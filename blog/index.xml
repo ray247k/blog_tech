@@ -2,64 +2,64 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blog on 薛丁格的工程師</title>
-    <link>https://example.com/blog/</link>
+    <link>https://ray247k.github.io/blog_tech/blog/</link>
     <description>Recent content in Blog on 薛丁格的工程師</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Sun, 25 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 25 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://ray247k.github.io/blog_tech/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>設定 ssh 金鑰登入遠端主機</title>
-      <link>https://example.com/blog/202104-use-ssh-key-login-remote-server/</link>
+      <link>https://ray247k.github.io/blog_tech/blog/202104-use-ssh-key-login-remote-server/</link>
       <pubDate>Sun, 25 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/blog/202104-use-ssh-key-login-remote-server/</guid>
+      <guid>https://ray247k.github.io/blog_tech/blog/202104-use-ssh-key-login-remote-server/</guid>
       <description>&lt;p&gt;一般登入伺服器是使用帳號與密碼進行登入，但是密碼可能會因為抄錄或是傳遞給人而外洩&lt;br&gt;
 安全性的程度會比較沒有像SSH key 那麼安全，而且使用SSH key 登入可以就不用每次手動輸入密碼&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>雲端主機啟動 Docker 服務</title>
-      <link>https://example.com/blog/202103-enable-docker-service-in-remote-server/</link>
+      <link>https://ray247k.github.io/blog_tech/blog/202103-enable-docker-service-in-remote-server/</link>
       <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/blog/202103-enable-docker-service-in-remote-server/</guid>
+      <guid>https://ray247k.github.io/blog_tech/blog/202103-enable-docker-service-in-remote-server/</guid>
       <description>&lt;p&gt;新開主機啟用 docker 與 docker-compose 服務的操作步驟&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>PostgreSQL 資料庫建置 - 使用 Docker</title>
-      <link>https://example.com/blog/202103-build-postgresql-database-useing-docker/</link>
+      <link>https://ray247k.github.io/blog_tech/blog/202103-build-postgresql-database-useing-docker/</link>
       <pubDate>Wed, 03 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/blog/202103-build-postgresql-database-useing-docker/</guid>
+      <guid>https://ray247k.github.io/blog_tech/blog/202103-build-postgresql-database-useing-docker/</guid>
       <description>&lt;p&gt;使用 Docker 來建置一個 PostgreSQL 資料庫&lt;br&gt;
 包含 &lt;code&gt;資料庫建置&lt;/code&gt;、&lt;code&gt;資料持久化&lt;/code&gt;、&lt;code&gt;使用 GUI 操作資料庫&lt;/code&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>反向代理 - 在 Docker 環境建置</title>
-      <link>https://example.com/blog/202102-reverse-proxy-in-docker-service/</link>
+      <link>https://ray247k.github.io/blog_tech/blog/202102-reverse-proxy-in-docker-service/</link>
       <pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/blog/202102-reverse-proxy-in-docker-service/</guid>
+      <guid>https://ray247k.github.io/blog_tech/blog/202102-reverse-proxy-in-docker-service/</guid>
       <description>&lt;p&gt;反向代理的基本說明，以及在 Docker 容器中如何建立反向代理&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Laravel 執行環境建置</title>
-      <link>https://example.com/blog/202102-laravel-environment-basic-settings/</link>
+      <link>https://ray247k.github.io/blog_tech/blog/202102-laravel-environment-basic-settings/</link>
       <pubDate>Thu, 25 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/blog/202102-laravel-environment-basic-settings/</guid>
+      <guid>https://ray247k.github.io/blog_tech/blog/202102-laravel-environment-basic-settings/</guid>
       <description>&lt;p&gt;開發 Laravel 專案所需要做的設定與套件安裝，不論是在遠端主機或是本機都適用&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Ngrok 讓 localhost 可以被外部連線</title>
-      <link>https://example.com/blog/202102-ngrok-share-your-local-development-site/</link>
+      <link>https://ray247k.github.io/blog_tech/blog/202102-ngrok-share-your-local-development-site/</link>
       <pubDate>Sun, 14 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/blog/202102-ngrok-share-your-local-development-site/</guid>
+      <guid>https://ray247k.github.io/blog_tech/blog/202102-ngrok-share-your-local-development-site/</guid>
       <description>&lt;p&gt;ngrok 做為一個轉發的伺服器，他可以把外界的請求轉發到你指定的 Port&lt;br&gt;
 使用的背景原理是連接到 ngrok 雲端伺服器將你本機指定的地址公開&lt;br&gt;
 再將由 ngrok 一串公開的網址來存取內容&lt;br&gt;
@@ -68,10 +68,10 @@
     
     <item>
       <title>Portainer - 視覺化管理 Docker 的工具</title>
-      <link>https://example.com/blog/202101-portainer-open-source-container-management-gui/</link>
+      <link>https://ray247k.github.io/blog_tech/blog/202101-portainer-open-source-container-management-gui/</link>
       <pubDate>Sat, 16 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/blog/202101-portainer-open-source-container-management-gui/</guid>
+      <guid>https://ray247k.github.io/blog_tech/blog/202101-portainer-open-source-container-management-gui/</guid>
       <description>&lt;p&gt;本機開發大部分使用指令操作，或是使用 Docker 本身的 GUI 介面管理服務&lt;br&gt;
 &lt;a href=&#34;https://github.com/portainer&#34;&gt;Portainer&lt;/a&gt; 是一個 open-source 的 UI tool&lt;br&gt;
 可以查看 docker image, container，並執行 start, stop, restart, remove 等動作&lt;br&gt;
@@ -82,49 +82,49 @@
     
     <item>
       <title>Docker 筆記 3 - docker-compose</title>
-      <link>https://example.com/blog/202101-docker-note-3-introduce-docker-compose/</link>
+      <link>https://ray247k.github.io/blog_tech/blog/202101-docker-note-3-introduce-docker-compose/</link>
       <pubDate>Tue, 12 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/blog/202101-docker-note-3-introduce-docker-compose/</guid>
+      <guid>https://ray247k.github.io/blog_tech/blog/202101-docker-note-3-introduce-docker-compose/</guid>
       <description>&lt;p&gt;如果同時要管理彼此是有關連的多個 docker 容器，單純使用 docker 指令必須要自行記得容器之間的關聯&lt;br&gt;
 而使用 docker-compose，則可以輕鬆定義多容器服務&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Docker 筆記 2 - 基本使用</title>
-      <link>https://example.com/blog/202101-docker-note-2-basic-usage/</link>
+      <link>https://ray247k.github.io/blog_tech/blog/202101-docker-note-2-basic-usage/</link>
       <pubDate>Sat, 09 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/blog/202101-docker-note-2-basic-usage/</guid>
+      <guid>https://ray247k.github.io/blog_tech/blog/202101-docker-note-2-basic-usage/</guid>
       <description>&lt;p&gt;容器化可以隔離不同環境，將環境打包後工程師可以專注開發，不用花過多心力在開發環境安裝上&lt;br&gt;
 而 Docker 是目前非常成熟且流行的一個容器化技術&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Docker 筆記 1 - 認識 Docker</title>
-      <link>https://example.com/blog/202101-docker-note-1-what-is-docker/</link>
+      <link>https://ray247k.github.io/blog_tech/blog/202101-docker-note-1-what-is-docker/</link>
       <pubDate>Sat, 02 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/blog/202101-docker-note-1-what-is-docker/</guid>
+      <guid>https://ray247k.github.io/blog_tech/blog/202101-docker-note-1-what-is-docker/</guid>
       <description>&lt;p&gt;容器化可以隔離不同環境，將環境打包後工程師可以專注開發，不用花過多心力在開發環境安裝上&lt;br&gt;
 而 Docker 是目前非常成熟且流行的一個容器化技術&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 12 在 Vuex 使用 Mutation 管理狀態</title>
-      <link>https://example.com/blog/202009-express-vue-build-ecommerce-12-vuex-mutation/</link>
+      <link>https://ray247k.github.io/blog_tech/blog/202009-express-vue-build-ecommerce-12-vuex-mutation/</link>
       <pubDate>Fri, 18 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/blog/202009-express-vue-build-ecommerce-12-vuex-mutation/</guid>
+      <guid>https://ray247k.github.io/blog_tech/blog/202009-express-vue-build-ecommerce-12-vuex-mutation/</guid>
       <description>&lt;p&gt;透過 Mutation 管理 Vuex中的狀態&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 11 認識 vuex</title>
-      <link>https://example.com/blog/202009-express-vue-build-ecommerce-11-install_vuex/</link>
+      <link>https://ray247k.github.io/blog_tech/blog/202009-express-vue-build-ecommerce-11-install_vuex/</link>
       <pubDate>Sat, 12 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/blog/202009-express-vue-build-ecommerce-11-install_vuex/</guid>
+      <guid>https://ray247k.github.io/blog_tech/blog/202009-express-vue-build-ecommerce-11-install_vuex/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://vuex.vuejs.org/zh/&#34;&gt;vuex&lt;/a&gt; 來協助我們集中管理組件狀態，就不用到處維護狀態&lt;br&gt;
 使得組件只需要專注於渲染頁面，而前端狀態都保留在 vuex 中建立的狀態庫中&lt;br&gt;
 所謂狀態庫，其實也就是一個 Javascript 物件&lt;/p&gt;</description>
@@ -132,93 +132,93 @@
     
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 10 用 vue 建立一個表單</title>
-      <link>https://example.com/blog/202009-express-vue-build-ecommerce-10-new-product-page/</link>
+      <link>https://ray247k.github.io/blog_tech/blog/202009-express-vue-build-ecommerce-10-new-product-page/</link>
       <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/blog/202009-express-vue-build-ecommerce-10-new-product-page/</guid>
+      <guid>https://ray247k.github.io/blog_tech/blog/202009-express-vue-build-ecommerce-10-new-product-page/</guid>
       <description>&lt;p&gt;後端的 API 上次已經開了出來，接著來建立前端使用的表單&lt;br&gt;
 這次的目標是建立新增商品時所用的表單，會使用到基本的 Vue 知識，如果沒看過文件的可以先了解一下官方文件&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 09 API 測試</title>
-      <link>https://example.com/blog/202008-express-vue-build-ecommerce-09-test-api/</link>
+      <link>https://ray247k.github.io/blog_tech/blog/202008-express-vue-build-ecommerce-09-test-api/</link>
       <pubDate>Fri, 28 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/blog/202008-express-vue-build-ecommerce-09-test-api/</guid>
+      <guid>https://ray247k.github.io/blog_tech/blog/202008-express-vue-build-ecommerce-09-test-api/</guid>
       <description>&lt;p&gt;在上一篇中完成了第一個 API，這一篇要來測試 API 是不是正常工作&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 08 API 建立</title>
-      <link>https://example.com/blog/202008-express-vue-build-ecommerce-08-build-api/</link>
+      <link>https://ray247k.github.io/blog_tech/blog/202008-express-vue-build-ecommerce-08-build-api/</link>
       <pubDate>Fri, 21 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/blog/202008-express-vue-build-ecommerce-08-build-api/</guid>
+      <guid>https://ray247k.github.io/blog_tech/blog/202008-express-vue-build-ecommerce-08-build-api/</guid>
       <description>&lt;p&gt;在上一篇中建立了 Router，這一篇要做的就是將 Controller 完成，如此就完成了第一個 API&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 07 API 路由建立</title>
-      <link>https://example.com/blog/202008-express-vue-build-ecommerce-07-api-routes/</link>
+      <link>https://ray247k.github.io/blog_tech/blog/202008-express-vue-build-ecommerce-07-api-routes/</link>
       <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/blog/202008-express-vue-build-ecommerce-07-api-routes/</guid>
+      <guid>https://ray247k.github.io/blog_tech/blog/202008-express-vue-build-ecommerce-07-api-routes/</guid>
       <description>&lt;p&gt;在上一篇中建立了 Model，這一篇要做的就是將路由完成，讓請求可以送到指定的 Controller&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 06 - 資料庫設計</title>
-      <link>https://example.com/blog/202008-express-vue-build-ecommerce-06-db-schemas-and-models/</link>
+      <link>https://ray247k.github.io/blog_tech/blog/202008-express-vue-build-ecommerce-06-db-schemas-and-models/</link>
       <pubDate>Fri, 07 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/blog/202008-express-vue-build-ecommerce-06-db-schemas-and-models/</guid>
+      <guid>https://ray247k.github.io/blog_tech/blog/202008-express-vue-build-ecommerce-06-db-schemas-and-models/</guid>
       <description>&lt;p&gt;先前我們安裝好了 mongoDB 以及開啟了 CORS，這一篇要來建立資料庫架構以及 MVC 架構中的 Model 部分&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 05 - 連接 MongoDB 與 CORS</title>
-      <link>https://example.com/blog/202007-express-vue-build-ecommerce-05-mongodb-connect-and-cors/</link>
+      <link>https://ray247k.github.io/blog_tech/blog/202007-express-vue-build-ecommerce-05-mongodb-connect-and-cors/</link>
       <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/blog/202007-express-vue-build-ecommerce-05-mongodb-connect-and-cors/</guid>
+      <guid>https://ray247k.github.io/blog_tech/blog/202007-express-vue-build-ecommerce-05-mongodb-connect-and-cors/</guid>
       <description>&lt;p&gt;資料庫使用 MongoDB，這篇中我們會簡單介紹基本連線方式，以及跨來源資源共(CORS)&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 04 - 進入 MongoDB 的世界</title>
-      <link>https://example.com/blog/202007-express-vue-build-ecommerce-04-hello-mongodb/</link>
+      <link>https://ray247k.github.io/blog_tech/blog/202007-express-vue-build-ecommerce-04-hello-mongodb/</link>
       <pubDate>Thu, 23 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/blog/202007-express-vue-build-ecommerce-04-hello-mongodb/</guid>
+      <guid>https://ray247k.github.io/blog_tech/blog/202007-express-vue-build-ecommerce-04-hello-mongodb/</guid>
       <description>&lt;p&gt;資料庫使用 MongoDB，這篇中我們會簡單介紹基本指令及安裝。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 03 - 認識 Express</title>
-      <link>https://example.com/blog/202007-express-vue-build-ecommerce-03-hello-express/</link>
+      <link>https://ray247k.github.io/blog_tech/blog/202007-express-vue-build-ecommerce-03-hello-express/</link>
       <pubDate>Fri, 17 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/blog/202007-express-vue-build-ecommerce-03-hello-express/</guid>
+      <guid>https://ray247k.github.io/blog_tech/blog/202007-express-vue-build-ecommerce-03-hello-express/</guid>
       <description>&lt;p&gt;後端使用的是 node.js 的後端框架 - express，這篇中我們會建立新專案。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 02 - vue-router 的使用</title>
-      <link>https://example.com/blog/202007-express-vue-build-ecommerce-02-vue-router/</link>
+      <link>https://ray247k.github.io/blog_tech/blog/202007-express-vue-build-ecommerce-02-vue-router/</link>
       <pubDate>Wed, 08 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/blog/202007-express-vue-build-ecommerce-02-vue-router/</guid>
+      <guid>https://ray247k.github.io/blog_tech/blog/202007-express-vue-build-ecommerce-02-vue-router/</guid>
       <description>&lt;p&gt;在接下來的內容中會學習 vue-router 的使用方法與學習路由基礎知識&lt;br&gt;
 並使用 vue-router 來進行多個頁面的跳轉&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 01- 初始設定</title>
-      <link>https://example.com/blog/202006-express-vue-build-ecommerce-01-basic-settings/</link>
+      <link>https://ray247k.github.io/blog_tech/blog/202006-express-vue-build-ecommerce-01-basic-settings/</link>
       <pubDate>Thu, 25 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/blog/202006-express-vue-build-ecommerce-01-basic-settings/</guid>
+      <guid>https://ray247k.github.io/blog_tech/blog/202006-express-vue-build-ecommerce-01-basic-settings/</guid>
       <description>&lt;p&gt;本篇將使用 vue-ui 建立專案，並且安裝 vue-router&lt;/p&gt;</description>
     </item>
     

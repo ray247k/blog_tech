@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>composer on 薛丁格的工程師</title>
-    <link>https://example.com/tags/composer/</link>
+    <link>https://ray247k.github.io/blog_tech/tags/composer/</link>
     <description>Recent content in composer on 薛丁格的工程師</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Thu, 25 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/composer/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 25 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://ray247k.github.io/blog_tech/tags/composer/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Laravel 執行環境建置</title>
-      <link>https://example.com/blog/202102-laravel-environment-basic-settings/</link>
+      <link>https://ray247k.github.io/blog_tech/blog/202102-laravel-environment-basic-settings/</link>
       <pubDate>Thu, 25 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/blog/202102-laravel-environment-basic-settings/</guid>
+      <guid>https://ray247k.github.io/blog_tech/blog/202102-laravel-environment-basic-settings/</guid>
       <description>&lt;p&gt;開發 Laravel 專案所需要做的設定與套件安裝，不論是在遠端主機或是本機都適用&lt;/p&gt;</description>
     </item>
     

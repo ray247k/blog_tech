@@ -2,177 +2,177 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://example.com/blog/</loc>
+    <loc>https://ray247k.github.io/blog_tech/blog/</loc>
     <lastmod>2021-04-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/categories/</loc>
+    <loc>https://ray247k.github.io/blog_tech/categories/</loc>
     <lastmod>2021-04-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/tags/devops/</loc>
+    <loc>https://ray247k.github.io/blog_tech/tags/devops/</loc>
     <lastmod>2021-04-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/categories/devops/</loc>
+    <loc>https://ray247k.github.io/blog_tech/categories/devops/</loc>
     <lastmod>2021-04-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/tags/linux/</loc>
+    <loc>https://ray247k.github.io/blog_tech/tags/linux/</loc>
     <lastmod>2021-04-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/tags/ssh/</loc>
+    <loc>https://ray247k.github.io/blog_tech/tags/ssh/</loc>
     <lastmod>2021-04-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/tags/</loc>
+    <loc>https://ray247k.github.io/blog_tech/tags/</loc>
     <lastmod>2021-04-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/</loc>
+    <loc>https://ray247k.github.io/blog_tech/</loc>
     <lastmod>2021-04-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/blog/202104-use-ssh-key-login-remote-server/</loc>
+    <loc>https://ray247k.github.io/blog_tech/blog/202104-use-ssh-key-login-remote-server/</loc>
     <lastmod>2021-04-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/tags/aws/</loc>
+    <loc>https://ray247k.github.io/blog_tech/tags/aws/</loc>
     <lastmod>2021-03-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/tags/docker/</loc>
+    <loc>https://ray247k.github.io/blog_tech/tags/docker/</loc>
     <lastmod>2021-03-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/tags/docker-compose/</loc>
+    <loc>https://ray247k.github.io/blog_tech/tags/docker-compose/</loc>
     <lastmod>2021-03-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/tags/gcp/</loc>
+    <loc>https://ray247k.github.io/blog_tech/tags/gcp/</loc>
     <lastmod>2021-03-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/blog/202103-enable-docker-service-in-remote-server/</loc>
+    <loc>https://ray247k.github.io/blog_tech/blog/202103-enable-docker-service-in-remote-server/</loc>
     <lastmod>2021-03-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/tags/postgresql/</loc>
+    <loc>https://ray247k.github.io/blog_tech/tags/postgresql/</loc>
     <lastmod>2021-03-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/blog/202103-build-postgresql-database-useing-docker/</loc>
+    <loc>https://ray247k.github.io/blog_tech/blog/202103-build-postgresql-database-useing-docker/</loc>
     <lastmod>2021-03-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/tags/nginx/</loc>
+    <loc>https://ray247k.github.io/blog_tech/tags/nginx/</loc>
     <lastmod>2021-02-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/tags/proxy/</loc>
+    <loc>https://ray247k.github.io/blog_tech/tags/proxy/</loc>
     <lastmod>2021-02-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/blog/202102-reverse-proxy-in-docker-service/</loc>
+    <loc>https://ray247k.github.io/blog_tech/blog/202102-reverse-proxy-in-docker-service/</loc>
     <lastmod>2021-02-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/tags/composer/</loc>
+    <loc>https://ray247k.github.io/blog_tech/tags/composer/</loc>
     <lastmod>2021-02-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/tags/laravel/</loc>
+    <loc>https://ray247k.github.io/blog_tech/tags/laravel/</loc>
     <lastmod>2021-02-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/categories/laravel/</loc>
+    <loc>https://ray247k.github.io/blog_tech/categories/laravel/</loc>
     <lastmod>2021-02-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/blog/202102-laravel-environment-basic-settings/</loc>
+    <loc>https://ray247k.github.io/blog_tech/blog/202102-laravel-environment-basic-settings/</loc>
     <lastmod>2021-02-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/tags/php/</loc>
+    <loc>https://ray247k.github.io/blog_tech/tags/php/</loc>
     <lastmod>2021-02-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/tags/ngrok/</loc>
+    <loc>https://ray247k.github.io/blog_tech/tags/ngrok/</loc>
     <lastmod>2021-02-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/blog/202102-ngrok-share-your-local-development-site/</loc>
+    <loc>https://ray247k.github.io/blog_tech/blog/202102-ngrok-share-your-local-development-site/</loc>
     <lastmod>2021-02-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/tags/portainer/</loc>
+    <loc>https://ray247k.github.io/blog_tech/tags/portainer/</loc>
     <lastmod>2021-01-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/blog/202101-portainer-open-source-container-management-gui/</loc>
+    <loc>https://ray247k.github.io/blog_tech/blog/202101-portainer-open-source-container-management-gui/</loc>
     <lastmod>2021-01-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/tags/containerization/</loc>
+    <loc>https://ray247k.github.io/blog_tech/tags/containerization/</loc>
     <lastmod>2021-01-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/blog/202101-docker-note-3-introduce-docker-compose/</loc>
+    <loc>https://ray247k.github.io/blog_tech/blog/202101-docker-note-3-introduce-docker-compose/</loc>
     <lastmod>2021-01-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/tags/%E5%AE%B9%E5%99%A8%E6%8A%80%E8%A1%93/</loc>
+    <loc>https://ray247k.github.io/blog_tech/tags/%E5%AE%B9%E5%99%A8%E6%8A%80%E8%A1%93/</loc>
     <lastmod>2021-01-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/blog/202101-docker-note-2-basic-usage/</loc>
+    <loc>https://ray247k.github.io/blog_tech/blog/202101-docker-note-2-basic-usage/</loc>
     <lastmod>2021-01-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/blog/202101-docker-note-1-what-is-docker/</loc>
+    <loc>https://ray247k.github.io/blog_tech/blog/202101-docker-note-1-what-is-docker/</loc>
     <lastmod>2021-01-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/blog/202009-express-vue-build-ecommerce-12-vuex-mutation/</loc>
+    <loc>https://ray247k.github.io/blog_tech/blog/202009-express-vue-build-ecommerce-12-vuex-mutation/</loc>
     <lastmod>2020-09-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/tags/mutation/</loc>
+    <loc>https://ray247k.github.io/blog_tech/tags/mutation/</loc>
     <lastmod>2020-09-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/tags/node.js/</loc>
+    <loc>https://ray247k.github.io/blog_tech/tags/node.js/</loc>
     <lastmod>2020-09-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/categories/node.js/</loc>
+    <loc>https://ray247k.github.io/blog_tech/categories/node.js/</loc>
     <lastmod>2020-09-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/tags/vue/</loc>
+    <loc>https://ray247k.github.io/blog_tech/tags/vue/</loc>
     <lastmod>2020-09-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/tags/vuex/</loc>
+    <loc>https://ray247k.github.io/blog_tech/tags/vuex/</loc>
     <lastmod>2020-09-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/blog/202009-express-vue-build-ecommerce-11-install_vuex/</loc>
+    <loc>https://ray247k.github.io/blog_tech/blog/202009-express-vue-build-ecommerce-11-install_vuex/</loc>
     <lastmod>2020-09-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/blog/202009-express-vue-build-ecommerce-10-new-product-page/</loc>
+    <loc>https://ray247k.github.io/blog_tech/blog/202009-express-vue-build-ecommerce-10-new-product-page/</loc>
     <lastmod>2020-09-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/tags/component/</loc>
+    <loc>https://ray247k.github.io/blog_tech/tags/component/</loc>
     <lastmod>2020-09-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/blog/202008-express-vue-build-ecommerce-09-test-api/</loc>
+    <loc>https://ray247k.github.io/blog_tech/blog/202008-express-vue-build-ecommerce-09-test-api/</loc>
     <lastmod>2020-08-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/tags/express/</loc>
+    <loc>https://ray247k.github.io/blog_tech/tags/express/</loc>
     <lastmod>2020-08-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/tags/restful/</loc>
+    <loc>https://ray247k.github.io/blog_tech/tags/restful/</loc>
     <lastmod>2020-08-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/blog/202008-express-vue-build-ecommerce-08-build-api/</loc>
+    <loc>https://ray247k.github.io/blog_tech/blog/202008-express-vue-build-ecommerce-08-build-api/</loc>
     <lastmod>2020-08-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/blog/202008-express-vue-build-ecommerce-07-api-routes/</loc>
+    <loc>https://ray247k.github.io/blog_tech/blog/202008-express-vue-build-ecommerce-07-api-routes/</loc>
     <lastmod>2020-08-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/blog/202008-express-vue-build-ecommerce-06-db-schemas-and-models/</loc>
+    <loc>https://ray247k.github.io/blog_tech/blog/202008-express-vue-build-ecommerce-06-db-schemas-and-models/</loc>
     <lastmod>2020-08-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/tags/mongodb/</loc>
+    <loc>https://ray247k.github.io/blog_tech/tags/mongodb/</loc>
     <lastmod>2020-08-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/blog/202007-express-vue-build-ecommerce-05-mongodb-connect-and-cors/</loc>
+    <loc>https://ray247k.github.io/blog_tech/blog/202007-express-vue-build-ecommerce-05-mongodb-connect-and-cors/</loc>
     <lastmod>2020-07-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/tags/cors/</loc>
+    <loc>https://ray247k.github.io/blog_tech/tags/cors/</loc>
     <lastmod>2020-07-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/blog/202007-express-vue-build-ecommerce-04-hello-mongodb/</loc>
+    <loc>https://ray247k.github.io/blog_tech/blog/202007-express-vue-build-ecommerce-04-hello-mongodb/</loc>
     <lastmod>2020-07-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/blog/202007-express-vue-build-ecommerce-03-hello-express/</loc>
+    <loc>https://ray247k.github.io/blog_tech/blog/202007-express-vue-build-ecommerce-03-hello-express/</loc>
     <lastmod>2020-07-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/blog/202007-express-vue-build-ecommerce-02-vue-router/</loc>
+    <loc>https://ray247k.github.io/blog_tech/blog/202007-express-vue-build-ecommerce-02-vue-router/</loc>
     <lastmod>2020-07-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/tags/vue-router/</loc>
+    <loc>https://ray247k.github.io/blog_tech/tags/vue-router/</loc>
     <lastmod>2020-07-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/tags/vue-ui/</loc>
+    <loc>https://ray247k.github.io/blog_tech/tags/vue-ui/</loc>
     <lastmod>2020-07-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/blog/202006-express-vue-build-ecommerce-01-basic-settings/</loc>
+    <loc>https://ray247k.github.io/blog_tech/blog/202006-express-vue-build-ecommerce-01-basic-settings/</loc>
     <lastmod>2020-06-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/about/</loc>
+    <loc>https://ray247k.github.io/blog_tech/about/</loc>
   </url>
 </urlset>

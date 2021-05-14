@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CORS on 薛丁格的工程師</title>
-    <link>https://example.com/tags/cors/</link>
+    <link>https://ray247k.github.io/blog_tech/tags/cors/</link>
     <description>Recent content in CORS on 薛丁格的工程師</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Thu, 30 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/cors/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://ray247k.github.io/blog_tech/tags/cors/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 05 - 連接 MongoDB 與 CORS</title>
-      <link>https://example.com/blog/202007-express-vue-build-ecommerce-05-mongodb-connect-and-cors/</link>
+      <link>https://ray247k.github.io/blog_tech/blog/202007-express-vue-build-ecommerce-05-mongodb-connect-and-cors/</link>
       <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/blog/202007-express-vue-build-ecommerce-05-mongodb-connect-and-cors/</guid>
+      <guid>https://ray247k.github.io/blog_tech/blog/202007-express-vue-build-ecommerce-05-mongodb-connect-and-cors/</guid>
       <description>&lt;p&gt;資料庫使用 MongoDB，這篇中我們會簡單介紹基本連線方式，以及跨來源資源共(CORS)&lt;/p&gt;</description>
     </item>
     

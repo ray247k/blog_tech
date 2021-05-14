@@ -2,55 +2,55 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>DevOps on 薛丁格的工程師</title>
-    <link>https://example.com/categories/devops/</link>
+    <link>https://ray247k.github.io/blog_tech/categories/devops/</link>
     <description>Recent content in DevOps on 薛丁格的工程師</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Sun, 25 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/categories/devops/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 25 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://ray247k.github.io/blog_tech/categories/devops/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>設定 ssh 金鑰登入遠端主機</title>
-      <link>https://example.com/blog/202104-use-ssh-key-login-remote-server/</link>
+      <link>https://ray247k.github.io/blog_tech/blog/202104-use-ssh-key-login-remote-server/</link>
       <pubDate>Sun, 25 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/blog/202104-use-ssh-key-login-remote-server/</guid>
+      <guid>https://ray247k.github.io/blog_tech/blog/202104-use-ssh-key-login-remote-server/</guid>
       <description>&lt;p&gt;一般登入伺服器是使用帳號與密碼進行登入，但是密碼可能會因為抄錄或是傳遞給人而外洩&lt;br&gt;
 安全性的程度會比較沒有像SSH key 那麼安全，而且使用SSH key 登入可以就不用每次手動輸入密碼&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>雲端主機啟動 Docker 服務</title>
-      <link>https://example.com/blog/202103-enable-docker-service-in-remote-server/</link>
+      <link>https://ray247k.github.io/blog_tech/blog/202103-enable-docker-service-in-remote-server/</link>
       <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/blog/202103-enable-docker-service-in-remote-server/</guid>
+      <guid>https://ray247k.github.io/blog_tech/blog/202103-enable-docker-service-in-remote-server/</guid>
       <description>&lt;p&gt;新開主機啟用 docker 與 docker-compose 服務的操作步驟&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>PostgreSQL 資料庫建置 - 使用 Docker</title>
-      <link>https://example.com/blog/202103-build-postgresql-database-useing-docker/</link>
+      <link>https://ray247k.github.io/blog_tech/blog/202103-build-postgresql-database-useing-docker/</link>
       <pubDate>Wed, 03 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/blog/202103-build-postgresql-database-useing-docker/</guid>
+      <guid>https://ray247k.github.io/blog_tech/blog/202103-build-postgresql-database-useing-docker/</guid>
       <description>&lt;p&gt;使用 Docker 來建置一個 PostgreSQL 資料庫&lt;br&gt;
 包含 &lt;code&gt;資料庫建置&lt;/code&gt;、&lt;code&gt;資料持久化&lt;/code&gt;、&lt;code&gt;使用 GUI 操作資料庫&lt;/code&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>反向代理 - 在 Docker 環境建置</title>
-      <link>https://example.com/blog/202102-reverse-proxy-in-docker-service/</link>
+      <link>https://ray247k.github.io/blog_tech/blog/202102-reverse-proxy-in-docker-service/</link>
       <pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/blog/202102-reverse-proxy-in-docker-service/</guid>
+      <guid>https://ray247k.github.io/blog_tech/blog/202102-reverse-proxy-in-docker-service/</guid>
       <description>&lt;p&gt;反向代理的基本說明，以及在 Docker 容器中如何建立反向代理&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Ngrok 讓 localhost 可以被外部連線</title>
-      <link>https://example.com/blog/202102-ngrok-share-your-local-development-site/</link>
+      <link>https://ray247k.github.io/blog_tech/blog/202102-ngrok-share-your-local-development-site/</link>
       <pubDate>Sun, 14 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/blog/202102-ngrok-share-your-local-development-site/</guid>
+      <guid>https://ray247k.github.io/blog_tech/blog/202102-ngrok-share-your-local-development-site/</guid>
       <description>&lt;p&gt;ngrok 做為一個轉發的伺服器，他可以把外界的請求轉發到你指定的 Port&lt;br&gt;
 使用的背景原理是連接到 ngrok 雲端伺服器將你本機指定的地址公開&lt;br&gt;
 再將由 ngrok 一串公開的網址來存取內容&lt;br&gt;
@@ -59,10 +59,10 @@
     
     <item>
       <title>Portainer - 視覺化管理 Docker 的工具</title>
-      <link>https://example.com/blog/202101-portainer-open-source-container-management-gui/</link>
+      <link>https://ray247k.github.io/blog_tech/blog/202101-portainer-open-source-container-management-gui/</link>
       <pubDate>Sat, 16 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/blog/202101-portainer-open-source-container-management-gui/</guid>
+      <guid>https://ray247k.github.io/blog_tech/blog/202101-portainer-open-source-container-management-gui/</guid>
       <description>&lt;p&gt;本機開發大部分使用指令操作，或是使用 Docker 本身的 GUI 介面管理服務&lt;br&gt;
 &lt;a href=&#34;https://github.com/portainer&#34;&gt;Portainer&lt;/a&gt; 是一個 open-source 的 UI tool&lt;br&gt;
 可以查看 docker image, container，並執行 start, stop, restart, remove 等動作&lt;br&gt;
@@ -73,30 +73,30 @@
     
     <item>
       <title>Docker 筆記 3 - docker-compose</title>
-      <link>https://example.com/blog/202101-docker-note-3-introduce-docker-compose/</link>
+      <link>https://ray247k.github.io/blog_tech/blog/202101-docker-note-3-introduce-docker-compose/</link>
       <pubDate>Tue, 12 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/blog/202101-docker-note-3-introduce-docker-compose/</guid>
+      <guid>https://ray247k.github.io/blog_tech/blog/202101-docker-note-3-introduce-docker-compose/</guid>
       <description>&lt;p&gt;如果同時要管理彼此是有關連的多個 docker 容器，單純使用 docker 指令必須要自行記得容器之間的關聯&lt;br&gt;
 而使用 docker-compose，則可以輕鬆定義多容器服務&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Docker 筆記 2 - 基本使用</title>
-      <link>https://example.com/blog/202101-docker-note-2-basic-usage/</link>
+      <link>https://ray247k.github.io/blog_tech/blog/202101-docker-note-2-basic-usage/</link>
       <pubDate>Sat, 09 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/blog/202101-docker-note-2-basic-usage/</guid>
+      <guid>https://ray247k.github.io/blog_tech/blog/202101-docker-note-2-basic-usage/</guid>
       <description>&lt;p&gt;容器化可以隔離不同環境，將環境打包後工程師可以專注開發，不用花過多心力在開發環境安裝上&lt;br&gt;
 而 Docker 是目前非常成熟且流行的一個容器化技術&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Docker 筆記 1 - 認識 Docker</title>
-      <link>https://example.com/blog/202101-docker-note-1-what-is-docker/</link>
+      <link>https://ray247k.github.io/blog_tech/blog/202101-docker-note-1-what-is-docker/</link>
       <pubDate>Sat, 02 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/blog/202101-docker-note-1-what-is-docker/</guid>
+      <guid>https://ray247k.github.io/blog_tech/blog/202101-docker-note-1-what-is-docker/</guid>
       <description>&lt;p&gt;容器化可以隔離不同環境，將環境打包後工程師可以專注開發，不用花過多心力在開發環境安裝上&lt;br&gt;
 而 Docker 是目前非常成熟且流行的一個容器化技術&lt;/p&gt;</description>
     </item>
