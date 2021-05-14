@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vuex on 薛丁格的工程師</title>
+    <link>https://example.com/tags/vuex/</link>
+    <description>Recent content in vuex on 薛丁格的工程師</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-TW</language>
+    <lastBuildDate>Fri, 18 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/vuex/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Express&#43;Vue 搭建電商網站] 12 在 Vuex 使用 Mutation 管理狀態</title>
+      <link>https://example.com/blog/202009-express-vue-build-ecommerce-12-vuex-mutation/</link>
+      <pubDate>Fri, 18 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/blog/202009-express-vue-build-ecommerce-12-vuex-mutation/</guid>
+      <description>&lt;p&gt;透過 Mutation 管理 Vuex中的狀態&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[Express&#43;Vue 搭建電商網站] 11 認識 vuex</title>
+      <link>https://example.com/blog/202009-express-vue-build-ecommerce-11-install_vuex/</link>
+      <pubDate>Sat, 12 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/blog/202009-express-vue-build-ecommerce-11-install_vuex/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://vuex.vuejs.org/zh/&#34;&gt;vuex&lt;/a&gt; 來協助我們集中管理組件狀態，就不用到處維護狀態&lt;br&gt;
+使得組件只需要專注於渲染頁面，而前端狀態都保留在 vuex 中建立的狀態庫中&lt;br&gt;
+所謂狀態庫，其實也就是一個 Javascript 物件&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

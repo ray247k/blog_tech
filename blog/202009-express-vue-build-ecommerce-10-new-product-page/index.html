@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="zh-tw">
+  <head>
+  <meta charset="utf-8">
+<title>[Express&#43;Vue 搭建電商網站] 10 用 vue 建立一個表單 - 薛丁格的工程師</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
+  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
+  
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=1" color="#ffffff">
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=1">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=1">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+<meta name="generator" content="Hugo 0.83.1" /><meta property="og:site_name" content="薛丁格的工程師">
+  <meta property="og:title" content="[Express&#43;Vue 搭建電商網站] 10 用 vue 建立一個表單">
+  <meta property="og:description" content="使用 Express &#43; Vue 搭建一個電商網站 - 用 vue 建立一個表單">
+  <meta property="description" content="使用 Express &#43; Vue 搭建一個電商網站 - 用 vue 建立一個表單">
+  <meta property="og:url" content="https://example.com/blog/202009-express-vue-build-ecommerce-10-new-product-page/">
+  <meta property="og:type" content="article">
+  
+    <meta property="og:image" content="https://example.com/img/main/logo.jpg">
+  
+  <link rel="stylesheet" href="/css/bundle.min.6ad9eb85bff384c75937a02036b01425a2ca63f19a96535b8ba5b181db62a4b3.css" integrity="sha256-atnrhb/zhMdZN6AgNrAUJaLKY/GallNbi6WxgdtipLM="><link rel="stylesheet" href="/css/add-on.css">
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/" class="nav">
+        
+          Blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/" class="nav link"><i class='fa fa-home'></i> home</a>
+        
+      
+        
+          
+          <a href="/about/" class="nav link"><i class='far fa-id-card'></i> about</a>
+        
+      
+        
+          
+          <a href="/tags/" class="nav link"><i class='fas fa-tag'></i> tag</a>
+        
+      
+        
+          
+          <a href="/categories/" class="nav link"><i class='fas fa-sitemap'></i> category</a>
+        
+      
+      
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    
+    
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/"><img src="https://example.com/img/main/logo.jpg" class="bevel" width="100" alt="一隻箱子裡的貓，看著電腦螢幕" /></a>
+  <header>
+    <h1>Schrödinger's Programmer</h1>
+  </header>
+  <main>
+    <p>奔跑吧工程師，趁年輕跑得越遠越好</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+
+        <li><a href="//github.com/ray247k" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+<li><a href="//gitlab.com/ray247k" target="_blank" rel="noopener" title="GitLab" class="fab fa-gitlab"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:ray247k@gmail.com" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="/blog/202009-express-vue-build-ecommerce-10-new-product-page/">[Express&#43;Vue 搭建電商網站] 10 用 vue 建立一個表單</a></h2>
+    
+    
+      <p>使用 Express &#43; Vue 搭建一個電商網站 - 用 vue 建立一個表單</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2020-09-04 00:00:00 &#43;0000 UTC">2020/09/04</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+    <div id="socnet-share">
+      
+
+
+
+
+
+    </div>
+    <div class="content">
+      
+      <p>後端的 API 上次已經開了出來，接著來建立前端使用的表單<br>
+這次的目標是建立新增商品時所用的表單，會使用到基本的 Vue 知識，如果沒看過文件的可以先了解一下官方文件</p>
+<h1 id="架構規劃">架構規劃</h1>
+<p>之前我們建立了 <code>/src/views/admin/New.vue</code> 這個模板做為網址 <code>/admin/new</code> 的顯示頁面<br>
+在這節中會建立一個表單，然後讓他作為頁面組件顯示在 <code>New.vue</code> 中</p>
+<h1 id="程式實作">程式實作</h1>
+<p>建立一個新的檔案 <code>/src/components/products/ProductForm.vue</code> 作為表單的組件<br>
+可以看到我們在這邊的存放位置不再是 <code>/src/views/</code> 因為他是組件<br>
+好好的放在「components」內是比較好的架構方式</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+  &lt;<span style="color:#f92672">form</span> <span style="color:#f92672">@submit.prevent</span><span style="color:#e6db74">=&#34;saveProduct&#34;</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col-lg-5 col-md-5 col-sm-12 col-xs-12&#34;</span>&gt;
+      &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-group&#34;</span>&gt;
+        &lt;<span style="color:#f92672">label</span>&gt;<span style="color:#a6e22e">Name</span>&lt;/<span style="color:#f92672">label</span>&gt;
+        &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Name&#34;</span> <span style="color:#f92672">v-model</span><span style="color:#e6db74">=&#34;model.name&#34; name=&#34;name&#34; class=&#34;form-control&#34; /&gt;
+</span><span style="color:#e6db74">      &lt;/div&gt;
+</span><span style="color:#e6db74">      &lt;div class=&#34;form-group&#34;&gt;
+</span><span style="color:#e6db74">        &lt;label&gt;Price&lt;/label&gt;
+</span><span style="color:#e6db74">        &lt;input
+</span><span style="color:#e6db74">          type=&#34;number&#34;
+</span><span style="color:#e6db74">          class=&#34;form-control&#34;
+</span><span style="color:#e6db74">          placeholder=&#34;Price&#34;
+</span><span style="color:#e6db74">          v-model=&#34;model.price&#34;
+</span><span style="color:#e6db74">          name=&#34;price&#34;
+</span><span style="color:#e6db74">        /&gt;
+</span><span style="color:#e6db74">      &lt;/div&gt;
+</span><span style="color:#e6db74">      &lt;div class=&#34;form-group&#34;&gt;
+</span><span style="color:#e6db74">        &lt;label&gt;Manufacturer&lt;/label&gt;
+</span><span style="color:#e6db74">        &lt;select type=&#34;text&#34; class=&#34;form-control&#34; v-model=&#34;model.manufacturer&#34; name=&#34;manufacturer&#34;&gt;
+</span><span style="color:#e6db74">          &lt;template v-for=&#34;manufacturer in manufacturers&#34;&gt;
+</span><span style="color:#e6db74">            &lt;option
+</span><span style="color:#e6db74">              :key=&#34;manufacturer._id&#34;
+</span><span style="color:#e6db74">              :value=&#34;manufacturer._id&#34;
+</span><span style="color:#e6db74">              :selected=&#34;manufacturer._id == (model.manufacturer &amp;&amp; model.manufacturer._id)&#34;
+</span><span style="color:#e6db74">            &gt;{{manufacturer.name}}&lt;/option&gt;
+</span><span style="color:#e6db74">          &lt;/template&gt;
+</span><span style="color:#e6db74">        &lt;/select&gt;
+</span><span style="color:#e6db74">      &lt;/div&gt;
+</span><span style="color:#e6db74">    &lt;/div&gt;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    &lt;div class=&#34;col-lg-4 col-md-4 col-sm-12 col-xs-12&#34;&gt;
+</span><span style="color:#e6db74">      &lt;div class=&#34;form-group&#34;&gt;
+</span><span style="color:#e6db74">        &lt;label&gt;Image&lt;/label&gt;
+</span><span style="color:#e6db74">        &lt;input
+</span><span style="color:#e6db74">          type=&#34;text&#34;
+</span><span style="color:#e6db74">          lass=&#34;form-control&#34;
+</span><span style="color:#e6db74">          placeholder=&#34;Image&#34;
+</span><span style="color:#e6db74">          v-model=&#34;model.image&#34;
+</span><span style="color:#e6db74">          name=&#34;image&#34;
+</span><span style="color:#e6db74">          class=&#34;form-control&#34;
+</span><span style="color:#e6db74">        /&gt;
+</span><span style="color:#e6db74">      &lt;/div&gt;
+</span><span style="color:#e6db74">      &lt;div class=&#34;form-group&#34;&gt;
+</span><span style="color:#e6db74">        &lt;label&gt;Description&lt;/label&gt;
+</span><span style="color:#e6db74">        &lt;textarea
+</span><span style="color:#e6db74">          class=&#34;form-control&#34;
+</span><span style="color:#e6db74">          placeholder=&#34;Description&#34;
+</span><span style="color:#e6db74">          rows=&#34;5&#34;
+</span><span style="color:#e6db74">          v-model=&#34;model.description&#34;
+</span><span style="color:#e6db74">          name=&#34;description&#34;
+</span><span style="color:#e6db74">        &gt;&lt;/textarea&gt;
+</span><span style="color:#e6db74">      &lt;/div&gt;
+</span><span style="color:#e6db74">      &lt;div class=&#34;form-group new-button&#34;&gt;
+</span><span style="color:#e6db74">        &lt;button class=&#34;button&#34;&gt;
+</span><span style="color:#e6db74">          &lt;i class=&#34;fa fa-pencil&#34;&gt;&lt;/i&gt;
+</span><span style="color:#e6db74">          &lt;!-- Conditional rendering for input text --&gt;
+</span><span style="color:#e6db74">          &lt;span v-if=&#34;isEditing&#34;</span>&gt;<span style="color:#a6e22e">Update</span> <span style="color:#a6e22e">Product</span>&lt;/<span style="color:#f92672">span</span>&gt;
+          &lt;<span style="color:#f92672">span</span> <span style="color:#f92672">v-else</span>&gt;<span style="color:#a6e22e">Add</span> <span style="color:#a6e22e">Product</span>&lt;/<span style="color:#f92672">span</span>&gt;
+        &lt;/<span style="color:#f92672">button</span>&gt;
+      &lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;
+  &lt;/<span style="color:#f92672">form</span>&gt;
+&lt;/<span style="color:#f92672">template</span>&gt;
+
+&lt;<span style="color:#f92672">script</span>&gt;
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+  <span style="color:#a6e22e">props</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;model&#34;</span>, <span style="color:#e6db74">&#34;manufacturers&#34;</span>, <span style="color:#e6db74">&#34;isEditing&#34;</span>],
+  <span style="color:#a6e22e">methods</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">saveProduct</span>() {
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$emit</span>(<span style="color:#e6db74">&#34;save-product&#34;</span>, <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">model</span>);
+    }
+  }
+};
+&lt;/<span style="color:#f92672">script</span>&gt;
+</code></pre></div><h1 id="程式說明">程式說明</h1>
+<p>於是我們來看看這段看起來很長很嚇人的東西在做什麼？</p>
+<p>分為兩部分來理解</p>
+<h2 id="script-部分">script 部分</h2>
+<p><code>props</code> 主要接收父組件傳來的三個參數 <code>model</code>、<code>manufacturers</code>、<code>isEditing</code></p>
+<p>然後在 <code>methods</code> 定義了一個方法 <code>saveProduct</code>，當使用者填完送出後按下送出會觸發這個方法<br>
+而在 <code>saveProduct</code> 內部調用了一個 <code>save-product</code> 方法，這個方法稍後會在父組件建立<br>
+除了調用父組件方法，在送出的同事還會把 <code>this.model</code> 內容傳遞給父組件</p>
+<h2 id="template-部分">template 部分</h2>
+<p>淺而易見的 <code>template</code> 就是一個表單，其中的 <code>submit</code> 事件使用 <code>@submit.prevent</code> 禁用預設的送出行為<br>
+並使用 <code>saveProduct</code> 替換</p>
+<p>接著寫了好幾個 <code>class=&quot;form-group&quot;</code> 的區塊，代表要填寫的商品資料<br>
+其中前兩個區塊使用了 <code>v-model</code> 綁定 model 的 <code>name</code>、<code>price</code> 兩個屬性<br>
+第三個區塊先對 <code>select</code> 標籤雙向綁定了 <code>model.manufacturer</code> 屬性<br>
+代表在內部做的行為都會影響對應的 <code>model.manufacturer</code></p>
+<p>接著使用迴圈把 script 中接收到的父組件 <code>manufacturers</code> 資料一個一個設為 <code>option</code> 標籤內容<br>
+並且把個別設定 <code>manufacturer</code> 的屬性<br>
+以及如果 <code>model.manufacturer._id</code> 和當前的 <code>manufacturer._id</code> 一致<br>
+就把 <code>selected</code> 屬性設為 true</p>
+<p>接著第四個 <code>form-group</code> 開始，依然是使用 <code>v-model</code> 綁定 <code>model.image</code> 和 <code>model.description</code> 屬性<br>
+最後一個 <code>form-group</code> 使用 <code>v-if</code> 判斷式來判斷 <code>isEditing</code> 來渲染不同的按鈕文字</p>
+<hr>
+<p>完成了子組件之後，就要引入父組件內。所以重新打開 <code>New.vue</code> 這個檔案，引入剛剛建立的表單組件</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+  &lt;<span style="color:#f92672">product-form</span>
+    <span style="color:#f92672">@save-product</span><span style="color:#e6db74">=&#34;addProduct&#34;</span>
+    <span style="color:#f92672">:model</span><span style="color:#e6db74">=&#34;model&#34;</span>
+    <span style="color:#f92672">:manufacturers</span><span style="color:#e6db74">=&#34;manufacturers&#34;</span>
+  &gt;
+  <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/product-form&gt;</span>
+&lt;/<span style="color:#f92672">template</span>&gt;
+
+&lt;<span style="color:#f92672">script</span>&gt;
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ProductForm</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@/components/products/ProductForm.vue&#39;</span>;
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+  <span style="color:#a6e22e">data</span>() {
+    <span style="color:#66d9ef">return</span> {
+      <span style="color:#a6e22e">model</span><span style="color:#f92672">:</span> {},
+      <span style="color:#a6e22e">manufacturers</span><span style="color:#f92672">:</span> [
+        {
+          <span style="color:#a6e22e">_id</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;sam&#39;</span>,
+          <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Samsung&#39;</span>,
+        },
+        {
+          <span style="color:#a6e22e">_id</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;apple&#39;</span>,
+          <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Apple&#39;</span>,
+        },
+      ],
+    };
+  },
+  <span style="color:#a6e22e">methods</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">addProduct</span>(<span style="color:#a6e22e">model</span>) {
+      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;model&#39;</span>, <span style="color:#a6e22e">model</span>);
+    },
+  },
+  <span style="color:#a6e22e">components</span><span style="color:#f92672">:</span> {
+    <span style="color:#e6db74">&#39;product-form&#39;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ProductForm</span>
+  }
+}
+&lt;/<span style="color:#f92672">script</span>&gt;
+
+
+</code></pre></div><p>當要在一個組件中使用另一個組件時，需要在父組件的 <code>components</code> 中註冊<br>
+在我們的 <code>New.vue</code> 中就將 <code>ProductForm</code> 註冊為 <code>product-form</code><br>
+於是我們就可以在 <code>&lt;template&gt;</code> 區塊中使用 <code>&lt;product-form /&gt;</code> 來使用組件。</p>
+<p>同時在 <code>data</code> 中定義了 <code>model</code> 和 <code>manufacturers</code>；<code>methods</code> 中定義了 <code>addProduct</code> 方法<br>
+並且綁定成 <code>@save-product=&quot;saveProduct&quot;</code> 事件傳遞給子組件使用</p>
+<p>儲存之後，重新開啟前端網頁，進入新建商品的頁面就可以看到子組件已經被加入 <code>New.vue</code> 的畫面上<br>
+<img src="/img/blog/2020/09/express-vue-build-ecommerce-10-new-product-page/new-product-page.png" alt="new-product-page"></p>
+<p>目前為止我們學會了</p>
+<ul>
+<li>使用 vue-router 進行多頁面的跳轉與路由</li>
+<li>使用嵌套路由有組織的管理前端路由</li>
+<li>基礎的 Vue 使用</li>
+<li>學會建立 Vue 的組件並在父組件中使用</li>
+</ul>
+
+      
+      
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/ray247k/button?referrer=https%3a%2f%2fexample.com%2fblog%2f202009-express-vue-build-ecommerce-10-new-product-page%2f" width="100%" frameborder=0></iframe>
+
+    </div>
+    <footer>
+      <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/node.js/">node.js</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/vue/">vue</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/node.js/">node.js</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/component/">component</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+    </footer>
+  </article>
+  
+    
+
+  
+  <div class="pagination">
+    
+      <a href="/blog/202009-express-vue-build-ecommerce-11-install_vuex/" class="button left"><span>[Express&#43;Vue 搭建電商網站] 11 認識 vuex</span></a>
+    
+    
+      <a href="/blog/202008-express-vue-build-ecommerce-09-test-api/" class="button right"><span>[Express&#43;Vue 搭建電商網站] 09 API 測試</span></a>
+    
+  </div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>最新文章</h1>
+      </header>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202104-use-ssh-key-login-remote-server/">設定 ssh 金鑰登入遠端主機</a></h2>
+          <time class="published" datetime="2021-04-25 00:00:00 &#43;0000 UTC">2021/04/25</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202103-enable-docker-service-in-remote-server/">雲端主機啟動 Docker 服務</a></h2>
+          <time class="published" datetime="2021-03-13 00:00:00 &#43;0000 UTC">2021/03/13</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202103-build-postgresql-database-useing-docker/">PostgreSQL 資料庫建置 - 使用 Docker</a></h2>
+          <time class="published" datetime="2021-03-03 00:00:00 &#43;0000 UTC">2021/03/03</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202102-reverse-proxy-in-docker-service/">反向代理 - 在 Docker 環境建置</a></h2>
+          <time class="published" datetime="2021-02-27 00:00:00 &#43;0000 UTC">2021/02/27</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202102-laravel-environment-basic-settings/">Laravel 執行環境建置</a></h2>
+          <time class="published" datetime="2021-02-25 00:00:00 &#43;0000 UTC">2021/02/25</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202102-ngrok-share-your-local-development-site/">Ngrok 讓 localhost 可以被外部連線</a></h2>
+          <time class="published" datetime="2021-02-14 00:00:00 &#43;0000 UTC">2021/02/14</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202101-portainer-open-source-container-management-gui/">Portainer - 視覺化管理 Docker 的工具</a></h2>
+          <time class="published" datetime="2021-01-16 00:00:00 &#43;0000 UTC">2021/01/16</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/blog/" class="button">查看更多</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="/categories">category</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/categories/node.js/">node.js<span class="count">12</span></a>
+          
+          <li>
+              <a href="/categories/devops/">devops<span class="count">9</span></a>
+          
+          <li>
+              <a href="/categories/laravel/">laravel<span class="count">1</span></a>
+          
+          </li>
+        </ul>
+      </section>
+    
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+    
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script><script src="/js/bundle.min.ccb4e6bb4674f9a0e2b6ce56bb0cddea093526d4bc032314766519cdfec730b1.js" integrity="sha256-zLTmu0Z0&#43;aDits5Wuwzd6gk1JtS8AyMUdmUZzf7HMLE="></script>
+    <script src="/js/add-on.js"></script>
+    </div>
+  </body>
+</html>

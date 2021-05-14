@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="zh-tw">
+  <head>
+  <meta charset="utf-8">
+<title>Docker 筆記 1 - 認識 Docker - 薛丁格的工程師</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
+  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
+  
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=1" color="#ffffff">
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=1">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=1">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+<meta name="generator" content="Hugo 0.83.1" /><meta property="og:site_name" content="薛丁格的工程師">
+  <meta property="og:title" content="Docker 筆記 1 - 認識 Docker">
+  <meta property="og:description" content="介紹什麼是 Docker，以及容器化技術">
+  <meta property="description" content="介紹什麼是 Docker，以及容器化技術">
+  <meta property="og:url" content="https://example.com/blog/202101-docker-note-1-what-is-docker/">
+  <meta property="og:type" content="article">
+  
+    <meta property="og:image" content="https://example.com/img/main/logo.jpg">
+  
+  <link rel="stylesheet" href="/css/bundle.min.6ad9eb85bff384c75937a02036b01425a2ca63f19a96535b8ba5b181db62a4b3.css" integrity="sha256-atnrhb/zhMdZN6AgNrAUJaLKY/GallNbi6WxgdtipLM="><link rel="stylesheet" href="/css/add-on.css">
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/" class="nav">
+        
+          Blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/" class="nav link"><i class='fa fa-home'></i> home</a>
+        
+      
+        
+          
+          <a href="/about/" class="nav link"><i class='far fa-id-card'></i> about</a>
+        
+      
+        
+          
+          <a href="/tags/" class="nav link"><i class='fas fa-tag'></i> tag</a>
+        
+      
+        
+          
+          <a href="/categories/" class="nav link"><i class='fas fa-sitemap'></i> category</a>
+        
+      
+      
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    
+    
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/"><img src="https://example.com/img/main/logo.jpg" class="bevel" width="100" alt="一隻箱子裡的貓，看著電腦螢幕" /></a>
+  <header>
+    <h1>Schrödinger's Programmer</h1>
+  </header>
+  <main>
+    <p>奔跑吧工程師，趁年輕跑得越遠越好</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+
+        <li><a href="//github.com/ray247k" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+<li><a href="//gitlab.com/ray247k" target="_blank" rel="noopener" title="GitLab" class="fab fa-gitlab"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:ray247k@gmail.com" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="/blog/202101-docker-note-1-what-is-docker/">Docker 筆記 1 - 認識 Docker</a></h2>
+    
+    
+      <p>介紹什麼是 Docker，以及容器化技術</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2021-01-02 00:00:00 &#43;0000 UTC">2021/01/02</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+    <div id="socnet-share">
+      
+
+
+
+
+
+    </div>
+    <div class="content">
+      
+      <p>容器化可以隔離不同環境，將環境打包後工程師可以專注開發，不用花過多心力在開發環境安裝上<br>
+而 Docker 是目前非常成熟且流行的一個容器化技術</p>
+<p>將OS做為 Application 化<br>
+所有 container 只能允許一個指令執行<br>
+預設權限都會是 root</p>
+<p>商業來說</p>
+<ul>
+<li>方便部署</li>
+<li>可攜性</li>
+</ul>
+<h2 id="容器進化史">容器進化史</h2>
+<p><a href="https://www.docker.com/resources/what-container">What is a Container?</a></p>
+<h2 id="名詞介紹">名詞介紹</h2>
+<ul>
+<li><a href="https://medium.com/andy-blog/kubernetes-%E9%82%A3%E4%BA%9B%E4%BA%8B-stateless-%E8%88%87stateful-2c68cebdd635">Stateful</a></li>
+<li>Stateless：在未設的前提之下，每次建立時會消除舊的資料</li>
+<li>Repository
+<ul>
+<li>就像是 apt、brew 或是 yum 的來源一樣</li>
+<li>存了很多 image (Package)</li>
+</ul>
+</li>
+<li>Image
+<ul>
+<li>相當於 Package</li>
+<li>產生特殊的 cache，本地有 cache 的話，就不需再從 Respository (如 Docker hub) 抓</li>
+</ul>
+</li>
+<li>Container
+<ul>
+<li>由 image 建立而成</li>
+<li>相當於一個一個的程式，可以持續執行</li>
+<li>必須要有一個 foreground 在跑的程式</li>
+</ul>
+</li>
+<li>Network
+<ul>
+<li>none：沒有網路</li>
+<li>bridge：區網</li>
+<li>overlay：不同網段</li>
+<li>container：Docker 預設的網路連線, 無法由外部直接進來</li>
+<li>host：與本機共用網路介面</li>
+</ul>
+</li>
+<li><a href="https://docs.docker.com/storage/volumes/">Volume</a>
+<ul>
+<li>Docker 內的持久化(Stateful)空間，可以 stateful 的秘密(空間)</li>
+<li>等同本機空間</li>
+</ul>
+</li>
+</ul>
+<h2 id="架構">架構</h2>
+<p><img src="https://i.imgur.com/ETVbGt1.png" alt=""></p>
+<h2 id="生命週期">生命週期</h2>
+<ol>
+<li>client 呼叫 docker daemon</li>
+<li>docker daemon 與 host network / host cgroups 溝通</li>
+<li>判斷 docker container 是否存在</li>
+<li>從 local image 將 layer 解開</li>
+<li>如果 local image 不存在的話從 repository 拿</li>
+<li>建立 docker container</li>
+</ol>
+<p><img src="https://i.imgur.com/dak8sCE.png" alt=""></p>
+<h2 id="學習資源">學習資源</h2>
+<p>線上練習環境：<a href="https://labs.play-with-docker.com/">Play with Docker</a></p>
+<p><a href="https://blog.gtwang.org/virtualization/docker-basic-tutorial/">Docker 基本觀念與使用教學：自行建立 Docker 影像檔 - G. T. Wang</a></p>
+<p><a href="https://yrq110.me/post/devops/overview-of-docker/">鸟瞰Docker</a></p>
+<p><a href="https://ithelp.ithome.com.tw/users/20102562/ironman/3746">30 天與鯨魚先生做好朋友</a></p>
+
+      
+      
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/ray247k/button?referrer=https%3a%2f%2fexample.com%2fblog%2f202101-docker-note-1-what-is-docker%2f" width="100%" frameborder=0></iframe>
+
+    </div>
+    <footer>
+      <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/devops/">DevOps</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/devops/">DevOps</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/docker/">Docker</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/%e5%ae%b9%e5%99%a8%e6%8a%80%e8%a1%93/">容器技術</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/containerization/">Containerization</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+    </footer>
+  </article>
+  
+    
+
+  
+  <div class="pagination">
+    
+      <a href="/blog/202101-docker-note-2-basic-usage/" class="button left"><span>Docker 筆記 2 - 基本使用</span></a>
+    
+    
+      <a href="/blog/202009-express-vue-build-ecommerce-12-vuex-mutation/" class="button right"><span>[Express&#43;Vue 搭建電商網站] 12 在 Vuex 使用 Mutation 管理狀態</span></a>
+    
+  </div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>最新文章</h1>
+      </header>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202104-use-ssh-key-login-remote-server/">設定 ssh 金鑰登入遠端主機</a></h2>
+          <time class="published" datetime="2021-04-25 00:00:00 &#43;0000 UTC">2021/04/25</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202103-enable-docker-service-in-remote-server/">雲端主機啟動 Docker 服務</a></h2>
+          <time class="published" datetime="2021-03-13 00:00:00 &#43;0000 UTC">2021/03/13</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202103-build-postgresql-database-useing-docker/">PostgreSQL 資料庫建置 - 使用 Docker</a></h2>
+          <time class="published" datetime="2021-03-03 00:00:00 &#43;0000 UTC">2021/03/03</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202102-reverse-proxy-in-docker-service/">反向代理 - 在 Docker 環境建置</a></h2>
+          <time class="published" datetime="2021-02-27 00:00:00 &#43;0000 UTC">2021/02/27</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202102-laravel-environment-basic-settings/">Laravel 執行環境建置</a></h2>
+          <time class="published" datetime="2021-02-25 00:00:00 &#43;0000 UTC">2021/02/25</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202102-ngrok-share-your-local-development-site/">Ngrok 讓 localhost 可以被外部連線</a></h2>
+          <time class="published" datetime="2021-02-14 00:00:00 &#43;0000 UTC">2021/02/14</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202101-portainer-open-source-container-management-gui/">Portainer - 視覺化管理 Docker 的工具</a></h2>
+          <time class="published" datetime="2021-01-16 00:00:00 &#43;0000 UTC">2021/01/16</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/blog/" class="button">查看更多</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="/categories">category</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/categories/node.js/">node.js<span class="count">12</span></a>
+          
+          <li>
+              <a href="/categories/devops/">devops<span class="count">9</span></a>
+          
+          <li>
+              <a href="/categories/laravel/">laravel<span class="count">1</span></a>
+          
+          </li>
+        </ul>
+      </section>
+    
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+    
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script><script src="/js/bundle.min.ccb4e6bb4674f9a0e2b6ce56bb0cddea093526d4bc032314766519cdfec730b1.js" integrity="sha256-zLTmu0Z0&#43;aDits5Wuwzd6gk1JtS8AyMUdmUZzf7HMLE="></script>
+    <script src="/js/add-on.js"></script>
+    </div>
+  </body>
+</html>

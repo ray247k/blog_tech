@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="zh-tw">
+  <head>
+  <meta charset="utf-8">
+<title>反向代理 - 在 Docker 環境建置 - 薛丁格的工程師</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
+  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
+  
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=1" color="#ffffff">
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=1">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=1">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+<meta name="generator" content="Hugo 0.83.1" /><meta property="og:site_name" content="薛丁格的工程師">
+  <meta property="og:title" content="反向代理 - 在 Docker 環境建置">
+  <meta property="og:description" content="介紹基本反向代理以及在 Docker 環境中建置">
+  <meta property="description" content="介紹基本反向代理以及在 Docker 環境中建置">
+  <meta property="og:url" content="https://example.com/blog/202102-reverse-proxy-in-docker-service/">
+  <meta property="og:type" content="article">
+  
+    <meta property="og:image" content="https://example.com/img/main/logo.jpg">
+  
+  <link rel="stylesheet" href="/css/bundle.min.6ad9eb85bff384c75937a02036b01425a2ca63f19a96535b8ba5b181db62a4b3.css" integrity="sha256-atnrhb/zhMdZN6AgNrAUJaLKY/GallNbi6WxgdtipLM="><link rel="stylesheet" href="/css/add-on.css">
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/" class="nav">
+        
+          Blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/" class="nav link"><i class='fa fa-home'></i> home</a>
+        
+      
+        
+          
+          <a href="/about/" class="nav link"><i class='far fa-id-card'></i> about</a>
+        
+      
+        
+          
+          <a href="/tags/" class="nav link"><i class='fas fa-tag'></i> tag</a>
+        
+      
+        
+          
+          <a href="/categories/" class="nav link"><i class='fas fa-sitemap'></i> category</a>
+        
+      
+      
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    
+    
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/"><img src="https://example.com/img/main/logo.jpg" class="bevel" width="100" alt="一隻箱子裡的貓，看著電腦螢幕" /></a>
+  <header>
+    <h1>Schrödinger's Programmer</h1>
+  </header>
+  <main>
+    <p>奔跑吧工程師，趁年輕跑得越遠越好</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+
+        <li><a href="//github.com/ray247k" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+<li><a href="//gitlab.com/ray247k" target="_blank" rel="noopener" title="GitLab" class="fab fa-gitlab"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:ray247k@gmail.com" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="/blog/202102-reverse-proxy-in-docker-service/">反向代理 - 在 Docker 環境建置</a></h2>
+    
+    
+      <p>介紹基本反向代理以及在 Docker 環境中建置</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2021-02-27 00:00:00 &#43;0000 UTC">2021/02/27</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+    <div id="socnet-share">
+      
+
+
+
+
+
+    </div>
+    <div class="content">
+      
+      <p>反向代理的基本說明，以及在 Docker 容器中如何建立反向代理</p>
+<h1 id="反向代理">反向代理</h1>
+<p><a href="https://www.jyt0532.com/2019/11/18/proxy-reverse-proxy/">系統設計 - 正向代理跟反向代理</a></p>
+<h1 id="不同實體主機">不同實體主機</h1>
+<h2 id="使用-nginx-proxy-pass">使用 nginx proxy-pass</h2>
+<h3 id="目標">目標</h3>
+<ul>
+<li>使用者造訪指定網頁路徑 <code>/new_path</code> 或是整個跳轉 <code>/</code></li>
+<li>設定測試機 nginx proxy_pass 使其跳轉到其他主機專案相同路徑下</li>
+<li>確認使用者 IP 沒有被變成為代理伺服器的 IP</li>
+<li>確認在代理目標的專案可以讀取 Cookie</li>
+<li>確認 Post 請求的 payload 也會被轉送過去</li>
+</ul>
+<h3 id="設定-nginx-config">設定 nginx config</h3>
+<h4 id="第一台主機的-nginx-設定">第一台主機的 nginx 設定</h4>
+<pre><code class="language-nginx=" data-lang="nginx="># 把所有前往 domain/new_path 的請求反向代理到另一台主機上
+location /new_path {
+    # 要代理到哪個網址
+    proxy_pass http://laravel55.test.com;
+
+    # 傳送使用者真實 IP 到目標主機
+    proxy_set_header X-Real-IP $remote_addr;
+
+    # 設定伺服器為代理前的伺服器，否則 HTTP_HOST 會變成 proxy 那台代理伺服器的位址
+    proxy_set_header Host $host;
+
+    # 設定 cookie 轉發
+    proxy_set_header Cookie $http_cookie;
+
+    # 用來確認最初的用戶端原始 ip 位置
+    proxy_set_header X-Forwarded-Host $host;
+
+    # 記錄從使用者端出來經過的每個代理 X-Forwarded-For: &lt;client&gt;, &lt;proxy1&gt;, &lt;proxy2&gt;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+    # 識別網路連線協定
+    proxy_set_header X-Forwarded-Proto $scheme;
+
+    # 隱藏伺服器資訊
+    proxy_hide_header Server;
+    proxy_hide_header X-Powered-By;
+
+    # 因為自行加大 header 所以把空間也加大
+    proxy_headers_hash_bucket_size 128;
+    proxy_headers_hash_max_size 512;
+}
+</code></pre><h4 id="第二台主機的-nginx-設定">第二台主機的 nginx 設定</h4>
+<pre><code class="language-nginx=" data-lang="nginx=">server {
+    listen 80;
+    server_name ray200;
+    root /home/toc/www/laravel55/public;
+
+    access_log /var/log/nginx/www/laravel55.access.log;
+    error_log /var/log/nginx/www/laravel55.error.log;
+    index index.php;
+
+    location / {
+        try_files $uri $uri/ /index.php$is_args$args;
+    }
+
+    location ~* \.(jpg|jpeg|gif|css|png|js|ico|html|svg|ttf|woff|woff2|eotD)$ {
+        access_log off;
+    expires max;
+    }
+
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+        
+        # php-fpm 的位置
+        fastcgi_pass 127.0.0.1:9000; 
+   }
+}
+</code></pre><h4 id="注意事項">注意事項</h4>
+<ul>
+<li>server_name 必須要是 proxy_pass 過來那台的 domain，如果不這樣設定，proxy_pass 過來會進到預設的 server_name 下</li>
+<li>在程式中判斷真實 IP 的方法要改成讀讀取 header 中的 x-real-ip 才是真實使用者 ip 位置</li>
+</ul>
+<h3 id="確認-cookie-可以讀取">確認 cookie 可以讀取</h3>
+<p>如果設定 nginx 有設定 <code>proxy_set_header Cookie $http_cookie;</code><br>
+那 <code>dump($_COOKIE);</code> 可以取得 cookie，但是 Laravel 內建的 <code>request()-&gt;cookie();</code> 卻沒有取到值</p>
+<h4 id="解決方案">解決方案</h4>
+<p>Laravel 預設的 web middleware <code>\App\Http\Middleware\EncryptCookies::class,</code> 會要求 cookie 是加密過後的，如果沒有加密當然就讀不到。<br>
+解決方案一個是在 <code>EncryptCookies</code> 這個 class 中的 <code>$except</code> 加入要排除的 cookie 名稱，另一個就是直接把 middleware 註解掉。</p>
+<hr>
+<h1 id="使用-docker">使用 Docker</h1>
+<h2 id="架構示意圖">架構示意圖</h2>
+<p><img src="https://i.imgur.com/hWJ7nIs.png" alt="">
+參考資料：<a href="https://dev.to/sukhbirsekhon/what-is-docker-reverse-proxy-45mm">How to set up NGINX Docker Reverse Proxy?</a></p>
+<h2 id="步驟">步驟</h2>
+<h3 id="1-手動建立-network">1. 手動建立 network</h3>
+<blockquote>
+<p>反向代理會根據載入的設定檔把請求導向到指定的容器名稱內<br>
+故代理的目標容器必須在同一網路內，才能直接使用容器名稱做代理目標</p>
+</blockquote>
+<p>因為不想讓 network 前面帶上 prefix，還有避免依賴，所以手動建立 network</p>
+<pre><code class="language-bash=" data-lang="bash=">docker network create nginx-network
+</code></pre><p>這個情境屬於來自外部的 nginx-proxy，要多給一個 <code>external network</code>
+有需要連接到這個 network 裡面的服務都要設定</p>
+<pre><code class="language-yaml=" data-lang="yaml=">networks:
+  default:
+    external:
+      name: nginx-network
+</code></pre><p>如此就可以讓不同 docker-compose.yml 中的服務互相溝通：<a href="https://docs.docker.com/compose/networking/#use-a-pre-existing-network">官方說明</a></p>
+<h3 id="2-建立測試用的服務">2. 建立測試用的服務</h3>
+<p>因為懶得建太複雜的服務，所以抓現成的 <code>portainer</code> 服務來做為 proxy 的目標<br>
+只是為了要有一個只要 docker-compose up 就可以運行的服務，也可以換成自己比較熟的映像檔</p>
+<p>為了測試從 80 port poxy 到其他 port，所以這邊開在 8080 port<br>
+服務啟動之後可以先去 <code>localhost:8080</code> 查看 portainer 服務有沒有啟動</p>
+<pre><code class="language-yaml=" data-lang="yaml=">version: '3'
+
+networks:
+  default:
+    external:
+      name: nginx-network
+
+services:
+  portainer:
+    container_name: nginx_test_portainer
+    image: portainer/portainer-ce
+    command: -H unix:///var/run/docker.sock
+    restart: always
+    ports:
+      - 8080:9000
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+
+volumes:
+  portainer_data:
+</code></pre><h3 id="3-nginx-的-proxy-設定">3. Nginx 的 proxy 設定</h3>
+<h4 id="31-設定-docker-composeyml">3.1 設定 <code>docker-compose.yml</code></h4>
+<pre><code class="language-yaml=" data-lang="yaml=">version: '3'
+
+networks:
+  default:
+    external:
+      name: nginx-network
+
+services:
+  nginx:
+    container_name: test_nginx
+    image: nginx:1.18
+    ports:
+      - &quot;80:80&quot;
+      - &quot;443:443&quot;
+    volumes:
+      - ./conf.d/:/etc/nginx/conf.d/
+      - ./ssl/:/ssl/
+</code></pre><h4 id="32-設定-mount-進去給反向代理伺服器使用的-nginx-config">3.2 設定 mount 進去給反向代理伺服器使用的 nginx config</h4>
+<p>可以看到底下設定中，我們把所有發往 <code>test.example</code> 網址的請求都轉到<br>
+<code>http://nginx_test_portainer:9000</code>
+在容器中使用的模式是</p>
+<blockquote>
+<p>http://{container_name}:{port}</p>
+</blockquote>
+<p>可以看到 <code>container_name</code> 對應了<a href="#2-%E5%BB%BA%E7%AB%8B%E6%B8%AC%E8%A9%A6%E7%94%A8%E7%9A%84%E6%9C%8D%E5%8B%99">上面建立測試服務</a>時候使用的容器名稱<br>
+而 <code>port</code> 對應到了容器的<font color="red">內部</font> port！<br>
+這邊特別把上面的容器內外使用的 port 區隔開來顯示差別，我們代理的目標是內部的 9000 port<br>
+而不是對外的 <code>8080 port</code></p>
+<pre><code class="language-nginx=" data-lang="nginx=">server {
+    listen 80;
+    listen [::]:80;
+    server_name test.example;
+
+    return 301 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    server_name test.example;
+
+    ssl_certificate /ssl/ssl.crt;
+    ssl_certificate_key /ssl/ssl.key;
+
+    access_log /var/log/nginx/access.log;
+    error_log /var/log/nginx/error.log;
+
+    location / {
+        proxy_set_header Host $host;
+        proxy_set_header Cookie $http_cookie;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-Host $host;
+        proxy_pass http://trp_portainer:9000;
+    }
+}
+</code></pre><p>要特別注意的是，這邊 proxy_pass 的目標網址中，<code>http://</code> 不可以省略<br>
+如果轉址過去的網址有自己的 https 證書驗證(例如另一個 nginx 環境)，則必須改成 <code>https://</code> 開頭</p>
+<p>參考資料：<a href="https://www.digitalocean.com/community/questions/what-value-should-i-use-for-nginx-proxy_pass-running-in-docker">What value should I use for Nginx proxy_pass running in Docker?</a></p>
+<h4 id="33-編輯-etchosts">3.3 編輯 <code>etc/hosts</code></h4>
+<pre><code>127.0.0.1       test.example
+</code></pre><p>接著啟動 nginx 服務，用瀏覽器開啟剛剛設定的 <code>test.example</code><br>
+正確設定的話，監聽 80 port 的 nginx 服務應該會把所有目標是 <code>test.example</code> 的請求利用 proxy_pass 送到 portainer 容器的指定 port<br>
+所以畫面上會顯示 portainer 服務的畫面</p>
+<blockquote>
+<p>要在所有服務都啟動之後再啟動反向代理服務，否則會報錯指出被代理的容器目標不存在</p>
+</blockquote>
+<h1 id="注意事項-1">注意事項</h1>
+<p>如果要把全部沒有匹配到的 <code>server_name</code> 請求統一處理<br>
+可以在指定的 nginx config 加上 <code>default_server</code> 定義<br>
+<font color="red">
+如果沒有定義 default_server，則第一個 server 會被預設成 default server
+</font></p>
+<pre><code class="language-nginx=" data-lang="nginx=">server {
+    listen 8080 ssl default_server;
+    listen [::]:8080 ssl default_server;
+
+    ssl_certificate /ssl/ssl.crt;
+    ssl_certificate_key /ssl/ssl.key;
+
+    # Virtual Host Domain
+    server_name _;
+
+    # where code is
+    root /var/trp/dev/www/trp_backend/public;
+    index index.php index.html index.htm;
+
+    access_log /var/log/nginx/access.log;
+    error_log /var/log/nginx/error.log;
+
+    location / {
+        try_files $uri $uri/ /index.php$is_args$args;
+    }
+
+    location ~ \.php$ {
+        try_files $uri /index.php =404;
+        fastcgi_pass trp_dev_php:9000;
+        fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+
+    location ~ /\.ht {
+        deny all;
+    }
+}
+</code></pre><p>因為要處理沒有被其他 server_name 捕獲的請求<br>
+所以 server_name 就不是什麼重點，可以用 <code>_</code>, <code>__</code>, <code>___</code> 都可以</p>
+<p>這個情境會發生在當前端的 API 設定檔使用的路徑網址是指定後端容器名稱的時候
+因為不是使用網址經過反向代理轉發，而是直接將請求發至容器<br>
+而這個 nginx 容器中又有多個 server config 設定<br>
+所以 nginx 沒有 <code>server_name</code> 可以判斷要使用哪個 config 設定</p>
+<h2 id="案例說明">案例說明</h2>
+<p>同一個 nginx 容器(dev_nginx) 裡面有多個 server config</p>
+<ul>
+<li>alex_backend</li>
+<li>john_backend</li>
+<li>dev_backend</li>
+</ul>
+<p>如果現在有一個在同樣 docker network 的前端容器要打 API 到 dev_backend<br>
+他會在設定檔指定網址是 dev_nginx<br>
+這時候問題就來了，當 dev_nginx 收到這個請求會不知道是發給誰的<br>
+如果沒有設定 default_server，就會把請求派發給第一個 server，也就是 <code>alex_backend</code><br>
+這不是我們要的結果<br>
+所以會把 <code>dev_backend</code> 設定為 <code>default_server</code><br>
+如此之後，只要是送進這個容器的請求<br>
+若沒有被其他設定檔捕獲，就會被送進 dev_backend 處理</p>
+
+      
+      
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/ray247k/button?referrer=https%3a%2f%2fexample.com%2fblog%2f202102-reverse-proxy-in-docker-service%2f" width="100%" frameborder=0></iframe>
+
+    </div>
+    <footer>
+      <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/devops/">DevOps</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/devops/">DevOps</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/nginx/">nginx</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/proxy/">proxy</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+    </footer>
+  </article>
+  
+    
+
+  
+  <div class="pagination">
+    
+      <a href="/blog/202103-build-postgresql-database-useing-docker/" class="button left"><span>PostgreSQL 資料庫建置 - 使用 Docker</span></a>
+    
+    
+      <a href="/blog/202102-laravel-environment-basic-settings/" class="button right"><span>Laravel 執行環境建置</span></a>
+    
+  </div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>最新文章</h1>
+      </header>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202104-use-ssh-key-login-remote-server/">設定 ssh 金鑰登入遠端主機</a></h2>
+          <time class="published" datetime="2021-04-25 00:00:00 &#43;0000 UTC">2021/04/25</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202103-enable-docker-service-in-remote-server/">雲端主機啟動 Docker 服務</a></h2>
+          <time class="published" datetime="2021-03-13 00:00:00 &#43;0000 UTC">2021/03/13</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202103-build-postgresql-database-useing-docker/">PostgreSQL 資料庫建置 - 使用 Docker</a></h2>
+          <time class="published" datetime="2021-03-03 00:00:00 &#43;0000 UTC">2021/03/03</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202102-reverse-proxy-in-docker-service/">反向代理 - 在 Docker 環境建置</a></h2>
+          <time class="published" datetime="2021-02-27 00:00:00 &#43;0000 UTC">2021/02/27</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202102-laravel-environment-basic-settings/">Laravel 執行環境建置</a></h2>
+          <time class="published" datetime="2021-02-25 00:00:00 &#43;0000 UTC">2021/02/25</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202102-ngrok-share-your-local-development-site/">Ngrok 讓 localhost 可以被外部連線</a></h2>
+          <time class="published" datetime="2021-02-14 00:00:00 &#43;0000 UTC">2021/02/14</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202101-portainer-open-source-container-management-gui/">Portainer - 視覺化管理 Docker 的工具</a></h2>
+          <time class="published" datetime="2021-01-16 00:00:00 &#43;0000 UTC">2021/01/16</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/blog/" class="button">查看更多</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="/categories">category</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/categories/node.js/">node.js<span class="count">12</span></a>
+          
+          <li>
+              <a href="/categories/devops/">devops<span class="count">9</span></a>
+          
+          <li>
+              <a href="/categories/laravel/">laravel<span class="count">1</span></a>
+          
+          </li>
+        </ul>
+      </section>
+    
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+    
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script><script src="/js/bundle.min.ccb4e6bb4674f9a0e2b6ce56bb0cddea093526d4bc032314766519cdfec730b1.js" integrity="sha256-zLTmu0Z0&#43;aDits5Wuwzd6gk1JtS8AyMUdmUZzf7HMLE="></script>
+    <script src="/js/add-on.js"></script>
+    </div>
+  </body>
+</html>

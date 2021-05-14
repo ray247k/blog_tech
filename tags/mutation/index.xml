@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mutation on 薛丁格的工程師</title>
+    <link>https://example.com/tags/mutation/</link>
+    <description>Recent content in mutation on 薛丁格的工程師</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-TW</language>
+    <lastBuildDate>Fri, 18 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/mutation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Express&#43;Vue 搭建電商網站] 12 在 Vuex 使用 Mutation 管理狀態</title>
+      <link>https://example.com/blog/202009-express-vue-build-ecommerce-12-vuex-mutation/</link>
+      <pubDate>Fri, 18 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/blog/202009-express-vue-build-ecommerce-12-vuex-mutation/</guid>
+      <description>&lt;p&gt;透過 Mutation 管理 Vuex中的狀態&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

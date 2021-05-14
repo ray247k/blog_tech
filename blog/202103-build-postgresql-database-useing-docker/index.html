@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="zh-tw">
+  <head>
+  <meta charset="utf-8">
+<title>PostgreSQL 資料庫建置 - 使用 Docker - 薛丁格的工程師</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
+  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
+  
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=1" color="#ffffff">
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=1">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=1">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+<meta name="generator" content="Hugo 0.83.1" /><meta property="og:site_name" content="薛丁格的工程師">
+  <meta property="og:title" content="PostgreSQL 資料庫建置 - 使用 Docker">
+  <meta property="og:description" content="介紹如何使用 Docker 建置 PostgreSQL 資料庫">
+  <meta property="description" content="介紹如何使用 Docker 建置 PostgreSQL 資料庫">
+  <meta property="og:url" content="https://example.com/blog/202103-build-postgresql-database-useing-docker/">
+  <meta property="og:type" content="article">
+  
+    <meta property="og:image" content="https://example.com/img/main/logo.jpg">
+  
+  <link rel="stylesheet" href="/css/bundle.min.6ad9eb85bff384c75937a02036b01425a2ca63f19a96535b8ba5b181db62a4b3.css" integrity="sha256-atnrhb/zhMdZN6AgNrAUJaLKY/GallNbi6WxgdtipLM="><link rel="stylesheet" href="/css/add-on.css">
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/" class="nav">
+        
+          Blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/" class="nav link"><i class='fa fa-home'></i> home</a>
+        
+      
+        
+          
+          <a href="/about/" class="nav link"><i class='far fa-id-card'></i> about</a>
+        
+      
+        
+          
+          <a href="/tags/" class="nav link"><i class='fas fa-tag'></i> tag</a>
+        
+      
+        
+          
+          <a href="/categories/" class="nav link"><i class='fas fa-sitemap'></i> category</a>
+        
+      
+      
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    
+    
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/"><img src="https://example.com/img/main/logo.jpg" class="bevel" width="100" alt="一隻箱子裡的貓，看著電腦螢幕" /></a>
+  <header>
+    <h1>Schrödinger's Programmer</h1>
+  </header>
+  <main>
+    <p>奔跑吧工程師，趁年輕跑得越遠越好</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+
+        <li><a href="//github.com/ray247k" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+<li><a href="//gitlab.com/ray247k" target="_blank" rel="noopener" title="GitLab" class="fab fa-gitlab"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:ray247k@gmail.com" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="/blog/202103-build-postgresql-database-useing-docker/">PostgreSQL 資料庫建置 - 使用 Docker</a></h2>
+    
+    
+      <p>介紹如何使用 Docker 建置 PostgreSQL 資料庫</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2021-03-03 00:00:00 &#43;0000 UTC">2021/03/03</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+    <div id="socnet-share">
+      
+
+
+
+
+
+    </div>
+    <div class="content">
+      
+      <p>使用 Docker 來建置一個 PostgreSQL 資料庫<br>
+包含 <code>資料庫建置</code>、<code>資料持久化</code>、<code>使用 GUI 操作資料庫</code></p>
+<p>PostgreSQL 基礎教學：<a href="https://ithelp.ithome.com.tw/users/20105865/ironman/2865">後端前進PostgreSQL 系列</a></p>
+<h1 id="環境建置---使用-docker-compose">環境建置 - 使用 Docker-compose</h1>
+<p>使用的映像檔：<a href="https://hub.docker.com/_/postgres">postgres: alpine</a><br>
+參考文章：<a href="https://medium.com/analytics-vidhya/getting-started-with-postgresql-using-docker-compose-34d6b808c47c">Getting Started with PostgreSQL using Docker-Compose</a></p>
+<h2 id="docker-composeyml">docker-compose.yml</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;3&#39;</span>
+<span style="color:#f92672">services</span>:
+  <span style="color:#f92672">postgres</span>:
+    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">postgres</span>
+    <span style="color:#f92672">ports</span>: 
+      - <span style="color:#e6db74">&#34;5432:5432&#34;</span>
+    <span style="color:#f92672">image</span>: <span style="color:#e6db74">&#34;postgres:alpine&#34;</span>
+    <span style="color:#f92672">volumes</span>:
+      - <span style="color:#ae81ff">database-data:/var/lib/postgresql/data</span> <span style="color:#75715e"># persist data even if container shuts down</span>
+    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">always</span>
+    <span style="color:#f92672">environment</span>:
+      <span style="color:#f92672">POSTGRES_USER</span>: <span style="color:#ae81ff">superuser</span>
+      <span style="color:#f92672">POSTGRES_PASSWORD</span>: <span style="color:#ae81ff">superpassword</span>
+      <span style="color:#f92672">POSTGRES_DB</span>: <span style="color:#ae81ff">demo_db</span>
+<span style="color:#f92672">volumes</span>: 
+  <span style="color:#f92672">database-data</span>: <span style="color:#75715e"># named volumes can be managed easier using docker-compose</span>
+</code></pre></div><p>啟動容器：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose up
+</code></pre></div><hr>
+<h1 id="gui">GUI</h1>
+<h2 id="安裝">安裝</h2>
+<p>因為 sequel ace 不支援 PostgreSQL 所以另外裝一個 GUI 來用<br>
+安裝 <a href="https://dbeaver.com/">DBeaver</a></p>
+<p>會需要安裝 JAVA 包</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install --cask dbeaver-community
+</code></pre></div><h2 id="存取在遠端的-postgresql-container">存取在遠端的 PostgreSQL container</h2>
+<p>取得該遠端的對外 ip 作為 host 之後連線到指定的 port (5432)<br>
+就可以在其他機器上存取 PostgreSQL container</p>
+<hr>
+<h1 id="資料持久化-persist-data">資料持久化 (persist data)</h1>
+<p><a href="https://docs.docker.com/storage/volumes/">官方文件說明</a><br>
+<a href="https://www.tpisoftware.com/tpu/articleDetails/1826">使用docker-compose啟動服務時，初始化資料庫和資料(以Mysql為例)</a><br>
+<a href="https://success.mirantis.com/article/different-types-of-volumes">Different Types of Volumes</a></p>
+<h2 id="named-volume">named volume：</h2>
+<ol>
+<li><code>docker-compose up</code> 啟動容器</li>
+<li><code>docker volume ls</code> 確認有建立 volume</li>
+<li><code>docker-compose stop</code> 停止容器</li>
+<li><code>docker-compose up</code>，使用 GUI 連線容器確認資料有被重新掛載</li>
+<li><code>docker-compose down</code>，移除容器</li>
+<li><code>docker ps -a</code> 確認容器確實被移除</li>
+<li><code>docker-compose up</code>，volume 成功掛載回去</li>
+</ol>
+<h2 id="host-volume">host volume</h2>
+<p>調整容器內 volume 目標資料夾位置到本機特定資料夾下<br>
+如果有多台容器需要一起掛載同一份資料：<a href="https://docs.docker.com/storage/volumes/#share-data-among-machines">官方文件</a><br>
+這個做法使用 <code>docker volume ls</code> 就不會有結果，要自己去看指定的路徑。因為管理 volume 已經不是透過 docker</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;3&#39;</span>
+<span style="color:#f92672">services</span>:
+  <span style="color:#f92672">postgres</span>:
+    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">postgres</span>
+    <span style="color:#f92672">ports</span>: 
+      - <span style="color:#e6db74">&#34;5432:5432&#34;</span>
+    <span style="color:#f92672">image</span>: <span style="color:#e6db74">&#34;postgres:alpine&#34;</span>
+    <span style="color:#f92672">volumes</span>:
+      - <span style="color:#ae81ff">./database_data:/var/lib/postgresql/data</span> <span style="color:#75715e"># persist data even if container shuts down</span>
+    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">always</span>
+    <span style="color:#f92672">environment</span>:
+      <span style="color:#f92672">POSTGRES_USER</span>: <span style="color:#ae81ff">superuser</span>
+      <span style="color:#f92672">POSTGRES_PASSWORD</span>: <span style="color:#ae81ff">superpassword</span>
+      <span style="color:#f92672">POSTGRES_DB</span>: <span style="color:#ae81ff">trp</span>
+</code></pre></div><ol>
+<li>調整 yml 檔 service 內 volumes，改為指定路徑</li>
+<li><code>docker-compose up</code> 啟動容器</li>
+<li>使用路徑管理 volume 後 <code>docker volume ls</code> 不會有反應</li>
+<li>查看指定路徑 <code>./database_data</code>，volume 檔案成功寫入</li>
+<li><code>docker-compose up</code>，使用 GUI 連線容器確認資料有被重新掛載</li>
+<li><code>docker-compose down</code>，用 <code>docker ps -a</code> 確認 container 確實被移除</li>
+<li><code>docker-compose up</code>，volume 成功掛載回去</li>
+</ol>
+<h1 id="補充">補充</h1>
+<p>如果在同一台機器上想要啟用多個 PostgreSQL 容器<br>
+則 5432 port 會被佔用，當然可以將外部 port 改為不衝突的 port<br>
+但是內部 port 使用的依然是 5432
+如果在容器網路內直接溝通，例如 Laravel 的 .env 設定的 port<br>
+當透過容器外部網路線連線時使用調整後錯開的 port 連線正常<br>
+但是當執行 <code>php artisan migrate</code> 之類指令，執行者是容器時<br>
+要使用的卻是內部的 5432 port，如此在管理上會十分麻煩</p>
+<p>此情境下可以透啟動容器時指定內部運行的 port 來解決</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">  <span style="color:#f92672">postgre</span>:
+    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">trp_stage_postgre</span>
+    <span style="color:#f92672">ports</span>:
+      - <span style="color:#e6db74">&#34;5430:5430&#34;</span>
+    <span style="color:#f92672">image</span>: <span style="color:#e6db74">&#34;postgres:12.6&#34;</span>
+    <span style="color:#f92672">volumes</span>:
+      - <span style="color:#ae81ff">/trp/database/stage/database_data:/var/lib/postgresql/data</span> <span style="color:#75715e"># persist data even if container shuts down</span>
+    <span style="color:#f92672">command</span>: -<span style="color:#ae81ff">p 5430</span>
+    <span style="color:#f92672">environment</span>:
+      <span style="color:#f92672">POSTGRES_USER</span>: <span style="color:#ae81ff">${TRP_DB_USER}</span>
+      <span style="color:#f92672">POSTGRES_PASSWORD</span>: <span style="color:#ae81ff">${TRP_DB_PASSWORD}</span>
+      <span style="color:#f92672">POSTGRES_DB</span>: <span style="color:#ae81ff">${TRP_DB_NAME}</span>
+    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">always</span>
+</code></pre></div><p>如上面的設定中 <code>command: -p 5430</code> 指定了內部 postgres 使用的 port<br>
+所以在 <code>ports:</code> 設定中就直接將外部 port 5430 指定給內部的 port 5430<br>
+這樣不管在容器內或外部都可以使用一樣的 port 來進行連線</p>
+
+      
+      
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/ray247k/button?referrer=https%3a%2f%2fexample.com%2fblog%2f202103-build-postgresql-database-useing-docker%2f" width="100%" frameborder=0></iframe>
+
+    </div>
+    <footer>
+      <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/devops/">DevOps</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/devops/">DevOps</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/docker/">Docker</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/docker-compose/">Docker compose</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/postgresql/">PostgreSQL</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+    </footer>
+  </article>
+  
+    
+
+  
+  <div class="pagination">
+    
+      <a href="/blog/202103-enable-docker-service-in-remote-server/" class="button left"><span>雲端主機啟動 Docker 服務</span></a>
+    
+    
+      <a href="/blog/202102-reverse-proxy-in-docker-service/" class="button right"><span>反向代理 - 在 Docker 環境建置</span></a>
+    
+  </div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>最新文章</h1>
+      </header>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202104-use-ssh-key-login-remote-server/">設定 ssh 金鑰登入遠端主機</a></h2>
+          <time class="published" datetime="2021-04-25 00:00:00 &#43;0000 UTC">2021/04/25</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202103-enable-docker-service-in-remote-server/">雲端主機啟動 Docker 服務</a></h2>
+          <time class="published" datetime="2021-03-13 00:00:00 &#43;0000 UTC">2021/03/13</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202103-build-postgresql-database-useing-docker/">PostgreSQL 資料庫建置 - 使用 Docker</a></h2>
+          <time class="published" datetime="2021-03-03 00:00:00 &#43;0000 UTC">2021/03/03</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202102-reverse-proxy-in-docker-service/">反向代理 - 在 Docker 環境建置</a></h2>
+          <time class="published" datetime="2021-02-27 00:00:00 &#43;0000 UTC">2021/02/27</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202102-laravel-environment-basic-settings/">Laravel 執行環境建置</a></h2>
+          <time class="published" datetime="2021-02-25 00:00:00 &#43;0000 UTC">2021/02/25</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202102-ngrok-share-your-local-development-site/">Ngrok 讓 localhost 可以被外部連線</a></h2>
+          <time class="published" datetime="2021-02-14 00:00:00 &#43;0000 UTC">2021/02/14</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202101-portainer-open-source-container-management-gui/">Portainer - 視覺化管理 Docker 的工具</a></h2>
+          <time class="published" datetime="2021-01-16 00:00:00 &#43;0000 UTC">2021/01/16</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/blog/" class="button">查看更多</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="/categories">category</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/categories/node.js/">node.js<span class="count">12</span></a>
+          
+          <li>
+              <a href="/categories/devops/">devops<span class="count">9</span></a>
+          
+          <li>
+              <a href="/categories/laravel/">laravel<span class="count">1</span></a>
+          
+          </li>
+        </ul>
+      </section>
+    
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+    
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script><script src="/js/bundle.min.ccb4e6bb4674f9a0e2b6ce56bb0cddea093526d4bc032314766519cdfec730b1.js" integrity="sha256-zLTmu0Z0&#43;aDits5Wuwzd6gk1JtS8AyMUdmUZzf7HMLE="></script>
+    <script src="/js/add-on.js"></script>
+    </div>
+  </body>
+</html>

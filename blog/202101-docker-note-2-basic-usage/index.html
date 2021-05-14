@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="zh-tw">
+  <head>
+  <meta charset="utf-8">
+<title>Docker 筆記 2 - 基本使用 - 薛丁格的工程師</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
+  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
+  
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=1" color="#ffffff">
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=1">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=1">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+<meta name="generator" content="Hugo 0.83.1" /><meta property="og:site_name" content="薛丁格的工程師">
+  <meta property="og:title" content="Docker 筆記 2 - 基本使用">
+  <meta property="og:description" content="Docker 的基本使用方法">
+  <meta property="description" content="Docker 的基本使用方法">
+  <meta property="og:url" content="https://example.com/blog/202101-docker-note-2-basic-usage/">
+  <meta property="og:type" content="article">
+  
+    <meta property="og:image" content="https://example.com/img/main/logo.jpg">
+  
+  <link rel="stylesheet" href="/css/bundle.min.6ad9eb85bff384c75937a02036b01425a2ca63f19a96535b8ba5b181db62a4b3.css" integrity="sha256-atnrhb/zhMdZN6AgNrAUJaLKY/GallNbi6WxgdtipLM="><link rel="stylesheet" href="/css/add-on.css">
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/" class="nav">
+        
+          Blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/" class="nav link"><i class='fa fa-home'></i> home</a>
+        
+      
+        
+          
+          <a href="/about/" class="nav link"><i class='far fa-id-card'></i> about</a>
+        
+      
+        
+          
+          <a href="/tags/" class="nav link"><i class='fas fa-tag'></i> tag</a>
+        
+      
+        
+          
+          <a href="/categories/" class="nav link"><i class='fas fa-sitemap'></i> category</a>
+        
+      
+      
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    
+    
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/"><img src="https://example.com/img/main/logo.jpg" class="bevel" width="100" alt="一隻箱子裡的貓，看著電腦螢幕" /></a>
+  <header>
+    <h1>Schrödinger's Programmer</h1>
+  </header>
+  <main>
+    <p>奔跑吧工程師，趁年輕跑得越遠越好</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+
+        <li><a href="//github.com/ray247k" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+<li><a href="//gitlab.com/ray247k" target="_blank" rel="noopener" title="GitLab" class="fab fa-gitlab"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:ray247k@gmail.com" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="/blog/202101-docker-note-2-basic-usage/">Docker 筆記 2 - 基本使用</a></h2>
+    
+    
+      <p>Docker 的基本使用方法</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2021-01-09 00:00:00 &#43;0000 UTC">2021/01/09</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+    <div id="socnet-share">
+      
+
+
+
+
+
+    </div>
+    <div class="content">
+      
+      <p>容器化可以隔離不同環境，將環境打包後工程師可以專注開發，不用花過多心力在開發環境安裝上<br>
+而 Docker 是目前非常成熟且流行的一個容器化技術</p>
+<h1 id="玩轉docker指令">玩轉docker指令</h1>
+<h2 id="查看容器資訊">查看容器資訊</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker ps 列出所有運行中的容器
+docker ps -a 列出所有存在的容器
+</code></pre></div><h2 id="看-log">看 log</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker logs <span style="color:#f92672">[</span>CONTAINER<span style="color:#f92672">]</span>  印出 log
+docker logs -f <span style="color:#f92672">[</span>CONTAINER<span style="color:#f92672">]</span> 持續印出最新 log
+</code></pre></div><h2 id="執行容器">執行容器</h2>
+<p>從本地環境的 image 建立 container<br>
+如果不存在從 repository 訪問，private repo 必須要有「登入」行為<br>
+image的格式可以為[IMAGE NAME]:[TAG]</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run
+</code></pre></div><h3 id="範例">範例：</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#75715e"># 執行nginx</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>docker run -idt nginx<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># 執行nginx並且暴露port為8080</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>docker run -idt -p 8080:80 nginx<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># 執行nginx在8080，在失敗的時候會自動重啟動</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>docker run -idt -p 8080:80 --restart on-failure nginx<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># 執行nginx，結束後移除</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>docker run --rm -idt nginx<span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><h3 id="常用到的-flag">常用到的 flag</h3>
+<ul>
+<li><code>-d</code> detach 將 container 置於背景執行</li>
+<li><code>-i</code> interactive 維持 STDIN，可互動</li>
+<li><code>-t</code> 提供 tty 允許 container 使用 tty</li>
+<li><code>-p</code> expose socket 對外:對內 port (ex -p 8080:80) <code>-p Host Port:Docker Port</code></li>
+<li><code>--restart</code> 失敗重啟(always-default, none, on-failure)</li>
+<li><code>--rm</code> 關閉後 container 自動消滅，若不刪可能會不斷累積，即使已經死掉了</li>
+</ul>
+<h2 id="常用指令">常用指令</h2>
+<p><strong>進入運行中的容器，並開啟終端機指令介面</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker exec -ti <span style="color:#f92672">[</span>CONTAINER<span style="color:#f92672">]</span> bash
+</code></pre></div><p><strong>取得 container 或是 image 的 Metadata</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker inspect <span style="color:#f92672">[</span>CONTAINER<span style="color:#f92672">]</span>
+</code></pre></div><p><strong>刪除 docker container</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker rm <span style="color:#f92672">[</span>CONTAINER<span style="color:#f92672">]</span>
+</code></pre></div><p><strong>刪除 docker image</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker rmi <span style="color:#f92672">[</span>IMAGE<span style="color:#f92672">]</span>
+</code></pre></div><p><strong>查看容器運行 process</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker top <span style="color:#f92672">[</span>CONTAINER<span style="color:#f92672">]</span>
+</code></pre></div><h2 id="其他指令">其他指令</h2>
+<p><strong>使用 Dockerfile 建立 docker image</strong><br>
+<code>-f</code> 手動指定 Dockerfile 名稱</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 在目前的資料夾建立image，來源是Dockerfile</span>
+docker build . -t image-name
+
+<span style="color:#75715e"># 在目前的資料夾建立image，來源是Dockerfile-alt</span>
+docker build . -t image-name -f Dockerfile-alt
+</code></pre></div><p><strong>將 docker image 從 repository 上拉/推上去</strong><br>
+要先登入 docker login</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker push / pull
+</code></pre></div><p><strong>登入 docker repository</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker login
+</code></pre></div><h2 id="怎麼寫自己的dockerfile">怎麼寫自己的dockerfile</h2>
+<ul>
+<li>先註冊 Docker Hub</li>
+<li><a href="https://alpinelinux.org/">Alpine Linux</a>
+<ul>
+<li>體積非常的小 (5MB)</li>
+<li>有完整的Linux架構</li>
+<li>豐富的元件支援</li>
+</ul>
+</li>
+</ul>
+<h3 id="常見-dockerfile-命令">常見 Dockerfile 命令</h3>
+<h4 id="基本">基本</h4>
+<ul>
+<li>FROM：指定基底 image，不指定版本的話預設都是 latest</li>
+<li>RUN：
+<ul>
+<li>docker build 時候執行命令，裝一些相依套件。</li>
+<li>每一個 RUN 都是獨立事件</li>
+</ul>
+</li>
+<li>ARG：
+<ul>
+<li>container docker build 時的建置參數</li>
+<li>無法在 container 中被使用</li>
+</ul>
+</li>
+<li>ENV：
+<ul>
+<li>printenv 容器內使用的環境變數</li>
+<li>格式：<code>ENV &lt;key&gt; &lt;value&gt;</code> 或是 <code>ENV &lt;key1&gt;=&lt;value1&gt; &lt;key2&gt;=&lt;value2&gt;</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="檔案複製">檔案複製</h4>
+<ul>
+<li>COPY：
+<ul>
+<li>複製「來源文件\目錄」到的容器中的「文件\目錄」中</li>
+<li><code>COPY [--chown=&lt;user&gt;:&lt;group&gt;] &lt;source path&gt;... &lt;dist path&gt;</code></li>
+<li>dist path 可以是 Container 內的絕對路徑，也可以是相對於 WORKDIR 的相對路徑</li>
+<li>會保留來源數據的各種屬性</li>
+</ul>
+</li>
+<li>ADD：
+<ul>
+<li>強化版的 COPY</li>
+<li><code>ADD [--chown=&lt;user&gt;:&lt;group&gt;] &lt;source path&gt;... &lt;dist path&gt;</code></li>
+<li>允許 source path 是一個 URL</li>
+<li>文件權限自動設置為 <code>600</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="執行指令">執行指令</h4>
+<ul>
+<li>ENTRYPOINT：
+<ul>
+<li>Container 起來預設會執行的指令</li>
+<li>最後指令，啟動時要保持在前景的指令</li>
+</ul>
+</li>
+<li>CMD：
+<ul>
+<li>container起來預設會執行的指令（或參數）</li>
+<li>ENTRYPOINT, CMD 同時存在 CMD 當參數使用</li>
+</ul>
+</li>
+<li>WORKDIR(cd + mkdir):
+<ul>
+<li>初始容器內工作目錄</li>
+</ul>
+</li>
+</ul>
+<h3 id="指令差異">指令差異</h3>
+<h4 id="arg-vs-env">ARG vs ENV</h4>
+<p>ARG 由建立 image 的時候帶入</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker build . --build-arg FOO<span style="color:#f92672">=</span>bar
+</code></pre></div><p>ENV是在docker container內作為環境變數使用</p>
+<h4 id="cmd-vs-entrypoint">CMD vs ENTRYPOINT</h4>
+<p>ENTRYPOINT 在 container 啟動時預設執行
+CMD 在 ENTRYPOINT 存在時作為參數使用</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">FROM ubuntu
+
+ENTRYPOINY <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;ping&#34;</span><span style="color:#f92672">]</span>
+CMD <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;localhost&#34;</span><span style="color:#f92672">]</span>
+</code></pre></div><h4 id="copy-vs-add">COPY vs ADD</h4>
+<p>COPY 適用在將本地端的檔案複製到container內<br>
+ADD 適用將遠端的檔案複製到container內</p>
+<h2 id="除錯">除錯</h2>
+<blockquote>
+<p>docker: Got permission denied</p>
+</blockquote>
+<p>這個錯誤是因為當前使用者的權限不足<br>
+可以將使用者提升至 <code>root</code> 保證權限</p>
+<p>但是比較安全且正確的做法應該是</p>
+<ol>
+<li>建立 docker 執行群組</li>
+<li>將使用者加入 docker 群組</li>
+</ol>
+<p>指令如下，需要退出重新登錄後才會生效！</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo groupadd docker
+sudo usermod -aG docker user_name
+</code></pre></div>
+
+      
+      
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/ray247k/button?referrer=https%3a%2f%2fexample.com%2fblog%2f202101-docker-note-2-basic-usage%2f" width="100%" frameborder=0></iframe>
+
+    </div>
+    <footer>
+      <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/devops/">DevOps</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/devops/">DevOps</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/docker/">Docker</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/%e5%ae%b9%e5%99%a8%e6%8a%80%e8%a1%93/">容器技術</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/containerization/">Containerization</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+    </footer>
+  </article>
+  
+    
+
+  
+  <div class="pagination">
+    
+      <a href="/blog/202101-docker-note-3-introduce-docker-compose/" class="button left"><span>Docker 筆記 3 - docker-compose</span></a>
+    
+    
+      <a href="/blog/202101-docker-note-1-what-is-docker/" class="button right"><span>Docker 筆記 1 - 認識 Docker</span></a>
+    
+  </div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>最新文章</h1>
+      </header>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202104-use-ssh-key-login-remote-server/">設定 ssh 金鑰登入遠端主機</a></h2>
+          <time class="published" datetime="2021-04-25 00:00:00 &#43;0000 UTC">2021/04/25</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202103-enable-docker-service-in-remote-server/">雲端主機啟動 Docker 服務</a></h2>
+          <time class="published" datetime="2021-03-13 00:00:00 &#43;0000 UTC">2021/03/13</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202103-build-postgresql-database-useing-docker/">PostgreSQL 資料庫建置 - 使用 Docker</a></h2>
+          <time class="published" datetime="2021-03-03 00:00:00 &#43;0000 UTC">2021/03/03</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202102-reverse-proxy-in-docker-service/">反向代理 - 在 Docker 環境建置</a></h2>
+          <time class="published" datetime="2021-02-27 00:00:00 &#43;0000 UTC">2021/02/27</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202102-laravel-environment-basic-settings/">Laravel 執行環境建置</a></h2>
+          <time class="published" datetime="2021-02-25 00:00:00 &#43;0000 UTC">2021/02/25</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202102-ngrok-share-your-local-development-site/">Ngrok 讓 localhost 可以被外部連線</a></h2>
+          <time class="published" datetime="2021-02-14 00:00:00 &#43;0000 UTC">2021/02/14</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202101-portainer-open-source-container-management-gui/">Portainer - 視覺化管理 Docker 的工具</a></h2>
+          <time class="published" datetime="2021-01-16 00:00:00 &#43;0000 UTC">2021/01/16</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/blog/" class="button">查看更多</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="/categories">category</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/categories/node.js/">node.js<span class="count">12</span></a>
+          
+          <li>
+              <a href="/categories/devops/">devops<span class="count">9</span></a>
+          
+          <li>
+              <a href="/categories/laravel/">laravel<span class="count">1</span></a>
+          
+          </li>
+        </ul>
+      </section>
+    
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+    
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script><script src="/js/bundle.min.ccb4e6bb4674f9a0e2b6ce56bb0cddea093526d4bc032314766519cdfec730b1.js" integrity="sha256-zLTmu0Z0&#43;aDits5Wuwzd6gk1JtS8AyMUdmUZzf7HMLE="></script>
+    <script src="/js/add-on.js"></script>
+    </div>
+  </body>
+</html>

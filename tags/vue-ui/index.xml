@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vue-ui on 薛丁格的工程師</title>
+    <link>https://example.com/tags/vue-ui/</link>
+    <description>Recent content in vue-ui on 薛丁格的工程師</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-TW</language>
+    <lastBuildDate>Wed, 08 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/vue-ui/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Express&#43;Vue 搭建電商網站] 02 - vue-router 的使用</title>
+      <link>https://example.com/blog/202007-express-vue-build-ecommerce-02-vue-router/</link>
+      <pubDate>Wed, 08 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/blog/202007-express-vue-build-ecommerce-02-vue-router/</guid>
+      <description>&lt;p&gt;在接下來的內容中會學習 vue-router 的使用方法與學習路由基礎知識&lt;br&gt;
+並使用 vue-router 來進行多個頁面的跳轉&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[Express&#43;Vue 搭建電商網站] 01- 初始設定</title>
+      <link>https://example.com/blog/202006-express-vue-build-ecommerce-01-basic-settings/</link>
+      <pubDate>Thu, 25 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/blog/202006-express-vue-build-ecommerce-01-basic-settings/</guid>
+      <description>&lt;p&gt;本篇將使用 vue-ui 建立專案，並且安裝 vue-router&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
