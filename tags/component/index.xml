@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>component on 薛丁格的工程師</title>
-    <link>https://ray247k.github.io/blog_tech/tags/component/</link>
+    <link>https://tech.ray247k.com/tags/component/</link>
     <description>Recent content in component on 薛丁格的工程師</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Fri, 04 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://ray247k.github.io/blog_tech/tags/component/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 04 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/component/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 10 用 vue 建立一個表單</title>
-      <link>https://ray247k.github.io/blog_tech/blog/202009-express-vue-build-ecommerce-10-new-product-page/</link>
+      <link>https://tech.ray247k.com/blog/202009-express-vue-build-ecommerce-10-new-product-page/</link>
       <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://ray247k.github.io/blog_tech/blog/202009-express-vue-build-ecommerce-10-new-product-page/</guid>
+      <guid>https://tech.ray247k.com/blog/202009-express-vue-build-ecommerce-10-new-product-page/</guid>
       <description>&lt;p&gt;後端的 API 上次已經開了出來，接著來建立前端使用的表單&lt;br&gt;
 這次的目標是建立新增商品時所用的表單，會使用到基本的 Vue 知識，如果沒看過文件的可以先了解一下官方文件&lt;/p&gt;</description>
     </item>

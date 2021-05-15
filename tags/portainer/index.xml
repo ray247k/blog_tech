@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Portainer on 薛丁格的工程師</title>
-    <link>https://ray247k.github.io/blog_tech/tags/portainer/</link>
+    <link>https://tech.ray247k.com/tags/portainer/</link>
     <description>Recent content in Portainer on 薛丁格的工程師</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Sat, 16 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://ray247k.github.io/blog_tech/tags/portainer/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 16 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/portainer/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Portainer - 視覺化管理 Docker 的工具</title>
-      <link>https://ray247k.github.io/blog_tech/blog/202101-portainer-open-source-container-management-gui/</link>
+      <link>https://tech.ray247k.com/blog/202101-portainer-open-source-container-management-gui/</link>
       <pubDate>Sat, 16 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://ray247k.github.io/blog_tech/blog/202101-portainer-open-source-container-management-gui/</guid>
+      <guid>https://tech.ray247k.com/blog/202101-portainer-open-source-container-management-gui/</guid>
       <description>&lt;p&gt;本機開發大部分使用指令操作，或是使用 Docker 本身的 GUI 介面管理服務&lt;br&gt;
 &lt;a href=&#34;https://github.com/portainer&#34;&gt;Portainer&lt;/a&gt; 是一個 open-source 的 UI tool&lt;br&gt;
 可以查看 docker image, container，並執行 start, stop, restart, remove 等動作&lt;br&gt;

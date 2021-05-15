@@ -2,37 +2,37 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Containerization on 薛丁格的工程師</title>
-    <link>https://ray247k.github.io/blog_tech/tags/containerization/</link>
+    <link>https://tech.ray247k.com/tags/containerization/</link>
     <description>Recent content in Containerization on 薛丁格的工程師</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Tue, 12 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://ray247k.github.io/blog_tech/tags/containerization/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 12 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/containerization/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Docker 筆記 3 - docker-compose</title>
-      <link>https://ray247k.github.io/blog_tech/blog/202101-docker-note-3-introduce-docker-compose/</link>
+      <link>https://tech.ray247k.com/blog/202101-docker-note-3-introduce-docker-compose/</link>
       <pubDate>Tue, 12 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://ray247k.github.io/blog_tech/blog/202101-docker-note-3-introduce-docker-compose/</guid>
+      <guid>https://tech.ray247k.com/blog/202101-docker-note-3-introduce-docker-compose/</guid>
       <description>&lt;p&gt;如果同時要管理彼此是有關連的多個 docker 容器，單純使用 docker 指令必須要自行記得容器之間的關聯&lt;br&gt;
 而使用 docker-compose，則可以輕鬆定義多容器服務&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Docker 筆記 2 - 基本使用</title>
-      <link>https://ray247k.github.io/blog_tech/blog/202101-docker-note-2-basic-usage/</link>
+      <link>https://tech.ray247k.com/blog/202101-docker-note-2-basic-usage/</link>
       <pubDate>Sat, 09 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://ray247k.github.io/blog_tech/blog/202101-docker-note-2-basic-usage/</guid>
+      <guid>https://tech.ray247k.com/blog/202101-docker-note-2-basic-usage/</guid>
       <description>&lt;p&gt;容器化可以隔離不同環境，將環境打包後工程師可以專注開發，不用花過多心力在開發環境安裝上&lt;br&gt;
 而 Docker 是目前非常成熟且流行的一個容器化技術&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Docker 筆記 1 - 認識 Docker</title>
-      <link>https://ray247k.github.io/blog_tech/blog/202101-docker-note-1-what-is-docker/</link>
+      <link>https://tech.ray247k.com/blog/202101-docker-note-1-what-is-docker/</link>
       <pubDate>Sat, 02 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://ray247k.github.io/blog_tech/blog/202101-docker-note-1-what-is-docker/</guid>
+      <guid>https://tech.ray247k.com/blog/202101-docker-note-1-what-is-docker/</guid>
       <description>&lt;p&gt;容器化可以隔離不同環境，將環境打包後工程師可以專注開發，不用花過多心力在開發環境安裝上&lt;br&gt;
 而 Docker 是目前非常成熟且流行的一個容器化技術&lt;/p&gt;</description>
     </item>

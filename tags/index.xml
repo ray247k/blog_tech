@@ -2,260 +2,260 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on 薛丁格的工程師</title>
-    <link>https://ray247k.github.io/blog_tech/tags/</link>
+    <link>https://tech.ray247k.com/tags/</link>
     <description>Recent content in Tags on 薛丁格的工程師</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Sun, 25 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://ray247k.github.io/blog_tech/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 25 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>DevOps</title>
-      <link>https://ray247k.github.io/blog_tech/tags/devops/</link>
+      <link>https://tech.ray247k.com/tags/devops/</link>
       <pubDate>Sun, 25 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://ray247k.github.io/blog_tech/tags/devops/</guid>
+      <guid>https://tech.ray247k.com/tags/devops/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Linux</title>
-      <link>https://ray247k.github.io/blog_tech/tags/linux/</link>
+      <link>https://tech.ray247k.com/tags/linux/</link>
       <pubDate>Sun, 25 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://ray247k.github.io/blog_tech/tags/linux/</guid>
+      <guid>https://tech.ray247k.com/tags/linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ssh</title>
-      <link>https://ray247k.github.io/blog_tech/tags/ssh/</link>
+      <link>https://tech.ray247k.com/tags/ssh/</link>
       <pubDate>Sun, 25 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://ray247k.github.io/blog_tech/tags/ssh/</guid>
+      <guid>https://tech.ray247k.com/tags/ssh/</guid>
       <description></description>
     </item>
     
     <item>
       <title>AWS</title>
-      <link>https://ray247k.github.io/blog_tech/tags/aws/</link>
+      <link>https://tech.ray247k.com/tags/aws/</link>
       <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://ray247k.github.io/blog_tech/tags/aws/</guid>
+      <guid>https://tech.ray247k.com/tags/aws/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Docker</title>
-      <link>https://ray247k.github.io/blog_tech/tags/docker/</link>
+      <link>https://tech.ray247k.com/tags/docker/</link>
       <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://ray247k.github.io/blog_tech/tags/docker/</guid>
+      <guid>https://tech.ray247k.com/tags/docker/</guid>
       <description></description>
     </item>
     
     <item>
       <title>docker-compose</title>
-      <link>https://ray247k.github.io/blog_tech/tags/docker-compose/</link>
+      <link>https://tech.ray247k.com/tags/docker-compose/</link>
       <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://ray247k.github.io/blog_tech/tags/docker-compose/</guid>
+      <guid>https://tech.ray247k.com/tags/docker-compose/</guid>
       <description></description>
     </item>
     
     <item>
       <title>GCP</title>
-      <link>https://ray247k.github.io/blog_tech/tags/gcp/</link>
+      <link>https://tech.ray247k.com/tags/gcp/</link>
       <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://ray247k.github.io/blog_tech/tags/gcp/</guid>
+      <guid>https://tech.ray247k.com/tags/gcp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>PostgreSQL</title>
-      <link>https://ray247k.github.io/blog_tech/tags/postgresql/</link>
+      <link>https://tech.ray247k.com/tags/postgresql/</link>
       <pubDate>Wed, 03 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://ray247k.github.io/blog_tech/tags/postgresql/</guid>
+      <guid>https://tech.ray247k.com/tags/postgresql/</guid>
       <description></description>
     </item>
     
     <item>
       <title>nginx</title>
-      <link>https://ray247k.github.io/blog_tech/tags/nginx/</link>
+      <link>https://tech.ray247k.com/tags/nginx/</link>
       <pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://ray247k.github.io/blog_tech/tags/nginx/</guid>
+      <guid>https://tech.ray247k.com/tags/nginx/</guid>
       <description></description>
     </item>
     
     <item>
       <title>proxy</title>
-      <link>https://ray247k.github.io/blog_tech/tags/proxy/</link>
+      <link>https://tech.ray247k.com/tags/proxy/</link>
       <pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://ray247k.github.io/blog_tech/tags/proxy/</guid>
+      <guid>https://tech.ray247k.com/tags/proxy/</guid>
       <description></description>
     </item>
     
     <item>
       <title>composer</title>
-      <link>https://ray247k.github.io/blog_tech/tags/composer/</link>
+      <link>https://tech.ray247k.com/tags/composer/</link>
       <pubDate>Thu, 25 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://ray247k.github.io/blog_tech/tags/composer/</guid>
+      <guid>https://tech.ray247k.com/tags/composer/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Laravel</title>
-      <link>https://ray247k.github.io/blog_tech/tags/laravel/</link>
+      <link>https://tech.ray247k.com/tags/laravel/</link>
       <pubDate>Thu, 25 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://ray247k.github.io/blog_tech/tags/laravel/</guid>
+      <guid>https://tech.ray247k.com/tags/laravel/</guid>
       <description></description>
     </item>
     
     <item>
       <title>PHP</title>
-      <link>https://ray247k.github.io/blog_tech/tags/php/</link>
+      <link>https://tech.ray247k.com/tags/php/</link>
       <pubDate>Thu, 25 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://ray247k.github.io/blog_tech/tags/php/</guid>
+      <guid>https://tech.ray247k.com/tags/php/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ngrok</title>
-      <link>https://ray247k.github.io/blog_tech/tags/ngrok/</link>
+      <link>https://tech.ray247k.com/tags/ngrok/</link>
       <pubDate>Sun, 14 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://ray247k.github.io/blog_tech/tags/ngrok/</guid>
+      <guid>https://tech.ray247k.com/tags/ngrok/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Portainer</title>
-      <link>https://ray247k.github.io/blog_tech/tags/portainer/</link>
+      <link>https://tech.ray247k.com/tags/portainer/</link>
       <pubDate>Sat, 16 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://ray247k.github.io/blog_tech/tags/portainer/</guid>
+      <guid>https://tech.ray247k.com/tags/portainer/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Containerization</title>
-      <link>https://ray247k.github.io/blog_tech/tags/containerization/</link>
+      <link>https://tech.ray247k.com/tags/containerization/</link>
       <pubDate>Tue, 12 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://ray247k.github.io/blog_tech/tags/containerization/</guid>
+      <guid>https://tech.ray247k.com/tags/containerization/</guid>
       <description></description>
     </item>
     
     <item>
       <title>容器技術</title>
-      <link>https://ray247k.github.io/blog_tech/tags/%E5%AE%B9%E5%99%A8%E6%8A%80%E8%A1%93/</link>
+      <link>https://tech.ray247k.com/tags/%E5%AE%B9%E5%99%A8%E6%8A%80%E8%A1%93/</link>
       <pubDate>Tue, 12 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://ray247k.github.io/blog_tech/tags/%E5%AE%B9%E5%99%A8%E6%8A%80%E8%A1%93/</guid>
+      <guid>https://tech.ray247k.com/tags/%E5%AE%B9%E5%99%A8%E6%8A%80%E8%A1%93/</guid>
       <description></description>
     </item>
     
     <item>
       <title>mutation</title>
-      <link>https://ray247k.github.io/blog_tech/tags/mutation/</link>
+      <link>https://tech.ray247k.com/tags/mutation/</link>
       <pubDate>Fri, 18 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://ray247k.github.io/blog_tech/tags/mutation/</guid>
+      <guid>https://tech.ray247k.com/tags/mutation/</guid>
       <description></description>
     </item>
     
     <item>
       <title>node.js</title>
-      <link>https://ray247k.github.io/blog_tech/tags/node.js/</link>
+      <link>https://tech.ray247k.com/tags/node.js/</link>
       <pubDate>Fri, 18 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://ray247k.github.io/blog_tech/tags/node.js/</guid>
+      <guid>https://tech.ray247k.com/tags/node.js/</guid>
       <description></description>
     </item>
     
     <item>
       <title>vue</title>
-      <link>https://ray247k.github.io/blog_tech/tags/vue/</link>
+      <link>https://tech.ray247k.com/tags/vue/</link>
       <pubDate>Fri, 18 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://ray247k.github.io/blog_tech/tags/vue/</guid>
+      <guid>https://tech.ray247k.com/tags/vue/</guid>
       <description></description>
     </item>
     
     <item>
       <title>vuex</title>
-      <link>https://ray247k.github.io/blog_tech/tags/vuex/</link>
+      <link>https://tech.ray247k.com/tags/vuex/</link>
       <pubDate>Fri, 18 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://ray247k.github.io/blog_tech/tags/vuex/</guid>
+      <guid>https://tech.ray247k.com/tags/vuex/</guid>
       <description></description>
     </item>
     
     <item>
       <title>component</title>
-      <link>https://ray247k.github.io/blog_tech/tags/component/</link>
+      <link>https://tech.ray247k.com/tags/component/</link>
       <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://ray247k.github.io/blog_tech/tags/component/</guid>
+      <guid>https://tech.ray247k.com/tags/component/</guid>
       <description></description>
     </item>
     
     <item>
       <title>express</title>
-      <link>https://ray247k.github.io/blog_tech/tags/express/</link>
+      <link>https://tech.ray247k.com/tags/express/</link>
       <pubDate>Fri, 28 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://ray247k.github.io/blog_tech/tags/express/</guid>
+      <guid>https://tech.ray247k.com/tags/express/</guid>
       <description></description>
     </item>
     
     <item>
       <title>RESTful</title>
-      <link>https://ray247k.github.io/blog_tech/tags/restful/</link>
+      <link>https://tech.ray247k.com/tags/restful/</link>
       <pubDate>Fri, 28 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://ray247k.github.io/blog_tech/tags/restful/</guid>
+      <guid>https://tech.ray247k.com/tags/restful/</guid>
       <description></description>
     </item>
     
     <item>
       <title>MongoDB</title>
-      <link>https://ray247k.github.io/blog_tech/tags/mongodb/</link>
+      <link>https://tech.ray247k.com/tags/mongodb/</link>
       <pubDate>Fri, 07 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://ray247k.github.io/blog_tech/tags/mongodb/</guid>
+      <guid>https://tech.ray247k.com/tags/mongodb/</guid>
       <description></description>
     </item>
     
     <item>
       <title>CORS</title>
-      <link>https://ray247k.github.io/blog_tech/tags/cors/</link>
+      <link>https://tech.ray247k.com/tags/cors/</link>
       <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://ray247k.github.io/blog_tech/tags/cors/</guid>
+      <guid>https://tech.ray247k.com/tags/cors/</guid>
       <description></description>
     </item>
     
     <item>
       <title>vue-router</title>
-      <link>https://ray247k.github.io/blog_tech/tags/vue-router/</link>
+      <link>https://tech.ray247k.com/tags/vue-router/</link>
       <pubDate>Wed, 08 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://ray247k.github.io/blog_tech/tags/vue-router/</guid>
+      <guid>https://tech.ray247k.com/tags/vue-router/</guid>
       <description></description>
     </item>
     
     <item>
       <title>vue-ui</title>
-      <link>https://ray247k.github.io/blog_tech/tags/vue-ui/</link>
+      <link>https://tech.ray247k.com/tags/vue-ui/</link>
       <pubDate>Wed, 08 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://ray247k.github.io/blog_tech/tags/vue-ui/</guid>
+      <guid>https://tech.ray247k.com/tags/vue-ui/</guid>
       <description></description>
     </item>
     
