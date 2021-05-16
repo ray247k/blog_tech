@@ -1,0 +1,772 @@
+<!doctype html>
+<html lang="zh-tw">
+  <head>
+  <meta charset="utf-8">
+<title>[Express&#43;Vue 搭建電商網站] 19 使用 Element UI 重構畫面 - 薛丁格的工程師</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
+  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
+  
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=1" color="#ffffff">
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=1">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=1">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+<meta name="generator" content="Hugo 0.83.1" /><meta property="og:site_name" content="薛丁格的工程師">
+  <meta property="og:title" content="[Express&#43;Vue 搭建電商網站] 19 使用 Element UI 重構畫面">
+  <meta property="og:description" content="使用 Express &#43; Vue 搭建一個電商網站 - 套用 Element UI 到頁面上">
+  <meta property="description" content="使用 Express &#43; Vue 搭建一個電商網站 - 套用 Element UI 到頁面上">
+  <meta property="og:url" content="https://tech.ray247k.com/blog/202011-express-vue-build-ecommerce-19-elemen-ui-refactor-page/">
+  <meta property="og:type" content="article">
+  
+    <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.jpg">
+  
+  <link rel="stylesheet" href="/css/bundle.min.6ad9eb85bff384c75937a02036b01425a2ca63f19a96535b8ba5b181db62a4b3.css" integrity="sha256-atnrhb/zhMdZN6AgNrAUJaLKY/GallNbi6WxgdtipLM="><link rel="stylesheet" href="/css/add-on.css">
+
+  
+
+
+    
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-LTGVYYWC2J');
+        </script>
+    
+
+
+  <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "image": {
+        "@type": "ImageObject",
+        "image": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+        "height": 648,
+        "width": 1080
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "薛丁格的工程師",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg"
+        }
+    },
+    "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+    "headline": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - Schrödinger\u0027s Programmer",
+    "name": "薛丁格的工程師",
+    "url": "https:\/\/tech.ray247k.com",
+    "description": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - devops,laravel,node.js,",
+    "keywords": [
+        "aws,axios,component,composer,containerization,cors,devops,docker,docker-compose,element-ui,express,gcp,getter,laravel,linux,mongodb,mutation,nginx,ngrok,node.js,php,portainer,postgresql,proxy,restful,ssh,vue,vue-router,vue-ui,vuex,容器技術,"
+    ]
+}
+</script>
+
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "legalName": "薛丁格的工程師",
+    "url": "https:\/\/tech.ray247k.com",
+    "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "ray247k@gmail.com",
+        "availableLanguage": [
+            "Mandarin",
+            "English"
+        ]
+    },
+    "sameAs": [
+        "https://ray247k.blogspot.com/"
+    ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "[Express\u002bVue 搭建電商網站] 19 使用 Element UI 重構畫面",
+    "description": "使用 Express \u002b Vue 搭建一個電商網站 - 套用 Element UI 到頁面上",
+    "keywords": [
+        "vue" , "node.js" , "element-ui" 
+    ],
+    "dateCreated": "2020-11-13T00:00:00.00Z",
+    "datePublished": "2020-11-13T00:00:00.00Z",
+    "dateModified": "2020-11-13T00:00:00.00Z",
+    "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "contentUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg"
+    },
+    "breadcrumb": {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com",
+                    "name": "薛丁格的工程師",
+                    "url": "https:\/\/tech.ray247k.com"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com/blog",
+                    "name": "Blog",
+                    "url": "https:\/\/tech.ray247k.com/blog"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\/blog\/202011-express-vue-build-ecommerce-19-elemen-ui-refactor-page\/",
+                    "name": "[Express\u002bVue 搭建電商網站] 19 使用 Element UI 重構畫面",
+                    "url": "https:\/\/tech.ray247k.com\/blog\/202011-express-vue-build-ecommerce-19-elemen-ui-refactor-page\/"
+                }
+            }
+        ],
+        "itemListOrder": "Ascending",
+        "numberOfItems": 3
+    }
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "articleSection": "blog",
+    "name": "[Express\u002bVue 搭建電商網站] 19 使用 Element UI 重構畫面",
+    "headline": "\u003cp\u003e重構可能會造成一些功能癱瘓，本章先著重在畫面，讓畫面變美美噠\u003cbr\u003e\n後續的文章會把功能修復，莫急莫慌莫害怕\u003c\/p\u003e",
+    "description": "使用 Express \u002b Vue 搭建一個電商網站 - 套用 Element UI 到頁面上",
+    "inLanguage": "zh-TW",
+    "isFamilyFriendly": "true",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com\/blog\/202011-express-vue-build-ecommerce-19-elemen-ui-refactor-page\/"
+    },
+    "author" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "creator" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "accountablePerson" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "copyrightHolder" : "薛丁格的工程師",
+    "copyrightYear" : "2020",
+    "dateCreated": "2020-11-13T00:00:00.00Z",
+    "datePublished": "2020-11-13T00:00:00.00Z",
+    "dateModified": "2020-11-13T00:00:00.00Z",
+    "publisher":{
+        "@type":"Organization",
+        "name": "薛丁格的工程師",
+        "url": "https://tech.ray247k.com",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+            "width":"32",
+            "height":"32"
+        }
+    },
+    "image": "https://tech.ray247k.com/img/main/logo.jpg",
+    "url" : "https:\/\/tech.ray247k.com\/blog\/202011-express-vue-build-ecommerce-19-elemen-ui-refactor-page\/",
+    "wordCount" : "501",
+    "genre" : [ "vue" , "node.js" , "element-ui" ],
+    "keywords" : [ "vue" , "node.js" , "element-ui" ]
+}
+</script>
+
+
+
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/" class="nav">
+        
+          Blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/" class="nav link"><i class='fa fa-home'></i> home</a>
+        
+      
+        
+          
+          <a href="/about/" class="nav link"><i class='far fa-id-card'></i> about</a>
+        
+      
+        
+          
+          <a href="/tags/" class="nav link"><i class='fas fa-tag'></i> tag</a>
+        
+      
+        
+          
+          <a href="/categories/" class="nav link"><i class='fas fa-sitemap'></i> category</a>
+        
+      
+      
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    
+    
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/"><img src="https://tech.ray247k.com/img/main/logo.jpg" class="circle" width="100" alt="一隻箱子裡的貓，看著電腦螢幕" /></a>
+  <header>
+    <h1>Schrödinger's Programmer</h1>
+  </header>
+  <main>
+    <p>奔跑吧工程師，趁年輕跑得越遠越好</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+
+        <li><a href="//github.com/ray247k" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+<li><a href="//gitlab.com/ray247k" target="_blank" rel="noopener" title="GitLab" class="fab fa-gitlab"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:ray247k@gmail.com" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="/blog/202011-express-vue-build-ecommerce-19-elemen-ui-refactor-page/">[Express&#43;Vue 搭建電商網站] 19 使用 Element UI 重構畫面</a></h2>
+    
+    
+      <p>使用 Express &#43; Vue 搭建一個電商網站 - 套用 Element UI 到頁面上</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2020-11-13 00:00:00 &#43;0000 UTC">2020/11/13</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+    <div id="socnet-share">
+      
+
+
+
+
+
+    </div>
+    <div class="content">
+      
+      <p>重構可能會造成一些功能癱瘓，本章先著重在畫面，讓畫面變美美噠<br>
+後續的文章會把功能修復，莫急莫慌莫害怕</p>
+<h1 id="管理後台畫面重構">管理後台畫面重構</h1>
+<p>由於我們之前在 <code>App</code> 組件中已經有了共用的工具列，所以打開 <code>src/views/admin/Index.vue</code> 修改成</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+  &lt;<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;admin-new&#34;</span>&gt;
+      &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;
+        &lt;<span style="color:#f92672">h1</span>&gt;<span style="color:#a6e22e">In</span> <span style="color:#a6e22e">Admin</span>&lt;/<span style="color:#f92672">h1</span>&gt;
+        &lt;<span style="color:#f92672">router-view</span>/&gt;
+      &lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;
+  &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">template</span>&gt;
+</code></pre></div><h2 id="後台商品列表頁面重構">後台商品列表頁面重構</h2>
+<p>接著打開後台的商品組件 <code>src/views/admin/Products.vue</code>，將 <code>&lt;template&gt;</code> 修改成</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;products&#34;</span>&gt;
+    &lt;<span style="color:#f92672">el-table</span>
+    <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;table&#34;</span>
+    <span style="color:#f92672">:data</span><span style="color:#e6db74">=&#34;products&#34;</span>&gt;
+      &lt;<span style="color:#f92672">el-table-column</span>
+        <span style="color:#a6e22e">prop</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;name&#34;</span>
+        <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;名稱&#34;</span>
+        <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;180&#34;</span>&gt;
+      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-table-column&gt;</span>
+      &lt;<span style="color:#f92672">el-table-column</span>
+        <span style="color:#a6e22e">prop</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;price&#34;</span>
+        <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;售價&#34;</span>
+        <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;180&#34;</span>&gt;
+      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-table-column&gt;</span>
+      &lt;<span style="color:#f92672">el-table-column</span>
+        <span style="color:#a6e22e">prop</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;manufacturer.name&#34;</span>
+        <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;製造商&#34;</span>
+        <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;180&#34;</span>&gt;
+      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-table-column&gt;</span>
+      &lt;<span style="color:#f92672">el-table-column</span>
+        <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;管理&#34;</span>
+        <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;200&#34;</span>&gt;
+        &lt;<span style="color:#f92672">template</span> <span style="color:#a6e22e">slot</span><span style="color:#f92672">-scope</span><span style="color:#960050;background-color:#1e0010">=&#34;</span><span style="color:#a6e22e">scope</span><span style="color:#960050;background-color:#1e0010">&#34;</span>&gt;
+          &lt;<span style="color:#f92672">el-button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;modify&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">size</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;small&#34;</span>&gt;&lt;<span style="color:#f92672">router-link</span> <span style="color:#f92672">:</span><span style="color:#a6e22e">to</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#39;/admin/edit/&#39; + scope.row._id&#34;</span>&gt;<span style="color:#a6e22e">修改</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/router-link&gt;&lt;/el-button&gt;</span>
+          &lt;<span style="color:#f92672">el-button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;remove&#34;</span> <span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">click</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;removeProduct(scope.row._id), deleteRow(scope.$index, products)&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">size</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;small&#34;</span>&gt;<span style="color:#a6e22e">删除</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-button&gt;</span>
+        &lt;/<span style="color:#f92672">template</span>&gt;
+      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-table-column&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-table&gt;</span>
+  &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">template</span>&gt;
+</code></pre></div><p>看起來和前台的 <code>ProductItem</code> 組件中表格非常相似，差在對商品物件的操作<br>
+一個是將商品加入或移出購物車，一個是刪除或修改商品</p>
+<h2 id="後台編輯商品頁面重構">後台編輯商品頁面重構</h2>
+<p>打開 <code>ProductForm</code> 組件，在 <code>&lt;template&gt;</code> 內使用組件庫提供的 <code>el-form</code> 表單組件代替原本簡陋的 form 表單</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;productInfo&#34;</span>&gt;
+    &lt;<span style="color:#f92672">el-form</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form&#34;</span> <span style="color:#a6e22e">ref</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form&#34;</span> <span style="color:#f92672">:model</span><span style="color:#e6db74">=&#34;model&#34;</span> <span style="color:#a6e22e">label</span><span style="color:#f92672">-width</span><span style="color:#960050;background-color:#1e0010">=&#34;</span><span style="color:#a6e22e">180px</span><span style="color:#960050;background-color:#1e0010">&#34;</span>&gt;
+      &lt;<span style="color:#f92672">el-form-item</span> <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Name&#34;</span>&gt;
+        &lt;<span style="color:#f92672">el-input</span> <span style="color:#f92672">v-model</span><span style="color:#e6db74">=&#34;model.name&#34;</span>&gt;<span style="color:#960050;background-color:#1e0010">&lt;/</span><span style="color:#a6e22e">el</span><span style="color:#f92672">-input</span>&gt;
+      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-form-item&gt;</span>
+      &lt;<span style="color:#f92672">el-form-item</span> <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Price&#34;</span>&gt;
+        &lt;<span style="color:#f92672">el-input</span> <span style="color:#f92672">v-model</span><span style="color:#e6db74">=&#34;model.price&#34;</span>&gt;<span style="color:#960050;background-color:#1e0010">&lt;/</span><span style="color:#a6e22e">el</span><span style="color:#f92672">-input</span>&gt;
+      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-form-item&gt;</span>
+      &lt;<span style="color:#f92672">el-form-item</span> <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Manufacturer &#34;</span>&gt;
+        &lt;<span style="color:#f92672">el-select</span> <span style="color:#f92672">v-model</span><span style="color:#e6db74">=&#34;model.manufacturer.name&#34; clearable placeholder=&#34;请选择制造商&#34;&gt;
+</span><span style="color:#e6db74">          &lt;el-option
+</span><span style="color:#e6db74">            v-for=&#34;manufacturer in manufacturers&#34;
+</span><span style="color:#e6db74">            :key=&#34;manufacturer._id&#34;
+</span><span style="color:#e6db74">            :label=&#34;manufacturer.name&#34;
+</span><span style="color:#e6db74">            :value=&#34;manufacturer.name&#34;
+</span><span style="color:#e6db74">          &gt;&lt;/el-option&gt;
+</span><span style="color:#e6db74">        &lt;/el-select&gt;
+</span><span style="color:#e6db74">      &lt;/el-form-item&gt;
+</span><span style="color:#e6db74">      &lt;el-form-item label=&#34;Image &#34;&gt;
+</span><span style="color:#e6db74">        &lt;el-input v-model=&#34;model.image&#34;&gt;&lt;/el-input&gt;
+</span><span style="color:#e6db74">      &lt;/el-form-item&gt;
+</span><span style="color:#e6db74">      &lt;el-form-item label=&#34;Description &#34;&gt;
+</span><span style="color:#e6db74">        &lt;el-input type=&#34;textarea&#34; v-model=&#34;model.description&#34;&gt;&lt;/el-input&gt;
+</span><span style="color:#e6db74">      &lt;/el-form-item&gt;
+</span><span style="color:#e6db74">      &lt;el-form-item&gt;
+</span><span style="color:#e6db74">        &lt;el-button v-if=&#34;isEditing&#34; type=&#34;primary&#34; @click=&#34;onSubmit&#34;&gt;Update Product&lt;/el-button&gt;
+</span><span style="color:#e6db74">        &lt;el-button v-else @click=&#34;onSubmit&#34;</span>&gt;<span style="color:#a6e22e">Add</span> <span style="color:#a6e22e">Product</span><span style="color:#960050;background-color:#1e0010">&lt;/</span><span style="color:#a6e22e">el</span><span style="color:#f92672">-button</span>&gt;
+      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-form-item&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-form&gt;</span>
+  &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">template</span>&gt;
+</code></pre></div><p>接著要解決 <code>src/views/admin/Edit.vue</code> 組件內傳入的 computed <code>model</code> 無法被編輯的問題<br>
+理由是 input 作為受控的組件，會一直顯示 Vue 的綁定資料<br>
+輸入框內容將無法進行編輯：<a href="https://element.eleme.io/#/zh-CN/component/input">Input 输入框</a><br>
+結果送出之後還是沒反應，這很正常先繼續把畫面調好，等等我們會來修復它</p>
+<p>打開 <code>Edit</code> 組件，將原本在 computed 中的 <code>model</code> 屬性放到 <code>data</code> 屬性中，並移除原本在 computed 中的屬性</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+  &lt;<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;title&#34;</span>&gt;
+      &lt;<span style="color:#f92672">h1</span>&gt;<span style="color:#a6e22e">This</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">Admin</span><span style="color:#f92672">/</span><span style="color:#a6e22e">Edit</span>&lt;/<span style="color:#f92672">h1</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">product-form</span>
+      <span style="color:#f92672">@save-product</span><span style="color:#e6db74">=&#34;updateProduct&#34;</span>
+      <span style="color:#f92672">:model</span><span style="color:#e6db74">=&#34;model&#34;</span>
+      <span style="color:#f92672">:manufacturers</span><span style="color:#e6db74">=&#34;manufacturers&#34;</span>
+      <span style="color:#f92672">:isEditing</span><span style="color:#e6db74">=&#34;true&#34;</span>
+    &gt;<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/product-form&gt;</span>
+  &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">template</span>&gt;
+
+&lt;<span style="color:#f92672">script</span>&gt;
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ProductForm</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@/components/products/ProductForm.vue&#34;</span>;
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+  <span style="color:#a6e22e">data</span>() {
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">product</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">getters</span>.<span style="color:#a6e22e">productById</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$route</span>.<span style="color:#a6e22e">params</span>[<span style="color:#e6db74">&#34;id&#34;</span>]);
+    <span style="color:#66d9ef">return</span> {
+      <span style="color:#75715e">// 回傳 product 的備份，是為了在修改 product 的備份之後，在保存之前不修改本地 Vuex store 的 product 屬性
+</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">model</span><span style="color:#f92672">:</span> { ...<span style="color:#a6e22e">product</span>, <span style="color:#a6e22e">manufacturer</span><span style="color:#f92672">:</span> { ...<span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">manufacturer</span> } }
+    };
+  },
+  <span style="color:#a6e22e">created</span>() {
+    <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">name</span> } <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">model</span>;
+    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">name</span>) {
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#e6db74">&#34;productById&#34;</span>, {
+        <span style="color:#a6e22e">productId</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$route</span>.<span style="color:#a6e22e">params</span>[<span style="color:#e6db74">&#34;id&#34;</span>]
+      });
+    }
+
+    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">manufacturers</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) {
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#e6db74">&#34;allManufacturers&#34;</span>);
+    }
+  },
+  <span style="color:#a6e22e">computed</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">manufacturers</span>() {
+      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">getters</span>.<span style="color:#a6e22e">allManufacturers</span>;
+    },
+  },
+  <span style="color:#a6e22e">methods</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">updateProduct</span>(<span style="color:#a6e22e">product</span>) {
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#e6db74">&#34;updateProduct&#34;</span>, {
+        <span style="color:#a6e22e">product</span>
+      });
+    }
+  },
+  <span style="color:#a6e22e">components</span><span style="color:#f92672">:</span> {
+    <span style="color:#e6db74">&#34;product-form&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ProductForm</span>
+  }
+};
+&lt;/<span style="color:#f92672">script</span>&gt;
+</code></pre></div><p>接著，長得跟 <code>Edit</code> 組件很像的 <code>New</code> 組件也一起重構</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+  &lt;<span style="color:#f92672">product-form</span> <span style="color:#f92672">@save-product</span><span style="color:#e6db74">=&#34;addProduct&#34;</span> <span style="color:#f92672">:model</span><span style="color:#e6db74">=&#34;model&#34;</span> <span style="color:#f92672">:manufacturers</span><span style="color:#e6db74">=&#34;manufacturers&#34;</span>&gt;<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/product-form&gt;</span>
+&lt;/<span style="color:#f92672">template</span>&gt;
+
+&lt;<span style="color:#f92672">script</span>&gt;
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ProductForm</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@/components/products/ProductForm.vue&#34;</span>;
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+  <span style="color:#a6e22e">data</span>() {
+    <span style="color:#66d9ef">return</span> {
+      <span style="color:#a6e22e">model</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">manufacturer</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span> } }
+    };
+  },
+  <span style="color:#a6e22e">created</span>() {
+    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">manufacturers</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) {
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#e6db74">&#34;allManufacturers&#34;</span>);
+    }
+  },
+  <span style="color:#a6e22e">computed</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">manufacturers</span>() {
+      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">getters</span>.<span style="color:#a6e22e">allManufacturers</span>;
+    }
+  },
+  <span style="color:#a6e22e">methods</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">addProduct</span>(<span style="color:#a6e22e">model</span>) {
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#e6db74">&#34;addProduct&#34;</span>, {
+        <span style="color:#a6e22e">product</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">model</span>
+      });
+    }
+  },
+  <span style="color:#a6e22e">components</span><span style="color:#f92672">:</span> {
+    <span style="color:#e6db74">&#34;product-form&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ProductForm</span>
+  }
+};
+&lt;/<span style="color:#f92672">script</span>&gt;
+</code></pre></div><h2 id="後台編輯製造商頁面重構">後台編輯製造商頁面重構</h2>
+<p>和 <code>Products</code> 組件類似，開啟 <code>Manufacturers</code> 使用 <code>el-table</code> 替換掉原本的表單的 <code>&lt;template&gt;</code> 部分</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;manufacturers&#34;</span>&gt;
+    &lt;<span style="color:#f92672">el-table</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;table&#34;</span> <span style="color:#f92672">:data</span><span style="color:#e6db74">=&#34;manufacturers&#34;</span>&gt;
+      &lt;<span style="color:#f92672">el-table-column</span> <span style="color:#a6e22e">prop</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;製造商&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;180&#34;</span>&gt;<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-table-column&gt;</span>
+      &lt;<span style="color:#f92672">el-table-column</span> <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;管理&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;200&#34;</span>&gt;
+        &lt;<span style="color:#f92672">template</span> <span style="color:#a6e22e">slot</span><span style="color:#f92672">-scope</span><span style="color:#960050;background-color:#1e0010">=&#34;</span><span style="color:#a6e22e">scope</span><span style="color:#960050;background-color:#1e0010">&#34;</span>&gt;
+          &lt;<span style="color:#f92672">el-button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;modify&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">size</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;small&#34;</span>&gt;
+            &lt;<span style="color:#f92672">router-link</span> <span style="color:#f92672">:</span><span style="color:#a6e22e">to</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#39;/admin/manufacturers/edit/&#39; + scope.row._id&#34;</span>&gt;<span style="color:#a6e22e">修改</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/router-link&gt;</span>
+          <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-button&gt;</span>
+          &lt;<span style="color:#f92672">el-button</span>
+            <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;remove&#34;</span>
+            <span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">click</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;removeManufacturer(scope.row._id), deleteRow(scope.$index, products)&#34;</span>
+            <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span>
+            <span style="color:#a6e22e">size</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;small&#34;</span>
+          &gt;<span style="color:#a6e22e">刪除</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-button&gt;</span>
+        &lt;/<span style="color:#f92672">template</span>&gt;
+      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-table-column&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-table&gt;</span>
+  &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">template</span>&gt;
+</code></pre></div><p>接著重構 <code>NewManufacturers</code> 組件，一樣將 computed 的 <code>model</code> 換到 data 屬性中</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+  &lt;<span style="color:#f92672">manufacturer-form</span> <span style="color:#f92672">@save-manufacturer</span><span style="color:#e6db74">=&#34;addManufacturer&#34;</span> <span style="color:#f92672">:model</span><span style="color:#e6db74">=&#34;model&#34;</span>&gt;<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/manufacturer-form&gt;</span>
+&lt;/<span style="color:#f92672">template</span>&gt;
+
+&lt;<span style="color:#f92672">script</span>&gt;
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ManufacturerForm</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@/components/ManufacturerForm.vue&#34;</span>;
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+  <span style="color:#a6e22e">data</span>() {
+    <span style="color:#66d9ef">return</span> {
+      <span style="color:#a6e22e">model</span><span style="color:#f92672">:</span> {}
+    };
+  },
+  <span style="color:#a6e22e">methods</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">addManufacturer</span>(<span style="color:#a6e22e">model</span>) {
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#e6db74">&#34;addManufacturer&#34;</span>, {
+        <span style="color:#a6e22e">manufacturer</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">model</span>
+      });
+    }
+  },
+  <span style="color:#a6e22e">components</span><span style="color:#f92672">:</span> {
+    <span style="color:#e6db74">&#34;manufacturer-form&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ManufacturerForm</span>
+  }
+};
+&lt;/<span style="color:#f92672">script</span>&gt;
+</code></pre></div><p>接著重構 <code>ManufacturerForm</code><br>
+程式結構和 <code>ProductForm</code> 組件很類似，將 <code>&lt;template&gt;</code> 區塊替換成組件庫樣式</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;manufacturerInfo&#34;</span>&gt;
+    &lt;<span style="color:#f92672">el-form</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form&#34;</span> <span style="color:#a6e22e">ref</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form&#34;</span> <span style="color:#f92672">:model</span><span style="color:#e6db74">=&#34;model&#34;</span> <span style="color:#a6e22e">label</span><span style="color:#f92672">-width</span><span style="color:#960050;background-color:#1e0010">=&#34;</span><span style="color:#a6e22e">180px</span><span style="color:#960050;background-color:#1e0010">&#34;</span>&gt;
+      &lt;<span style="color:#f92672">el-form-item</span> <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Name&#34;</span>&gt;
+        &lt;<span style="color:#f92672">el-input</span> <span style="color:#f92672">v-model</span><span style="color:#e6db74">=&#34;model.name&#34;</span>&gt;<span style="color:#960050;background-color:#1e0010">&lt;/</span><span style="color:#a6e22e">el</span><span style="color:#f92672">-input</span>&gt;
+      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-form-item&gt;</span>
+      &lt;<span style="color:#f92672">el-form-item</span>&gt;
+        &lt;<span style="color:#f92672">el-button</span> <span style="color:#f92672">v-if</span><span style="color:#e6db74">=&#34;isEditing&#34; type=&#34;primary&#34; @click=&#34;onSubmit&#34;&gt;Update Manufacturer&lt;/el-button&gt;
+</span><span style="color:#e6db74">        &lt;el-button v-else @click=&#34;onSubmit&#34;</span>&gt;<span style="color:#a6e22e">Add</span> <span style="color:#a6e22e">Manufacturer</span><span style="color:#960050;background-color:#1e0010">&lt;/</span><span style="color:#a6e22e">el</span><span style="color:#f92672">-button</span>&gt;
+      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-form-item&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-form&gt;</span>
+  &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">template</span>&gt;
+</code></pre></div><h1 id="重構前台購物車">重構前台購物車</h1>
+<p>最後！重構 <code>Cart</code> 組件，和 <code>ProductList</code> 類似，兩者都用了 <code>ProductItem</code> 組件<br>
+一樣那句話：將 <code>&lt;template&gt;</code> 區塊替換成組件庫樣式</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+  &lt;<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;title&#34;</span>&gt;
+      &lt;<span style="color:#f92672">h1</span>&gt;{{<span style="color:#a6e22e">msg</span>}}&lt;/<span style="color:#f92672">h1</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">product-item</span> <span style="color:#f92672">:products</span><span style="color:#e6db74">=&#34;cart&#34;</span>&gt;<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/product-item&gt;</span>
+  &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">template</span>&gt;
+</code></pre></div><p>在這篇文章中主要就是使用 <code>element-ui</code> 組件庫將畫面做得比較酷炫<br>
+但也造成一些功能癱瘓，當下一定很緊張，但不要緊！我們馬上就要來修復功能了！</p>
+<hr>
+<p>專案範例程式碼 GitHub 網址：<a href="https://github.com/ray247k/mini-E-commerce">ray247k/mini-E-commerce</a></p>
+
+      
+      
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/ray247k/button?referrer=https%3a%2f%2ftech.ray247k.com%2fblog%2f202011-express-vue-build-ecommerce-19-elemen-ui-refactor-page%2f" width="100%" frameborder=0></iframe>
+
+    </div>
+    <footer>
+      <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/node.js/">node.js</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/vue/">vue</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/node.js/">node.js</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/element-ui/">element-ui</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+    </footer>
+  </article>
+  
+    
+
+  
+  <div class="pagination">
+    
+      <a href="/blog/202011-express-vue-build-ecommerce-20-element-ui-fix-function/" class="button left"><span>[Express&#43;Vue 搭建電商網站] 20 重構後的頁面功能恢復</span></a>
+    
+    
+      <a href="/blog/202011-express-vue-build-ecommerce-18-element-ui-product-list/" class="button right"><span>[Express&#43;Vue 搭建電商網站] 18 套用 Element UI 到頁面上</span></a>
+    
+  </div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>最新文章</h1>
+      </header>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202104-use-ssh-key-login-remote-server/">設定 ssh 金鑰登入遠端主機</a></h2>
+          <time class="published" datetime="2021-04-25 00:00:00 &#43;0000 UTC">2021/04/25</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202103-enable-docker-service-in-remote-server/">雲端主機啟動 Docker 服務</a></h2>
+          <time class="published" datetime="2021-03-13 00:00:00 &#43;0000 UTC">2021/03/13</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202103-build-postgresql-database-useing-docker/">PostgreSQL 資料庫建置 - 使用 Docker</a></h2>
+          <time class="published" datetime="2021-03-03 00:00:00 &#43;0000 UTC">2021/03/03</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202102-reverse-proxy-in-docker-service/">反向代理 - 在 Docker 環境建置</a></h2>
+          <time class="published" datetime="2021-02-27 00:00:00 &#43;0000 UTC">2021/02/27</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202102-laravel-environment-basic-settings/">Laravel 執行環境建置</a></h2>
+          <time class="published" datetime="2021-02-25 00:00:00 &#43;0000 UTC">2021/02/25</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202102-ngrok-share-your-local-development-site/">Ngrok 讓 localhost 可以被外部連線</a></h2>
+          <time class="published" datetime="2021-02-14 00:00:00 &#43;0000 UTC">2021/02/14</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202101-portainer-open-source-container-management-gui/">Portainer - 視覺化管理 Docker 的工具</a></h2>
+          <time class="published" datetime="2021-01-16 00:00:00 &#43;0000 UTC">2021/01/16</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/blog/" class="button">查看更多</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="/categories">category</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/categories/node.js/">node.js<span class="count">22</span></a>
+          
+          <li>
+              <a href="/categories/devops/">devops<span class="count">9</span></a>
+          
+          <li>
+              <a href="/categories/laravel/">laravel<span class="count">1</span></a>
+          
+          </li>
+        </ul>
+      </section>
+    
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+    
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script><script src="/js/bundle.min.ccb4e6bb4674f9a0e2b6ce56bb0cddea093526d4bc032314766519cdfec730b1.js" integrity="sha256-zLTmu0Z0&#43;aDits5Wuwzd6gk1JtS8AyMUdmUZzf7HMLE="></script>
+    <script src="/js/add-on.js"></script>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-LTGVYYWC2J', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </div>
+  </body>
+</html>

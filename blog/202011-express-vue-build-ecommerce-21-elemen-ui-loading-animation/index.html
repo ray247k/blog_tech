@@ -1,0 +1,966 @@
+<!doctype html>
+<html lang="zh-tw">
+  <head>
+  <meta charset="utf-8">
+<title>[Express&#43;Vue 搭建電商網站] 21 使用 Element UI 加入載入過動畫 - 薛丁格的工程師</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
+  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
+  
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=1" color="#ffffff">
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=1">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=1">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+<meta name="generator" content="Hugo 0.83.1" /><meta property="og:site_name" content="薛丁格的工程師">
+  <meta property="og:title" content="[Express&#43;Vue 搭建電商網站] 21 使用 Element UI 加入載入過動畫">
+  <meta property="og:description" content="使用 Express &#43; Vue 搭建一個電商網站 - 套用 Element UI 加入載入動畫">
+  <meta property="description" content="使用 Express &#43; Vue 搭建一個電商網站 - 套用 Element UI 加入載入動畫">
+  <meta property="og:url" content="https://tech.ray247k.com/blog/202011-express-vue-build-ecommerce-21-elemen-ui-loading-animation/">
+  <meta property="og:type" content="article">
+  
+    <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.jpg">
+  
+  <link rel="stylesheet" href="/css/bundle.min.6ad9eb85bff384c75937a02036b01425a2ca63f19a96535b8ba5b181db62a4b3.css" integrity="sha256-atnrhb/zhMdZN6AgNrAUJaLKY/GallNbi6WxgdtipLM="><link rel="stylesheet" href="/css/add-on.css">
+
+  
+
+
+    
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-LTGVYYWC2J');
+        </script>
+    
+
+
+  <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "image": {
+        "@type": "ImageObject",
+        "image": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+        "height": 648,
+        "width": 1080
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "薛丁格的工程師",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg"
+        }
+    },
+    "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+    "headline": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - Schrödinger\u0027s Programmer",
+    "name": "薛丁格的工程師",
+    "url": "https:\/\/tech.ray247k.com",
+    "description": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - devops,laravel,node.js,",
+    "keywords": [
+        "aws,axios,component,composer,containerization,cors,devops,docker,docker-compose,element-ui,express,gcp,getter,laravel,linux,mongodb,mutation,nginx,ngrok,node.js,php,portainer,postgresql,proxy,restful,ssh,vue,vue-router,vue-ui,vuex,容器技術,"
+    ]
+}
+</script>
+
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "legalName": "薛丁格的工程師",
+    "url": "https:\/\/tech.ray247k.com",
+    "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "ray247k@gmail.com",
+        "availableLanguage": [
+            "Mandarin",
+            "English"
+        ]
+    },
+    "sameAs": [
+        "https://ray247k.blogspot.com/"
+    ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "[Express\u002bVue 搭建電商網站] 21 使用 Element UI 加入載入過動畫",
+    "description": "使用 Express \u002b Vue 搭建一個電商網站 - 套用 Element UI 加入載入動畫",
+    "keywords": [
+        "vue" , "node.js" , "element-ui" 
+    ],
+    "dateCreated": "2020-11-27T00:00:00.00Z",
+    "datePublished": "2020-11-27T00:00:00.00Z",
+    "dateModified": "2020-11-27T00:00:00.00Z",
+    "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "contentUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg"
+    },
+    "breadcrumb": {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com",
+                    "name": "薛丁格的工程師",
+                    "url": "https:\/\/tech.ray247k.com"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com/blog",
+                    "name": "Blog",
+                    "url": "https:\/\/tech.ray247k.com/blog"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\/blog\/202011-express-vue-build-ecommerce-21-elemen-ui-loading-animation\/",
+                    "name": "[Express\u002bVue 搭建電商網站] 21 使用 Element UI 加入載入過動畫",
+                    "url": "https:\/\/tech.ray247k.com\/blog\/202011-express-vue-build-ecommerce-21-elemen-ui-loading-animation\/"
+                }
+            }
+        ],
+        "itemListOrder": "Ascending",
+        "numberOfItems": 3
+    }
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "articleSection": "blog",
+    "name": "[Express\u002bVue 搭建電商網站] 21 使用 Element UI 加入載入過動畫",
+    "headline": "\u003cp\u003e等待的時候很無聊，所以我們加點動畫\u003cbr\u003e\n基本的動畫是用來告訴使用者動作執行結果，做到這樣使用者才知道自己剛剛做的事情有沒有完成\u003c\/p\u003e",
+    "description": "使用 Express \u002b Vue 搭建一個電商網站 - 套用 Element UI 加入載入動畫",
+    "inLanguage": "zh-TW",
+    "isFamilyFriendly": "true",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com\/blog\/202011-express-vue-build-ecommerce-21-elemen-ui-loading-animation\/"
+    },
+    "author" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "creator" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "accountablePerson" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "copyrightHolder" : "薛丁格的工程師",
+    "copyrightYear" : "2020",
+    "dateCreated": "2020-11-27T00:00:00.00Z",
+    "datePublished": "2020-11-27T00:00:00.00Z",
+    "dateModified": "2020-11-27T00:00:00.00Z",
+    "publisher":{
+        "@type":"Organization",
+        "name": "薛丁格的工程師",
+        "url": "https://tech.ray247k.com",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+            "width":"32",
+            "height":"32"
+        }
+    },
+    "image": "https://tech.ray247k.com/img/main/logo.jpg",
+    "url" : "https:\/\/tech.ray247k.com\/blog\/202011-express-vue-build-ecommerce-21-elemen-ui-loading-animation\/",
+    "wordCount" : "878",
+    "genre" : [ "vue" , "node.js" , "element-ui" ],
+    "keywords" : [ "vue" , "node.js" , "element-ui" ]
+}
+</script>
+
+
+
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/" class="nav">
+        
+          Blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/" class="nav link"><i class='fa fa-home'></i> home</a>
+        
+      
+        
+          
+          <a href="/about/" class="nav link"><i class='far fa-id-card'></i> about</a>
+        
+      
+        
+          
+          <a href="/tags/" class="nav link"><i class='fas fa-tag'></i> tag</a>
+        
+      
+        
+          
+          <a href="/categories/" class="nav link"><i class='fas fa-sitemap'></i> category</a>
+        
+      
+      
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    
+    
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/"><img src="https://tech.ray247k.com/img/main/logo.jpg" class="circle" width="100" alt="一隻箱子裡的貓，看著電腦螢幕" /></a>
+  <header>
+    <h1>Schrödinger's Programmer</h1>
+  </header>
+  <main>
+    <p>奔跑吧工程師，趁年輕跑得越遠越好</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+
+        <li><a href="//github.com/ray247k" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+<li><a href="//gitlab.com/ray247k" target="_blank" rel="noopener" title="GitLab" class="fab fa-gitlab"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:ray247k@gmail.com" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="/blog/202011-express-vue-build-ecommerce-21-elemen-ui-loading-animation/">[Express&#43;Vue 搭建電商網站] 21 使用 Element UI 加入載入過動畫</a></h2>
+    
+    
+      <p>使用 Express &#43; Vue 搭建一個電商網站 - 套用 Element UI 加入載入動畫</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2020-11-27 00:00:00 &#43;0000 UTC">2020/11/27</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+    <div id="socnet-share">
+      
+
+
+
+
+
+    </div>
+    <div class="content">
+      
+      <p>等待的時候很無聊，所以我們加點動畫<br>
+基本的動畫是用來告訴使用者動作執行結果，做到這樣使用者才知道自己剛剛做的事情有沒有完成</p>
+<h1 id="manufactureform-組件">ManufactureForm 組件</h1>
+<p>在這個組件中，會在使用者新建或是修改製造商資訊後，當後端完成處理前出現 <code>Loading</code> 的動態效果</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;manufacturerInfo&#34;</span>&gt;
+    &lt;<span style="color:#f92672">el-form</span>
+      <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form&#34;</span>
+      <span style="color:#a6e22e">ref</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form&#34;</span>
+      <span style="color:#a6e22e">label</span><span style="color:#f92672">-width</span><span style="color:#960050;background-color:#1e0010">=&#34;</span><span style="color:#a6e22e">180px</span><span style="color:#960050;background-color:#1e0010">&#34;</span>
+      <span style="color:#f92672">v-loading</span><span style="color:#e6db74">=&#34;loading&#34;
+</span><span style="color:#e6db74">      element-loading-text=&#34;Loading...&#34;
+</span><span style="color:#e6db74">      element-loading-spinner=&#34;el-icon-loading&#34;
+</span><span style="color:#e6db74">      element-loading-background=&#34;rgba(0, 0, 0, 0.8)&#34;
+</span><span style="color:#e6db74">    &gt;
+</span><span style="color:#e6db74">      &lt;el-form-item label=&#34;Name&#34;&gt;
+</span><span style="color:#e6db74">        &lt;el-input v-model=&#34;manufacturerData.name&#34;&gt;&lt;/el-input&gt;
+</span><span style="color:#e6db74">      &lt;/el-form-item&gt;
+</span><span style="color:#e6db74">      &lt;el-form-item&gt;
+</span><span style="color:#e6db74">        &lt;el-button
+</span><span style="color:#e6db74">          v-if=&#34;isEditing&#34;
+</span><span style="color:#e6db74">          type=&#34;primary&#34;
+</span><span style="color:#e6db74">          native-type=&#34;submit&#34;
+</span><span style="color:#e6db74">          @click=&#34;onSubmit&#34;
+</span><span style="color:#e6db74">        &gt;Update Manufacturer&lt;/el-button&gt;
+</span><span style="color:#e6db74">        &lt;el-button v-else @click=&#34;onSubmit&#34;</span>&gt;<span style="color:#a6e22e">Add</span> <span style="color:#a6e22e">Manufacturer</span><span style="color:#960050;background-color:#1e0010">&lt;/</span><span style="color:#a6e22e">el</span><span style="color:#f92672">-button</span>&gt;
+      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-form-item&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-form&gt;</span>
+  &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">template</span>&gt;
+
+&lt;<span style="color:#f92672">script</span>&gt;
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+  <span style="color:#a6e22e">props</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;model&#34;</span>, <span style="color:#e6db74">&#34;isEditing&#34;</span>],
+  <span style="color:#a6e22e">data</span>() {
+    <span style="color:#66d9ef">return</span> {
+      <span style="color:#a6e22e">manufacturerData</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span> }
+    };
+  },
+  <span style="color:#a6e22e">created</span>() {
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">manufacturerData</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">model</span>;
+  },
+  <span style="color:#a6e22e">watch</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">model</span>(<span style="color:#a6e22e">val</span>) {
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">manufacturerData</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">val</span>;
+    }
+  },
+  <span style="color:#a6e22e">computed</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">loading</span>() {
+      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span>;
+    }
+  },
+  <span style="color:#a6e22e">methods</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">onSubmit</span>() {
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$emit</span>(<span style="color:#e6db74">&#34;save-manufacturer&#34;</span>, <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">manufacturerData</span>);
+    }
+  }
+};
+&lt;/<span style="color:#f92672">script</span>&gt;
+</code></pre></div><p>使用 <code>element-ui</code> 组件庫提供的指令 <code>v-loading</code> 來判斷 <code>loading</code> 是否為真來決定是否要顯示載入動畫<br>
+而 <code>loading</code> 這個 computed 屬性使用 <code>store.state.showLoader</code> 的資料</p>
+<p>同時也把當初在 <code>ProductForm</code> 中解決過「無法修改標單內容」的問題用同樣方法解決了</p>
+<h1 id="productform-組件">ProductForm 組件</h1>
+<p>當然啦，製造商表單的效果在 <code>ProductForm</code> 中應該也要有<br>
+接著就打開 ProductForm 組件進行編輯</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;productInfo&#34;</span>&gt;
+    &lt;<span style="color:#f92672">el-form</span>
+      <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form&#34;</span>
+      <span style="color:#a6e22e">ref</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form&#34;</span>
+      <span style="color:#a6e22e">label</span><span style="color:#f92672">-width</span><span style="color:#960050;background-color:#1e0010">=&#34;</span><span style="color:#a6e22e">180px</span><span style="color:#960050;background-color:#1e0010">&#34;</span>
+      <span style="color:#f92672">v-loading</span><span style="color:#e6db74">=&#34;loading&#34;
+</span><span style="color:#e6db74">      element-loading-text=&#34;Loading...&#34;
+</span><span style="color:#e6db74">      element-loading-spinner=&#34;el-icon-loading&#34;
+</span><span style="color:#e6db74">      element-loading-background=&#34;rgba(0, 0, 0, 0.8)&#34;
+</span><span style="color:#e6db74">    &gt;
+</span><span style="color:#e6db74">      &lt;el-form-item label=&#34;Name&#34;&gt;
+</span><span style="color:#e6db74">        &lt;el-input v-model=&#34;modelData.name&#34;&gt;&lt;/el-input&gt;
+</span><span style="color:#e6db74">      &lt;/el-form-item&gt;
+</span><span style="color:#e6db74">      &lt;el-form-item label=&#34;Price&#34;&gt;
+</span><span style="color:#e6db74">        &lt;el-input v-model=&#34;modelData.price&#34;&gt;&lt;/el-input&gt;
+</span><span style="color:#e6db74">      &lt;/el-form-item&gt;
+</span><span style="color:#e6db74">      &lt;el-form-item label=&#34;Manufacturer &#34;&gt;
+</span><span style="color:#e6db74">        &lt;el-select v-model=&#34;modelData.manufacturer.name&#34; clearable placeholder=&#34;請選擇製造商&#34;&gt;
+</span><span style="color:#e6db74">          &lt;el-option
+</span><span style="color:#e6db74">            v-for=&#34;manufacturer in manufacturers&#34;
+</span><span style="color:#e6db74">            :key=&#34;manufacturer._id&#34;
+</span><span style="color:#e6db74">            :label=&#34;manufacturer.name&#34;
+</span><span style="color:#e6db74">            :value=&#34;manufacturer.name&#34;
+</span><span style="color:#e6db74">          &gt;&lt;/el-option&gt;
+</span><span style="color:#e6db74">        &lt;/el-select&gt;
+</span><span style="color:#e6db74">      &lt;/el-form-item&gt;
+</span><span style="color:#e6db74">      &lt;el-form-item label=&#34;Image &#34;&gt;
+</span><span style="color:#e6db74">        &lt;el-input v-model=&#34;modelData.image&#34;&gt;&lt;/el-input&gt;
+</span><span style="color:#e6db74">      &lt;/el-form-item&gt;
+</span><span style="color:#e6db74">      &lt;el-form-item label=&#34;Description &#34;&gt;
+</span><span style="color:#e6db74">        &lt;el-input type=&#34;textarea&#34; v-model=&#34;modelData.description&#34;&gt;&lt;/el-input&gt;
+</span><span style="color:#e6db74">      &lt;/el-form-item&gt;
+</span><span style="color:#e6db74">      &lt;el-form-item&gt;
+</span><span style="color:#e6db74">        &lt;el-button
+</span><span style="color:#e6db74">          v-if=&#34;isEditing&#34;
+</span><span style="color:#e6db74">          type=&#34;primary&#34;
+</span><span style="color:#e6db74">          native-type=&#34;submit&#34;
+</span><span style="color:#e6db74">          @click=&#34;onSubmit&#34;
+</span><span style="color:#e6db74">        &gt;Update Product&lt;/el-button&gt;
+</span><span style="color:#e6db74">        &lt;el-button v-else @click=&#34;onSubmit&#34;</span>&gt;<span style="color:#a6e22e">Add</span> <span style="color:#a6e22e">Product</span><span style="color:#960050;background-color:#1e0010">&lt;/</span><span style="color:#a6e22e">el</span><span style="color:#f92672">-button</span>&gt;
+      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-form-item&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-form&gt;</span>
+  &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">template</span>&gt;
+
+&lt;<span style="color:#f92672">script</span>&gt;
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+  <span style="color:#a6e22e">data</span>() {
+    <span style="color:#66d9ef">return</span> {
+      <span style="color:#a6e22e">modelData</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">manufacturer</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span> } }
+    };
+  },
+  <span style="color:#a6e22e">props</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;model&#34;</span>, <span style="color:#e6db74">&#34;manufacturers&#34;</span>, <span style="color:#e6db74">&#34;isEditing&#34;</span>],
+  <span style="color:#a6e22e">created</span>() {
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">product</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">model</span>;
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">modelData</span> <span style="color:#f92672">=</span> { ...<span style="color:#a6e22e">product</span>, <span style="color:#a6e22e">manufacturer</span><span style="color:#f92672">:</span> { ...<span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">manufacturer</span> } };
+  },
+  <span style="color:#a6e22e">watch</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">model</span>(<span style="color:#a6e22e">val</span>) {
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">modelData</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">val</span>;
+    }
+  },
+  <span style="color:#a6e22e">computed</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">loading</span>() {
+      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span>;
+    }
+  },
+  <span style="color:#a6e22e">methods</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">onSubmit</span>() {
+      <span style="color:#75715e">// 表單中只有 modelData.manufacturer.name，但後端需要整個製造商物件，所以要找出對應的製造商物件寫入到 modelData 中
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">manufacturer</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">manufacturers</span>.<span style="color:#a6e22e">find</span>(
+        <span style="color:#a6e22e">item</span> =&gt; <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">modelData</span>.<span style="color:#a6e22e">manufacturer</span>.<span style="color:#a6e22e">name</span>
+      );
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">modelData</span>.<span style="color:#a6e22e">manufacturer</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">manufacturer</span>;
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$emit</span>(<span style="color:#e6db74">&#34;save-product&#34;</span>, <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">modelData</span>);
+    }
+  }
+};
+&lt;/<span style="color:#f92672">script</span>&gt;
+
+&lt;<span style="color:#f92672">style</span>&gt;
+.<span style="color:#a6e22e">productInfo</span> {
+  <span style="color:#a6e22e">padding</span><span style="color:#f92672">-</span><span style="color:#a6e22e">top</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span><span style="color:#a6e22e">px</span>;
+}
+.<span style="color:#a6e22e">form</span> {
+  <span style="color:#a6e22e">margin</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span> <span style="color:#a6e22e">auto</span>;
+  <span style="color:#a6e22e">width</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">500</span><span style="color:#a6e22e">px</span>;
+}
+.<span style="color:#a6e22e">el</span><span style="color:#f92672">-</span><span style="color:#a6e22e">input__inner</span> {
+  <span style="color:#a6e22e">height</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">60</span><span style="color:#a6e22e">px</span>;
+}
+&lt;/<span style="color:#f92672">style</span>&gt;
+</code></pre></div><p>在這個組件中我們也加入了 <code>loading()</code> 這個 computed 屬性</p>
+<h1 id="實現提示功能">實現提示功能</h1>
+<p>在組件中加入功能後，我們要實際把提示功能完成<br>
+首先打開 <code>src/store/actions.js</code> 加入提示訊息的功能</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">axios</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;axios&#39;</span>;
+<span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Message</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;element-ui&#39;</span>;
+<span style="color:#66d9ef">import</span> {
+    <span style="color:#a6e22e">ADD_PRODUCT</span>,
+    <span style="color:#a6e22e">ADD_PRODUCT_SUCCESS</span>,
+    <span style="color:#a6e22e">PRODUCT_BY_ID</span>,
+    <span style="color:#a6e22e">PRODUCT_BY_ID_SUCCESS</span>,
+    <span style="color:#a6e22e">UPDATE_PRODUCT</span>,
+    <span style="color:#a6e22e">UPDATE_PRODUCT_SUCCESS</span>,
+    <span style="color:#a6e22e">REMOVE_PRODUCT</span>,
+    <span style="color:#a6e22e">REMOVE_PRODUCT_SUCCESS</span>,
+    <span style="color:#a6e22e">ALL_PRODUCTS</span>,
+    <span style="color:#a6e22e">ALL_PRODUCTS_SUCCESS</span>,
+    <span style="color:#a6e22e">ALL_MANUFACTURERS</span>,
+    <span style="color:#a6e22e">ALL_MANUFACTURERS_SUCCESS</span>,
+    <span style="color:#a6e22e">MANUFACTURER_BY_ID</span>,
+    <span style="color:#a6e22e">MANUFACTURER_BY_ID_SUCCESS</span>,
+    <span style="color:#a6e22e">ADD_MANUFACTURER</span>,
+    <span style="color:#a6e22e">ADD_MANUFACTURER_SUCCESS</span>,
+    <span style="color:#a6e22e">UPDATE_MANUFACTURER</span>,
+    <span style="color:#a6e22e">UPDATE_MANUFACTURER_SUCCESS</span>,
+    <span style="color:#a6e22e">REMOVE_MANUFACTURER</span>,
+    <span style="color:#a6e22e">REMOVE_MANUFACTURER_SUCCESS</span>,
+} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./mutation-types&#39;</span>;
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">API_BASE</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;http://localhost:3000/api/v1&#39;</span>;
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">productActions</span> <span style="color:#f92672">=</span> {
+    <span style="color:#a6e22e">allProducts</span>({ <span style="color:#a6e22e">commit</span> }) {
+        <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">ALL_PRODUCTS</span>)
+
+        <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/products`</span>).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">response</span> =&gt; {
+            <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">ALL_PRODUCTS_SUCCESS</span>, {
+                <span style="color:#a6e22e">products</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>,
+            });
+        })
+    },
+    <span style="color:#a6e22e">productById</span>({ <span style="color:#a6e22e">commit</span> }, <span style="color:#a6e22e">payload</span>) {
+        <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">PRODUCT_BY_ID</span>);
+
+        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">productId</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
+        <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/products/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">productId</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">response</span> =&gt; {
+            <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">PRODUCT_BY_ID_SUCCESS</span>, {
+                <span style="color:#a6e22e">product</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>,
+            });
+        })
+    },
+    <span style="color:#a6e22e">removeProduct</span>({ <span style="color:#a6e22e">commit</span> }, <span style="color:#a6e22e">payload</span>) {
+        <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">REMOVE_PRODUCT</span>);
+
+        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">productId</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
+        <span style="color:#a6e22e">axios</span>.<span style="color:#66d9ef">delete</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/products/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">productId</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
+            .<span style="color:#a6e22e">then</span>(() =&gt; {
+                <span style="color:#75715e">// 回傳 productId，用來刪除對應商品
+</span><span style="color:#75715e"></span>                <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">REMOVE_PRODUCT_SUCCESS</span>, {
+                    <span style="color:#a6e22e">productId</span>,
+                });
+                <span style="color:#a6e22e">Message</span>({
+                    <span style="color:#a6e22e">message</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;產品刪除完成&#39;</span>,
+                    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;success&#39;</span>
+                })
+            })
+            .<span style="color:#66d9ef">catch</span>(() =&gt; {
+                <span style="color:#a6e22e">Message</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">&#39;產品刪除失敗&#39;</span>);
+            })
+    },
+    <span style="color:#a6e22e">updateProduct</span>({ <span style="color:#a6e22e">commit</span> }, <span style="color:#a6e22e">payload</span>) {
+        <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">UPDATE_PRODUCT</span>);
+
+        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">product</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
+        <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">put</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/products/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">_id</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>, <span style="color:#a6e22e">product</span>)
+            .<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">response</span> =&gt; {
+                <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">UPDATE_PRODUCT_SUCCESS</span>, {
+                    <span style="color:#a6e22e">product</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>,
+                });
+                <span style="color:#a6e22e">Message</span>({
+                    <span style="color:#a6e22e">message</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;商品更新成功&#39;</span>,
+                    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;success&#39;</span>
+                })
+            })
+            .<span style="color:#66d9ef">catch</span>(() =&gt; {
+                <span style="color:#a6e22e">Message</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">&#39;商品更新失敗&#39;</span>);
+            })
+    },
+    <span style="color:#a6e22e">addProduct</span>({ <span style="color:#a6e22e">commit</span> }, <span style="color:#a6e22e">payload</span>) {
+        <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">ADD_PRODUCT</span>);
+        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">product</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
+        <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">post</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/products`</span>, <span style="color:#a6e22e">product</span>)
+            .<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">response</span> =&gt; {
+                <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">ADD_PRODUCT_SUCCESS</span>, {
+                    <span style="color:#a6e22e">product</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>,
+                })
+                <span style="color:#a6e22e">Message</span>({
+                    <span style="color:#a6e22e">message</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;已新建商品&#39;</span>,
+                    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;success&#39;</span>
+                })
+            })
+            .<span style="color:#66d9ef">catch</span>(() =&gt; {
+                <span style="color:#a6e22e">Message</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">&#39;商品建立失敗&#39;</span>);
+            })
+    }
+};
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">manufacturerActions</span> <span style="color:#f92672">=</span> {
+    <span style="color:#a6e22e">allManufacturers</span>({ <span style="color:#a6e22e">commit</span> }) {
+        <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">ALL_MANUFACTURERS</span>);
+
+        <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/manufacturers`</span>).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">response</span> =&gt; {
+            <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">ALL_MANUFACTURERS_SUCCESS</span>, {
+                <span style="color:#a6e22e">manufacturers</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>,
+            });
+        })
+    },
+    <span style="color:#a6e22e">manufacturerById</span>({ <span style="color:#a6e22e">commit</span> }, <span style="color:#a6e22e">payload</span>) {
+        <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">MANUFACTURER_BY_ID</span>);
+
+        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">manufacturerId</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
+        <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/manufacturers/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">manufacturerId</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">response</span> =&gt; {
+            <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">MANUFACTURER_BY_ID_SUCCESS</span>, {
+                <span style="color:#a6e22e">manufacturer</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>,
+            });
+        })
+    },
+    <span style="color:#a6e22e">removeManufacturer</span>({ <span style="color:#a6e22e">commit</span> }, <span style="color:#a6e22e">payload</span>) {
+        <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">REMOVE_MANUFACTURER</span>);
+
+        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">manufacturerId</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
+        <span style="color:#a6e22e">axios</span>.<span style="color:#66d9ef">delete</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/manufacturers/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">manufacturerId</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
+            .<span style="color:#a6e22e">then</span>(() =&gt; {
+                <span style="color:#75715e">// 回傳 manufacturerId，用來刪除對應的製造商
+</span><span style="color:#75715e"></span>                <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">REMOVE_MANUFACTURER_SUCCESS</span>, {
+                    <span style="color:#a6e22e">manufacturerId</span>,
+                });
+                <span style="color:#a6e22e">Message</span>({
+                    <span style="color:#a6e22e">message</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;製造商刪除完成&#39;</span>,
+                    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;success&#39;</span>
+                })
+            })
+            .<span style="color:#66d9ef">catch</span>(() =&gt; {
+                <span style="color:#a6e22e">Message</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">&#39;製造商刪除完成失敗&#39;</span>);
+            })
+    },
+    <span style="color:#a6e22e">updateManufacturer</span>({ <span style="color:#a6e22e">commit</span> }, <span style="color:#a6e22e">payload</span>) {
+        <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">UPDATE_MANUFACTURER</span>);
+
+        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">manufacturer</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
+        <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">put</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/manufacturers/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">manufacturer</span>.<span style="color:#a6e22e">_id</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>, <span style="color:#a6e22e">manufacturer</span>)
+            .<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">response</span> =&gt; {
+                <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">UPDATE_MANUFACTURER_SUCCESS</span>, {
+                    <span style="color:#a6e22e">manufacturer</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>,
+                });
+                <span style="color:#a6e22e">Message</span>({
+                    <span style="color:#a6e22e">message</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;製造商更新完成&#39;</span>,
+                    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;success&#39;</span>
+                })
+            })
+            .<span style="color:#66d9ef">catch</span>(() =&gt; {
+                <span style="color:#a6e22e">Message</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">&#39;製造商更新失敗&#39;</span>);
+            })
+    },
+    <span style="color:#a6e22e">addManufacturer</span>({ <span style="color:#a6e22e">commit</span> }, <span style="color:#a6e22e">payload</span>) {
+        <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">ADD_MANUFACTURER</span>);
+        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">manufacturer</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
+        <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">post</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/manufacturers`</span>, <span style="color:#a6e22e">manufacturer</span>)
+            .<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">response</span> =&gt; {
+                <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">ADD_MANUFACTURER_SUCCESS</span>, {
+                    <span style="color:#a6e22e">manufacturer</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>,
+                });
+                <span style="color:#a6e22e">Message</span>({
+                    <span style="color:#a6e22e">message</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;製造商建立完成&#39;</span>,
+                    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;success&#39;</span>
+                })
+            })
+            .<span style="color:#66d9ef">catch</span>(() =&gt; {
+                <span style="color:#a6e22e">Message</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">&#39;製造商建立失敗&#39;</span>);
+            })
+    }
+}
+</code></pre></div><p>首先導入了 <code>element-ui</code> 组件庫提供的 <code>Message</code> 提示訊息組件<br>
+接著在各個操作中加入提示訊息的物件，成功或失敗都會回傳對應的訊息</p>
+<p>接著開啟 <code>src/store/mutations.js</code> 做部分內容修改，為的是修改購物車的提示訊息</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">cartMutations</span> <span style="color:#f92672">=</span> {
+    [<span style="color:#a6e22e">ADD_TO_CART</span>](<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
+        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">product</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
+        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">cart</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">product</span>);
+        <span style="color:#a6e22e">Message</span>({
+            <span style="color:#a6e22e">message</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;成功加入購物車&#39;</span>,
+            <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;success&#39;</span>
+        })
+    },
+    [<span style="color:#a6e22e">REMOVE_FROM_CART</span>](<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
+        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">productId</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>
+        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">cart</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">cart</span>.<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">product</span> =&gt; <span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">_id</span> <span style="color:#f92672">!==</span> <span style="color:#a6e22e">productId</span>)
+        <span style="color:#a6e22e">Message</span>({
+            <span style="color:#a6e22e">message</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;已從購物車移除商品&#39;</span>,
+            <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;success&#39;</span>
+        })
+    },
+}
+</code></pre></div><p>同樣導入了 <code>element-ui</code> 组件庫提供的 <code>Message</code> 提示訊息組件<br>
+當使用者加入或移除購物車商品時就會收到提示了！</p>
+<p>結果看起來像這樣，十分酷炫有型<br>
+<img src="/img/blog/2020/11/express-vue-build-ecommerce-21-elemen-ui-loading-animation/message-ui.png" alt="message-ui"></p>
+<p>重構到這邊，測試起來似乎又有點什麼問題<br>
+那就是在表單按下更新後，看到了更新成功的訊息，但畫面上的資料似乎沒有同步成最新的<br>
+當資料出現問題，應該依據 Vue 的單向資料流原則來修正<br>
+使用者更新資料後，應該從後端同步更新資料到狀態池中進行渲染<br>
+因此我們要修改的就是 <code>src/store/actions.js</code> 的內容</p>
+<p>可以大膽的猜測，是因為後端請求結束後 <code>action</code> 提交到 <code>mutations.js</code> 中的不是修改後的最新資料<br>
+所以才沒有改變狀態池中的物件<br>
+修改 <code>src/store/actions.js</code> 檔案中更新數據的部分<br>
+兩個方法在不同的常數中，但為了節省版面就只展示其中關鍵的方法</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#a6e22e">updateProduct</span>({ <span style="color:#a6e22e">commit</span> }, <span style="color:#a6e22e">payload</span>) {
+    <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">UPDATE_PRODUCT</span>);
+
+    <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">product</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
+    <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">put</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/products/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">_id</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>, <span style="color:#a6e22e">product</span>)
+        .<span style="color:#a6e22e">then</span>(() =&gt; {
+            <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">UPDATE_PRODUCT_SUCCESS</span>, {
+                <span style="color:#a6e22e">product</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">product</span>,
+            });
+            <span style="color:#a6e22e">Message</span>({
+                <span style="color:#a6e22e">message</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;商品更新成功&#39;</span>,
+                <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;success&#39;</span>
+            })
+        })
+        .<span style="color:#66d9ef">catch</span>(() =&gt; {
+            <span style="color:#a6e22e">Message</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">&#39;商品更新失敗&#39;</span>);
+        })
+},
+
+<span style="color:#a6e22e">updateManufacturer</span>({ <span style="color:#a6e22e">commit</span> }, <span style="color:#a6e22e">payload</span>) {
+    <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">UPDATE_MANUFACTURER</span>);
+
+    <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">manufacturer</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
+    <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">put</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/manufacturers/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">manufacturer</span>.<span style="color:#a6e22e">_id</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>, <span style="color:#a6e22e">manufacturer</span>)
+        .<span style="color:#a6e22e">then</span>(() =&gt; {
+            <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">UPDATE_MANUFACTURER_SUCCESS</span>, {
+                <span style="color:#a6e22e">manufacturer</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">manufacturer</span>,
+            });
+            <span style="color:#a6e22e">Message</span>({
+                <span style="color:#a6e22e">message</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;製造商更新完成&#39;</span>,
+                <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;success&#39;</span>
+            })
+        })
+        .<span style="color:#66d9ef">catch</span>(() =&gt; {
+            <span style="color:#a6e22e">Message</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">&#39;製造商更新失敗&#39;</span>);
+        })
+},
+</code></pre></div><p>可以看到我們不理會 <code>axios</code> 返回的結果<br>
+直接使用原本作為 <code>payload</code> 去執行 API 的資料回傳到 <code>mutations</code> 來修改狀態</p>
+<p>所以接著就要修改 <code>mutations.js</code>，將新的資料同步到狀態池中<br>
+也是針對更新的部分做局部修改，將最新的資料同步到狀態池中</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">[<span style="color:#a6e22e">UPDATE_PRODUCT_SUCCESS</span>](<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
+    <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+
+    <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">product</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">newProduct</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
+    <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">products</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">products</span>.<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">product</span> =&gt; {
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">_id</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">newProduct</span>.<span style="color:#a6e22e">_id</span>) {
+            <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">newProduct</span>;
+        }
+        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">product</span>;
+    });
+
+    <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">product</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">newProduct</span>;
+},
+
+[<span style="color:#a6e22e">UPDATE_MANUFACTURER_SUCCESS</span>](<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
+    <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+
+    <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">manufacturer</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">newManufacturer</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
+    <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">manufacturers</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">manufacturers</span>.<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">manufacturer</span> =&gt; {
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">manufacturer</span>.<span style="color:#a6e22e">_id</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">newManufacturer</span>.<span style="color:#a6e22e">_id</span>) {
+            <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">newManufacturer</span>;
+        }
+        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">manufacturer</span>;
+    });
+
+    <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">manufacturer</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">newManufacturer</span>;
+},
+</code></pre></div><p>於是我們就修好了表單的修改功能並直接顯示最新資料！</p>
+<p>這就是在實際開發中使用 element-ui 組件庫套用在前端樣板中的流程，並且一步一步的進行了重構<br>
+到了這邊整個專案基本上已經可以正常運行了，使用者的體驗也得到的明顯的改善！</p>
+<hr>
+<p>專案範例程式碼 GitHub 網址：<a href="https://github.com/ray247k/mini-E-commerce">ray247k/mini-E-commerce</a></p>
+
+      
+      
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/ray247k/button?referrer=https%3a%2f%2ftech.ray247k.com%2fblog%2f202011-express-vue-build-ecommerce-21-elemen-ui-loading-animation%2f" width="100%" frameborder=0></iframe>
+
+    </div>
+    <footer>
+      <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/node.js/">node.js</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/vue/">vue</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/node.js/">node.js</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/element-ui/">element-ui</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+    </footer>
+  </article>
+  
+    
+
+  
+  <div class="pagination">
+    
+      <a href="/blog/202012-express-vue-build-ecommerce-22-docker-containerized/" class="button left"><span>[Express&#43;Vue 搭建電商網站] 22 使用 Docker 將專案容器化</span></a>
+    
+    
+      <a href="/blog/202011-express-vue-build-ecommerce-20-element-ui-fix-function/" class="button right"><span>[Express&#43;Vue 搭建電商網站] 20 重構後的頁面功能恢復</span></a>
+    
+  </div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>最新文章</h1>
+      </header>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202104-use-ssh-key-login-remote-server/">設定 ssh 金鑰登入遠端主機</a></h2>
+          <time class="published" datetime="2021-04-25 00:00:00 &#43;0000 UTC">2021/04/25</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202103-enable-docker-service-in-remote-server/">雲端主機啟動 Docker 服務</a></h2>
+          <time class="published" datetime="2021-03-13 00:00:00 &#43;0000 UTC">2021/03/13</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202103-build-postgresql-database-useing-docker/">PostgreSQL 資料庫建置 - 使用 Docker</a></h2>
+          <time class="published" datetime="2021-03-03 00:00:00 &#43;0000 UTC">2021/03/03</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202102-reverse-proxy-in-docker-service/">反向代理 - 在 Docker 環境建置</a></h2>
+          <time class="published" datetime="2021-02-27 00:00:00 &#43;0000 UTC">2021/02/27</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202102-laravel-environment-basic-settings/">Laravel 執行環境建置</a></h2>
+          <time class="published" datetime="2021-02-25 00:00:00 &#43;0000 UTC">2021/02/25</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202102-ngrok-share-your-local-development-site/">Ngrok 讓 localhost 可以被外部連線</a></h2>
+          <time class="published" datetime="2021-02-14 00:00:00 &#43;0000 UTC">2021/02/14</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202101-portainer-open-source-container-management-gui/">Portainer - 視覺化管理 Docker 的工具</a></h2>
+          <time class="published" datetime="2021-01-16 00:00:00 &#43;0000 UTC">2021/01/16</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/blog/" class="button">查看更多</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="/categories">category</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/categories/node.js/">node.js<span class="count">22</span></a>
+          
+          <li>
+              <a href="/categories/devops/">devops<span class="count">9</span></a>
+          
+          <li>
+              <a href="/categories/laravel/">laravel<span class="count">1</span></a>
+          
+          </li>
+        </ul>
+      </section>
+    
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+    
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script><script src="/js/bundle.min.ccb4e6bb4674f9a0e2b6ce56bb0cddea093526d4bc032314766519cdfec730b1.js" integrity="sha256-zLTmu0Z0&#43;aDits5Wuwzd6gk1JtS8AyMUdmUZzf7HMLE="></script>
+    <script src="/js/add-on.js"></script>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-LTGVYYWC2J', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </div>
+  </body>
+</html>

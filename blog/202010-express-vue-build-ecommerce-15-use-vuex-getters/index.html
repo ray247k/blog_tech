@@ -1,0 +1,759 @@
+<!doctype html>
+<html lang="zh-tw">
+  <head>
+  <meta charset="utf-8">
+<title>[Express&#43;Vue 搭建電商網站] 15 使用 Vuex Getters 複用資料邏輯 - 薛丁格的工程師</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
+  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
+  
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=1" color="#ffffff">
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=1">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=1">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+<meta name="generator" content="Hugo 0.83.1" /><meta property="og:site_name" content="薛丁格的工程師">
+  <meta property="og:title" content="[Express&#43;Vue 搭建電商網站] 15 使用 Vuex Getters 複用資料邏輯">
+  <meta property="og:description" content="使用 Express &#43; Vue 搭建一個電商網站 - 使用 Vuex Getters 複用資料邏輯">
+  <meta property="description" content="使用 Express &#43; Vue 搭建一個電商網站 - 使用 Vuex Getters 複用資料邏輯">
+  <meta property="og:url" content="https://tech.ray247k.com/blog/202010-express-vue-build-ecommerce-15-use-vuex-getters/">
+  <meta property="og:type" content="article">
+  
+    <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.jpg">
+  
+  <link rel="stylesheet" href="/css/bundle.min.6ad9eb85bff384c75937a02036b01425a2ca63f19a96535b8ba5b181db62a4b3.css" integrity="sha256-atnrhb/zhMdZN6AgNrAUJaLKY/GallNbi6WxgdtipLM="><link rel="stylesheet" href="/css/add-on.css">
+
+  
+
+
+    
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-LTGVYYWC2J');
+        </script>
+    
+
+
+  <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "image": {
+        "@type": "ImageObject",
+        "image": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+        "height": 648,
+        "width": 1080
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "薛丁格的工程師",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg"
+        }
+    },
+    "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+    "headline": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - Schrödinger\u0027s Programmer",
+    "name": "薛丁格的工程師",
+    "url": "https:\/\/tech.ray247k.com",
+    "description": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - devops,laravel,node.js,",
+    "keywords": [
+        "aws,axios,component,composer,containerization,cors,devops,docker,docker-compose,element-ui,express,gcp,getter,laravel,linux,mongodb,mutation,nginx,ngrok,node.js,php,portainer,postgresql,proxy,restful,ssh,vue,vue-router,vue-ui,vuex,容器技術,"
+    ]
+}
+</script>
+
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "legalName": "薛丁格的工程師",
+    "url": "https:\/\/tech.ray247k.com",
+    "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "ray247k@gmail.com",
+        "availableLanguage": [
+            "Mandarin",
+            "English"
+        ]
+    },
+    "sameAs": [
+        "https://ray247k.blogspot.com/"
+    ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "[Express\u002bVue 搭建電商網站] 15 使用 Vuex Getters 複用資料邏輯",
+    "description": "使用 Express \u002b Vue 搭建一個電商網站 - 使用 Vuex Getters 複用資料邏輯",
+    "keywords": [
+        "vue" , "node.js" , "vuex" , "getter" 
+    ],
+    "dateCreated": "2020-10-09T00:00:00.00Z",
+    "datePublished": "2020-10-09T00:00:00.00Z",
+    "dateModified": "2020-10-09T00:00:00.00Z",
+    "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "contentUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg"
+    },
+    "breadcrumb": {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com",
+                    "name": "薛丁格的工程師",
+                    "url": "https:\/\/tech.ray247k.com"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com/blog",
+                    "name": "Blog",
+                    "url": "https:\/\/tech.ray247k.com/blog"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\/blog\/202010-express-vue-build-ecommerce-15-use-vuex-getters\/",
+                    "name": "[Express\u002bVue 搭建電商網站] 15 使用 Vuex Getters 複用資料邏輯",
+                    "url": "https:\/\/tech.ray247k.com\/blog\/202010-express-vue-build-ecommerce-15-use-vuex-getters\/"
+                }
+            }
+        ],
+        "itemListOrder": "Ascending",
+        "numberOfItems": 3
+    }
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "articleSection": "blog",
+    "name": "[Express\u002bVue 搭建電商網站] 15 使用 Vuex Getters 複用資料邏輯",
+    "headline": "\u003cp\u003e有時候我們需要 \u003ccode\u003ecomputed\u003c\/code\u003e store 中的 state，在每個組件中複製貼上同樣的 \u003ccode\u003ecomputed\u003c\/code\u003e 似乎不是一個明智的作法\u003cbr\u003e\n\u003ca href=\u0022https:\/\/vuex.vuejs.org\/zh\/guide\/getters.html\u0022\u003eVuex Getter\u003c\/a\u003e 是 Vuex 提供讓我們可以對 Vuex store 中 state 資料做預處理的方法，就可以達成這個目的\u003c\/p\u003e",
+    "description": "使用 Express \u002b Vue 搭建一個電商網站 - 使用 Vuex Getters 複用資料邏輯",
+    "inLanguage": "zh-TW",
+    "isFamilyFriendly": "true",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com\/blog\/202010-express-vue-build-ecommerce-15-use-vuex-getters\/"
+    },
+    "author" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "creator" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "accountablePerson" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "copyrightHolder" : "薛丁格的工程師",
+    "copyrightYear" : "2020",
+    "dateCreated": "2020-10-09T00:00:00.00Z",
+    "datePublished": "2020-10-09T00:00:00.00Z",
+    "dateModified": "2020-10-09T00:00:00.00Z",
+    "publisher":{
+        "@type":"Organization",
+        "name": "薛丁格的工程師",
+        "url": "https://tech.ray247k.com",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+            "width":"32",
+            "height":"32"
+        }
+    },
+    "image": "https://tech.ray247k.com/img/main/logo.jpg",
+    "url" : "https:\/\/tech.ray247k.com\/blog\/202010-express-vue-build-ecommerce-15-use-vuex-getters\/",
+    "wordCount" : "534",
+    "genre" : [ "vue" , "node.js" , "vuex" , "getter" ],
+    "keywords" : [ "vue" , "node.js" , "vuex" , "getter" ]
+}
+</script>
+
+
+
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/" class="nav">
+        
+          Blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/" class="nav link"><i class='fa fa-home'></i> home</a>
+        
+      
+        
+          
+          <a href="/about/" class="nav link"><i class='far fa-id-card'></i> about</a>
+        
+      
+        
+          
+          <a href="/tags/" class="nav link"><i class='fas fa-tag'></i> tag</a>
+        
+      
+        
+          
+          <a href="/categories/" class="nav link"><i class='fas fa-sitemap'></i> category</a>
+        
+      
+      
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    
+    
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/"><img src="https://tech.ray247k.com/img/main/logo.jpg" class="circle" width="100" alt="一隻箱子裡的貓，看著電腦螢幕" /></a>
+  <header>
+    <h1>Schrödinger's Programmer</h1>
+  </header>
+  <main>
+    <p>奔跑吧工程師，趁年輕跑得越遠越好</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+
+        <li><a href="//github.com/ray247k" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+<li><a href="//gitlab.com/ray247k" target="_blank" rel="noopener" title="GitLab" class="fab fa-gitlab"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:ray247k@gmail.com" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="/blog/202010-express-vue-build-ecommerce-15-use-vuex-getters/">[Express&#43;Vue 搭建電商網站] 15 使用 Vuex Getters 複用資料邏輯</a></h2>
+    
+    
+      <p>使用 Express &#43; Vue 搭建一個電商網站 - 使用 Vuex Getters 複用資料邏輯</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2020-10-09 00:00:00 &#43;0000 UTC">2020/10/09</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+    <div id="socnet-share">
+      
+
+
+
+
+
+    </div>
+    <div class="content">
+      
+      <p>有時候我們需要 <code>computed</code> store 中的 state，在每個組件中複製貼上同樣的 <code>computed</code> 似乎不是一個明智的作法<br>
+<a href="https://vuex.vuejs.org/zh/guide/getters.html">Vuex Getter</a> 是 Vuex 提供讓我們可以對 Vuex store 中 state 資料做預處理的方法，就可以達成這個目的</p>
+<h1 id="建立-getter">建立 Getter</h1>
+<p>首先在原本的 <code>src/store/index.js</code> 檔案裡加入一些新的 <code>action</code>、<code>mutation</code> 屬性<br>
+以及這次要使用的 <code>getter</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Vue</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue&#39;</span>;
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Vuex</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vuex&#39;</span>;
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">axios</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;axios&#39;</span>;
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">API_BASE</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;http://localhost:3000/api/v1&#39;</span>;
+
+<span style="color:#a6e22e">Vue</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">Vuex</span>);
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Vuex</span>.<span style="color:#a6e22e">Store</span>({
+  <span style="color:#a6e22e">strict</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+  <span style="color:#a6e22e">state</span><span style="color:#f92672">:</span> {
+    <span style="color:#75715e">// bought items
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">cart</span><span style="color:#f92672">:</span> [],
+    <span style="color:#75715e">// ajax loader
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">showLoader</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
+    <span style="color:#75715e">// selected product
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">product</span><span style="color:#f92672">:</span> {},
+    <span style="color:#75715e">// all products
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">products</span><span style="color:#f92672">:</span> [],
+    <span style="color:#75715e">// all manufacturers
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">manufacturers</span><span style="color:#f92672">:</span> [],
+  },
+  <span style="color:#a6e22e">mutations</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">ADD_TO_CART</span>(<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
+      <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">product</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
+      <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">cart</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">product</span>)
+    },
+    <span style="color:#a6e22e">REMOVE_FROM_CART</span>(<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
+      <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">productId</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>
+      <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">cart</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">cart</span>.<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">product</span> =&gt; <span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">_id</span> <span style="color:#f92672">!==</span> <span style="color:#a6e22e">productId</span>)
+    },
+    <span style="color:#a6e22e">ALL_PRODUCTS</span>(<span style="color:#a6e22e">state</span>) {
+      <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+    },
+    <span style="color:#a6e22e">ALL_PRODUCTS_SUCCESS</span>(<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
+      <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">products</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
+
+      <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+      <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">products</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">products</span>;
+    },
+    <span style="color:#a6e22e">PRODUCT_BY_ID</span>(<span style="color:#a6e22e">state</span>) {
+      <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+    },
+    <span style="color:#a6e22e">PRODUCT_BY_ID_SUCCESS</span>(<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
+      <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+
+      <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">product</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
+      <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">product</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">product</span>;
+    }
+  },
+  <span style="color:#a6e22e">getters</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">allProducts</span>(<span style="color:#a6e22e">state</span>) {
+      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">products</span>;
+    },
+    <span style="color:#a6e22e">productById</span><span style="color:#f92672">:</span> (<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">getters</span>) =&gt; <span style="color:#a6e22e">id</span> =&gt; {
+      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">getters</span>.<span style="color:#a6e22e">allProducts</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) {
+        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">getters</span>.<span style="color:#a6e22e">allProducts</span>.<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">p</span> =&gt; <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">_id</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">id</span>)[<span style="color:#ae81ff">0</span>];
+      } <span style="color:#66d9ef">else</span> {
+        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">product</span>;
+      }
+    }
+  },
+  <span style="color:#a6e22e">actions</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">allProducts</span>({ <span style="color:#a6e22e">commit</span> }) {
+      <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;ALL_PRODUCTS&#39;</span>)
+
+      <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/products`</span>).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">response</span> =&gt; {
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;response&#39;</span>, <span style="color:#a6e22e">response</span>);
+        <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;ALL_PRODUCTS_SUCCESS&#39;</span>, {
+          <span style="color:#a6e22e">products</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>,
+        });
+      })
+    },
+    <span style="color:#a6e22e">productById</span>({ <span style="color:#a6e22e">commit</span> }, <span style="color:#a6e22e">payload</span>) {
+      <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;PRODUCT_BY_ID&#39;</span>);
+
+      <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">productId</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
+      <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/products/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">productId</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">response</span> =&gt; {
+        <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;PRODUCT_BY_ID_SUCCESS&#39;</span>, {
+          <span style="color:#a6e22e">product</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>,
+        });
+      })
+    }
+  }
+});
+</code></pre></div><p>主要增加了三個部分</p>
+<ul>
+<li>mutations：增加了 <code>PRODUCT_BY_ID</code>、<code>PRODUCT_BY_ID_SUCCESS</code> 用來管理單一商品的資訊狀態</li>
+<li>actions：增加了 <code>productById</code> 來呼叫 <code>mutations</code>中的方法取得商品資訊</li>
+<li>getters：建立 getters，並且加入 <code>allProducts</code> 和 <code>productById</code> 方法<br>
+<code>allProducts</code> 取得所有商品；<code>productById</code> 則會回傳指定 id 的商品資料，如果商品不存在則回傳空的物件</li>
+</ul>
+<h1 id="在後台-products-組件中使用-getters">在後台 Products 組件中使用 Getters</h1>
+<p>先使用一個簡單的範例說明 Getters 是怎麼運作的，打開 <code>src/views/admin/Products.vue</code> 組件<br>
+並且把以下內容</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">products</span>[<span style="color:#ae81ff">0</span>];
+</code></pre></div><p>替換成</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">getters</span>.<span style="color:#a6e22e">allProducts</span>[<span style="color:#ae81ff">0</span>];
+</code></pre></div><p>在這個範例中，我們通過 <code>this.$store.getters.allProducts</code> 來調用 <code>getter</code> 中的 <code>allProducts</code> 屬性<br>
+並且顯示出第一個商品的名稱</p>
+<h1 id="建立-productdetail-組件">建立 ProductDetail 組件</h1>
+<p>在簡單的了解 Getter 是怎麼運作之後，要來實現單一商品詳細內容的組件</p>
+<p>新建 <code>src/components/products/ProductDetail.vue</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;product-details&#34;</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;product-details__image&#34;</span>&gt;
+      &lt;<span style="color:#f92672">img</span> <span style="color:#f92672">:src</span><span style="color:#e6db74">=&#34;product.image&#34;</span> <span style="color:#a6e22e">alt</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;image&#34;</span> /&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;product-details__info&#34;</span>&gt;
+      &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;product-details__description&#34;</span>&gt;
+        &lt;<span style="color:#f92672">small</span>&gt;<span style="color:#a6e22e">生產商</span><span style="color:#960050;background-color:#1e0010">：</span>{{<span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">manufacturer</span>.<span style="color:#a6e22e">name</span>}}&lt;/<span style="color:#f92672">small</span>&gt;
+        &lt;<span style="color:#f92672">h3</span>&gt;<span style="color:#a6e22e">產品名稱</span><span style="color:#960050;background-color:#1e0010">：</span>{{<span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">name</span>}}&lt;/<span style="color:#f92672">h3</span>&gt;
+        &lt;<span style="color:#f92672">p</span>&gt;<span style="color:#a6e22e">簡介</span><span style="color:#960050;background-color:#1e0010">：</span>{{<span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">description</span>}}&lt;/<span style="color:#f92672">p</span>&gt;
+      &lt;/<span style="color:#f92672">div</span>&gt;
+      &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;product-details__price-cart&#34;</span>&gt;
+        &lt;<span style="color:#f92672">p</span>&gt;<span style="color:#a6e22e">價錢</span><span style="color:#960050;background-color:#1e0010">：</span>{{<span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">price</span>}}&lt;/<span style="color:#f92672">p</span>&gt;
+        &lt;<span style="color:#f92672">product-button</span> <span style="color:#f92672">:product</span><span style="color:#e6db74">=&#34;product&#34;</span>&gt;<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/product-button&gt;</span>
+      &lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;
+  &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">template</span>&gt;
+
+&lt;<span style="color:#f92672">style</span>&gt;
+.<span style="color:#a6e22e">product</span><span style="color:#f92672">-</span><span style="color:#a6e22e">details__image</span> .<span style="color:#a6e22e">image</span> {
+  <span style="color:#a6e22e">width</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">100</span><span style="color:#a6e22e">px</span>;
+  <span style="color:#a6e22e">height</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">100</span><span style="color:#a6e22e">px</span>;
+}
+&lt;/<span style="color:#f92672">style</span>&gt;
+
+&lt;<span style="color:#f92672">script</span>&gt;
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ProductButton</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;./ProductButton&#34;</span>;
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+  <span style="color:#a6e22e">props</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;product&#34;</span>],
+  <span style="color:#a6e22e">components</span><span style="color:#f92672">:</span> {
+    <span style="color:#e6db74">&#34;product-button&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ProductButton</span>
+  }
+};
+&lt;/<span style="color:#f92672">script</span>&gt;
+</code></pre></div><p>可以看到這個組件將會利用父組件傳入的 <code>product</code> 物件來顯示內容<br>
+並且複用了先前建立的 <code>ProductButton</code> 組件</p>
+<h1 id="在-productitem-組件中為商品加入連結">在 ProductItem 組件中為商品加入連結</h1>
+<p>有了詳細頁面，我們還需要設定怎麼進入商品詳細頁面的連結<br>
+打開 <code>src/components/products/ProductItem.vue</code> 組件，將 <code>&lt;template&gt;</code> 區塊編輯成以下樣式</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"> &lt;<span style="color:#f92672">template</span>&gt;
+  &lt;<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;product&#34;</span>&gt;
+      &lt;<span style="color:#f92672">router-link</span> <span style="color:#f92672">:</span><span style="color:#a6e22e">to</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#39;/detail/&#39; + product._id&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;product-link&#34;</span>&gt;
+        &lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;product__name&#34;</span>&gt;<span style="color:#a6e22e">商品名稱</span><span style="color:#960050;background-color:#1e0010">：</span>{{<span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">name</span>}}&lt;/<span style="color:#f92672">p</span>&gt;
+        &lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;product__description&#34;</span>&gt;<span style="color:#a6e22e">簡介</span><span style="color:#960050;background-color:#1e0010">：</span>{{<span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">description</span>}}&lt;/<span style="color:#f92672">p</span>&gt;
+        &lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;product__price&#34;</span>&gt;<span style="color:#a6e22e">售價</span><span style="color:#960050;background-color:#1e0010">：</span>{{<span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">price</span>}}&lt;/<span style="color:#f92672">p</span>&gt;
+        &lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;product.manufacturer&#34;</span>&gt;<span style="color:#a6e22e">生產商</span><span style="color:#960050;background-color:#1e0010">：</span>{{<span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">manufacturer</span>.<span style="color:#a6e22e">name</span>}}&lt;/<span style="color:#f92672">p</span>&gt;
+        &lt;<span style="color:#f92672">img</span> <span style="color:#f92672">:src</span><span style="color:#e6db74">=&#34;product.image&#34;</span> <span style="color:#a6e22e">alt</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;product__image&#34;</span> /&gt;
+      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/router-link&gt;</span>
+      &lt;<span style="color:#f92672">product-button</span> <span style="color:#f92672">:product</span><span style="color:#e6db74">=&#34;product&#34;</span>&gt;<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/product-button&gt;</span>
+    &lt;/<span style="color:#f92672">div</span>&gt;
+  &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">template</span>&gt;
+
+&lt;<span style="color:#f92672">style</span>&gt;
+.<span style="color:#a6e22e">product</span> {
+  <span style="color:#a6e22e">border</span><span style="color:#f92672">-</span><span style="color:#a6e22e">bottom</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span><span style="color:#a6e22e">px</span> <span style="color:#a6e22e">solid</span> <span style="color:#a6e22e">black</span>;
+}
+
+.<span style="color:#a6e22e">product__image</span> {
+  <span style="color:#a6e22e">width</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">100</span><span style="color:#a6e22e">px</span>;
+  <span style="color:#a6e22e">height</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">100</span><span style="color:#a6e22e">px</span>;
+}
+&lt;/<span style="color:#f92672">style</span>&gt;
+</code></pre></div><p>可以發現我們使用了之前學過的 <code>vue-router</code> 中的 <code>router-link</code> 方法跳轉到指定編號的商品頁面</p>
+<h1 id="在-productlist-中使用-getters">在 ProductList 中使用 Getters</h1>
+<p>而原先商品列表組件（<code>src/components/products/ProductList.vue</code>）「取得所有商品」功能<br>
+也是直接操作 Vuex store 中的 state</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#a6e22e">computed</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">products</span>() {
+      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">products</span>;
+    }
+},
+</code></pre></div><p>在這邊我們也改用剛剛學到的 Getter 改寫成以下內容，使用指定的 getter：<code>allProducts</code> 取得所有商品資料</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">  <span style="color:#a6e22e">computed</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">products</span>() {
+      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">getters</span>.<span style="color:#a6e22e">allProducts</span>;
+    }
+  },
+</code></pre></div><h1 id="建立-detail-頁面組件">建立 Detail 頁面組件</h1>
+<p>現在子組件都完成了，只缺一個詳細商品頁面將組件拿來使用</p>
+<p>建立 <code>src/views/Detail.vue</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+  &lt;<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">product-detail</span> <span style="color:#f92672">:product</span><span style="color:#e6db74">=&#34;product&#34;</span>&gt;<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/product-detail&gt;</span>
+  &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">template</span>&gt;
+
+&lt;<span style="color:#f92672">script</span>&gt;
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ProductDetail</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@/components/products/ProductDetail.vue&#34;</span>;
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+  <span style="color:#a6e22e">created</span>() {
+    <span style="color:#75715e">// 如果使用者儲存的狀態中不存在此商品，則從後端取得商品資訊
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">name</span> } <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">product</span>;
+    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">name</span>) {
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#e6db74">&#34;productById&#34;</span>, {
+        <span style="color:#a6e22e">productId</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$route</span>.<span style="color:#a6e22e">params</span>[<span style="color:#e6db74">&#34;id&#34;</span>]
+      });
+    }
+  },
+  <span style="color:#a6e22e">computed</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">product</span>() {
+      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">getters</span>.<span style="color:#a6e22e">productById</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$route</span>.<span style="color:#a6e22e">params</span>[<span style="color:#e6db74">&#34;id&#34;</span>]);
+    }
+  },
+  <span style="color:#a6e22e">components</span><span style="color:#f92672">:</span> {
+    <span style="color:#e6db74">&#34;product-detail&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ProductDetail</span>
+  }
+};
+&lt;/<span style="color:#f92672">script</span>&gt;
+</code></pre></div><p>引入了 <code>ProductDetail</code> 組件，並且在生命週期中頁面建立「created()」時檢查使用者端是否有指定商品的資料<br>
+沒有則使用異步方法呼叫 Vuex action 取得資訊，並透過 <code>mutation</code> 修改狀態</p>
+<p>其中的 <code>computed</code> 屬性用於取得狀態管理中的指定商品<br>
+而其中的 id 參數透過 <code>this.$route.params['id']</code> 取得路由中的產品編號，傳入指定的 getter 取得指定商品資料</p>
+<h1 id="設定-detail-頁面路由">設定 Detail 頁面路由</h1>
+<p>剛剛提到會使用路由傳入的產品編號來查詢產品資料，有沒有想起什麼事情？</p>
+<p>打開 vue-router 的設定檔 <code>src/router/index.js</code> 引入 Detail 頁面</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Detail</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@/views/Detail&#39;</span>;
+</code></pre></div><p>在路由規則中加入 Detail 頁面設定值</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">  {
+    <span style="color:#a6e22e">path</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;/detail/:id&#39;</span>,
+    <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Detail&#39;</span>,
+    <span style="color:#a6e22e">component</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Detail</span>,
+  },
+</code></pre></div><h2 id="成果">成果</h2>
+<p>打開專案頁面，可以在商品列表發現所有商品現在都有了超連結<br>
+點擊超連結之後會進入商品詳細頁面，而顯示的就是該商品的詳細資料</p>
+<hr>
+<p>專案範例程式碼 GitHub 網址：<a href="https://github.com/ray247k/mini-E-commerce">ray247k/mini-E-commerce</a></p>
+
+      
+      
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/ray247k/button?referrer=https%3a%2f%2ftech.ray247k.com%2fblog%2f202010-express-vue-build-ecommerce-15-use-vuex-getters%2f" width="100%" frameborder=0></iframe>
+
+    </div>
+    <footer>
+      <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/node.js/">node.js</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/vue/">vue</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/node.js/">node.js</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/vuex/">vuex</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/getter/">getter</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+    </footer>
+  </article>
+  
+    
+
+  
+  <div class="pagination">
+    
+      <a href="/blog/202010-express-vue-build-ecommerce-16-refactor-vue-store/" class="button left"><span>[Express&#43;Vue 搭建電商網站] 16 抽離 Vuex store 中的邏輯</span></a>
+    
+    
+      <a href="/blog/202010-express-vue-build-ecommerce-14-refactor-component/" class="button right"><span>[Express&#43;Vue 搭建電商網站] 14 使用組件思維重構頁面邏輯</span></a>
+    
+  </div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>最新文章</h1>
+      </header>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202104-use-ssh-key-login-remote-server/">設定 ssh 金鑰登入遠端主機</a></h2>
+          <time class="published" datetime="2021-04-25 00:00:00 &#43;0000 UTC">2021/04/25</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202103-enable-docker-service-in-remote-server/">雲端主機啟動 Docker 服務</a></h2>
+          <time class="published" datetime="2021-03-13 00:00:00 &#43;0000 UTC">2021/03/13</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202103-build-postgresql-database-useing-docker/">PostgreSQL 資料庫建置 - 使用 Docker</a></h2>
+          <time class="published" datetime="2021-03-03 00:00:00 &#43;0000 UTC">2021/03/03</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202102-reverse-proxy-in-docker-service/">反向代理 - 在 Docker 環境建置</a></h2>
+          <time class="published" datetime="2021-02-27 00:00:00 &#43;0000 UTC">2021/02/27</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202102-laravel-environment-basic-settings/">Laravel 執行環境建置</a></h2>
+          <time class="published" datetime="2021-02-25 00:00:00 &#43;0000 UTC">2021/02/25</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202102-ngrok-share-your-local-development-site/">Ngrok 讓 localhost 可以被外部連線</a></h2>
+          <time class="published" datetime="2021-02-14 00:00:00 &#43;0000 UTC">2021/02/14</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202101-portainer-open-source-container-management-gui/">Portainer - 視覺化管理 Docker 的工具</a></h2>
+          <time class="published" datetime="2021-01-16 00:00:00 &#43;0000 UTC">2021/01/16</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/blog/" class="button">查看更多</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="/categories">category</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/categories/node.js/">node.js<span class="count">22</span></a>
+          
+          <li>
+              <a href="/categories/devops/">devops<span class="count">9</span></a>
+          
+          <li>
+              <a href="/categories/laravel/">laravel<span class="count">1</span></a>
+          
+          </li>
+        </ul>
+      </section>
+    
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+    
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script><script src="/js/bundle.min.ccb4e6bb4674f9a0e2b6ce56bb0cddea093526d4bc032314766519cdfec730b1.js" integrity="sha256-zLTmu0Z0&#43;aDits5Wuwzd6gk1JtS8AyMUdmUZzf7HMLE="></script>
+    <script src="/js/add-on.js"></script>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-LTGVYYWC2J', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </div>
+  </body>
+</html>

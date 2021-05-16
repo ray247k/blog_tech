@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>axios on 薛丁格的工程師</title>
+    <link>https://tech.ray247k.com/tags/axios/</link>
+    <description>Recent content in axios on 薛丁格的工程師</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-TW</language>
+    <lastBuildDate>Sat, 26 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/axios/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Express&#43;Vue 搭建電商網站] 13 使用 Axios 取得 API 資料</title>
+      <link>https://tech.ray247k.com/blog/202009-express-vue-build-ecommerce-13-how-to-use-axios/</link>
+      <pubDate>Sat, 26 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://tech.ray247k.com/blog/202009-express-vue-build-ecommerce-13-how-to-use-axios/</guid>
+      <description>&lt;p&gt;使用 Axios 取得後端 API 的資料&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

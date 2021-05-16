@@ -6,7 +6,17 @@
     <description>Recent content in component on 薛丁格的工程師</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Fri, 04 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/component/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 03 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/component/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Express&#43;Vue 搭建電商網站] 14 使用組件思維重構頁面邏輯</title>
+      <link>https://tech.ray247k.com/blog/202010-express-vue-build-ecommerce-14-refactor-component/</link>
+      <pubDate>Sat, 03 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://tech.ray247k.com/blog/202010-express-vue-build-ecommerce-14-refactor-component/</guid>
+      <description>&lt;p&gt;在先前我們學會怎麼使用 Vuex 進行狀態管理、如何使用 Action 取得 API 資料，以及使用 Mutation 更改狀態&lt;br&gt;
+而這一篇中將透過 Vue 的組件化思維簡化原本複雜且分散於各個頁面的邏輯&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 10 用 vue 建立一個表單</title>
       <link>https://tech.ray247k.com/blog/202009-express-vue-build-ecommerce-10-new-product-page/</link>

@@ -73,7 +73,7 @@
     "url": "https:\/\/tech.ray247k.com",
     "description": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - devops,laravel,node.js,",
     "keywords": [
-        "aws,component,composer,containerization,cors,devops,docker,docker-compose,express,gcp,laravel,linux,mongodb,mutation,nginx,ngrok,node.js,php,portainer,postgresql,proxy,restful,ssh,vue,vue-router,vue-ui,vuex,容器技術,"
+        "aws,axios,component,composer,containerization,cors,devops,docker,docker-compose,element-ui,express,gcp,getter,laravel,linux,mongodb,mutation,nginx,ngrok,node.js,php,portainer,postgresql,proxy,restful,ssh,vue,vue-router,vue-ui,vuex,容器技術,"
     ]
 }
 </script>
@@ -200,14 +200,14 @@
   <header>
   <div class="title">
     
-      <h2><a href="/blog/202009-express-vue-build-ecommerce-12-vuex-mutation/">[Express&#43;Vue 搭建電商網站] 12 在 Vuex 使用 Mutation 管理狀態</a></h2>
+      <h2><a href="/blog/202012-express-vue-build-ecommerce-22-docker-containerized/">[Express&#43;Vue 搭建電商網站] 22 使用 Docker 將專案容器化</a></h2>
     
     
-      <p>使用 Express &#43; Vue 搭建一個電商網站 - 在 Vuex 使用 Mutation 管理狀態</p>
+      <p>使用 Express &#43; Vue 搭建一個電商網站 - 使用 Docker 將專案容器化</p>
     
   </div>
   <div class="meta">
-    <time datetime="2020-09-18 00:00:00 &#43;0000 UTC">2020/09/18</time>
+    <time datetime="2020-12-03 00:00:00 &#43;0000 UTC">2020/12/03</time>
     <p>Ray</p>
     
   </div>
@@ -216,10 +216,284 @@
   <div class="content">
     
     
-    <p>透過 Mutation 管理 Vuex中的狀態</p>
+    <p>接著我們會把整個專案使用 <a href="https://www.docker.com/">Docker</a> 來將服務容器化，也會在 MongoDB 設定身份驗證機制<br>
+如果對 Docker 不熟的話必須先去了解，才有辦法進行<br>
+或是直接跳過這個章節 <del>交給熱心的攤主處理</del></p>
   </div>
   <footer>
-    <a href="/blog/202009-express-vue-build-ecommerce-12-vuex-mutation/" class="button big">閱讀全文</a>
+    <a href="/blog/202012-express-vue-build-ecommerce-22-docker-containerized/" class="button big">閱讀全文</a>
+    <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/node.js/">node.js</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/vue/">vue</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/node.js/">node.js</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/element-ui/">element-ui</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+  </footer>
+</article>
+
+  
+    <article class="post">
+  <header>
+  <div class="title">
+    
+      <h2><a href="/blog/202011-express-vue-build-ecommerce-21-elemen-ui-loading-animation/">[Express&#43;Vue 搭建電商網站] 21 使用 Element UI 加入載入過動畫</a></h2>
+    
+    
+      <p>使用 Express &#43; Vue 搭建一個電商網站 - 套用 Element UI 加入載入動畫</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2020-11-27 00:00:00 &#43;0000 UTC">2020/11/27</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+  <div class="content">
+    
+    
+    <p>等待的時候很無聊，所以我們加點動畫<br>
+基本的動畫是用來告訴使用者動作執行結果，做到這樣使用者才知道自己剛剛做的事情有沒有完成</p>
+  </div>
+  <footer>
+    <a href="/blog/202011-express-vue-build-ecommerce-21-elemen-ui-loading-animation/" class="button big">閱讀全文</a>
+    <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/node.js/">node.js</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/vue/">vue</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/node.js/">node.js</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/element-ui/">element-ui</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+  </footer>
+</article>
+
+  
+    <article class="post">
+  <header>
+  <div class="title">
+    
+      <h2><a href="/blog/202011-express-vue-build-ecommerce-20-element-ui-fix-function/">[Express&#43;Vue 搭建電商網站] 20 重構後的頁面功能恢復</a></h2>
+    
+    
+      <p>使用 Express &#43; Vue 搭建一個電商網站 - 重構後的頁面功能恢復</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2020-11-20 00:00:00 &#43;0000 UTC">2020/11/20</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+  <div class="content">
+    
+    
+    <p>要是你跟老闆說：<strong>現在我們專案的畫面好看了，但是功能全壞了</strong><br>
+老闆應該會一臉問號問你在講什麼？<br>
+廢話不多說，趕快來修好上一篇中被我們弄壞的功能！</p>
+  </div>
+  <footer>
+    <a href="/blog/202011-express-vue-build-ecommerce-20-element-ui-fix-function/" class="button big">閱讀全文</a>
+    <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/node.js/">node.js</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/vue/">vue</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/node.js/">node.js</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/element-ui/">element-ui</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+  </footer>
+</article>
+
+  
+    <article class="post">
+  <header>
+  <div class="title">
+    
+      <h2><a href="/blog/202011-express-vue-build-ecommerce-19-elemen-ui-refactor-page/">[Express&#43;Vue 搭建電商網站] 19 使用 Element UI 重構畫面</a></h2>
+    
+    
+      <p>使用 Express &#43; Vue 搭建一個電商網站 - 套用 Element UI 到頁面上</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2020-11-13 00:00:00 &#43;0000 UTC">2020/11/13</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+  <div class="content">
+    
+    
+    <p>重構可能會造成一些功能癱瘓，本章先著重在畫面，讓畫面變美美噠<br>
+後續的文章會把功能修復，莫急莫慌莫害怕</p>
+  </div>
+  <footer>
+    <a href="/blog/202011-express-vue-build-ecommerce-19-elemen-ui-refactor-page/" class="button big">閱讀全文</a>
+    <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/node.js/">node.js</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/vue/">vue</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/node.js/">node.js</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/element-ui/">element-ui</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+  </footer>
+</article>
+
+  
+    <article class="post">
+  <header>
+  <div class="title">
+    
+      <h2><a href="/blog/202011-express-vue-build-ecommerce-18-element-ui-product-list/">[Express&#43;Vue 搭建電商網站] 18 套用 Element UI 到頁面上</a></h2>
+    
+    
+      <p>使用 Express &#43; Vue 搭建一個電商網站 - 套用 Element UI 到頁面上</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2020-11-06 00:00:00 &#43;0000 UTC">2020/11/06</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+  <div class="content">
+    
+    
+    <p>先前我們已經把電商的基本功能完成了，只是畫面有點差強人意。<br>
+在這一節中我們使用 <code>Element UI</code> 來讓畫面更加美觀</p>
+  </div>
+  <footer>
+    <a href="/blog/202011-express-vue-build-ecommerce-18-element-ui-product-list/" class="button big">閱讀全文</a>
+    <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/node.js/">node.js</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/vue/">vue</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/node.js/">node.js</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/element-ui/">element-ui</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+  </footer>
+</article>
+
+  
+    <article class="post">
+  <header>
+  <div class="title">
+    
+      <h2><a href="/blog/202010-express-vue-build-ecommerce-17-use-const-instead-of-variable/">[Express&#43;Vue 搭建電商網站] 17 使用常數管理變數</a></h2>
+    
+    
+      <p>使用 Express &#43; Vue 搭建一個電商網站 - 使用常數管理變數</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2020-10-24 00:00:00 &#43;0000 UTC">2020/10/24</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+  <div class="content">
+    
+    
+    <p>很多時候我們會把功能封裝到組件內，以便重複使用組件，而在組件內我們會定義很多方法名稱去呼叫不同的事件<br>
+這中間只要有一個字打錯，整個流程就會錯誤，並且非常難除錯，因此我們會使用常數維持一致<br>
+打錯字的時候就會報錯，方便除錯</p>
+  </div>
+  <footer>
+    <a href="/blog/202010-express-vue-build-ecommerce-17-use-const-instead-of-variable/" class="button big">閱讀全文</a>
     <div class="stats">
   
     <ul class="categories">
@@ -255,14 +529,14 @@
   <header>
   <div class="title">
     
-      <h2><a href="/blog/202009-express-vue-build-ecommerce-11-install_vuex/">[Express&#43;Vue 搭建電商網站] 11 認識 vuex</a></h2>
+      <h2><a href="/blog/202010-express-vue-build-ecommerce-16-refactor-vue-store/">[Express&#43;Vue 搭建電商網站] 16 抽離 Vuex store 中的邏輯</a></h2>
     
     
-      <p>使用 Express &#43; Vue 搭建一個電商網站 - 認識 vuex</p>
+      <p>使用 Express &#43; Vue 搭建一個電商網站 - 抽離 Vuex store 中的邏輯</p>
     
   </div>
   <div class="meta">
-    <time datetime="2020-09-12 00:00:00 &#43;0000 UTC">2020/09/12</time>
+    <time datetime="2020-10-16 00:00:00 &#43;0000 UTC">2020/10/16</time>
     <p>Ray</p>
     
   </div>
@@ -271,12 +545,12 @@
   <div class="content">
     
     
-    <p><a href="https://vuex.vuejs.org/zh/">vuex</a> 來協助我們集中管理組件狀態，就不用到處維護狀態<br>
-使得組件只需要專注於渲染頁面，而前端狀態都保留在 vuex 中建立的狀態庫中<br>
-所謂狀態庫，其實也就是一個 Javascript 物件</p>
+    <p>隨著我們的迷你電商網站越來越完整，在 Vuex store 中的程式也越來越龐大<br>
+不只有 getters、mutation 還有 actions<br>
+在章節中先試著將這些複雜的邏輯拆分成個別的檔案，抽出 Getters、Mutations 和 Actions 邏輯</p>
   </div>
   <footer>
-    <a href="/blog/202009-express-vue-build-ecommerce-11-install_vuex/" class="button big">閱讀全文</a>
+    <a href="/blog/202010-express-vue-build-ecommerce-16-refactor-vue-store/" class="button big">閱讀全文</a>
     <div class="stats">
   
     <ul class="categories">
@@ -297,174 +571,9 @@
         
           <li><a class="article-terms-link" href="/tags/vuex/">vuex</a></li>
         
-      
-    </ul>
-  
-</div>
-
-  </footer>
-</article>
-
-  
-    <article class="post">
-  <header>
-  <div class="title">
-    
-      <h2><a href="/blog/202009-express-vue-build-ecommerce-10-new-product-page/">[Express&#43;Vue 搭建電商網站] 10 用 vue 建立一個表單</a></h2>
-    
-    
-      <p>使用 Express &#43; Vue 搭建一個電商網站 - 用 vue 建立一個表單</p>
-    
-  </div>
-  <div class="meta">
-    <time datetime="2020-09-04 00:00:00 &#43;0000 UTC">2020/09/04</time>
-    <p>Ray</p>
-    
-  </div>
-</header>
-
-  <div class="content">
-    
-    
-    <p>後端的 API 上次已經開了出來，接著來建立前端使用的表單<br>
-這次的目標是建立新增商品時所用的表單，會使用到基本的 Vue 知識，如果沒看過文件的可以先了解一下官方文件</p>
-  </div>
-  <footer>
-    <a href="/blog/202009-express-vue-build-ecommerce-10-new-product-page/" class="button big">閱讀全文</a>
-    <div class="stats">
-  
-    <ul class="categories">
-      
+          <li><a class="article-terms-link" href="/tags/mutation/">mutation</a></li>
         
-          <li><a class="article-terms-link" href="/categories/node.js/">node.js</a></li>
-        
-      
-    </ul>
-  
-  
-    <ul class="tags">
-      
-        
-          <li><a class="article-terms-link" href="/tags/vue/">vue</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/node.js/">node.js</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/component/">component</a></li>
-        
-      
-    </ul>
-  
-</div>
-
-  </footer>
-</article>
-
-  
-    <article class="post">
-  <header>
-  <div class="title">
-    
-      <h2><a href="/blog/202007-express-vue-build-ecommerce-02-vue-router/">[Express&#43;Vue 搭建電商網站] 02 - vue-router 的使用</a></h2>
-    
-    
-      <p>使用 Express &#43; Vue 搭建一個電商網站 - vue-router 的使用</p>
-    
-  </div>
-  <div class="meta">
-    <time datetime="2020-07-08 00:00:00 &#43;0000 UTC">2020/07/08</time>
-    <p>Ray</p>
-    
-  </div>
-</header>
-
-  <div class="content">
-    
-    
-    <p>在接下來的內容中會學習 vue-router 的使用方法與學習路由基礎知識<br>
-並使用 vue-router 來進行多個頁面的跳轉</p>
-  </div>
-  <footer>
-    <a href="/blog/202007-express-vue-build-ecommerce-02-vue-router/" class="button big">閱讀全文</a>
-    <div class="stats">
-  
-    <ul class="categories">
-      
-        
-          <li><a class="article-terms-link" href="/categories/node.js/">node.js</a></li>
-        
-      
-    </ul>
-  
-  
-    <ul class="tags">
-      
-        
-          <li><a class="article-terms-link" href="/tags/express/">express</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/vue/">vue</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/node.js/">node.js</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/vue-ui/">vue-ui</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/vue-router/">vue-router</a></li>
-        
-      
-    </ul>
-  
-</div>
-
-  </footer>
-</article>
-
-  
-    <article class="post">
-  <header>
-  <div class="title">
-    
-      <h2><a href="/blog/202006-express-vue-build-ecommerce-01-basic-settings/">[Express&#43;Vue 搭建電商網站] 01- 初始設定</a></h2>
-    
-    
-      <p>使用 Express &#43; Vue 搭建一個電商網站 - 初始設定</p>
-    
-  </div>
-  <div class="meta">
-    <time datetime="2020-06-25 00:00:00 &#43;0000 UTC">2020/06/25</time>
-    <p>Ray</p>
-    
-  </div>
-</header>
-
-  <div class="content">
-    
-    
-    <p>本篇將使用 vue-ui 建立專案，並且安裝 vue-router</p>
-  </div>
-  <footer>
-    <a href="/blog/202006-express-vue-build-ecommerce-01-basic-settings/" class="button big">閱讀全文</a>
-    <div class="stats">
-  
-    <ul class="categories">
-      
-        
-          <li><a class="article-terms-link" href="/categories/node.js/">node.js</a></li>
-        
-      
-    </ul>
-  
-  
-    <ul class="tags">
-      
-        
-          <li><a class="article-terms-link" href="/tags/express/">express</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/vue/">vue</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/node.js/">node.js</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/vue-ui/">vue-ui</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/vue-router/">vue-router</a></li>
+          <li><a class="article-terms-link" href="/tags/getter/">getter</a></li>
         
       
     </ul>
@@ -477,6 +586,8 @@
   
   <div class="pagination">
     
+    
+      <a href="/tags/vue/page/2/" class="button right"><span>下一頁</span></a>
     
   </div>
 
@@ -563,7 +674,7 @@
           
           
           <li>
-              <a href="/categories/node.js/">node.js<span class="count">12</span></a>
+              <a href="/categories/node.js/">node.js<span class="count">22</span></a>
           
           <li>
               <a href="/categories/devops/">devops<span class="count">9</span></a>

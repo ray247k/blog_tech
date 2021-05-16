@@ -1,0 +1,706 @@
+<!doctype html>
+<html lang="zh-tw">
+  <head>
+  <meta charset="utf-8">
+<title>node.js - 薛丁格的工程師</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
+  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
+  
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=1" color="#ffffff">
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=1">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=1">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+<meta name="generator" content="Hugo 0.83.1" /><meta property="og:site_name" content="薛丁格的工程師">
+  <meta property="og:title" content="node.js">
+  <meta property="og:description" content="薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識">
+  <meta property="description" content="薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識">
+  <meta property="og:url" content="https://tech.ray247k.com/tags/node.js/">
+  <meta property="og:type" content="article">
+  
+    <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.jpg">
+  
+  <link rel="stylesheet" href="/css/bundle.min.6ad9eb85bff384c75937a02036b01425a2ca63f19a96535b8ba5b181db62a4b3.css" integrity="sha256-atnrhb/zhMdZN6AgNrAUJaLKY/GallNbi6WxgdtipLM="><link rel="stylesheet" href="/css/add-on.css">
+
+  
+
+
+    
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-LTGVYYWC2J');
+        </script>
+    
+
+
+  <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "image": {
+        "@type": "ImageObject",
+        "image": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+        "height": 648,
+        "width": 1080
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "薛丁格的工程師",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg"
+        }
+    },
+    "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+    "headline": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - Schrödinger\u0027s Programmer",
+    "name": "薛丁格的工程師",
+    "url": "https:\/\/tech.ray247k.com",
+    "description": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - devops,laravel,node.js,",
+    "keywords": [
+        "aws,axios,component,composer,containerization,cors,devops,docker,docker-compose,element-ui,express,gcp,getter,laravel,linux,mongodb,mutation,nginx,ngrok,node.js,php,portainer,postgresql,proxy,restful,ssh,vue,vue-router,vue-ui,vuex,容器技術,"
+    ]
+}
+</script>
+
+
+
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/" class="nav">
+        
+          Tag
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/" class="nav link"><i class='fa fa-home'></i> home</a>
+        
+      
+        
+          
+          <a href="/about/" class="nav link"><i class='far fa-id-card'></i> about</a>
+        
+      
+        
+          
+          <a href="/tags/" class="nav link"><i class='fas fa-tag'></i> tag</a>
+        
+      
+        
+          
+          <a href="/categories/" class="nav link"><i class='fas fa-sitemap'></i> category</a>
+        
+      
+      
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    
+    
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/"><img src="https://tech.ray247k.com/img/main/logo.jpg" class="circle" width="100" alt="一隻箱子裡的貓，看著電腦螢幕" /></a>
+  <header>
+    <h1>Schrödinger's Programmer</h1>
+  </header>
+  <main>
+    <p>奔跑吧工程師，趁年輕跑得越遠越好</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+    <li><a href="/tags/node.js/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fas fa-rss"></a></li>
+
+
+        <li><a href="//github.com/ray247k" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+<li><a href="//gitlab.com/ray247k" target="_blank" rel="noopener" title="GitLab" class="fab fa-gitlab"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:ray247k@gmail.com" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  
+  
+    <article class="post">
+  <header>
+  <div class="title">
+    
+      <h2><a href="/blog/202008-express-vue-build-ecommerce-08-build-api/">[Express&#43;Vue 搭建電商網站] 08 API 建立</a></h2>
+    
+    
+      <p>使用 Express &#43; Vue 搭建一個電商網站 - API 建立</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2020-08-21 00:00:00 &#43;0000 UTC">2020/08/21</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+  <div class="content">
+    
+    
+    <p>在上一篇中建立了 Router，這一篇要做的就是將 Controller 完成，如此就完成了第一個 API</p>
+  </div>
+  <footer>
+    <a href="/blog/202008-express-vue-build-ecommerce-08-build-api/" class="button big">閱讀全文</a>
+    <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/node.js/">node.js</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/express/">express</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/node.js/">node.js</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/restful/">RESTful</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+  </footer>
+</article>
+
+  
+    <article class="post">
+  <header>
+  <div class="title">
+    
+      <h2><a href="/blog/202008-express-vue-build-ecommerce-07-api-routes/">[Express&#43;Vue 搭建電商網站] 07 API 路由建立</a></h2>
+    
+    
+      <p>使用 Express &#43; Vue 搭建一個電商網站 - API 路由建立</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2020-08-11 00:00:00 &#43;0000 UTC">2020/08/11</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+  <div class="content">
+    
+    
+    <p>在上一篇中建立了 Model，這一篇要做的就是將路由完成，讓請求可以送到指定的 Controller</p>
+  </div>
+  <footer>
+    <a href="/blog/202008-express-vue-build-ecommerce-07-api-routes/" class="button big">閱讀全文</a>
+    <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/node.js/">node.js</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/express/">express</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/node.js/">node.js</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/restful/">RESTful</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+  </footer>
+</article>
+
+  
+    <article class="post">
+  <header>
+  <div class="title">
+    
+      <h2><a href="/blog/202008-express-vue-build-ecommerce-06-db-schemas-and-models/">[Express&#43;Vue 搭建電商網站] 06 - 資料庫設計</a></h2>
+    
+    
+      <p>使用 Express &#43; Vue 搭建一個電商網站 - 資料庫設計</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2020-08-07 00:00:00 &#43;0000 UTC">2020/08/07</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+  <div class="content">
+    
+    
+    <p>先前我們安裝好了 mongoDB 以及開啟了 CORS，這一篇要來建立資料庫架構以及 MVC 架構中的 Model 部分</p>
+  </div>
+  <footer>
+    <a href="/blog/202008-express-vue-build-ecommerce-06-db-schemas-and-models/" class="button big">閱讀全文</a>
+    <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/node.js/">node.js</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/express/">express</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/node.js/">node.js</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/mongodb/">MongoDB</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+  </footer>
+</article>
+
+  
+    <article class="post">
+  <header>
+  <div class="title">
+    
+      <h2><a href="/blog/202007-express-vue-build-ecommerce-05-mongodb-connect-and-cors/">[Express&#43;Vue 搭建電商網站] 05 - 連接 MongoDB 與 CORS</a></h2>
+    
+    
+      <p>使用 Express &#43; Vue 搭建一個電商網站 - 連接 MongoDB 與 CORS</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2020-07-30 00:00:00 &#43;0000 UTC">2020/07/30</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+  <div class="content">
+    
+    
+    <p>資料庫使用 MongoDB，這篇中我們會簡單介紹基本連線方式，以及跨來源資源共(CORS)</p>
+  </div>
+  <footer>
+    <a href="/blog/202007-express-vue-build-ecommerce-05-mongodb-connect-and-cors/" class="button big">閱讀全文</a>
+    <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/node.js/">node.js</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/express/">express</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/node.js/">node.js</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/mongodb/">MongoDB</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/cors/">CORS</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+  </footer>
+</article>
+
+  
+    <article class="post">
+  <header>
+  <div class="title">
+    
+      <h2><a href="/blog/202007-express-vue-build-ecommerce-04-hello-mongodb/">[Express&#43;Vue 搭建電商網站] 04 - 進入 MongoDB 的世界</a></h2>
+    
+    
+      <p>使用 Express &#43; Vue 搭建一個電商網站 - 進入 MongoDB 的世界</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2020-07-23 00:00:00 &#43;0000 UTC">2020/07/23</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+  <div class="content">
+    
+    
+    <p>資料庫使用 MongoDB，這篇中我們會簡單介紹基本指令及安裝。</p>
+  </div>
+  <footer>
+    <a href="/blog/202007-express-vue-build-ecommerce-04-hello-mongodb/" class="button big">閱讀全文</a>
+    <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/node.js/">node.js</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/express/">express</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/node.js/">node.js</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/mongodb/">MongoDB</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+  </footer>
+</article>
+
+  
+    <article class="post">
+  <header>
+  <div class="title">
+    
+      <h2><a href="/blog/202007-express-vue-build-ecommerce-03-hello-express/">[Express&#43;Vue 搭建電商網站] 03 - 認識 Express</a></h2>
+    
+    
+      <p>使用 Express &#43; Vue 搭建一個電商網站 - 認識 Express</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2020-07-17 00:00:00 &#43;0000 UTC">2020/07/17</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+  <div class="content">
+    
+    
+    <p>後端使用的是 node.js 的後端框架 - express，這篇中我們會建立新專案。</p>
+  </div>
+  <footer>
+    <a href="/blog/202007-express-vue-build-ecommerce-03-hello-express/" class="button big">閱讀全文</a>
+    <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/node.js/">node.js</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/express/">express</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/node.js/">node.js</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+  </footer>
+</article>
+
+  
+    <article class="post">
+  <header>
+  <div class="title">
+    
+      <h2><a href="/blog/202007-express-vue-build-ecommerce-02-vue-router/">[Express&#43;Vue 搭建電商網站] 02 - vue-router 的使用</a></h2>
+    
+    
+      <p>使用 Express &#43; Vue 搭建一個電商網站 - vue-router 的使用</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2020-07-08 00:00:00 &#43;0000 UTC">2020/07/08</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+  <div class="content">
+    
+    
+    <p>在接下來的內容中會學習 vue-router 的使用方法與學習路由基礎知識<br>
+並使用 vue-router 來進行多個頁面的跳轉</p>
+  </div>
+  <footer>
+    <a href="/blog/202007-express-vue-build-ecommerce-02-vue-router/" class="button big">閱讀全文</a>
+    <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/node.js/">node.js</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/express/">express</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/vue/">vue</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/node.js/">node.js</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/vue-ui/">vue-ui</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/vue-router/">vue-router</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+  </footer>
+</article>
+
+  
+  <div class="pagination">
+    
+      <a href="/tags/node.js/page/2/" class="button left"><span>上一頁</span></a>
+    
+    
+      <a href="/tags/node.js/page/4/" class="button right"><span>下一頁</span></a>
+    
+  </div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>最新文章</h1>
+      </header>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202104-use-ssh-key-login-remote-server/">設定 ssh 金鑰登入遠端主機</a></h2>
+          <time class="published" datetime="2021-04-25 00:00:00 &#43;0000 UTC">2021/04/25</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202103-enable-docker-service-in-remote-server/">雲端主機啟動 Docker 服務</a></h2>
+          <time class="published" datetime="2021-03-13 00:00:00 &#43;0000 UTC">2021/03/13</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202103-build-postgresql-database-useing-docker/">PostgreSQL 資料庫建置 - 使用 Docker</a></h2>
+          <time class="published" datetime="2021-03-03 00:00:00 &#43;0000 UTC">2021/03/03</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202102-reverse-proxy-in-docker-service/">反向代理 - 在 Docker 環境建置</a></h2>
+          <time class="published" datetime="2021-02-27 00:00:00 &#43;0000 UTC">2021/02/27</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202102-laravel-environment-basic-settings/">Laravel 執行環境建置</a></h2>
+          <time class="published" datetime="2021-02-25 00:00:00 &#43;0000 UTC">2021/02/25</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202102-ngrok-share-your-local-development-site/">Ngrok 讓 localhost 可以被外部連線</a></h2>
+          <time class="published" datetime="2021-02-14 00:00:00 &#43;0000 UTC">2021/02/14</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202101-portainer-open-source-container-management-gui/">Portainer - 視覺化管理 Docker 的工具</a></h2>
+          <time class="published" datetime="2021-01-16 00:00:00 &#43;0000 UTC">2021/01/16</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/blog/" class="button">查看更多</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="/categories">category</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/categories/node.js/">node.js<span class="count">22</span></a>
+          
+          <li>
+              <a href="/categories/devops/">devops<span class="count">9</span></a>
+          
+          <li>
+              <a href="/categories/laravel/">laravel<span class="count">1</span></a>
+          
+          </li>
+        </ul>
+      </section>
+    
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+    
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script><script src="/js/bundle.min.ccb4e6bb4674f9a0e2b6ce56bb0cddea093526d4bc032314766519cdfec730b1.js" integrity="sha256-zLTmu0Z0&#43;aDits5Wuwzd6gk1JtS8AyMUdmUZzf7HMLE="></script>
+    <script src="/js/add-on.js"></script>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-LTGVYYWC2J', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </div>
+  </body>
+</html>
