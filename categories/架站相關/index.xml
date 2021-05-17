@@ -6,7 +6,17 @@
     <description>Recent content in 架站相關 on 薛丁格的工程師</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Sat, 15 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 16 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>設定 Cloudflare 免費 CDN，並啟用 DNS 代管</title>
+      <link>https://tech.ray247k.com/blog/202105-cloudflare-dns-add-domain/</link>
+      <pubDate>Sun, 16 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://tech.ray247k.com/blog/202105-cloudflare-dns-add-domain/</guid>
+      <description>&lt;p&gt;Google Domains 服務原本就有網域名稱伺服器(Domain Name System, DNS)服務&lt;br&gt;
+透過 DNS 可以管理你的域名，加子網域什麼的&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>如何從 Google Domains 購買屬於自己的網址</title>
       <link>https://tech.ray247k.com/blog/202105-how-to-buy-a-domain-from-google/</link>

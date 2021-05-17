@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cloudflare on 薛丁格的工程師</title>
+    <link>https://tech.ray247k.com/tags/cloudflare/</link>
+    <description>Recent content in Cloudflare on 薛丁格的工程師</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-TW</language>
+    <lastBuildDate>Sun, 16 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/cloudflare/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>設定 Cloudflare 免費 CDN，並啟用 DNS 代管</title>
+      <link>https://tech.ray247k.com/blog/202105-cloudflare-dns-add-domain/</link>
+      <pubDate>Sun, 16 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://tech.ray247k.com/blog/202105-cloudflare-dns-add-domain/</guid>
+      <description>&lt;p&gt;Google Domains 服務原本就有網域名稱伺服器(Domain Name System, DNS)服務&lt;br&gt;
+透過 DNS 可以管理你的域名，加子網域什麼的&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
