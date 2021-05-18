@@ -6,7 +6,19 @@
     <description>Recent content in 架站相關 on 薛丁格的工程師</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Sun, 16 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 18 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>透過 Cloudflare 設定子網域，並客製 GitHub Page 網址</title>
+      <link>https://tech.ray247k.com/blog/202105-set-custom-domain-for-github-page/</link>
+      <pubDate>Tue, 18 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://tech.ray247k.com/blog/202105-set-custom-domain-for-github-page/</guid>
+      <description>&lt;p&gt;之前已經買好了自己的網址，接著要利用 Cloudflare DNS 服務建立子網域&lt;br&gt;
+並且設定給指定的 GitHub Page 專案作為客製網址&lt;br&gt;
+學會這項技能之後，只要有一組主要網址，就可以根據需求產生不同的子網域網址&lt;br&gt;
+各家 DNS 服務提供商都有這個功能，本篇以 Cloudflare 為例&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>設定 Cloudflare 免費 CDN，並啟用 DNS 代管</title>
       <link>https://tech.ray247k.com/blog/202105-cloudflare-dns-add-domain/</link>

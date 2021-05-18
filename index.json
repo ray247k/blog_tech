@@ -1,4 +1,10 @@
 [{
+    "title": "透過 Cloudflare 設定子網域，並客製 GitHub Page 網址",
+    "date": "",
+    "description": "購買網址後可設定子網域給不同網站使用，本篇以 Cloudflare + GitHub Page 靜態網站為例",
+    "body": "之前已經買好了自己的網址，接著要利用 Cloudflare DNS 服務建立子網域\n並且設定給指定的 GitHub Page 專案作為客製網址\n學會這項技能之後，只要有一組主要網址，就可以根據需求產生不同的子網域網址\n各家 DNS 服務提供商都有這個功能，本篇以 Cloudflare 為例\n 1. 設定子網域 前往 cloudflare 管理後台，點選 DNS 頁籤\n建立 DNS 紀錄，選擇類型是 CNAME，並指向自己的網域\n2. 設定 GitHub Page CNAME 在靜態網站的根目錄下建立一個檔名為 CNAME 的檔案，並上傳至 GitHub\n內容為子域名的完整網址，像我就是 tech.ray247k.com\n3. 設定 GitHub Page 網址 前往專案 Settings \u0026gt; Pages 頁籤中 Custom domain 區塊\n貼上剛剛在 cloudflare DNS 加入且上傳到專案 CNAME 檔案中的完整網址\n如此就完成了在 cloudflare 建立子網域，並自訂 GitHub Page 的網址\n",
+    "ref": "/blog/202105-set-custom-domain-for-github-page/"
+  },{
     "title": "設定 Cloudflare 免費 CDN，並啟用 DNS 代管",
     "date": "",
     "description": "從 Google Domains 把 DNS 代管交給 Cloudflare 管理",

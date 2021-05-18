@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="zh-tw">
+  <head>
+  <meta charset="utf-8">
+<title>透過 Cloudflare 設定子網域，並客製 GitHub Page 網址 - 薛丁格的工程師</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
+  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
+  
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=1" color="#ffffff">
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=1">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=1">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+<meta name="generator" content="Hugo 0.83.1" /><meta property="og:site_name" content="薛丁格的工程師">
+  <meta property="og:title" content="透過 Cloudflare 設定子網域，並客製 GitHub Page 網址">
+  <meta property="og:description" content="購買網址後可設定子網域給不同網站使用，本篇以 Cloudflare &#43; GitHub Page 靜態網站為例">
+  <meta property="description" content="購買網址後可設定子網域給不同網站使用，本篇以 Cloudflare &#43; GitHub Page 靜態網站為例">
+  <meta property="og:url" content="https://tech.ray247k.com/blog/202105-set-custom-domain-for-github-page/">
+  <meta property="og:type" content="article">
+  
+    <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.jpg">
+  
+  <link rel="stylesheet" href="/css/bundle.min.6ad9eb85bff384c75937a02036b01425a2ca63f19a96535b8ba5b181db62a4b3.css" integrity="sha256-atnrhb/zhMdZN6AgNrAUJaLKY/GallNbi6WxgdtipLM="><link rel="stylesheet" href="/css/add-on.css">
+
+  
+
+
+    
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-LTGVYYWC2J');
+        </script>
+    
+
+
+  <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "image": {
+        "@type": "ImageObject",
+        "image": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+        "height": 648,
+        "width": 1080
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "薛丁格的工程師",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg"
+        }
+    },
+    "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+    "headline": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - Schrödinger\u0027s Programmer",
+    "name": "薛丁格的工程師",
+    "url": "https:\/\/tech.ray247k.com",
+    "description": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - devops,laravel,node.js,架站相關,",
+    "keywords": [
+        "aws,axios,cdn,cloudflare,component,composer,containerization,cors,devops,dns,docker,docker-compose,domain-name,element-ui,express,gcp,getter,github-page,google-domains,laravel,linux,mongodb,mutation,nginx,ngrok,node.js,php,portainer,postgresql,proxy,restful,ssh,subdomain,vue,vue-router,vue-ui,vuex,個人品牌,域名,子網域,容器技術,架站相關,買網址,"
+    ]
+}
+</script>
+
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "legalName": "薛丁格的工程師",
+    "url": "https:\/\/tech.ray247k.com",
+    "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "ray247k@gmail.com",
+        "availableLanguage": [
+            "Mandarin",
+            "English"
+        ]
+    },
+    "sameAs": [
+        "https://ray247k.blogspot.com/"
+    ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "透過 Cloudflare 設定子網域，並客製 GitHub Page 網址",
+    "description": "購買網址後可設定子網域給不同網站使用，本篇以 Cloudflare \u002b GitHub Page 靜態網站為例",
+    "keywords": [
+        "架站相關" , "Cloudflare" , "DNS" , "GitHub Page" , "subdomain" , "子網域" 
+    ],
+    "dateCreated": "2021-05-18T00:00:00.00Z",
+    "datePublished": "2021-05-18T00:00:00.00Z",
+    "dateModified": "2021-05-18T00:00:00.00Z",
+    "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "contentUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg"
+    },
+    "breadcrumb": {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com",
+                    "name": "薛丁格的工程師",
+                    "url": "https:\/\/tech.ray247k.com"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com/blog",
+                    "name": "Blog",
+                    "url": "https:\/\/tech.ray247k.com/blog"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\/blog\/202105-set-custom-domain-for-github-page\/",
+                    "name": "透過 Cloudflare 設定子網域，並客製 GitHub Page 網址",
+                    "url": "https:\/\/tech.ray247k.com\/blog\/202105-set-custom-domain-for-github-page\/"
+                }
+            }
+        ],
+        "itemListOrder": "Ascending",
+        "numberOfItems": 3
+    }
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "articleSection": "blog",
+    "name": "透過 Cloudflare 設定子網域，並客製 GitHub Page 網址",
+    "headline": "\u003cp\u003e之前已經買好了自己的網址，接著要利用 Cloudflare DNS 服務建立子網域\u003cbr\u003e\n並且設定給指定的 GitHub Page 專案作為客製網址\u003cbr\u003e\n學會這項技能之後，只要有一組主要網址，就可以根據需求產生不同的子網域網址\u003cbr\u003e\n各家 DNS 服務提供商都有這個功能，本篇以 Cloudflare 為例\u003c\/p\u003e",
+    "description": "購買網址後可設定子網域給不同網站使用，本篇以 Cloudflare \u002b GitHub Page 靜態網站為例",
+    "inLanguage": "zh-TW",
+    "isFamilyFriendly": "true",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com\/blog\/202105-set-custom-domain-for-github-page\/"
+    },
+    "author" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "creator" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "accountablePerson" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "copyrightHolder" : "薛丁格的工程師",
+    "copyrightYear" : "2021",
+    "dateCreated": "2021-05-18T00:00:00.00Z",
+    "datePublished": "2021-05-18T00:00:00.00Z",
+    "dateModified": "2021-05-18T00:00:00.00Z",
+    "publisher":{
+        "@type":"Organization",
+        "name": "薛丁格的工程師",
+        "url": "https://tech.ray247k.com",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+            "width":"32",
+            "height":"32"
+        }
+    },
+    "image": "https://tech.ray247k.com/img/main/logo.jpg",
+    "url" : "https:\/\/tech.ray247k.com\/blog\/202105-set-custom-domain-for-github-page\/",
+    "wordCount" : "61",
+    "genre" : [ "架站相關" , "Cloudflare" , "DNS" , "GitHub Page" , "subdomain" , "子網域" ],
+    "keywords" : [ "架站相關" , "Cloudflare" , "DNS" , "GitHub Page" , "subdomain" , "子網域" ]
+}
+</script>
+
+
+
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/" class="nav">
+        
+          Blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/" class="nav link"><i class='fa fa-home'></i> home</a>
+        
+      
+        
+          
+          <a href="/about/" class="nav link"><i class='far fa-id-card'></i> about</a>
+        
+      
+        
+          
+          <a href="/tags/" class="nav link"><i class='fas fa-tag'></i> tag</a>
+        
+      
+        
+          
+          <a href="/categories/" class="nav link"><i class='fas fa-sitemap'></i> category</a>
+        
+      
+      
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    
+    
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/"><img src="https://tech.ray247k.com/img/main/logo.jpg" class="circle" width="100" alt="一隻箱子裡的貓，看著電腦螢幕" /></a>
+  <header>
+    <h1>Schrödinger's Programmer</h1>
+  </header>
+  <main>
+    <p>奔跑吧工程師，趁年輕跑得越遠越好</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+
+        <li><a href="//github.com/ray247k" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+<li><a href="//gitlab.com/ray247k" target="_blank" rel="noopener" title="GitLab" class="fab fa-gitlab"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:ray247k@gmail.com" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="/blog/202105-set-custom-domain-for-github-page/">透過 Cloudflare 設定子網域，並客製 GitHub Page 網址</a></h2>
+    
+    
+      <p>購買網址後可設定子網域給不同網站使用，本篇以 Cloudflare &#43; GitHub Page 靜態網站為例</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2021-05-18 00:00:00 &#43;0000 UTC">2021/05/18</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+    <div id="socnet-share">
+      
+
+
+
+
+
+    </div>
+    <div class="content">
+      
+      <p>之前已經買好了自己的網址，接著要利用 Cloudflare DNS 服務建立子網域<br>
+並且設定給指定的 GitHub Page 專案作為客製網址<br>
+學會這項技能之後，只要有一組主要網址，就可以根據需求產生不同的子網域網址<br>
+各家 DNS 服務提供商都有這個功能，本篇以 Cloudflare 為例</p>
+<h1 id="heading"></h1>
+<h1 id="1-設定子網域">1. 設定子網域</h1>
+<p>前往 cloudflare 管理後台，點選 DNS 頁籤<br>
+建立 DNS 紀錄，選擇類型是 CNAME，並指向自己的網域</p>
+<p><img src="/img/blog/2021/05/set-custom-domain-for-github-page/cloudflare-dns-cname.png" alt="cloudflare-dns-cname"></p>
+<h1 id="2-設定-github-page-cname">2. 設定 GitHub Page CNAME</h1>
+<p>在靜態網站的根目錄下建立一個檔名為 <code>CNAME</code> 的檔案，並上傳至 GitHub<br>
+內容為子域名的完整網址，像我就是 <code>tech.ray247k.com</code></p>
+<p><img src="/img/blog/2021/05/set-custom-domain-for-github-page/github-cname.png" alt="github-cname"></p>
+<h1 id="3-設定-github-page-網址">3. 設定 GitHub Page 網址</h1>
+<p>前往專案 <code>Settings &gt; Pages</code> 頁籤中 <code>Custom domain</code> 區塊<br>
+貼上剛剛在 cloudflare DNS 加入且上傳到專案 CNAME 檔案中的完整網址</p>
+<p><img src="/img/blog/2021/05/set-custom-domain-for-github-page/github-page-custom-domain.png" alt="github-page-custom-domain"></p>
+<p>如此就完成了在 cloudflare 建立子網域，並自訂 GitHub Page 的網址</p>
+
+      
+      
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/ray247k/button?referrer=https%3a%2f%2ftech.ray247k.com%2fblog%2f202105-set-custom-domain-for-github-page%2f" width="100%" frameborder=0></iframe>
+
+    </div>
+    <footer>
+      <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/%e6%9e%b6%e7%ab%99%e7%9b%b8%e9%97%9c/">架站相關</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/%e6%9e%b6%e7%ab%99%e7%9b%b8%e9%97%9c/">架站相關</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/cloudflare/">Cloudflare</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/dns/">DNS</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/github-page/">GitHub Page</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/subdomain/">subdomain</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/%e5%ad%90%e7%b6%b2%e5%9f%9f/">子網域</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+    </footer>
+  </article>
+  
+    
+
+  
+  <div class="pagination">
+    
+    
+      <a href="/blog/202105-cloudflare-dns-add-domain/" class="button right"><span>設定 Cloudflare 免費 CDN，並啟用 DNS 代管</span></a>
+    
+  </div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>最新文章</h1>
+      </header>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202105-set-custom-domain-for-github-page/">透過 Cloudflare 設定子網域，並客製 GitHub Page 網址</a></h2>
+          <time class="published" datetime="2021-05-18 00:00:00 &#43;0000 UTC">2021/05/18</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202105-cloudflare-dns-add-domain/">設定 Cloudflare 免費 CDN，並啟用 DNS 代管</a></h2>
+          <time class="published" datetime="2021-05-16 00:00:00 &#43;0000 UTC">2021/05/16</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202105-how-to-buy-a-domain-from-google/">如何從 Google Domains 購買屬於自己的網址</a></h2>
+          <time class="published" datetime="2021-05-15 00:00:00 &#43;0000 UTC">2021/05/15</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202104-use-ssh-key-login-remote-server/">設定 ssh 金鑰登入遠端主機</a></h2>
+          <time class="published" datetime="2021-04-25 00:00:00 &#43;0000 UTC">2021/04/25</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202103-enable-docker-service-in-remote-server/">雲端主機啟動 Docker 服務</a></h2>
+          <time class="published" datetime="2021-03-13 00:00:00 &#43;0000 UTC">2021/03/13</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202103-build-postgresql-database-useing-docker/">PostgreSQL 資料庫建置 - 使用 Docker</a></h2>
+          <time class="published" datetime="2021-03-03 00:00:00 &#43;0000 UTC">2021/03/03</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202102-reverse-proxy-in-docker-service/">反向代理 - 在 Docker 環境建置</a></h2>
+          <time class="published" datetime="2021-02-27 00:00:00 &#43;0000 UTC">2021/02/27</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/blog/" class="button">查看更多</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="/categories">category</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/categories/node.js/">node.js<span class="count">22</span></a>
+          
+          <li>
+              <a href="/categories/devops/">devops<span class="count">9</span></a>
+          
+          <li>
+              <a href="/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/">架站相關<span class="count">3</span></a>
+          
+          <li>
+              <a href="/categories/laravel/">laravel<span class="count">1</span></a>
+          
+          </li>
+        </ul>
+      </section>
+    
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+    
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script><script src="/js/bundle.min.ccb4e6bb4674f9a0e2b6ce56bb0cddea093526d4bc032314766519cdfec730b1.js" integrity="sha256-zLTmu0Z0&#43;aDits5Wuwzd6gk1JtS8AyMUdmUZzf7HMLE="></script>
+    <script src="/js/add-on.js"></script>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-LTGVYYWC2J', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </div>
+  </body>
+</html>
