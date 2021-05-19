@@ -1,8 +1,14 @@
 [{
+    "title": "[LeetCode] #1 Two Sum (Eazy)",
+    "date": "",
+    "description": "LeetCode 第一題 Two Sum，難度 Eazy",
+    "body": "用 PHP 解 LeetCode 系列，這次是經典題目 Two Sum，屬於 Eazy\n原始題目 Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target. You may assume that each input would have exactly one solution, and you may not use the same element twice. You can return the answer in any order. Example:\nInput: nums = [2,7,11,15], target = 9 Output: [0,1] Output: Because nums[0] + nums[1] == 9, we return [0, 1]. Input: nums = [3,2,4], target = 6 Output: [1,2] Input: nums = [3,3], target = 6 Output: [0,1] 題目分析  輸入一個還有多個數字的陣列，以及預期數字 找出陣列中兩數和等於預期數字的值，並用陣列方式回傳兩個數字在陣列中的鍵值  解題過程 直覺的暴力解是兩個迴圈嵌套，類似九九乘法的做法。但是這麼做時間複雜度會很高\n並且內層迴圈會重複遍歷當前鍵值的數字，每次外層迴圈都要先建立新的內層陣列物件才能比對\n對記憶體使用也會增加\n最終使用一次迴圈的解決方案\n遍歷傳入的陣列，比對 target 減掉當前數字的差值是否存在陣列剩餘的數字中\n為什麼說是 剩餘 的數字中呢？先看完程式碼再繼續說明\nclass Solution { /** * @param Integer[] $nums * @param Integer $target * @return Integer[] */ function twoSum($nums, $target) { foreach ($nums as $k1 =\u0026gt; $v1) { unset($nums[$k1]); if ($k2 = array_search($target - $v1, $nums)) { return [$k1, $k2]; } } return []; } } 如果不使用 unset 永久把數字從陣列排除掉\nunset($nums[$k1]); 在輸入 inpout = [3, 3], target = 6，預期結果為 [0, 1] 的時候\n會因為 array_search 在查詢值等於 3 (6 - 3) 的數字的時候，因為第一個數字就是 3\n而造成 $k2 = 0 而輸出 [0, 0]！\n",
+    "ref": "/blog/202105-leetcode-no1-two-sum/"
+  },{
     "title": "透過 Cloudflare 設定子網域，並客製 GitHub Page 網址",
     "date": "",
     "description": "購買網址後可設定子網域給不同網站使用，本篇以 Cloudflare + GitHub Page 靜態網站為例",
-    "body": "之前已經買好了自己的網址，接著要利用 Cloudflare DNS 服務建立子網域\n並且設定給指定的 GitHub Page 專案作為客製網址\n學會這項技能之後，只要有一組主要網址，就可以根據需求產生不同的子網域網址\n各家 DNS 服務提供商都有這個功能，本篇以 Cloudflare 為例\n 1. 設定子網域 前往 cloudflare 管理後台，點選 DNS 頁籤\n建立 DNS 紀錄，選擇類型是 CNAME，並指向自己的網域\n2. 設定 GitHub Page CNAME 在靜態網站的根目錄下建立一個檔名為 CNAME 的檔案，並上傳至 GitHub\n內容為子域名的完整網址，像我就是 tech.ray247k.com\n3. 設定 GitHub Page 網址 前往專案 Settings \u0026gt; Pages 頁籤中 Custom domain 區塊\n貼上剛剛在 cloudflare DNS 加入且上傳到專案 CNAME 檔案中的完整網址\n如此就完成了在 cloudflare 建立子網域，並自訂 GitHub Page 的網址\n",
+    "body": "之前已經買好了自己的網址，接著要利用 Cloudflare DNS 服務建立子網域\n並且設定給指定的 GitHub Page 專案作為客製網址\n學會這項技能之後，只要有一組主要網址，就可以根據需求產生不同的子網域網址\n各家 DNS 服務提供商都有這個功能，本篇以 Cloudflare 為例\n1. 設定子網域 前往 cloudflare 管理後台，點選 DNS 頁籤\n建立 DNS 紀錄，選擇類型是 CNAME，並指向自己的網域\n2. 設定 GitHub Page CNAME 在靜態網站的根目錄下建立一個檔名為 CNAME 的檔案，並上傳至 GitHub\n內容為子域名的完整網址，像我就是 tech.ray247k.com\n3. 設定 GitHub Page 網址 前往專案 Settings \u0026gt; Pages 頁籤中 Custom domain 區塊\n貼上剛剛在 cloudflare DNS 加入且上傳到專案 CNAME 檔案中的完整網址\n如此就完成了在 cloudflare 建立子網域，並自訂 GitHub Page 的網址\n",
     "ref": "/blog/202105-set-custom-domain-for-github-page/"
   },{
     "title": "設定 Cloudflare 免費 CDN，並啟用 DNS 代管",

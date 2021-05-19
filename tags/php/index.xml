@@ -6,7 +6,16 @@
     <description>Recent content in PHP on 薛丁格的工程師</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Thu, 25 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/php/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 19 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/php/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[LeetCode] #1 Two Sum (Eazy)</title>
+      <link>https://tech.ray247k.com/blog/202105-leetcode-no1-two-sum/</link>
+      <pubDate>Wed, 19 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://tech.ray247k.com/blog/202105-leetcode-no1-two-sum/</guid>
+      <description>&lt;p&gt;用 PHP 解 LeetCode 系列，這次是經典題目 &lt;code&gt;Two Sum&lt;/code&gt;，屬於 Eazy&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Laravel 執行環境建置</title>
       <link>https://tech.ray247k.com/blog/202102-laravel-environment-basic-settings/</link>
