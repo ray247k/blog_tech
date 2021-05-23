@@ -73,7 +73,7 @@
     "url": "https:\/\/tech.ray247k.com",
     "description": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - devops,laravel,leetcode,node.js,php,架站相關,",
     "keywords": [
-        "aws,axios,cdn,cloudflare,component,composer,containerization,cors,devops,dns,docker,docker-compose,domain-name,element-ui,express,gcp,getter,github-page,google-domains,laravel,leetcode,leetcode-eazy,leetcode-medium,linux,mongodb,mutation,nginx,ngrok,node.js,php,portainer,postgresql,proxy,restful,ssh,subdomain,vue,vue-router,vue-ui,vuex,個人品牌,域名,子網域,容器技術,架站相關,買網址,"
+        "apache-bench,aws,axios,cdn,cloudflare,component,composer,containerization,cors,devops,dns,docker,docker-compose,domain-name,element-ui,express,gcp,getter,github-page,google-domains,laravel,leetcode,leetcode-eazy,leetcode-medium,linux,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,portainer,postgresql,proxy,restful,server,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,架站相關,買網址,"
     ]
 }
 </script>
@@ -192,6 +192,60 @@
       <main id="site-main">
         
   
+  
+    <article class="post">
+  <header>
+  <div class="title">
+    
+      <h2><a href="/blog/202104-use-ssh-key-login-remote-server/">設定 ssh 金鑰登入遠端主機</a></h2>
+    
+    
+      <p>使用 ssh key 登入遠端主機而不使用密碼登入</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2021-04-25 00:00:00 &#43;0000 UTC">2021/04/25</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+  <div class="content">
+    
+    
+    <p>一般登入伺服器是使用帳號與密碼進行登入，但是密碼可能會因為抄錄或是傳遞給人而外洩<br>
+安全性的程度會比較沒有像SSH key 那麼安全，而且使用SSH key 登入可以就不用每次手動輸入密碼</p>
+  </div>
+  <footer>
+    <a href="/blog/202104-use-ssh-key-login-remote-server/" class="button big">閱讀全文</a>
+    <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/devops/">DevOps</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/devops/">DevOps</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/linux/">Linux</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/ssh/">ssh</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+  </footer>
+</article>
+
   
     <article class="post">
   <header>
@@ -528,64 +582,6 @@
 </article>
 
   
-    <article class="post">
-  <header>
-  <div class="title">
-    
-      <h2><a href="/blog/202101-docker-note-3-introduce-docker-compose/">Docker 筆記 3 - docker-compose</a></h2>
-    
-    
-      <p>介紹如何使用 docker-compose 管理多個容器</p>
-    
-  </div>
-  <div class="meta">
-    <time datetime="2021-01-12 00:00:00 &#43;0000 UTC">2021/01/12</time>
-    <p>Ray</p>
-    
-  </div>
-</header>
-
-  <div class="content">
-    
-    
-    <p>如果同時要管理彼此是有關連的多個 docker 容器，單純使用 docker 指令必須要自行記得容器之間的關聯<br>
-而使用 docker-compose，則可以輕鬆定義多容器服務</p>
-  </div>
-  <footer>
-    <a href="/blog/202101-docker-note-3-introduce-docker-compose/" class="button big">閱讀全文</a>
-    <div class="stats">
-  
-    <ul class="categories">
-      
-        
-          <li><a class="article-terms-link" href="/categories/devops/">DevOps</a></li>
-        
-      
-    </ul>
-  
-  
-    <ul class="tags">
-      
-        
-          <li><a class="article-terms-link" href="/tags/devops/">DevOps</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/docker/">Docker</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/%e5%ae%b9%e5%99%a8%e6%8a%80%e8%a1%93/">容器技術</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/containerization/">Containerization</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/docker-compose/">docker-compose</a></li>
-        
-      
-    </ul>
-  
-</div>
-
-  </footer>
-</article>
-
-  
   <div class="pagination">
     
       <a href="/blog/" class="button left"><span>上一頁</span></a>
@@ -602,6 +598,14 @@
       <header>
         <h1>最新文章</h1>
       </header>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202105-web-server-stress-testing/">網頁伺服器壓力測試 - 使用 Apache Bench</a></h2>
+          <time class="published" datetime="2021-05-23 00:00:00 &#43;0000 UTC">2021/05/23</time>
+        </header>
+      </article>
       
       <article class="mini-post">
           <a href="/blog/202105-leetcode-no1833-maximum-ice-cream-bars/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/05/leetcode-no1833-maximum-ice-cream-bars/no1833-result.png');">
@@ -657,14 +661,6 @@
         </header>
       </article>
       
-      <article class="mini-post">
-          
-        <header>
-          <h2><a href="/blog/202104-use-ssh-key-login-remote-server/">設定 ssh 金鑰登入遠端主機</a></h2>
-          <time class="published" datetime="2021-04-25 00:00:00 &#43;0000 UTC">2021/04/25</time>
-        </header>
-      </article>
-      
       
         <footer>
           <a href="/blog/" class="button">查看更多</a>
@@ -687,7 +683,7 @@
               <a href="/categories/node.js/">node.js<span class="count">22</span></a>
           
           <li>
-              <a href="/categories/devops/">devops<span class="count">9</span></a>
+              <a href="/categories/devops/">devops<span class="count">10</span></a>
           
           <li>
               <a href="/categories/leetcode/">leetcode<span class="count">3</span></a>

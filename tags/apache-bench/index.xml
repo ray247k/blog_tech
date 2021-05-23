@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Apache Bench on 薛丁格的工程師</title>
+    <link>https://tech.ray247k.com/tags/apache-bench/</link>
+    <description>Recent content in Apache Bench on 薛丁格的工程師</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-TW</language>
+    <lastBuildDate>Sun, 23 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/apache-bench/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>網頁伺服器壓力測試 - 使用 Apache Bench</title>
+      <link>https://tech.ray247k.com/blog/202105-web-server-stress-testing/</link>
+      <pubDate>Sun, 23 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://tech.ray247k.com/blog/202105-web-server-stress-testing/</guid>
+      <description>&lt;p&gt;MacOS 預設已經安裝了 Apache Bench 又簡稱為 ab，是 Apache 開發的其中一個開源測試工具&lt;br&gt;
+主要用來測試網站或 API 的伺服器執行效能，並查看執行後伺服器的性能測試結果&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
