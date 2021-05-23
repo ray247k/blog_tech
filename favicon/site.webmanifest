@@ -1,0 +1,14 @@
+{
+  "name": "薛丁格的工程師",
+  "short_name": "薛丁格的工程師",
+  "icons": [{
+    "src": "/img/main/logo.jpg",
+    "sizes": "1000x1000",
+    "type": "image/png"
+  }],
+  "start_url": "/home/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f5f5f5",
+  "theme_color": "#3ed2f4"
+}
