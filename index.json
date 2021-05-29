@@ -1,4 +1,10 @@
 [{
+    "title": "[LeetCode] #540 Single Element in a Sorted Array (Medium)",
+    "date": "",
+    "description": "LeetCode 第 540 題 Single Element in a Sorted Array，難度 Medium",
+    "body": "用 PHP 解 LeetCode 系列，Single Element in a Sorted Array，屬於 Medium\n原始題目 You are given a sorted array consisting of only integers where every element appears exactly twice, except for one element which appears exactly once. Find this single element that appears only once.\nFollow up: Your solution should run in O(log n) time and O(1) space.\nExample:\nInput: nums = [1,1,2,3,3,4,4,8,8] Output: 2 Input: nums = [3,3,7,7,10,11,11] Output: 10 題目分析  一個排序過的純整數陣列，其中除了一個數字外，其他數字都是兩兩一組 找出落單的那個整數  解題過程 第一種是用 for 迴圈的做法\n因為陣列為排序好的內容，且只有一個數字單一出現\n所以可以使用 for 迴圈，每次計數器 +2 然後和下一個數字比較。例如 n+1 數字等於 n，則判斷 n+2 和 n+3 是否相等\n若不相等代表該數字只出現一次\n另一種做法是用 foreach 迴圈\n判斷所當前數字和下一個數字相等，則記錄在陣列中\n若當前數字不等於下一個數字，則和陣列比對\n若數字也不在陣列紀錄中，則代表該數字和下一位數不相等，且尚未出現過！\n依據題目規則，可以判斷是唯一數字\n我覺得這種做法比較有彈性\n萬一之後變成有數字會出現兩次以上，或是不只一個數字只出現一次的情況下程式也不需大量調整\n故最後採用第二種方法\nclass Solution { /** * @param Integer[] $nums * @return Integer */ function singleNonDuplicate($nums) { $skip = []; foreach($nums as $key =\u0026gt; $num) { if (isset($nums[$key + 1]) \u0026amp;\u0026amp; $num == $nums[$key + 1]) { $skip[] = $num; } elseif( ! in_array($num, $skip)) { return $num; } } } } 結果 ",
+    "ref": "/blog/202105-leetcode-no540-single-element-in-a-sorted-array/"
+  },{
     "title": "[LeetCode] #791 Custom Sort String (Medium)",
     "date": "",
     "description": "LeetCode 第 791 題 Custom Sort String，難度 Medium",
