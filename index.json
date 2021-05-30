@@ -1,4 +1,10 @@
 [{
+    "title": "[LeetCode] #11 Container With Most Water (Medium)",
+    "date": "",
+    "description": "LeetCode 第 11 題 Container With Most Water，難度 Medium",
+    "body": "用 PHP 解 LeetCode 系列，Container With Most Water，屬於 Medium\n原始題目 Given n non-negative integers a1, a2, ..., an , where each represents a point at coordinate (i, ai).\nn vertical lines are drawn such that the two endpoints of the line i is at (i, ai) and (i, 0).\nFind two lines, which, together with the x-axis forms a container, such that the container contains the most water.\nNotice that you may not slant the container.\nExample:\nInput: height = [1,8,6,2,5,4,8,3,7] Output: 49 Explanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,7]. In this case, the max area of water (blue section) the container can contain is 49. Input: height = [1,1] Output: 1 Input: height = [4,3,2,1,4] Output: 16 Input: height = [1,2,1] Output: 2 題目分析  輸入 height 是一串正整數，代表木板高度 找出中間面積最大的兩個數字（容納最多水）  解題過程 這題難在找出中間邏輯，運算本身並不難\n使用雙指針這個方法，從頭尾向內夾找出最大值\n第一指針 p1 理所當然就是陣列初始鍵值 0，第二指針 p2 則是陣列最後一個鍵值\n又因為陣列鍵值是從 0 開始，所以是 陣列長度 - 1\n使用 while 迴圈，因為鍵值交叉後算出來的結果會和先前重複，所以不需要計算\n計算當前兩個指針之間的面積 $area，如果當前面積大於原先最大面積，則設定新最大面積\n因為最大容量是用比較短的一端決定，且向內移動勢必讓寬度下降，若兩端高度不變則面積也會變小\n所以比較兩個指針在陣列中的長度，長度較短的指針向中心移動\n在這個邏輯下，若指針向內移動找到更長的一端，面積才有變大的可能！\nclass Solution { /** * @param Integer[] $height * @return Integer */ function maxArea($height) { $p1 = 0; $p2 = count($height) - 1; $max_area = 0; while($p1 \u0026lt; $p2){ $area = ($p2 - $p1) * min($height[$p1], $height[$p2]); if ($area \u0026gt; $max_area) { $max_area = $area; } if($height[$p1] \u0026lt; $height[$p2]) { $p1++; } else { $p2--; } } return $max_area; } } 結果 ",
+    "ref": "/blog/202105-leetcode-no11-container-with-most-water/"
+  },{
     "title": "[LeetCode] #540 Single Element in a Sorted Array (Medium)",
     "date": "",
     "description": "LeetCode 第 540 題 Single Element in a Sorted Array，難度 Medium",
