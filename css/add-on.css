@@ -1,0 +1,64 @@
+/*********************/
+/*     分類頁樣式      */
+/*********************/
+ul.posts {
+    list-style: none;
+}
+
+ul.posts li {
+    border-bottom: solid 0.1em #2eb8ac;
+    margin: 0.5em 0 0 0;
+    padding: 0.5em 0 0 0;
+}
+
+ul.posts > li > article > header > a {
+    border-bottom: none;
+}
+
+/*********************/
+/*    tag 標籤區塊     */
+/*********************/
+
+/* 讓列表顯示在同一列 */
+.li-x li {
+    display: inline-block;
+}
+
+/* 標籤外框 */
+.tags-md {
+    color: #666;
+    line-height: 1em;
+    list-style: none;
+    padding-left: 0;
+    padding-right: 0;
+    vertical-align: middle;
+}
+
+/* 標籤外框和內文的距離 */
+.tags-md li {
+    padding: 5px 2px;
+}
+
+/* 標籤內文字 */
+.tags-md a {
+    border: 1px solid #959595;
+    background-color: transparent;
+    color: #959595;
+
+    padding: 0.3em 0.8em;
+    font-size: 0.8em;
+
+    text-transform: none;
+    letter-spacing: .04em;
+
+    border-radius: 999em;
+    vertical-align: middle;
+}
+
+/* 標籤動畫 */
+.tags-md a:hover, .tags-md a:active {
+    color: #2eb8ac;
+    border: 1px solid #2eb8ac;
+    box-shadow: 0 1px 3px 0 #00000028, 0 2px 10px 0 #0000001E;
+}
+
