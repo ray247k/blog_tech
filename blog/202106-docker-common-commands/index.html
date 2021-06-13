@@ -2,7 +2,7 @@
 <html lang="zh-tw">
   <head>
   <meta charset="utf-8">
-<title>ngrok - 薛丁格的工程師</title>
+<title>Docker 常用指令 - 薛丁格的工程師</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
@@ -19,10 +19,10 @@
   <meta name="theme-color" content="#ffffff">
 
 <meta name="generator" content="Hugo 0.83.1" /><meta property="og:site_name" content="薛丁格的工程師">
-  <meta property="og:title" content="ngrok">
-  <meta property="og:description" content="薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識">
-  <meta property="description" content="薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識">
-  <meta property="og:url" content="https://tech.ray247k.com/tags/ngrok/">
+  <meta property="og:title" content="Docker 常用指令">
+  <meta property="og:description" content="介紹基本 Docker 操作常用指令">
+  <meta property="description" content="介紹基本 Docker 操作常用指令">
+  <meta property="og:url" content="https://tech.ray247k.com/blog/202106-docker-common-commands/">
   <meta property="og:type" content="article">
   
     <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.jpg">
@@ -80,6 +80,134 @@
 
 
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "legalName": "薛丁格的工程師",
+    "url": "https:\/\/tech.ray247k.com",
+    "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "ray247k@gmail.com",
+        "availableLanguage": [
+            "Mandarin",
+            "English"
+        ]
+    },
+    "sameAs": [
+        "https://ray247k.blogspot.com/"
+    ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Docker 常用指令",
+    "description": "介紹基本 Docker 操作常用指令",
+    "keywords": [
+        "DevOps" , "Docker" , "容器技術" , "Containerization" 
+    ],
+    "dateCreated": "2021-06-06T00:00:00.00Z",
+    "datePublished": "2021-06-06T00:00:00.00Z",
+    "dateModified": "2021-06-06T00:00:00.00Z",
+    "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "contentUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg"
+    },
+    "breadcrumb": {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com",
+                    "name": "薛丁格的工程師",
+                    "url": "https:\/\/tech.ray247k.com"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com/blog",
+                    "name": "Blog",
+                    "url": "https:\/\/tech.ray247k.com/blog"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\/blog\/202106-docker-common-commands\/",
+                    "name": "Docker 常用指令",
+                    "url": "https:\/\/tech.ray247k.com\/blog\/202106-docker-common-commands\/"
+                }
+            }
+        ],
+        "itemListOrder": "Ascending",
+        "numberOfItems": 3
+    }
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "articleSection": "blog",
+    "name": "Docker 常用指令",
+    "headline": "\u003cp\u003e一些 Docker 上常用的指令和相關參數使用方法\u003cbr\u003e\n實際使用上一定不只這些指令\u003c\/p\u003e",
+    "description": "介紹基本 Docker 操作常用指令",
+    "inLanguage": "zh-TW",
+    "isFamilyFriendly": "true",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com\/blog\/202106-docker-common-commands\/"
+    },
+    "author" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "creator" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "accountablePerson" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "copyrightHolder" : "薛丁格的工程師",
+    "copyrightYear" : "2021",
+    "dateCreated": "2021-06-06T00:00:00.00Z",
+    "datePublished": "2021-06-06T00:00:00.00Z",
+    "dateModified": "2021-06-06T00:00:00.00Z",
+    "publisher":{
+        "@type":"Organization",
+        "name": "薛丁格的工程師",
+        "url": "https://tech.ray247k.com",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+            "width":"32",
+            "height":"32"
+        }
+    },
+    "image": "https://tech.ray247k.com/img/main/logo.jpg",
+    "url" : "https:\/\/tech.ray247k.com\/blog\/202106-docker-common-commands\/",
+    "wordCount" : "315",
+    "genre" : [ "DevOps" , "Docker" , "容器技術" , "Containerization" ],
+    "keywords" : [ "DevOps" , "Docker" , "容器技術" , "Containerization" ]
+}
+</script>
+
+
+
 </head>
 
   <body>
@@ -90,7 +218,7 @@
     <h1 class="nav-title">
       <a href="/" class="nav">
         
-          Tag
+          Blog
         
       </a>
     </h1>
@@ -186,36 +314,133 @@
 
       <main id="site-main">
         
-  
-  
-    <article class="post">
-  <header>
+  <article class="post">
+    <header>
   <div class="title">
     
-      <h2><a href="/blog/202102-ngrok-share-your-local-development-site/">Ngrok 讓 localhost 可以被外部連線</a></h2>
+      <h2><a href="/blog/202106-docker-common-commands/">Docker 常用指令</a></h2>
     
     
-      <p>Ngrok 開發測試 webhook 的利器</p>
+      <p>介紹基本 Docker 操作常用指令</p>
     
   </div>
   <div class="meta">
-    <time datetime="2021-02-14 00:00:00 &#43;0000 UTC">2021/02/14</time>
+    <time datetime="2021-06-06 00:00:00 &#43;0000 UTC">2021/06/06</time>
     <p>Ray</p>
     
   </div>
 </header>
 
-  <div class="content">
-    
-    
-    <p>ngrok 做為一個轉發的伺服器，他可以把外界的請求轉發到你指定的 Port<br>
-使用的背景原理是連接到 ngrok 雲端伺服器將你本機指定的地址公開<br>
-再將由 ngrok 一串公開的網址來存取內容<br>
-他的優點是快速而且還提供了 https 的服務讓你使用上更安全，甚至你還可以設置密碼保護</p>
-  </div>
-  <footer>
-    <a href="/blog/202102-ngrok-share-your-local-development-site/" class="button big">閱讀全文</a>
-    <div class="stats">
+    <div id="socnet-share">
+      
+
+
+
+
+
+    </div>
+    <div class="content">
+      
+      <p>一些 Docker 上常用的指令和相關參數使用方法<br>
+實際使用上一定不只這些指令</p>
+<h1 id="服務基本指令">服務基本指令</h1>
+<pre><code class="language-bash=" data-lang="bash=">docker stats             顯示容器的資源使用統計
+docker start             啟動一個或多個停止的容器  
+docker stop              停止一個或多個正在運行的容器
+docker restart           重啟一個或多個容器
+</code></pre><h1 id="log-常用指令">Log 常用指令</h1>
+<pre><code class="language-bash=" data-lang="bash=">$ docker logs [OPTIONS] CONTAINER
+  Options:
+        --details        顯示詳細資料
+    -f, --follow         追蹤即時 log
+        --since string   顯示自某個 timestamp「之後」的 log，或相對時間，如42m（即42分鐘）
+        --tail string    從 log 末尾顯示多少行內容， 默認是all
+    -t, --timestamps     顯示時間戳
+        --until string   顯示自某個 timestamp「之前」的 log，或相對時間：如42m（即42分鐘）
+</code></pre><h2 id="使用範例">使用範例</h2>
+<p>查看某個時間之後的 log</p>
+<pre><code class="language-bash=" data-lang="bash=">$ docker logs -t --since=&quot;2018-02-08T13:23:37&quot; {CONTAINER_ID}
+</code></pre><p>顯示某個時間後的 log，且只要最後 100 行</p>
+<pre><code class="language-bash=" data-lang="bash=">$ docker logs -f -t --since=&quot;2018-02-08&quot; --tail=100 {CONTAINER_ID}
+</code></pre><p>查看最近 30 分鐘的 log</p>
+<pre><code class="language-bash=" data-lang="bash=">$ docker logs --since 30m {CONTAINER_ID}
+</code></pre><p>查看某個時間區間內的 log</p>
+<pre><code class="language-bash=" data-lang="bash=">$ docker logs -t --since=&quot;2018-02-08T13:23:37&quot; --until &quot;2018-02-09T12:23:37&quot; CONTAINER_ID
+</code></pre><h1 id="執行容器">執行容器</h1>
+<p>從本地環境的 image 建立 container<br>
+如果不存在從 repository 訪問，private repo 必須要有「登入」行為<br>
+image的格式可以為[IMAGE NAME]:[TAG]</p>
+<pre><code class="language-bash=" data-lang="bash=">docker run
+</code></pre><h2 id="範例">範例：</h2>
+<pre><code class="language-bash=" data-lang="bash="># 執行nginx
+docker run -idt nginx
+
+# 執行nginx並且暴露port為8080
+docker run -idt -p 8080:80 nginx
+
+# 執行nginx在8080，在失敗的時候會自動重啟動
+docker run -idt -p 8080:80 --restart on-failure nginx
+
+# 執行nginx，結束後移除
+docker run --rm -idt nginx
+</code></pre><h2 id="常用到的-flag">常用到的 flag</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#e6db74">`</span>-d<span style="color:#e6db74">`</span> detach 將 container 置於背景執行
+<span style="color:#e6db74">`</span>-i<span style="color:#e6db74">`</span> interactive 維持 STDIN，可互動
+<span style="color:#e6db74">`</span>-t<span style="color:#e6db74">`</span> 提供 tty 允許 container 使用 tty
+<span style="color:#e6db74">`</span>-p<span style="color:#e6db74">`</span> expose socket 對外:對內 port <span style="color:#f92672">(</span>ex -p 8080:80<span style="color:#f92672">)</span> <span style="color:#e6db74">`</span>-p Host Port:Docker Port<span style="color:#e6db74">`</span>
+<span style="color:#e6db74">`</span>--restart<span style="color:#e6db74">`</span> 失敗重啟<span style="color:#f92672">(</span>always-default, none, on-failure<span style="color:#f92672">)</span>
+<span style="color:#e6db74">`</span>--rm<span style="color:#e6db74">`</span> 關閉後 container 自動消滅，若不刪可能會不斷累積，即使已經死掉了
+</code></pre></div><h1 id="container-相關指令">container 相關指令</h1>
+<p>列出所有活著的容器</p>
+<pre><code class="language-bash=" data-lang="bash=">docker ps
+</code></pre><p>列出所有活的死的容器</p>
+<pre><code class="language-bash=" data-lang="bash=">docker ps -a
+</code></pre><p>進到已存在、執行中的 container 執行指令</p>
+<pre><code class="language-bash=" data-lang="bash=">docker exec -ti nginx bash
+</code></pre><p>取得 container 或是 image 的 Metadata</p>
+<pre><code class="language-bash=" data-lang="bash=">docker inspect {container name}
+</code></pre><p>刪除 docker container</p>
+<pre><code class="language-bash=" data-lang="bash=">docker rm [CONTAINER]
+</code></pre><h1 id="image-相關指令">image 相關指令</h1>
+<p>列出所有 image</p>
+<pre><code class="language-bash=" data-lang="bash=">docker images
+</code></pre><p>刪除指定 image</p>
+<pre><code class="language-bash=" data-lang="bash=">docker rmi [IMAGE]
+</code></pre><p>如果對外開放要給別人用怎麼辦</p>
+<pre><code class="language-bash=" data-lang="bash=">docker run -i -t -d -p 80:80 nginx
+</code></pre><p>如果服務遇到意外中斷</p>
+<pre><code class="language-bash=" data-lang="bash=">docker run -i -t -d -p 80:80 --restart always nginx
+</code></pre><p>如果要連node.js</p>
+<pre><code class="language-bash=" data-lang="bash=">docker run -i -d -t -p 80:80 --link node nginx
+</code></pre><h1 id="volume-相關指令">Volume 相關指令</h1>
+<p>列出所有 volume</p>
+<pre><code class="language-bash=" data-lang="bash=">docker volume ls
+</code></pre><p>清除指定 volume</p>
+<pre><code class="language-bash=" data-lang="bash=">docker volume rm [OPTIONS] VOLUME [VOLUME...]
+</code></pre><p>清除「全部」volume</p>
+<pre><code class="language-bash=" data-lang="bash=">docker volume prune
+</code></pre><h1 id="其他指令">其他指令</h1>
+<h3 id="docker-build">docker build</h3>
+<p>從 Dockerfile 建立 docker image<br>
+<code>-f</code> 手動指定 Dockerfile 名稱</p>
+<pre><code class="language-bash=" data-lang="bash="># 在目前的資料夾建立image，來源是Dockerfile
+docker build . -t image-name
+
+# 在目前的資料夾建立image，來源是Dockerfile-alt
+docker build . -t image-name -f Dockerfile-alt
+</code></pre><h3 id="docker-push--pull">docker push / pull</h3>
+<p>將 docker image 從 repository 上拉/推上去<br>
+要先登入 docker login</p>
+<h3 id="docker-login">docker login</h3>
+<p>登入 docker repository</p>
+
+      
+      
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/ray247k/button?referrer=https%3a%2f%2ftech.ray247k.com%2fblog%2f202106-docker-common-commands%2f" width="100%" frameborder=0></iframe>
+
+    </div>
+    <footer>
+      <div class="stats">
   
     <ul class="categories">
       
@@ -231,19 +456,27 @@
         
           <li><a class="article-terms-link" href="/tags/devops/">DevOps</a></li>
         
-          <li><a class="article-terms-link" href="/tags/ngrok/">ngrok</a></li>
+          <li><a class="article-terms-link" href="/tags/docker/">Docker</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/%e5%ae%b9%e5%99%a8%e6%8a%80%e8%a1%93/">容器技術</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/containerization/">Containerization</a></li>
         
       
     </ul>
   
 </div>
 
-  </footer>
-</article>
+    </footer>
+  </article>
+  
+    
 
   
   <div class="pagination">
     
+    
+      <a href="/blog/202105-leetcode-no11-container-with-most-water/" class="button right"><span>[LeetCode] #11 Container With Most Water (Medium)</span></a>
     
   </div>
 

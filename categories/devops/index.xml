@@ -6,7 +6,17 @@
     <description>Recent content in DevOps on 薛丁格的工程師</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Sun, 23 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/categories/devops/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 06 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/categories/devops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker 常用指令</title>
+      <link>https://tech.ray247k.com/blog/202106-docker-common-commands/</link>
+      <pubDate>Sun, 06 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://tech.ray247k.com/blog/202106-docker-common-commands/</guid>
+      <description>&lt;p&gt;一些 Docker 上常用的指令和相關參數使用方法&lt;br&gt;
+實際使用上一定不只這些指令&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>網頁伺服器壓力測試 - 使用 Apache Bench</title>
       <link>https://tech.ray247k.com/blog/202105-web-server-stress-testing/</link>

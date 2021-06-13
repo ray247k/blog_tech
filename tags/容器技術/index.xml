@@ -6,7 +6,50 @@
     <description>Recent content in 容器技術 on 薛丁格的工程師</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Tue, 12 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/%E5%AE%B9%E5%99%A8%E6%8A%80%E8%A1%93/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 06 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/%E5%AE%B9%E5%99%A8%E6%8A%80%E8%A1%93/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker 常用指令</title>
+      <link>https://tech.ray247k.com/blog/202106-docker-common-commands/</link>
+      <pubDate>Sun, 06 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://tech.ray247k.com/blog/202106-docker-common-commands/</guid>
+      <description>&lt;p&gt;一些 Docker 上常用的指令和相關參數使用方法&lt;br&gt;
+實際使用上一定不只這些指令&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>雲端主機啟動 Docker 服務</title>
+      <link>https://tech.ray247k.com/blog/202103-enable-docker-service-in-remote-server/</link>
+      <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://tech.ray247k.com/blog/202103-enable-docker-service-in-remote-server/</guid>
+      <description>&lt;p&gt;新開主機啟用 docker 與 docker-compose 服務的操作步驟&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>PostgreSQL 資料庫建置 - 使用 Docker</title>
+      <link>https://tech.ray247k.com/blog/202103-build-postgresql-database-useing-docker/</link>
+      <pubDate>Wed, 03 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://tech.ray247k.com/blog/202103-build-postgresql-database-useing-docker/</guid>
+      <description>&lt;p&gt;使用 Docker 來建置一個 PostgreSQL 資料庫&lt;br&gt;
+包含 &lt;code&gt;資料庫建置&lt;/code&gt;、&lt;code&gt;資料持久化&lt;/code&gt;、&lt;code&gt;使用 GUI 操作資料庫&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Portainer - 視覺化管理 Docker 的工具</title>
+      <link>https://tech.ray247k.com/blog/202101-portainer-open-source-container-management-gui/</link>
+      <pubDate>Sat, 16 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://tech.ray247k.com/blog/202101-portainer-open-source-container-management-gui/</guid>
+      <description>&lt;p&gt;本機開發大部分使用指令操作，或是使用 Docker 本身的 GUI 介面管理服務&lt;br&gt;
+&lt;a href=&#34;https://github.com/portainer&#34;&gt;Portainer&lt;/a&gt; 是一個 open-source 的 UI tool&lt;br&gt;
+可以查看 docker image, container，並執行 start, stop, restart, remove 等動作&lt;br&gt;
+也可查看每個 container 的 log 及 error&lt;br&gt;
+在雲端主機上啟動服務的話，即使沒有 Docker 執行權限的人也可以透過帳號密碼登入&lt;br&gt;
+使用視覺化的介面進行 Docker 服務的各種管理&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Docker 筆記 3 - docker-compose</title>
       <link>https://tech.ray247k.com/blog/202101-docker-note-3-introduce-docker-compose/</link>
