@@ -6,7 +6,18 @@
     <description>Recent content in DevOps on 薛丁格的工程師</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Tue, 08 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 12 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[用 Drone 建立自動部署] 02 複數觸發條件設定</title>
+      <link>https://tech.ray247k.com/blog/202106-drone-cicd-2-advanced-multiple-conditions/</link>
+      <pubDate>Sat, 12 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://tech.ray247k.com/blog/202106-drone-cicd-2-advanced-multiple-conditions/</guid>
+      <description>&lt;p&gt;使用 &lt;a href=&#34;https://www.drone.io/&#34;&gt;Drone&lt;/a&gt; 建立自己的自動部署服務&lt;br&gt;
+Drone 是一套以 Golang 開發的一套 CI/CD 系統工具&lt;br&gt;
+本篇進行複數觸發條件設定，在不同觸發條件下觸發不同的部署步驟設定&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>[用 Drone 建立自動部署] 01 基本服務建置及串接 GitHub</title>
       <link>https://tech.ray247k.com/blog/202106-drone-cicd-1-basic-usage/</link>
@@ -14,7 +25,8 @@
       
       <guid>https://tech.ray247k.com/blog/202106-drone-cicd-1-basic-usage/</guid>
       <description>&lt;p&gt;使用 &lt;a href=&#34;https://www.drone.io/&#34;&gt;Drone&lt;/a&gt; 建立自己的自動部署服務&lt;br&gt;
-Drone 是一套以 Golang 開發的一套 CI/CD 系統工具&lt;/p&gt;</description>
+Drone 是一套以 Golang 開發的一套 CI/CD 系統工具&lt;br&gt;
+本篇進行基礎服務啟動設定，以及串接 GitHub&lt;/p&gt;</description>
     </item>
     
     <item>

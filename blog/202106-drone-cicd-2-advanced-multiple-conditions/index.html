@@ -2,7 +2,7 @@
 <html lang="zh-tw">
   <head>
   <meta charset="utf-8">
-<title>[Express&#43;Vue 搭建電商網站] 13 使用 Axios 取得 API 資料 - 薛丁格的工程師</title>
+<title>[用 Drone 建立自動部署] 02 複數觸發條件設定 - 薛丁格的工程師</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
@@ -19,10 +19,10 @@
   <meta name="theme-color" content="#ffffff">
 
 <meta name="generator" content="Hugo 0.83.1" /><meta property="og:site_name" content="薛丁格的工程師">
-  <meta property="og:title" content="[Express&#43;Vue 搭建電商網站] 13 使用 Axios 取得 API 資料">
-  <meta property="og:description" content="使用 Express &#43; Vue 搭建一個電商網站 - 使用 Axios 取得 API 資料">
-  <meta property="description" content="使用 Express &#43; Vue 搭建一個電商網站 - 使用 Axios 取得 API 資料">
-  <meta property="og:url" content="https://tech.ray247k.com/blog/202009-express-vue-build-ecommerce-13-how-to-use-axios/">
+  <meta property="og:title" content="[用 Drone 建立自動部署] 02 複數觸發條件設定">
+  <meta property="og:description" content="透過 Drone 建立自動部署流程，複數觸發條件設定">
+  <meta property="description" content="透過 Drone 建立自動部署流程，複數觸發條件設定">
+  <meta property="og:url" content="https://tech.ray247k.com/blog/202106-drone-cicd-2-advanced-multiple-conditions/">
   <meta property="og:type" content="article">
   
     <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.jpg">
@@ -106,14 +106,14 @@
 {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "[Express\u002bVue 搭建電商網站] 13 使用 Axios 取得 API 資料",
-    "description": "使用 Express \u002b Vue 搭建一個電商網站 - 使用 Axios 取得 API 資料",
+    "name": "[用 Drone 建立自動部署] 02 複數觸發條件設定",
+    "description": "透過 Drone 建立自動部署流程，複數觸發條件設定",
     "keywords": [
-        "vue" , "node.js" , "vuex" , "axios" 
+        "DevOps" , "Drone" , "CICD" 
     ],
-    "dateCreated": "2020-09-26T00:00:00.00Z",
-    "datePublished": "2020-09-26T00:00:00.00Z",
-    "dateModified": "2020-09-26T00:00:00.00Z",
+    "dateCreated": "2021-06-12T00:00:00.00Z",
+    "datePublished": "2021-06-12T00:00:00.00Z",
+    "dateModified": "2021-06-12T00:00:00.00Z",
     "primaryImageOfPage": {
         "@type": "ImageObject",
         "contentUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg"
@@ -144,9 +144,9 @@
                 "@type": "ListItem",
                 "position": 3,
                 "item": {
-                    "@id": "https:\/\/tech.ray247k.com\/blog\/202009-express-vue-build-ecommerce-13-how-to-use-axios\/",
-                    "name": "[Express\u002bVue 搭建電商網站] 13 使用 Axios 取得 API 資料",
-                    "url": "https:\/\/tech.ray247k.com\/blog\/202009-express-vue-build-ecommerce-13-how-to-use-axios\/"
+                    "@id": "https:\/\/tech.ray247k.com\/blog\/202106-drone-cicd-2-advanced-multiple-conditions\/",
+                    "name": "[用 Drone 建立自動部署] 02 複數觸發條件設定",
+                    "url": "https:\/\/tech.ray247k.com\/blog\/202106-drone-cicd-2-advanced-multiple-conditions\/"
                 }
             }
         ],
@@ -161,14 +161,14 @@
     "@context": "http://schema.org",
     "@type": "BlogPosting",
     "articleSection": "blog",
-    "name": "[Express\u002bVue 搭建電商網站] 13 使用 Axios 取得 API 資料",
-    "headline": "\u003cp\u003e使用 Axios 取得後端 API 的資料\u003c\/p\u003e",
-    "description": "使用 Express \u002b Vue 搭建一個電商網站 - 使用 Axios 取得 API 資料",
+    "name": "[用 Drone 建立自動部署] 02 複數觸發條件設定",
+    "headline": "\u003cp\u003e使用 \u003ca href=\u0022https:\/\/www.drone.io\/\u0022\u003eDrone\u003c\/a\u003e 建立自己的自動部署服務\u003cbr\u003e\nDrone 是一套以 Golang 開發的一套 CI\/CD 系統工具\u003cbr\u003e\n本篇進行複數觸發條件設定，在不同觸發條件下觸發不同的部署步驟設定\u003c\/p\u003e",
+    "description": "透過 Drone 建立自動部署流程，複數觸發條件設定",
     "inLanguage": "zh-TW",
     "isFamilyFriendly": "true",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https:\/\/tech.ray247k.com\/blog\/202009-express-vue-build-ecommerce-13-how-to-use-axios\/"
+        "@id": "https:\/\/tech.ray247k.com\/blog\/202106-drone-cicd-2-advanced-multiple-conditions\/"
     },
     "author" : {
     "@type": "Person",
@@ -183,10 +183,10 @@
     "name": "Ray"
     },
     "copyrightHolder" : "薛丁格的工程師",
-    "copyrightYear" : "2020",
-    "dateCreated": "2020-09-26T00:00:00.00Z",
-    "datePublished": "2020-09-26T00:00:00.00Z",
-    "dateModified": "2020-09-26T00:00:00.00Z",
+    "copyrightYear" : "2021",
+    "dateCreated": "2021-06-12T00:00:00.00Z",
+    "datePublished": "2021-06-12T00:00:00.00Z",
+    "dateModified": "2021-06-12T00:00:00.00Z",
     "publisher":{
         "@type":"Organization",
         "name": "薛丁格的工程師",
@@ -199,10 +199,10 @@
         }
     },
     "image": "https://tech.ray247k.com/img/main/logo.jpg",
-    "url" : "https:\/\/tech.ray247k.com\/blog\/202009-express-vue-build-ecommerce-13-how-to-use-axios\/",
-    "wordCount" : "369",
-    "genre" : [ "vue" , "node.js" , "vuex" , "axios" ],
-    "keywords" : [ "vue" , "node.js" , "vuex" , "axios" ]
+    "url" : "https:\/\/tech.ray247k.com\/blog\/202106-drone-cicd-2-advanced-multiple-conditions\/",
+    "wordCount" : "267",
+    "genre" : [ "DevOps" , "Drone" , "CICD" ],
+    "keywords" : [ "DevOps" , "Drone" , "CICD" ]
 }
 </script>
 
@@ -318,14 +318,14 @@
     <header>
   <div class="title">
     
-      <h2><a href="/blog/202009-express-vue-build-ecommerce-13-how-to-use-axios/">[Express&#43;Vue 搭建電商網站] 13 使用 Axios 取得 API 資料</a></h2>
+      <h2><a href="/blog/202106-drone-cicd-2-advanced-multiple-conditions/">[用 Drone 建立自動部署] 02 複數觸發條件設定</a></h2>
     
     
-      <p>使用 Express &#43; Vue 搭建一個電商網站 - 使用 Axios 取得 API 資料</p>
+      <p>透過 Drone 建立自動部署流程，複數觸發條件設定</p>
     
   </div>
   <div class="meta">
-    <time datetime="2020-09-26 00:00:00 &#43;0000 UTC">2020/09/26</time>
+    <time datetime="2021-06-12 00:00:00 &#43;0000 UTC">2021/06/12</time>
     <p>Ray</p>
     
   </div>
@@ -341,149 +341,115 @@
     </div>
     <div class="content">
       
-      <p>使用 Axios 取得後端 API 的資料</p>
-<h1 id="使用-axios-取得-api-資料">使用 Axios 取得 API 資料</h1>
-<p>首先先安裝 <a href="https://www.npmjs.com/package/axios">axios</a></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm i axios
-</code></pre></div><p>在 Vuex store 中可以使用 <a href="https://vuex.vuejs.org/zh/guide/actions.html">action</a> 屬性<br>
-乍看之下跟 <code>mutation</code> 類似，不同的地方在於</p>
-<ul>
-<li>Action 提交的是 mutation，而不是直接變更狀態</li>
-<li>Action 可以包含任意異步操作，用於響應 Vue 組件中分派的事件或動作</li>
-</ul>
-<p>一個 <code>action</code> 是類似於 <code>(context, payload) =&gt; response.data</code> 的函數：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#a6e22e">productById</span>(<span style="color:#a6e22e">context</span>, <span style="color:#a6e22e">payload</span>) {
-  <span style="color:#75715e">// 異步操作，從後端取得資料
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>;
-}
-</code></pre></div><p>其中 <code>productById</code> 是從組件分派的事件或動作名稱，接收兩個參數 <code>context</code>、<code>payload</code><br>
-<code>context</code> 具有跟 <code>store</code> 相同的方法與屬性，可以透過 <code>context.commit</code> 來提交一個 <code>mutation</code><br>
-或是透過 <code>context.state</code> 和 <code>context.getters</code> 來取得 state 和 getters<br>
-<code>payload</code> 就是攜帶的參數，可以透過他來執行異步操作，從而取得後端資料並回傳</p>
-<p>所以我們可以在 <code>Action</code> 中異步執行 <code>axios</code> 來抓取後端 API 的資料<br>
-取得回傳結果後將結果提交給 <code>mutation</code>，並更新使用者端的資料</p>
-<h2 id="實現-action">實現 Action</h2>
-<p>再次修改 <code>src/store/index.js</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Vue</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue&#39;</span>;
-<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Vuex</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vuex&#39;</span>;
-<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">axios</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;axios&#39;</span>;
+      <p>使用 <a href="https://www.drone.io/">Drone</a> 建立自己的自動部署服務<br>
+Drone 是一套以 Golang 開發的一套 CI/CD 系統工具<br>
+本篇進行複數觸發條件設定，在不同觸發條件下觸發不同的部署步驟設定</p>
+<h1 id="複數觸發條件multiple-conditions">複數觸發條件(Multiple Conditions)</h1>
+<p>有時候專案中在特定分支要做不同的事件，這時候可以參考以下設定</p>
+<p><code>.drone.yml</code></p>
+<pre><code class="language-yaml=" data-lang="yaml=">---
+################################################
+#             dev 每次推到分支就更新              #
+################################################
+kind: pipeline
+type: docker
+name: backend_dev
 
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">API_BASE</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;http://localhost:3000/api/v1&#39;</span>;
+steps:
+  - name: submodules update
+    image: alpine/git
+    commands:
+      - date
+      - echo DRONE_REPO = ${DRONE_REPO}
+      - echo DRONE_BRANCH = ${DRONE_BRANCH}
+      - echo DRONE_COMMIT = ${DRONE_COMMIT}
+      - echo DRONE_BUILD_NUMBER = ${DRONE_BUILD_NUMBER}
+      - git submodule update --init --recursive
 
-<span style="color:#a6e22e">Vue</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">Vuex</span>);
+  - name: composer install
+    image: composer:1.10.19
+    commands:
+      - composer install --ignore-platform-reqs
 
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Vuex</span>.<span style="color:#a6e22e">Store</span>({
-  <span style="color:#a6e22e">strict</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
-  <span style="color:#a6e22e">state</span><span style="color:#f92672">:</span> {
-    <span style="color:#75715e">// bought items
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">cart</span><span style="color:#f92672">:</span> [],
-    <span style="color:#75715e">// ajax loader
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">showLoader</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
-    <span style="color:#75715e">// selected product
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">product</span><span style="color:#f92672">:</span> {},
-    <span style="color:#75715e">// all products
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">products</span><span style="color:#f92672">:</span> [],
-    <span style="color:#75715e">// all manufacturers
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">manufacturers</span><span style="color:#f92672">:</span> [],
-  },
-  <span style="color:#a6e22e">mutations</span><span style="color:#f92672">:</span> {
-    <span style="color:#a6e22e">ADD_TO_CART</span>(<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
-      <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">product</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
-      <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">cart</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">product</span>)
-    },
-    <span style="color:#a6e22e">REMOVE_FROM_CART</span>(<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
-      <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">productId</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>
-      <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">cart</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">cart</span>.<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">product</span> =&gt; <span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">_id</span> <span style="color:#f92672">!==</span> <span style="color:#a6e22e">productId</span>)
-    },
-    <span style="color:#a6e22e">ALL_PRODUCTS</span>(<span style="color:#a6e22e">state</span>) {
-      <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
-    },
-    <span style="color:#a6e22e">ALL_PRODUCTS_SUCCESS</span>(<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
-      <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">products</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
+trigger:
+  branch:
+    - dev
+  event:
+    - push
 
-      <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
-      <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">products</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">products</span>;
-    }
-  },
-  <span style="color:#a6e22e">actions</span><span style="color:#f92672">:</span> {
-    <span style="color:#a6e22e">allProducts</span>({ <span style="color:#a6e22e">commit</span> }) {
-      <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;ALL_PRODUCTS&#39;</span>)
+---
+################################################
+#             stage 根據排程設定執行              #
+################################################
+kind: pipeline
+type: docker
+name: backend_stage
 
-      <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/products`</span>).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">response</span> =&gt; {
-        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;response&#39;</span>, <span style="color:#a6e22e">response</span>);
-        <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;ALL_PRODUCTS_SUCCESS&#39;</span>, {
-          <span style="color:#a6e22e">products</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>,
-        });
-      })
-    }
-  }
-});
-</code></pre></div><p>我們總共做了幾件事情</p>
-<ol>
-<li>導入 axios，定義了後端 API 的網址到 <code>API_BASE</code></li>
-<li>刪除 store 中的假資料，清空 <code>products</code> 陣列</li>
-<li>mutations 增加了 <code>ALL_PRODUCTS</code> 和 <code>ALL_PRODUCTS_SUCCESS</code> 方法&lt;
-用來處理撈取後端資料的載入狀態以及資料</li>
-<li>最後加入了 <code>actions</code> 屬性，定義了 <code>allProducts</code> 函數，用來響應組件的對應事件<br>
-首先提交了 <code>ALL_PRODUCTS</code> mutation，接著在 <code>axios</code> 取得後端資料後提交了 <code>ALL_PRODUCTS_SUCCESS</code><br>
-並且把取得的資料命名為 <code>products</code> 一併作為 <code>payload</code> 傳入</li>
-</ol>
-<blockquote>
-<p>提示：<br>
-可以看到在 <code>allProducts</code> 中我們傳入了 <code>{ commit }</code> 參數<br>
-這地方使用了解構賦值 <code>const { commit } = context</code><br>
-代替比較長的 <code>context.commit</code><br>
-因為目前我們沒用到其他 <code>context</code> 屬性，所以這麼做是可以的</p>
-</blockquote>
-<h2 id="更新組件">更新組件</h2>
-<h3 id="productlist">ProductList</h3>
-<p>將 <code>src/components/products/ProductList.vue</code> 的 <code>&lt;script&gt;</code> 區塊改成以下</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">script</span>&gt;
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
-  <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;product-list&#34;</span>,
-  <span style="color:#a6e22e">created</span>() {
-    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">products</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) {
-      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#e6db74">&#34;allProducts&#34;</span>);
-    }
-  },
-  <span style="color:#a6e22e">computed</span><span style="color:#f92672">:</span> {
-    <span style="color:#75715e">// a computed getter
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">products</span>() {
-      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">products</span>;
-    }
-  },
-  <span style="color:#a6e22e">methods</span><span style="color:#f92672">:</span> {
-    <span style="color:#a6e22e">addToCart</span>(<span style="color:#a6e22e">product</span>) {
-      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#34;ADD_TO_CART&#34;</span>, {
-        <span style="color:#a6e22e">product</span>
-      });
-    }
-  }
-};
-&lt;/<span style="color:#f92672">script</span>&gt;
-</code></pre></div><p>增加了一個 <code>created()</code> 生命週期方法，在這個組件被建立時判斷使用者端是否有商品資料<br>
-若是沒有，則需要跟後端 API 要資料<br>
-於是通過 <code>this.$store.dispatch</code> 方法觸發名叫 <code>allProducts</code> 的 <code>action</code></p>
-<p>為什麼我們這邊不使用 <code>commit</code> 操作 <code>mutation</code> 而是使用 <code>dispatch</code> 呢？<br>
-是因為 <code>mutation</code> 必須是一個同步執行的程式，而這邊是一個異步請求<br>
-需要使用 <code>dispatch</code> 來操作 <code>Action</code> 進行異步請求</p>
-<p>再來是 <code>&lt;template&gt;</code>，我們做部分修改，讓畫面渲染時的資料符合當初後端 API 定義的格式</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;product.manufacturer&#34;</span>&gt;<span style="color:#a6e22e">生產商</span><span style="color:#960050;background-color:#1e0010">：</span>{{<span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">manufacturer</span>.<span style="color:#a6e22e">name</span>}}&lt;/<span style="color:#f92672">p</span>&gt;
-</code></pre></div><h3 id="cart">Cart</h3>
-<p>接著打開 <code>src/views/Cart.vue</code> 頁面，因為上面也有顯示生產商的名稱<br>
-同樣把 <code>{{product.manufacturer}}</code> 改成 <code>{{product.manufacturer.name}}</code></p>
-<h2 id="測試結果">測試結果</h2>
-<p>首先確認先前的後端 API 專案已經啟動，並且 MongoDB 也在運行中<br>
-如果先前在撰寫 API 時你沒有進行測試，則資料庫應該為空。先去加一些資料吧！</p>
-<p>完成之後進入前端測試，應該就可以發現商品的資料就是後端 API 傳來的資料<br>
-如果不確定的話，可以照著先前的教學，使用 Postman 取得 API 中的商品列表和前端的資料比對<br>
-取得的資料和先前一樣，可以加入與移出購物車</p>
-<hr>
-<p>專案範例程式碼 GitHub 網址：<a href="https://github.com/ray247k/mini-E-commerce">ray247k/mini-E-commerce</a></p>
+steps:
+  - name: submodules update
+    image: alpine/git
+    commands:
+      - date
+      - echo DRONE_REPO = ${DRONE_REPO}
+      - echo DRONE_BRANCH = ${DRONE_BRANCH}
+      - echo DRONE_COMMIT = ${DRONE_COMMIT}
+      - echo DRONE_BUILD_NUMBER = ${DRONE_BUILD_NUMBER}
+      - git submodule update --init --recursive
+
+  - name: composer install
+    image: composer:1.10.19
+    commands:
+      - composer install --ignore-platform-reqs
+
+trigger:
+  event:
+    - cron
+  cron:
+    - every2hour
+
+---
+################################################
+#        production 使用 git tag 發動部署        #
+################################################
+kind: pipeline
+type: docker
+name: backend_production
+
+steps:
+  - name: submodules update
+    image: alpine/git
+    commands:
+      - date
+      - echo DRONE_REPO = ${DRONE_REPO}
+      - echo DRONE_TAG = ${DRONE_TAG}
+      - echo DRONE_COMMIT = ${DRONE_COMMIT}
+      - echo DRONE_BUILD_NUMBER = ${DRONE_BUILD_NUMBER}
+      - git submodule update --init --recursive
+
+  - name: composer install
+    image: composer:1.10.19
+    commands:
+      - composer install --no-dev --ignore-platform-reqs
+
+trigger:
+  event:
+    - tag
+</code></pre><p>如果 push dev 分支，則只會執行 <code>dev_check_info</code> 和 <code>dev_run_update</code> 兩個動作<br>
+相對的 push testing 分支的行為則會等到指定排程 <code>every2hour</code> 被觸發才會執行<br>
+如此就可以針對不同環境可能會偵測不同分支來做不同的操作，比較常見是啟動時的指令是否加上開啟除錯模式<br>
+若是不同環境是部署在不同伺服器上，或是不同環境的部署流程不同的話是十分方便的</p>
+<p>每個 pipeline 都是獨立的，根據 trigger 的設定在不同條件下被觸發而執行不同步驟<br>
+如果推送程式到 dev 分支，則只會觸發 <code>backend_dev</code> 這個 pipeline 以及內部的步驟
+或是在版本控制中下 tag，當 webhook 監聽到新的 tag 被推送，則會觸發 <code>backend_production</code><br>
+也可以建立 cronjob 來進行排程定時執行<br>
+例如 <code>backend_stage</code> 所設定的 testing 就是監聽名為 <code>every2hour</code> 的排程<br>
+這部分之後會再獨立介紹相關的設定和使用方法</p>
+<p>更多的設定條件可以參考官方文件：<a href="https://docs.drone.io/pipeline/docker/syntax/conditions/">Pipelines Conditions</a><br>
+了解更多關於 Pipeline：<a href="https://docs.drone.io/pipeline/overview/">Pipelines Overview</a></p>
 
       
       
-<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/ray247k/button?referrer=https%3a%2f%2ftech.ray247k.com%2fblog%2f202009-express-vue-build-ecommerce-13-how-to-use-axios%2f" width="100%" frameborder=0></iframe>
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/ray247k/button?referrer=https%3a%2f%2ftech.ray247k.com%2fblog%2f202106-drone-cicd-2-advanced-multiple-conditions%2f" width="100%" frameborder=0></iframe>
 
     </div>
     <footer>
@@ -492,7 +458,7 @@
     <ul class="categories">
       
         
-          <li><a class="article-terms-link" href="/categories/node.js/">node.js</a></li>
+          <li><a class="article-terms-link" href="/categories/devops/">DevOps</a></li>
         
       
     </ul>
@@ -501,13 +467,11 @@
     <ul class="tags">
       
         
-          <li><a class="article-terms-link" href="/tags/vue/">vue</a></li>
+          <li><a class="article-terms-link" href="/tags/devops/">DevOps</a></li>
         
-          <li><a class="article-terms-link" href="/tags/node.js/">node.js</a></li>
+          <li><a class="article-terms-link" href="/tags/drone/">Drone</a></li>
         
-          <li><a class="article-terms-link" href="/tags/vuex/">vuex</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/axios/">axios</a></li>
+          <li><a class="article-terms-link" href="/tags/cicd/">CICD</a></li>
         
       
     </ul>
@@ -522,10 +486,8 @@
   
   <div class="pagination">
     
-      <a href="/blog/202010-express-vue-build-ecommerce-14-refactor-component/" class="button left"><span>[Express&#43;Vue 搭建電商網站] 14 使用組件思維重構頁面邏輯</span></a>
     
-    
-      <a href="/blog/202009-express-vue-build-ecommerce-12-vuex-mutation/" class="button right"><span>[Express&#43;Vue 搭建電商網站] 12 在 Vuex 使用 Mutation 管理狀態</span></a>
+      <a href="/blog/202106-drone-cicd-1-basic-usage/" class="button right"><span>[用 Drone 建立自動部署] 01 基本服務建置及串接 GitHub</span></a>
     
   </div>
 
