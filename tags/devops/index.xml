@@ -6,7 +6,18 @@
     <description>Recent content in DevOps on 薛丁格的工程師</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Sat, 12 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 14 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[用 Drone 建立自動部署] 03 部署排程設定與權限管理</title>
+      <link>https://tech.ray247k.com/blog/202106-drone-cicd-3-advanced-cron-job/</link>
+      <pubDate>Mon, 14 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://tech.ray247k.com/blog/202106-drone-cicd-3-advanced-cron-job/</guid>
+      <description>&lt;p&gt;使用 &lt;a href=&#34;https://www.drone.io/&#34;&gt;Drone&lt;/a&gt; 建立自己的自動部署服務&lt;br&gt;
+Drone 是一套以 Golang 開發的一套 CI/CD 系統工具&lt;br&gt;
+本篇進行部署排程設定與權限管理的教學&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>[用 Drone 建立自動部署] 02 複數觸發條件設定</title>
       <link>https://tech.ray247k.com/blog/202106-drone-cicd-2-advanced-multiple-conditions/</link>

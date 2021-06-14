@@ -1,4 +1,10 @@
 [{
+    "title": "[用 Drone 建立自動部署] 03 部署排程設定與權限管理",
+    "date": "",
+    "description": "透過 Drone 建立自動部署流程，部署排程設定與權限管理",
+    "body": "使用 Drone 建立自己的自動部署服務\nDrone 是一套以 Golang 開發的一套 CI/CD 系統工具\n本篇進行部署排程設定與權限管理的教學\n定時執行 (Cron Job) 當初在設定排程的時候真的是各種坑，要是前面的服務啟動花了三天的話\n排程設定不斷查文件、看討論串、測試、除錯，整個大概花了半個月吧\n很多細節作者都只回在 gitter 或是論壇裡，並沒有寫進官方文件\n還有公司用的是 bitbucket，有些功能並不支援！\n自訂執行時間 服務本身的限制 Drone 1.0 最終版不給在介面上自訂因為容易出錯：來源 且最低重複執行時間半小時一次：來源\n專案設定檔的設定方法 作者說明應該要用 CLI 定義好之後在專案的 .drone.yml 檔去設定觸發條件的 cron job 名稱\n而不是表達式：Cron job definition\n表達式的時區居然是寫死的 官方說明排程的時區是使用 UTC 也就是 +0 時區，所以要自己換算：Cron Timezones\n The current implementation calculates the execution time based on UTC as opposed to local time.\n 不過官方也說自訂排程時間不會在準確的時間被觸發，前後可能會差一點點：參考資料\n建立 Cron Job 大部分教學都使用 Drone CLI，但是在官網發現可以用 API 建立：API drone cron create，結果一樣\n首先要去 Drone 頁面右上的 User Settings 取得 Token 作為 Post 的 header\n打開 Postman 建立一個 POST /api/repos/{owner}/{repo}/cron 請求\n並在 Headers 頁籤加入 Token\nTocken key 是 Authorization\n而對應的 value 長得像 Bearer Nvr50c3yKjY2br20KDzN16OAH1XADiNN 的格式\nBody 則是設定 Cron Job 名稱和執行條件還有要執行的分支\n{ \u0026quot;name\u0026quot;: \u0026quot;every2hour\u0026quot;, \u0026quot;expr\u0026quot;: \u0026quot;0 0 */2 * * *\u0026quot;, \u0026quot;branch\u0026quot;: \u0026quot;main\u0026quot; } 可以看到我的條件是 0 0 8-16,*/2 * * *，代表「8-16 點，每兩個小時執行一次」\n或是也可以設定成 0 0 10,12,14,16 * * *「每個 10 12 14 16 點」執行\n可以使用 線上工具 來依照條件產生\n 注意！這邊作者使用的時間套件是包含秒數的 6 位數格式！\n 查看 Cron Job Cron List 建立完成之後可以使用 GET /api/repos/{owner}/{repo}/cron 查看所有 Cron Job 列表\nCron Info 使用 GET /api/repos/{owner}/{repo}/cron/{name} 則可以查看指定 Cron Job 的詳細資訊\n回到 Drone 後台，點開專案的 settings 頁面會發現我們剛剛用 API 建立的 Cron Job 被加入了!\n等時間到就會執行 .drone.yml 中由指定 Cron Job 名稱觸發的 pipeline\n更新 Cron Job 更新Cron Job 使用 PATCH /api/repos/{owner}/{repo}/cron/{name}\nBody 帶入要改變的內容，例如把使用的分支換成 dev\n或是把執行時間換成每天的固定時間執行\n{ \u0026quot;name\u0026quot;: \u0026quot;every2hour\u0026quot;, \u0026quot;expr\u0026quot;: \u0026quot;0 0 2,4,6,8 * * *\u0026quot;, \u0026quot;branch\u0026quot;: \u0026quot;dev\u0026quot; } 刪除 Cron Job 可以使用 DELETE /api/repos/{owner}/{repo}/cron/{name} 刪除之前建立的 Cron Job\n但是我更偏好用後台的 UI 介面按下 DELETE 就好\n另外一種操作方式是 Drone CLI，不過這次沒用上，提供給各位參考\n Drone CLI Cron CLI drone cron add  權限控管 如果沒設定使用者，服務上線到公開網址的話就是全世界都可以拿來使用：官方說明\n Drone registration is open by default. This means any user can register an account and use the system.\n 管理員權限設定 在 drone_server 建立 admin 才能管理其他帳號：DRONE_USER_CREATE\n- DRONE_USER_CREATE=username:ray247k,admin:true 使用者名單設定 藉由設定使用者名單來限制存取權限：官方文件\n可以使用機構或是使用者 ID\n- DRONE_USER_FILTER=ray247k,lemon,JohnDoe 但如果版本控制使用的是 Bitbuctet 平台，則不支援 Organization 限制：討論串說明\n所以只要有寫入權限就可以看到 setting 頁面\n使用 GitHub 測試，結果是可以使用組織進行權限控管的，並且不會開放 setting 分頁給所有人\n",
+    "ref": "/blog/202106-drone-cicd-3-advanced-cron-job/"
+  },{
     "title": "[用 Drone 建立自動部署] 02 複數觸發條件設定",
     "date": "",
     "description": "透過 Drone 建立自動部署流程，複數觸發條件設定",
@@ -268,12 +274,6 @@
     "description": "使用 Express + Vue 搭建一個電商網站 - 初始設定",
     "body": "本篇將使用 vue-ui 建立專案，並且安裝 vue-router\n安裝所需要的環境 在這個練習中我們首先需要的是安裝 npm 以及node\n這部分教學太多了，總之就先去裝起來吧！裝好後使用\nnpm -v # 確定安裝結果 node -v 接著要安裝我們前端所要使用的 vue\nnpm install -g vue-cli 安裝完成後在 terminal 確認安裝結果\nvue --version 新建 vue 專案 這次嘗試使用 Vue-cli 新出的 vue ui 來建立專案，在終端機輸入\nvue ui 就可以起動，根據提示我們開啟 vue-ui 的畫面 按下新增之後選擇指定的位置，根據畫面上提示來建立新專案\n接著就是等待他執行完成，在終端機進到剛剛建立專案的資料夾下會發現一個 vue 專案已經被建立\n根據 README 的說明執行以下指令後，可以打開 http://localhost:8080/ 來預覽執行結果\nnpm install npm run serve 安裝 vue-router 接著還要安裝一個我們會用上的東西：vue-router\n可以選擇下指令，或是同樣的使用 vue-ui 來完成，既然剛剛使用 vue-ui 建立專案，這邊繼續使用 vue-ui 安裝 vue-router\n打開 vue-ui 頁面，最上方搜尋欄的左邊看「新增 vue-router」給他按下去就會開始安裝了 安裝好之後可以進入 main.js 查看，友善的自動安裝已經幫我們引入了呢！\n如此就完成了我們前端 vue 專案的初始設定\n 專案範例程式碼 GitHub 網址：ray247k/mini-E-commerce\n",
     "ref": "/blog/202006-express-vue-build-ecommerce-01-basic-settings/"
-  },{
-    "title": "",
-    "date": "",
-    "description": "",
-    "body": "",
-    "ref": "/blog/101-drone-cicd-3-advanced-cron-job/"
   },{
     "title": "About",
     "date": "",
