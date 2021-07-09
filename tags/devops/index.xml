@@ -6,7 +6,19 @@
     <description>Recent content in DevOps on 薛丁格的工程師</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Mon, 14 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 09 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[用 Drone 建立自動部署] 04 drone runner 介紹</title>
+      <link>https://tech.ray247k.com/blog/202107-drone-cicd-4-advanced-runner/</link>
+      <pubDate>Fri, 09 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://tech.ray247k.com/blog/202107-drone-cicd-4-advanced-runner/</guid>
+      <description>&lt;p&gt;我們在 &lt;a href=&#34;https://tech.ray247k.com/blog/202106-drone-cicd-1-basic-usage/&#34;&gt;[用 Drone 建立自動部署] 01 基本服務建置及串接 GitHub&lt;/a&gt; 文章中有 &lt;code&gt;docker-compose.yml&lt;/code&gt; 的範例&lt;br&gt;
+在範例中建立了兩個 docker runner，分別是 &lt;code&gt;drone_runner_docker&lt;/code&gt; 和 &lt;code&gt;drone-runner-ssh&lt;/code&gt;&lt;br&gt;
+而在 &lt;a href=&#34;https://tech.ray247k.com/blog/202106-drone-cicd-2-advanced-pipeline-configuration/&#34;&gt;[用 Drone 建立自動部署] 02 部署觸發條件(pipeline)設定&lt;/a&gt; 中使用到的其實只有 docker runner&lt;br&gt;
+這篇文章來分別介紹兩個 runner，以及官方網站上提到的其他 runner&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>[用 Drone 建立自動部署] 03 部署排程設定與權限管理</title>
       <link>https://tech.ray247k.com/blog/202106-drone-cicd-3-advanced-cron-job/</link>

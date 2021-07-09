@@ -2,7 +2,7 @@
 <html lang="zh-tw">
   <head>
   <meta charset="utf-8">
-<title>買網址 - 薛丁格的工程師</title>
+<title>[用 Drone 建立自動部署] 04 drone runner 介紹 - 薛丁格的工程師</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
@@ -19,13 +19,16 @@
   <meta name="theme-color" content="#ffffff">
 
 <meta name="generator" content="Hugo 0.85.0" /><meta property="og:site_name" content="薛丁格的工程師">
-  <meta property="og:title" content="買網址">
-  <meta property="og:description" content="薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識">
-  <meta property="description" content="薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識">
-  <meta property="og:url" content="https://tech.ray247k.com/tags/%E8%B2%B7%E7%B6%B2%E5%9D%80/">
+  <meta property="og:title" content="[用 Drone 建立自動部署] 04 drone runner 介紹">
+  <meta property="og:description" content="透過 Drone 建立自動部署流程，drone runner 介紹">
+  <meta property="description" content="透過 Drone 建立自動部署流程，drone runner 介紹">
+  <meta property="og:url" content="https://tech.ray247k.com/blog/202107-drone-cicd-4-advanced-runner/">
   <meta property="og:type" content="article">
   
-    <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.jpg">
+    
+      <meta property="og:image" content="https://tech.ray247k.com/img/blog/2021/06/drone-cicd-1-basic-usage/ngrok-start.png">
+      <meta property="og:image:alt" content="ngrok start screenshot">
+    
   
   <link rel="stylesheet" href="/css/bundle.min.6ad9eb85bff384c75937a02036b01425a2ca63f19a96535b8ba5b181db62a4b3.css" integrity="sha256-atnrhb/zhMdZN6AgNrAUJaLKY/GallNbi6WxgdtipLM="><link rel="stylesheet" href="/css/add-on.css">
 
@@ -80,6 +83,134 @@
 
 
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "legalName": "薛丁格的工程師",
+    "url": "https:\/\/tech.ray247k.com",
+    "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "ray247k@gmail.com",
+        "availableLanguage": [
+            "Mandarin",
+            "English"
+        ]
+    },
+    "sameAs": [
+        "https://ray247k.blogspot.com/"
+    ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "[用 Drone 建立自動部署] 04 drone runner 介紹",
+    "description": "透過 Drone 建立自動部署流程，drone runner 介紹",
+    "keywords": [
+        "DevOps" , "Drone" , "CICD" 
+    ],
+    "dateCreated": "2021-07-09T00:00:00.00Z",
+    "datePublished": "2021-07-09T00:00:00.00Z",
+    "dateModified": "2021-07-09T00:00:00.00Z",
+    "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "contentUrl": "[]"
+    },
+    "breadcrumb": {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com",
+                    "name": "薛丁格的工程師",
+                    "url": "https:\/\/tech.ray247k.com"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com/blog",
+                    "name": "Blog",
+                    "url": "https:\/\/tech.ray247k.com/blog"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\/blog\/202107-drone-cicd-4-advanced-runner\/",
+                    "name": "[用 Drone 建立自動部署] 04 drone runner 介紹",
+                    "url": "https:\/\/tech.ray247k.com\/blog\/202107-drone-cicd-4-advanced-runner\/"
+                }
+            }
+        ],
+        "itemListOrder": "Ascending",
+        "numberOfItems": 3
+    }
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "articleSection": "blog",
+    "name": "[用 Drone 建立自動部署] 04 drone runner 介紹",
+    "headline": "\u003cp\u003e我們在 \u003ca href=\u0022\/blog\/202106-drone-cicd-1-basic-usage\/\u0022\u003e[用 Drone 建立自動部署] 01 基本服務建置及串接 GitHub\u003c\/a\u003e 文章中有 \u003ccode\u003edocker-compose.yml\u003c\/code\u003e 的範例\u003cbr\u003e\n在範例中建立了兩個 docker runner，分別是 \u003ccode\u003edrone_runner_docker\u003c\/code\u003e 和 \u003ccode\u003edrone-runner-ssh\u003c\/code\u003e\u003cbr\u003e\n而在 \u003ca href=\u0022\/blog\/202106-drone-cicd-2-advanced-pipeline-configuration\/\u0022\u003e[用 Drone 建立自動部署] 02 部署觸發條件(pipeline)設定\u003c\/a\u003e 中使用到的其實只有 docker runner\u003cbr\u003e\n這篇文章來分別介紹兩個 runner，以及官方網站上提到的其他 runner\u003c\/p\u003e",
+    "description": "透過 Drone 建立自動部署流程，drone runner 介紹",
+    "inLanguage": "zh-TW",
+    "isFamilyFriendly": "true",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com\/blog\/202107-drone-cicd-4-advanced-runner\/"
+    },
+    "author" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "creator" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "accountablePerson" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "copyrightHolder" : "薛丁格的工程師",
+    "copyrightYear" : "2021",
+    "dateCreated": "2021-07-09T00:00:00.00Z",
+    "datePublished": "2021-07-09T00:00:00.00Z",
+    "dateModified": "2021-07-09T00:00:00.00Z",
+    "publisher":{
+        "@type":"Organization",
+        "name": "薛丁格的工程師",
+        "url": "https://tech.ray247k.com",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+            "width":"32",
+            "height":"32"
+        }
+    },
+    "image": [""],
+    "url" : "https:\/\/tech.ray247k.com\/blog\/202107-drone-cicd-4-advanced-runner\/",
+    "wordCount" : "308",
+    "genre" : [ "DevOps" , "Drone" , "CICD" ],
+    "keywords" : [ "DevOps" , "Drone" , "CICD" ]
+}
+</script>
+
+
+
 </head>
 
   <body>
@@ -90,7 +221,7 @@
     <h1 class="nav-title">
       <a href="/" class="nav">
         
-          Tag
+          Blog
         
       </a>
     </h1>
@@ -186,42 +317,156 @@
 
       <main id="site-main">
         
-  
-  
-    <article class="post">
-  <header>
+  <article class="post">
+    <header>
   <div class="title">
     
-      <h2><a href="/blog/202105-how-to-buy-a-domain-from-google/">如何從 Google Domains 購買屬於自己的網址</a></h2>
+      <h2><a href="/blog/202107-drone-cicd-4-advanced-runner/">[用 Drone 建立自動部署] 04 drone runner 介紹</a></h2>
     
     
-      <p>購買屬於自己的網址 - 使用Google Domains 教學</p>
+      <p>透過 Drone 建立自動部署流程，drone runner 介紹</p>
     
   </div>
   <div class="meta">
-    <time datetime="2021-05-15 00:00:00 &#43;0000 UTC">2021/05/15</time>
+    <time datetime="2021-07-09 00:00:00 &#43;0000 UTC">2021/07/09</time>
     <p>Ray</p>
     
   </div>
 </header>
 
-  <div class="content">
-    
-    
-    <p>以前都一直是使用免費的部落(blogger)，隨著近幾年個人品牌意識崛起，以及覺得原本部落格不敷使用<br>
-且搬家非常不方便，還有不能自訂 SEO 和埋設追蹤碼。在媒體業做過就會想自己動手處理這些<br>
-當初一度從 blogger 搬到 medium，又搬回 blogger轉移十分麻煩<br>
-而且還有程式碼內容格式會跑掉，以及想都用 markdown 語法紀錄等等原因<br>
-興起了自架的想法，一方面也是想要作為展現自己的能力的平台</p>
-  </div>
-  <footer>
-    <a href="/blog/202105-how-to-buy-a-domain-from-google/" class="button big">閱讀全文</a>
-    <div class="stats">
+    <div id="socnet-share">
+      
+
+
+
+
+
+    </div>
+    <div class="content">
+      <a href="/blog/202107-drone-cicd-4-advanced-runner/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/06/drone-cicd-1-basic-usage/ngrok-start.png');">
+    <img src="https://tech.ray247k.com/img/blog/2021/06/drone-cicd-1-basic-usage/ngrok-start.png" alt="ngrok start screenshot">
+  </a>
+      <p>我們在 <a href="/blog/202106-drone-cicd-1-basic-usage/">[用 Drone 建立自動部署] 01 基本服務建置及串接 GitHub</a> 文章中有 <code>docker-compose.yml</code> 的範例<br>
+在範例中建立了兩個 docker runner，分別是 <code>drone_runner_docker</code> 和 <code>drone-runner-ssh</code><br>
+而在 <a href="/blog/202106-drone-cicd-2-advanced-pipeline-configuration/">[用 Drone 建立自動部署] 02 部署觸發條件(pipeline)設定</a> 中使用到的其實只有 docker runner<br>
+這篇文章來分別介紹兩個 runner，以及官方網站上提到的其他 runner</p>
+<p>所有的 runner 可以在官方網站的 <a href="https://docs.drone.io/runner/overview/">runner overview</a> 頁面找到<br>
+預設的 runner 是 docker runner</p>
+<p>在文章編輯的時候有的 runner 列表</p>
+<ul>
+<li><a href="https://docs.drone.io/runner/docker/overview/">Docker Runner</a></li>
+<li><a href="https://docs.drone.io/runner/kubernetes/overview/">Kubernetes Runner</a></li>
+<li><a href="https://docs.drone.io/runner/exec/overview/">Exec Runner</a></li>
+<li><a href="https://docs.drone.io/runner/ssh/overview/">SSH Runner</a></li>
+<li><a href="https://docs.drone.io/runner/digitalocean/overview/">Digital Ocean Runner</a></li>
+<li><a href="https://docs.drone.io/runner/macstadium/overview/">Macstadium Runner</a></li>
+</ul>
+<h1 id="ssh-runner">ssh runner</h1>
+<h2 id="範例">範例：</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">pipeline</span>
+<span style="color:#f92672">type</span>: <span style="color:#ae81ff">ssh</span>
+<span style="color:#f92672">name</span>: <span style="color:#ae81ff">default</span>
+
+<span style="color:#f92672">server</span>:
+  <span style="color:#f92672">host</span>:
+    <span style="color:#f92672">from_secret</span>: <span style="color:#ae81ff">GCP_IP_HOST</span>
+  <span style="color:#f92672">user</span>:
+    <span style="color:#f92672">from_secret</span>: <span style="color:#ae81ff">TESTING_USER</span>
+  <span style="color:#f92672">ssh_key</span>:
+    <span style="color:#f92672">from_secret</span>: <span style="color:#ae81ff">TESTING_PRIVATE_SSH_KEY</span>
+
+<span style="color:#f92672">steps</span>:
+  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">greeting</span>
+    <span style="color:#f92672">commands</span>:
+      - <span style="color:#ae81ff">echo hello world</span>
+      - <span style="color:#ae81ff">whoami</span>
+      - <span style="color:#ae81ff">pwd</span>
+      - <span style="color:#ae81ff">echo DRONE_REPO = ${DRONE_REPO}</span>
+      - <span style="color:#ae81ff">echo DRONE_BRANCH = ${DRONE_BRANCH}</span>
+</code></pre></div><h2 id="解說">解說</h2>
+<p>當 type 使用 ssh 的時候，就是使用 ssh runner 執行<br>
+在 <code>server</code> 區塊中指定了 ssh 所需要的參數，包含遠端的 host ip 位置以及登入的使用者名稱<br>
+<code>from_secret: SSH_KEY</code> 代表從 Drone 服務後台設定的 <code>Secrets</code> 取用特定 index 的值<br>
+如果有需要使用 ssh 登入主機操作，則這邊要填入主機的 id_rsa<br>
+並且也要建立權限為 <code>600</code> 的 <code>authorized_keys</code> 檔案在用來登入的使用者目錄下 .ssh 中<br>
+檔案內容則是 id_rsa.pub 的內容，如此 drone 的 ssh runner 才能正確的使用指定使用者的 ssh key 登入遠端主機</p>
+<p>這樣做的好處是敏感資料不用讓所有專案的部署者知道，只要知道使用的 secrets index 叫什麼就好<br>
+未來若是有修改，也只需要在 Drone 後台操作，不需要每個專案修改檔案</p>
+<p><a href="https://docs.drone.io/secret/repository/">Secrets 官方說明</a></p>
+<p>當然也可以使用 password 而不是 ssh 登入遠端主機，更多設定可以在 <a href="https://docs.drone.io/pipeline/ssh/syntax/">官方文件</a> 裡面查看</p>
+<h1 id="docker-runner">docker runner</h1>
+<p>會使用指定的 image 去建立容器，並且用容器執行指定的行爲<br>
+是預設的 runner，也是建議初學者使用的 runner</p>
+<p>若是你的多個 pipeline 會需要繼承對主機檔案進行操作的行為則不適合<br>
+因為 Docker pipelines 是執行在 Docker 容器中，和實體主機是隔絕的，並不會直接影響主機上的檔案</p>
+<h2 id="範例-1">範例</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">pipeline</span>
+<span style="color:#f92672">type</span>: <span style="color:#ae81ff">docker</span>
+<span style="color:#f92672">name</span>: <span style="color:#ae81ff">backend_dev</span>
+
+<span style="color:#f92672">steps</span>:
+  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">submodules update</span>
+    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">alpine/git</span>
+    <span style="color:#f92672">commands</span>:
+      - <span style="color:#ae81ff">whoami</span>
+      - <span style="color:#ae81ff">pwd</span>
+      - <span style="color:#ae81ff">date</span>
+      - <span style="color:#ae81ff">echo DRONE_REPO = ${DRONE_REPO}</span>
+      - <span style="color:#ae81ff">echo DRONE_BRANCH = ${DRONE_BRANCH}</span>
+      - <span style="color:#ae81ff">echo DRONE_COMMIT = ${DRONE_COMMIT}</span>
+      - <span style="color:#ae81ff">echo DRONE_BUILD_NUMBER = ${DRONE_BUILD_NUMBER}</span>
+      - <span style="color:#ae81ff">git submodule update --init --recursive</span>
+
+<span style="color:#f92672">trigger</span>:
+  <span style="color:#f92672">branch</span>:
+    - <span style="color:#ae81ff">dev</span>
+  <span style="color:#f92672">event</span>:
+    - <span style="color:#ae81ff">push</span>
+</code></pre></div><h1 id="其他-runner">其他 runner</h1>
+<h2 id="exec-runner">Exec Runner</h2>
+<h3 id="使用時機">使用時機</h3>
+<p>不適合跑在容器內的專案，例如：MacOS 的專案</p>
+<h3 id="不該使用的時機">不該使用的時機</h3>
+<p>由於 Exec runner 沒有和主機隔離，所有操作都是直接在服務建構的主機上操作<br>
+如果專案和 Drone 服務沒有在同一台主機上，或是有人在專案內的 <code>.drone.yml</code> 加入危險的指令<br>
+那會釀成悲劇，所以一般來說預設都使用 Docker runner<br>
+並且 Exec runner 是 Beta 版本，並不建議使用在正式環境中</p>
+<h3 id="範例-2">範例</h3>
+<p>可以看到底下範例，pipeline 被觸發時會直接在主機上下指令！</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
+<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">pipeline</span>
+<span style="color:#f92672">type</span>: <span style="color:#ae81ff">exec</span>
+<span style="color:#f92672">name</span>: <span style="color:#ae81ff">default</span>
+
+<span style="color:#f92672">steps</span>:
+- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">backend</span>
+  <span style="color:#f92672">commands</span>:
+  - <span style="color:#ae81ff">go build</span>
+  - <span style="color:#ae81ff">go test</span>
+
+- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">frontend</span>
+  <span style="color:#f92672">commands</span>:
+  - <span style="color:#ae81ff">npm install</span>
+  - <span style="color:#ae81ff">npm test</span>
+</code></pre></div><hr>
+<p>以上就是常用的 Drone Runner 介紹，建議都是使用 Docker runner<br>
+因為大部分所需要的操作都有現成的 Docker image 了<br>
+沒有特別必要的話就別使用另外兩個 runner 直接對主機檔案系統操作，或是直接在主機下指令</p>
+<p>而 Kubernetes 我還沒有用過，所以並沒有介紹到 Kubernetes runner<br>
+未來若有機會再補充</p>
+
+      
+      
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/ray247k/button?referrer=https%3a%2f%2ftech.ray247k.com%2fblog%2f202107-drone-cicd-4-advanced-runner%2f" width="100%" frameborder=0></iframe>
+
+    </div>
+    <footer>
+      <div class="stats">
   
     <ul class="categories">
       
         
-          <li><a class="article-terms-link" href="/categories/%e6%9e%b6%e7%ab%99%e7%9b%b8%e9%97%9c/">架站相關</a></li>
+          <li><a class="article-terms-link" href="/categories/devops/">DevOps</a></li>
         
       
     </ul>
@@ -230,29 +475,27 @@
     <ul class="tags">
       
         
-          <li><a class="article-terms-link" href="/tags/%e6%9e%b6%e7%ab%99%e7%9b%b8%e9%97%9c/">架站相關</a></li>
+          <li><a class="article-terms-link" href="/tags/devops/">DevOps</a></li>
         
-          <li><a class="article-terms-link" href="/tags/domain-name/">Domain Name</a></li>
+          <li><a class="article-terms-link" href="/tags/drone/">Drone</a></li>
         
-          <li><a class="article-terms-link" href="/tags/google-domains/">Google Domains</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/%e8%b2%b7%e7%b6%b2%e5%9d%80/">買網址</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/%e5%80%8b%e4%ba%ba%e5%93%81%e7%89%8c/">個人品牌</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/%e5%9f%9f%e5%90%8d/">域名</a></li>
+          <li><a class="article-terms-link" href="/tags/cicd/">CICD</a></li>
         
       
     </ul>
   
 </div>
 
-  </footer>
-</article>
+    </footer>
+  </article>
+  
+    
 
   
   <div class="pagination">
     
+    
+      <a href="/blog/202106-drone-cicd-3-advanced-cron-job/" class="button right"><span>[用 Drone 建立自動部署] 03 部署排程設定與權限管理</span></a>
     
   </div>
 
