@@ -2,7 +2,7 @@
 <html lang="zh-tw">
   <head>
   <meta charset="utf-8">
-<title>Blog - 薛丁格的工程師</title>
+<title>[用 Drone 建立自動部署] 02 部署觸發條件(pipeline)設定 - 薛丁格的工程師</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
@@ -19,10 +19,10 @@
   <meta name="theme-color" content="#ffffff">
 
 <meta name="generator" content="Hugo 0.85.0" /><meta property="og:site_name" content="薛丁格的工程師">
-  <meta property="og:title" content="Blog">
-  <meta property="og:description" content="薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識">
-  <meta property="description" content="薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識">
-  <meta property="og:url" content="https://tech.ray247k.com/blog/">
+  <meta property="og:title" content="[用 Drone 建立自動部署] 02 部署觸發條件(pipeline)設定">
+  <meta property="og:description" content="透過 Drone 建立自動部署流程，部署觸發條件(pipeline)設定">
+  <meta property="description" content="透過 Drone 建立自動部署流程，部署觸發條件(pipeline)設定">
+  <meta property="og:url" content="https://tech.ray247k.com/blog/202106-drone-cicd-2-advanced-pipeline-configuration/">
   <meta property="og:type" content="article">
   
     <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.jpg">
@@ -75,6 +75,134 @@
     "keywords": [
         "apache-bench,aws,axios,cdn,cicd,cloudflare,component,composer,containerization,cors,devops,dns,docker,docker-compose,domain-name,drone,element-ui,express,gcp,getter,github-page,google-domains,laravel,leetcode,leetcode-eazy,leetcode-medium,linux,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,portainer,postgresql,proxy,restful,server,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,架站相關,買網址,"
     ]
+}
+</script>
+
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "legalName": "薛丁格的工程師",
+    "url": "https:\/\/tech.ray247k.com",
+    "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "ray247k@gmail.com",
+        "availableLanguage": [
+            "Mandarin",
+            "English"
+        ]
+    },
+    "sameAs": [
+        "https://ray247k.blogspot.com/"
+    ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "[用 Drone 建立自動部署] 02 部署觸發條件(pipeline)設定",
+    "description": "透過 Drone 建立自動部署流程，部署觸發條件(pipeline)設定",
+    "keywords": [
+        "DevOps" , "Drone" , "CICD" 
+    ],
+    "dateCreated": "2021-06-12T00:00:00.00Z",
+    "datePublished": "2021-06-12T00:00:00.00Z",
+    "dateModified": "2021-06-12T00:00:00.00Z",
+    "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "contentUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg"
+    },
+    "breadcrumb": {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com",
+                    "name": "薛丁格的工程師",
+                    "url": "https:\/\/tech.ray247k.com"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com/blog",
+                    "name": "Blog",
+                    "url": "https:\/\/tech.ray247k.com/blog"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\/blog\/202106-drone-cicd-2-advanced-pipeline-configuration\/",
+                    "name": "[用 Drone 建立自動部署] 02 部署觸發條件(pipeline)設定",
+                    "url": "https:\/\/tech.ray247k.com\/blog\/202106-drone-cicd-2-advanced-pipeline-configuration\/"
+                }
+            }
+        ],
+        "itemListOrder": "Ascending",
+        "numberOfItems": 3
+    }
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "articleSection": "blog",
+    "name": "[用 Drone 建立自動部署] 02 部署觸發條件(pipeline)設定",
+    "headline": "\u003cp\u003e使用 \u003ca href=\u0022https:\/\/www.drone.io\/\u0022\u003eDrone\u003c\/a\u003e 建立自己的自動部署服務\u003cbr\u003e\nDrone 是一套以 Golang 開發的一套 CI\/CD 系統工具\u003cbr\u003e\n本篇進行複數觸發條件設定，在不同觸發條件下觸發不同的部署步驟設定\u003c\/p\u003e",
+    "description": "透過 Drone 建立自動部署流程，部署觸發條件(pipeline)設定",
+    "inLanguage": "zh-TW",
+    "isFamilyFriendly": "true",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com\/blog\/202106-drone-cicd-2-advanced-pipeline-configuration\/"
+    },
+    "author" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "creator" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "accountablePerson" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "copyrightHolder" : "薛丁格的工程師",
+    "copyrightYear" : "2021",
+    "dateCreated": "2021-06-12T00:00:00.00Z",
+    "datePublished": "2021-06-12T00:00:00.00Z",
+    "dateModified": "2021-06-12T00:00:00.00Z",
+    "publisher":{
+        "@type":"Organization",
+        "name": "薛丁格的工程師",
+        "url": "https://tech.ray247k.com",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+            "width":"32",
+            "height":"32"
+        }
+    },
+    "image": "https://tech.ray247k.com/img/main/logo.jpg",
+    "url" : "https:\/\/tech.ray247k.com\/blog\/202106-drone-cicd-2-advanced-pipeline-configuration\/",
+    "wordCount" : "267",
+    "genre" : [ "DevOps" , "Drone" , "CICD" ],
+    "keywords" : [ "DevOps" , "Drone" , "CICD" ]
 }
 </script>
 
@@ -186,40 +314,151 @@
 
       <main id="site-main">
         
-  
-  
-    <article class="post">
-  <header>
+  <article class="post">
+    <header>
   <div class="title">
     
-      <h2><a href="/blog/202009-express-vue-build-ecommerce-11-install_vuex/">[Express&#43;Vue 搭建電商網站] 11 認識 vuex</a></h2>
+      <h2><a href="/blog/202106-drone-cicd-2-advanced-pipeline-configuration/">[用 Drone 建立自動部署] 02 部署觸發條件(pipeline)設定</a></h2>
     
     
-      <p>使用 Express &#43; Vue 搭建一個電商網站 - 認識 vuex</p>
+      <p>透過 Drone 建立自動部署流程，部署觸發條件(pipeline)設定</p>
     
   </div>
   <div class="meta">
-    <time datetime="2020-09-12 00:00:00 &#43;0000 UTC">2020/09/12</time>
+    <time datetime="2021-06-12 00:00:00 &#43;0000 UTC">2021/06/12</time>
     <p>Ray</p>
     
   </div>
 </header>
 
-  <div class="content">
-    
-    
-    <p><a href="https://vuex.vuejs.org/zh/">vuex</a> 來協助我們集中管理組件狀態，就不用到處維護狀態<br>
-使得組件只需要專注於渲染頁面，而前端狀態都保留在 vuex 中建立的狀態庫中<br>
-所謂狀態庫，其實也就是一個 Javascript 物件</p>
-  </div>
-  <footer>
-    <a href="/blog/202009-express-vue-build-ecommerce-11-install_vuex/" class="button big">閱讀全文</a>
-    <div class="stats">
+    <div id="socnet-share">
+      
+
+
+
+
+
+    </div>
+    <div class="content">
+      
+      <p>使用 <a href="https://www.drone.io/">Drone</a> 建立自己的自動部署服務<br>
+Drone 是一套以 Golang 開發的一套 CI/CD 系統工具<br>
+本篇進行複數觸發條件設定，在不同觸發條件下觸發不同的部署步驟設定</p>
+<h1 id="複數觸發條件multiple-conditions">複數觸發條件(Multiple Conditions)</h1>
+<p>有時候專案中在特定分支要做不同的事件，這時候可以參考以下設定</p>
+<p><code>.drone.yml</code></p>
+<pre><code class="language-yaml=" data-lang="yaml=">---
+################################################
+#             dev 每次推到分支就更新              #
+################################################
+kind: pipeline
+type: docker
+name: backend_dev
+
+steps:
+  - name: submodules update
+    image: alpine/git
+    commands:
+      - date
+      - echo DRONE_REPO = ${DRONE_REPO}
+      - echo DRONE_BRANCH = ${DRONE_BRANCH}
+      - echo DRONE_COMMIT = ${DRONE_COMMIT}
+      - echo DRONE_BUILD_NUMBER = ${DRONE_BUILD_NUMBER}
+      - git submodule update --init --recursive
+
+  - name: composer install
+    image: composer:1.10.19
+    commands:
+      - composer install --ignore-platform-reqs
+
+trigger:
+  branch:
+    - dev
+  event:
+    - push
+
+---
+################################################
+#             stage 根據排程設定執行              #
+################################################
+kind: pipeline
+type: docker
+name: backend_stage
+
+steps:
+  - name: submodules update
+    image: alpine/git
+    commands:
+      - date
+      - echo DRONE_REPO = ${DRONE_REPO}
+      - echo DRONE_BRANCH = ${DRONE_BRANCH}
+      - echo DRONE_COMMIT = ${DRONE_COMMIT}
+      - echo DRONE_BUILD_NUMBER = ${DRONE_BUILD_NUMBER}
+      - git submodule update --init --recursive
+
+  - name: composer install
+    image: composer:1.10.19
+    commands:
+      - composer install --ignore-platform-reqs
+
+trigger:
+  event:
+    - cron
+  cron:
+    - every2hour
+
+---
+################################################
+#        production 使用 git tag 發動部署        #
+################################################
+kind: pipeline
+type: docker
+name: backend_production
+
+steps:
+  - name: submodules update
+    image: alpine/git
+    commands:
+      - date
+      - echo DRONE_REPO = ${DRONE_REPO}
+      - echo DRONE_TAG = ${DRONE_TAG}
+      - echo DRONE_COMMIT = ${DRONE_COMMIT}
+      - echo DRONE_BUILD_NUMBER = ${DRONE_BUILD_NUMBER}
+      - git submodule update --init --recursive
+
+  - name: composer install
+    image: composer:1.10.19
+    commands:
+      - composer install --no-dev --ignore-platform-reqs
+
+trigger:
+  event:
+    - tag
+</code></pre><p>如果 push dev 分支，則只會執行 <code>dev_check_info</code> 和 <code>dev_run_update</code> 兩個動作<br>
+相對的 push testing 分支的行為則會等到指定排程 <code>every2hour</code> 被觸發才會執行<br>
+如此就可以針對不同環境可能會偵測不同分支來做不同的操作，比較常見是啟動時的指令是否加上開啟除錯模式<br>
+若是不同環境是部署在不同伺服器上，或是不同環境的部署流程不同的話是十分方便的</p>
+<p>每個 pipeline 都是獨立的，根據 trigger 的設定在不同條件下被觸發而執行不同步驟<br>
+如果推送程式到 dev 分支，則只會觸發 <code>backend_dev</code> 這個 pipeline 以及內部的步驟
+或是在版本控制中下 tag，當 webhook 監聽到新的 tag 被推送，則會觸發 <code>backend_production</code><br>
+也可以建立 cronjob 來進行排程定時執行<br>
+例如 <code>backend_stage</code> 所設定的 testing 就是監聽名為 <code>every2hour</code> 的排程<br>
+這部分之後會再獨立介紹相關的設定和使用方法</p>
+<p>更多的設定條件可以參考官方文件：<a href="https://docs.drone.io/pipeline/docker/syntax/conditions/">Pipelines Conditions</a><br>
+了解更多關於 Pipeline：<a href="https://docs.drone.io/pipeline/overview/">Pipelines Overview</a></p>
+
+      
+      
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/ray247k/button?referrer=https%3a%2f%2ftech.ray247k.com%2fblog%2f202106-drone-cicd-2-advanced-pipeline-configuration%2f" width="100%" frameborder=0></iframe>
+
+    </div>
+    <footer>
+      <div class="stats">
   
     <ul class="categories">
       
         
-          <li><a class="article-terms-link" href="/categories/node.js/">node.js</a></li>
+          <li><a class="article-terms-link" href="/categories/devops/">DevOps</a></li>
         
       
     </ul>
@@ -228,348 +467,29 @@
     <ul class="tags">
       
         
-          <li><a class="article-terms-link" href="/tags/vue/">vue</a></li>
+          <li><a class="article-terms-link" href="/tags/devops/">DevOps</a></li>
         
-          <li><a class="article-terms-link" href="/tags/node.js/">node.js</a></li>
+          <li><a class="article-terms-link" href="/tags/drone/">Drone</a></li>
         
-          <li><a class="article-terms-link" href="/tags/vuex/">vuex</a></li>
-        
-      
-    </ul>
-  
-</div>
-
-  </footer>
-</article>
-
-  
-    <article class="post">
-  <header>
-  <div class="title">
-    
-      <h2><a href="/blog/202009-express-vue-build-ecommerce-10-new-product-page/">[Express&#43;Vue 搭建電商網站] 10 用 vue 建立一個表單</a></h2>
-    
-    
-      <p>使用 Express &#43; Vue 搭建一個電商網站 - 用 vue 建立一個表單</p>
-    
-  </div>
-  <div class="meta">
-    <time datetime="2020-09-04 00:00:00 &#43;0000 UTC">2020/09/04</time>
-    <p>Ray</p>
-    
-  </div>
-</header>
-
-  <div class="content">
-    
-    
-    <p>後端的 API 上次已經開了出來，接著來建立前端使用的表單<br>
-這次的目標是建立新增商品時所用的表單，會使用到基本的 Vue 知識，如果沒看過文件的可以先了解一下官方文件</p>
-  </div>
-  <footer>
-    <a href="/blog/202009-express-vue-build-ecommerce-10-new-product-page/" class="button big">閱讀全文</a>
-    <div class="stats">
-  
-    <ul class="categories">
-      
-        
-          <li><a class="article-terms-link" href="/categories/node.js/">node.js</a></li>
-        
-      
-    </ul>
-  
-  
-    <ul class="tags">
-      
-        
-          <li><a class="article-terms-link" href="/tags/vue/">vue</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/node.js/">node.js</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/component/">component</a></li>
+          <li><a class="article-terms-link" href="/tags/cicd/">CICD</a></li>
         
       
     </ul>
   
 </div>
 
-  </footer>
-</article>
-
+    </footer>
+  </article>
   
-    <article class="post">
-  <header>
-  <div class="title">
     
-      <h2><a href="/blog/202008-express-vue-build-ecommerce-09-test-api/">[Express&#43;Vue 搭建電商網站] 09 API 測試</a></h2>
-    
-    
-      <p>使用 Express &#43; Vue 搭建一個電商網站 - API 測試</p>
-    
-  </div>
-  <div class="meta">
-    <time datetime="2020-08-28 00:00:00 &#43;0000 UTC">2020/08/28</time>
-    <p>Ray</p>
-    
-  </div>
-</header>
-
-  <div class="content">
-    
-    
-    <p>在上一篇中完成了第一個 API，這一篇要來測試 API 是不是正常工作</p>
-  </div>
-  <footer>
-    <a href="/blog/202008-express-vue-build-ecommerce-09-test-api/" class="button big">閱讀全文</a>
-    <div class="stats">
-  
-    <ul class="categories">
-      
-        
-          <li><a class="article-terms-link" href="/categories/node.js/">node.js</a></li>
-        
-      
-    </ul>
-  
-  
-    <ul class="tags">
-      
-        
-          <li><a class="article-terms-link" href="/tags/express/">express</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/node.js/">node.js</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/restful/">RESTful</a></li>
-        
-      
-    </ul>
-  
-</div>
-
-  </footer>
-</article>
-
-  
-    <article class="post">
-  <header>
-  <div class="title">
-    
-      <h2><a href="/blog/202008-express-vue-build-ecommerce-08-build-api/">[Express&#43;Vue 搭建電商網站] 08 API 建立</a></h2>
-    
-    
-      <p>使用 Express &#43; Vue 搭建一個電商網站 - API 建立</p>
-    
-  </div>
-  <div class="meta">
-    <time datetime="2020-08-21 00:00:00 &#43;0000 UTC">2020/08/21</time>
-    <p>Ray</p>
-    
-  </div>
-</header>
-
-  <div class="content">
-    
-    
-    <p>在上一篇中建立了 Router，這一篇要做的就是將 Controller 完成，如此就完成了第一個 API</p>
-  </div>
-  <footer>
-    <a href="/blog/202008-express-vue-build-ecommerce-08-build-api/" class="button big">閱讀全文</a>
-    <div class="stats">
-  
-    <ul class="categories">
-      
-        
-          <li><a class="article-terms-link" href="/categories/node.js/">node.js</a></li>
-        
-      
-    </ul>
-  
-  
-    <ul class="tags">
-      
-        
-          <li><a class="article-terms-link" href="/tags/express/">express</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/node.js/">node.js</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/restful/">RESTful</a></li>
-        
-      
-    </ul>
-  
-</div>
-
-  </footer>
-</article>
-
-  
-    <article class="post">
-  <header>
-  <div class="title">
-    
-      <h2><a href="/blog/202008-express-vue-build-ecommerce-07-api-routes/">[Express&#43;Vue 搭建電商網站] 07 API 路由建立</a></h2>
-    
-    
-      <p>使用 Express &#43; Vue 搭建一個電商網站 - API 路由建立</p>
-    
-  </div>
-  <div class="meta">
-    <time datetime="2020-08-11 00:00:00 &#43;0000 UTC">2020/08/11</time>
-    <p>Ray</p>
-    
-  </div>
-</header>
-
-  <div class="content">
-    
-    
-    <p>在上一篇中建立了 Model，這一篇要做的就是將路由完成，讓請求可以送到指定的 Controller</p>
-  </div>
-  <footer>
-    <a href="/blog/202008-express-vue-build-ecommerce-07-api-routes/" class="button big">閱讀全文</a>
-    <div class="stats">
-  
-    <ul class="categories">
-      
-        
-          <li><a class="article-terms-link" href="/categories/node.js/">node.js</a></li>
-        
-      
-    </ul>
-  
-  
-    <ul class="tags">
-      
-        
-          <li><a class="article-terms-link" href="/tags/express/">express</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/node.js/">node.js</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/restful/">RESTful</a></li>
-        
-      
-    </ul>
-  
-</div>
-
-  </footer>
-</article>
-
-  
-    <article class="post">
-  <header>
-  <div class="title">
-    
-      <h2><a href="/blog/202008-express-vue-build-ecommerce-06-db-schemas-and-models/">[Express&#43;Vue 搭建電商網站] 06 - 資料庫設計</a></h2>
-    
-    
-      <p>使用 Express &#43; Vue 搭建一個電商網站 - 資料庫設計</p>
-    
-  </div>
-  <div class="meta">
-    <time datetime="2020-08-07 00:00:00 &#43;0000 UTC">2020/08/07</time>
-    <p>Ray</p>
-    
-  </div>
-</header>
-
-  <div class="content">
-    
-    
-    <p>先前我們安裝好了 mongoDB 以及開啟了 CORS，這一篇要來建立資料庫架構以及 MVC 架構中的 Model 部分</p>
-  </div>
-  <footer>
-    <a href="/blog/202008-express-vue-build-ecommerce-06-db-schemas-and-models/" class="button big">閱讀全文</a>
-    <div class="stats">
-  
-    <ul class="categories">
-      
-        
-          <li><a class="article-terms-link" href="/categories/node.js/">node.js</a></li>
-        
-      
-    </ul>
-  
-  
-    <ul class="tags">
-      
-        
-          <li><a class="article-terms-link" href="/tags/express/">express</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/node.js/">node.js</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/mongodb/">MongoDB</a></li>
-        
-      
-    </ul>
-  
-</div>
-
-  </footer>
-</article>
-
-  
-    <article class="post">
-  <header>
-  <div class="title">
-    
-      <h2><a href="/blog/202007-express-vue-build-ecommerce-05-mongodb-connect-and-cors/">[Express&#43;Vue 搭建電商網站] 05 - 連接 MongoDB 與 CORS</a></h2>
-    
-    
-      <p>使用 Express &#43; Vue 搭建一個電商網站 - 連接 MongoDB 與 CORS</p>
-    
-  </div>
-  <div class="meta">
-    <time datetime="2020-07-30 00:00:00 &#43;0000 UTC">2020/07/30</time>
-    <p>Ray</p>
-    
-  </div>
-</header>
-
-  <div class="content">
-    
-    
-    <p>資料庫使用 MongoDB，這篇中我們會簡單介紹基本連線方式，以及跨來源資源共(CORS)</p>
-  </div>
-  <footer>
-    <a href="/blog/202007-express-vue-build-ecommerce-05-mongodb-connect-and-cors/" class="button big">閱讀全文</a>
-    <div class="stats">
-  
-    <ul class="categories">
-      
-        
-          <li><a class="article-terms-link" href="/categories/node.js/">node.js</a></li>
-        
-      
-    </ul>
-  
-  
-    <ul class="tags">
-      
-        
-          <li><a class="article-terms-link" href="/tags/express/">express</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/node.js/">node.js</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/mongodb/">MongoDB</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/cors/">CORS</a></li>
-        
-      
-    </ul>
-  
-</div>
-
-  </footer>
-</article>
 
   
   <div class="pagination">
     
-      <a href="/blog/page/5/" class="button left"><span>上一頁</span></a>
+      <a href="/blog/202106-drone-cicd-3-advanced-cron-job/" class="button left"><span>[用 Drone 建立自動部署] 03 部署排程設定與權限管理</span></a>
     
     
-      <a href="/blog/page/7/" class="button right"><span>下一頁</span></a>
+      <a href="/blog/202106-drone-cicd-1-basic-usage/" class="button right"><span>[用 Drone 建立自動部署] 01 基本服務建置及串接 GitHub</span></a>
     
   </div>
 
