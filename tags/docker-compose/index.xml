@@ -6,7 +6,17 @@
     <description>Recent content in docker-compose on 薛丁格的工程師</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Sat, 13 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/docker-compose/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 17 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/docker-compose/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>環境初始化主機設定(Docker &#43; Laravel)</title>
+      <link>https://tech.ray247k.com/blog/202107-initialize-server-setting-with-docker-and-laravel/</link>
+      <pubDate>Sat, 17 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://tech.ray247k.com/blog/202107-initialize-server-setting-with-docker-and-laravel/</guid>
+      <description>&lt;p&gt;如果今天開啟一台全新的雲端主機，要在上面使用 Docker 建立 Laravel 開發環境&lt;br&gt;
+並且可以在遠端主機執行 Laravel 常用的 composer 與 artisan 指令&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>雲端主機啟動 Docker 服務</title>
       <link>https://tech.ray247k.com/blog/202103-enable-docker-service-in-remote-server/</link>
