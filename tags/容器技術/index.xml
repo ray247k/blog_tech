@@ -6,7 +6,17 @@
     <description>Recent content in 容器技術 on 薛丁格的工程師</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Sat, 17 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/%E5%AE%B9%E5%99%A8%E6%8A%80%E8%A1%93/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/%E5%AE%B9%E5%99%A8%E6%8A%80%E8%A1%93/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>用 Docker 建立 Laravel 開發環境</title>
+      <link>https://tech.ray247k.com/blog/202107-laravel-environment-with-docker/</link>
+      <pubDate>Sat, 24 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://tech.ray247k.com/blog/202107-laravel-environment-with-docker/</guid>
+      <description>&lt;p&gt;過去在本機開發 Laravel 專案，多數是直接在本機安裝所需要服務&lt;br&gt;
+而後來改以虛擬機為主，曾經官方文件推薦開發環境的 &lt;a href=&#34;https://github.com/laravel/homestead&#34;&gt;Homestead&lt;/a&gt; 是很多人第一次使用的環境&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>環境初始化主機設定(Docker &#43; Laravel)</title>
       <link>https://tech.ray247k.com/blog/202107-initialize-server-setting-with-docker-and-laravel/</link>
