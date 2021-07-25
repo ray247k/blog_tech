@@ -203,7 +203,7 @@
     },
     "image": [""],
     "url" : "https:\/\/tech.ray247k.com\/blog\/202107-laravel-package-development\/",
-    "wordCount" : "885",
+    "wordCount" : "899",
     "genre" : [ "Laravel" , "composer" ],
     "keywords" : [ "Laravel" , "composer" ]
 }
@@ -472,6 +472,9 @@ composer init
 }
 </code></pre></div><p>在<code>boot()</code>中使用<code>publishes</code>方法後，在引用套件的時候可以在專案內使用指令</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">php artisan vendor:publish
+</code></pre></div><p>如果如果你很確定自己要建立的是哪一個套件的 config 檔，也可以直接加上 provider 標籤<br>
+指定要呼叫的是哪一個命名空間內的 provider 的 publishes 發布方法</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">php artisan vendor:publish --provider<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Ray247k\LaraPeko\LaraPekoServiceProvider&#34;</span>
 </code></pre></div><p>並根據跳出的互動視窗選擇套件對應數字輸入<br>
 就可以的在專案目錄的 config 路徑下產生套件包的 config 範本對應的檔案</p>
 <p>而<code>register()</code>中則是將預設的 config 設定檔和新建立的設定檔合併<br>
