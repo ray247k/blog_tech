@@ -6,7 +6,16 @@
     <description>Recent content in Categories on 薛丁格的工程師</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Sat, 24 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 25 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Laravel</title>
+      <link>https://tech.ray247k.com/categories/laravel/</link>
+      <pubDate>Sun, 25 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://tech.ray247k.com/categories/laravel/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>DevOps</title>
       <link>https://tech.ray247k.com/categories/devops/</link>
@@ -40,15 +49,6 @@
       <pubDate>Tue, 18 May 2021 00:00:00 +0000</pubDate>
       
       <guid>https://tech.ray247k.com/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Laravel</title>
-      <link>https://tech.ray247k.com/categories/laravel/</link>
-      <pubDate>Thu, 25 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://tech.ray247k.com/categories/laravel/</guid>
       <description></description>
     </item>
     
