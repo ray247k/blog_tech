@@ -203,7 +203,7 @@
     },
     "image": [""],
     "url" : "https:\/\/tech.ray247k.com\/blog\/202107-grumphp-a-php-code-quality-tool\/",
-    "wordCount" : "286",
+    "wordCount" : "298",
     "genre" : [ "GrumPHP" , "composer" ],
     "keywords" : [ "GrumPHP" , "composer" ]
 }
@@ -361,12 +361,16 @@
 <p>一樣拿上次做一半的 LaraPeko 來做示範，以下說的「專案」指的都是這個套件包！</p>
 <p>首先進入專案目錄下執行</p>
 <pre><code>composer require --dev phpro/grumphp
-</code></pre><p>他會問你要不要建立設定檔<code>grumphp.yml</code>，然後給你一大堆選項<br>
+</code></pre><p>會跳出互動介面問你要不要建立設定檔<code>grumphp.yml</code>，然後給你一大堆選項<br>
 可以先隨便選一個，或是直接跳過<br>
 因為下一步要安裝的是<code>yamllint</code>，如果你在這邊選了 yamllint，下一步就沒事了</p>
 <p>可以在專案根目錄執行指令來測試是否可以執行檢查</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vendor/bin/grumphp run
-</code></pre></div><h1 id="加入檢查任務">加入檢查任務</h1>
+</code></pre></div><p>若是執行</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">composer install
+</code></pre></div><p>可以看到提示<code>GrumPHP is sniffing your commits!</code>代表 GrumPHP 已經在嗅探我們的 commit 了</p>
+<p><img src="/img/blog/2021/07/grumphp-a-php-code-quality-tool/grumphp-composer-install.png" alt="grumphp composer install"></p>
+<h1 id="加入檢查任務">加入檢查任務</h1>
 <p>這邊會逐步安裝並說明四個常用的基本檢查任務</p>
 <ul>
 <li>yamllint</li>
