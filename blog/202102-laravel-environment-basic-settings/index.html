@@ -18,7 +18,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.85.0" /><meta property="og:site_name" content="薛丁格的工程師">
+<meta name="generator" content="Hugo 0.86.1" /><meta property="og:site_name" content="薛丁格的工程師">
   <meta property="og:title" content="Laravel 執行環境建置">
   <meta property="og:description" content="介紹 Laravel 執行環境所需要的環境設定，包含 composer 安裝">
   <meta property="description" content="介紹 Laravel 執行環境所需要的環境設定，包含 composer 安裝">
@@ -343,19 +343,19 @@
       
       <p>開發 Laravel 專案所需要做的設定與套件安裝，不論是在遠端主機或是本機都適用</p>
 <h1 id="更新套件包">更新套件包</h1>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt-get update
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt-get update
 </code></pre></div><h1 id="安裝-composer">安裝 composer</h1>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">php -r <span style="color:#e6db74">&#34;copy(&#39;https://getcomposer.org/installer&#39;, &#39;composer-setup.php&#39;);&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">php -r <span style="color:#e6db74">&#34;copy(&#39;https://getcomposer.org/installer&#39;, &#39;composer-setup.php&#39;);&#34;</span>
 php -r <span style="color:#e6db74">&#34;if (hash_file(&#39;sha384&#39;, &#39;composer-setup.php&#39;) === &#39;756890a4488ce9024fc62c56153228907f1545c228516cbf63f885e036d37e9a59d27d63f46af1d4d07ee0f76181c7d3&#39;) { echo &#39;Installer verified&#39;; } else { echo &#39;Installer corrupt&#39;; unlink(&#39;composer-setup.php&#39;); } echo PHP_EOL;&#34;</span>
 php composer-setup.php
 php -r <span style="color:#e6db74">&#34;unlink(&#39;composer-setup.php&#39;);&#34;</span>
 </code></pre></div><h2 id="執行結果">執行結果</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Composer <span style="color:#f92672">(</span>version 2.0.12<span style="color:#f92672">)</span> successfully installed to: //composer.phar
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Composer <span style="color:#f92672">(</span>version 2.0.12<span style="color:#f92672">)</span> successfully installed to: //composer.phar
 Use it: php composer.phar
 </code></pre></div><h2 id="將指令改成全域">將指令改成全域</h2>
 <p>執行後可以直接使用 <code>composer</code> 指令操作<br>
 很方便，建議要執行這個步驟</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mv composer.phar /usr/local/bin/composer
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mv composer.phar /usr/local/bin/composer
 </code></pre></div><h1 id="安裝-php-extension">安裝 PHP extension</h1>
 <p>以 PHP 版本 7.4 的主機為例<br>
 要在容器外運行 <code>composer install</code>，需要安裝以下 extension</p>
@@ -366,7 +366,7 @@ Use it: php composer.phar
 <li>ext-dom(php-xml)</li>
 <li>zip unzip php7.4-zip</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt install php7.4-cli 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt install php7.4-cli 
 
 apt-get install mbstring ext-dom zip unzip php7.4-zip php7.4-mbstring php-xml php7.4-gd
 </code></pre></div><h2 id="安裝資料庫對應的-extension">安裝資料庫對應的 extension</h2>
@@ -379,7 +379,7 @@ apt-get install mbstring ext-dom zip unzip php7.4-zip php7.4-mbstring php-xml ph
 <h2 id="php-artisan-必要套件">php artisan 必要套件</h2>
 <p>php artisan 要在 php 指令介面(php Command Line Interface) 下執行<br>
 所以必須依照自身 php 版本安裝 cli 套件</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt install php7.4-cli
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt install php7.4-cli
 </code></pre></div><hr>
 <p>以上就是建置 Laravel 環境所需要的最基本設定<br>
 若是容器化的使用者，在打包 php 映像檔的時候一併執行即可</p>
@@ -781,7 +781,7 @@ apt-get install mbstring ext-dom zip unzip php7.4-zip php7.4-mbstring php-xml ph
         © 2021 薛丁格的工程師
     </p>
     <p class="copyright" style="font-size: 0.1EM;">
-        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.85.0' target='_blank' rel='noopener'>Hugo</a>
+        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.86.1' target='_blank' rel='noopener'>Hugo</a>
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>

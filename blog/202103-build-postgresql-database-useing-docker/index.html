@@ -18,7 +18,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.85.0" /><meta property="og:site_name" content="薛丁格的工程師">
+<meta name="generator" content="Hugo 0.86.1" /><meta property="og:site_name" content="薛丁格的工程師">
   <meta property="og:title" content="PostgreSQL 資料庫建置 - 使用 Docker">
   <meta property="og:description" content="介紹如何使用 Docker 建置 PostgreSQL 資料庫">
   <meta property="description" content="介紹如何使用 Docker 建置 PostgreSQL 資料庫">
@@ -348,7 +348,7 @@
 <p>使用的映像檔：<a href="https://hub.docker.com/_/postgres">postgres: alpine</a><br>
 參考文章：<a href="https://medium.com/analytics-vidhya/getting-started-with-postgresql-using-docker-compose-34d6b808c47c">Getting Started with PostgreSQL using Docker-Compose</a></p>
 <h2 id="docker-composeyml">docker-compose.yml</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;3&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;3&#39;</span>
 <span style="color:#f92672">services</span>:
   <span style="color:#f92672">postgres</span>:
     <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">postgres</span>
@@ -365,14 +365,14 @@
 <span style="color:#f92672">volumes</span>: 
   <span style="color:#f92672">database-data</span>: <span style="color:#75715e"># named volumes can be managed easier using docker-compose</span>
 </code></pre></div><p>啟動容器：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose up
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose up
 </code></pre></div><hr>
 <h1 id="gui">GUI</h1>
 <h2 id="安裝">安裝</h2>
 <p>因為 sequel ace 不支援 PostgreSQL 所以另外裝一個 GUI 來用<br>
 安裝 <a href="https://dbeaver.com/">DBeaver</a></p>
 <p>會需要安裝 JAVA 包</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install --cask dbeaver-community
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install --cask dbeaver-community
 </code></pre></div><h2 id="存取在遠端的-postgresql-container">存取在遠端的 PostgreSQL container</h2>
 <p>取得該遠端的對外 ip 作為 host 之後連線到指定的 port (5432)<br>
 就可以在其他機器上存取 PostgreSQL container</p>
@@ -395,7 +395,7 @@
 <p>調整容器內 volume 目標資料夾位置到本機特定資料夾下<br>
 如果有多台容器需要一起掛載同一份資料：<a href="https://docs.docker.com/storage/volumes/#share-data-among-machines">官方文件</a><br>
 這個做法使用 <code>docker volume ls</code> 就不會有結果，要自己去看指定的路徑。因為管理 volume 已經不是透過 docker</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;3&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;3&#39;</span>
 <span style="color:#f92672">services</span>:
   <span style="color:#f92672">postgres</span>:
     <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">postgres</span>
@@ -427,7 +427,7 @@
 但是當執行 <code>php artisan migrate</code> 之類指令，執行者是容器時<br>
 要使用的卻是內部的 5432 port，如此在管理上會十分麻煩</p>
 <p>此情境下可以透啟動容器時指定內部運行的 port 來解決</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">  <span style="color:#f92672">postgre</span>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">  <span style="color:#f92672">postgre</span>:
     <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">trp_stage_postgre</span>
     <span style="color:#f92672">ports</span>:
       - <span style="color:#e6db74">&#34;5430:5430&#34;</span>
@@ -848,7 +848,7 @@
         © 2021 薛丁格的工程師
     </p>
     <p class="copyright" style="font-size: 0.1EM;">
-        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.85.0' target='_blank' rel='noopener'>Hugo</a>
+        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.86.1' target='_blank' rel='noopener'>Hugo</a>
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>

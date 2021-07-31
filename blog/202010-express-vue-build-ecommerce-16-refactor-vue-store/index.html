@@ -18,7 +18,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.85.0" /><meta property="og:site_name" content="薛丁格的工程師">
+<meta name="generator" content="Hugo 0.86.1" /><meta property="og:site_name" content="薛丁格的工程師">
   <meta property="og:title" content="[Express&#43;Vue 搭建電商網站] 16 抽離 Vuex store 中的邏輯">
   <meta property="og:description" content="使用 Express &#43; Vue 搭建一個電商網站 - 抽離 Vuex store 中的邏輯">
   <meta property="description" content="使用 Express &#43; Vue 搭建一個電商網站 - 抽離 Vuex store 中的邏輯">
@@ -346,7 +346,7 @@
 在章節中先試著將這些複雜的邏輯拆分成個別的檔案，抽出 Getters、Mutations 和 Actions 邏輯</p>
 <h1 id="重構-admin-首頁">重構 Admin 首頁</h1>
 <p>打開 <code>src/views/admin/Index.vue</code> 頁面，將選單換成中文。並且加上查看查看製造商的選項</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
   &lt;<span style="color:#f92672">div</span>&gt;
     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;admin-new&#34;</span>&gt;
       &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;
@@ -371,7 +371,7 @@
 </code></pre></div><p>可以預期到的接下來我們會做一個關於製造商的頁面，然後透過後端 API 取得製造商資料</p>
 <h1 id="建立-manufacturers-頁面">建立 Manufacturers 頁面</h1>
 <p>新建 <code>src/views/admin/Manufacturers.vue</code> 檔案</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
   &lt;<span style="color:#f92672">div</span>&gt;
     &lt;<span style="color:#f92672">table</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;table&#34;</span>&gt;
       &lt;<span style="color:#f92672">thead</span>&gt;
@@ -439,7 +439,7 @@
 還有製造商刪除用的 method 中 <code>removeManufacturer</code>，這些會在之後實作出來</p>
 <h1 id="重構-products-組件">重構 Products 組件</h1>
 <p>接著要動手重構的就是 <code>src/views/admin/Products.vue</code> 組件</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
   &lt;<span style="color:#f92672">div</span>&gt;
     &lt;<span style="color:#f92672">table</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;table&#34;</span>&gt;
       &lt;<span style="color:#f92672">thead</span>&gt;
@@ -512,9 +512,9 @@
 <p>頁面跟組件都完成了，接著就要讓頁面可以被訪問<br>
 打開 vue-router 的設定 <code>src/router/index.js</code>，加入製造商相關的路由參數</p>
 <p>引入頁面檔案</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Manufacturers</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@/views/admin/Manufacturers&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Manufacturers</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@/views/admin/Manufacturers&#39;</span>
 </code></pre></div><p>在 admin 路由的 <code>children</code> 屬性中加入頁面</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">{
     <span style="color:#a6e22e">path</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;manufacturers&#39;</span>,
     <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Manufacturers&#39;</span>,
     <span style="color:#a6e22e">component</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Manufacturers</span>,
@@ -523,7 +523,7 @@
 記得嗎？之前說要從後端 API 取得資料的方法還沒寫，接下來就一邊重構一邊把這個功能完成吧！</p>
 <h1 id="分離-getter-邏輯">分離 Getter 邏輯</h1>
 <p>首先建立 <code>src/store/getters.js</code> 檔案，用來存放各種不同的 <code>getter</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">productGetters</span> <span style="color:#f92672">=</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">productGetters</span> <span style="color:#f92672">=</span> {
     <span style="color:#a6e22e">allProducts</span>(<span style="color:#a6e22e">state</span>) {
         <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">products</span>
     },
@@ -545,7 +545,7 @@
 前者包含商品的 getters，後者則是負責製造商的 getter，如此就補上了前面幾段缺少的 manufacturer getters</p>
 <h2 id="分離-mutations-邏輯">分離 Mutations 邏輯</h2>
 <p>就像剛剛分離 Getter 邏輯，接著新建 <code>src/store/mutations.js</code> 檔案作為 store 中 <code>mutation</code> 的程式管理</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">productMutations</span> <span style="color:#f92672">=</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">productMutations</span> <span style="color:#f92672">=</span> {
     <span style="color:#a6e22e">ALL_PRODUCTS</span>(<span style="color:#a6e22e">state</span>) {
         <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
     },
@@ -621,7 +621,7 @@
 <li>引入新建的 getters 和 mutations</li>
 </ol>
 <p>下面就是新的 <code>src/store/index.js</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Vue</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue&#39;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Vue</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue&#39;</span>;
 <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Vuex</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vuex&#39;</span>;
 <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">axios</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;axios&#39;</span>;
 
@@ -711,7 +711,7 @@
 });
 </code></pre></div><p>移除原有 getters 和 mutations 不難理解，而引入新建的 getters 和 mutations 就值得說明了！</p>
 <p>首先藉由</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">productGetters</span>, <span style="color:#a6e22e">manufacturerGetters</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./getters&#39;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">productGetters</span>, <span style="color:#a6e22e">manufacturerGetters</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./getters&#39;</span>;
 <span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">productMutations</span>, <span style="color:#a6e22e">cartMutations</span>, <span style="color:#a6e22e">manufacturerMutations</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./mutations&#39;</span>;
 </code></pre></div><p>引入剛剛分離出去的檔案<br>
 接著使用 ES6 中的：<a href="https://www.geeksforgeeks.org/javascript-spread-operator/">擴展運算符（spread operator）</a> 將剛剛引入的屬性以及包含的方法導入到 <code>store</code> 物件中。</p>
@@ -721,7 +721,7 @@
 <p>上面抽出了 Getters、Mutations 終於輪到 Actions 了</p>
 <h2 id="重構-edit-頁面">重構 Edit 頁面</h2>
 <p>打開 <code>src/views/admin/Edit.vue</code> 替換成</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
   &lt;<span style="color:#f92672">div</span>&gt;
     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;title&#34;</span>&gt;
       &lt;<span style="color:#f92672">h1</span>&gt;<span style="color:#a6e22e">This</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">Admin</span><span style="color:#f92672">/</span><span style="color:#a6e22e">Edit</span>&lt;/<span style="color:#f92672">h1</span>&gt;
@@ -784,7 +784,7 @@
 <p><code>src/views/admin/New.vue</code> 負責建立新的商品，邏輯與 Edit 類似<br>
 只是一個負責新增商品，一個修改</p>
 <p>在這邊我們將組件中原本寫死的資料改為從後端動態取得，並將資料傳入給子組件 <code>ProductForm</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
   &lt;<span style="color:#f92672">product-form</span> <span style="color:#f92672">@save-product</span><span style="color:#e6db74">=&#34;addProduct&#34;</span> <span style="color:#f92672">:model</span><span style="color:#e6db74">=&#34;model&#34;</span> <span style="color:#f92672">:manufacturers</span><span style="color:#e6db74">=&#34;manufacturers&#34;</span>&gt;<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/product-form&gt;</span>
 &lt;/<span style="color:#f92672">template</span>&gt;
 
@@ -820,7 +820,7 @@
 <h2 id="拆分-actions-邏輯">拆分 Actions 邏輯</h2>
 <p>就像之前一樣建立 <code>src/store/actions.js</code> 檔案，用來管理 store 物件中 <code>actions</code> 屬性的內部屬性<br>
 就跟上面處理 Getters 和 Manufacturers 時類似做法</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">axios</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;axios&#39;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">axios</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;axios&#39;</span>;
 
 <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">API_BASE</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;http://localhost:3000/api/v1&#39;</span>;
 
@@ -903,7 +903,7 @@
 <h1 id="重構-store">重構 Store</h1>
 <p>再次回到 <code>src/store/index.js</code> 檔案中，導入 <code>Actions</code> 邏輯相關的設定<br>
 並且移除 API 相關的設定，包含引入 axios 和 API 網址的參數設定</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Vue</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue&#39;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Vue</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue&#39;</span>;
 <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Vuex</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vuex&#39;</span>;
 
 <span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">productGetters</span>, <span style="color:#a6e22e">manufacturerGetters</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./getters&#39;</span>;
@@ -944,7 +944,7 @@
 <h1 id="新增-mutations-屬性">新增 mutations 屬性</h1>
 <p>接著我們要在 <code>src/store/mutations.js</code> 的 <code>productMutations</code> 下新增一些 <code>mutation</code> 屬性<br>
 用來處理使用者不同的操作時更新狀態庫中的內容同步</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#a6e22e">UPDATE_PRODUCT</span>(<span style="color:#a6e22e">state</span>) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#a6e22e">UPDATE_PRODUCT</span>(<span style="color:#a6e22e">state</span>) {
     <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
 },
 <span style="color:#a6e22e">UPDATE_PRODUCT_SUCCESS</span>(<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
@@ -1373,7 +1373,7 @@
         © 2021 薛丁格的工程師
     </p>
     <p class="copyright" style="font-size: 0.1EM;">
-        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.85.0' target='_blank' rel='noopener'>Hugo</a>
+        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.86.1' target='_blank' rel='noopener'>Hugo</a>
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>

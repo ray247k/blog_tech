@@ -18,7 +18,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.85.0" /><meta property="og:site_name" content="薛丁格的工程師">
+<meta name="generator" content="Hugo 0.86.1" /><meta property="og:site_name" content="薛丁格的工程師">
   <meta property="og:title" content="Portainer - 視覺化管理 Docker 的工具">
   <meta property="og:description" content="介紹如何使用 Portainer 視覺化管理 Docker 服務">
   <meta property="description" content="介紹如何使用 Portainer 視覺化管理 Docker 服務">
@@ -349,7 +349,7 @@
 使用視覺化的介面進行 Docker 服務的各種管理</p>
 <p>Dockerhub image: <a href="https://hub.docker.com/r/portainer/portainer-ce">portainer/portainer-ce</a></p>
 <h1 id="docker-composeyml">docker-compose.yml</h1>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;3&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;3&#39;</span>
 
 <span style="color:#f92672">services</span>:
   <span style="color:#f92672">portainer</span>:
@@ -370,7 +370,7 @@
 <h1 id="補充">補充</h1>
 <p>如果遠端主機不想開放 port 造成任意使用者都有機會開啟後台畫面<br>
 可以使用超外道的連線方式：<a href="https://www.tecmint.com/create-ssh-tunneling-port-forwarding-in-linux/">How to Create SSH Tunneling or Port Forwarding in Linux</a></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh -i ~/.ssh/id_rsa -L 8081:localhost:9000 ray@<span style="color:#f92672">{</span>你的遠端主機 IP<span style="color:#f92672">}</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh -i ~/.ssh/id_rsa -L 8081:localhost:9000 ray@<span style="color:#f92672">{</span>你的遠端主機 IP<span style="color:#f92672">}</span>
 </code></pre></div><p>在容器啟動後可以在本機終端機執行<br>
 接著就可以在本機 localhost:8081 看到我們在遠端主機的 9000 port<br>
 原理是透過 ssh 連線將本機 8081 port 的請求轉發到遠端主機的 9000 port</p>
@@ -778,7 +778,7 @@
         © 2021 薛丁格的工程師
     </p>
     <p class="copyright" style="font-size: 0.1EM;">
-        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.85.0' target='_blank' rel='noopener'>Hugo</a>
+        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.86.1' target='_blank' rel='noopener'>Hugo</a>
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>

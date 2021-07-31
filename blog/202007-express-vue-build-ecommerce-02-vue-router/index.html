@@ -18,7 +18,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.85.0" /><meta property="og:site_name" content="薛丁格的工程師">
+<meta name="generator" content="Hugo 0.86.1" /><meta property="og:site_name" content="薛丁格的工程師">
   <meta property="og:title" content="[Express&#43;Vue 搭建電商網站] 02 - vue-router 的使用">
   <meta property="og:description" content="使用 Express &#43; Vue 搭建一個電商網站 - vue-router 的使用">
   <meta property="description" content="使用 Express &#43; Vue 搭建一個電商網站 - vue-router 的使用">
@@ -345,7 +345,7 @@
 並使用 vue-router 來進行多個頁面的跳轉</p>
 <h1 id="建立新組件">建立新組件</h1>
 <p>首先我們要先建立新的頁面組件，新建一個 <code>src/components/Home.vue</code> 檔案</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
   &lt;<span style="color:#f92672">div</span>&gt;
     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;title&#34;</span>&gt;
       &lt;<span style="color:#f92672">h1</span>&gt;{{<span style="color:#a6e22e">msg</span>}}&lt;/<span style="color:#f92672">h1</span>&gt;
@@ -368,7 +368,7 @@
 <p>在安裝了 vue-router 之後，會發現專案中多了一個資料夾 <code>/src/router/index.js</code><br>
 這就是 vue-router 的設定檔</p>
 <p>藉由以下這段我們發現，路徑 <code>'/'</code> 使用的是 <code>Home</code> 這個組件</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">routes</span> <span style="color:#f92672">=</span> [
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">routes</span> <span style="color:#f92672">=</span> [
   {
     <span style="color:#a6e22e">path</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;/&#39;</span>,
     <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Home&#39;</span>,
@@ -384,9 +384,9 @@
   }
 ]
 </code></pre></div><p>順著邏輯往上找會發現 Home 這個組件的引用來源</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Home</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;../views/Home.vue&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Home</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;../views/Home.vue&#39;</span>
 </code></pre></div><p>接著打開 <code>/views/Home.vue</code>，原來這引入了 HelloWorld 組件</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
   &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;home&#34;</span>&gt;
     &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Vue logo&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;../assets/logo.png&#34;</span>&gt;
     &lt;<span style="color:#f92672">HelloWorld</span> <span style="color:#a6e22e">msg</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Welcome to Your Vue.js App&#34;</span>/&gt;
@@ -406,7 +406,7 @@
 &lt;/<span style="color:#f92672">script</span>&gt;
 
 </code></pre></div><p>知道原理之後呢，就把 <code>/views/Home.vue</code> 內部目前沒有用到的部分刪除，並且換成我們上面建立的 Home 組件</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">script</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">script</span>&gt;
 <span style="color:#75715e">// @ is an alias to /src
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Home</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@/components/Home.vue&#39;</span>
 
@@ -427,7 +427,7 @@
 <li>在 HTML5 history 模式下，router-link 會守衛點擊事件，讓瀏覽器不再重新加載頁面。</li>
 <li>當你在 HTML5 history 模式下使用 base 選項之後，所有的 to 屬性都不需要寫 (基路徑) 了。</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
   &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;app&#34;</span>&gt;
     &lt;<span style="color:#f92672">nav</span>&gt;
       &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;
@@ -466,7 +466,7 @@
 在刪除 import 的內容之後一切就正常了</p>
 <h1 id="新建立的頁面加入路由">新建立的頁面加入路由</h1>
 <p>接著把剛剛新建的頁面加入路由設定檔案 <code>/src/router/index.js</code> 中</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Vue</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Vue</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue&#39;</span>
 <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Router</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue-router&#39;</span>
 <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Home</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@/views/Home.vue&#39;</span>
 <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Admin</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@/views/Admin&#39;</span>;
@@ -515,7 +515,7 @@
 還好 vue-router 提供了嵌套路由的功能，讓我們可以組織化的管理相關聯的頁面</p>
 <p>在後台頁面中會使用到很多操作的頁面，例如新增、修改商品，下面就藉由嵌套路由的方法來管理這些路由</p>
 <p>在引入的地方加入我們之後要增加的頁面，這邊只是先聲明，之後會一步一步的完成頁面</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#75715e">// Admin Components
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#75715e">// Admin Components
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Index</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@/views/admin/Index&#39;</span>
 <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">New</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@/views/admin/New&#39;</span>
 <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Products</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@/views/admin/Products&#39;</span>
@@ -523,7 +523,7 @@
 </code></pre></div><p>路由常數中加入嵌套路由，會發現 <code>Admin</code> 下有四個組件（component）<br>
 而嵌套路由會為相關連的子路由設置一個入口頁面<br>
 然後把這些頁面都放到 <code>children</code> 定義中的陣列中</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">  {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">  {
     <span style="color:#a6e22e">path</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;/admin&#39;</span>,
     <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Admin&#39;</span>,
     <span style="color:#a6e22e">component</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Index</span>,
@@ -557,7 +557,7 @@
 <p><code>Index</code> 是我們上面提到的入口組件，也就是渲染 <code>path = /admin</code> 的基礎組件<br>
 其餘的組件藉由 <code>children</code> 陣列宣告為嵌套的子路由。在子路由內的路由，前端都必須加上父層的路徑<br>
 而在上方的定義中，我們把 <code>/admin/</code> 的渲染子組件定義給了 <code>Products</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
   &lt;<span style="color:#f92672">div</span>&gt;
     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;admin-new&#34;</span>&gt;
       &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;
@@ -580,7 +580,7 @@
 那麼 <code>&lt;router-view&gt;&lt;/router-view&gt;</code> 內部會被替換成 <code>New.vue</code> 組件的內容<br>
 因為我們在上面路由定義中定義 &lsquo;/new&rsquo; 的路由渲染組件是 <code>New.vue</code></p>
 <h3 id="editvue">Edit.vue</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
   &lt;<span style="color:#f92672">div</span>&gt;
     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;title&#34;</span>&gt;
       &lt;<span style="color:#f92672">h1</span>&gt;<span style="color:#a6e22e">This</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">Admin</span><span style="color:#f92672">/</span><span style="color:#a6e22e">Edit</span><span style="color:#f92672">/</span>{{<span style="color:#a6e22e">$route</span>.<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">id</span>}}&lt;/<span style="color:#f92672">h1</span>&gt;
@@ -590,10 +590,10 @@
 </code></pre></div><p><code>Edit</code> 這個路由在剛剛路由定義的時候有點不一樣，他的路徑是 <code>edit/:id</code> 這種寫法被稱作動態路由<br>
 <code>:id</code> 會接收任意的內容作為一個參數傳入。例如我們進入 <code>/admin/edit/banana</code> 頁面<br>
 那麼就可以在 <code>Edit.vue</code> 這個組件上使用</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">{{<span style="color:#a6e22e">$route</span>.<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">id</span>}}
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">{{<span style="color:#a6e22e">$route</span>.<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">id</span>}}
 </code></pre></div><p>來呼叫到 <code>:id</code> 接收到的值，在上面的例子中就是「banana」</p>
 <h3 id="newvue">New.vue</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
   &lt;<span style="color:#f92672">div</span>&gt;
     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;title&#34;</span>&gt;
       &lt;<span style="color:#f92672">h1</span>&gt;<span style="color:#a6e22e">This</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">Admin</span><span style="color:#f92672">/</span><span style="color:#a6e22e">New</span>&lt;/<span style="color:#f92672">h1</span>&gt;
@@ -601,7 +601,7 @@
   &lt;/<span style="color:#f92672">div</span>&gt;
 &lt;/<span style="color:#f92672">template</span>&gt;
 </code></pre></div><h3 id="productsvue">Products.vue</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
   &lt;<span style="color:#f92672">div</span>&gt;
     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;title&#34;</span>&gt;
       &lt;<span style="color:#f92672">h1</span>&gt;<span style="color:#a6e22e">This</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">Admin</span>&lt;/<span style="color:#f92672">h1</span>&gt;
@@ -1011,7 +1011,7 @@
         © 2021 薛丁格的工程師
     </p>
     <p class="copyright" style="font-size: 0.1EM;">
-        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.85.0' target='_blank' rel='noopener'>Hugo</a>
+        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.86.1' target='_blank' rel='noopener'>Hugo</a>
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>

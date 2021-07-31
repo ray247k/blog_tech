@@ -18,7 +18,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.85.0" /><meta property="og:site_name" content="薛丁格的工程師">
+<meta name="generator" content="Hugo 0.86.1" /><meta property="og:site_name" content="薛丁格的工程師">
   <meta property="og:title" content="[Express&#43;Vue 搭建電商網站] 10 用 vue 建立一個表單">
   <meta property="og:description" content="使用 Express &#43; Vue 搭建一個電商網站 - 用 vue 建立一個表單">
   <meta property="description" content="使用 Express &#43; Vue 搭建一個電商網站 - 用 vue 建立一個表單">
@@ -350,7 +350,7 @@
 <p>建立一個新的檔案 <code>/src/components/products/ProductForm.vue</code> 作為表單的組件<br>
 可以看到我們在這邊的存放位置不再是 <code>/src/views/</code> 因為他是組件<br>
 好好的放在「components」內是比較好的架構方式</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
   &lt;<span style="color:#f92672">form</span> <span style="color:#f92672">@submit.prevent</span><span style="color:#e6db74">=&#34;saveProduct&#34;</span>&gt;
     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col-lg-5 col-md-5 col-sm-12 col-xs-12&#34;</span>&gt;
       &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-group&#34;</span>&gt;
@@ -448,7 +448,7 @@
 最後一個 <code>form-group</code> 使用 <code>v-if</code> 判斷式來判斷 <code>isEditing</code> 來渲染不同的按鈕文字</p>
 <hr>
 <p>完成了子組件之後，就要引入父組件內。所以重新打開 <code>New.vue</code> 這個檔案，引入剛剛建立的表單組件</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
   &lt;<span style="color:#f92672">product-form</span>
     <span style="color:#f92672">@save-product</span><span style="color:#e6db74">=&#34;addProduct&#34;</span>
     <span style="color:#f92672">:model</span><span style="color:#e6db74">=&#34;model&#34;</span>
@@ -899,7 +899,7 @@
         © 2021 薛丁格的工程師
     </p>
     <p class="copyright" style="font-size: 0.1EM;">
-        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.85.0' target='_blank' rel='noopener'>Hugo</a>
+        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.86.1' target='_blank' rel='noopener'>Hugo</a>
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>

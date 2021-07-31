@@ -18,7 +18,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.85.0" /><meta property="og:site_name" content="薛丁格的工程師">
+<meta name="generator" content="Hugo 0.86.1" /><meta property="og:site_name" content="薛丁格的工程師">
   <meta property="og:title" content="[Express&#43;Vue 搭建電商網站] 13 使用 Axios 取得 API 資料">
   <meta property="og:description" content="使用 Express &#43; Vue 搭建一個電商網站 - 使用 Axios 取得 API 資料">
   <meta property="description" content="使用 Express &#43; Vue 搭建一個電商網站 - 使用 Axios 取得 API 資料">
@@ -344,7 +344,7 @@
       <p>使用 Axios 取得後端 API 的資料</p>
 <h1 id="使用-axios-取得-api-資料">使用 Axios 取得 API 資料</h1>
 <p>首先先安裝 <a href="https://www.npmjs.com/package/axios">axios</a></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm i axios
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm i axios
 </code></pre></div><p>在 Vuex store 中可以使用 <a href="https://vuex.vuejs.org/zh/guide/actions.html">action</a> 屬性<br>
 乍看之下跟 <code>mutation</code> 類似，不同的地方在於</p>
 <ul>
@@ -352,7 +352,7 @@
 <li>Action 可以包含任意異步操作，用於響應 Vue 組件中分派的事件或動作</li>
 </ul>
 <p>一個 <code>action</code> 是類似於 <code>(context, payload) =&gt; response.data</code> 的函數：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#a6e22e">productById</span>(<span style="color:#a6e22e">context</span>, <span style="color:#a6e22e">payload</span>) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#a6e22e">productById</span>(<span style="color:#a6e22e">context</span>, <span style="color:#a6e22e">payload</span>) {
   <span style="color:#75715e">// 異步操作，從後端取得資料
 </span><span style="color:#75715e"></span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>;
 }
@@ -364,7 +364,7 @@
 取得回傳結果後將結果提交給 <code>mutation</code>，並更新使用者端的資料</p>
 <h2 id="實現-action">實現 Action</h2>
 <p>再次修改 <code>src/store/index.js</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Vue</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue&#39;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Vue</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue&#39;</span>;
 <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Vuex</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vuex&#39;</span>;
 <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">axios</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;axios&#39;</span>;
 
@@ -438,7 +438,7 @@
 <h2 id="更新組件">更新組件</h2>
 <h3 id="productlist">ProductList</h3>
 <p>將 <code>src/components/products/ProductList.vue</code> 的 <code>&lt;script&gt;</code> 區塊改成以下</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">script</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">script</span>&gt;
 <span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
   <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;product-list&#34;</span>,
   <span style="color:#a6e22e">created</span>() {
@@ -468,7 +468,7 @@
 是因為 <code>mutation</code> 必須是一個同步執行的程式，而這邊是一個異步請求<br>
 需要使用 <code>dispatch</code> 來操作 <code>Action</code> 進行異步請求</p>
 <p>再來是 <code>&lt;template&gt;</code>，我們做部分修改，讓畫面渲染時的資料符合當初後端 API 定義的格式</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;product.manufacturer&#34;</span>&gt;<span style="color:#a6e22e">生產商</span><span style="color:#960050;background-color:#1e0010">：</span>{{<span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">manufacturer</span>.<span style="color:#a6e22e">name</span>}}&lt;/<span style="color:#f92672">p</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;product.manufacturer&#34;</span>&gt;<span style="color:#a6e22e">生產商</span><span style="color:#960050;background-color:#1e0010">：</span>{{<span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">manufacturer</span>.<span style="color:#a6e22e">name</span>}}&lt;/<span style="color:#f92672">p</span>&gt;
 </code></pre></div><h3 id="cart">Cart</h3>
 <p>接著打開 <code>src/views/Cart.vue</code> 頁面，因為上面也有顯示生產商的名稱<br>
 同樣把 <code>{{product.manufacturer}}</code> 改成 <code>{{product.manufacturer.name}}</code></p>
@@ -878,7 +878,7 @@
         © 2021 薛丁格的工程師
     </p>
     <p class="copyright" style="font-size: 0.1EM;">
-        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.85.0' target='_blank' rel='noopener'>Hugo</a>
+        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.86.1' target='_blank' rel='noopener'>Hugo</a>
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>

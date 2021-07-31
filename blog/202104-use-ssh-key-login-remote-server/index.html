@@ -18,7 +18,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.85.0" /><meta property="og:site_name" content="薛丁格的工程師">
+<meta name="generator" content="Hugo 0.86.1" /><meta property="og:site_name" content="薛丁格的工程師">
   <meta property="og:title" content="設定 ssh 金鑰登入遠端主機">
   <meta property="og:description" content="使用 ssh key 登入遠端主機而不使用密碼登入">
   <meta property="description" content="使用 ssh key 登入遠端主機而不使用密碼登入">
@@ -345,14 +345,14 @@
 安全性的程度會比較沒有像SSH key 那麼安全，而且使用SSH key 登入可以就不用每次手動輸入密碼</p>
 <h1 id="建立登入端的-ssh-key">建立登入端的 ssh key</h1>
 <h2 id="使用者端建立-ssh-key使用指令">使用者端建立 ssh key，使用指令</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh-keygen
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh-keygen
 </code></pre></div><blockquote>
 <p>注意：ssh key 要是 RSA 的格式，如果是 OPENSSH 會不斷的報錯<br>
 參考資料：<a href="https://ray247k.blogspot.com/2019/03/mac-majave-10141-ssh-keygen.html">mac majave 10.14.1 ssh-keygen 金鑰格式問題</a></p>
 </blockquote>
 <p>預設會產生在 <code>.ssh/</code> 路徑下</p>
 <p>如果是用複製別人的 id_rsa 和 id_rsa.pub 的話需要重新設定權限，否則會報錯</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">chmod <span style="color:#ae81ff">600</span> id_rsa
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">chmod <span style="color:#ae81ff">600</span> id_rsa
 chmod <span style="color:#ae81ff">644</span> id_rsa.pub
 </code></pre></div><h3 id="權限說明">權限說明</h3>
 <pre><code>-rw------- (600) -- 只有屬主有讀寫權限。
@@ -775,7 +775,7 @@ drwxr-xr-x (755) - 所有用戶可讀該目錄，但只有擁有者才能改變�
         © 2021 薛丁格的工程師
     </p>
     <p class="copyright" style="font-size: 0.1EM;">
-        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.85.0' target='_blank' rel='noopener'>Hugo</a>
+        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.86.1' target='_blank' rel='noopener'>Hugo</a>
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>

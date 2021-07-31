@@ -18,7 +18,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.85.0" /><meta property="og:site_name" content="薛丁格的工程師">
+<meta name="generator" content="Hugo 0.86.1" /><meta property="og:site_name" content="薛丁格的工程師">
   <meta property="og:title" content="[用 Drone 建立自動部署] 03 部署排程設定與權限管理">
   <meta property="og:description" content="透過 Drone 建立自動部署流程，部署排程設定與權限管理">
   <meta property="description" content="透過 Drone 建立自動部署流程，部署排程設定與權限管理">
@@ -426,7 +426,7 @@ Body 帶入要改變的內容，例如把使用的分支換成 <code>dev</code><
 </code></pre><h2 id="使用者名單設定">使用者名單設定</h2>
 <p>藉由設定使用者名單來限制存取權限：<a href="https://docs.drone.io/server/reference/drone-user-filter/">官方文件</a></p>
 <p>可以使用機構或是使用者 ID</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">- <span style="color:#ae81ff">DRONE_USER_FILTER=ray247k,lemon,JohnDoe</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">- <span style="color:#ae81ff">DRONE_USER_FILTER=ray247k,lemon,JohnDoe</span>
 </code></pre></div><p>但如果版本控制使用的是 Bitbuctet 平台，則不支援 Organization 限制：<a href="https://gitter.im/drone/drone?at=5c5314b9ca428b0645318a1e">討論串說明</a><br>
 所以只要有寫入權限就可以看到 setting 頁面<br>
 <img src="/img/blog/2021/06/drone-cicd-3-advanced-cron-job/bitbucket-not-supported.png" alt="bitbucket not supported"></p>
@@ -827,7 +827,7 @@ Body 帶入要改變的內容，例如把使用的分支換成 <code>dev</code><
         © 2021 薛丁格的工程師
     </p>
     <p class="copyright" style="font-size: 0.1EM;">
-        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.85.0' target='_blank' rel='noopener'>Hugo</a>
+        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.86.1' target='_blank' rel='noopener'>Hugo</a>
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>

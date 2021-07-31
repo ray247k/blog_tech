@@ -18,7 +18,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.85.0" /><meta property="og:site_name" content="薛丁格的工程師">
+<meta name="generator" content="Hugo 0.86.1" /><meta property="og:site_name" content="薛丁格的工程師">
   <meta property="og:title" content="Ngrok 讓 localhost 可以被外部連線">
   <meta property="og:description" content="Ngrok 開發測試 webhook 的利器">
   <meta property="description" content="Ngrok 開發測試 webhook 的利器">
@@ -348,28 +348,28 @@
 <p>官方文件與載點：<a href="https://ngrok.com/download">https://ngrok.com/download</a></p>
 <h1 id="安裝">安裝</h1>
 <h2 id="mac">Mac</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install ngrok
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install ngrok
 </code></pre></div><h2 id="linux">Linux</h2>
 <p>確認自己的主機硬體架構</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat /proc/cpuinfo
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat /proc/cpuinfo
 </code></pre></div><p><img src="/img/blog/2021/02/ngrok-share-your-local-development-site/01.png" alt="image"></p>
 <p>再去官網下載指定檔案依照<a href="https://ngrok.com/download">官網安裝</a>
 或是直接使用 snap 安裝</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt update
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt update
 sudo apt install snapd
 sudo snap install ngrok
 </code></pre></div><h1 id="使用">使用</h1>
 <p>啟動並監聽 8080 Port</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ngrok http <span style="color:#ae81ff">8080</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ngrok http <span style="color:#ae81ff">8080</span>
 </code></pre></div><p>就可以看到對外開放的網址</p>
 <p><img src="/img/blog/2021/02/ngrok-share-your-local-development-site/02.png" alt="image"></p>
 <h2 id="註冊-ngrok">註冊 ngrok</h2>
 <p>不註冊的話過一段時間就會被斷線，開發階段使用免費版本就足夠了<br>
 <a href="https://dashboard.ngrok.com/auth/your-authtoken">Ngrok authtoken 頁面</a>
 複製 Authtoken 之後到 terminal 輸入</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ngrok authtoken <span style="color:#f92672">{</span>Your Authtoken<span style="color:#f92672">}</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ngrok authtoken <span style="color:#f92672">{</span>Your Authtoken<span style="color:#f92672">}</span>
 </code></pre></div><p>看到以下訊息代表認證完成</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Authtoken saved to configuration file: /Users/user_name/.ngrok2/ngrok.yml
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Authtoken saved to configuration file: /Users/user_name/.ngrok2/ngrok.yml
 </code></pre></div>
 
       
@@ -765,7 +765,7 @@ sudo snap install ngrok
         © 2021 薛丁格的工程師
     </p>
     <p class="copyright" style="font-size: 0.1EM;">
-        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.85.0' target='_blank' rel='noopener'>Hugo</a>
+        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.86.1' target='_blank' rel='noopener'>Hugo</a>
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>

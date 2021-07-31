@@ -18,7 +18,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.85.0" /><meta property="og:site_name" content="薛丁格的工程師">
+<meta name="generator" content="Hugo 0.86.1" /><meta property="og:site_name" content="薛丁格的工程師">
   <meta property="og:title" content="[Express&#43;Vue 搭建電商網站] 12 在 Vuex 使用 Mutation 管理狀態">
   <meta property="og:description" content="使用 Express &#43; Vue 搭建一個電商網站 - 在 Vuex 使用 Mutation 管理狀態">
   <meta property="description" content="使用 Express &#43; Vue 搭建一個電商網站 - 在 Vuex 使用 Mutation 管理狀態">
@@ -346,7 +346,7 @@
 <p>在 Vuex 中 <code>Mutation</code> 是修改 Vuex store 內容的唯一方法</p>
 <p><a href="https://vuex.vuejs.org/zh/guide/mutations.html">Mutation</a> 是定義在 Vuex store 物件中 <code>mutations</code> 屬性的一系列函數</p>
 <p>長得會像</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#a6e22e">ACTION_NAME</span>(<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#a6e22e">ACTION_NAME</span>(<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
   <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">state</span><span style="color:#f92672">++</span>;
 }
 </code></pre></div><p>其中 <code>ACTION_NAME</code> 就是組件發出的事件或動作的名稱<br>
@@ -356,7 +356,7 @@
 <h2 id="初始化-mutations-狀態">初始化 mutations 狀態</h2>
 <p>打開 <code>src/store/index.js</code> 檔案，修改其中的 <code>state</code><br>
 並加入 <code>mutations</code>，這邊我們先把資料寫死，未來會接上先前寫的後端 API</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Vue</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue&#39;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Vue</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue&#39;</span>;
 <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Vuex</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vuex&#39;</span>;
 
 <span style="color:#a6e22e">Vue</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">Vuex</span>);
@@ -432,7 +432,7 @@
 <h2 id="productlist-組件">ProductList 組件</h2>
 <p>接著要新建「商品列表」的組件，用來展示商品詳細資訊</p>
 <p>新建 <code>/src/components/products/ProductList.vue</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
   &lt;<span style="color:#f92672">div</span>&gt;
     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;products&#34;</span>&gt;
       &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;<span style="color:#a6e22e">This</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">ProductList</span>&lt;/<span style="color:#f92672">div</span>&gt;
@@ -486,7 +486,7 @@
 將目前商品物件 <code>{product}</code> 當作 payload 來操作 Vux store 中 mutation 所定義的 <code>ADD_TO_CART</code> 方法做狀態修改</p>
 <p>組件建立完之後要在畫面引入才能使用<br>
 修改首頁 <code>src/pages/Home.vue</code> 把剛剛建立的 <code>ProductList.vue</code> 組件加入畫面</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
   &lt;<span style="color:#f92672">div</span>&gt;
     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;title&#34;</span>&gt;
       &lt;<span style="color:#f92672">h1</span>&gt;<span style="color:#a6e22e">In</span> <span style="color:#a6e22e">Stock</span>&lt;/<span style="color:#f92672">h1</span>&gt;
@@ -511,7 +511,7 @@
 &lt;/<span style="color:#f92672">script</span>&gt;
 </code></pre></div><h2 id="購物車">購物車</h2>
 <p>接著要修改購物車頁面 <code>/src/views/Cart.vue</code> 將商品資訊顯示出來。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
   &lt;<span style="color:#f92672">div</span>&gt;
     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;title&#34;</span>&gt;
       &lt;<span style="color:#f92672">h1</span>&gt;{{<span style="color:#a6e22e">msg</span>}}&lt;/<span style="color:#f92672">h1</span>&gt;
@@ -969,7 +969,7 @@
         © 2021 薛丁格的工程師
     </p>
     <p class="copyright" style="font-size: 0.1EM;">
-        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.85.0' target='_blank' rel='noopener'>Hugo</a>
+        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.86.1' target='_blank' rel='noopener'>Hugo</a>
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>

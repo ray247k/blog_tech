@@ -18,7 +18,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.85.0" /><meta property="og:site_name" content="薛丁格的工程師">
+<meta name="generator" content="Hugo 0.86.1" /><meta property="og:site_name" content="薛丁格的工程師">
   <meta property="og:title" content="[Express&#43;Vue 搭建電商網站] 07 API 路由建立">
   <meta property="og:description" content="使用 Express &#43; Vue 搭建一個電商網站 - API 路由建立">
   <meta property="description" content="使用 Express &#43; Vue 搭建一個電商網站 - API 路由建立">
@@ -345,13 +345,13 @@
 <h1 id="api-路由建立">API 路由建立</h1>
 <h2 id="新增路由並設定路由群組">新增路由並設定路由群組</h2>
 <p>打開 <code>app.js</code> 引入我們要使用的 api 路由</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">api</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;./routes/api&#39;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">api</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;./routes/api&#39;</span>);
 </code></pre></div><p>路徑就設定成 <code>/api/v1</code> 吧</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#e6db74">&#39;/api/v1&#39;</span>, <span style="color:#a6e22e">api</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#e6db74">&#39;/api/v1&#39;</span>, <span style="color:#a6e22e">api</span>);
 </code></pre></div><p>這下子所有進入 <code>/api/v1/</code> 以及底下路徑的所有請求都會進入 <code>/routes/api</code> 這個路由內</p>
 <h2 id="建立新路由">建立新路由</h2>
 <p>我們建立一個檔案 <code>/routes/api/index.js</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">express</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;express&#39;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">express</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;express&#39;</span>);
 <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">router</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">express</span>.<span style="color:#a6e22e">Router</span>();
 <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">productController</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;../../controllers/product&#39;</span>);
 <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">manufacturerController</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;../../controllers/manufacturer&#39;</span>);
@@ -776,7 +776,7 @@
         © 2021 薛丁格的工程師
     </p>
     <p class="copyright" style="font-size: 0.1EM;">
-        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.85.0' target='_blank' rel='noopener'>Hugo</a>
+        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.86.1' target='_blank' rel='noopener'>Hugo</a>
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>

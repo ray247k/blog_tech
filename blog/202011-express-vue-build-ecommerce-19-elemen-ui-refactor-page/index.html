@@ -18,7 +18,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.85.0" /><meta property="og:site_name" content="薛丁格的工程師">
+<meta name="generator" content="Hugo 0.86.1" /><meta property="og:site_name" content="薛丁格的工程師">
   <meta property="og:title" content="[Express&#43;Vue 搭建電商網站] 19 使用 Element UI 重構畫面">
   <meta property="og:description" content="使用 Express &#43; Vue 搭建一個電商網站 - 套用 Element UI 到頁面上">
   <meta property="description" content="使用 Express &#43; Vue 搭建一個電商網站 - 套用 Element UI 到頁面上">
@@ -345,7 +345,7 @@
 後續的文章會把功能修復，莫急莫慌莫害怕</p>
 <h1 id="管理後台畫面重構">管理後台畫面重構</h1>
 <p>由於我們之前在 <code>App</code> 組件中已經有了共用的工具列，所以打開 <code>src/views/admin/Index.vue</code> 修改成</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
   &lt;<span style="color:#f92672">div</span>&gt;
     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;admin-new&#34;</span>&gt;
       &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;
@@ -357,7 +357,7 @@
 &lt;/<span style="color:#f92672">template</span>&gt;
 </code></pre></div><h2 id="後台商品列表頁面重構">後台商品列表頁面重構</h2>
 <p>接著打開後台的商品組件 <code>src/views/admin/Products.vue</code>，將 <code>&lt;template&gt;</code> 修改成</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
   &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;products&#34;</span>&gt;
     &lt;<span style="color:#f92672">el-table</span>
     <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;table&#34;</span>
@@ -392,7 +392,7 @@
 一個是將商品加入或移出購物車，一個是刪除或修改商品</p>
 <h2 id="後台編輯商品頁面重構">後台編輯商品頁面重構</h2>
 <p>打開 <code>ProductForm</code> 組件，在 <code>&lt;template&gt;</code> 內使用組件庫提供的 <code>el-form</code> 表單組件代替原本簡陋的 form 表單</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
   &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;productInfo&#34;</span>&gt;
     &lt;<span style="color:#f92672">el-form</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form&#34;</span> <span style="color:#a6e22e">ref</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form&#34;</span> <span style="color:#f92672">:model</span><span style="color:#e6db74">=&#34;model&#34;</span> <span style="color:#a6e22e">label</span><span style="color:#f92672">-width</span><span style="color:#960050;background-color:#1e0010">=&#34;</span><span style="color:#a6e22e">180px</span><span style="color:#960050;background-color:#1e0010">&#34;</span>&gt;
       &lt;<span style="color:#f92672">el-form-item</span> <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Name&#34;</span>&gt;
@@ -429,7 +429,7 @@
 輸入框內容將無法進行編輯：<a href="https://element.eleme.io/#/zh-CN/component/input">Input 输入框</a><br>
 結果送出之後還是沒反應，這很正常先繼續把畫面調好，等等我們會來修復它</p>
 <p>打開 <code>Edit</code> 組件，將原本在 computed 中的 <code>model</code> 屬性放到 <code>data</code> 屬性中，並移除原本在 computed 中的屬性</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
   &lt;<span style="color:#f92672">div</span>&gt;
     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;title&#34;</span>&gt;
       &lt;<span style="color:#f92672">h1</span>&gt;<span style="color:#a6e22e">This</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">Admin</span><span style="color:#f92672">/</span><span style="color:#a6e22e">Edit</span>&lt;/<span style="color:#f92672">h1</span>&gt;
@@ -483,7 +483,7 @@
 };
 &lt;/<span style="color:#f92672">script</span>&gt;
 </code></pre></div><p>接著，長得跟 <code>Edit</code> 組件很像的 <code>New</code> 組件也一起重構</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
   &lt;<span style="color:#f92672">product-form</span> <span style="color:#f92672">@save-product</span><span style="color:#e6db74">=&#34;addProduct&#34;</span> <span style="color:#f92672">:model</span><span style="color:#e6db74">=&#34;model&#34;</span> <span style="color:#f92672">:manufacturers</span><span style="color:#e6db74">=&#34;manufacturers&#34;</span>&gt;<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/product-form&gt;</span>
 &lt;/<span style="color:#f92672">template</span>&gt;
 
@@ -519,7 +519,7 @@
 &lt;/<span style="color:#f92672">script</span>&gt;
 </code></pre></div><h2 id="後台編輯製造商頁面重構">後台編輯製造商頁面重構</h2>
 <p>和 <code>Products</code> 組件類似，開啟 <code>Manufacturers</code> 使用 <code>el-table</code> 替換掉原本的表單的 <code>&lt;template&gt;</code> 部分</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
   &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;manufacturers&#34;</span>&gt;
     &lt;<span style="color:#f92672">el-table</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;table&#34;</span> <span style="color:#f92672">:data</span><span style="color:#e6db74">=&#34;manufacturers&#34;</span>&gt;
       &lt;<span style="color:#f92672">el-table-column</span> <span style="color:#a6e22e">prop</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;製造商&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;180&#34;</span>&gt;<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-table-column&gt;</span>
@@ -540,7 +540,7 @@
   &lt;/<span style="color:#f92672">div</span>&gt;
 &lt;/<span style="color:#f92672">template</span>&gt;
 </code></pre></div><p>接著重構 <code>NewManufacturers</code> 組件，一樣將 computed 的 <code>model</code> 換到 data 屬性中</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
   &lt;<span style="color:#f92672">manufacturer-form</span> <span style="color:#f92672">@save-manufacturer</span><span style="color:#e6db74">=&#34;addManufacturer&#34;</span> <span style="color:#f92672">:model</span><span style="color:#e6db74">=&#34;model&#34;</span>&gt;<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/manufacturer-form&gt;</span>
 &lt;/<span style="color:#f92672">template</span>&gt;
 
@@ -566,7 +566,7 @@
 &lt;/<span style="color:#f92672">script</span>&gt;
 </code></pre></div><p>接著重構 <code>ManufacturerForm</code><br>
 程式結構和 <code>ProductForm</code> 組件很類似，將 <code>&lt;template&gt;</code> 區塊替換成組件庫樣式</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
   &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;manufacturerInfo&#34;</span>&gt;
     &lt;<span style="color:#f92672">el-form</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form&#34;</span> <span style="color:#a6e22e">ref</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form&#34;</span> <span style="color:#f92672">:model</span><span style="color:#e6db74">=&#34;model&#34;</span> <span style="color:#a6e22e">label</span><span style="color:#f92672">-width</span><span style="color:#960050;background-color:#1e0010">=&#34;</span><span style="color:#a6e22e">180px</span><span style="color:#960050;background-color:#1e0010">&#34;</span>&gt;
       &lt;<span style="color:#f92672">el-form-item</span> <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Name&#34;</span>&gt;
@@ -582,7 +582,7 @@
 </code></pre></div><h1 id="重構前台購物車">重構前台購物車</h1>
 <p>最後！重構 <code>Cart</code> 組件，和 <code>ProductList</code> 類似，兩者都用了 <code>ProductItem</code> 組件<br>
 一樣那句話：將 <code>&lt;template&gt;</code> 區塊替換成組件庫樣式</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
   &lt;<span style="color:#f92672">div</span>&gt;
     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;title&#34;</span>&gt;
       &lt;<span style="color:#f92672">h1</span>&gt;{{<span style="color:#a6e22e">msg</span>}}&lt;/<span style="color:#f92672">h1</span>&gt;
@@ -990,7 +990,7 @@
         © 2021 薛丁格的工程師
     </p>
     <p class="copyright" style="font-size: 0.1EM;">
-        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.85.0' target='_blank' rel='noopener'>Hugo</a>
+        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.86.1' target='_blank' rel='noopener'>Hugo</a>
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>

@@ -18,7 +18,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.85.0" /><meta property="og:site_name" content="薛丁格的工程師">
+<meta name="generator" content="Hugo 0.86.1" /><meta property="og:site_name" content="薛丁格的工程師">
   <meta property="og:title" content="[Express&#43;Vue 搭建電商網站] 15 使用 Vuex Getters 複用資料邏輯">
   <meta property="og:description" content="使用 Express &#43; Vue 搭建一個電商網站 - 使用 Vuex Getters 複用資料邏輯">
   <meta property="description" content="使用 Express &#43; Vue 搭建一個電商網站 - 使用 Vuex Getters 複用資料邏輯">
@@ -346,7 +346,7 @@
 <h1 id="建立-getter">建立 Getter</h1>
 <p>首先在原本的 <code>src/store/index.js</code> 檔案裡加入一些新的 <code>action</code>、<code>mutation</code> 屬性<br>
 以及這次要使用的 <code>getter</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Vue</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue&#39;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Vue</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue&#39;</span>;
 <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Vuex</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vuex&#39;</span>;
 <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">axios</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;axios&#39;</span>;
 
@@ -441,15 +441,15 @@
 <h1 id="在後台-products-組件中使用-getters">在後台 Products 組件中使用 Getters</h1>
 <p>先使用一個簡單的範例說明 Getters 是怎麼運作的，打開 <code>src/views/admin/Products.vue</code> 組件<br>
 並且把以下內容</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">products</span>[<span style="color:#ae81ff">0</span>];
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">products</span>[<span style="color:#ae81ff">0</span>];
 </code></pre></div><p>替換成</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">getters</span>.<span style="color:#a6e22e">allProducts</span>[<span style="color:#ae81ff">0</span>];
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">getters</span>.<span style="color:#a6e22e">allProducts</span>[<span style="color:#ae81ff">0</span>];
 </code></pre></div><p>在這個範例中，我們通過 <code>this.$store.getters.allProducts</code> 來調用 <code>getter</code> 中的 <code>allProducts</code> 屬性<br>
 並且顯示出第一個商品的名稱</p>
 <h1 id="建立-productdetail-組件">建立 ProductDetail 組件</h1>
 <p>在簡單的了解 Getter 是怎麼運作之後，要來實現單一商品詳細內容的組件</p>
 <p>新建 <code>src/components/products/ProductDetail.vue</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
   &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;product-details&#34;</span>&gt;
     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;product-details__image&#34;</span>&gt;
       &lt;<span style="color:#f92672">img</span> <span style="color:#f92672">:src</span><span style="color:#e6db74">=&#34;product.image&#34;</span> <span style="color:#a6e22e">alt</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;image&#34;</span> /&gt;
@@ -489,7 +489,7 @@
 <h1 id="在-productitem-組件中為商品加入連結">在 ProductItem 組件中為商品加入連結</h1>
 <p>有了詳細頁面，我們還需要設定怎麼進入商品詳細頁面的連結<br>
 打開 <code>src/components/products/ProductItem.vue</code> 組件，將 <code>&lt;template&gt;</code> 區塊編輯成以下樣式</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"> &lt;<span style="color:#f92672">template</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"> &lt;<span style="color:#f92672">template</span>&gt;
   &lt;<span style="color:#f92672">div</span>&gt;
     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;product&#34;</span>&gt;
       &lt;<span style="color:#f92672">router-link</span> <span style="color:#f92672">:</span><span style="color:#a6e22e">to</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#39;/detail/&#39; + product._id&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;product-link&#34;</span>&gt;
@@ -518,13 +518,13 @@
 <h1 id="在-productlist-中使用-getters">在 ProductList 中使用 Getters</h1>
 <p>而原先商品列表組件（<code>src/components/products/ProductList.vue</code>）「取得所有商品」功能<br>
 也是直接操作 Vuex store 中的 state</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#a6e22e">computed</span><span style="color:#f92672">:</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#a6e22e">computed</span><span style="color:#f92672">:</span> {
     <span style="color:#a6e22e">products</span>() {
       <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">products</span>;
     }
 },
 </code></pre></div><p>在這邊我們也改用剛剛學到的 Getter 改寫成以下內容，使用指定的 getter：<code>allProducts</code> 取得所有商品資料</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">  <span style="color:#a6e22e">computed</span><span style="color:#f92672">:</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">  <span style="color:#a6e22e">computed</span><span style="color:#f92672">:</span> {
     <span style="color:#a6e22e">products</span>() {
       <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">getters</span>.<span style="color:#a6e22e">allProducts</span>;
     }
@@ -532,7 +532,7 @@
 </code></pre></div><h1 id="建立-detail-頁面組件">建立 Detail 頁面組件</h1>
 <p>現在子組件都完成了，只缺一個詳細商品頁面將組件拿來使用</p>
 <p>建立 <code>src/views/Detail.vue</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
   &lt;<span style="color:#f92672">div</span>&gt;
     &lt;<span style="color:#f92672">product-detail</span> <span style="color:#f92672">:product</span><span style="color:#e6db74">=&#34;product&#34;</span>&gt;<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/product-detail&gt;</span>
   &lt;/<span style="color:#f92672">div</span>&gt;
@@ -567,9 +567,9 @@
 <h1 id="設定-detail-頁面路由">設定 Detail 頁面路由</h1>
 <p>剛剛提到會使用路由傳入的產品編號來查詢產品資料，有沒有想起什麼事情？</p>
 <p>打開 vue-router 的設定檔 <code>src/router/index.js</code> 引入 Detail 頁面</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Detail</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@/views/Detail&#39;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Detail</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@/views/Detail&#39;</span>;
 </code></pre></div><p>在路由規則中加入 Detail 頁面設定值</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">  {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">  {
     <span style="color:#a6e22e">path</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;/detail/:id&#39;</span>,
     <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Detail&#39;</span>,
     <span style="color:#a6e22e">component</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Detail</span>,
@@ -977,7 +977,7 @@
         © 2021 薛丁格的工程師
     </p>
     <p class="copyright" style="font-size: 0.1EM;">
-        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.85.0' target='_blank' rel='noopener'>Hugo</a>
+        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.86.1' target='_blank' rel='noopener'>Hugo</a>
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>

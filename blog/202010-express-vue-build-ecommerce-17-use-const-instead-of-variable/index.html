@@ -18,7 +18,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.85.0" /><meta property="og:site_name" content="薛丁格的工程師">
+<meta name="generator" content="Hugo 0.86.1" /><meta property="og:site_name" content="薛丁格的工程師">
   <meta property="og:title" content="[Express&#43;Vue 搭建電商網站] 17 使用常數管理變數">
   <meta property="og:description" content="使用 Express &#43; Vue 搭建一個電商網站 - 使用常數管理變數">
   <meta property="description" content="使用 Express &#43; Vue 搭建一個電商網站 - 使用常數管理變數">
@@ -347,7 +347,7 @@
 <h1 id="建立-manufacturerform-組件">建立 ManufacturerForm 組件</h1>
 <p>和商品資訊一樣，我們也要將製造商資訊封裝到另一個單獨的組件 <code>ManufacturerForm</code></p>
 <p>新增 <code>src/components/ManufacturerForm.vue</code> 檔案</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
   &lt;<span style="color:#f92672">form</span> <span style="color:#f92672">@submit.prevent</span><span style="color:#e6db74">=&#34;saveManufacturer&#34;</span>&gt;
     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-group&#34;</span>&gt;
       &lt;<span style="color:#f92672">label</span>&gt;<span style="color:#a6e22e">Name</span>&lt;/<span style="color:#f92672">label</span>&gt;
@@ -379,7 +379,7 @@
 <p>在建立編輯生產商的組件前，需先加入對應的 getter 屬性</p>
 <p>打開 <code>src/store/getters.js</code> 檔案，對 <code>manufacturerGetters</code> 增加一個屬性<br>
 用來取得狀態庫中的指定生產商</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#a6e22e">manufacturerById</span><span style="color:#f92672">:</span> (<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">getters</span>) =&gt; <span style="color:#a6e22e">id</span> =&gt; {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#a6e22e">manufacturerById</span><span style="color:#f92672">:</span> (<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">getters</span>) =&gt; <span style="color:#a6e22e">id</span> =&gt; {
     <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">getters</span>.<span style="color:#a6e22e">allManufacturers</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) {
         <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">getters</span>.<span style="color:#a6e22e">allManufacturers</span>.<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">manufacturer</span> =&gt; <span style="color:#a6e22e">manufacturer</span>.<span style="color:#a6e22e">_id</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">id</span>)[<span style="color:#ae81ff">0</span>]
     } <span style="color:#66d9ef">else</span> {
@@ -389,7 +389,7 @@
 </code></pre></div><h1 id="建立-editmanufacturers-頁面">建立 EditManufacturers 頁面</h1>
 <p>在建立好顯示製造商資訊的表單組件 <code>ManufacturerForm</code> 以及設定好取得資料的 getter 之後<br>
 我們要來建立編輯製造商的頁面 <code>src/views/admin/EditManufacturers.vue</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
   &lt;<span style="color:#f92672">manufacturer-form</span> <span style="color:#f92672">@save-manufacturer</span><span style="color:#e6db74">=&#34;addManufacturer&#34;</span> <span style="color:#f92672">:model</span><span style="color:#e6db74">=&#34;model&#34;</span> <span style="color:#f92672">:isEditing</span><span style="color:#e6db74">=&#34;true&#34;</span>&gt;<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/manufacturer-form&gt;</span>
 &lt;/<span style="color:#f92672">template</span>&gt;
 
@@ -427,7 +427,7 @@
 而組件內如果對生產商有操作，會透過 <code>action</code> 修改商品資訊，然後呼叫 <code>mutation</code> 變更狀態池</p>
 <h1 id="建立-newmanufacturers-頁面">建立 NewManufacturers 頁面</h1>
 <p>跟剛剛的編輯頁面邏輯差不多，這邊要建立新增頁面 <code>src/views/admin/NewManufacturers.vue</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
   &lt;<span style="color:#f92672">manufacturer-form</span> <span style="color:#f92672">@save-manufacturer</span><span style="color:#e6db74">=&#34;addManufacturer&#34;</span> <span style="color:#f92672">:model</span><span style="color:#e6db74">=&#34;model&#34;</span>&gt;<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/manufacturer-form&gt;</span>
 &lt;/<span style="color:#f92672">template</span>&gt;
 
@@ -453,15 +453,15 @@
 &lt;/<span style="color:#f92672">script</span>&gt;
 </code></pre></div><h1 id="重構-admin-menu">重構 Admin menu</h1>
 <p>在 <code>src/views/admin/Index.vue</code> 加入新的頁面用來增加製造商，沒什麼多解釋的</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">li</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">li</span>&gt;
     &lt;<span style="color:#f92672">router-link</span> <span style="color:#a6e22e">to</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/admin/manufacturers/new&#34;</span>&gt;<span style="color:#a6e22e">新增製造商</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/router-link&gt;</span>
 &lt;/<span style="color:#f92672">li</span>&gt;
 </code></pre></div><h1 id="增加路由邏輯">增加路由邏輯</h1>
 <p>頁面跟連結都做好了，打開 <code>src/router/index.js</code> 引入路由設定</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">NewManufacturers</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@/views/admin/NewManufacturers&#39;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">NewManufacturers</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@/views/admin/NewManufacturers&#39;</span>;
 <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">EditManufacturers</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@/views/admin/EditManufacturers&#39;</span>;
 </code></pre></div><p>增加 admin 頁面下路由 <code>children</code> 屬性</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">{
     <span style="color:#a6e22e">path</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;manufacturers/new&#39;</span>,
     <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;NewManufacturers&#39;</span>,
     <span style="color:#a6e22e">component</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">NewManufacturers</span>,
@@ -480,7 +480,7 @@
 <p>因此我們會使用常數的方式定義 <code>actions</code> 和 <code>mutations</code> 中的事件<br>
 只要我們都使用同一組常數就可以維持一致。關鍵的是如果這麼做打錯字的時候就會報錯，方便除錯</p>
 <p>接著就來實作建立 <code>src/store/mutation-types.js</code> 檔案作為 mapping 表</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ALL_PRODUCTS</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;ALL_PRODUCTS&#39;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ALL_PRODUCTS</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;ALL_PRODUCTS&#39;</span>;
 <span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ALL_PRODUCTS_SUCCESS</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;ALL_PRODUCTS_SUCCESS&#39;</span>;
 
 <span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">PRODUCT_BY_ID</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;PRODUCT_BY_ID&#39;</span>;
@@ -514,7 +514,7 @@
 <span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">REMOVE_MANUFACTURER_SUCCESS</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;REMOVE_MANUFACTURER_SUCCESS&#39;</span>;
 </code></pre></div><h2 id="重構-actions-檔案">重構 actions 檔案</h2>
 <p>打開 <code>src/store/actions.js</code> 檔案，引入剛剛的常數表文件後，把其中的方法名稱通通改成使用常數表內的常數</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">axios</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;axios&#39;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">axios</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;axios&#39;</span>;
 
 <span style="color:#66d9ef">import</span> {
     <span style="color:#a6e22e">ADD_PRODUCT</span>,
@@ -649,7 +649,7 @@
 }
 </code></pre></div><h2 id="重構-manufacturer-檔案">重構 manufacturer 檔案</h2>
 <p>在 <code>src/store/mutations.js</code> 也做跟上一步一樣的事情</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">import</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">import</span> {
     <span style="color:#a6e22e">ADD_PRODUCT</span>,
     <span style="color:#a6e22e">ADD_PRODUCT_SUCCESS</span>,
     <span style="color:#a6e22e">PRODUCT_BY_ID</span>,
@@ -1194,7 +1194,7 @@
         © 2021 薛丁格的工程師
     </p>
     <p class="copyright" style="font-size: 0.1EM;">
-        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.85.0' target='_blank' rel='noopener'>Hugo</a>
+        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.86.1' target='_blank' rel='noopener'>Hugo</a>
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>

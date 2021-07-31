@@ -18,7 +18,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.85.0" /><meta property="og:site_name" content="薛丁格的工程師">
+<meta name="generator" content="Hugo 0.86.1" /><meta property="og:site_name" content="薛丁格的工程師">
   <meta property="og:title" content="[Express&#43;Vue 搭建電商網站] 18 套用 Element UI 到頁面上">
   <meta property="og:description" content="使用 Express &#43; Vue 搭建一個電商網站 - 套用 Element UI 到頁面上">
   <meta property="description" content="使用 Express &#43; Vue 搭建一個電商網站 - 套用 Element UI 到頁面上">
@@ -351,12 +351,12 @@
 <ol>
 <li>
 <p>使用 npm 套件管理安裝，這也是官方推薦的作法</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm i element-ui -S
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm i element-ui -S
 </code></pre></div></li>
 <li>
 <p>使用 CDN 安裝<br>
 在 index.html 中加入 CDN 連結</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#75715e">&lt;!--</span> <span style="color:#a6e22e">引入样式</span> <span style="color:#f92672">--&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#75715e">&lt;!--</span> <span style="color:#a6e22e">引入样式</span> <span style="color:#f92672">--&gt;</span>
 &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://unpkg.com/element-ui/lib/theme-chalk/index.css&#34;</span>&gt;
 <span style="color:#75715e">&lt;!--</span> <span style="color:#a6e22e">引入组件库</span> <span style="color:#f92672">--&gt;</span>
 &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://unpkg.com/element-ui/lib/index.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
@@ -370,7 +370,7 @@
 </ol>
 <h1 id="導入套件">導入套件</h1>
 <p>打開主目錄中的 <code>src/main.js</code> 我們要把剛剛安裝的套件導入到專案中註冊依賴</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Vue</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Vue</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue&#39;</span>
 <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">App</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./App.vue&#39;</span>
 <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">router</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./router&#39;</span>
 <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">store</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./store&#39;</span>
@@ -390,7 +390,7 @@
 並且聲明 <code>Vue.use(ElementUI);</code> 來註冊組件庫，接著就是快樂的開始使用組件庫了</p>
 <h1 id="重構選單列">重構選單列</h1>
 <p>打開 <code>src/App.vue</code> 愉快的使用 <code>element-ui</code> 改成酷炫的樣子</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
   &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;app&#34;</span>&gt;
     &lt;<span style="color:#f92672">el-menu</span>
       <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;menu&#34;</span>
@@ -450,7 +450,7 @@
 <p>接著要重構 <code>ProductItem</code> 同時因為子組件被修改，所以 <code>ProductList</code> 也需要修改</p>
 <h2 id="productlist">ProductList</h2>
 <p>打開 <code>src/components/products/ProductList.vue</code> 將 <code>&lt;template&gt;</code> 部分修改為</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">template</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">template</span>&gt;
   &lt;<span style="color:#f92672">div</span>&gt;
     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;products&#34;</span>&gt;
       &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;This is ProductList&lt;/<span style="color:#f92672">div</span>&gt;
@@ -464,7 +464,7 @@
 至於為什麼？就讓我們看下去</p>
 <h2 id="productitem">ProductItem</h2>
 <p>打開 <code>src/components/products/ProductItem.vue</code> 修改成以下內容</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
   &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;products&#34;</span>&gt;
     &lt;<span style="color:#f92672">el-table</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;table&#34;</span> <span style="color:#f92672">:data</span><span style="color:#e6db74">=&#34;products&#34;</span> <span style="color:#a6e22e">max</span><span style="color:#f92672">-height</span><span style="color:#960050;background-color:#1e0010">=&#34;</span><span style="color:#a6e22e">250</span><span style="color:#960050;background-color:#1e0010">&#34;</span>&gt;
       &lt;<span style="color:#f92672">el-table-column</span> <span style="color:#a6e22e">prop</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;產品名稱&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;180&#34;</span>&gt;<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-table-column&gt;</span>
@@ -515,7 +515,7 @@
 </blockquote>
 <h2 id="productbutton">ProductButton</h2>
 <p>接著就是修改 <code>src/components/products/ProductButton.vue</code> 組件</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
   &lt;<span style="color:#f92672">div</span>&gt;
     &lt;<span style="color:#f92672">el-button</span> <span style="color:#f92672">v-if</span><span style="color:#e6db74">=&#34;isAdding&#34; @click=&#34;addToCart&#34; type=&#34;text&#34; size=&#34;small&#34;&gt;加入購物車&lt;/el-button&gt;
 </span><span style="color:#e6db74">    &lt;el-button v-else @click=&#34;removeFromCart(id)&#34; type=&#34;text&#34; size=&#34;small&#34;</span>&gt;<span style="color:#a6e22e">從購物車移除</span><span style="color:#960050;background-color:#1e0010">&lt;/</span><span style="color:#a6e22e">el</span><span style="color:#f92672">-button</span>&gt;
@@ -966,7 +966,7 @@
         © 2021 薛丁格的工程師
     </p>
     <p class="copyright" style="font-size: 0.1EM;">
-        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.85.0' target='_blank' rel='noopener'>Hugo</a>
+        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.86.1' target='_blank' rel='noopener'>Hugo</a>
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>

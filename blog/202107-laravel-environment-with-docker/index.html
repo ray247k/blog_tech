@@ -18,7 +18,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.85.0" /><meta property="og:site_name" content="薛丁格的工程師">
+<meta name="generator" content="Hugo 0.86.1" /><meta property="og:site_name" content="薛丁格的工程師">
   <meta property="og:title" content="用 Docker 建立 Laravel 開發環境">
   <meta property="og:description" content="介紹如何使用 Docker 建置基礎的 Laravel 的開發環境">
   <meta property="description" content="介紹如何使用 Docker 建置基礎的 Laravel 的開發環境">
@@ -375,7 +375,7 @@
 <p>首先先建立一個專案資料夾，為了好分辨就叫 <code>docker_env</code> 吧<br>
 在 docker_env 資料夾內建立檔案 <code>docker-compose.yml</code>，當作 docker-compose 服務的設定檔</p>
 <h2 id="完整程式碼">完整程式碼</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e"># docker-compose.yml</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e"># docker-compose.yml</span>
 <span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;3&#39;</span>
 
 <span style="color:#f92672">networks</span>:
@@ -451,7 +451,7 @@
 如果只把上面複製貼上就啟動服務的話必定會失敗的</p>
 <h3 id="nginx">nginx</h3>
 <p>使用 nginx 作為我們的 Web 伺服器程式</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">  <span style="color:#f92672">nginx</span>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">  <span style="color:#f92672">nginx</span>:
     <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">docker_env_nginx                     </span> <span style="color:#75715e"># 將容器命名為 docker_env_nginx </span>
     <span style="color:#f92672">image</span>: <span style="color:#ae81ff">nginx:1.18                                    </span> <span style="color:#75715e"># stable version</span>
     <span style="color:#f92672">networks</span>:
@@ -516,7 +516,7 @@ root 則是指定專案資料夾的位置，可以看到他的指定位置和剛
 <p>而 <code>fastcgi_pass</code> 是指定到有安裝 php-fpm 的容器 container_name，以及剛剛提供容器內部存取的 port<br>
 其名稱和使用的 port 不是固定的！</p>
 <h3 id="php">php</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">  <span style="color:#f92672">php</span>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">  <span style="color:#f92672">php</span>:
     <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">docker_env_php</span>
     <span style="color:#f92672">build</span>: <span style="color:#ae81ff">./php/</span>
     <span style="color:#f92672">expose</span>:
@@ -537,7 +537,7 @@ volumes 的掛載方式和 nginx 服務一樣</p>
 我們可以透過直接在本機下指令改變 volumes 的檔案，進而讓容器內部程式產生變更<br>
 除非有非要在容器內下指令的原因，否則是不建議安裝</p>
 <p>在 docker_env 資料夾下建立 <code>php</code> 資料夾，新增檔案 Dockerfile</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#75715e"># Dockerfile</span><span style="color:#960050;background-color:#1e0010">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#75715e"># Dockerfile</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> php:7.4-fpm</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">WORKDIR</span><span style="color:#e6db74"> /var</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> apt-get update <span style="color:#f92672">&amp;&amp;</span> apt-get install -y libpq-dev libpng-dev libzip-dev zip<span style="color:#960050;background-color:#1e0010">
@@ -554,7 +554,7 @@ volumes 的掛載方式和 nginx 服務一樣</p>
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># &amp;&amp; mv composer.phar /usr/local/bin/composer</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010">
 </span></code></pre></div><h3 id="database">database</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">  <span style="color:#f92672">postgre</span>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">  <span style="color:#f92672">postgre</span>:
     <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">docker_env_postgre</span>
     <span style="color:#f92672">ports</span>:
       - <span style="color:#e6db74">&#34;5432:5432&#34;</span>
@@ -593,13 +593,13 @@ DB_NAME=my_database
 <h2 id="啟動容器">啟動容器</h2>
 <p>經過上面的步驟，我們設定了 nginx php 和資料庫的服務<br>
 確定 Docker 服務本身有在運作後，進入 <code>docker_env</code> 資料夾下執行</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose up -d
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose up -d
 </code></pre></div><p>如果一切正常，容器會在背景起動<br>
 這樣就完成了「使用 Docker 建置 Laravel 環境」的目標！</p>
 <p>要檢查容器啟動狀況可以使用指令，看是不是全部運行中</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker ps -a
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker ps -a
 </code></pre></div><p>不過如果是我自己在寫新的 docker-compose.yml 設定檔，我會先使用</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose up
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose up
 </code></pre></div><p>讓 Log 即時顯示在畫面上，這時候要除錯就方便很多了！<br>
 通常會遇到的問題是 volume 的資料夾不存在，例如 nginx config、ssl、Laravel 專案</p>
 <h2 id="laravel-env-設定">Laravel .env 設定</h2>
@@ -627,7 +627,7 @@ Laravel 連線到 Docker 的資料庫 - 完成</p>
 <p>如此一來就大功&hellip; 欸不對！<del>我還沒上車</del> 我要怎麼看專案的畫面？</p>
 <p>接下來要做的就是讓我們可以用瀏覽器開啟本機 Laravel 專案的畫面<br>
 首先使用終端機指令，不管是 bash 還是 zsh</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo vim /etc/hosts 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo vim /etc/hosts 
 </code></pre></div><p>在 <code>/etc/hosts</code> 檔案裡面加入</p>
 <pre><code>127.0.0.1       dev.project.com
 </code></pre><p>意思是要把後面定義的網址名稱，指向前面的 IP 位址<br>
@@ -646,7 +646,7 @@ Laravel 連線到 Docker 的資料庫 - 完成</p>
 <p>如果想執行 Laravel 中跟資料庫有關的指令，例如</p>
 <pre><code>php artisan migrate
 </code></pre><p>首先要先進入 php 容器內</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker exec -ti docker_env_php bash
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker exec -ti docker_env_php bash
 </code></pre></div><p>在容器內的專案目錄下運行指令，就可以看到指令被正確執行<br>
 若是沒有連進容器，直接執行 migrate 指令，則會得到錯誤訊息</p>
 <pre><code class="language-bash=" data-lang="bash=">SQLSTATE[08006] [7] could not translate host name &quot;docker_env_postgre&quot; to address: nodename nor servname provided, or not known
@@ -1067,7 +1067,7 @@ Laravel 連線到 Docker 的資料庫 - 完成</p>
         © 2021 薛丁格的工程師
     </p>
     <p class="copyright" style="font-size: 0.1EM;">
-        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.85.0' target='_blank' rel='noopener'>Hugo</a>
+        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.86.1' target='_blank' rel='noopener'>Hugo</a>
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>

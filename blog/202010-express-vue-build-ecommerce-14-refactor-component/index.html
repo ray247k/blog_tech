@@ -18,7 +18,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.85.0" /><meta property="og:site_name" content="薛丁格的工程師">
+<meta name="generator" content="Hugo 0.86.1" /><meta property="og:site_name" content="薛丁格的工程師">
   <meta property="og:title" content="[Express&#43;Vue 搭建電商網站] 14 使用組件思維重構頁面邏輯">
   <meta property="og:description" content="使用 Express &#43; Vue 搭建一個電商網站 - 使用組件思維重構頁面邏輯">
   <meta property="description" content="使用 Express &#43; Vue 搭建一個電商網站 - 使用組件思維重構頁面邏輯">
@@ -346,7 +346,7 @@
 <h1 id="建立-productbutton-組件">建立 ProductButton 組件</h1>
 <p>新建一個 <code>src/components/products/ProductButton.vue</code> 檔案<br>
 準備用這個組件替換掉操作購物車中狀態按鈕的組件</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
   &lt;<span style="color:#f92672">div</span>&gt;
     &lt;<span style="color:#f92672">button</span> <span style="color:#f92672">v-if</span><span style="color:#e6db74">=&#34;isAdding&#34; class=&#34;button&#34; @click=&#34;addToCart&#34;&gt;加入購物車&lt;/button&gt;
 </span><span style="color:#e6db74">    &lt;button v-else class=&#34;button&#34; @click=&#34;removeFromCart(product._id)&#34;</span>&gt;<span style="color:#a6e22e">從購物車移除</span>&lt;/<span style="color:#f92672">button</span>&gt;
@@ -393,7 +393,7 @@
 <p>建立好了按鈕後，要建立個別商品在渲染時使用的組件<br>
 建立 <code>src/components/products/ProductItem.vue</code> 顯示商品相關資訊<br>
 並引入上一步建立的 ProductButton 組件</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
   &lt;<span style="color:#f92672">div</span>&gt;
     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;product&#34;</span>&gt;
       &lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;product__name&#34;</span>&gt;<span style="color:#a6e22e">商品名稱</span><span style="color:#960050;background-color:#1e0010">：</span>{{<span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">name</span>}}&lt;/<span style="color:#f92672">p</span>&gt;
@@ -422,7 +422,7 @@
 <p>接著就可以把 <code>src/components/products/ProductList.vue</code> 這個組件重構<br>
 把跟商品相關的模板部分移除，methods 中的加入購物車方法也一併移除<br>
 因為單一商品的資料以及按鈕都已經加入到剛剛的 ProductItem 組件中</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
   &lt;<span style="color:#f92672">div</span>&gt;
     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;products&#34;</span>&gt;
       &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;<span style="color:#a6e22e">This</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">ProductList</span>&lt;/<span style="color:#f92672">div</span>&gt;
@@ -467,7 +467,7 @@
 </code></pre></div><p>我們在引用了 ProductItem 組件後，利用 <code>v-for</code> 把每個商品都傳入組件用來建立商品列表</p>
 <h1 id="重構-cart-頁面">重構 Cart 頁面</h1>
 <p>就跟在 ProductItem 組件中一樣，我們也將 <code>src/views/Cart.vue</code> 頁面中的商品列表組件化</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
   &lt;<span style="color:#f92672">div</span>&gt;
     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;title&#34;</span>&gt;
       &lt;<span style="color:#f92672">h1</span>&gt;{{<span style="color:#a6e22e">msg</span>}}&lt;/<span style="color:#f92672">h1</span>&gt;
@@ -909,7 +909,7 @@
         © 2021 薛丁格的工程師
     </p>
     <p class="copyright" style="font-size: 0.1EM;">
-        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.85.0' target='_blank' rel='noopener'>Hugo</a>
+        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.86.1' target='_blank' rel='noopener'>Hugo</a>
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>

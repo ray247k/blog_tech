@@ -18,7 +18,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.85.0" /><meta property="og:site_name" content="薛丁格的工程師">
+<meta name="generator" content="Hugo 0.86.1" /><meta property="og:site_name" content="薛丁格的工程師">
   <meta property="og:title" content="[Express&#43;Vue 搭建電商網站] 05 - 連接 MongoDB 與 CORS">
   <meta property="og:description" content="使用 Express &#43; Vue 搭建一個電商網站 - 連接 MongoDB 與 CORS">
   <meta property="description" content="使用 Express &#43; Vue 搭建一個電商網站 - 連接 MongoDB 與 CORS">
@@ -346,11 +346,11 @@
 <p>接著我們要安裝 mongoose 套件：<a href="https://www.npmjs.com/package/mongoose">Mongoose</a><br>
 Mongoose 是一個 <a href="https://www.mongodb.com/">MongoDB</a> 對象建模工具，用於在異步環境中工作<br>
 是時下最流行的 ODM(Object Document Mapping)，要比直接操作底層 MongoDB Node 更方便</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm install mongoose
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm install mongoose
 </code></pre></div><p>接著回到 <code>app.js</code> 中導入剛剛安裝的 <code>mongoose</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">mongoose</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;mongoose&#39;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">mongoose</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;mongoose&#39;</span>)
 </code></pre></div><p>並透過套件提供的方法連上我們的 MongoDB 資料庫</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#a6e22e">mongoose</span>.<span style="color:#a6e22e">connect</span>(<span style="color:#e6db74">`mongodb://localhost:27017/test`</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#a6e22e">mongoose</span>.<span style="color:#a6e22e">connect</span>(<span style="color:#e6db74">`mongodb://localhost:27017/test`</span>);
 </code></pre></div><p>雖然現在看不出效果，但我們等等會嘗試操作資料庫來測試連線的有效性<br>
 但現在我們先做點額外的事情，儘管目前看來沒什麼用處但卻是必要的一環<br>
 那就是開啟跨來源資源共用 CORS</p>
@@ -358,7 +358,7 @@ Mongoose 是一個 <a href="https://www.mongodb.com/">MongoDB</a> 對象建模�
 <p>CORS 是基於 <a href="https://developer.mozilla.org/zh-TW/docs/Web/Security/Same-origin_policy">同源政策</a> 的限制<br>
 當關閉時限制了程式碼和不同網域資源間的互動，來自不同網域的資源請求會被無情拒絕！</p>
 <p>讓我們回到 <code>app.js</code>，在剛剛的資料庫連線下一行加入以下程式碼</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#75715e">// CORS config here
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#75715e">// CORS config here
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">all</span>(<span style="color:#e6db74">&#39;/*&#39;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">next</span>) {
   <span style="color:#75715e">// CORS headers
 </span><span style="color:#75715e"></span>  <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">header</span>(<span style="color:#e6db74">&#34;Access-Control-Allow-Origin&#34;</span>, <span style="color:#e6db74">&#34;*&#34;</span>); <span style="color:#75715e">// restrict it to the required domain
@@ -773,7 +773,7 @@ Mongoose 是一個 <a href="https://www.mongodb.com/">MongoDB</a> 對象建模�
         © 2021 薛丁格的工程師
     </p>
     <p class="copyright" style="font-size: 0.1EM;">
-        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.85.0' target='_blank' rel='noopener'>Hugo</a>
+        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.86.1' target='_blank' rel='noopener'>Hugo</a>
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>

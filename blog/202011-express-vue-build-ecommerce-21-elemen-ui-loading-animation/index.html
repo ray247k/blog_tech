@@ -18,7 +18,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.85.0" /><meta property="og:site_name" content="薛丁格的工程師">
+<meta name="generator" content="Hugo 0.86.1" /><meta property="og:site_name" content="薛丁格的工程師">
   <meta property="og:title" content="[Express&#43;Vue 搭建電商網站] 21 使用 Element UI 加入載入過動畫">
   <meta property="og:description" content="使用 Express &#43; Vue 搭建一個電商網站 - 套用 Element UI 加入載入動畫">
   <meta property="description" content="使用 Express &#43; Vue 搭建一個電商網站 - 套用 Element UI 加入載入動畫">
@@ -345,7 +345,7 @@
 基本的動畫是用來告訴使用者動作執行結果，做到這樣使用者才知道自己剛剛做的事情有沒有完成</p>
 <h1 id="manufactureform-組件">ManufactureForm 組件</h1>
 <p>在這個組件中，會在使用者新建或是修改製造商資訊後，當後端完成處理前出現 <code>Loading</code> 的動態效果</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
   &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;manufacturerInfo&#34;</span>&gt;
     &lt;<span style="color:#f92672">el-form</span>
       <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form&#34;</span>
@@ -406,7 +406,7 @@
 <h1 id="productform-組件">ProductForm 組件</h1>
 <p>當然啦，製造商表單的效果在 <code>ProductForm</code> 中應該也要有<br>
 接著就打開 ProductForm 組件進行編輯</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
   &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;productInfo&#34;</span>&gt;
     &lt;<span style="color:#f92672">el-form</span>
       <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form&#34;</span>
@@ -503,7 +503,7 @@
 <h1 id="實現提示功能">實現提示功能</h1>
 <p>在組件中加入功能後，我們要實際把提示功能完成<br>
 首先打開 <code>src/store/actions.js</code> 加入提示訊息的功能</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">axios</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;axios&#39;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">axios</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;axios&#39;</span>;
 <span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Message</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;element-ui&#39;</span>;
 <span style="color:#66d9ef">import</span> {
     <span style="color:#a6e22e">ADD_PRODUCT</span>,
@@ -684,7 +684,7 @@
 </code></pre></div><p>首先導入了 <code>element-ui</code> 组件庫提供的 <code>Message</code> 提示訊息組件<br>
 接著在各個操作中加入提示訊息的物件，成功或失敗都會回傳對應的訊息</p>
 <p>接著開啟 <code>src/store/mutations.js</code> 做部分內容修改，為的是修改購物車的提示訊息</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">cartMutations</span> <span style="color:#f92672">=</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">cartMutations</span> <span style="color:#f92672">=</span> {
     [<span style="color:#a6e22e">ADD_TO_CART</span>](<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
         <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">product</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
         <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">cart</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">product</span>);
@@ -715,7 +715,7 @@
 所以才沒有改變狀態池中的物件<br>
 修改 <code>src/store/actions.js</code> 檔案中更新數據的部分<br>
 兩個方法在不同的常數中，但為了節省版面就只展示其中關鍵的方法</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#a6e22e">updateProduct</span>({ <span style="color:#a6e22e">commit</span> }, <span style="color:#a6e22e">payload</span>) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#a6e22e">updateProduct</span>({ <span style="color:#a6e22e">commit</span> }, <span style="color:#a6e22e">payload</span>) {
     <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">UPDATE_PRODUCT</span>);
 
     <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">product</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
@@ -756,7 +756,7 @@
 直接使用原本作為 <code>payload</code> 去執行 API 的資料回傳到 <code>mutations</code> 來修改狀態</p>
 <p>所以接著就要修改 <code>mutations.js</code>，將新的資料同步到狀態池中<br>
 也是針對更新的部分做局部修改，將最新的資料同步到狀態池中</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">[<span style="color:#a6e22e">UPDATE_PRODUCT_SUCCESS</span>](<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">[<span style="color:#a6e22e">UPDATE_PRODUCT_SUCCESS</span>](<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
     <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
 
     <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">product</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">newProduct</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
@@ -1184,7 +1184,7 @@
         © 2021 薛丁格的工程師
     </p>
     <p class="copyright" style="font-size: 0.1EM;">
-        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.85.0' target='_blank' rel='noopener'>Hugo</a>
+        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.86.1' target='_blank' rel='noopener'>Hugo</a>
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>

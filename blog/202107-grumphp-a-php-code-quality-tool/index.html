@@ -18,7 +18,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.85.0" /><meta property="og:site_name" content="薛丁格的工程師">
+<meta name="generator" content="Hugo 0.86.1" /><meta property="og:site_name" content="薛丁格的工程師">
   <meta property="og:title" content="使用 GrumPHP 做程式碼品質的守門員">
   <meta property="og:description" content="檢查你的程式有沒有怪味道，在你犯錯前就制止你。一生只督你一人">
   <meta property="description" content="檢查你的程式有沒有怪味道，在你犯錯前就制止你。一生只督你一人">
@@ -365,9 +365,9 @@
 可以先隨便選一個，或是直接跳過<br>
 因為下一步要安裝的是<code>yamllint</code>，如果你在這邊選了 yamllint，下一步就沒事了</p>
 <p>可以在專案根目錄執行指令來測試是否可以執行檢查</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vendor/bin/grumphp run
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vendor/bin/grumphp run
 </code></pre></div><p>若是執行</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">composer install
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">composer install
 </code></pre></div><p>可以看到提示<code>GrumPHP is sniffing your commits!</code>代表 GrumPHP 已經在嗅探我們的 commit 了</p>
 <p><img src="/img/blog/2021/07/grumphp-a-php-code-quality-tool/grumphp-composer-install.png" alt="grumphp composer install"></p>
 <h1 id="加入檢查任務">加入檢查任務</h1>
@@ -379,7 +379,7 @@
 <li>Phpcs</li>
 </ul>
 <p>首先如果上一步沒建立<code>grumphp.yml</code>的話，在專案根目錄下建立檔案並建立內容</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">grumphp</span>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">grumphp</span>:
     <span style="color:#f92672">tasks</span>: {
 
     }
@@ -390,7 +390,7 @@
 <p>檢查你專案中的 yaml 檔結構合法性，如果有 drone 或是其他需要使用 yaml 格式檔案配置的設定檔</p>
 <p>根據文件中 <a href="https://github.com/phpro/grumphp/blob/master/doc/tasks/yamllint.md">YamlLint</a> 我們不需要額外配置<br>
 只需要在 tasks 列表中加入 yamllint 即可</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">grumphp</span>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">grumphp</span>:
     <span style="color:#f92672">tasks</span>: {
         <span style="color:#f92672">yamllint</span>: <span style="color:#66d9ef">null</span>,
     }
@@ -399,9 +399,9 @@
 <p>照著官方文件的任務使用方法安裝：<a href="https://github.com/phpro/grumphp/blob/master/doc/tasks/phplint.md">PHPLint</a><br>
 首先執行 composer 指令安裝依賴項目，因為這個檢查只有在測試環境需要被執行<br>
 所以只在測試環境<code>require-dev</code>中安裝</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">composer require --dev php-parallel-lint/php-parallel-lint
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">composer require --dev php-parallel-lint/php-parallel-lint
 </code></pre></div><p>接著加入<code>grumphp.yml</code>中的任務</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">grumphp</span>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">grumphp</span>:
     <span style="color:#f92672">tasks</span>: {
         <span style="color:#f92672">yamllint</span>: <span style="color:#66d9ef">null</span>,
         <span style="color:#f92672">phplint</span>: <span style="color:#ae81ff">~,</span>
@@ -411,7 +411,7 @@
 <h2 id="3-phpunit">3. Phpunit</h2>
 <p>指行指定路徑下的測試，如果失敗則視為任務失敗</p>
 <p>照著官方文件的任務說明安裝在測試環境中：<a href="https://github.com/phpro/grumphp/blob/master/doc/tasks/phpunit.md">Phpunit</a></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">composer require --dev phpunit/phpunit
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">composer require --dev phpunit/phpunit
 </code></pre></div><p>而文件中有說明，你必須建立<code>phpunit.xml</code>作為任務的設定檔<br>
 底下範例指定了測試檔案的資料夾目錄</p>
 <ul>
@@ -421,7 +421,7 @@
 <p>如果缺少這個檔案，預設會是 null，執行下去會報錯<br>
 如果你的對應資料夾沒建立，在執行檢查的時候也會視為錯誤，記得要在專案中建立對應資料夾</p>
 <p><strong>phpunit.xml</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
 <span style="color:#f92672">&lt;phpunit</span> <span style="color:#a6e22e">xmlns:xsi=</span><span style="color:#e6db74">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
          <span style="color:#a6e22e">xsi:noNamespaceSchemaLocation=</span><span style="color:#e6db74">&#34;./vendor/phpunit/phpunit/phpunit.xsd&#34;</span>
          <span style="color:#a6e22e">bootstrap=</span><span style="color:#e6db74">&#34;vendor/autoload.php&#34;</span>
@@ -446,7 +446,7 @@
 執行指令<code>vendor/bin/grumphp run</code>可以看到通過的綠色的開心老頭</p>
 <p><img src="/img/blog/2021/07/grumphp-a-php-code-quality-tool/phpunit-pass.png" alt="phpunit pass"></p>
 <p>若我們修改測試方法，讓測試無法通過</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">testGetAhoy</span>()
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">testGetAhoy</span>()
 {
     $larapeko <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">LaraPeko</span>();
     $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">assertEquals</span>(<span style="color:#e6db74">&#39;ahoy&#39;</span>, <span style="color:#e6db74">&#39;DD&#39;</span>);
@@ -458,10 +458,10 @@
 <h2 id="4-phpcs">4. Phpcs</h2>
 <p>這個任務，可以檢查提交的 PHP 內容是不是符合 <a href="https://www.php-fig.org/psr/">PSR 規則</a></p>
 <p>首先安裝相關套件，參考：<a href="https://github.com/phpro/grumphp/blob/master/doc/tasks/phpcs.md">Phpcs 任務文件</a></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">composer require --dev squizlabs/php_codesniffer
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">composer require --dev squizlabs/php_codesniffer
 </code></pre></div><p>接著一樣是需要建立配置文件<code>phpcs.xml</code>來設定我們需要檢查的規則，這邊以基本的 PSR-12 為例<br>
 可以看到我們設定了 PSR12 的檢查規則</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34;?&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34;?&gt;</span>
 <span style="color:#f92672">&lt;ruleset</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;PSR12&#34;</span><span style="color:#f92672">&gt;</span>
     <span style="color:#f92672">&lt;description&gt;</span>The PSR12 coding standard.<span style="color:#f92672">&lt;/description&gt;</span>
     <span style="color:#f92672">&lt;rule</span> <span style="color:#a6e22e">ref=</span><span style="color:#e6db74">&#34;PSR12&#34;</span><span style="color:#f92672">/&gt;</span>
@@ -494,7 +494,7 @@
 透過修改專案的<code>composer.json</code>我們可以加入指令，參考 <a href="https://getcomposer.org/doc/articles/scripts.md">composer 官方文件</a><br>
 我們可以透過加入<code>scripts</code>區塊，讓指令在 composer 執行過程中被執行</p>
 <p>在專案的<code>composer.json</code>中加入指令，在初始時就就開始嗅探</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    <span style="color:#e6db74">&#34;scripts&#34;</span><span style="color:#f92672">:</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    <span style="color:#e6db74">&#34;scripts&#34;</span><span style="color:#f92672">:</span> {
         <span style="color:#e6db74">&#34;post-install-cmd&#34;</span><span style="color:#f92672">:</span> [
             <span style="color:#e6db74">&#34;@php ./vendor/bin/grumphp git:init&#34;</span>
         ]
@@ -894,7 +894,7 @@
         © 2021 薛丁格的工程師
     </p>
     <p class="copyright" style="font-size: 0.1EM;">
-        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.85.0' target='_blank' rel='noopener'>Hugo</a>
+        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.86.1' target='_blank' rel='noopener'>Hugo</a>
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>

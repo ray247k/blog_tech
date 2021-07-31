@@ -18,7 +18,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.85.0" /><meta property="og:site_name" content="薛丁格的工程師">
+<meta name="generator" content="Hugo 0.86.1" /><meta property="og:site_name" content="薛丁格的工程師">
   <meta property="og:title" content="[LeetCode] #1 Two Sum (Eazy)">
   <meta property="og:description" content="LeetCode 第 1 題 Two Sum，難度 Eazy">
   <meta property="description" content="LeetCode 第 1 題 Two Sum，難度 Eazy">
@@ -347,7 +347,7 @@
 <p>You may assume that each input would have exactly one solution, and you may not use the same element twice.</p>
 <p>You can return the answer in any order.</p>
 <p>Example:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Input: nums = [2,7,11,15], target = 9
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Input: nums = [2,7,11,15], target = 9
 Output: [0,1]
 Output: Because nums[0] + nums[1] == 9, we return [0, 1].
 
@@ -368,7 +368,7 @@ Output: [0,1]
 <p>最終使用一次迴圈的解決方案<br>
 遍歷傳入的陣列，比對 <code>target</code> 減掉當前數字的差值是否存在陣列剩餘的數字中<br>
 為什麼說是 <code>剩餘</code> 的數字中呢？先看完程式碼再繼續說明</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
 
     <span style="color:#e6db74">/**
 </span><span style="color:#e6db74">     * @param Integer[] $nums
@@ -386,7 +386,7 @@ Output: [0,1]
     }
 }
 </code></pre></div><p>如果不使用 <code>unset</code> 永久把數字從陣列排除掉</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#a6e22e">unset</span>($nums[$k1]);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#a6e22e">unset</span>($nums[$k1]);
 </code></pre></div><p>在輸入 <code>inpout = [3, 3], target = 6</code>，預期結果為 <code>[0, 1]</code> 的時候<br>
 會因為 <code>array_search</code> 在查詢值等於 3 (6 - 3) 的數字的時候，因為第一個數字就是 3<br>
 而造成 $k2 = 0 而輸出 <code>[0, 0]</code>！</p>
@@ -788,7 +788,7 @@ Output: [0,1]
         © 2021 薛丁格的工程師
     </p>
     <p class="copyright" style="font-size: 0.1EM;">
-        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.85.0' target='_blank' rel='noopener'>Hugo</a>
+        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.86.1' target='_blank' rel='noopener'>Hugo</a>
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>

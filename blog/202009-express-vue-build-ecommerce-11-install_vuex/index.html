@@ -18,7 +18,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.85.0" /><meta property="og:site_name" content="薛丁格的工程師">
+<meta name="generator" content="Hugo 0.86.1" /><meta property="og:site_name" content="薛丁格的工程師">
   <meta property="og:title" content="[Express&#43;Vue 搭建電商網站] 11 認識 vuex">
   <meta property="og:description" content="使用 Express &#43; Vue 搭建一個電商網站 - 認識 vuex">
   <meta property="description" content="使用 Express &#43; Vue 搭建一個電商網站 - 認識 vuex">
@@ -346,11 +346,11 @@
 所謂狀態庫，其實也就是一個 Javascript 物件</p>
 <h1 id="安裝-vuex">安裝 vuex</h1>
 <p>可以使用指令</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm install vuex --save
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm install vuex --save
 </code></pre></div><p>或是依然使用 <code>vue ui</code> 來安裝<br>
 <img src="/img/blog/2020/09/express-vue-build-ecommerce-11-install_vuex/install-vuex.png" alt="install-vuex"></p>
 <p>如果是使用 <code>vue ui</code> 安裝，會發現專案下多了一個檔案：<code>/src/store/index.js</code>，先用以下內容取代原本的檔案</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Vue</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue&#39;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Vue</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue&#39;</span>;
 <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Vuex</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vuex&#39;</span>;
 
 <span style="color:#a6e22e">Vue</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">Vuex</span>);
@@ -386,7 +386,7 @@
 <h1 id="整合-vuex-和-vue">整合 Vuex 和 Vue</h1>
 <p>當我們建立了 <code>Vuex</code> 的 <code>store</code> 物件後就可以使用它了，打開 <code>src/main.js</code><br>
 在開頭導入之前建立的 <code>store</code>，並且將 <code>store</code> 添加到 Vue 初始化的參數列表裡</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Vue</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Vue</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue&#39;</span>
 <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">App</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./App.vue&#39;</span>
 <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">router</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./router&#39;</span>
 <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">store</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./store&#39;</span>
@@ -405,7 +405,7 @@
 同時也避免了組件嵌套層級過多時，組件之間傳遞屬性的複雜性，便於大型程式與團隊合作</p>
 <h1 id="查看結果">查看結果</h1>
 <p>在整合好 Vuex 和 Vue 之後，馬上來看看 Vuex 帶來的變化。打開 <code>src/pages/admin/Products.vue</code> 修改成以下內容</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
   &lt;<span style="color:#f92672">div</span>&gt;
     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;title&#34;</span>&gt;
       &lt;<span style="color:#f92672">h1</span>&gt;<span style="color:#a6e22e">This</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">Admin</span>&lt;/<span style="color:#f92672">h1</span>&gt;
@@ -831,7 +831,7 @@
         © 2021 薛丁格的工程師
     </p>
     <p class="copyright" style="font-size: 0.1EM;">
-        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.85.0' target='_blank' rel='noopener'>Hugo</a>
+        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.86.1' target='_blank' rel='noopener'>Hugo</a>
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
