@@ -1,0 +1,915 @@
+<!doctype html>
+<html lang="zh-tw">
+  <head>
+  <meta charset="utf-8">
+<title>使用 GrumPHP 做程式碼品質的守門員 - 薛丁格的工程師</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
+  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
+  
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=1" color="#ffffff">
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=1">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=1">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+<meta name="generator" content="Hugo 0.85.0" /><meta property="og:site_name" content="薛丁格的工程師">
+  <meta property="og:title" content="使用 GrumPHP 做程式碼品質的守門員">
+  <meta property="og:description" content="檢查你的程式有沒有怪味道，在你犯錯前就制止你。一生只督你一人">
+  <meta property="description" content="檢查你的程式有沒有怪味道，在你犯錯前就制止你。一生只督你一人">
+  <meta property="og:url" content="https://tech.ray247k.com/blog/202107-grumphp-a-php-code-quality-tool/">
+  <meta property="og:type" content="article">
+  
+    
+      <meta property="og:image" content="https://tech.ray247k.com/img/blog/2021/07/grumphp-a-php-code-quality-tool/grumphp-logo.png">
+      <meta property="og:image:alt" content="grumphp logo">
+    
+  
+  <link rel="stylesheet" href="/css/bundle.min.6ad9eb85bff384c75937a02036b01425a2ca63f19a96535b8ba5b181db62a4b3.css" integrity="sha256-atnrhb/zhMdZN6AgNrAUJaLKY/GallNbi6WxgdtipLM="><link rel="stylesheet" href="/css/add-on.css">
+
+  
+
+
+    
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-LTGVYYWC2J');
+        </script>
+    
+
+
+  <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "image": {
+        "@type": "ImageObject",
+        "image": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+        "height": 648,
+        "width": 1080
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "薛丁格的工程師",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg"
+        }
+    },
+    "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+    "headline": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - Schrödinger\u0027s Programmer",
+    "name": "薛丁格的工程師",
+    "url": "https:\/\/tech.ray247k.com",
+    "description": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - devops,laravel,leetcode,node.js,php,架站相關,",
+    "keywords": [
+        "apache-bench,aws,axios,cdn,cicd,cloudflare,component,composer,containerization,cors,devops,dns,docker,docker-compose,domain-name,drone,element-ui,express,gcp,getter,github-page,google-domains,grumphp,laravel,leetcode,leetcode-eazy,leetcode-medium,linux,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,portainer,postgresql,proxy,restful,server,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,架站相關,買網址,"
+    ]
+}
+</script>
+
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "legalName": "薛丁格的工程師",
+    "url": "https:\/\/tech.ray247k.com",
+    "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "ray247k@gmail.com",
+        "availableLanguage": [
+            "Mandarin",
+            "English"
+        ]
+    },
+    "sameAs": [
+        "https://ray247k.blogspot.com/"
+    ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "使用 GrumPHP 做程式碼品質的守門員",
+    "description": "檢查你的程式有沒有怪味道，在你犯錯前就制止你。一生只督你一人",
+    "keywords": [
+        "GrumPHP" , "composer" 
+    ],
+    "dateCreated": "2021-07-31T00:00:00.00Z",
+    "datePublished": "2021-07-31T00:00:00.00Z",
+    "dateModified": "2021-07-31T00:00:00.00Z",
+    "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "contentUrl": "[]"
+    },
+    "breadcrumb": {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com",
+                    "name": "薛丁格的工程師",
+                    "url": "https:\/\/tech.ray247k.com"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com/blog",
+                    "name": "Blog",
+                    "url": "https:\/\/tech.ray247k.com/blog"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\/blog\/202107-grumphp-a-php-code-quality-tool\/",
+                    "name": "使用 GrumPHP 做程式碼品質的守門員",
+                    "url": "https:\/\/tech.ray247k.com\/blog\/202107-grumphp-a-php-code-quality-tool\/"
+                }
+            }
+        ],
+        "itemListOrder": "Ascending",
+        "numberOfItems": 3
+    }
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "articleSection": "blog",
+    "name": "使用 GrumPHP 做程式碼品質的守門員",
+    "headline": "\u003cp\u003e多人一起開發的環境下，Code Review 是一件非常重要的事情\u003cbr\u003e\n因為如果有人寫出一些不符合規則的程式，或是無法通過測試的程式時會造成專案出錯\u003cbr\u003e\n而人工檢查語法或是手動執行測試耗時費力 no fashion，這種事情應該讓程式自動做\u003cbr\u003e\n於是 \u003ccode\u003eGrumPHP\u003c\/code\u003e 登場了\u003c\/p\u003e",
+    "description": "檢查你的程式有沒有怪味道，在你犯錯前就制止你。一生只督你一人",
+    "inLanguage": "zh-TW",
+    "isFamilyFriendly": "true",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com\/blog\/202107-grumphp-a-php-code-quality-tool\/"
+    },
+    "author" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "creator" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "accountablePerson" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "copyrightHolder" : "薛丁格的工程師",
+    "copyrightYear" : "2021",
+    "dateCreated": "2021-07-31T00:00:00.00Z",
+    "datePublished": "2021-07-31T00:00:00.00Z",
+    "dateModified": "2021-07-31T00:00:00.00Z",
+    "publisher":{
+        "@type":"Organization",
+        "name": "薛丁格的工程師",
+        "url": "https://tech.ray247k.com",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+            "width":"32",
+            "height":"32"
+        }
+    },
+    "image": [""],
+    "url" : "https:\/\/tech.ray247k.com\/blog\/202107-grumphp-a-php-code-quality-tool\/",
+    "wordCount" : "286",
+    "genre" : [ "GrumPHP" , "composer" ],
+    "keywords" : [ "GrumPHP" , "composer" ]
+}
+</script>
+
+
+
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/" class="nav">
+        
+          Blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/" class="nav link"><i class='fa fa-home'></i> home</a>
+        
+      
+        
+          
+          <a href="/about" class="nav link"><i class='far fa-id-card'></i> about</a>
+        
+      
+        
+          
+          <a href="/categories" class="nav link"><i class='fas fa-sitemap'></i> category</a>
+        
+      
+      
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    
+    
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/"><img src="https://tech.ray247k.com/img/main/logo.jpg" class="circle" width="100" alt="一隻箱子裡的貓，看著電腦螢幕" /></a>
+  <header>
+    <h1>Schrödinger's Programmer</h1>
+  </header>
+  <main>
+    <p>奔跑吧工程師，趁年輕跑得越遠越好</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/ray247k" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+<li><a href="//gitlab.com/ray247k" target="_blank" rel="noopener" title="GitLab" class="fab fa-gitlab"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:ray247k@gmail.com" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="/blog/202107-grumphp-a-php-code-quality-tool/">使用 GrumPHP 做程式碼品質的守門員</a></h2>
+    
+    
+      <p>檢查你的程式有沒有怪味道，在你犯錯前就制止你。一生只督你一人</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2021-07-31 00:00:00 &#43;0000 UTC">2021/07/31</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+    <div id="socnet-share">
+      
+
+
+
+
+
+    </div>
+    <div class="content">
+      <a href="/blog/202107-grumphp-a-php-code-quality-tool/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/07/grumphp-a-php-code-quality-tool/grumphp-logo.png');">
+    <img src="https://tech.ray247k.com/img/blog/2021/07/grumphp-a-php-code-quality-tool/grumphp-logo.png" alt="grumphp logo">
+  </a>
+      <p>多人一起開發的環境下，Code Review 是一件非常重要的事情<br>
+因為如果有人寫出一些不符合規則的程式，或是無法通過測試的程式時會造成專案出錯<br>
+而人工檢查語法或是手動執行測試耗時費力 no fashion，這種事情應該讓程式自動做<br>
+於是 <code>GrumPHP</code> 登場了</p>
+<h1 id="什麼是-grumphp">什麼是 GrumPHP</h1>
+<p>GrumPHP 是一個開源的 Composer 套件，藉由 git hook<br>
+當有人變更程式並且 commit 的時候，GrumPHP 將根據設定好的 tasks 去檢查程式內容<br>
+如果測試失敗，commit 會被中斷</p>
+<p>並且 GrumPHP 內建了一組常見的任務，可以用最少的客製設定使用 GrumPHP<br>
+可以在官方文件中的 <a href="https://github.com/phpro/grumphp/blob/master/doc/tasks.md">Tasks</a> 頁面找到大部分你會用到的檢查任務<br>
+以下我們就分別從安裝到加入四個常用的任務來介紹</p>
+<h1 id="安裝-grumphp">安裝 GrumPHP</h1>
+<p>一樣拿上次做一半的 LaraPeko 來做示範，以下說的「專案」指的都是這個套件包！</p>
+<p>首先進入專案目錄下執行</p>
+<pre><code>composer require --dev phpro/grumphp
+</code></pre><p>他會問你要不要建立設定檔<code>grumphp.yml</code>，然後給你一大堆選項<br>
+可以先隨便選一個，或是直接跳過<br>
+因為下一步要安裝的是<code>yamllint</code>，如果你在這邊選了 yamllint，下一步就沒事了</p>
+<p>可以在專案根目錄執行指令來測試是否可以執行檢查</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vendor/bin/grumphp run
+</code></pre></div><h1 id="加入檢查任務">加入檢查任務</h1>
+<p>這邊會逐步安裝並說明四個常用的基本檢查任務</p>
+<ul>
+<li>yamllint</li>
+<li>PHPLint</li>
+<li>Phpunit</li>
+<li>Phpcs</li>
+</ul>
+<p>首先如果上一步沒建立<code>grumphp.yml</code>的話，在專案根目錄下建立檔案並建立內容</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">grumphp</span>:
+    <span style="color:#f92672">tasks</span>: {
+
+    }
+</code></pre></div><p>在官方 GitHub 上有一份範例的 grumphp.yml 設定檔<br>
+而 <a href="https://github.com/phpro/grumphp/blob/master/doc/parameters.md">Parameters 文件</a> 有參數的詳細說明和與設值介紹<br>
+在這邊為了減少設定上的步驟，我們都先用預設值就好</p>
+<h2 id="1-yamllint">1. yamllint</h2>
+<p>檢查你專案中的 yaml 檔結構合法性，如果有 drone 或是其他需要使用 yaml 格式檔案配置的設定檔</p>
+<p>根據文件中 <a href="https://github.com/phpro/grumphp/blob/master/doc/tasks/yamllint.md">YamlLint</a> 我們不需要額外配置<br>
+只需要在 tasks 列表中加入 yamllint 即可</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">grumphp</span>:
+    <span style="color:#f92672">tasks</span>: {
+        <span style="color:#f92672">yamllint</span>: <span style="color:#66d9ef">null</span>,
+    }
+</code></pre></div><h2 id="2-phplint">2. PHPLint</h2>
+<p>檢查語法錯誤，多一個逗點之類會讓 IDE 有紅字的<code>syntax error</code></p>
+<p>照著官方文件的任務使用方法安裝：<a href="https://github.com/phpro/grumphp/blob/master/doc/tasks/phplint.md">PHPLint</a><br>
+首先執行 composer 指令安裝依賴項目，因為這個檢查只有在測試環境需要被執行<br>
+所以只在測試環境<code>require-dev</code>中安裝</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">composer require --dev php-parallel-lint/php-parallel-lint
+</code></pre></div><p>接著加入<code>grumphp.yml</code>中的任務</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">grumphp</span>:
+    <span style="color:#f92672">tasks</span>: {
+        <span style="color:#f92672">yamllint</span>: <span style="color:#66d9ef">null</span>,
+        <span style="color:#f92672">phplint</span>: <span style="color:#ae81ff">~,</span>
+    }
+</code></pre></div><p>同樣的，在文件中有很多可以調整個規則<br>
+可以依照個人使用調整，而這邊我們依然使用預設值就好</p>
+<h2 id="3-phpunit">3. Phpunit</h2>
+<p>指行指定路徑下的測試，如果失敗則視為任務失敗</p>
+<p>照著官方文件的任務說明安裝在測試環境中：<a href="https://github.com/phpro/grumphp/blob/master/doc/tasks/phpunit.md">Phpunit</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">composer require --dev phpunit/phpunit
+</code></pre></div><p>而文件中有說明，你必須建立<code>phpunit.xml</code>作為任務的設定檔<br>
+底下範例指定了測試檔案的資料夾目錄</p>
+<ul>
+<li>Unit：./tests/Unit</directory></li>
+<li>Feature：./tests/Feature</directory></li>
+</ul>
+<p>如果缺少這個檔案，預設會是 null，執行下去會報錯<br>
+如果你的對應資料夾沒建立，在執行檢查的時候也會視為錯誤，記得要在專案中建立對應資料夾</p>
+<p><strong>phpunit.xml</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+<span style="color:#f92672">&lt;phpunit</span> <span style="color:#a6e22e">xmlns:xsi=</span><span style="color:#e6db74">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+         <span style="color:#a6e22e">xsi:noNamespaceSchemaLocation=</span><span style="color:#e6db74">&#34;./vendor/phpunit/phpunit/phpunit.xsd&#34;</span>
+         <span style="color:#a6e22e">bootstrap=</span><span style="color:#e6db74">&#34;vendor/autoload.php&#34;</span>
+         <span style="color:#a6e22e">colors=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;testsuites&gt;</span>
+        <span style="color:#f92672">&lt;testsuite</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;Unit&#34;</span><span style="color:#f92672">&gt;</span>
+            <span style="color:#f92672">&lt;directory</span> <span style="color:#a6e22e">suffix=</span><span style="color:#e6db74">&#34;Test.php&#34;</span><span style="color:#f92672">&gt;</span>./tests/Unit<span style="color:#f92672">&lt;/directory&gt;</span>
+        <span style="color:#f92672">&lt;/testsuite&gt;</span>
+
+        <span style="color:#f92672">&lt;testsuite</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;Feature&#34;</span><span style="color:#f92672">&gt;</span>
+            <span style="color:#f92672">&lt;directory</span> <span style="color:#a6e22e">suffix=</span><span style="color:#e6db74">&#34;Test.php&#34;</span><span style="color:#f92672">&gt;</span>./tests/Feature<span style="color:#f92672">&lt;/directory&gt;</span>
+        <span style="color:#f92672">&lt;/testsuite&gt;</span>
+    <span style="color:#f92672">&lt;/testsuites&gt;</span>
+    <span style="color:#f92672">&lt;filter&gt;</span>
+        <span style="color:#f92672">&lt;whitelist</span> <span style="color:#a6e22e">processUncoveredFilesFromWhitelist=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">&gt;</span>
+            <span style="color:#f92672">&lt;directory</span> <span style="color:#a6e22e">suffix=</span><span style="color:#e6db74">&#34;.php&#34;</span><span style="color:#f92672">&gt;</span>./app<span style="color:#f92672">&lt;/directory&gt;</span>
+        <span style="color:#f92672">&lt;/whitelist&gt;</span>
+    <span style="color:#f92672">&lt;/filter&gt;</span>
+<span style="color:#f92672">&lt;/phpunit&gt;</span>
+</code></pre></div><p>來測試一下任務是否有執行上次套件包中的測試吧！<br>
+因為配合 phpunit.xml 的設定，所以把上次寫在 tests 資料夾內的測試搬到 tests/unit 內<br>
+執行指令<code>vendor/bin/grumphp run</code>可以看到通過的綠色的開心老頭</p>
+<p><img src="/img/blog/2021/07/grumphp-a-php-code-quality-tool/phpunit-pass.png" alt="phpunit pass"></p>
+<p>若我們修改測試方法，讓測試無法通過</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">testGetAhoy</span>()
+{
+    $larapeko <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">LaraPeko</span>();
+    $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">assertEquals</span>(<span style="color:#e6db74">&#39;ahoy&#39;</span>, <span style="color:#e6db74">&#39;DD&#39;</span>);
+}
+</code></pre></div><p>接著再一次執行指令便會看到一個生氣的紅色老頭，以及其錯誤訊息<br>
+透過提示訊息，我們可以清楚的知道是哪個測試沒有通過</p>
+<p><img src="/img/blog/2021/07/grumphp-a-php-code-quality-tool/phpunit-fail-a.png" alt="phpunit fail">
+<img src="/img/blog/2021/07/grumphp-a-php-code-quality-tool/phpunit-fail-b.png" alt="phpunit fail"></p>
+<h2 id="4-phpcs">4. Phpcs</h2>
+<p>這個任務，可以檢查提交的 PHP 內容是不是符合 <a href="https://www.php-fig.org/psr/">PSR 規則</a></p>
+<p>首先安裝相關套件，參考：<a href="https://github.com/phpro/grumphp/blob/master/doc/tasks/phpcs.md">Phpcs 任務文件</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">composer require --dev squizlabs/php_codesniffer
+</code></pre></div><p>接著一樣是需要建立配置文件<code>phpcs.xml</code>來設定我們需要檢查的規則，這邊以基本的 PSR-12 為例<br>
+可以看到我們設定了 PSR12 的檢查規則</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34;?&gt;</span>
+<span style="color:#f92672">&lt;ruleset</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;PSR12&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;description&gt;</span>The PSR12 coding standard.<span style="color:#f92672">&lt;/description&gt;</span>
+    <span style="color:#f92672">&lt;rule</span> <span style="color:#a6e22e">ref=</span><span style="color:#e6db74">&#34;PSR12&#34;</span><span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;file&gt;</span>app/<span style="color:#f92672">&lt;/file&gt;</span>
+    <span style="color:#f92672">&lt;file&gt;</span>config/<span style="color:#f92672">&lt;/file&gt;</span>
+    <span style="color:#f92672">&lt;file&gt;</span>routes/<span style="color:#f92672">&lt;/file&gt;</span>
+    <span style="color:#f92672">&lt;exclude-pattern&gt;</span>public/index.php<span style="color:#f92672">&lt;/exclude-pattern&gt;</span>
+    <span style="color:#f92672">&lt;exclude-pattern&gt;</span>server.php<span style="color:#f92672">&lt;/exclude-pattern&gt;</span>
+    <span style="color:#f92672">&lt;exclude-pattern&gt;</span>laravel-nova-*<span style="color:#f92672">&lt;/exclude-pattern&gt;</span>
+    <span style="color:#f92672">&lt;exclude-pattern&gt;</span>vendor<span style="color:#f92672">&lt;/exclude-pattern&gt;</span>
+    <span style="color:#f92672">&lt;exclude-pattern&gt;</span>resources<span style="color:#f92672">&lt;/exclude-pattern&gt;</span>
+    <span style="color:#f92672">&lt;exclude-pattern&gt;</span>database/<span style="color:#f92672">&lt;/exclude-pattern&gt;</span>
+    <span style="color:#f92672">&lt;exclude-pattern&gt;</span>storage/<span style="color:#f92672">&lt;/exclude-pattern&gt;</span>
+    <span style="color:#f92672">&lt;exclude-pattern&gt;</span>node_modules/<span style="color:#f92672">&lt;/exclude-pattern&gt;</span>
+    <span style="color:#f92672">&lt;exclude-pattern&gt;</span>tests<span style="color:#f92672">&lt;/exclude-pattern&gt;</span>
+<span style="color:#f92672">&lt;/ruleset&gt;</span>
+</code></pre></div><p>既然設定好了就執行看看吧</p>
+<pre><code>vendor/bin/grumphp run
+</code></pre><p><img src="/img/blog/2021/07/grumphp-a-php-code-quality-tool/phpcs-pass.png" alt="phpcs pass"></p>
+<p>可以看到我們設定的測試都有通過了</p>
+<p>那如果有一些不符合 PSR12 規則的東西會發生什麼事情呢？<br>
+為了測試，我們隨便找一段 PHP 程式，在分號後面再加一個分號<br>
+這麼做並不會觸發先前安裝的 phplint 檢查，因為這不屬於語法錯誤，但這麼做不符合 PSR12 規則</p>
+<p><img src="/img/blog/2021/07/grumphp-a-php-code-quality-tool/phpcs-fail.png" alt="phpcs fail"></p>
+<p>於是我們又看到了生氣的老頭，指出哪裡有問題</p>
+<h1 id="自動監聽">自動監聽</h1>
+<p>以上都是我們手動執行套件的任務來測試程式碼的品質，好還要更好<br>
+最好可以讓程式自動執行測試，也就是一開頭我們說過的在 commit 時自動觸發 GrumPHP 的 tasks</p>
+<p>這件事情想起來難，做起來倒是一點就通<br>
+透過修改專案的<code>composer.json</code>我們可以加入指令，參考 <a href="https://getcomposer.org/doc/articles/scripts.md">composer 官方文件</a><br>
+我們可以透過加入<code>scripts</code>區塊，讓指令在 composer 執行過程中被執行</p>
+<p>在專案的<code>composer.json</code>中加入指令，在初始時就就開始嗅探</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    <span style="color:#e6db74">&#34;scripts&#34;</span><span style="color:#f92672">:</span> {
+        <span style="color:#e6db74">&#34;post-install-cmd&#34;</span><span style="color:#f92672">:</span> [
+            <span style="color:#e6db74">&#34;@php ./vendor/bin/grumphp git:init&#34;</span>
+        ]
+    },
+</code></pre></div><p>這樣不論是在 CLI 執行<code>git commit</code>或是使用 GUI 操作，都可以在 commit 前觸發我們定義的 tasks<br>
+如下圖就是使用 GUI 觸發 phpcs 這個任務的失敗狀態跳出的訊息</p>
+<p><img src="/img/blog/2021/07/grumphp-a-php-code-quality-tool/grumphp-gui-fail.png" alt="grumphp gui fail"></p>
+
+      
+      
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/ray247k/button?referrer=https%3a%2f%2ftech.ray247k.com%2fblog%2f202107-grumphp-a-php-code-quality-tool%2f" width="100%" frameborder=0></iframe>
+
+    </div>
+    <footer>
+      <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/laravel/">Laravel</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/grumphp/">GrumPHP</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/composer/">composer</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+    </footer>
+  </article>
+  
+    
+
+  
+  <div class="pagination">
+    
+    
+      <a href="/blog/202107-laravel-package-development/" class="button right"><span>開發屬於自己的 Laravel 套件</span></a>
+    
+  </div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>最新文章</h1>
+      </header>
+      
+      <article class="mini-post">
+          <a href="/blog/202107-grumphp-a-php-code-quality-tool/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/07/grumphp-a-php-code-quality-tool/grumphp-logo.png');">
+    <img src="https://tech.ray247k.com/img/blog/2021/07/grumphp-a-php-code-quality-tool/grumphp-logo.png" alt="grumphp logo">
+  </a>
+        <header>
+          <h2><a href="/blog/202107-grumphp-a-php-code-quality-tool/">使用 GrumPHP 做程式碼品質的守門員</a></h2>
+          <time class="published" datetime="2021-07-31 00:00:00 &#43;0000 UTC">2021/07/31</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202107-laravel-package-development/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/07/laravel-package-development/peko-test.png');">
+    <img src="https://tech.ray247k.com/img/blog/2021/07/laravel-package-development/peko-test.png" alt="test result">
+  </a>
+        <header>
+          <h2><a href="/blog/202107-laravel-package-development/">開發屬於自己的 Laravel 套件</a></h2>
+          <time class="published" datetime="2021-07-25 00:00:00 &#43;0000 UTC">2021/07/25</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202107-laravel-environment-with-docker/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/07/laravel-environment-with-docker/docker-and-laravel-logo.png');">
+    <img src="https://tech.ray247k.com/img/blog/2021/07/laravel-environment-with-docker/docker-and-laravel-logo.png" alt="docker and laravel logo">
+  </a>
+        <header>
+          <h2><a href="/blog/202107-laravel-environment-with-docker/">用 Docker 建立 Laravel 開發環境</a></h2>
+          <time class="published" datetime="2021-07-24 00:00:00 &#43;0000 UTC">2021/07/24</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202107-initialize-server-setting-with-docker-and-laravel/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/07/initialize-server-setting-with-docker-and-laravel/apt-update-demo.png');">
+    <img src="https://tech.ray247k.com/img/blog/2021/07/initialize-server-setting-with-docker-and-laravel/apt-update-demo.png" alt="apt install demo">
+  </a>
+        <header>
+          <h2><a href="/blog/202107-initialize-server-setting-with-docker-and-laravel/">環境初始化主機設定(Docker &#43; Laravel)</a></h2>
+          <time class="published" datetime="2021-07-17 00:00:00 &#43;0000 UTC">2021/07/17</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202107-drone-cicd-4-advanced-runner/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/06/drone-cicd-1-basic-usage/ngrok-start.png');">
+    <img src="https://tech.ray247k.com/img/blog/2021/06/drone-cicd-1-basic-usage/ngrok-start.png" alt="ngrok start screenshot">
+  </a>
+        <header>
+          <h2><a href="/blog/202107-drone-cicd-4-advanced-runner/">[用 Drone 建立自動部署] 04 drone runner 介紹</a></h2>
+          <time class="published" datetime="2021-07-09 00:00:00 &#43;0000 UTC">2021/07/09</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/blog/" class="button">查看更多</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="/categories">category</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/categories/node.js/">node.js<span class="count">22</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/devops/">devops<span class="count">17</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/leetcode/">leetcode<span class="count">6</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/php/">php<span class="count">6</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/laravel/">laravel<span class="count">3</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/">架站相關<span class="count">3</span></a>
+          </li>
+          
+        </ul>
+      </section>
+    
+  
+
+  
+  <section id="tags">
+    <header>
+      <h1><a href="/tags">Tag</a></h1>
+    </header>
+    <div class="li-x post-meta tags-md" style="margin-left: 0.5em;">
+      <ul>
+        
+        
+        <li>
+          <a href="/tags/node.js/">node.js (22)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/devops/">devops (18)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/vue/">vue (15)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/containerization/">containerization (9)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/docker/">docker (9)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/express/">express (9)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%AE%B9%E5%99%A8%E6%8A%80%E8%A1%93/">容器技術 (9)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/php/">php (8)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/docker-compose/">docker-compose (6)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/leetcode/">leetcode (6)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/vuex/">vuex (6)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/composer/">composer (5)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/element-ui/">element-ui (5)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cicd/">cicd (4)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/drone/">drone (4)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/laravel/">laravel (4)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/leetcode-medium/">leetcode-medium (4)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/mongodb/">mongodb (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/mutation/">mutation (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/restful/">restful (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/">架站相關 (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cloudflare/">cloudflare (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/component/">component (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/dns/">dns (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/getter/">getter (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/google-domains/">google-domains (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/leetcode-eazy/">leetcode-eazy (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/nginx/">nginx (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/vue-router/">vue-router (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/vue-ui/">vue-ui (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/apache-bench/">apache-bench (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/aws/">aws (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/axios/">axios (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cdn/">cdn (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cors/">cors (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/domain-name/">domain-name (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/gcp/">gcp (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/github-page/">github-page (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/grumphp/">grumphp (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/linux/">linux (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/ngrok/">ngrok (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/php-fpm/">php-fpm (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/portainer/">portainer (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/postgresql/">postgresql (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/proxy/">proxy (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/server/">server (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/ssh/">ssh (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/stress-testing/">stress-testing (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/subdomain/">subdomain (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E4%BC%BA%E6%9C%8D%E5%99%A8/">伺服器 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%80%8B%E4%BA%BA%E5%93%81%E7%89%8C/">個人品牌 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%9F%9F%E5%90%8D/">域名 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%A3%93%E5%8A%9B%E6%B8%AC%E8%A9%A6/">壓力測試 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%AD%90%E7%B6%B2%E5%9F%9F/">子網域 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E8%B2%B7%E7%B6%B2%E5%9D%80/">買網址 (1)</a>
+        </li>
+        
+      </ul>
+
+    </div>
+  </section>
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+    
+    <p class="copyright">
+        © 2021 薛丁格的工程師
+    </p>
+    <p class="copyright" style="font-size: 0.1EM;">
+        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.85.0' target='_blank' rel='noopener'>Hugo</a>
+    </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>hljs.highlightAll();</script><script src="/js/bundle.min.5b32dd31e63dd828a839e9860a98304cf53722df362abf843cffaeb692f5eebf.js" integrity="sha256-WzLdMeY92CioOemGCpgwTPU3It82Kr&#43;EPP&#43;utpL17r8="></script>
+    <script src="/js/add-on.js"></script>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-LTGVYYWC2J', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </div>
+  </body>
+</html>

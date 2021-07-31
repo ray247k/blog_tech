@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GrumPHP on 薛丁格的工程師</title>
+    <link>https://tech.ray247k.com/tags/grumphp/</link>
+    <description>Recent content in GrumPHP on 薛丁格的工程師</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-TW</language>
+    <lastBuildDate>Sat, 31 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/grumphp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用 GrumPHP 做程式碼品質的守門員</title>
+      <link>https://tech.ray247k.com/blog/202107-grumphp-a-php-code-quality-tool/</link>
+      <pubDate>Sat, 31 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://tech.ray247k.com/blog/202107-grumphp-a-php-code-quality-tool/</guid>
+      <description>&lt;p&gt;多人一起開發的環境下，Code Review 是一件非常重要的事情&lt;br&gt;
+因為如果有人寫出一些不符合規則的程式，或是無法通過測試的程式時會造成專案出錯&lt;br&gt;
+而人工檢查語法或是手動執行測試耗時費力 no fashion，這種事情應該讓程式自動做&lt;br&gt;
+於是 &lt;code&gt;GrumPHP&lt;/code&gt; 登場了&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
