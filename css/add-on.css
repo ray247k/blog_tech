@@ -62,3 +62,7 @@ ul.posts > li > article > header > a {
     box-shadow: 0 1px 3px 0 #00000028, 0 2px 10px 0 #0000001E;
 }
 
+/* 標題不要大寫 */
+h1, h2, h3, h4, h5, h6 {
+    text-transform: none;
+}
