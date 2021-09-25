@@ -1,0 +1,839 @@
+<!doctype html>
+<html lang="zh-tw">
+  <head>
+  <meta charset="utf-8">
+<title>[LeetCode] #290 word-pattern (Eazy) - 薛丁格的工程師</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
+  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
+  
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=1" color="#ffffff">
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=1">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=1">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+<meta name="generator" content="Hugo 0.87.0" /><meta property="og:site_name" content="薛丁格的工程師">
+  <meta property="og:title" content="[LeetCode] #290 word-pattern (Eazy)">
+  <meta property="og:description" content="LeetCode 第 290 題 word-pattern，難度 Eazy">
+  <meta property="description" content="LeetCode 第 290 題 word-pattern，難度 Eazy">
+  <meta property="og:url" content="https://tech.ray247k.com/blog/202109-leetcode-no290-word-pattern/">
+  <meta property="og:type" content="article">
+  
+    
+      <meta property="og:image" content="https://tech.ray247k.com/img/blog/2021/09/leetcode-no290-word-pattern/no290-result.png">
+      <meta property="og:image:alt" content="LeetCode #290 run result">
+    
+  
+  <link rel="stylesheet" href="/css/bundle.min.6ad9eb85bff384c75937a02036b01425a2ca63f19a96535b8ba5b181db62a4b3.css" integrity="sha256-atnrhb/zhMdZN6AgNrAUJaLKY/GallNbi6WxgdtipLM="><link rel="stylesheet" href="/css/add-on.css">
+
+  
+
+
+    
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-LTGVYYWC2J');
+        </script>
+    
+
+
+  <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "image": {
+        "@type": "ImageObject",
+        "image": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+        "height": 648,
+        "width": 1080
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "薛丁格的工程師",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg"
+        }
+    },
+    "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+    "headline": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - Schrödinger\u0027s Programmer",
+    "name": "薛丁格的工程師",
+    "url": "https:\/\/tech.ray247k.com",
+    "description": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - devops,laravel,leetcode,node.js,php,python3,架站相關,",
+    "keywords": [
+        "apache-bench,aws,axios,cdn,cicd,cloudflare,component,composer,containerization,cors,devops,dns,docker,docker-compose,domain-name,drone,element-ui,express,gcp,getter,github-page,google-domains,grumphp,laravel,leetcode,leetcode-eazy,leetcode-medium,linux,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,portainer,postgresql,proxy,python3,restful,server,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,架站相關,買網址,"
+    ]
+}
+</script>
+
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "legalName": "薛丁格的工程師",
+    "url": "https:\/\/tech.ray247k.com",
+    "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "",
+        "availableLanguage": [
+            "Mandarin",
+            "English"
+        ]
+    },
+    "sameAs": [
+        "https://ray247k.blogspot.com/"
+    ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "[LeetCode] #290 word-pattern (Eazy)",
+    "description": "LeetCode 第 290 題 word-pattern，難度 Eazy",
+    "keywords": [
+        "LeetCode" , "LeetCode-Eazy" , "Python3" 
+    ],
+    "dateCreated": "2021-09-05T00:00:00.00Z",
+    "datePublished": "2021-09-05T00:00:00.00Z",
+    "dateModified": "2021-09-05T00:00:00.00Z",
+    "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "contentUrl": "[]"
+    },
+    "breadcrumb": {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com",
+                    "name": "薛丁格的工程師",
+                    "url": "https:\/\/tech.ray247k.com"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com/blog",
+                    "name": "Blog",
+                    "url": "https:\/\/tech.ray247k.com/blog"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\/blog\/202109-leetcode-no290-word-pattern\/",
+                    "name": "[LeetCode] #290 word-pattern (Eazy)",
+                    "url": "https:\/\/tech.ray247k.com\/blog\/202109-leetcode-no290-word-pattern\/"
+                }
+            }
+        ],
+        "itemListOrder": "Ascending",
+        "numberOfItems": 3
+    }
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "articleSection": "blog",
+    "name": "[LeetCode] #290 word-pattern (Eazy)",
+    "headline": "\u003cp\u003e用 Python3 解 LeetCode 系列，\u003ccode\u003eWord Pattern\u003c\/code\u003e，屬於 Eazy\u003c\/p\u003e",
+    "description": "LeetCode 第 290 題 word-pattern，難度 Eazy",
+    "inLanguage": "zh-TW",
+    "isFamilyFriendly": "true",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com\/blog\/202109-leetcode-no290-word-pattern\/"
+    },
+    "author" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "creator" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "accountablePerson" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "copyrightHolder" : "薛丁格的工程師",
+    "copyrightYear" : "2021",
+    "dateCreated": "2021-09-05T00:00:00.00Z",
+    "datePublished": "2021-09-05T00:00:00.00Z",
+    "dateModified": "2021-09-05T00:00:00.00Z",
+    "publisher":{
+        "@type":"Organization",
+        "name": "薛丁格的工程師",
+        "url": "https://tech.ray247k.com",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+            "width":"32",
+            "height":"32"
+        }
+    },
+    "image": [""],
+    "url" : "https:\/\/tech.ray247k.com\/blog\/202109-leetcode-no290-word-pattern\/",
+    "wordCount" : "209",
+    "genre" : [ "LeetCode" , "LeetCode-Eazy" , "Python3" ],
+    "keywords" : [ "LeetCode" , "LeetCode-Eazy" , "Python3" ]
+}
+</script>
+
+
+
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/" class="nav">
+        
+          Blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/" class="nav link"><i class='fa fa-home'></i> home</a>
+        
+      
+        
+          
+          <a href="/about" class="nav link"><i class='far fa-id-card'></i> about</a>
+        
+      
+        
+          
+          <a href="/categories" class="nav link"><i class='fas fa-sitemap'></i> category</a>
+        
+      
+      
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    
+    
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/"><img src="https://tech.ray247k.com/img/main/logo.jpg" class="circle" width="100" alt="一隻箱子裡的貓，看著電腦螢幕" /></a>
+  <header>
+    <h1>Schrödinger's Programmer</h1>
+  </header>
+  <main>
+    <p>奔跑吧工程師，趁年輕跑得越遠越好</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/ray247k" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+<li><a href="//gitlab.com/ray247k" target="_blank" rel="noopener" title="GitLab" class="fab fa-gitlab"></a></li>
+
+
+
+
+
+
+
+
+
+
+<li><a href="//www.linkedin.com/in/j-ray-cheng" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="/blog/202109-leetcode-no290-word-pattern/">[LeetCode] #290 word-pattern (Eazy)</a></h2>
+    
+    
+      <p>LeetCode 第 290 題 word-pattern，難度 Eazy</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2021-09-05 00:00:00 &#43;0000 UTC">2021/09/05</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+    <div id="socnet-share">
+      
+
+
+
+
+
+    </div>
+    <div class="content">
+      <a href="/blog/202109-leetcode-no290-word-pattern/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/09/leetcode-no290-word-pattern/no290-result.png');">
+    <img src="https://tech.ray247k.com/img/blog/2021/09/leetcode-no290-word-pattern/no290-result.png" alt="LeetCode #290 run result">
+  </a>
+      <p>用 Python3 解 LeetCode 系列，<code>Word Pattern</code>，屬於 Eazy</p>
+<h1 id="原始題目">原始題目</h1>
+<p>Given a <code>pattern</code> and a string <code>s</code>, find if <code>s</code> follows the same pattern.</p>
+<p>Here <strong>follow</strong> means a full match, such that there is a bijection between a letter in <code>pattern</code> and a <strong>non-empty</strong> word in <code>s</code>.</p>
+<p>Example 1:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Input: pattern = &#34;abba&#34;, s = &#34;dog cat cat dog&#34;
+Output: true
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Example 2:
+
+Input: pattern = &#34;abba&#34;, s = &#34;dog cat cat fish&#34;
+Output: false
+</code></pre></div><p>Example 3:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Input: pattern = &#34;aaaa&#34;, s = &#34;dog cat cat dog&#34;
+Output: false
+</code></pre></div><p>Example 4:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Input: pattern = &#34;abba&#34;, s = &#34;dog dog dog dog&#34;
+Output: false
+</code></pre></div><h1 id="題目分析">題目分析</h1>
+<ul>
+<li>給你一個模式<code>pattern</code>和<code>s</code></li>
+<li>pattern 裡的每個字母對應<code>s</code>一個單字，相同字母單字必須一樣</li>
+<li>判斷<code>s</code>是否符合<code>pattern</code></li>
+</ul>
+<h1 id="解題過程">解題過程</h1>
+<ol>
+<li>長度判斷，如果<code>pattern</code>字母數量和<code>s</code>單字數量不同，一定就是 false</li>
+<li><code>mapping_dict</code>的 key 是<code>pattern</code>的字母，值是同 index 的<code>s</code>內容</li>
+<li><code>exist_check_dict</code>的 key 是<code>s</code>的單字，值是<code>pattern</code>的字母</li>
+<li>遍歷<code>pattern</code>所有值</li>
+<li>檢查當前<code>pattern</code>字母為 key 的<code>mapping_dict</code>資料，和<code>s</code>中相同位置的單字有沒有一樣</li>
+<li>檢查和當前<code>pattern</code>字母同 index 的 s 單字所對應的字母和<code>exist_check_dict</code>紀錄中的字母有沒有一樣</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span>:
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">wordPattern</span>(self, pattern: str, s: str) <span style="color:#f92672">-&gt;</span> bool:
+        <span style="color:#75715e"># 長度判斷，如果不同長度一定就是 false</span>
+        words_list <span style="color:#f92672">=</span> s<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39; &#39;</span>)
+        words_len <span style="color:#f92672">=</span> len(words_list)
+        pattern_len <span style="color:#f92672">=</span> len(pattern)
+        <span style="color:#66d9ef">if</span> words_len <span style="color:#f92672">!=</span> pattern_len:
+            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">False</span>
+        
+        mapping_dict <span style="color:#f92672">=</span> dict()
+        exist_check_dict <span style="color:#f92672">=</span> dict()
+
+        <span style="color:#66d9ef">for</span> index, val <span style="color:#f92672">in</span> enumerate(pattern):
+            
+            <span style="color:#75715e"># 如果 pattern key 存在</span>
+            <span style="color:#66d9ef">if</span> val <span style="color:#f92672">in</span> mapping_dict<span style="color:#f92672">.</span>keys():
+                
+                <span style="color:#75715e"># 檢查 pattern 字母代表的單字是否一致</span>
+                <span style="color:#66d9ef">if</span> mapping_dict[val] <span style="color:#f92672">!=</span> words_list[index]:
+                    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">False</span>
+            <span style="color:#66d9ef">else</span>:
+                <span style="color:#75715e"># 檢查有沒有重複的單字在不同字母中</span>
+                <span style="color:#66d9ef">if</span> words_list[index] <span style="color:#f92672">in</span> exist_check_dict:
+                    <span style="color:#66d9ef">if</span> exist_check_dict[words_list[index]] <span style="color:#f92672">!=</span> val:
+                        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">False</span>
+                <span style="color:#66d9ef">else</span> :
+                    mapping_dict[val] <span style="color:#f92672">=</span> words_list[index]
+                    exist_check_dict[words_list[index]] <span style="color:#f92672">=</span> val
+
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">True</span>
+</code></pre></div><h1 id="結果">結果</h1>
+<p><img src="/img/blog/2021/09/leetcode-no290-word-pattern/no290-result.png" alt="result"></p>
+
+      
+      
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/ray247k/button?referrer=https%3a%2f%2ftech.ray247k.com%2fblog%2f202109-leetcode-no290-word-pattern%2f" width="100%" frameborder=0></iframe>
+
+    </div>
+    <footer>
+      <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/leetcode/">LeetCode</a></li>
+        
+          <li><a class="article-terms-link" href="/categories/python3/">Python3</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/leetcode/">LeetCode</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/leetcode-eazy/">LeetCode-Eazy</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/python3/">Python3</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+    </footer>
+  </article>
+  
+    
+
+  
+  <div class="pagination">
+    
+    
+      <a href="/blog/202107-grumphp-a-php-code-quality-tool/" class="button right"><span>使用 GrumPHP 做程式碼品質的守門員</span></a>
+    
+  </div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>最新文章</h1>
+      </header>
+      
+      <article class="mini-post">
+          <a href="/blog/202109-leetcode-no290-word-pattern/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/09/leetcode-no290-word-pattern/no290-result.png');">
+    <img src="https://tech.ray247k.com/img/blog/2021/09/leetcode-no290-word-pattern/no290-result.png" alt="LeetCode #290 run result">
+  </a>
+        <header>
+          <h2><a href="/blog/202109-leetcode-no290-word-pattern/">[LeetCode] #290 word-pattern (Eazy)</a></h2>
+          <time class="published" datetime="2021-09-05 00:00:00 &#43;0000 UTC">2021/09/05</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202107-grumphp-a-php-code-quality-tool/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/07/grumphp-a-php-code-quality-tool/grumphp-logo.png');">
+    <img src="https://tech.ray247k.com/img/blog/2021/07/grumphp-a-php-code-quality-tool/grumphp-logo.png" alt="grumphp logo">
+  </a>
+        <header>
+          <h2><a href="/blog/202107-grumphp-a-php-code-quality-tool/">使用 GrumPHP 做程式碼品質的守門員</a></h2>
+          <time class="published" datetime="2021-07-31 00:00:00 &#43;0000 UTC">2021/07/31</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202107-laravel-package-development/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/07/laravel-package-development/peko-test.png');">
+    <img src="https://tech.ray247k.com/img/blog/2021/07/laravel-package-development/peko-test.png" alt="test result">
+  </a>
+        <header>
+          <h2><a href="/blog/202107-laravel-package-development/">開發屬於自己的 Laravel 套件</a></h2>
+          <time class="published" datetime="2021-07-25 00:00:00 &#43;0000 UTC">2021/07/25</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202107-laravel-environment-with-docker/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/07/laravel-environment-with-docker/docker-and-laravel-logo.png');">
+    <img src="https://tech.ray247k.com/img/blog/2021/07/laravel-environment-with-docker/docker-and-laravel-logo.png" alt="docker and laravel logo">
+  </a>
+        <header>
+          <h2><a href="/blog/202107-laravel-environment-with-docker/">用 Docker 建立 Laravel 開發環境</a></h2>
+          <time class="published" datetime="2021-07-24 00:00:00 &#43;0000 UTC">2021/07/24</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202107-initialize-server-setting-with-docker-and-laravel/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/07/initialize-server-setting-with-docker-and-laravel/apt-update-demo.png');">
+    <img src="https://tech.ray247k.com/img/blog/2021/07/initialize-server-setting-with-docker-and-laravel/apt-update-demo.png" alt="apt install demo">
+  </a>
+        <header>
+          <h2><a href="/blog/202107-initialize-server-setting-with-docker-and-laravel/">環境初始化主機設定(Docker &#43; Laravel)</a></h2>
+          <time class="published" datetime="2021-07-17 00:00:00 &#43;0000 UTC">2021/07/17</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/blog/" class="button">查看更多</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="/categories">category</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/categories/node.js/">node.js<span class="count">22</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/devops/">devops<span class="count">17</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/leetcode/">leetcode<span class="count">7</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/php/">php<span class="count">6</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/laravel/">laravel<span class="count">3</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/">架站相關<span class="count">3</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/python3/">python3<span class="count">1</span></a>
+          </li>
+          
+        </ul>
+      </section>
+    
+  
+
+  
+  <section id="tags">
+    <header>
+      <h1><a href="/tags">Tag</a></h1>
+    </header>
+    <div class="li-x post-meta tags-md" style="margin-left: 0.5em;">
+      <ul>
+        
+        
+        <li>
+          <a href="/tags/node.js/">node.js (22)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/devops/">devops (18)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/vue/">vue (15)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/containerization/">containerization (9)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/docker/">docker (9)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/express/">express (9)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%AE%B9%E5%99%A8%E6%8A%80%E8%A1%93/">容器技術 (9)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/php/">php (8)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/leetcode/">leetcode (7)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/docker-compose/">docker-compose (6)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/vuex/">vuex (6)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/composer/">composer (5)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/element-ui/">element-ui (5)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cicd/">cicd (4)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/drone/">drone (4)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/laravel/">laravel (4)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/leetcode-medium/">leetcode-medium (4)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/leetcode-eazy/">leetcode-eazy (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/mongodb/">mongodb (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/mutation/">mutation (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/restful/">restful (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/">架站相關 (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cloudflare/">cloudflare (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/component/">component (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/dns/">dns (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/getter/">getter (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/google-domains/">google-domains (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/nginx/">nginx (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/vue-router/">vue-router (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/vue-ui/">vue-ui (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/apache-bench/">apache-bench (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/aws/">aws (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/axios/">axios (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cdn/">cdn (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cors/">cors (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/domain-name/">domain-name (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/gcp/">gcp (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/github-page/">github-page (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/grumphp/">grumphp (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/linux/">linux (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/ngrok/">ngrok (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/php-fpm/">php-fpm (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/portainer/">portainer (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/postgresql/">postgresql (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/proxy/">proxy (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/python3/">python3 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/server/">server (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/ssh/">ssh (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/stress-testing/">stress-testing (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/subdomain/">subdomain (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E4%BC%BA%E6%9C%8D%E5%99%A8/">伺服器 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%80%8B%E4%BA%BA%E5%93%81%E7%89%8C/">個人品牌 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%9F%9F%E5%90%8D/">域名 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%A3%93%E5%8A%9B%E6%B8%AC%E8%A9%A6/">壓力測試 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%AD%90%E7%B6%B2%E5%9F%9F/">子網域 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E8%B2%B7%E7%B6%B2%E5%9D%80/">買網址 (1)</a>
+        </li>
+        
+      </ul>
+
+    </div>
+  </section>
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+    
+    <p class="copyright">
+        © 2021 薛丁格的工程師
+    </p>
+    <p class="copyright" style="font-size: 0.1EM;">
+        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.87.0' target='_blank' rel='noopener'>Hugo</a>
+    </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>hljs.highlightAll();</script><script src="/js/bundle.min.5352079d3388d9a4297e0200dd1040866c8b3b67460090bf30e01a9cd56fd746.js" integrity="sha256-U1IHnTOI2aQpfgIA3RBAhmyLO2dGAJC/MOAanNVv10Y="></script>
+    <script src="/js/add-on.js"></script>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-LTGVYYWC2J', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </div>
+  </body>
+</html>

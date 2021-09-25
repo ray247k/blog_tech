@@ -1,4 +1,10 @@
 [{
+    "title": "[LeetCode] #290 word-pattern (Eazy)",
+    "date": "",
+    "description": "LeetCode 第 290 題 word-pattern，難度 Eazy",
+    "body": "用 Python3 解 LeetCode 系列，Word Pattern，屬於 Eazy\n原始題目 Given a pattern and a string s, find if s follows the same pattern.\nHere follow means a full match, such that there is a bijection between a letter in pattern and a non-empty word in s.\nExample 1:\nInput: pattern = \u0026#34;abba\u0026#34;, s = \u0026#34;dog cat cat dog\u0026#34; Output: true Example 2: Input: pattern = \u0026#34;abba\u0026#34;, s = \u0026#34;dog cat cat fish\u0026#34; Output: false Example 3:\nInput: pattern = \u0026#34;aaaa\u0026#34;, s = \u0026#34;dog cat cat dog\u0026#34; Output: false Example 4:\nInput: pattern = \u0026#34;abba\u0026#34;, s = \u0026#34;dog dog dog dog\u0026#34; Output: false 題目分析  給你一個模式pattern和s pattern 裡的每個字母對應s一個單字，相同字母單字必須一樣 判斷s是否符合pattern  解題過程  長度判斷，如果pattern字母數量和s單字數量不同，一定就是 false mapping_dict的 key 是pattern的字母，值是同 index 的s內容 exist_check_dict的 key 是s的單字，值是pattern的字母 遍歷pattern所有值 檢查當前pattern字母為 key 的mapping_dict資料，和s中相同位置的單字有沒有一樣 檢查和當前pattern字母同 index 的 s 單字所對應的字母和exist_check_dict紀錄中的字母有沒有一樣  class Solution: def wordPattern(self, pattern: str, s: str) -\u0026gt; bool: # 長度判斷，如果不同長度一定就是 false words_list = s.split(\u0026#39; \u0026#39;) words_len = len(words_list) pattern_len = len(pattern) if words_len != pattern_len: return False mapping_dict = dict() exist_check_dict = dict() for index, val in enumerate(pattern): # 如果 pattern key 存在 if val in mapping_dict.keys(): # 檢查 pattern 字母代表的單字是否一致 if mapping_dict[val] != words_list[index]: return False else: # 檢查有沒有重複的單字在不同字母中 if words_list[index] in exist_check_dict: if exist_check_dict[words_list[index]] != val: return False else : mapping_dict[val] = words_list[index] exist_check_dict[words_list[index]] = val return True 結果 ",
+    "ref": "/blog/202109-leetcode-no290-word-pattern/"
+  },{
     "title": "使用 GrumPHP 做程式碼品質的守門員",
     "date": "",
     "description": "檢查你的程式有沒有怪味道，在你犯錯前就制止你。一生只督你一人",
