@@ -6,23 +6,32 @@
     <description>Recent content in Blog on 薛丁格的工程師</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Thu, 09 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 15 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>[LeetCode] #66 plus-one (Eazy)</title>
+      <title>[LeetCode] #155 min-stack (Easy)</title>
+      <link>https://tech.ray247k.com/blog/202109-leetcode-no155-min-stack/</link>
+      <pubDate>Wed, 15 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://tech.ray247k.com/blog/202109-leetcode-no155-min-stack/</guid>
+      <description>&lt;p&gt;用 Python3 解 LeetCode 系列，&lt;code&gt;Min Stack&lt;/code&gt;，屬於 Easy&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[LeetCode] #66 plus-one (Easy)</title>
       <link>https://tech.ray247k.com/blog/202109-leetcode-no66-plus-one/</link>
       <pubDate>Thu, 09 Sep 2021 00:00:00 +0000</pubDate>
       
       <guid>https://tech.ray247k.com/blog/202109-leetcode-no66-plus-one/</guid>
-      <description>&lt;p&gt;用 Python3 解 LeetCode 系列，&lt;code&gt;Plus One&lt;/code&gt;，屬於 Eazy&lt;/p&gt;</description>
+      <description>&lt;p&gt;用 Python3 解 LeetCode 系列，&lt;code&gt;Plus One&lt;/code&gt;，屬於 Easy&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>[LeetCode] #290 word-pattern (Eazy)</title>
+      <title>[LeetCode] #290 word-pattern (Easy)</title>
       <link>https://tech.ray247k.com/blog/202109-leetcode-no290-word-pattern/</link>
       <pubDate>Sun, 05 Sep 2021 00:00:00 +0000</pubDate>
       
       <guid>https://tech.ray247k.com/blog/202109-leetcode-no290-word-pattern/</guid>
-      <description>&lt;p&gt;用 Python3 解 LeetCode 系列，&lt;code&gt;Word Pattern&lt;/code&gt;，屬於 Eazy&lt;/p&gt;</description>
+      <description>&lt;p&gt;用 Python3 解 LeetCode 系列，&lt;code&gt;Word Pattern&lt;/code&gt;，屬於 Easy&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -170,21 +179,21 @@ Drone 是一套以 Golang 開發的一套 CI/CD 系統工具&lt;br&gt;
     </item>
     
     <item>
-      <title>[LeetCode] #1732 Find the Highest Altitude (Eazy)</title>
+      <title>[LeetCode] #1732 Find the Highest Altitude (Easy)</title>
       <link>https://tech.ray247k.com/blog/202105-leetcode-no1732-find-the-highest-altitude/</link>
       <pubDate>Thu, 20 May 2021 00:00:00 +0000</pubDate>
       
       <guid>https://tech.ray247k.com/blog/202105-leetcode-no1732-find-the-highest-altitude/</guid>
-      <description>&lt;p&gt;用 PHP 解 LeetCode 系列，&lt;code&gt;Find the Highest Altitude&lt;/code&gt;，屬於 Eazy&lt;/p&gt;</description>
+      <description>&lt;p&gt;用 PHP 解 LeetCode 系列，&lt;code&gt;Find the Highest Altitude&lt;/code&gt;，屬於 Easy&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>[LeetCode] #1 Two Sum (Eazy)</title>
+      <title>[LeetCode] #1 Two Sum (Easy)</title>
       <link>https://tech.ray247k.com/blog/202105-leetcode-no1-two-sum/</link>
       <pubDate>Wed, 19 May 2021 00:00:00 +0000</pubDate>
       
       <guid>https://tech.ray247k.com/blog/202105-leetcode-no1-two-sum/</guid>
-      <description>&lt;p&gt;用 PHP 解 LeetCode 系列，這次是經典題目 &lt;code&gt;Two Sum&lt;/code&gt;，屬於 Eazy&lt;/p&gt;</description>
+      <description>&lt;p&gt;用 PHP 解 LeetCode 系列，這次是經典題目 &lt;code&gt;Two Sum&lt;/code&gt;，屬於 Easy&lt;/p&gt;</description>
     </item>
     
     <item>
