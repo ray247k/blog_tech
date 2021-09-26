@@ -1,4 +1,10 @@
 [{
+    "title": "[LeetCode] #66 plus-one (Eazy)",
+    "date": "",
+    "description": "LeetCode 第 66 題 plus-one，難度 Eazy",
+    "body": "用 Python3 解 LeetCode 系列，Word Pattern，屬於 Eazy\n原始題目 You are given a large integer represented as an integer array digits, where each digits[i] is the ith digit of the integer. The digits are ordered from most significant to least significant in left-to-right order. The large integer does not contain any leading 0\u0026rsquo;s.\nIncrement the large integer by one and return the resulting array of digits.\nExample 1:\nInput: digits = [1,2,3] Output: [1,2,4] Explanation: The array represents the integer 123. Incrementing by one gives 123 + 1 = 124. Thus, the result should be [1,2,4]. Example 2:\nInput: digits = [4,3,2,1] Output: [4,3,2,2] Explanation: The array represents the integer 4321. Incrementing by one gives 4321 + 1 = 4322. Thus, the result should be [4,3,2,2]. Example 3:\nInput: digits = [0] Output: [1] Explanation: The array represents the integer 0. Incrementing by one gives 0 + 1 = 1. Thus, the result should be [1]. Example 4:\nInput: digits = [9] Output: [1,0] Explanation: The array represents the integer 9. Incrementing by one gives 9 + 1 = 10. Thus, the result should be [1,0]. 題目分析  傳入一個純正整數的陣列 該陣列是一個大正整數，依照每個位數拆開 計算出該正整數 +1 的結果 把結果依照輸入的方式也輸出成陣列  解題過程  把輸入的陣列數字一個一個串成字串 字串轉換成數字，然後 +1 每個位元拆開做成新的 list 後回傳  class Solution: def plusOne(self, digits: List[int]) -\u0026gt; List[int]: number_string = \u0026#39;\u0026#39; number_new = [] # list 用字串串起來 for number in digits: number_string += str(number) # 字串轉數字，數字 +1 number_string = str(int(number_string) + 1) # 每一個位元拆開成新的 list for number in number_string: number_new.append(number) return number_new 結果 ",
+    "ref": "/blog/202109-leetcode-no66-plus-one/"
+  },{
     "title": "[LeetCode] #290 word-pattern (Eazy)",
     "date": "",
     "description": "LeetCode 第 290 題 word-pattern，難度 Eazy",
