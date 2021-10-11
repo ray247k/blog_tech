@@ -6,9 +6,18 @@
     <description>Recent content in LeetCode on 薛丁格的工程師</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Fri, 24 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 05 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>[LeetCode] #150 evaluate-reverse-polish-notation (Medium)</title>
+      <title>[LeetCode] #455 Assign Cookies (Easy)</title>
+      <link>https://tech.ray247k.com/blog/202110-leetcode-no455-assign-cookies/</link>
+      <pubDate>Tue, 05 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://tech.ray247k.com/blog/202110-leetcode-no455-assign-cookies/</guid>
+      <description>&lt;p&gt;用 Python3 解 LeetCode 系列，&lt;code&gt;Assign Cookies&lt;/code&gt;，屬於 Easy&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[LeetCode] #150 Evaluate Reverse Polish Notation (Medium)</title>
       <link>https://tech.ray247k.com/blog/202109-leetcode-no150-evaluate-reverse-polish-notation/</link>
       <pubDate>Fri, 24 Sep 2021 00:00:00 +0000</pubDate>
       
@@ -17,7 +26,7 @@
     </item>
     
     <item>
-      <title>[LeetCode] #155 min-stack (Easy)</title>
+      <title>[LeetCode] #155 Min Stack (Easy)</title>
       <link>https://tech.ray247k.com/blog/202109-leetcode-no155-min-stack/</link>
       <pubDate>Wed, 15 Sep 2021 00:00:00 +0000</pubDate>
       
@@ -26,7 +35,7 @@
     </item>
     
     <item>
-      <title>[LeetCode] #66 plus-one (Easy)</title>
+      <title>[LeetCode] #66 Plus One (Easy)</title>
       <link>https://tech.ray247k.com/blog/202109-leetcode-no66-plus-one/</link>
       <pubDate>Thu, 09 Sep 2021 00:00:00 +0000</pubDate>
       
@@ -35,7 +44,7 @@
     </item>
     
     <item>
-      <title>[LeetCode] #290 word-pattern (Easy)</title>
+      <title>[LeetCode] #290 Word Pattern (Easy)</title>
       <link>https://tech.ray247k.com/blog/202109-leetcode-no290-word-pattern/</link>
       <pubDate>Sun, 05 Sep 2021 00:00:00 +0000</pubDate>
       
