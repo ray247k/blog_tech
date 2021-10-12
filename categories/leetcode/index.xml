@@ -6,7 +6,16 @@
     <description>Recent content in LeetCode on 薛丁格的工程師</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Tue, 05 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 12 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[LeetCode] #1013 Partition Array Into Three Parts With Equal Sum (Easy)</title>
+      <link>https://tech.ray247k.com/blog/202110-leetcode-no1013-partition-array-into-three-parts-with-equal-sum/</link>
+      <pubDate>Tue, 12 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://tech.ray247k.com/blog/202110-leetcode-no1013-partition-array-into-three-parts-with-equal-sum/</guid>
+      <description>&lt;p&gt;用 Python3 解 LeetCode 系列，&lt;code&gt;Partition Array Into Three Parts With Equal Sum&lt;/code&gt;，屬於 Easy&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>[LeetCode] #455 Assign Cookies (Easy)</title>
       <link>https://tech.ray247k.com/blog/202110-leetcode-no455-assign-cookies/</link>

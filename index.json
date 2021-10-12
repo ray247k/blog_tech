@@ -1,4 +1,10 @@
 [{
+    "title": "[LeetCode] #1013 Partition Array Into Three Parts With Equal Sum (Easy)",
+    "date": "",
+    "description": "LeetCode 第 1013 題 Partition Array Into Three Parts With Equal Sum，難度 Easy",
+    "body": "用 Python3 解 LeetCode 系列，Partition Array Into Three Parts With Equal Sum，屬於 Easy\n原始題目 Given an array of integers arr, return true if we can partition the array into three non-empty parts with equal sums.\nFormally, we can partition the array if we can find indexes i + 1 \u0026lt; j with (arr[0] + arr[1] + ... + arr[i] == arr[i + 1] + arr[i + 2] + ... + arr[j - 1] == arr[j] + arr[j + 1] + ... + arr[arr.length - 1])\nExample 1:\nInput: arr = [0,2,1,-6,6,-7,9,1,2,0,1] Output: true Explanation: 0 + 2 + 1 = -6 + 6 - 7 + 9 + 1 = 2 + 0 + 1 Example 2:\nInput: arr = [0,2,1,-6,6,7,9,-1,2,0,1] Output: false Example 3:\nInput: arr = [3,3,6,5,-2,2,5,1,-9,4] Output: true Explanation: 3 + 3 = 6 = 5 - 2 + 2 + 5 + 1 - 9 + 4 Constraints:\n 3 \u0026lt;= arr.length \u0026lt;= 5 * 104 -104 \u0026lt;= arr[i] \u0026lt;= 104  題目分析 一個陣列，當裡面的內容相加可以分成完全相等的三個部分，並且內容都不是空值就會傳 true\n否則回傳 false\n解題過程 可以理解成三等分的每一份恰好等於陣列總和的三分之一，所以不能整除三的就必定是 false\n從陣列開頭累加，當等於三分之一的總和，則切為一份\n繼續計算下一份的累加值，當累加值等於三分之二的總和時，剩下的值總和必然是另外的三分之一，所以可以回傳 true\n若累加沒有達到三分之二則回傳 false\nclass Solution: def canThreePartsEqualSum(self, arr: List[int]) -\u0026gt; bool: s = sum(arr) if s % 3 != 0: return False target = s // 3 n, i, cur = len(arr), 0, 0 while i \u0026lt; n: cur += arr[i] if cur == target: break i += 1 if cur != target: return False j = i + 1 while j + 1 \u0026lt; n: cur += arr[j] if cur == target * 2: return True j += 1 return False 結果 ",
+    "ref": "/blog/202110-leetcode-no1013-partition-array-into-three-parts-with-equal-sum/"
+  },{
     "title": "[LeetCode] #455 Assign Cookies (Easy)",
     "date": "",
     "description": "LeetCode 第 455 題 Assign Cookies，難度 Easy",
