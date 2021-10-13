@@ -1,4 +1,10 @@
 [{
+    "title": "[LeetCode] #404 Sum of Left Leaves (Easy)",
+    "date": "",
+    "description": "LeetCode 第 404 題 Sum of Left Leaves，難度 Easy",
+    "body": "用 Python3 解 LeetCode 系列，Sum of Left Leaves，屬於 Easy\n原始題目 Given the root of a binary tree, return the sum of all left leaves.\nExample 1:\nInput: root = [3,9,20,null,null,15,7] Output: 24 Explanation: There are two left leaves in the binary tree, with values 9 and 15 respectively. Example 2:\nInput: root = [1] Output: 0 Constraints:\n The number of nodes in the tree is in the range [1, 1000]. -1000 \u0026lt;= Node.val \u0026lt;= 1000  題目分析 判斷一個二元樹的左子葉總和\n把每個節點送進遞迴函數裡面取得該節點的左節點，並且送進同一個函數取得更深入的左節點\n如果傳入節點的左節點不為空，且該節點的左節點沒有更深入的左節點\n而且該節點的左節點的右節點為空，則找到了一個左子葉\n判斷式長得像：\nif (node-\u0026gt;left != NULL \u0026amp;\u0026amp; node-\u0026gt;left-\u0026gt;left == NULL \u0026amp;\u0026amp; node-\u0026gt;left-\u0026gt;right == NULL) { 找到左子葉 } 解題過程 # Definition for a binary tree node. # class TreeNode: # def __init__(self, val=0, left=None, right=None): # self.val = val # self.left = left # self.right = right class Solution: def sumOfLeftLeaves(self, root: Optional[TreeNode]) -\u0026gt; int: if not root: return 0 left_left_leaves_sum = self.sumOfLeftLeaves(root.left) right_left_leaves_sum = self.sumOfLeftLeaves(root.right) cur_left_leaf_val = 0 if root.left and not root.left.left and not root.left.right: cur_left_leaf_val = root.left.val return cur_left_leaf_val + left_left_leaves_sum + right_left_leaves_sum 結果 ",
+    "ref": "/blog/202110-leetcode-no404-sum-of-left-leaves/"
+  },{
     "title": "[LeetCode] #1013 Partition Array Into Three Parts With Equal Sum (Easy)",
     "date": "",
     "description": "LeetCode 第 1013 題 Partition Array Into Three Parts With Equal Sum，難度 Easy",
