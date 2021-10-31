@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Discord on 薛丁格的工程師</title>
+    <link>https://tech.ray247k.com/tags/discord/</link>
+    <description>Recent content in Discord on 薛丁格的工程師</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-TW</language>
+    <lastBuildDate>Wed, 20 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/discord/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Discord 機器人] 01.建立基本機器人</title>
+      <link>https://tech.ray247k.com/blog/202110-make-discord-chatbot-01-set-up/</link>
+      <pubDate>Wed, 20 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://tech.ray247k.com/blog/202110-make-discord-chatbot-01-set-up/</guid>
+      <description>&lt;p&gt;閒閒沒事，來寫點沒寫過的東西&lt;br&gt;
+最近都在 Discord 活動，就決定寫 Discord ChatBot 啦&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -18,7 +18,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.87.0" /><meta property="og:site_name" content="薛丁格的工程師">
+<meta name="generator" content="Hugo 0.88.1" /><meta property="og:site_name" content="薛丁格的工程師">
   <meta property="og:title" content="[Express&#43;Vue 搭建電商網站] 01- 初始設定">
   <meta property="og:description" content="使用 Express &#43; Vue 搭建一個電商網站 - 初始設定">
   <meta property="description" content="使用 Express &#43; Vue 搭建一個電商網站 - 初始設定">
@@ -73,7 +73,7 @@
     "url": "https:\/\/tech.ray247k.com",
     "description": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - devops,laravel,leetcode,node.js,php,python3,架站相關,",
     "keywords": [
-        "apache-bench,aws,axios,cdn,cicd,cloudflare,component,composer,containerization,cors,devops,dns,docker,docker-compose,domain-name,drone,element-ui,express,gcp,getter,github-page,google-domains,grumphp,laravel,leetcode,leetcode-easy,leetcode-medium,linux,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,portainer,postgresql,proxy,python3,restful,server,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,架站相關,買網址,"
+        "apache-bench,aws,axios,cdn,chatbot,cicd,cloudflare,component,composer,containerization,cors,devops,discord,dns,docker,docker-compose,domain-name,drone,element-ui,express,gcp,getter,github-page,google-domains,grumphp,laravel,leetcode,leetcode-easy,leetcode-medium,linux,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,portainer,postgresql,proxy,python3,restful,server,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,架站相關,買網址,"
     ]
 }
 </script>
@@ -350,18 +350,18 @@
 <span style="color:#75715e"># 確定安裝結果</span>
 node -v
 </code></pre></div><p>接著要安裝我們前端所要使用的 vue</p>
-<pre><code>npm install -g vue-cli
+<pre tabindex="0"><code>npm install -g vue-cli
 </code></pre><p>安裝完成後在 terminal 確認安裝結果</p>
-<pre><code>vue --version
+<pre tabindex="0"><code>vue --version
 </code></pre><h1 id="新建-vue-專案">新建 vue 專案</h1>
 <p>這次嘗試使用 Vue-cli 新出的 <a href="https://cli.vuejs.org/zh/dev-guide/ui-api.html#ui-%E6%96%87%E4%BB%B6">vue ui</a> 來建立專案，在終端機輸入</p>
-<pre><code>vue ui
+<pre tabindex="0"><code>vue ui
 </code></pre><p>就可以起動，根據提示我們開啟 vue-ui 的畫面
 按下新增之後選擇指定的位置，根據畫面上提示來建立新專案</p>
 <p><img src="/img/blog/2020/06/express-vue-build-ecommerce-01-basic-settings/vue-ui.png" alt="vue-ui"></p>
 <p>接著就是等待他執行完成，在終端機進到剛剛建立專案的資料夾下會發現一個 vue 專案已經被建立</p>
 <p>根據 README 的說明執行以下指令後，可以打開 <code>http://localhost:8080/</code> 來預覽執行結果</p>
-<pre><code>npm install
+<pre tabindex="0"><code>npm install
 npm run serve
 </code></pre><p><img src="/img/blog/2020/06/express-vue-build-ecommerce-01-basic-settings/hello-vue.png" alt="hello-vue"></p>
 <h2 id="安裝-vue-router">安裝 vue-router</h2>
@@ -431,6 +431,16 @@ npm run serve
       </header>
       
       <article class="mini-post">
+          <a href="/blog/202110-make-discord-chatbot-01-set-up/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/10/make-discord-chatbot-01-set-up/chat-bot-terminal.png');">
+    <img src="https://tech.ray247k.com/img/blog/2021/10/make-discord-chatbot-01-set-up/chat-bot-terminal.png" alt="chat bot terminal">
+  </a>
+        <header>
+          <h2><a href="/blog/202110-make-discord-chatbot-01-set-up/">[Discord 機器人] 01.建立基本機器人</a></h2>
+          <time class="published" datetime="2021-10-20 00:00:00 &#43;0000 UTC">2021/10/20</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
           <a href="/blog/202110-leetcode-no404-sum-of-left-leaves/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/10/leetcode-no404-sum-of-left-leaves/no404-result.png');">
     <img src="https://tech.ray247k.com/img/blog/2021/10/leetcode-no404-sum-of-left-leaves/no404-result.png" alt="LeetCode #290 run result">
   </a>
@@ -470,16 +480,6 @@ npm run serve
         </header>
       </article>
       
-      <article class="mini-post">
-          <a href="/blog/202109-leetcode-no155-min-stack/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/09/leetcode-no155-min-stack/no155-result.png');">
-    <img src="https://tech.ray247k.com/img/blog/2021/09/leetcode-no155-min-stack/no155-result.png" alt="LeetCode #155 run result">
-  </a>
-        <header>
-          <h2><a href="/blog/202109-leetcode-no155-min-stack/">[LeetCode] #155 Min Stack (Easy)</a></h2>
-          <time class="published" datetime="2021-09-15 00:00:00 &#43;0000 UTC">2021/09/15</time>
-        </header>
-      </article>
-      
       
         <footer>
           <a href="/blog/" class="button">查看更多</a>
@@ -511,7 +511,7 @@ npm run serve
           </li>
           
           <li>
-              <a href="/categories/python3/">python3<span class="count">7</span></a>
+              <a href="/categories/python3/">python3<span class="count">8</span></a>
           </li>
           
           <li>
@@ -581,7 +581,7 @@ npm run serve
         </li>
         
         <li>
-          <a href="/tags/python3/">python3 (7)</a>
+          <a href="/tags/python3/">python3 (8)</a>
         </li>
         
         <li>
@@ -681,7 +681,15 @@ npm run serve
         </li>
         
         <li>
+          <a href="/tags/chatbot/">chatbot (1)</a>
+        </li>
+        
+        <li>
           <a href="/tags/cors/">cors (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/discord/">discord (1)</a>
         </li>
         
         <li>
@@ -779,7 +787,7 @@ npm run serve
         © 2021 薛丁格的工程師
     </p>
     <p class="copyright" style="font-size: 0.1EM;">
-        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.87.0' target='_blank' rel='noopener'>Hugo</a>
+        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.88.1' target='_blank' rel='noopener'>Hugo</a>
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>

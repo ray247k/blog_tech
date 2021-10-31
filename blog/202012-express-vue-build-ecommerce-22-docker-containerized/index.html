@@ -18,7 +18,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.87.0" /><meta property="og:site_name" content="薛丁格的工程師">
+<meta name="generator" content="Hugo 0.88.1" /><meta property="og:site_name" content="薛丁格的工程師">
   <meta property="og:title" content="[Express&#43;Vue 搭建電商網站] 22 使用 Docker 將專案容器化">
   <meta property="og:description" content="使用 Express &#43; Vue 搭建一個電商網站 - 使用 Docker 將專案容器化">
   <meta property="description" content="使用 Express &#43; Vue 搭建一個電商網站 - 使用 Docker 將專案容器化">
@@ -73,7 +73,7 @@
     "url": "https:\/\/tech.ray247k.com",
     "description": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - devops,laravel,leetcode,node.js,php,python3,架站相關,",
     "keywords": [
-        "apache-bench,aws,axios,cdn,cicd,cloudflare,component,composer,containerization,cors,devops,dns,docker,docker-compose,domain-name,drone,element-ui,express,gcp,getter,github-page,google-domains,grumphp,laravel,leetcode,leetcode-easy,leetcode-medium,linux,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,portainer,postgresql,proxy,python3,restful,server,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,架站相關,買網址,"
+        "apache-bench,aws,axios,cdn,chatbot,cicd,cloudflare,component,composer,containerization,cors,devops,discord,dns,docker,docker-compose,domain-name,drone,element-ui,express,gcp,getter,github-page,google-domains,grumphp,laravel,leetcode,leetcode-easy,leetcode-medium,linux,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,portainer,postgresql,proxy,python3,restful,server,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,架站相關,買網址,"
     ]
 }
 </script>
@@ -403,7 +403,7 @@
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># 將前端靜態檔案映射到容器的 /www 目錄下</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> dist /www<span style="color:#960050;background-color:#1e0010">
 </span></code></pre></div><p>接著建立 <code>client/.dockerignore</code>，裡面只有短短一行</p>
-<pre><code>node_modules
+<pre tabindex="0"><code>node_modules
 </code></pre><p>代表不 mount 進 docker 的資料夾</p>
 <h2 id="後端容器化">後端容器化</h2>
 <p>前端容器化之後，接著準備進行後端的容器化。首先把寫死的 MongoDB 連線字串透過環境變數注入，修改 <code>server/app.js</code> 連線資料庫的部分成</p>
@@ -436,7 +436,7 @@
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">CMD</span> [<span style="color:#e6db74">&#34;npm&#34;</span>, <span style="color:#e6db74">&#34;start&#34;</span>]<span style="color:#960050;background-color:#1e0010">
 </span></code></pre></div><p>和前端一樣建立 <code>server/.dockerignore</code> 確定不會把 <code>node_modules</code> 給映射進容器裡<br>
 裡面也只有一行：</p>
-<pre><code>node_modules
+<pre tabindex="0"><code>node_modules
 </code></pre><h2 id="docker-compose">Docker Compose</h2>
 <p><a href="https://docs.docker.com/compose/">Docker Compose</a> 可以讓我們很好的管理 docker 容器，只需要透過一個 YAML 檔就可以修改設定。</p>
 <p>在專案的根目錄下建立（跟 client 和 server 兩個資料夾同層）<code>docker-compose.yml</code></p>
@@ -576,6 +576,16 @@
       </header>
       
       <article class="mini-post">
+          <a href="/blog/202110-make-discord-chatbot-01-set-up/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/10/make-discord-chatbot-01-set-up/chat-bot-terminal.png');">
+    <img src="https://tech.ray247k.com/img/blog/2021/10/make-discord-chatbot-01-set-up/chat-bot-terminal.png" alt="chat bot terminal">
+  </a>
+        <header>
+          <h2><a href="/blog/202110-make-discord-chatbot-01-set-up/">[Discord 機器人] 01.建立基本機器人</a></h2>
+          <time class="published" datetime="2021-10-20 00:00:00 &#43;0000 UTC">2021/10/20</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
           <a href="/blog/202110-leetcode-no404-sum-of-left-leaves/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/10/leetcode-no404-sum-of-left-leaves/no404-result.png');">
     <img src="https://tech.ray247k.com/img/blog/2021/10/leetcode-no404-sum-of-left-leaves/no404-result.png" alt="LeetCode #290 run result">
   </a>
@@ -615,16 +625,6 @@
         </header>
       </article>
       
-      <article class="mini-post">
-          <a href="/blog/202109-leetcode-no155-min-stack/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/09/leetcode-no155-min-stack/no155-result.png');">
-    <img src="https://tech.ray247k.com/img/blog/2021/09/leetcode-no155-min-stack/no155-result.png" alt="LeetCode #155 run result">
-  </a>
-        <header>
-          <h2><a href="/blog/202109-leetcode-no155-min-stack/">[LeetCode] #155 Min Stack (Easy)</a></h2>
-          <time class="published" datetime="2021-09-15 00:00:00 &#43;0000 UTC">2021/09/15</time>
-        </header>
-      </article>
-      
       
         <footer>
           <a href="/blog/" class="button">查看更多</a>
@@ -656,7 +656,7 @@
           </li>
           
           <li>
-              <a href="/categories/python3/">python3<span class="count">7</span></a>
+              <a href="/categories/python3/">python3<span class="count">8</span></a>
           </li>
           
           <li>
@@ -726,7 +726,7 @@
         </li>
         
         <li>
-          <a href="/tags/python3/">python3 (7)</a>
+          <a href="/tags/python3/">python3 (8)</a>
         </li>
         
         <li>
@@ -826,7 +826,15 @@
         </li>
         
         <li>
+          <a href="/tags/chatbot/">chatbot (1)</a>
+        </li>
+        
+        <li>
           <a href="/tags/cors/">cors (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/discord/">discord (1)</a>
         </li>
         
         <li>
@@ -924,7 +932,7 @@
         © 2021 薛丁格的工程師
     </p>
     <p class="copyright" style="font-size: 0.1EM;">
-        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.87.0' target='_blank' rel='noopener'>Hugo</a>
+        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.88.1' target='_blank' rel='noopener'>Hugo</a>
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>

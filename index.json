@@ -1,4 +1,10 @@
 [{
+    "title": "[Discord 機器人] 01.建立基本機器人",
+    "date": "",
+    "description": "使用 Python3 建立基本的 Discord 聊天機器人",
+    "body": "閒閒沒事，來寫點沒寫過的東西\n最近都在 Discord 活動，就決定寫 Discord ChatBot 啦\n新增 Discord Application 到 Discord Developers Applications 登入 Discord 帳號\n按下New Application命名之後按下Create，名字之後可以改\n左邊Bot進入後點選Add Bot\n點選左邊OAuth2頁籤\n SCOPES中點選bot Bot Permissions 選擇 Administrator  下面就是機器人的邀請連結，可以將機器人邀請到自己的群\n安裝 pip 及 Discord .py 使用指令安裝Discord.py套件\npython3 -m pip install -U discord.py 機器人程式碼 剛剛已經建立機器人，並且把機器人加到自己的群組裡\n下一步就是要來啟動機器人，讓他可以開始做事\n作為範例，我們先寫一個最簡單的機器人試試看運行結果\nroll_dice.py\n# 導入 Discord.py 套件 import discord # 取得 Discord client 物件才能操作 client = discord.Client() # 調用 event 函式庫 @client.event # 當機器人完成啟動時在終端機顯示提示訊息 async def on_ready(): print(f\u0026#39;目前登入身份：{client.user}\u0026#39;) # 調用 event 函式庫 @client.event # 當有訊息時 async def on_message(message): # 排除機器人本身發出的訊息，避免機器人自問自答的無限迴圈 if message.author == client.user: return # 如果我們說了「誰是機器人」，機器人就會回「誰叫我？」 if message.content == \u0026#39;誰是機器人\u0026#39;: await message.channel.send(\u0026#39;誰叫我？\u0026#39;) client.run(\u0026#39;MY APP TOKEN\u0026#39;) 程式說明都寫在範例中了，唯一要解釋的就是 token 要去哪裡拿？\n廢話不多說，上圖！\nTOKEN 在上面 Discord Developer 的BOT頁面中取得\n他不會直接顯示在畫面上，就按Copy就好了，如果堅持要看的話就按下Click to Reveal Token就會顯示\n如果覺得 TOKEN 外洩可以使用 Regenerate 重新產生\n啟動機器人 開啟你的終端機，執行剛剛的 python 檔案\npython roll_dice.py 接著測試指令是不是可以觸發機器人\n看來成功被呼叫了呢！\n",
+    "ref": "/blog/202110-make-discord-chatbot-01-set-up/"
+  },{
     "title": "[LeetCode] #404 Sum of Left Leaves (Easy)",
     "date": "",
     "description": "LeetCode 第 404 題 Sum of Left Leaves，難度 Easy",

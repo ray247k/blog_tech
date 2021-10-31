@@ -18,7 +18,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.87.0" /><meta property="og:site_name" content="薛丁格的工程師">
+<meta name="generator" content="Hugo 0.88.1" /><meta property="og:site_name" content="薛丁格的工程師">
   <meta property="og:title" content="反向代理 - 在 Docker 環境建置">
   <meta property="og:description" content="介紹基本反向代理以及在 Docker 環境中建置">
   <meta property="description" content="介紹基本反向代理以及在 Docker 環境中建置">
@@ -73,7 +73,7 @@
     "url": "https:\/\/tech.ray247k.com",
     "description": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - devops,laravel,leetcode,node.js,php,python3,架站相關,",
     "keywords": [
-        "apache-bench,aws,axios,cdn,cicd,cloudflare,component,composer,containerization,cors,devops,dns,docker,docker-compose,domain-name,drone,element-ui,express,gcp,getter,github-page,google-domains,grumphp,laravel,leetcode,leetcode-easy,leetcode-medium,linux,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,portainer,postgresql,proxy,python3,restful,server,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,架站相關,買網址,"
+        "apache-bench,aws,axios,cdn,chatbot,cicd,cloudflare,component,composer,containerization,cors,devops,discord,dns,docker,docker-compose,domain-name,drone,element-ui,express,gcp,getter,github-page,google-domains,grumphp,laravel,leetcode,leetcode-easy,leetcode-medium,linux,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,portainer,postgresql,proxy,python3,restful,server,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,架站相關,買網址,"
     ]
 }
 </script>
@@ -356,7 +356,7 @@
 </ul>
 <h3 id="設定-nginx-config">設定 nginx config</h3>
 <h4 id="第一台主機的-nginx-設定">第一台主機的 nginx 設定</h4>
-<pre><code class="language-nginx=" data-lang="nginx="># 把所有前往 domain/new_path 的請求反向代理到另一台主機上
+<pre tabindex="0"><code class="language-nginx=" data-lang="nginx="># 把所有前往 domain/new_path 的請求反向代理到另一台主機上
 location /new_path {
     # 要代理到哪個網址
     proxy_pass http://laravel55.test.com;
@@ -388,7 +388,7 @@ location /new_path {
     proxy_headers_hash_max_size 512;
 }
 </code></pre><h4 id="第二台主機的-nginx-設定">第二台主機的 nginx 設定</h4>
-<pre><code class="language-nginx=" data-lang="nginx=">server {
+<pre tabindex="0"><code class="language-nginx=" data-lang="nginx=">server {
     listen 80;
     server_name ray200;
     root /home/toc/www/laravel55/public;
@@ -436,10 +436,10 @@ location /new_path {
 故代理的目標容器必須在同一網路內，才能直接使用容器名稱做代理目標</p>
 </blockquote>
 <p>因為不想讓 network 前面帶上 prefix，還有避免依賴，所以手動建立 network</p>
-<pre><code class="language-bash=" data-lang="bash=">docker network create nginx-network
+<pre tabindex="0"><code class="language-bash=" data-lang="bash=">docker network create nginx-network
 </code></pre><p>這個情境屬於來自外部的 nginx-proxy，要多給一個 <code>external network</code>
 有需要連接到這個 network 裡面的服務都要設定</p>
-<pre><code class="language-yaml=" data-lang="yaml=">networks:
+<pre tabindex="0"><code class="language-yaml=" data-lang="yaml=">networks:
   default:
     external:
       name: nginx-network
@@ -449,7 +449,7 @@ location /new_path {
 只是為了要有一個只要 docker-compose up 就可以運行的服務，也可以換成自己比較熟的映像檔</p>
 <p>為了測試從 80 port poxy 到其他 port，所以這邊開在 8080 port<br>
 服務啟動之後可以先去 <code>localhost:8080</code> 查看 portainer 服務有沒有啟動</p>
-<pre><code class="language-yaml=" data-lang="yaml=">version: '3'
+<pre tabindex="0"><code class="language-yaml=" data-lang="yaml=">version: '3'
 
 networks:
   default:
@@ -472,7 +472,7 @@ volumes:
   portainer_data:
 </code></pre><h3 id="3-nginx-的-proxy-設定">3. Nginx 的 proxy 設定</h3>
 <h4 id="31-設定-docker-composeyml">3.1 設定 <code>docker-compose.yml</code></h4>
-<pre><code class="language-yaml=" data-lang="yaml=">version: '3'
+<pre tabindex="0"><code class="language-yaml=" data-lang="yaml=">version: '3'
 
 networks:
   default:
@@ -500,7 +500,7 @@ services:
 而 <code>port</code> 對應到了容器的<font color="red">內部</font> port！<br>
 這邊特別把上面的容器內外使用的 port 區隔開來顯示差別，我們代理的目標是內部的 9000 port<br>
 而不是對外的 <code>8080 port</code></p>
-<pre><code class="language-nginx=" data-lang="nginx=">server {
+<pre tabindex="0"><code class="language-nginx=" data-lang="nginx=">server {
     listen 80;
     listen [::]:80;
     server_name test.example;
@@ -531,7 +531,7 @@ server {
 如果轉址過去的網址有自己的 https 證書驗證(例如另一個 nginx 環境)，則必須改成 <code>https://</code> 開頭</p>
 <p>參考資料：<a href="https://www.digitalocean.com/community/questions/what-value-should-i-use-for-nginx-proxy_pass-running-in-docker">What value should I use for Nginx proxy_pass running in Docker?</a></p>
 <h4 id="33-編輯-etchosts">3.3 編輯 <code>etc/hosts</code></h4>
-<pre><code>127.0.0.1       test.example
+<pre tabindex="0"><code>127.0.0.1       test.example
 </code></pre><p>接著啟動 nginx 服務，用瀏覽器開啟剛剛設定的 <code>test.example</code><br>
 正確設定的話，監聽 80 port 的 nginx 服務應該會把所有目標是 <code>test.example</code> 的請求利用 proxy_pass 送到 portainer 容器的指定 port<br>
 所以畫面上會顯示 portainer 服務的畫面</p>
@@ -544,7 +544,7 @@ server {
 <font color="red">
 如果沒有定義 default_server，則第一個 server 會被預設成 default server
 </font></p>
-<pre><code class="language-nginx=" data-lang="nginx=">server {
+<pre tabindex="0"><code class="language-nginx=" data-lang="nginx=">server {
     listen 8080 ssl default_server;
     listen [::]:8080 ssl default_server;
 
@@ -654,6 +654,16 @@ server {
       </header>
       
       <article class="mini-post">
+          <a href="/blog/202110-make-discord-chatbot-01-set-up/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/10/make-discord-chatbot-01-set-up/chat-bot-terminal.png');">
+    <img src="https://tech.ray247k.com/img/blog/2021/10/make-discord-chatbot-01-set-up/chat-bot-terminal.png" alt="chat bot terminal">
+  </a>
+        <header>
+          <h2><a href="/blog/202110-make-discord-chatbot-01-set-up/">[Discord 機器人] 01.建立基本機器人</a></h2>
+          <time class="published" datetime="2021-10-20 00:00:00 &#43;0000 UTC">2021/10/20</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
           <a href="/blog/202110-leetcode-no404-sum-of-left-leaves/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/10/leetcode-no404-sum-of-left-leaves/no404-result.png');">
     <img src="https://tech.ray247k.com/img/blog/2021/10/leetcode-no404-sum-of-left-leaves/no404-result.png" alt="LeetCode #290 run result">
   </a>
@@ -693,16 +703,6 @@ server {
         </header>
       </article>
       
-      <article class="mini-post">
-          <a href="/blog/202109-leetcode-no155-min-stack/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/09/leetcode-no155-min-stack/no155-result.png');">
-    <img src="https://tech.ray247k.com/img/blog/2021/09/leetcode-no155-min-stack/no155-result.png" alt="LeetCode #155 run result">
-  </a>
-        <header>
-          <h2><a href="/blog/202109-leetcode-no155-min-stack/">[LeetCode] #155 Min Stack (Easy)</a></h2>
-          <time class="published" datetime="2021-09-15 00:00:00 &#43;0000 UTC">2021/09/15</time>
-        </header>
-      </article>
-      
       
         <footer>
           <a href="/blog/" class="button">查看更多</a>
@@ -734,7 +734,7 @@ server {
           </li>
           
           <li>
-              <a href="/categories/python3/">python3<span class="count">7</span></a>
+              <a href="/categories/python3/">python3<span class="count">8</span></a>
           </li>
           
           <li>
@@ -804,7 +804,7 @@ server {
         </li>
         
         <li>
-          <a href="/tags/python3/">python3 (7)</a>
+          <a href="/tags/python3/">python3 (8)</a>
         </li>
         
         <li>
@@ -904,7 +904,15 @@ server {
         </li>
         
         <li>
+          <a href="/tags/chatbot/">chatbot (1)</a>
+        </li>
+        
+        <li>
           <a href="/tags/cors/">cors (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/discord/">discord (1)</a>
         </li>
         
         <li>
@@ -1002,7 +1010,7 @@ server {
         © 2021 薛丁格的工程師
     </p>
     <p class="copyright" style="font-size: 0.1EM;">
-        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.87.0' target='_blank' rel='noopener'>Hugo</a>
+        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.88.1' target='_blank' rel='noopener'>Hugo</a>
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>

@@ -18,7 +18,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.87.0" /><meta property="og:site_name" content="薛丁格的工程師">
+<meta name="generator" content="Hugo 0.88.1" /><meta property="og:site_name" content="薛丁格的工程師">
   <meta property="og:title" content="Docker 常用指令">
   <meta property="og:description" content="介紹基本 Docker 操作常用指令">
   <meta property="description" content="介紹基本 Docker 操作常用指令">
@@ -73,7 +73,7 @@
     "url": "https:\/\/tech.ray247k.com",
     "description": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - devops,laravel,leetcode,node.js,php,python3,架站相關,",
     "keywords": [
-        "apache-bench,aws,axios,cdn,cicd,cloudflare,component,composer,containerization,cors,devops,dns,docker,docker-compose,domain-name,drone,element-ui,express,gcp,getter,github-page,google-domains,grumphp,laravel,leetcode,leetcode-easy,leetcode-medium,linux,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,portainer,postgresql,proxy,python3,restful,server,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,架站相關,買網址,"
+        "apache-bench,aws,axios,cdn,chatbot,cicd,cloudflare,component,composer,containerization,cors,devops,discord,dns,docker,docker-compose,domain-name,drone,element-ui,express,gcp,getter,github-page,google-domains,grumphp,laravel,leetcode,leetcode-easy,leetcode-medium,linux,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,portainer,postgresql,proxy,python3,restful,server,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,架站相關,買網址,"
     ]
 }
 </script>
@@ -344,12 +344,12 @@
       <p>一些 Docker 上常用的指令和相關參數使用方法<br>
 實際使用上一定不只這些指令</p>
 <h1 id="服務基本指令">服務基本指令</h1>
-<pre><code class="language-bash=" data-lang="bash=">docker stats             顯示容器的資源使用統計
+<pre tabindex="0"><code class="language-bash=" data-lang="bash=">docker stats             顯示容器的資源使用統計
 docker start             啟動一個或多個停止的容器  
 docker stop              停止一個或多個正在運行的容器
 docker restart           重啟一個或多個容器
 </code></pre><h1 id="log-常用指令">Log 常用指令</h1>
-<pre><code class="language-bash=" data-lang="bash=">$ docker logs [OPTIONS] CONTAINER
+<pre tabindex="0"><code class="language-bash=" data-lang="bash=">$ docker logs [OPTIONS] CONTAINER
   Options:
         --details        顯示詳細資料
     -f, --follow         追蹤即時 log
@@ -359,20 +359,20 @@ docker restart           重啟一個或多個容器
         --until string   顯示自某個 timestamp「之前」的 log，或相對時間：如42m（即42分鐘）
 </code></pre><h2 id="使用範例">使用範例</h2>
 <p>查看某個時間之後的 log</p>
-<pre><code class="language-bash=" data-lang="bash=">$ docker logs -t --since=&quot;2018-02-08T13:23:37&quot; {CONTAINER_ID}
+<pre tabindex="0"><code class="language-bash=" data-lang="bash=">$ docker logs -t --since=&quot;2018-02-08T13:23:37&quot; {CONTAINER_ID}
 </code></pre><p>顯示某個時間後的 log，且只要最後 100 行</p>
-<pre><code class="language-bash=" data-lang="bash=">$ docker logs -f -t --since=&quot;2018-02-08&quot; --tail=100 {CONTAINER_ID}
+<pre tabindex="0"><code class="language-bash=" data-lang="bash=">$ docker logs -f -t --since=&quot;2018-02-08&quot; --tail=100 {CONTAINER_ID}
 </code></pre><p>查看最近 30 分鐘的 log</p>
-<pre><code class="language-bash=" data-lang="bash=">$ docker logs --since 30m {CONTAINER_ID}
+<pre tabindex="0"><code class="language-bash=" data-lang="bash=">$ docker logs --since 30m {CONTAINER_ID}
 </code></pre><p>查看某個時間區間內的 log</p>
-<pre><code class="language-bash=" data-lang="bash=">$ docker logs -t --since=&quot;2018-02-08T13:23:37&quot; --until &quot;2018-02-09T12:23:37&quot; CONTAINER_ID
+<pre tabindex="0"><code class="language-bash=" data-lang="bash=">$ docker logs -t --since=&quot;2018-02-08T13:23:37&quot; --until &quot;2018-02-09T12:23:37&quot; CONTAINER_ID
 </code></pre><h1 id="執行容器">執行容器</h1>
 <p>從本地環境的 image 建立 container<br>
 如果不存在從 repository 訪問，private repo 必須要有「登入」行為<br>
 image的格式可以為[IMAGE NAME]:[TAG]</p>
-<pre><code class="language-bash=" data-lang="bash=">docker run
+<pre tabindex="0"><code class="language-bash=" data-lang="bash=">docker run
 </code></pre><h2 id="範例">範例：</h2>
-<pre><code class="language-bash=" data-lang="bash="># 執行nginx
+<pre tabindex="0"><code class="language-bash=" data-lang="bash="># 執行nginx
 docker run -idt nginx
 
 # 執行nginx並且暴露port為8080
@@ -392,38 +392,38 @@ docker run --rm -idt nginx
 <span style="color:#e6db74">`</span>--rm<span style="color:#e6db74">`</span> 關閉後 container 自動消滅，若不刪可能會不斷累積，即使已經死掉了
 </code></pre></div><h1 id="container-相關指令">container 相關指令</h1>
 <p>列出所有活著的容器</p>
-<pre><code class="language-bash=" data-lang="bash=">docker ps
+<pre tabindex="0"><code class="language-bash=" data-lang="bash=">docker ps
 </code></pre><p>列出所有活的死的容器</p>
-<pre><code class="language-bash=" data-lang="bash=">docker ps -a
+<pre tabindex="0"><code class="language-bash=" data-lang="bash=">docker ps -a
 </code></pre><p>進到已存在、執行中的 container 執行指令</p>
-<pre><code class="language-bash=" data-lang="bash=">docker exec -ti nginx bash
+<pre tabindex="0"><code class="language-bash=" data-lang="bash=">docker exec -ti nginx bash
 </code></pre><p>取得 container 或是 image 的 Metadata</p>
-<pre><code class="language-bash=" data-lang="bash=">docker inspect {container name}
+<pre tabindex="0"><code class="language-bash=" data-lang="bash=">docker inspect {container name}
 </code></pre><p>刪除 docker container</p>
-<pre><code class="language-bash=" data-lang="bash=">docker rm [CONTAINER]
+<pre tabindex="0"><code class="language-bash=" data-lang="bash=">docker rm [CONTAINER]
 </code></pre><h1 id="image-相關指令">image 相關指令</h1>
 <p>列出所有 image</p>
-<pre><code class="language-bash=" data-lang="bash=">docker images
+<pre tabindex="0"><code class="language-bash=" data-lang="bash=">docker images
 </code></pre><p>刪除指定 image</p>
-<pre><code class="language-bash=" data-lang="bash=">docker rmi [IMAGE]
+<pre tabindex="0"><code class="language-bash=" data-lang="bash=">docker rmi [IMAGE]
 </code></pre><p>如果對外開放要給別人用怎麼辦</p>
-<pre><code class="language-bash=" data-lang="bash=">docker run -i -t -d -p 80:80 nginx
+<pre tabindex="0"><code class="language-bash=" data-lang="bash=">docker run -i -t -d -p 80:80 nginx
 </code></pre><p>如果服務遇到意外中斷</p>
-<pre><code class="language-bash=" data-lang="bash=">docker run -i -t -d -p 80:80 --restart always nginx
+<pre tabindex="0"><code class="language-bash=" data-lang="bash=">docker run -i -t -d -p 80:80 --restart always nginx
 </code></pre><p>如果要連node.js</p>
-<pre><code class="language-bash=" data-lang="bash=">docker run -i -d -t -p 80:80 --link node nginx
+<pre tabindex="0"><code class="language-bash=" data-lang="bash=">docker run -i -d -t -p 80:80 --link node nginx
 </code></pre><h1 id="volume-相關指令">Volume 相關指令</h1>
 <p>列出所有 volume</p>
-<pre><code class="language-bash=" data-lang="bash=">docker volume ls
+<pre tabindex="0"><code class="language-bash=" data-lang="bash=">docker volume ls
 </code></pre><p>清除指定 volume</p>
-<pre><code class="language-bash=" data-lang="bash=">docker volume rm [OPTIONS] VOLUME [VOLUME...]
+<pre tabindex="0"><code class="language-bash=" data-lang="bash=">docker volume rm [OPTIONS] VOLUME [VOLUME...]
 </code></pre><p>清除「全部」volume</p>
-<pre><code class="language-bash=" data-lang="bash=">docker volume prune
+<pre tabindex="0"><code class="language-bash=" data-lang="bash=">docker volume prune
 </code></pre><h1 id="其他指令">其他指令</h1>
 <h3 id="docker-build">docker build</h3>
 <p>從 Dockerfile 建立 docker image<br>
 <code>-f</code> 手動指定 Dockerfile 名稱</p>
-<pre><code class="language-bash=" data-lang="bash="># 在目前的資料夾建立image，來源是Dockerfile
+<pre tabindex="0"><code class="language-bash=" data-lang="bash="># 在目前的資料夾建立image，來源是Dockerfile
 docker build . -t image-name
 
 # 在目前的資料夾建立image，來源是Dockerfile-alt
@@ -491,6 +491,16 @@ docker build . -t image-name -f Dockerfile-alt
       </header>
       
       <article class="mini-post">
+          <a href="/blog/202110-make-discord-chatbot-01-set-up/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/10/make-discord-chatbot-01-set-up/chat-bot-terminal.png');">
+    <img src="https://tech.ray247k.com/img/blog/2021/10/make-discord-chatbot-01-set-up/chat-bot-terminal.png" alt="chat bot terminal">
+  </a>
+        <header>
+          <h2><a href="/blog/202110-make-discord-chatbot-01-set-up/">[Discord 機器人] 01.建立基本機器人</a></h2>
+          <time class="published" datetime="2021-10-20 00:00:00 &#43;0000 UTC">2021/10/20</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
           <a href="/blog/202110-leetcode-no404-sum-of-left-leaves/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/10/leetcode-no404-sum-of-left-leaves/no404-result.png');">
     <img src="https://tech.ray247k.com/img/blog/2021/10/leetcode-no404-sum-of-left-leaves/no404-result.png" alt="LeetCode #290 run result">
   </a>
@@ -530,16 +540,6 @@ docker build . -t image-name -f Dockerfile-alt
         </header>
       </article>
       
-      <article class="mini-post">
-          <a href="/blog/202109-leetcode-no155-min-stack/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/09/leetcode-no155-min-stack/no155-result.png');">
-    <img src="https://tech.ray247k.com/img/blog/2021/09/leetcode-no155-min-stack/no155-result.png" alt="LeetCode #155 run result">
-  </a>
-        <header>
-          <h2><a href="/blog/202109-leetcode-no155-min-stack/">[LeetCode] #155 Min Stack (Easy)</a></h2>
-          <time class="published" datetime="2021-09-15 00:00:00 &#43;0000 UTC">2021/09/15</time>
-        </header>
-      </article>
-      
       
         <footer>
           <a href="/blog/" class="button">查看更多</a>
@@ -571,7 +571,7 @@ docker build . -t image-name -f Dockerfile-alt
           </li>
           
           <li>
-              <a href="/categories/python3/">python3<span class="count">7</span></a>
+              <a href="/categories/python3/">python3<span class="count">8</span></a>
           </li>
           
           <li>
@@ -641,7 +641,7 @@ docker build . -t image-name -f Dockerfile-alt
         </li>
         
         <li>
-          <a href="/tags/python3/">python3 (7)</a>
+          <a href="/tags/python3/">python3 (8)</a>
         </li>
         
         <li>
@@ -741,7 +741,15 @@ docker build . -t image-name -f Dockerfile-alt
         </li>
         
         <li>
+          <a href="/tags/chatbot/">chatbot (1)</a>
+        </li>
+        
+        <li>
           <a href="/tags/cors/">cors (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/discord/">discord (1)</a>
         </li>
         
         <li>
@@ -839,7 +847,7 @@ docker build . -t image-name -f Dockerfile-alt
         © 2021 薛丁格的工程師
     </p>
     <p class="copyright" style="font-size: 0.1EM;">
-        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.87.0' target='_blank' rel='noopener'>Hugo</a>
+        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.88.1' target='_blank' rel='noopener'>Hugo</a>
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>

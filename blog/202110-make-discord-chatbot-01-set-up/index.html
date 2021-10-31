@@ -1,0 +1,846 @@
+<!doctype html>
+<html lang="zh-tw">
+  <head>
+  <meta charset="utf-8">
+<title>[Discord 機器人] 01.建立基本機器人 - 薛丁格的工程師</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
+  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
+  
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=1" color="#ffffff">
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=1">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=1">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+<meta name="generator" content="Hugo 0.88.1" /><meta property="og:site_name" content="薛丁格的工程師">
+  <meta property="og:title" content="[Discord 機器人] 01.建立基本機器人">
+  <meta property="og:description" content="使用 Python3 建立基本的 Discord 聊天機器人">
+  <meta property="description" content="使用 Python3 建立基本的 Discord 聊天機器人">
+  <meta property="og:url" content="https://tech.ray247k.com/blog/202110-make-discord-chatbot-01-set-up/">
+  <meta property="og:type" content="article">
+  
+    
+      <meta property="og:image" content="https://tech.ray247k.com/img/blog/2021/10/make-discord-chatbot-01-set-up/chat-bot-terminal.png">
+      <meta property="og:image:alt" content="chat bot terminal">
+    
+  
+  <link rel="stylesheet" href="/css/bundle.min.6ad9eb85bff384c75937a02036b01425a2ca63f19a96535b8ba5b181db62a4b3.css" integrity="sha256-atnrhb/zhMdZN6AgNrAUJaLKY/GallNbi6WxgdtipLM="><link rel="stylesheet" href="/css/add-on.css">
+
+  
+
+
+    
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-LTGVYYWC2J');
+        </script>
+    
+
+
+  <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "image": {
+        "@type": "ImageObject",
+        "image": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+        "height": 648,
+        "width": 1080
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "薛丁格的工程師",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg"
+        }
+    },
+    "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+    "headline": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - Schrödinger\u0027s Programmer",
+    "name": "薛丁格的工程師",
+    "url": "https:\/\/tech.ray247k.com",
+    "description": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - devops,laravel,leetcode,node.js,php,python3,架站相關,",
+    "keywords": [
+        "apache-bench,aws,axios,cdn,chatbot,cicd,cloudflare,component,composer,containerization,cors,devops,discord,dns,docker,docker-compose,domain-name,drone,element-ui,express,gcp,getter,github-page,google-domains,grumphp,laravel,leetcode,leetcode-easy,leetcode-medium,linux,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,portainer,postgresql,proxy,python3,restful,server,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,架站相關,買網址,"
+    ]
+}
+</script>
+
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "legalName": "薛丁格的工程師",
+    "url": "https:\/\/tech.ray247k.com",
+    "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "",
+        "availableLanguage": [
+            "Mandarin",
+            "English"
+        ]
+    },
+    "sameAs": [
+        "https://ray247k.blogspot.com/"
+    ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "[Discord 機器人] 01.建立基本機器人",
+    "description": "使用 Python3 建立基本的 Discord 聊天機器人",
+    "keywords": [
+        "Python3" , "ChatBot" , "Discord" 
+    ],
+    "dateCreated": "2021-10-20T00:00:00.00Z",
+    "datePublished": "2021-10-20T00:00:00.00Z",
+    "dateModified": "2021-10-20T00:00:00.00Z",
+    "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "contentUrl": "[]"
+    },
+    "breadcrumb": {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com",
+                    "name": "薛丁格的工程師",
+                    "url": "https:\/\/tech.ray247k.com"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com/blog",
+                    "name": "Blog",
+                    "url": "https:\/\/tech.ray247k.com/blog"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\/blog\/202110-make-discord-chatbot-01-set-up\/",
+                    "name": "[Discord 機器人] 01.建立基本機器人",
+                    "url": "https:\/\/tech.ray247k.com\/blog\/202110-make-discord-chatbot-01-set-up\/"
+                }
+            }
+        ],
+        "itemListOrder": "Ascending",
+        "numberOfItems": 3
+    }
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "articleSection": "blog",
+    "name": "[Discord 機器人] 01.建立基本機器人",
+    "headline": "\u003cp\u003e閒閒沒事，來寫點沒寫過的東西\u003cbr\u003e\n最近都在 Discord 活動，就決定寫 Discord ChatBot 啦\u003c\/p\u003e",
+    "description": "使用 Python3 建立基本的 Discord 聊天機器人",
+    "inLanguage": "zh-TW",
+    "isFamilyFriendly": "true",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com\/blog\/202110-make-discord-chatbot-01-set-up\/"
+    },
+    "author" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "creator" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "accountablePerson" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "copyrightHolder" : "薛丁格的工程師",
+    "copyrightYear" : "2021",
+    "dateCreated": "2021-10-20T00:00:00.00Z",
+    "datePublished": "2021-10-20T00:00:00.00Z",
+    "dateModified": "2021-10-20T00:00:00.00Z",
+    "publisher":{
+        "@type":"Organization",
+        "name": "薛丁格的工程師",
+        "url": "https://tech.ray247k.com",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+            "width":"32",
+            "height":"32"
+        }
+    },
+    "image": [""],
+    "url" : "https:\/\/tech.ray247k.com\/blog\/202110-make-discord-chatbot-01-set-up\/",
+    "wordCount" : "124",
+    "genre" : [ "Python3" , "ChatBot" , "Discord" ],
+    "keywords" : [ "Python3" , "ChatBot" , "Discord" ]
+}
+</script>
+
+
+
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/" class="nav">
+        
+          Blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/" class="nav link"><i class='fa fa-home'></i> home</a>
+        
+      
+        
+          
+          <a href="/about" class="nav link"><i class='far fa-id-card'></i> about</a>
+        
+      
+        
+          
+          <a href="/categories" class="nav link"><i class='fas fa-sitemap'></i> category</a>
+        
+      
+      
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    
+    
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/"><img src="https://tech.ray247k.com/img/main/logo.jpg" class="circle" width="100" alt="一隻箱子裡的貓，看著電腦螢幕" /></a>
+  <header>
+    <h1>Schrödinger's Programmer</h1>
+  </header>
+  <main>
+    <p>奔跑吧工程師，趁年輕跑得越遠越好</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/ray247k" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+<li><a href="//gitlab.com/ray247k" target="_blank" rel="noopener" title="GitLab" class="fab fa-gitlab"></a></li>
+
+
+
+
+
+
+
+
+
+
+<li><a href="//www.linkedin.com/in/j-ray-cheng" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="/blog/202110-make-discord-chatbot-01-set-up/">[Discord 機器人] 01.建立基本機器人</a></h2>
+    
+    
+      <p>使用 Python3 建立基本的 Discord 聊天機器人</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2021-10-20 00:00:00 &#43;0000 UTC">2021/10/20</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+    <div id="socnet-share">
+      
+
+
+
+
+
+    </div>
+    <div class="content">
+      <a href="/blog/202110-make-discord-chatbot-01-set-up/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/10/make-discord-chatbot-01-set-up/chat-bot-terminal.png');">
+    <img src="https://tech.ray247k.com/img/blog/2021/10/make-discord-chatbot-01-set-up/chat-bot-terminal.png" alt="chat bot terminal">
+  </a>
+      <p>閒閒沒事，來寫點沒寫過的東西<br>
+最近都在 Discord 活動，就決定寫 Discord ChatBot 啦</p>
+<h1 id="新增-discord-application">新增 Discord Application</h1>
+<p>到 <a href="https://discord.com/developers/applications">Discord Developers Applications</a> 登入 Discord 帳號</p>
+<p>按下<code>New Application</code>命名之後按下<code>Create</code>，名字之後可以改</p>
+<p><img src="/img/blog/2021/10/make-discord-chatbot-01-set-up/create-application.png" alt="create application"></p>
+<p>左邊<code>Bot</code>進入後點選<code>Add Bot</code></p>
+<p><img src="/img/blog/2021/10/make-discord-chatbot-01-set-up/add-bot.png" alt="add bot"></p>
+<p>點選左邊<code>OAuth2</code>頁籤</p>
+<ul>
+<li><code>SCOPES</code>中點選<code>bot</code></li>
+<li><code>Bot Permissions</code> 選擇 <code>Administrator</code></li>
+</ul>
+<p>下面就是機器人的邀請連結，可以將機器人邀請到自己的群</p>
+<p><img src="/img/blog/2021/10/make-discord-chatbot-01-set-up/bot-invite-link.png" alt="bot invite link"></p>
+<p><img src="/img/blog/2021/10/make-discord-chatbot-01-set-up/bot-coming.png" alt="bot coming"></p>
+<h1 id="安裝-pip-及-discord-py">安裝 pip 及 Discord .py</h1>
+<p>使用指令安裝<code>Discord.py</code>套件</p>
+<pre tabindex="0"><code class="language-bash=" data-lang="bash=">python3 -m pip install -U discord.py
+</code></pre><p><img src="/img/blog/2021/10/make-discord-chatbot-01-set-up/pip-install-package.png" alt="pip install package"></p>
+<h1 id="機器人程式碼">機器人程式碼</h1>
+<p>剛剛已經建立機器人，並且把機器人加到自己的群組裡<br>
+下一步就是要來啟動機器人，讓他可以開始做事</p>
+<p>作為範例，我們先寫一個最簡單的機器人試試看運行結果</p>
+<p><strong>roll_dice.py</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 導入 Discord.py 套件</span>
+<span style="color:#f92672">import</span> discord
+
+<span style="color:#75715e"># 取得 Discord client 物件才能操作</span>
+client <span style="color:#f92672">=</span> discord<span style="color:#f92672">.</span>Client()
+
+<span style="color:#75715e"># 調用 event 函式庫</span>
+<span style="color:#a6e22e">@client</span><span style="color:#f92672">.</span>event
+
+<span style="color:#75715e"># 當機器人完成啟動時在終端機顯示提示訊息</span>
+<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">on_ready</span>():
+    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;目前登入身份：</span><span style="color:#e6db74">{</span>client<span style="color:#f92672">.</span>user<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
+
+<span style="color:#75715e"># 調用 event 函式庫</span>
+<span style="color:#a6e22e">@client</span><span style="color:#f92672">.</span>event
+<span style="color:#75715e"># 當有訊息時</span>
+<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">on_message</span>(message):
+    
+    <span style="color:#75715e"># 排除機器人本身發出的訊息，避免機器人自問自答的無限迴圈</span>
+    <span style="color:#66d9ef">if</span> message<span style="color:#f92672">.</span>author <span style="color:#f92672">==</span> client<span style="color:#f92672">.</span>user:
+        <span style="color:#66d9ef">return</span>
+    
+    <span style="color:#75715e"># 如果我們說了「誰是機器人」，機器人就會回「誰叫我？」</span>
+    <span style="color:#66d9ef">if</span> message<span style="color:#f92672">.</span>content <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;誰是機器人&#39;</span>:
+        <span style="color:#66d9ef">await</span> message<span style="color:#f92672">.</span>channel<span style="color:#f92672">.</span>send(<span style="color:#e6db74">&#39;誰叫我？&#39;</span>)
+
+client<span style="color:#f92672">.</span>run(<span style="color:#e6db74">&#39;MY APP TOKEN&#39;</span>)
+</code></pre></div><p>程式說明都寫在範例中了，唯一要解釋的就是 token 要去哪裡拿？<br>
+廢話不多說，上圖！</p>
+<p><img src="/img/blog/2021/10/make-discord-chatbot-01-set-up/bot-token.png" alt="bot token"></p>
+<p>TOKEN 在上面 Discord Developer 的<code>BOT</code>頁面中取得<br>
+他不會直接顯示在畫面上，就按<code>Copy</code>就好了，如果堅持要看的話就按下<code>Click to Reveal Token</code>就會顯示<br>
+如果覺得 TOKEN 外洩可以使用 Regenerate 重新產生</p>
+<h1 id="啟動機器人">啟動機器人</h1>
+<p>開啟你的終端機，執行剛剛的 python 檔案</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">python roll_dice.py
+</code></pre></div><p><img src="/img/blog/2021/10/make-discord-chatbot-01-set-up/chat-bot-terminal.png" alt="chat-bot-terminal"></p>
+<p>接著測試指令是不是可以觸發機器人</p>
+<p><img src="/img/blog/2021/10/make-discord-chatbot-01-set-up/chat-bot-test.png" alt="chat-bot-test"></p>
+<p>看來成功被呼叫了呢！</p>
+
+      
+      
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/ray247k/button?referrer=https%3a%2f%2ftech.ray247k.com%2fblog%2f202110-make-discord-chatbot-01-set-up%2f" width="100%" frameborder=0></iframe>
+
+    </div>
+    <footer>
+      <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/python3/">Python3</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/python3/">Python3</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/chatbot/">ChatBot</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/discord/">Discord</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+    </footer>
+  </article>
+  
+    
+
+  
+  <div class="pagination">
+    
+    
+      <a href="/blog/202110-leetcode-no404-sum-of-left-leaves/" class="button right"><span>[LeetCode] #404 Sum of Left Leaves (Easy)</span></a>
+    
+  </div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>最新文章</h1>
+      </header>
+      
+      <article class="mini-post">
+          <a href="/blog/202110-make-discord-chatbot-01-set-up/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/10/make-discord-chatbot-01-set-up/chat-bot-terminal.png');">
+    <img src="https://tech.ray247k.com/img/blog/2021/10/make-discord-chatbot-01-set-up/chat-bot-terminal.png" alt="chat bot terminal">
+  </a>
+        <header>
+          <h2><a href="/blog/202110-make-discord-chatbot-01-set-up/">[Discord 機器人] 01.建立基本機器人</a></h2>
+          <time class="published" datetime="2021-10-20 00:00:00 &#43;0000 UTC">2021/10/20</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202110-leetcode-no404-sum-of-left-leaves/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/10/leetcode-no404-sum-of-left-leaves/no404-result.png');">
+    <img src="https://tech.ray247k.com/img/blog/2021/10/leetcode-no404-sum-of-left-leaves/no404-result.png" alt="LeetCode #290 run result">
+  </a>
+        <header>
+          <h2><a href="/blog/202110-leetcode-no404-sum-of-left-leaves/">[LeetCode] #404 Sum of Left Leaves (Easy)</a></h2>
+          <time class="published" datetime="2021-10-13 00:00:00 &#43;0000 UTC">2021/10/13</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202110-leetcode-no1013-partition-array-into-three-parts-with-equal-sum/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/10/leetcode-no1013-partition-array-into-three-parts-with-equal-sum/no1013-result.png');">
+    <img src="https://tech.ray247k.com/img/blog/2021/10/leetcode-no1013-partition-array-into-three-parts-with-equal-sum/no1013-result.png" alt="LeetCode #290 run result">
+  </a>
+        <header>
+          <h2><a href="/blog/202110-leetcode-no1013-partition-array-into-three-parts-with-equal-sum/">[LeetCode] #1013 Partition Array Into Three Parts With Equal Sum (Easy)</a></h2>
+          <time class="published" datetime="2021-10-12 00:00:00 &#43;0000 UTC">2021/10/12</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202110-leetcode-no455-assign-cookies/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/10/leetcode-no455-assign-cookies/no455-result.png');">
+    <img src="https://tech.ray247k.com/img/blog/2021/10/leetcode-no455-assign-cookies/no455-result.png" alt="LeetCode #290 run result">
+  </a>
+        <header>
+          <h2><a href="/blog/202110-leetcode-no455-assign-cookies/">[LeetCode] #455 Assign Cookies (Easy)</a></h2>
+          <time class="published" datetime="2021-10-05 00:00:00 &#43;0000 UTC">2021/10/05</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202109-leetcode-no150-evaluate-reverse-polish-notation/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/09/leetcode-no150-evaluate-reverse-polish-notation/no150-result.png');">
+    <img src="https://tech.ray247k.com/img/blog/2021/09/leetcode-no150-evaluate-reverse-polish-notation/no150-result.png" alt="LeetCode #150 run result">
+  </a>
+        <header>
+          <h2><a href="/blog/202109-leetcode-no150-evaluate-reverse-polish-notation/">[LeetCode] #150 Evaluate Reverse Polish Notation (Medium)</a></h2>
+          <time class="published" datetime="2021-09-24 00:00:00 &#43;0000 UTC">2021/09/24</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/blog/" class="button">查看更多</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="/categories">category</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/categories/node.js/">node.js<span class="count">22</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/devops/">devops<span class="count">17</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/leetcode/">leetcode<span class="count">13</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/python3/">python3<span class="count">8</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/php/">php<span class="count">6</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/laravel/">laravel<span class="count">3</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/">架站相關<span class="count">3</span></a>
+          </li>
+          
+        </ul>
+      </section>
+    
+  
+
+  
+  <section id="tags">
+    <header>
+      <h1><a href="/tags">Tag</a></h1>
+    </header>
+    <div class="li-x post-meta tags-md" style="margin-left: 0.5em;">
+      <ul>
+        
+        
+        <li>
+          <a href="/tags/node.js/">node.js (22)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/devops/">devops (18)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/vue/">vue (15)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/leetcode/">leetcode (13)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/containerization/">containerization (9)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/docker/">docker (9)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/express/">express (9)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%AE%B9%E5%99%A8%E6%8A%80%E8%A1%93/">容器技術 (9)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/leetcode-easy/">leetcode-easy (8)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/php/">php (8)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/python3/">python3 (8)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/docker-compose/">docker-compose (6)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/vuex/">vuex (6)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/composer/">composer (5)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/element-ui/">element-ui (5)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/leetcode-medium/">leetcode-medium (5)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cicd/">cicd (4)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/drone/">drone (4)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/laravel/">laravel (4)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/mongodb/">mongodb (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/mutation/">mutation (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/restful/">restful (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/">架站相關 (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cloudflare/">cloudflare (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/component/">component (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/dns/">dns (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/getter/">getter (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/google-domains/">google-domains (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/nginx/">nginx (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/vue-router/">vue-router (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/vue-ui/">vue-ui (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/apache-bench/">apache-bench (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/aws/">aws (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/axios/">axios (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cdn/">cdn (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/chatbot/">chatbot (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cors/">cors (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/discord/">discord (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/domain-name/">domain-name (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/gcp/">gcp (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/github-page/">github-page (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/grumphp/">grumphp (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/linux/">linux (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/ngrok/">ngrok (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/php-fpm/">php-fpm (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/portainer/">portainer (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/postgresql/">postgresql (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/proxy/">proxy (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/server/">server (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/ssh/">ssh (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/stress-testing/">stress-testing (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/subdomain/">subdomain (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E4%BC%BA%E6%9C%8D%E5%99%A8/">伺服器 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%80%8B%E4%BA%BA%E5%93%81%E7%89%8C/">個人品牌 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%9F%9F%E5%90%8D/">域名 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%A3%93%E5%8A%9B%E6%B8%AC%E8%A9%A6/">壓力測試 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%AD%90%E7%B6%B2%E5%9F%9F/">子網域 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E8%B2%B7%E7%B6%B2%E5%9D%80/">買網址 (1)</a>
+        </li>
+        
+      </ul>
+
+    </div>
+  </section>
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+    
+    <p class="copyright">
+        © 2021 薛丁格的工程師
+    </p>
+    <p class="copyright" style="font-size: 0.1EM;">
+        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.88.1' target='_blank' rel='noopener'>Hugo</a>
+    </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>hljs.highlightAll();</script><script src="/js/bundle.min.5352079d3388d9a4297e0200dd1040866c8b3b67460090bf30e01a9cd56fd746.js" integrity="sha256-U1IHnTOI2aQpfgIA3RBAhmyLO2dGAJC/MOAanNVv10Y="></script>
+    <script src="/js/add-on.js"></script>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-LTGVYYWC2J', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </div>
+  </body>
+</html>

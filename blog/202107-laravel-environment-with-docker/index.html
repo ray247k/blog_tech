@@ -18,7 +18,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.87.0" /><meta property="og:site_name" content="薛丁格的工程師">
+<meta name="generator" content="Hugo 0.88.1" /><meta property="og:site_name" content="薛丁格的工程師">
   <meta property="og:title" content="用 Docker 建立 Laravel 開發環境">
   <meta property="og:description" content="介紹如何使用 Docker 建置基礎的 Laravel 的開發環境">
   <meta property="description" content="介紹如何使用 Docker 建置基礎的 Laravel 的開發環境">
@@ -76,7 +76,7 @@
     "url": "https:\/\/tech.ray247k.com",
     "description": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - devops,laravel,leetcode,node.js,php,python3,架站相關,",
     "keywords": [
-        "apache-bench,aws,axios,cdn,cicd,cloudflare,component,composer,containerization,cors,devops,dns,docker,docker-compose,domain-name,drone,element-ui,express,gcp,getter,github-page,google-domains,grumphp,laravel,leetcode,leetcode-easy,leetcode-medium,linux,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,portainer,postgresql,proxy,python3,restful,server,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,架站相關,買網址,"
+        "apache-bench,aws,axios,cdn,chatbot,cicd,cloudflare,component,composer,containerization,cors,devops,discord,dns,docker,docker-compose,domain-name,drone,element-ui,express,gcp,getter,github-page,google-domains,grumphp,laravel,leetcode,leetcode-easy,leetcode-medium,linux,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,portainer,postgresql,proxy,python3,restful,server,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,架站相關,買網址,"
     ]
 }
 </script>
@@ -472,7 +472,7 @@
 這麼做雖然會顯示不安全，但是至少是 https 的網址</p>
 <p>第一行我們把同層中的 nginx 資料夾掛載進「/etc/nginx/conf.d/」這是 nginx 服務使用的設定檔位置<br>
 所以我們要在 docker_env/nginx 資料夾中建立 nginx config 檔案</p>
-<pre><code># dev.project.com.conf
+<pre tabindex="0"><code># dev.project.com.conf
 server {
     listen 80;
     listen [::]:80;
@@ -585,7 +585,7 @@ volumes 的掛載方式和 nginx 服務一樣</p>
 </code></pre></div><p>而資料庫的設定中 <code>volumes</code> 主要是在做資料持久化使用，當容器重啟時會去讀取裡面的資料<br>
 資料庫的相關環境參數設定則是在 <code>environment</code> 區塊中，可以看到有很多敏感資料<br>
 所以我們可以藉由在 docker_env 資料夾中建立不加入版本控制的 <code>.env</code> 檔案</p>
-<pre><code># .env
+<pre tabindex="0"><code># .env
 DB_USER=db_user
 DB_PASSWORD=db_password
 DB_NAME=my_database
@@ -613,7 +613,7 @@ DB_NAME=my_database
 <li>DB_USERNAME：設定檔中的 POSTGRES_USER</li>
 <li>DB_PASSWORD：設定檔中的 POSTGRES_PASSWORD</li>
 </ul>
-<pre><code># .env
+<pre tabindex="0"><code># .env
 DB_CONNECTION=pgsql
 DB_HOST=docker_env_postgre
 DB_PORT=5432
@@ -629,33 +629,33 @@ Laravel 連線到 Docker 的資料庫 - 完成</p>
 首先使用終端機指令，不管是 bash 還是 zsh</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo vim /etc/hosts 
 </code></pre></div><p>在 <code>/etc/hosts</code> 檔案裡面加入</p>
-<pre><code>127.0.0.1       dev.project.com
+<pre tabindex="0"><code>127.0.0.1       dev.project.com
 </code></pre><p>意思是要把後面定義的網址名稱，指向前面的 IP 位址<br>
 所以當瀏覽器網址列輸入 <code>dev.project.com</code> 的時候會將請求發送到本機的 localhost</p>
 <p>那為什麼這樣就可以看到剛剛設定的 Laravel 專案呢？<br>
 因為我們在前面的 nginx config 設定中，有設定了 <code>server_name</code> 內容</p>
-<pre><code>server_name dev.project.com;
+<pre tabindex="0"><code>server_name dev.project.com;
 </code></pre><p>所以當監聽本機 80 和 443 port 的 Docker nginx 服務發現有請求進來<br>
 而且符合 server_name 區塊設定的內容，就會進行處理</p>
 <p>如果你有另一個 nginx config 在 listen port 號的後面加上 <code>default_server</code> 如下</p>
-<pre><code>listen 80 default_server;
+<pre tabindex="0"><code>listen 80 default_server;
 </code></pre><p>那代表當其他 nginx config 規則都沒有抓取到的時候，nginx 會使用這個設定檔<br>
 若是全部 config 都沒有設定成 default_server，那麼會使用「檔名排序最前面」的設定檔</p>
 <p>如此一來應該就可以瀏覽 Laravel 專案的畫面了</p>
 <h1 id="執行-laravel-指令">執行 Laravel 指令</h1>
 <p>如果想執行 Laravel 中跟資料庫有關的指令，例如</p>
-<pre><code>php artisan migrate
+<pre tabindex="0"><code>php artisan migrate
 </code></pre><p>首先要先進入 php 容器內</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker exec -ti docker_env_php bash
 </code></pre></div><p>在容器內的專案目錄下運行指令，就可以看到指令被正確執行<br>
 若是沒有連進容器，直接執行 migrate 指令，則會得到錯誤訊息</p>
-<pre><code class="language-bash=" data-lang="bash=">SQLSTATE[08006] [7] could not translate host name &quot;docker_env_postgre&quot; to address: nodename nor servname provided, or not known
+<pre tabindex="0"><code class="language-bash=" data-lang="bash=">SQLSTATE[08006] [7] could not translate host name &quot;docker_env_postgre&quot; to address: nodename nor servname provided, or not known
 </code></pre><p>因為程式不認得「docker_env_postgre」這個 host 的真實位址，所以無法執行<br>
 如果我們把 .env 中的 DB_HOST 換成真實位置，透過 <code>docker inspect</code> 指令取得<br>
 就可以執行，但是每次容器重啟就會被刷新。看來並沒有解決問題</p>
 <p>如果真的很懶，覺得連進容器執行也很麻煩，就是要直接在本機資料夾執行該怎麼辦呢？<br>
 再一次修改 <code>etc/hosts</code> 檔案，加上</p>
-<pre><code>127.0.0.1     docker_env_postgre           # 資料庫使用的容器名稱
+<pre tabindex="0"><code>127.0.0.1     docker_env_postgre           # 資料庫使用的容器名稱
 </code></pre><p>完工啦，這樣在本機專案資料夾下執行 migrate 就會被指向本機容器</p>
 <hr>
 <p>以上就是這次「用 Docker 建立 Laravel 開發環境」的全部內容<br>
@@ -727,6 +727,16 @@ Laravel 連線到 Docker 的資料庫 - 完成</p>
       </header>
       
       <article class="mini-post">
+          <a href="/blog/202110-make-discord-chatbot-01-set-up/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/10/make-discord-chatbot-01-set-up/chat-bot-terminal.png');">
+    <img src="https://tech.ray247k.com/img/blog/2021/10/make-discord-chatbot-01-set-up/chat-bot-terminal.png" alt="chat bot terminal">
+  </a>
+        <header>
+          <h2><a href="/blog/202110-make-discord-chatbot-01-set-up/">[Discord 機器人] 01.建立基本機器人</a></h2>
+          <time class="published" datetime="2021-10-20 00:00:00 &#43;0000 UTC">2021/10/20</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
           <a href="/blog/202110-leetcode-no404-sum-of-left-leaves/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/10/leetcode-no404-sum-of-left-leaves/no404-result.png');">
     <img src="https://tech.ray247k.com/img/blog/2021/10/leetcode-no404-sum-of-left-leaves/no404-result.png" alt="LeetCode #290 run result">
   </a>
@@ -766,16 +776,6 @@ Laravel 連線到 Docker 的資料庫 - 完成</p>
         </header>
       </article>
       
-      <article class="mini-post">
-          <a href="/blog/202109-leetcode-no155-min-stack/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/09/leetcode-no155-min-stack/no155-result.png');">
-    <img src="https://tech.ray247k.com/img/blog/2021/09/leetcode-no155-min-stack/no155-result.png" alt="LeetCode #155 run result">
-  </a>
-        <header>
-          <h2><a href="/blog/202109-leetcode-no155-min-stack/">[LeetCode] #155 Min Stack (Easy)</a></h2>
-          <time class="published" datetime="2021-09-15 00:00:00 &#43;0000 UTC">2021/09/15</time>
-        </header>
-      </article>
-      
       
         <footer>
           <a href="/blog/" class="button">查看更多</a>
@@ -807,7 +807,7 @@ Laravel 連線到 Docker 的資料庫 - 完成</p>
           </li>
           
           <li>
-              <a href="/categories/python3/">python3<span class="count">7</span></a>
+              <a href="/categories/python3/">python3<span class="count">8</span></a>
           </li>
           
           <li>
@@ -877,7 +877,7 @@ Laravel 連線到 Docker 的資料庫 - 完成</p>
         </li>
         
         <li>
-          <a href="/tags/python3/">python3 (7)</a>
+          <a href="/tags/python3/">python3 (8)</a>
         </li>
         
         <li>
@@ -977,7 +977,15 @@ Laravel 連線到 Docker 的資料庫 - 完成</p>
         </li>
         
         <li>
+          <a href="/tags/chatbot/">chatbot (1)</a>
+        </li>
+        
+        <li>
           <a href="/tags/cors/">cors (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/discord/">discord (1)</a>
         </li>
         
         <li>
@@ -1075,7 +1083,7 @@ Laravel 連線到 Docker 的資料庫 - 完成</p>
         © 2021 薛丁格的工程師
     </p>
     <p class="copyright" style="font-size: 0.1EM;">
-        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.87.0' target='_blank' rel='noopener'>Hugo</a>
+        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.88.1' target='_blank' rel='noopener'>Hugo</a>
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
