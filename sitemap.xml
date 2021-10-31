@@ -2,31 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://tech.ray247k.com/blog/202110-make-discord-chatbot-01-set-up/</loc>
-    <lastmod>2021-10-20T00:00:00+00:00</lastmod>
+    <loc>https://tech.ray247k.com/blog/202110-make-discord-chatbot-02-roll-dice-bot/</loc>
+    <lastmod>2021-10-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/blog/</loc>
-    <lastmod>2021-10-20T00:00:00+00:00</lastmod>
+    <lastmod>2021-10-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/categories/</loc>
-    <lastmod>2021-10-20T00:00:00+00:00</lastmod>
+    <lastmod>2021-10-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/tags/chatbot/</loc>
-    <lastmod>2021-10-20T00:00:00+00:00</lastmod>
+    <lastmod>2021-10-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/tags/discord/</loc>
-    <lastmod>2021-10-20T00:00:00+00:00</lastmod>
+    <lastmod>2021-10-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/tags/python3/</loc>
-    <lastmod>2021-10-20T00:00:00+00:00</lastmod>
+    <lastmod>2021-10-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/categories/python3/</loc>
-    <lastmod>2021-10-20T00:00:00+00:00</lastmod>
+    <lastmod>2021-10-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/tags/</loc>
-    <lastmod>2021-10-20T00:00:00+00:00</lastmod>
+    <lastmod>2021-10-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/</loc>
+    <lastmod>2021-10-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tech.ray247k.com/blog/202110-make-discord-chatbot-01-set-up/</loc>
     <lastmod>2021-10-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/blog/202110-leetcode-no404-sum-of-left-leaves/</loc>
