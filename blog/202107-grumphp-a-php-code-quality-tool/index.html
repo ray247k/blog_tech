@@ -74,9 +74,9 @@
     "headline": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - Schrödinger\u0027s Programmer",
     "name": "薛丁格的工程師",
     "url": "https:\/\/tech.ray247k.com",
-    "description": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - devops,laravel,leetcode,node.js,php,python3,架站相關,",
+    "description": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - devops,laravel,leetcode,node.js,php,python3,架站相關,版本控制,",
     "keywords": [
-        "apache-bench,aws,axios,cdn,chatbot,cicd,cloudflare,component,composer,containerization,cors,devops,discord,dns,docker,docker-compose,domain-name,drone,element-ui,express,gcp,getter,github-page,google-domains,grumphp,laravel,leetcode,leetcode-easy,leetcode-medium,linux,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,portainer,postgresql,proxy,python3,restful,server,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,架站相關,買網址,"
+        "apache-bench,aws,axios,cdn,chatbot,cicd,cloudflare,component,composer,containerization,cors,devops,discord,dns,docker,docker-compose,domain-name,drone,element-ui,express,gcp,getter,git,github,github-page,google-domains,grumphp,laravel,leetcode,leetcode-easy,leetcode-medium,linux,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,portainer,postgresql,proxy,python3,restful,server,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,架站相關,版本控制,買網址,"
     ]
 }
 </script>
@@ -355,7 +355,11 @@
 當有人變更程式並且 commit 的時候，GrumPHP 將根據設定好的 tasks 去檢查程式內容<br>
 如果測試失敗，commit 會被中斷</p>
 <p>並且 GrumPHP 內建了一組常見的任務，可以用最少的客製設定使用 GrumPHP<br>
-可以在官方文件中的 <a href="https://github.com/phpro/grumphp/blob/master/doc/tasks.md">Tasks</a> 頁面找到大部分你會用到的檢查任務<br>
+可以在官方文件中的 <a href="https://github.com/phpro/grumphp/blob/master/doc/tasks.md"
+   
+    target="_blank" rel="noreferrer noopener">Tasks
+</a>
+ 頁面找到大部分你會用到的檢查任務<br>
 以下我們就分別從安裝到加入四個常用的任務來介紹</p>
 <h1 id="安裝-grumphp">安裝 GrumPHP</h1>
 <p>一樣拿上次做一半的 LaraPeko 來做示範，以下說的「專案」指的都是這個套件包！</p>
@@ -384,11 +388,19 @@
 
     }
 </code></pre></div><p>在官方 GitHub 上有一份範例的 grumphp.yml 設定檔<br>
-而 <a href="https://github.com/phpro/grumphp/blob/master/doc/parameters.md">Parameters 文件</a> 有參數的詳細說明和與設值介紹<br>
+而 <a href="https://github.com/phpro/grumphp/blob/master/doc/parameters.md"
+   
+    target="_blank" rel="noreferrer noopener">Parameters 文件
+</a>
+ 有參數的詳細說明和與設值介紹<br>
 在這邊為了減少設定上的步驟，我們都先用預設值就好</p>
 <h2 id="1-yamllint">1. yamllint</h2>
 <p>檢查你專案中的 yaml 檔結構合法性，如果有 drone 或是其他需要使用 yaml 格式檔案配置的設定檔</p>
-<p>根據文件中 <a href="https://github.com/phpro/grumphp/blob/master/doc/tasks/yamllint.md">YamlLint</a> 我們不需要額外配置<br>
+<p>根據文件中 <a href="https://github.com/phpro/grumphp/blob/master/doc/tasks/yamllint.md"
+   
+    target="_blank" rel="noreferrer noopener">YamlLint
+</a>
+ 我們不需要額外配置<br>
 只需要在 tasks 列表中加入 yamllint 即可</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">grumphp</span>:
     <span style="color:#f92672">tasks</span>: {
@@ -396,7 +408,11 @@
     }
 </code></pre></div><h2 id="2-phplint">2. PHPLint</h2>
 <p>檢查語法錯誤，多一個逗點之類會讓 IDE 有紅字的<code>syntax error</code></p>
-<p>照著官方文件的任務使用方法安裝：<a href="https://github.com/phpro/grumphp/blob/master/doc/tasks/phplint.md">PHPLint</a><br>
+<p>照著官方文件的任務使用方法安裝：<a href="https://github.com/phpro/grumphp/blob/master/doc/tasks/phplint.md"
+   
+    target="_blank" rel="noreferrer noopener">PHPLint
+</a>
+<br>
 首先執行 composer 指令安裝依賴項目，因為這個檢查只有在測試環境需要被執行<br>
 所以只在測試環境<code>require-dev</code>中安裝</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">composer require --dev php-parallel-lint/php-parallel-lint
@@ -410,7 +426,11 @@
 可以依照個人使用調整，而這邊我們依然使用預設值就好</p>
 <h2 id="3-phpunit">3. Phpunit</h2>
 <p>指行指定路徑下的測試，如果失敗則視為任務失敗</p>
-<p>照著官方文件的任務說明安裝在測試環境中：<a href="https://github.com/phpro/grumphp/blob/master/doc/tasks/phpunit.md">Phpunit</a></p>
+<p>照著官方文件的任務說明安裝在測試環境中：<a href="https://github.com/phpro/grumphp/blob/master/doc/tasks/phpunit.md"
+   
+    target="_blank" rel="noreferrer noopener">Phpunit
+</a>
+</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">composer require --dev phpunit/phpunit
 </code></pre></div><p>而文件中有說明，你必須建立<code>phpunit.xml</code>作為任務的設定檔<br>
 底下範例指定了測試檔案的資料夾目錄</p>
@@ -456,8 +476,16 @@
 <p><img src="/img/blog/2021/07/grumphp-a-php-code-quality-tool/phpunit-fail-a.png" alt="phpunit fail">
 <img src="/img/blog/2021/07/grumphp-a-php-code-quality-tool/phpunit-fail-b.png" alt="phpunit fail"></p>
 <h2 id="4-phpcs">4. Phpcs</h2>
-<p>這個任務，可以檢查提交的 PHP 內容是不是符合 <a href="https://www.php-fig.org/psr/">PSR 規則</a></p>
-<p>首先安裝相關套件，參考：<a href="https://github.com/phpro/grumphp/blob/master/doc/tasks/phpcs.md">Phpcs 任務文件</a></p>
+<p>這個任務，可以檢查提交的 PHP 內容是不是符合 <a href="https://www.php-fig.org/psr/"
+   
+    target="_blank" rel="noreferrer noopener">PSR 規則
+</a>
+</p>
+<p>首先安裝相關套件，參考：<a href="https://github.com/phpro/grumphp/blob/master/doc/tasks/phpcs.md"
+   
+    target="_blank" rel="noreferrer noopener">Phpcs 任務文件
+</a>
+</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">composer require --dev squizlabs/php_codesniffer
 </code></pre></div><p>接著一樣是需要建立配置文件<code>phpcs.xml</code>來設定我們需要檢查的規則，這邊以基本的 PSR-12 為例<br>
 可以看到我們設定了 PSR12 的檢查規則</p>
@@ -491,7 +519,11 @@
 <p>以上都是我們手動執行套件的任務來測試程式碼的品質，好還要更好<br>
 最好可以讓程式自動執行測試，也就是一開頭我們說過的在 commit 時自動觸發 GrumPHP 的 tasks</p>
 <p>這件事情想起來難，做起來倒是一點就通<br>
-透過修改專案的<code>composer.json</code>我們可以加入指令，參考 <a href="https://getcomposer.org/doc/articles/scripts.md">composer 官方文件</a><br>
+透過修改專案的<code>composer.json</code>我們可以加入指令，參考 <a href="https://getcomposer.org/doc/articles/scripts.md"
+   
+    target="_blank" rel="noreferrer noopener">composer 官方文件
+</a>
+<br>
 我們可以透過加入<code>scripts</code>區塊，讓指令在 composer 執行過程中被執行</p>
 <p>在專案的<code>composer.json</code>中加入指令，在初始時就就開始嗅探</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    <span style="color:#e6db74">&#34;scripts&#34;</span><span style="color:#f92672">:</span> {
@@ -556,6 +588,16 @@
       </header>
       
       <article class="mini-post">
+          <a href="/blog/202111-git-global-gitignore/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/10/git-global-gitignore/command.png');">
+    <img src="https://tech.ray247k.com/img/blog/2021/10/git-global-gitignore/command.png" alt="command">
+  </a>
+        <header>
+          <h2><a href="/blog/202111-git-global-gitignore/">[Git 教學] 設定本機全域 gitignore</a></h2>
+          <time class="published" datetime="2021-11-06 00:00:00 &#43;0000 UTC">2021/11/06</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
           <a href="/blog/202110-make-discord-chatbot-02-roll-dice-bot/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/10/make-discord-chatbot-02-roll-dice-bot/dices.jpg');">
     <img src="https://tech.ray247k.com/img/blog/2021/10/make-discord-chatbot-02-roll-dice-bot/dices.jpg" alt="dices">
   </a>
@@ -592,16 +634,6 @@
         <header>
           <h2><a href="/blog/202110-leetcode-no1013-partition-array-into-three-parts-with-equal-sum/">[LeetCode] #1013 Partition Array Into Three Parts With Equal Sum (Easy)</a></h2>
           <time class="published" datetime="2021-10-12 00:00:00 &#43;0000 UTC">2021/10/12</time>
-        </header>
-      </article>
-      
-      <article class="mini-post">
-          <a href="/blog/202110-leetcode-no455-assign-cookies/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/10/leetcode-no455-assign-cookies/no455-result.png');">
-    <img src="https://tech.ray247k.com/img/blog/2021/10/leetcode-no455-assign-cookies/no455-result.png" alt="LeetCode #290 run result">
-  </a>
-        <header>
-          <h2><a href="/blog/202110-leetcode-no455-assign-cookies/">[LeetCode] #455 Assign Cookies (Easy)</a></h2>
-          <time class="published" datetime="2021-10-05 00:00:00 &#43;0000 UTC">2021/10/05</time>
         </header>
       </article>
       
@@ -649,6 +681,10 @@
           
           <li>
               <a href="/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/">架站相關<span class="count">3</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">版本控制<span class="count">1</span></a>
           </li>
           
         </ul>
@@ -826,6 +862,14 @@
         </li>
         
         <li>
+          <a href="/tags/git/">git (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/github/">github (1)</a>
+        </li>
+        
+        <li>
           <a href="/tags/github-page/">github-page (1)</a>
         </li>
         
@@ -891,6 +935,10 @@
         
         <li>
           <a href="/tags/%E5%AD%90%E7%B6%B2%E5%9F%9F/">子網域 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">版本控制 (1)</a>
         </li>
         
         <li>

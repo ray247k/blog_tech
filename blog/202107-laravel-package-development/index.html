@@ -74,9 +74,9 @@
     "headline": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - Schrödinger\u0027s Programmer",
     "name": "薛丁格的工程師",
     "url": "https:\/\/tech.ray247k.com",
-    "description": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - devops,laravel,leetcode,node.js,php,python3,架站相關,",
+    "description": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - devops,laravel,leetcode,node.js,php,python3,架站相關,版本控制,",
     "keywords": [
-        "apache-bench,aws,axios,cdn,chatbot,cicd,cloudflare,component,composer,containerization,cors,devops,discord,dns,docker,docker-compose,domain-name,drone,element-ui,express,gcp,getter,github-page,google-domains,grumphp,laravel,leetcode,leetcode-easy,leetcode-medium,linux,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,portainer,postgresql,proxy,python3,restful,server,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,架站相關,買網址,"
+        "apache-bench,aws,axios,cdn,chatbot,cicd,cloudflare,component,composer,containerization,cors,devops,discord,dns,docker,docker-compose,domain-name,drone,element-ui,express,gcp,getter,git,github,github-page,google-domains,grumphp,laravel,leetcode,leetcode-easy,leetcode-medium,linux,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,portainer,postgresql,proxy,python3,restful,server,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,架站相關,版本控制,買網址,"
     ]
 }
 </script>
@@ -416,7 +416,11 @@ composer init
     }
 }
 </code></pre></div><h1 id="4-facade">4. Facade</h1>
-<p><a href="https://laravel.com/docs/8.x/facades">Facade</a> 提供一個靜態的介面讓我們直接呼叫註冊過的類別</p>
+<p><a href="https://laravel.com/docs/8.x/facades"
+   
+    target="_blank" rel="noreferrer noopener">Facade
+</a>
+ 提供一個靜態的介面讓我們直接呼叫註冊過的類別</p>
 <p>在 src 目錄內建立剛剛檔案的 Facade，命名為 LaraPekoFacade.php 吧<br>
 使用剛剛上面 ServiceProvider 註冊的<code>LaraPeko</code>類別作為 Laravel 的 Facade 物件</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
@@ -567,7 +571,11 @@ php artisan -V
 <h3 id="加入套件項目">加入套件項目</h3>
 <p>在專案中使用指令，在 composer.json 中加入套件的版本儲存位置<br>
 這邊因為是在本機測試，所以使用 path 方法指定本機套件包的相對或絕對路徑<br>
-關於路徑的設定可以參考官方說明：<a href="https://getcomposer.org/doc/05-repositories.md#path">Composer Documentation #Path</a></p>
+關於路徑的設定可以參考官方說明：<a href="https://getcomposer.org/doc/05-repositories.md#path"
+   
+    target="_blank" rel="noreferrer noopener">Composer Documentation #Path
+</a>
+</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">composer config repositories.ray247k path ../larapeko
 </code></pre></div><p>從相對路徑看得出來我把套件包(larapeko) 和測試用的專案(lara-ahoy) 放在同一個資料夾裡面</p>
 <p>指令執行之後可以打開 lara-ahoy 專案的 composer.json 檔案<br>
@@ -671,14 +679,22 @@ Package manifest generated successfully.
 </code></pre></div><p>如此就不會看到 PHP Deprecated 的提示了<br>
 <img src="/img/blog/2021/07/laravel-package-development/peko-test.png" alt="peko test"></p>
 <h3 id="方法二使用單元測試">方法二、使用單元測試</h3>
-<p>接著就是使用單元測試來測試套件，參考文件：<a href="https://laravelpackage.com/04-testing.html">Laravel Package Development #Testing</a></p>
+<p>接著就是使用單元測試來測試套件，參考文件：<a href="https://laravelpackage.com/04-testing.html"
+   
+    target="_blank" rel="noreferrer noopener">Laravel Package Development #Testing
+</a>
+</p>
 <p>先試試看 PHPUnit 是否可以執行，在專案目錄下使用指令</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">php vendor/bin/phpunit
 </code></pre></div><p>如果出現底下錯誤訊息</p>
 <pre tabindex="0"><code>/usr/bin/php declares an invalid value for PHP_VERSION.
 This breaks fundamental functionality such as version_compare().
 Please use a different PHP interpreter.
-</code></pre><p>那看來是蘋果的鍋：<a href="https://stackoverflow.com/questions/68245876/phpunit-does-not-work-when-i-run-the-tests-on-the-laravel-framework-i-get-the-e">PHPUnit does not work when I run the tests on the Laravel framework</a></p>
+</code></pre><p>那看來是蘋果的鍋：<a href="https://stackoverflow.com/questions/68245876/phpunit-does-not-work-when-i-run-the-tests-on-the-laravel-framework-i-get-the-e"
+   
+    target="_blank" rel="noreferrer noopener">PHPUnit does not work when I run the tests on the Laravel framework
+</a>
+</p>
 <blockquote>
 <p>PHPUnit refuses to be run with a PHP interpreter where the value of the PHP_VERSION constant contains an invalid value due to modification made by vendors that ship (binary) distributions of PHP.</p>
 </blockquote>
@@ -688,7 +704,11 @@ Please use a different PHP interpreter.
 <blockquote>
 <p>TL;DR: Do not use the PHP interpreter that is shipped by Apple with macOS. Use Homebrew, or similar, instead.</p>
 </blockquote>
-<p>這時候有兩個解法，一個是用 <a href="https://brew.sh/index_zh-tw">Homebrew</a> 安裝 PHP，記得要修改 bash/zsh 的設定檔<br>
+<p>這時候有兩個解法，一個是用 <a href="https://brew.sh/index_zh-tw"
+   
+    target="_blank" rel="noreferrer noopener">Homebrew
+</a>
+ 安裝 PHP，記得要修改 bash/zsh 的設定檔<br>
 另一個是把測試專案搬到 docker 環境裡面 PHP mount 的資料夾內<br>
 直接進到 php 容器裡面執行 php vendor/bin/phpunit 指令</p>
 <p>如果 <code>php vendor/bin/phpunit</code> 可以執行，接著就要來建置單元測試檔案</p>
@@ -810,6 +830,16 @@ Please use a different PHP interpreter.
       </header>
       
       <article class="mini-post">
+          <a href="/blog/202111-git-global-gitignore/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/10/git-global-gitignore/command.png');">
+    <img src="https://tech.ray247k.com/img/blog/2021/10/git-global-gitignore/command.png" alt="command">
+  </a>
+        <header>
+          <h2><a href="/blog/202111-git-global-gitignore/">[Git 教學] 設定本機全域 gitignore</a></h2>
+          <time class="published" datetime="2021-11-06 00:00:00 &#43;0000 UTC">2021/11/06</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
           <a href="/blog/202110-make-discord-chatbot-02-roll-dice-bot/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/10/make-discord-chatbot-02-roll-dice-bot/dices.jpg');">
     <img src="https://tech.ray247k.com/img/blog/2021/10/make-discord-chatbot-02-roll-dice-bot/dices.jpg" alt="dices">
   </a>
@@ -846,16 +876,6 @@ Please use a different PHP interpreter.
         <header>
           <h2><a href="/blog/202110-leetcode-no1013-partition-array-into-three-parts-with-equal-sum/">[LeetCode] #1013 Partition Array Into Three Parts With Equal Sum (Easy)</a></h2>
           <time class="published" datetime="2021-10-12 00:00:00 &#43;0000 UTC">2021/10/12</time>
-        </header>
-      </article>
-      
-      <article class="mini-post">
-          <a href="/blog/202110-leetcode-no455-assign-cookies/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/10/leetcode-no455-assign-cookies/no455-result.png');">
-    <img src="https://tech.ray247k.com/img/blog/2021/10/leetcode-no455-assign-cookies/no455-result.png" alt="LeetCode #290 run result">
-  </a>
-        <header>
-          <h2><a href="/blog/202110-leetcode-no455-assign-cookies/">[LeetCode] #455 Assign Cookies (Easy)</a></h2>
-          <time class="published" datetime="2021-10-05 00:00:00 &#43;0000 UTC">2021/10/05</time>
         </header>
       </article>
       
@@ -903,6 +923,10 @@ Please use a different PHP interpreter.
           
           <li>
               <a href="/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/">架站相關<span class="count">3</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">版本控制<span class="count">1</span></a>
           </li>
           
         </ul>
@@ -1080,6 +1104,14 @@ Please use a different PHP interpreter.
         </li>
         
         <li>
+          <a href="/tags/git/">git (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/github/">github (1)</a>
+        </li>
+        
+        <li>
           <a href="/tags/github-page/">github-page (1)</a>
         </li>
         
@@ -1145,6 +1177,10 @@ Please use a different PHP interpreter.
         
         <li>
           <a href="/tags/%E5%AD%90%E7%B6%B2%E5%9F%9F/">子網域 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">版本控制 (1)</a>
         </li>
         
         <li>

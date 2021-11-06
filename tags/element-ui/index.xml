@@ -13,7 +13,11 @@
       <pubDate>Thu, 03 Dec 2020 00:00:00 +0000</pubDate>
       
       <guid>https://tech.ray247k.com/blog/202012-express-vue-build-ecommerce-22-docker-containerized/</guid>
-      <description>&lt;p&gt;接著我們會把整個專案使用 &lt;a href=&#34;https://www.docker.com/&#34;&gt;Docker&lt;/a&gt; 來將服務容器化，也會在 MongoDB 設定身份驗證機制&lt;br&gt;
+      <description>&lt;p&gt;接著我們會把整個專案使用 &lt;a href=&#34;https://www.docker.com/&#34;
+   
+    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Docker
+&lt;/a&gt;
+ 來將服務容器化，也會在 MongoDB 設定身份驗證機制&lt;br&gt;
 如果對 Docker 不熟的話必須先去了解，才有辦法進行&lt;br&gt;
 或是直接跳過這個章節 &lt;del&gt;交給熱心的攤主處理&lt;/del&gt;&lt;/p&gt;</description>
     </item>

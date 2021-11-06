@@ -74,9 +74,9 @@
     "headline": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - Schrödinger\u0027s Programmer",
     "name": "薛丁格的工程師",
     "url": "https:\/\/tech.ray247k.com",
-    "description": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - devops,laravel,leetcode,node.js,php,python3,架站相關,",
+    "description": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - devops,laravel,leetcode,node.js,php,python3,架站相關,版本控制,",
     "keywords": [
-        "apache-bench,aws,axios,cdn,chatbot,cicd,cloudflare,component,composer,containerization,cors,devops,discord,dns,docker,docker-compose,domain-name,drone,element-ui,express,gcp,getter,github-page,google-domains,grumphp,laravel,leetcode,leetcode-easy,leetcode-medium,linux,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,portainer,postgresql,proxy,python3,restful,server,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,架站相關,買網址,"
+        "apache-bench,aws,axios,cdn,chatbot,cicd,cloudflare,component,composer,containerization,cors,devops,discord,dns,docker,docker-compose,domain-name,drone,element-ui,express,gcp,getter,git,github,github-page,google-domains,grumphp,laravel,leetcode,leetcode-easy,leetcode-medium,linux,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,portainer,postgresql,proxy,python3,restful,server,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,架站相關,版本控制,買網址,"
     ]
 }
 </script>
@@ -203,7 +203,7 @@
     },
     "image": [""],
     "url" : "https:\/\/tech.ray247k.com\/blog\/202109-leetcode-no150-evaluate-reverse-polish-notation\/",
-    "wordCount" : "265",
+    "wordCount" : "267",
     "genre" : [ "LeetCode" , "LeetCode-Medium" , "Python3" ],
     "keywords" : [ "LeetCode" , "LeetCode-Medium" , "Python3" ]
 }
@@ -348,7 +348,11 @@
   </a>
       <p>用 Python3 解 LeetCode 系列，<code>Evaluate Reverse Polish Notation</code>，屬於 Medium</p>
 <h1 id="原始題目">原始題目</h1>
-<p>Evaluate the value of an arithmetic expression in <a href="https://en.wikipedia.org/wiki/Reverse_Polish_notation">Reverse Polish Notation</a>.</p>
+<p>Evaluate the value of an arithmetic expression in <a href="https://en.wikipedia.org/wiki/Reverse_Polish_notation"
+   
+    target="_blank" rel="noreferrer noopener">Reverse Polish Notation
+</a>
+.</p>
 <p>Valid operators are <code>+</code>, <code>-</code>, <code>*</code>, and <code>/</code>. Each operand may be an integer or another expression.</p>
 <p><strong>Note</strong> that division between two integers should truncate toward zero.</p>
 <p>It is guaranteed that the given RPN expression is always valid. That means the expression would always evaluate to a result, and there will not be any division by zero operation.</p>
@@ -371,7 +375,11 @@ Explanation: ((10 * (6 / ((9 + 3) * -11))) + 17) + 5
 = 17 + 5
 = 22
 </code></pre></div><h1 id="題目分析">題目分析</h1>
-<p>這題是使用：<a href="https://zh.wikipedia.org/wiki/%E9%80%86%E6%B3%A2%E8%98%AD%E8%A1%A8%E7%A4%BA%E6%B3%95">逆波蘭表示法</a>，兩個值之間的運算符號是表示在兩個值後面<br>
+<p>這題是使用：<a href="https://zh.wikipedia.org/wiki/%e9%80%86%e6%b3%a2%e8%98%ad%e8%a1%a8%e7%a4%ba%e6%b3%95"
+   
+    target="_blank" rel="noreferrer noopener">逆波蘭表示法
+</a>
+，兩個值之間的運算符號是表示在兩個值後面<br>
 和一般日常使用寫在中間的表示方式不太一樣 ，遇到運算符才把前面「兩個」數字做運算</p>
 <h1 id="解題過程">解題過程</h1>
 <ol>
@@ -463,6 +471,16 @@ Explanation: ((10 * (6 / ((9 + 3) * -11))) + 17) + 5
       </header>
       
       <article class="mini-post">
+          <a href="/blog/202111-git-global-gitignore/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/10/git-global-gitignore/command.png');">
+    <img src="https://tech.ray247k.com/img/blog/2021/10/git-global-gitignore/command.png" alt="command">
+  </a>
+        <header>
+          <h2><a href="/blog/202111-git-global-gitignore/">[Git 教學] 設定本機全域 gitignore</a></h2>
+          <time class="published" datetime="2021-11-06 00:00:00 &#43;0000 UTC">2021/11/06</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
           <a href="/blog/202110-make-discord-chatbot-02-roll-dice-bot/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/10/make-discord-chatbot-02-roll-dice-bot/dices.jpg');">
     <img src="https://tech.ray247k.com/img/blog/2021/10/make-discord-chatbot-02-roll-dice-bot/dices.jpg" alt="dices">
   </a>
@@ -499,16 +517,6 @@ Explanation: ((10 * (6 / ((9 + 3) * -11))) + 17) + 5
         <header>
           <h2><a href="/blog/202110-leetcode-no1013-partition-array-into-three-parts-with-equal-sum/">[LeetCode] #1013 Partition Array Into Three Parts With Equal Sum (Easy)</a></h2>
           <time class="published" datetime="2021-10-12 00:00:00 &#43;0000 UTC">2021/10/12</time>
-        </header>
-      </article>
-      
-      <article class="mini-post">
-          <a href="/blog/202110-leetcode-no455-assign-cookies/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/10/leetcode-no455-assign-cookies/no455-result.png');">
-    <img src="https://tech.ray247k.com/img/blog/2021/10/leetcode-no455-assign-cookies/no455-result.png" alt="LeetCode #290 run result">
-  </a>
-        <header>
-          <h2><a href="/blog/202110-leetcode-no455-assign-cookies/">[LeetCode] #455 Assign Cookies (Easy)</a></h2>
-          <time class="published" datetime="2021-10-05 00:00:00 &#43;0000 UTC">2021/10/05</time>
         </header>
       </article>
       
@@ -556,6 +564,10 @@ Explanation: ((10 * (6 / ((9 + 3) * -11))) + 17) + 5
           
           <li>
               <a href="/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/">架站相關<span class="count">3</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">版本控制<span class="count">1</span></a>
           </li>
           
         </ul>
@@ -733,6 +745,14 @@ Explanation: ((10 * (6 / ((9 + 3) * -11))) + 17) + 5
         </li>
         
         <li>
+          <a href="/tags/git/">git (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/github/">github (1)</a>
+        </li>
+        
+        <li>
           <a href="/tags/github-page/">github-page (1)</a>
         </li>
         
@@ -798,6 +818,10 @@ Explanation: ((10 * (6 / ((9 + 3) * -11))) + 17) + 5
         
         <li>
           <a href="/tags/%E5%AD%90%E7%B6%B2%E5%9F%9F/">子網域 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">版本控制 (1)</a>
         </li>
         
         <li>

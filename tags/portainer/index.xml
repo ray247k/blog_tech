@@ -14,7 +14,11 @@
       
       <guid>https://tech.ray247k.com/blog/202101-portainer-open-source-container-management-gui/</guid>
       <description>&lt;p&gt;本機開發大部分使用指令操作，或是使用 Docker 本身的 GUI 介面管理服務&lt;br&gt;
-&lt;a href=&#34;https://github.com/portainer&#34;&gt;Portainer&lt;/a&gt; 是一個 open-source 的 UI tool&lt;br&gt;
+&lt;a href=&#34;https://github.com/portainer&#34;
+   
+    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Portainer
+&lt;/a&gt;
+ 是一個 open-source 的 UI tool&lt;br&gt;
 可以查看 docker image, container，並執行 start, stop, restart, remove 等動作&lt;br&gt;
 也可查看每個 container 的 log 及 error&lt;br&gt;
 在雲端主機上啟動服務的話，即使沒有 Docker 執行權限的人也可以透過帳號密碼登入&lt;br&gt;

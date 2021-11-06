@@ -71,9 +71,9 @@
     "headline": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - Schrödinger\u0027s Programmer",
     "name": "薛丁格的工程師",
     "url": "https:\/\/tech.ray247k.com",
-    "description": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - devops,laravel,leetcode,node.js,php,python3,架站相關,",
+    "description": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - devops,laravel,leetcode,node.js,php,python3,架站相關,版本控制,",
     "keywords": [
-        "apache-bench,aws,axios,cdn,chatbot,cicd,cloudflare,component,composer,containerization,cors,devops,discord,dns,docker,docker-compose,domain-name,drone,element-ui,express,gcp,getter,github-page,google-domains,grumphp,laravel,leetcode,leetcode-easy,leetcode-medium,linux,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,portainer,postgresql,proxy,python3,restful,server,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,架站相關,買網址,"
+        "apache-bench,aws,axios,cdn,chatbot,cicd,cloudflare,component,composer,containerization,cors,devops,discord,dns,docker,docker-compose,domain-name,drone,element-ui,express,gcp,getter,git,github,github-page,google-domains,grumphp,laravel,leetcode,leetcode-easy,leetcode-medium,linux,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,portainer,postgresql,proxy,python3,restful,server,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,架站相關,版本控制,買網址,"
     ]
 }
 </script>
@@ -162,7 +162,7 @@
     "@type": "BlogPosting",
     "articleSection": "blog",
     "name": "Portainer - 視覺化管理 Docker 的工具",
-    "headline": "\u003cp\u003e本機開發大部分使用指令操作，或是使用 Docker 本身的 GUI 介面管理服務\u003cbr\u003e\n\u003ca href=\u0022https:\/\/github.com\/portainer\u0022\u003ePortainer\u003c\/a\u003e 是一個 open-source 的 UI tool\u003cbr\u003e\n可以查看 docker image, container，並執行 start, stop, restart, remove 等動作\u003cbr\u003e\n也可查看每個 container 的 log 及 error\u003cbr\u003e\n在雲端主機上啟動服務的話，即使沒有 Docker 執行權限的人也可以透過帳號密碼登入\u003cbr\u003e\n使用視覺化的介面進行 Docker 服務的各種管理\u003c\/p\u003e",
+    "headline": "\u003cp\u003e本機開發大部分使用指令操作，或是使用 Docker 本身的 GUI 介面管理服務\u003cbr\u003e\n\u003ca href=\u0022https:\/\/github.com\/portainer\u0022\n   \n    target=\u0022_blank\u0022 rel=\u0022noreferrer noopener\u0022\u003ePortainer\n\u003c\/a\u003e\n 是一個 open-source 的 UI tool\u003cbr\u003e\n可以查看 docker image, container，並執行 start, stop, restart, remove 等動作\u003cbr\u003e\n也可查看每個 container 的 log 及 error\u003cbr\u003e\n在雲端主機上啟動服務的話，即使沒有 Docker 執行權限的人也可以透過帳號密碼登入\u003cbr\u003e\n使用視覺化的介面進行 Docker 服務的各種管理\u003c\/p\u003e",
     "description": "介紹如何使用 Portainer 視覺化管理 Docker 服務",
     "inLanguage": "zh-TW",
     "isFamilyFriendly": "true",
@@ -342,12 +342,20 @@
     <div class="content">
       
       <p>本機開發大部分使用指令操作，或是使用 Docker 本身的 GUI 介面管理服務<br>
-<a href="https://github.com/portainer">Portainer</a> 是一個 open-source 的 UI tool<br>
+<a href="https://github.com/portainer"
+   
+    target="_blank" rel="noreferrer noopener">Portainer
+</a>
+ 是一個 open-source 的 UI tool<br>
 可以查看 docker image, container，並執行 start, stop, restart, remove 等動作<br>
 也可查看每個 container 的 log 及 error<br>
 在雲端主機上啟動服務的話，即使沒有 Docker 執行權限的人也可以透過帳號密碼登入<br>
 使用視覺化的介面進行 Docker 服務的各種管理</p>
-<p>Dockerhub image: <a href="https://hub.docker.com/r/portainer/portainer-ce">portainer/portainer-ce</a></p>
+<p>Dockerhub image: <a href="https://hub.docker.com/r/portainer/portainer-ce"
+   
+    target="_blank" rel="noreferrer noopener">portainer/portainer-ce
+</a>
+</p>
 <h1 id="docker-composeyml">docker-compose.yml</h1>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;3&#39;</span>
 
@@ -365,11 +373,19 @@
 
 <span style="color:#f92672">volumes</span>:
   <span style="color:#f92672">portainer_data</span>:
-</code></pre></div><p>為了 edge agent 而開啟 8000 port：<a href="https://downloads.portainer.io/edge_agent_guide.pdf">文件說明</a></p>
+</code></pre></div><p>為了 edge agent 而開啟 8000 port：<a href="https://downloads.portainer.io/edge_agent_guide.pdf"
+   
+    target="_blank" rel="noreferrer noopener">文件說明
+</a>
+</p>
 <hr>
 <h1 id="補充">補充</h1>
 <p>如果遠端主機不想開放 port 造成任意使用者都有機會開啟後台畫面<br>
-可以使用超外道的連線方式：<a href="https://www.tecmint.com/create-ssh-tunneling-port-forwarding-in-linux/">How to Create SSH Tunneling or Port Forwarding in Linux</a></p>
+可以使用超外道的連線方式：<a href="https://www.tecmint.com/create-ssh-tunneling-port-forwarding-in-linux/"
+   
+    target="_blank" rel="noreferrer noopener">How to Create SSH Tunneling or Port Forwarding in Linux
+</a>
+</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh -i ~/.ssh/id_rsa -L 8081:localhost:9000 ray@<span style="color:#f92672">{</span>你的遠端主機 IP<span style="color:#f92672">}</span>
 </code></pre></div><p>在容器啟動後可以在本機終端機執行<br>
 接著就可以在本機 localhost:8081 看到我們在遠端主機的 9000 port<br>
@@ -438,6 +454,16 @@
       </header>
       
       <article class="mini-post">
+          <a href="/blog/202111-git-global-gitignore/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/10/git-global-gitignore/command.png');">
+    <img src="https://tech.ray247k.com/img/blog/2021/10/git-global-gitignore/command.png" alt="command">
+  </a>
+        <header>
+          <h2><a href="/blog/202111-git-global-gitignore/">[Git 教學] 設定本機全域 gitignore</a></h2>
+          <time class="published" datetime="2021-11-06 00:00:00 &#43;0000 UTC">2021/11/06</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
           <a href="/blog/202110-make-discord-chatbot-02-roll-dice-bot/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/10/make-discord-chatbot-02-roll-dice-bot/dices.jpg');">
     <img src="https://tech.ray247k.com/img/blog/2021/10/make-discord-chatbot-02-roll-dice-bot/dices.jpg" alt="dices">
   </a>
@@ -474,16 +500,6 @@
         <header>
           <h2><a href="/blog/202110-leetcode-no1013-partition-array-into-three-parts-with-equal-sum/">[LeetCode] #1013 Partition Array Into Three Parts With Equal Sum (Easy)</a></h2>
           <time class="published" datetime="2021-10-12 00:00:00 &#43;0000 UTC">2021/10/12</time>
-        </header>
-      </article>
-      
-      <article class="mini-post">
-          <a href="/blog/202110-leetcode-no455-assign-cookies/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/10/leetcode-no455-assign-cookies/no455-result.png');">
-    <img src="https://tech.ray247k.com/img/blog/2021/10/leetcode-no455-assign-cookies/no455-result.png" alt="LeetCode #290 run result">
-  </a>
-        <header>
-          <h2><a href="/blog/202110-leetcode-no455-assign-cookies/">[LeetCode] #455 Assign Cookies (Easy)</a></h2>
-          <time class="published" datetime="2021-10-05 00:00:00 &#43;0000 UTC">2021/10/05</time>
         </header>
       </article>
       
@@ -531,6 +547,10 @@
           
           <li>
               <a href="/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/">架站相關<span class="count">3</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">版本控制<span class="count">1</span></a>
           </li>
           
         </ul>
@@ -708,6 +728,14 @@
         </li>
         
         <li>
+          <a href="/tags/git/">git (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/github/">github (1)</a>
+        </li>
+        
+        <li>
           <a href="/tags/github-page/">github-page (1)</a>
         </li>
         
@@ -773,6 +801,10 @@
         
         <li>
           <a href="/tags/%E5%AD%90%E7%B6%B2%E5%9F%9F/">子網域 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">版本控制 (1)</a>
         </li>
         
         <li>

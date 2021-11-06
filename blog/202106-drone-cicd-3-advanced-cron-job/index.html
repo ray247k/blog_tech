@@ -74,9 +74,9 @@
     "headline": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - Schrödinger\u0027s Programmer",
     "name": "薛丁格的工程師",
     "url": "https:\/\/tech.ray247k.com",
-    "description": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - devops,laravel,leetcode,node.js,php,python3,架站相關,",
+    "description": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - devops,laravel,leetcode,node.js,php,python3,架站相關,版本控制,",
     "keywords": [
-        "apache-bench,aws,axios,cdn,chatbot,cicd,cloudflare,component,composer,containerization,cors,devops,discord,dns,docker,docker-compose,domain-name,drone,element-ui,express,gcp,getter,github-page,google-domains,grumphp,laravel,leetcode,leetcode-easy,leetcode-medium,linux,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,portainer,postgresql,proxy,python3,restful,server,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,架站相關,買網址,"
+        "apache-bench,aws,axios,cdn,chatbot,cicd,cloudflare,component,composer,containerization,cors,devops,discord,dns,docker,docker-compose,domain-name,drone,element-ui,express,gcp,getter,git,github,github-page,google-domains,grumphp,laravel,leetcode,leetcode-easy,leetcode-medium,linux,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,portainer,postgresql,proxy,python3,restful,server,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,架站相關,版本控制,買網址,"
     ]
 }
 </script>
@@ -165,7 +165,7 @@
     "@type": "BlogPosting",
     "articleSection": "blog",
     "name": "[用 Drone 建立自動部署] 03 部署排程設定與權限管理",
-    "headline": "\u003cp\u003e使用 \u003ca href=\u0022https:\/\/www.drone.io\/\u0022\u003eDrone\u003c\/a\u003e 建立自己的自動部署服務\u003cbr\u003e\nDrone 是一套以 Golang 開發的一套 CI\/CD 系統工具\u003cbr\u003e\n本篇進行部署排程設定與權限管理的教學\u003c\/p\u003e",
+    "headline": "\u003cp\u003e使用 \u003ca href=\u0022https:\/\/www.drone.io\/\u0022\n   \n    target=\u0022_blank\u0022 rel=\u0022noreferrer noopener\u0022\u003eDrone\n\u003c\/a\u003e\n 建立自己的自動部署服務\u003cbr\u003e\nDrone 是一套以 Golang 開發的一套 CI\/CD 系統工具\u003cbr\u003e\n本篇進行部署排程設定與權限管理的教學\u003c\/p\u003e",
     "description": "透過 Drone 建立自動部署流程，部署排程設定與權限管理",
     "inLanguage": "zh-TW",
     "isFamilyFriendly": "true",
@@ -203,7 +203,7 @@
     },
     "image": [""],
     "url" : "https:\/\/tech.ray247k.com\/blog\/202106-drone-cicd-3-advanced-cron-job\/",
-    "wordCount" : "281",
+    "wordCount" : "282",
     "genre" : [ "DevOps" , "Drone" , "CICD" ],
     "keywords" : [ "DevOps" , "Drone" , "CICD" ]
 }
@@ -346,7 +346,11 @@
       <a href="/blog/202106-drone-cicd-3-advanced-cron-job/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/06/drone-cicd-3-advanced-cron-job/drone-pipeline.png');">
     <img src="https://tech.ray247k.com/img/blog/2021/06/drone-cicd-3-advanced-cron-job/drone-pipeline.png" alt="drone pipeline screenshot">
   </a>
-      <p>使用 <a href="https://www.drone.io/">Drone</a> 建立自己的自動部署服務<br>
+      <p>使用 <a href="https://www.drone.io/"
+   
+    target="_blank" rel="noreferrer noopener">Drone
+</a>
+ 建立自己的自動部署服務<br>
 Drone 是一套以 Golang 開發的一套 CI/CD 系統工具<br>
 本篇進行部署排程設定與權限管理的教學</p>
 <h1 id="定時執行-cron-job">定時執行 (Cron Job)</h1>
@@ -356,19 +360,43 @@ Drone 是一套以 Golang 開發的一套 CI/CD 系統工具<br>
 還有公司用的是 bitbucket，有些功能並不支援！</p>
 <h2 id="自訂執行時間">自訂執行時間</h2>
 <h3 id="服務本身的限制">服務本身的限制</h3>
-<p>Drone 1.0 最終版不給在介面上自訂因為容易出錯：<a href="https://gitter.im/drone/drone?at=5d5d5b8d2cdb146ad612536f">來源</a>
-且最低重複執行時間半小時一次：<a href="https://discourse.drone.io/t/how-to-use-cron-scheduling-in-drone-1-0-0-rc-1/2999">來源</a></p>
+<p>Drone 1.0 最終版不給在介面上自訂因為容易出錯：<a href="https://gitter.im/drone/drone?at=5d5d5b8d2cdb146ad612536f"
+   
+    target="_blank" rel="noreferrer noopener">來源
+</a>
+
+且最低重複執行時間半小時一次：<a href="https://discourse.drone.io/t/how-to-use-cron-scheduling-in-drone-1-0-0-rc-1/2999"
+   
+    target="_blank" rel="noreferrer noopener">來源
+</a>
+</p>
 <h3 id="專案設定檔的設定方法">專案設定檔的設定方法</h3>
 <p>作者說明應該要用 CLI 定義好之後在專案的 <code>.drone.yml</code> 檔去設定觸發條件的 <code>cron job 名稱</code><br>
-而不是表達式：<a href="https://discourse.drone.io/t/cron-job-definition/8027/2">Cron job definition</a></p>
+而不是表達式：<a href="https://discourse.drone.io/t/cron-job-definition/8027/2"
+   
+    target="_blank" rel="noreferrer noopener">Cron job definition
+</a>
+</p>
 <h3 id="表達式的時區居然是寫死的">表達式的時區居然是寫死的</h3>
-<p>官方說明排程的時區是使用 UTC 也就是 +0 時區，所以要自己換算：<a href="https://docs.drone.io/cron/#timezones">Cron Timezones</a></p>
+<p>官方說明排程的時區是使用 UTC 也就是 +0 時區，所以要自己換算：<a href="https://docs.drone.io/cron/#timezones"
+   
+    target="_blank" rel="noreferrer noopener">Cron Timezones
+</a>
+</p>
 <blockquote>
 <p>The current implementation calculates the execution time based on UTC as opposed to local time.</p>
 </blockquote>
-<p>不過官方也說自訂排程時間不會在準確的時間被觸發，前後可能會差一點點：<a href="https://docs.drone.io/cron/#scheduling">參考資料</a></p>
+<p>不過官方也說自訂排程時間不會在準確的時間被觸發，前後可能會差一點點：<a href="https://docs.drone.io/cron/#scheduling"
+   
+    target="_blank" rel="noreferrer noopener">參考資料
+</a>
+</p>
 <h2 id="建立-cron-job">建立 Cron Job</h2>
-<p>大部分教學都使用 Drone CLI，但是在官網發現可以用 API 建立：<a href="https://docs.drone.io/api/cron/cron_create/"> API drone cron create</a>，結果一樣<br>
+<p>大部分教學都使用 Drone CLI，但是在官網發現可以用 API 建立：<a href="https://docs.drone.io/api/cron/cron_create/"
+   
+    target="_blank" rel="noreferrer noopener"> API drone cron create
+</a>
+，結果一樣<br>
 首先要去 Drone 頁面右上的 <code>User Settings</code> 取得 <code>Token</code> 作為 Post 的 header<br>
 打開 Postman 建立一個 <code>POST /api/repos/{owner}/{repo}/cron</code> 請求<br>
 並在 <code>Headers</code> 頁籤加入 Token<br>
@@ -382,7 +410,11 @@ Tocken key 是 <code>Authorization</code><br>
 }
 </code></pre><p>可以看到我的條件是 <code>0 0 8-16,*/2 * * *</code>，代表「8-16 點，每兩個小時執行一次」<br>
 或是也可以設定成 <code>0 0 10,12,14,16 * * *</code>「每個 10 12 14 16 點」執行</p>
-<p>可以使用 <a href="https://www.freeformatter.com/cron-expression-generator-quartz.html">線上工具</a> 來依照條件產生</p>
+<p>可以使用 <a href="https://www.freeformatter.com/cron-expression-generator-quartz.html"
+   
+    target="_blank" rel="noreferrer noopener">線上工具
+</a>
+ 來依照條件產生</p>
 <blockquote>
 <p>注意！這邊作者使用的時間套件是<strong>包含秒數的 6 位數格式</strong>！</p>
 </blockquote>
@@ -412,22 +444,46 @@ Body 帶入要改變的內容，例如把使用的分支換成 <code>dev</code><
 <img src="/img/blog/2021/06/drone-cicd-3-advanced-cron-job/delete-cronjob.png" alt="delete cronjob"></p>
 <p>另外一種操作方式是 Drone CLI，不過這次沒用上，提供給各位參考</p>
 <ul>
-<li><a href="https://docs.drone.io/cron/">Drone CLI Cron</a></li>
-<li><a href="https://docs.drone.io/cli/cron/drone-cron-add/"> CLI drone cron add</a></li>
+<li><a href="https://docs.drone.io/cron/"
+   
+    target="_blank" rel="noreferrer noopener">Drone CLI Cron
+</a>
+</li>
+<li><a href="https://docs.drone.io/cli/cron/drone-cron-add/"
+   
+    target="_blank" rel="noreferrer noopener"> CLI drone cron add
+</a>
+</li>
 </ul>
 <h1 id="權限控管">權限控管</h1>
-<p>如果沒設定使用者，服務上線到公開網址的話就是全世界都可以拿來使用：<a href="https://docs.drone.io/server/user/registration/">官方說明</a></p>
+<p>如果沒設定使用者，服務上線到公開網址的話就是全世界都可以拿來使用：<a href="https://docs.drone.io/server/user/registration/"
+   
+    target="_blank" rel="noreferrer noopener">官方說明
+</a>
+</p>
 <blockquote>
 <p><font color="red">Drone registration is open by default. This means any user can register an account and use the system.</font></p>
 </blockquote>
 <h2 id="管理員權限設定">管理員權限設定</h2>
-<p>在 drone_server 建立 admin 才能管理其他帳號：<a href="https://docs.drone.io/server/reference/drone-user-create/">DRONE_USER_CREATE</a></p>
+<p>在 drone_server 建立 admin 才能管理其他帳號：<a href="https://docs.drone.io/server/reference/drone-user-create/"
+   
+    target="_blank" rel="noreferrer noopener">DRONE_USER_CREATE
+</a>
+</p>
 <pre tabindex="0"><code class="language-yaml=" data-lang="yaml=">- DRONE_USER_CREATE=username:ray247k,admin:true
 </code></pre><h2 id="使用者名單設定">使用者名單設定</h2>
-<p>藉由設定使用者名單來限制存取權限：<a href="https://docs.drone.io/server/reference/drone-user-filter/">官方文件</a></p>
+<p>藉由設定使用者名單來限制存取權限：<a href="https://docs.drone.io/server/reference/drone-user-filter/"
+   
+    target="_blank" rel="noreferrer noopener">官方文件
+</a>
+</p>
 <p>可以使用機構或是使用者 ID</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">- <span style="color:#ae81ff">DRONE_USER_FILTER=ray247k,lemon,JohnDoe</span>
-</code></pre></div><p>但如果版本控制使用的是 Bitbuctet 平台，則不支援 Organization 限制：<a href="https://gitter.im/drone/drone?at=5c5314b9ca428b0645318a1e">討論串說明</a><br>
+</code></pre></div><p>但如果版本控制使用的是 Bitbuctet 平台，則不支援 Organization 限制：<a href="https://gitter.im/drone/drone?at=5c5314b9ca428b0645318a1e"
+   
+    target="_blank" rel="noreferrer noopener">討論串說明
+</a>
+<br>
 所以只要有寫入權限就可以看到 setting 頁面<br>
 <img src="/img/blog/2021/06/drone-cicd-3-advanced-cron-job/bitbucket-not-supported.png" alt="bitbucket not supported"></p>
 <p>使用 GitHub 測試，結果是可以使用組織進行權限控管的，並且不會開放 setting 分頁給所有人</p>
@@ -487,6 +543,16 @@ Body 帶入要改變的內容，例如把使用的分支換成 <code>dev</code><
       </header>
       
       <article class="mini-post">
+          <a href="/blog/202111-git-global-gitignore/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/10/git-global-gitignore/command.png');">
+    <img src="https://tech.ray247k.com/img/blog/2021/10/git-global-gitignore/command.png" alt="command">
+  </a>
+        <header>
+          <h2><a href="/blog/202111-git-global-gitignore/">[Git 教學] 設定本機全域 gitignore</a></h2>
+          <time class="published" datetime="2021-11-06 00:00:00 &#43;0000 UTC">2021/11/06</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
           <a href="/blog/202110-make-discord-chatbot-02-roll-dice-bot/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/10/make-discord-chatbot-02-roll-dice-bot/dices.jpg');">
     <img src="https://tech.ray247k.com/img/blog/2021/10/make-discord-chatbot-02-roll-dice-bot/dices.jpg" alt="dices">
   </a>
@@ -523,16 +589,6 @@ Body 帶入要改變的內容，例如把使用的分支換成 <code>dev</code><
         <header>
           <h2><a href="/blog/202110-leetcode-no1013-partition-array-into-three-parts-with-equal-sum/">[LeetCode] #1013 Partition Array Into Three Parts With Equal Sum (Easy)</a></h2>
           <time class="published" datetime="2021-10-12 00:00:00 &#43;0000 UTC">2021/10/12</time>
-        </header>
-      </article>
-      
-      <article class="mini-post">
-          <a href="/blog/202110-leetcode-no455-assign-cookies/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/10/leetcode-no455-assign-cookies/no455-result.png');">
-    <img src="https://tech.ray247k.com/img/blog/2021/10/leetcode-no455-assign-cookies/no455-result.png" alt="LeetCode #290 run result">
-  </a>
-        <header>
-          <h2><a href="/blog/202110-leetcode-no455-assign-cookies/">[LeetCode] #455 Assign Cookies (Easy)</a></h2>
-          <time class="published" datetime="2021-10-05 00:00:00 &#43;0000 UTC">2021/10/05</time>
         </header>
       </article>
       
@@ -580,6 +636,10 @@ Body 帶入要改變的內容，例如把使用的分支換成 <code>dev</code><
           
           <li>
               <a href="/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/">架站相關<span class="count">3</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">版本控制<span class="count">1</span></a>
           </li>
           
         </ul>
@@ -757,6 +817,14 @@ Body 帶入要改變的內容，例如把使用的分支換成 <code>dev</code><
         </li>
         
         <li>
+          <a href="/tags/git/">git (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/github/">github (1)</a>
+        </li>
+        
+        <li>
           <a href="/tags/github-page/">github-page (1)</a>
         </li>
         
@@ -822,6 +890,10 @@ Body 帶入要改變的內容，例如把使用的分支換成 <code>dev</code><
         
         <li>
           <a href="/tags/%E5%AD%90%E7%B6%B2%E5%9F%9F/">子網域 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">版本控制 (1)</a>
         </li>
         
         <li>

@@ -71,9 +71,9 @@
     "headline": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - Schrödinger\u0027s Programmer",
     "name": "薛丁格的工程師",
     "url": "https:\/\/tech.ray247k.com",
-    "description": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - devops,laravel,leetcode,node.js,php,python3,架站相關,",
+    "description": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - devops,laravel,leetcode,node.js,php,python3,架站相關,版本控制,",
     "keywords": [
-        "apache-bench,aws,axios,cdn,chatbot,cicd,cloudflare,component,composer,containerization,cors,devops,discord,dns,docker,docker-compose,domain-name,drone,element-ui,express,gcp,getter,github-page,google-domains,grumphp,laravel,leetcode,leetcode-easy,leetcode-medium,linux,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,portainer,postgresql,proxy,python3,restful,server,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,架站相關,買網址,"
+        "apache-bench,aws,axios,cdn,chatbot,cicd,cloudflare,component,composer,containerization,cors,devops,discord,dns,docker,docker-compose,domain-name,drone,element-ui,express,gcp,getter,git,github,github-page,google-domains,grumphp,laravel,leetcode,leetcode-easy,leetcode-medium,linux,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,portainer,postgresql,proxy,python3,restful,server,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,架站相關,版本控制,買網址,"
     ]
 }
 </script>
@@ -343,10 +343,22 @@
       
       <p>使用 Docker 來建置一個 PostgreSQL 資料庫<br>
 包含 <code>資料庫建置</code>、<code>資料持久化</code>、<code>使用 GUI 操作資料庫</code></p>
-<p>PostgreSQL 基礎教學：<a href="https://ithelp.ithome.com.tw/users/20105865/ironman/2865">後端前進PostgreSQL 系列</a></p>
+<p>PostgreSQL 基礎教學：<a href="https://ithelp.ithome.com.tw/users/20105865/ironman/2865"
+   
+    target="_blank" rel="noreferrer noopener">後端前進PostgreSQL 系列
+</a>
+</p>
 <h1 id="環境建置---使用-docker-compose">環境建置 - 使用 Docker-compose</h1>
-<p>使用的映像檔：<a href="https://hub.docker.com/_/postgres">postgres: alpine</a><br>
-參考文章：<a href="https://medium.com/analytics-vidhya/getting-started-with-postgresql-using-docker-compose-34d6b808c47c">Getting Started with PostgreSQL using Docker-Compose</a></p>
+<p>使用的映像檔：<a href="https://hub.docker.com/_/postgres"
+   
+    target="_blank" rel="noreferrer noopener">postgres: alpine
+</a>
+<br>
+參考文章：<a href="https://medium.com/analytics-vidhya/getting-started-with-postgresql-using-docker-compose-34d6b808c47c"
+   
+    target="_blank" rel="noreferrer noopener">Getting Started with PostgreSQL using Docker-Compose
+</a>
+</p>
 <h2 id="docker-composeyml">docker-compose.yml</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;3&#39;</span>
 <span style="color:#f92672">services</span>:
@@ -370,7 +382,11 @@
 <h1 id="gui">GUI</h1>
 <h2 id="安裝">安裝</h2>
 <p>因為 sequel ace 不支援 PostgreSQL 所以另外裝一個 GUI 來用<br>
-安裝 <a href="https://dbeaver.com/">DBeaver</a></p>
+安裝 <a href="https://dbeaver.com/"
+   
+    target="_blank" rel="noreferrer noopener">DBeaver
+</a>
+</p>
 <p>會需要安裝 JAVA 包</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install --cask dbeaver-community
 </code></pre></div><h2 id="存取在遠端的-postgresql-container">存取在遠端的 PostgreSQL container</h2>
@@ -378,9 +394,21 @@
 就可以在其他機器上存取 PostgreSQL container</p>
 <hr>
 <h1 id="資料持久化-persist-data">資料持久化 (persist data)</h1>
-<p><a href="https://docs.docker.com/storage/volumes/">官方文件說明</a><br>
-<a href="https://www.tpisoftware.com/tpu/articleDetails/1826">使用docker-compose啟動服務時，初始化資料庫和資料(以Mysql為例)</a><br>
-<a href="https://success.mirantis.com/article/different-types-of-volumes">Different Types of Volumes</a></p>
+<p><a href="https://docs.docker.com/storage/volumes/"
+   
+    target="_blank" rel="noreferrer noopener">官方文件說明
+</a>
+<br>
+<a href="https://www.tpisoftware.com/tpu/articleDetails/1826"
+   
+    target="_blank" rel="noreferrer noopener">使用docker-compose啟動服務時，初始化資料庫和資料(以Mysql為例)
+</a>
+<br>
+<a href="https://success.mirantis.com/article/different-types-of-volumes"
+   
+    target="_blank" rel="noreferrer noopener">Different Types of Volumes
+</a>
+</p>
 <h2 id="named-volume">named volume：</h2>
 <ol>
 <li><code>docker-compose up</code> 啟動容器</li>
@@ -393,7 +421,11 @@
 </ol>
 <h2 id="host-volume">host volume</h2>
 <p>調整容器內 volume 目標資料夾位置到本機特定資料夾下<br>
-如果有多台容器需要一起掛載同一份資料：<a href="https://docs.docker.com/storage/volumes/#share-data-among-machines">官方文件</a><br>
+如果有多台容器需要一起掛載同一份資料：<a href="https://docs.docker.com/storage/volumes/#share-data-among-machines"
+   
+    target="_blank" rel="noreferrer noopener">官方文件
+</a>
+<br>
 這個做法使用 <code>docker volume ls</code> 就不會有結果，要自己去看指定的路徑。因為管理 volume 已經不是透過 docker</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;3&#39;</span>
 <span style="color:#f92672">services</span>:
@@ -508,6 +540,16 @@
       </header>
       
       <article class="mini-post">
+          <a href="/blog/202111-git-global-gitignore/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/10/git-global-gitignore/command.png');">
+    <img src="https://tech.ray247k.com/img/blog/2021/10/git-global-gitignore/command.png" alt="command">
+  </a>
+        <header>
+          <h2><a href="/blog/202111-git-global-gitignore/">[Git 教學] 設定本機全域 gitignore</a></h2>
+          <time class="published" datetime="2021-11-06 00:00:00 &#43;0000 UTC">2021/11/06</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
           <a href="/blog/202110-make-discord-chatbot-02-roll-dice-bot/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/10/make-discord-chatbot-02-roll-dice-bot/dices.jpg');">
     <img src="https://tech.ray247k.com/img/blog/2021/10/make-discord-chatbot-02-roll-dice-bot/dices.jpg" alt="dices">
   </a>
@@ -544,16 +586,6 @@
         <header>
           <h2><a href="/blog/202110-leetcode-no1013-partition-array-into-three-parts-with-equal-sum/">[LeetCode] #1013 Partition Array Into Three Parts With Equal Sum (Easy)</a></h2>
           <time class="published" datetime="2021-10-12 00:00:00 &#43;0000 UTC">2021/10/12</time>
-        </header>
-      </article>
-      
-      <article class="mini-post">
-          <a href="/blog/202110-leetcode-no455-assign-cookies/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/10/leetcode-no455-assign-cookies/no455-result.png');">
-    <img src="https://tech.ray247k.com/img/blog/2021/10/leetcode-no455-assign-cookies/no455-result.png" alt="LeetCode #290 run result">
-  </a>
-        <header>
-          <h2><a href="/blog/202110-leetcode-no455-assign-cookies/">[LeetCode] #455 Assign Cookies (Easy)</a></h2>
-          <time class="published" datetime="2021-10-05 00:00:00 &#43;0000 UTC">2021/10/05</time>
         </header>
       </article>
       
@@ -601,6 +633,10 @@
           
           <li>
               <a href="/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/">架站相關<span class="count">3</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">版本控制<span class="count">1</span></a>
           </li>
           
         </ul>
@@ -778,6 +814,14 @@
         </li>
         
         <li>
+          <a href="/tags/git/">git (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/github/">github (1)</a>
+        </li>
+        
+        <li>
           <a href="/tags/github-page/">github-page (1)</a>
         </li>
         
@@ -843,6 +887,10 @@
         
         <li>
           <a href="/tags/%E5%AD%90%E7%B6%B2%E5%9F%9F/">子網域 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">版本控制 (1)</a>
         </li>
         
         <li>

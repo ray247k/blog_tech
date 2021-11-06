@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GitHub on 薛丁格的工程師</title>
+    <link>https://tech.ray247k.com/tags/github/</link>
+    <description>Recent content in GitHub on 薛丁格的工程師</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-TW</language>
+    <lastBuildDate>Sat, 06 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Git 教學] 設定本機全域 gitignore</title>
+      <link>https://tech.ray247k.com/blog/202111-git-global-gitignore/</link>
+      <pubDate>Sat, 06 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://tech.ray247k.com/blog/202111-git-global-gitignore/</guid>
+      <description>&lt;p&gt;在開發專案時，你會不會把編輯器自動產生的設定檔加入 .gitignore 裡呢？&lt;br&gt;
+為什麼要把你的個人的環境設定加到專案中呢？&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

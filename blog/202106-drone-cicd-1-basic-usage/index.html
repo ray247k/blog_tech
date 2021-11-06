@@ -74,9 +74,9 @@
     "headline": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - Schrödinger\u0027s Programmer",
     "name": "薛丁格的工程師",
     "url": "https:\/\/tech.ray247k.com",
-    "description": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - devops,laravel,leetcode,node.js,php,python3,架站相關,",
+    "description": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - devops,laravel,leetcode,node.js,php,python3,架站相關,版本控制,",
     "keywords": [
-        "apache-bench,aws,axios,cdn,chatbot,cicd,cloudflare,component,composer,containerization,cors,devops,discord,dns,docker,docker-compose,domain-name,drone,element-ui,express,gcp,getter,github-page,google-domains,grumphp,laravel,leetcode,leetcode-easy,leetcode-medium,linux,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,portainer,postgresql,proxy,python3,restful,server,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,架站相關,買網址,"
+        "apache-bench,aws,axios,cdn,chatbot,cicd,cloudflare,component,composer,containerization,cors,devops,discord,dns,docker,docker-compose,domain-name,drone,element-ui,express,gcp,getter,git,github,github-page,google-domains,grumphp,laravel,leetcode,leetcode-easy,leetcode-medium,linux,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,portainer,postgresql,proxy,python3,restful,server,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,架站相關,版本控制,買網址,"
     ]
 }
 </script>
@@ -165,7 +165,7 @@
     "@type": "BlogPosting",
     "articleSection": "blog",
     "name": "[用 Drone 建立自動部署] 01 基本服務建置及串接 GitHub",
-    "headline": "\u003cp\u003e使用 \u003ca href=\u0022https:\/\/www.drone.io\/\u0022\u003eDrone\u003c\/a\u003e 建立自己的自動部署服務\u003cbr\u003e\nDrone 是一套以 Golang 開發的一套 CI\/CD 系統工具\u003cbr\u003e\n本篇進行基礎服務啟動設定，以及串接 GitHub\u003c\/p\u003e",
+    "headline": "\u003cp\u003e使用 \u003ca href=\u0022https:\/\/www.drone.io\/\u0022\n   \n    target=\u0022_blank\u0022 rel=\u0022noreferrer noopener\u0022\u003eDrone\n\u003c\/a\u003e\n 建立自己的自動部署服務\u003cbr\u003e\nDrone 是一套以 Golang 開發的一套 CI\/CD 系統工具\u003cbr\u003e\n本篇進行基礎服務啟動設定，以及串接 GitHub\u003c\/p\u003e",
     "description": "透過 Drone 建立自動部署流程，基本服務建置及串接 GitHub",
     "inLanguage": "zh-TW",
     "isFamilyFriendly": "true",
@@ -346,7 +346,11 @@
       <a href="/blog/202106-drone-cicd-1-basic-usage/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/06/drone-cicd-1-basic-usage/ngrok-start.png');">
     <img src="https://tech.ray247k.com/img/blog/2021/06/drone-cicd-1-basic-usage/ngrok-start.png" alt="ngrok start screenshot">
   </a>
-      <p>使用 <a href="https://www.drone.io/">Drone</a> 建立自己的自動部署服務<br>
+      <p>使用 <a href="https://www.drone.io/"
+   
+    target="_blank" rel="noreferrer noopener">Drone
+</a>
+ 建立自己的自動部署服務<br>
 Drone 是一套以 Golang 開發的一套 CI/CD 系統工具<br>
 本篇進行基礎服務啟動設定，以及串接 GitHub</p>
 <h1 id="為什麼使用-drone">為什麼使用 drone</h1>
@@ -422,10 +426,18 @@ services:
 
 </code></pre><p>可以在 docker-compose.yml 的同層用 <code>.env</code> 保存一些機密資料<br>
 例如 <code>${DRONE_GITHUB_CLIENT_SECRET}</code> 就可以從出版本控制中抽離</p>
-<p>關於設定的參數可以在 <a href="https://docs.drone.io/server/reference/">官方文件</a> 了解更多</p>
+<p>關於設定的參數可以在 <a href="https://docs.drone.io/server/reference/"
+   
+    target="_blank" rel="noreferrer noopener">官方文件
+</a>
+ 了解更多</p>
 <p>設置 <code>DRONE_CRON_INTERVAL=1m</code> 讓 drone server 每一分鐘都去偵測有沒有需要執行的 cron<br>
 預設是 30m，所以有人會遇到服務啟動之後 cron 延後被執行<br>
-其實不是延後執行，而是 drone server 偵測未執行 cron 的行為還沒被觸發：<a href="https://discourse.drone.io/t/triggered-builds-by-cron-have-high-deviation-against-expected-time/6612/2">參考資料</a></p>
+其實不是延後執行，而是 drone server 偵測未執行 cron 的行為還沒被觸發：<a href="https://discourse.drone.io/t/triggered-builds-by-cron-have-high-deviation-against-expected-time/6612/2"
+   
+    target="_blank" rel="noreferrer noopener">參考資料
+</a>
+</p>
 <p>而在 <code>.env</code> 裡就直接定義名稱就好<br>
 注意的是 <code>DRONE_SERVER_HOST</code> 不需要加上 protocol</p>
 <h3 id="env">.env</h3>
@@ -547,6 +559,16 @@ callback 網址設為 <code>/login</code><br>
       </header>
       
       <article class="mini-post">
+          <a href="/blog/202111-git-global-gitignore/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/10/git-global-gitignore/command.png');">
+    <img src="https://tech.ray247k.com/img/blog/2021/10/git-global-gitignore/command.png" alt="command">
+  </a>
+        <header>
+          <h2><a href="/blog/202111-git-global-gitignore/">[Git 教學] 設定本機全域 gitignore</a></h2>
+          <time class="published" datetime="2021-11-06 00:00:00 &#43;0000 UTC">2021/11/06</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
           <a href="/blog/202110-make-discord-chatbot-02-roll-dice-bot/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/10/make-discord-chatbot-02-roll-dice-bot/dices.jpg');">
     <img src="https://tech.ray247k.com/img/blog/2021/10/make-discord-chatbot-02-roll-dice-bot/dices.jpg" alt="dices">
   </a>
@@ -583,16 +605,6 @@ callback 網址設為 <code>/login</code><br>
         <header>
           <h2><a href="/blog/202110-leetcode-no1013-partition-array-into-three-parts-with-equal-sum/">[LeetCode] #1013 Partition Array Into Three Parts With Equal Sum (Easy)</a></h2>
           <time class="published" datetime="2021-10-12 00:00:00 &#43;0000 UTC">2021/10/12</time>
-        </header>
-      </article>
-      
-      <article class="mini-post">
-          <a href="/blog/202110-leetcode-no455-assign-cookies/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/10/leetcode-no455-assign-cookies/no455-result.png');">
-    <img src="https://tech.ray247k.com/img/blog/2021/10/leetcode-no455-assign-cookies/no455-result.png" alt="LeetCode #290 run result">
-  </a>
-        <header>
-          <h2><a href="/blog/202110-leetcode-no455-assign-cookies/">[LeetCode] #455 Assign Cookies (Easy)</a></h2>
-          <time class="published" datetime="2021-10-05 00:00:00 &#43;0000 UTC">2021/10/05</time>
         </header>
       </article>
       
@@ -640,6 +652,10 @@ callback 網址設為 <code>/login</code><br>
           
           <li>
               <a href="/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/">架站相關<span class="count">3</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">版本控制<span class="count">1</span></a>
           </li>
           
         </ul>
@@ -817,6 +833,14 @@ callback 網址設為 <code>/login</code><br>
         </li>
         
         <li>
+          <a href="/tags/git/">git (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/github/">github (1)</a>
+        </li>
+        
+        <li>
           <a href="/tags/github-page/">github-page (1)</a>
         </li>
         
@@ -882,6 +906,10 @@ callback 網址設為 <code>/login</code><br>
         
         <li>
           <a href="/tags/%E5%AD%90%E7%B6%B2%E5%9F%9F/">子網域 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">版本控制 (1)</a>
         </li>
         
         <li>

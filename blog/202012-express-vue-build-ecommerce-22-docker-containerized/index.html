@@ -71,9 +71,9 @@
     "headline": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - Schrödinger\u0027s Programmer",
     "name": "薛丁格的工程師",
     "url": "https:\/\/tech.ray247k.com",
-    "description": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - devops,laravel,leetcode,node.js,php,python3,架站相關,",
+    "description": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - devops,laravel,leetcode,node.js,php,python3,架站相關,版本控制,",
     "keywords": [
-        "apache-bench,aws,axios,cdn,chatbot,cicd,cloudflare,component,composer,containerization,cors,devops,discord,dns,docker,docker-compose,domain-name,drone,element-ui,express,gcp,getter,github-page,google-domains,grumphp,laravel,leetcode,leetcode-easy,leetcode-medium,linux,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,portainer,postgresql,proxy,python3,restful,server,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,架站相關,買網址,"
+        "apache-bench,aws,axios,cdn,chatbot,cicd,cloudflare,component,composer,containerization,cors,devops,discord,dns,docker,docker-compose,domain-name,drone,element-ui,express,gcp,getter,git,github,github-page,google-domains,grumphp,laravel,leetcode,leetcode-easy,leetcode-medium,linux,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,portainer,postgresql,proxy,python3,restful,server,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,架站相關,版本控制,買網址,"
     ]
 }
 </script>
@@ -162,7 +162,7 @@
     "@type": "BlogPosting",
     "articleSection": "blog",
     "name": "[Express\u002bVue 搭建電商網站] 22 使用 Docker 將專案容器化",
-    "headline": "\u003cp\u003e接著我們會把整個專案使用 \u003ca href=\u0022https:\/\/www.docker.com\/\u0022\u003eDocker\u003c\/a\u003e 來將服務容器化，也會在 MongoDB 設定身份驗證機制\u003cbr\u003e\n如果對 Docker 不熟的話必須先去了解，才有辦法進行\u003cbr\u003e\n或是直接跳過這個章節 \u003cdel\u003e交給熱心的攤主處理\u003c\/del\u003e\u003c\/p\u003e",
+    "headline": "\u003cp\u003e接著我們會把整個專案使用 \u003ca href=\u0022https:\/\/www.docker.com\/\u0022\n   \n    target=\u0022_blank\u0022 rel=\u0022noreferrer noopener\u0022\u003eDocker\n\u003c\/a\u003e\n 來將服務容器化，也會在 MongoDB 設定身份驗證機制\u003cbr\u003e\n如果對 Docker 不熟的話必須先去了解，才有辦法進行\u003cbr\u003e\n或是直接跳過這個章節 \u003cdel\u003e交給熱心的攤主處理\u003c\/del\u003e\u003c\/p\u003e",
     "description": "使用 Express \u002b Vue 搭建一個電商網站 - 使用 Docker 將專案容器化",
     "inLanguage": "zh-TW",
     "isFamilyFriendly": "true",
@@ -341,7 +341,11 @@
     </div>
     <div class="content">
       
-      <p>接著我們會把整個專案使用 <a href="https://www.docker.com/">Docker</a> 來將服務容器化，也會在 MongoDB 設定身份驗證機制<br>
+      <p>接著我們會把整個專案使用 <a href="https://www.docker.com/"
+   
+    target="_blank" rel="noreferrer noopener">Docker
+</a>
+ 來將服務容器化，也會在 MongoDB 設定身份驗證機制<br>
 如果對 Docker 不熟的話必須先去了解，才有辦法進行<br>
 或是直接跳過這個章節 <del>交給熱心的攤主處理</del></p>
 <p>在這邊我們會用到三個容器</p>
@@ -438,7 +442,11 @@
 裡面也只有一行：</p>
 <pre tabindex="0"><code>node_modules
 </code></pre><h2 id="docker-compose">Docker Compose</h2>
-<p><a href="https://docs.docker.com/compose/">Docker Compose</a> 可以讓我們很好的管理 docker 容器，只需要透過一個 YAML 檔就可以修改設定。</p>
+<p><a href="https://docs.docker.com/compose/"
+   
+    target="_blank" rel="noreferrer noopener">Docker Compose
+</a>
+ 可以讓我們很好的管理 docker 容器，只需要透過一個 YAML 檔就可以修改設定。</p>
 <p>在專案的根目錄下建立（跟 client 和 server 兩個資料夾同層）<code>docker-compose.yml</code></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;3&#39;</span>
 
@@ -463,12 +471,20 @@
 <li>nginx：映像檔透過 <code>client</code> 資料夾內來建立，對外 port 為 <code>8080:80</code>，外部的 8080 port 會指向到內部 80 port</li>
 </ul>
 <blockquote>
-<p>如果 docker-compose.yml 中的 service 使用 image 指定映像檔，則會去<a href="https://hub.docker.com/">Docker Hub</a> 上拉回指定的映像檔<br>
+<p>如果 docker-compose.yml 中的 service 使用 image 指定映像檔，則會去<a href="https://hub.docker.com/"
+   
+    target="_blank" rel="noreferrer noopener">Docker Hub
+</a>
+ 上拉回指定的映像檔<br>
 若是使用 <code>build</code> 則會根據指定目錄下的 <code>Dockerfile</code> 來建立映像檔。</p>
 </blockquote>
 <p>接著就是測試的時間！打開 Docker 之後，在終端機輸入</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose up --build
-</code></pre></div><p>第一次執行會多花一些時間，因為先前提過的要從<a href="https://hub.docker.com/">Docker Hub</a> 上拉回指定的映像檔，如下圖<br>
+</code></pre></div><p>第一次執行會多花一些時間，因為先前提過的要從<a href="https://hub.docker.com/"
+   
+    target="_blank" rel="noreferrer noopener">Docker Hub
+</a>
+ 上拉回指定的映像檔，如下圖<br>
 <img src="/img/blog/2020/12/express-vue-build-ecommerce-22-docker-containerized/docker-compose-up.png" alt="docker_container.md"></p>
 <p>可以藉由</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker ps
@@ -519,7 +535,11 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose up --build
 </code></pre></div><p>應該會看到網頁一切正常，不過資料庫已經有了驗證，不是「裸奔」的狀態了</p>
 <hr>
-<p>專案範例程式碼 GitHub 網址：<a href="https://github.com/ray247k/mini-E-commerce">ray247k/mini-E-commerce</a></p>
+<p>專案範例程式碼 GitHub 網址：<a href="https://github.com/ray247k/mini-E-commerce"
+   
+    target="_blank" rel="noreferrer noopener">ray247k/mini-E-commerce
+</a>
+</p>
 
       
       
@@ -576,6 +596,16 @@
       </header>
       
       <article class="mini-post">
+          <a href="/blog/202111-git-global-gitignore/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/10/git-global-gitignore/command.png');">
+    <img src="https://tech.ray247k.com/img/blog/2021/10/git-global-gitignore/command.png" alt="command">
+  </a>
+        <header>
+          <h2><a href="/blog/202111-git-global-gitignore/">[Git 教學] 設定本機全域 gitignore</a></h2>
+          <time class="published" datetime="2021-11-06 00:00:00 &#43;0000 UTC">2021/11/06</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
           <a href="/blog/202110-make-discord-chatbot-02-roll-dice-bot/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/10/make-discord-chatbot-02-roll-dice-bot/dices.jpg');">
     <img src="https://tech.ray247k.com/img/blog/2021/10/make-discord-chatbot-02-roll-dice-bot/dices.jpg" alt="dices">
   </a>
@@ -612,16 +642,6 @@
         <header>
           <h2><a href="/blog/202110-leetcode-no1013-partition-array-into-three-parts-with-equal-sum/">[LeetCode] #1013 Partition Array Into Three Parts With Equal Sum (Easy)</a></h2>
           <time class="published" datetime="2021-10-12 00:00:00 &#43;0000 UTC">2021/10/12</time>
-        </header>
-      </article>
-      
-      <article class="mini-post">
-          <a href="/blog/202110-leetcode-no455-assign-cookies/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/10/leetcode-no455-assign-cookies/no455-result.png');">
-    <img src="https://tech.ray247k.com/img/blog/2021/10/leetcode-no455-assign-cookies/no455-result.png" alt="LeetCode #290 run result">
-  </a>
-        <header>
-          <h2><a href="/blog/202110-leetcode-no455-assign-cookies/">[LeetCode] #455 Assign Cookies (Easy)</a></h2>
-          <time class="published" datetime="2021-10-05 00:00:00 &#43;0000 UTC">2021/10/05</time>
         </header>
       </article>
       
@@ -669,6 +689,10 @@
           
           <li>
               <a href="/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/">架站相關<span class="count">3</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">版本控制<span class="count">1</span></a>
           </li>
           
         </ul>
@@ -846,6 +870,14 @@
         </li>
         
         <li>
+          <a href="/tags/git/">git (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/github/">github (1)</a>
+        </li>
+        
+        <li>
           <a href="/tags/github-page/">github-page (1)</a>
         </li>
         
@@ -911,6 +943,10 @@
         
         <li>
           <a href="/tags/%E5%AD%90%E7%B6%B2%E5%9F%9F/">子網域 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">版本控制 (1)</a>
         </li>
         
         <li>

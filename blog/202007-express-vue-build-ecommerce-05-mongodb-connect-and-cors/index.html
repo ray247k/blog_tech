@@ -71,9 +71,9 @@
     "headline": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - Schrödinger\u0027s Programmer",
     "name": "薛丁格的工程師",
     "url": "https:\/\/tech.ray247k.com",
-    "description": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - devops,laravel,leetcode,node.js,php,python3,架站相關,",
+    "description": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - devops,laravel,leetcode,node.js,php,python3,架站相關,版本控制,",
     "keywords": [
-        "apache-bench,aws,axios,cdn,chatbot,cicd,cloudflare,component,composer,containerization,cors,devops,discord,dns,docker,docker-compose,domain-name,drone,element-ui,express,gcp,getter,github-page,google-domains,grumphp,laravel,leetcode,leetcode-easy,leetcode-medium,linux,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,portainer,postgresql,proxy,python3,restful,server,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,架站相關,買網址,"
+        "apache-bench,aws,axios,cdn,chatbot,cicd,cloudflare,component,composer,containerization,cors,devops,discord,dns,docker,docker-compose,domain-name,drone,element-ui,express,gcp,getter,git,github,github-page,google-domains,grumphp,laravel,leetcode,leetcode-easy,leetcode-medium,linux,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,portainer,postgresql,proxy,python3,restful,server,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,架站相關,版本控制,買網址,"
     ]
 }
 </script>
@@ -343,8 +343,16 @@
       
       <p>資料庫使用 MongoDB，這篇中我們會簡單介紹基本連線方式，以及跨來源資源共(CORS)</p>
 <h1 id="連接-mongodb">連接 MongoDB</h1>
-<p>接著我們要安裝 mongoose 套件：<a href="https://www.npmjs.com/package/mongoose">Mongoose</a><br>
-Mongoose 是一個 <a href="https://www.mongodb.com/">MongoDB</a> 對象建模工具，用於在異步環境中工作<br>
+<p>接著我們要安裝 mongoose 套件：<a href="https://www.npmjs.com/package/mongoose"
+   
+    target="_blank" rel="noreferrer noopener">Mongoose
+</a>
+<br>
+Mongoose 是一個 <a href="https://www.mongodb.com/"
+   
+    target="_blank" rel="noreferrer noopener">MongoDB
+</a>
+ 對象建模工具，用於在異步環境中工作<br>
 是時下最流行的 ODM(Object Document Mapping)，要比直接操作底層 MongoDB Node 更方便</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm install mongoose
 </code></pre></div><p>接著回到 <code>app.js</code> 中導入剛剛安裝的 <code>mongoose</code></p>
@@ -355,7 +363,11 @@ Mongoose 是一個 <a href="https://www.mongodb.com/">MongoDB</a> 對象建模�
 但現在我們先做點額外的事情，儘管目前看來沒什麼用處但卻是必要的一環<br>
 那就是開啟跨來源資源共用 CORS</p>
 <h1 id="跨來源資源共用-cors">跨來源資源共用 CORS</h1>
-<p>CORS 是基於 <a href="https://developer.mozilla.org/zh-TW/docs/Web/Security/Same-origin_policy">同源政策</a> 的限制<br>
+<p>CORS 是基於 <a href="https://developer.mozilla.org/zh-TW/docs/Web/Security/Same-origin_policy"
+   
+    target="_blank" rel="noreferrer noopener">同源政策
+</a>
+ 的限制<br>
 當關閉時限制了程式碼和不同網域資源間的互動，來自不同網域的資源請求會被無情拒絕！</p>
 <p>讓我們回到 <code>app.js</code>，在剛剛的資料庫連線下一行加入以下程式碼</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#75715e">// CORS config here
@@ -371,10 +383,18 @@ Mongoose 是一個 <a href="https://www.mongodb.com/">MongoDB</a> 對象建模�
     <span style="color:#a6e22e">next</span>();
   }
 });
-</code></pre></div><p>通常來說會使用 npm 套件 <a href="https://www.npmjs.com/package/cors">cors</a> 解決，但這邊先用簡單暴力的方式解決<br>
+</code></pre></div><p>通常來說會使用 npm 套件 <a href="https://www.npmjs.com/package/cors"
+   
+    target="_blank" rel="noreferrer noopener">cors
+</a>
+ 解決，但這邊先用簡單暴力的方式解決<br>
 未來如果有進行優化會再回頭安裝</p>
 <hr>
-<p>專案範例程式碼 GitHub 網址：<a href="https://github.com/ray247k/mini-E-commerce">ray247k/mini-E-commerce</a></p>
+<p>專案範例程式碼 GitHub 網址：<a href="https://github.com/ray247k/mini-E-commerce"
+   
+    target="_blank" rel="noreferrer noopener">ray247k/mini-E-commerce
+</a>
+</p>
 
       
       
@@ -433,6 +453,16 @@ Mongoose 是一個 <a href="https://www.mongodb.com/">MongoDB</a> 對象建模�
       </header>
       
       <article class="mini-post">
+          <a href="/blog/202111-git-global-gitignore/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/10/git-global-gitignore/command.png');">
+    <img src="https://tech.ray247k.com/img/blog/2021/10/git-global-gitignore/command.png" alt="command">
+  </a>
+        <header>
+          <h2><a href="/blog/202111-git-global-gitignore/">[Git 教學] 設定本機全域 gitignore</a></h2>
+          <time class="published" datetime="2021-11-06 00:00:00 &#43;0000 UTC">2021/11/06</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
           <a href="/blog/202110-make-discord-chatbot-02-roll-dice-bot/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/10/make-discord-chatbot-02-roll-dice-bot/dices.jpg');">
     <img src="https://tech.ray247k.com/img/blog/2021/10/make-discord-chatbot-02-roll-dice-bot/dices.jpg" alt="dices">
   </a>
@@ -469,16 +499,6 @@ Mongoose 是一個 <a href="https://www.mongodb.com/">MongoDB</a> 對象建模�
         <header>
           <h2><a href="/blog/202110-leetcode-no1013-partition-array-into-three-parts-with-equal-sum/">[LeetCode] #1013 Partition Array Into Three Parts With Equal Sum (Easy)</a></h2>
           <time class="published" datetime="2021-10-12 00:00:00 &#43;0000 UTC">2021/10/12</time>
-        </header>
-      </article>
-      
-      <article class="mini-post">
-          <a href="/blog/202110-leetcode-no455-assign-cookies/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/10/leetcode-no455-assign-cookies/no455-result.png');">
-    <img src="https://tech.ray247k.com/img/blog/2021/10/leetcode-no455-assign-cookies/no455-result.png" alt="LeetCode #290 run result">
-  </a>
-        <header>
-          <h2><a href="/blog/202110-leetcode-no455-assign-cookies/">[LeetCode] #455 Assign Cookies (Easy)</a></h2>
-          <time class="published" datetime="2021-10-05 00:00:00 &#43;0000 UTC">2021/10/05</time>
         </header>
       </article>
       
@@ -526,6 +546,10 @@ Mongoose 是一個 <a href="https://www.mongodb.com/">MongoDB</a> 對象建模�
           
           <li>
               <a href="/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/">架站相關<span class="count">3</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">版本控制<span class="count">1</span></a>
           </li>
           
         </ul>
@@ -703,6 +727,14 @@ Mongoose 是一個 <a href="https://www.mongodb.com/">MongoDB</a> 對象建模�
         </li>
         
         <li>
+          <a href="/tags/git/">git (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/github/">github (1)</a>
+        </li>
+        
+        <li>
           <a href="/tags/github-page/">github-page (1)</a>
         </li>
         
@@ -768,6 +800,10 @@ Mongoose 是一個 <a href="https://www.mongodb.com/">MongoDB</a> 對象建模�
         
         <li>
           <a href="/tags/%E5%AD%90%E7%B6%B2%E5%9F%9F/">子網域 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">版本控制 (1)</a>
         </li>
         
         <li>

@@ -25,7 +25,11 @@
       
       <guid>https://tech.ray247k.com/blog/202010-express-vue-build-ecommerce-15-use-vuex-getters/</guid>
       <description>&lt;p&gt;有時候我們需要 &lt;code&gt;computed&lt;/code&gt; store 中的 state，在每個組件中複製貼上同樣的 &lt;code&gt;computed&lt;/code&gt; 似乎不是一個明智的作法&lt;br&gt;
-&lt;a href=&#34;https://vuex.vuejs.org/zh/guide/getters.html&#34;&gt;Vuex Getter&lt;/a&gt; 是 Vuex 提供讓我們可以對 Vuex store 中 state 資料做預處理的方法，就可以達成這個目的&lt;/p&gt;</description>
+&lt;a href=&#34;https://vuex.vuejs.org/zh/guide/getters.html&#34;
+   
+    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Vuex Getter
+&lt;/a&gt;
+ 是 Vuex 提供讓我們可以對 Vuex store 中 state 資料做預處理的方法，就可以達成這個目的&lt;/p&gt;</description>
     </item>
     
   </channel>
