@@ -2,7 +2,7 @@
 <html lang="zh-tw">
   <head>
   <meta charset="utf-8">
-<title>[LeetCode] #290 Word Pattern (Easy) - 薛丁格的工程師</title>
+<title>[A Tour of Go 學習筆記] 04 指針和結構 - 薛丁格的工程師</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
@@ -19,15 +19,15 @@
   <meta name="theme-color" content="#ffffff">
 
 <meta name="generator" content="Hugo 0.88.1" /><meta property="og:site_name" content="薛丁格的工程師">
-  <meta property="og:title" content="[LeetCode] #290 Word Pattern (Easy)">
-  <meta property="og:description" content="LeetCode 第 290 題 Word Pattern，難度 Easy">
-  <meta property="description" content="LeetCode 第 290 題 Word Pattern，難度 Easy">
-  <meta property="og:url" content="https://tech.ray247k.com/blog/202109-leetcode-no290-word-pattern/">
+  <meta property="og:title" content="[A Tour of Go 學習筆記] 04 指針和結構">
+  <meta property="og:description" content="使用官方教學瞭解 Go 語言指針和結構">
+  <meta property="description" content="使用官方教學瞭解 Go 語言指針和結構">
+  <meta property="og:url" content="https://tech.ray247k.com/blog/202111-a-tour-of-go-04-pointer-and-struct/">
   <meta property="og:type" content="article">
   
     
-      <meta property="og:image" content="https://tech.ray247k.com/img/blog/2021/09/leetcode-no290-word-pattern/no290-result.png">
-      <meta property="og:image:alt" content="LeetCode #290 run result">
+      <meta property="og:image" content="https://tech.ray247k.com/img/blog/2021/11/a-tour-of-go-04-pointer-and-struct/IMG_8708.jpg">
+      <meta property="og:image:alt" content="a photo">
     
   
   <link rel="stylesheet" href="/css/bundle.min.6ad9eb85bff384c75937a02036b01425a2ca63f19a96535b8ba5b181db62a4b3.css" integrity="sha256-atnrhb/zhMdZN6AgNrAUJaLKY/GallNbi6WxgdtipLM="><link rel="stylesheet" href="/css/add-on.css">
@@ -109,14 +109,14 @@
 {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "[LeetCode] #290 Word Pattern (Easy)",
-    "description": "LeetCode 第 290 題 Word Pattern，難度 Easy",
+    "name": "[A Tour of Go 學習筆記] 04 指針和結構",
+    "description": "使用官方教學瞭解 Go 語言指針和結構",
     "keywords": [
-        "LeetCode" , "LeetCode-Easy" , "Python3" 
+        "Golang" , "Go" 
     ],
-    "dateCreated": "2021-09-05T00:00:00.00Z",
-    "datePublished": "2021-09-05T00:00:00.00Z",
-    "dateModified": "2021-09-05T00:00:00.00Z",
+    "dateCreated": "2021-11-17T00:00:00.00Z",
+    "datePublished": "2021-11-17T00:00:00.00Z",
+    "dateModified": "2021-11-17T00:00:00.00Z",
     "primaryImageOfPage": {
         "@type": "ImageObject",
         "contentUrl": "[]"
@@ -147,9 +147,9 @@
                 "@type": "ListItem",
                 "position": 3,
                 "item": {
-                    "@id": "https:\/\/tech.ray247k.com\/blog\/202109-leetcode-no290-word-pattern\/",
-                    "name": "[LeetCode] #290 Word Pattern (Easy)",
-                    "url": "https:\/\/tech.ray247k.com\/blog\/202109-leetcode-no290-word-pattern\/"
+                    "@id": "https:\/\/tech.ray247k.com\/blog\/202111-a-tour-of-go-04-pointer-and-struct\/",
+                    "name": "[A Tour of Go 學習筆記] 04 指針和結構",
+                    "url": "https:\/\/tech.ray247k.com\/blog\/202111-a-tour-of-go-04-pointer-and-struct\/"
                 }
             }
         ],
@@ -164,14 +164,14 @@
     "@context": "http://schema.org",
     "@type": "BlogPosting",
     "articleSection": "blog",
-    "name": "[LeetCode] #290 Word Pattern (Easy)",
-    "headline": "\u003cp\u003e用 Python3 解 LeetCode 系列，\u003ccode\u003eWord Pattern\u003c\/code\u003e，屬於 Easy\u003c\/p\u003e",
-    "description": "LeetCode 第 290 題 Word Pattern，難度 Easy",
+    "name": "[A Tour of Go 學習筆記] 04 指針和結構",
+    "headline": "\u003cp\u003e初入 Golang 的世界，首先我們使用官方教學：\u003ca href=\u0022https:\/\/tour.golang.org\/welcome\/1\u0022\n   \n    target=\u0022_blank\u0022 rel=\u0022noreferrer noopener\u0022\u003eA Tour of Go\n\u003c\/a\u003e\n 來認識基本的 Golang 使用\u003cbr\u003e\n這篇是流程控制相關的筆記，說明如何使用指針和結構\u003c\/p\u003e",
+    "description": "使用官方教學瞭解 Go 語言指針和結構",
     "inLanguage": "zh-TW",
     "isFamilyFriendly": "true",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https:\/\/tech.ray247k.com\/blog\/202109-leetcode-no290-word-pattern\/"
+        "@id": "https:\/\/tech.ray247k.com\/blog\/202111-a-tour-of-go-04-pointer-and-struct\/"
     },
     "author" : {
     "@type": "Person",
@@ -187,9 +187,9 @@
     },
     "copyrightHolder" : "薛丁格的工程師",
     "copyrightYear" : "2021",
-    "dateCreated": "2021-09-05T00:00:00.00Z",
-    "datePublished": "2021-09-05T00:00:00.00Z",
-    "dateModified": "2021-09-05T00:00:00.00Z",
+    "dateCreated": "2021-11-17T00:00:00.00Z",
+    "datePublished": "2021-11-17T00:00:00.00Z",
+    "dateModified": "2021-11-17T00:00:00.00Z",
     "publisher":{
         "@type":"Organization",
         "name": "薛丁格的工程師",
@@ -202,10 +202,10 @@
         }
     },
     "image": [""],
-    "url" : "https:\/\/tech.ray247k.com\/blog\/202109-leetcode-no290-word-pattern\/",
-    "wordCount" : "209",
-    "genre" : [ "LeetCode" , "LeetCode-Easy" , "Python3" ],
-    "keywords" : [ "LeetCode" , "LeetCode-Easy" , "Python3" ]
+    "url" : "https:\/\/tech.ray247k.com\/blog\/202111-a-tour-of-go-04-pointer-and-struct\/",
+    "wordCount" : "306",
+    "genre" : [ "Golang" , "Go" ],
+    "keywords" : [ "Golang" , "Go" ]
 }
 </script>
 
@@ -321,14 +321,14 @@
     <header>
   <div class="title">
     
-      <h2><a href="/blog/202109-leetcode-no290-word-pattern/">[LeetCode] #290 Word Pattern (Easy)</a></h2>
+      <h2><a href="/blog/202111-a-tour-of-go-04-pointer-and-struct/">[A Tour of Go 學習筆記] 04 指針和結構</a></h2>
     
     
-      <p>LeetCode 第 290 題 Word Pattern，難度 Easy</p>
+      <p>使用官方教學瞭解 Go 語言指針和結構</p>
     
   </div>
   <div class="meta">
-    <time datetime="2021-09-05 00:00:00 &#43;0000 UTC">2021/09/05</time>
+    <time datetime="2021-11-17 00:00:00 &#43;0000 UTC">2021/11/17</time>
     <p>Ray</p>
     
   </div>
@@ -343,77 +343,131 @@
 
     </div>
     <div class="content">
-      <a href="/blog/202109-leetcode-no290-word-pattern/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/09/leetcode-no290-word-pattern/no290-result.png');">
-    <img src="https://tech.ray247k.com/img/blog/2021/09/leetcode-no290-word-pattern/no290-result.png" alt="LeetCode #290 run result">
+      <a href="/blog/202111-a-tour-of-go-04-pointer-and-struct/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/11/a-tour-of-go-04-pointer-and-struct/IMG_8708.jpg');">
+    <img src="https://tech.ray247k.com/img/blog/2021/11/a-tour-of-go-04-pointer-and-struct/IMG_8708.jpg" alt="a photo">
   </a>
-      <p>用 Python3 解 LeetCode 系列，<code>Word Pattern</code>，屬於 Easy</p>
-<h1 id="原始題目">原始題目</h1>
-<p>Given a <code>pattern</code> and a string <code>s</code>, find if <code>s</code> follows the same pattern.</p>
-<p>Here <strong>follow</strong> means a full match, such that there is a bijection between a letter in <code>pattern</code> and a <strong>non-empty</strong> word in <code>s</code>.</p>
-<p>Example 1:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Input: pattern = &#34;abba&#34;, s = &#34;dog cat cat dog&#34;
-Output: true
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Example 2:
+      <p>初入 Golang 的世界，首先我們使用官方教學：<a href="https://tour.golang.org/welcome/1"
+   
+    target="_blank" rel="noreferrer noopener">A Tour of Go
+</a>
+ 來認識基本的 Golang 使用<br>
+這篇是流程控制相關的筆記，說明如何使用指針和結構</p>
+<h1 id="指針pointer">指針(pointer)</h1>
+<p>Go 有指針，指針代表值在記憶體中的位址<br>
+<code>*T</code>代表指向<code>T</code>這個類型的指針，預設值是<code>nil</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">p</span> <span style="color:#f92672">*</span><span style="color:#66d9ef">int</span> <span style="color:#75715e">// p = nil
+</span></code></pre></div><p><code>&amp;</code>符號會指向目標的「記憶體位址」</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">42</span>
+<span style="color:#a6e22e">p</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">i</span>  <span style="color:#75715e">// p = 0xc000018038 = 變數 i 的指針位置
+</span></code></pre></div><p><code>*</code>可以取得該指針位置代表的「值」</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#f92672">*</span><span style="color:#a6e22e">p</span>) <span style="color:#75715e">// 透過指針 p 取得 i 代表的值
+</span><span style="color:#75715e"></span><span style="color:#f92672">*</span><span style="color:#a6e22e">p</span> = <span style="color:#ae81ff">21</span>         <span style="color:#75715e">// 透過設定指針位置 p 的值，間接改變 i
+</span></code></pre></div><p>這就是常說的「間接引用」或是「重新定向」</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 
-Input: pattern = &#34;abba&#34;, s = &#34;dog cat cat fish&#34;
-Output: false
-</code></pre></div><p>Example 3:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Input: pattern = &#34;aaaa&#34;, s = &#34;dog cat cat dog&#34;
-Output: false
-</code></pre></div><p>Example 4:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Input: pattern = &#34;abba&#34;, s = &#34;dog dog dog dog&#34;
-Output: false
-</code></pre></div><h1 id="題目分析">題目分析</h1>
-<ul>
-<li>給你一個模式<code>pattern</code>和<code>s</code></li>
-<li>pattern 裡的每個字母對應<code>s</code>一個單字，相同字母單字必須一樣</li>
-<li>判斷<code>s</code>是否符合<code>pattern</code></li>
-</ul>
-<h1 id="解題過程">解題過程</h1>
-<ol>
-<li>長度判斷，如果<code>pattern</code>字母數量和<code>s</code>單字數量不同，一定就是 false</li>
-<li><code>mapping_dict</code>的 key 是<code>pattern</code>的字母，值是同 index 的<code>s</code>內容</li>
-<li><code>exist_check_dict</code>的 key 是<code>s</code>的單字，值是<code>pattern</code>的字母</li>
-<li>遍歷<code>pattern</code>所有值</li>
-<li>檢查當前<code>pattern</code>字母為 key 的<code>mapping_dict</code>資料，和<code>s</code>中相同位置的單字有沒有一樣</li>
-<li>檢查和當前<code>pattern</code>字母同 index 的 s 單字所對應的字母和<code>exist_check_dict</code>紀錄中的字母有沒有一樣</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span>:
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">wordPattern</span>(self, pattern: str, s: str) <span style="color:#f92672">-&gt;</span> bool:
-        <span style="color:#75715e"># 長度判斷，如果不同長度一定就是 false</span>
-        words_list <span style="color:#f92672">=</span> s<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39; &#39;</span>)
-        words_len <span style="color:#f92672">=</span> len(words_list)
-        pattern_len <span style="color:#f92672">=</span> len(pattern)
-        <span style="color:#66d9ef">if</span> words_len <span style="color:#f92672">!=</span> pattern_len:
-            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">False</span>
-        
-        mapping_dict <span style="color:#f92672">=</span> dict()
-        exist_check_dict <span style="color:#f92672">=</span> dict()
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
 
-        <span style="color:#66d9ef">for</span> index, val <span style="color:#f92672">in</span> enumerate(pattern):
-            
-            <span style="color:#75715e"># 如果 pattern key 存在</span>
-            <span style="color:#66d9ef">if</span> val <span style="color:#f92672">in</span> mapping_dict<span style="color:#f92672">.</span>keys():
-                
-                <span style="color:#75715e"># 檢查 pattern 字母代表的單字是否一致</span>
-                <span style="color:#66d9ef">if</span> mapping_dict[val] <span style="color:#f92672">!=</span> words_list[index]:
-                    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">False</span>
-            <span style="color:#66d9ef">else</span>:
-                <span style="color:#75715e"># 檢查有沒有重複的單字在不同字母中</span>
-                <span style="color:#66d9ef">if</span> words_list[index] <span style="color:#f92672">in</span> exist_check_dict:
-                    <span style="color:#66d9ef">if</span> exist_check_dict[words_list[index]] <span style="color:#f92672">!=</span> val:
-                        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">False</span>
-                <span style="color:#66d9ef">else</span> :
-                    mapping_dict[val] <span style="color:#f92672">=</span> words_list[index]
-                    exist_check_dict[words_list[index]] <span style="color:#f92672">=</span> val
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+	<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">42</span>, <span style="color:#ae81ff">2701</span>
 
-        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">True</span>
-</code></pre></div><h1 id="結果">結果</h1>
-<p><img src="/img/blog/2021/09/leetcode-no290-word-pattern/no290-result.png" alt="result"></p>
+	<span style="color:#a6e22e">p</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">i</span>         <span style="color:#75715e">// point to i
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#f92672">*</span><span style="color:#a6e22e">p</span>) <span style="color:#75715e">// read i through the pointer
+</span><span style="color:#75715e"></span>	<span style="color:#f92672">*</span><span style="color:#a6e22e">p</span> = <span style="color:#ae81ff">21</span>         <span style="color:#75715e">// set i through the pointer
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">i</span>)  <span style="color:#75715e">// see the new value of i
+</span><span style="color:#75715e"></span>
+	<span style="color:#a6e22e">p</span> = <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">j</span>         <span style="color:#75715e">// point to j
+</span><span style="color:#75715e"></span>	<span style="color:#f92672">*</span><span style="color:#a6e22e">p</span> = <span style="color:#f92672">*</span><span style="color:#a6e22e">p</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">37</span>   <span style="color:#75715e">// divide j through the pointer
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">j</span>) <span style="color:#75715e">// see the new value of j
+</span><span style="color:#75715e"></span>}
+<span style="color:#75715e">/*
+</span><span style="color:#75715e">&gt;&gt;&gt; 42
+</span><span style="color:#75715e">&gt;&gt;&gt; 21
+</span><span style="color:#75715e">&gt;&gt;&gt; 73
+</span><span style="color:#75715e">*/</span>
+</code></pre></div><h1 id="結構-struct">結構 (struct)</h1>
+<p>類似於 JavaScript 的物件，是一堆欄位的集合<br>
+變數儲存單一值，如果需要表是比較複雜的概念例如座標，就可以使用結構</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Vertex</span> <span style="color:#66d9ef">struct</span> {
+	<span style="color:#a6e22e">X</span> <span style="color:#66d9ef">int</span>
+	<span style="color:#a6e22e">Y</span> <span style="color:#66d9ef">int</span>
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">Vertex</span>{<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>})
+}
+<span style="color:#75715e">/*
+</span><span style="color:#75715e">&gt;&gt;&gt; {1 2}
+</span><span style="color:#75715e">*/</span>
+</code></pre></div><p>甚至連訪問方式都很像 JavaScript 的物件，使用<code>.</code>來存取結構中的內容<br>
+注意到了嗎，這邊的<code>X</code>和<code>Y</code>都是大寫的<br>
+代表該內容被導出可以在外部被呼叫！</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Vertex</span> <span style="color:#66d9ef">struct</span> {
+	<span style="color:#a6e22e">X</span> <span style="color:#66d9ef">int</span>
+	<span style="color:#a6e22e">Y</span> <span style="color:#66d9ef">int</span>
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+	<span style="color:#a6e22e">v</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">Vertex</span>{<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>}
+	<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">X</span> = <span style="color:#ae81ff">4</span>
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">X</span>)
+}
+<span style="color:#75715e">/*
+</span><span style="color:#75715e">&gt;&gt;&gt; 4
+</span><span style="color:#75715e">*/</span>
+</code></pre></div><p>上面提到的指針操作，同樣也適用於 struct 操作</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Vertex</span> <span style="color:#66d9ef">struct</span> {
+	<span style="color:#a6e22e">X</span> <span style="color:#66d9ef">int</span>
+	<span style="color:#a6e22e">Y</span> <span style="color:#66d9ef">int</span>
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+	<span style="color:#a6e22e">v</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">Vertex</span>{<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>}
+	<span style="color:#a6e22e">p</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">v</span>            <span style="color:#75715e">// p 指向 v 的記憶體位置，代表他們是同一個目標
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">X</span> = <span style="color:#ae81ff">1e9</span>
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">v</span>)
+}
+<span style="color:#75715e">/*
+</span><span style="color:#75715e">&gt;&gt;&gt; {1000000000 2}
+</span><span style="color:#75715e">*/</span>
+</code></pre></div><h2 id="創建-struct">創建 struct</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Vertex</span> <span style="color:#66d9ef">struct</span> {
+	<span style="color:#a6e22e">X</span>, <span style="color:#a6e22e">Y</span> <span style="color:#66d9ef">int</span>
+}
+
+<span style="color:#66d9ef">var</span> (
+	<span style="color:#a6e22e">v1</span> = <span style="color:#a6e22e">Vertex</span>{<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>}  <span style="color:#75715e">// 建立型別為 Vertex 的 struct
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">v2</span> = <span style="color:#a6e22e">Vertex</span>{<span style="color:#a6e22e">X</span>: <span style="color:#ae81ff">1</span>}  <span style="color:#75715e">// Y:0 是因為 int 型別預設為 0
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">v3</span> = <span style="color:#a6e22e">Vertex</span>{}      <span style="color:#75715e">// X:0, Y:0
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">p</span>  = <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Vertex</span>{<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">2</span>} <span style="color:#75715e">// 建立型別為 *Vertex 的 struct
+</span><span style="color:#75715e"></span>)
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">v1</span>, <span style="color:#a6e22e">v2</span>, <span style="color:#a6e22e">v3</span>, <span style="color:#a6e22e">p</span>)
+}
+<span style="color:#75715e">/*
+</span><span style="color:#75715e">&gt;&gt;&gt; {1 2} {1 0} {0 0} &amp;{3 2}
+</span><span style="color:#75715e">*/</span>
+</code></pre></div>
 
       
       
-<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/ray247k/button?referrer=https%3a%2f%2ftech.ray247k.com%2fblog%2f202109-leetcode-no290-word-pattern%2f" width="100%" frameborder=0></iframe>
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/ray247k/button?referrer=https%3a%2f%2ftech.ray247k.com%2fblog%2f202111-a-tour-of-go-04-pointer-and-struct%2f" width="100%" frameborder=0></iframe>
 
     </div>
     <footer>
@@ -422,9 +476,7 @@ Output: false
     <ul class="categories">
       
         
-          <li><a class="article-terms-link" href="/categories/leetcode/">LeetCode</a></li>
-        
-          <li><a class="article-terms-link" href="/categories/python3/">Python3</a></li>
+          <li><a class="article-terms-link" href="/categories/go/">GO</a></li>
         
       
     </ul>
@@ -433,11 +485,9 @@ Output: false
     <ul class="tags">
       
         
-          <li><a class="article-terms-link" href="/tags/leetcode/">LeetCode</a></li>
+          <li><a class="article-terms-link" href="/tags/golang/">Golang</a></li>
         
-          <li><a class="article-terms-link" href="/tags/leetcode-easy/">LeetCode-Easy</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/python3/">Python3</a></li>
+          <li><a class="article-terms-link" href="/tags/go/">Go</a></li>
         
       
     </ul>
@@ -452,10 +502,8 @@ Output: false
   
   <div class="pagination">
     
-      <a href="/blog/202109-leetcode-no66-plus-one/" class="button left"><span>[LeetCode] #66 Plus One (Easy)</span></a>
     
-    
-      <a href="/blog/202107-grumphp-a-php-code-quality-tool/" class="button right"><span>使用 GrumPHP 做程式碼品質的守門員</span></a>
+      <a href="/blog/202111-a-tour-of-go-03-flow-control-statements/" class="button right"><span>[A Tour of Go 學習筆記] 03 流程控制</span></a>
     
   </div>
 
