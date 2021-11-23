@@ -6,7 +6,21 @@
     <description>Recent content on 薛丁格的工程師</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Wed, 17 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 23 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[A Tour of Go 學習筆記] 05 陣列和切片</title>
+      <link>https://tech.ray247k.com/blog/202111-a-tour-of-go-05-array-and-slice/</link>
+      <pubDate>Tue, 23 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://tech.ray247k.com/blog/202111-a-tour-of-go-05-array-and-slice/</guid>
+      <description>&lt;p&gt;初入 Golang 的世界，首先我們使用官方教學：&lt;a href=&#34;https://tour.golang.org/welcome/1&#34;
+   
+    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;A Tour of Go
+&lt;/a&gt;
+ 來認識基本的 Golang 使用&lt;br&gt;
+這篇介紹陣列和切片的概念&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>[A Tour of Go 學習筆記] 04 指針和結構</title>
       <link>https://tech.ray247k.com/blog/202111-a-tour-of-go-04-pointer-and-struct/</link>
@@ -18,7 +32,7 @@
     target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;A Tour of Go
 &lt;/a&gt;
  來認識基本的 Golang 使用&lt;br&gt;
-這篇是流程控制相關的筆記，說明如何使用指針和結構&lt;/p&gt;</description>
+這篇介紹指針和結構的使用&lt;/p&gt;</description>
     </item>
     
     <item>
