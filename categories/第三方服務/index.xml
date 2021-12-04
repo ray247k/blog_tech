@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>第三方服務 on 薛丁格的工程師</title>
+    <link>https://tech.ray247k.com/categories/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%9C%8D%E5%8B%99/</link>
+    <description>Recent content in 第三方服務 on 薛丁格的工程師</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-TW</language>
+    <lastBuildDate>Sun, 28 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/categories/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%9C%8D%E5%8B%99/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>操作 Google 表單，透過 GAS(Google App Script)</title>
+      <link>https://tech.ray247k.com/blog/202111-operate-google-sheet-via-google-app-script/</link>
+      <pubDate>Sun, 28 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://tech.ray247k.com/blog/202111-operate-google-sheet-via-google-app-script/</guid>
+      <description>&lt;p&gt;在管理後台尚未建立完成而前台已經上線的時候，會希望可以讓非程式人員自行調整網頁上的文案&lt;br&gt;
+又或是暫時性的紀錄內容不想因此開資料表，通常這時候我們會透過 Google 表單來管理資料&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
