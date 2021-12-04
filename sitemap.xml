@@ -2,13 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://tech.ray247k.com/blog/202111-a-tour-of-go-05-array-and-slice/</loc>
-    <lastmod>2021-11-23T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://tech.ray247k.com/blog/</loc>
-    <lastmod>2021-11-23T00:00:00+00:00</lastmod>
+    <lastmod>2021-11-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/categories/</loc>
+    <lastmod>2021-11-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tech.ray247k.com/tags/gas/</loc>
+    <lastmod>2021-11-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tech.ray247k.com/tags/google-app-script/</loc>
+    <lastmod>2021-11-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tech.ray247k.com/tags/google-sheets/</loc>
+    <lastmod>2021-11-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tech.ray247k.com/tags/</loc>
+    <lastmod>2021-11-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tech.ray247k.com/blog/202111-operate-google-sheet-via-google-app-script/</loc>
+    <lastmod>2021-11-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tech.ray247k.com/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/</loc>
+    <lastmod>2021-11-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tech.ray247k.com/</loc>
+    <lastmod>2021-11-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tech.ray247k.com/blog/202111-a-tour-of-go-05-array-and-slice/</loc>
     <lastmod>2021-11-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/categories/go/</loc>
@@ -18,12 +39,6 @@
     <lastmod>2021-11-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/tags/golang/</loc>
-    <lastmod>2021-11-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tech.ray247k.com/tags/</loc>
-    <lastmod>2021-11-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tech.ray247k.com/</loc>
     <lastmod>2021-11-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/blog/202111-a-tour-of-go-04-pointer-and-struct/</loc>
@@ -231,9 +246,6 @@
     <lastmod>2021-05-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/tags/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/</loc>
-    <lastmod>2021-05-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tech.ray247k.com/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/</loc>
     <lastmod>2021-05-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/blog/202105-set-custom-domain-for-github-page/</loc>

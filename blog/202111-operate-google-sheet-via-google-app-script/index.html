@@ -1,0 +1,1075 @@
+<!doctype html>
+<html lang="zh-tw">
+  <head>
+  <meta charset="utf-8">
+<title>操作 Google 表單，透過 GAS(Google App Script) - 薛丁格的工程師</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
+  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
+  
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=1" color="#ffffff">
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=1">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=1">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+<meta name="generator" content="Hugo 0.89.4" /><meta property="og:site_name" content="薛丁格的工程師">
+  <meta property="og:title" content="操作 Google 表單，透過 GAS(Google App Script)">
+  <meta property="og:description" content="使用 GAS(Google App Script) 服務把 Google 表單當作簡易的資料庫使用">
+  <meta property="description" content="使用 GAS(Google App Script) 服務把 Google 表單當作簡易的資料庫使用">
+  <meta property="og:url" content="https://tech.ray247k.com/blog/202111-operate-google-sheet-via-google-app-script/">
+  <meta property="og:type" content="article">
+  
+    
+      <meta property="og:image" content="https://tech.ray247k.com/img/blog/2021/11/operate-google-sheet-via-google-app-script/IMG_9408.jpg">
+      <meta property="og:image:alt" content="Ramen">
+    
+  
+  <link rel="stylesheet" href="/css/bundle.min.6ad9eb85bff384c75937a02036b01425a2ca63f19a96535b8ba5b181db62a4b3.css" integrity="sha256-atnrhb/zhMdZN6AgNrAUJaLKY/GallNbi6WxgdtipLM="><link rel="stylesheet" href="/css/add-on.css">
+
+  
+
+
+    
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-LTGVYYWC2J');
+        </script>
+    
+
+
+  <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "image": {
+        "@type": "ImageObject",
+        "image": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+        "height": 648,
+        "width": 1080
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "薛丁格的工程師",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg"
+        }
+    },
+    "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+    "headline": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - Schrödinger\u0027s Programmer",
+    "name": "薛丁格的工程師",
+    "url": "https:\/\/tech.ray247k.com",
+    "description": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - devops,go,laravel,leetcode,node.js,php,python3,架站相關,版本控制,",
+    "keywords": [
+        "apache-bench,aws,axios,cdn,chatbot,cicd,cloudflare,component,composer,containerization,cors,devops,discord,dns,docker,docker-compose,domain-name,drone,element-ui,express,gas,gcp,getter,git,github,github-page,go,golang,google-app-script,google-domains,google-sheets,grumphp,laravel,leetcode,leetcode-easy,leetcode-medium,linux,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,portainer,postgresql,proxy,python3,restful,server,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,架站相關,版本控制,買網址,"
+    ]
+}
+</script>
+
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "legalName": "薛丁格的工程師",
+    "url": "https:\/\/tech.ray247k.com",
+    "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "",
+        "availableLanguage": [
+            "Mandarin",
+            "English"
+        ]
+    },
+    "sameAs": [
+        "https://ray247k.blogspot.com/"
+    ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "操作 Google 表單，透過 GAS(Google App Script)",
+    "description": "使用 GAS(Google App Script) 服務把 Google 表單當作簡易的資料庫使用",
+    "keywords": [
+        "Google Sheets" , "Google App Script" , "GAS" 
+    ],
+    "dateCreated": "2021-11-28T00:00:00.00Z",
+    "datePublished": "2021-11-28T00:00:00.00Z",
+    "dateModified": "2021-11-28T00:00:00.00Z",
+    "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "contentUrl": "[]"
+    },
+    "breadcrumb": {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com",
+                    "name": "薛丁格的工程師",
+                    "url": "https:\/\/tech.ray247k.com"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com/blog",
+                    "name": "Blog",
+                    "url": "https:\/\/tech.ray247k.com/blog"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\/blog\/202111-operate-google-sheet-via-google-app-script\/",
+                    "name": "操作 Google 表單，透過 GAS(Google App Script)",
+                    "url": "https:\/\/tech.ray247k.com\/blog\/202111-operate-google-sheet-via-google-app-script\/"
+                }
+            }
+        ],
+        "itemListOrder": "Ascending",
+        "numberOfItems": 3
+    }
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "articleSection": "blog",
+    "name": "操作 Google 表單，透過 GAS(Google App Script)",
+    "headline": "\u003cp\u003e在管理後台尚未建立完成而前台已經上線的時候，會希望可以讓非程式人員自行調整網頁上的文案\u003cbr\u003e\n又或是暫時性的紀錄內容不想因此開資料表，通常這時候我們會透過 Google 表單來管理資料\u003c\/p\u003e",
+    "description": "使用 GAS(Google App Script) 服務把 Google 表單當作簡易的資料庫使用",
+    "inLanguage": "zh-TW",
+    "isFamilyFriendly": "true",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com\/blog\/202111-operate-google-sheet-via-google-app-script\/"
+    },
+    "author" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "creator" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "accountablePerson" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "copyrightHolder" : "薛丁格的工程師",
+    "copyrightYear" : "2021",
+    "dateCreated": "2021-11-28T00:00:00.00Z",
+    "datePublished": "2021-11-28T00:00:00.00Z",
+    "dateModified": "2021-11-28T00:00:00.00Z",
+    "publisher":{
+        "@type":"Organization",
+        "name": "薛丁格的工程師",
+        "url": "https://tech.ray247k.com",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+            "width":"32",
+            "height":"32"
+        }
+    },
+    "image": [""],
+    "url" : "https:\/\/tech.ray247k.com\/blog\/202111-operate-google-sheet-via-google-app-script\/",
+    "wordCount" : "529",
+    "genre" : [ "Google Sheets" , "Google App Script" , "GAS" ],
+    "keywords" : [ "Google Sheets" , "Google App Script" , "GAS" ]
+}
+</script>
+
+
+
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/" class="nav">
+        
+          Blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/" class="nav link"><i class='fa fa-home'></i> home</a>
+        
+      
+        
+          
+          <a href="/about" class="nav link"><i class='far fa-id-card'></i> about</a>
+        
+      
+        
+          
+          <a href="/categories" class="nav link"><i class='fas fa-sitemap'></i> category</a>
+        
+      
+      
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    
+    
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/"><img src="https://tech.ray247k.com/img/main/logo.jpg" class="circle" width="100" alt="一隻箱子裡的貓，看著電腦螢幕" /></a>
+  <header>
+    <h1>Schrödinger's Programmer</h1>
+  </header>
+  <main>
+    <p>奔跑吧工程師，趁年輕跑得越遠越好</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/ray247k" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+<li><a href="//gitlab.com/ray247k" target="_blank" rel="noopener" title="GitLab" class="fab fa-gitlab"></a></li>
+
+
+
+
+
+
+
+
+
+
+<li><a href="//www.linkedin.com/in/j-ray-cheng" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="/blog/202111-operate-google-sheet-via-google-app-script/">操作 Google 表單，透過 GAS(Google App Script)</a></h2>
+    
+    
+      <p>使用 GAS(Google App Script) 服務把 Google 表單當作簡易的資料庫使用</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2021-11-28 00:00:00 &#43;0000 UTC">2021/11/28</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+    <div id="socnet-share">
+      
+
+
+
+
+
+    </div>
+    <div class="content">
+      <a href="/blog/202111-operate-google-sheet-via-google-app-script/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/11/operate-google-sheet-via-google-app-script/IMG_9408.jpg');">
+    <img src="https://tech.ray247k.com/img/blog/2021/11/operate-google-sheet-via-google-app-script/IMG_9408.jpg" alt="Ramen">
+  </a>
+      <p>在管理後台尚未建立完成而前台已經上線的時候，會希望可以讓非程式人員自行調整網頁上的文案<br>
+又或是暫時性的紀錄內容不想因此開資料表，通常這時候我們會透過 Google 表單來管理資料</p>
+<p>先把話說在前面，這種做法都是權宜之計！<br>
+Google 表單本身限制蠻多的，如果你拿去當正式資料庫絕對會爆炸<br>
+沒爆炸代表你的服務太小，連三公分都不到<br>
+在初期小不是什麼問題，換來的靈活性讓非程式人員在正式編輯介面完成前可以讓自行修改內容<br>
+而不用透過技術人員發布新版程式</p>
+<p>讀取 Google 表單有兩種方式，一種是將表單發佈在網路上<br>
+如此就可以透過網址取得指定輸出類型的表單內容，最常見的就是輸出成 csv 格式</p>
+<p><strong>優點：</strong></p>
+<ul>
+<li>操作簡單，人人都會</li>
+<li>不需要額外寫程式，建立好之後可以直接訪問網址取得資料</li>
+</ul>
+<p><strong>缺點：</strong></p>
+<ul>
+<li>發佈內容會被 Google 快取：雖然說明寫有修改之後會更新，但是實際更新大概要等個三到五分鐘<br>
+如果你的內容是需要即時存取最新資料做判斷的話會發生問題</li>
+</ul>
+<p>至於第二種方式就是為了解決缺點的部分，為此我們要使用 Google 提供的 GAS(Google App Script) 服務</p>
+<h1 id="1-建立一個google-表單">1. 建立一個google 表單</h1>
+<p>既然都說要「操作 Google 表單」所以建立一個 Google 表單也是合情合理的吧<br>
+設為共用可查看就好</p>
+<p><img src="/img/blog/2021/11/operate-google-sheet-via-google-app-script/share-sheet.png" alt="share sheet"></p>
+<h1 id="2-建立新-google-app-script-專案">2. 建立新 Google App Script 專案</h1>
+<p>可以在 <a href="https://script.google.com/home"
+   
+    target="_blank" rel="noreferrer noopener">Google App Script 專案頁面
+</a>
+ 建立<br>
+或是用在 google sheet 裡面直接開啟擴充功能</p>
+<p><img src="/img/blog/2021/11/operate-google-sheet-via-google-app-script/tool-bar.png" alt="tool bar"></p>
+<h1 id="3-google-script-撰寫">3. Google Script 撰寫</h1>
+<p>現在已經有了 Google 表單，也知道操作用的程式要寫在哪了<br>
+接著就是要來寫要執行的程式，撰寫時可以參考：<a href="https://developers.google.com/apps-script/reference/spreadsheet/sheet?hl=en#methods"
+   
+    target="_blank" rel="noreferrer noopener">官方參考文件
+</a>
+<br>
+從文件中找到需要的函數來操作 Google 表單</p>
+<h2 id="共用參數說明">共用參數說明</h2>
+<p>有一些很常用的函數先一併說明</p>
+<h3 id="eparameter">e.parameter</h3>
+<p>取得傳入的所有參數，後續程式可以用來操作<br>
+使用方式是</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">params</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">parameter</span>
+</code></pre></div><h3 id="paramssheettag">params.sheetTag</h3>
+<p>google sheet 最下面的工作表名稱，作為變數傳入就可以同時寫或是讀多個不同工作表</p>
+<p><img src="/img/blog/2021/11/operate-google-sheet-via-google-app-script/sheet-tag.png" alt="sheet tag"></p>
+<p>使用方式是在取得傳入的所有變數之後呼叫<code>sheetTag</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">sheetTag</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">sheetTag</span>
+</code></pre></div><h3 id="paramssheetid">params.sheetId</h3>
+<p>Google 表單的 ID 用來識別，作為參數傳入就可以區分正式或是測試環境<br>
+用自己的就好了，這份文件我已經刪掉了！</p>
+<p><img src="/img/blog/2021/11/operate-google-sheet-via-google-app-script/sheet-id.png" alt="sheet id"></p>
+<p>使用方式是在取得傳入的所有變數之後呼叫<code>sheetId</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">sheetId</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">sheetId</span>
+</code></pre></div><h2 id="讀取資料">讀取資料</h2>
+<p>接下來是說一下怎麼讀取資料<br>
+讀取表單用的 function 名稱一定要叫<code>deGet</code>，所有 get 方法都打到這邊</p>
+<p>呼叫的內建方法可以去查上面提到過的官方文件</p>
+<ol>
+<li>取得最後一欄和最後一列的數字</li>
+<li>取得範圍內的所有資料</li>
+<li>回傳 json 格式</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">doGet</span>(<span style="color:#a6e22e">e</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">params</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">parameter</span>
+
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">sheetTag</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">sheetTag</span>
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">sheetId</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">sheetId</span>
+
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">SpreadSheet</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">SpreadsheetApp</span>.<span style="color:#a6e22e">openById</span>(<span style="color:#a6e22e">sheetId</span>)
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">Sheet</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">SpreadSheet</span>.<span style="color:#a6e22e">getSheetByName</span>(<span style="color:#a6e22e">sheetTag</span>)
+
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">lastRow</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Sheet</span>.<span style="color:#a6e22e">getLastRow</span>()
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">lastColumn</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Sheet</span>.<span style="color:#a6e22e">getLastColumn</span>()
+
+  <span style="color:#75715e">// getSheetValues(startRow, startColumn, numRows, numColumns)
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">values</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Sheet</span>.<span style="color:#a6e22e">getSheetValues</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">lastRow</span>, <span style="color:#a6e22e">lastColumn</span>)
+
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">jsonString</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(Object.<span style="color:#a6e22e">assign</span>({}, <span style="color:#a6e22e">values</span>))
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ContentService</span>.<span style="color:#a6e22e">createTextOutput</span>(<span style="color:#a6e22e">jsonString</span>)
+}
+</code></pre></div><p>在寫好<code>doGet</code>之後我們來測試一下是否可以達成預期結果<br>
+在直接發佈之前可以利用內建的測試工具來測試</p>
+<p>在剛剛的 Google App Script 專案下新增一個檔案<code>debugGet.gs</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">debug</span>() {
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">e</span> <span style="color:#f92672">=</span> {
+      <span style="color:#a6e22e">parameter</span><span style="color:#f92672">:</span>{
+        <span style="color:#a6e22e">sheetId</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;1XuNpMRdZasL8TNovZasd13asd41SoEBo0BMzabGqaE1s&#34;</span>,
+        <span style="color:#a6e22e">sheetTag</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;todo&#34;</span>
+      }
+  }
+
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">doGet</span>(<span style="color:#a6e22e">e</span>)
+  <span style="color:#a6e22e">Logger</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">result</span>.<span style="color:#a6e22e">getContent</span>())
+}
+</code></pre></div><p>設定好 Google 表單要傳入資料之後，按下執行<br>
+回傳結果會透過<code>Logger.log</code>顯示在底下執行結果視窗</p>
+<h2 id="寫入資料">寫入資料</h2>
+<p>傳入 data 是一個 json 字串，將會一筆一筆寫入指定的工作表<br>
+比較特別的是假設資料內容有包含網址，在傳入的時候必須跳脫特殊字元<br>
+而原生 JavaScript 沒有轉回來的函示<br>
+都必須調用 DOM document，但是 GAS 是 server side 的沒得呼叫<br>
+所以就直接用替換的</p>
+<ol>
+<li>傳入的資料從字串轉換為 JSON 物件</li>
+<li>遍歷物件將值從第一列根據不同 index 寫入到不同欄位</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">doPost</span>(<span style="color:#a6e22e">e</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">params</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">parameter</span>
+
+  <span style="color:#75715e">// 初始化試算表
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">sheetTag</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">sheetTag</span>
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">sheetId</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">sheetId</span>
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">SpreadSheet</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">SpreadsheetApp</span>.<span style="color:#a6e22e">openById</span>(<span style="color:#a6e22e">sheetId</span>)
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">Sheet</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">SpreadSheet</span>.<span style="color:#a6e22e">getSheetByName</span>(<span style="color:#a6e22e">sheetTag</span>)
+  
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">data</span>)
+
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">lastRow</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+
+  <span style="color:#75715e">// 寫入試算表
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">value</span>){
+    <span style="color:#66d9ef">with</span>(<span style="color:#a6e22e">value</span>) {
+      <span style="color:#a6e22e">content</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">content</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/&amp;amp;/g</span>, <span style="color:#e6db74">&#34;&amp;&#34;</span>).<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/&amp;lt;/g</span>, <span style="color:#e6db74">&#34;&lt;&#34;</span>).<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/&amp;gt;/g</span>, <span style="color:#e6db74">&#34;&gt;&#34;</span>).<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/&amp;quot;/g</span>, <span style="color:#e6db74">&#34;\&#34;&#34;</span>).<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/&amp;#039;/g</span>, <span style="color:#e6db74">&#34;&#39;&#34;</span>)
+      <span style="color:#a6e22e">Sheet</span>.<span style="color:#a6e22e">getRange</span>(<span style="color:#a6e22e">lastRow</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>).<span style="color:#a6e22e">setValue</span>(<span style="color:#a6e22e">article_id</span>)
+      <span style="color:#a6e22e">Sheet</span>.<span style="color:#a6e22e">getRange</span>(<span style="color:#a6e22e">lastRow</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>).<span style="color:#a6e22e">setValue</span>(<span style="color:#a6e22e">content</span>)
+    }
+    <span style="color:#a6e22e">lastRow</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">lastRow</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+  })
+
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ContentService</span>.<span style="color:#a6e22e">createTextOutput</span>(<span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#66d9ef">true</span>)).<span style="color:#a6e22e">setMimeType</span>(<span style="color:#a6e22e">ContentService</span>.<span style="color:#a6e22e">MimeType</span>.<span style="color:#a6e22e">JSON</span>)
+}
+</code></pre></div><p>測試方法和 Get 的時候很像，我們新增一個檔案<code>debugGet.gs</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">debugPost</span>(){
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">processing</span> <span style="color:#f92672">=</span> {
+    <span style="color:#a6e22e">parameter</span><span style="color:#f92672">:</span>{
+      <span style="color:#a6e22e">sheetId</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;1XuNpMRdZasL8TNovZS09Aing41SoEBo0BMzabGqaE1s&#34;</span>,
+      <span style="color:#a6e22e">sheetTag</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;processing&#34;</span>,
+      <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;[{&#34;action&#34;:&#34;鐵人賽&#34;,&#34;date&#34;:&#34;2021/09/12&#34;}]&#39;</span>,
+    }
+  }
+
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">done</span> <span style="color:#f92672">=</span> {
+    <span style="color:#a6e22e">parameter</span><span style="color:#f92672">:</span>{
+      <span style="color:#a6e22e">sheetId</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;1XuNpMRdZasL8TNovZS09Aing41SoEBo0BMzabGqaE1s&#34;</span>,
+      <span style="color:#a6e22e">sheetTag</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;done&#34;</span>,
+      <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;[{&#34;action&#34;:&#34;還書&#34;,&#34;date&#34;:&#34;2021/10/09&#34;}]&#39;</span>,
+    }
+  }
+
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">result1</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">doPost</span>(<span style="color:#a6e22e">processing</span>)
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">result2</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">doPost</span>(<span style="color:#a6e22e">done</span>)
+  <span style="color:#a6e22e">Logger</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">result1</span>.<span style="color:#a6e22e">getContent</span>())
+  <span style="color:#a6e22e">Logger</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">result2</span>.<span style="color:#a6e22e">getContent</span>())
+}
+</code></pre></div><p>可以看到我們測試了兩種傳入參數：processing 和 done<br>
+兩者的差異就只有傳入的 sheetTag，代表不同工作表</p>
+<p>下一個範例比較複雜，屬於延伸應用</p>
+<ol>
+<li>輸入邀請碼和使用者 email</li>
+<li>檢查該邀請碼是否還有可使用額度(相同邀請碼的後一欄均已經被填入資料，換言之沒有可填入資料的欄位)</li>
+<li>檢查該使用者是否登記過邀請碼</li>
+<li>寫入資料 / 回傳結果</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">doPost</span>(<span style="color:#a6e22e">e</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">params</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">parameter</span>
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">sheetTag</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">sheetTag</span>
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">sheetId</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">sheetId</span>
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">SpreadSheet</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">SpreadsheetApp</span>.<span style="color:#a6e22e">openById</span>(<span style="color:#a6e22e">sheetId</span>)
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">Sheet</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">SpreadSheet</span>.<span style="color:#a6e22e">getSheetByName</span>(<span style="color:#a6e22e">sheetTag</span>)
+
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">invitation_code</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">invitation_code</span>
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">email</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">email</span>
+
+  <span style="color:#75715e">// email 已存在
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">user_target_range</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Sheet</span>.<span style="color:#a6e22e">createTextFinder</span>(<span style="color:#a6e22e">email</span>).<span style="color:#a6e22e">findNext</span>()
+  <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">user_target_range</span> <span style="color:#f92672">!==</span> <span style="color:#66d9ef">null</span>) {
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ContentService</span>.<span style="color:#a6e22e">createTextOutput</span>(<span style="color:#66d9ef">false</span>)
+  }
+
+  <span style="color:#75715e">// 撈取全部 invitation_code
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">ranges</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Sheet</span>.<span style="color:#a6e22e">createTextFinder</span>(<span style="color:#a6e22e">invitation_code</span>).<span style="color:#a6e22e">findAll</span>()
+
+  <span style="color:#75715e">// 遍歷所有 invitation_code 的結果
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">target_row</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+  <span style="color:#a6e22e">ranges</span>.<span style="color:#a6e22e">every</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">range</span>){
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">row_num</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">range</span>.<span style="color:#a6e22e">getRowIndex</span>()
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">column_value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Sheet</span>.<span style="color:#a6e22e">getRange</span>(<span style="color:#a6e22e">row_num</span>, <span style="color:#ae81ff">2</span>).<span style="color:#a6e22e">getValue</span>()
+
+    <span style="color:#75715e">// 取得當前目標的 B 欄內容，如果為空就設定寫入行數
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">column_value</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;&#39;</span>) {
+      <span style="color:#a6e22e">target_row</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">row_num</span>
+      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+    }
+
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
+  })
+
+  <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">target_row</span> <span style="color:#f92672">!==</span> <span style="color:#ae81ff">0</span>) {
+    <span style="color:#a6e22e">Sheet</span>.<span style="color:#a6e22e">getRange</span>(<span style="color:#a6e22e">target_row</span>, <span style="color:#ae81ff">2</span>).<span style="color:#a6e22e">setValue</span>(<span style="color:#a6e22e">email</span>)
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ContentService</span>.<span style="color:#a6e22e">createTextOutput</span>(<span style="color:#66d9ef">true</span>)
+  }
+  
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ContentService</span>.<span style="color:#a6e22e">createTextOutput</span>(<span style="color:#66d9ef">false</span>) <span style="color:#75715e">// 邀請碼額度已經用完
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p>測試用的 function</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">debugPost</span>(){
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">params</span> <span style="color:#f92672">=</span> {
+    <span style="color:#a6e22e">parameter</span><span style="color:#f92672">:</span> {
+      <span style="color:#a6e22e">sheetId</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;1XuNpMRdZasL8TNovZS09Aing41SoEBo0BMzabGqaE1s&#34;</span>,
+      <span style="color:#a6e22e">sheetTag</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;done&#34;</span>,
+      <span style="color:#a6e22e">invitation_code</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;5XdxPDdv&#34;</span>,
+      <span style="color:#a6e22e">email</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;test123@gm.co&#39;</span>
+    }
+  }
+
+  <span style="color:#a6e22e">Logger</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">doPost</span>(<span style="color:#a6e22e">params</span>).<span style="color:#a6e22e">getContent</span>());
+}
+</code></pre></div><h2 id="從後端呼叫">從後端呼叫</h2>
+<p>在測試沒問題之後，就可以按下發佈<br>
+就可以拿到一串 API 的網址，這邊沒有截圖的原因是 Google 整天在改版<br>
+搞不好截圖過幾天就又改位置了</p>
+<p>接著示範怎麼在 PHP 發送請求到 GAS 的 API</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">updateSheet</span>(<span style="color:#a6e22e">string</span> $invitation_code)<span style="color:#f92672">:</span> <span style="color:#a6e22e">void</span>
+{
+    $auth_user <span style="color:#f92672">=</span> <span style="color:#a6e22e">auth</span>()<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">user</span>();
+    $user_email <span style="color:#f92672">=</span> $auth_user<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">account</span>;
+
+    $client <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">\GuzzleHttp\Client</span>();
+    $response <span style="color:#f92672">=</span> $client<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">request</span>(<span style="color:#e6db74">&#39;POST&#39;</span>, $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">gas_url</span>, [
+        <span style="color:#e6db74">&#39;form_params&#39;</span> <span style="color:#f92672">=&gt;</span> [
+            <span style="color:#e6db74">&#39;sheetId&#39;</span>         <span style="color:#f92672">=&gt;</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">sheetId</span>,
+            <span style="color:#e6db74">&#39;sheetTag&#39;</span>        <span style="color:#f92672">=&gt;</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">sheetTag</span>,
+            <span style="color:#e6db74">&#39;invitation_code&#39;</span> <span style="color:#f92672">=&gt;</span> $invitation_code,
+            <span style="color:#e6db74">&#39;email&#39;</span>           <span style="color:#f92672">=&gt;</span> $user_email,
+        ]
+    ]);
+
+    <span style="color:#66d9ef">if</span> ($response<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getStatusCode</span>() <span style="color:#f92672">!=</span> <span style="color:#a6e22e">Response</span><span style="color:#f92672">::</span><span style="color:#a6e22e">HTTP_OK</span>) {
+        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">AppException</span>(<span style="color:#a6e22e">Response</span><span style="color:#f92672">::</span><span style="color:#a6e22e">HTTP_INTERNAL_SERVER_ERROR</span>, <span style="color:#e6db74">&#39;The Sheet Die&#39;</span>);
+    }
+}
+</code></pre></div><p>可以看到使用的是<code>form_params</code>來帶入變數，其他就沒什麼需要別注意的了<br>
+最後再說一遍，只有在服務還小的時候可以這樣做<br>
+除了 <a href="https://zh.wikipedia.org/zh-tw/ACID"
+   
+    target="_blank" rel="noreferrer noopener">ACID
+</a>
+ 這類的考量外，你永遠不知道什麼時候會踩中 Google 的敏感帶<br>
+取回資料後最好就快取在自己的伺服器，不要讓每個請求都去執行 GAS <br>
+因為過於頻繁觸發 GAS 有可能會造成 Google 表單無法存取的情形發生</p>
+
+      
+      
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/ray247k/button?referrer=https%3a%2f%2ftech.ray247k.com%2fblog%2f202111-operate-google-sheet-via-google-app-script%2f" width="100%" frameborder=0></iframe>
+
+    </div>
+    <footer>
+      <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/%e6%9e%b6%e7%ab%99%e7%9b%b8%e9%97%9c/">架站相關</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/google-sheets/">Google Sheets</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/google-app-script/">Google App Script</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/gas/">GAS</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+    </footer>
+  </article>
+  
+    
+
+  
+  <div class="pagination">
+    
+    
+      <a href="/blog/202111-a-tour-of-go-05-array-and-slice/" class="button right"><span>[A Tour of Go 學習筆記] 05 陣列和切片</span></a>
+    
+  </div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>最新文章</h1>
+      </header>
+      
+      <article class="mini-post">
+          <a href="/blog/202111-operate-google-sheet-via-google-app-script/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/11/operate-google-sheet-via-google-app-script/IMG_9408.jpg');">
+    <img src="https://tech.ray247k.com/img/blog/2021/11/operate-google-sheet-via-google-app-script/IMG_9408.jpg" alt="Ramen">
+  </a>
+        <header>
+          <h2><a href="/blog/202111-operate-google-sheet-via-google-app-script/">操作 Google 表單，透過 GAS(Google App Script)</a></h2>
+          <time class="published" datetime="2021-11-28 00:00:00 &#43;0000 UTC">2021/11/28</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202111-a-tour-of-go-05-array-and-slice/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/11/a-tour-of-go-05-array-and-slice/IMG_8722.jpg');">
+    <img src="https://tech.ray247k.com/img/blog/2021/11/a-tour-of-go-05-array-and-slice/IMG_8722.jpg" alt="a photo">
+  </a>
+        <header>
+          <h2><a href="/blog/202111-a-tour-of-go-05-array-and-slice/">[A Tour of Go 學習筆記] 05 陣列和切片</a></h2>
+          <time class="published" datetime="2021-11-23 00:00:00 &#43;0000 UTC">2021/11/23</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202111-a-tour-of-go-04-pointer-and-struct/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/11/a-tour-of-go-04-pointer-and-struct/IMG_8708.jpg');">
+    <img src="https://tech.ray247k.com/img/blog/2021/11/a-tour-of-go-04-pointer-and-struct/IMG_8708.jpg" alt="a photo">
+  </a>
+        <header>
+          <h2><a href="/blog/202111-a-tour-of-go-04-pointer-and-struct/">[A Tour of Go 學習筆記] 04 指針和結構</a></h2>
+          <time class="published" datetime="2021-11-17 00:00:00 &#43;0000 UTC">2021/11/17</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202111-a-tour-of-go-03-flow-control-statements/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/11/a-tour-of-go-03-flow-control-statements/IMG_9188.jpg');">
+    <img src="https://tech.ray247k.com/img/blog/2021/11/a-tour-of-go-03-flow-control-statements/IMG_9188.jpg" alt="a photo">
+  </a>
+        <header>
+          <h2><a href="/blog/202111-a-tour-of-go-03-flow-control-statements/">[A Tour of Go 學習筆記] 03 流程控制</a></h2>
+          <time class="published" datetime="2021-11-14 00:00:00 &#43;0000 UTC">2021/11/14</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202111-a-tour-of-go-02-variables-and-types/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/11/a-tour-of-go-02-variables-and-types/IMG_9289.jpg');">
+    <img src="https://tech.ray247k.com/img/blog/2021/11/a-tour-of-go-02-variables-and-types/IMG_9289.jpg" alt="a photo">
+  </a>
+        <header>
+          <h2><a href="/blog/202111-a-tour-of-go-02-variables-and-types/">[A Tour of Go 學習筆記] 02 變數與型別</a></h2>
+          <time class="published" datetime="2021-11-12 00:00:00 &#43;0000 UTC">2021/11/12</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/blog/" class="button">查看更多</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="/categories">category</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/categories/node.js/">node.js<span class="count">22</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/devops/">devops<span class="count">17</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/leetcode/">leetcode<span class="count">13</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/python3/">python3<span class="count">9</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/php/">php<span class="count">6</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/go/">go<span class="count">5</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/">架站相關<span class="count">4</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/laravel/">laravel<span class="count">3</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">版本控制<span class="count">1</span></a>
+          </li>
+          
+        </ul>
+      </section>
+    
+  
+
+  
+  <section id="tags">
+    <header>
+      <h1><a href="/tags">Tag</a></h1>
+    </header>
+    <div class="li-x post-meta tags-md" style="margin-left: 0.5em;">
+      <ul>
+        
+        
+        <li>
+          <a href="/tags/node.js/">node.js (22)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/devops/">devops (18)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/vue/">vue (15)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/leetcode/">leetcode (13)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/containerization/">containerization (9)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/docker/">docker (9)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/express/">express (9)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/python3/">python3 (9)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%AE%B9%E5%99%A8%E6%8A%80%E8%A1%93/">容器技術 (9)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/leetcode-easy/">leetcode-easy (8)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/php/">php (8)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/docker-compose/">docker-compose (6)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/vuex/">vuex (6)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/composer/">composer (5)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/element-ui/">element-ui (5)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/go/">go (5)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/golang/">golang (5)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/leetcode-medium/">leetcode-medium (5)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cicd/">cicd (4)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/drone/">drone (4)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/laravel/">laravel (4)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/mongodb/">mongodb (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/mutation/">mutation (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/restful/">restful (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/">架站相關 (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/chatbot/">chatbot (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cloudflare/">cloudflare (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/component/">component (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/discord/">discord (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/dns/">dns (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/getter/">getter (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/google-domains/">google-domains (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/nginx/">nginx (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/vue-router/">vue-router (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/vue-ui/">vue-ui (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/apache-bench/">apache-bench (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/aws/">aws (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/axios/">axios (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cdn/">cdn (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cors/">cors (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/domain-name/">domain-name (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/gas/">gas (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/gcp/">gcp (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/git/">git (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/github/">github (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/github-page/">github-page (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/google-app-script/">google-app-script (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/google-sheets/">google-sheets (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/grumphp/">grumphp (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/linux/">linux (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/ngrok/">ngrok (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/php-fpm/">php-fpm (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/portainer/">portainer (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/postgresql/">postgresql (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/proxy/">proxy (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/server/">server (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/ssh/">ssh (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/stress-testing/">stress-testing (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/subdomain/">subdomain (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E4%BC%BA%E6%9C%8D%E5%99%A8/">伺服器 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%80%8B%E4%BA%BA%E5%93%81%E7%89%8C/">個人品牌 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%9F%9F%E5%90%8D/">域名 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%A3%93%E5%8A%9B%E6%B8%AC%E8%A9%A6/">壓力測試 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%AD%90%E7%B6%B2%E5%9F%9F/">子網域 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">版本控制 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E8%B2%B7%E7%B6%B2%E5%9D%80/">買網址 (1)</a>
+        </li>
+        
+      </ul>
+
+    </div>
+  </section>
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+    
+    <p class="copyright">
+        © 2021 薛丁格的工程師
+    </p>
+    <p class="copyright" style="font-size: 0.1EM;">
+        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.89.4' target='_blank' rel='noopener'>Hugo</a>
+    </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>hljs.highlightAll();</script><script src="/js/bundle.min.5352079d3388d9a4297e0200dd1040866c8b3b67460090bf30e01a9cd56fd746.js" integrity="sha256-U1IHnTOI2aQpfgIA3RBAhmyLO2dGAJC/MOAanNVv10Y="></script>
+    <script src="/js/add-on.js"></script>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-LTGVYYWC2J', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </div>
+  </body>
+</html>
