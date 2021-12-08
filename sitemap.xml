@@ -2,11 +2,29 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://tech.ray247k.com/blog/202112-a-tour-of-go-06-range-and-map/</loc>
+    <lastmod>2021-12-08T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://tech.ray247k.com/blog/</loc>
-    <lastmod>2021-11-28T00:00:00+00:00</lastmod>
+    <lastmod>2021-12-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/categories/</loc>
-    <lastmod>2021-11-28T00:00:00+00:00</lastmod>
+    <lastmod>2021-12-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tech.ray247k.com/categories/go/</loc>
+    <lastmod>2021-12-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tech.ray247k.com/tags/go/</loc>
+    <lastmod>2021-12-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tech.ray247k.com/tags/golang/</loc>
+    <lastmod>2021-12-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tech.ray247k.com/tags/</loc>
+    <lastmod>2021-12-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tech.ray247k.com/</loc>
+    <lastmod>2021-12-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/tags/gas/</loc>
     <lastmod>2021-11-28T00:00:00+00:00</lastmod>
@@ -17,28 +35,13 @@
     <loc>https://tech.ray247k.com/tags/google-sheets/</loc>
     <lastmod>2021-11-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://tech.ray247k.com/tags/</loc>
-    <lastmod>2021-11-28T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://tech.ray247k.com/blog/202111-operate-google-sheet-via-google-app-script/</loc>
     <lastmod>2021-11-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/categories/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%9C%8D%E5%8B%99/</loc>
     <lastmod>2021-11-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://tech.ray247k.com/</loc>
-    <lastmod>2021-11-28T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://tech.ray247k.com/blog/202111-a-tour-of-go-05-array-and-slice/</loc>
-    <lastmod>2021-11-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tech.ray247k.com/categories/go/</loc>
-    <lastmod>2021-11-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tech.ray247k.com/tags/go/</loc>
-    <lastmod>2021-11-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tech.ray247k.com/tags/golang/</loc>
     <lastmod>2021-11-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/blog/202111-a-tour-of-go-04-pointer-and-struct/</loc>
