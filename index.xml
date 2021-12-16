@@ -6,7 +6,21 @@
     <description>Recent content on 薛丁格的工程師</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Sat, 11 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[A Tour of Go 學習筆記] 07 method</title>
+      <link>https://tech.ray247k.com/blog/202112-a-tour-of-go-07-method/</link>
+      <pubDate>Thu, 16 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://tech.ray247k.com/blog/202112-a-tour-of-go-07-method/</guid>
+      <description>&lt;p&gt;初入 Golang 的世界，首先我們使用官方教學：&lt;a href=&#34;https://tour.golang.org/welcome/1&#34;
+   
+    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;A Tour of Go
+&lt;/a&gt;
+ 來認識基本的 Golang 使用&lt;br&gt;
+這篇介紹 method&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>匯入 Excel 或是 csv 檔案到 Laravel</title>
       <link>https://tech.ray247k.com/blog/202112-laravel-excel-import/</link>

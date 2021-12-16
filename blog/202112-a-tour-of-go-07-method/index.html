@@ -2,7 +2,7 @@
 <html lang="zh-tw">
   <head>
   <meta charset="utf-8">
-<title>[A Tour of Go 學習筆記] 02 變數與型別 - 薛丁格的工程師</title>
+<title>[A Tour of Go 學習筆記] 07 method - 薛丁格的工程師</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
@@ -19,14 +19,14 @@
   <meta name="theme-color" content="#ffffff">
 
 <meta name="generator" content="Hugo 0.89.4" /><meta property="og:site_name" content="薛丁格的工程師">
-  <meta property="og:title" content="[A Tour of Go 學習筆記] 02 變數與型別">
-  <meta property="og:description" content="使用官方教學瞭解 Go 語言變數與型別">
-  <meta property="description" content="使用官方教學瞭解 Go 語言變數與型別">
-  <meta property="og:url" content="https://tech.ray247k.com/blog/202111-a-tour-of-go-02-variables-and-types/">
+  <meta property="og:title" content="[A Tour of Go 學習筆記] 07 method">
+  <meta property="og:description" content="使用官方教學瞭解 Go method">
+  <meta property="description" content="使用官方教學瞭解 Go method">
+  <meta property="og:url" content="https://tech.ray247k.com/blog/202112-a-tour-of-go-07-method/">
   <meta property="og:type" content="article">
   
     
-      <meta property="og:image" content="https://tech.ray247k.com/img/blog/2021/11/a-tour-of-go-02-variables-and-types/IMG_9289.jpg">
+      <meta property="og:image" content="https://tech.ray247k.com/img/blog/2021/12/a-tour-of-go-07-method/IMG_0005.jpg">
       <meta property="og:image:alt" content="a photo">
     
   
@@ -109,14 +109,14 @@
 {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "[A Tour of Go 學習筆記] 02 變數與型別",
-    "description": "使用官方教學瞭解 Go 語言變數與型別",
+    "name": "[A Tour of Go 學習筆記] 07 method",
+    "description": "使用官方教學瞭解 Go method",
     "keywords": [
         "Golang" , "Go" 
     ],
-    "dateCreated": "2021-11-12T00:00:00.00Z",
-    "datePublished": "2021-11-12T00:00:00.00Z",
-    "dateModified": "2021-11-12T00:00:00.00Z",
+    "dateCreated": "2021-12-16T00:00:00.00Z",
+    "datePublished": "2021-12-16T00:00:00.00Z",
+    "dateModified": "2021-12-16T00:00:00.00Z",
     "primaryImageOfPage": {
         "@type": "ImageObject",
         "contentUrl": "[]"
@@ -147,9 +147,9 @@
                 "@type": "ListItem",
                 "position": 3,
                 "item": {
-                    "@id": "https:\/\/tech.ray247k.com\/blog\/202111-a-tour-of-go-02-variables-and-types\/",
-                    "name": "[A Tour of Go 學習筆記] 02 變數與型別",
-                    "url": "https:\/\/tech.ray247k.com\/blog\/202111-a-tour-of-go-02-variables-and-types\/"
+                    "@id": "https:\/\/tech.ray247k.com\/blog\/202112-a-tour-of-go-07-method\/",
+                    "name": "[A Tour of Go 學習筆記] 07 method",
+                    "url": "https:\/\/tech.ray247k.com\/blog\/202112-a-tour-of-go-07-method\/"
                 }
             }
         ],
@@ -164,14 +164,14 @@
     "@context": "http://schema.org",
     "@type": "BlogPosting",
     "articleSection": "blog",
-    "name": "[A Tour of Go 學習筆記] 02 變數與型別",
-    "headline": "\u003cp\u003e初入 Golang 的世界，首先我們使用官方教學：\u003ca href=\u0022https:\/\/tour.golang.org\/welcome\/1\u0022\n   \n    target=\u0022_blank\u0022 rel=\u0022noreferrer noopener\u0022\u003eA Tour of Go\n\u003c\/a\u003e\n 來認識基本的 Golang 使用\u003cbr\u003e\n這篇是變數與型別的筆記\u003c\/p\u003e",
-    "description": "使用官方教學瞭解 Go 語言變數與型別",
+    "name": "[A Tour of Go 學習筆記] 07 method",
+    "headline": "\u003cp\u003e初入 Golang 的世界，首先我們使用官方教學：\u003ca href=\u0022https:\/\/tour.golang.org\/welcome\/1\u0022\n   \n    target=\u0022_blank\u0022 rel=\u0022noreferrer noopener\u0022\u003eA Tour of Go\n\u003c\/a\u003e\n 來認識基本的 Golang 使用\u003cbr\u003e\n這篇介紹 method\u003c\/p\u003e",
+    "description": "使用官方教學瞭解 Go method",
     "inLanguage": "zh-TW",
     "isFamilyFriendly": "true",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https:\/\/tech.ray247k.com\/blog\/202111-a-tour-of-go-02-variables-and-types\/"
+        "@id": "https:\/\/tech.ray247k.com\/blog\/202112-a-tour-of-go-07-method\/"
     },
     "author" : {
     "@type": "Person",
@@ -187,9 +187,9 @@
     },
     "copyrightHolder" : "薛丁格的工程師",
     "copyrightYear" : "2021",
-    "dateCreated": "2021-11-12T00:00:00.00Z",
-    "datePublished": "2021-11-12T00:00:00.00Z",
-    "dateModified": "2021-11-12T00:00:00.00Z",
+    "dateCreated": "2021-12-16T00:00:00.00Z",
+    "datePublished": "2021-12-16T00:00:00.00Z",
+    "dateModified": "2021-12-16T00:00:00.00Z",
     "publisher":{
         "@type":"Organization",
         "name": "薛丁格的工程師",
@@ -202,8 +202,8 @@
         }
     },
     "image": [""],
-    "url" : "https:\/\/tech.ray247k.com\/blog\/202111-a-tour-of-go-02-variables-and-types\/",
-    "wordCount" : "377",
+    "url" : "https:\/\/tech.ray247k.com\/blog\/202112-a-tour-of-go-07-method\/",
+    "wordCount" : "504",
     "genre" : [ "Golang" , "Go" ],
     "keywords" : [ "Golang" , "Go" ]
 }
@@ -321,14 +321,14 @@
     <header>
   <div class="title">
     
-      <h2><a href="/blog/202111-a-tour-of-go-02-variables-and-types/">[A Tour of Go 學習筆記] 02 變數與型別</a></h2>
+      <h2><a href="/blog/202112-a-tour-of-go-07-method/">[A Tour of Go 學習筆記] 07 method</a></h2>
     
     
-      <p>使用官方教學瞭解 Go 語言變數與型別</p>
+      <p>使用官方教學瞭解 Go method</p>
     
   </div>
   <div class="meta">
-    <time datetime="2021-11-12 00:00:00 &#43;0000 UTC">2021/11/12</time>
+    <time datetime="2021-12-16 00:00:00 &#43;0000 UTC">2021/12/16</time>
     <p>Ray</p>
     
   </div>
@@ -343,178 +343,237 @@
 
     </div>
     <div class="content">
-      <a href="/blog/202111-a-tour-of-go-02-variables-and-types/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/11/a-tour-of-go-02-variables-and-types/IMG_9289.jpg');">
-    <img src="https://tech.ray247k.com/img/blog/2021/11/a-tour-of-go-02-variables-and-types/IMG_9289.jpg" alt="a photo">
+      <a href="/blog/202112-a-tour-of-go-07-method/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/12/a-tour-of-go-07-method/IMG_0005.jpg');">
+    <img src="https://tech.ray247k.com/img/blog/2021/12/a-tour-of-go-07-method/IMG_0005.jpg" alt="a photo">
   </a>
       <p>初入 Golang 的世界，首先我們使用官方教學：<a href="https://tour.golang.org/welcome/1"
    
     target="_blank" rel="noreferrer noopener">A Tour of Go
 </a>
  來認識基本的 Golang 使用<br>
-這篇是變數與型別的筆記</p>
-<h1 id="變數">變數</h1>
-<p>在 Go 語言中使用<code>var</code>來定義變數，並且和函數的參數列表一樣將型別定義在最後<br>
-<code>var</code> 聲明可以出現在 package 或是 function 的作用域內</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
-
-<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
-
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">c</span>, <span style="color:#a6e22e">python</span>, <span style="color:#a6e22e">java</span> <span style="color:#66d9ef">bool</span>
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#66d9ef">int</span>
-	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">c</span>, <span style="color:#a6e22e">python</span>, <span style="color:#a6e22e">java</span>)
-}
-<span style="color:#75715e">/*
-</span><span style="color:#75715e">&gt;&gt;&gt; 0 false false false
-</span><span style="color:#75715e">*/</span>
-</code></pre></div><h2 id="變數預設值">變數預設值</h2>
-<p>在聲明變數的時後可以定義一個初始值<br>
-如果有定義初始值，在聲明的時候可以省略類型<br>
-Go 會根據初始值來推斷變數的型別，這點十分聰明！</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
-
-<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
-
-<span style="color:#75715e">// 主動定義變數型別
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span> <span style="color:#66d9ef">int</span> = <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-    <span style="color:#75715e">// 省略型別，透過預設值
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">c</span>, <span style="color:#a6e22e">python</span>, <span style="color:#a6e22e">java</span> = <span style="color:#66d9ef">true</span>, <span style="color:#66d9ef">false</span>, <span style="color:#e6db74">&#34;no!&#34;</span>
-	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span>, <span style="color:#a6e22e">c</span>, <span style="color:#a6e22e">python</span>, <span style="color:#a6e22e">java</span>)
-}
-<span style="color:#75715e">/*
-</span><span style="color:#75715e">&gt;&gt;&gt; 1 2 true false no!
-</span><span style="color:#75715e">*/</span>
-</code></pre></div><h2 id="短變數聲明">短變數聲明</h2>
-<p>在函數內可以使用<code>:=</code>來代替使用<code>var</code>聲明變數<br>
-在函數外部，每個語句都以關鍵字(var、func 等)開頭，不可使用<code>:=</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
-
-<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span> <span style="color:#66d9ef">int</span> = <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>
-	<span style="color:#a6e22e">k</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">3</span>
-	<span style="color:#a6e22e">c</span>, <span style="color:#a6e22e">python</span>, <span style="color:#a6e22e">java</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">true</span>, <span style="color:#66d9ef">false</span>, <span style="color:#e6db74">&#34;no!&#34;</span>
-
-	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span>, <span style="color:#a6e22e">k</span>, <span style="color:#a6e22e">c</span>, <span style="color:#a6e22e">python</span>, <span style="color:#a6e22e">java</span>)
-}
-<span style="color:#75715e">/*
-</span><span style="color:#75715e">&gt;&gt;&gt; 1 2 true false no!
-</span><span style="color:#75715e">*/</span>
-</code></pre></div><h1 id="基本型別">基本型別</h1>
-<p>Go 的基本型別有</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">bool</span>
-
-<span style="color:#66d9ef">string</span>
-
-<span style="color:#66d9ef">int</span>  <span style="color:#66d9ef">int8</span>  <span style="color:#66d9ef">int16</span>  <span style="color:#66d9ef">int32</span>  <span style="color:#66d9ef">int64</span>
-<span style="color:#66d9ef">uint</span> <span style="color:#66d9ef">uint8</span> <span style="color:#66d9ef">uint16</span> <span style="color:#66d9ef">uint32</span> <span style="color:#66d9ef">uint64</span> <span style="color:#66d9ef">uintptr</span>
-
-<span style="color:#66d9ef">byte</span> <span style="color:#75715e">// alias for uint8
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">rune</span> <span style="color:#75715e">// alias for int32
-</span><span style="color:#75715e"></span>     <span style="color:#75715e">// represents a Unicode code point
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">float32</span> <span style="color:#66d9ef">float64</span>
-
-<span style="color:#66d9ef">complex64</span> <span style="color:#66d9ef">complex128</span>
-</code></pre></div><p>一般來說<code>int</code>、<code>uint</code>和<code>uintptr</code>的長度和系統位元數一樣<br>
-在 32 位元系統中就是 32 位元；在 64 位元系統中就是 64 位元<br>
-當你需要整數的時候直接使用<code>int</code>就好<br>
-除非有明確的理由，否則不應該去限制長度</p>
-<p>可以使用<code>fmt.Printf</code>套件來印出變數的格式化輸出內容，包含型別<code>%T</code>和值<code>%v</code></p>
+這篇介紹 method</p>
+<h1 id="method">method</h1>
+<p>Go 不是物件導向，所以沒有 class，但是可以用<code>Type</code>搭配<code>receiver</code>參數來時做出類似功能<br>
+而 method 是一種帶有特殊接收(receiver)參數函數</p>
+<p>receiver 出現在它自己的參數列表中，位於宣告字串：<code>func</code>和方法名稱之間<br>
+在範例中<code>Abs</code>函數擁有一個 Type 是<code>Vertex</code>並且叫做<code>v</code>的 receiver</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 
 <span style="color:#f92672">import</span> (
 	<span style="color:#e6db74">&#34;fmt&#34;</span>
-	<span style="color:#e6db74">&#34;math/cmplx&#34;</span>
+	<span style="color:#e6db74">&#34;math&#34;</span>
 )
 
-<span style="color:#66d9ef">var</span> (
-	<span style="color:#a6e22e">ToBe</span>   <span style="color:#66d9ef">bool</span>       = <span style="color:#66d9ef">false</span>
-	<span style="color:#a6e22e">MaxInt</span> <span style="color:#66d9ef">uint64</span>     = <span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#ae81ff">64</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>
-	<span style="color:#a6e22e">z</span>      <span style="color:#66d9ef">complex128</span> = <span style="color:#a6e22e">cmplx</span>.<span style="color:#a6e22e">Sqrt</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">5</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">12i</span>)
-)
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;Type: %T Value: %v\n&#34;</span>, <span style="color:#a6e22e">ToBe</span>, <span style="color:#a6e22e">ToBe</span>)
-	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;Type: %T Value: %v\n&#34;</span>, <span style="color:#a6e22e">MaxInt</span>, <span style="color:#a6e22e">MaxInt</span>)
-	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;Type: %T Value: %v\n&#34;</span>, <span style="color:#a6e22e">z</span>, <span style="color:#a6e22e">z</span>)
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Vertex</span> <span style="color:#66d9ef">struct</span> {
+	<span style="color:#a6e22e">X</span>, <span style="color:#a6e22e">Y</span> <span style="color:#66d9ef">float64</span>
 }
 
-<span style="color:#75715e">/*
-</span><span style="color:#75715e">&gt;&gt;&gt; Type: bool Value: false
-</span><span style="color:#75715e">&gt;&gt;&gt; Type: uint64 Value: 18446744073709551615
-</span><span style="color:#75715e">&gt;&gt;&gt; Type: complex128 Value: (2+3i)
-</span><span style="color:#75715e">*/</span>
-</code></pre></div><h2 id="zero-values">Zero values</h2>
-<p>如果在聲明變數的時候沒有給定預設值<br>
-那就會被自動賦予 <em>Zero value</em></p>
-<p>不同型別的 Zero value 分別是</p>
-<ul>
-<li>數值型別：<code>0</code></li>
-<li>布林型別：<code>false</code></li>
-<li>字串型別：<code>&quot;&quot;</code>(空字串)</li>
-</ul>
-<h2 id="型別轉換">型別轉換</h2>
-<p>使用<code>T(v)</code>的形式來將<code>v</code>型別轉換成<code>T</code></p>
-<p>例如：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#66d9ef">int</span> = <span style="color:#ae81ff">42</span>
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">f</span> <span style="color:#66d9ef">float64</span> = float64(<span style="color:#a6e22e">i</span>)
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">u</span> <span style="color:#66d9ef">uint</span> = uint(<span style="color:#a6e22e">f</span>)
-</code></pre></div><p>或是可以使用更簡短的表達方式：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">42</span>
-<span style="color:#a6e22e">f</span> <span style="color:#f92672">:=</span> float64(<span style="color:#a6e22e">i</span>)
-<span style="color:#a6e22e">u</span> <span style="color:#f92672">:=</span> uint(<span style="color:#a6e22e">f</span>)
-</code></pre></div><h2 id="常數">常數</h2>
-<ul>
-<li>和變數的宣告方式很像，只是改為使用<code>const</code></li>
-<li>內容可以是字元、字串、布林、或數值資料</li>
-<li>不能使用<code>:=</code>聲明</li>
-</ul>
-<h2 id="數值常數numeric-constants">數值常數(Numeric constants)</h2>
-<ul>
-<li>一種高精度的數值</li>
-<li>根據上下文使用來決定他的數值型別</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
-
-<span style="color:#66d9ef">const</span> (
-    <span style="color:#75715e">// 透過將 1 往左移動 100 位數來創造一個很大的數字（二進制中 1 後面接了 100 個 0）
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">Big</span> = <span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">100</span>
-    <span style="color:#75715e">// 再往左移 99 位元，變成二進制的「10」也就是十進制的 2
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">Small</span> = <span style="color:#a6e22e">Big</span> <span style="color:#f92672">&gt;&gt;</span> <span style="color:#ae81ff">99</span>
-)
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">needInt</span>(<span style="color:#a6e22e">x</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> { <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">x</span><span style="color:#f92672">*</span><span style="color:#ae81ff">10</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span> }
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">needFloat</span>(<span style="color:#a6e22e">x</span> <span style="color:#66d9ef">float64</span>) <span style="color:#66d9ef">float64</span> {
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">0.1</span>
+<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">v</span> <span style="color:#a6e22e">Vertex</span>) <span style="color:#a6e22e">Abs</span>() <span style="color:#66d9ef">float64</span> {
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Sqrt</span>(<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">X</span><span style="color:#f92672">*</span><span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">X</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Y</span><span style="color:#f92672">*</span><span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Y</span>)
 }
 
 <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">needInt</span>(<span style="color:#a6e22e">Small</span>))
-	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">needFloat</span>(<span style="color:#a6e22e">Small</span>))
-	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">needFloat</span>(<span style="color:#a6e22e">Big</span>))
+	<span style="color:#a6e22e">v</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">Vertex</span>{<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>}
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Abs</span>())
 }
 
 <span style="color:#75715e">/*
-</span><span style="color:#75715e">&gt;&gt;&gt; 21
-</span><span style="color:#75715e">&gt;&gt;&gt; 0.2
-</span><span style="color:#75715e">&gt;&gt;&gt; 1.2676506002282295e+29
+</span><span style="color:#75715e">&gt;&gt;&gt; 5
 </span><span style="color:#75715e">*/</span>
-</code></pre></div><p>這時候如果印出<code>needInt(Big)</code>會發生什麼事情呢？</p>
+</code></pre></div><h1 id="方法即函數">方法即函數</h1>
 <blockquote>
-<p>constant 1267650600228229401496703205376 overflows int</p>
+<p>method 就只是具有 receiver 的 function</p>
 </blockquote>
-<p>原來是因為我們所使用的系統中，最長的 int 就是 64-bit(有時候會更少)<br>
-而我們定義的數值常數<code>Big</code>是一個 100 位元的正數，所以就造成了 overflow</p>
+<p>底下就是一個一般寫法的 function，功能並沒有什麼變化</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> (
+	<span style="color:#e6db74">&#34;fmt&#34;</span>
+	<span style="color:#e6db74">&#34;math&#34;</span>
+)
+
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Vertex</span> <span style="color:#66d9ef">struct</span> {
+	<span style="color:#a6e22e">X</span>, <span style="color:#a6e22e">Y</span> <span style="color:#66d9ef">float64</span>
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Abs</span>(<span style="color:#a6e22e">v</span> <span style="color:#a6e22e">Vertex</span>) <span style="color:#66d9ef">float64</span> {
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Sqrt</span>(<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">X</span><span style="color:#f92672">*</span><span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">X</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Y</span><span style="color:#f92672">*</span><span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Y</span>)
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+	<span style="color:#a6e22e">v</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">Vertex</span>{<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>}
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">Abs</span>(<span style="color:#a6e22e">v</span>))
+}
+
+<span style="color:#75715e">/*
+</span><span style="color:#75715e">&gt;&gt;&gt; 5
+</span><span style="color:#75715e">*/</span>
+</code></pre></div><p>method 聲明也可以使用非結構化的 type</p>
+<p>只能使用同一個<code>package</code>作用域中聲明過的的<code>type</code>當作<code>receiver</code><br>
+如果是聲明在其他<code>package</code>中，就算是內建的型別，例如<code>int</code>也不行</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> (
+	<span style="color:#e6db74">&#34;fmt&#34;</span>
+	<span style="color:#e6db74">&#34;math&#34;</span>
+)
+
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">MyFloat</span> <span style="color:#66d9ef">float64</span>
+
+<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">f</span> <span style="color:#a6e22e">MyFloat</span>) <span style="color:#a6e22e">Abs</span>() <span style="color:#66d9ef">float64</span> {
+	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">f</span> &lt; <span style="color:#ae81ff">0</span> {
+		<span style="color:#66d9ef">return</span> float64(<span style="color:#f92672">-</span><span style="color:#a6e22e">f</span>)
+	}
+	<span style="color:#66d9ef">return</span> float64(<span style="color:#a6e22e">f</span>)
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+	<span style="color:#a6e22e">f</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">MyFloat</span>(<span style="color:#f92672">-</span><span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Sqrt2</span>)
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">f</span>.<span style="color:#a6e22e">Abs</span>())
+}
+
+<span style="color:#75715e">/*
+</span><span style="color:#75715e">&gt;&gt;&gt; 1.4142135623730951
+</span><span style="color:#75715e">*/</span>
+</code></pre></div><h1 id="指針接收者pointer-receivers">指針接收者(Pointer receivers)</h1>
+<p>你也可以使用指針 receiver 來聲明 method<br>
+型態前加<code>*</code>代表是 Pointer receiver，method 的 receiver type 為指針</p>
+<p>範例程式中，函數<code>Scale</code>的 receiver 就聲明為<code>*Vertex</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> (
+	<span style="color:#e6db74">&#34;fmt&#34;</span>
+	<span style="color:#e6db74">&#34;math&#34;</span>
+)
+
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Vertex</span> <span style="color:#66d9ef">struct</span> {
+	<span style="color:#a6e22e">X</span>, <span style="color:#a6e22e">Y</span> <span style="color:#66d9ef">float64</span>
+}
+
+<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">v</span> <span style="color:#a6e22e">Vertex</span>) <span style="color:#a6e22e">Abs</span>() <span style="color:#66d9ef">float64</span> {
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Sqrt</span>(<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">X</span><span style="color:#f92672">*</span><span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">X</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Y</span><span style="color:#f92672">*</span><span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Y</span>)
+}
+
+<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">v</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Vertex</span>) <span style="color:#a6e22e">Scale</span>(<span style="color:#a6e22e">f</span> <span style="color:#66d9ef">float64</span>) {
+	<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">X</span> = <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">X</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">f</span>
+	<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Y</span> = <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Y</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">f</span>
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+	<span style="color:#a6e22e">v</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">Vertex</span>{<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>}
+	<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Scale</span>(<span style="color:#ae81ff">10</span>)
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Abs</span>())
+}
+<span style="color:#75715e">/*
+</span><span style="color:#75715e">&gt;&gt;&gt; 50
+</span><span style="color:#75715e">*/</span>
+</code></pre></div><p>具有 pointer receiver 的 method，例如上面的<code>Scale</code>可以直接修改變數指向的值，而不是單純的運算<br>
+由於 method 經常會修改 receiver，所以實際應用上比較常使用指針作為 <code>receiver</code></p>
+<p>如果把上面範例中的<code>Scale</code>的 receiver<code>*</code>刪除，變成一般的 method<br>
+則是會把<code>Vertex</code>的值複製一份，對其進行操作</p>
+<p>如果嘗試執行，得到的結果會是<code>5</code><br>
+因為<code>v.Scale(10)</code>的執行結果不會影響到<code>main</code>裡面<code>v := Vertex{3, 4}</code>得到的結果，而直接印出<code>5</code></p>
+<h1 id="pointers-and-functions">Pointers and functions</h1>
+<p>現在我們要把<code>Abs</code>和<code>Scale</code>方法重寫為函數<br>
+之前的範例中<code>v.Scale(10)</code>可以直接調用指針 receiver<br>
+而 function 的寫法參數必須使用<code>&amp;</code>符號聲明傳入指針</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Vertex</span> <span style="color:#66d9ef">struct</span> {
+	<span style="color:#a6e22e">X</span>, <span style="color:#a6e22e">Y</span> <span style="color:#66d9ef">float64</span>
+}
+
+<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">v</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Vertex</span>) <span style="color:#a6e22e">Scale</span>(<span style="color:#a6e22e">f</span> <span style="color:#66d9ef">float64</span>) {
+	<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">X</span> = <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">X</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">f</span>
+	<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Y</span> = <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Y</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">f</span>
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">ScaleFunc</span>(<span style="color:#a6e22e">v</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Vertex</span>, <span style="color:#a6e22e">f</span> <span style="color:#66d9ef">float64</span>) {
+	<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">X</span> = <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">X</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">f</span>
+	<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Y</span> = <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Y</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">f</span>
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+	<span style="color:#a6e22e">v</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">Vertex</span>{<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>}
+	<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Scale</span>(<span style="color:#ae81ff">2</span>)
+	<span style="color:#a6e22e">ScaleFunc</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">v</span>, <span style="color:#ae81ff">10</span>)
+
+	<span style="color:#a6e22e">p</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Vertex</span>{<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">3</span>}
+	<span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">Scale</span>(<span style="color:#ae81ff">3</span>)
+	<span style="color:#a6e22e">ScaleFunc</span>(<span style="color:#a6e22e">p</span>, <span style="color:#ae81ff">8</span>)
+
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">v</span>, <span style="color:#a6e22e">p</span>)
+}
+<span style="color:#75715e">/*
+</span><span style="color:#75715e">&gt;&gt;&gt; {60 80} &amp;{96 72}
+</span><span style="color:#75715e">*/</span> 
+</code></pre></div><p>和前面兩個範例做比較，會發現會注意到帶有參數的 functions 必須傳入一個指針，否則</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">v</span> <span style="color:#a6e22e">Vertex</span>
+<span style="color:#a6e22e">ScaleFunc</span>(<span style="color:#a6e22e">v</span>, <span style="color:#ae81ff">5</span>)  <span style="color:#75715e">// Compile error!
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">ScaleFunc</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">v</span>, <span style="color:#ae81ff">5</span>) <span style="color:#75715e">// OK
+</span></code></pre></div><p>但是帶有 pointer receiver 的 methods 在被呼叫時可以接受一個值或一個指針</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">v</span> <span style="color:#a6e22e">Vertex</span>
+<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Scale</span>(<span style="color:#ae81ff">5</span>)  <span style="color:#75715e">// OK
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">p</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">v</span>
+<span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">Scale</span>(<span style="color:#ae81ff">10</span>) <span style="color:#75715e">// OK
+</span></code></pre></div><p>對於<code>v.Scale(5)</code>即使<code>v</code>是個值而非指針，帶有 pointer receiver 的 methods 也能被直接呼叫<br>
+也就是說，由於<code>Scale</code> method 有一個 pointer receiver<br>
+為方便起見，Go 會將<code>v.Scale(5)</code>視為<code>(&amp;v).Scale(5)</code></p>
+<p>同樣的事情也發生在相反的情況，若是對傳值的 function 傳入指針</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">v</span> <span style="color:#a6e22e">Vertex</span>
+<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">AbsFunc</span>(<span style="color:#a6e22e">v</span>))  <span style="color:#75715e">// OK
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">AbsFunc</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">v</span>)) <span style="color:#75715e">// Compile error!
+</span></code></pre></div><p>但是作為 method 使用的時候，又可以直接傳入指針</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">v</span> <span style="color:#a6e22e">Vertex</span>
+<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Abs</span>()) <span style="color:#75715e">// OK
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">p</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">v</span>
+<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">Abs</span>()) <span style="color:#75715e">// OK
+</span></code></pre></div><p>因為這種情況下<code>p.Abs()</code>會被解釋為<code>(*p).Abs()</code></p>
+<h1 id="receiver-類型怎麼選值指針">receiver 類型怎麼選（值/指針）</h1>
+<p>通常來說使用「指針」作為 receiver 是因為</p>
+<ul>
+<li>method 能夠修改指向的值</li>
+<li>避免每次調用的時候複製資料，若使用的 type 是大型 struct 時效率比較好</li>
+</ul>
+<p>在範例中<code>Scale</code>和<code>Abs</code>的 receiver 類型為<code>*Vertex</code>，即使<code>Abs</code>並不需要修改 receiver<br>
+通常來說，所有具有類型的 method 都應該要有值或是指針的 receiver，但不該兩者混用</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> (
+	<span style="color:#e6db74">&#34;fmt&#34;</span>
+	<span style="color:#e6db74">&#34;math&#34;</span>
+)
+
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Vertex</span> <span style="color:#66d9ef">struct</span> {
+	<span style="color:#a6e22e">X</span>, <span style="color:#a6e22e">Y</span> <span style="color:#66d9ef">float64</span>
+}
+
+<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">v</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Vertex</span>) <span style="color:#a6e22e">Scale</span>(<span style="color:#a6e22e">f</span> <span style="color:#66d9ef">float64</span>) {
+	<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">X</span> = <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">X</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">f</span>
+	<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Y</span> = <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Y</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">f</span>
+}
+
+<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">v</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Vertex</span>) <span style="color:#a6e22e">Abs</span>() <span style="color:#66d9ef">float64</span> {
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Sqrt</span>(<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">X</span><span style="color:#f92672">*</span><span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">X</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Y</span><span style="color:#f92672">*</span><span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Y</span>)
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+	<span style="color:#a6e22e">v</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Vertex</span>{<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>}
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;Before scaling: %+v, Abs: %v\n&#34;</span>, <span style="color:#a6e22e">v</span>, <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Abs</span>())
+	<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Scale</span>(<span style="color:#ae81ff">5</span>)
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;After scaling: %+v, Abs: %v\n&#34;</span>, <span style="color:#a6e22e">v</span>, <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Abs</span>())
+}
+<span style="color:#75715e">/*
+</span><span style="color:#75715e">&gt;&gt;&gt; Before scaling: &amp;{X:3 Y:4}, Abs: 5
+</span><span style="color:#75715e">&gt;&gt;&gt; After scaling: &amp;{X:15 Y:20}, Abs: 25
+</span><span style="color:#75715e">*/</span>
+</code></pre></div>
 
       
       
-<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/ray247k/button?referrer=https%3a%2f%2ftech.ray247k.com%2fblog%2f202111-a-tour-of-go-02-variables-and-types%2f" width="100%" frameborder=0></iframe>
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/ray247k/button?referrer=https%3a%2f%2ftech.ray247k.com%2fblog%2f202112-a-tour-of-go-07-method%2f" width="100%" frameborder=0></iframe>
 
     </div>
     <footer>
@@ -549,10 +608,8 @@ Go 會根據初始值來推斷變數的型別，這點十分聰明！</p>
   
   <div class="pagination">
     
-      <a href="/blog/202111-a-tour-of-go-03-flow-control-statements/" class="button left"><span>[A Tour of Go 學習筆記] 03 流程控制</span></a>
     
-    
-      <a href="/blog/202111-a-tour-of-go-01-packages-and-functions/" class="button right"><span>[A Tour of Go 學習筆記] 01 Packages 和 Functions</span></a>
+      <a href="/blog/202112-laravel-excel-import/" class="button right"><span>匯入 Excel 或是 csv 檔案到 Laravel</span></a>
     
   </div>
 
