@@ -6,7 +6,21 @@
     <description>Recent content in Go on 薛丁格的工程師</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Thu, 16 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 18 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[A Tour of Go 學習筆記] 08 interface 和 error</title>
+      <link>https://tech.ray247k.com/blog/202112-a-tour-of-go-08-interface-and-error/</link>
+      <pubDate>Sat, 18 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://tech.ray247k.com/blog/202112-a-tour-of-go-08-interface-and-error/</guid>
+      <description>&lt;p&gt;初入 Golang 的世界，首先我們使用官方教學：&lt;a href=&#34;https://tour.golang.org/welcome/1&#34;
+   
+    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;A Tour of Go
+&lt;/a&gt;
+ 來認識基本的 Golang 使用&lt;br&gt;
+這篇介紹 interface 和 error&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>[A Tour of Go 學習筆記] 07 method</title>
       <link>https://tech.ray247k.com/blog/202112-a-tour-of-go-07-method/</link>

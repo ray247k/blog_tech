@@ -1,4 +1,10 @@
 [{
+    "title": "[A Tour of Go 學習筆記] 08 interface 和 error",
+    "date": "",
+    "description": "使用官方教學瞭解 Go interface 和 error",
+    "body": "初入 Golang 的世界，首先我們使用官方教學：A Tour of Go  來認識基本的 Golang 使用\n這篇介紹 interface 和 error\ninterface 概念有點像 PHP 裡面的 implement  定義 function name、接收的參數及型別、回傳的值與型別\n並不定義實作方法，而是由繼承的對象個別實作\n然而 Go 沒有繼承的機制，不需要明確的使用implement關鍵字來聲明它實作了哪個 interface\n無論是任何資料型別，只要實作了 interface 裡的定義，就等於自動實作了該 interface\n interface 型別定義了一組方法，如果某個物件實現了某個介面的所有方法，則此物件就實現了此介面\n package main import \u0026#34;fmt\u0026#34; type I interface { M() } type T struct { S string } // This method means type T implements the interface I, // but we don\u0026#39;t need to explicitly declare that it does so. func (t T) M() { fmt.Println(t.S) } func main() { var i I = T{\u0026#34;hello\u0026#34;} i.M() } /* \u0026gt;\u0026gt;\u0026gt; hello */ 這種特性也被稱為 Duck type   「當看到一隻鳥走起來像鴨子、游泳起來像鴨子、叫起來也像鴨子，那麼這隻鳥就可以被稱為鴨子。」\n 可以解釋為，當一個物件有實作鴨子這個 interface 的所有定義，那他就是鴨子\nerror 在 Go 中使用error來表示錯誤狀態\n和fmt.Stringer類似，error 類型是一個內建(built-in) 的 interface\ntype error interface { Error() string } 通常會讓 function 回傳一個error，並且判斷值是不是nil來進行錯誤處理\ni, err := strconv.Atoi(\u0026#34;42\u0026#34;) if err != nil { fmt.Printf(\u0026#34;couldn\u0026#39;t convert number: %v\\n\u0026#34;, err) return } fmt.Println(\u0026#34;Converted integer:\u0026#34;, i) 當 error 為nil時表示成功；非nil的 error 表示失敗\n",
+    "ref": "/blog/202112-a-tour-of-go-08-interface-and-error/"
+  },{
     "title": "[A Tour of Go 學習筆記] 07 method",
     "date": "",
     "description": "使用官方教學瞭解 Go method",
