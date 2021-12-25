@@ -2,28 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://tech.ray247k.com/blog/202112-a-tour-of-go-08-interface-and-error/</loc>
-    <lastmod>2021-12-18T00:00:00+00:00</lastmod>
+    <loc>https://tech.ray247k.com/blog/202112-a-tour-of-go-09-concurrency/</loc>
+    <lastmod>2021-12-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/blog/</loc>
-    <lastmod>2021-12-18T00:00:00+00:00</lastmod>
+    <lastmod>2021-12-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/categories/</loc>
-    <lastmod>2021-12-18T00:00:00+00:00</lastmod>
+    <lastmod>2021-12-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/categories/go/</loc>
-    <lastmod>2021-12-18T00:00:00+00:00</lastmod>
+    <lastmod>2021-12-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/tags/go/</loc>
-    <lastmod>2021-12-18T00:00:00+00:00</lastmod>
+    <lastmod>2021-12-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/tags/golang/</loc>
-    <lastmod>2021-12-18T00:00:00+00:00</lastmod>
+    <lastmod>2021-12-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/tags/</loc>
-    <lastmod>2021-12-18T00:00:00+00:00</lastmod>
+    <lastmod>2021-12-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/</loc>
+    <lastmod>2021-12-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tech.ray247k.com/blog/202112-a-tour-of-go-08-interface-and-error/</loc>
     <lastmod>2021-12-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/blog/202112-a-tour-of-go-07-method/</loc>

@@ -2,7 +2,7 @@
 <html lang="zh-tw">
   <head>
   <meta charset="utf-8">
-<title>[A Tour of Go 學習筆記] 08 interface 和 error - 薛丁格的工程師</title>
+<title>[A Tour of Go 學習筆記] 09 併發(concurrency) - 薛丁格的工程師</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
@@ -19,14 +19,14 @@
   <meta name="theme-color" content="#ffffff">
 
 <meta name="generator" content="Hugo 0.89.4" /><meta property="og:site_name" content="薛丁格的工程師">
-  <meta property="og:title" content="[A Tour of Go 學習筆記] 08 interface 和 error">
-  <meta property="og:description" content="使用官方教學瞭解 Go interface 和 error">
-  <meta property="description" content="使用官方教學瞭解 Go interface 和 error">
-  <meta property="og:url" content="https://tech.ray247k.com/blog/202112-a-tour-of-go-08-interface-and-error/">
+  <meta property="og:title" content="[A Tour of Go 學習筆記] 09 併發(concurrency)">
+  <meta property="og:description" content="使用官方教學瞭解 Go 的併發">
+  <meta property="description" content="使用官方教學瞭解 Go 的併發">
+  <meta property="og:url" content="https://tech.ray247k.com/blog/202112-a-tour-of-go-09-concurrency/">
   <meta property="og:type" content="article">
   
     
-      <meta property="og:image" content="https://tech.ray247k.com/img/blog/2021/12/a-tour-of-go-08-interface-and-error/IMG_8640.jpg">
+      <meta property="og:image" content="https://tech.ray247k.com/img/blog/2021/12/a-tour-of-go-09-concurrency/IMG_9462.jpg">
       <meta property="og:image:alt" content="a photo">
     
   
@@ -109,14 +109,14 @@
 {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "[A Tour of Go 學習筆記] 08 interface 和 error",
-    "description": "使用官方教學瞭解 Go interface 和 error",
+    "name": "[A Tour of Go 學習筆記] 09 併發(concurrency)",
+    "description": "使用官方教學瞭解 Go 的併發",
     "keywords": [
         "Golang" , "Go" 
     ],
-    "dateCreated": "2021-12-18T00:00:00.00Z",
-    "datePublished": "2021-12-18T00:00:00.00Z",
-    "dateModified": "2021-12-18T00:00:00.00Z",
+    "dateCreated": "2021-12-25T00:00:00.00Z",
+    "datePublished": "2021-12-25T00:00:00.00Z",
+    "dateModified": "2021-12-25T00:00:00.00Z",
     "primaryImageOfPage": {
         "@type": "ImageObject",
         "contentUrl": "[]"
@@ -147,9 +147,9 @@
                 "@type": "ListItem",
                 "position": 3,
                 "item": {
-                    "@id": "https:\/\/tech.ray247k.com\/blog\/202112-a-tour-of-go-08-interface-and-error\/",
-                    "name": "[A Tour of Go 學習筆記] 08 interface 和 error",
-                    "url": "https:\/\/tech.ray247k.com\/blog\/202112-a-tour-of-go-08-interface-and-error\/"
+                    "@id": "https:\/\/tech.ray247k.com\/blog\/202112-a-tour-of-go-09-concurrency\/",
+                    "name": "[A Tour of Go 學習筆記] 09 併發(concurrency)",
+                    "url": "https:\/\/tech.ray247k.com\/blog\/202112-a-tour-of-go-09-concurrency\/"
                 }
             }
         ],
@@ -164,14 +164,14 @@
     "@context": "http://schema.org",
     "@type": "BlogPosting",
     "articleSection": "blog",
-    "name": "[A Tour of Go 學習筆記] 08 interface 和 error",
-    "headline": "\u003cp\u003e初入 Golang 的世界，首先我們使用官方教學：\u003ca href=\u0022https:\/\/tour.golang.org\/welcome\/1\u0022\n   \n    target=\u0022_blank\u0022 rel=\u0022noreferrer noopener\u0022\u003eA Tour of Go\n\u003c\/a\u003e\n 來認識基本的 Golang 使用\u003cbr\u003e\n這篇介紹 interface 和 error\u003c\/p\u003e",
-    "description": "使用官方教學瞭解 Go interface 和 error",
+    "name": "[A Tour of Go 學習筆記] 09 併發(concurrency)",
+    "headline": "\u003cp\u003e初入 Golang 的世界，首先我們使用官方教學：\u003ca href=\u0022https:\/\/tour.golang.org\/welcome\/1\u0022\n   \n    target=\u0022_blank\u0022 rel=\u0022noreferrer noopener\u0022\u003eA Tour of Go\n\u003c\/a\u003e\n 來認識基本的 Golang 使用\u003cbr\u003e\n這篇介紹 go 強大的併發（concurrency）\u003c\/p\u003e",
+    "description": "使用官方教學瞭解 Go 的併發",
     "inLanguage": "zh-TW",
     "isFamilyFriendly": "true",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https:\/\/tech.ray247k.com\/blog\/202112-a-tour-of-go-08-interface-and-error\/"
+        "@id": "https:\/\/tech.ray247k.com\/blog\/202112-a-tour-of-go-09-concurrency\/"
     },
     "author" : {
     "@type": "Person",
@@ -187,9 +187,9 @@
     },
     "copyrightHolder" : "薛丁格的工程師",
     "copyrightYear" : "2021",
-    "dateCreated": "2021-12-18T00:00:00.00Z",
-    "datePublished": "2021-12-18T00:00:00.00Z",
-    "dateModified": "2021-12-18T00:00:00.00Z",
+    "dateCreated": "2021-12-25T00:00:00.00Z",
+    "datePublished": "2021-12-25T00:00:00.00Z",
+    "dateModified": "2021-12-25T00:00:00.00Z",
     "publisher":{
         "@type":"Organization",
         "name": "薛丁格的工程師",
@@ -202,8 +202,8 @@
         }
     },
     "image": [""],
-    "url" : "https:\/\/tech.ray247k.com\/blog\/202112-a-tour-of-go-08-interface-and-error\/",
-    "wordCount" : "141",
+    "url" : "https:\/\/tech.ray247k.com\/blog\/202112-a-tour-of-go-09-concurrency\/",
+    "wordCount" : "683",
     "genre" : [ "Golang" , "Go" ],
     "keywords" : [ "Golang" , "Go" ]
 }
@@ -321,14 +321,14 @@
     <header>
   <div class="title">
     
-      <h2><a href="/blog/202112-a-tour-of-go-08-interface-and-error/">[A Tour of Go 學習筆記] 08 interface 和 error</a></h2>
+      <h2><a href="/blog/202112-a-tour-of-go-09-concurrency/">[A Tour of Go 學習筆記] 09 併發(concurrency)</a></h2>
     
     
-      <p>使用官方教學瞭解 Go interface 和 error</p>
+      <p>使用官方教學瞭解 Go 的併發</p>
     
   </div>
   <div class="meta">
-    <time datetime="2021-12-18 00:00:00 &#43;0000 UTC">2021/12/18</time>
+    <time datetime="2021-12-25 00:00:00 &#43;0000 UTC">2021/12/25</time>
     <p>Ray</p>
     
   </div>
@@ -343,81 +343,291 @@
 
     </div>
     <div class="content">
-      <a href="/blog/202112-a-tour-of-go-08-interface-and-error/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/12/a-tour-of-go-08-interface-and-error/IMG_8640.jpg');">
-    <img src="https://tech.ray247k.com/img/blog/2021/12/a-tour-of-go-08-interface-and-error/IMG_8640.jpg" alt="a photo">
+      <a href="/blog/202112-a-tour-of-go-09-concurrency/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/12/a-tour-of-go-09-concurrency/IMG_9462.jpg');">
+    <img src="https://tech.ray247k.com/img/blog/2021/12/a-tour-of-go-09-concurrency/IMG_9462.jpg" alt="a photo">
   </a>
       <p>初入 Golang 的世界，首先我們使用官方教學：<a href="https://tour.golang.org/welcome/1"
    
     target="_blank" rel="noreferrer noopener">A Tour of Go
 </a>
  來認識基本的 Golang 使用<br>
-這篇介紹 interface 和 error</p>
-<h1 id="interface">interface</h1>
-<p>概念有點像 PHP 裡面的 <a href="https://www.php.net/manual/en/language.oop5.interfaces.php"
-   
-    target="_blank" rel="noreferrer noopener">implement
-</a>
-<br>
-定義 function name、接收的參數及型別、回傳的值與型別<br>
-並不定義實作方法，而是由繼承的對象個別實作</p>
-<p>然而 Go 沒有繼承的機制，不需要明確的使用<code>implement</code>關鍵字來聲明它實作了哪個 interface<br>
-無論是任何資料型別，只要實作了 interface 裡的定義，就等於自動實作了該 interface</p>
-<blockquote>
-<p>interface 型別定義了一組方法，如果某個物件實現了某個介面的所有方法，則此物件就實現了此介面</p>
-</blockquote>
+這篇介紹 go 強大的併發（concurrency）</p>
+<h1 id="goroutine">Goroutine</h1>
+<p>透過 Go runtime 運作的輕量級的執行緒管理<br>
+會啟動並執行一個新的<strong>Goroutine</strong>，可以理解為建立了一個新的 Thread</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">go</span> <span style="color:#a6e22e">f</span>(<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span>, <span style="color:#a6e22e">z</span>)
+</code></pre></div><p>以<code>go</code>開頭來調用函式，可以使指定的函式 f 跑在另一個 Goroutine 上</p>
+<p><code>f</code>,<code>x</code>,<code>y</code>,<code>z</code> 取自目前的 Goroutine，而<code>main</code>也是執行在同一個 Thread 裡</p>
+<p>下面範例中<code>say(&quot;world&quot;)</code>會開啟另一個執行序，並行於原本的執行序<br>
+而原本的執行序會執行<code>say(&quot;hello&quot;)</code></p>
+<p>一般情況下會先執行<code>say(&quot;world&quot;)</code>，待執行完才執行<code>say(&quot;hello&quot;)</code><br>
+如果加上<code>go</code>關鍵字調用<code>say(&quot;world&quot;)</code>，變成<code>go say(&quot;world&quot;)</code><br>
+會開啟一個新的 Goroutine，而原本的執行序會繼續執行<code>say(&quot;hello&quot;)</code><br>
+兩個執行緒會同時運行，當 Main Goroutine 執行結束後，其他的 Goroutine 會被強制關閉</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 
-<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+<span style="color:#f92672">import</span> (
+	<span style="color:#e6db74">&#34;fmt&#34;</span>
+	<span style="color:#e6db74">&#34;time&#34;</span>
+)
 
-<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">I</span> <span style="color:#66d9ef">interface</span> {
-	<span style="color:#a6e22e">M</span>()
-}
-
-<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">T</span> <span style="color:#66d9ef">struct</span> {
-	<span style="color:#a6e22e">S</span> <span style="color:#66d9ef">string</span>
-}
-
-<span style="color:#75715e">// This method means type T implements the interface I,
-</span><span style="color:#75715e">// but we don&#39;t need to explicitly declare that it does so.
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">t</span> <span style="color:#a6e22e">T</span>) <span style="color:#a6e22e">M</span>() {
-	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">S</span>)
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">say</span>(<span style="color:#a6e22e">s</span> <span style="color:#66d9ef">string</span>) {
+	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#ae81ff">5</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+		<span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Sleep</span>(<span style="color:#ae81ff">100</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Millisecond</span>)
+		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">s</span>)
+	}
 }
 
 <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#a6e22e">I</span> = <span style="color:#a6e22e">T</span>{<span style="color:#e6db74">&#34;hello&#34;</span>}
-	<span style="color:#a6e22e">i</span>.<span style="color:#a6e22e">M</span>()
+	<span style="color:#66d9ef">go</span> <span style="color:#a6e22e">say</span>(<span style="color:#e6db74">&#34;world&#34;</span>)
+	<span style="color:#a6e22e">say</span>(<span style="color:#e6db74">&#34;hello&#34;</span>)
 }
 <span style="color:#75715e">/*
+</span><span style="color:#75715e">&gt;&gt;&gt; world
+</span><span style="color:#75715e">&gt;&gt;&gt; hello
+</span><span style="color:#75715e">&gt;&gt;&gt; world
+</span><span style="color:#75715e">&gt;&gt;&gt; hello
+</span><span style="color:#75715e">&gt;&gt;&gt; hello
+</span><span style="color:#75715e">&gt;&gt;&gt; world
+</span><span style="color:#75715e">&gt;&gt;&gt; world
+</span><span style="color:#75715e">&gt;&gt;&gt; hello
 </span><span style="color:#75715e">&gt;&gt;&gt; hello
 </span><span style="color:#75715e">*/</span>
-</code></pre></div><p>這種特性也被稱為 <a href="https://en.wikipedia.org/wiki/Duck_typing"
+</code></pre></div><h1 id="channels">Channels</h1>
+<p>Channel 是帶有類型的通訊，可以透過 <code>&lt;-</code> 來發送或是接收值<br>
+具有<code>阻塞</code>的特性，可以讓執行緒進行等待</p>
+<p>和 maps 跟 slices 一樣，在使用前必須先建立 channels</p>
+<pre tabindex="0"><code class="language-go=" data-lang="go=">ch := make(chan int)
+</code></pre><p>因為 Channel 就像水管一樣，發送和接收會暫停直到另一邊準備完成<br>
+直到另一端完成推入或是拉出的動作後才會繼續往下處理，可以被用在 Goroutines 間同步資料內容</p>
+<pre tabindex="0"><code class="language-go=" data-lang="go=">ch &lt;- v    // 將 v 發送到 channel ch
+v := &lt;-ch  // 從 ch 接收值，並且指派給 v
+</code></pre><p>以下範例示範了對切片中的數求和，再將任務分配給兩個 Goroutines<br>
+要等到兩個 Goroutines 內的計算都被完成，才會計算出最終結果</p>
+<pre tabindex="0"><code class="language-go=" data-lang="go=">package main
+
+import &quot;fmt&quot;
+
+func sum(s []int, ch chan int) {
+	sum := 0
+	for _, v := range s {
+		sum += v
+	}
+	ch &lt;- sum // send sum to ch
+}
+
+func main() {
+	s := []int{7, 2, 8, -9, 4, 0}
+
+	ch := make(chan int)
+	go sum(s[:len(s)/2], ch)
+	go sum(s[len(s)/2:], ch)
+	x, y := &lt;-ch, &lt;-ch // receive from ch
+
+	fmt.Println(x, y, x+y)
+}
+/*
+&gt;&gt;&gt; -5 17 12
+*/
+</code></pre><h1 id="buffered-channels">Buffered Channels</h1>
+<p>Channels 可以帶有緩衝(buffered)，將緩衝長度作為 channel 初始化時候的第二個參數傳入</p>
+<p>前面提到的一般 Channel 具有以下特色</p>
+<ul>
+<li>推入一個資料卻還未拉取資料時，會造成推入方的等待其他 Goroutine 拉出</li>
+<li>Goroutine 拉出時 Channel 中沒有資料，會造成拉出方的等待其他 Goroutine 推入</li>
+</ul>
+<p>而若是帶上了緩衝，則會變成只會在 Buffered 中資料填滿以後才會阻塞造成等待</p>
+<p>如以下範例中，只有到第<code>101</code>個資料被推入後，推入方的 Goroutine 才會開始進行等待</p>
+<pre tabindex="0"><code class="language-go=" data-lang="go=">ch := make(chan int, 100)
+</code></pre><p>緩衝長度代表這個 channel 可以緩衝儲存的資料數量，如果傳入大於緩衝長度的元素數量則會發生<code>deadlock</code></p>
+<pre tabindex="0"><code class="language-go=" data-lang="go=">package main
+
+import &quot;fmt&quot;
+
+func main() {
+	ch := make(chan int, 1)
+	ch &lt;- 1
+	ch &lt;- 2
+	fmt.Println(&lt;-ch)
+	fmt.Println(&lt;-ch)
+}
+/*
+&gt;&gt;&gt; fatal error: all goroutines are asleep - deadlock!
+*/
+</code></pre><p>如果有取出就不會發生錯誤</p>
+<pre tabindex="0"><code class="language-go=" data-lang="go=">package main
+
+import &quot;fmt&quot;
+
+func main() {
+	ch := make(chan int, 1)
+	ch &lt;- 1
+	fmt.Println(&lt;-ch)
+	ch &lt;- 2
+	fmt.Println(&lt;-ch)
+}
+/*
+&gt;&gt;&gt; 1
+&gt;&gt;&gt; 2
+*/
+</code></pre><h1 id="range-和-close">Range 和 Close</h1>
+<p>發送者可以透過<code>close</code>關閉一個 Channel 來表示沒有需要發送的值了<br>
+接收者可以通過第二個參數來測試 Channel 是不是被關閉</p>
+<p>若沒有值可以接收，且 channel 被關閉的話<code>ok</code>會被設為 <code>false</code></p>
+<pre tabindex="0"><code class="language-go=" data-lang="go=">v, ok := &lt;-ch
+</code></pre><p>如果對一個 channel 做 for 迴圈<code>for i := range c</code>則會不斷從 Channel 接收值，直到他被關閉</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> (
+	<span style="color:#e6db74">&#34;fmt&#34;</span>
+)
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">fibonacci</span>(<span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">c</span> <span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">int</span>) {
+	<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>
+	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#a6e22e">n</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+		<span style="color:#a6e22e">c</span> <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">x</span>
+		<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span> = <span style="color:#a6e22e">y</span>, <span style="color:#a6e22e">x</span><span style="color:#f92672">+</span><span style="color:#a6e22e">y</span>
+	}
+	close(<span style="color:#a6e22e">c</span>)
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+	<span style="color:#a6e22e">c</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">10</span>)
+	<span style="color:#66d9ef">go</span> <span style="color:#a6e22e">fibonacci</span>(cap(<span style="color:#a6e22e">c</span>), <span style="color:#a6e22e">c</span>)
+	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">c</span> {
+		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">i</span>)
+	}
+}
+<span style="color:#75715e">/*
+</span><span style="color:#75715e">&gt;&gt;&gt; 0
+</span><span style="color:#75715e">&gt;&gt;&gt; 1
+</span><span style="color:#75715e">&gt;&gt;&gt; 1
+</span><span style="color:#75715e">&gt;&gt;&gt; 2
+</span><span style="color:#75715e">&gt;&gt;&gt; 3
+</span><span style="color:#75715e">&gt;&gt;&gt; 5
+</span><span style="color:#75715e">&gt;&gt;&gt; 8
+</span><span style="color:#75715e">&gt;&gt;&gt; 13
+</span><span style="color:#75715e">&gt;&gt;&gt; 21
+</span><span style="color:#75715e">&gt;&gt;&gt; 34
+</span><span style="color:#75715e">*/</span>
+</code></pre></div><p>若是向已經關閉的 channel 發送資料會引發<code>panic</code>，所以應該由推入的 Goroutine 執行關閉 Channel</p>
+<p>還有就是 Channel 和檔案不同，通常情況下不需要手動關閉<br>
+只有在必須告訴接收者不再有新的值的時候，例如一個<code>range</code>迴圈，才需要關閉</p>
+<h1 id="select">Select</h1>
+<p>可以透過<code>select</code>處理 Channel 的多種情況，其中包括阻塞時的處理</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">select</span> {
+<span style="color:#66d9ef">case</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">c</span>:
+    <span style="color:#75715e">// use i
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">default</span>:
+    <span style="color:#75715e">// receiving from c would block
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p>當所有 case 都沒符合的時候會執行<code>default</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> (
+	<span style="color:#e6db74">&#34;fmt&#34;</span>
+	<span style="color:#e6db74">&#34;time&#34;</span>
+)
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+	<span style="color:#a6e22e">tick</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Tick</span>(<span style="color:#ae81ff">100</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Millisecond</span>)
+	<span style="color:#a6e22e">boom</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">After</span>(<span style="color:#ae81ff">500</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Millisecond</span>)
+	<span style="color:#66d9ef">for</span> {
+		<span style="color:#66d9ef">select</span> {
+		<span style="color:#66d9ef">case</span> <span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">tick</span>:
+			<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;tick.&#34;</span>)
+		<span style="color:#66d9ef">case</span> <span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">boom</span>:
+			<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;BOOM!&#34;</span>)
+			<span style="color:#66d9ef">return</span>
+		<span style="color:#66d9ef">default</span>:
+			<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;    .&#34;</span>)
+			<span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Sleep</span>(<span style="color:#ae81ff">50</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Millisecond</span>)
+		}
+	}
+}
+<span style="color:#75715e">/*
+</span><span style="color:#75715e">&gt;&gt;&gt;     .
+</span><span style="color:#75715e">&gt;&gt;&gt;     .
+</span><span style="color:#75715e">&gt;&gt;&gt; tick.
+</span><span style="color:#75715e">&gt;&gt;&gt;     .
+</span><span style="color:#75715e">&gt;&gt;&gt;     .
+</span><span style="color:#75715e">&gt;&gt;&gt; tick.
+</span><span style="color:#75715e">&gt;&gt;&gt;     .
+</span><span style="color:#75715e">&gt;&gt;&gt;     .
+</span><span style="color:#75715e">&gt;&gt;&gt; tick.
+</span><span style="color:#75715e">&gt;&gt;&gt;     .
+</span><span style="color:#75715e">&gt;&gt;&gt;     .
+</span><span style="color:#75715e">&gt;&gt;&gt; tick.
+</span><span style="color:#75715e">&gt;&gt;&gt;     .
+</span><span style="color:#75715e">&gt;&gt;&gt;     .
+</span><span style="color:#75715e">&gt;&gt;&gt; tick.
+</span><span style="color:#75715e">&gt;&gt;&gt; BOOM!
+</span><span style="color:#75715e">*/</span>
+</code></pre></div><h1 id="syncmutex">sync.Mutex</h1>
+<p>前面我們使用 Channel 讓 Goroutine 之前可以進行溝通傳遞資料<br>
+因為阻塞的特點，當拉取時若沒資料，便會等待其他的 Goroutine 將資料推入 Channel</p>
+<p>那如果我們不使用 Channel，而是直接在多個 Goroutine 之間共用變數的話呢？</p>
+<p>當多個 Goroutine 之間共用變數，同時對一個變數做操作<br>
+便會發生 Race Condition，這時候會沒辦法保證運算結果的正確性</p>
+<p>這牽涉到 <strong>互斥(mutual exclusion)</strong> 的概念，可以使用 <strong>互斥鎖(Mutex)</strong> 來避免衝突</p>
+<p>Go 提供了一個 struct：<a href="https://pkg.go.dev/sync#Mutex"
    
-    target="_blank" rel="noreferrer noopener">Duck type
+    target="_blank" rel="noreferrer noopener">sync.Mutex
 </a>
-</p>
-<blockquote>
-<p>「當看到一隻鳥走起來像鴨子、游泳起來像鴨子、叫起來也像鴨子，那麼這隻鳥就可以被稱為鴨子。」</p>
-</blockquote>
-<p>可以解釋為，當一個物件有實作鴨子這個 interface 的所有定義，那他就是鴨子</p>
-<p><img src="/img/blog/2021/12/a-tour-of-go-08-interface-and-error/i-am-a-duck.jpg" alt="i am a duck"></p>
-<h1 id="error">error</h1>
-<p>在 Go 中使用<code>error</code>來表示錯誤狀態<br>
-和<code>fmt.Stringer</code>類似，error 類型是一個內建(built-in) 的 interface</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">type</span> <span style="color:#66d9ef">error</span> <span style="color:#66d9ef">interface</span> {
-    <span style="color:#a6e22e">Error</span>() <span style="color:#66d9ef">string</span>
+<br>
+提供兩個方法</p>
+<ul>
+<li>Lock</li>
+<li>Unlock</li>
+</ul>
+<p>在<code>Lock</code>和<code>Unlock</code>之間的操作，會使其他的 Goroutine 進入等待</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> (
+	<span style="color:#e6db74">&#34;fmt&#34;</span>
+	<span style="color:#e6db74">&#34;sync&#34;</span>
+	<span style="color:#e6db74">&#34;time&#34;</span>
+)
+
+<span style="color:#75715e">// SafeCounter is safe to use concurrently.
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">SafeCounter</span> <span style="color:#66d9ef">struct</span> {
+	<span style="color:#a6e22e">mu</span> <span style="color:#a6e22e">sync</span>.<span style="color:#a6e22e">Mutex</span>
+	<span style="color:#a6e22e">v</span>  <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">int</span>
 }
-</code></pre></div><p>通常會讓 function 回傳一個<code>error</code>，並且判斷值是不是<code>nil</code>來進行錯誤處理</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">strconv</span>.<span style="color:#a6e22e">Atoi</span>(<span style="color:#e6db74">&#34;42&#34;</span>)
-<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
-    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;couldn&#39;t convert number: %v\n&#34;</span>, <span style="color:#a6e22e">err</span>)
-    <span style="color:#66d9ef">return</span>
+
+<span style="color:#75715e">// Inc increments the counter for the given key.
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">SafeCounter</span>) <span style="color:#a6e22e">Inc</span>(<span style="color:#a6e22e">key</span> <span style="color:#66d9ef">string</span>) {
+	<span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">mu</span>.<span style="color:#a6e22e">Lock</span>()
+	<span style="color:#75715e">// Lock so only one goroutine at a time can access the map c.v.
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">v</span>[<span style="color:#a6e22e">key</span>]<span style="color:#f92672">++</span>
+	<span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">mu</span>.<span style="color:#a6e22e">Unlock</span>()
 }
-<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Converted integer:&#34;</span>, <span style="color:#a6e22e">i</span>)
-</code></pre></div><p>當 error 為<code>nil</code>時表示成功；非<code>nil</code>的 error 表示失敗</p>
+
+<span style="color:#75715e">// Value returns the current value of the counter for the given key.
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">SafeCounter</span>) <span style="color:#a6e22e">Value</span>(<span style="color:#a6e22e">key</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">int</span> {
+	<span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">mu</span>.<span style="color:#a6e22e">Lock</span>()
+	<span style="color:#75715e">// Lock so only one goroutine at a time can access the map c.v.
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">defer</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">mu</span>.<span style="color:#a6e22e">Unlock</span>()
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">v</span>[<span style="color:#a6e22e">key</span>]
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+	<span style="color:#a6e22e">c</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">SafeCounter</span>{<span style="color:#a6e22e">v</span>: make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">int</span>)}
+	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#ae81ff">1000</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+		<span style="color:#66d9ef">go</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">Inc</span>(<span style="color:#e6db74">&#34;somekey&#34;</span>)
+	}
+
+	<span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Sleep</span>(<span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Second</span>)
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">Value</span>(<span style="color:#e6db74">&#34;somekey&#34;</span>))
+}
+<span style="color:#75715e">/*
+</span><span style="color:#75715e">&gt;&gt;&gt; 1000
+</span><span style="color:#75715e">*/</span>
+</code></pre></div>
 
       
       
-<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/ray247k/button?referrer=https%3a%2f%2ftech.ray247k.com%2fblog%2f202112-a-tour-of-go-08-interface-and-error%2f" width="100%" frameborder=0></iframe>
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/ray247k/button?referrer=https%3a%2f%2ftech.ray247k.com%2fblog%2f202112-a-tour-of-go-09-concurrency%2f" width="100%" frameborder=0></iframe>
 
     </div>
     <footer>
@@ -452,10 +662,8 @@
   
   <div class="pagination">
     
-      <a href="/blog/202112-a-tour-of-go-09-concurrency/" class="button left"><span>[A Tour of Go 學習筆記] 09 併發(concurrency)</span></a>
     
-    
-      <a href="/blog/202112-a-tour-of-go-07-method/" class="button right"><span>[A Tour of Go 學習筆記] 07 method</span></a>
+      <a href="/blog/202112-a-tour-of-go-08-interface-and-error/" class="button right"><span>[A Tour of Go 學習筆記] 08 interface 和 error</span></a>
     
   </div>
 
