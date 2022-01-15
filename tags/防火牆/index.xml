@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>防火牆 on 薛丁格的工程師</title>
+    <link>https://tech.ray247k.com/tags/%E9%98%B2%E7%81%AB%E7%89%86/</link>
+    <description>Recent content in 防火牆 on 薛丁格的工程師</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-TW</language>
+    <lastBuildDate>Sat, 15 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/%E9%98%B2%E7%81%AB%E7%89%86/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>第一次在 GCP 開 VM 就成功</title>
+      <link>https://tech.ray247k.com/blog/202201-gcp-vm-basic/</link>
+      <pubDate>Sat, 15 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://tech.ray247k.com/blog/202201-gcp-vm-basic/</guid>
+      <description>&lt;p&gt;如何在 Google Cloud Platform (GCP) 上開啟一個 VM 虛擬主機呢？&lt;br&gt;
+聽起來很複雜，實際做起來十分簡單&lt;br&gt;
+過去沒有開主機的經驗，這次就把步驟給記錄下來&lt;br&gt;
+&lt;del&gt;我不想花錢自己開，以前公司也沒開權限給我過&lt;/del&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
