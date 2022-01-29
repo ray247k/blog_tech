@@ -1,4 +1,10 @@
 [{
+    "title": "使用 PHP CodeSniffer 檢查 Coding Style",
+    "date": "",
+    "description": "透過 phpcs 與 phpcbf 檢查並修正 Coding Style",
+    "body": "透過 phpcs(PHP Code Sniffer) 檢查程式碼是否符合標準\n使用 phpcbf(PHP Code Beautifier and Fixer) 自動修正不符合標準的程式碼\nPHP CodeSniffer PHP_CodeSniffer  是一套用來檢查程式碼是否符合標準的工具\n包含兩個 PHP script：phpcs, phpcbf\n phpcs：用來檢查 PHP、JavaScript 和 CSS 檔案有沒有符合指定的 Coding Style phpcbf：自動修正不符合標準的程式碼  安裝與使用 如何設定檢查用的配置文件phpcs.xml之前已經在 使用 GrumPHP 做程式碼品質的守門員  介紹過\n就不多花篇幅重複說明\n本機 安裝指令\ncomposer global require \u0026#39;squizlabs/php_codesniffer=*\u0026#39; 如果是的使用者 oh-my-zsh 的話需要額外手動設定\nvim ~/.zshrc 加入\nexport PATH=$HOME/bin:/usr/local/bin:/Users/[your-user-name]/.composer/vendor/bin:$PATH 使用指令重新載入設定並檢查安裝版本\nsource ~/.zshrc which phpcs phpcs --version 變更提示訊息顏色設定 phpcs --config-set colors 1 執行自定義 Coding Style 如果有自己定義的 Coding Style，需要設定執行指定 phpcs.xml 設定檔\nphpcs --standard={/path/to/custom_phpcs.xml} {/path/to/project/or/file} 更換預設 Coding Style phpcs --config-set default_standard ../../phpcs.xml 當然也可以換成其他的 PSR 標準\nphpcs --config-set default_standard PSR2 設定預設 Coding Style 原始預設是 PSR-2，可以換成自己的版本\nphpcs --config-set default_standard ../../phpcs.xml 直接用預設執行檢查和修正格式 phpcs {/path/to/project/or/file} phpcbf {/path/to/project/or/file} 在專案中使用 如果想在專案中配置，並且加入 CI(Continuous integration) 流程中自動執行\n則可以直接加入到專案中，方便統一設定\ncomposer require --dev squizlabs/php_codesniffer ./vendor/bin/phpcs -h ./vendor/bin/phpcbf -h ",
+    "ref": "/blog/202201-phpcs/"
+  },{
     "title": "第一次在 GCP 開 VM 就成功",
     "date": "",
     "description": "手把手在 Google Cloud Platform (GCP) 啟動第一個 VM 執行個體及相關設定",
