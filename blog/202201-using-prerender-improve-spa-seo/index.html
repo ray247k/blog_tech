@@ -1,0 +1,1033 @@
+<!doctype html>
+<html lang="zh-tw">
+  <head>
+  <meta charset="utf-8">
+<title>使用 Prerender 為 SPA 增進 SEO - 薛丁格的工程師</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
+  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
+  
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=1" color="#ffffff">
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=1">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=1">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+<meta name="generator" content="Hugo 0.91.2" /><meta property="og:site_name" content="薛丁格的工程師">
+  <meta property="og:title" content="使用 Prerender 為 SPA 增進 SEO">
+  <meta property="og:description" content="解決 CSR 網頁的 SEO 問題，示範自架與 SaaS 方案">
+  <meta property="description" content="解決 CSR 網頁的 SEO 問題，示範自架與 SaaS 方案">
+  <meta property="og:url" content="https://tech.ray247k.com/blog/202201-using-prerender-improve-spa-seo/">
+  <meta property="og:type" content="article">
+  
+    
+      <meta property="og:image" content="https://tech.ray247k.com/img/blog/2022/01/using-prerender-improve-spa-seo/seo.jpeg">
+      <meta property="og:image:alt" content="">
+    
+  
+  
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/github-dark.min.css">
+          <link rel="stylesheet" href="/css/bundle.min.1bfccf86359e3de974865922b006112447a52f942c2a9c2bf93d159980ae641b.css" integrity="sha256-G/zPhjWePel0hlkisAYRJEelL5QsKpwr&#43;T0VmYCuZBs="><link rel="stylesheet" href="/css/add-on.css">
+
+  
+
+
+    
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-LTGVYYWC2J');
+        </script>
+    
+
+
+  <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "image": {
+        "@type": "ImageObject",
+        "image": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+        "height": 648,
+        "width": 1080
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "薛丁格的工程師",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg"
+        }
+    },
+    "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+    "headline": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - Schrödinger\u0027s Programmer",
+    "name": "薛丁格的工程師",
+    "url": "https:\/\/tech.ray247k.com",
+    "description": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - devops,go,laravel,leetcode,node.js,php,python3,架站相關,版本控制,第三方服務,",
+    "keywords": [
+        "apache-bench,aws,axios,cdn,chatbot,cicd,cloudflare,cloudflare-workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker-compose,domain-name,drone,element-ui,excel,express,gas,gcp,getter,git,github,github-page,go,golang,google-app-script,google-domains,google-sheets,grumphp,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,phpcbf,phpcs,portainer,postgresql,prerender,proxy,python3,restful,seo,server,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
+    ]
+}
+</script>
+
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "legalName": "薛丁格的工程師",
+    "url": "https:\/\/tech.ray247k.com",
+    "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "",
+        "availableLanguage": [
+            "Mandarin",
+            "English"
+        ]
+    },
+    "sameAs": [
+        "https://ray247k.blogspot.com/"
+    ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "使用 Prerender 為 SPA 增進 SEO",
+    "description": "解決 CSR 網頁的 SEO 問題，示範自架與 SaaS 方案",
+    "keywords": [
+        "SEO" , "Prerender" , "搜尋引擎最佳化" , "Cloudflare" , "Cloudflare Workers" 
+    ],
+    "dateCreated": "2022-01-31T00:00:00.00Z",
+    "datePublished": "2022-01-31T00:00:00.00Z",
+    "dateModified": "2022-01-31T00:00:00.00Z",
+    "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "contentUrl": "[]"
+    },
+    "breadcrumb": {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com",
+                    "name": "薛丁格的工程師",
+                    "url": "https:\/\/tech.ray247k.com"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com/blog",
+                    "name": "Blog",
+                    "url": "https:\/\/tech.ray247k.com/blog"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\/blog\/202201-using-prerender-improve-spa-seo\/",
+                    "name": "使用 Prerender 為 SPA 增進 SEO",
+                    "url": "https:\/\/tech.ray247k.com\/blog\/202201-using-prerender-improve-spa-seo\/"
+                }
+            }
+        ],
+        "itemListOrder": "Ascending",
+        "numberOfItems": 3
+    }
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "articleSection": "blog",
+    "name": "使用 Prerender 為 SPA 增進 SEO",
+    "headline": "\u003cp\u003eSingle Page Application(SPA) 網站使用 Client-Side Rendering (CSR) 來渲染畫面\u003cbr\u003e\n一開始載入時伺服器只會回傳根元件，透過後續 API 互動取得資料填入\u003cbr\u003e\n而網站排名的爬蟲，爬到就會是空空的。雖然 Google 聲稱他們的爬蟲會執行 JS，但是其他搜尋引擎不一定會執行\u003cbr\u003e\n所以透過 Prerender 服務來做到預先渲染給網頁爬蟲，達成搜尋結果最佳化\u003c\/p\u003e",
+    "description": "解決 CSR 網頁的 SEO 問題，示範自架與 SaaS 方案",
+    "inLanguage": "zh-TW",
+    "isFamilyFriendly": "true",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com\/blog\/202201-using-prerender-improve-spa-seo\/"
+    },
+    "author" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "creator" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "accountablePerson" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "copyrightHolder" : "薛丁格的工程師",
+    "copyrightYear" : "2022",
+    "dateCreated": "2022-01-31T00:00:00.00Z",
+    "datePublished": "2022-01-31T00:00:00.00Z",
+    "dateModified": "2022-01-31T00:00:00.00Z",
+    "publisher":{
+        "@type":"Organization",
+        "name": "薛丁格的工程師",
+        "url": "https://tech.ray247k.com",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+            "width":"32",
+            "height":"32"
+        }
+    },
+    "image": [""],
+    "url" : "https:\/\/tech.ray247k.com\/blog\/202201-using-prerender-improve-spa-seo\/",
+    "wordCount" : "300",
+    "genre" : [ "SEO" , "Prerender" , "搜尋引擎最佳化" , "Cloudflare" , "Cloudflare Workers" ],
+    "keywords" : [ "SEO" , "Prerender" , "搜尋引擎最佳化" , "Cloudflare" , "Cloudflare Workers" ]
+}
+</script>
+
+
+
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/" class="nav">
+        
+          Blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/" class="nav link"><i class='fa fa-home'></i> home</a>
+        
+      
+        
+          
+          <a href="/about" class="nav link"><i class='far fa-id-card'></i> about</a>
+        
+      
+        
+          
+          <a href="/categories" class="nav link"><i class='fas fa-sitemap'></i> category</a>
+        
+      
+      
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    
+    
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/"><img src="https://tech.ray247k.com/img/main/logo.jpg" class="circle" width="100" alt="一隻箱子裡的貓，看著電腦螢幕" /></a>
+  <header>
+    <h1>Schrödinger's Programmer</h1>
+  </header>
+  <main>
+    <p>奔跑吧工程師，趁年輕跑得越遠越好</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/ray247k" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+<li><a href="//gitlab.com/ray247k" target="_blank" rel="noopener" title="GitLab" class="fab fa-gitlab"></a></li>
+
+
+
+
+
+
+
+
+
+
+<li><a href="//www.linkedin.com/in/j-ray-cheng" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="/blog/202201-using-prerender-improve-spa-seo/">使用 Prerender 為 SPA 增進 SEO</a></h2>
+    
+    
+      <p>解決 CSR 網頁的 SEO 問題，示範自架與 SaaS 方案</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2022-01-31 00:00:00 &#43;0000 UTC">2022/01/31</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+    <div id="socnet-share">
+      
+
+
+
+
+
+    </div>
+    <div class="content">
+      <a href="/blog/202201-using-prerender-improve-spa-seo/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2022/01/using-prerender-improve-spa-seo/seo.jpeg');">
+    <img src="https://tech.ray247k.com/img/blog/2022/01/using-prerender-improve-spa-seo/seo.jpeg" alt="">
+  </a>
+      <p>Single Page Application(SPA) 網站使用 Client-Side Rendering (CSR) 來渲染畫面<br>
+一開始載入時伺服器只會回傳根元件，透過後續 API 互動取得資料填入<br>
+而網站排名的爬蟲，爬到就會是空空的。雖然 Google 聲稱他們的爬蟲會執行 JS，但是其他搜尋引擎不一定會執行<br>
+所以透過 Prerender 服務來做到預先渲染給網頁爬蟲，達成搜尋結果最佳化</p>
+<h1 id="prerender">Prerender</h1>
+<p>原理是內部起一個 headless 的 chrome 達到預先渲染畫面的效果</p>
+<p>以下會介紹兩個 Prerender 的使用方式</p>
+<ul>
+<li>自架：<a href="https://github.com/prerender/prerender"
+   
+    target="_blank" rel="noreferrer noopener">prerender
+</a>
+</li>
+<li>SaaS 服務：<a href="https://prerender.io/"
+   
+    target="_blank" rel="noreferrer noopener">Prerender.io
+</a>
+</li>
+</ul>
+<p>要自建的話要先建一個反向代理，在 request 進來的時候<br>
+判斷 user agent，機器人的話就把請求發給自己 host 的 prerender 服務<br>
+服務本身有個 headless chrome，所以可以 render 出 HTML 回傳<br>
+如果是一般使用者進來就直接轉發前端伺服器，不做渲染</p>
+<p>使用 <a href="https://prerender.io/"
+   
+    target="_blank" rel="noreferrer noopener">Prerender.io
+</a>
+ 所提供的 SaaS 服務，就會有所限制<br>
+並且超過免費使用的上限就會需要付費，但是就不需要自己管理以及設定服務<br>
+而自建的優點則是擁有更多設定上的自由</p>
+<p>兩個方案可以依照使用情境評估後自行選擇<br>
+若是要使用 <a href="https://prerender.io/"
+   
+    target="_blank" rel="noreferrer noopener">Prerender.io
+</a>
+ 方案，則必須在網站已經上線的情況下才能進行設定</p>
+<h1 id="自架">自架</h1>
+<p>套件：<a href="https://github.com/prerender/prerender"
+   
+    target="_blank" rel="noreferrer noopener">Prerender
+</a>
+<br>
+說明寫的其實蠻清楚，就是這麼簡單<br>
+為了表示誠意，底下還是一步一步示範</p>
+<h2 id="1-安裝">1. 安裝</h2>
+<p>開個資料夾，為了方便我們先取叫<code>prerender</code></p>
+<p>在資料夾內輸入指令：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm install prerender
+</code></pre></div><p>就安裝好了</p>
+<h2 id="2-設定">2. 設定</h2>
+<p>在 prerender 資料夾中新增一個檔案
+<code>server.js</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">prerender</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;prerender&#39;</span>);
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">server</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">prerender</span>();
+<span style="color:#a6e22e">server</span>.<span style="color:#a6e22e">start</span>();
+</code></pre></div><h2 id="3-啟動">3. 啟動</h2>
+<p>終端機輸入指令啟動服務</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">node server.js
+</code></pre></div><p>服務會啟動在本機的 3000 port<br>
+如果你的服務也是啟動在 3000 port，就把 port 錯開</p>
+<p>接著在你的前端專案啟動的狀況下開啟終端機，輸入</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl <span style="color:#e6db74">&#34;https://www.google.com.tw/&#34;</span> <span style="color:#75715e"># 你的 SPA 專案網址</span>
+</code></pre></div><p>會得到空空一片只有根元件的 DOM，因為取得元件內容的 JS 還沒被執行<br>
+這也是 SPA 的 SEO 不好的原因<br>
+雖然 Google 聲稱他們的爬蟲會執行 JS，但是其他搜尋引擎不一定會執行</p>
+<p>接著就是神奇的時刻了，打開終端機輸入</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl <span style="color:#e6db74">&#34;http://localhost:3000/render?url=https://www.google.com.tw/&#34;</span> <span style="color:#75715e"># 你的 SPA 專案網址</span>
+</code></pre></div><p>拿到一大包渲染過後的結果啦！<br>
+前面網址是 Prerender 服務的網址，然後參數帶上你的專案網址<br>
+就會透過 Prerender 內部啟動的 headless chrome 去渲染畫面再回傳</p>
+<h2 id="快取設定">快取設定</h2>
+<p>一般情況下，如果你自己起一個 Prerender 服務<br>
+則每次進行轉發都會重新渲染畫面，但是實務上我們不需要這麼頻繁的重新渲染<br>
+可以藉由設定快取保留渲染結果一段時間</p>
+<p>每次請求進來，如果快取還沒過期就直接回傳快取結果<br>
+不用重新渲染畫面，可以減少服務本身的附載</p>
+<p>使用的快取套件：<a href="https://github.com/prerender/prerender-memory-cache"
+   
+    target="_blank" rel="noreferrer noopener">prerender-memory-cache
+</a>
+</p>
+<h3 id="1-安裝-1">1. 安裝</h3>
+<p>用終端機在剛剛的 prerender 資料夾輸入指令安裝套件</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm install prerender-memory-cache --save
+</code></pre></div><h3 id="2-設定-1">2. 設定</h3>
+<p>打開剛剛 prerender 的 <code>server.js</code><br>
+在原先檔案的<code>server.start();</code>前加入設定聲明</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">server</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;prerender-memory-cache&#39;</span>))
+</code></pre></div><p>就是這麼簡單，第二次請求應該會使用快取的結果</p>
+<h3 id="3-參數">3. 參數</h3>
+<p>我們還可以在 prerender 資料夾下使用終端機輸入來設定參數</p>
+<p><strong>快取最大項目數量</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export CACHE_MAXSIZE<span style="color:#f92672">=</span><span style="color:#ae81ff">1000</span>
+</code></pre></div><p>default: 100</p>
+<p><strong>快取存活時間(秒)</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export CACHE_TTL<span style="color:#f92672">=</span><span style="color:#ae81ff">600</span>
+</code></pre></div><p>default: 60</p>
+<h3 id="4-測試">4. 測試</h3>
+<p>設定存活時間之後使用終端機去測試</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl <span style="color:#e6db74">&#34;http://localhost:3000/render?url=http://localhost:3030/&#34;</span> <span style="color:#75715e"># 你的 SPA 專案網址</span>
+</code></pre></div><p>打完第一次之後，去修改自己專案的一些內容（footer, title 之類）<br>
+確認用瀏覽器直接造訪畫面有出現變更<br>
+接著再重新使用終端機測試，應該會出現舊的 HTML 內容</p>
+<p>這就證明他是使用快取的內容，而不是請求一來就重新渲染<br>
+所以剛剛才會建議修改 footer 或是 title，因為比較好確認</p>
+<h2 id="線上服務價錢方案">線上服務價錢方案</h2>
+<p>底下範例使用 <a href="https://www.cloudflare.com/zh-tw/products/workers-kv/"
+   
+    target="_blank" rel="noreferrer noopener">Cloudflare Workers
+</a>
+ 設定 Prerender.io 服務<br>
+因為專案的前端好像有自己的 Nginx 服務，不想介入太多 <del>不然到時候又變我要負責</del></p>
+<p>而且以前就聽過 Cloudflare Workers 也知道很強大，畢竟就像個 proxy 掛在最前面，所以能做的事情很多<br>
+但是從來沒機會使用，剛好用這次機會摸摸看</p>
+<h3 id="prerenderio-價錢方案">Prerender.io 價錢方案</h3>
+<p><img src="/img/blog/2022/01/using-prerender-improve-spa-seo/prerender-price.png" alt="prerender price"></p>
+<h3 id="cloudflare-workers-價錢方案">Cloudflare workers 價錢方案</h3>
+<p><img src="/img/blog/2022/01/using-prerender-improve-spa-seo/cloudflare-workers-price.png" alt="cloudflare workers price"></p>
+<h2 id="設定">設定</h2>
+<p>進到 prerender 頁面，點擊<code>Install middleware</code>後選擇<code>cloudflare</code>選項</p>
+<p><img src="/img/blog/2022/01/using-prerender-improve-spa-seo/prerender-settings.png" alt="prerender settings"></p>
+<p>根據提示打開設定檔的範例：<a href="https://github.com/prerender/prerender-nginx"
+   
+    target="_blank" rel="noreferrer noopener">prerender/prerender-nginx
+</a>
+<br>
+我們是前後端完全分離的 SPA 架構，所以選擇<code>Single Page Application: nginx.conf</code></p>
+<p>就會看到範例的<code>index.js</code>，看起來要改的只有<code>API_KEY</code>和<code>PRERENDERED_DOMAINS</code></p>
+<ul>
+<li>API_KEY：prerender.io 儀表板左上的<code>Token</code></li>
+<li>PRERENDERED_DOMAINS：等等會拿來設定路由規則的目標網域</li>
+</ul>
+<p>建立一個 Cloudflare worker，把剛剛的設定檔貼上去<br>
+一般的 Worker 可以使用提供的 <a href="https://developers.cloudflare.com/workers/learning/playground"
+   
+    target="_blank" rel="noreferrer noopener">playground
+</a>
+ 玩看看<br>
+但是我們使用的是第三方服務，必須經過 Prerender 驗證才會生效<br>
+所以在這邊使用 playground 是無法測試的</p>
+<p>在設定好 Worker 之後，開啟 Worker 頁籤<br>
+選擇<code>新增路由</code></p>
+<p><img src="/img/blog/2022/01/using-prerender-improve-spa-seo/cloudflare-workers-settings.png" alt="cloudflare workers settings"></p>
+<p>接著要設定<strong>要求限制失敗模式</strong><br>
+選擇<code>開啟失敗 (繼續)</code>的話，當請求進來而 Worker 失敗則會直接進到服務內<br>
+而<code>關閉失敗 (封鎖)</code>是會噴出錯誤頁面阻止使用者繼續訪問<br>
+由於我們不希望在達到免費方案限制的時候網站就無法存取，且不預先渲染內容不影響網站功能<br>
+所以選擇讓在失敗時跳過 Worker 直接執行，畢竟只是拿來做 prerender，爬蟲這次爬不到就下次再來也不要緊</p>
+<p><img src="/img/blog/2022/01/using-prerender-improve-spa-seo/cloudflare-new-route.png" alt="cloudflare new route"></p>
+<p>路由規則要和你在 Worker 設定的網址一樣<br>
+設定完之後就可以回到 prerender 按下一步進行驗證，接著就是等他自己驗證完成囉</p>
+<p>通常按下驗證過幾秒驗證結果就會出來了<br>
+如果驗證完成後想模擬爬蟲爬取的時候會取得的結果，可以使用</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -A Googlebot <span style="color:#e6db74">&#34;https://{你線上服務網址}&#34;</span>
+</code></pre></div><p>這樣可以模擬<code>Googlebot</code>爬蟲得到的結果，因為我們在 Worker 的 nginx 設定檔中有指定特定的 user agent<br>
+所以 Cloudflare Worker 會替我們判斷是不是需要轉發給 <a href="https://prerender.io/"
+   
+    target="_blank" rel="noreferrer noopener">Prerender.io
+</a>
+ 服務處理<br>
+如果不加上<code>-A Googlebot</code>參數，則不會轉發進行渲染 <br>
+會回傳一般使用者造訪網頁時的 CSR 結果，也就是未經渲染的網頁內容</p>
+
+      
+      
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/ray247k/button?referrer=https%3a%2f%2ftech.ray247k.com%2fblog%2f202201-using-prerender-improve-spa-seo%2f" width="100%" frameborder=0></iframe>
+
+    </div>
+    <footer>
+      <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/%e6%9e%b6%e7%ab%99%e7%9b%b8%e9%97%9c/">架站相關</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/seo/">SEO</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/prerender/">Prerender</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/%e6%90%9c%e5%b0%8b%e5%bc%95%e6%93%8e%e6%9c%80%e4%bd%b3%e5%8c%96/">搜尋引擎最佳化</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/cloudflare/">Cloudflare</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/cloudflare-workers/">Cloudflare Workers</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+    </footer>
+  </article>
+  
+    
+
+  
+  <div class="pagination">
+    
+    
+      <a href="/blog/202201-phpcs/" class="button right"><span>使用 PHP CodeSniffer 檢查 Coding Style</span></a>
+    
+  </div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>最新文章</h1>
+      </header>
+      
+      <article class="mini-post">
+          <a href="/blog/202201-using-prerender-improve-spa-seo/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2022/01/using-prerender-improve-spa-seo/seo.jpeg');">
+    <img src="https://tech.ray247k.com/img/blog/2022/01/using-prerender-improve-spa-seo/seo.jpeg" alt="">
+  </a>
+        <header>
+          <h2><a href="/blog/202201-using-prerender-improve-spa-seo/">使用 Prerender 為 SPA 增進 SEO</a></h2>
+          <time class="published" datetime="2022-01-31 00:00:00 &#43;0000 UTC">2022/01/31</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202201-phpcs/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2022/01/phpcs/code.jpeg');">
+    <img src="https://tech.ray247k.com/img/blog/2022/01/phpcs/code.jpeg" alt="code">
+  </a>
+        <header>
+          <h2><a href="/blog/202201-phpcs/">使用 PHP CodeSniffer 檢查 Coding Style</a></h2>
+          <time class="published" datetime="2022-01-20 00:00:00 &#43;0000 UTC">2022/01/20</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202201-gcp-vm-basic/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2022/01/gcp-vm-basic/gcp-compute-engine-logo.jpg');">
+    <img src="https://tech.ray247k.com/img/blog/2022/01/gcp-vm-basic/gcp-compute-engine-logo.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/blog/202201-gcp-vm-basic/">第一次在 GCP 開 VM 就成功</a></h2>
+          <time class="published" datetime="2022-01-15 00:00:00 &#43;0000 UTC">2022/01/15</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202112-a-tour-of-go-09-concurrency/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/12/a-tour-of-go-09-concurrency/IMG_9462.jpg');">
+    <img src="https://tech.ray247k.com/img/blog/2021/12/a-tour-of-go-09-concurrency/IMG_9462.jpg" alt="a photo">
+  </a>
+        <header>
+          <h2><a href="/blog/202112-a-tour-of-go-09-concurrency/">[A Tour of Go 學習筆記] 09 併發(concurrency)</a></h2>
+          <time class="published" datetime="2021-12-25 00:00:00 &#43;0000 UTC">2021/12/25</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202112-a-tour-of-go-08-interface-and-error/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/12/a-tour-of-go-08-interface-and-error/IMG_8640.jpg');">
+    <img src="https://tech.ray247k.com/img/blog/2021/12/a-tour-of-go-08-interface-and-error/IMG_8640.jpg" alt="a photo">
+  </a>
+        <header>
+          <h2><a href="/blog/202112-a-tour-of-go-08-interface-and-error/">[A Tour of Go 學習筆記] 08 interface 和 error</a></h2>
+          <time class="published" datetime="2021-12-18 00:00:00 &#43;0000 UTC">2021/12/18</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/blog/" class="button">查看更多</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="/categories">category</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/categories/node.js/">node.js<span class="count">22</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/devops/">devops<span class="count">17</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/leetcode/">leetcode<span class="count">13</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/go/">go<span class="count">9</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/python3/">python3<span class="count">9</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/php/">php<span class="count">7</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/">架站相關<span class="count">5</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/laravel/">laravel<span class="count">4</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">版本控制<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%9C%8D%E5%8B%99/">第三方服務<span class="count">1</span></a>
+          </li>
+          
+        </ul>
+      </section>
+    
+  
+
+  
+  <section id="tags">
+    <header>
+      <h1><a href="/tags">Tag</a></h1>
+    </header>
+    <div class="li-x post-meta tags-md" style="margin-left: 0.5em;">
+      <ul>
+        
+        
+        <li>
+          <a href="/tags/node.js/">node.js (22)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/devops/">devops (19)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/vue/">vue (15)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/leetcode/">leetcode (13)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/containerization/">containerization (9)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/docker/">docker (9)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/express/">express (9)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/go/">go (9)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/golang/">golang (9)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/php/">php (9)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/python3/">python3 (9)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%AE%B9%E5%99%A8%E6%8A%80%E8%A1%93/">容器技術 (9)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/leetcode-easy/">leetcode-easy (8)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/docker-compose/">docker-compose (6)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/vuex/">vuex (6)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/composer/">composer (5)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/element-ui/">element-ui (5)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/laravel/">laravel (5)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/leetcode-medium/">leetcode-medium (5)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cicd/">cicd (4)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/drone/">drone (4)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cloudflare/">cloudflare (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/mongodb/">mongodb (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/mutation/">mutation (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/restful/">restful (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/">架站相關 (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/chatbot/">chatbot (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/component/">component (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/discord/">discord (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/dns/">dns (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/gcp/">gcp (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/getter/">getter (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/google-domains/">google-domains (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/nginx/">nginx (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/vue-router/">vue-router (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/vue-ui/">vue-ui (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/apache-bench/">apache-bench (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/aws/">aws (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/axios/">axios (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cdn/">cdn (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cloudflare-workers/">cloudflare-workers (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cors/">cors (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/csv/">csv (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/domain-name/">domain-name (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/excel/">excel (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/gas/">gas (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/git/">git (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/github/">github (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/github-page/">github-page (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/google-app-script/">google-app-script (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/google-sheets/">google-sheets (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/grumphp/">grumphp (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/laravel-excel/">laravel-excel (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/linux/">linux (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/ngrok/">ngrok (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/php-fpm/">php-fpm (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/phpcbf/">phpcbf (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/phpcs/">phpcs (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/portainer/">portainer (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/postgresql/">postgresql (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/prerender/">prerender (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/proxy/">proxy (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/seo/">seo (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/server/">server (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/ssh/">ssh (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/stress-testing/">stress-testing (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/subdomain/">subdomain (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E4%BC%BA%E6%9C%8D%E5%99%A8/">伺服器 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%80%8B%E4%BA%BA%E5%93%81%E7%89%8C/">個人品牌 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%9F%9F%E5%90%8D/">域名 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%A3%93%E5%8A%9B%E6%B8%AC%E8%A9%A6/">壓力測試 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%AD%90%E7%B6%B2%E5%9F%9F/">子網域 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E6%90%9C%E5%B0%8B%E5%BC%95%E6%93%8E%E6%9C%80%E4%BD%B3%E5%8C%96/">搜尋引擎最佳化 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">版本控制 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E8%B2%B7%E7%B6%B2%E5%9D%80/">買網址 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E9%98%B2%E7%81%AB%E7%89%86/">防火牆 (1)</a>
+        </li>
+        
+      </ul>
+
+    </div>
+  </section>
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+    
+    <p class="copyright">
+        © 2022 薛丁格的工程師
+    </p>
+    <p class="copyright" style="font-size: 0.1EM;">
+        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.91.2' target='_blank' rel='noopener'>Hugo</a>
+    </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>hljs.highlightAll();</script><script src="/js/bundle.min.5352079d3388d9a4297e0200dd1040866c8b3b67460090bf30e01a9cd56fd746.js" integrity="sha256-U1IHnTOI2aQpfgIA3RBAhmyLO2dGAJC/MOAanNVv10Y="></script>
+    <script src="/js/add-on.js"></script>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-LTGVYYWC2J', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </div>
+  </body>
+</html>
