@@ -1,4 +1,10 @@
 [{
+    "title": "使用 ssh 從本機連線到 GCP VM",
+    "date": "",
+    "description": "在本機透過終端機 ssh 連線到 GCP VM",
+    "body": "原先在 GCP 開啟 VM 後每當管理主機時都要先開啟 GCP 控制台頁面，找到指定主機\n按下畫面上的 SSH 連線按鈕，接著開啟 GCP 的終端機畫面\n開啟的步驟實在繁瑣，而且那個終端機也沒有自己本機的用的習慣\n這篇文章說明如何透過本機終端機 ssh 連線到 GCP 主機內\n先前有介紹過一種方法：設定 ssh 金鑰登入遠端主機  缺點就是專案中每一台主機，都要分別設定。這次透過 GCP 設定，讓專案中的主機都可以共用設定\n「達成設定一次，到處可用」的目標\n基本設定 在本機產生 ssh key，使用指令\nssh-keygen 接著複製/.ssh/id_rsa.pub檔案內容，新增進 GCP 的「中繼資料」\n如此一來，整個專案下的所有主機都可以使用這組 key 存取\n再也不需要一台一台設定，人員異動時也更便於管理\n加入之後就完成了，就是這麼簡單\n回到你的本機開啟終端機，輸入\nssh -i ~/.ssh/id_rsa {遠端主機 username}@{遠端主機對外 IP} 出現交互問題時回答yes就可以成功登入遠端主機！\n只有第一次會出現問句，之後就會直接登入了\n快還要更快 剛剛已經可以連線進去主機，但是每次都要去記得 IP 位置很麻煩\n有沒有更快的方法呢？答案當然是有！\n在~/.ssh下新增config檔案，不用打任何副檔名\nHost ssh-test # 用來連線的 alias 名稱 HostName 486.69.87.420 # host domain 或 ip Port 22 # host 的 SSH port (預設是 22 port 可以省略) User ray # 登入 SSH 的 username IdentitiesOnly yes # 使用指定的 key IdentityFile ~/.ssh/id_rsa # 指定的 ssh key 路徑 儲存之後就可以使用Host設定的別名進行連線登入遠端主機\nssh ssh-test 其他用途 除了單純登入主機外，設定這個還有什麼額外的應用呢？\n一般來說要查看 Google Cloud SQL 中的資料庫，要在 GCP 控制台進行連線 連線後還要輸入資料庫密碼\n並且有個明顯的缺點：沒有 GUI\n做什麼都要直接下指令，而且顯示出來的格式很不親民\n如果想要用 GUI 查看，官方的說明是使用 Cloud SQL proxy  這東西實在不好設定，而且需要把資料庫位址公開在網路上\n一般在當資料庫和主機都是使用 GCP 的情況下，可以直接透過 GCP 的內部網路進行連線\n避免設定對外的資料庫 IP 位址讓駭客有機可趁\n有看到關鍵字嗎？「GCP 的內部網路」！\n我們剛剛可以從本機利用 ssh 連線到遠端 GCP VM 中，那就可以利用這個方法存取到同在內部網路的資料庫了\n因為是利用內部網路存取，所以也不需要設定對外的資料庫 IP 位址\n大部分的資料庫 GUI 都有提供 ssh 連線的選項\n遠裡就是先透過上面設定好的 ssh 連線進到主機作為跳板，接著使用「內部網路」對資料庫進行存取\n所以資料庫連線的Host和Username等只要和程式中使用一樣的連線設定即可！\n如此一來絕對是有助於開發速度，不需要特地從 GCP 控制台登入\n",
+    "ref": "/blog/202202-connect-to-gcp-vm-using-ssh/"
+  },{
     "title": "使用 Prerender 為 SPA 增進 SEO",
     "date": "",
     "description": "解決 CSR 網頁的 SEO 問題，示範自架與 SaaS 方案",

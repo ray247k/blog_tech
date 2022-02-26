@@ -67,6 +67,11 @@ h1, h2, h3, h4, h5, h6 {
     text-transform: none;
 }
 
+/* 文章底部 tag 不要大寫 */
+.stats ul li {
+    text-transform: none;
+}
+
 /* 超連結顏色 */
 .content a {
     color: #1d9994;
