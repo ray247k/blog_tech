@@ -74,13 +74,13 @@
     <loc>https://tech.ray247k.com/blog/202112-a-tour-of-go-09-concurrency/</loc>
     <lastmod>2021-12-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://tech.ray247k.com/categories/go/</loc>
-    <lastmod>2021-12-25T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://tech.ray247k.com/tags/go/</loc>
     <lastmod>2021-12-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/tags/golang/</loc>
+    <lastmod>2021-12-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tech.ray247k.com/categories/golang/</loc>
     <lastmod>2021-12-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/blog/202112-a-tour-of-go-08-interface-and-error/</loc>
