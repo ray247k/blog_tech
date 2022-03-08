@@ -361,10 +361,10 @@
 <li>Amazon SQS</li>
 </ul>
 <p>如果在本機測試，可以將<code>.env</code>中設定成</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-env" data-lang="env">QUEUE_DRIVER<span style="color:#f92672">=</span>sync
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-env" data-lang="env">QUEUE_CONNECTION<span style="color:#f92672">=</span>sync
 </code></pre></div><p>如此就會在送出任務後馬上執行，這樣對於測試 Queue 的程式碼會比較方便<br>
-至於以下會使用<code>Database</code>做為驅動做示範</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-env" data-lang="env">QUEUE_DRIVER<span style="color:#f92672">=</span>Database
+至於以下會使用<code>database</code>做為驅動做示範</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-env" data-lang="env">QUEUE_CONNECTION<span style="color:#f92672">=</span>database
 </code></pre></div><h1 id="建立-queue-用的表">建立 Queue 用的表</h1>
 <p>因為 Queue 是 Laravel 提供的功能，所以可以直接藉由指令建立用來紀錄待執行的 Queue 資訊的資料表：<code>Jobs</code></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">php artisan queue:table
