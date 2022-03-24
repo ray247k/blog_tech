@@ -18,7 +18,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.92.2" /><meta property="og:site_name" content="薛丁格的工程師">
+<meta name="generator" content="Hugo 0.93.3" /><meta property="og:site_name" content="薛丁格的工程師">
   <meta property="og:title" content="[A Tour of Go 學習筆記] 06 Range、Map 和 function">
   <meta property="og:description" content="使用官方教學瞭解 Go Range、Map 和 function">
   <meta property="description" content="使用官方教學瞭解 Go Range、Map 和 function">
@@ -359,13 +359,13 @@
 當使用 for 迴圈遍歷切片的時候，每次迭代都會回傳兩個值。第一個值是元素的 index，第二個值是元素內容的副本。</p>
 <pre tabindex="0"><code class="language-go=" data-lang="go=">package main
 
-import &quot;fmt&quot;
+import &#34;fmt&#34;
 
 var pow = []int{1, 2, 4, 8, 16, 32, 64, 128}
 
 func main() {
 	for i, v := range pow {
-		fmt.Printf(&quot;2**%d = %d\n&quot;, i, v)
+		fmt.Printf(&#34;2**%d = %d\n&#34;, i, v)
 	}
 }
 /*
@@ -387,7 +387,7 @@ for _, value := range pow
 </code></pre><p>底下是一個只取 index 的範例：</p>
 <pre tabindex="0"><code class="language-go=" data-lang="go=">package main
 
-import &quot;fmt&quot;
+import &#34;fmt&#34;
 
 func main() {
 	pow := make([]int, 10)
@@ -395,7 +395,7 @@ func main() {
 		pow[i] = 1 &lt;&lt; uint(i) // 把值設為 index 左移一位元，等於 2 的 i 次方
 	}
 	for _, value := range pow {
-		fmt.Printf(&quot;%d\n&quot;, value)
+		fmt.Printf(&#34;%d\n&#34;, value)
 	}
 }
 /*
@@ -417,7 +417,7 @@ func main() {
 使用<code>make</code>函數可以初始化指定型別 map 並回傳</p>
 <pre tabindex="0"><code class="language-go=" data-lang="go=">package main
 
-import &quot;fmt&quot;
+import &#34;fmt&#34;
 
 type Vertex struct {
 	Lat, Long float64
@@ -427,10 +427,10 @@ var m map[string]Vertex
 
 func main() {
 	m = make(map[string]Vertex)
-	m[&quot;Bell Labs&quot;] = Vertex{
+	m[&#34;Bell Labs&#34;] = Vertex{
 		40.68433, -74.39967,
 	}
-	fmt.Println(m[&quot;Bell Labs&quot;])
+	fmt.Println(m[&#34;Bell Labs&#34;])
 }
 /*
 &gt;&gt;&gt; {40.68433 -74.39967}
@@ -438,15 +438,15 @@ func main() {
 </code></pre><p>map 和 struct 類似，但是 key 是必須的</p>
 <pre tabindex="0"><code class="language-go=" data-lang="go=">package main
 
-import &quot;fmt&quot;
+import &#34;fmt&#34;
 
 type Vertex struct {
 	Lat, Long float64
 }
 
 var m = map[string]Vertex{
-	&quot;Bell Labs&quot;: {40.68433, -74.39967},
-	&quot;Google&quot;:    {37.42202, -122.08408},
+	&#34;Bell Labs&#34;: {40.68433, -74.39967},
+	&#34;Google&#34;:    {37.42202, -122.08408},
 }
 
 func main() {
@@ -456,26 +456,26 @@ func main() {
 &gt;&gt;&gt; map[Bell Labs:{40.68433 -74.39967} Google:{37.42202 -122.08408}]
 */
 </code></pre><p>如果最頂層的型別只是一種類別名稱，則可以省略不寫</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
-
-<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
-
-<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Vertex</span> <span style="color:#66d9ef">struct</span> {
-	<span style="color:#a6e22e">Lat</span>, <span style="color:#a6e22e">Long</span> <span style="color:#66d9ef">float64</span>
-}
-
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">m</span> = <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#a6e22e">Vertex</span>{
-	<span style="color:#e6db74">&#34;Bell Labs&#34;</span>: {<span style="color:#ae81ff">40.68433</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">74.39967</span>},
-	<span style="color:#e6db74">&#34;Google&#34;</span>:    {<span style="color:#ae81ff">37.42202</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">122.08408</span>},
-}
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">m</span>)
-}
-<span style="color:#75715e">/*
-</span><span style="color:#75715e">&gt;&gt;&gt; map[Bell Labs:{40.68433 -74.39967} Google:{37.42202 -122.08408}]
-</span><span style="color:#75715e">*/</span>
-</code></pre></div><h1 id="修改-map-中的值">修改 map 中的值</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Vertex</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">Lat</span>, <span style="color:#a6e22e">Long</span> <span style="color:#66d9ef">float64</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">m</span> = <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#a6e22e">Vertex</span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;Bell Labs&#34;</span>: {<span style="color:#ae81ff">40.68433</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">74.39967</span>},
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;Google&#34;</span>:    {<span style="color:#ae81ff">37.42202</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">122.08408</span>},
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">m</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">&gt;&gt;&gt; map[Bell Labs:{40.68433 -74.39967} Google:{37.42202 -122.08408}]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span></code></pre></div><h1 id="修改-map-中的值">修改 map 中的值</h1>
 <p>在 map 中插入或修改元素</p>
 <pre tabindex="0"><code class="language-go=" data-lang="go=">m[key] = elem
 </code></pre><p>取得元素</p>
@@ -489,40 +489,40 @@ func main() {
 在使用時若<code>elem</code>或是<code>ok</code>還沒被定義，可以使用<code>:</code>做簡短變數聲明</p>
 <pre tabindex="0"><code class="language-go=" data-lang="go=">elem, ok := m[key]
 </code></pre><p>實際操作起來就：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
-
-<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-	<span style="color:#a6e22e">m</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">int</span>)
-
-	<span style="color:#a6e22e">m</span>[<span style="color:#e6db74">&#34;Answer&#34;</span>] = <span style="color:#ae81ff">42</span>
-	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;The value:&#34;</span>, <span style="color:#a6e22e">m</span>[<span style="color:#e6db74">&#34;Answer&#34;</span>])
-
-	<span style="color:#a6e22e">m</span>[<span style="color:#e6db74">&#34;Answer&#34;</span>] = <span style="color:#ae81ff">48</span>
-	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;The value:&#34;</span>, <span style="color:#a6e22e">m</span>[<span style="color:#e6db74">&#34;Answer&#34;</span>])
-
-	delete(<span style="color:#a6e22e">m</span>, <span style="color:#e6db74">&#34;Answer&#34;</span>)
-	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;The value:&#34;</span>, <span style="color:#a6e22e">m</span>[<span style="color:#e6db74">&#34;Answer&#34;</span>])
-
-	<span style="color:#a6e22e">v</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">m</span>[<span style="color:#e6db74">&#34;Answer&#34;</span>]
-	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;The value:&#34;</span>, <span style="color:#a6e22e">v</span>, <span style="color:#e6db74">&#34;Present?&#34;</span>, <span style="color:#a6e22e">ok</span>)
-}
-<span style="color:#75715e">/*
-</span><span style="color:#75715e">&gt;&gt;&gt; The value: 42
-</span><span style="color:#75715e">&gt;&gt;&gt; The value: 48
-</span><span style="color:#75715e">&gt;&gt;&gt; The value: 0
-</span><span style="color:#75715e">&gt;&gt;&gt; The value: 0 Present? false
-</span><span style="color:#75715e">*/</span>
-</code></pre></div><h1 id="函數-function">函數 Function</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">m</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">int</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">m</span>[<span style="color:#e6db74">&#34;Answer&#34;</span>] = <span style="color:#ae81ff">42</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;The value:&#34;</span>, <span style="color:#a6e22e">m</span>[<span style="color:#e6db74">&#34;Answer&#34;</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">m</span>[<span style="color:#e6db74">&#34;Answer&#34;</span>] = <span style="color:#ae81ff">48</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;The value:&#34;</span>, <span style="color:#a6e22e">m</span>[<span style="color:#e6db74">&#34;Answer&#34;</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	delete(<span style="color:#a6e22e">m</span>, <span style="color:#e6db74">&#34;Answer&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;The value:&#34;</span>, <span style="color:#a6e22e">m</span>[<span style="color:#e6db74">&#34;Answer&#34;</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">v</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">m</span>[<span style="color:#e6db74">&#34;Answer&#34;</span>]
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;The value:&#34;</span>, <span style="color:#a6e22e">v</span>, <span style="color:#e6db74">&#34;Present?&#34;</span>, <span style="color:#a6e22e">ok</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">&gt;&gt;&gt; The value: 42
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">&gt;&gt;&gt; The value: 48
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">&gt;&gt;&gt; The value: 0
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">&gt;&gt;&gt; The value: 0 Present? false
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span></code></pre></div><h1 id="函數-function">函數 Function</h1>
 <h2 id="function-values">Function values</h2>
 <p>function 也是值，也可以被傳遞<br>
 函數可以作為函數的參數或是回傳值</p>
 <pre tabindex="0"><code class="language-go=" data-lang="go=">package main
 
 import (
-	&quot;fmt&quot;
-	&quot;math&quot;
+	&#34;fmt&#34;
+	&#34;math&#34;
 )
 
 func compute(fn func(float64, float64) float64) float64 {
@@ -548,40 +548,40 @@ func main() {
 閉包是一個函數值，引用了函數本身外部的變數。閉包函數被指定給變數，並且可以存取變數。<br>
 換句話說，閉包函數跟變數被「綁定」在一起。</p>
 <p>範例中的<code>adder</code>這個 function 回傳一個閉包，所以每個<code>sum</code>變數都擁有自己的閉包函數</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
-
-<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">adder</span>() <span style="color:#66d9ef">func</span>(<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">x</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-		<span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">x</span>
-		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">sum</span>
-	}
-}
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-	<span style="color:#a6e22e">pos</span>, <span style="color:#a6e22e">neg</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">adder</span>(), <span style="color:#a6e22e">adder</span>()
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#ae81ff">10</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(
-			<span style="color:#a6e22e">pos</span>(<span style="color:#a6e22e">i</span>),
-			<span style="color:#a6e22e">neg</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span><span style="color:#f92672">*</span><span style="color:#a6e22e">i</span>),
-		)
-	}
-}
-<span style="color:#75715e">/*
-</span><span style="color:#75715e">&gt;&gt;&gt; 0 0
-</span><span style="color:#75715e">&gt;&gt;&gt; 1 -2
-</span><span style="color:#75715e">&gt;&gt;&gt; 3 -6
-</span><span style="color:#75715e">&gt;&gt;&gt; 6 -12
-</span><span style="color:#75715e">&gt;&gt;&gt; 10 -20
-</span><span style="color:#75715e">&gt;&gt;&gt; 15 -30
-</span><span style="color:#75715e">&gt;&gt;&gt; 21 -42
-</span><span style="color:#75715e">&gt;&gt;&gt; 28 -56
-</span><span style="color:#75715e">&gt;&gt;&gt; 36 -72
-</span><span style="color:#75715e">&gt;&gt;&gt; 45 -90
-</span><span style="color:#75715e">*/</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">adder</span>() <span style="color:#66d9ef">func</span>(<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">x</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">x</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">sum</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">pos</span>, <span style="color:#a6e22e">neg</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">adder</span>(), <span style="color:#a6e22e">adder</span>()
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#ae81ff">10</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">pos</span>(<span style="color:#a6e22e">i</span>),
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">neg</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span><span style="color:#f92672">*</span><span style="color:#a6e22e">i</span>),
+</span></span><span style="display:flex;"><span>		)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">&gt;&gt;&gt; 0 0
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">&gt;&gt;&gt; 1 -2
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">&gt;&gt;&gt; 3 -6
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">&gt;&gt;&gt; 6 -12
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">&gt;&gt;&gt; 10 -20
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">&gt;&gt;&gt; 15 -30
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">&gt;&gt;&gt; 21 -42
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">&gt;&gt;&gt; 28 -56
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">&gt;&gt;&gt; 36 -72
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">&gt;&gt;&gt; 45 -90
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span></code></pre></div>
 
       
       
@@ -1076,14 +1076,14 @@ func main() {
         © 2022 薛丁格的工程師
     </p>
     <p class="copyright" style="font-size: 0.1EM;">
-        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.92.2' target='_blank' rel='noopener'>Hugo</a>
+        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.93.3' target='_blank' rel='noopener'>Hugo</a>
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
 
       <script src="/js/highlight.js"></script>
     
-    <script>hljs.highlightAll();</script><script src="/js/bundle.min.5352079d3388d9a4297e0200dd1040866c8b3b67460090bf30e01a9cd56fd746.js" integrity="sha256-U1IHnTOI2aQpfgIA3RBAhmyLO2dGAJC/MOAanNVv10Y="></script>
+    <script>hljs.highlightAll();</script><script src="/js/bundle.min.70300e10d694c03c4e7b364dbb682d9972a2a0198302fda4dcf8911935f91bf0.js" integrity="sha256-cDAOENaUwDxOezZNu2gtmXKioBmDAv2k3PiRGTX5G/A="></script>
     <script src="/js/add-on.js"></script>
 <script type="application/javascript">
 var doNotTrack = false;

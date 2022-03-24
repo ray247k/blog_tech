@@ -18,7 +18,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.92.2" /><meta property="og:site_name" content="薛丁格的工程師">
+<meta name="generator" content="Hugo 0.93.3" /><meta property="og:site_name" content="薛丁格的工程師">
   <meta property="og:title" content="[Express&#43;Vue 搭建電商網站] 18 套用 Element UI 到頁面上">
   <meta property="og:description" content="使用 Express &#43; Vue 搭建一個電商網站 - 套用 Element UI 到頁面上">
   <meta property="description" content="使用 Express &#43; Vue 搭建一個電商網站 - 套用 Element UI 到頁面上">
@@ -357,16 +357,16 @@
 <ol>
 <li>
 <p>使用 npm 套件管理安裝，這也是官方推薦的作法</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm i element-ui -S
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm i element-ui -S
+</span></span></code></pre></div></li>
 <li>
 <p>使用 CDN 安裝<br>
 在 index.html 中加入 CDN 連結</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#75715e">&lt;!--</span> <span style="color:#a6e22e">引入样式</span> <span style="color:#f92672">--&gt;</span>
-&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://unpkg.com/element-ui/lib/theme-chalk/index.css&#34;</span>&gt;
-<span style="color:#75715e">&lt;!--</span> <span style="color:#a6e22e">引入组件库</span> <span style="color:#f92672">--&gt;</span>
-&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://unpkg.com/element-ui/lib/index.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-</code></pre></div><p>若是使用 CDN 版本作法，建議加入版本號避免因為 Element UI 升級而受到影響</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span><span style="color:#75715e">&lt;!--</span> <span style="color:#a6e22e">引入样式</span> <span style="color:#f92672">--&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://unpkg.com/element-ui/lib/theme-chalk/index.css&#34;</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!--</span> <span style="color:#a6e22e">引入组件库</span> <span style="color:#f92672">--&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://unpkg.com/element-ui/lib/index.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>若是使用 CDN 版本作法，建議加入版本號避免因為 Element UI 升級而受到影響</p>
 </li>
 <li>
 <p>使用 vue-ui
@@ -380,79 +380,79 @@
 </ol>
 <h1 id="導入套件">導入套件</h1>
 <p>打開主目錄中的 <code>src/main.js</code> 我們要把剛剛安裝的套件導入到專案中註冊依賴</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Vue</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue&#39;</span>
-<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">App</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./App.vue&#39;</span>
-<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">router</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./router&#39;</span>
-<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">store</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./store&#39;</span>
-
-<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ElementUI</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;element-ui&#39;</span>;
-<span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;element-ui/lib/theme-chalk/index.css&#39;</span>;
-
-<span style="color:#a6e22e">Vue</span>.<span style="color:#a6e22e">config</span>.<span style="color:#a6e22e">productionTip</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>
-<span style="color:#a6e22e">Vue</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">ElementUI</span>);
-
-<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Vue</span>({
-  <span style="color:#a6e22e">router</span>,
-  <span style="color:#a6e22e">store</span>,
-  <span style="color:#a6e22e">render</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">h</span> =&gt; <span style="color:#a6e22e">h</span>(<span style="color:#a6e22e">App</span>)
-}).<span style="color:#a6e22e">$mount</span>(<span style="color:#e6db74">&#39;#app&#39;</span>)
-</code></pre></div><p>除了導入 <code>element-ui</code> 組件庫外，還需要單獨把 CSS 樣式也導入<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Vue</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">App</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./App.vue&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">router</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./router&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">store</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./store&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ElementUI</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;element-ui&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;element-ui/lib/theme-chalk/index.css&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Vue</span>.<span style="color:#a6e22e">config</span>.<span style="color:#a6e22e">productionTip</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Vue</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">ElementUI</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Vue</span>({
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">router</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">store</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">render</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">h</span> =&gt; <span style="color:#a6e22e">h</span>(<span style="color:#a6e22e">App</span>)
+</span></span><span style="display:flex;"><span>}).<span style="color:#a6e22e">$mount</span>(<span style="color:#e6db74">&#39;#app&#39;</span>)
+</span></span></code></pre></div><p>除了導入 <code>element-ui</code> 組件庫外，還需要單獨把 CSS 樣式也導入<br>
 並且聲明 <code>Vue.use(ElementUI);</code> 來註冊組件庫，接著就是快樂的開始使用組件庫了</p>
 <h1 id="重構選單列">重構選單列</h1>
 <p>打開 <code>src/App.vue</code> 愉快的使用 <code>element-ui</code> 改成酷炫的樣子</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
-  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;app&#34;</span>&gt;
-    &lt;<span style="color:#f92672">el-menu</span>
-      <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;menu&#34;</span>
-      <span style="color:#f92672">:default-active</span><span style="color:#e6db74">=&#34;activeIndex2&#34;</span>
-      <span style="color:#a6e22e">mode</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;horizontal&#34;</span>
-      <span style="color:#f92672">@select</span><span style="color:#e6db74">=&#34;handleSelect&#34;</span>
-      <span style="color:#a6e22e">background</span><span style="color:#f92672">-color</span><span style="color:#960050;background-color:#1e0010">=&#34;#</span><span style="color:#a6e22e">545c64</span><span style="color:#960050;background-color:#1e0010">&#34;</span>
-      <span style="color:#a6e22e">text</span><span style="color:#f92672">-color</span><span style="color:#960050;background-color:#1e0010">=&#34;#</span><span style="color:#a6e22e">fff</span><span style="color:#960050;background-color:#1e0010">&#34;</span>
-      <span style="color:#a6e22e">active</span><span style="color:#f92672">-text-color</span><span style="color:#960050;background-color:#1e0010">=&#34;#</span><span style="color:#a6e22e">ffd04b</span><span style="color:#960050;background-color:#1e0010">&#34;</span>&gt;
-      &lt;<span style="color:#f92672">el-menu-item</span> <span style="color:#a6e22e">index</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1&#34;</span>&gt;&lt;<span style="color:#f92672">router-link</span> <span style="color:#a6e22e">to</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/&#34;</span> <span style="color:#a6e22e">tag</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;div&#34;</span>&gt;<span style="color:#a6e22e">首頁</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/router-link&gt;&lt;/el-menu-item&gt;</span>
-      &lt;<span style="color:#f92672">el-submenu</span> <span style="color:#a6e22e">index</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2&#34;</span>&gt;
-        &lt;<span style="color:#f92672">template</span> <span style="color:#a6e22e">slot</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;title&#34;</span>&gt;<span style="color:#a6e22e">控制台</span>&lt;/<span style="color:#f92672">template</span>&gt;
-        &lt;<span style="color:#f92672">el-menu-item</span> <span style="color:#a6e22e">index</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2-1&#34;</span>&gt;&lt;<span style="color:#f92672">router-link</span> <span style="color:#a6e22e">to</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/admin&#34;</span> <span style="color:#a6e22e">tag</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;div&#34;</span>&gt;<span style="color:#a6e22e">產品列表</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/router-link&gt;&lt;/el-menu-item&gt;</span>
-        &lt;<span style="color:#f92672">el-menu-item</span> <span style="color:#a6e22e">index</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2-2&#34;</span>&gt;&lt;<span style="color:#f92672">router-link</span> <span style="color:#a6e22e">to</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/admin/new&#34;</span> <span style="color:#a6e22e">tag</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;div&#34;</span>&gt;<span style="color:#a6e22e">新增商品</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/router-link&gt;&lt;/el-menu-item&gt;</span>
-        &lt;<span style="color:#f92672">el-menu-item</span> <span style="color:#a6e22e">index</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2-3&#34;</span>&gt;&lt;<span style="color:#f92672">router-link</span> <span style="color:#a6e22e">to</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/admin/manufacturers&#34;</span> <span style="color:#a6e22e">tag</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;div&#34;</span>&gt;<span style="color:#a6e22e">製造商列表</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/router-link&gt;&lt;/el-menu-item&gt;</span>
-        &lt;<span style="color:#f92672">el-menu-item</span> <span style="color:#a6e22e">index</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2-4&#34;</span>&gt;&lt;<span style="color:#f92672">router-link</span> <span style="color:#a6e22e">to</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/admin/manufacturers/new&#34;</span> <span style="color:#a6e22e">tag</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;div&#34;</span>&gt;<span style="color:#a6e22e">新增製造商</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/router-link&gt;&lt;/el-menu-item&gt;</span>
-      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-submenu&gt;  </span>
-      &lt;<span style="color:#f92672">el-menu-item</span> <span style="color:#a6e22e">index</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;3&#34;</span>&gt;&lt;<span style="color:#f92672">router-link</span> <span style="color:#a6e22e">to</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/cart&#34;</span> <span style="color:#a6e22e">tag</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;div&#34;</span>&gt;<span style="color:#a6e22e">購物車</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/router-link&gt;&lt;/el-menu-item&gt;</span>
-    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-menu&gt;</span>
-    &lt;<span style="color:#f92672">router-view</span>/&gt;
-  &lt;/<span style="color:#f92672">div</span>&gt;
-&lt;/<span style="color:#f92672">template</span>&gt;
-
-&lt;<span style="color:#f92672">script</span>&gt;
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
-  <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;App&#39;</span>,
-  <span style="color:#a6e22e">data</span>() {
-    <span style="color:#66d9ef">return</span> {
-      <span style="color:#a6e22e">activeIndex</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;1&#39;</span>,
-      <span style="color:#a6e22e">activeIndex2</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;1&#39;</span>
-    };
-  },
-  <span style="color:#a6e22e">methods</span><span style="color:#f92672">:</span> {
-    <span style="color:#a6e22e">handleSelect</span>(<span style="color:#a6e22e">key</span>, <span style="color:#a6e22e">keyPath</span>) {
-        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">key</span>, <span style="color:#a6e22e">keyPath</span>);
-    }
-  }
-
-};
-&lt;/<span style="color:#f92672">script</span>&gt;
-
-&lt;<span style="color:#f92672">style</span>&gt;
-<span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">app</span> {
-  <span style="color:#a6e22e">font</span><span style="color:#f92672">-</span><span style="color:#a6e22e">family</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Avenir</span>, <span style="color:#a6e22e">Helvetica</span>, <span style="color:#a6e22e">Arial</span>, <span style="color:#a6e22e">sans</span><span style="color:#f92672">-</span><span style="color:#a6e22e">serif</span>;
-  <span style="color:#f92672">-</span><span style="color:#a6e22e">webkit</span><span style="color:#f92672">-</span><span style="color:#a6e22e">font</span><span style="color:#f92672">-</span><span style="color:#a6e22e">smoothing</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">antialiased</span>;
-  <span style="color:#f92672">-</span><span style="color:#a6e22e">moz</span><span style="color:#f92672">-</span><span style="color:#a6e22e">osx</span><span style="color:#f92672">-</span><span style="color:#a6e22e">font</span><span style="color:#f92672">-</span><span style="color:#a6e22e">smoothing</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">grayscale</span>;
-  <span style="color:#a6e22e">text</span><span style="color:#f92672">-</span><span style="color:#a6e22e">align</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">center</span>;
-  <span style="color:#a6e22e">color</span><span style="color:#f92672">:</span> <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#ae81ff">2</span><span style="color:#a6e22e">c3e50</span>;
-  <span style="color:#a6e22e">margin</span><span style="color:#f92672">-</span><span style="color:#a6e22e">top</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">60</span><span style="color:#a6e22e">px</span>;
-}
-&lt;/<span style="color:#f92672">style</span>&gt;
-</code></pre></div><p>先不要在意 <code>data</code> 屬性以及 <code>handleSelect</code> 方法，暫時不會碰到<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;app&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">el-menu</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;menu&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">:default-active</span><span style="color:#e6db74">=&#34;activeIndex2&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">mode</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;horizontal&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">@select</span><span style="color:#e6db74">=&#34;handleSelect&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">background</span><span style="color:#f92672">-color</span><span style="color:#960050;background-color:#1e0010">=&#34;#</span><span style="color:#a6e22e">545c64</span><span style="color:#960050;background-color:#1e0010">&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">text</span><span style="color:#f92672">-color</span><span style="color:#960050;background-color:#1e0010">=&#34;#</span><span style="color:#a6e22e">fff</span><span style="color:#960050;background-color:#1e0010">&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">active</span><span style="color:#f92672">-text-color</span><span style="color:#960050;background-color:#1e0010">=&#34;#</span><span style="color:#a6e22e">ffd04b</span><span style="color:#960050;background-color:#1e0010">&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">el-menu-item</span> <span style="color:#a6e22e">index</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1&#34;</span>&gt;&lt;<span style="color:#f92672">router-link</span> <span style="color:#a6e22e">to</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/&#34;</span> <span style="color:#a6e22e">tag</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;div&#34;</span>&gt;<span style="color:#a6e22e">首頁</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/router-link&gt;&lt;/el-menu-item&gt;</span>
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">el-submenu</span> <span style="color:#a6e22e">index</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">template</span> <span style="color:#a6e22e">slot</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;title&#34;</span>&gt;<span style="color:#a6e22e">控制台</span>&lt;/<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">el-menu-item</span> <span style="color:#a6e22e">index</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2-1&#34;</span>&gt;&lt;<span style="color:#f92672">router-link</span> <span style="color:#a6e22e">to</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/admin&#34;</span> <span style="color:#a6e22e">tag</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;div&#34;</span>&gt;<span style="color:#a6e22e">產品列表</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/router-link&gt;&lt;/el-menu-item&gt;</span>
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">el-menu-item</span> <span style="color:#a6e22e">index</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2-2&#34;</span>&gt;&lt;<span style="color:#f92672">router-link</span> <span style="color:#a6e22e">to</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/admin/new&#34;</span> <span style="color:#a6e22e">tag</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;div&#34;</span>&gt;<span style="color:#a6e22e">新增商品</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/router-link&gt;&lt;/el-menu-item&gt;</span>
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">el-menu-item</span> <span style="color:#a6e22e">index</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2-3&#34;</span>&gt;&lt;<span style="color:#f92672">router-link</span> <span style="color:#a6e22e">to</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/admin/manufacturers&#34;</span> <span style="color:#a6e22e">tag</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;div&#34;</span>&gt;<span style="color:#a6e22e">製造商列表</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/router-link&gt;&lt;/el-menu-item&gt;</span>
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">el-menu-item</span> <span style="color:#a6e22e">index</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2-4&#34;</span>&gt;&lt;<span style="color:#f92672">router-link</span> <span style="color:#a6e22e">to</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/admin/manufacturers/new&#34;</span> <span style="color:#a6e22e">tag</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;div&#34;</span>&gt;<span style="color:#a6e22e">新增製造商</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/router-link&gt;&lt;/el-menu-item&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-submenu&gt;  </span>
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">el-menu-item</span> <span style="color:#a6e22e">index</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;3&#34;</span>&gt;&lt;<span style="color:#f92672">router-link</span> <span style="color:#a6e22e">to</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/cart&#34;</span> <span style="color:#a6e22e">tag</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;div&#34;</span>&gt;<span style="color:#a6e22e">購物車</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/router-link&gt;&lt;/el-menu-item&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-menu&gt;</span>
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">router-view</span>/&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;App&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">data</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">activeIndex</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;1&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">activeIndex2</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;1&#39;</span>
+</span></span><span style="display:flex;"><span>    };
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">methods</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">handleSelect</span>(<span style="color:#a6e22e">key</span>, <span style="color:#a6e22e">keyPath</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">key</span>, <span style="color:#a6e22e">keyPath</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">style</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">app</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">font</span><span style="color:#f92672">-</span><span style="color:#a6e22e">family</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Avenir</span>, <span style="color:#a6e22e">Helvetica</span>, <span style="color:#a6e22e">Arial</span>, <span style="color:#a6e22e">sans</span><span style="color:#f92672">-</span><span style="color:#a6e22e">serif</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">webkit</span><span style="color:#f92672">-</span><span style="color:#a6e22e">font</span><span style="color:#f92672">-</span><span style="color:#a6e22e">smoothing</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">antialiased</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">moz</span><span style="color:#f92672">-</span><span style="color:#a6e22e">osx</span><span style="color:#f92672">-</span><span style="color:#a6e22e">font</span><span style="color:#f92672">-</span><span style="color:#a6e22e">smoothing</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">grayscale</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">text</span><span style="color:#f92672">-</span><span style="color:#a6e22e">align</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">center</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">color</span><span style="color:#f92672">:</span> <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#ae81ff">2</span><span style="color:#a6e22e">c3e50</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">margin</span><span style="color:#f92672">-</span><span style="color:#a6e22e">top</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">60</span><span style="color:#a6e22e">px</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">style</span>&gt;
+</span></span></code></pre></div><p>先不要在意 <code>data</code> 屬性以及 <code>handleSelect</code> 方法，暫時不會碰到<br>
 首先看到 <code>&lt;el-menu&gt;</code> 這個標籤，其中的 <code>el-menu-item</code> 帶有幾個屬性<br>
 其中 <code>tag</code> 屬性代表將這個內容用 <code>&lt;div&gt;</code> 這個標籤渲染，如果沒設定則預設是 <code>&lt;a&gt;</code> 連結並帶有底線<br>
 所以這邊設定為 <code>div</code> 就是為了避免出現底線</p>
@@ -460,63 +460,63 @@
 <p>接著要重構 <code>ProductItem</code> 同時因為子組件被修改，所以 <code>ProductList</code> 也需要修改</p>
 <h2 id="productlist">ProductList</h2>
 <p>打開 <code>src/components/products/ProductList.vue</code> 將 <code>&lt;template&gt;</code> 部分修改為</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">template</span>&gt;
-  &lt;<span style="color:#f92672">div</span>&gt;
-    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;products&#34;</span>&gt;
-      &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;This is ProductList&lt;/<span style="color:#f92672">div</span>&gt;
-      <span style="color:#75715e">&lt;!-- &lt;template v-for=&#34;product in products&#34;&gt; --&gt;</span>
-      &lt;<span style="color:#f92672">product-item</span> <span style="color:#a6e22e">:products</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;products&#34;</span>&gt;&lt;/<span style="color:#f92672">product-item</span>&gt;
-      <span style="color:#75715e">&lt;!-- &lt;/template&gt; --&gt;</span>
-    &lt;/<span style="color:#f92672">div</span>&gt;
-  &lt;/<span style="color:#f92672">div</span>&gt;
-&lt;/<span style="color:#f92672">template</span>&gt;
-</code></pre></div><p>可以藉由註解了解到，原本是分別將產品傳入子組件再進行渲染。但現在變成了傳入全部商品<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;products&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;This is ProductList&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">&lt;!-- &lt;template v-for=&#34;product in products&#34;&gt; --&gt;</span>
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">product-item</span> <span style="color:#a6e22e">:products</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;products&#34;</span>&gt;&lt;/<span style="color:#f92672">product-item</span>&gt;
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">&lt;!-- &lt;/template&gt; --&gt;</span>
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">template</span>&gt;
+</span></span></code></pre></div><p>可以藉由註解了解到，原本是分別將產品傳入子組件再進行渲染。但現在變成了傳入全部商品<br>
 至於為什麼？就讓我們看下去</p>
 <h2 id="productitem">ProductItem</h2>
 <p>打開 <code>src/components/products/ProductItem.vue</code> 修改成以下內容</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
-  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;products&#34;</span>&gt;
-    &lt;<span style="color:#f92672">el-table</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;table&#34;</span> <span style="color:#f92672">:data</span><span style="color:#e6db74">=&#34;products&#34;</span> <span style="color:#a6e22e">max</span><span style="color:#f92672">-height</span><span style="color:#960050;background-color:#1e0010">=&#34;</span><span style="color:#a6e22e">250</span><span style="color:#960050;background-color:#1e0010">&#34;</span>&gt;
-      &lt;<span style="color:#f92672">el-table-column</span> <span style="color:#a6e22e">prop</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;產品名稱&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;180&#34;</span>&gt;<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-table-column&gt;</span>
-      &lt;<span style="color:#f92672">el-table-column</span> <span style="color:#a6e22e">prop</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;description&#34;</span> <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;介紹&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;180&#34;</span>&gt;<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-table-column&gt;</span>
-      &lt;<span style="color:#f92672">el-table-column</span> <span style="color:#a6e22e">prop</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;price&#34;</span> <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;售價&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;180&#34;</span>&gt;<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-table-column&gt;</span>
-      &lt;<span style="color:#f92672">el-table-column</span> <span style="color:#a6e22e">prop</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;manufacturer.name&#34;</span> <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;製造商&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;180&#34;</span>&gt;<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-table-column&gt;</span>
-      <span style="color:#75715e">&lt;!--</span> &lt;<span style="color:#f92672">el-table-column</span>
-        <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;圖片&#34;</span><span style="color:#960050;background-color:#1e0010">&#34;</span>
-        <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;200&#34;</span>&gt;
-        &lt;<span style="color:#f92672">img</span> <span style="color:#f92672">:src</span><span style="color:#e6db74">=&#34;image&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;product__image&#34;</span>&gt;
-      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-table-column&gt;--&gt;</span>
-      &lt;<span style="color:#f92672">el-table-column</span> <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;操作&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;180&#34;</span>&gt;
-        &lt;<span style="color:#f92672">template</span> <span style="color:#a6e22e">slot</span><span style="color:#f92672">-scope</span><span style="color:#960050;background-color:#1e0010">=&#34;</span><span style="color:#a6e22e">scope</span><span style="color:#960050;background-color:#1e0010">&#34;</span>&gt;
-          &lt;<span style="color:#f92672">product-button</span> <span style="color:#f92672">:id</span><span style="color:#e6db74">=&#34;scope.row._id&#34;</span>&gt;<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/product-button&gt;</span>
-        &lt;/<span style="color:#f92672">template</span>&gt;
-      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-table-column&gt;</span>
-    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-table&gt;</span>
-  &lt;/<span style="color:#f92672">div</span>&gt;
-&lt;/<span style="color:#f92672">template</span>&gt;
-
-&lt;<span style="color:#f92672">style</span>&gt;
-.<span style="color:#a6e22e">product</span> {
-  <span style="color:#a6e22e">border</span><span style="color:#f92672">-</span><span style="color:#a6e22e">bottom</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span><span style="color:#a6e22e">px</span> <span style="color:#a6e22e">solid</span> <span style="color:#a6e22e">black</span>;
-}
-
-.<span style="color:#a6e22e">product__image</span> {
-  <span style="color:#a6e22e">width</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">100</span><span style="color:#a6e22e">px</span>;
-  <span style="color:#a6e22e">height</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">100</span><span style="color:#a6e22e">px</span>;
-}
-&lt;/<span style="color:#f92672">style</span>&gt;
-
-&lt;<span style="color:#f92672">script</span>&gt;
-<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ProductButton</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;./ProductButton&#34;</span>;
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
-  <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;product-item&#34;</span>,
-  <span style="color:#a6e22e">props</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;products&#34;</span>],
-  <span style="color:#a6e22e">components</span><span style="color:#f92672">:</span> {
-    <span style="color:#e6db74">&#34;product-button&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ProductButton</span>
-  }
-};
-&lt;/<span style="color:#f92672">script</span>&gt;
-</code></pre></div><p>第一，針對傳入值改成 <code>props: [&quot;products&quot;],</code> 因為在父組件做了改變，但是為什麼呢？<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;products&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">el-table</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;table&#34;</span> <span style="color:#f92672">:data</span><span style="color:#e6db74">=&#34;products&#34;</span> <span style="color:#a6e22e">max</span><span style="color:#f92672">-height</span><span style="color:#960050;background-color:#1e0010">=&#34;</span><span style="color:#a6e22e">250</span><span style="color:#960050;background-color:#1e0010">&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">el-table-column</span> <span style="color:#a6e22e">prop</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;產品名稱&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;180&#34;</span>&gt;<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-table-column&gt;</span>
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">el-table-column</span> <span style="color:#a6e22e">prop</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;description&#34;</span> <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;介紹&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;180&#34;</span>&gt;<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-table-column&gt;</span>
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">el-table-column</span> <span style="color:#a6e22e">prop</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;price&#34;</span> <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;售價&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;180&#34;</span>&gt;<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-table-column&gt;</span>
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">el-table-column</span> <span style="color:#a6e22e">prop</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;manufacturer.name&#34;</span> <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;製造商&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;180&#34;</span>&gt;<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-table-column&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">&lt;!--</span> &lt;<span style="color:#f92672">el-table-column</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;圖片&#34;</span><span style="color:#960050;background-color:#1e0010">&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;200&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">img</span> <span style="color:#f92672">:src</span><span style="color:#e6db74">=&#34;image&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;product__image&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-table-column&gt;--&gt;</span>
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">el-table-column</span> <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;操作&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;180&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">template</span> <span style="color:#a6e22e">slot</span><span style="color:#f92672">-scope</span><span style="color:#960050;background-color:#1e0010">=&#34;</span><span style="color:#a6e22e">scope</span><span style="color:#960050;background-color:#1e0010">&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>          &lt;<span style="color:#f92672">product-button</span> <span style="color:#f92672">:id</span><span style="color:#e6db74">=&#34;scope.row._id&#34;</span>&gt;<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/product-button&gt;</span>
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-table-column&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-table&gt;</span>
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">style</span>&gt;
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">product</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">border</span><span style="color:#f92672">-</span><span style="color:#a6e22e">bottom</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span><span style="color:#a6e22e">px</span> <span style="color:#a6e22e">solid</span> <span style="color:#a6e22e">black</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">product__image</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">width</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">100</span><span style="color:#a6e22e">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">height</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">100</span><span style="color:#a6e22e">px</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">style</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ProductButton</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;./ProductButton&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;product-item&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">props</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;products&#34;</span>],
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">components</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;product-button&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ProductButton</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>第一，針對傳入值改成 <code>props: [&quot;products&quot;],</code> 因為在父組件做了改變，但是為什麼呢？<br>
 再往回看 <code>&lt;template&gt;</code> 中，原來是因為 <code>&lt;el-table&gt;</code> 這個表格組件要傳入一個陣列作為 <code>data</code> 屬性<br>
 而最後一個 <code>el-table-column</code> 作為按鈕，所以沒有定義 <code>prop</code> 屬性<br>
 為了作為按鈕操作，使用了 <code>scope.row</code> 取得指定物件的 id 作為值傳給了子組件 <code>ProductButton</code> 來操作</p>
@@ -525,52 +525,52 @@
 </blockquote>
 <h2 id="productbutton">ProductButton</h2>
 <p>接著就是修改 <code>src/components/products/ProductButton.vue</code> 組件</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
-  &lt;<span style="color:#f92672">div</span>&gt;
-    &lt;<span style="color:#f92672">el-button</span> <span style="color:#f92672">v-if</span><span style="color:#e6db74">=&#34;isAdding&#34; @click=&#34;addToCart&#34; type=&#34;text&#34; size=&#34;small&#34;&gt;加入購物車&lt;/el-button&gt;
-</span><span style="color:#e6db74">    &lt;el-button v-else @click=&#34;removeFromCart(id)&#34; type=&#34;text&#34; size=&#34;small&#34;</span>&gt;<span style="color:#a6e22e">從購物車移除</span><span style="color:#960050;background-color:#1e0010">&lt;/</span><span style="color:#a6e22e">el</span><span style="color:#f92672">-button</span>&gt;
-  &lt;/<span style="color:#f92672">div</span>&gt;
-&lt;/<span style="color:#f92672">template</span>&gt;
-
-&lt;<span style="color:#f92672">script</span>&gt;
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
-  <span style="color:#a6e22e">props</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;id&#34;</span>],
-  <span style="color:#a6e22e">computed</span><span style="color:#f92672">:</span> {
-    <span style="color:#a6e22e">product</span>() {
-      <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">product</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">getters</span>.<span style="color:#a6e22e">allProducts</span>.<span style="color:#a6e22e">find</span>(
-        <span style="color:#a6e22e">product</span> =&gt; <span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">_id</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">id</span>
-      );
-      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">product</span>;
-    },
-    <span style="color:#a6e22e">isAdding</span>() {
-      <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">isAdding</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
-      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">cart</span>.<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">product</span> =&gt; {
-        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">_id</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">_id</span>) {
-          <span style="color:#a6e22e">isAdding</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
-        }
-      });
-
-      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">isAdding</span>;
-    },
-    <span style="color:#a6e22e">cart</span>() {
-      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">cart</span>;
-    }
-  },
-  <span style="color:#a6e22e">methods</span><span style="color:#f92672">:</span> {
-    <span style="color:#a6e22e">addToCart</span>() {
-      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#34;ADD_TO_CART&#34;</span>, {
-        <span style="color:#a6e22e">product</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">product</span>
-      });
-    },
-    <span style="color:#a6e22e">removeFromCart</span>(<span style="color:#a6e22e">productId</span>) {
-      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#34;REMOVE_FROM_CART&#34;</span>, {
-        <span style="color:#a6e22e">productId</span>
-      });
-    }
-  }
-};
-&lt;/<span style="color:#f92672">script</span>&gt;
-</code></pre></div><p>使用 <code>element-ui</code> 組件庫提供的按鈕組件 <code>el-button</code> 替換先前普通的按鈕，並且改變了對應的按鈕方法
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">el-button</span> <span style="color:#f92672">v-if</span><span style="color:#e6db74">=&#34;isAdding&#34; @click=&#34;addToCart&#34; type=&#34;text&#34; size=&#34;small&#34;&gt;加入購物車&lt;/el-button&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;el-button v-else @click=&#34;removeFromCart(id)&#34; type=&#34;text&#34; size=&#34;small&#34;</span>&gt;<span style="color:#a6e22e">從購物車移除</span><span style="color:#960050;background-color:#1e0010">&lt;/</span><span style="color:#a6e22e">el</span><span style="color:#f92672">-button</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">props</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;id&#34;</span>],
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">computed</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">product</span>() {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">product</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">getters</span>.<span style="color:#a6e22e">allProducts</span>.<span style="color:#a6e22e">find</span>(
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">product</span> =&gt; <span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">_id</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">id</span>
+</span></span><span style="display:flex;"><span>      );
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">product</span>;
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">isAdding</span>() {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">isAdding</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">cart</span>.<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">product</span> =&gt; {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">_id</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">_id</span>) {
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">isAdding</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>      });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">isAdding</span>;
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">cart</span>() {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">cart</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">methods</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">addToCart</span>() {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#34;ADD_TO_CART&#34;</span>, {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">product</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">product</span>
+</span></span><span style="display:flex;"><span>      });
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">removeFromCart</span>(<span style="color:#a6e22e">productId</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#34;REMOVE_FROM_CART&#34;</span>, {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">productId</span>
+</span></span><span style="display:flex;"><span>      });
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>使用 <code>element-ui</code> 組件庫提供的按鈕組件 <code>el-button</code> 替換先前普通的按鈕，並且改變了對應的按鈕方法
 將父組件傳來的 <code>product</code> 物件換成了單純的 <code>id</code><br>
 因為在 <code>ProductItem</code> 組件中傳入的是指定物件的 id<br>
 所以定義了一個 computed <code>product</code>，來取得指定 id 的產品物件</p>
@@ -1080,14 +1080,14 @@
         © 2022 薛丁格的工程師
     </p>
     <p class="copyright" style="font-size: 0.1EM;">
-        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.92.2' target='_blank' rel='noopener'>Hugo</a>
+        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.93.3' target='_blank' rel='noopener'>Hugo</a>
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
 
       <script src="/js/highlight.js"></script>
     
-    <script>hljs.highlightAll();</script><script src="/js/bundle.min.5352079d3388d9a4297e0200dd1040866c8b3b67460090bf30e01a9cd56fd746.js" integrity="sha256-U1IHnTOI2aQpfgIA3RBAhmyLO2dGAJC/MOAanNVv10Y="></script>
+    <script>hljs.highlightAll();</script><script src="/js/bundle.min.70300e10d694c03c4e7b364dbb682d9972a2a0198302fda4dcf8911935f91bf0.js" integrity="sha256-cDAOENaUwDxOezZNu2gtmXKioBmDAv2k3PiRGTX5G/A="></script>
     <script src="/js/add-on.js"></script>
 <script type="application/javascript">
 var doNotTrack = false;

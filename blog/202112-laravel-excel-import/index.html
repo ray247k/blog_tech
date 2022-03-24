@@ -18,7 +18,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.92.2" /><meta property="og:site_name" content="薛丁格的工程師">
+<meta name="generator" content="Hugo 0.93.3" /><meta property="og:site_name" content="薛丁格的工程師">
   <meta property="og:title" content="匯入 Excel 或是 csv 檔案到 Laravel">
   <meta property="og:description" content="使用 Laravel-excel 套件匯入 Excel 或是 csv 檔案，並寫入資料庫">
   <meta property="description" content="使用 Laravel-excel 套件匯入 Excel 或是 csv 檔案，並寫入資料庫">
@@ -365,54 +365,54 @@
     target="_blank" rel="noreferrer noopener">Documentation 3.1
 </a>
 </p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">composer require maatwebsite/excel
-</code></pre></div><p>如果需要加入自定義的 config 就執行指令產生<code>config/excel.php</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">composer require maatwebsite/excel
-php artisan vendor:publish --provider<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Maatwebsite\Excel\ExcelServiceProvider&#34;</span> --tag<span style="color:#f92672">=</span>config
-</code></pre></div><h1 id="定義檔案讀入格式">定義檔案讀入格式</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>composer require maatwebsite/excel
+</span></span></code></pre></div><p>如果需要加入自定義的 config 就執行指令產生<code>config/excel.php</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>composer require maatwebsite/excel
+</span></span><span style="display:flex;"><span>php artisan vendor:publish --provider<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Maatwebsite\Excel\ExcelServiceProvider&#34;</span> --tag<span style="color:#f92672">=</span>config
+</span></span></code></pre></div><h1 id="定義檔案讀入格式">定義檔案讀入格式</h1>
 <p>因為 Laravel 自帶的 collection 類型太好用<br>
 所以我們也想把讀取到的表單資料轉成 collection 格式</p>
 <p>首先要先建立資料要載入之後的物件定義，我們假設要匯入的是商品規格的 csv<br>
 所以就建立一個名為<code>app/Imports/ProductImport.php</code>的檔案</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
-
-<span style="color:#66d9ef">namespace</span> <span style="color:#a6e22e">App\Imports</span>;
-
-<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Illuminate\Support\Collection</span>;
-<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Maatwebsite\Excel\Concerns\ToCollection</span>;
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ProductImport</span> <span style="color:#66d9ef">implements</span> <span style="color:#a6e22e">ToCollection</span>
-{
-    <span style="color:#66d9ef">public</span> $collection;
-
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">collection</span>(<span style="color:#a6e22e">Collection</span> $collection)
-    {
-        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">collection</span> <span style="color:#f92672">=</span> $collection<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">transform</span>(<span style="color:#66d9ef">function</span> ($row) {
-            <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">collect</span>([
-                <span style="color:#e6db74">&#39;name&#39;</span>          <span style="color:#f92672">=&gt;</span> $row[<span style="color:#ae81ff">1</span>],
-                <span style="color:#e6db74">&#39;main_image&#39;</span>    <span style="color:#f92672">=&gt;</span> $row[<span style="color:#ae81ff">2</span>],
-                <span style="color:#e6db74">&#39;author_name&#39;</span>   <span style="color:#f92672">=&gt;</span> $row[<span style="color:#ae81ff">3</span>],
-                <span style="color:#e6db74">&#39;material&#39;</span>      <span style="color:#f92672">=&gt;</span> $row[<span style="color:#ae81ff">4</span>],
-                <span style="color:#e6db74">&#39;specification&#39;</span> <span style="color:#f92672">=&gt;</span> $row[<span style="color:#ae81ff">5</span>],
-                <span style="color:#e6db74">&#39;description&#39;</span>   <span style="color:#f92672">=&gt;</span> $row[<span style="color:#ae81ff">6</span>],
-            ]);
-        });
-    }
-}
-</code></pre></div><p>可以看到我們使用了<code>ToCollection</code>這個 interface<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">namespace</span> <span style="color:#a6e22e">App\Imports</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Illuminate\Support\Collection</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Maatwebsite\Excel\Concerns\ToCollection</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ProductImport</span> <span style="color:#66d9ef">implements</span> <span style="color:#a6e22e">ToCollection</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> $collection;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">collection</span>(<span style="color:#a6e22e">Collection</span> $collection)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">collection</span> <span style="color:#f92672">=</span> $collection<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">transform</span>(<span style="color:#66d9ef">function</span> ($row) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">collect</span>([
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;name&#39;</span>          <span style="color:#f92672">=&gt;</span> $row[<span style="color:#ae81ff">1</span>],
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;main_image&#39;</span>    <span style="color:#f92672">=&gt;</span> $row[<span style="color:#ae81ff">2</span>],
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;author_name&#39;</span>   <span style="color:#f92672">=&gt;</span> $row[<span style="color:#ae81ff">3</span>],
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;material&#39;</span>      <span style="color:#f92672">=&gt;</span> $row[<span style="color:#ae81ff">4</span>],
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;specification&#39;</span> <span style="color:#f92672">=&gt;</span> $row[<span style="color:#ae81ff">5</span>],
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;description&#39;</span>   <span style="color:#f92672">=&gt;</span> $row[<span style="color:#ae81ff">6</span>],
+</span></span><span style="display:flex;"><span>            ]);
+</span></span><span style="display:flex;"><span>        });
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>可以看到我們使用了<code>ToCollection</code>這個 interface<br>
 並且定義了<code>collection</code>和讀取到的表單內容對應</p>
 <h1 id="讀取-csv-檔案">讀取 csv 檔案</h1>
 <p>在 controller 呼叫當初藉由 auto-discovered 註冊到 Facade 的<code>Excel</code>來讀取上傳的檔案</p>
 <p>首先是建立物件<code>ProductImport</code>，接著透過 Facade 呼叫<code>Excel</code>套件並使用載入功能<br>
 載入之後透過 collection 的 shift() 方法去除第一列的 header 資料</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">uploadCsv</span>(<span style="color:#a6e22e">Request</span> $request)
-{
-    $import <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ProductImport</span>();
-    <span style="color:#a6e22e">Excel</span><span style="color:#f92672">::</span><span style="color:#a6e22e">import</span>($import, $request<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">file</span>(<span style="color:#e6db74">&#39;file&#39;</span>));
-    $productCollection <span style="color:#f92672">=</span> $import<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">collection</span>;
-    $productCollection<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">shift</span>();
-}
-</code></pre></div><p>如此就可以將上傳的 csv 檔案載入成 collection 來做後續操作</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">uploadCsv</span>(<span style="color:#a6e22e">Request</span> $request)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    $import <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ProductImport</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Excel</span><span style="color:#f92672">::</span><span style="color:#a6e22e">import</span>($import, $request<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">file</span>(<span style="color:#e6db74">&#39;file&#39;</span>));
+</span></span><span style="display:flex;"><span>    $productCollection <span style="color:#f92672">=</span> $import<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">collection</span>;
+</span></span><span style="display:flex;"><span>    $productCollection<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">shift</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>如此就可以將上傳的 csv 檔案載入成 collection 來做後續操作</p>
 <h1 id="上傳測試">上傳測試</h1>
 <p>用 Postman 要測試，只要在 Body 頁籤選擇<code>form-data</code>類性之後<br>
 <code>key</code>可以名稱的後面下拉選單可以選擇 file 格式</p>
@@ -470,8 +470,8 @@ PHP 就用 <code>phpinfo()</code>、nginx 就用 <code>nginx -T</code></p>
     target="_blank" rel="noreferrer noopener">array_chunk
 </a>
  來分割</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$productChunks <span style="color:#f92672">=</span> <span style="color:#a6e22e">array_chunk</span>($products, <span style="color:#ae81ff">500</span>);
-</code></pre></div><p>執行完之後會得到一個把原始資料每 500 筆切為一包的新陣列<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>$productChunks <span style="color:#f92672">=</span> <span style="color:#a6e22e">array_chunk</span>($products, <span style="color:#ae81ff">500</span>);
+</span></span></code></pre></div><p>執行完之後會得到一個把原始資料每 500 筆切為一包的新陣列<br>
 接著就可以用迴圈把每一組的 500 筆取出來執行<br>
 原本是一個迴圈跑 10,000 筆資料，現在是一次 500 筆跑 20 次</p>
 <p>這就是使用 Laravel-excel 套件來讀取 csv 並且寫入資料庫的方法<br>
@@ -974,14 +974,14 @@ PHP 就用 <code>phpinfo()</code>、nginx 就用 <code>nginx -T</code></p>
         © 2022 薛丁格的工程師
     </p>
     <p class="copyright" style="font-size: 0.1EM;">
-        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.92.2' target='_blank' rel='noopener'>Hugo</a>
+        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.93.3' target='_blank' rel='noopener'>Hugo</a>
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
 
       <script src="/js/highlight.js"></script>
     
-    <script>hljs.highlightAll();</script><script src="/js/bundle.min.5352079d3388d9a4297e0200dd1040866c8b3b67460090bf30e01a9cd56fd746.js" integrity="sha256-U1IHnTOI2aQpfgIA3RBAhmyLO2dGAJC/MOAanNVv10Y="></script>
+    <script>hljs.highlightAll();</script><script src="/js/bundle.min.70300e10d694c03c4e7b364dbb682d9972a2a0198302fda4dcf8911935f91bf0.js" integrity="sha256-cDAOENaUwDxOezZNu2gtmXKioBmDAv2k3PiRGTX5G/A="></script>
     <script src="/js/add-on.js"></script>
 <script type="application/javascript">
 var doNotTrack = false;

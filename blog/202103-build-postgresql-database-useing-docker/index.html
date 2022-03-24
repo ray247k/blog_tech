@@ -18,7 +18,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.92.2" /><meta property="og:site_name" content="薛丁格的工程師">
+<meta name="generator" content="Hugo 0.93.3" /><meta property="og:site_name" content="薛丁格的工程師">
   <meta property="og:title" content="PostgreSQL 資料庫建置 - 使用 Docker">
   <meta property="og:description" content="介紹如何使用 Docker 建置 PostgreSQL 資料庫">
   <meta property="description" content="介紹如何使用 Docker 建置 PostgreSQL 資料庫">
@@ -362,25 +362,25 @@
 </a>
 </p>
 <h2 id="docker-composeyml">docker-compose.yml</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;3&#39;</span>
-<span style="color:#f92672">services</span>:
-  <span style="color:#f92672">postgres</span>:
-    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">postgres</span>
-    <span style="color:#f92672">ports</span>: 
-      - <span style="color:#e6db74">&#34;5432:5432&#34;</span>
-    <span style="color:#f92672">image</span>: <span style="color:#e6db74">&#34;postgres:alpine&#34;</span>
-    <span style="color:#f92672">volumes</span>:
-      - <span style="color:#ae81ff">database-data:/var/lib/postgresql/data</span> <span style="color:#75715e"># persist data even if container shuts down</span>
-    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">always</span>
-    <span style="color:#f92672">environment</span>:
-      <span style="color:#f92672">POSTGRES_USER</span>: <span style="color:#ae81ff">superuser</span>
-      <span style="color:#f92672">POSTGRES_PASSWORD</span>: <span style="color:#ae81ff">superpassword</span>
-      <span style="color:#f92672">POSTGRES_DB</span>: <span style="color:#ae81ff">demo_db</span>
-<span style="color:#f92672">volumes</span>: 
-  <span style="color:#f92672">database-data</span>: <span style="color:#75715e"># named volumes can be managed easier using docker-compose</span>
-</code></pre></div><p>啟動容器：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose up
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;3&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">services</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">postgres</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">postgres</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>: 
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;5432:5432&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#e6db74">&#34;postgres:alpine&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">database-data:/var/lib/postgresql/data</span> <span style="color:#75715e"># persist data even if container shuts down</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">always</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">environment</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">POSTGRES_USER</span>: <span style="color:#ae81ff">superuser</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">POSTGRES_PASSWORD</span>: <span style="color:#ae81ff">superpassword</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">POSTGRES_DB</span>: <span style="color:#ae81ff">demo_db</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">volumes</span>: 
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">database-data</span>: <span style="color:#75715e"># named volumes can be managed easier using docker-compose</span>
+</span></span></code></pre></div><p>啟動容器：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker-compose up
+</span></span></code></pre></div><hr>
 <h1 id="gui">GUI</h1>
 <h2 id="安裝">安裝</h2>
 <p>因為 sequel ace 不支援 PostgreSQL 所以另外裝一個 GUI 來用<br>
@@ -390,8 +390,8 @@
 </a>
 </p>
 <p>會需要安裝 JAVA 包</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install --cask dbeaver-community
-</code></pre></div><h2 id="存取在遠端的-postgresql-container">存取在遠端的 PostgreSQL container</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew install --cask dbeaver-community
+</span></span></code></pre></div><h2 id="存取在遠端的-postgresql-container">存取在遠端的 PostgreSQL container</h2>
 <p>取得該遠端的對外 ip 作為 host 之後連線到指定的 port (5432)<br>
 就可以在其他機器上存取 PostgreSQL container</p>
 <hr>
@@ -429,21 +429,21 @@
 </a>
 <br>
 這個做法使用 <code>docker volume ls</code> 就不會有結果，要自己去看指定的路徑。因為管理 volume 已經不是透過 docker</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;3&#39;</span>
-<span style="color:#f92672">services</span>:
-  <span style="color:#f92672">postgres</span>:
-    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">postgres</span>
-    <span style="color:#f92672">ports</span>: 
-      - <span style="color:#e6db74">&#34;5432:5432&#34;</span>
-    <span style="color:#f92672">image</span>: <span style="color:#e6db74">&#34;postgres:alpine&#34;</span>
-    <span style="color:#f92672">volumes</span>:
-      - <span style="color:#ae81ff">./database_data:/var/lib/postgresql/data</span> <span style="color:#75715e"># persist data even if container shuts down</span>
-    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">always</span>
-    <span style="color:#f92672">environment</span>:
-      <span style="color:#f92672">POSTGRES_USER</span>: <span style="color:#ae81ff">superuser</span>
-      <span style="color:#f92672">POSTGRES_PASSWORD</span>: <span style="color:#ae81ff">superpassword</span>
-      <span style="color:#f92672">POSTGRES_DB</span>: <span style="color:#ae81ff">trp</span>
-</code></pre></div><ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;3&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">services</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">postgres</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">postgres</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>: 
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;5432:5432&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#e6db74">&#34;postgres:alpine&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">./database_data:/var/lib/postgresql/data</span> <span style="color:#75715e"># persist data even if container shuts down</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">always</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">environment</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">POSTGRES_USER</span>: <span style="color:#ae81ff">superuser</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">POSTGRES_PASSWORD</span>: <span style="color:#ae81ff">superpassword</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">POSTGRES_DB</span>: <span style="color:#ae81ff">trp</span>
+</span></span></code></pre></div><ol>
 <li>調整 yml 檔 service 內 volumes，改為指定路徑</li>
 <li><code>docker-compose up</code> 啟動容器</li>
 <li>使用路徑管理 volume 後 <code>docker volume ls</code> 不會有反應</li>
@@ -461,20 +461,20 @@
 但是當執行 <code>php artisan migrate</code> 之類指令，執行者是容器時<br>
 要使用的卻是內部的 5432 port，如此在管理上會十分麻煩</p>
 <p>此情境下可以透啟動容器時指定內部運行的 port 來解決</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">  <span style="color:#f92672">postgre</span>:
-    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">trp_stage_postgre</span>
-    <span style="color:#f92672">ports</span>:
-      - <span style="color:#e6db74">&#34;5430:5430&#34;</span>
-    <span style="color:#f92672">image</span>: <span style="color:#e6db74">&#34;postgres:12.6&#34;</span>
-    <span style="color:#f92672">volumes</span>:
-      - <span style="color:#ae81ff">/trp/database/stage/database_data:/var/lib/postgresql/data</span> <span style="color:#75715e"># persist data even if container shuts down</span>
-    <span style="color:#f92672">command</span>: -<span style="color:#ae81ff">p 5430</span>
-    <span style="color:#f92672">environment</span>:
-      <span style="color:#f92672">POSTGRES_USER</span>: <span style="color:#ae81ff">${TRP_DB_USER}</span>
-      <span style="color:#f92672">POSTGRES_PASSWORD</span>: <span style="color:#ae81ff">${TRP_DB_PASSWORD}</span>
-      <span style="color:#f92672">POSTGRES_DB</span>: <span style="color:#ae81ff">${TRP_DB_NAME}</span>
-    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">always</span>
-</code></pre></div><p>如上面的設定中 <code>command: -p 5430</code> 指定了內部 postgres 使用的 port<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>  <span style="color:#f92672">postgre</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">trp_stage_postgre</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;5430:5430&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#e6db74">&#34;postgres:12.6&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">/trp/database/stage/database_data:/var/lib/postgresql/data</span> <span style="color:#75715e"># persist data even if container shuts down</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">command</span>: -<span style="color:#ae81ff">p 5430</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">environment</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">POSTGRES_USER</span>: <span style="color:#ae81ff">${TRP_DB_USER}</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">POSTGRES_PASSWORD</span>: <span style="color:#ae81ff">${TRP_DB_PASSWORD}</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">POSTGRES_DB</span>: <span style="color:#ae81ff">${TRP_DB_NAME}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">always</span>
+</span></span></code></pre></div><p>如上面的設定中 <code>command: -p 5430</code> 指定了內部 postgres 使用的 port<br>
 所以在 <code>ports:</code> 設定中就直接將外部 port 5430 指定給內部的 port 5430<br>
 這樣不管在容器內或外部都可以使用一樣的 port 來進行連線</p>
 <h2 id="使用-gui-存取在遠端的-postgresql-container">使用 GUI 存取在遠端的 PostgreSQL container</h2>
@@ -982,14 +982,14 @@
         © 2022 薛丁格的工程師
     </p>
     <p class="copyright" style="font-size: 0.1EM;">
-        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.92.2' target='_blank' rel='noopener'>Hugo</a>
+        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.93.3' target='_blank' rel='noopener'>Hugo</a>
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
 
       <script src="/js/highlight.js"></script>
     
-    <script>hljs.highlightAll();</script><script src="/js/bundle.min.5352079d3388d9a4297e0200dd1040866c8b3b67460090bf30e01a9cd56fd746.js" integrity="sha256-U1IHnTOI2aQpfgIA3RBAhmyLO2dGAJC/MOAanNVv10Y="></script>
+    <script>hljs.highlightAll();</script><script src="/js/bundle.min.70300e10d694c03c4e7b364dbb682d9972a2a0198302fda4dcf8911935f91bf0.js" integrity="sha256-cDAOENaUwDxOezZNu2gtmXKioBmDAv2k3PiRGTX5G/A="></script>
     <script src="/js/add-on.js"></script>
 <script type="application/javascript">
 var doNotTrack = false;

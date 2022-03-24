@@ -18,7 +18,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.92.2" /><meta property="og:site_name" content="薛丁格的工程師">
+<meta name="generator" content="Hugo 0.93.3" /><meta property="og:site_name" content="薛丁格的工程師">
   <meta property="og:title" content="[LeetCode] #66 Plus One (Easy)">
   <meta property="og:description" content="LeetCode 第 66 題 Plus One，難度 Easy">
   <meta property="description" content="LeetCode 第 66 題 Plus One，難度 Easy">
@@ -355,30 +355,30 @@ digit of the integer. The digits are ordered from most significant to least sign
 The large integer does not contain any leading <code>0</code>&rsquo;s.</p>
 <p>Increment the large integer by one and return <em>the resulting array of digits</em>.</p>
 <p>Example 1:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Input: digits = [1,2,3]
-Output: [1,2,4]
-Explanation: The array represents the integer 123.
-Incrementing by one gives 123 + 1 = 124.
-Thus, the result should be [1,2,4].
-</code></pre></div><p>Example 2:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Input: digits = [4,3,2,1]
-Output: [4,3,2,2]
-Explanation: The array represents the integer 4321.
-Incrementing by one gives 4321 + 1 = 4322.
-Thus, the result should be [4,3,2,2].
-</code></pre></div><p>Example 3:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Input: digits = [0]
-Output: [1]
-Explanation: The array represents the integer 0.
-Incrementing by one gives 0 + 1 = 1.
-Thus, the result should be [1].
-</code></pre></div><p>Example 4:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Input: digits = [9]
-Output: [1,0]
-Explanation: The array represents the integer 9.
-Incrementing by one gives 9 + 1 = 10.
-Thus, the result should be [1,0].
-</code></pre></div><h1 id="題目分析">題目分析</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Input: digits = [1,2,3]
+</span></span><span style="display:flex;"><span>Output: [1,2,4]
+</span></span><span style="display:flex;"><span>Explanation: The array represents the integer 123.
+</span></span><span style="display:flex;"><span>Incrementing by one gives 123 + 1 = 124.
+</span></span><span style="display:flex;"><span>Thus, the result should be [1,2,4].
+</span></span></code></pre></div><p>Example 2:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Input: digits = [4,3,2,1]
+</span></span><span style="display:flex;"><span>Output: [4,3,2,2]
+</span></span><span style="display:flex;"><span>Explanation: The array represents the integer 4321.
+</span></span><span style="display:flex;"><span>Incrementing by one gives 4321 + 1 = 4322.
+</span></span><span style="display:flex;"><span>Thus, the result should be [4,3,2,2].
+</span></span></code></pre></div><p>Example 3:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Input: digits = [0]
+</span></span><span style="display:flex;"><span>Output: [1]
+</span></span><span style="display:flex;"><span>Explanation: The array represents the integer 0.
+</span></span><span style="display:flex;"><span>Incrementing by one gives 0 + 1 = 1.
+</span></span><span style="display:flex;"><span>Thus, the result should be [1].
+</span></span></code></pre></div><p>Example 4:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Input: digits = [9]
+</span></span><span style="display:flex;"><span>Output: [1,0]
+</span></span><span style="display:flex;"><span>Explanation: The array represents the integer 9.
+</span></span><span style="display:flex;"><span>Incrementing by one gives 9 + 1 = 10.
+</span></span><span style="display:flex;"><span>Thus, the result should be [1,0].
+</span></span></code></pre></div><h1 id="題目分析">題目分析</h1>
 <ul>
 <li>傳入一個純正整數的陣列</li>
 <li>該陣列是一個大正整數，依照每個位數拆開</li>
@@ -391,24 +391,24 @@ Thus, the result should be [1,0].
 <li>字串轉換成數字，然後 +1</li>
 <li>每個位元拆開做成新的 list 後回傳</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span>:
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">plusOne</span>(self, digits: List[int]) <span style="color:#f92672">-&gt;</span> List[int]:
-        number_string <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
-        number_new <span style="color:#f92672">=</span> []
-
-        <span style="color:#75715e"># list 用字串串起來</span>
-        <span style="color:#66d9ef">for</span> number <span style="color:#f92672">in</span> digits:
-            number_string <span style="color:#f92672">+=</span> str(number)
-
-        <span style="color:#75715e"># 字串轉數字，數字 +1</span>
-        number_string <span style="color:#f92672">=</span> str(int(number_string) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>)
-
-        <span style="color:#75715e"># 每一個位元拆開成新的 list</span>
-        <span style="color:#66d9ef">for</span> number <span style="color:#f92672">in</span> number_string:
-            number_new<span style="color:#f92672">.</span>append(number)
-            
-        <span style="color:#66d9ef">return</span> number_new
-</code></pre></div><h1 id="結果">結果</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python3" data-lang="python3"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">plusOne</span>(self, digits: List[int]) <span style="color:#f92672">-&gt;</span> List[int]:
+</span></span><span style="display:flex;"><span>        number_string <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>        number_new <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># list 用字串串起來</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> number <span style="color:#f92672">in</span> digits:
+</span></span><span style="display:flex;"><span>            number_string <span style="color:#f92672">+=</span> str(number)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 字串轉數字，數字 +1</span>
+</span></span><span style="display:flex;"><span>        number_string <span style="color:#f92672">=</span> str(int(number_string) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 每一個位元拆開成新的 list</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> number <span style="color:#f92672">in</span> number_string:
+</span></span><span style="display:flex;"><span>            number_new<span style="color:#f92672">.</span>append(number)
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> number_new
+</span></span></code></pre></div><h1 id="結果">結果</h1>
 <p><img src="/img/blog/2021/09/leetcode-no66-plus-one/no66-result.png" alt="result"></p>
 
       
@@ -908,14 +908,14 @@ Thus, the result should be [1,0].
         © 2022 薛丁格的工程師
     </p>
     <p class="copyright" style="font-size: 0.1EM;">
-        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.92.2' target='_blank' rel='noopener'>Hugo</a>
+        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.93.3' target='_blank' rel='noopener'>Hugo</a>
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
 
       <script src="/js/highlight.js"></script>
     
-    <script>hljs.highlightAll();</script><script src="/js/bundle.min.5352079d3388d9a4297e0200dd1040866c8b3b67460090bf30e01a9cd56fd746.js" integrity="sha256-U1IHnTOI2aQpfgIA3RBAhmyLO2dGAJC/MOAanNVv10Y="></script>
+    <script>hljs.highlightAll();</script><script src="/js/bundle.min.70300e10d694c03c4e7b364dbb682d9972a2a0198302fda4dcf8911935f91bf0.js" integrity="sha256-cDAOENaUwDxOezZNu2gtmXKioBmDAv2k3PiRGTX5G/A="></script>
     <script src="/js/add-on.js"></script>
 <script type="application/javascript">
 var doNotTrack = false;

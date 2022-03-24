@@ -18,7 +18,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.92.2" /><meta property="og:site_name" content="薛丁格的工程師">
+<meta name="generator" content="Hugo 0.93.3" /><meta property="og:site_name" content="薛丁格的工程師">
   <meta property="og:title" content="網頁伺服器壓力測試 - 使用 Apache Bench">
   <meta property="og:description" content="使用 Apache Bench 對網頁伺服器做壓力測試，測試伺服器性能">
   <meta property="description" content="使用 Apache Bench 對網頁伺服器做壓力測試，測試伺服器性能">
@@ -349,52 +349,52 @@
 <p>可以使用 <code>ab &lt;url&gt;</code> 開始對某一網址做測試，有很多參數可以使用</p>
 <h2 id="常用參數">常用參數</h2>
 <p>使用 <code>ab -h</code> 指令可以看到</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Usage: ab [options] [http[s]://]hostname[:port]/path
-Options are:
-    -n requests     Number of requests to perform
-    -c concurrency  Number of multiple requests to make at a time
-    -t timelimit    Seconds to max. to spend on benchmarking
-                    This implies -n 50000
-    -s timeout      Seconds to max. wait for each response
-                    Default is 30 seconds
-    -b windowsize   Size of TCP send/receive buffer, in bytes
-    -B address      Address to bind to when making outgoing connections
-    -p postfile     File containing data to POST. Remember also to set -T
-    -u putfile      File containing data to PUT. Remember also to set -T
-    -T content-type Content-type header to use for POST/PUT data, eg.
-                    &#39;application/x-www-form-urlencoded&#39;
-                    Default is &#39;text/plain&#39;
-    -v verbosity    How much troubleshooting info to print
-    -w              Print out results in HTML tables
-    -i              Use HEAD instead of GET
-    -x attributes   String to insert as table attributes
-    -y attributes   String to insert as tr attributes
-    -z attributes   String to insert as td or th attributes
-    -C attribute    Add cookie, eg. &#39;Apache=1234&#39;. (repeatable)
-    -H attribute    Add Arbitrary header line, eg. &#39;Accept-Encoding: gzip&#39;
-                    Inserted after all normal header lines. (repeatable)
-    -A attribute    Add Basic WWW Authentication, the attributes
-                    are a colon separated username and password.
-    -P attribute    Add Basic Proxy Authentication, the attributes
-                    are a colon separated username and password.
-    -X proxy:port   Proxyserver and port number to use
-    -V              Print version number and exit
-    -k              Use HTTP KeepAlive feature
-    -d              Do not show percentiles served table.
-    -S              Do not show confidence estimators and warnings.
-    -q              Do not show progress when doing more than 150 requests
-    -l              Accept variable document length (use this for dynamic pages)
-    -g filename     Output collected data to gnuplot format file.
-    -e filename     Output CSV file with percentages served
-    -r              Don&#39;t exit on socket receive errors.
-    -m method       Method name
-    -h              Display usage information (this message)
-    -I              Disable TLS Server Name Indication (SNI) extension
-    -Z ciphersuite  Specify SSL/TLS cipher suite (See openssl ciphers)
-    -f protocol     Specify SSL/TLS protocol
-                    (TLS1, TLS1.1, TLS1.2 or ALL)
-    -E certfile     Specify optional client certificate chain and private key
-</code></pre></div><p>比較常用的參數是</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Usage: ab [options] [http[s]://]hostname[:port]/path
+</span></span><span style="display:flex;"><span>Options are:
+</span></span><span style="display:flex;"><span>    -n requests     Number of requests to perform
+</span></span><span style="display:flex;"><span>    -c concurrency  Number of multiple requests to make at a time
+</span></span><span style="display:flex;"><span>    -t timelimit    Seconds to max. to spend on benchmarking
+</span></span><span style="display:flex;"><span>                    This implies -n 50000
+</span></span><span style="display:flex;"><span>    -s timeout      Seconds to max. wait for each response
+</span></span><span style="display:flex;"><span>                    Default is 30 seconds
+</span></span><span style="display:flex;"><span>    -b windowsize   Size of TCP send/receive buffer, in bytes
+</span></span><span style="display:flex;"><span>    -B address      Address to bind to when making outgoing connections
+</span></span><span style="display:flex;"><span>    -p postfile     File containing data to POST. Remember also to set -T
+</span></span><span style="display:flex;"><span>    -u putfile      File containing data to PUT. Remember also to set -T
+</span></span><span style="display:flex;"><span>    -T content-type Content-type header to use for POST/PUT data, eg.
+</span></span><span style="display:flex;"><span>                    &#39;application/x-www-form-urlencoded&#39;
+</span></span><span style="display:flex;"><span>                    Default is &#39;text/plain&#39;
+</span></span><span style="display:flex;"><span>    -v verbosity    How much troubleshooting info to print
+</span></span><span style="display:flex;"><span>    -w              Print out results in HTML tables
+</span></span><span style="display:flex;"><span>    -i              Use HEAD instead of GET
+</span></span><span style="display:flex;"><span>    -x attributes   String to insert as table attributes
+</span></span><span style="display:flex;"><span>    -y attributes   String to insert as tr attributes
+</span></span><span style="display:flex;"><span>    -z attributes   String to insert as td or th attributes
+</span></span><span style="display:flex;"><span>    -C attribute    Add cookie, eg. &#39;Apache=1234&#39;. (repeatable)
+</span></span><span style="display:flex;"><span>    -H attribute    Add Arbitrary header line, eg. &#39;Accept-Encoding: gzip&#39;
+</span></span><span style="display:flex;"><span>                    Inserted after all normal header lines. (repeatable)
+</span></span><span style="display:flex;"><span>    -A attribute    Add Basic WWW Authentication, the attributes
+</span></span><span style="display:flex;"><span>                    are a colon separated username and password.
+</span></span><span style="display:flex;"><span>    -P attribute    Add Basic Proxy Authentication, the attributes
+</span></span><span style="display:flex;"><span>                    are a colon separated username and password.
+</span></span><span style="display:flex;"><span>    -X proxy:port   Proxyserver and port number to use
+</span></span><span style="display:flex;"><span>    -V              Print version number and exit
+</span></span><span style="display:flex;"><span>    -k              Use HTTP KeepAlive feature
+</span></span><span style="display:flex;"><span>    -d              Do not show percentiles served table.
+</span></span><span style="display:flex;"><span>    -S              Do not show confidence estimators and warnings.
+</span></span><span style="display:flex;"><span>    -q              Do not show progress when doing more than 150 requests
+</span></span><span style="display:flex;"><span>    -l              Accept variable document length (use this for dynamic pages)
+</span></span><span style="display:flex;"><span>    -g filename     Output collected data to gnuplot format file.
+</span></span><span style="display:flex;"><span>    -e filename     Output CSV file with percentages served
+</span></span><span style="display:flex;"><span>    -r              Don&#39;t exit on socket receive errors.
+</span></span><span style="display:flex;"><span>    -m method       Method name
+</span></span><span style="display:flex;"><span>    -h              Display usage information (this message)
+</span></span><span style="display:flex;"><span>    -I              Disable TLS Server Name Indication (SNI) extension
+</span></span><span style="display:flex;"><span>    -Z ciphersuite  Specify SSL/TLS cipher suite (See openssl ciphers)
+</span></span><span style="display:flex;"><span>    -f protocol     Specify SSL/TLS protocol
+</span></span><span style="display:flex;"><span>                    (TLS1, TLS1.1, TLS1.2 or ALL)
+</span></span><span style="display:flex;"><span>    -E certfile     Specify optional client certificate chain and private key
+</span></span></code></pre></div><p>比較常用的參數是</p>
 <ul>
 <li><code>-n</code>：測試時執行的 request 數量，預設為1</li>
 <li><code>-c</code>：一次執行下同時的 request 數量，模擬同時在線使用者數，預設為1</li>
@@ -927,14 +927,14 @@ Options are:
         © 2022 薛丁格的工程師
     </p>
     <p class="copyright" style="font-size: 0.1EM;">
-        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.92.2' target='_blank' rel='noopener'>Hugo</a>
+        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.93.3' target='_blank' rel='noopener'>Hugo</a>
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
 
       <script src="/js/highlight.js"></script>
     
-    <script>hljs.highlightAll();</script><script src="/js/bundle.min.5352079d3388d9a4297e0200dd1040866c8b3b67460090bf30e01a9cd56fd746.js" integrity="sha256-U1IHnTOI2aQpfgIA3RBAhmyLO2dGAJC/MOAanNVv10Y="></script>
+    <script>hljs.highlightAll();</script><script src="/js/bundle.min.70300e10d694c03c4e7b364dbb682d9972a2a0198302fda4dcf8911935f91bf0.js" integrity="sha256-cDAOENaUwDxOezZNu2gtmXKioBmDAv2k3PiRGTX5G/A="></script>
     <script src="/js/add-on.js"></script>
 <script type="application/javascript">
 var doNotTrack = false;

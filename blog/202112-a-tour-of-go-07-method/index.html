@@ -18,7 +18,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.92.2" /><meta property="og:site_name" content="薛丁格的工程師">
+<meta name="generator" content="Hugo 0.93.3" /><meta property="og:site_name" content="薛丁格的工程師">
   <meta property="og:title" content="[A Tour of Go 學習筆記] 07 method">
   <meta property="og:description" content="使用官方教學瞭解 Go method">
   <meta property="description" content="使用官方教學瞭解 Go method">
@@ -359,117 +359,117 @@
 而 method 是一種帶有特殊接收(receiver)參數函數</p>
 <p>receiver 出現在它自己的參數列表中，位於宣告字串：<code>func</code>和方法名稱之間<br>
 在範例中<code>Abs</code>函數擁有一個 Type 是<code>Vertex</code>並且叫做<code>v</code>的 receiver</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
-
-<span style="color:#f92672">import</span> (
-	<span style="color:#e6db74">&#34;fmt&#34;</span>
-	<span style="color:#e6db74">&#34;math&#34;</span>
-)
-
-<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Vertex</span> <span style="color:#66d9ef">struct</span> {
-	<span style="color:#a6e22e">X</span>, <span style="color:#a6e22e">Y</span> <span style="color:#66d9ef">float64</span>
-}
-
-<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">v</span> <span style="color:#a6e22e">Vertex</span>) <span style="color:#a6e22e">Abs</span>() <span style="color:#66d9ef">float64</span> {
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Sqrt</span>(<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">X</span><span style="color:#f92672">*</span><span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">X</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Y</span><span style="color:#f92672">*</span><span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Y</span>)
-}
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-	<span style="color:#a6e22e">v</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">Vertex</span>{<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>}
-	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Abs</span>())
-}
-
-<span style="color:#75715e">/*
-</span><span style="color:#75715e">&gt;&gt;&gt; 5
-</span><span style="color:#75715e">*/</span>
-</code></pre></div><h1 id="方法即函數">方法即函數</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;math&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Vertex</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">X</span>, <span style="color:#a6e22e">Y</span> <span style="color:#66d9ef">float64</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">v</span> <span style="color:#a6e22e">Vertex</span>) <span style="color:#a6e22e">Abs</span>() <span style="color:#66d9ef">float64</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Sqrt</span>(<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">X</span><span style="color:#f92672">*</span><span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">X</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Y</span><span style="color:#f92672">*</span><span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Y</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">v</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">Vertex</span>{<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Abs</span>())
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">&gt;&gt;&gt; 5
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span></code></pre></div><h1 id="方法即函數">方法即函數</h1>
 <blockquote>
 <p>method 就只是具有 receiver 的 function</p>
 </blockquote>
 <p>底下就是一個一般寫法的 function，功能並沒有什麼變化</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
-
-<span style="color:#f92672">import</span> (
-	<span style="color:#e6db74">&#34;fmt&#34;</span>
-	<span style="color:#e6db74">&#34;math&#34;</span>
-)
-
-<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Vertex</span> <span style="color:#66d9ef">struct</span> {
-	<span style="color:#a6e22e">X</span>, <span style="color:#a6e22e">Y</span> <span style="color:#66d9ef">float64</span>
-}
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Abs</span>(<span style="color:#a6e22e">v</span> <span style="color:#a6e22e">Vertex</span>) <span style="color:#66d9ef">float64</span> {
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Sqrt</span>(<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">X</span><span style="color:#f92672">*</span><span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">X</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Y</span><span style="color:#f92672">*</span><span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Y</span>)
-}
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-	<span style="color:#a6e22e">v</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">Vertex</span>{<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>}
-	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">Abs</span>(<span style="color:#a6e22e">v</span>))
-}
-
-<span style="color:#75715e">/*
-</span><span style="color:#75715e">&gt;&gt;&gt; 5
-</span><span style="color:#75715e">*/</span>
-</code></pre></div><p>method 聲明也可以使用非結構化的 type</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;math&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Vertex</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">X</span>, <span style="color:#a6e22e">Y</span> <span style="color:#66d9ef">float64</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Abs</span>(<span style="color:#a6e22e">v</span> <span style="color:#a6e22e">Vertex</span>) <span style="color:#66d9ef">float64</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Sqrt</span>(<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">X</span><span style="color:#f92672">*</span><span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">X</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Y</span><span style="color:#f92672">*</span><span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Y</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">v</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">Vertex</span>{<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">Abs</span>(<span style="color:#a6e22e">v</span>))
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">&gt;&gt;&gt; 5
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span></code></pre></div><p>method 聲明也可以使用非結構化的 type</p>
 <p>只能使用同一個<code>package</code>作用域中聲明過的的<code>type</code>當作<code>receiver</code><br>
 如果是聲明在其他<code>package</code>中，就算是內建的型別，例如<code>int</code>也不行</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
-
-<span style="color:#f92672">import</span> (
-	<span style="color:#e6db74">&#34;fmt&#34;</span>
-	<span style="color:#e6db74">&#34;math&#34;</span>
-)
-
-<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">MyFloat</span> <span style="color:#66d9ef">float64</span>
-
-<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">f</span> <span style="color:#a6e22e">MyFloat</span>) <span style="color:#a6e22e">Abs</span>() <span style="color:#66d9ef">float64</span> {
-	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">f</span> &lt; <span style="color:#ae81ff">0</span> {
-		<span style="color:#66d9ef">return</span> float64(<span style="color:#f92672">-</span><span style="color:#a6e22e">f</span>)
-	}
-	<span style="color:#66d9ef">return</span> float64(<span style="color:#a6e22e">f</span>)
-}
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-	<span style="color:#a6e22e">f</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">MyFloat</span>(<span style="color:#f92672">-</span><span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Sqrt2</span>)
-	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">f</span>.<span style="color:#a6e22e">Abs</span>())
-}
-
-<span style="color:#75715e">/*
-</span><span style="color:#75715e">&gt;&gt;&gt; 1.4142135623730951
-</span><span style="color:#75715e">*/</span>
-</code></pre></div><h1 id="指針接收者pointer-receivers">指針接收者(Pointer receivers)</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;math&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">MyFloat</span> <span style="color:#66d9ef">float64</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">f</span> <span style="color:#a6e22e">MyFloat</span>) <span style="color:#a6e22e">Abs</span>() <span style="color:#66d9ef">float64</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">f</span> &lt; <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> float64(<span style="color:#f92672">-</span><span style="color:#a6e22e">f</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> float64(<span style="color:#a6e22e">f</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">f</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">MyFloat</span>(<span style="color:#f92672">-</span><span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Sqrt2</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">f</span>.<span style="color:#a6e22e">Abs</span>())
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">&gt;&gt;&gt; 1.4142135623730951
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span></code></pre></div><h1 id="指針接收者pointer-receivers">指針接收者(Pointer receivers)</h1>
 <p>你也可以使用指針 receiver 來聲明 method<br>
 型態前加<code>*</code>代表是 Pointer receiver，method 的 receiver type 為指針</p>
 <p>範例程式中，函數<code>Scale</code>的 receiver 就聲明為<code>*Vertex</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
-
-<span style="color:#f92672">import</span> (
-	<span style="color:#e6db74">&#34;fmt&#34;</span>
-	<span style="color:#e6db74">&#34;math&#34;</span>
-)
-
-<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Vertex</span> <span style="color:#66d9ef">struct</span> {
-	<span style="color:#a6e22e">X</span>, <span style="color:#a6e22e">Y</span> <span style="color:#66d9ef">float64</span>
-}
-
-<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">v</span> <span style="color:#a6e22e">Vertex</span>) <span style="color:#a6e22e">Abs</span>() <span style="color:#66d9ef">float64</span> {
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Sqrt</span>(<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">X</span><span style="color:#f92672">*</span><span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">X</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Y</span><span style="color:#f92672">*</span><span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Y</span>)
-}
-
-<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">v</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Vertex</span>) <span style="color:#a6e22e">Scale</span>(<span style="color:#a6e22e">f</span> <span style="color:#66d9ef">float64</span>) {
-	<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">X</span> = <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">X</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">f</span>
-	<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Y</span> = <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Y</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">f</span>
-}
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-	<span style="color:#a6e22e">v</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">Vertex</span>{<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>}
-	<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Scale</span>(<span style="color:#ae81ff">10</span>)
-	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Abs</span>())
-}
-<span style="color:#75715e">/*
-</span><span style="color:#75715e">&gt;&gt;&gt; 50
-</span><span style="color:#75715e">*/</span>
-</code></pre></div><p>具有 pointer receiver 的 method，例如上面的<code>Scale</code>可以直接修改變數指向的值，而不是單純的運算<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;math&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Vertex</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">X</span>, <span style="color:#a6e22e">Y</span> <span style="color:#66d9ef">float64</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">v</span> <span style="color:#a6e22e">Vertex</span>) <span style="color:#a6e22e">Abs</span>() <span style="color:#66d9ef">float64</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Sqrt</span>(<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">X</span><span style="color:#f92672">*</span><span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">X</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Y</span><span style="color:#f92672">*</span><span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Y</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">v</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Vertex</span>) <span style="color:#a6e22e">Scale</span>(<span style="color:#a6e22e">f</span> <span style="color:#66d9ef">float64</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">X</span> = <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">X</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">f</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Y</span> = <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Y</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">f</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">v</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">Vertex</span>{<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Scale</span>(<span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Abs</span>())
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">&gt;&gt;&gt; 50
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span></code></pre></div><p>具有 pointer receiver 的 method，例如上面的<code>Scale</code>可以直接修改變數指向的值，而不是單純的運算<br>
 由於 method 經常會修改 receiver，所以實際應用上比較常使用指針作為 <code>receiver</code></p>
 <p>如果把上面範例中的<code>Scale</code>的 receiver<code>*</code>刪除，變成一般的 method<br>
 則是會把<code>Vertex</code>的值複製一份，對其進行操作</p>
@@ -479,60 +479,60 @@
 <p>現在我們要把<code>Abs</code>和<code>Scale</code>方法重寫為函數<br>
 之前的範例中<code>v.Scale(10)</code>可以直接調用指針 receiver<br>
 而 function 的寫法參數必須使用<code>&amp;</code>符號聲明傳入指針</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
-
-<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
-
-<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Vertex</span> <span style="color:#66d9ef">struct</span> {
-	<span style="color:#a6e22e">X</span>, <span style="color:#a6e22e">Y</span> <span style="color:#66d9ef">float64</span>
-}
-
-<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">v</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Vertex</span>) <span style="color:#a6e22e">Scale</span>(<span style="color:#a6e22e">f</span> <span style="color:#66d9ef">float64</span>) {
-	<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">X</span> = <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">X</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">f</span>
-	<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Y</span> = <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Y</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">f</span>
-}
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">ScaleFunc</span>(<span style="color:#a6e22e">v</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Vertex</span>, <span style="color:#a6e22e">f</span> <span style="color:#66d9ef">float64</span>) {
-	<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">X</span> = <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">X</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">f</span>
-	<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Y</span> = <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Y</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">f</span>
-}
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-	<span style="color:#a6e22e">v</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">Vertex</span>{<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>}
-	<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Scale</span>(<span style="color:#ae81ff">2</span>)
-	<span style="color:#a6e22e">ScaleFunc</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">v</span>, <span style="color:#ae81ff">10</span>)
-
-	<span style="color:#a6e22e">p</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Vertex</span>{<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">3</span>}
-	<span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">Scale</span>(<span style="color:#ae81ff">3</span>)
-	<span style="color:#a6e22e">ScaleFunc</span>(<span style="color:#a6e22e">p</span>, <span style="color:#ae81ff">8</span>)
-
-	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">v</span>, <span style="color:#a6e22e">p</span>)
-}
-<span style="color:#75715e">/*
-</span><span style="color:#75715e">&gt;&gt;&gt; {60 80} &amp;{96 72}
-</span><span style="color:#75715e">*/</span> 
-</code></pre></div><p>和前面兩個範例做比較，會發現會注意到帶有參數的 functions 必須傳入一個指針，否則</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">v</span> <span style="color:#a6e22e">Vertex</span>
-<span style="color:#a6e22e">ScaleFunc</span>(<span style="color:#a6e22e">v</span>, <span style="color:#ae81ff">5</span>)  <span style="color:#75715e">// Compile error!
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">ScaleFunc</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">v</span>, <span style="color:#ae81ff">5</span>) <span style="color:#75715e">// OK
-</span></code></pre></div><p>但是帶有 pointer receiver 的 methods 在被呼叫時可以接受一個值或一個指針</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">v</span> <span style="color:#a6e22e">Vertex</span>
-<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Scale</span>(<span style="color:#ae81ff">5</span>)  <span style="color:#75715e">// OK
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">p</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">v</span>
-<span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">Scale</span>(<span style="color:#ae81ff">10</span>) <span style="color:#75715e">// OK
-</span></code></pre></div><p>對於<code>v.Scale(5)</code>即使<code>v</code>是個值而非指針，帶有 pointer receiver 的 methods 也能被直接呼叫<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Vertex</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">X</span>, <span style="color:#a6e22e">Y</span> <span style="color:#66d9ef">float64</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">v</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Vertex</span>) <span style="color:#a6e22e">Scale</span>(<span style="color:#a6e22e">f</span> <span style="color:#66d9ef">float64</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">X</span> = <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">X</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">f</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Y</span> = <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Y</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">f</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">ScaleFunc</span>(<span style="color:#a6e22e">v</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Vertex</span>, <span style="color:#a6e22e">f</span> <span style="color:#66d9ef">float64</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">X</span> = <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">X</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">f</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Y</span> = <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Y</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">f</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">v</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">Vertex</span>{<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Scale</span>(<span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ScaleFunc</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">v</span>, <span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">p</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Vertex</span>{<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">3</span>}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">Scale</span>(<span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ScaleFunc</span>(<span style="color:#a6e22e">p</span>, <span style="color:#ae81ff">8</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">v</span>, <span style="color:#a6e22e">p</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">&gt;&gt;&gt; {60 80} &amp;{96 72}
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span> 
+</span></span></code></pre></div><p>和前面兩個範例做比較，會發現會注意到帶有參數的 functions 必須傳入一個指針，否則</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">v</span> <span style="color:#a6e22e">Vertex</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ScaleFunc</span>(<span style="color:#a6e22e">v</span>, <span style="color:#ae81ff">5</span>)  <span style="color:#75715e">// Compile error!
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">ScaleFunc</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">v</span>, <span style="color:#ae81ff">5</span>) <span style="color:#75715e">// OK
+</span></span></span></code></pre></div><p>但是帶有 pointer receiver 的 methods 在被呼叫時可以接受一個值或一個指針</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">v</span> <span style="color:#a6e22e">Vertex</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Scale</span>(<span style="color:#ae81ff">5</span>)  <span style="color:#75715e">// OK
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">p</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">v</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">Scale</span>(<span style="color:#ae81ff">10</span>) <span style="color:#75715e">// OK
+</span></span></span></code></pre></div><p>對於<code>v.Scale(5)</code>即使<code>v</code>是個值而非指針，帶有 pointer receiver 的 methods 也能被直接呼叫<br>
 也就是說，由於<code>Scale</code> method 有一個 pointer receiver<br>
 為方便起見，Go 會將<code>v.Scale(5)</code>視為<code>(&amp;v).Scale(5)</code></p>
 <p>同樣的事情也發生在相反的情況，若是對傳值的 function 傳入指針</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">v</span> <span style="color:#a6e22e">Vertex</span>
-<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">AbsFunc</span>(<span style="color:#a6e22e">v</span>))  <span style="color:#75715e">// OK
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">AbsFunc</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">v</span>)) <span style="color:#75715e">// Compile error!
-</span></code></pre></div><p>但是作為 method 使用的時候，又可以直接傳入指針</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">v</span> <span style="color:#a6e22e">Vertex</span>
-<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Abs</span>()) <span style="color:#75715e">// OK
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">p</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">v</span>
-<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">Abs</span>()) <span style="color:#75715e">// OK
-</span></code></pre></div><p>因為這種情況下<code>p.Abs()</code>會被解釋為<code>(*p).Abs()</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">v</span> <span style="color:#a6e22e">Vertex</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">AbsFunc</span>(<span style="color:#a6e22e">v</span>))  <span style="color:#75715e">// OK
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">AbsFunc</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">v</span>)) <span style="color:#75715e">// Compile error!
+</span></span></span></code></pre></div><p>但是作為 method 使用的時候，又可以直接傳入指針</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">v</span> <span style="color:#a6e22e">Vertex</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Abs</span>()) <span style="color:#75715e">// OK
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">p</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">v</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">Abs</span>()) <span style="color:#75715e">// OK
+</span></span></span></code></pre></div><p>因為這種情況下<code>p.Abs()</code>會被解釋為<code>(*p).Abs()</code></p>
 <h1 id="receiver-類型怎麼選值指針">receiver 類型怎麼選（值/指針）</h1>
 <p>通常來說使用「指針」作為 receiver 是因為</p>
 <ul>
@@ -541,37 +541,37 @@
 </ul>
 <p>在範例中<code>Scale</code>和<code>Abs</code>的 receiver 類型為<code>*Vertex</code>，即使<code>Abs</code>並不需要修改 receiver<br>
 通常來說，所有具有類型的 method 都應該要有值或是指針的 receiver，但不該兩者混用</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
-
-<span style="color:#f92672">import</span> (
-	<span style="color:#e6db74">&#34;fmt&#34;</span>
-	<span style="color:#e6db74">&#34;math&#34;</span>
-)
-
-<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Vertex</span> <span style="color:#66d9ef">struct</span> {
-	<span style="color:#a6e22e">X</span>, <span style="color:#a6e22e">Y</span> <span style="color:#66d9ef">float64</span>
-}
-
-<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">v</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Vertex</span>) <span style="color:#a6e22e">Scale</span>(<span style="color:#a6e22e">f</span> <span style="color:#66d9ef">float64</span>) {
-	<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">X</span> = <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">X</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">f</span>
-	<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Y</span> = <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Y</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">f</span>
-}
-
-<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">v</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Vertex</span>) <span style="color:#a6e22e">Abs</span>() <span style="color:#66d9ef">float64</span> {
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Sqrt</span>(<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">X</span><span style="color:#f92672">*</span><span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">X</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Y</span><span style="color:#f92672">*</span><span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Y</span>)
-}
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-	<span style="color:#a6e22e">v</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Vertex</span>{<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>}
-	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;Before scaling: %+v, Abs: %v\n&#34;</span>, <span style="color:#a6e22e">v</span>, <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Abs</span>())
-	<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Scale</span>(<span style="color:#ae81ff">5</span>)
-	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;After scaling: %+v, Abs: %v\n&#34;</span>, <span style="color:#a6e22e">v</span>, <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Abs</span>())
-}
-<span style="color:#75715e">/*
-</span><span style="color:#75715e">&gt;&gt;&gt; Before scaling: &amp;{X:3 Y:4}, Abs: 5
-</span><span style="color:#75715e">&gt;&gt;&gt; After scaling: &amp;{X:15 Y:20}, Abs: 25
-</span><span style="color:#75715e">*/</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;math&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Vertex</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">X</span>, <span style="color:#a6e22e">Y</span> <span style="color:#66d9ef">float64</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">v</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Vertex</span>) <span style="color:#a6e22e">Scale</span>(<span style="color:#a6e22e">f</span> <span style="color:#66d9ef">float64</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">X</span> = <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">X</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">f</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Y</span> = <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Y</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">f</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">v</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Vertex</span>) <span style="color:#a6e22e">Abs</span>() <span style="color:#66d9ef">float64</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Sqrt</span>(<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">X</span><span style="color:#f92672">*</span><span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">X</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Y</span><span style="color:#f92672">*</span><span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Y</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">v</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Vertex</span>{<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;Before scaling: %+v, Abs: %v\n&#34;</span>, <span style="color:#a6e22e">v</span>, <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Abs</span>())
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Scale</span>(<span style="color:#ae81ff">5</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;After scaling: %+v, Abs: %v\n&#34;</span>, <span style="color:#a6e22e">v</span>, <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Abs</span>())
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">&gt;&gt;&gt; Before scaling: &amp;{X:3 Y:4}, Abs: 5
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">&gt;&gt;&gt; After scaling: &amp;{X:15 Y:20}, Abs: 25
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span></code></pre></div>
 
       
       
@@ -1066,14 +1066,14 @@
         © 2022 薛丁格的工程師
     </p>
     <p class="copyright" style="font-size: 0.1EM;">
-        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.92.2' target='_blank' rel='noopener'>Hugo</a>
+        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.93.3' target='_blank' rel='noopener'>Hugo</a>
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
 
       <script src="/js/highlight.js"></script>
     
-    <script>hljs.highlightAll();</script><script src="/js/bundle.min.5352079d3388d9a4297e0200dd1040866c8b3b67460090bf30e01a9cd56fd746.js" integrity="sha256-U1IHnTOI2aQpfgIA3RBAhmyLO2dGAJC/MOAanNVv10Y="></script>
+    <script>hljs.highlightAll();</script><script src="/js/bundle.min.70300e10d694c03c4e7b364dbb682d9972a2a0198302fda4dcf8911935f91bf0.js" integrity="sha256-cDAOENaUwDxOezZNu2gtmXKioBmDAv2k3PiRGTX5G/A="></script>
     <script src="/js/add-on.js"></script>
 <script type="application/javascript">
 var doNotTrack = false;

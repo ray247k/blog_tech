@@ -18,7 +18,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.92.2" /><meta property="og:site_name" content="薛丁格的工程師">
+<meta name="generator" content="Hugo 0.93.3" /><meta property="og:site_name" content="薛丁格的工程師">
   <meta property="og:title" content="[Express&#43;Vue 搭建電商網站] 16 抽離 Vuex store 中的邏輯">
   <meta property="og:description" content="使用 Express &#43; Vue 搭建一個電商網站 - 抽離 Vuex store 中的邏輯">
   <meta property="description" content="使用 Express &#43; Vue 搭建一個電商網站 - 抽離 Vuex store 中的邏輯">
@@ -348,267 +348,267 @@
 在章節中先試著將這些複雜的邏輯拆分成個別的檔案，抽出 Getters、Mutations 和 Actions 邏輯</p>
 <h1 id="重構-admin-首頁">重構 Admin 首頁</h1>
 <p>打開 <code>src/views/admin/Index.vue</code> 頁面，將選單換成中文。並且加上查看查看製造商的選項</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
-  &lt;<span style="color:#f92672">div</span>&gt;
-    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;admin-new&#34;</span>&gt;
-      &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;
-        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col-lg-3 col-md-3 col-sm-12 col-xs-12&#34;</span>&gt;
-          &lt;<span style="color:#f92672">ul</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;admin-menu&#34;</span>&gt;
-            &lt;<span style="color:#f92672">li</span>&gt;
-              &lt;<span style="color:#f92672">router-link</span> <span style="color:#a6e22e">to</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/admin&#34;</span>&gt;<span style="color:#a6e22e">查看商品</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/router-link&gt;</span>
-            &lt;/<span style="color:#f92672">li</span>&gt;
-            &lt;<span style="color:#f92672">li</span>&gt;
-              &lt;<span style="color:#f92672">router-link</span> <span style="color:#a6e22e">to</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/admin/new&#34;</span>&gt;<span style="color:#a6e22e">新建商品</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/router-link&gt;</span>
-            &lt;/<span style="color:#f92672">li</span>&gt;
-            &lt;<span style="color:#f92672">li</span>&gt;
-              &lt;<span style="color:#f92672">router-link</span> <span style="color:#a6e22e">to</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/admin/manufacturers&#34;</span>&gt;<span style="color:#a6e22e">查看製造商</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/router-link&gt;</span>
-            &lt;/<span style="color:#f92672">li</span>&gt;
-          &lt;/<span style="color:#f92672">ul</span>&gt;
-        &lt;/<span style="color:#f92672">div</span>&gt;
-        &lt;<span style="color:#f92672">router-view</span>&gt;<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/router-view&gt;</span>
-      &lt;/<span style="color:#f92672">div</span>&gt;
-    &lt;/<span style="color:#f92672">div</span>&gt;
-  &lt;/<span style="color:#f92672">div</span>&gt;
-&lt;/<span style="color:#f92672">template</span>&gt;
-</code></pre></div><p>可以預期到的接下來我們會做一個關於製造商的頁面，然後透過後端 API 取得製造商資料</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;admin-new&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col-lg-3 col-md-3 col-sm-12 col-xs-12&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>          &lt;<span style="color:#f92672">ul</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;admin-menu&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>              &lt;<span style="color:#f92672">router-link</span> <span style="color:#a6e22e">to</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/admin&#34;</span>&gt;<span style="color:#a6e22e">查看商品</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/router-link&gt;</span>
+</span></span><span style="display:flex;"><span>            &lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>              &lt;<span style="color:#f92672">router-link</span> <span style="color:#a6e22e">to</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/admin/new&#34;</span>&gt;<span style="color:#a6e22e">新建商品</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/router-link&gt;</span>
+</span></span><span style="display:flex;"><span>            &lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>              &lt;<span style="color:#f92672">router-link</span> <span style="color:#a6e22e">to</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/admin/manufacturers&#34;</span>&gt;<span style="color:#a6e22e">查看製造商</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/router-link&gt;</span>
+</span></span><span style="display:flex;"><span>            &lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>          &lt;/<span style="color:#f92672">ul</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">router-view</span>&gt;<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/router-view&gt;</span>
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">template</span>&gt;
+</span></span></code></pre></div><p>可以預期到的接下來我們會做一個關於製造商的頁面，然後透過後端 API 取得製造商資料</p>
 <h1 id="建立-manufacturers-頁面">建立 Manufacturers 頁面</h1>
 <p>新建 <code>src/views/admin/Manufacturers.vue</code> 檔案</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
-  &lt;<span style="color:#f92672">div</span>&gt;
-    &lt;<span style="color:#f92672">table</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;table&#34;</span>&gt;
-      &lt;<span style="color:#f92672">thead</span>&gt;
-        &lt;<span style="color:#f92672">tr</span>&gt;
-          &lt;<span style="color:#f92672">th</span>&gt;<span style="color:#a6e22e">製造商</span>&lt;/<span style="color:#f92672">th</span>&gt;
-          &lt;<span style="color:#f92672">th</span>&gt;&lt;/<span style="color:#f92672">th</span>&gt;
-          &lt;<span style="color:#f92672">th</span>&gt;&lt;/<span style="color:#f92672">th</span>&gt;
-        &lt;/<span style="color:#f92672">tr</span>&gt;
-      &lt;/<span style="color:#f92672">thead</span>&gt;
-      &lt;<span style="color:#f92672">tbody</span>&gt;
-        &lt;<span style="color:#f92672">tr</span> <span style="color:#f92672">v-for</span><span style="color:#e6db74">=&#34;manufacturer in manufacturers&#34; :key=&#34;manufacturer._id&#34;&gt;
-</span><span style="color:#e6db74">          &lt;td&gt;{{manufacturer.name}}&lt;/td&gt;
-</span><span style="color:#e6db74">          &lt;td class=&#34;modify&#34;&gt;
-</span><span style="color:#e6db74">            &lt;router-link :to=&#34;&#39;/admin/manufacturers/edit/&#39; + manufacturer._id&#34;&gt;修改&lt;/router-link&gt;
-</span><span style="color:#e6db74">          &lt;/td&gt;
-</span><span style="color:#e6db74">          &lt;td class=&#34;remove&#34;&gt;
-</span><span style="color:#e6db74">            &lt;a @click=&#34;removeManufacturer(manufacturer._id)&#34; href=&#34;#&#34;</span>&gt;<span style="color:#a6e22e">刪除</span>&lt;/<span style="color:#f92672">a</span>&gt;
-          &lt;/<span style="color:#f92672">td</span>&gt;
-        &lt;/<span style="color:#f92672">tr</span>&gt;
-      &lt;/<span style="color:#f92672">tbody</span>&gt;
-    &lt;/<span style="color:#f92672">table</span>&gt;
-  &lt;/<span style="color:#f92672">div</span>&gt;
-&lt;/<span style="color:#f92672">template</span>&gt;
-
-&lt;<span style="color:#f92672">style</span>&gt;
-<span style="color:#a6e22e">table</span> {
-  <span style="color:#a6e22e">margin</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span> <span style="color:#a6e22e">auto</span>;
-}
-
-.<span style="color:#a6e22e">modify</span> {
-  <span style="color:#a6e22e">color</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">blue</span>;
-}
-
-.<span style="color:#a6e22e">remove</span> <span style="color:#a6e22e">a</span> {
-  <span style="color:#a6e22e">color</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">red</span>;
-}
-&lt;/<span style="color:#f92672">style</span>&gt;
-
-&lt;<span style="color:#f92672">script</span>&gt;
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
-  <span style="color:#a6e22e">created</span>() {
-    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">manufacturers</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) {
-      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#e6db74">&#34;allManufacturers&#34;</span>);
-    }
-  },
-  <span style="color:#a6e22e">computed</span><span style="color:#f92672">:</span> {
-    <span style="color:#a6e22e">manufacturers</span>() {
-      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">getters</span>.<span style="color:#a6e22e">allManufacturers</span>;
-    }
-  },
-  <span style="color:#a6e22e">methods</span><span style="color:#f92672">:</span> {
-    <span style="color:#a6e22e">removeManufacturer</span>(<span style="color:#a6e22e">manufacturerId</span>) {
-      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">res</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">confirm</span>(<span style="color:#e6db74">&#34;是否刪除此製造商？&#34;</span>);
-      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">res</span>) {
-        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#e6db74">&#34;removeManufacturer&#34;</span>, {
-          <span style="color:#a6e22e">manufacturerId</span>
-        });
-      }
-    }
-  }
-};
-&lt;/<span style="color:#f92672">script</span>&gt;
-</code></pre></div><p>可以看到這邊我們用了一些先前沒用過的方法<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">table</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;table&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">thead</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>          &lt;<span style="color:#f92672">th</span>&gt;<span style="color:#a6e22e">製造商</span>&lt;/<span style="color:#f92672">th</span>&gt;
+</span></span><span style="display:flex;"><span>          &lt;<span style="color:#f92672">th</span>&gt;&lt;/<span style="color:#f92672">th</span>&gt;
+</span></span><span style="display:flex;"><span>          &lt;<span style="color:#f92672">th</span>&gt;&lt;/<span style="color:#f92672">th</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">thead</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">tbody</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">tr</span> <span style="color:#f92672">v-for</span><span style="color:#e6db74">=&#34;manufacturer in manufacturers&#34; :key=&#34;manufacturer._id&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;td&gt;{{manufacturer.name}}&lt;/td&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;td class=&#34;modify&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &lt;router-link :to=&#34;&#39;/admin/manufacturers/edit/&#39; + manufacturer._id&#34;&gt;修改&lt;/router-link&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;/td&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;td class=&#34;remove&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &lt;a @click=&#34;removeManufacturer(manufacturer._id)&#34; href=&#34;#&#34;</span>&gt;<span style="color:#a6e22e">刪除</span>&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span><span style="display:flex;"><span>          &lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">tbody</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">table</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">style</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">table</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">margin</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span> <span style="color:#a6e22e">auto</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">modify</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">color</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">blue</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">remove</span> <span style="color:#a6e22e">a</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">color</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">red</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">style</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">created</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">manufacturers</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#e6db74">&#34;allManufacturers&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">computed</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">manufacturers</span>() {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">getters</span>.<span style="color:#a6e22e">allManufacturers</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">methods</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">removeManufacturer</span>(<span style="color:#a6e22e">manufacturerId</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">res</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">confirm</span>(<span style="color:#e6db74">&#34;是否刪除此製造商？&#34;</span>);
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">res</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#e6db74">&#34;removeManufacturer&#34;</span>, {
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">manufacturerId</span>
+</span></span><span style="display:flex;"><span>        });
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>可以看到這邊我們用了一些先前沒用過的方法<br>
 例如 computed 中的 <code>manufacturers</code>、生命週期 created() 時候會使用到的 <code>allManufacturers</code><br>
 還有製造商刪除用的 method 中 <code>removeManufacturer</code>，這些會在之後實作出來</p>
 <h1 id="重構-products-組件">重構 Products 組件</h1>
 <p>接著要動手重構的就是 <code>src/views/admin/Products.vue</code> 組件</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
-  &lt;<span style="color:#f92672">div</span>&gt;
-    &lt;<span style="color:#f92672">table</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;table&#34;</span>&gt;
-      &lt;<span style="color:#f92672">thead</span>&gt;
-        &lt;<span style="color:#f92672">tr</span>&gt;
-          &lt;<span style="color:#f92672">th</span>&gt;<span style="color:#a6e22e">名稱</span>&lt;/<span style="color:#f92672">th</span>&gt;
-          &lt;<span style="color:#f92672">th</span>&gt;<span style="color:#a6e22e">價錢</span>&lt;/<span style="color:#f92672">th</span>&gt;
-          &lt;<span style="color:#f92672">th</span>&gt;<span style="color:#a6e22e">製造商</span>&lt;/<span style="color:#f92672">th</span>&gt;
-          &lt;<span style="color:#f92672">th</span>&gt;&lt;/<span style="color:#f92672">th</span>&gt;
-          &lt;<span style="color:#f92672">th</span>&gt;&lt;/<span style="color:#f92672">th</span>&gt;
-        &lt;/<span style="color:#f92672">tr</span>&gt;
-      &lt;/<span style="color:#f92672">thead</span>&gt;
-      &lt;<span style="color:#f92672">tbody</span>&gt;
-        &lt;<span style="color:#f92672">tr</span> <span style="color:#f92672">v-for</span><span style="color:#e6db74">=&#34;product in products&#34; :key=&#34;product._id&#34;&gt;
-</span><span style="color:#e6db74">          &lt;td&gt;{{product.name}}&lt;/td&gt;
-</span><span style="color:#e6db74">          &lt;td&gt;{{product.price}}&lt;/td&gt;
-</span><span style="color:#e6db74">          &lt;td&gt;{{product.manufacturer.name}}&lt;/td&gt;
-</span><span style="color:#e6db74">          &lt;td class=&#34;modify&#34;&gt;
-</span><span style="color:#e6db74">            &lt;router-link :to=&#34;&#39;/admin/edit/&#39; + product._id&#34;&gt;修改&lt;/router-link&gt;
-</span><span style="color:#e6db74">          &lt;/td&gt;
-</span><span style="color:#e6db74">          &lt;td class=&#34;remove&#34;&gt;
-</span><span style="color:#e6db74">            &lt;a @click=&#34;removeProduct(product._id)&#34; href=&#34;#&#34;</span>&gt;<span style="color:#a6e22e">刪除</span>&lt;/<span style="color:#f92672">a</span>&gt;
-          &lt;/<span style="color:#f92672">td</span>&gt;
-        &lt;/<span style="color:#f92672">tr</span>&gt;
-      &lt;/<span style="color:#f92672">tbody</span>&gt;
-    &lt;/<span style="color:#f92672">table</span>&gt;
-  &lt;/<span style="color:#f92672">div</span>&gt;
-&lt;/<span style="color:#f92672">template</span>&gt;
-
-&lt;<span style="color:#f92672">style</span>&gt;
-<span style="color:#a6e22e">table</span> {
-  <span style="color:#a6e22e">margin</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span> <span style="color:#a6e22e">auto</span>;
-}
-
-.<span style="color:#a6e22e">modify</span> {
-  <span style="color:#a6e22e">color</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">blue</span>;
-}
-
-.<span style="color:#a6e22e">remove</span> <span style="color:#a6e22e">a</span> {
-  <span style="color:#a6e22e">color</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">red</span>;
-}
-&lt;/<span style="color:#f92672">style</span>&gt;
-
-&lt;<span style="color:#f92672">script</span>&gt;
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
-  <span style="color:#a6e22e">created</span>() {
-    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">products</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) {
-      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#e6db74">&#34;allProducts&#34;</span>);
-    }
-  },
-  <span style="color:#a6e22e">computed</span><span style="color:#f92672">:</span> {
-    <span style="color:#a6e22e">products</span>() {
-      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">getters</span>.<span style="color:#a6e22e">allProducts</span>;
-    }
-  },
-  <span style="color:#a6e22e">methods</span><span style="color:#f92672">:</span> {
-    <span style="color:#a6e22e">removeProduct</span>(<span style="color:#a6e22e">productId</span>) {
-      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">res</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">confirm</span>(<span style="color:#e6db74">&#34;是否刪除此商品？&#34;</span>);
-      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">res</span>) {
-        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#e6db74">&#34;removeProduct&#34;</span>, {
-          <span style="color:#a6e22e">productId</span>
-        });
-      }
-    }
-  }
-};
-&lt;/<span style="color:#f92672">script</span>&gt;
-</code></pre></div><p>基本上和使用者畫面中的商品頁差不多，就是將加入購物車換成了修改與刪除商品<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">table</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;table&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">thead</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>          &lt;<span style="color:#f92672">th</span>&gt;<span style="color:#a6e22e">名稱</span>&lt;/<span style="color:#f92672">th</span>&gt;
+</span></span><span style="display:flex;"><span>          &lt;<span style="color:#f92672">th</span>&gt;<span style="color:#a6e22e">價錢</span>&lt;/<span style="color:#f92672">th</span>&gt;
+</span></span><span style="display:flex;"><span>          &lt;<span style="color:#f92672">th</span>&gt;<span style="color:#a6e22e">製造商</span>&lt;/<span style="color:#f92672">th</span>&gt;
+</span></span><span style="display:flex;"><span>          &lt;<span style="color:#f92672">th</span>&gt;&lt;/<span style="color:#f92672">th</span>&gt;
+</span></span><span style="display:flex;"><span>          &lt;<span style="color:#f92672">th</span>&gt;&lt;/<span style="color:#f92672">th</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">thead</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">tbody</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">tr</span> <span style="color:#f92672">v-for</span><span style="color:#e6db74">=&#34;product in products&#34; :key=&#34;product._id&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;td&gt;{{product.name}}&lt;/td&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;td&gt;{{product.price}}&lt;/td&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;td&gt;{{product.manufacturer.name}}&lt;/td&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;td class=&#34;modify&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &lt;router-link :to=&#34;&#39;/admin/edit/&#39; + product._id&#34;&gt;修改&lt;/router-link&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;/td&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;td class=&#34;remove&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &lt;a @click=&#34;removeProduct(product._id)&#34; href=&#34;#&#34;</span>&gt;<span style="color:#a6e22e">刪除</span>&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span><span style="display:flex;"><span>          &lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">tbody</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">table</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">style</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">table</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">margin</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span> <span style="color:#a6e22e">auto</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">modify</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">color</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">blue</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">remove</span> <span style="color:#a6e22e">a</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">color</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">red</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">style</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">created</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">products</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#e6db74">&#34;allProducts&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">computed</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">products</span>() {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">getters</span>.<span style="color:#a6e22e">allProducts</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">methods</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">removeProduct</span>(<span style="color:#a6e22e">productId</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">res</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">confirm</span>(<span style="color:#e6db74">&#34;是否刪除此商品？&#34;</span>);
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">res</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#e6db74">&#34;removeProduct&#34;</span>, {
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">productId</span>
+</span></span><span style="display:flex;"><span>        });
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>基本上和使用者畫面中的商品頁差不多，就是將加入購物車換成了修改與刪除商品<br>
 也和剛剛操作過的 <code>Manufacturers</code> 組件相似，相關的東西講了許多次了，就交給你來思考</p>
 <h1 id="加入路由設定">加入路由設定</h1>
 <p>頁面跟組件都完成了，接著就要讓頁面可以被訪問<br>
 打開 vue-router 的設定 <code>src/router/index.js</code>，加入製造商相關的路由參數</p>
 <p>引入頁面檔案</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Manufacturers</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@/views/admin/Manufacturers&#39;</span>
-</code></pre></div><p>在 admin 路由的 <code>children</code> 屬性中加入頁面</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">{
-    <span style="color:#a6e22e">path</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;manufacturers&#39;</span>,
-    <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Manufacturers&#39;</span>,
-    <span style="color:#a6e22e">component</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Manufacturers</span>,
-},
-</code></pre></div><p>接著開啟專案，可以看到製造商連結已經生效，可以把我們帶到製造商頁面，但是資料還是沒有取得<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Manufacturers</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@/views/admin/Manufacturers&#39;</span>
+</span></span></code></pre></div><p>在 admin 路由的 <code>children</code> 屬性中加入頁面</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">path</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;manufacturers&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Manufacturers&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">component</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Manufacturers</span>,
+</span></span><span style="display:flex;"><span>},
+</span></span></code></pre></div><p>接著開啟專案，可以看到製造商連結已經生效，可以把我們帶到製造商頁面，但是資料還是沒有取得<br>
 記得嗎？之前說要從後端 API 取得資料的方法還沒寫，接下來就一邊重構一邊把這個功能完成吧！</p>
 <h1 id="分離-getter-邏輯">分離 Getter 邏輯</h1>
 <p>首先建立 <code>src/store/getters.js</code> 檔案，用來存放各種不同的 <code>getter</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">productGetters</span> <span style="color:#f92672">=</span> {
-    <span style="color:#a6e22e">allProducts</span>(<span style="color:#a6e22e">state</span>) {
-        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">products</span>
-    },
-    <span style="color:#a6e22e">productById</span><span style="color:#f92672">:</span> (<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">getters</span>) =&gt; <span style="color:#a6e22e">id</span> =&gt; {
-        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">getters</span>.<span style="color:#a6e22e">allProducts</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) {
-            <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">getters</span>.<span style="color:#a6e22e">allProducts</span>.<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">product</span> =&gt; <span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">_id</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">id</span>)[<span style="color:#ae81ff">0</span>]
-        } <span style="color:#66d9ef">else</span> {
-            <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">product</span>;
-        }
-    }
-}
-
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">manufacturerGetters</span> <span style="color:#f92672">=</span> {
-    <span style="color:#a6e22e">allManufacturers</span>(<span style="color:#a6e22e">state</span>) {
-        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">manufacturers</span>;
-    }
-}
-</code></pre></div><p>可以看到我們導出了 <code>productGetters</code> 和 <code>manufacturerGetters</code> 兩個方法<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">productGetters</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">allProducts</span>(<span style="color:#a6e22e">state</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">products</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">productById</span><span style="color:#f92672">:</span> (<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">getters</span>) =&gt; <span style="color:#a6e22e">id</span> =&gt; {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">getters</span>.<span style="color:#a6e22e">allProducts</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">getters</span>.<span style="color:#a6e22e">allProducts</span>.<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">product</span> =&gt; <span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">_id</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">id</span>)[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">product</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">manufacturerGetters</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">allManufacturers</span>(<span style="color:#a6e22e">state</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">manufacturers</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>可以看到我們導出了 <code>productGetters</code> 和 <code>manufacturerGetters</code> 兩個方法<br>
 前者包含商品的 getters，後者則是負責製造商的 getter，如此就補上了前面幾段缺少的 manufacturer getters</p>
 <h2 id="分離-mutations-邏輯">分離 Mutations 邏輯</h2>
 <p>就像剛剛分離 Getter 邏輯，接著新建 <code>src/store/mutations.js</code> 檔案作為 store 中 <code>mutation</code> 的程式管理</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">productMutations</span> <span style="color:#f92672">=</span> {
-    <span style="color:#a6e22e">ALL_PRODUCTS</span>(<span style="color:#a6e22e">state</span>) {
-        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
-    },
-    <span style="color:#a6e22e">ALL_PRODUCTS_SUCCESS</span>(<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
-        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">products</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
-
-        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
-        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">products</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">products</span>;
-    },
-    <span style="color:#a6e22e">PRODUCT_BY_ID</span>(<span style="color:#a6e22e">state</span>) {
-        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
-    },
-    <span style="color:#a6e22e">PRODUCT_BY_ID_SUCCESS</span>(<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
-        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
-
-        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">product</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
-        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">product</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">product</span>;
-    },
-    <span style="color:#a6e22e">REMOVE_PRODUCT</span>(<span style="color:#a6e22e">state</span>) {
-        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
-    },
-    <span style="color:#a6e22e">REMOVE_PRODUCT_SUCCESS</span>(<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
-        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
-
-        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">productId</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
-        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">products</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">products</span>.<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">product</span> =&gt; <span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">_id</span> <span style="color:#f92672">!==</span> <span style="color:#a6e22e">productId</span>);
-    }
-};
-
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">cartMutations</span> <span style="color:#f92672">=</span> {
-    <span style="color:#a6e22e">ADD_TO_CART</span>(<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
-        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">product</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
-        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">cart</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">product</span>)
-    },
-    <span style="color:#a6e22e">REMOVE_FROM_CART</span>(<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
-        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">productId</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>
-        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">cart</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">cart</span>.<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">product</span> =&gt; <span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">_id</span> <span style="color:#f92672">!==</span> <span style="color:#a6e22e">productId</span>)
-    },
-}
-
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">manufacturerMutations</span> <span style="color:#f92672">=</span> {
-    <span style="color:#a6e22e">ALL_MANUFACTURERS</span>(<span style="color:#a6e22e">state</span>) {
-        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
-    },
-    <span style="color:#a6e22e">ALL_MANUFACTURERS_SUCCESS</span>(<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
-        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">manufacturers</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
-
-        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
-        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">manufacturers</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">manufacturers</span>;
-    },
-    <span style="color:#a6e22e">REMOVE_MANUFACTURER</span>(<span style="color:#a6e22e">state</span>) {
-        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
-    },
-    <span style="color:#a6e22e">REMOVE_MANUFACTURER_SUCCESS</span>(<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
-        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
-
-        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">manufacturerId</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
-        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">manufacturers</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">manufacturers</span>.<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">manufacturer</span> =&gt; <span style="color:#a6e22e">manufacturer</span>.<span style="color:#a6e22e">_id</span> <span style="color:#f92672">!==</span> <span style="color:#a6e22e">manufacturerId</span>);
-    }
-}
-</code></pre></div><p>分別導出了</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">productMutations</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ALL_PRODUCTS</span>(<span style="color:#a6e22e">state</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ALL_PRODUCTS_SUCCESS</span>(<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">products</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">products</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">products</span>;
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">PRODUCT_BY_ID</span>(<span style="color:#a6e22e">state</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">PRODUCT_BY_ID_SUCCESS</span>(<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">product</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">product</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">product</span>;
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">REMOVE_PRODUCT</span>(<span style="color:#a6e22e">state</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">REMOVE_PRODUCT_SUCCESS</span>(<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">productId</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">products</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">products</span>.<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">product</span> =&gt; <span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">_id</span> <span style="color:#f92672">!==</span> <span style="color:#a6e22e">productId</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">cartMutations</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ADD_TO_CART</span>(<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">product</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">cart</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">product</span>)
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">REMOVE_FROM_CART</span>(<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">productId</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">cart</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">cart</span>.<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">product</span> =&gt; <span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">_id</span> <span style="color:#f92672">!==</span> <span style="color:#a6e22e">productId</span>)
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">manufacturerMutations</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ALL_MANUFACTURERS</span>(<span style="color:#a6e22e">state</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ALL_MANUFACTURERS_SUCCESS</span>(<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">manufacturers</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">manufacturers</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">manufacturers</span>;
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">REMOVE_MANUFACTURER</span>(<span style="color:#a6e22e">state</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">REMOVE_MANUFACTURER_SUCCESS</span>(<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">manufacturerId</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">manufacturers</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">manufacturers</span>.<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">manufacturer</span> =&gt; <span style="color:#a6e22e">manufacturer</span>.<span style="color:#a6e22e">_id</span> <span style="color:#f92672">!==</span> <span style="color:#a6e22e">manufacturerId</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>分別導出了</p>
 <ul>
 <li><code>productMutations</code></li>
 <li><code>cartMutations</code></li>
@@ -623,99 +623,99 @@
 <li>引入新建的 getters 和 mutations</li>
 </ol>
 <p>下面就是新的 <code>src/store/index.js</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Vue</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue&#39;</span>;
-<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Vuex</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vuex&#39;</span>;
-<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">axios</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;axios&#39;</span>;
-
-<span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">productGetters</span>, <span style="color:#a6e22e">manufacturerGetters</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./getters&#39;</span>;
-<span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">productMutations</span>, <span style="color:#a6e22e">cartMutations</span>, <span style="color:#a6e22e">manufacturerMutations</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./mutations&#39;</span>;
-
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">API_BASE</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;http://localhost:3000/api/v1&#39;</span>;
-
-<span style="color:#a6e22e">Vue</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">Vuex</span>);
-
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Vuex</span>.<span style="color:#a6e22e">Store</span>({
-  <span style="color:#a6e22e">strict</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
-  <span style="color:#a6e22e">state</span><span style="color:#f92672">:</span> {
-    <span style="color:#75715e">// bought items
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">cart</span><span style="color:#f92672">:</span> [],
-    <span style="color:#75715e">// ajax loader
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">showLoader</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
-    <span style="color:#75715e">// selected product
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">product</span><span style="color:#f92672">:</span> {},
-    <span style="color:#75715e">// all products
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">products</span><span style="color:#f92672">:</span> [],
-    <span style="color:#75715e">// all manufacturers
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">manufacturers</span><span style="color:#f92672">:</span> [],
-  },
-  <span style="color:#a6e22e">mutations</span><span style="color:#f92672">:</span> {
-    ...<span style="color:#a6e22e">productMutations</span>,
-    ...<span style="color:#a6e22e">cartMutations</span>,
-    ...<span style="color:#a6e22e">manufacturerMutations</span>,
-  },
-  <span style="color:#a6e22e">getters</span><span style="color:#f92672">:</span> {
-    ...<span style="color:#a6e22e">productGetters</span>,
-    ...<span style="color:#a6e22e">manufacturerGetters</span>,
-  },
-  <span style="color:#a6e22e">actions</span><span style="color:#f92672">:</span> {
-    <span style="color:#a6e22e">allProducts</span>({ <span style="color:#a6e22e">commit</span> }) {
-      <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;ALL_PRODUCTS&#39;</span>)
-
-      <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/products`</span>).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">response</span> =&gt; {
-        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;response&#39;</span>, <span style="color:#a6e22e">response</span>);
-        <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;ALL_PRODUCTS_SUCCESS&#39;</span>, {
-          <span style="color:#a6e22e">products</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>,
-        });
-      })
-    },
-    <span style="color:#a6e22e">productById</span>({ <span style="color:#a6e22e">commit</span> }, <span style="color:#a6e22e">payload</span>) {
-      <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;PRODUCT_BY_ID&#39;</span>);
-
-      <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">productId</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
-      <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/products/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">productId</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">response</span> =&gt; {
-        <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;PRODUCT_BY_ID_SUCCESS&#39;</span>, {
-          <span style="color:#a6e22e">product</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>,
-        });
-      })
-    },
-    <span style="color:#a6e22e">removeProduct</span>({ <span style="color:#a6e22e">commit</span> }, <span style="color:#a6e22e">payload</span>) {
-      <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;REMOVE_PRODUCT&#39;</span>);
-
-      <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">productId</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
-      <span style="color:#a6e22e">axios</span>.<span style="color:#66d9ef">delete</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/products/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">productId</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>).<span style="color:#a6e22e">then</span>(() =&gt; {
-        <span style="color:#75715e">// 傳入 manufacturerId，用來刪除指定商品
-</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;REMOVE_PRODUCT_SUCCESS&#39;</span>, {
-          <span style="color:#a6e22e">productId</span>,
-        });
-      })
-    },
-    <span style="color:#a6e22e">allManufacturers</span>({ <span style="color:#a6e22e">commit</span> }) {
-      <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;ALL_MANUFACTURERS&#39;</span>);
-
-      <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/manufacturers`</span>).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">response</span> =&gt; {
-        <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;ALL_MANUFACTURERS_SUCCESS&#39;</span>, {
-          <span style="color:#a6e22e">manufacturers</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>,
-        });
-      })
-    },
-    <span style="color:#a6e22e">removeManufacturer</span>({ <span style="color:#a6e22e">commit</span> }, <span style="color:#a6e22e">payload</span>) {
-      <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;REMOVE_MANUFACTURER&#39;</span>);
-
-      <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">manufacturerId</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
-      <span style="color:#a6e22e">axios</span>.<span style="color:#66d9ef">delete</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/manufacturers/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">manufacturerId</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>).<span style="color:#a6e22e">then</span>(() =&gt; {
-        <span style="color:#75715e">// 傳入 manufacturerId，用來刪除指定製造商
-</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;REMOVE_MANUFACTURER_SUCCESS&#39;</span>, {
-          <span style="color:#a6e22e">manufacturerId</span>,
-        });
-      })
-    },
-  }
-});
-</code></pre></div><p>移除原有 getters 和 mutations 不難理解，而引入新建的 getters 和 mutations 就值得說明了！</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Vue</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Vuex</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vuex&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">axios</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;axios&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">productGetters</span>, <span style="color:#a6e22e">manufacturerGetters</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./getters&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">productMutations</span>, <span style="color:#a6e22e">cartMutations</span>, <span style="color:#a6e22e">manufacturerMutations</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./mutations&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">API_BASE</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;http://localhost:3000/api/v1&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Vue</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">Vuex</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Vuex</span>.<span style="color:#a6e22e">Store</span>({
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">strict</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">state</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// bought items
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">cart</span><span style="color:#f92672">:</span> [],
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// ajax loader
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">showLoader</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// selected product
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">product</span><span style="color:#f92672">:</span> {},
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// all products
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">products</span><span style="color:#f92672">:</span> [],
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// all manufacturers
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">manufacturers</span><span style="color:#f92672">:</span> [],
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">mutations</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    ...<span style="color:#a6e22e">productMutations</span>,
+</span></span><span style="display:flex;"><span>    ...<span style="color:#a6e22e">cartMutations</span>,
+</span></span><span style="display:flex;"><span>    ...<span style="color:#a6e22e">manufacturerMutations</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">getters</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    ...<span style="color:#a6e22e">productGetters</span>,
+</span></span><span style="display:flex;"><span>    ...<span style="color:#a6e22e">manufacturerGetters</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">actions</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">allProducts</span>({ <span style="color:#a6e22e">commit</span> }) {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;ALL_PRODUCTS&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/products`</span>).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">response</span> =&gt; {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;response&#39;</span>, <span style="color:#a6e22e">response</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;ALL_PRODUCTS_SUCCESS&#39;</span>, {
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">products</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>,
+</span></span><span style="display:flex;"><span>        });
+</span></span><span style="display:flex;"><span>      })
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">productById</span>({ <span style="color:#a6e22e">commit</span> }, <span style="color:#a6e22e">payload</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;PRODUCT_BY_ID&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">productId</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/products/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">productId</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">response</span> =&gt; {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;PRODUCT_BY_ID_SUCCESS&#39;</span>, {
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">product</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>,
+</span></span><span style="display:flex;"><span>        });
+</span></span><span style="display:flex;"><span>      })
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">removeProduct</span>({ <span style="color:#a6e22e">commit</span> }, <span style="color:#a6e22e">payload</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;REMOVE_PRODUCT&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">productId</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">axios</span>.<span style="color:#66d9ef">delete</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/products/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">productId</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>).<span style="color:#a6e22e">then</span>(() =&gt; {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 傳入 manufacturerId，用來刪除指定商品
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;REMOVE_PRODUCT_SUCCESS&#39;</span>, {
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">productId</span>,
+</span></span><span style="display:flex;"><span>        });
+</span></span><span style="display:flex;"><span>      })
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">allManufacturers</span>({ <span style="color:#a6e22e">commit</span> }) {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;ALL_MANUFACTURERS&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/manufacturers`</span>).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">response</span> =&gt; {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;ALL_MANUFACTURERS_SUCCESS&#39;</span>, {
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">manufacturers</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>,
+</span></span><span style="display:flex;"><span>        });
+</span></span><span style="display:flex;"><span>      })
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">removeManufacturer</span>({ <span style="color:#a6e22e">commit</span> }, <span style="color:#a6e22e">payload</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;REMOVE_MANUFACTURER&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">manufacturerId</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">axios</span>.<span style="color:#66d9ef">delete</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/manufacturers/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">manufacturerId</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>).<span style="color:#a6e22e">then</span>(() =&gt; {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 傳入 manufacturerId，用來刪除指定製造商
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;REMOVE_MANUFACTURER_SUCCESS&#39;</span>, {
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">manufacturerId</span>,
+</span></span><span style="display:flex;"><span>        });
+</span></span><span style="display:flex;"><span>      })
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><p>移除原有 getters 和 mutations 不難理解，而引入新建的 getters 和 mutations 就值得說明了！</p>
 <p>首先藉由</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">productGetters</span>, <span style="color:#a6e22e">manufacturerGetters</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./getters&#39;</span>;
-<span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">productMutations</span>, <span style="color:#a6e22e">cartMutations</span>, <span style="color:#a6e22e">manufacturerMutations</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./mutations&#39;</span>;
-</code></pre></div><p>引入剛剛分離出去的檔案<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">productGetters</span>, <span style="color:#a6e22e">manufacturerGetters</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./getters&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">productMutations</span>, <span style="color:#a6e22e">cartMutations</span>, <span style="color:#a6e22e">manufacturerMutations</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./mutations&#39;</span>;
+</span></span></code></pre></div><p>引入剛剛分離出去的檔案<br>
 接著使用 ES6 中的：<a href="https://www.geeksforgeeks.org/javascript-spread-operator/"
    
     target="_blank" rel="noreferrer noopener">擴展運算符（spread operator）
@@ -727,59 +727,59 @@
 <p>上面抽出了 Getters、Mutations 終於輪到 Actions 了</p>
 <h2 id="重構-edit-頁面">重構 Edit 頁面</h2>
 <p>打開 <code>src/views/admin/Edit.vue</code> 替換成</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
-  &lt;<span style="color:#f92672">div</span>&gt;
-    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;title&#34;</span>&gt;
-      &lt;<span style="color:#f92672">h1</span>&gt;<span style="color:#a6e22e">This</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">Admin</span><span style="color:#f92672">/</span><span style="color:#a6e22e">Edit</span>&lt;/<span style="color:#f92672">h1</span>&gt;
-    &lt;/<span style="color:#f92672">div</span>&gt;
-    &lt;<span style="color:#f92672">product-form</span>
-      <span style="color:#f92672">@save-product</span><span style="color:#e6db74">=&#34;updateProduct&#34;</span>
-      <span style="color:#f92672">:model</span><span style="color:#e6db74">=&#34;model&#34;</span>
-      <span style="color:#f92672">:manufacturers</span><span style="color:#e6db74">=&#34;manufacturers&#34;</span>
-      <span style="color:#f92672">:isEditing</span><span style="color:#e6db74">=&#34;true&#34;</span>
-    &gt;<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/product-form&gt;</span>
-  &lt;/<span style="color:#f92672">div</span>&gt;
-&lt;/<span style="color:#f92672">template</span>&gt;
-
-&lt;<span style="color:#f92672">script</span>&gt;
-<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ProductForm</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@/components/products/ProductForm.vue&#34;</span>;
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
-  <span style="color:#a6e22e">created</span>() {
-    <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">name</span> } <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">model</span>;
-    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">name</span>) {
-      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#e6db74">&#34;productById&#34;</span>, {
-        <span style="color:#a6e22e">productId</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$route</span>.<span style="color:#a6e22e">params</span>[<span style="color:#e6db74">&#34;id&#34;</span>]
-      });
-    }
-
-    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">manufacturers</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) {
-      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#e6db74">&#34;allManufacturers&#34;</span>);
-    }
-  },
-  <span style="color:#a6e22e">computed</span><span style="color:#f92672">:</span> {
-    <span style="color:#a6e22e">manufacturers</span>() {
-      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">getters</span>.<span style="color:#a6e22e">allManufacturers</span>;
-    },
-    <span style="color:#a6e22e">model</span>() {
-      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">product</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">getters</span>.<span style="color:#a6e22e">productById</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$route</span>.<span style="color:#a6e22e">params</span>[<span style="color:#e6db74">&#34;id&#34;</span>]);
-
-      <span style="color:#75715e">// 回傳 product 的備份，是為了在修改 product 的備份之後，在保存之前不修改本地 Vuex store 的 product 屬性
-</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">return</span> { ...<span style="color:#a6e22e">product</span>, <span style="color:#a6e22e">manufacturer</span><span style="color:#f92672">:</span> { ...<span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">manufacturer</span> } };
-    }
-  },
-  <span style="color:#a6e22e">methods</span><span style="color:#f92672">:</span> {
-    <span style="color:#a6e22e">updateProduct</span>(<span style="color:#a6e22e">product</span>) {
-      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#e6db74">&#34;updateProduct&#34;</span>, {
-        <span style="color:#a6e22e">product</span>
-      });
-    }
-  },
-  <span style="color:#a6e22e">components</span><span style="color:#f92672">:</span> {
-    <span style="color:#e6db74">&#34;product-form&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ProductForm</span>
-  }
-};
-&lt;/<span style="color:#f92672">script</span>&gt;
-</code></pre></div><p>可以看到我們有兩個 <code>computed</code>：<code>manufacturers</code> 和 <code>model</code>，分別回傳製造商和當前商品<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;title&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">h1</span>&gt;<span style="color:#a6e22e">This</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">Admin</span><span style="color:#f92672">/</span><span style="color:#a6e22e">Edit</span>&lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">product-form</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">@save-product</span><span style="color:#e6db74">=&#34;updateProduct&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">:model</span><span style="color:#e6db74">=&#34;model&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">:manufacturers</span><span style="color:#e6db74">=&#34;manufacturers&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">:isEditing</span><span style="color:#e6db74">=&#34;true&#34;</span>
+</span></span><span style="display:flex;"><span>    &gt;<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/product-form&gt;</span>
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ProductForm</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@/components/products/ProductForm.vue&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">created</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">name</span> } <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">model</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">name</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#e6db74">&#34;productById&#34;</span>, {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">productId</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$route</span>.<span style="color:#a6e22e">params</span>[<span style="color:#e6db74">&#34;id&#34;</span>]
+</span></span><span style="display:flex;"><span>      });
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">manufacturers</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#e6db74">&#34;allManufacturers&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">computed</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">manufacturers</span>() {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">getters</span>.<span style="color:#a6e22e">allManufacturers</span>;
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">model</span>() {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">product</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">getters</span>.<span style="color:#a6e22e">productById</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$route</span>.<span style="color:#a6e22e">params</span>[<span style="color:#e6db74">&#34;id&#34;</span>]);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// 回傳 product 的備份，是為了在修改 product 的備份之後，在保存之前不修改本地 Vuex store 的 product 屬性
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#66d9ef">return</span> { ...<span style="color:#a6e22e">product</span>, <span style="color:#a6e22e">manufacturer</span><span style="color:#f92672">:</span> { ...<span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">manufacturer</span> } };
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">methods</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">updateProduct</span>(<span style="color:#a6e22e">product</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#e6db74">&#34;updateProduct&#34;</span>, {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">product</span>
+</span></span><span style="display:flex;"><span>      });
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">components</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;product-form&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ProductForm</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>可以看到我們有兩個 <code>computed</code>：<code>manufacturers</code> 和 <code>model</code>，分別回傳製造商和當前商品<br>
 之所以要回傳當前的 <code>product</code> 是為了在編輯了 <code>product</code> 的副本之後<br>
 在存入資料庫之前先不變更使用者端 Vuex store 中的 <code>product</code> 屬性</p>
 <p>當組件被建立時，判斷 <code>model</code> 是否有值，如果沒有代表本機狀態庫中沒有資料<br>
@@ -790,192 +790,192 @@
 <p><code>src/views/admin/New.vue</code> 負責建立新的商品，邏輯與 Edit 類似<br>
 只是一個負責新增商品，一個修改</p>
 <p>在這邊我們將組件中原本寫死的資料改為從後端動態取得，並將資料傳入給子組件 <code>ProductForm</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
-  &lt;<span style="color:#f92672">product-form</span> <span style="color:#f92672">@save-product</span><span style="color:#e6db74">=&#34;addProduct&#34;</span> <span style="color:#f92672">:model</span><span style="color:#e6db74">=&#34;model&#34;</span> <span style="color:#f92672">:manufacturers</span><span style="color:#e6db74">=&#34;manufacturers&#34;</span>&gt;<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/product-form&gt;</span>
-&lt;/<span style="color:#f92672">template</span>&gt;
-
-&lt;<span style="color:#f92672">script</span>&gt;
-<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ProductForm</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@/components/products/ProductForm.vue&#34;</span>;
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
-  <span style="color:#a6e22e">created</span>() {
-    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">manufacturers</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) {
-      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#e6db74">&#34;allManufacturers&#34;</span>);
-    }
-  },
-  <span style="color:#a6e22e">computed</span><span style="color:#f92672">:</span> {
-    <span style="color:#a6e22e">manufacturers</span>() {
-      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">getters</span>.<span style="color:#a6e22e">allManufacturers</span>;
-    },
-    <span style="color:#a6e22e">model</span>() {
-      <span style="color:#66d9ef">return</span> {};
-    }
-  },
-  <span style="color:#a6e22e">methods</span><span style="color:#f92672">:</span> {
-    <span style="color:#a6e22e">addProduct</span>(<span style="color:#a6e22e">model</span>) {
-      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#e6db74">&#34;addProduct&#34;</span>, {
-        <span style="color:#a6e22e">product</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">model</span>
-      });
-    }
-  },
-  <span style="color:#a6e22e">components</span><span style="color:#f92672">:</span> {
-    <span style="color:#e6db74">&#34;product-form&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ProductForm</span>
-  }
-};
-&lt;/<span style="color:#f92672">script</span>&gt;
-</code></pre></div><p>跟 Edit 組件類似，只是這邊的 <code>model</code> 屬性回傳的是空物件，畢竟當前是不存在商品的</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">product-form</span> <span style="color:#f92672">@save-product</span><span style="color:#e6db74">=&#34;addProduct&#34;</span> <span style="color:#f92672">:model</span><span style="color:#e6db74">=&#34;model&#34;</span> <span style="color:#f92672">:manufacturers</span><span style="color:#e6db74">=&#34;manufacturers&#34;</span>&gt;<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/product-form&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ProductForm</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@/components/products/ProductForm.vue&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">created</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">manufacturers</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#e6db74">&#34;allManufacturers&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">computed</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">manufacturers</span>() {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">getters</span>.<span style="color:#a6e22e">allManufacturers</span>;
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">model</span>() {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> {};
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">methods</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">addProduct</span>(<span style="color:#a6e22e">model</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#e6db74">&#34;addProduct&#34;</span>, {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">product</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">model</span>
+</span></span><span style="display:flex;"><span>      });
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">components</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;product-form&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ProductForm</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>跟 Edit 組件類似，只是這邊的 <code>model</code> 屬性回傳的是空物件，畢竟當前是不存在商品的</p>
 <h2 id="拆分-actions-邏輯">拆分 Actions 邏輯</h2>
 <p>就像之前一樣建立 <code>src/store/actions.js</code> 檔案，用來管理 store 物件中 <code>actions</code> 屬性的內部屬性<br>
 就跟上面處理 Getters 和 Manufacturers 時類似做法</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">axios</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;axios&#39;</span>;
-
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">API_BASE</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;http://localhost:3000/api/v1&#39;</span>;
-
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">productActions</span> <span style="color:#f92672">=</span> {
-    <span style="color:#a6e22e">allProducts</span>({ <span style="color:#a6e22e">commit</span> }) {
-        <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;ALL_PRODUCTS&#39;</span>)
-
-        <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/products`</span>).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">response</span> =&gt; {
-            <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;ALL_PRODUCTS_SUCCESS&#39;</span>, {
-                <span style="color:#a6e22e">products</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>,
-            });
-        })
-    },
-    <span style="color:#a6e22e">productById</span>({ <span style="color:#a6e22e">commit</span> }, <span style="color:#a6e22e">payload</span>) {
-        <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;PRODUCT_BY_ID&#39;</span>);
-
-        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">productId</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
-        <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/products/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">productId</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">response</span> =&gt; {
-            <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;PRODUCT_BY_ID_SUCCESS&#39;</span>, {
-                <span style="color:#a6e22e">product</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>,
-            });
-        })
-    },
-    <span style="color:#a6e22e">removeProduct</span>({ <span style="color:#a6e22e">commit</span> }, <span style="color:#a6e22e">payload</span>) {
-        <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;REMOVE_PRODUCT&#39;</span>);
-
-        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">productId</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
-        <span style="color:#a6e22e">axios</span>.<span style="color:#66d9ef">delete</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/products/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">productId</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>).<span style="color:#a6e22e">then</span>(() =&gt; {
-            <span style="color:#75715e">// 回傳 productId，用來刪除對應商品
-</span><span style="color:#75715e"></span>            <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;REMOVE_PRODUCT_SUCCESS&#39;</span>, {
-                <span style="color:#a6e22e">productId</span>,
-            });
-        })
-    },
-    <span style="color:#a6e22e">updateProduct</span>({ <span style="color:#a6e22e">commit</span> }, <span style="color:#a6e22e">payload</span>) {
-        <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;UPDATE_PRODUCT&#39;</span>);
-
-        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">product</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
-        <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">put</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/products/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">_id</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>, <span style="color:#a6e22e">product</span>).<span style="color:#a6e22e">then</span>(() =&gt; {
-            <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;UPDATE_PRODUCT_SUCCESS&#39;</span>, {
-                <span style="color:#a6e22e">product</span>,
-            });
-        })
-    },
-    <span style="color:#a6e22e">addProduct</span>({ <span style="color:#a6e22e">commit</span> }, <span style="color:#a6e22e">payload</span>) {
-        <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;ADD_PRODUCT&#39;</span>);
-
-        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">product</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
-        <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">post</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/products`</span>, <span style="color:#a6e22e">product</span>).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">response</span> =&gt; {
-            <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;ADD_PRODUCT_SUCCESS&#39;</span>, {
-                <span style="color:#a6e22e">product</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>,
-            })
-        })
-    }
-};
-
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">manufacturerActions</span> <span style="color:#f92672">=</span> {
-    <span style="color:#a6e22e">allManufacturers</span>({ <span style="color:#a6e22e">commit</span> }) {
-        <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;ALL_MANUFACTURERS&#39;</span>);
-
-        <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/manufacturers`</span>).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">response</span> =&gt; {
-            <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;ALL_MANUFACTURERS_SUCCESS&#39;</span>, {
-                <span style="color:#a6e22e">manufacturers</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>,
-            });
-        })
-    },
-    <span style="color:#a6e22e">removeManufacturer</span>({ <span style="color:#a6e22e">commit</span> }, <span style="color:#a6e22e">payload</span>) {
-        <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;REMOVE_MANUFACTURER&#39;</span>);
-
-        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">manufacturerId</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
-        <span style="color:#a6e22e">axios</span>.<span style="color:#66d9ef">delete</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/manufacturers/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">manufacturerId</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>).<span style="color:#a6e22e">then</span>(() =&gt; {
-            <span style="color:#75715e">// 回傳 manufacturerId，用來刪除對應的製造商
-</span><span style="color:#75715e"></span>            <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;REMOVE_MANUFACTURER_SUCCESS&#39;</span>, {
-                <span style="color:#a6e22e">manufacturerId</span>,
-            });
-        })
-    },
-}
-</code></pre></div><p>可以發現我們把 API 的設定與使用都搬到這邊了，所以可以猜到下一步我們要做的就是「重構 Store」</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">axios</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;axios&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">API_BASE</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;http://localhost:3000/api/v1&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">productActions</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">allProducts</span>({ <span style="color:#a6e22e">commit</span> }) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;ALL_PRODUCTS&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/products`</span>).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">response</span> =&gt; {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;ALL_PRODUCTS_SUCCESS&#39;</span>, {
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">products</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>,
+</span></span><span style="display:flex;"><span>            });
+</span></span><span style="display:flex;"><span>        })
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">productById</span>({ <span style="color:#a6e22e">commit</span> }, <span style="color:#a6e22e">payload</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;PRODUCT_BY_ID&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">productId</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/products/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">productId</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">response</span> =&gt; {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;PRODUCT_BY_ID_SUCCESS&#39;</span>, {
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">product</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>,
+</span></span><span style="display:flex;"><span>            });
+</span></span><span style="display:flex;"><span>        })
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">removeProduct</span>({ <span style="color:#a6e22e">commit</span> }, <span style="color:#a6e22e">payload</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;REMOVE_PRODUCT&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">productId</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">axios</span>.<span style="color:#66d9ef">delete</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/products/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">productId</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>).<span style="color:#a6e22e">then</span>(() =&gt; {
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// 回傳 productId，用來刪除對應商品
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;REMOVE_PRODUCT_SUCCESS&#39;</span>, {
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">productId</span>,
+</span></span><span style="display:flex;"><span>            });
+</span></span><span style="display:flex;"><span>        })
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">updateProduct</span>({ <span style="color:#a6e22e">commit</span> }, <span style="color:#a6e22e">payload</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;UPDATE_PRODUCT&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">product</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">put</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/products/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">_id</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>, <span style="color:#a6e22e">product</span>).<span style="color:#a6e22e">then</span>(() =&gt; {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;UPDATE_PRODUCT_SUCCESS&#39;</span>, {
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">product</span>,
+</span></span><span style="display:flex;"><span>            });
+</span></span><span style="display:flex;"><span>        })
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">addProduct</span>({ <span style="color:#a6e22e">commit</span> }, <span style="color:#a6e22e">payload</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;ADD_PRODUCT&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">product</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">post</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/products`</span>, <span style="color:#a6e22e">product</span>).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">response</span> =&gt; {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;ADD_PRODUCT_SUCCESS&#39;</span>, {
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">product</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>,
+</span></span><span style="display:flex;"><span>            })
+</span></span><span style="display:flex;"><span>        })
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">manufacturerActions</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">allManufacturers</span>({ <span style="color:#a6e22e">commit</span> }) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;ALL_MANUFACTURERS&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/manufacturers`</span>).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">response</span> =&gt; {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;ALL_MANUFACTURERS_SUCCESS&#39;</span>, {
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">manufacturers</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>,
+</span></span><span style="display:flex;"><span>            });
+</span></span><span style="display:flex;"><span>        })
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">removeManufacturer</span>({ <span style="color:#a6e22e">commit</span> }, <span style="color:#a6e22e">payload</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;REMOVE_MANUFACTURER&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">manufacturerId</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">axios</span>.<span style="color:#66d9ef">delete</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/manufacturers/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">manufacturerId</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>).<span style="color:#a6e22e">then</span>(() =&gt; {
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// 回傳 manufacturerId，用來刪除對應的製造商
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;REMOVE_MANUFACTURER_SUCCESS&#39;</span>, {
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">manufacturerId</span>,
+</span></span><span style="display:flex;"><span>            });
+</span></span><span style="display:flex;"><span>        })
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>可以發現我們把 API 的設定與使用都搬到這邊了，所以可以猜到下一步我們要做的就是「重構 Store」</p>
 <h1 id="重構-store">重構 Store</h1>
 <p>再次回到 <code>src/store/index.js</code> 檔案中，導入 <code>Actions</code> 邏輯相關的設定<br>
 並且移除 API 相關的設定，包含引入 axios 和 API 網址的參數設定</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Vue</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue&#39;</span>;
-<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Vuex</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vuex&#39;</span>;
-
-<span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">productGetters</span>, <span style="color:#a6e22e">manufacturerGetters</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./getters&#39;</span>;
-<span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">productMutations</span>, <span style="color:#a6e22e">cartMutations</span>, <span style="color:#a6e22e">manufacturerMutations</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./mutations&#39;</span>;
-<span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">productActions</span>, <span style="color:#a6e22e">manufacturerActions</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./actions&#39;</span>;
-
-<span style="color:#a6e22e">Vue</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">Vuex</span>);
-
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Vuex</span>.<span style="color:#a6e22e">Store</span>({
-  <span style="color:#a6e22e">strict</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
-  <span style="color:#a6e22e">state</span><span style="color:#f92672">:</span> {
-    <span style="color:#75715e">// bought items
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">cart</span><span style="color:#f92672">:</span> [],
-    <span style="color:#75715e">// ajax loader
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">showLoader</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
-    <span style="color:#75715e">// selected product
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">product</span><span style="color:#f92672">:</span> {},
-    <span style="color:#75715e">// all products
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">products</span><span style="color:#f92672">:</span> [],
-    <span style="color:#75715e">// all manufacturers
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">manufacturers</span><span style="color:#f92672">:</span> [],
-  },
-  <span style="color:#a6e22e">mutations</span><span style="color:#f92672">:</span> {
-    ...<span style="color:#a6e22e">productMutations</span>,
-    ...<span style="color:#a6e22e">cartMutations</span>,
-    ...<span style="color:#a6e22e">manufacturerMutations</span>,
-  },
-  <span style="color:#a6e22e">getters</span><span style="color:#f92672">:</span> {
-    ...<span style="color:#a6e22e">productGetters</span>,
-    ...<span style="color:#a6e22e">manufacturerGetters</span>,
-  },
-  <span style="color:#a6e22e">actions</span><span style="color:#f92672">:</span> {
-    ...<span style="color:#a6e22e">productActions</span>,
-    ...<span style="color:#a6e22e">manufacturerActions</span>,
-  }
-});
-</code></pre></div><p>於是我們就完成了 Actions 邏輯的抽換，來賓請掌聲鼓勵！</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Vue</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Vuex</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vuex&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">productGetters</span>, <span style="color:#a6e22e">manufacturerGetters</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./getters&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">productMutations</span>, <span style="color:#a6e22e">cartMutations</span>, <span style="color:#a6e22e">manufacturerMutations</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./mutations&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">productActions</span>, <span style="color:#a6e22e">manufacturerActions</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./actions&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Vue</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">Vuex</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Vuex</span>.<span style="color:#a6e22e">Store</span>({
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">strict</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">state</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// bought items
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">cart</span><span style="color:#f92672">:</span> [],
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// ajax loader
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">showLoader</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// selected product
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">product</span><span style="color:#f92672">:</span> {},
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// all products
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">products</span><span style="color:#f92672">:</span> [],
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// all manufacturers
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">manufacturers</span><span style="color:#f92672">:</span> [],
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">mutations</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    ...<span style="color:#a6e22e">productMutations</span>,
+</span></span><span style="display:flex;"><span>    ...<span style="color:#a6e22e">cartMutations</span>,
+</span></span><span style="display:flex;"><span>    ...<span style="color:#a6e22e">manufacturerMutations</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">getters</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    ...<span style="color:#a6e22e">productGetters</span>,
+</span></span><span style="display:flex;"><span>    ...<span style="color:#a6e22e">manufacturerGetters</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">actions</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    ...<span style="color:#a6e22e">productActions</span>,
+</span></span><span style="display:flex;"><span>    ...<span style="color:#a6e22e">manufacturerActions</span>,
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><p>於是我們就完成了 Actions 邏輯的抽換，來賓請掌聲鼓勵！</p>
 <h1 id="新增-mutations-屬性">新增 mutations 屬性</h1>
 <p>接著我們要在 <code>src/store/mutations.js</code> 的 <code>productMutations</code> 下新增一些 <code>mutation</code> 屬性<br>
 用來處理使用者不同的操作時更新狀態庫中的內容同步</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#a6e22e">UPDATE_PRODUCT</span>(<span style="color:#a6e22e">state</span>) {
-    <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
-},
-<span style="color:#a6e22e">UPDATE_PRODUCT_SUCCESS</span>(<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
-    <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
-
-    <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">product</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">newProduct</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
-    <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">product</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">newProduct</span>;
-    <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">products</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">products</span>.<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">product</span> =&gt; {
-        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">_id</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">newProduct</span>.<span style="color:#a6e22e">_id</span>) {
-            <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">newProduct</span>;
-        }
-
-        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">product</span>;
-    })
-},
-<span style="color:#a6e22e">ADD_PRODUCT</span>(<span style="color:#a6e22e">state</span>) {
-    <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
-},
-<span style="color:#a6e22e">ADD_PRODUCT_SUCCESS</span>(<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
-    <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
-
-    <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">product</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
-    <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">products</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">products</span>.<span style="color:#a6e22e">concat</span>(<span style="color:#a6e22e">product</span>);
-}
-</code></pre></div><p>上面幾個 <code>mutation</code> 屬性分別處理了更新商品以及加入商品的邏輯，如此就完成了第一階段的重構<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span><span style="color:#a6e22e">UPDATE_PRODUCT</span>(<span style="color:#a6e22e">state</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>},
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">UPDATE_PRODUCT_SUCCESS</span>(<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">product</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">newProduct</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">product</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">newProduct</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">products</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">products</span>.<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">product</span> =&gt; {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">_id</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">newProduct</span>.<span style="color:#a6e22e">_id</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">newProduct</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">product</span>;
+</span></span><span style="display:flex;"><span>    })
+</span></span><span style="display:flex;"><span>},
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ADD_PRODUCT</span>(<span style="color:#a6e22e">state</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>},
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ADD_PRODUCT_SUCCESS</span>(<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">product</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">products</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">products</span>.<span style="color:#a6e22e">concat</span>(<span style="color:#a6e22e">product</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>上面幾個 <code>mutation</code> 屬性分別處理了更新商品以及加入商品的邏輯，如此就完成了第一階段的重構<br>
 本來還想把更多的重構寫在一起，但由於此篇篇幅以及資訊量已經很龐大，就在下一篇繼續優化我們的程式吧！</p>
 <hr>
 <p>專案範例程式碼 GitHub 網址：<a href="https://github.com/ray247k/mini-E-commerce"
@@ -1483,14 +1483,14 @@
         © 2022 薛丁格的工程師
     </p>
     <p class="copyright" style="font-size: 0.1EM;">
-        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.92.2' target='_blank' rel='noopener'>Hugo</a>
+        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.93.3' target='_blank' rel='noopener'>Hugo</a>
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
 
       <script src="/js/highlight.js"></script>
     
-    <script>hljs.highlightAll();</script><script src="/js/bundle.min.5352079d3388d9a4297e0200dd1040866c8b3b67460090bf30e01a9cd56fd746.js" integrity="sha256-U1IHnTOI2aQpfgIA3RBAhmyLO2dGAJC/MOAanNVv10Y="></script>
+    <script>hljs.highlightAll();</script><script src="/js/bundle.min.70300e10d694c03c4e7b364dbb682d9972a2a0198302fda4dcf8911935f91bf0.js" integrity="sha256-cDAOENaUwDxOezZNu2gtmXKioBmDAv2k3PiRGTX5G/A="></script>
     <script src="/js/add-on.js"></script>
 <script type="application/javascript">
 var doNotTrack = false;

@@ -18,7 +18,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.92.2" /><meta property="og:site_name" content="薛丁格的工程師">
+<meta name="generator" content="Hugo 0.93.3" /><meta property="og:site_name" content="薛丁格的工程師">
   <meta property="og:title" content="[LeetCode] #11 Container With Most Water (Medium)">
   <meta property="og:description" content="LeetCode 第 11 題 Container With Most Water，難度 Medium">
   <meta property="description" content="LeetCode 第 11 題 Container With Most Water，難度 Medium">
@@ -355,20 +355,20 @@
 Find two lines, which, together with the x-axis forms a container, such that the container contains the most water.</p>
 <p>Notice that you may not slant the container.</p>
 <p>Example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Input: height = [1,8,6,2,5,4,8,3,7]
-Output: 49
-Explanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,7].  
-In this case, the max area of water (blue section) the container can contain is 49.
-
-Input: height = [1,1]
-Output: 1
-
-Input: height = [4,3,2,1,4]
-Output: 16
-
-Input: height = [1,2,1]
-Output: 2
-</code></pre></div><h1 id="題目分析">題目分析</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Input: height = [1,8,6,2,5,4,8,3,7]
+</span></span><span style="display:flex;"><span>Output: 49
+</span></span><span style="display:flex;"><span>Explanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,7].  
+</span></span><span style="display:flex;"><span>In this case, the max area of water (blue section) the container can contain is 49.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Input: height = [1,1]
+</span></span><span style="display:flex;"><span>Output: 1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Input: height = [4,3,2,1,4]
+</span></span><span style="display:flex;"><span>Output: 16
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Input: height = [1,2,1]
+</span></span><span style="display:flex;"><span>Output: 2
+</span></span></code></pre></div><h1 id="題目分析">題目分析</h1>
 <ol>
 <li>輸入 <code>height</code> 是一串正整數，代表木板高度</li>
 <li>找出中間面積最大的兩個數字（容納最多水）</li>
@@ -383,32 +383,32 @@ Output: 2
 <p>因為最大容量是用比較短的一端決定，且向內移動勢必讓寬度下降，若兩端高度不變則面積也會變小<br>
 所以比較兩個指針在陣列中的長度，長度較短的指針向中心移動<br>
 在這個邏輯下，若指針向內移動找到更長的一端，面積才有變大的可能！</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
-
-    <span style="color:#e6db74">/**
-</span><span style="color:#e6db74">     * @param Integer[] $height
-</span><span style="color:#e6db74">     * @return Integer
-</span><span style="color:#e6db74">     */</span>
-    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">maxArea</span>($height) {
-        $p1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-        $p2 <span style="color:#f92672">=</span> <span style="color:#a6e22e">count</span>($height) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>;
-        $max_area <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-        <span style="color:#66d9ef">while</span>($p1 <span style="color:#f92672">&lt;</span> $p2){
-            $area <span style="color:#f92672">=</span> ($p2 <span style="color:#f92672">-</span> $p1) <span style="color:#f92672">*</span> <span style="color:#a6e22e">min</span>($height[$p1], $height[$p2]);
-            <span style="color:#66d9ef">if</span> ($area <span style="color:#f92672">&gt;</span> $max_area) {
-                $max_area <span style="color:#f92672">=</span> $area;
-            }
-            <span style="color:#66d9ef">if</span>($height[$p1] <span style="color:#f92672">&lt;</span> $height[$p2]) {
-                $p1<span style="color:#f92672">++</span>;
-            } <span style="color:#66d9ef">else</span> {
-                $p2<span style="color:#f92672">--</span>;
-            }
-        }
-
-        <span style="color:#66d9ef">return</span> $max_area;
-    }
-}
-</code></pre></div><h1 id="結果">結果</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">     * @param Integer[] $height
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">     * @return Integer
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">     */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">maxArea</span>($height) {
+</span></span><span style="display:flex;"><span>        $p1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>        $p2 <span style="color:#f92672">=</span> <span style="color:#a6e22e">count</span>($height) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>        $max_area <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span>($p1 <span style="color:#f92672">&lt;</span> $p2){
+</span></span><span style="display:flex;"><span>            $area <span style="color:#f92672">=</span> ($p2 <span style="color:#f92672">-</span> $p1) <span style="color:#f92672">*</span> <span style="color:#a6e22e">min</span>($height[$p1], $height[$p2]);
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> ($area <span style="color:#f92672">&gt;</span> $max_area) {
+</span></span><span style="display:flex;"><span>                $max_area <span style="color:#f92672">=</span> $area;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span>($height[$p1] <span style="color:#f92672">&lt;</span> $height[$p2]) {
+</span></span><span style="display:flex;"><span>                $p1<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>            } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>                $p2<span style="color:#f92672">--</span>;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> $max_area;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="結果">結果</h1>
 <p><img src="/img/blog/2021/05/leetcode-no11-container-with-most-water/no11-result.png" alt="result"></p>
 
       
@@ -908,14 +908,14 @@ Output: 2
         © 2022 薛丁格的工程師
     </p>
     <p class="copyright" style="font-size: 0.1EM;">
-        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.92.2' target='_blank' rel='noopener'>Hugo</a>
+        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.93.3' target='_blank' rel='noopener'>Hugo</a>
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
 
       <script src="/js/highlight.js"></script>
     
-    <script>hljs.highlightAll();</script><script src="/js/bundle.min.5352079d3388d9a4297e0200dd1040866c8b3b67460090bf30e01a9cd56fd746.js" integrity="sha256-U1IHnTOI2aQpfgIA3RBAhmyLO2dGAJC/MOAanNVv10Y="></script>
+    <script>hljs.highlightAll();</script><script src="/js/bundle.min.70300e10d694c03c4e7b364dbb682d9972a2a0198302fda4dcf8911935f91bf0.js" integrity="sha256-cDAOENaUwDxOezZNu2gtmXKioBmDAv2k3PiRGTX5G/A="></script>
     <script src="/js/add-on.js"></script>
 <script type="application/javascript">
 var doNotTrack = false;

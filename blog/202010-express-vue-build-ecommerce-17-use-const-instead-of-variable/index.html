@@ -18,7 +18,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.92.2" /><meta property="og:site_name" content="薛丁格的工程師">
+<meta name="generator" content="Hugo 0.93.3" /><meta property="og:site_name" content="薛丁格的工程師">
   <meta property="og:title" content="[Express&#43;Vue 搭建電商網站] 17 使用常數管理變數">
   <meta property="og:description" content="使用 Express &#43; Vue 搭建一個電商網站 - 使用常數管理變數">
   <meta property="description" content="使用 Express &#43; Vue 搭建一個電商網站 - 使用常數管理變數">
@@ -349,131 +349,131 @@
 <h1 id="建立-manufacturerform-組件">建立 ManufacturerForm 組件</h1>
 <p>和商品資訊一樣，我們也要將製造商資訊封裝到另一個單獨的組件 <code>ManufacturerForm</code></p>
 <p>新增 <code>src/components/ManufacturerForm.vue</code> 檔案</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
-  &lt;<span style="color:#f92672">form</span> <span style="color:#f92672">@submit.prevent</span><span style="color:#e6db74">=&#34;saveManufacturer&#34;</span>&gt;
-    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-group&#34;</span>&gt;
-      &lt;<span style="color:#f92672">label</span>&gt;<span style="color:#a6e22e">Name</span>&lt;/<span style="color:#f92672">label</span>&gt;
-      &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Name&#34;</span> <span style="color:#f92672">v-model</span><span style="color:#e6db74">=&#34;model.name&#34; name=&#34;name&#34; class=&#34;form-control&#34; /&gt;
-</span><span style="color:#e6db74">    &lt;/div&gt;
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">    &lt;div class=&#34;form-group new-button&#34;&gt;
-</span><span style="color:#e6db74">      &lt;button class=&#34;button&#34;&gt;
-</span><span style="color:#e6db74">        &lt;i class=&#34;fa fa-pencil&#34;&gt;&lt;/i&gt;
-</span><span style="color:#e6db74">        &lt;!-- Conditional rendering for input text --&gt;
-</span><span style="color:#e6db74">        &lt;span v-if=&#34;isEditing&#34;</span>&gt;<span style="color:#a6e22e">Update</span> <span style="color:#a6e22e">Manufacturer</span>&lt;/<span style="color:#f92672">span</span>&gt;
-        &lt;<span style="color:#f92672">span</span> <span style="color:#f92672">v-else</span>&gt;<span style="color:#a6e22e">Add</span> <span style="color:#a6e22e">Manufacturer</span>&lt;/<span style="color:#f92672">span</span>&gt;
-      &lt;/<span style="color:#f92672">button</span>&gt;
-    &lt;/<span style="color:#f92672">div</span>&gt;
-  &lt;/<span style="color:#f92672">form</span>&gt;
-&lt;/<span style="color:#f92672">template</span>&gt;
-
-&lt;<span style="color:#f92672">script</span>&gt;
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
-  <span style="color:#a6e22e">props</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;model&#34;</span>, <span style="color:#e6db74">&#34;isEditing&#34;</span>],
-  <span style="color:#a6e22e">methods</span><span style="color:#f92672">:</span> {
-    <span style="color:#a6e22e">saveManufacturer</span>() {
-      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$emit</span>(<span style="color:#e6db74">&#34;save-manufacturer&#34;</span>, <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">model</span>);
-    }
-  }
-};
-&lt;/<span style="color:#f92672">script</span>&gt;
-</code></pre></div><h1 id="重構-getters-檔案">重構 getters 檔案</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">form</span> <span style="color:#f92672">@submit.prevent</span><span style="color:#e6db74">=&#34;saveManufacturer&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-group&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">label</span>&gt;<span style="color:#a6e22e">Name</span>&lt;/<span style="color:#f92672">label</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Name&#34;</span> <span style="color:#f92672">v-model</span><span style="color:#e6db74">=&#34;model.name&#34; name=&#34;name&#34; class=&#34;form-control&#34; /&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;/div&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;div class=&#34;form-group new-button&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;button class=&#34;button&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;i class=&#34;fa fa-pencil&#34;&gt;&lt;/i&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;!-- Conditional rendering for input text --&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;span v-if=&#34;isEditing&#34;</span>&gt;<span style="color:#a6e22e">Update</span> <span style="color:#a6e22e">Manufacturer</span>&lt;/<span style="color:#f92672">span</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">span</span> <span style="color:#f92672">v-else</span>&gt;<span style="color:#a6e22e">Add</span> <span style="color:#a6e22e">Manufacturer</span>&lt;/<span style="color:#f92672">span</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">button</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">form</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">props</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;model&#34;</span>, <span style="color:#e6db74">&#34;isEditing&#34;</span>],
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">methods</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">saveManufacturer</span>() {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$emit</span>(<span style="color:#e6db74">&#34;save-manufacturer&#34;</span>, <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">model</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><h1 id="重構-getters-檔案">重構 getters 檔案</h1>
 <p>在建立編輯生產商的組件前，需先加入對應的 getter 屬性</p>
 <p>打開 <code>src/store/getters.js</code> 檔案，對 <code>manufacturerGetters</code> 增加一個屬性<br>
 用來取得狀態庫中的指定生產商</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#a6e22e">manufacturerById</span><span style="color:#f92672">:</span> (<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">getters</span>) =&gt; <span style="color:#a6e22e">id</span> =&gt; {
-    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">getters</span>.<span style="color:#a6e22e">allManufacturers</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) {
-        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">getters</span>.<span style="color:#a6e22e">allManufacturers</span>.<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">manufacturer</span> =&gt; <span style="color:#a6e22e">manufacturer</span>.<span style="color:#a6e22e">_id</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">id</span>)[<span style="color:#ae81ff">0</span>]
-    } <span style="color:#66d9ef">else</span> {
-        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">manufacturer</span>;
-    }
-}
-</code></pre></div><h1 id="建立-editmanufacturers-頁面">建立 EditManufacturers 頁面</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span><span style="color:#a6e22e">manufacturerById</span><span style="color:#f92672">:</span> (<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">getters</span>) =&gt; <span style="color:#a6e22e">id</span> =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">getters</span>.<span style="color:#a6e22e">allManufacturers</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">getters</span>.<span style="color:#a6e22e">allManufacturers</span>.<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">manufacturer</span> =&gt; <span style="color:#a6e22e">manufacturer</span>.<span style="color:#a6e22e">_id</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">id</span>)[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">manufacturer</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="建立-editmanufacturers-頁面">建立 EditManufacturers 頁面</h1>
 <p>在建立好顯示製造商資訊的表單組件 <code>ManufacturerForm</code> 以及設定好取得資料的 getter 之後<br>
 我們要來建立編輯製造商的頁面 <code>src/views/admin/EditManufacturers.vue</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
-  &lt;<span style="color:#f92672">manufacturer-form</span> <span style="color:#f92672">@save-manufacturer</span><span style="color:#e6db74">=&#34;addManufacturer&#34;</span> <span style="color:#f92672">:model</span><span style="color:#e6db74">=&#34;model&#34;</span> <span style="color:#f92672">:isEditing</span><span style="color:#e6db74">=&#34;true&#34;</span>&gt;<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/manufacturer-form&gt;</span>
-&lt;/<span style="color:#f92672">template</span>&gt;
-
-&lt;<span style="color:#f92672">script</span>&gt;
-<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ManufacturerForm</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@/components/ManufacturerForm.vue&#34;</span>;
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
-  <span style="color:#a6e22e">created</span>() {
-    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#e6db74">&#34;manufacturerById&#34;</span>, {
-      <span style="color:#a6e22e">manufacturerId</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$route</span>.<span style="color:#a6e22e">params</span>[<span style="color:#e6db74">&#34;id&#34;</span>]
-    });
-  },
-  <span style="color:#a6e22e">computed</span><span style="color:#f92672">:</span> {
-    <span style="color:#a6e22e">model</span>() {
-      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">manufacturer</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">getters</span>.<span style="color:#a6e22e">manufacturerById</span>(
-        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$route</span>.<span style="color:#a6e22e">params</span>[<span style="color:#e6db74">&#34;id&#34;</span>]
-      );
-      <span style="color:#66d9ef">return</span> { ...<span style="color:#a6e22e">manufacturer</span> };
-    }
-  },
-  <span style="color:#a6e22e">methods</span><span style="color:#f92672">:</span> {
-    <span style="color:#a6e22e">addManufacturer</span>(<span style="color:#a6e22e">model</span>) {
-      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#e6db74">&#34;updateManufacturer&#34;</span>, {
-        <span style="color:#a6e22e">manufacturer</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">model</span>
-      });
-    }
-  },
-  <span style="color:#a6e22e">components</span><span style="color:#f92672">:</span> {
-    <span style="color:#e6db74">&#34;manufacturer-form&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ManufacturerForm</span>
-  }
-};
-&lt;/<span style="color:#f92672">script</span>&gt;
-</code></pre></div><p>組件在創建時會使用 <code>action</code> 去異步取得製造商資訊，並透過 <code>mutation</code> 修改狀態池
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">manufacturer-form</span> <span style="color:#f92672">@save-manufacturer</span><span style="color:#e6db74">=&#34;addManufacturer&#34;</span> <span style="color:#f92672">:model</span><span style="color:#e6db74">=&#34;model&#34;</span> <span style="color:#f92672">:isEditing</span><span style="color:#e6db74">=&#34;true&#34;</span>&gt;<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/manufacturer-form&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ManufacturerForm</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@/components/ManufacturerForm.vue&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">created</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#e6db74">&#34;manufacturerById&#34;</span>, {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">manufacturerId</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$route</span>.<span style="color:#a6e22e">params</span>[<span style="color:#e6db74">&#34;id&#34;</span>]
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">computed</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">model</span>() {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">manufacturer</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">getters</span>.<span style="color:#a6e22e">manufacturerById</span>(
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$route</span>.<span style="color:#a6e22e">params</span>[<span style="color:#e6db74">&#34;id&#34;</span>]
+</span></span><span style="display:flex;"><span>      );
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> { ...<span style="color:#a6e22e">manufacturer</span> };
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">methods</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">addManufacturer</span>(<span style="color:#a6e22e">model</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#e6db74">&#34;updateManufacturer&#34;</span>, {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">manufacturer</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">model</span>
+</span></span><span style="display:flex;"><span>      });
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">components</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;manufacturer-form&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ManufacturerForm</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>組件在創建時會使用 <code>action</code> 去異步取得製造商資訊，並透過 <code>mutation</code> 修改狀態池
 之所以在 <code>model</code> 這個 <code>computed</code> 中回傳製造商資料的備份資料<br>
 是為了在修改資料被送出前不對當前 store 的生產商屬性做操作<br>
 而組件內如果對生產商有操作，會透過 <code>action</code> 修改商品資訊，然後呼叫 <code>mutation</code> 變更狀態池</p>
 <h1 id="建立-newmanufacturers-頁面">建立 NewManufacturers 頁面</h1>
 <p>跟剛剛的編輯頁面邏輯差不多，這邊要建立新增頁面 <code>src/views/admin/NewManufacturers.vue</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
-  &lt;<span style="color:#f92672">manufacturer-form</span> <span style="color:#f92672">@save-manufacturer</span><span style="color:#e6db74">=&#34;addManufacturer&#34;</span> <span style="color:#f92672">:model</span><span style="color:#e6db74">=&#34;model&#34;</span>&gt;<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/manufacturer-form&gt;</span>
-&lt;/<span style="color:#f92672">template</span>&gt;
-
-&lt;<span style="color:#f92672">script</span>&gt;
-<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ManufacturerForm</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@/components/ManufacturerForm.vue&#34;</span>;
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
-  <span style="color:#a6e22e">computed</span><span style="color:#f92672">:</span> {
-    <span style="color:#a6e22e">model</span>() {
-      <span style="color:#66d9ef">return</span> {};
-    }
-  },
-  <span style="color:#a6e22e">methods</span><span style="color:#f92672">:</span> {
-    <span style="color:#a6e22e">addManufacturer</span>(<span style="color:#a6e22e">model</span>) {
-      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#e6db74">&#34;addManufacturer&#34;</span>, {
-        <span style="color:#a6e22e">manufacturer</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">model</span>
-      });
-    }
-  },
-  <span style="color:#a6e22e">components</span><span style="color:#f92672">:</span> {
-    <span style="color:#e6db74">&#34;manufacturer-form&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ManufacturerForm</span>
-  }
-};
-&lt;/<span style="color:#f92672">script</span>&gt;
-</code></pre></div><h1 id="重構-admin-menu">重構 Admin menu</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">manufacturer-form</span> <span style="color:#f92672">@save-manufacturer</span><span style="color:#e6db74">=&#34;addManufacturer&#34;</span> <span style="color:#f92672">:model</span><span style="color:#e6db74">=&#34;model&#34;</span>&gt;<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/manufacturer-form&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ManufacturerForm</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@/components/ManufacturerForm.vue&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">computed</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">model</span>() {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> {};
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">methods</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">addManufacturer</span>(<span style="color:#a6e22e">model</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#e6db74">&#34;addManufacturer&#34;</span>, {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">manufacturer</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">model</span>
+</span></span><span style="display:flex;"><span>      });
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">components</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;manufacturer-form&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ManufacturerForm</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><h1 id="重構-admin-menu">重構 Admin menu</h1>
 <p>在 <code>src/views/admin/Index.vue</code> 加入新的頁面用來增加製造商，沒什麼多解釋的</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">li</span>&gt;
-    &lt;<span style="color:#f92672">router-link</span> <span style="color:#a6e22e">to</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/admin/manufacturers/new&#34;</span>&gt;<span style="color:#a6e22e">新增製造商</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/router-link&gt;</span>
-&lt;/<span style="color:#f92672">li</span>&gt;
-</code></pre></div><h1 id="增加路由邏輯">增加路由邏輯</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">router-link</span> <span style="color:#a6e22e">to</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/admin/manufacturers/new&#34;</span>&gt;<span style="color:#a6e22e">新增製造商</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/router-link&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span></code></pre></div><h1 id="增加路由邏輯">增加路由邏輯</h1>
 <p>頁面跟連結都做好了，打開 <code>src/router/index.js</code> 引入路由設定</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">NewManufacturers</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@/views/admin/NewManufacturers&#39;</span>;
-<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">EditManufacturers</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@/views/admin/EditManufacturers&#39;</span>;
-</code></pre></div><p>增加 admin 頁面下路由 <code>children</code> 屬性</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">{
-    <span style="color:#a6e22e">path</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;manufacturers/new&#39;</span>,
-    <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;NewManufacturers&#39;</span>,
-    <span style="color:#a6e22e">component</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">NewManufacturers</span>,
-},
-{
-    <span style="color:#a6e22e">path</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;manufacturers/edit/:id&#39;</span>,
-    <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;EditManufacturers&#39;</span>,
-    <span style="color:#a6e22e">component</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">EditManufacturers</span>,
-},
-</code></pre></div><h1 id="用常數管理通用名稱">用常數管理通用名稱</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">NewManufacturers</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@/views/admin/NewManufacturers&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">EditManufacturers</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@/views/admin/EditManufacturers&#39;</span>;
+</span></span></code></pre></div><p>增加 admin 頁面下路由 <code>children</code> 屬性</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">path</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;manufacturers/new&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;NewManufacturers&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">component</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">NewManufacturers</span>,
+</span></span><span style="display:flex;"><span>},
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">path</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;manufacturers/edit/:id&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;EditManufacturers&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">component</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">EditManufacturers</span>,
+</span></span><span style="display:flex;"><span>},
+</span></span></code></pre></div><h1 id="用常數管理通用名稱">用常數管理通用名稱</h1>
 <p>很多時候我們會把功能封裝到組件內，以便重複使用組件<br>
 而在組件內我們會定義很多方法名稱去呼叫不同的事件，例如當使用者按下了送出，觸發了 <code>ADD_PRODUCT</code> 事件<br>
 那在 <code>action</code> 中就要有相應的事件<br>
@@ -482,319 +482,319 @@
 <p>因此我們會使用常數的方式定義 <code>actions</code> 和 <code>mutations</code> 中的事件<br>
 只要我們都使用同一組常數就可以維持一致。關鍵的是如果這麼做打錯字的時候就會報錯，方便除錯</p>
 <p>接著就來實作建立 <code>src/store/mutation-types.js</code> 檔案作為 mapping 表</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ALL_PRODUCTS</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;ALL_PRODUCTS&#39;</span>;
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ALL_PRODUCTS_SUCCESS</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;ALL_PRODUCTS_SUCCESS&#39;</span>;
-
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">PRODUCT_BY_ID</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;PRODUCT_BY_ID&#39;</span>;
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">PRODUCT_BY_ID_SUCCESS</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;PRODUCT_BY_ID_SUCCESS&#39;</span>;
-
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ADD_PRODUCT</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;ADD_PRODUCT&#39;</span>;
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ADD_PRODUCT_SUCCESS</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;ADD_PRODUCT_SUCCESS&#39;</span>;
-
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">UPDATE_PRODUCT</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;UPDATE_PRODUCT&#39;</span>;
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">UPDATE_PRODUCT_SUCCESS</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;UPDATE_PRODUCT_SUCCESS&#39;</span>;
-
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">REMOVE_PRODUCT</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;REMOVE_PRODUCT&#39;</span>;
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">REMOVE_PRODUCT_SUCCESS</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;REMOVE_PRODUCT_SUCCESS&#39;</span>;
-
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ADD_TO_CART</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;ADD_TO_CART&#39;</span>;
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">REMOVE_FROM_CART</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;REMOVE_FROM_CART&#39;</span>;
-
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ALL_MANUFACTURERS</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;ALL_MANUFACTURER&#39;</span>;
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ALL_MANUFACTURERS_SUCCESS</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;ALL_MANUFACTURER_S&#39;</span>;
-
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">MANUFACTURER_BY_ID</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;MANUFACTURER_BY_ID&#39;</span>;
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">MANUFACTURER_BY_ID_SUCCESS</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;MANUFACTURER_BY_ID_SUCCESS&#39;</span>;
-
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ADD_MANUFACTURER</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;ADD_MANUFACTURER&#39;</span>;
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ADD_MANUFACTURER_SUCCESS</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;ADD_MANUFACTURER_SUCCESS&#39;</span>;
-
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">UPDATE_MANUFACTURER</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;UPDATE_MANUFACTURER&#39;</span>;
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">UPDATE_MANUFACTURER_SUCCESS</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;UPDATE_MANUFACTURER_SUCCESS&#39;</span>;
-
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">REMOVE_MANUFACTURER</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;REMOVE_MANUFACTURER&#39;</span>;
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">REMOVE_MANUFACTURER_SUCCESS</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;REMOVE_MANUFACTURER_SUCCESS&#39;</span>;
-</code></pre></div><h2 id="重構-actions-檔案">重構 actions 檔案</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ALL_PRODUCTS</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;ALL_PRODUCTS&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ALL_PRODUCTS_SUCCESS</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;ALL_PRODUCTS_SUCCESS&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">PRODUCT_BY_ID</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;PRODUCT_BY_ID&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">PRODUCT_BY_ID_SUCCESS</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;PRODUCT_BY_ID_SUCCESS&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ADD_PRODUCT</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;ADD_PRODUCT&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ADD_PRODUCT_SUCCESS</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;ADD_PRODUCT_SUCCESS&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">UPDATE_PRODUCT</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;UPDATE_PRODUCT&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">UPDATE_PRODUCT_SUCCESS</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;UPDATE_PRODUCT_SUCCESS&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">REMOVE_PRODUCT</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;REMOVE_PRODUCT&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">REMOVE_PRODUCT_SUCCESS</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;REMOVE_PRODUCT_SUCCESS&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ADD_TO_CART</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;ADD_TO_CART&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">REMOVE_FROM_CART</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;REMOVE_FROM_CART&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ALL_MANUFACTURERS</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;ALL_MANUFACTURER&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ALL_MANUFACTURERS_SUCCESS</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;ALL_MANUFACTURER_S&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">MANUFACTURER_BY_ID</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;MANUFACTURER_BY_ID&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">MANUFACTURER_BY_ID_SUCCESS</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;MANUFACTURER_BY_ID_SUCCESS&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ADD_MANUFACTURER</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;ADD_MANUFACTURER&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ADD_MANUFACTURER_SUCCESS</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;ADD_MANUFACTURER_SUCCESS&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">UPDATE_MANUFACTURER</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;UPDATE_MANUFACTURER&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">UPDATE_MANUFACTURER_SUCCESS</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;UPDATE_MANUFACTURER_SUCCESS&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">REMOVE_MANUFACTURER</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;REMOVE_MANUFACTURER&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">REMOVE_MANUFACTURER_SUCCESS</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;REMOVE_MANUFACTURER_SUCCESS&#39;</span>;
+</span></span></code></pre></div><h2 id="重構-actions-檔案">重構 actions 檔案</h2>
 <p>打開 <code>src/store/actions.js</code> 檔案，引入剛剛的常數表文件後，把其中的方法名稱通通改成使用常數表內的常數</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">axios</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;axios&#39;</span>;
-
-<span style="color:#66d9ef">import</span> {
-    <span style="color:#a6e22e">ADD_PRODUCT</span>,
-    <span style="color:#a6e22e">ADD_PRODUCT_SUCCESS</span>,
-    <span style="color:#a6e22e">PRODUCT_BY_ID</span>,
-    <span style="color:#a6e22e">PRODUCT_BY_ID_SUCCESS</span>,
-    <span style="color:#a6e22e">UPDATE_PRODUCT</span>,
-    <span style="color:#a6e22e">UPDATE_PRODUCT_SUCCESS</span>,
-    <span style="color:#a6e22e">REMOVE_PRODUCT</span>,
-    <span style="color:#a6e22e">REMOVE_PRODUCT_SUCCESS</span>,
-    <span style="color:#a6e22e">ALL_PRODUCTS</span>,
-    <span style="color:#a6e22e">ALL_PRODUCTS_SUCCESS</span>,
-    <span style="color:#a6e22e">ALL_MANUFACTURERS</span>,
-    <span style="color:#a6e22e">ALL_MANUFACTURERS_SUCCESS</span>,
-    <span style="color:#a6e22e">MANUFACTURER_BY_ID</span>,
-    <span style="color:#a6e22e">MANUFACTURER_BY_ID_SUCCESS</span>,
-    <span style="color:#a6e22e">ADD_MANUFACTURER</span>,
-    <span style="color:#a6e22e">ADD_MANUFACTURER_SUCCESS</span>,
-    <span style="color:#a6e22e">UPDATE_MANUFACTURER</span>,
-    <span style="color:#a6e22e">UPDATE_MANUFACTURER_SUCCESS</span>,
-    <span style="color:#a6e22e">REMOVE_MANUFACTURER</span>,
-    <span style="color:#a6e22e">REMOVE_MANUFACTURER_SUCCESS</span>,
-} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./mutation-types&#39;</span>;
-
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">API_BASE</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;http://localhost:3000/api/v1&#39;</span>;
-
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">productActions</span> <span style="color:#f92672">=</span> {
-    <span style="color:#a6e22e">allProducts</span>({ <span style="color:#a6e22e">commit</span> }) {
-        <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">ALL_PRODUCTS</span>)
-
-        <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/products`</span>).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">response</span> =&gt; {
-            <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">ALL_PRODUCTS_SUCCESS</span>, {
-                <span style="color:#a6e22e">products</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>,
-            });
-        })
-    },
-    <span style="color:#a6e22e">productById</span>({ <span style="color:#a6e22e">commit</span> }, <span style="color:#a6e22e">payload</span>) {
-        <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">PRODUCT_BY_ID</span>);
-
-        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">productId</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
-        <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/products/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">productId</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">response</span> =&gt; {
-            <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">PRODUCT_BY_ID_SUCCESS</span>, {
-                <span style="color:#a6e22e">product</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>,
-            });
-        })
-    },
-
-    <span style="color:#a6e22e">removeProduct</span>({ <span style="color:#a6e22e">commit</span> }, <span style="color:#a6e22e">payload</span>) {
-        <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">REMOVE_PRODUCT</span>);
-
-        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">productId</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
-        <span style="color:#a6e22e">axios</span>.<span style="color:#66d9ef">delete</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/products/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">productId</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>).<span style="color:#a6e22e">then</span>(() =&gt; {
-            <span style="color:#75715e">// 回傳 productId，用來刪除對應商品
-</span><span style="color:#75715e"></span>            <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">REMOVE_PRODUCT_SUCCESS</span>, {
-                <span style="color:#a6e22e">productId</span>,
-            });
-        })
-    },
-    <span style="color:#a6e22e">updateProduct</span>({ <span style="color:#a6e22e">commit</span> }, <span style="color:#a6e22e">payload</span>) {
-        <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">UPDATE_PRODUCT</span>);
-
-        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">product</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
-        <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">put</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/products/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">_id</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>, <span style="color:#a6e22e">product</span>).<span style="color:#a6e22e">then</span>(() =&gt; {
-            <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">UPDATE_PRODUCT_SUCCESS</span>, {
-                <span style="color:#a6e22e">product</span>,
-            });
-        })
-    },
-    <span style="color:#a6e22e">addProduct</span>({ <span style="color:#a6e22e">commit</span> }, <span style="color:#a6e22e">payload</span>) {
-        <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">ADD_PRODUCT</span>);
-
-        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">product</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
-        <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">post</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/products`</span>, <span style="color:#a6e22e">product</span>).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">response</span> =&gt; {
-            <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">ADD_PRODUCT_SUCCESS</span>, {
-                <span style="color:#a6e22e">product</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>,
-            })
-        })
-    }
-};
-
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">manufacturerActions</span> <span style="color:#f92672">=</span> {
-    <span style="color:#a6e22e">allManufacturers</span>({ <span style="color:#a6e22e">commit</span> }) {
-        <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">ALL_MANUFACTURERS</span>);
-
-        <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/manufacturers`</span>).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">response</span> =&gt; {
-            <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">ALL_MANUFACTURERS_SUCCESS</span>, {
-                <span style="color:#a6e22e">manufacturers</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>,
-            });
-        })
-    },
-    <span style="color:#a6e22e">manufacturerById</span>({ <span style="color:#a6e22e">commit</span> }, <span style="color:#a6e22e">payload</span>) {
-        <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">MANUFACTURER_BY_ID</span>);
-
-        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">manufacturerId</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
-        <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/manufacturers/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">manufacturerId</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">response</span> =&gt; {
-            <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">MANUFACTURER_BY_ID_SUCCESS</span>, {
-                <span style="color:#a6e22e">manufacturer</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>,
-            });
-        })
-    },
-    <span style="color:#a6e22e">removeManufacturer</span>({ <span style="color:#a6e22e">commit</span> }, <span style="color:#a6e22e">payload</span>) {
-        <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">REMOVE_MANUFACTURER</span>);
-
-        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">manufacturerId</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
-        <span style="color:#a6e22e">axios</span>.<span style="color:#66d9ef">delete</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/manufacturers/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">manufacturerId</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>).<span style="color:#a6e22e">then</span>(() =&gt; {
-            <span style="color:#75715e">// 回傳 manufacturerId，用來刪除對應的製造商
-</span><span style="color:#75715e"></span>            <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">REMOVE_MANUFACTURER_SUCCESS</span>, {
-                <span style="color:#a6e22e">manufacturerId</span>,
-            });
-        })
-    },
-    <span style="color:#a6e22e">updateManufacturer</span>({ <span style="color:#a6e22e">commit</span> }, <span style="color:#a6e22e">payload</span>) {
-        <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">UPDATE_MANUFACTURER</span>);
-
-        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">manufacturer</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
-        <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">put</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/manufacturers/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">manufacturer</span>.<span style="color:#a6e22e">_id</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>, <span style="color:#a6e22e">manufacturer</span>).<span style="color:#a6e22e">then</span>(() =&gt; {
-            <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">UPDATE_MANUFACTURER_SUCCESS</span>, {
-                <span style="color:#a6e22e">manufacturer</span>,
-            });
-        })
-    },
-    <span style="color:#a6e22e">addManufacturer</span>({ <span style="color:#a6e22e">commit</span> }, <span style="color:#a6e22e">payload</span>) {
-        <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">ADD_MANUFACTURER</span>);
-
-        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">manufacturer</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
-        <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">post</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/manufacturers`</span>, <span style="color:#a6e22e">manufacturer</span>).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">response</span> =&gt; {
-            <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">ADD_MANUFACTURER_SUCCESS</span>, {
-                <span style="color:#a6e22e">manufacturer</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>,
-            })
-        })
-    }
-}
-</code></pre></div><h2 id="重構-manufacturer-檔案">重構 manufacturer 檔案</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">axios</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;axios&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ADD_PRODUCT</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ADD_PRODUCT_SUCCESS</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">PRODUCT_BY_ID</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">PRODUCT_BY_ID_SUCCESS</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">UPDATE_PRODUCT</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">UPDATE_PRODUCT_SUCCESS</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">REMOVE_PRODUCT</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">REMOVE_PRODUCT_SUCCESS</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ALL_PRODUCTS</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ALL_PRODUCTS_SUCCESS</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ALL_MANUFACTURERS</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ALL_MANUFACTURERS_SUCCESS</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">MANUFACTURER_BY_ID</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">MANUFACTURER_BY_ID_SUCCESS</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ADD_MANUFACTURER</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ADD_MANUFACTURER_SUCCESS</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">UPDATE_MANUFACTURER</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">UPDATE_MANUFACTURER_SUCCESS</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">REMOVE_MANUFACTURER</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">REMOVE_MANUFACTURER_SUCCESS</span>,
+</span></span><span style="display:flex;"><span>} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./mutation-types&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">API_BASE</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;http://localhost:3000/api/v1&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">productActions</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">allProducts</span>({ <span style="color:#a6e22e">commit</span> }) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">ALL_PRODUCTS</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/products`</span>).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">response</span> =&gt; {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">ALL_PRODUCTS_SUCCESS</span>, {
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">products</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>,
+</span></span><span style="display:flex;"><span>            });
+</span></span><span style="display:flex;"><span>        })
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">productById</span>({ <span style="color:#a6e22e">commit</span> }, <span style="color:#a6e22e">payload</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">PRODUCT_BY_ID</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">productId</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/products/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">productId</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">response</span> =&gt; {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">PRODUCT_BY_ID_SUCCESS</span>, {
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">product</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>,
+</span></span><span style="display:flex;"><span>            });
+</span></span><span style="display:flex;"><span>        })
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">removeProduct</span>({ <span style="color:#a6e22e">commit</span> }, <span style="color:#a6e22e">payload</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">REMOVE_PRODUCT</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">productId</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">axios</span>.<span style="color:#66d9ef">delete</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/products/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">productId</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>).<span style="color:#a6e22e">then</span>(() =&gt; {
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// 回傳 productId，用來刪除對應商品
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">REMOVE_PRODUCT_SUCCESS</span>, {
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">productId</span>,
+</span></span><span style="display:flex;"><span>            });
+</span></span><span style="display:flex;"><span>        })
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">updateProduct</span>({ <span style="color:#a6e22e">commit</span> }, <span style="color:#a6e22e">payload</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">UPDATE_PRODUCT</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">product</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">put</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/products/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">_id</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>, <span style="color:#a6e22e">product</span>).<span style="color:#a6e22e">then</span>(() =&gt; {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">UPDATE_PRODUCT_SUCCESS</span>, {
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">product</span>,
+</span></span><span style="display:flex;"><span>            });
+</span></span><span style="display:flex;"><span>        })
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">addProduct</span>({ <span style="color:#a6e22e">commit</span> }, <span style="color:#a6e22e">payload</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">ADD_PRODUCT</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">product</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">post</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/products`</span>, <span style="color:#a6e22e">product</span>).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">response</span> =&gt; {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">ADD_PRODUCT_SUCCESS</span>, {
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">product</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>,
+</span></span><span style="display:flex;"><span>            })
+</span></span><span style="display:flex;"><span>        })
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">manufacturerActions</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">allManufacturers</span>({ <span style="color:#a6e22e">commit</span> }) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">ALL_MANUFACTURERS</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/manufacturers`</span>).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">response</span> =&gt; {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">ALL_MANUFACTURERS_SUCCESS</span>, {
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">manufacturers</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>,
+</span></span><span style="display:flex;"><span>            });
+</span></span><span style="display:flex;"><span>        })
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">manufacturerById</span>({ <span style="color:#a6e22e">commit</span> }, <span style="color:#a6e22e">payload</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">MANUFACTURER_BY_ID</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">manufacturerId</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/manufacturers/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">manufacturerId</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">response</span> =&gt; {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">MANUFACTURER_BY_ID_SUCCESS</span>, {
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">manufacturer</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>,
+</span></span><span style="display:flex;"><span>            });
+</span></span><span style="display:flex;"><span>        })
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">removeManufacturer</span>({ <span style="color:#a6e22e">commit</span> }, <span style="color:#a6e22e">payload</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">REMOVE_MANUFACTURER</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">manufacturerId</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">axios</span>.<span style="color:#66d9ef">delete</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/manufacturers/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">manufacturerId</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>).<span style="color:#a6e22e">then</span>(() =&gt; {
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// 回傳 manufacturerId，用來刪除對應的製造商
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">REMOVE_MANUFACTURER_SUCCESS</span>, {
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">manufacturerId</span>,
+</span></span><span style="display:flex;"><span>            });
+</span></span><span style="display:flex;"><span>        })
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">updateManufacturer</span>({ <span style="color:#a6e22e">commit</span> }, <span style="color:#a6e22e">payload</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">UPDATE_MANUFACTURER</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">manufacturer</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">put</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/manufacturers/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">manufacturer</span>.<span style="color:#a6e22e">_id</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>, <span style="color:#a6e22e">manufacturer</span>).<span style="color:#a6e22e">then</span>(() =&gt; {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">UPDATE_MANUFACTURER_SUCCESS</span>, {
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">manufacturer</span>,
+</span></span><span style="display:flex;"><span>            });
+</span></span><span style="display:flex;"><span>        })
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">addManufacturer</span>({ <span style="color:#a6e22e">commit</span> }, <span style="color:#a6e22e">payload</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">ADD_MANUFACTURER</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">manufacturer</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">post</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">API_BASE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/manufacturers`</span>, <span style="color:#a6e22e">manufacturer</span>).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">response</span> =&gt; {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">commit</span>(<span style="color:#a6e22e">ADD_MANUFACTURER_SUCCESS</span>, {
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">manufacturer</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>,
+</span></span><span style="display:flex;"><span>            })
+</span></span><span style="display:flex;"><span>        })
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="重構-manufacturer-檔案">重構 manufacturer 檔案</h2>
 <p>在 <code>src/store/mutations.js</code> 也做跟上一步一樣的事情</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#66d9ef">import</span> {
-    <span style="color:#a6e22e">ADD_PRODUCT</span>,
-    <span style="color:#a6e22e">ADD_PRODUCT_SUCCESS</span>,
-    <span style="color:#a6e22e">PRODUCT_BY_ID</span>,
-    <span style="color:#a6e22e">PRODUCT_BY_ID_SUCCESS</span>,
-    <span style="color:#a6e22e">UPDATE_PRODUCT</span>,
-    <span style="color:#a6e22e">UPDATE_PRODUCT_SUCCESS</span>,
-    <span style="color:#a6e22e">REMOVE_PRODUCT</span>,
-    <span style="color:#a6e22e">REMOVE_PRODUCT_SUCCESS</span>,
-    <span style="color:#a6e22e">ADD_TO_CART</span>,
-    <span style="color:#a6e22e">REMOVE_FROM_CART</span>,
-    <span style="color:#a6e22e">ALL_PRODUCTS</span>,
-    <span style="color:#a6e22e">ALL_PRODUCTS_SUCCESS</span>,
-    <span style="color:#a6e22e">ALL_MANUFACTURERS</span>,
-    <span style="color:#a6e22e">ALL_MANUFACTURERS_SUCCESS</span>,
-    <span style="color:#a6e22e">MANUFACTURER_BY_ID</span>,
-    <span style="color:#a6e22e">MANUFACTURER_BY_ID_SUCCESS</span>,
-    <span style="color:#a6e22e">ADD_MANUFACTURER</span>,
-    <span style="color:#a6e22e">ADD_MANUFACTURER_SUCCESS</span>,
-    <span style="color:#a6e22e">UPDATE_MANUFACTURER</span>,
-    <span style="color:#a6e22e">UPDATE_MANUFACTURER_SUCCESS</span>,
-    <span style="color:#a6e22e">REMOVE_MANUFACTURER</span>,
-    <span style="color:#a6e22e">REMOVE_MANUFACTURER_SUCCESS</span>,
-} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./mutation-types&#39;</span>;
-
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">productMutations</span> <span style="color:#f92672">=</span> {
-    [<span style="color:#a6e22e">ALL_PRODUCTS</span>](<span style="color:#a6e22e">state</span>) {
-        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
-    },
-    [<span style="color:#a6e22e">ALL_PRODUCTS_SUCCESS</span>](<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
-        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">products</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
-
-        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
-        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">products</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">products</span>;
-    },
-    [<span style="color:#a6e22e">PRODUCT_BY_ID</span>](<span style="color:#a6e22e">state</span>) {
-        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
-    },
-    [<span style="color:#a6e22e">PRODUCT_BY_ID_SUCCESS</span>](<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
-        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
-
-        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">product</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
-        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">product</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">product</span>;
-    },
-    [<span style="color:#a6e22e">REMOVE_PRODUCT</span>](<span style="color:#a6e22e">state</span>) {
-        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
-    },
-    [<span style="color:#a6e22e">REMOVE_PRODUCT_SUCCESS</span>](<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
-        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
-
-        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">productId</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
-        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">products</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">products</span>.<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">product</span> =&gt; <span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">_id</span> <span style="color:#f92672">!==</span> <span style="color:#a6e22e">productId</span>);
-    },
-    [<span style="color:#a6e22e">UPDATE_PRODUCT</span>](<span style="color:#a6e22e">state</span>) {
-        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
-    },
-    [<span style="color:#a6e22e">UPDATE_PRODUCT_SUCCESS</span>](<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
-        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
-
-        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">product</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">newProduct</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
-        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">product</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">newProduct</span>;
-        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">products</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">products</span>.<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">product</span> =&gt; {
-            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">_id</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">newProduct</span>.<span style="color:#a6e22e">_id</span>) {
-                <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">newProduct</span>;
-            }
-            <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">product</span>;
-        })
-    },
-    [<span style="color:#a6e22e">ADD_PRODUCT</span>](<span style="color:#a6e22e">state</span>) {
-        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
-    },
-    [<span style="color:#a6e22e">ADD_PRODUCT_SUCCESS</span>](<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
-        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
-
-        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">product</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
-        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">products</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">products</span>.<span style="color:#a6e22e">concat</span>(<span style="color:#a6e22e">product</span>);
-    },
-};
-
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">cartMutations</span> <span style="color:#f92672">=</span> {
-    [<span style="color:#a6e22e">ADD_TO_CART</span>](<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
-        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">product</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
-        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">cart</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">product</span>)
-    },
-    [<span style="color:#a6e22e">REMOVE_FROM_CART</span>](<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
-        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">productId</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>
-        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">cart</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">cart</span>.<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">product</span> =&gt; <span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">_id</span> <span style="color:#f92672">!==</span> <span style="color:#a6e22e">productId</span>)
-    },
-}
-
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">manufacturerMutations</span> <span style="color:#f92672">=</span> {
-    [<span style="color:#a6e22e">ALL_MANUFACTURERS</span>](<span style="color:#a6e22e">state</span>) {
-        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
-    },
-    [<span style="color:#a6e22e">ALL_MANUFACTURERS_SUCCESS</span>](<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
-        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">manufacturers</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
-
-        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
-        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">manufacturers</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">manufacturers</span>;
-    },
-    [<span style="color:#a6e22e">MANUFACTURER_BY_ID</span>](<span style="color:#a6e22e">state</span>) {
-        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
-    },
-    [<span style="color:#a6e22e">MANUFACTURER_BY_ID_SUCCESS</span>](<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
-        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
-
-        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">manufacturer</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
-        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">manufacturer</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">manufacturer</span>;
-    },
-    [<span style="color:#a6e22e">REMOVE_MANUFACTURER</span>](<span style="color:#a6e22e">state</span>) {
-        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
-    },
-    [<span style="color:#a6e22e">REMOVE_MANUFACTURER_SUCCESS</span>](<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
-        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
-
-        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">manufacturerId</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
-        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">manufacturers</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">manufacturers</span>.<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">manufacturer</span> =&gt; <span style="color:#a6e22e">manufacturer</span>.<span style="color:#a6e22e">_id</span> <span style="color:#f92672">!==</span> <span style="color:#a6e22e">manufacturerId</span>);
-    },
-    [<span style="color:#a6e22e">UPDATE_MANUFACTURER</span>](<span style="color:#a6e22e">state</span>) {
-        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
-    },
-    [<span style="color:#a6e22e">UPDATE_MANUFACTURER_SUCCESS</span>](<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
-        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
-
-        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">manufacturer</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">newManufacturer</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
-        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">manufacturers</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">manufacturers</span>.<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">manufacturer</span> =&gt; {
-            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">manufacturer</span>.<span style="color:#a6e22e">_id</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">newManufacturer</span>.<span style="color:#a6e22e">_id</span>) {
-                <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">newManufacturer</span>;
-            }
-
-            <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">manufacturer</span>;
-        })
-    },
-    [<span style="color:#a6e22e">ADD_MANUFACTURER</span>](<span style="color:#a6e22e">state</span>) {
-        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
-    },
-    [<span style="color:#a6e22e">ADD_MANUFACTURER_SUCCESS</span>](<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
-        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
-
-        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">manufacturer</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
-        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">manufacturers</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">manufacturers</span>.<span style="color:#a6e22e">concat</span>(<span style="color:#a6e22e">manufacturer</span>);
-    }
-}
-</code></pre></div><p>如此就完成了用常數替換 <code>actions</code> 和 <code>mutations</code> 兩隻檔案中的事件類型<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ADD_PRODUCT</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ADD_PRODUCT_SUCCESS</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">PRODUCT_BY_ID</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">PRODUCT_BY_ID_SUCCESS</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">UPDATE_PRODUCT</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">UPDATE_PRODUCT_SUCCESS</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">REMOVE_PRODUCT</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">REMOVE_PRODUCT_SUCCESS</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ADD_TO_CART</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">REMOVE_FROM_CART</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ALL_PRODUCTS</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ALL_PRODUCTS_SUCCESS</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ALL_MANUFACTURERS</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ALL_MANUFACTURERS_SUCCESS</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">MANUFACTURER_BY_ID</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">MANUFACTURER_BY_ID_SUCCESS</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ADD_MANUFACTURER</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ADD_MANUFACTURER_SUCCESS</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">UPDATE_MANUFACTURER</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">UPDATE_MANUFACTURER_SUCCESS</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">REMOVE_MANUFACTURER</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">REMOVE_MANUFACTURER_SUCCESS</span>,
+</span></span><span style="display:flex;"><span>} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./mutation-types&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">productMutations</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    [<span style="color:#a6e22e">ALL_PRODUCTS</span>](<span style="color:#a6e22e">state</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    [<span style="color:#a6e22e">ALL_PRODUCTS_SUCCESS</span>](<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">products</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">products</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">products</span>;
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    [<span style="color:#a6e22e">PRODUCT_BY_ID</span>](<span style="color:#a6e22e">state</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    [<span style="color:#a6e22e">PRODUCT_BY_ID_SUCCESS</span>](<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">product</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">product</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">product</span>;
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    [<span style="color:#a6e22e">REMOVE_PRODUCT</span>](<span style="color:#a6e22e">state</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    [<span style="color:#a6e22e">REMOVE_PRODUCT_SUCCESS</span>](<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">productId</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">products</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">products</span>.<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">product</span> =&gt; <span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">_id</span> <span style="color:#f92672">!==</span> <span style="color:#a6e22e">productId</span>);
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    [<span style="color:#a6e22e">UPDATE_PRODUCT</span>](<span style="color:#a6e22e">state</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    [<span style="color:#a6e22e">UPDATE_PRODUCT_SUCCESS</span>](<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">product</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">newProduct</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">product</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">newProduct</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">products</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">products</span>.<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">product</span> =&gt; {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">_id</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">newProduct</span>.<span style="color:#a6e22e">_id</span>) {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">newProduct</span>;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">product</span>;
+</span></span><span style="display:flex;"><span>        })
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    [<span style="color:#a6e22e">ADD_PRODUCT</span>](<span style="color:#a6e22e">state</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    [<span style="color:#a6e22e">ADD_PRODUCT_SUCCESS</span>](<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">product</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">products</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">products</span>.<span style="color:#a6e22e">concat</span>(<span style="color:#a6e22e">product</span>);
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">cartMutations</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    [<span style="color:#a6e22e">ADD_TO_CART</span>](<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">product</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">cart</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">product</span>)
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    [<span style="color:#a6e22e">REMOVE_FROM_CART</span>](<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">productId</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">cart</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">cart</span>.<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">product</span> =&gt; <span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">_id</span> <span style="color:#f92672">!==</span> <span style="color:#a6e22e">productId</span>)
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">manufacturerMutations</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    [<span style="color:#a6e22e">ALL_MANUFACTURERS</span>](<span style="color:#a6e22e">state</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    [<span style="color:#a6e22e">ALL_MANUFACTURERS_SUCCESS</span>](<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">manufacturers</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">manufacturers</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">manufacturers</span>;
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    [<span style="color:#a6e22e">MANUFACTURER_BY_ID</span>](<span style="color:#a6e22e">state</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    [<span style="color:#a6e22e">MANUFACTURER_BY_ID_SUCCESS</span>](<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">manufacturer</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">manufacturer</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">manufacturer</span>;
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    [<span style="color:#a6e22e">REMOVE_MANUFACTURER</span>](<span style="color:#a6e22e">state</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    [<span style="color:#a6e22e">REMOVE_MANUFACTURER_SUCCESS</span>](<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">manufacturerId</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">manufacturers</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">manufacturers</span>.<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">manufacturer</span> =&gt; <span style="color:#a6e22e">manufacturer</span>.<span style="color:#a6e22e">_id</span> <span style="color:#f92672">!==</span> <span style="color:#a6e22e">manufacturerId</span>);
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    [<span style="color:#a6e22e">UPDATE_MANUFACTURER</span>](<span style="color:#a6e22e">state</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    [<span style="color:#a6e22e">UPDATE_MANUFACTURER_SUCCESS</span>](<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">manufacturer</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">newManufacturer</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">manufacturers</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">manufacturers</span>.<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">manufacturer</span> =&gt; {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">manufacturer</span>.<span style="color:#a6e22e">_id</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">newManufacturer</span>.<span style="color:#a6e22e">_id</span>) {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">newManufacturer</span>;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">manufacturer</span>;
+</span></span><span style="display:flex;"><span>        })
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    [<span style="color:#a6e22e">ADD_MANUFACTURER</span>](<span style="color:#a6e22e">state</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    [<span style="color:#a6e22e">ADD_MANUFACTURER_SUCCESS</span>](<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">showLoader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">manufacturer</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">manufacturers</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">manufacturers</span>.<span style="color:#a6e22e">concat</span>(<span style="color:#a6e22e">manufacturer</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>如此就完成了用常數替換 <code>actions</code> 和 <code>mutations</code> 兩隻檔案中的事件類型<br>
 後續要維護就不會東一塊西一塊的過於分散，還要用全域搜尋人工替換，增加了維護的可行性</p>
 <hr>
 <p>專案範例程式碼 GitHub 網址：<a href="https://github.com/ray247k/mini-E-commerce"
@@ -1300,14 +1300,14 @@
         © 2022 薛丁格的工程師
     </p>
     <p class="copyright" style="font-size: 0.1EM;">
-        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.92.2' target='_blank' rel='noopener'>Hugo</a>
+        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.93.3' target='_blank' rel='noopener'>Hugo</a>
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
 
       <script src="/js/highlight.js"></script>
     
-    <script>hljs.highlightAll();</script><script src="/js/bundle.min.5352079d3388d9a4297e0200dd1040866c8b3b67460090bf30e01a9cd56fd746.js" integrity="sha256-U1IHnTOI2aQpfgIA3RBAhmyLO2dGAJC/MOAanNVv10Y="></script>
+    <script>hljs.highlightAll();</script><script src="/js/bundle.min.70300e10d694c03c4e7b364dbb682d9972a2a0198302fda4dcf8911935f91bf0.js" integrity="sha256-cDAOENaUwDxOezZNu2gtmXKioBmDAv2k3PiRGTX5G/A="></script>
     <script src="/js/add-on.js"></script>
 <script type="application/javascript">
 var doNotTrack = false;

@@ -18,7 +18,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.92.2" /><meta property="og:site_name" content="薛丁格的工程師">
+<meta name="generator" content="Hugo 0.93.3" /><meta property="og:site_name" content="薛丁格的工程師">
   <meta property="og:title" content="[Express&#43;Vue 搭建電商網站] 19 使用 Element UI 重構畫面">
   <meta property="og:description" content="使用 Express &#43; Vue 搭建一個電商網站 - 套用 Element UI 到頁面上">
   <meta property="description" content="使用 Express &#43; Vue 搭建一個電商網站 - 套用 Element UI 到頁面上">
@@ -347,86 +347,86 @@
 後續的文章會把功能修復，莫急莫慌莫害怕</p>
 <h1 id="管理後台畫面重構">管理後台畫面重構</h1>
 <p>由於我們之前在 <code>App</code> 組件中已經有了共用的工具列，所以打開 <code>src/views/admin/Index.vue</code> 修改成</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
-  &lt;<span style="color:#f92672">div</span>&gt;
-    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;admin-new&#34;</span>&gt;
-      &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;
-        &lt;<span style="color:#f92672">h1</span>&gt;<span style="color:#a6e22e">In</span> <span style="color:#a6e22e">Admin</span>&lt;/<span style="color:#f92672">h1</span>&gt;
-        &lt;<span style="color:#f92672">router-view</span>/&gt;
-      &lt;/<span style="color:#f92672">div</span>&gt;
-    &lt;/<span style="color:#f92672">div</span>&gt;
-  &lt;/<span style="color:#f92672">div</span>&gt;
-&lt;/<span style="color:#f92672">template</span>&gt;
-</code></pre></div><h2 id="後台商品列表頁面重構">後台商品列表頁面重構</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;admin-new&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">h1</span>&gt;<span style="color:#a6e22e">In</span> <span style="color:#a6e22e">Admin</span>&lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">router-view</span>/&gt;
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">template</span>&gt;
+</span></span></code></pre></div><h2 id="後台商品列表頁面重構">後台商品列表頁面重構</h2>
 <p>接著打開後台的商品組件 <code>src/views/admin/Products.vue</code>，將 <code>&lt;template&gt;</code> 修改成</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
-  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;products&#34;</span>&gt;
-    &lt;<span style="color:#f92672">el-table</span>
-    <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;table&#34;</span>
-    <span style="color:#f92672">:data</span><span style="color:#e6db74">=&#34;products&#34;</span>&gt;
-      &lt;<span style="color:#f92672">el-table-column</span>
-        <span style="color:#a6e22e">prop</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;name&#34;</span>
-        <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;名稱&#34;</span>
-        <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;180&#34;</span>&gt;
-      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-table-column&gt;</span>
-      &lt;<span style="color:#f92672">el-table-column</span>
-        <span style="color:#a6e22e">prop</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;price&#34;</span>
-        <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;售價&#34;</span>
-        <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;180&#34;</span>&gt;
-      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-table-column&gt;</span>
-      &lt;<span style="color:#f92672">el-table-column</span>
-        <span style="color:#a6e22e">prop</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;manufacturer.name&#34;</span>
-        <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;製造商&#34;</span>
-        <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;180&#34;</span>&gt;
-      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-table-column&gt;</span>
-      &lt;<span style="color:#f92672">el-table-column</span>
-        <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;管理&#34;</span>
-        <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;200&#34;</span>&gt;
-        &lt;<span style="color:#f92672">template</span> <span style="color:#a6e22e">slot</span><span style="color:#f92672">-scope</span><span style="color:#960050;background-color:#1e0010">=&#34;</span><span style="color:#a6e22e">scope</span><span style="color:#960050;background-color:#1e0010">&#34;</span>&gt;
-          &lt;<span style="color:#f92672">el-button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;modify&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">size</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;small&#34;</span>&gt;&lt;<span style="color:#f92672">router-link</span> <span style="color:#f92672">:</span><span style="color:#a6e22e">to</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#39;/admin/edit/&#39; + scope.row._id&#34;</span>&gt;<span style="color:#a6e22e">修改</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/router-link&gt;&lt;/el-button&gt;</span>
-          &lt;<span style="color:#f92672">el-button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;remove&#34;</span> <span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">click</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;removeProduct(scope.row._id), deleteRow(scope.$index, products)&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">size</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;small&#34;</span>&gt;<span style="color:#a6e22e">删除</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-button&gt;</span>
-        &lt;/<span style="color:#f92672">template</span>&gt;
-      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-table-column&gt;</span>
-    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-table&gt;</span>
-  &lt;/<span style="color:#f92672">div</span>&gt;
-&lt;/<span style="color:#f92672">template</span>&gt;
-</code></pre></div><p>看起來和前台的 <code>ProductItem</code> 組件中表格非常相似，差在對商品物件的操作<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;products&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">el-table</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;table&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">:data</span><span style="color:#e6db74">=&#34;products&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">el-table-column</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">prop</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;name&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;名稱&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;180&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-table-column&gt;</span>
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">el-table-column</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">prop</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;price&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;售價&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;180&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-table-column&gt;</span>
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">el-table-column</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">prop</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;manufacturer.name&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;製造商&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;180&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-table-column&gt;</span>
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">el-table-column</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;管理&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;200&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">template</span> <span style="color:#a6e22e">slot</span><span style="color:#f92672">-scope</span><span style="color:#960050;background-color:#1e0010">=&#34;</span><span style="color:#a6e22e">scope</span><span style="color:#960050;background-color:#1e0010">&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>          &lt;<span style="color:#f92672">el-button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;modify&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">size</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;small&#34;</span>&gt;&lt;<span style="color:#f92672">router-link</span> <span style="color:#f92672">:</span><span style="color:#a6e22e">to</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#39;/admin/edit/&#39; + scope.row._id&#34;</span>&gt;<span style="color:#a6e22e">修改</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/router-link&gt;&lt;/el-button&gt;</span>
+</span></span><span style="display:flex;"><span>          &lt;<span style="color:#f92672">el-button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;remove&#34;</span> <span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">click</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;removeProduct(scope.row._id), deleteRow(scope.$index, products)&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">size</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;small&#34;</span>&gt;<span style="color:#a6e22e">删除</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-button&gt;</span>
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-table-column&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-table&gt;</span>
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">template</span>&gt;
+</span></span></code></pre></div><p>看起來和前台的 <code>ProductItem</code> 組件中表格非常相似，差在對商品物件的操作<br>
 一個是將商品加入或移出購物車，一個是刪除或修改商品</p>
 <h2 id="後台編輯商品頁面重構">後台編輯商品頁面重構</h2>
 <p>打開 <code>ProductForm</code> 組件，在 <code>&lt;template&gt;</code> 內使用組件庫提供的 <code>el-form</code> 表單組件代替原本簡陋的 form 表單</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
-  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;productInfo&#34;</span>&gt;
-    &lt;<span style="color:#f92672">el-form</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form&#34;</span> <span style="color:#a6e22e">ref</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form&#34;</span> <span style="color:#f92672">:model</span><span style="color:#e6db74">=&#34;model&#34;</span> <span style="color:#a6e22e">label</span><span style="color:#f92672">-width</span><span style="color:#960050;background-color:#1e0010">=&#34;</span><span style="color:#a6e22e">180px</span><span style="color:#960050;background-color:#1e0010">&#34;</span>&gt;
-      &lt;<span style="color:#f92672">el-form-item</span> <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Name&#34;</span>&gt;
-        &lt;<span style="color:#f92672">el-input</span> <span style="color:#f92672">v-model</span><span style="color:#e6db74">=&#34;model.name&#34;</span>&gt;<span style="color:#960050;background-color:#1e0010">&lt;/</span><span style="color:#a6e22e">el</span><span style="color:#f92672">-input</span>&gt;
-      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-form-item&gt;</span>
-      &lt;<span style="color:#f92672">el-form-item</span> <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Price&#34;</span>&gt;
-        &lt;<span style="color:#f92672">el-input</span> <span style="color:#f92672">v-model</span><span style="color:#e6db74">=&#34;model.price&#34;</span>&gt;<span style="color:#960050;background-color:#1e0010">&lt;/</span><span style="color:#a6e22e">el</span><span style="color:#f92672">-input</span>&gt;
-      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-form-item&gt;</span>
-      &lt;<span style="color:#f92672">el-form-item</span> <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Manufacturer &#34;</span>&gt;
-        &lt;<span style="color:#f92672">el-select</span> <span style="color:#f92672">v-model</span><span style="color:#e6db74">=&#34;model.manufacturer.name&#34; clearable placeholder=&#34;请选择制造商&#34;&gt;
-</span><span style="color:#e6db74">          &lt;el-option
-</span><span style="color:#e6db74">            v-for=&#34;manufacturer in manufacturers&#34;
-</span><span style="color:#e6db74">            :key=&#34;manufacturer._id&#34;
-</span><span style="color:#e6db74">            :label=&#34;manufacturer.name&#34;
-</span><span style="color:#e6db74">            :value=&#34;manufacturer.name&#34;
-</span><span style="color:#e6db74">          &gt;&lt;/el-option&gt;
-</span><span style="color:#e6db74">        &lt;/el-select&gt;
-</span><span style="color:#e6db74">      &lt;/el-form-item&gt;
-</span><span style="color:#e6db74">      &lt;el-form-item label=&#34;Image &#34;&gt;
-</span><span style="color:#e6db74">        &lt;el-input v-model=&#34;model.image&#34;&gt;&lt;/el-input&gt;
-</span><span style="color:#e6db74">      &lt;/el-form-item&gt;
-</span><span style="color:#e6db74">      &lt;el-form-item label=&#34;Description &#34;&gt;
-</span><span style="color:#e6db74">        &lt;el-input type=&#34;textarea&#34; v-model=&#34;model.description&#34;&gt;&lt;/el-input&gt;
-</span><span style="color:#e6db74">      &lt;/el-form-item&gt;
-</span><span style="color:#e6db74">      &lt;el-form-item&gt;
-</span><span style="color:#e6db74">        &lt;el-button v-if=&#34;isEditing&#34; type=&#34;primary&#34; @click=&#34;onSubmit&#34;&gt;Update Product&lt;/el-button&gt;
-</span><span style="color:#e6db74">        &lt;el-button v-else @click=&#34;onSubmit&#34;</span>&gt;<span style="color:#a6e22e">Add</span> <span style="color:#a6e22e">Product</span><span style="color:#960050;background-color:#1e0010">&lt;/</span><span style="color:#a6e22e">el</span><span style="color:#f92672">-button</span>&gt;
-      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-form-item&gt;</span>
-    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-form&gt;</span>
-  &lt;/<span style="color:#f92672">div</span>&gt;
-&lt;/<span style="color:#f92672">template</span>&gt;
-</code></pre></div><p>接著要解決 <code>src/views/admin/Edit.vue</code> 組件內傳入的 computed <code>model</code> 無法被編輯的問題<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;productInfo&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">el-form</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form&#34;</span> <span style="color:#a6e22e">ref</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form&#34;</span> <span style="color:#f92672">:model</span><span style="color:#e6db74">=&#34;model&#34;</span> <span style="color:#a6e22e">label</span><span style="color:#f92672">-width</span><span style="color:#960050;background-color:#1e0010">=&#34;</span><span style="color:#a6e22e">180px</span><span style="color:#960050;background-color:#1e0010">&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">el-form-item</span> <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Name&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">el-input</span> <span style="color:#f92672">v-model</span><span style="color:#e6db74">=&#34;model.name&#34;</span>&gt;<span style="color:#960050;background-color:#1e0010">&lt;/</span><span style="color:#a6e22e">el</span><span style="color:#f92672">-input</span>&gt;
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-form-item&gt;</span>
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">el-form-item</span> <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Price&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">el-input</span> <span style="color:#f92672">v-model</span><span style="color:#e6db74">=&#34;model.price&#34;</span>&gt;<span style="color:#960050;background-color:#1e0010">&lt;/</span><span style="color:#a6e22e">el</span><span style="color:#f92672">-input</span>&gt;
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-form-item&gt;</span>
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">el-form-item</span> <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Manufacturer &#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">el-select</span> <span style="color:#f92672">v-model</span><span style="color:#e6db74">=&#34;model.manufacturer.name&#34; clearable placeholder=&#34;请选择制造商&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;el-option
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            v-for=&#34;manufacturer in manufacturers&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            :key=&#34;manufacturer._id&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            :label=&#34;manufacturer.name&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            :value=&#34;manufacturer.name&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &gt;&lt;/el-option&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;/el-select&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;/el-form-item&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;el-form-item label=&#34;Image &#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;el-input v-model=&#34;model.image&#34;&gt;&lt;/el-input&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;/el-form-item&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;el-form-item label=&#34;Description &#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;el-input type=&#34;textarea&#34; v-model=&#34;model.description&#34;&gt;&lt;/el-input&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;/el-form-item&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;el-form-item&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;el-button v-if=&#34;isEditing&#34; type=&#34;primary&#34; @click=&#34;onSubmit&#34;&gt;Update Product&lt;/el-button&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;el-button v-else @click=&#34;onSubmit&#34;</span>&gt;<span style="color:#a6e22e">Add</span> <span style="color:#a6e22e">Product</span><span style="color:#960050;background-color:#1e0010">&lt;/</span><span style="color:#a6e22e">el</span><span style="color:#f92672">-button</span>&gt;
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-form-item&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-form&gt;</span>
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">template</span>&gt;
+</span></span></code></pre></div><p>接著要解決 <code>src/views/admin/Edit.vue</code> 組件內傳入的 computed <code>model</code> 無法被編輯的問題<br>
 理由是 input 作為受控的組件，會一直顯示 Vue 的綁定資料<br>
 輸入框內容將無法進行編輯：<a href="https://element.eleme.io/#/zh-CN/component/input"
    
@@ -435,168 +435,168 @@
 <br>
 結果送出之後還是沒反應，這很正常先繼續把畫面調好，等等我們會來修復它</p>
 <p>打開 <code>Edit</code> 組件，將原本在 computed 中的 <code>model</code> 屬性放到 <code>data</code> 屬性中，並移除原本在 computed 中的屬性</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
-  &lt;<span style="color:#f92672">div</span>&gt;
-    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;title&#34;</span>&gt;
-      &lt;<span style="color:#f92672">h1</span>&gt;<span style="color:#a6e22e">This</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">Admin</span><span style="color:#f92672">/</span><span style="color:#a6e22e">Edit</span>&lt;/<span style="color:#f92672">h1</span>&gt;
-    &lt;/<span style="color:#f92672">div</span>&gt;
-    &lt;<span style="color:#f92672">product-form</span>
-      <span style="color:#f92672">@save-product</span><span style="color:#e6db74">=&#34;updateProduct&#34;</span>
-      <span style="color:#f92672">:model</span><span style="color:#e6db74">=&#34;model&#34;</span>
-      <span style="color:#f92672">:manufacturers</span><span style="color:#e6db74">=&#34;manufacturers&#34;</span>
-      <span style="color:#f92672">:isEditing</span><span style="color:#e6db74">=&#34;true&#34;</span>
-    &gt;<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/product-form&gt;</span>
-  &lt;/<span style="color:#f92672">div</span>&gt;
-&lt;/<span style="color:#f92672">template</span>&gt;
-
-&lt;<span style="color:#f92672">script</span>&gt;
-<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ProductForm</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@/components/products/ProductForm.vue&#34;</span>;
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
-  <span style="color:#a6e22e">data</span>() {
-    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">product</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">getters</span>.<span style="color:#a6e22e">productById</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$route</span>.<span style="color:#a6e22e">params</span>[<span style="color:#e6db74">&#34;id&#34;</span>]);
-    <span style="color:#66d9ef">return</span> {
-      <span style="color:#75715e">// 回傳 product 的備份，是為了在修改 product 的備份之後，在保存之前不修改本地 Vuex store 的 product 屬性
-</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">model</span><span style="color:#f92672">:</span> { ...<span style="color:#a6e22e">product</span>, <span style="color:#a6e22e">manufacturer</span><span style="color:#f92672">:</span> { ...<span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">manufacturer</span> } }
-    };
-  },
-  <span style="color:#a6e22e">created</span>() {
-    <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">name</span> } <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">model</span>;
-    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">name</span>) {
-      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#e6db74">&#34;productById&#34;</span>, {
-        <span style="color:#a6e22e">productId</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$route</span>.<span style="color:#a6e22e">params</span>[<span style="color:#e6db74">&#34;id&#34;</span>]
-      });
-    }
-
-    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">manufacturers</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) {
-      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#e6db74">&#34;allManufacturers&#34;</span>);
-    }
-  },
-  <span style="color:#a6e22e">computed</span><span style="color:#f92672">:</span> {
-    <span style="color:#a6e22e">manufacturers</span>() {
-      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">getters</span>.<span style="color:#a6e22e">allManufacturers</span>;
-    },
-  },
-  <span style="color:#a6e22e">methods</span><span style="color:#f92672">:</span> {
-    <span style="color:#a6e22e">updateProduct</span>(<span style="color:#a6e22e">product</span>) {
-      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#e6db74">&#34;updateProduct&#34;</span>, {
-        <span style="color:#a6e22e">product</span>
-      });
-    }
-  },
-  <span style="color:#a6e22e">components</span><span style="color:#f92672">:</span> {
-    <span style="color:#e6db74">&#34;product-form&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ProductForm</span>
-  }
-};
-&lt;/<span style="color:#f92672">script</span>&gt;
-</code></pre></div><p>接著，長得跟 <code>Edit</code> 組件很像的 <code>New</code> 組件也一起重構</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
-  &lt;<span style="color:#f92672">product-form</span> <span style="color:#f92672">@save-product</span><span style="color:#e6db74">=&#34;addProduct&#34;</span> <span style="color:#f92672">:model</span><span style="color:#e6db74">=&#34;model&#34;</span> <span style="color:#f92672">:manufacturers</span><span style="color:#e6db74">=&#34;manufacturers&#34;</span>&gt;<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/product-form&gt;</span>
-&lt;/<span style="color:#f92672">template</span>&gt;
-
-&lt;<span style="color:#f92672">script</span>&gt;
-<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ProductForm</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@/components/products/ProductForm.vue&#34;</span>;
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
-  <span style="color:#a6e22e">data</span>() {
-    <span style="color:#66d9ef">return</span> {
-      <span style="color:#a6e22e">model</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">manufacturer</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span> } }
-    };
-  },
-  <span style="color:#a6e22e">created</span>() {
-    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">manufacturers</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) {
-      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#e6db74">&#34;allManufacturers&#34;</span>);
-    }
-  },
-  <span style="color:#a6e22e">computed</span><span style="color:#f92672">:</span> {
-    <span style="color:#a6e22e">manufacturers</span>() {
-      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">getters</span>.<span style="color:#a6e22e">allManufacturers</span>;
-    }
-  },
-  <span style="color:#a6e22e">methods</span><span style="color:#f92672">:</span> {
-    <span style="color:#a6e22e">addProduct</span>(<span style="color:#a6e22e">model</span>) {
-      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#e6db74">&#34;addProduct&#34;</span>, {
-        <span style="color:#a6e22e">product</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">model</span>
-      });
-    }
-  },
-  <span style="color:#a6e22e">components</span><span style="color:#f92672">:</span> {
-    <span style="color:#e6db74">&#34;product-form&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ProductForm</span>
-  }
-};
-&lt;/<span style="color:#f92672">script</span>&gt;
-</code></pre></div><h2 id="後台編輯製造商頁面重構">後台編輯製造商頁面重構</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;title&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">h1</span>&gt;<span style="color:#a6e22e">This</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">Admin</span><span style="color:#f92672">/</span><span style="color:#a6e22e">Edit</span>&lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">product-form</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">@save-product</span><span style="color:#e6db74">=&#34;updateProduct&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">:model</span><span style="color:#e6db74">=&#34;model&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">:manufacturers</span><span style="color:#e6db74">=&#34;manufacturers&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">:isEditing</span><span style="color:#e6db74">=&#34;true&#34;</span>
+</span></span><span style="display:flex;"><span>    &gt;<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/product-form&gt;</span>
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ProductForm</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@/components/products/ProductForm.vue&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">data</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">product</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">getters</span>.<span style="color:#a6e22e">productById</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$route</span>.<span style="color:#a6e22e">params</span>[<span style="color:#e6db74">&#34;id&#34;</span>]);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// 回傳 product 的備份，是為了在修改 product 的備份之後，在保存之前不修改本地 Vuex store 的 product 屬性
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#a6e22e">model</span><span style="color:#f92672">:</span> { ...<span style="color:#a6e22e">product</span>, <span style="color:#a6e22e">manufacturer</span><span style="color:#f92672">:</span> { ...<span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">manufacturer</span> } }
+</span></span><span style="display:flex;"><span>    };
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">created</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">name</span> } <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">model</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">name</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#e6db74">&#34;productById&#34;</span>, {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">productId</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$route</span>.<span style="color:#a6e22e">params</span>[<span style="color:#e6db74">&#34;id&#34;</span>]
+</span></span><span style="display:flex;"><span>      });
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">manufacturers</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#e6db74">&#34;allManufacturers&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">computed</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">manufacturers</span>() {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">getters</span>.<span style="color:#a6e22e">allManufacturers</span>;
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">methods</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">updateProduct</span>(<span style="color:#a6e22e">product</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#e6db74">&#34;updateProduct&#34;</span>, {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">product</span>
+</span></span><span style="display:flex;"><span>      });
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">components</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;product-form&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ProductForm</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>接著，長得跟 <code>Edit</code> 組件很像的 <code>New</code> 組件也一起重構</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">product-form</span> <span style="color:#f92672">@save-product</span><span style="color:#e6db74">=&#34;addProduct&#34;</span> <span style="color:#f92672">:model</span><span style="color:#e6db74">=&#34;model&#34;</span> <span style="color:#f92672">:manufacturers</span><span style="color:#e6db74">=&#34;manufacturers&#34;</span>&gt;<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/product-form&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ProductForm</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@/components/products/ProductForm.vue&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">data</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">model</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">manufacturer</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span> } }
+</span></span><span style="display:flex;"><span>    };
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">created</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">manufacturers</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#e6db74">&#34;allManufacturers&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">computed</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">manufacturers</span>() {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">getters</span>.<span style="color:#a6e22e">allManufacturers</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">methods</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">addProduct</span>(<span style="color:#a6e22e">model</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#e6db74">&#34;addProduct&#34;</span>, {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">product</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">model</span>
+</span></span><span style="display:flex;"><span>      });
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">components</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;product-form&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ProductForm</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><h2 id="後台編輯製造商頁面重構">後台編輯製造商頁面重構</h2>
 <p>和 <code>Products</code> 組件類似，開啟 <code>Manufacturers</code> 使用 <code>el-table</code> 替換掉原本的表單的 <code>&lt;template&gt;</code> 部分</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
-  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;manufacturers&#34;</span>&gt;
-    &lt;<span style="color:#f92672">el-table</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;table&#34;</span> <span style="color:#f92672">:data</span><span style="color:#e6db74">=&#34;manufacturers&#34;</span>&gt;
-      &lt;<span style="color:#f92672">el-table-column</span> <span style="color:#a6e22e">prop</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;製造商&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;180&#34;</span>&gt;<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-table-column&gt;</span>
-      &lt;<span style="color:#f92672">el-table-column</span> <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;管理&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;200&#34;</span>&gt;
-        &lt;<span style="color:#f92672">template</span> <span style="color:#a6e22e">slot</span><span style="color:#f92672">-scope</span><span style="color:#960050;background-color:#1e0010">=&#34;</span><span style="color:#a6e22e">scope</span><span style="color:#960050;background-color:#1e0010">&#34;</span>&gt;
-          &lt;<span style="color:#f92672">el-button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;modify&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">size</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;small&#34;</span>&gt;
-            &lt;<span style="color:#f92672">router-link</span> <span style="color:#f92672">:</span><span style="color:#a6e22e">to</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#39;/admin/manufacturers/edit/&#39; + scope.row._id&#34;</span>&gt;<span style="color:#a6e22e">修改</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/router-link&gt;</span>
-          <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-button&gt;</span>
-          &lt;<span style="color:#f92672">el-button</span>
-            <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;remove&#34;</span>
-            <span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">click</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;removeManufacturer(scope.row._id), deleteRow(scope.$index, products)&#34;</span>
-            <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span>
-            <span style="color:#a6e22e">size</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;small&#34;</span>
-          &gt;<span style="color:#a6e22e">刪除</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-button&gt;</span>
-        &lt;/<span style="color:#f92672">template</span>&gt;
-      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-table-column&gt;</span>
-    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-table&gt;</span>
-  &lt;/<span style="color:#f92672">div</span>&gt;
-&lt;/<span style="color:#f92672">template</span>&gt;
-</code></pre></div><p>接著重構 <code>NewManufacturers</code> 組件，一樣將 computed 的 <code>model</code> 換到 data 屬性中</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
-  &lt;<span style="color:#f92672">manufacturer-form</span> <span style="color:#f92672">@save-manufacturer</span><span style="color:#e6db74">=&#34;addManufacturer&#34;</span> <span style="color:#f92672">:model</span><span style="color:#e6db74">=&#34;model&#34;</span>&gt;<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/manufacturer-form&gt;</span>
-&lt;/<span style="color:#f92672">template</span>&gt;
-
-&lt;<span style="color:#f92672">script</span>&gt;
-<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ManufacturerForm</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@/components/ManufacturerForm.vue&#34;</span>;
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
-  <span style="color:#a6e22e">data</span>() {
-    <span style="color:#66d9ef">return</span> {
-      <span style="color:#a6e22e">model</span><span style="color:#f92672">:</span> {}
-    };
-  },
-  <span style="color:#a6e22e">methods</span><span style="color:#f92672">:</span> {
-    <span style="color:#a6e22e">addManufacturer</span>(<span style="color:#a6e22e">model</span>) {
-      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#e6db74">&#34;addManufacturer&#34;</span>, {
-        <span style="color:#a6e22e">manufacturer</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">model</span>
-      });
-    }
-  },
-  <span style="color:#a6e22e">components</span><span style="color:#f92672">:</span> {
-    <span style="color:#e6db74">&#34;manufacturer-form&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ManufacturerForm</span>
-  }
-};
-&lt;/<span style="color:#f92672">script</span>&gt;
-</code></pre></div><p>接著重構 <code>ManufacturerForm</code><br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;manufacturers&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">el-table</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;table&#34;</span> <span style="color:#f92672">:data</span><span style="color:#e6db74">=&#34;manufacturers&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">el-table-column</span> <span style="color:#a6e22e">prop</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;製造商&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;180&#34;</span>&gt;<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-table-column&gt;</span>
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">el-table-column</span> <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;管理&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;200&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">template</span> <span style="color:#a6e22e">slot</span><span style="color:#f92672">-scope</span><span style="color:#960050;background-color:#1e0010">=&#34;</span><span style="color:#a6e22e">scope</span><span style="color:#960050;background-color:#1e0010">&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>          &lt;<span style="color:#f92672">el-button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;modify&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">size</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;small&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">router-link</span> <span style="color:#f92672">:</span><span style="color:#a6e22e">to</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#39;/admin/manufacturers/edit/&#39; + scope.row._id&#34;</span>&gt;<span style="color:#a6e22e">修改</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/router-link&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-button&gt;</span>
+</span></span><span style="display:flex;"><span>          &lt;<span style="color:#f92672">el-button</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;remove&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">click</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;removeManufacturer(scope.row._id), deleteRow(scope.$index, products)&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">size</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;small&#34;</span>
+</span></span><span style="display:flex;"><span>          &gt;<span style="color:#a6e22e">刪除</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-button&gt;</span>
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-table-column&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-table&gt;</span>
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">template</span>&gt;
+</span></span></code></pre></div><p>接著重構 <code>NewManufacturers</code> 組件，一樣將 computed 的 <code>model</code> 換到 data 屬性中</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">manufacturer-form</span> <span style="color:#f92672">@save-manufacturer</span><span style="color:#e6db74">=&#34;addManufacturer&#34;</span> <span style="color:#f92672">:model</span><span style="color:#e6db74">=&#34;model&#34;</span>&gt;<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/manufacturer-form&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ManufacturerForm</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@/components/ManufacturerForm.vue&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">data</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">model</span><span style="color:#f92672">:</span> {}
+</span></span><span style="display:flex;"><span>    };
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">methods</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">addManufacturer</span>(<span style="color:#a6e22e">model</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#e6db74">&#34;addManufacturer&#34;</span>, {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">manufacturer</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">model</span>
+</span></span><span style="display:flex;"><span>      });
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">components</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;manufacturer-form&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ManufacturerForm</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>接著重構 <code>ManufacturerForm</code><br>
 程式結構和 <code>ProductForm</code> 組件很類似，將 <code>&lt;template&gt;</code> 區塊替換成組件庫樣式</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
-  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;manufacturerInfo&#34;</span>&gt;
-    &lt;<span style="color:#f92672">el-form</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form&#34;</span> <span style="color:#a6e22e">ref</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form&#34;</span> <span style="color:#f92672">:model</span><span style="color:#e6db74">=&#34;model&#34;</span> <span style="color:#a6e22e">label</span><span style="color:#f92672">-width</span><span style="color:#960050;background-color:#1e0010">=&#34;</span><span style="color:#a6e22e">180px</span><span style="color:#960050;background-color:#1e0010">&#34;</span>&gt;
-      &lt;<span style="color:#f92672">el-form-item</span> <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Name&#34;</span>&gt;
-        &lt;<span style="color:#f92672">el-input</span> <span style="color:#f92672">v-model</span><span style="color:#e6db74">=&#34;model.name&#34;</span>&gt;<span style="color:#960050;background-color:#1e0010">&lt;/</span><span style="color:#a6e22e">el</span><span style="color:#f92672">-input</span>&gt;
-      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-form-item&gt;</span>
-      &lt;<span style="color:#f92672">el-form-item</span>&gt;
-        &lt;<span style="color:#f92672">el-button</span> <span style="color:#f92672">v-if</span><span style="color:#e6db74">=&#34;isEditing&#34; type=&#34;primary&#34; @click=&#34;onSubmit&#34;&gt;Update Manufacturer&lt;/el-button&gt;
-</span><span style="color:#e6db74">        &lt;el-button v-else @click=&#34;onSubmit&#34;</span>&gt;<span style="color:#a6e22e">Add</span> <span style="color:#a6e22e">Manufacturer</span><span style="color:#960050;background-color:#1e0010">&lt;/</span><span style="color:#a6e22e">el</span><span style="color:#f92672">-button</span>&gt;
-      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-form-item&gt;</span>
-    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-form&gt;</span>
-  &lt;/<span style="color:#f92672">div</span>&gt;
-&lt;/<span style="color:#f92672">template</span>&gt;
-</code></pre></div><h1 id="重構前台購物車">重構前台購物車</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;manufacturerInfo&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">el-form</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form&#34;</span> <span style="color:#a6e22e">ref</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form&#34;</span> <span style="color:#f92672">:model</span><span style="color:#e6db74">=&#34;model&#34;</span> <span style="color:#a6e22e">label</span><span style="color:#f92672">-width</span><span style="color:#960050;background-color:#1e0010">=&#34;</span><span style="color:#a6e22e">180px</span><span style="color:#960050;background-color:#1e0010">&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">el-form-item</span> <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Name&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">el-input</span> <span style="color:#f92672">v-model</span><span style="color:#e6db74">=&#34;model.name&#34;</span>&gt;<span style="color:#960050;background-color:#1e0010">&lt;/</span><span style="color:#a6e22e">el</span><span style="color:#f92672">-input</span>&gt;
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-form-item&gt;</span>
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">el-form-item</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">el-button</span> <span style="color:#f92672">v-if</span><span style="color:#e6db74">=&#34;isEditing&#34; type=&#34;primary&#34; @click=&#34;onSubmit&#34;&gt;Update Manufacturer&lt;/el-button&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;el-button v-else @click=&#34;onSubmit&#34;</span>&gt;<span style="color:#a6e22e">Add</span> <span style="color:#a6e22e">Manufacturer</span><span style="color:#960050;background-color:#1e0010">&lt;/</span><span style="color:#a6e22e">el</span><span style="color:#f92672">-button</span>&gt;
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-form-item&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-form&gt;</span>
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">template</span>&gt;
+</span></span></code></pre></div><h1 id="重構前台購物車">重構前台購物車</h1>
 <p>最後！重構 <code>Cart</code> 組件，和 <code>ProductList</code> 類似，兩者都用了 <code>ProductItem</code> 組件<br>
 一樣那句話：將 <code>&lt;template&gt;</code> 區塊替換成組件庫樣式</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
-  &lt;<span style="color:#f92672">div</span>&gt;
-    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;title&#34;</span>&gt;
-      &lt;<span style="color:#f92672">h1</span>&gt;{{<span style="color:#a6e22e">msg</span>}}&lt;/<span style="color:#f92672">h1</span>&gt;
-    &lt;/<span style="color:#f92672">div</span>&gt;
-    &lt;<span style="color:#f92672">product-item</span> <span style="color:#f92672">:products</span><span style="color:#e6db74">=&#34;cart&#34;</span>&gt;<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/product-item&gt;</span>
-  &lt;/<span style="color:#f92672">div</span>&gt;
-&lt;/<span style="color:#f92672">template</span>&gt;
-</code></pre></div><p>在這篇文章中主要就是使用 <code>element-ui</code> 組件庫將畫面做得比較酷炫<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;title&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">h1</span>&gt;{{<span style="color:#a6e22e">msg</span>}}&lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">product-item</span> <span style="color:#f92672">:products</span><span style="color:#e6db74">=&#34;cart&#34;</span>&gt;<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/product-item&gt;</span>
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">template</span>&gt;
+</span></span></code></pre></div><p>在這篇文章中主要就是使用 <code>element-ui</code> 組件庫將畫面做得比較酷炫<br>
 但也造成一些功能癱瘓，當下一定很緊張，但不要緊！我們馬上就要來修復功能了！</p>
 <hr>
 <p>專案範例程式碼 GitHub 網址：<a href="https://github.com/ray247k/mini-E-commerce"
@@ -1100,14 +1100,14 @@
         © 2022 薛丁格的工程師
     </p>
     <p class="copyright" style="font-size: 0.1EM;">
-        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.92.2' target='_blank' rel='noopener'>Hugo</a>
+        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.93.3' target='_blank' rel='noopener'>Hugo</a>
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
 
       <script src="/js/highlight.js"></script>
     
-    <script>hljs.highlightAll();</script><script src="/js/bundle.min.5352079d3388d9a4297e0200dd1040866c8b3b67460090bf30e01a9cd56fd746.js" integrity="sha256-U1IHnTOI2aQpfgIA3RBAhmyLO2dGAJC/MOAanNVv10Y="></script>
+    <script>hljs.highlightAll();</script><script src="/js/bundle.min.70300e10d694c03c4e7b364dbb682d9972a2a0198302fda4dcf8911935f91bf0.js" integrity="sha256-cDAOENaUwDxOezZNu2gtmXKioBmDAv2k3PiRGTX5G/A="></script>
     <script src="/js/add-on.js"></script>
 <script type="application/javascript">
 var doNotTrack = false;

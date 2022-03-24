@@ -18,7 +18,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.92.2" /><meta property="og:site_name" content="薛丁格的工程師">
+<meta name="generator" content="Hugo 0.93.3" /><meta property="og:site_name" content="薛丁格的工程師">
   <meta property="og:title" content="環境初始化主機設定(Docker &#43; Laravel)">
   <meta property="og:description" content="介紹如何在一台剛開的主機上設定基礎的 Docker 以及 Laravel 執行環境">
   <meta property="description" content="介紹如何在一台剛開的主機上設定基礎的 Docker 以及 Laravel 執行環境">
@@ -356,37 +356,37 @@
 <p>要讓遠端主機可以對指定的 Repository 進行存取，需要加入 ssh key</p>
 <h2 id="正規方法">正規方法：</h2>
 <p>ssh 登入遠端主機之後，在遠端主機使用指令產生 ssh key</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh-keygen
-</code></pre></div><p>然後把 public key 加到遠端版本庫</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh-keygen
+</span></span></code></pre></div><p>然後把 public key 加到遠端版本庫</p>
 <h2 id="小朋友不要學的方法">小朋友不要學的方法：</h2>
 <p>也是可以把自己已經具有版本庫存取權限的 key pair 塞進遠端主機<br>
 如果 .ssh 資料夾不存在要自己加，權限 <code>700</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir .ssh
-chmod <span style="color:#ae81ff">700</span> .ssh
-cd .ssh
-vim id_rsa
-chmod <span style="color:#ae81ff">600</span> id_rsa
-vim id_rsa.pub
-chmod <span style="color:#ae81ff">644</span> id_rsa.pub
-</code></pre></div><h1 id="2-更新-linux-套件包">2. 更新 linux 套件包</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir .ssh
+</span></span><span style="display:flex;"><span>chmod <span style="color:#ae81ff">700</span> .ssh
+</span></span><span style="display:flex;"><span>cd .ssh
+</span></span><span style="display:flex;"><span>vim id_rsa
+</span></span><span style="display:flex;"><span>chmod <span style="color:#ae81ff">600</span> id_rsa
+</span></span><span style="display:flex;"><span>vim id_rsa.pub
+</span></span><span style="display:flex;"><span>chmod <span style="color:#ae81ff">644</span> id_rsa.pub
+</span></span></code></pre></div><h1 id="2-更新-linux-套件包">2. 更新 linux 套件包</h1>
 <p>因為等等要裝套件，先更新主機的套件包</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt update
-</code></pre></div><h1 id="3-安裝-docker">3. 安裝 docker</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt update
+</span></span></code></pre></div><h1 id="3-安裝-docker">3. 安裝 docker</h1>
 <p>都說要建立 Docker 的環境，當然要安裝 Docker</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt install docker.io
-</code></pre></div><h1 id="4-安裝-docker-compose">4. 安裝 docker-compose</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install docker.io
+</span></span></code></pre></div><h1 id="4-安裝-docker-compose">4. 安裝 docker-compose</h1>
 <p>後面會使用 docker-compose 來組合多個 Docker container 啟動一個完整服務<br>
 因為之後的 Laravel 專案中會同時啟動 nginx, PHP, redis, mysql 等容器<br>
 透過 docker-compose 管理與操作會比較方便</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo curl -L <span style="color:#e6db74">&#34;https://github.com/docker/compose/releases/download/1.29.1/docker-compose-</span><span style="color:#66d9ef">$(</span>uname -s<span style="color:#66d9ef">)</span><span style="color:#e6db74">-</span><span style="color:#66d9ef">$(</span>uname -m<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
-</code></pre></div><h1 id="5-安裝-php-套件">5. 安裝 php 套件</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo curl -L <span style="color:#e6db74">&#34;https://github.com/docker/compose/releases/download/1.29.1/docker-compose-</span><span style="color:#66d9ef">$(</span>uname -s<span style="color:#66d9ef">)</span><span style="color:#e6db74">-</span><span style="color:#66d9ef">$(</span>uname -m<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> -o /usr/local/bin/docker-compose
+</span></span><span style="display:flex;"><span>sudo chmod +x /usr/local/bin/docker-compose
+</span></span></code></pre></div><h1 id="5-安裝-php-套件">5. 安裝 php 套件</h1>
 <p>因為 Laravel 專案不需要編譯，當我們修改容器外的檔案，會同步對掛載進容器的檔案做變更<br>
 所以不一定要連進容器裡執行指令，在本機的變更一樣會直接生效。當然不進行這一步也是可以的</p>
 <p>為了之後可以直接在主機上執行 <code>php artisan</code> 和 <code>phpunit</code>，還有安裝&amp;執行 <code>composer</code><br>
 PHP 版本根據你的需求安裝</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt install php7.4-cli php7.4-gd install php7.4-mbstring php7.4-curl php7.4-xml php7.4-zip
-</code></pre></div><p>如果不確定自己想找的套件名稱叫什麼，可以在 <code>apt install php7.4</code> 之後按兩下 tab<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt install php7.4-cli php7.4-gd install php7.4-mbstring php7.4-curl php7.4-xml php7.4-zip
+</span></span></code></pre></div><p>如果不確定自己想找的套件名稱叫什麼，可以在 <code>apt install php7.4</code> 之後按兩下 tab<br>
 這樣就會列出名稱為「php7.4」開頭的所有套件，如此就可以很方便的找到指定版本的套件！</p>
 <p>下圖用 <code>apt install docker</code> 按兩下 tab 顯示所有「docker」開頭的套件為例<br>
 <img src="/img/blog/2021/07/initialize-server-setting-with-docker-and-laravel/apt-install-demo.png" alt="apt install demo"></p>
@@ -397,19 +397,19 @@ PHP 版本根據你的需求安裝</p>
 </a>
 </p>
 <p>範例：（正確指令以官方網站為主）</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">php -r <span style="color:#e6db74">&#34;copy(&#39;https://getcomposer.org/installer&#39;, &#39;composer-setup.php&#39;);&#34;</span>
-php -r <span style="color:#e6db74">&#34;if (hash_file(&#39;sha384&#39;, &#39;composer-setup.php&#39;) === &#39;756890a4488ce9024fc62c56153228907f1545c228516cbf63f885e036d37e9a59d27d63f46af1d4d07ee0f76181c7d3&#39;) { echo &#39;Installer verified&#39;; } else { echo &#39;Installer corrupt&#39;; unlink(&#39;composer-setup.php&#39;); } echo PHP_EOL;&#34;</span>
-php composer-setup.php
-php -r <span style="color:#e6db74">&#34;unlink(&#39;composer-setup.php&#39;);&#34;</span>
-</code></pre></div><p>將 composer 移動到環境變數，讓全域都可以使用指令<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>php -r <span style="color:#e6db74">&#34;copy(&#39;https://getcomposer.org/installer&#39;, &#39;composer-setup.php&#39;);&#34;</span>
+</span></span><span style="display:flex;"><span>php -r <span style="color:#e6db74">&#34;if (hash_file(&#39;sha384&#39;, &#39;composer-setup.php&#39;) === &#39;756890a4488ce9024fc62c56153228907f1545c228516cbf63f885e036d37e9a59d27d63f46af1d4d07ee0f76181c7d3&#39;) { echo &#39;Installer verified&#39;; } else { echo &#39;Installer corrupt&#39;; unlink(&#39;composer-setup.php&#39;); } echo PHP_EOL;&#34;</span>
+</span></span><span style="display:flex;"><span>php composer-setup.php
+</span></span><span style="display:flex;"><span>php -r <span style="color:#e6db74">&#34;unlink(&#39;composer-setup.php&#39;);&#34;</span>
+</span></span></code></pre></div><p>將 composer 移動到環境變數，讓全域都可以使用指令<br>
 建議要執行此步驟，否則就只能在你安裝的路徑（有 composer.phar 檔案）的地方執行指令</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo mv composer.phar /usr/local/bin/composer
-</code></pre></div><p>若要查看全域可以執行的指令與對應目錄</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo $PATH
-</code></pre></div><h1 id="7-設定-sh-檔案可執行">7. 設定 .sh 檔案可執行</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo mv composer.phar /usr/local/bin/composer
+</span></span></code></pre></div><p>若要查看全域可以執行的指令與對應目錄</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo $PATH
+</span></span></code></pre></div><h1 id="7-設定-sh-檔案可執行">7. 設定 .sh 檔案可執行</h1>
 <p>如果專案中有 shell 需要執行，必須要修改檔案權限</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">chmod <span style="color:#ae81ff">755</span> <span style="color:#f92672">{</span>target file path<span style="color:#f92672">}</span>
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod <span style="color:#ae81ff">755</span> <span style="color:#f92672">{</span>target file path<span style="color:#f92672">}</span>
+</span></span></code></pre></div><hr>
 <p>如此就可以在主機中執行以下的指令</p>
 <ul>
 <li>docker</li>
@@ -921,14 +921,14 @@ php -r <span style="color:#e6db74">&#34;unlink(&#39;composer-setup.php&#39;);&#3
         © 2022 薛丁格的工程師
     </p>
     <p class="copyright" style="font-size: 0.1EM;">
-        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.92.2' target='_blank' rel='noopener'>Hugo</a>
+        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.93.3' target='_blank' rel='noopener'>Hugo</a>
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
 
       <script src="/js/highlight.js"></script>
     
-    <script>hljs.highlightAll();</script><script src="/js/bundle.min.5352079d3388d9a4297e0200dd1040866c8b3b67460090bf30e01a9cd56fd746.js" integrity="sha256-U1IHnTOI2aQpfgIA3RBAhmyLO2dGAJC/MOAanNVv10Y="></script>
+    <script>hljs.highlightAll();</script><script src="/js/bundle.min.70300e10d694c03c4e7b364dbb682d9972a2a0198302fda4dcf8911935f91bf0.js" integrity="sha256-cDAOENaUwDxOezZNu2gtmXKioBmDAv2k3PiRGTX5G/A="></script>
     <script src="/js/add-on.js"></script>
 <script type="application/javascript">
 var doNotTrack = false;

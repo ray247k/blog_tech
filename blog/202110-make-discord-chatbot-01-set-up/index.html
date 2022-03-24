@@ -18,7 +18,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.92.2" /><meta property="og:site_name" content="薛丁格的工程師">
+<meta name="generator" content="Hugo 0.93.3" /><meta property="og:site_name" content="薛丁格的工程師">
   <meta property="og:title" content="[Discord 機器人] 01.建立基本機器人">
   <meta property="og:description" content="使用 Python3 建立基本的 Discord 聊天機器人">
   <meta property="description" content="使用 Python3 建立基本的 Discord 聊天機器人">
@@ -377,34 +377,34 @@
 下一步就是要來啟動機器人，讓他可以開始做事</p>
 <p>作為範例，我們先寫一個最簡單的機器人試試看運行結果</p>
 <p><strong>roll_dice.py</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3"><span style="color:#75715e"># 導入 Discord.py 套件</span>
-<span style="color:#f92672">import</span> discord
-
-<span style="color:#75715e"># 取得 Discord client 物件才能操作</span>
-client <span style="color:#f92672">=</span> discord<span style="color:#f92672">.</span>Client()
-
-<span style="color:#75715e"># 調用 event 函式庫</span>
-<span style="color:#a6e22e">@client</span><span style="color:#f92672">.</span>event
-
-<span style="color:#75715e"># 當機器人完成啟動時在終端機顯示提示訊息</span>
-<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">on_ready</span>():
-    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;目前登入身份：</span><span style="color:#e6db74">{</span>client<span style="color:#f92672">.</span>user<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
-
-<span style="color:#75715e"># 調用 event 函式庫</span>
-<span style="color:#a6e22e">@client</span><span style="color:#f92672">.</span>event
-<span style="color:#75715e"># 當有訊息時</span>
-<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">on_message</span>(message):
-    
-    <span style="color:#75715e"># 排除機器人本身發出的訊息，避免機器人自問自答的無限迴圈</span>
-    <span style="color:#66d9ef">if</span> message<span style="color:#f92672">.</span>author <span style="color:#f92672">==</span> client<span style="color:#f92672">.</span>user:
-        <span style="color:#66d9ef">return</span>
-    
-    <span style="color:#75715e"># 如果我們說了「誰是機器人」，機器人就會回「誰叫我？」</span>
-    <span style="color:#66d9ef">if</span> message<span style="color:#f92672">.</span>content <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;誰是機器人&#39;</span>:
-        <span style="color:#66d9ef">await</span> message<span style="color:#f92672">.</span>channel<span style="color:#f92672">.</span>send(<span style="color:#e6db74">&#39;誰叫我？&#39;</span>)
-
-client<span style="color:#f92672">.</span>run(<span style="color:#e6db74">&#39;MY APP TOKEN&#39;</span>)
-</code></pre></div><p>程式說明都寫在範例中了，唯一要解釋的就是 token 要去哪裡拿？<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python3" data-lang="python3"><span style="display:flex;"><span><span style="color:#75715e"># 導入 Discord.py 套件</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> discord
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 取得 Discord client 物件才能操作</span>
+</span></span><span style="display:flex;"><span>client <span style="color:#f92672">=</span> discord<span style="color:#f92672">.</span>Client()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 調用 event 函式庫</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@client</span><span style="color:#f92672">.</span>event
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 當機器人完成啟動時在終端機顯示提示訊息</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">on_ready</span>():
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;目前登入身份：</span><span style="color:#e6db74">{</span>client<span style="color:#f92672">.</span>user<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 調用 event 函式庫</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@client</span><span style="color:#f92672">.</span>event
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 當有訊息時</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">on_message</span>(message):
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 排除機器人本身發出的訊息，避免機器人自問自答的無限迴圈</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> message<span style="color:#f92672">.</span>author <span style="color:#f92672">==</span> client<span style="color:#f92672">.</span>user:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 如果我們說了「誰是機器人」，機器人就會回「誰叫我？」</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> message<span style="color:#f92672">.</span>content <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;誰是機器人&#39;</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">await</span> message<span style="color:#f92672">.</span>channel<span style="color:#f92672">.</span>send(<span style="color:#e6db74">&#39;誰叫我？&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>client<span style="color:#f92672">.</span>run(<span style="color:#e6db74">&#39;MY APP TOKEN&#39;</span>)
+</span></span></code></pre></div><p>程式說明都寫在範例中了，唯一要解釋的就是 token 要去哪裡拿？<br>
 廢話不多說，上圖！</p>
 <p><img src="/img/blog/2021/10/make-discord-chatbot-01-set-up/bot-token.png" alt="bot token"></p>
 <p>TOKEN 在上面 Discord Developer 的<code>BOT</code>頁面中取得<br>
@@ -412,8 +412,8 @@ client<span style="color:#f92672">.</span>run(<span style="color:#e6db74">&#39;M
 如果覺得 TOKEN 外洩可以使用 Regenerate 重新產生</p>
 <h1 id="啟動機器人">啟動機器人</h1>
 <p>開啟你的終端機，執行剛剛的 python 檔案</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">python roll_dice.py
-</code></pre></div><p><img src="/img/blog/2021/10/make-discord-chatbot-01-set-up/chat-bot-terminal.png" alt="ChatBot terminal"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python roll_dice.py
+</span></span></code></pre></div><p><img src="/img/blog/2021/10/make-discord-chatbot-01-set-up/chat-bot-terminal.png" alt="ChatBot terminal"></p>
 <p>接著測試指令是不是可以觸發機器人</p>
 <p><img src="/img/blog/2021/10/make-discord-chatbot-01-set-up/chat-bot-test.png" alt="ChatBot test"></p>
 <p>看來成功被呼叫了呢！</p>
@@ -913,14 +913,14 @@ client<span style="color:#f92672">.</span>run(<span style="color:#e6db74">&#39;M
         © 2022 薛丁格的工程師
     </p>
     <p class="copyright" style="font-size: 0.1EM;">
-        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.92.2' target='_blank' rel='noopener'>Hugo</a>
+        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.93.3' target='_blank' rel='noopener'>Hugo</a>
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
 
       <script src="/js/highlight.js"></script>
     
-    <script>hljs.highlightAll();</script><script src="/js/bundle.min.5352079d3388d9a4297e0200dd1040866c8b3b67460090bf30e01a9cd56fd746.js" integrity="sha256-U1IHnTOI2aQpfgIA3RBAhmyLO2dGAJC/MOAanNVv10Y="></script>
+    <script>hljs.highlightAll();</script><script src="/js/bundle.min.70300e10d694c03c4e7b364dbb682d9972a2a0198302fda4dcf8911935f91bf0.js" integrity="sha256-cDAOENaUwDxOezZNu2gtmXKioBmDAv2k3PiRGTX5G/A="></script>
     <script src="/js/add-on.js"></script>
 <script type="application/javascript">
 var doNotTrack = false;
