@@ -1,4 +1,10 @@
 [{
+    "title": "Jenkins 01 安裝",
+    "date": "",
+    "description": "一步一步安裝 Jenkins",
+    "body": "使用 Jenkins  建立自己的自動部署服務\nJenkins 是一套以 Java 開發的一套 CI/CD 系統工具\n之前介紹過 Drone  ，於是這次就來摸摸 Jenkins 了\n 如果使用 docker 安裝，並且想在裡面使用 docker 指令的話會需要處理 docker in docker 問題\n對 docker 和作業系統不太熟的話，建議和我一樣使用直接在主機上安裝的方法\n 底下照著官方安裝文件  一步一步安裝\n首先先確定你有裝 java\njava -version  sudo apt install openjdk-11-jre 接著就是安裝 Jenkins 服務到主機上，這邊安裝的是穩定版(LTS, Long Term Support)\ncurl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo tee \\  /usr/share/keyrings/jenkins-keyring.asc \u0026gt; /dev/null echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \\  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \\  /etc/apt/sources.list.d/jenkins.list \u0026gt; /dev/null sudo apt-get update sudo apt-get install jenkins 使用指令啟動 jenkins 服務並在瀏覽器輸入localhost:8080後會看到驗證初始密碼的提示\nsudo systemctl enable --now jenkins 可以用指令查看提示路徑中的初始 admin 密碼\nsudo cat /var/lib/jenkins/secrets/initialAdminPassword 外掛安裝 Jenkins預設不支援 pipeline，需要安裝 pipeline 外掛\n這邊我選擇的是：Blue Ocean  為了使用 docker 作為構建流程中的 agent\n還必須安裝兩個擴充功能\n Docker plugin Docker Pipeline  可以在管理外掛程式的地方進行搜尋和安裝\n當然還有就是你 Jenkins 的 Host 主機也要裝好 Docker\ndocker 指令的權限設定 首先先切換到 jenkins 身份\nsudo su jenkins 接著隨便呼叫一個 docker 指令，例如 docker ps\n如果看到權限不足的提示訊息\n Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post\n 有些文章會告訴你直接sudo chmod 777 /var/run/docker.sock\n不要這麼做！正確做法應該是將 jenkins 加入 docker 使用者群組中\ncat /etc/passwd # 列出所有使用者 sudo groupadd docker # 建立 docker 使用者群組，通常安裝 docker 的就會建立 sudo usermod -aG docker jenkins # 將 jenkins 這個使用者加入 docker 群組 接著重啟 jenkins 服務，可以透過網址列直接輸入網址來觸發重啟\n http://jenlins_url/restart\n 按下就可以等他重新啟動後就會載入新的設定，就可以在 jenkins 身份下執行 docker 指令了\n",
+    "ref": "/blog/202203-jenkins-cicd-1-installation/"
+  },{
     "title": "Laravel Queue 使用",
     "date": "",
     "description": "使用隊列，讓不需要馬上處理的任務延遲處理",
