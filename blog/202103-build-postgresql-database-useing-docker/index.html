@@ -442,7 +442,7 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">environment</span>:
 </span></span><span style="display:flex;"><span>      <span style="color:#f92672">POSTGRES_USER</span>: <span style="color:#ae81ff">superuser</span>
 </span></span><span style="display:flex;"><span>      <span style="color:#f92672">POSTGRES_PASSWORD</span>: <span style="color:#ae81ff">superpassword</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">POSTGRES_DB</span>: <span style="color:#ae81ff">trp</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">POSTGRES_DB</span>: <span style="color:#ae81ff">database_name</span>
 </span></span></code></pre></div><ol>
 <li>調整 yml 檔 service 內 volumes，改為指定路徑</li>
 <li><code>docker-compose up</code> 啟動容器</li>
@@ -462,17 +462,17 @@
 要使用的卻是內部的 5432 port，如此在管理上會十分麻煩</p>
 <p>此情境下可以透啟動容器時指定內部運行的 port 來解決</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>  <span style="color:#f92672">postgre</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">trp_stage_postgre</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">stage_postgre</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
 </span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;5430:5430&#34;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#e6db74">&#34;postgres:12.6&#34;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
-</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">/trp/database/stage/database_data:/var/lib/postgresql/data</span> <span style="color:#75715e"># persist data even if container shuts down</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">/project/database/stage/database_data:/var/lib/postgresql/data</span> <span style="color:#75715e"># persist data even if container shuts down</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">command</span>: -<span style="color:#ae81ff">p 5430</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">environment</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">POSTGRES_USER</span>: <span style="color:#ae81ff">${TRP_DB_USER}</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">POSTGRES_PASSWORD</span>: <span style="color:#ae81ff">${TRP_DB_PASSWORD}</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">POSTGRES_DB</span>: <span style="color:#ae81ff">${TRP_DB_NAME}</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">POSTGRES_USER</span>: <span style="color:#ae81ff">${DB_USER}</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">POSTGRES_PASSWORD</span>: <span style="color:#ae81ff">${DB_PASSWORD}</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">POSTGRES_DB</span>: <span style="color:#ae81ff">${DB_NAME}</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">always</span>
 </span></span></code></pre></div><p>如上面的設定中 <code>command: -p 5430</code> 指定了內部 postgres 使用的 port<br>
 所以在 <code>ports:</code> 設定中就直接將外部 port 5430 指定給內部的 port 5430<br>
@@ -542,6 +542,16 @@
       </header>
       
       <article class="mini-post">
+          <a href="/blog/202203-gcp-auto-scaling/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2022/03/gcp-auto-scaling/server.jpeg');">
+    <img src="https://tech.ray247k.com/img/blog/2022/03/gcp-auto-scaling/server.jpeg" alt="server">
+  </a>
+        <header>
+          <h2><a href="/blog/202203-gcp-auto-scaling/">伸縮自在的伺服器 01 自動配置 Auto Scaling</a></h2>
+          <time class="published" datetime="2022-03-27 00:00:00 &#43;0000 UTC">2022/03/27</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
           <a href="/blog/202203-jenkins-cicd-1-installation/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2022/03/jenkins-cicd-1-installation/jenkins_icon.png');">
     <img src="https://tech.ray247k.com/img/blog/2022/03/jenkins-cicd-1-installation/jenkins_icon.png" alt="jenkins icon">
   </a>
@@ -581,16 +591,6 @@
         </header>
       </article>
       
-      <article class="mini-post">
-          <a href="/blog/202201-phpcs/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2022/01/phpcs/code.jpeg');">
-    <img src="https://tech.ray247k.com/img/blog/2022/01/phpcs/code.jpeg" alt="code">
-  </a>
-        <header>
-          <h2><a href="/blog/202201-phpcs/">使用 PHP CodeSniffer 檢查 Coding Style</a></h2>
-          <time class="published" datetime="2022-01-20 00:00:00 &#43;0000 UTC">2022/01/20</time>
-        </header>
-      </article>
-      
       
         <footer>
           <a href="/blog/" class="button">查看更多</a>
@@ -614,7 +614,7 @@
           </li>
           
           <li>
-              <a href="/categories/devops/">devops<span class="count">18</span></a>
+              <a href="/categories/devops/">devops<span class="count">19</span></a>
           </li>
           
           <li>
@@ -664,11 +664,11 @@
         
         
         <li>
-          <a href="/tags/node.js/">node.js (22)</a>
+          <a href="/tags/devops/">devops (22)</a>
         </li>
         
         <li>
-          <a href="/tags/devops/">devops (21)</a>
+          <a href="/tags/node.js/">node.js (22)</a>
         </li>
         
         <li>
@@ -748,11 +748,11 @@
         </li>
         
         <li>
-          <a href="/tags/cloudflare/">cloudflare (3)</a>
+          <a href="/tags/gcp/">gcp (4)</a>
         </li>
         
         <li>
-          <a href="/tags/gcp/">gcp (3)</a>
+          <a href="/tags/cloudflare/">cloudflare (3)</a>
         </li>
         
         <li>

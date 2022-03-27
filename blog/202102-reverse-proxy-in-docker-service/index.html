@@ -542,7 +542,7 @@ server {
         proxy_set_header Cookie $http_cookie;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-Host $host;
-        proxy_pass http://trp_portainer:9000;
+        proxy_pass http://my_portainer:9000;
     }
 }
 </code></pre><p>要特別注意的是，這邊 proxy_pass 的目標網址中，<code>http://</code> 不可以省略<br>
@@ -577,7 +577,7 @@ server {
     server_name _;
 
     # where code is
-    root /var/trp/dev/www/trp_backend/public;
+    root /var/project/dev/www/my_backend/public;
     index index.php index.html index.htm;
 
     access_log /var/log/nginx/access.log;
@@ -589,7 +589,7 @@ server {
 
     location ~ \.php$ {
         try_files $uri /index.php =404;
-        fastcgi_pass trp_dev_php:9000;
+        fastcgi_pass dev_php:9000;
         fastcgi_index index.php;
         fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
         include fastcgi_params;
@@ -676,6 +676,16 @@ server {
       </header>
       
       <article class="mini-post">
+          <a href="/blog/202203-gcp-auto-scaling/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2022/03/gcp-auto-scaling/server.jpeg');">
+    <img src="https://tech.ray247k.com/img/blog/2022/03/gcp-auto-scaling/server.jpeg" alt="server">
+  </a>
+        <header>
+          <h2><a href="/blog/202203-gcp-auto-scaling/">伸縮自在的伺服器 01 自動配置 Auto Scaling</a></h2>
+          <time class="published" datetime="2022-03-27 00:00:00 &#43;0000 UTC">2022/03/27</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
           <a href="/blog/202203-jenkins-cicd-1-installation/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2022/03/jenkins-cicd-1-installation/jenkins_icon.png');">
     <img src="https://tech.ray247k.com/img/blog/2022/03/jenkins-cicd-1-installation/jenkins_icon.png" alt="jenkins icon">
   </a>
@@ -715,16 +725,6 @@ server {
         </header>
       </article>
       
-      <article class="mini-post">
-          <a href="/blog/202201-phpcs/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2022/01/phpcs/code.jpeg');">
-    <img src="https://tech.ray247k.com/img/blog/2022/01/phpcs/code.jpeg" alt="code">
-  </a>
-        <header>
-          <h2><a href="/blog/202201-phpcs/">使用 PHP CodeSniffer 檢查 Coding Style</a></h2>
-          <time class="published" datetime="2022-01-20 00:00:00 &#43;0000 UTC">2022/01/20</time>
-        </header>
-      </article>
-      
       
         <footer>
           <a href="/blog/" class="button">查看更多</a>
@@ -748,7 +748,7 @@ server {
           </li>
           
           <li>
-              <a href="/categories/devops/">devops<span class="count">18</span></a>
+              <a href="/categories/devops/">devops<span class="count">19</span></a>
           </li>
           
           <li>
@@ -798,11 +798,11 @@ server {
         
         
         <li>
-          <a href="/tags/node.js/">node.js (22)</a>
+          <a href="/tags/devops/">devops (22)</a>
         </li>
         
         <li>
-          <a href="/tags/devops/">devops (21)</a>
+          <a href="/tags/node.js/">node.js (22)</a>
         </li>
         
         <li>
@@ -882,11 +882,11 @@ server {
         </li>
         
         <li>
-          <a href="/tags/cloudflare/">cloudflare (3)</a>
+          <a href="/tags/gcp/">gcp (4)</a>
         </li>
         
         <li>
-          <a href="/tags/gcp/">gcp (3)</a>
+          <a href="/tags/cloudflare/">cloudflare (3)</a>
         </li>
         
         <li>

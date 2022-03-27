@@ -3,30 +3,36 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://tech.ray247k.com/blog/</loc>
-    <lastmod>2022-03-16T00:00:00+00:00</lastmod>
+    <lastmod>2022-03-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/categories/</loc>
-    <lastmod>2022-03-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tech.ray247k.com/tags/cicd/</loc>
-    <lastmod>2022-03-16T00:00:00+00:00</lastmod>
+    <lastmod>2022-03-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/tags/devops/</loc>
-    <lastmod>2022-03-16T00:00:00+00:00</lastmod>
+    <lastmod>2022-03-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/categories/devops/</loc>
+    <lastmod>2022-03-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tech.ray247k.com/tags/gcp/</loc>
+    <lastmod>2022-03-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tech.ray247k.com/tags/</loc>
+    <lastmod>2022-03-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tech.ray247k.com/blog/202203-gcp-auto-scaling/</loc>
+    <lastmod>2022-03-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tech.ray247k.com/</loc>
+    <lastmod>2022-03-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tech.ray247k.com/tags/cicd/</loc>
     <lastmod>2022-03-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/tags/jenkins/</loc>
     <lastmod>2022-03-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/blog/202203-jenkins-cicd-1-installation/</loc>
-    <lastmod>2022-03-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tech.ray247k.com/tags/</loc>
-    <lastmod>2022-03-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tech.ray247k.com/</loc>
     <lastmod>2022-03-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/tags/laravel/</loc>
@@ -40,9 +46,6 @@
   </url><url>
     <loc>https://tech.ray247k.com/tags/php/</loc>
     <lastmod>2022-03-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tech.ray247k.com/tags/gcp/</loc>
-    <lastmod>2022-02-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/tags/linux/</loc>
     <lastmod>2022-02-26T00:00:00+00:00</lastmod>
