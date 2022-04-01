@@ -6,7 +6,21 @@
     <description>Recent content in CICD on 薛丁格的工程師</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Wed, 16 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/cicd/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 30 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/cicd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Jenkins 02 基本 pipeline 建置及串接 Github</title>
+      <link>https://tech.ray247k.com/blog/202203-jenkins-cicd-2-basic-pipeline/</link>
+      <pubDate>Wed, 30 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://tech.ray247k.com/blog/202203-jenkins-cicd-2-basic-pipeline/</guid>
+      <description>&lt;p&gt;在 &lt;a href=&#34;https://www.jenkins.io/&#34;
+   
+    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Jenkins
+&lt;/a&gt;
+ 中的建置流程也叫做 pipeline，也可以透過 webhook 觸發建置&lt;br&gt;
+一樣有各種觸發方式和執行方式，底下示範串接 Github webhook 和常見觸發條件範例&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Jenkins 01 安裝</title>
       <link>https://tech.ray247k.com/blog/202203-jenkins-cicd-1-installation/</link>
