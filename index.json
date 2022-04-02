@@ -1,4 +1,10 @@
 [{
+    "title": "介紹 Laravel Sail 和基本操作",
+    "date": "",
+    "description": "使用 Laravel Sail 啟動專案開發環境，輕鬆愉快",
+    "body": "在 Laravel 開發環境建置上官方與非官方都有提供非常多的方式\n這次要介紹的是 Laravel 8 之後加入的套件：Laravel Sail  過去為了節省新手在接觸初期環境建置的時間，有需多套開發環境的工具\n例如透過虛擬機建立的 Laravel Homestead  也有基於 Docker 的開發環境：laradock  ，或是像我一樣自己用 Docker 建立 Laravel 開發環境  而在 Laravel 8 之後將 Laravel Sail  加入內建套件，不需要額外安裝\n相較於 Laravel Homestead 來說，因為是使用 Docker 所以需要的資源較少\n而和同樣基於 Docker 環境的 laradock 相比，則是設定較為容易，甚至不需要設定，達到開箱即用\n 在使用 Laravel Sail 之前，電腦必須先安裝 Docker\n 安裝 Sail 在 Laravel 9 已經內建有 Sail 了，可以直接使用指令啟動服務\nphp artisan sail:install 如果沒有安裝的舊版本 Laravel，則可以透過 composer 進行安裝\ncomposer require laravel/sail --dev 執行指令後會出現互動介面問你想要使用哪些服務\n Which services would you like to install? [mysql]:  [0] mysql  [1] pgsql  [2] mariadb  [3] redis  [4] memcached  [5] meilisearch  [6] minio  [7] mailhog  [8] selenium  \u0026gt; 0,3,7  Sail scaffolding installed successfully. 選擇完之後就會在專案根目錄產生一個docker-compose.yml檔案\n然後就可以使用指令啟動 Sail 服務\n./vendor/bin/sail up 設定指令別名 如果很懶不想打這麼長，可以設定指令的別名\n透過vim ~/.bashrc或vim ~/.zshrc（看你的終端機是使用哪一款）\n在檔案中加入\nalias sail=\u0026#34;./vendor/bin/sail\u0026#34; 接著就可以直接在專案內透過sail別名來執行 Sail 指令，底下都以加入別名後的指令來進行操作\n使用 Sail 使用上跟 Docker 指令很像\n sail up -d：啟動並且在背景執行 sail stop：停止 sail down：停止並刪除容容器 sail build --no-cache：重新建立容器，並忽略快取全部重建  調整映像檔 預設的映像檔包含了 Laravel 基本的環境\n若是想調整，例如想安裝額外的 php extension 則需要導出相關設定\nphp artisan sail:publish 執行完之後專案內會多一個docker資料夾，裡面就是容器用的設定和 Dockerfile\n指行指令 在 Sail 中提供了很方便的方法可以呼叫到各種指令\n基本上就是在各種指令前面加上sail\n執行 PHP 指令 sail php --version 執行 Composer 指令 sail composer install # composer install 執行 Artisan 指令 sail artisan queue:work # php artisan queue:work sail artisan schedule:work # php artisan schedule:work 執行 shell 指令 sail shell myShell.sh # sh myShell.sh 如此簡單就可以建立開發環境，而且也可以操作指令\nLaravel Sail 真的減少很多開發上的麻煩事！\n",
+    "ref": "/blog/202204-laravel-sail/"
+  },{
     "title": "Jenkins 02 基本 pipeline 建置及串接 Github",
     "date": "",
     "description": "建立一個基本的 pipeline 流程，並透過 Github 的 webhook 觸發建置流程",
