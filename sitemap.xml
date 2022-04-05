@@ -3,10 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://tech.ray247k.com/blog/</loc>
-    <lastmod>2022-04-02T00:00:00+00:00</lastmod>
+    <lastmod>2022-04-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/categories/</loc>
-    <lastmod>2022-04-02T00:00:00+00:00</lastmod>
+    <lastmod>2022-04-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tech.ray247k.com/tags/devops/</loc>
+    <lastmod>2022-04-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tech.ray247k.com/categories/devops/</loc>
+    <lastmod>2022-04-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tech.ray247k.com/tags/gcp/</loc>
+    <lastmod>2022-04-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tech.ray247k.com/tags/load-balancing/</loc>
+    <lastmod>2022-04-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tech.ray247k.com/tags/</loc>
+    <lastmod>2022-04-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tech.ray247k.com/blog/202204-gcp-load-balancing/</loc>
+    <lastmod>2022-04-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tech.ray247k.com/</loc>
+    <lastmod>2022-04-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/tags/laravel/</loc>
     <lastmod>2022-04-02T00:00:00+00:00</lastmod>
@@ -17,22 +38,10 @@
     <loc>https://tech.ray247k.com/tags/php/</loc>
     <lastmod>2022-04-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://tech.ray247k.com/tags/</loc>
-    <lastmod>2022-04-02T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://tech.ray247k.com/blog/202204-laravel-sail/</loc>
     <lastmod>2022-04-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://tech.ray247k.com/</loc>
-    <lastmod>2022-04-02T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://tech.ray247k.com/tags/cicd/</loc>
-    <lastmod>2022-03-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tech.ray247k.com/tags/devops/</loc>
-    <lastmod>2022-03-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tech.ray247k.com/categories/devops/</loc>
     <lastmod>2022-03-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/tags/jenkins/</loc>
@@ -41,7 +50,7 @@
     <loc>https://tech.ray247k.com/blog/202203-jenkins-cicd-2-basic-pipeline/</loc>
     <lastmod>2022-03-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://tech.ray247k.com/tags/gcp/</loc>
+    <loc>https://tech.ray247k.com/tags/auto-scaling/</loc>
     <lastmod>2022-03-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/blog/202203-gcp-auto-scaling/</loc>

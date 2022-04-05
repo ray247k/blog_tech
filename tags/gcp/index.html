@@ -75,7 +75,7 @@
     "url": "https:\/\/tech.ray247k.com",
     "description": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - devops,golang,laravel,leetcode,node.js,php,python3,架站相關,版本控制,第三方服務,",
     "keywords": [
-        "apache-bench,aws,axios,cdn,chatbot,cicd,cloudflare,cloudflare-workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker-compose,domain-name,drone,element-ui,excel,express,gas,gcp,getter,git,github,github-page,go,golang,google-app-script,google-domains,google-sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,phpcbf,phpcs,portainer,postgresql,prerender,proxy,python3,restful,seo,server,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
+        "apache-bench,auto-scaling,aws,axios,cdn,chatbot,cicd,cloudflare,cloudflare-workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker-compose,domain-name,drone,element-ui,excel,express,gas,gcp,getter,git,github,github-page,go,golang,google-app-script,google-domains,google-sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load-balancing,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,phpcbf,phpcs,portainer,postgresql,prerender,proxy,python3,restful,seo,server,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
     ]
 }
 </script>
@@ -194,6 +194,67 @@
   <header>
   <div class="title">
     
+      <h2><a href="/blog/202204-gcp-load-balancing/">伸縮自在的伺服器 02 負載平衡 Load Balancing</a></h2>
+    
+    
+      <p>設定 GCP 上的 Load Balancing 打造穩健雲端伺服器</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2022-04-05 00:00:00 &#43;0000 UTC">2022/04/05</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+  <div class="content">
+    <a href="/blog/202204-gcp-load-balancing/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2022/04/gcp-load-balancing/hacker.jpeg');">
+    <img src="https://tech.ray247k.com/img/blog/2022/04/gcp-load-balancing/hacker.jpeg" alt="hacker">
+  </a>
+    
+    <p>在前一篇<a href="blog/202203-gcp-auto-scaling/"
+   
+   >伸縮自在的伺服器 01 自動配置 Auto Scaling
+</a>
+中有提到<br>
+我們需要設定一組 Load Balancer 對網際網路的請求分流到不同伺服器主機處理<br>
+這樣可以根據流量彈性調整主機數量，並維持服務穩定運作</p>
+  </div>
+  <footer>
+    <a href="/blog/202204-gcp-load-balancing/" class="button big">閱讀全文</a>
+    <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/devops/">DevOps</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/devops/">DevOps</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/gcp/">GCP</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/load-balancing/">Load Balancing</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+  </footer>
+</article>
+
+  
+    <article class="post">
+  <header>
+  <div class="title">
+    
       <h2><a href="/blog/202203-gcp-auto-scaling/">伸縮自在的伺服器 01 自動配置 Auto Scaling</a></h2>
     
     
@@ -236,6 +297,8 @@
           <li><a class="article-terms-link" href="/tags/devops/">DevOps</a></li>
         
           <li><a class="article-terms-link" href="/tags/gcp/">GCP</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/auto-scaling/">Auto Scaling</a></li>
         
       
     </ul>
@@ -439,6 +502,16 @@
       </header>
       
       <article class="mini-post">
+          <a href="/blog/202204-gcp-load-balancing/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2022/04/gcp-load-balancing/hacker.jpeg');">
+    <img src="https://tech.ray247k.com/img/blog/2022/04/gcp-load-balancing/hacker.jpeg" alt="hacker">
+  </a>
+        <header>
+          <h2><a href="/blog/202204-gcp-load-balancing/">伸縮自在的伺服器 02 負載平衡 Load Balancing</a></h2>
+          <time class="published" datetime="2022-04-05 00:00:00 &#43;0000 UTC">2022/04/05</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
           <a href="/blog/202204-laravel-sail/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2022/04/laravel-sail/laravel-sail.png');">
     <img src="https://tech.ray247k.com/img/blog/2022/04/laravel-sail/laravel-sail.png" alt="laravel sail logo">
   </a>
@@ -478,16 +551,6 @@
         </header>
       </article>
       
-      <article class="mini-post">
-          <a href="/blog/202203-laravel-queue/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2022/03/laravel-queue/queue.jpeg');">
-    <img src="https://tech.ray247k.com/img/blog/2022/03/laravel-queue/queue.jpeg" alt="queue">
-  </a>
-        <header>
-          <h2><a href="/blog/202203-laravel-queue/">Laravel Queue 使用</a></h2>
-          <time class="published" datetime="2022-03-05 00:00:00 &#43;0000 UTC">2022/03/05</time>
-        </header>
-      </article>
-      
       
         <footer>
           <a href="/blog/" class="button">查看更多</a>
@@ -511,7 +574,7 @@
           </li>
           
           <li>
-              <a href="/categories/devops/">devops<span class="count">20</span></a>
+              <a href="/categories/devops/">devops<span class="count">21</span></a>
           </li>
           
           <li>
@@ -561,7 +624,7 @@
         
         
         <li>
-          <a href="/tags/devops/">devops (23)</a>
+          <a href="/tags/devops/">devops (24)</a>
         </li>
         
         <li>
@@ -637,15 +700,15 @@
         </li>
         
         <li>
+          <a href="/tags/gcp/">gcp (5)</a>
+        </li>
+        
+        <li>
           <a href="/tags/leetcode-medium/">leetcode-medium (5)</a>
         </li>
         
         <li>
           <a href="/tags/drone/">drone (4)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/gcp/">gcp (4)</a>
         </li>
         
         <li>
@@ -721,6 +784,10 @@
         </li>
         
         <li>
+          <a href="/tags/auto-scaling/">auto-scaling (1)</a>
+        </li>
+        
+        <li>
           <a href="/tags/aws/">aws (1)</a>
         </li>
         
@@ -782,6 +849,10 @@
         
         <li>
           <a href="/tags/laravel-excel/">laravel-excel (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/load-balancing/">load-balancing (1)</a>
         </li>
         
         <li>
