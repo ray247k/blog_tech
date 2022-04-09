@@ -75,7 +75,7 @@
     "url": "https:\/\/tech.ray247k.com",
     "description": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - devops,golang,laravel,leetcode,node.js,php,python3,架站相關,版本控制,第三方服務,",
     "keywords": [
-        "apache-bench,auto-scaling,aws,axios,cdn,chatbot,cicd,cloudflare,cloudflare-workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker-compose,domain-name,drone,element-ui,excel,express,gas,gcp,getter,git,github,github-page,go,golang,google-app-script,google-domains,google-sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load-balancing,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,phpcbf,phpcs,portainer,postgresql,prerender,proxy,python3,restful,seo,server,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
+        "apache-bench,auto-scaling,aws,axios,cdn,chatbot,cicd,cloudflare,cloudflare-workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker-compose,domain-name,drone,element-ui,excel,express,gas,gcp,gcr,getter,git,github,github-page,go,golang,google-app-script,google-container-registry,google-domains,google-sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load-balancing,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,phpcbf,phpcs,portainer,postgresql,prerender,proxy,python3,restful,seo,server,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
     ]
 }
 </script>
@@ -189,6 +189,72 @@
       <main id="site-main">
         
   
+  
+    <article class="post">
+  <header>
+  <div class="title">
+    
+      <h2><a href="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/">Jenkins 03 打包 Docker image 並推送到 GCR</a></h2>
+    
+    
+      <p>打包 Docker image 並在 pipeline 中使用 gcloud 指令推送到 Google Container Registry 儲存映像檔</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2022-04-08 00:00:00 &#43;0000 UTC">2022/04/08</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+  <div class="content">
+    <a href="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2022/04/jenkins-cicd-3-push-docker-image-to-gcr/deliver.jpeg');">
+    <img src="https://tech.ray247k.com/img/blog/2022/04/jenkins-cicd-3-push-docker-image-to-gcr/deliver.jpeg" alt="jenkins branches">
+  </a>
+    
+    <p><a href="https://cloud.google.com/container-registry?hl=zh-tw"
+   
+    target="_blank" rel="noreferrer noopener">GCR(Google Container Registry)
+</a>
+ 是 Google 提供用來儲存、管理和保護 Docker 容器映像檔的服務<br>
+這次要做的事是打包 Docker image，再透過 gcloud 指令推送到 GCP 以便未來部署主機時使用</p>
+  </div>
+  <footer>
+    <a href="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/" class="button big">閱讀全文</a>
+    <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/devops/">DevOps</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/devops/">DevOps</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/jenkins/">Jenkins</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/cicd/">CICD</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/docker/">docker</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/gcr/">GCR</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/google-container-registry/">Google Container Registry</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+  </footer>
+</article>
+
   
     <article class="post">
   <header>
@@ -329,6 +395,16 @@ Jenkins 是一套以 Java 開發的一套 CI/CD 系統工具<br>
       </header>
       
       <article class="mini-post">
+          <a href="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2022/04/jenkins-cicd-3-push-docker-image-to-gcr/deliver.jpeg');">
+    <img src="https://tech.ray247k.com/img/blog/2022/04/jenkins-cicd-3-push-docker-image-to-gcr/deliver.jpeg" alt="jenkins branches">
+  </a>
+        <header>
+          <h2><a href="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/">Jenkins 03 打包 Docker image 並推送到 GCR</a></h2>
+          <time class="published" datetime="2022-04-08 00:00:00 &#43;0000 UTC">2022/04/08</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
           <a href="/blog/202204-gcp-load-balancing/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2022/04/gcp-load-balancing/hacker.jpeg');">
     <img src="https://tech.ray247k.com/img/blog/2022/04/gcp-load-balancing/hacker.jpeg" alt="hacker">
   </a>
@@ -368,16 +444,6 @@ Jenkins 是一套以 Java 開發的一套 CI/CD 系統工具<br>
         </header>
       </article>
       
-      <article class="mini-post">
-          <a href="/blog/202203-jenkins-cicd-1-installation/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2022/03/jenkins-cicd-1-installation/jenkins_icon.png');">
-    <img src="https://tech.ray247k.com/img/blog/2022/03/jenkins-cicd-1-installation/jenkins_icon.png" alt="jenkins icon">
-  </a>
-        <header>
-          <h2><a href="/blog/202203-jenkins-cicd-1-installation/">Jenkins 01 安裝</a></h2>
-          <time class="published" datetime="2022-03-16 00:00:00 &#43;0000 UTC">2022/03/16</time>
-        </header>
-      </article>
-      
       
         <footer>
           <a href="/blog/" class="button">查看更多</a>
@@ -397,11 +463,11 @@ Jenkins 是一套以 Java 開發的一套 CI/CD 系統工具<br>
           
           
           <li>
-              <a href="/categories/node.js/">node.js<span class="count">22</span></a>
+              <a href="/categories/devops/">devops<span class="count">22</span></a>
           </li>
           
           <li>
-              <a href="/categories/devops/">devops<span class="count">21</span></a>
+              <a href="/categories/node.js/">node.js<span class="count">22</span></a>
           </li>
           
           <li>
@@ -451,7 +517,7 @@ Jenkins 是一套以 Java 開發的一套 CI/CD 系統工具<br>
         
         
         <li>
-          <a href="/tags/devops/">devops (24)</a>
+          <a href="/tags/devops/">devops (25)</a>
         </li>
         
         <li>
@@ -471,11 +537,11 @@ Jenkins 是一套以 Java 開發的一套 CI/CD 系統工具<br>
         </li>
         
         <li>
-          <a href="/tags/containerization/">containerization (9)</a>
+          <a href="/tags/docker/">docker (10)</a>
         </li>
         
         <li>
-          <a href="/tags/docker/">docker (9)</a>
+          <a href="/tags/containerization/">containerization (9)</a>
         </li>
         
         <li>
@@ -503,11 +569,11 @@ Jenkins 是一套以 Java 開發的一套 CI/CD 系統工具<br>
         </li>
         
         <li>
-          <a href="/tags/laravel/">laravel (7)</a>
+          <a href="/tags/cicd/">cicd (7)</a>
         </li>
         
         <li>
-          <a href="/tags/cicd/">cicd (6)</a>
+          <a href="/tags/laravel/">laravel (7)</a>
         </li>
         
         <li>
@@ -540,6 +606,10 @@ Jenkins 是一套以 Java 開發的一套 CI/CD 系統工具<br>
         
         <li>
           <a href="/tags/cloudflare/">cloudflare (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/jenkins/">jenkins (3)</a>
         </li>
         
         <li>
@@ -580,10 +650,6 @@ Jenkins 是一套以 Java 開發的一套 CI/CD 系統工具<br>
         
         <li>
           <a href="/tags/google-domains/">google-domains (2)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/jenkins/">jenkins (2)</a>
         </li>
         
         <li>
@@ -651,6 +717,10 @@ Jenkins 是一套以 Java 開發的一套 CI/CD 系統工具<br>
         </li>
         
         <li>
+          <a href="/tags/gcr/">gcr (1)</a>
+        </li>
+        
+        <li>
           <a href="/tags/git/">git (1)</a>
         </li>
         
@@ -664,6 +734,10 @@ Jenkins 是一套以 Java 開發的一套 CI/CD 系統工具<br>
         
         <li>
           <a href="/tags/google-app-script/">google-app-script (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/google-container-registry/">google-container-registry (1)</a>
         </li>
         
         <li>

@@ -1,0 +1,1032 @@
+<!doctype html>
+<html lang="zh-tw">
+  <head>
+  <meta charset="utf-8">
+<title>Jenkins 03 打包 Docker image 並推送到 GCR - 薛丁格的工程師</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
+  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
+  
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=1" color="#ffffff">
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=1">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=1">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+<meta name="generator" content="Hugo 0.93.3" /><meta property="og:site_name" content="薛丁格的工程師">
+  <meta property="og:title" content="Jenkins 03 打包 Docker image 並推送到 GCR">
+  <meta property="og:description" content="打包 Docker image 並在 pipeline 中使用 gcloud 指令推送到 Google Container Registry 儲存映像檔">
+  <meta property="description" content="打包 Docker image 並在 pipeline 中使用 gcloud 指令推送到 Google Container Registry 儲存映像檔">
+  <meta property="og:url" content="https://tech.ray247k.com/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/">
+  <meta property="og:type" content="article">
+  
+    
+      <meta property="og:image" content="https://tech.ray247k.com/img/blog/2022/04/jenkins-cicd-3-push-docker-image-to-gcr/deliver.jpeg">
+      <meta property="og:image:alt" content="jenkins branches">
+    
+  
+  
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/github-dark.min.css">
+          <link rel="stylesheet" href="/css/bundle.min.1bfccf86359e3de974865922b006112447a52f942c2a9c2bf93d159980ae641b.css" integrity="sha256-G/zPhjWePel0hlkisAYRJEelL5QsKpwr&#43;T0VmYCuZBs="><link rel="stylesheet" href="/css/add-on.css">
+
+  
+
+
+    
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-LTGVYYWC2J');
+        </script>
+    
+
+
+  <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "image": {
+        "@type": "ImageObject",
+        "image": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+        "height": 648,
+        "width": 1080
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "薛丁格的工程師",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg"
+        }
+    },
+    "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+    "headline": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - Schrödinger\u0027s Programmer",
+    "name": "薛丁格的工程師",
+    "url": "https:\/\/tech.ray247k.com",
+    "description": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - devops,golang,laravel,leetcode,node.js,php,python3,架站相關,版本控制,第三方服務,",
+    "keywords": [
+        "apache-bench,auto-scaling,aws,axios,cdn,chatbot,cicd,cloudflare,cloudflare-workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker-compose,domain-name,drone,element-ui,excel,express,gas,gcp,gcr,getter,git,github,github-page,go,golang,google-app-script,google-container-registry,google-domains,google-sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load-balancing,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,phpcbf,phpcs,portainer,postgresql,prerender,proxy,python3,restful,seo,server,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
+    ]
+}
+</script>
+
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "legalName": "薛丁格的工程師",
+    "url": "https:\/\/tech.ray247k.com",
+    "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "",
+        "availableLanguage": [
+            "Mandarin",
+            "English"
+        ]
+    },
+    "sameAs": [
+        "https://ray247k.blogspot.com/"
+    ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Jenkins 03 打包 Docker image 並推送到 GCR",
+    "description": "打包 Docker image 並在 pipeline 中使用 gcloud 指令推送到 Google Container Registry 儲存映像檔",
+    "keywords": [
+        "DevOps" , "Jenkins" , "CICD" , "docker" , "GCR" , "Google Container Registry" 
+    ],
+    "dateCreated": "2022-04-08T00:00:00.00Z",
+    "datePublished": "2022-04-08T00:00:00.00Z",
+    "dateModified": "2022-04-08T00:00:00.00Z",
+    "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "contentUrl": "[]"
+    },
+    "breadcrumb": {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com",
+                    "name": "薛丁格的工程師",
+                    "url": "https:\/\/tech.ray247k.com"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com/blog",
+                    "name": "Blog",
+                    "url": "https:\/\/tech.ray247k.com/blog"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\/blog\/202204-jenkins-cicd-3-push-docker-image-to-gcr\/",
+                    "name": "Jenkins 03 打包 Docker image 並推送到 GCR",
+                    "url": "https:\/\/tech.ray247k.com\/blog\/202204-jenkins-cicd-3-push-docker-image-to-gcr\/"
+                }
+            }
+        ],
+        "itemListOrder": "Ascending",
+        "numberOfItems": 3
+    }
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "articleSection": "blog",
+    "name": "Jenkins 03 打包 Docker image 並推送到 GCR",
+    "headline": "\u003cp\u003e\u003ca href=\u0022https:\/\/cloud.google.com\/container-registry?hl=zh-tw\u0022\n   \n    target=\u0022_blank\u0022 rel=\u0022noreferrer noopener\u0022\u003eGCR(Google Container Registry)\n\u003c\/a\u003e\n 是 Google 提供用來儲存、管理和保護 Docker 容器映像檔的服務\u003cbr\u003e\n這次要做的事是打包 Docker image，再透過 gcloud 指令推送到 GCP 以便未來部署主機時使用\u003c\/p\u003e",
+    "description": "打包 Docker image 並在 pipeline 中使用 gcloud 指令推送到 Google Container Registry 儲存映像檔",
+    "inLanguage": "zh-TW",
+    "isFamilyFriendly": "true",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com\/blog\/202204-jenkins-cicd-3-push-docker-image-to-gcr\/"
+    },
+    "author" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "creator" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "accountablePerson" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "copyrightHolder" : "薛丁格的工程師",
+    "copyrightYear" : "2022",
+    "dateCreated": "2022-04-08T00:00:00.00Z",
+    "datePublished": "2022-04-08T00:00:00.00Z",
+    "dateModified": "2022-04-08T00:00:00.00Z",
+    "publisher":{
+        "@type":"Organization",
+        "name": "薛丁格的工程師",
+        "url": "https://tech.ray247k.com",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+            "width":"32",
+            "height":"32"
+        }
+    },
+    "image": [""],
+    "url" : "https:\/\/tech.ray247k.com\/blog\/202204-jenkins-cicd-3-push-docker-image-to-gcr\/",
+    "wordCount" : "429",
+    "genre" : [ "DevOps" , "Jenkins" , "CICD" , "docker" , "GCR" , "Google Container Registry" ],
+    "keywords" : [ "DevOps" , "Jenkins" , "CICD" , "docker" , "GCR" , "Google Container Registry" ]
+}
+</script>
+
+
+
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/" class="nav">
+        
+          Blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/" class="nav link"><i class='fa fa-home'></i> home</a>
+        
+      
+        
+          
+          <a href="/about" class="nav link"><i class='far fa-id-card'></i> about</a>
+        
+      
+        
+          
+          <a href="/categories" class="nav link"><i class='fas fa-sitemap'></i> category</a>
+        
+      
+      
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    
+    
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/"><img src="https://tech.ray247k.com/img/main/logo.jpg" class="circle" width="100" alt="一隻箱子裡的貓，看著電腦螢幕" /></a>
+  <header>
+    <h1>Schrödinger's Programmer</h1>
+  </header>
+  <main>
+    <p>奔跑吧工程師，趁年輕跑得越遠越好</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/ray247k" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+<li><a href="//gitlab.com/ray247k" target="_blank" rel="noopener" title="GitLab" class="fab fa-gitlab"></a></li>
+
+
+
+
+
+
+
+
+
+
+<li><a href="//www.linkedin.com/in/j-ray-cheng" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/">Jenkins 03 打包 Docker image 並推送到 GCR</a></h2>
+    
+    
+      <p>打包 Docker image 並在 pipeline 中使用 gcloud 指令推送到 Google Container Registry 儲存映像檔</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2022-04-08 00:00:00 &#43;0000 UTC">2022/04/08</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+    <div id="socnet-share">
+      
+
+
+
+
+
+    </div>
+    <div class="content">
+      <a href="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2022/04/jenkins-cicd-3-push-docker-image-to-gcr/deliver.jpeg');">
+    <img src="https://tech.ray247k.com/img/blog/2022/04/jenkins-cicd-3-push-docker-image-to-gcr/deliver.jpeg" alt="jenkins branches">
+  </a>
+      <p><a href="https://cloud.google.com/container-registry?hl=zh-tw"
+   
+    target="_blank" rel="noreferrer noopener">GCR(Google Container Registry)
+</a>
+ 是 Google 提供用來儲存、管理和保護 Docker 容器映像檔的服務<br>
+這次要做的事是打包 Docker image，再透過 gcloud 指令推送到 GCP 以便未來部署主機時使用</p>
+<p>首先要先有一個 Google Cloud 專案<br>
+可以根據官方文件：<a href="https://cloud.google.com/resource-manager/docs/creating-managing-projects"
+   
+    target="_blank" rel="noreferrer noopener">Creating and managing projects
+</a>
+ 的說明建立</p>
+<h1 id="在-jenkins-主機安裝-gcloud">在 Jenkins 主機安裝 gcloud</h1>
+<p>以下就照著官方文件：<a href="https://cloud.google.com/sdk/docs/install#deb"
+   
+    target="_blank" rel="noreferrer noopener">Installing the gcloud CLI
+</a>
+ 一步一步安裝</p>
+<h2 id="準備工作">準備工作</h2>
+<p>先確定有安裝以下套件：<code>apt-transport-https</code>、<code>ca-certificates</code>、<code>gnupg</code><br>
+可以透過指令列出所有已安裝的套件列表</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt list --installed
+</span></span></code></pre></div><p>如果沒安裝好，使用指令安裝</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install apt-transport-https ca-certificates gnupg
+</span></span></code></pre></div><h2 id="加入-gcloud-cli-的發行版-uri-作為套件來源">加入 gcloud CLI 的發行版 URI 作為套件來源</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main&#34;</span> | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 如果不支援 signed-by，則使用</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;deb https://packages.cloud.google.com/apt cloud-sdk main&#34;</span> | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+</span></span></code></pre></div><h2 id="導入-google-cloud-公鑰">導入 Google Cloud 公鑰</h2>
+<p>如果<code>apt-key</code>指令支援<code>--keyring</code>參數</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
+</span></span></code></pre></div><p>否則</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+</span></span></code></pre></div><p>至於 Debian 11+ 或 Ubuntu 21.10+ 不支援<code>apt-key</code>指令的發行版</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo tee /usr/share/keyrings/cloud.google.gpg
+</span></span></code></pre></div><h2 id="更新並安裝-gcloud-cli">更新並安裝 gcloud CLI</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get update <span style="color:#f92672">&amp;&amp;</span> sudo apt-get install google-cloud-cli
+</span></span></code></pre></div><h2 id="初始化-gcloud">初始化 gcloud</h2>
+<p>因為我們是在 GCP 同專案中的 VM 操作 gcloud，所以省略了<code>gcloud auth login</code>的步驟<br>
+而是直接使用 VM 主機作為登入帳號，若是輸入指令則會詢問你是否繼續</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>You are running on a Google Compute Engine virtual machine.
+</span></span><span style="display:flex;"><span>It is recommended that you use service accounts for authentication.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>You can run:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  $ gcloud config set account `ACCOUNT`
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>to switch accounts if necessary.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Your credentials may be visible to others with access to this
+</span></span><span style="display:flex;"><span>virtual machine. Are you sure you want to authenticate with
+</span></span><span style="display:flex;"><span>your personal account?
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Do you want to continue (Y/n)?
+</span></span></code></pre></div><p>查看目前所有專案</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud projects list
+</span></span></code></pre></div><p>如果遇到</p>
+<blockquote>
+<p>ERROR: (gcloud.projects.list) PERMISSION_DENIED: Request had insufficient authentication scopes.</p>
+</blockquote>
+<p>首先<strong>停止運行 VM</strong>並進到編輯頁面<br>
+找到<code>存取權範圍</code>並開啟<code>允許所有 Cloud API 的完整存取權</code></p>
+<p><img src="/img/blog/2022/04/jenkins-cicd-3-push-docker-image-to-gcr/gcloud-error.jpg" alt="gcloud error"></p>
+<p>重新啟動 VM 之後執行指令，照著提示訊息設定</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud init
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Your Google Cloud SDK is configured and ready to use!</span>
+</span></span></code></pre></div><p>可以透過指令來確定設定檔內容</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud config configurations list
+</span></span></code></pre></div><h1 id="設定-jenkins-推送權限">設定 Jenkins 推送權限</h1>
+<p>確認 gcloud 指令可以使用後，要設定 Jenkins 對 GCR 的推送權限</p>
+<h2 id="產生-gcp-金鑰">產生 GCP 金鑰</h2>
+<p>進入 GCP 控制台的<code>API 和服務</code>左方點選<code>憑證</code>頁籤<br>
+點選<code>建立新憑證</code>並選擇<code>服務帳戶</code></p>
+<p><img src="/img/blog/2022/04/jenkins-cicd-3-push-docker-image-to-gcr/gcp-create-license.png" alt="gcp create license"></p>
+<p>跟著提示建立好之後點選列表中剛剛建立的帳戶進入編輯頁面<br>
+並且切換到<code>金鑰</code>頁籤中：新增金鑰 -&gt; 建立新的金鑰<br>
+並選擇「<strong>JSON</strong>」類型</p>
+<p><img src="/img/blog/2022/04/jenkins-cicd-3-push-docker-image-to-gcr/gcp-create-key.png" alt="gcp create key"></p>
+<p>接著就會跳出下載提示，將 JSON 格式的金鑰下載到本機中</p>
+<p><img src="/img/blog/2022/04/jenkins-cicd-3-push-docker-image-to-gcr/gcp-key-download.jpg" alt="gcp key download"></p>
+<h2 id="設定金鑰到-jenkins">設定金鑰到 Jenkins</h2>
+<p>進到<code>Jenkins -&gt; 管理 Jenkins -&gt; Manage Credentials</code><br>
+選擇作用範圍，這邊用預設的<code>Jenkins</code>也就是全域(global)</p>
+<p><img src="/img/blog/2022/04/jenkins-cicd-3-push-docker-image-to-gcr/jenkins-add-credential.png" alt="jenkins add credential"></p>
+<p>按下 Add Credentials 後<code>Kind</code>選擇<code>Secret file</code>並填寫相關設定</p>
+<ul>
+<li>ID：在 Jenkins 中呼叫用的唯一識別 ID，本文章範例中取叫<code>jenkins-gcr</code></li>
+<li>File：把剛剛下載的 json 金鑰上傳</li>
+</ul>
+<p><img src="/img/blog/2022/04/jenkins-cicd-3-push-docker-image-to-gcr/jenkins-set-credential.png" alt="jenkins set credential"></p>
+<p>如此就完成 Jenkins 金鑰設定</p>
+<h1 id="pipeline-範例">Pipeline 範例</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#a6e22e">pipeline</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">agent</span> <span style="color:#a6e22e">any</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">environment</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">GCR_HOST</span>   <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;asia.gcr.io&#34;</span>        <span style="color:#75715e">// GCR 主機位置選離自己近的會比較快，或是直接 gcr.io
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">PROJECT_ID</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;my-project-315408&#34;</span>  <span style="color:#75715e">// GCP 專案的 ID
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">FOLDER</span>  <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;my-project-backend-test&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">VERSION</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>TAG_NAME<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">IMAGE</span>   <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">$GCR_HOST</span><span style="color:#e6db74">/</span><span style="color:#e6db74">$PROJECT_ID</span><span style="color:#e6db74">/</span><span style="color:#e6db74">$FOLDER</span><span style="color:#e6db74">:</span><span style="color:#e6db74">$VERSION</span><span style="color:#e6db74">&#34;</span> <span style="color:#75715e">// 組裝出 image 名稱
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">stages</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">stage</span>(<span style="color:#e6db74">&#39;Build docker image&#39;</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">when</span> {
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">branch</span> <span style="color:#e6db74">&#39;main&#39;</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">steps</span> {
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// 打包的 docker 指令，指定 dockerfile 在專案中的路徑
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#a6e22e">sh</span> <span style="color:#e6db74">&#34;docker build . -f ./builds/docker/php81/Dockerfile -t </span><span style="color:#e6db74">${</span>IMAGE<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">stage</span>(<span style="color:#e6db74">&#39;Push image to Google Container Registry&#39;</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">when</span> {
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">branch</span> <span style="color:#e6db74">&#39;main&#39;</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">steps</span> {
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// jenkins-gcr 就是上面設定過的金鑰唯一識別 ID
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#a6e22e">withCredentials</span>([<span style="color:#a6e22e">file</span>(<span style="color:#a6e22e">credentialsId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;jenkins-gcr&#39;</span>, <span style="color:#a6e22e">variable</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;GC_KEY&#39;</span>)]) {
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">sh</span> <span style="color:#e6db74">&#34;cat &#39;</span><span style="color:#e6db74">$GC_KEY</span><span style="color:#e6db74">&#39; | docker login -u _json_key --password-stdin https://asia.gcr.io&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">sh</span> <span style="color:#e6db74">&#34;gcloud auth activate-service-account --key-file=</span><span style="color:#e6db74">${</span>GC_KEY<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">sh</span> <span style="color:#e6db74">&#34;gcloud auth configure-docker&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;Pushing image to GCR&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">sh</span> <span style="color:#e6db74">&#34;docker push </span><span style="color:#e6db74">${</span>IMAGE<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>接著就是觸發 Jenkins 服務，範例中是推送 commit 到 main 的分支上</p>
+<h1 id="檢查儲存位置">檢查儲存位置</h1>
+<p>若是沒有錯誤訊息，則可以到<code>Google Cloud Registry</code>頁面查看<br>
+把剛剛上傳的 image 名稱想成在 linux 終端機下指令，就可以理解 GCR 中的資料夾結構</p>
+<p><img src="/img/blog/2022/04/jenkins-cicd-3-push-docker-image-to-gcr/gcr-store.jpg" alt="gcr store"></p>
+
+      
+      
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/ray247k/button?referrer=https%3a%2f%2ftech.ray247k.com%2fblog%2f202204-jenkins-cicd-3-push-docker-image-to-gcr%2f" width="100%" frameborder=0></iframe>
+
+    </div>
+    <footer>
+      <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/devops/">DevOps</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/devops/">DevOps</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/jenkins/">Jenkins</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/cicd/">CICD</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/docker/">docker</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/gcr/">GCR</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/google-container-registry/">Google Container Registry</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+    </footer>
+  </article>
+  
+    
+
+  
+  <div class="pagination">
+    
+    
+      <a href="/blog/202204-gcp-load-balancing/" class="button right"><span>伸縮自在的伺服器 02 負載平衡 Load Balancing</span></a>
+    
+  </div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>最新文章</h1>
+      </header>
+      
+      <article class="mini-post">
+          <a href="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2022/04/jenkins-cicd-3-push-docker-image-to-gcr/deliver.jpeg');">
+    <img src="https://tech.ray247k.com/img/blog/2022/04/jenkins-cicd-3-push-docker-image-to-gcr/deliver.jpeg" alt="jenkins branches">
+  </a>
+        <header>
+          <h2><a href="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/">Jenkins 03 打包 Docker image 並推送到 GCR</a></h2>
+          <time class="published" datetime="2022-04-08 00:00:00 &#43;0000 UTC">2022/04/08</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202204-gcp-load-balancing/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2022/04/gcp-load-balancing/hacker.jpeg');">
+    <img src="https://tech.ray247k.com/img/blog/2022/04/gcp-load-balancing/hacker.jpeg" alt="hacker">
+  </a>
+        <header>
+          <h2><a href="/blog/202204-gcp-load-balancing/">伸縮自在的伺服器 02 負載平衡 Load Balancing</a></h2>
+          <time class="published" datetime="2022-04-05 00:00:00 &#43;0000 UTC">2022/04/05</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202204-laravel-sail/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2022/04/laravel-sail/laravel-sail.png');">
+    <img src="https://tech.ray247k.com/img/blog/2022/04/laravel-sail/laravel-sail.png" alt="laravel sail logo">
+  </a>
+        <header>
+          <h2><a href="/blog/202204-laravel-sail/">介紹 Laravel Sail 和基本操作</a></h2>
+          <time class="published" datetime="2022-04-02 00:00:00 &#43;0000 UTC">2022/04/02</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202203-jenkins-cicd-2-basic-pipeline/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2022/03/jenkins-cicd-2-basic-pipeline/jenkins-branches.png');">
+    <img src="https://tech.ray247k.com/img/blog/2022/03/jenkins-cicd-2-basic-pipeline/jenkins-branches.png" alt="jenkins branches">
+  </a>
+        <header>
+          <h2><a href="/blog/202203-jenkins-cicd-2-basic-pipeline/">Jenkins 02 基本 pipeline 建置及串接 Github</a></h2>
+          <time class="published" datetime="2022-03-30 00:00:00 &#43;0000 UTC">2022/03/30</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202203-gcp-auto-scaling/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2022/03/gcp-auto-scaling/server.jpeg');">
+    <img src="https://tech.ray247k.com/img/blog/2022/03/gcp-auto-scaling/server.jpeg" alt="server">
+  </a>
+        <header>
+          <h2><a href="/blog/202203-gcp-auto-scaling/">伸縮自在的伺服器 01 自動配置 Auto Scaling</a></h2>
+          <time class="published" datetime="2022-03-27 00:00:00 &#43;0000 UTC">2022/03/27</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/blog/" class="button">查看更多</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="/categories">Category</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/categories/devops/">devops<span class="count">22</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/node.js/">node.js<span class="count">22</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/leetcode/">leetcode<span class="count">13</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/golang/">golang<span class="count">9</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/python3/">python3<span class="count">9</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/php/">php<span class="count">7</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/laravel/">laravel<span class="count">6</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/">架站相關<span class="count">6</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">版本控制<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%9C%8D%E5%8B%99/">第三方服務<span class="count">1</span></a>
+          </li>
+          
+        </ul>
+      </section>
+    
+  
+
+  
+  <section id="tags">
+    <header>
+      <h1><a href="/tags">Tag</a></h1>
+    </header>
+    <div class="li-x post-meta tags-md" style="margin-left: 0.5em;">
+      <ul>
+        
+        
+        <li>
+          <a href="/tags/devops/">devops (25)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/node.js/">node.js (22)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/vue/">vue (15)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/leetcode/">leetcode (13)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/php/">php (11)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/docker/">docker (10)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/containerization/">containerization (9)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/express/">express (9)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/go/">go (9)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/golang/">golang (9)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/python3/">python3 (9)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%AE%B9%E5%99%A8%E6%8A%80%E8%A1%93/">容器技術 (9)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/leetcode-easy/">leetcode-easy (8)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cicd/">cicd (7)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/laravel/">laravel (7)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/docker-compose/">docker-compose (6)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/vuex/">vuex (6)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/composer/">composer (5)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/element-ui/">element-ui (5)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/gcp/">gcp (5)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/leetcode-medium/">leetcode-medium (5)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/drone/">drone (4)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cloudflare/">cloudflare (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/jenkins/">jenkins (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/mongodb/">mongodb (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/mutation/">mutation (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/restful/">restful (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/">架站相關 (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/chatbot/">chatbot (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/component/">component (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/discord/">discord (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/dns/">dns (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/getter/">getter (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/google-domains/">google-domains (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/linux/">linux (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/nginx/">nginx (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/ssh/">ssh (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/vue-router/">vue-router (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/vue-ui/">vue-ui (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/apache-bench/">apache-bench (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/auto-scaling/">auto-scaling (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/aws/">aws (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/axios/">axios (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cdn/">cdn (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cloudflare-workers/">cloudflare-workers (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cors/">cors (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/csv/">csv (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/domain-name/">domain-name (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/excel/">excel (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/gas/">gas (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/gcr/">gcr (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/git/">git (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/github/">github (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/github-page/">github-page (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/google-app-script/">google-app-script (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/google-container-registry/">google-container-registry (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/google-sheets/">google-sheets (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/grumphp/">grumphp (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/laravel-excel/">laravel-excel (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/load-balancing/">load-balancing (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/ngrok/">ngrok (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/php-fpm/">php-fpm (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/phpcbf/">phpcbf (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/phpcs/">phpcs (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/portainer/">portainer (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/postgresql/">postgresql (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/prerender/">prerender (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/proxy/">proxy (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/seo/">seo (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/server/">server (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/stress-testing/">stress-testing (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/subdomain/">subdomain (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E4%BC%BA%E6%9C%8D%E5%99%A8/">伺服器 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%80%8B%E4%BA%BA%E5%93%81%E7%89%8C/">個人品牌 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%9F%9F%E5%90%8D/">域名 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%A3%93%E5%8A%9B%E6%B8%AC%E8%A9%A6/">壓力測試 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%AD%90%E7%B6%B2%E5%9F%9F/">子網域 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E6%90%9C%E5%B0%8B%E5%BC%95%E6%93%8E%E6%9C%80%E4%BD%B3%E5%8C%96/">搜尋引擎最佳化 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">版本控制 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E8%B2%B7%E7%B6%B2%E5%9D%80/">買網址 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E9%98%B2%E7%81%AB%E7%89%86/">防火牆 (1)</a>
+        </li>
+        
+      </ul>
+
+    </div>
+  </section>
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+    
+    <p class="copyright">
+        © 2022 薛丁格的工程師
+    </p>
+    <p class="copyright" style="font-size: 0.1EM;">
+        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.93.3' target='_blank' rel='noopener'>Hugo</a>
+    </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>hljs.highlightAll();</script><script src="/js/bundle.min.70300e10d694c03c4e7b364dbb682d9972a2a0198302fda4dcf8911935f91bf0.js" integrity="sha256-cDAOENaUwDxOezZNu2gtmXKioBmDAv2k3PiRGTX5G/A="></script>
+    <script src="/js/add-on.js"></script>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-LTGVYYWC2J', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </div>
+  </body>
+</html>

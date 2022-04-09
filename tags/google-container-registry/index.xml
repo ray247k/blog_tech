@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Google Container Registry on 薛丁格的工程師</title>
+    <link>https://tech.ray247k.com/tags/google-container-registry/</link>
+    <description>Recent content in Google Container Registry on 薛丁格的工程師</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-TW</language>
+    <lastBuildDate>Fri, 08 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/google-container-registry/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Jenkins 03 打包 Docker image 並推送到 GCR</title>
+      <link>https://tech.ray247k.com/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/</link>
+      <pubDate>Fri, 08 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://tech.ray247k.com/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://cloud.google.com/container-registry?hl=zh-tw&#34;
+   
+    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;GCR(Google Container Registry)
+&lt;/a&gt;
+ 是 Google 提供用來儲存、管理和保護 Docker 容器映像檔的服務&lt;br&gt;
+這次要做的事是打包 Docker image，再透過 gcloud 指令推送到 GCP 以便未來部署主機時使用&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
