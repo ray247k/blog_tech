@@ -18,7 +18,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.93.3" /><meta property="og:site_name" content="薛丁格的工程師">
+<meta name="generator" content="Hugo 0.96.0" /><meta property="og:site_name" content="薛丁格的工程師">
   <meta property="og:title" content="Jenkins 03 打包 Docker image 並推送到 GCR">
   <meta property="og:description" content="打包 Docker image 並在 pipeline 中使用 gcloud 指令推送到 Google Container Registry 儲存映像檔">
   <meta property="description" content="打包 Docker image 並在 pipeline 中使用 gcloud 指令推送到 Google Container Registry 儲存映像檔">
@@ -205,7 +205,7 @@
     },
     "image": [""],
     "url" : "https:\/\/tech.ray247k.com\/blog\/202204-jenkins-cicd-3-push-docker-image-to-gcr\/",
-    "wordCount" : "429",
+    "wordCount" : "431",
     "genre" : [ "DevOps" , "Jenkins" , "CICD" , "docker" , "GCR" , "Google Container Registry" ],
     "keywords" : [ "DevOps" , "Jenkins" , "CICD" , "docker" , "GCR" , "Google Container Registry" ]
 }
@@ -442,7 +442,8 @@
 <p><img src="/img/blog/2022/04/jenkins-cicd-3-push-docker-image-to-gcr/jenkins-set-credential.png" alt="jenkins set credential"></p>
 <p>如此就完成 Jenkins 金鑰設定</p>
 <h1 id="pipeline-範例">Pipeline 範例</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#a6e22e">pipeline</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#75715e">// jenkinsfile
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">pipeline</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">agent</span> <span style="color:#a6e22e">any</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">environment</span> {
@@ -533,6 +534,8 @@
   
   <div class="pagination">
     
+      <a href="/blog/202204-jenkins-cicd-4-ssh-remote-server/" class="button left"><span>Jenkins 04 在流程中使用 SSH 指令操作另一台 GCP 上的執行個體</span></a>
+    
     
       <a href="/blog/202204-gcp-load-balancing/" class="button right"><span>伸縮自在的伺服器 02 負載平衡 Load Balancing</span></a>
     
@@ -545,6 +548,16 @@
       <header>
         <h1>最新文章</h1>
       </header>
+      
+      <article class="mini-post">
+          <a href="/blog/202204-jenkins-cicd-4-ssh-remote-server/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2022/04/jenkins-cicd-4-ssh-remote-server/home-office.jpeg');">
+    <img src="https://tech.ray247k.com/img/blog/2022/04/jenkins-cicd-4-ssh-remote-server/home-office.jpeg" alt="home office">
+  </a>
+        <header>
+          <h2><a href="/blog/202204-jenkins-cicd-4-ssh-remote-server/">Jenkins 04 在流程中使用 SSH 指令操作另一台 GCP 上的執行個體</a></h2>
+          <time class="published" datetime="2022-04-13 00:00:00 &#43;0000 UTC">2022/04/13</time>
+        </header>
+      </article>
       
       <article class="mini-post">
           <a href="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2022/04/jenkins-cicd-3-push-docker-image-to-gcr/deliver.jpeg');">
@@ -586,16 +599,6 @@
         </header>
       </article>
       
-      <article class="mini-post">
-          <a href="/blog/202203-gcp-auto-scaling/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2022/03/gcp-auto-scaling/server.jpeg');">
-    <img src="https://tech.ray247k.com/img/blog/2022/03/gcp-auto-scaling/server.jpeg" alt="server">
-  </a>
-        <header>
-          <h2><a href="/blog/202203-gcp-auto-scaling/">伸縮自在的伺服器 01 自動配置 Auto Scaling</a></h2>
-          <time class="published" datetime="2022-03-27 00:00:00 &#43;0000 UTC">2022/03/27</time>
-        </header>
-      </article>
-      
       
         <footer>
           <a href="/blog/" class="button">查看更多</a>
@@ -615,7 +618,7 @@
           
           
           <li>
-              <a href="/categories/devops/">devops<span class="count">22</span></a>
+              <a href="/categories/devops/">devops<span class="count">23</span></a>
           </li>
           
           <li>
@@ -669,7 +672,7 @@
         
         
         <li>
-          <a href="/tags/devops/">devops (25)</a>
+          <a href="/tags/devops/">devops (26)</a>
         </li>
         
         <li>
@@ -685,11 +688,11 @@
         </li>
         
         <li>
-          <a href="/tags/php/">php (11)</a>
+          <a href="/tags/docker/">docker (11)</a>
         </li>
         
         <li>
-          <a href="/tags/docker/">docker (10)</a>
+          <a href="/tags/php/">php (11)</a>
         </li>
         
         <li>
@@ -717,11 +720,11 @@
         </li>
         
         <li>
-          <a href="/tags/leetcode-easy/">leetcode-easy (8)</a>
+          <a href="/tags/cicd/">cicd (8)</a>
         </li>
         
         <li>
-          <a href="/tags/cicd/">cicd (7)</a>
+          <a href="/tags/leetcode-easy/">leetcode-easy (8)</a>
         </li>
         
         <li>
@@ -730,6 +733,10 @@
         
         <li>
           <a href="/tags/docker-compose/">docker-compose (6)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/gcp/">gcp (6)</a>
         </li>
         
         <li>
@@ -745,10 +752,6 @@
         </li>
         
         <li>
-          <a href="/tags/gcp/">gcp (5)</a>
-        </li>
-        
-        <li>
           <a href="/tags/leetcode-medium/">leetcode-medium (5)</a>
         </li>
         
@@ -757,11 +760,11 @@
         </li>
         
         <li>
-          <a href="/tags/cloudflare/">cloudflare (3)</a>
+          <a href="/tags/jenkins/">jenkins (4)</a>
         </li>
         
         <li>
-          <a href="/tags/jenkins/">jenkins (3)</a>
+          <a href="/tags/cloudflare/">cloudflare (3)</a>
         </li>
         
         <li>
@@ -774,6 +777,10 @@
         
         <li>
           <a href="/tags/restful/">restful (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/ssh/">ssh (3)</a>
         </li>
         
         <li>
@@ -810,10 +817,6 @@
         
         <li>
           <a href="/tags/nginx/">nginx (2)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/ssh/">ssh (2)</a>
         </li>
         
         <li>
@@ -1007,7 +1010,7 @@
         © 2022 薛丁格的工程師
     </p>
     <p class="copyright" style="font-size: 0.1EM;">
-        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.93.3' target='_blank' rel='noopener'>Hugo</a>
+        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.96.0' target='_blank' rel='noopener'>Hugo</a>
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>

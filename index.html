@@ -18,7 +18,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.93.3" /><meta property="og:site_name" content="薛丁格的工程師">
+<meta name="generator" content="Hugo 0.96.0" /><meta property="og:site_name" content="薛丁格的工程師">
   <meta property="og:title" content="薛丁格的工程師">
   <meta property="og:description" content="薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識">
   <meta property="description" content="薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識">
@@ -189,6 +189,69 @@
       <main id="site-main">
         
   
+  
+    <article class="post">
+  <header>
+  <div class="title">
+    
+      <h2><a href="/blog/202204-jenkins-cicd-4-ssh-remote-server/">Jenkins 04 在流程中使用 SSH 指令操作另一台 GCP 上的執行個體</a></h2>
+    
+    
+      <p>讓 Jenkins 透過 SSH 連線操作遠端主機，代替手動連線部署</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2022-04-13 00:00:00 &#43;0000 UTC">2022/04/13</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+  <div class="content">
+    <a href="/blog/202204-jenkins-cicd-4-ssh-remote-server/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2022/04/jenkins-cicd-4-ssh-remote-server/home-office.jpeg');">
+    <img src="https://tech.ray247k.com/img/blog/2022/04/jenkins-cicd-4-ssh-remote-server/home-office.jpeg" alt="home office">
+  </a>
+    
+    <p>在沒有自動化部屬的情境下，每次都需要手動連線到伺服器主機內部<br>
+透過下指令或是執行將部署指令的執行檔，不僅麻煩且有人為失誤的風險<br>
+透過 Jenkins 的 pipeline 來取代人工執行，部署就變得輕鬆又愜意</p>
+  </div>
+  <footer>
+    <a href="/blog/202204-jenkins-cicd-4-ssh-remote-server/" class="button big">閱讀全文</a>
+    <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/devops/">DevOps</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/devops/">DevOps</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/jenkins/">Jenkins</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/cicd/">CICD</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/docker/">docker</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/gcp/">GCP</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/ssh/">ssh</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+  </footer>
+</article>
+
   
     <article class="post">
   <header>
@@ -558,61 +621,6 @@ Jenkins 是一套以 Java 開發的一套 CI/CD 系統工具<br>
 </article>
 
   
-    <article class="post">
-  <header>
-  <div class="title">
-    
-      <h2><a href="/blog/202203-laravel-queue/">Laravel Queue 使用</a></h2>
-    
-    
-      <p>使用隊列，讓不需要馬上處理的任務延遲處理</p>
-    
-  </div>
-  <div class="meta">
-    <time datetime="2022-03-05 00:00:00 &#43;0000 UTC">2022/03/05</time>
-    <p>Ray</p>
-    
-  </div>
-</header>
-
-  <div class="content">
-    <a href="/blog/202203-laravel-queue/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2022/03/laravel-queue/queue.jpeg');">
-    <img src="https://tech.ray247k.com/img/blog/2022/03/laravel-queue/queue.jpeg" alt="queue">
-  </a>
-    
-    <p><strong>Queue</strong> 中文名稱是「<strong>隊列</strong>」<br>
-用處是將一個耗時且不需要即時完成的任務延遲處理，例如寄送電子郵件<br>
-使用者不需要等寄信成功才能進行下一步操作，這樣可以讓應用程式對網頁請求有更快的反應</p>
-  </div>
-  <footer>
-    <a href="/blog/202203-laravel-queue/" class="button big">閱讀全文</a>
-    <div class="stats">
-  
-    <ul class="categories">
-      
-        
-          <li><a class="article-terms-link" href="/categories/laravel/">Laravel</a></li>
-        
-      
-    </ul>
-  
-  
-    <ul class="tags">
-      
-        
-          <li><a class="article-terms-link" href="/tags/laravel/">Laravel</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/php/">PHP</a></li>
-        
-      
-    </ul>
-  
-</div>
-
-  </footer>
-</article>
-
-  
   <div class="pagination">
     
     
@@ -627,6 +635,16 @@ Jenkins 是一套以 Java 開發的一套 CI/CD 系統工具<br>
       <header>
         <h1>最新文章</h1>
       </header>
+      
+      <article class="mini-post">
+          <a href="/blog/202204-jenkins-cicd-4-ssh-remote-server/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2022/04/jenkins-cicd-4-ssh-remote-server/home-office.jpeg');">
+    <img src="https://tech.ray247k.com/img/blog/2022/04/jenkins-cicd-4-ssh-remote-server/home-office.jpeg" alt="home office">
+  </a>
+        <header>
+          <h2><a href="/blog/202204-jenkins-cicd-4-ssh-remote-server/">Jenkins 04 在流程中使用 SSH 指令操作另一台 GCP 上的執行個體</a></h2>
+          <time class="published" datetime="2022-04-13 00:00:00 &#43;0000 UTC">2022/04/13</time>
+        </header>
+      </article>
       
       <article class="mini-post">
           <a href="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2022/04/jenkins-cicd-3-push-docker-image-to-gcr/deliver.jpeg');">
@@ -668,16 +686,6 @@ Jenkins 是一套以 Java 開發的一套 CI/CD 系統工具<br>
         </header>
       </article>
       
-      <article class="mini-post">
-          <a href="/blog/202203-gcp-auto-scaling/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2022/03/gcp-auto-scaling/server.jpeg');">
-    <img src="https://tech.ray247k.com/img/blog/2022/03/gcp-auto-scaling/server.jpeg" alt="server">
-  </a>
-        <header>
-          <h2><a href="/blog/202203-gcp-auto-scaling/">伸縮自在的伺服器 01 自動配置 Auto Scaling</a></h2>
-          <time class="published" datetime="2022-03-27 00:00:00 &#43;0000 UTC">2022/03/27</time>
-        </header>
-      </article>
-      
       
         <footer>
           <a href="/blog/" class="button">查看更多</a>
@@ -697,7 +705,7 @@ Jenkins 是一套以 Java 開發的一套 CI/CD 系統工具<br>
           
           
           <li>
-              <a href="/categories/devops/">devops<span class="count">22</span></a>
+              <a href="/categories/devops/">devops<span class="count">23</span></a>
           </li>
           
           <li>
@@ -751,7 +759,7 @@ Jenkins 是一套以 Java 開發的一套 CI/CD 系統工具<br>
         
         
         <li>
-          <a href="/tags/devops/">devops (25)</a>
+          <a href="/tags/devops/">devops (26)</a>
         </li>
         
         <li>
@@ -767,11 +775,11 @@ Jenkins 是一套以 Java 開發的一套 CI/CD 系統工具<br>
         </li>
         
         <li>
-          <a href="/tags/php/">php (11)</a>
+          <a href="/tags/docker/">docker (11)</a>
         </li>
         
         <li>
-          <a href="/tags/docker/">docker (10)</a>
+          <a href="/tags/php/">php (11)</a>
         </li>
         
         <li>
@@ -799,11 +807,11 @@ Jenkins 是一套以 Java 開發的一套 CI/CD 系統工具<br>
         </li>
         
         <li>
-          <a href="/tags/leetcode-easy/">leetcode-easy (8)</a>
+          <a href="/tags/cicd/">cicd (8)</a>
         </li>
         
         <li>
-          <a href="/tags/cicd/">cicd (7)</a>
+          <a href="/tags/leetcode-easy/">leetcode-easy (8)</a>
         </li>
         
         <li>
@@ -812,6 +820,10 @@ Jenkins 是一套以 Java 開發的一套 CI/CD 系統工具<br>
         
         <li>
           <a href="/tags/docker-compose/">docker-compose (6)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/gcp/">gcp (6)</a>
         </li>
         
         <li>
@@ -827,10 +839,6 @@ Jenkins 是一套以 Java 開發的一套 CI/CD 系統工具<br>
         </li>
         
         <li>
-          <a href="/tags/gcp/">gcp (5)</a>
-        </li>
-        
-        <li>
           <a href="/tags/leetcode-medium/">leetcode-medium (5)</a>
         </li>
         
@@ -839,11 +847,11 @@ Jenkins 是一套以 Java 開發的一套 CI/CD 系統工具<br>
         </li>
         
         <li>
-          <a href="/tags/cloudflare/">cloudflare (3)</a>
+          <a href="/tags/jenkins/">jenkins (4)</a>
         </li>
         
         <li>
-          <a href="/tags/jenkins/">jenkins (3)</a>
+          <a href="/tags/cloudflare/">cloudflare (3)</a>
         </li>
         
         <li>
@@ -856,6 +864,10 @@ Jenkins 是一套以 Java 開發的一套 CI/CD 系統工具<br>
         
         <li>
           <a href="/tags/restful/">restful (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/ssh/">ssh (3)</a>
         </li>
         
         <li>
@@ -892,10 +904,6 @@ Jenkins 是一套以 Java 開發的一套 CI/CD 系統工具<br>
         
         <li>
           <a href="/tags/nginx/">nginx (2)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/ssh/">ssh (2)</a>
         </li>
         
         <li>
@@ -1089,7 +1097,7 @@ Jenkins 是一套以 Java 開發的一套 CI/CD 系統工具<br>
         © 2022 薛丁格的工程師
     </p>
     <p class="copyright" style="font-size: 0.1EM;">
-        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.93.3' target='_blank' rel='noopener'>Hugo</a>
+        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.96.0' target='_blank' rel='noopener'>Hugo</a>
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>

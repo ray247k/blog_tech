@@ -6,7 +6,18 @@
     <description>Recent content in Blog on 薛丁格的工程師</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Fri, 08 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 13 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Jenkins 04 在流程中使用 SSH 指令操作另一台 GCP 上的執行個體</title>
+      <link>https://tech.ray247k.com/blog/202204-jenkins-cicd-4-ssh-remote-server/</link>
+      <pubDate>Wed, 13 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://tech.ray247k.com/blog/202204-jenkins-cicd-4-ssh-remote-server/</guid>
+      <description>&lt;p&gt;在沒有自動化部屬的情境下，每次都需要手動連線到伺服器主機內部&lt;br&gt;
+透過下指令或是執行將部署指令的執行檔，不僅麻煩且有人為失誤的風險&lt;br&gt;
+透過 Jenkins 的 pipeline 來取代人工執行，部署就變得輕鬆又愜意&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Jenkins 03 打包 Docker image 並推送到 GCR</title>
       <link>https://tech.ray247k.com/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/</link>
