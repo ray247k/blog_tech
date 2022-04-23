@@ -6,7 +6,18 @@
     <description>Recent content in DevOps on 薛丁格的工程師</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Wed, 13 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/categories/devops/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/categories/devops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>讓你的電腦暫時公開在網路上 - Ngrok</title>
+      <link>https://tech.ray247k.com/blog/202204-ngrok/</link>
+      <pubDate>Sat, 23 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://tech.ray247k.com/blog/202204-ngrok/</guid>
+      <description>&lt;p&gt;在開發上有常常會遇到，想要在本機測試但是串接的服務或是 webhook 需要有一個公開的網址作為 callback&lt;br&gt;
+還都要求要有 https 的認證！&lt;br&gt;
+這種時候除了真的去開一台雲端主機外還有沒有其他選擇呢？&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Jenkins 04 在流程中使用 SSH 指令操作另一台 GCP 上的執行個體</title>
       <link>https://tech.ray247k.com/blog/202204-jenkins-cicd-4-ssh-remote-server/</link>

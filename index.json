@@ -1,4 +1,10 @@
 [{
+    "title": "讓你的電腦暫時公開在網路上 - Ngrok",
+    "date": "",
+    "description": "使用 Ngrok 讓你的電腦暫時取得一組對外開放的網址",
+    "body": "在開發上有常常會遇到，想要在本機測試但是串接的服務或是 webhook 需要有一個公開的網址作為 callback\n還都要求要有 https 的認證！\n這種時候除了真的去開一台雲端主機外還有沒有其他選擇呢？\nNgrok  做為一個轉發的伺服器，他可以把外界的請求轉發到你指定的 Port\n使用的原理是連接到 ngrok 雲端伺服器，將你本機指定的地址公開\n再將由 ngrok 提供一串公開的網址來存取內容\n優點是快速而且還提供了 https 的服務讓你使用上更安全，甚至你還可以設置密碼保護！\n官方文件與載點  安裝 Mac brew install ngrok Linux 確認自己的主機硬體架構\ncat /proc/cpuinfo 再去官網下載指定檔案依照 官網安裝  方式安裝\n或是直接使用 snap 安裝\nsudo apt update sudo apt install snapd sudo snap install ngrok 啟用服務 輸入指令啟動並監聽 8080 Port\nngrok http 8080 就可以看到對外開放的網址\n註冊 ngrok 沒有註冊也是可以直接使用服務，但是過一段時間就會被斷線，重新啟動會配發一組新的網址\n但是在測試 webhook 或是提供給其他人使用的時候，重新配發網址意味著你要重新設定 webhook 或是通知其他人\n這樣在使用上有諸多不便\n登入 Ngrok 帳號之後前往 Your Authtoken  頁面\n複製 Authtoken 之後到 terminal 輸入\nngrok config add-authtoken {Your Authtoken} 看到以下訊息代表認證完成\nAuthtoken saved to configuration file: /Users/user_name/.ngrok2/ngrok.yml 註冊完成後就可以使用 Ngrok 服務，而不用擔心過一陣子服務被斷線\n",
+    "ref": "/blog/202204-ngrok/"
+  },{
     "title": "Jenkins 04 在流程中使用 SSH 指令操作另一台 GCP 上的執行個體",
     "date": "",
     "description": "讓 Jenkins 透過 SSH 連線操作遠端主機，代替手動連線部署",

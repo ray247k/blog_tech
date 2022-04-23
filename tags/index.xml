@@ -6,22 +6,31 @@
     <description>Recent content in Tags on 薛丁格的工程師</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Wed, 13 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DevOps</title>
+      <link>https://tech.ray247k.com/tags/devops/</link>
+      <pubDate>Sat, 23 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://tech.ray247k.com/tags/devops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ngrok</title>
+      <link>https://tech.ray247k.com/tags/ngrok/</link>
+      <pubDate>Sat, 23 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://tech.ray247k.com/tags/ngrok/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>CICD</title>
       <link>https://tech.ray247k.com/tags/cicd/</link>
       <pubDate>Wed, 13 Apr 2022 00:00:00 +0000</pubDate>
       
       <guid>https://tech.ray247k.com/tags/cicd/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>DevOps</title>
-      <link>https://tech.ray247k.com/tags/devops/</link>
-      <pubDate>Wed, 13 Apr 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://tech.ray247k.com/tags/devops/</guid>
       <description></description>
     </item>
     
@@ -589,15 +598,6 @@
       <pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>https://tech.ray247k.com/tags/proxy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ngrok</title>
-      <link>https://tech.ray247k.com/tags/ngrok/</link>
-      <pubDate>Sun, 14 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://tech.ray247k.com/tags/ngrok/</guid>
       <description></description>
     </item>
     
