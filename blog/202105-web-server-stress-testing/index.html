@@ -2,7 +2,7 @@
 <html lang="zh-tw">
   <head>
   <meta charset="utf-8">
-<title>網頁伺服器壓力測試 - 使用 Apache Bench - 薛丁格的工程師</title>
+<title>伺服器壓力測試 - 使用 Apache Bench - 薛丁格的工程師</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
@@ -18,14 +18,17 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.97.3" /><meta property="og:site_name" content="薛丁格的工程師">
-  <meta property="og:title" content="網頁伺服器壓力測試 - 使用 Apache Bench">
-  <meta property="og:description" content="使用 Apache Bench 對網頁伺服器做壓力測試，測試伺服器性能">
-  <meta property="description" content="使用 Apache Bench 對網頁伺服器做壓力測試，測試伺服器性能">
+<meta name="generator" content="Hugo 0.98.0" /><meta property="og:site_name" content="薛丁格的工程師">
+  <meta property="og:title" content="伺服器壓力測試 - 使用 Apache Bench">
+  <meta property="og:description" content="使用 Apache Bench 進行伺服器壓力測試，測試伺服器性能">
+  <meta property="description" content="使用 Apache Bench 進行伺服器壓力測試，測試伺服器性能">
   <meta property="og:url" content="https://tech.ray247k.com/blog/202105-web-server-stress-testing/">
   <meta property="og:type" content="article">
   
-    <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.jpg">
+    
+      <meta property="og:image" content="https://tech.ray247k.com/img/blog/2021/05/web-server-stress-testing/lego-blocks.jpeg">
+      <meta property="og:image:alt" content="lego blocks">
+    
   
   
             <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/github-dark.min.css">
@@ -108,17 +111,17 @@
 {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "網頁伺服器壓力測試 - 使用 Apache Bench",
-    "description": "使用 Apache Bench 對網頁伺服器做壓力測試，測試伺服器性能",
+    "name": "伺服器壓力測試 - 使用 Apache Bench",
+    "description": "使用 Apache Bench 進行伺服器壓力測試，測試伺服器性能",
     "keywords": [
-        "DevOps" , "PHP" , "PHP-FPM" , "nginx" , "壓力測試" , "stress testing" , "Apache Bench" , "server" , "伺服器" 
+        "DevOps" , "PHP" , "PHP-FPM" , "nginx" , "壓力測試" , "Stress Testing" , "Apache Bench" , "server" , "伺服器" 
     ],
     "dateCreated": "2021-05-23T00:00:00.00Z",
     "datePublished": "2021-05-23T00:00:00.00Z",
     "dateModified": "2021-05-23T00:00:00.00Z",
     "primaryImageOfPage": {
         "@type": "ImageObject",
-        "contentUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg"
+        "contentUrl": "[]"
     },
     "breadcrumb": {
         "@context": "http://schema.org",
@@ -147,7 +150,7 @@
                 "position": 3,
                 "item": {
                     "@id": "https:\/\/tech.ray247k.com\/blog\/202105-web-server-stress-testing\/",
-                    "name": "網頁伺服器壓力測試 - 使用 Apache Bench",
+                    "name": "伺服器壓力測試 - 使用 Apache Bench",
                     "url": "https:\/\/tech.ray247k.com\/blog\/202105-web-server-stress-testing\/"
                 }
             }
@@ -163,9 +166,9 @@
     "@context": "http://schema.org",
     "@type": "BlogPosting",
     "articleSection": "blog",
-    "name": "網頁伺服器壓力測試 - 使用 Apache Bench",
-    "headline": "\u003cp\u003eMacOS 預設已經安裝了 Apache Bench 又簡稱為 ab，是 Apache 開發的其中一個開源測試工具\u003cbr\u003e\n主要用來測試網站或 API 的伺服器執行效能，並查看執行後伺服器的性能測試結果\u003c\/p\u003e",
-    "description": "使用 Apache Bench 對網頁伺服器做壓力測試，測試伺服器性能",
+    "name": "伺服器壓力測試 - 使用 Apache Bench",
+    "headline": "\u003cp\u003e伺服器壓力測試，上線前一定要要做，不做不行！你們想想\u003cbr\u003e\n你加班幾個月、系統上了線，吃著火鍋還唱著歌，突然主機就被流量灌倒了！\u003cbr\u003e\n所以，有事先壓測的系統，才是好系統！\u003c\/p\u003e",
+    "description": "使用 Apache Bench 進行伺服器壓力測試，測試伺服器性能",
     "inLanguage": "zh-TW",
     "isFamilyFriendly": "true",
     "mainEntityOfPage": {
@@ -200,11 +203,11 @@
             "height":"32"
         }
     },
-    "image": "https://tech.ray247k.com/img/main/logo.jpg",
+    "image": [""],
     "url" : "https:\/\/tech.ray247k.com\/blog\/202105-web-server-stress-testing\/",
-    "wordCount" : "394",
-    "genre" : [ "DevOps" , "PHP" , "PHP-FPM" , "nginx" , "壓力測試" , "stress testing" , "Apache Bench" , "server" , "伺服器" ],
-    "keywords" : [ "DevOps" , "PHP" , "PHP-FPM" , "nginx" , "壓力測試" , "stress testing" , "Apache Bench" , "server" , "伺服器" ]
+    "wordCount" : "419",
+    "genre" : [ "DevOps" , "PHP" , "PHP-FPM" , "nginx" , "壓力測試" , "Stress Testing" , "Apache Bench" , "server" , "伺服器" ],
+    "keywords" : [ "DevOps" , "PHP" , "PHP-FPM" , "nginx" , "壓力測試" , "Stress Testing" , "Apache Bench" , "server" , "伺服器" ]
 }
 </script>
 
@@ -320,10 +323,10 @@
     <header>
   <div class="title">
     
-      <h2><a href="/blog/202105-web-server-stress-testing/">網頁伺服器壓力測試 - 使用 Apache Bench</a></h2>
+      <h2><a href="/blog/202105-web-server-stress-testing/">伺服器壓力測試 - 使用 Apache Bench</a></h2>
     
     
-      <p>使用 Apache Bench 對網頁伺服器做壓力測試，測試伺服器性能</p>
+      <p>使用 Apache Bench 進行伺服器壓力測試，測試伺服器性能</p>
     
   </div>
   <div class="meta">
@@ -342,13 +345,35 @@
 
     </div>
     <div class="content">
-      
-      <p>MacOS 預設已經安裝了 Apache Bench 又簡稱為 ab，是 Apache 開發的其中一個開源測試工具<br>
-主要用來測試網站或 API 的伺服器執行效能，並查看執行後伺服器的性能測試結果</p>
-<h1 id="apache-bench-介紹">Apache Bench 介紹</h1>
-<p>可以使用 <code>ab &lt;url&gt;</code> 開始對某一網址做測試，有很多參數可以使用</p>
+      <a href="/blog/202105-web-server-stress-testing/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2021/05/web-server-stress-testing/lego-blocks.jpeg');">
+    <img src="https://tech.ray247k.com/img/blog/2021/05/web-server-stress-testing/lego-blocks.jpeg" alt="lego blocks">
+  </a>
+      <p>伺服器壓力測試，上線前一定要要做，不做不行！你們想想<br>
+你加班幾個月、系統上了線，吃著火鍋還唱著歌，突然主機就被流量灌倒了！<br>
+所以，有事先壓測的系統，才是好系統！</p>
+<p>上線前常常被問到伺服器可以承擔多大的業務，又或是沒人問<br>
+但是有一天服務突然發爐，一次湧進大批使用者<br>
+老闆以為要發大財了，但是先迎接的是伺服器 CUP 使用率超過 100% 然後服務中斷的客訴</p>
+<p>這次介紹的工具可以幫助我們事先發現這個問題，提前<del>做好心理準備</del>做好應變措施<br>
+不論是透過加大主機等級或是限流等手段，來避免服務運行中斷</p>
+<h1 id="apache-bench">Apache Bench</h1>
+<p>在 MacOS 預設已經安裝了 <a href="https://httpd.apache.org/docs/2.4/programs/ab.html"
+   
+    target="_blank" rel="noreferrer noopener">Apache Bench
+</a>
+ 又簡稱為「<strong><code>ab</code></strong>」<br>
+跟 A/B test 是不一樣的東西，Apache Bench 是 Apache 開發的其中一個開源測試工具<br>
+主要用來測試網站或 API 伺服器負載的極限，透過同時間傳送大量請求到目標使伺服器負載增加<br>
+並查看執行後伺服器的性能測試結果對主機進行調整<br>
+必須謹慎使用，因為其原理和 <a href="https://zh.wikipedia.org/zh-tw/%e9%98%bb%e6%96%b7%e6%9c%8d%e5%8b%99%e6%94%bb%e6%93%8a"
+   
+    target="_blank" rel="noreferrer noopener">DDoS (阻斷服務攻擊)
+</a>
+ 一樣是在於每秒鐘發出大量請求到伺服器！</p>
+<h2 id="使用">使用</h2>
+<p>使用 <code>ab &lt;url&gt;</code> 開始對某一網址做測試，有很多參數可以使用</p>
 <h2 id="常用參數">常用參數</h2>
-<p>使用 <code>ab -h</code> 指令可以看到</p>
+<p>使用<code>ab -h</code>指令可以看到</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Usage: ab [options] [http[s]://]hostname[:port]/path
 </span></span><span style="display:flex;"><span>Options are:
 </span></span><span style="display:flex;"><span>    -n requests     Number of requests to perform
@@ -394,31 +419,31 @@
 </span></span><span style="display:flex;"><span>    -f protocol     Specify SSL/TLS protocol
 </span></span><span style="display:flex;"><span>                    (TLS1, TLS1.1, TLS1.2 or ALL)
 </span></span><span style="display:flex;"><span>    -E certfile     Specify optional client certificate chain and private key
-</span></span></code></pre></div><p>比較常用的參數是</p>
+</span></span></code></pre></div><p>其中最常用的參數是</p>
 <ul>
-<li><code>-n</code>：測試時執行的 request 數量，預設為1</li>
-<li><code>-c</code>：一次執行下同時的 request 數量，模擬同時在線使用者數，預設為1</li>
+<li><code>-n</code>：測試時執行的 request 數量，預設為 1</li>
+<li><code>-c</code>：一次執行下同時的 request 數量，模擬同時在線使用者數，預設為 1</li>
 <li><code>-e output.csv</code>：將測試的效能原始資料匯出成叫做 <code>output.csv</code> 的 CSV 檔</li>
 </ul>
 <p>參考來源：<a href="https://blog.miniasp.com/post/2008/06/30/Using-ApacheBench-ab-to-to-Web-stress-test"
    
-    target="_blank" rel="noreferrer noopener">The Will Will Web - 使用 ApacheBench 進行網站的壓力測試
+    target="_blank" rel="noreferrer noopener">使用 ApacheBench 進行網站的壓力測試
 </a>
 </p>
-<h1 id="調整-php-fpm-參數">調整 php-fpm 參數</h1>
-<p>參數設定參考：<a href="https://github.com/kejyun/ubuntu-learning-notes/blob/master/web/php/web-php-max-children.md"
+<h1 id="補充-調整-php-fpm-參數">[補充] 調整 php-fpm 參數</h1>
+<p>蠻有趣的調校經驗，php fpm 的執行緒不太夠用<br>
+沒遇到不會特別研究，先筆記一下：<a href="https://ubuntu-for-newbie.kejyun.com/docs/web/php/max-children/"
    
-    target="_blank" rel="noreferrer noopener">kejyun/ubuntu-learning-notes
+    target="_blank" rel="noreferrer noopener">PHP FPM Max Children
 </a>
 </p>
-<p>docker 進到 php-fpm 的容器裡面<br>
-可以找到 <code>/usr/local/etc/php-fpm.d/www.conf</code> 設定檔<br>
-就像 nginx config 檔案一樣，可以從外部調整後掛載進來</p>
-<p>範例文章：<a href="https://xyz.cinc.biz/2015/09/linux-nginx-php-fpm-connection.html"
+<p>再搭配這這篇文章的說明：<a href="https://xyz.cinc.biz/2015/09/linux-nginx-php-fpm-connection.html"
    
     target="_blank" rel="noreferrer noopener">Linux、nginx、php-fpm 連線數優化
 </a>
 </p>
+<p>如果是使用 docker 容器的話則是進到 php-fpm 的容器裡，找到<code>/usr/local/etc/php-fpm.d/www.conf</code>設定檔<br>
+可以像是 nginx config 檔案一樣從外部調整後掛載進來，或是在 Dockerfile 打包時候就設定進去</p>
 
       
       
@@ -450,7 +475,7 @@
         
           <li><a class="article-terms-link" href="/tags/%e5%a3%93%e5%8a%9b%e6%b8%ac%e8%a9%a6/">壓力測試</a></li>
         
-          <li><a class="article-terms-link" href="/tags/stress-testing/">stress testing</a></li>
+          <li><a class="article-terms-link" href="/tags/stress-testing/">Stress Testing</a></li>
         
           <li><a class="article-terms-link" href="/tags/apache-bench/">Apache Bench</a></li>
         
@@ -947,14 +972,14 @@
         © 2022 薛丁格的工程師
     </p>
     <p class="copyright" style="font-size: 0.1EM;">
-        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.97.3' target='_blank' rel='noopener'>Hugo</a>
+        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.98.0' target='_blank' rel='noopener'>Hugo</a>
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
 
       <script src="/js/highlight.js"></script>
     
-    <script>hljs.highlightAll();</script><script src="/js/bundle.min.c7e8fb959cf51497f3e33867f92afc46dbfef6fe23b10fac4b7e7cf25da9c48b.js" integrity="sha256-x&#43;j7lZz1FJfz4zhn&#43;Sr8Rtv&#43;9v4jsQ&#43;sS3588l2pxIs="></script>
+    <script>hljs.highlightAll();</script><script src="/js/bundle.min.1ee93a9ac3dd02b9efb6b2e94016c3cc2058909243c6f586d39be77f06d1ae0e.js" integrity="sha256-Huk6msPdArnvtrLpQBbDzCBYkJJDxvWG05vnfwbRrg4="></script>
     <script src="/js/add-on.js"></script>
 <script type="application/javascript">
 var doNotTrack = false;
