@@ -3,13 +3,24 @@
   <head>
   <meta charset="utf-8">
 <title>反向代理 - 在 Docker 環境建置 - 薛丁格的工程師</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="你可能知道反向代理，但你試過在 Docker 做嗎">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta property="og:site_name" content="薛丁格的工程師">
+<meta property="og:title" content="反向代理 - 在 Docker 環境建置">
+<meta property="og:description" content="你可能知道反向代理，但你試過在 Docker 做嗎">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://tech.ray247k.com/blog/202102-reverse-proxy-in-docker-service/">
+    <meta property="og:image" content="https://tech.ray247k.com/img/blog/2021/02/reverse-proxy-in-docker-service/sunset.jpeg">
+    <meta property="og:image:alt" content="sunset">
 
 
+  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
-  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
   
     <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=1" color="#ffffff">
     <link rel="shortcut icon" href="/favicon/favicon.ico?v=1">
@@ -20,16 +31,19 @@
 
 <meta name="generator" content="Hugo 0.98.0" /><meta property="og:site_name" content="薛丁格的工程師">
   <meta property="og:title" content="反向代理 - 在 Docker 環境建置">
-  <meta property="og:description" content="介紹基本反向代理以及在 Docker 環境中建置">
-  <meta property="description" content="介紹基本反向代理以及在 Docker 環境中建置">
+  <meta property="og:description" content="你可能知道反向代理，但你試過在 Docker 做嗎">
+  <meta property="description" content="你可能知道反向代理，但你試過在 Docker 做嗎">
   <meta property="og:url" content="https://tech.ray247k.com/blog/202102-reverse-proxy-in-docker-service/">
   <meta property="og:type" content="article">
   
-    <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.jpg">
+    
+      <meta property="og:image" content="https://tech.ray247k.com/img/blog/2021/02/reverse-proxy-in-docker-service/sunset.jpeg">
+      <meta property="og:image:alt" content="sunset">
+    
   
   
             <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/github-dark.min.css">
-          <link rel="stylesheet" href="/css/bundle.min.1bfccf86359e3de974865922b006112447a52f942c2a9c2bf93d159980ae641b.css" integrity="sha256-G/zPhjWePel0hlkisAYRJEelL5QsKpwr&#43;T0VmYCuZBs="><link rel="stylesheet" href="/css/add-on.css">
+          <link rel="stylesheet" href="/css/bundle.min.3b1b5f2e683d24b1ea3b5a08c8254622e40aa935e0ead75ba6d45c0f14c2f965.css" integrity="sha256-OxtfLmg9JLHqO1oIyCVGIuQKqTXg6tdbptRcDxTC&#43;WU="><link rel="stylesheet" href="/css/add-on.css">
 
   
 
@@ -109,16 +123,16 @@
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "反向代理 - 在 Docker 環境建置",
-    "description": "介紹基本反向代理以及在 Docker 環境中建置",
+    "description": "你可能知道反向代理，但你試過在 Docker 做嗎",
     "keywords": [
-        "DevOps" , "nginx" , "proxy" 
+        "DevOps" , "nginx" , "proxy" , "Docker" , "容器技術" , "Containerization" 
     ],
     "dateCreated": "2021-02-27T00:00:00.00Z",
     "datePublished": "2021-02-27T00:00:00.00Z",
     "dateModified": "2021-02-27T00:00:00.00Z",
     "primaryImageOfPage": {
         "@type": "ImageObject",
-        "contentUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg"
+        "contentUrl": "[]"
     },
     "breadcrumb": {
         "@context": "http://schema.org",
@@ -164,8 +178,8 @@
     "@type": "BlogPosting",
     "articleSection": "blog",
     "name": "反向代理 - 在 Docker 環境建置",
-    "headline": "\u003cp\u003e反向代理的基本說明，以及在 Docker 容器中如何建立反向代理\u003c\/p\u003e",
-    "description": "介紹基本反向代理以及在 Docker 環境中建置",
+    "headline": "\u003cp\u003e反向代理的基本說明，以及在 Docker 容器環境中如何建置反向代理\u003c\/p\u003e",
+    "description": "你可能知道反向代理，但你試過在 Docker 做嗎",
     "inLanguage": "zh-TW",
     "isFamilyFriendly": "true",
     "mainEntityOfPage": {
@@ -200,11 +214,11 @@
             "height":"32"
         }
     },
-    "image": "https://tech.ray247k.com/img/main/logo.jpg",
+    "image": [""],
     "url" : "https:\/\/tech.ray247k.com\/blog\/202102-reverse-proxy-in-docker-service\/",
-    "wordCount" : "604",
-    "genre" : [ "DevOps" , "nginx" , "proxy" ],
-    "keywords" : [ "DevOps" , "nginx" , "proxy" ]
+    "wordCount" : "569",
+    "genre" : [ "DevOps" , "nginx" , "proxy" , "Docker" , "容器技術" , "Containerization" ],
+    "keywords" : [ "DevOps" , "nginx" , "proxy" , "Docker" , "容器技術" , "Containerization" ]
 }
 </script>
 
@@ -256,7 +270,7 @@
 
     <div id="wrapper">
       <section id="site-intro" >
-  <a href="/"><img src="https://tech.ray247k.com/img/main/logo.jpg" class="circle" width="100" alt="一隻箱子裡的貓，看著電腦螢幕" /></a>
+  <a href="/"><img src="/img/main/logo.jpg" class="circle" width="100" alt="一隻箱子裡的貓，看著電腦螢幕" /></a>
   <header>
     <h1>Schrödinger's Programmer</h1>
   </header>
@@ -323,7 +337,7 @@
       <h2><a href="/blog/202102-reverse-proxy-in-docker-service/">反向代理 - 在 Docker 環境建置</a></h2>
     
     
-      <p>介紹基本反向代理以及在 Docker 環境中建置</p>
+      <p>你可能知道反向代理，但你試過在 Docker 做嗎</p>
     
   </div>
   <div class="meta">
@@ -342,9 +356,11 @@
 
     </div>
     <div class="content">
-      
-      <p>反向代理的基本說明，以及在 Docker 容器中如何建立反向代理</p>
-<h1 id="反向代理">反向代理</h1>
+      <a href="/blog/202102-reverse-proxy-in-docker-service/" class="image" style="--bg-image: url('/img/blog/2021/02/reverse-proxy-in-docker-service/sunset.jpeg');">
+    <img src="/img/blog/2021/02/reverse-proxy-in-docker-service/sunset.jpeg" alt="sunset">
+  </a>
+      <p>反向代理的基本說明，以及在 Docker 容器環境中如何建置反向代理</p>
+<h1 id="反向代理說明">反向代理說明</h1>
 <p><a href="https://www.jyt0532.com/2019/11/18/proxy-reverse-proxy/"
    
     target="_blank" rel="noreferrer noopener">系統設計 - 正向代理跟反向代理
@@ -362,79 +378,82 @@
 </ul>
 <h3 id="設定-nginx-config">設定 nginx config</h3>
 <h4 id="第一台主機的-nginx-設定">第一台主機的 nginx 設定</h4>
-<pre tabindex="0"><code class="language-nginx=" data-lang="nginx="># 把所有前往 domain/new_path 的請求反向代理到另一台主機上
-location /new_path {
-    # 要代理到哪個網址
-    proxy_pass http://laravel55.test.com;
-
-    # 傳送使用者真實 IP 到目標主機
-    proxy_set_header X-Real-IP $remote_addr;
-
-    # 設定伺服器為代理前的伺服器，否則 HTTP_HOST 會變成 proxy 那台代理伺服器的位址
-    proxy_set_header Host $host;
-
-    # 設定 cookie 轉發
-    proxy_set_header Cookie $http_cookie;
-
-    # 用來確認最初的用戶端原始 ip 位置
-    proxy_set_header X-Forwarded-Host $host;
-
-    # 記錄從使用者端出來經過的每個代理 X-Forwarded-For: &lt;client&gt;, &lt;proxy1&gt;, &lt;proxy2&gt;
-    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-
-    # 識別網路連線協定
-    proxy_set_header X-Forwarded-Proto $scheme;
-
-    # 隱藏伺服器資訊
-    proxy_hide_header Server;
-    proxy_hide_header X-Powered-By;
-
-    # 因為自行加大 header 所以把空間也加大
-    proxy_headers_hash_bucket_size 128;
-    proxy_headers_hash_max_size 512;
-}
-</code></pre><h4 id="第二台主機的-nginx-設定">第二台主機的 nginx 設定</h4>
-<pre tabindex="0"><code class="language-nginx=" data-lang="nginx=">server {
-    listen 80;
-    server_name ray200;
-    root /home/toc/www/laravel55/public;
-
-    access_log /var/log/nginx/www/laravel55.access.log;
-    error_log /var/log/nginx/www/laravel55.error.log;
-    index index.php;
-
-    location / {
-        try_files $uri $uri/ /index.php$is_args$args;
-    }
-
-    location ~* \.(jpg|jpeg|gif|css|png|js|ico|html|svg|ttf|woff|woff2|eotD)$ {
-        access_log off;
-    expires max;
-    }
-
-    location ~ \.php$ {
-        include snippets/fastcgi-php.conf;
-        
-        # php-fpm 的位置
-        fastcgi_pass 127.0.0.1:9000; 
-   }
-}
-</code></pre><h4 id="注意事項">注意事項</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nginx" data-lang="nginx"><span style="display:flex;"><span><span style="color:#75715e"># 把所有前往 domain/new_path 的請求反向代理到另一台主機上
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">location</span> <span style="color:#e6db74">/new_path</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 要代理到哪個網址
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">proxy_pass</span> <span style="color:#e6db74">http://laravel55.test.com</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 傳送使用者真實 IP 到目標主機
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Real-IP</span> $remote_addr;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 設定伺服器為代理前的伺服器，否則 HTTP_HOST 會變成 proxy 那台代理伺服器的位址
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">Host</span> $host;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 設定 cookie 轉發
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">Cookie</span> $http_cookie;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 用來確認最初的用戶端原始 ip 位置
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Forwarded-Host</span> $host;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 記錄從使用者端出來經過的每個代理 X-Forwarded-For: &lt;client&gt;, &lt;proxy1&gt;, &lt;proxy2&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Forwarded-For</span> $proxy_add_x_forwarded_for;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 識別網路連線協定
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Forwarded-Proto</span> $scheme;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 隱藏伺服器資訊
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">proxy_hide_header</span> <span style="color:#e6db74">Server</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">proxy_hide_header</span> <span style="color:#e6db74">X-Powered-By</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 因為自行加大 header 所以把空間也加大
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">proxy_headers_hash_bucket_size</span> <span style="color:#ae81ff">128</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">proxy_headers_hash_max_size</span> <span style="color:#ae81ff">512</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="第二台主機的-nginx-設定">第二台主機的 nginx 設定</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nginx" data-lang="nginx"><span style="display:flex;"><span><span style="color:#66d9ef">server</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">listen</span> <span style="color:#ae81ff">80</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">server_name</span> <span style="color:#e6db74">ray200</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">root</span> <span style="color:#e6db74">/home/toc/www/laravel55/public</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">access_log</span> <span style="color:#e6db74">/var/log/nginx/www/laravel55.access.log</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">error_log</span> <span style="color:#e6db74">/var/log/nginx/www/laravel55.error.log</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">index</span> <span style="color:#e6db74">index.php</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">location</span> <span style="color:#e6db74">/</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">try_files</span> $uri $uri/ <span style="color:#e6db74">/index.php</span>$is_args$args;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">location</span> ~<span style="color:#e6db74">*</span> <span style="color:#e6db74">\.(jpg|jpeg|gif|css|png|js|ico|html|svg|ttf|woff|woff2|eotD)</span>$ {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">access_log</span> <span style="color:#66d9ef">off</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">expires</span> <span style="color:#e6db74">max</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">location</span> ~ <span style="color:#e6db74">\.php$</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">include</span> <span style="color:#e6db74">snippets/fastcgi-php.conf</span>;
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># php-fpm 的位置
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#f92672">fastcgi_pass</span> 127.0.0.1:<span style="color:#ae81ff">9000</span>; 
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="注意事項">注意事項</h4>
 <ul>
-<li>server_name 必須要是 proxy_pass 過來那台的 domain，如果不這樣設定，proxy_pass 過來會進到預設的 server_name 下</li>
-<li>在程式中判斷真實 IP 的方法要改成讀讀取 header 中的 x-real-ip 才是真實使用者 ip 位置</li>
+<li><code>server_name</code>必須要是 proxy_pass 過來那台的 domain<br>
+如果不這樣設定，proxy_pass 過來會進到預設的 server_name 下</li>
+<li>在程式中判斷真實 IP 的方法要改成讀讀取 header 中的<code>x-real-ip</code>才是真實使用者 ip 位置</li>
 </ul>
 <h3 id="確認-cookie-可以讀取">確認 cookie 可以讀取</h3>
-<p>如果設定 nginx 有設定 <code>proxy_set_header Cookie $http_cookie;</code><br>
-那 <code>dump($_COOKIE);</code> 可以取得 cookie，但是 Laravel 內建的 <code>request()-&gt;cookie();</code> 卻沒有取到值</p>
-<h4 id="解決方案">解決方案</h4>
-<p>Laravel 預設的 web middleware <code>\App\Http\Middleware\EncryptCookies::class,</code> 會要求 cookie 是加密過後的，如果沒有加密當然就讀不到。<br>
-解決方案一個是在 <code>EncryptCookies</code> 這個 class 中的 <code>$except</code> 加入要排除的 cookie 名稱，另一個就是直接把 middleware 註解掉。</p>
+<p>如果設定 nginx 有設定<code>proxy_set_header Cookie $http_cookie;</code><br>
+那<code>dump($_COOKIE);</code>可以取得 cookie，但是 Laravel 內建的<code>request()-&gt;cookie();</code>卻沒有取到值</p>
+<p>因為 Laravel 預設的 web middleware <strong>\App\Http\Middleware\EncryptCookies::class,</strong> 中<br>
+要求 cookie 是加密過後的，如果沒有加密當然就讀不到<br>
+解決方案一個是在 class <code>EncryptCookies</code>中的<code>$except</code>加入要排除的 cookie 名稱<br>
+另一個就是直接把 middleware 註解掉，解決發生問題的 code</p>
 <hr>
 <h1 id="使用-docker">使用 Docker</h1>
+<p>會點進這篇文章應該是比較想知道這部分</p>
 <h2 id="架構示意圖">架構示意圖</h2>
-<p><img src="https://i.imgur.com/hWJ7nIs.png" alt="">
-參考資料：<a href="https://dev.to/sukhbirsekhon/what-is-docker-reverse-proxy-45mm"
+<p><img src="/img/blog/2021/02/reverse-proxy-in-docker-service/infra.png" alt="infra"></p>
+<p>參考資料：<a href="https://dev.to/sukhbirsekhon/what-is-docker-reverse-proxy-45mm"
    
     target="_blank" rel="noreferrer noopener">How to set up NGINX Docker Reverse Proxy?
 </a>
@@ -446,165 +465,163 @@ location /new_path {
 故代理的目標容器必須在同一網路內，才能直接使用容器名稱做代理目標</p>
 </blockquote>
 <p>因為不想讓 network 前面帶上 prefix，還有避免依賴，所以手動建立 network</p>
-<pre tabindex="0"><code class="language-bash=" data-lang="bash=">docker network create nginx-network
-</code></pre><p>這個情境屬於來自外部的 nginx-proxy，要多給一個 <code>external network</code>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker network create nginx-network
+</span></span></code></pre></div><p>這個情境屬於來自外部的 nginx-proxy，要多給一個<code>external network</code>
 有需要連接到這個 network 裡面的服務都要設定</p>
-<pre tabindex="0"><code class="language-yaml=" data-lang="yaml=">networks:
-  default:
-    external:
-      name: nginx-network
-</code></pre><p>如此就可以讓不同 docker-compose.yml 中的服務互相溝通：<a href="https://docs.docker.com/compose/networking/#use-a-pre-existing-network"
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">networks</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">default</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">external</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">name</span>: <span style="color:#ae81ff">nginx-network</span>
+</span></span></code></pre></div><p>如此就可以讓不同 docker-compose.yml 中的服務互相溝通：<a href="https://docs.docker.com/compose/networking/#use-a-pre-existing-network"
    
     target="_blank" rel="noreferrer noopener">官方說明
 </a>
 </p>
 <h3 id="2-建立測試用的服務">2. 建立測試用的服務</h3>
-<p>因為懶得建太複雜的服務，所以抓現成的 <code>portainer</code> 服務來做為 proxy 的目標<br>
+<p>因為懶得建太複雜的服務，所以抓現成的「<strong>portainer</strong>」服務來做為 proxy 的目標<br>
 只是為了要有一個只要 docker-compose up 就可以運行的服務，也可以換成自己比較熟的映像檔</p>
 <p>為了測試從 80 port poxy 到其他 port，所以這邊開在 8080 port<br>
-服務啟動之後可以先去 <code>localhost:8080</code> 查看 portainer 服務有沒有啟動</p>
-<pre tabindex="0"><code class="language-yaml=" data-lang="yaml=">version: &#39;3&#39;
-
-networks:
-  default:
-    external:
-      name: nginx-network
-
-services:
-  portainer:
-    container_name: nginx_test_portainer
-    image: portainer/portainer-ce
-    command: -H unix:///var/run/docker.sock
-    restart: always
-    ports:
-      - 8080:9000
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - portainer_data:/data
-
-volumes:
-  portainer_data:
-</code></pre><h3 id="3-nginx-的-proxy-設定">3. Nginx 的 proxy 設定</h3>
-<h4 id="31-設定-docker-composeyml">3.1 設定 <code>docker-compose.yml</code></h4>
-<pre tabindex="0"><code class="language-yaml=" data-lang="yaml=">version: &#39;3&#39;
-
-networks:
-  default:
-    external:
-      name: nginx-network
-
-services:
-  nginx:
-    container_name: test_nginx
-    image: nginx:1.18
-    ports:
-      - &#34;80:80&#34;
-      - &#34;443:443&#34;
-    volumes:
-      - ./conf.d/:/etc/nginx/conf.d/
-      - ./ssl/:/ssl/
-</code></pre><h4 id="32-設定-mount-進去給反向代理伺服器使用的-nginx-config">3.2 設定 mount 進去給反向代理伺服器使用的 nginx config</h4>
-<p>可以看到底下設定中，我們把所有發往 <code>test.example</code> 網址的請求都轉到<br>
-<code>http://nginx_test_portainer:9000</code>
-在容器中使用的模式是</p>
+服務啟動之後可以先去<code>localhost:8080</code>查看 portainer 服務有沒有啟動</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;3&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">networks</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">default</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">external</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">name</span>: <span style="color:#ae81ff">nginx-network</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">services</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">portainer</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">nginx_test_portainer</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">portainer/portainer-ce</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">command</span>: -<span style="color:#ae81ff">H unix:///var/run/docker.sock</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">always</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">8080</span>:<span style="color:#ae81ff">9000</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">/var/run/docker.sock:/var/run/docker.sock</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">portainer_data:/data</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">portainer_data</span>:
+</span></span></code></pre></div><h3 id="3-nginx-的-proxy-設定">3. Nginx 的 proxy 設定</h3>
+<h4 id="31-設定docker-composeyml">3.1 設定<code>docker-compose.yml</code></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;3&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">networks</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">default</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">external</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">name</span>: <span style="color:#ae81ff">nginx-network</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">services</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">nginx</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">test_nginx</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">nginx:1.18</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;80:80&#34;</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;443:443&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">./conf.d/:/etc/nginx/conf.d/</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">./ssl/:/ssl/</span>
+</span></span></code></pre></div><h4 id="32-設定-mount-進去給反向代理伺服器使用的-nginx-config">3.2 設定 mount 進去給反向代理伺服器使用的 nginx config</h4>
+<p>可以看到底下設定中，我們把所有發往「<strong>test.example</strong>」網址的請求都轉到<br>
+<code>http://nginx_test_portainer:9000</code></p>
+<p>在容器中使用的模式是</p>
 <blockquote>
 <p>http://{container_name}:{port}</p>
 </blockquote>
-<p>可以看到 <code>container_name</code> 對應了<a href="#2-%e5%bb%ba%e7%ab%8b%e6%b8%ac%e8%a9%a6%e7%94%a8%e7%9a%84%e6%9c%8d%e5%8b%99"
+<p>可以看到「<strong>container_name</strong>」對應了<a href="#2-%e5%bb%ba%e7%ab%8b%e6%b8%ac%e8%a9%a6%e7%94%a8%e7%9a%84%e6%9c%8d%e5%8b%99"
    
    >上面建立測試服務
 </a>
 時候使用的容器名稱<br>
-而 <code>port</code> 對應到了容器的<font color="red">內部</font> port！<br>
+而「<strong>port</strong>」對應到了容器的<font color="red"><strong>內部</strong></font> <strong>port</strong>！<br>
 這邊特別把上面的容器內外使用的 port 區隔開來顯示差別，我們代理的目標是內部的 9000 port<br>
-而不是對外的 <code>8080 port</code></p>
-<pre tabindex="0"><code class="language-nginx=" data-lang="nginx=">server {
-    listen 80;
-    listen [::]:80;
-    server_name test.example;
-
-    return 301 https://$host$request_uri;
-}
-
-server {
-    listen 443 ssl;
-    listen [::]:443 ssl;
-    server_name test.example;
-
-    ssl_certificate /ssl/ssl.crt;
-    ssl_certificate_key /ssl/ssl.key;
-
-    access_log /var/log/nginx/access.log;
-    error_log /var/log/nginx/error.log;
-
-    location / {
-        proxy_set_header Host $host;
-        proxy_set_header Cookie $http_cookie;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-Host $host;
-        proxy_pass http://my_portainer:9000;
-    }
-}
-</code></pre><p>要特別注意的是，這邊 proxy_pass 的目標網址中，<code>http://</code> 不可以省略<br>
-如果轉址過去的網址有自己的 https 證書驗證(例如另一個 nginx 環境)，則必須改成 <code>https://</code> 開頭</p>
+而不是對外的<code>8080</code>port</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nginx" data-lang="nginx"><span style="display:flex;"><span><span style="color:#66d9ef">server</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">listen</span> <span style="color:#ae81ff">80</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">listen</span> <span style="color:#e6db74">[::]:80</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">server_name</span> <span style="color:#e6db74">test.example</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">return</span> <span style="color:#ae81ff">301</span> <span style="color:#e6db74">https://</span>$host$request_uri;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">server</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">listen</span> <span style="color:#ae81ff">443</span> <span style="color:#e6db74">ssl</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">listen</span> <span style="color:#e6db74">[::]:443</span> <span style="color:#e6db74">ssl</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">server_name</span> <span style="color:#e6db74">test.example</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ssl_certificate</span> <span style="color:#e6db74">/ssl/ssl.crt</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ssl_certificate_key</span> <span style="color:#e6db74">/ssl/ssl.key</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">access_log</span> <span style="color:#e6db74">/var/log/nginx/access.log</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">error_log</span> <span style="color:#e6db74">/var/log/nginx/error.log</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">location</span> <span style="color:#e6db74">/</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">Host</span> $host;
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">Cookie</span> $http_cookie;
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Real-IP</span> $remote_addr;
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Forwarded-Host</span> $host;
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">proxy_pass</span> <span style="color:#e6db74">http://my_portainer:9000</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>要特別注意的是，這邊 proxy_pass 目標網址中的<code>http://</code>不可以省略！<br>
+如果轉址過去的網址有自己的 https 證書驗證(例如另一個 nginx 環境)，則必須改成<code>https://</code>開頭</p>
 <p>參考資料：<a href="https://www.digitalocean.com/community/questions/what-value-should-i-use-for-nginx-proxy_pass-running-in-docker"
    
     target="_blank" rel="noreferrer noopener">What value should I use for Nginx proxy_pass running in Docker?
 </a>
 </p>
-<h4 id="33-編輯-etchosts">3.3 編輯 <code>etc/hosts</code></h4>
+<h4 id="33-編輯etchosts">3.3 編輯<code>etc/hosts</code></h4>
 <pre tabindex="0"><code>127.0.0.1       test.example
-</code></pre><p>接著啟動 nginx 服務，用瀏覽器開啟剛剛設定的 <code>test.example</code><br>
-正確設定的話，監聽 80 port 的 nginx 服務應該會把所有目標是 <code>test.example</code> 的請求利用 proxy_pass 送到 portainer 容器的指定 port<br>
-所以畫面上會顯示 portainer 服務的畫面</p>
+</code></pre><p>接著啟動 nginx 服務，用瀏覽器開啟剛剛設定的<code>test.example</code><br>
+正確設定的話，監聽 80 port 的 nginx 服務應該會把所有目標是 <code>test.example</code> 的請求<br>
+利用 proxy_pass 送到 portainer 容器的指定 port，所以畫面上會顯示 portainer 服務的畫面</p>
 <blockquote>
 <p>要在所有服務都啟動之後再啟動反向代理服務，否則會報錯指出被代理的容器目標不存在</p>
 </blockquote>
 <h1 id="注意事項-1">注意事項</h1>
-<p>如果要把全部沒有匹配到的 <code>server_name</code> 請求統一處理<br>
-可以在指定的 nginx config 加上 <code>default_server</code> 定義<br>
-<font color="red">
-如果沒有定義 default_server，則第一個 server 會被預設成 default server
-</font></p>
-<pre tabindex="0"><code class="language-nginx=" data-lang="nginx=">server {
-    listen 8080 ssl default_server;
-    listen [::]:8080 ssl default_server;
-
-    ssl_certificate /ssl/ssl.crt;
-    ssl_certificate_key /ssl/ssl.key;
-
-    # Virtual Host Domain
-    server_name _;
-
-    # where code is
-    root /var/project/dev/www/my_backend/public;
-    index index.php index.html index.htm;
-
-    access_log /var/log/nginx/access.log;
-    error_log /var/log/nginx/error.log;
-
-    location / {
-        try_files $uri $uri/ /index.php$is_args$args;
-    }
-
-    location ~ \.php$ {
-        try_files $uri /index.php =404;
-        fastcgi_pass dev_php:9000;
-        fastcgi_index index.php;
-        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-        include fastcgi_params;
-    }
-
-    location ~ /\.ht {
-        deny all;
-    }
-}
-</code></pre><p>因為要處理沒有被其他 server_name 捕獲的請求<br>
-所以 server_name 就不是什麼重點，可以用 <code>_</code>, <code>__</code>, <code>___</code> 都可以</p>
-<p>這個情境會發生在當前端的 API 設定檔使用的路徑網址是指定後端容器名稱的時候
+<p>如果要把全部沒有匹配到的<code>server_name</code>請求統一處理<br>
+可以在指定的 nginx config 加上 <code>default_server</code> 定義</p>
+<p><font color="red"><strong>如果沒有定義 default_server，則第一個 server 會被預設成 default server</strong></font></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nginx" data-lang="nginx"><span style="display:flex;"><span><span style="color:#66d9ef">server</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">listen</span> <span style="color:#ae81ff">8080</span> <span style="color:#e6db74">ssl</span> <span style="color:#e6db74">default_server</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">listen</span> <span style="color:#e6db74">[::]:8080</span> <span style="color:#e6db74">ssl</span> <span style="color:#e6db74">default_server</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ssl_certificate</span> <span style="color:#e6db74">/ssl/ssl.crt</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ssl_certificate_key</span> <span style="color:#e6db74">/ssl/ssl.key</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Virtual Host Domain
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">server_name</span> <span style="color:#e6db74">_</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># where code is
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">root</span> <span style="color:#e6db74">/var/project/dev/www/my_backend/public</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">index</span> <span style="color:#e6db74">index.php</span> <span style="color:#e6db74">index.html</span> <span style="color:#e6db74">index.htm</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">access_log</span> <span style="color:#e6db74">/var/log/nginx/access.log</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">error_log</span> <span style="color:#e6db74">/var/log/nginx/error.log</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">location</span> <span style="color:#e6db74">/</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">try_files</span> $uri $uri/ <span style="color:#e6db74">/index.php</span>$is_args$args;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">location</span> ~ <span style="color:#e6db74">\.php$</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">try_files</span> $uri <span style="color:#e6db74">/index.php</span> =<span style="color:#ae81ff">404</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">fastcgi_pass</span> <span style="color:#e6db74">dev_php:9000</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">fastcgi_index</span> <span style="color:#e6db74">index.php</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">fastcgi_param</span> <span style="color:#e6db74">SCRIPT_FILENAME</span> $document_root$fastcgi_script_name;
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">include</span> <span style="color:#e6db74">fastcgi_params</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">location</span> ~ <span style="color:#e6db74">/\.ht</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">deny</span> <span style="color:#e6db74">all</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>因為要處理沒有被其他 server_name 捕獲的請求<br>
+所以 server_name 就不是什麼重點，可以用「<code>_</code>, <code>__</code>, <code>___</code>」都可以</p>
+<p>這個情境會發生在當前端的 API 設定檔使用的路徑網址是指定後端容器名稱的時候<br>
 因為不是使用網址經過反向代理轉發，而是直接將請求發至容器<br>
 而這個 nginx 容器中又有多個 server config 設定<br>
-所以 nginx 沒有 <code>server_name</code> 可以判斷要使用哪個 config 設定</p>
+所以 nginx 沒有「<strong>server_name</strong>」可以判斷要使用哪個 config 設定</p>
 <h2 id="案例說明">案例說明</h2>
 <p>同一個 nginx 容器(dev_nginx) 裡面有多個 server config</p>
 <ul>
@@ -617,7 +634,7 @@ server {
 這時候問題就來了，當 dev_nginx 收到這個請求會不知道是發給誰的<br>
 如果沒有設定 default_server，就會把請求派發給第一個 server，也就是 <code>alex_backend</code><br>
 這不是我們要的結果<br>
-所以會把 <code>dev_backend</code> 設定為 <code>default_server</code><br>
+所以會把「<strong>dev_backend</strong>」設定為「<strong>default_server</strong>」<br>
 如此之後，只要是送進這個容器的請求<br>
 若沒有被其他設定檔捕獲，就會被送進 dev_backend 處理</p>
 
@@ -646,6 +663,12 @@ server {
           <li><a class="article-terms-link" href="/tags/nginx/">nginx</a></li>
         
           <li><a class="article-terms-link" href="/tags/proxy/">proxy</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/docker/">Docker</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/%e5%ae%b9%e5%99%a8%e6%8a%80%e8%a1%93/">容器技術</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/containerization/">Containerization</a></li>
         
       
     </ul>
@@ -676,8 +699,8 @@ server {
       </header>
       
       <article class="mini-post">
-          <a href="/blog/202204-ngrok/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2022/04/ngrok/earth.jpeg');">
-    <img src="https://tech.ray247k.com/img/blog/2022/04/ngrok/earth.jpeg" alt="earth">
+          <a href="/blog/202204-ngrok/" class="image" style="--bg-image: url('/img/blog/2022/04/ngrok/earth.jpeg');">
+    <img src="/img/blog/2022/04/ngrok/earth.jpeg" alt="earth">
   </a>
         <header>
           <h2><a href="/blog/202204-ngrok/">讓你的電腦暫時公開在網路上 - Ngrok</a></h2>
@@ -686,8 +709,8 @@ server {
       </article>
       
       <article class="mini-post">
-          <a href="/blog/202204-jenkins-cicd-4-ssh-remote-server/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2022/04/jenkins-cicd-4-ssh-remote-server/home-office.jpeg');">
-    <img src="https://tech.ray247k.com/img/blog/2022/04/jenkins-cicd-4-ssh-remote-server/home-office.jpeg" alt="home office">
+          <a href="/blog/202204-jenkins-cicd-4-ssh-remote-server/" class="image" style="--bg-image: url('/img/blog/2022/04/jenkins-cicd-4-ssh-remote-server/home-office.jpeg');">
+    <img src="/img/blog/2022/04/jenkins-cicd-4-ssh-remote-server/home-office.jpeg" alt="home office">
   </a>
         <header>
           <h2><a href="/blog/202204-jenkins-cicd-4-ssh-remote-server/">Jenkins 04 在流程中使用 SSH 指令操作另一台 GCP 上的執行個體</a></h2>
@@ -696,8 +719,8 @@ server {
       </article>
       
       <article class="mini-post">
-          <a href="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2022/04/jenkins-cicd-3-push-docker-image-to-gcr/deliver.jpeg');">
-    <img src="https://tech.ray247k.com/img/blog/2022/04/jenkins-cicd-3-push-docker-image-to-gcr/deliver.jpeg" alt="jenkins branches">
+          <a href="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/" class="image" style="--bg-image: url('/img/blog/2022/04/jenkins-cicd-3-push-docker-image-to-gcr/deliver.jpeg');">
+    <img src="/img/blog/2022/04/jenkins-cicd-3-push-docker-image-to-gcr/deliver.jpeg" alt="jenkins branches">
   </a>
         <header>
           <h2><a href="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/">Jenkins 03 打包 Docker image 並推送到 GCR</a></h2>
@@ -706,8 +729,8 @@ server {
       </article>
       
       <article class="mini-post">
-          <a href="/blog/202204-gcp-load-balancing/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2022/04/gcp-load-balancing/hacker.jpeg');">
-    <img src="https://tech.ray247k.com/img/blog/2022/04/gcp-load-balancing/hacker.jpeg" alt="hacker">
+          <a href="/blog/202204-gcp-load-balancing/" class="image" style="--bg-image: url('/img/blog/2022/04/gcp-load-balancing/hacker.jpeg');">
+    <img src="/img/blog/2022/04/gcp-load-balancing/hacker.jpeg" alt="hacker">
   </a>
         <header>
           <h2><a href="/blog/202204-gcp-load-balancing/">伸縮自在的伺服器 02 負載平衡 Load Balancing</a></h2>
@@ -716,8 +739,8 @@ server {
       </article>
       
       <article class="mini-post">
-          <a href="/blog/202204-laravel-sail/" class="image" style="--bg-image: url('https://tech.ray247k.com/img/blog/2022/04/laravel-sail/laravel-sail.png');">
-    <img src="https://tech.ray247k.com/img/blog/2022/04/laravel-sail/laravel-sail.png" alt="laravel sail logo">
+          <a href="/blog/202204-laravel-sail/" class="image" style="--bg-image: url('/img/blog/2022/04/laravel-sail/laravel-sail.png');">
+    <img src="/img/blog/2022/04/laravel-sail/laravel-sail.png" alt="laravel sail logo">
   </a>
         <header>
           <h2><a href="/blog/202204-laravel-sail/">介紹 Laravel Sail 和基本操作</a></h2>
@@ -814,7 +837,7 @@ server {
         </li>
         
         <li>
-          <a href="/tags/docker/">docker (11)</a>
+          <a href="/tags/docker/">docker (12)</a>
         </li>
         
         <li>
@@ -822,7 +845,11 @@ server {
         </li>
         
         <li>
-          <a href="/tags/containerization/">containerization (9)</a>
+          <a href="/tags/containerization/">containerization (10)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%AE%B9%E5%99%A8%E6%8A%80%E8%A1%93/">容器技術 (10)</a>
         </li>
         
         <li>
@@ -839,10 +866,6 @@ server {
         
         <li>
           <a href="/tags/python3/">python3 (9)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/%E5%AE%B9%E5%99%A8%E6%8A%80%E8%A1%93/">容器技術 (9)</a>
         </li>
         
         <li>

@@ -61,6 +61,15 @@
     </item>
     
     <item>
+      <title>反向代理 - 在 Docker 環境建置</title>
+      <link>https://tech.ray247k.com/blog/202102-reverse-proxy-in-docker-service/</link>
+      <pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://tech.ray247k.com/blog/202102-reverse-proxy-in-docker-service/</guid>
+      <description>&lt;p&gt;反向代理的基本說明，以及在 Docker 容器環境中如何建置反向代理&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Portainer - 視覺化管理 Docker 的工具</title>
       <link>https://tech.ray247k.com/blog/202101-portainer-open-source-container-management-gui/</link>
       <pubDate>Sat, 16 Jan 2021 00:00:00 +0000</pubDate>

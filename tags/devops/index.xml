@@ -269,7 +269,7 @@ Drone 是一套以 Golang 開發的一套 CI/CD 系統工具&lt;br&gt;
       <pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>https://tech.ray247k.com/blog/202102-reverse-proxy-in-docker-service/</guid>
-      <description>&lt;p&gt;反向代理的基本說明，以及在 Docker 容器中如何建立反向代理&lt;/p&gt;</description>
+      <description>&lt;p&gt;反向代理的基本說明，以及在 Docker 容器環境中如何建置反向代理&lt;/p&gt;</description>
     </item>
     
     <item>
