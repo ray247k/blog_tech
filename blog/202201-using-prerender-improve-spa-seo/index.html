@@ -216,7 +216,7 @@
     },
     "image": [""],
     "url" : "https:\/\/tech.ray247k.com\/blog\/202201-using-prerender-improve-spa-seo\/",
-    "wordCount" : "300",
+    "wordCount" : "297",
     "genre" : [ "SEO" , "Prerender" , "搜尋引擎最佳化" , "Cloudflare" , "Cloudflare Workers" ],
     "keywords" : [ "SEO" , "Prerender" , "搜尋引擎最佳化" , "Cloudflare" , "Cloudflare Workers" ]
 }
@@ -480,13 +480,18 @@
 <h2 id="設定">設定</h2>
 <p>進到 prerender 頁面，點擊<code>Install middleware</code>後選擇<code>cloudflare</code>選項</p>
 <p><img src="/img/blog/2022/01/using-prerender-improve-spa-seo/prerender-settings.png" alt="prerender settings"></p>
-<p>根據提示打開設定檔的範例：<a href="https://github.com/prerender/prerender-nginx"
+<p>官方已經新增了文件，只要照著文件操作，連不會寫程式的人也可以安心設定了！<br>
+照著文件按圖施工就好：<a href="https://docs.prerender.io/docs/24-cloudflare"
    
-    target="_blank" rel="noreferrer noopener">prerender/prerender-nginx
+    target="_blank" rel="noreferrer noopener">Cloudflare Integration
+</a>
+</p>
+<p>根據提示打開設定檔的範例：<a href="https://github.com/prerender/prerender-cloudflare-worker"
+   
+    target="_blank" rel="noreferrer noopener">prerender/prerender-cloudflare-worker
 </a>
 <br>
-我們是前後端完全分離的 SPA 架構，所以選擇<code>Single Page Application: nginx.conf</code></p>
-<p>就會看到範例的<code>index.js</code>，看起來要改的只有<code>API_KEY</code>和<code>PRERENDERED_DOMAINS</code></p>
+就會看到範例的<code>index.js</code>，看起來要改的只有<code>API_KEY</code>和<code>PRERENDERED_DOMAINS</code></p>
 <ul>
 <li>API_KEY：prerender.io 儀表板左上的<code>Token</code></li>
 <li>PRERENDERED_DOMAINS：等等會拿來設定路由規則的目標網域</li>
@@ -509,7 +514,11 @@
 所以選擇讓在失敗時跳過 Worker 直接執行，畢竟只是拿來做 prerender，爬蟲這次爬不到就下次再來也不要緊</p>
 <p><img src="/img/blog/2022/01/using-prerender-improve-spa-seo/cloudflare-new-route.png" alt="cloudflare new route"></p>
 <p>路由規則要和你在 Worker 設定的網址一樣<br>
-設定完之後就可以回到 prerender 按下一步進行驗證，接著就是等他自己驗證完成囉</p>
+設定完之後要記得回到 <a href="https://prerender.io/"
+   
+    target="_blank" rel="noreferrer noopener">Prerender.io
+</a>
+ 按下一步進行驗證，接著就是等他自己驗證完成囉</p>
 <p>通常按下驗證過幾秒驗證結果就會出來了<br>
 如果驗證完成後想模擬爬蟲爬取的時候會取得的結果，可以使用</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -A Googlebot <span style="color:#e6db74">&#34;https://{你線上服務網址}&#34;</span>
