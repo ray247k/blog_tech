@@ -3,14 +3,14 @@
   <head>
   <meta charset="utf-8">
 <title>Laravel Queue 使用 - 薛丁格的工程師</title>
-<meta name="description" content="使用隊列，讓不需要馬上處理的任務延遲處理">
+<meta name="description" content="使用佇列，讓不需要馬上處理的任務延遲處理">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <meta name="twitter:card" content="summary_large_image">
 
 <meta property="og:site_name" content="薛丁格的工程師">
 <meta property="og:title" content="Laravel Queue 使用">
-<meta property="og:description" content="使用隊列，讓不需要馬上處理的任務延遲處理">
+<meta property="og:description" content="使用佇列，讓不需要馬上處理的任務延遲處理">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://tech.ray247k.com/blog/202203-laravel-queue/">
     <meta property="og:image" content="https://tech.ray247k.com/img/blog/2022/03/laravel-queue/queue.jpeg">
@@ -31,8 +31,8 @@
 
 <meta name="generator" content="Hugo 0.98.0" /><meta property="og:site_name" content="薛丁格的工程師">
   <meta property="og:title" content="Laravel Queue 使用">
-  <meta property="og:description" content="使用隊列，讓不需要馬上處理的任務延遲處理">
-  <meta property="description" content="使用隊列，讓不需要馬上處理的任務延遲處理">
+  <meta property="og:description" content="使用佇列，讓不需要馬上處理的任務延遲處理">
+  <meta property="description" content="使用佇列，讓不需要馬上處理的任務延遲處理">
   <meta property="og:url" content="https://tech.ray247k.com/blog/202203-laravel-queue/">
   <meta property="og:type" content="article">
   
@@ -89,7 +89,7 @@
     "url": "https:\/\/tech.ray247k.com",
     "description": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - devops,golang,laravel,leetcode,node.js,php,python3,架站相關,版本控制,第三方服務,",
     "keywords": [
-        "apache-bench,auto-scaling,aws,axios,cdn,chatbot,cicd,cloudflare,cloudflare-workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker-compose,domain-name,drone,element-ui,excel,express,gas,gcp,gcr,getter,git,github,github-page,go,golang,google-app-script,google-container-registry,google-domains,google-sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load-balancing,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,phpcbf,phpcs,portainer,postgresql,prerender,proxy,python3,restful,seo,server,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
+        "apache-bench,auto-scaling,aws,axios,cdn,chatbot,cicd,cloudflare,cloudflare-workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker-compose,domain-name,drone,element-ui,excel,express,gas,gcp,gcr,getter,git,github,github-page,go,golang,google-app-script,google-container-registry,google-domains,google-sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load-balancing,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,phpcbf,phpcs,portainer,postgresql,prerender,proxy,python3,queue,restful,seo,server,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
     ]
 }
 </script>
@@ -123,9 +123,9 @@
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Laravel Queue 使用",
-    "description": "使用隊列，讓不需要馬上處理的任務延遲處理",
+    "description": "使用佇列，讓不需要馬上處理的任務延遲處理",
     "keywords": [
-        "Laravel" , "PHP" 
+        "Laravel" , "PHP" , "queue" 
     ],
     "dateCreated": "2022-03-05T00:00:00.00Z",
     "datePublished": "2022-03-05T00:00:00.00Z",
@@ -178,8 +178,8 @@
     "@type": "BlogPosting",
     "articleSection": "blog",
     "name": "Laravel Queue 使用",
-    "headline": "\u003cp\u003e\u003cstrong\u003eQueue\u003c\/strong\u003e 中文名稱是「\u003cstrong\u003e隊列\u003c\/strong\u003e」\u003cbr\u003e\n用處是將一個耗時且不需要即時完成的任務延遲處理，例如寄送電子郵件\u003cbr\u003e\n使用者不需要等寄信成功才能進行下一步操作，這樣可以讓應用程式對網頁請求有更快的反應\u003c\/p\u003e",
-    "description": "使用隊列，讓不需要馬上處理的任務延遲處理",
+    "headline": "\u003cp\u003e\u003cstrong\u003eQueue\u003c\/strong\u003e 臺灣這邊稱作「\u003cstrong\u003e佇列\u003c\/strong\u003e」，中國那邊的翻譯會用「\u003cstrong\u003e隊列\u003c\/strong\u003e」\u003cbr\u003e\n用處是將一個耗時且不需要即時完成的任務延遲處理，例如寄送電子郵件\u003cbr\u003e\n使用者不需要等寄信成功才能進行下一步操作，這樣可以讓應用程式對網頁請求有更快的反應\u003c\/p\u003e",
+    "description": "使用佇列，讓不需要馬上處理的任務延遲處理",
     "inLanguage": "zh-TW",
     "isFamilyFriendly": "true",
     "mainEntityOfPage": {
@@ -217,8 +217,8 @@
     "image": [""],
     "url" : "https:\/\/tech.ray247k.com\/blog\/202203-laravel-queue\/",
     "wordCount" : "262",
-    "genre" : [ "Laravel" , "PHP" ],
-    "keywords" : [ "Laravel" , "PHP" ]
+    "genre" : [ "Laravel" , "PHP" , "queue" ],
+    "keywords" : [ "Laravel" , "PHP" , "queue" ]
 }
 </script>
 
@@ -337,7 +337,7 @@
       <h2><a href="/blog/202203-laravel-queue/">Laravel Queue 使用</a></h2>
     
     
-      <p>使用隊列，讓不需要馬上處理的任務延遲處理</p>
+      <p>使用佇列，讓不需要馬上處理的任務延遲處理</p>
     
   </div>
   <div class="meta">
@@ -359,11 +359,11 @@
       <a href="/blog/202203-laravel-queue/" class="image" style="--bg-image: url('/img/blog/2022/03/laravel-queue/queue.jpeg');">
     <img src="/img/blog/2022/03/laravel-queue/queue.jpeg" alt="queue">
   </a>
-      <p><strong>Queue</strong> 中文名稱是「<strong>隊列</strong>」<br>
+      <p><strong>Queue</strong> 臺灣這邊稱作「<strong>佇列</strong>」，中國那邊的翻譯會用「<strong>隊列</strong>」<br>
 用處是將一個耗時且不需要即時完成的任務延遲處理，例如寄送電子郵件<br>
 使用者不需要等寄信成功才能進行下一步操作，這樣可以讓應用程式對網頁請求有更快的反應</p>
-<p>開始之前先吐槽一下：真的有人講「<strong>隊列</strong>」嗎？平常聽到都是直接講 Queue，會不會講<strong>隊列</strong>反而沒人懂<br>
-所以底下都會直接講 Queue 不會講隊列 <del>eue 算 uwu 的一種變體嗎</del></p>
+<p>開始之前先吐槽一下：真的有人講「<strong>佇列</strong>」嗎？平常聽到都是直接講 Queue，會不會講<strong>佇列</strong>反而沒人懂<br>
+所以底下都會直接講 Queue 不會講佇列 <del>eue 算 uwu 的一種變體嗎</del></p>
 <h1 id="前置作業">前置作業</h1>
 <p>在 Laravel 中支援多種 Queue 的驅動</p>
 <ul>
@@ -510,6 +510,8 @@ pidfile=/var/www/html/storage/logs/supervisord.pid
           <li><a class="article-terms-link" href="/tags/laravel/">Laravel</a></li>
         
           <li><a class="article-terms-link" href="/tags/php/">PHP</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/queue/">queue</a></li>
         
       
     </ul>
@@ -931,6 +933,10 @@ pidfile=/var/www/html/storage/logs/supervisord.pid
         
         <li>
           <a href="/tags/proxy/">proxy (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/queue/">queue (1)</a>
         </li>
         
         <li>
