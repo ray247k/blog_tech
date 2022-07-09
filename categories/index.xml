@@ -6,7 +6,16 @@
     <description>Recent content in Categories on 薛丁格的工程師</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Sat, 23 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 09 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Golang</title>
+      <link>https://tech.ray247k.com/categories/golang/</link>
+      <pubDate>Sat, 09 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://tech.ray247k.com/categories/golang/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>DevOps</title>
       <link>https://tech.ray247k.com/categories/devops/</link>
@@ -40,15 +49,6 @@
       <pubDate>Thu, 20 Jan 2022 00:00:00 +0000</pubDate>
       
       <guid>https://tech.ray247k.com/categories/php/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Golang</title>
-      <link>https://tech.ray247k.com/categories/golang/</link>
-      <pubDate>Sat, 25 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://tech.ray247k.com/categories/golang/</guid>
       <description></description>
     </item>
     

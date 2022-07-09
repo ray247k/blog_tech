@@ -6,7 +6,43 @@
     <description>Recent content in Tags on 薛丁格的工程師</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Sat, 23 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 09 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blockchain</title>
+      <link>https://tech.ray247k.com/tags/blockchain/</link>
+      <pubDate>Sat, 09 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://tech.ray247k.com/tags/blockchain/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Go</title>
+      <link>https://tech.ray247k.com/tags/go/</link>
+      <pubDate>Sat, 09 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://tech.ray247k.com/tags/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Golang</title>
+      <link>https://tech.ray247k.com/tags/golang/</link>
+      <pubDate>Sat, 09 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://tech.ray247k.com/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Smart Contract</title>
+      <link>https://tech.ray247k.com/tags/smart-contract/</link>
+      <pubDate>Sat, 09 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://tech.ray247k.com/tags/smart-contract/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>DevOps</title>
       <link>https://tech.ray247k.com/tags/devops/</link>
@@ -211,24 +247,6 @@
       <pubDate>Sat, 15 Jan 2022 00:00:00 +0000</pubDate>
       
       <guid>https://tech.ray247k.com/tags/%E9%98%B2%E7%81%AB%E7%89%86/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Go</title>
-      <link>https://tech.ray247k.com/tags/go/</link>
-      <pubDate>Sat, 25 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://tech.ray247k.com/tags/go/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Golang</title>
-      <link>https://tech.ray247k.com/tags/golang/</link>
-      <pubDate>Sat, 25 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://tech.ray247k.com/tags/golang/</guid>
       <description></description>
     </item>
     
