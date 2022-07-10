@@ -86,7 +86,7 @@
     "url": "https:\/\/tech.ray247k.com",
     "description": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - devops,golang,laravel,leetcode,node.js,php,python3,架站相關,版本控制,第三方服務,",
     "keywords": [
-        "apache-bench,auto-scaling,aws,axios,blockchain,cdn,chatbot,cicd,cloudflare,cloudflare-workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker-compose,domain-name,drone,element-ui,excel,express,gas,gcp,gcr,getter,git,github,github-page,go,golang,google-app-script,google-container-registry,google-domains,google-sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load-balancing,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,phpcbf,phpcs,portainer,postgresql,prerender,proxy,python3,queue,restful,seo,server,smart-contract,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
+        "apache-bench,auto-scaling,aws,axios,blockchain,cdn,chatbot,cicd,cloudflare,cloudflare-workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker-compose,domain-name,drone,element-ui,excel,express,gas,gcp,gcr,getter,git,github,github-page,go,golang,google-app-script,google-container-registry,google-domains,google-sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load-balancing,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,phpcbf,phpcs,portainer,postgresql,prerender,proxy,python3,queue,redis,restful,seo,server,smart-contract,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
     ]
 }
 </script>
@@ -200,6 +200,66 @@
       <main id="site-main">
         
   
+  
+    <article class="post">
+  <header>
+  <div class="title">
+    
+      <h2><a href="/blog/202203-jenkins-cicd-2-basic-pipeline/">Jenkins 02 基本 pipeline 建置及串接 Github</a></h2>
+    
+    
+      <p>建立一個基本的 pipeline 流程，並透過 Github 的 webhook 觸發建置流程</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2022-03-30 00:00:00 &#43;0000 UTC">2022/03/30</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+  <div class="content">
+    <a href="/blog/202203-jenkins-cicd-2-basic-pipeline/" class="image" style="--bg-image: url('/img/blog/2022/03/jenkins-cicd-2-basic-pipeline/jenkins-branches.png');">
+    <img src="/img/blog/2022/03/jenkins-cicd-2-basic-pipeline/jenkins-branches.png" alt="jenkins branches">
+  </a>
+    
+    <p>在 <a href="https://www.jenkins.io/"
+   
+    target="_blank" rel="noreferrer noopener">Jenkins
+</a>
+ 中的建置流程也叫做 pipeline，也可以透過 webhook 觸發建置<br>
+一樣有各種觸發方式和執行方式，底下示範串接 Github webhook 和常見觸發條件範例</p>
+  </div>
+  <footer>
+    <a href="/blog/202203-jenkins-cicd-2-basic-pipeline/" class="button big">閱讀全文</a>
+    <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/devops/">DevOps</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/devops/">DevOps</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/jenkins/">Jenkins</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/cicd/">CICD</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+  </footer>
+</article>
+
   
     <article class="post">
   <header>
@@ -559,64 +619,6 @@ Jenkins 是一套以 Java 開發的一套 CI/CD 系統工具<br>
 </article>
 
   
-    <article class="post">
-  <header>
-  <div class="title">
-    
-      <h2><a href="/blog/202201-gcp-vm-basic/">第一次在 GCP 開 VM 就成功</a></h2>
-    
-    
-      <p>手把手在 Google Cloud Platform (GCP) 啟動第一個 VM 執行個體及相關設定</p>
-    
-  </div>
-  <div class="meta">
-    <time datetime="2022-01-15 00:00:00 &#43;0000 UTC">2022/01/15</time>
-    <p>Ray</p>
-    
-  </div>
-</header>
-
-  <div class="content">
-    <a href="/blog/202201-gcp-vm-basic/" class="image" style="--bg-image: url('/img/blog/2022/01/gcp-vm-basic/gcp-compute-engine-logo.jpg');">
-    <img src="/img/blog/2022/01/gcp-vm-basic/gcp-compute-engine-logo.jpg" alt="">
-  </a>
-    
-    <p>如何在 Google Cloud Platform (GCP) 上開啟一個 VM 虛擬主機呢？<br>
-聽起來很複雜，實際做起來十分簡單<br>
-過去沒有開主機的經驗，這次就把步驟給記錄下來<br>
-<del>我不想花錢自己開，以前公司也沒開權限給我過</del></p>
-  </div>
-  <footer>
-    <a href="/blog/202201-gcp-vm-basic/" class="button big">閱讀全文</a>
-    <div class="stats">
-  
-    <ul class="categories">
-      
-        
-          <li><a class="article-terms-link" href="/categories/%e6%9e%b6%e7%ab%99%e7%9b%b8%e9%97%9c/">架站相關</a></li>
-        
-      
-    </ul>
-  
-  
-    <ul class="tags">
-      
-        
-          <li><a class="article-terms-link" href="/tags/gcp/">GCP</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/devops/">DevOps</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/%e9%98%b2%e7%81%ab%e7%89%86/">防火牆</a></li>
-        
-      
-    </ul>
-  
-</div>
-
-  </footer>
-</article>
-
-  
   <div class="pagination">
     
       <a href="/blog/" class="button left"><span>上一頁</span></a>
@@ -641,6 +643,16 @@ Jenkins 是一套以 Java 開發的一套 CI/CD 系統工具<br>
         <header>
           <h2><a href="/blog/202207-go-ethereum-abigen/">使用 Golang 和智能合約互動</a></h2>
           <time class="published" datetime="2022-07-09 00:00:00 &#43;0000 UTC">2022/07/09</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202206-gcp-redis/" class="image" style="--bg-image: url('/img/blog/2022/06/gcp-redis/redis-logo.png');">
+    <img src="/img/blog/2022/06/gcp-redis/redis-logo.png" alt="redis logo">
+  </a>
+        <header>
+          <h2><a href="/blog/202206-gcp-redis/">在 GCP 上建立 Redis 服務</a></h2>
+          <time class="published" datetime="2022-06-30 00:00:00 &#43;0000 UTC">2022/06/30</time>
         </header>
       </article>
       
@@ -674,16 +686,6 @@ Jenkins 是一套以 Java 開發的一套 CI/CD 系統工具<br>
         </header>
       </article>
       
-      <article class="mini-post">
-          <a href="/blog/202204-gcp-load-balancing/" class="image" style="--bg-image: url('/img/blog/2022/04/gcp-load-balancing/hacker.jpeg');">
-    <img src="/img/blog/2022/04/gcp-load-balancing/hacker.jpeg" alt="hacker">
-  </a>
-        <header>
-          <h2><a href="/blog/202204-gcp-load-balancing/">伸縮自在的伺服器 02 負載平衡 Load Balancing</a></h2>
-          <time class="published" datetime="2022-04-05 00:00:00 &#43;0000 UTC">2022/04/05</time>
-        </header>
-      </article>
-      
       
         <footer>
           <a href="/blog/" class="button">查看更多</a>
@@ -703,7 +705,7 @@ Jenkins 是一套以 Java 開發的一套 CI/CD 系統工具<br>
           
           
           <li>
-              <a href="/categories/devops/">devops<span class="count">24</span></a>
+              <a href="/categories/devops/">devops<span class="count">25</span></a>
           </li>
           
           <li>
@@ -757,7 +759,7 @@ Jenkins 是一套以 Java 開發的一套 CI/CD 系統工具<br>
         
         
         <li>
-          <a href="/tags/devops/">devops (27)</a>
+          <a href="/tags/devops/">devops (28)</a>
         </li>
         
         <li>
@@ -813,15 +815,15 @@ Jenkins 是一套以 Java 開發的一套 CI/CD 系統工具<br>
         </li>
         
         <li>
+          <a href="/tags/gcp/">gcp (7)</a>
+        </li>
+        
+        <li>
           <a href="/tags/laravel/">laravel (7)</a>
         </li>
         
         <li>
           <a href="/tags/docker-compose/">docker-compose (6)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/gcp/">gcp (6)</a>
         </li>
         
         <li>
@@ -1034,6 +1036,10 @@ Jenkins 是一套以 Java 開發的一套 CI/CD 系統工具<br>
         
         <li>
           <a href="/tags/queue/">queue (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/redis/">redis (1)</a>
         </li>
         
         <li>

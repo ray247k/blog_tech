@@ -33,10 +33,19 @@
     <lastmod>2022-07-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/tags/devops/</loc>
-    <lastmod>2022-04-23T00:00:00+00:00</lastmod>
+    <lastmod>2022-06-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/categories/devops/</loc>
-    <lastmod>2022-04-23T00:00:00+00:00</lastmod>
+    <lastmod>2022-06-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tech.ray247k.com/tags/gcp/</loc>
+    <lastmod>2022-06-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tech.ray247k.com/tags/redis/</loc>
+    <lastmod>2022-06-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tech.ray247k.com/blog/202206-gcp-redis/</loc>
+    <lastmod>2022-06-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/tags/ngrok/</loc>
     <lastmod>2022-04-23T00:00:00+00:00</lastmod>
@@ -48,9 +57,6 @@
     <lastmod>2022-04-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/tags/docker/</loc>
-    <lastmod>2022-04-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tech.ray247k.com/tags/gcp/</loc>
     <lastmod>2022-04-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/tags/jenkins/</loc>

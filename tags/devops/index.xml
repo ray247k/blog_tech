@@ -6,7 +6,17 @@
     <description>Recent content in DevOps on 薛丁格的工程師</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Sat, 23 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>在 GCP 上建立 Redis 服務</title>
+      <link>https://tech.ray247k.com/blog/202206-gcp-redis/</link>
+      <pubDate>Thu, 30 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://tech.ray247k.com/blog/202206-gcp-redis/</guid>
+      <description>&lt;p&gt;GCP 提供 Google Cloud MemoryStore 服務可用來建立 Redis 或是 Memcached 快取機器服務&lt;br&gt;
+價錢跟開 Database 差不多，原本以為跟 VM 一樣便宜&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>讓你的電腦暫時公開在網路上 - Ngrok</title>
       <link>https://tech.ray247k.com/blog/202204-ngrok/</link>
