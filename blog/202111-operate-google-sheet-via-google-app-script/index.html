@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.101.0" /><meta property="og:site_name" content="薛丁格的工程師">
+<meta name="generator" content="Hugo 0.104.0" /><meta property="og:site_name" content="薛丁格的工程師">
   <meta property="og:title" content="操作 Google 表單，透過 GAS(Google App Script)">
   <meta property="og:description" content="使用 GAS(Google App Script) 服務把 Google 表單當作簡易的資料庫使用">
   <meta property="description" content="使用 GAS(Google App Script) 服務把 Google 表單當作簡易的資料庫使用">
@@ -87,9 +87,9 @@
     "headline": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - Schrödinger\u0027s Programmer",
     "name": "薛丁格的工程師",
     "url": "https:\/\/tech.ray247k.com",
-    "description": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - devops,golang,laravel,leetcode,node.js,php,python3,架站相關,版本控制,第三方服務,",
+    "description": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - devops,golang,laravel,leetcode,node.js,php,python3,serverless,架站相關,版本控制,第三方服務,",
     "keywords": [
-        "apache-bench,auto-scaling,aws,axios,blockchain,cdn,chatbot,cicd,cloudflare,cloudflare-workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker-compose,domain-name,drone,element-ui,excel,express,gas,gcp,gcr,getter,git,github,github-page,go,golang,google-app-script,google-container-registry,google-domains,google-sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load-balancing,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,phpcbf,phpcs,portainer,postgresql,prerender,proxy,python3,queue,redis,restful,seo,server,smart-contract,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
+        "apache-bench,auto-scaling,aws,axios,blockchain,cdn,chatbot,cicd,cloudflare,cloudflare-workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker-compose,domain-name,drone,element-ui,excel,express,gas,gcp,gcr,getter,git,github,github-page,go,golang,google-app-script,google-container-registry,google-domains,google-sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load-balancing,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,phpcbf,phpcs,portainer,postgresql,prerender,proxy,python3,queue,redis,restful,seo,server,serverless,smart-contract,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
     ]
 }
 </script>
@@ -669,6 +669,16 @@ Google 表單本身限制蠻多的，如果你拿去當正式資料庫絕對會�
       </header>
       
       <article class="mini-post">
+          <a href="/blog/202210-what-is-serverless/" class="image" style="--bg-image: url('/img/blog/2022/10/what-is-serverless/sata.jpg');">
+    <img src="/img/blog/2022/10/what-is-serverless/sata.jpg" alt="sata">
+  </a>
+        <header>
+          <h2><a href="/blog/202210-what-is-serverless/">Serverless 簡介</a></h2>
+          <time class="published" datetime="2022-10-04 00:00:00 &#43;0000 UTC">2022/10/04</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
           <a href="/blog/202207-go-ethereum-abigen/" class="image" style="--bg-image: url('/img/blog/2022/07/go-ethereum-abigen/network.jpeg');">
     <img src="/img/blog/2022/07/go-ethereum-abigen/network.jpeg" alt="network">
   </a>
@@ -705,16 +715,6 @@ Google 表單本身限制蠻多的，如果你拿去當正式資料庫絕對會�
         <header>
           <h2><a href="/blog/202204-jenkins-cicd-4-ssh-remote-server/">Jenkins 04 在流程中使用 SSH 指令操作另一台 GCP 上的執行個體</a></h2>
           <time class="published" datetime="2022-04-13 00:00:00 &#43;0000 UTC">2022/04/13</time>
-        </header>
-      </article>
-      
-      <article class="mini-post">
-          <a href="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/" class="image" style="--bg-image: url('/img/blog/2022/04/jenkins-cicd-3-push-docker-image-to-gcr/deliver.jpeg');">
-    <img src="/img/blog/2022/04/jenkins-cicd-3-push-docker-image-to-gcr/deliver.jpeg" alt="jenkins branches">
-  </a>
-        <header>
-          <h2><a href="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/">Jenkins 03 打包 Docker image 並推送到 GCR</a></h2>
-          <time class="published" datetime="2022-04-08 00:00:00 &#43;0000 UTC">2022/04/08</time>
         </header>
       </article>
       
@@ -766,6 +766,10 @@ Google 表單本身限制蠻多的，如果你拿去當正式資料庫絕對會�
           
           <li>
               <a href="/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/">架站相關<span class="count">6</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/serverless/">serverless<span class="count">1</span></a>
           </li>
           
           <li>
@@ -907,6 +911,10 @@ Google 表單本身限制蠻多的，如果你拿去當正式資料庫絕對會�
         </li>
         
         <li>
+          <a href="/tags/aws/">aws (2)</a>
+        </li>
+        
+        <li>
           <a href="/tags/chatbot/">chatbot (2)</a>
         </li>
         
@@ -956,10 +964,6 @@ Google 表單本身限制蠻多的，如果你拿去當正式資料庫絕對會�
         
         <li>
           <a href="/tags/auto-scaling/">auto-scaling (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/aws/">aws (1)</a>
         </li>
         
         <li>
@@ -1083,6 +1087,10 @@ Google 表單本身限制蠻多的，如果你拿去當正式資料庫絕對會�
         </li>
         
         <li>
+          <a href="/tags/serverless/">serverless (1)</a>
+        </li>
+        
+        <li>
           <a href="/tags/smart-contract/">smart-contract (1)</a>
         </li>
         
@@ -1145,14 +1153,14 @@ Google 表單本身限制蠻多的，如果你拿去當正式資料庫絕對會�
         © 2022 薛丁格的工程師
     </p>
     <p class="copyright" style="font-size: 0.1EM;">
-        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.101.0' target='_blank' rel='noopener'>Hugo</a>
+        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.104.0' target='_blank' rel='noopener'>Hugo</a>
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
 
       <script src="/js/highlight.js"></script>
     
-    <script>hljs.highlightAll();</script><script src="/js/bundle.min.41159ab8f66b74576e991e049580e1d44be886678a064f37d924d646579867f3.js" integrity="sha256-QRWauPZrdFdumR4ElYDh1EvohmeKBk832STWRleYZ/M="></script>
+    <script>hljs.highlightAll();</script><script src="/js/bundle.min.8e0e9e02e90a944f3824b211410537154ce3a928a0190e41e8f4d87af513de6a.js" integrity="sha256-jg6eAukKlE84JLIRQQU3FUzjqSigGQ5B6PTYevUT3mo="></script>
     <script src="/js/add-on.js"></script>
 <script type="application/javascript">
 var doNotTrack = false;

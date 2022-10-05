@@ -1,4 +1,10 @@
 [{
+    "title": "Serverless 簡介",
+    "date": "",
+    "description": "使用 AWS 服務簡單介紹什麼是 Serverless",
+    "body": "因為公司的服務都是基於 AWS，且大量使用各種無伺服器運算服務\n以前完全沒摸過這部分，這系列算筆記整理，內容未來可能會隨時修正\n雖然叫做「無伺服器」但是實際上伺服器還是存在，只是交給雲端平台部署與維運\n對使用者來說只要撰寫程式碼即可！而不用折騰伺服器調校\n後端工程師常常都要兼職管理伺服器，都懂這有多痛苦\n而透過 Serverless 的架構\n只需要寫好設定檔（並掏出老闆的神奇小卡）就可以把基礎設施管理交給雲端服務商\n常見的雲端服務商都有各自的 Serverless 服務\nAWS：Lambda Microsoft Azure：Functions Google：Cloud Functions 而 AWS 提供的 Serverless 相關服務大致上分成這些\nServerless ≠ Lambda Function 這是一個很常見的誤會\n除了 Lambda Function 外，Serverless 也包含事件來源及其他資源的組合\n如 API、資料庫和事件來源對應，以共同執行任務\n而 AWS 提供了 AWS Serverless Application Model(AWS SAM） 是一個用於建置無伺服器應用程式的開源架構\n優點 基本上就是把基礎建設外包給雲端服務商幫你解決\n高可用性：透過自動擴展和負載平衡增加程式的流量彈性與穩定性 減少伺服器閒置效能：依使用量收費，用多少收多少而不用一直開著主機 降低伺服器建置維護人力成本 安全性：不需要顧慮伺服器整體的安全性 缺點 主要來自沒有主機一直在運轉而衍伸出來的問題\ndebug 會有點麻煩，需要用到 log 處理機制：Cloud Watch 無法處理 Schedule job =\u0026gt; Lambda 非 always running 會有啟動時間 Request 無法保證運行在同一個 Lambda 上 =\u0026gt; 是 stateless 的，必須透過其他服務同步狀態 程式架構 透過 lambda 撰寫不同 function 取代原有虛擬主機的一整包集合式程式碼\n可以視為一種 FaaS(Function as a Service)的實作\n大致上的流程是\n來源事件 -\u0026gt; Lambda 函式 -\u0026gt; 服務 以簡單的代辦事項應用程式來說，若是使用 Serverless 的系統架構圖大概就會長這樣\n主要可以關注圖的右邊ToDo App那塊虛線的部分\n該部分符合上面提到的來源事件 -\u0026gt; Lambda 函式 -\u0026gt; 服務流程\n",
+    "ref": "/blog/202210-what-is-serverless/"
+  },{
     "title": "使用 Golang 和智能合約互動",
     "date": "",
     "description": "藉由 abigen 產出能與智能合約互動的 Go package 來操作合約",
