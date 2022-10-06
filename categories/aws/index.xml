@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AWS on 薛丁格的工程師</title>
+    <link>https://tech.ray247k.com/categories/aws/</link>
+    <description>Recent content in AWS on 薛丁格的工程師</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-TW</language>
+    <lastBuildDate>Thu, 06 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/categories/aws/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[AWS 101] 什麼是 SNS 和 SQS</title>
+      <link>https://tech.ray247k.com/blog/202210-aws101-what-is-sns-and-sqs/</link>
+      <pubDate>Thu, 06 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://tech.ray247k.com/blog/202210-aws101-what-is-sns-and-sqs/</guid>
+      <description>&lt;p&gt;Amazon Simple Queue Service (SQS) 和 Amazon Simple Notification Service (SNS) 看起來很像，實際上又不太一樣&lt;br&gt;
+為了更好釐清兩者，就把兩個服務的筆記放在一起比較&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,1024 @@
+<!doctype html>
+<html lang="zh-tw">
+  <head>
+  <meta charset="utf-8">
+<title>[AWS 101] 什麼是 SNS 和 SQS - 薛丁格的工程師</title>
+<meta name="description" content="簡單筆記一下 AWS SNS 和 SQS 服務在幹嘛，還有使用情境">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta property="og:site_name" content="薛丁格的工程師">
+<meta property="og:title" content="[AWS 101] 什麼是 SNS 和 SQS">
+<meta property="og:description" content="簡單筆記一下 AWS SNS 和 SQS 服務在幹嘛，還有使用情境">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://tech.ray247k.com/blog/202210-what-is-sns-and-sqs/">
+    <meta property="og:image" content="https://tech.ray247k.com/img/blog/2022/10/what-is-sns-and-sqs/pipeline.jpg">
+    <meta property="og:image:alt" content="pipeline">
+
+
+  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
+  
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=1" color="#ffffff">
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=1">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=1">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+<meta name="generator" content="Hugo 0.104.0" /><meta property="og:site_name" content="薛丁格的工程師">
+  <meta property="og:title" content="[AWS 101] 什麼是 SNS 和 SQS">
+  <meta property="og:description" content="簡單筆記一下 AWS SNS 和 SQS 服務在幹嘛，還有使用情境">
+  <meta property="description" content="簡單筆記一下 AWS SNS 和 SQS 服務在幹嘛，還有使用情境">
+  <meta property="og:url" content="https://tech.ray247k.com/blog/202210-what-is-sns-and-sqs/">
+  <meta property="og:type" content="article">
+  
+    
+      <meta property="og:image" content="https://tech.ray247k.com/img/blog/2022/10/what-is-sns-and-sqs/pipeline.jpg">
+      <meta property="og:image:alt" content="pipeline">
+    
+  
+  
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/github-dark.min.css">
+          <link rel="stylesheet" href="/css/bundle.min.3b1b5f2e683d24b1ea3b5a08c8254622e40aa935e0ead75ba6d45c0f14c2f965.css" integrity="sha256-OxtfLmg9JLHqO1oIyCVGIuQKqTXg6tdbptRcDxTC&#43;WU="><link rel="stylesheet" href="/css/add-on.css">
+
+  
+
+
+    
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-LTGVYYWC2J');
+        </script>
+    
+
+
+  <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "image": {
+        "@type": "ImageObject",
+        "image": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+        "height": 648,
+        "width": 1080
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "薛丁格的工程師",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg"
+        }
+    },
+    "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+    "headline": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - Schrödinger\u0027s Programmer",
+    "name": "薛丁格的工程師",
+    "url": "https:\/\/tech.ray247k.com",
+    "description": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - aws,devops,golang,laravel,leetcode,node.js,php,python3,serverless,架站相關,版本控制,第三方服務,",
+    "keywords": [
+        "apache-bench,auto-scaling,aws,axios,blockchain,cdn,chatbot,cicd,cloudflare,cloudflare-workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker-compose,domain-name,drone,element-ui,excel,express,gas,gcp,gcr,getter,git,github,github-page,go,golang,google-app-script,google-container-registry,google-domains,google-sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load-balancing,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,phpcbf,phpcs,portainer,postgresql,prerender,proxy,python3,queue,redis,restful,seo,server,serverless,smart-contract,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
+    ]
+}
+</script>
+
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "legalName": "薛丁格的工程師",
+    "url": "https:\/\/tech.ray247k.com",
+    "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "",
+        "availableLanguage": [
+            "Mandarin",
+            "English"
+        ]
+    },
+    "sameAs": [
+        "https://ray247k.blogspot.com/"
+    ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "[AWS 101] 什麼是 SNS 和 SQS",
+    "description": "簡單筆記一下 AWS SNS 和 SQS 服務在幹嘛，還有使用情境",
+    "keywords": [
+        "AWS" 
+    ],
+    "dateCreated": "2022-10-06T00:00:00.00Z",
+    "datePublished": "2022-10-06T00:00:00.00Z",
+    "dateModified": "2022-10-06T00:00:00.00Z",
+    "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "contentUrl": "[]"
+    },
+    "breadcrumb": {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com",
+                    "name": "薛丁格的工程師",
+                    "url": "https:\/\/tech.ray247k.com"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com/blog",
+                    "name": "Blog",
+                    "url": "https:\/\/tech.ray247k.com/blog"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\/blog\/202210-what-is-sns-and-sqs\/",
+                    "name": "[AWS 101] 什麼是 SNS 和 SQS",
+                    "url": "https:\/\/tech.ray247k.com\/blog\/202210-what-is-sns-and-sqs\/"
+                }
+            }
+        ],
+        "itemListOrder": "Ascending",
+        "numberOfItems": 3
+    }
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "articleSection": "blog",
+    "name": "[AWS 101] 什麼是 SNS 和 SQS",
+    "headline": "\u003cp\u003eAmazon Simple Queue Service (SQS) 和 Amazon Simple Notification Service (SNS) 看起來很像，實際上又不太一樣\u003cbr\u003e\n為了更好釐清兩者，就把兩個服務的筆記放在一起比較\u003c\/p\u003e",
+    "description": "簡單筆記一下 AWS SNS 和 SQS 服務在幹嘛，還有使用情境",
+    "inLanguage": "zh-TW",
+    "isFamilyFriendly": "true",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com\/blog\/202210-what-is-sns-and-sqs\/"
+    },
+    "author" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "creator" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "accountablePerson" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "copyrightHolder" : "薛丁格的工程師",
+    "copyrightYear" : "2022",
+    "dateCreated": "2022-10-06T00:00:00.00Z",
+    "datePublished": "2022-10-06T00:00:00.00Z",
+    "dateModified": "2022-10-06T00:00:00.00Z",
+    "publisher":{
+        "@type":"Organization",
+        "name": "薛丁格的工程師",
+        "url": "https://tech.ray247k.com",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+            "width":"32",
+            "height":"32"
+        }
+    },
+    "image": [""],
+    "url" : "https:\/\/tech.ray247k.com\/blog\/202210-what-is-sns-and-sqs\/",
+    "wordCount" : "227",
+    "genre" : [ "AWS" ],
+    "keywords" : [ "AWS" ]
+}
+</script>
+
+
+
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/" class="nav">
+        
+          Blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/" class="nav link"><i class='fa fa-home'></i> home</a>
+        
+      
+        
+          
+          <a href="/about" class="nav link"><i class='far fa-id-card'></i> about</a>
+        
+      
+        
+          
+          <a href="/categories" class="nav link"><i class='fas fa-sitemap'></i> category</a>
+        
+      
+      
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    
+    
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/"><img src="/img/main/logo.jpg" class="circle" width="100" alt="一隻箱子裡的貓，看著電腦螢幕" /></a>
+  <header>
+    <h1>Schrödinger's Programmer</h1>
+  </header>
+  <main>
+    <p>奔跑吧工程師，趁年輕跑得越遠越好</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/ray247k" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//www.linkedin.com/in/j-ray-cheng" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="/blog/202210-what-is-sns-and-sqs/">[AWS 101] 什麼是 SNS 和 SQS</a></h2>
+    
+    
+      <p>簡單筆記一下 AWS SNS 和 SQS 服務在幹嘛，還有使用情境</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2022-10-06 00:00:00 &#43;0000 UTC">2022/10/06</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+    <div id="socnet-share">
+      
+
+
+
+
+
+    </div>
+    <div class="content">
+      <a href="/blog/202210-what-is-sns-and-sqs/" class="image" style="--bg-image: url('/img/blog/2022/10/what-is-sns-and-sqs/pipeline.jpg');">
+    <img src="/img/blog/2022/10/what-is-sns-and-sqs/pipeline.jpg" alt="pipeline">
+  </a>
+      <p>Amazon Simple Queue Service (SQS) 和 Amazon Simple Notification Service (SNS) 看起來很像，實際上又不太一樣<br>
+為了更好釐清兩者，就把兩個服務的筆記放在一起比較</p>
+<h1 id="aws-sns">AWS SNS</h1>
+<p>全名是：Amazon Simple Notification Service</p>
+<p>發佈者系統可以透過 Topics 將事件訊息分散發送至大量訂閱者系統以進行平行處理</p>
+<p>訂閱者包含：</p>
+<ul>
+<li>Amazon SQS 佇列</li>
+<li>AWS Lambda 函數</li>
+<li>HTTPS 端點</li>
+<li>Amazon Kinesis Data Firehose</li>
+</ul>
+<p>架構看起來像這樣<br>
+<img src="/img/blog/2022/10/what-is-sns-and-sqs/aws_sns.png" alt="aws_sns"></p>
+<h2 id="特點">特點</h2>
+<ol>
+<li>發送即時性的 message 給<code>所有</code>訂閱者</li>
+<li>不保存已發送的 message</li>
+<li>遵守為發佈/訂閱模式 (Publish/Subscribe Pattern a.k.a Pub/Sub) 模式</li>
+</ol>
+<h1 id="aws-sqs">AWS SQS</h1>
+<p>全名是：Amazon Simple Queue Service (SQS)</p>
+<p>是全受管訊息佇列服務，訊息通通送進 Queue 再看後續誰去抓來執行<br>
+屬於一種 Serverless 解決方案<br>
+但執行者可以是 Lambda 也可以是 Laravel 這種非 Serverless 的專案</p>
+<h2 id="類型">類型</h2>
+<p>針對不同的應用程式需求提供兩種佇列類型</p>
+<h3 id="standard-queue"><strong>Standard Queue</strong></h3>
+<p>應用程式可以處理抵達超過一次且未照順序排列的訊息</p>
+<ul>
+<li><strong>無限輸送量</strong>：標準佇列支援每個 API 動作每秒近乎無限個交易數 (TPS)</li>
+<li><strong>至少傳遞一次</strong>：一個訊息至少傳遞一次，但偶爾會傳遞一個以上的訊息副本</li>
+<li><strong>盡力按順序傳遞</strong>：訊息偶爾不會按照傳送順序傳遞</li>
+</ul>
+<p><img src="/img/blog/2022/10/what-is-sns-and-sqs/sqs_standard_queue.png" alt="sqs standard queue"></p>
+<h3 id="fifo-佇列"><strong>FIFO 佇列</strong></h3>
+<p>當操作和事件的順序很重要或者不能接受重複項目時</p>
+<ul>
+<li><strong>高輸送量</strong>：根據預設，FIFO 佇列支援高達每秒 300 個訊息 (每秒 300 次傳送、接收或刪除操作)</li>
+<li><strong>恰好處理一次</strong>：訊息只會傳遞一次並保持可用狀態，直到消費者(consumer)處理訊息並將之刪除</li>
+<li><strong>先入先出傳送</strong>：嚴格保持訊息傳送和接收的順序 (<strong>First In First Out</strong>)</li>
+</ul>
+<p><img src="/img/blog/2022/10/what-is-sns-and-sqs/sqs_fifo_queue.png" alt="sqs fifo queue"></p>
+<h2 id="poll"><strong>Poll</strong></h2>
+<h3 id="short-polling"><strong>Short polling</strong></h3>
+<p>詢問之後會馬上取得結果，即使 queue 裡沒東西也會告訴你沒東西<br>
+需要不斷詢問才能保證取得最新的狀態<br>
+這種方式就像是好像有人一直問你有沒有工作可以做？有沒有工作可以做？有沒有工作可以做</p>
+<h3 id="long-polling">Long polling</h3>
+<p>詢問之後除非 timeout 或是 queue 裡面有訊息，否則不會立即取得 response<br>
+減少額外的輪詢以盡量降低成本，同時以最快的速度接收新訊息<br>
+佇列處於空的狀態時，長輪詢請求下一則訊息最多等待 20 秒</p>
+<h2 id="特點-1">特點</h2>
+<ol>
+<li>由<code>接收端</code>主動去 poll message</li>
+<li>一個 queue 只能對應到一個 consumer</li>
+<li>consumer 回應 queue 完成處理程序後，才會刪掉message</li>
+</ol>
+<h1 id="sns-和-sqs-差異">SNS 和 SQS 差異</h1>
+<h2 id="sns">SNS</h2>
+<p>新內容更新時發布事件通知給所有訂閱者<br>
+是 Push-Based 的架構，訊息會自動推播給訂閱者</p>
+<blockquote>
+<h3 id="簡單來說就是廣播通知">簡單來說就是廣播通知</h3>
+</blockquote>
+<h2 id="sqs">SQS</h2>
+<p>將 Queue 任務從程式碼中分離<br>
+是 Pull-Based 的架構，消費者 (consumer) 要自己去 Queue 中抓訊息下來處理</p>
+<blockquote>
+<h3 id="簡單來說就是-queue">簡單來說就是 Queue</h3>
+</blockquote>
+<h1 id="組合範例">組合範例</h1>
+<h2 id="1-建立-sns-topic-和-sqs-的方法">1. 建立 SNS Topic 和 SQS 的方法</h2>
+<ol>
+<li>進入 SNS 服務，建立 SNS Topic</li>
+<li>進入 SQS 服務並建立 SQS</li>
+<li>將剛建立的 SQS 訂閱剛建立的 SNS Topic，藉此取得 podcast 內容
+<ol>
+<li>在 SQS Dashboard 勾選目標 SQS 後</li>
+<li>點選上方<code>Action</code>下拉選單後選擇<code>Subscribe to Amazon SNS topic</code></li>
+<li>選擇剛剛建立的 Topic，並按下Save</li>
+</ol>
+</li>
+</ol>
+<h2 id="2-模擬-sns-發送訊息">2. 模擬 SNS 發送訊息</h2>
+<ol>
+<li>到 SNS Topic 頁面並選擇 Topic 後，點選右上角<code>Publish message</code></li>
+<li>輸入測試用的內容，並按下<code>Publish message</code></li>
+</ol>
+<h2 id="3-確認是否收到訂閱訊息">3. 確認是否收到訂閱訊息</h2>
+<p>在SNS Publish message 後，理論上有訂閱 Topic 的全部端點都會收到</p>
+<ol>
+<li>開啟 SQS 頁面, 選擇有訂閱 Topic 的 SQS</li>
+<li>點選<code>Send and receive message</code></li>
+<li>往下拉到 Receive messages 區塊並選擇<code>Poll for Messages</code></li>
+<li>成功後就可看到訊息清單出現在下面，並且可以點進去看詳細內容</li>
+</ol>
+<p>參考來源：<a href="https://aws.amazon.com/tw/getting-started/hands-on/send-fanout-event-notifications/"
+   
+    target="_blank" rel="noreferrer noopener">傳送散發事件通知
+</a>
+</p>
+
+      
+      
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/ray247k/button?referrer=https%3a%2f%2ftech.ray247k.com%2fblog%2f202210-what-is-sns-and-sqs%2f" width="100%" frameborder=0></iframe>
+
+    </div>
+    <footer>
+      <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/aws/">AWS</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/aws/">AWS</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+    </footer>
+  </article>
+  
+    
+
+  
+  <div class="pagination">
+    
+    
+      <a href="/blog/202210-what-is-serverless/" class="button right"><span>Serverless 簡介</span></a>
+    
+  </div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>最新文章</h1>
+      </header>
+      
+      <article class="mini-post">
+          <a href="/blog/202210-what-is-sns-and-sqs/" class="image" style="--bg-image: url('/img/blog/2022/10/what-is-sns-and-sqs/pipeline.jpg');">
+    <img src="/img/blog/2022/10/what-is-sns-and-sqs/pipeline.jpg" alt="pipeline">
+  </a>
+        <header>
+          <h2><a href="/blog/202210-what-is-sns-and-sqs/">[AWS 101] 什麼是 SNS 和 SQS</a></h2>
+          <time class="published" datetime="2022-10-06 00:00:00 &#43;0000 UTC">2022/10/06</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202210-what-is-serverless/" class="image" style="--bg-image: url('/img/blog/2022/10/what-is-serverless/sata.jpg');">
+    <img src="/img/blog/2022/10/what-is-serverless/sata.jpg" alt="sata">
+  </a>
+        <header>
+          <h2><a href="/blog/202210-what-is-serverless/">Serverless 簡介</a></h2>
+          <time class="published" datetime="2022-10-04 00:00:00 &#43;0000 UTC">2022/10/04</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202207-go-ethereum-abigen/" class="image" style="--bg-image: url('/img/blog/2022/07/go-ethereum-abigen/network.jpeg');">
+    <img src="/img/blog/2022/07/go-ethereum-abigen/network.jpeg" alt="network">
+  </a>
+        <header>
+          <h2><a href="/blog/202207-go-ethereum-abigen/">使用 Golang 和智能合約互動</a></h2>
+          <time class="published" datetime="2022-07-09 00:00:00 &#43;0000 UTC">2022/07/09</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202206-gcp-redis/" class="image" style="--bg-image: url('/img/blog/2022/06/gcp-redis/redis-logo.png');">
+    <img src="/img/blog/2022/06/gcp-redis/redis-logo.png" alt="redis logo">
+  </a>
+        <header>
+          <h2><a href="/blog/202206-gcp-redis/">在 GCP 上建立 Redis 服務</a></h2>
+          <time class="published" datetime="2022-06-30 00:00:00 &#43;0000 UTC">2022/06/30</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202204-ngrok/" class="image" style="--bg-image: url('/img/blog/2022/04/ngrok/earth.jpeg');">
+    <img src="/img/blog/2022/04/ngrok/earth.jpeg" alt="earth">
+  </a>
+        <header>
+          <h2><a href="/blog/202204-ngrok/">讓你的電腦暫時公開在網路上 - Ngrok</a></h2>
+          <time class="published" datetime="2022-04-23 00:00:00 &#43;0000 UTC">2022/04/23</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/blog/" class="button">查看更多</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="/categories">Category</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/categories/devops/">devops<span class="count">25</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/node.js/">node.js<span class="count">22</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/leetcode/">leetcode<span class="count">13</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/golang/">golang<span class="count">10</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/python3/">python3<span class="count">9</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/php/">php<span class="count">7</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/laravel/">laravel<span class="count">6</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/">架站相關<span class="count">6</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/aws/">aws<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/serverless/">serverless<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">版本控制<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%9C%8D%E5%8B%99/">第三方服務<span class="count">1</span></a>
+          </li>
+          
+        </ul>
+      </section>
+    
+  
+
+  
+  <section id="tags">
+    <header>
+      <h1><a href="/tags">Tag</a></h1>
+    </header>
+    <div class="li-x post-meta tags-md" style="margin-left: 0.5em;">
+      <ul>
+        
+        
+        <li>
+          <a href="/tags/devops/">devops (28)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/node.js/">node.js (22)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/vue/">vue (15)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/leetcode/">leetcode (13)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/docker/">docker (12)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/php/">php (11)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/containerization/">containerization (10)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/go/">go (10)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/golang/">golang (10)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%AE%B9%E5%99%A8%E6%8A%80%E8%A1%93/">容器技術 (10)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/express/">express (9)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/python3/">python3 (9)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cicd/">cicd (8)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/leetcode-easy/">leetcode-easy (8)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/gcp/">gcp (7)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/laravel/">laravel (7)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/docker-compose/">docker-compose (6)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/vuex/">vuex (6)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/composer/">composer (5)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/element-ui/">element-ui (5)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/leetcode-medium/">leetcode-medium (5)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/drone/">drone (4)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/jenkins/">jenkins (4)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/aws/">aws (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cloudflare/">cloudflare (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/mongodb/">mongodb (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/mutation/">mutation (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/restful/">restful (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/ssh/">ssh (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/">架站相關 (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/chatbot/">chatbot (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/component/">component (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/discord/">discord (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/dns/">dns (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/getter/">getter (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/google-domains/">google-domains (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/linux/">linux (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/nginx/">nginx (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/ngrok/">ngrok (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/vue-router/">vue-router (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/vue-ui/">vue-ui (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/apache-bench/">apache-bench (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/auto-scaling/">auto-scaling (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/axios/">axios (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/blockchain/">blockchain (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cdn/">cdn (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cloudflare-workers/">cloudflare-workers (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cors/">cors (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/csv/">csv (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/domain-name/">domain-name (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/excel/">excel (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/gas/">gas (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/gcr/">gcr (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/git/">git (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/github/">github (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/github-page/">github-page (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/google-app-script/">google-app-script (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/google-container-registry/">google-container-registry (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/google-sheets/">google-sheets (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/grumphp/">grumphp (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/laravel-excel/">laravel-excel (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/load-balancing/">load-balancing (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/php-fpm/">php-fpm (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/phpcbf/">phpcbf (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/phpcs/">phpcs (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/portainer/">portainer (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/postgresql/">postgresql (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/prerender/">prerender (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/proxy/">proxy (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/queue/">queue (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/redis/">redis (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/seo/">seo (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/server/">server (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/serverless/">serverless (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/smart-contract/">smart-contract (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/stress-testing/">stress-testing (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/subdomain/">subdomain (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E4%BC%BA%E6%9C%8D%E5%99%A8/">伺服器 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%80%8B%E4%BA%BA%E5%93%81%E7%89%8C/">個人品牌 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%9F%9F%E5%90%8D/">域名 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%A3%93%E5%8A%9B%E6%B8%AC%E8%A9%A6/">壓力測試 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%AD%90%E7%B6%B2%E5%9F%9F/">子網域 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E6%90%9C%E5%B0%8B%E5%BC%95%E6%93%8E%E6%9C%80%E4%BD%B3%E5%8C%96/">搜尋引擎最佳化 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">版本控制 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E8%B2%B7%E7%B6%B2%E5%9D%80/">買網址 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E9%98%B2%E7%81%AB%E7%89%86/">防火牆 (1)</a>
+        </li>
+        
+      </ul>
+
+    </div>
+  </section>
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+    
+    <p class="copyright">
+        © 2022 薛丁格的工程師
+    </p>
+    <p class="copyright" style="font-size: 0.1EM;">
+        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.104.0' target='_blank' rel='noopener'>Hugo</a>
+    </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>hljs.highlightAll();</script><script src="/js/bundle.min.8e0e9e02e90a944f3824b211410537154ce3a928a0190e41e8f4d87af513de6a.js" integrity="sha256-jg6eAukKlE84JLIRQQU3FUzjqSigGQ5B6PTYevUT3mo="></script>
+    <script src="/js/add-on.js"></script>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-LTGVYYWC2J', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </div>
+  </body>
+</html>

@@ -2,14 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://tech.ray247k.com/blog/202210-aws101-what-is-sns-and-sqs/</loc>
+    <lastmod>2022-10-06T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://tech.ray247k.com/tags/aws/</loc>
-    <lastmod>2022-10-04T00:00:00+00:00</lastmod>
+    <lastmod>2022-10-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tech.ray247k.com/categories/aws/</loc>
+    <lastmod>2022-10-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/blog/</loc>
-    <lastmod>2022-10-04T00:00:00+00:00</lastmod>
+    <lastmod>2022-10-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/categories/</loc>
-    <lastmod>2022-10-04T00:00:00+00:00</lastmod>
+    <lastmod>2022-10-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tech.ray247k.com/tags/</loc>
+    <lastmod>2022-10-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tech.ray247k.com/</loc>
+    <lastmod>2022-10-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/tags/serverless/</loc>
     <lastmod>2022-10-04T00:00:00+00:00</lastmod>
@@ -18,12 +30,6 @@
     <lastmod>2022-10-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/blog/202210-what-is-serverless/</loc>
-    <lastmod>2022-10-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tech.ray247k.com/tags/</loc>
-    <lastmod>2022-10-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tech.ray247k.com/</loc>
     <lastmod>2022-10-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/tags/blockchain/</loc>
