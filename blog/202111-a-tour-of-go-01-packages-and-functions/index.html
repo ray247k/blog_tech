@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.104.0" /><meta property="og:site_name" content="薛丁格的工程師">
+<meta name="generator" content="Hugo 0.109.0"><meta property="og:site_name" content="薛丁格的工程師">
   <meta property="og:title" content="[A Tour of Go 學習筆記] 01 Packages 和 Functions">
   <meta property="og:description" content="使用官方教學瞭解 Go 語言基本套件包和函數的基礎">
   <meta property="description" content="使用官方教學瞭解 Go 語言基本套件包和函數的基礎">
@@ -87,9 +87,9 @@
     "headline": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - Schrödinger\u0027s Programmer",
     "name": "薛丁格的工程師",
     "url": "https:\/\/tech.ray247k.com",
-    "description": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - aws,devops,golang,laravel,leetcode,node.js,php,python3,serverless,架站相關,版本控制,第三方服務,",
+    "description": "薛丁格的工程師，討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - aws,devops,golang,laravel,leetcode,node.js,php,python3,serverless,實用工具,架站相關,版本控制,第三方服務,",
     "keywords": [
-        "apache-bench,auto-scaling,aws,axios,blockchain,cdn,chatbot,cicd,cloudflare,cloudflare-workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker-compose,domain-name,drone,element-ui,excel,express,gas,gcp,gcr,getter,git,github,github-page,go,golang,google-app-script,google-container-registry,google-domains,google-sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load-balancing,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,phpcbf,phpcs,portainer,postgresql,prerender,proxy,python3,queue,redis,restful,seo,server,serverless,smart-contract,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
+        "apache-bench,auto-scaling,aws,axios,blockchain,cdn,chatbot,cicd,cloudflare,cloudflare-workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker-compose,domain-name,drone,element-ui,excel,express,ffmpeg,gas,gcp,gcr,getter,git,github,github-page,go,golang,google-app-script,google-container-registry,google-domains,google-sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load-balancing,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,phpcbf,phpcs,portainer,postgresql,prerender,proxy,python3,queue,redis,restful,seo,server,serverless,smart-contract,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
     ]
 }
 </script>
@@ -547,6 +547,16 @@ Naked return 只應該被用在簡短的函數中，因為在比較長的函數�
       </header>
       
       <article class="mini-post">
+          <a href="/blog/202301-ffmpeg-video-convert/" class="image" style="--bg-image: url('/img/blog/2023/01/ffmpeg-video-convert/ffmpeg-logo.png');">
+    <img src="/img/blog/2023/01/ffmpeg-video-convert/ffmpeg-logo.png" alt="ffmpeg logo">
+  </a>
+        <header>
+          <h2><a href="/blog/202301-ffmpeg-video-convert/">透過 FFmpeg 轉換影片格式</a></h2>
+          <time class="published" datetime="2023-01-01 00:00:00 &#43;0000 UTC">2023/01/01</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
           <a href="/blog/202210-aws101-what-is-sns-and-sqs/" class="image" style="--bg-image: url('/img/blog/2022/10/aws101-what-is-sns-and-sqs/pipeline.jpg');">
     <img src="/img/blog/2022/10/aws101-what-is-sns-and-sqs/pipeline.jpg" alt="pipeline">
   </a>
@@ -583,16 +593,6 @@ Naked return 只應該被用在簡短的函數中，因為在比較長的函數�
         <header>
           <h2><a href="/blog/202206-gcp-redis/">在 GCP 上建立 Redis 服務</a></h2>
           <time class="published" datetime="2022-06-30 00:00:00 &#43;0000 UTC">2022/06/30</time>
-        </header>
-      </article>
-      
-      <article class="mini-post">
-          <a href="/blog/202204-ngrok/" class="image" style="--bg-image: url('/img/blog/2022/04/ngrok/earth.jpeg');">
-    <img src="/img/blog/2022/04/ngrok/earth.jpeg" alt="earth">
-  </a>
-        <header>
-          <h2><a href="/blog/202204-ngrok/">讓你的電腦暫時公開在網路上 - Ngrok</a></h2>
-          <time class="published" datetime="2022-04-23 00:00:00 &#43;0000 UTC">2022/04/23</time>
         </header>
       </article>
       
@@ -652,6 +652,10 @@ Naked return 只應該被用在簡短的函數中，因為在比較長的函數�
           
           <li>
               <a href="/categories/serverless/">serverless<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/%E5%AF%A6%E7%94%A8%E5%B7%A5%E5%85%B7/">實用工具<span class="count">1</span></a>
           </li>
           
           <li>
@@ -881,6 +885,10 @@ Naked return 只應該被用在簡短的函數中，因為在比較長的函數�
         </li>
         
         <li>
+          <a href="/tags/ffmpeg/">ffmpeg (1)</a>
+        </li>
+        
+        <li>
           <a href="/tags/gas/">gas (1)</a>
         </li>
         
@@ -1032,10 +1040,10 @@ Naked return 只應該被用在簡短的函數中，因為在比較長的函數�
       <footer id="site-footer">
     
     <p class="copyright">
-        © 2022 薛丁格的工程師
+        © 2023 薛丁格的工程師
     </p>
     <p class="copyright" style="font-size: 0.1EM;">
-        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.104.0' target='_blank' rel='noopener'>Hugo</a>
+        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.109.0' target='_blank' rel='noopener'>Hugo</a>
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>

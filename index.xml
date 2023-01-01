@@ -6,7 +6,17 @@
     <description>Recent content on 薛丁格的工程師</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Thu, 06 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 01 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>透過 FFmpeg 轉換影片格式</title>
+      <link>https://tech.ray247k.com/blog/202301-ffmpeg-video-convert/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://tech.ray247k.com/blog/202301-ffmpeg-video-convert/</guid>
+      <description>&lt;p&gt;有時候會透過某些方法把 .M3U8 檔下載回來後會整合成一隻 .ts 為副檔名的檔案&lt;br&gt;
+而電腦通常不能直接播放這種格式，我們可以透過 FFmpeg 轉成常見的 .mp4 檔案便於播放&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>[AWS 101] 什麼是 SNS 和 SQS</title>
       <link>https://tech.ray247k.com/blog/202210-aws101-what-is-sns-and-sqs/</link>

@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://tech.ray247k.com/blog/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tech.ray247k.com/categories/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tech.ray247k.com/tags/ffmpeg/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tech.ray247k.com/tags/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tech.ray247k.com/blog/202301-ffmpeg-video-convert/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tech.ray247k.com/categories/%E5%AF%A6%E7%94%A8%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tech.ray247k.com/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://tech.ray247k.com/blog/202210-aws101-what-is-sns-and-sqs/</loc>
     <lastmod>2022-10-06T00:00:00+00:00</lastmod>
   </url><url>
@@ -9,18 +30,6 @@
     <lastmod>2022-10-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/categories/aws/</loc>
-    <lastmod>2022-10-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tech.ray247k.com/blog/</loc>
-    <lastmod>2022-10-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tech.ray247k.com/categories/</loc>
-    <lastmod>2022-10-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tech.ray247k.com/tags/</loc>
-    <lastmod>2022-10-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tech.ray247k.com/</loc>
     <lastmod>2022-10-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/tags/serverless/</loc>

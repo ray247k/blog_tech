@@ -1,4 +1,10 @@
 [{
+    "title": "透過 FFmpeg 轉換影片格式",
+    "date": "",
+    "description": "轉換 .ts 影片檔案成 .mp4 格式",
+    "body": "有時候會透過某些方法把 .M3U8 檔下載回來後會整合成一隻 .ts 為副檔名的檔案\n而電腦通常不能直接播放這種格式，我們可以透過 FFmpeg 轉成常見的 .mp4 檔案便於播放\n安裝 首先我們要下載 FFmpeg，如果是 Mac 使用者可以透過 Homebrew 來安裝\nbrew install ffmpeg 要檢查安裝是否成功，可以使用指令\nffmpeg -version 轉檔 安裝好了之後就是轉檔\n使用以下指令，並且將來源的 .ts 檔案以及轉檔後的儲存位置替換成自己的目標路徑即可\nffmpeg -i /source_path/vedio.ts -acodec copy -vcodec copy -f mp4 /target_path/new_vedio.mp4 執行完就可以在目標路徑看到轉檔好的檔案了！\n再也不需要另外安裝軟體，或是使用線上轉檔服務了\n",
+    "ref": "/blog/202301-ffmpeg-video-convert/"
+  },{
     "title": "[AWS 101] 什麼是 SNS 和 SQS",
     "date": "",
     "description": "簡單筆記一下 AWS SNS 和 SQS 服務在幹嘛，還有使用情境",
