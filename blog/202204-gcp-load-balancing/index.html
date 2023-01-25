@@ -13,8 +13,8 @@
 <meta property="og:description" content="設定 GCP 上的 Load Balancing 打造穩健雲端伺服器">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://tech.ray247k.com/blog/202204-gcp-load-balancing/">
-    <meta property="og:image" content="https://tech.ray247k.com/img/blog/2022/04/gcp-load-balancing/hacker.jpeg">
-    <meta property="og:image:alt" content="hacker">
+  <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.jpg">
+
 
 
   <link rel="manifest" href="/favicon/site.webmanifest?v=1">
@@ -29,23 +29,18 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.109.0"><meta property="og:site_name" content="薛丁格的工程師">
+<meta name="generator" content="Hugo 0.110.0"><meta property="og:site_name" content="薛丁格的工程師">
   <meta property="og:title" content="伸縮自在的伺服器 02 負載平衡 Load Balancing">
   <meta property="og:description" content="設定 GCP 上的 Load Balancing 打造穩健雲端伺服器">
   <meta property="description" content="設定 GCP 上的 Load Balancing 打造穩健雲端伺服器">
   <meta property="og:url" content="https://tech.ray247k.com/blog/202204-gcp-load-balancing/">
   <meta property="og:type" content="article">
   
-    
-      <meta property="og:image" content="https://tech.ray247k.com/img/blog/2022/04/gcp-load-balancing/hacker.jpeg">
-      <meta property="og:image:alt" content="hacker">
-    
+    <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.jpg">
   
   
             <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/github-dark.min.css">
           <link rel="stylesheet" href="/css/bundle.min.3b1b5f2e683d24b1ea3b5a08c8254622e40aa935e0ead75ba6d45c0f14c2f965.css" integrity="sha256-OxtfLmg9JLHqO1oIyCVGIuQKqTXg6tdbptRcDxTC&#43;WU="><link rel="stylesheet" href="/css/add-on.css">
-
-  
 
 
     
@@ -132,7 +127,7 @@
     "dateModified": "2022-04-05T00:00:00.00Z",
     "primaryImageOfPage": {
         "@type": "ImageObject",
-        "contentUrl": "[]"
+        "contentUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg"
     },
     "breadcrumb": {
         "@context": "http://schema.org",
@@ -214,7 +209,7 @@
             "height":"32"
         }
     },
-    "image": [""],
+    "image": "https://tech.ray247k.com/img/main/logo.jpg",
     "url" : "https:\/\/tech.ray247k.com\/blog\/202204-gcp-load-balancing\/",
     "wordCount" : "69",
     "genre" : [ "DevOps" , "GCP" , "Load Balancing" ],
@@ -356,8 +351,8 @@
 
     </div>
     <div class="content">
-      <a href="/blog/202204-gcp-load-balancing/" class="image" style="--bg-image: url('/img/blog/2022/04/gcp-load-balancing/hacker.jpeg');">
-    <img src="/img/blog/2022/04/gcp-load-balancing/hacker.jpeg" alt="hacker">
+      <a href="/blog/202204-gcp-load-balancing/" class="image" style="--bg-image: url('/blog/202204-gcp-load-balancing/featured.jpeg');">
+    <img src="/blog/202204-gcp-load-balancing/featured.jpeg" alt="">
   </a>
       <p>在前一篇<a href="/blog/202203-gcp-auto-scaling/"
    
@@ -371,25 +366,25 @@
 這樣可以保證一定程度的安全和系統穩定性，原有主機不會因為負載過重而崩潰</p>
 <h1 id="建立負載平衡">建立負載平衡</h1>
 <p>首先在側邊選單找到<code>網路服務</code>並選擇<code>負載平衡</code></p>
-<p><img src="/img/blog/2022/04/gcp-load-balancing/gcp-menu.png" alt="gcp menu"></p>
+<p><img src="gcp-menu.png" alt="gcp menu"></p>
 <p>按下上方工具列的<code>建立負載平衡器</code>之後選擇<code>HTTP(S)負載平衡</code></p>
-<p><img src="/img/blog/2022/04/gcp-load-balancing/gpc-load-balancer.png" alt="gpc load balancer"></p>
+<p><img src="gpc-load-balancer.png" alt="gpc load balancer"></p>
 <p>因為流量是從網際網路傳入，所以選擇<code>從網際網路傳送至 VM 或無伺服器服務</code></p>
-<p><img src="/img/blog/2022/04/gcp-load-balancing/gcp-load-balancer-create.png" alt="gcp load balancer create"></p>
+<p><img src="gcp-load-balancer-create.png" alt="gcp load balancer create"></p>
 <h2 id="負載平衡---後端設定">負載平衡 - 後端設定</h2>
 <p>接著選擇<code>建立後端服務</code></p>
-<p><img src="/img/blog/2022/04/gcp-load-balancing/gcp-load-balancer-backend-settings.png" alt="gcp load balancer backend settings"></p>
+<p><img src="gcp-load-balancer-backend-settings.png" alt="gcp load balancer backend settings"></p>
 <p>內部溝通用的通訊埠編號通通選擇<code>80</code>，因為我們內部主機沒有掛 SSL 憑證</p>
-<p><img src="/img/blog/2022/04/gcp-load-balancing/gcp-load-balancer-backend-port.png" alt="gcp load balancer backend port"></p>
+<p><img src="gcp-load-balancer-backend-port.png" alt="gcp load balancer backend port"></p>
 <h2 id="負載平衡---前端設定">負載平衡 - 前端設定</h2>
 <p>接著到<code>前端設定</code><br>
 若是我們希望可以透過固定的一組 IP 造訪，則需要在這邊建立一組 IP 位址<br>
 可以預先建立，或是透過畫面提示來預約一組固定 IP 位址
 如果你有 SSL 憑證也可以設定在這</p>
-<p><img src="/img/blog/2022/04/gcp-load-balancing/gcp-load-balancer-backend-settings.png" alt="gcp load balancer frontend settings"></p>
+<p><img src="gcp-load-balancer-backend-settings.png" alt="gcp load balancer frontend settings"></p>
 <p>儲存之後等他建立好，點進剛剛建立的負載平衡詳細資訊中<br>
 會看到<code>前端</code>區塊有一個 IP 位置，貼到瀏覽器連看看，就可以看到剛剛設定的服務了！</p>
-<p><img src="/img/blog/2022/04/gcp-load-balancing/gcp-load-balancer-details.jpg" alt="gcp load balancer details"></p>
+<p><img src="gcp-load-balancer-details.jpg" alt="gcp load balancer details"></p>
 <p>於是我們的負載平衡就建置完成！
 配合自動擴展功能，當流量上升到觸發擴展規則時就會啟動新的虛擬主機<br>
 並透過負載平衡將請求分流，達到分擔流量維持服務穩定的功能</p>
@@ -462,8 +457,8 @@
       </header>
       
       <article class="mini-post">
-          <a href="/blog/202301-ffmpeg-video-convert/" class="image" style="--bg-image: url('/img/blog/2023/01/ffmpeg-video-convert/ffmpeg-logo.png');">
-    <img src="/img/blog/2023/01/ffmpeg-video-convert/ffmpeg-logo.png" alt="ffmpeg logo">
+          <a href="/blog/202301-ffmpeg-video-convert/" class="image" style="--bg-image: url('/blog/202301-ffmpeg-video-convert/featured.png');">
+    <img src="/blog/202301-ffmpeg-video-convert/featured.png" alt="">
   </a>
         <header>
           <h2><a href="/blog/202301-ffmpeg-video-convert/">透過 FFmpeg 轉換影片格式</a></h2>
@@ -472,8 +467,8 @@
       </article>
       
       <article class="mini-post">
-          <a href="/blog/202210-aws101-what-is-sns-and-sqs/" class="image" style="--bg-image: url('/img/blog/2022/10/aws101-what-is-sns-and-sqs/pipeline.jpg');">
-    <img src="/img/blog/2022/10/aws101-what-is-sns-and-sqs/pipeline.jpg" alt="pipeline">
+          <a href="/blog/202210-aws101-what-is-sns-and-sqs/" class="image" style="--bg-image: url('/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg');">
+    <img src="/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg" alt="">
   </a>
         <header>
           <h2><a href="/blog/202210-aws101-what-is-sns-and-sqs/">[AWS 101] 什麼是 SNS 和 SQS</a></h2>
@@ -482,8 +477,8 @@
       </article>
       
       <article class="mini-post">
-          <a href="/blog/202210-what-is-serverless/" class="image" style="--bg-image: url('/img/blog/2022/10/what-is-serverless/sata.jpg');">
-    <img src="/img/blog/2022/10/what-is-serverless/sata.jpg" alt="sata">
+          <a href="/blog/202210-what-is-serverless/" class="image" style="--bg-image: url('/blog/202210-what-is-serverless/featured.jpg');">
+    <img src="/blog/202210-what-is-serverless/featured.jpg" alt="">
   </a>
         <header>
           <h2><a href="/blog/202210-what-is-serverless/">Serverless 簡介</a></h2>
@@ -492,8 +487,8 @@
       </article>
       
       <article class="mini-post">
-          <a href="/blog/202207-go-ethereum-abigen/" class="image" style="--bg-image: url('/img/blog/2022/07/go-ethereum-abigen/network.jpeg');">
-    <img src="/img/blog/2022/07/go-ethereum-abigen/network.jpeg" alt="network">
+          <a href="/blog/202207-go-ethereum-abigen/" class="image" style="--bg-image: url('/blog/202207-go-ethereum-abigen/featured.jpeg');">
+    <img src="/blog/202207-go-ethereum-abigen/featured.jpeg" alt="">
   </a>
         <header>
           <h2><a href="/blog/202207-go-ethereum-abigen/">使用 Golang 和智能合約互動</a></h2>
@@ -502,8 +497,8 @@
       </article>
       
       <article class="mini-post">
-          <a href="/blog/202206-gcp-redis/" class="image" style="--bg-image: url('/img/blog/2022/06/gcp-redis/redis-logo.png');">
-    <img src="/img/blog/2022/06/gcp-redis/redis-logo.png" alt="redis logo">
+          <a href="/blog/202206-gcp-redis/" class="image" style="--bg-image: url('/blog/202206-gcp-redis/featured.png');">
+    <img src="/blog/202206-gcp-redis/featured.png" alt="">
   </a>
         <header>
           <h2><a href="/blog/202206-gcp-redis/">在 GCP 上建立 Redis 服務</a></h2>
@@ -956,9 +951,6 @@
     
     <p class="copyright">
         © 2023 薛丁格的工程師
-    </p>
-    <p class="copyright" style="font-size: 0.1EM;">
-        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.109.0' target='_blank' rel='noopener'>Hugo</a>
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>

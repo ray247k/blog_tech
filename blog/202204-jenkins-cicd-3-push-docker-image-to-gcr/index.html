@@ -13,8 +13,8 @@
 <meta property="og:description" content="打包 Docker image 並在 pipeline 中使用 gcloud 指令推送到 Google Container Registry 儲存映像檔">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://tech.ray247k.com/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/">
-    <meta property="og:image" content="https://tech.ray247k.com/img/blog/2022/04/jenkins-cicd-3-push-docker-image-to-gcr/deliver.jpeg">
-    <meta property="og:image:alt" content="jenkins branches">
+  <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.jpg">
+
 
 
   <link rel="manifest" href="/favicon/site.webmanifest?v=1">
@@ -29,23 +29,18 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.109.0"><meta property="og:site_name" content="薛丁格的工程師">
+<meta name="generator" content="Hugo 0.110.0"><meta property="og:site_name" content="薛丁格的工程師">
   <meta property="og:title" content="Jenkins 03 打包 Docker image 並推送到 GCR">
   <meta property="og:description" content="打包 Docker image 並在 pipeline 中使用 gcloud 指令推送到 Google Container Registry 儲存映像檔">
   <meta property="description" content="打包 Docker image 並在 pipeline 中使用 gcloud 指令推送到 Google Container Registry 儲存映像檔">
   <meta property="og:url" content="https://tech.ray247k.com/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/">
   <meta property="og:type" content="article">
   
-    
-      <meta property="og:image" content="https://tech.ray247k.com/img/blog/2022/04/jenkins-cicd-3-push-docker-image-to-gcr/deliver.jpeg">
-      <meta property="og:image:alt" content="jenkins branches">
-    
+    <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.jpg">
   
   
             <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/github-dark.min.css">
           <link rel="stylesheet" href="/css/bundle.min.3b1b5f2e683d24b1ea3b5a08c8254622e40aa935e0ead75ba6d45c0f14c2f965.css" integrity="sha256-OxtfLmg9JLHqO1oIyCVGIuQKqTXg6tdbptRcDxTC&#43;WU="><link rel="stylesheet" href="/css/add-on.css">
-
-  
 
 
     
@@ -132,7 +127,7 @@
     "dateModified": "2022-04-08T00:00:00.00Z",
     "primaryImageOfPage": {
         "@type": "ImageObject",
-        "contentUrl": "[]"
+        "contentUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg"
     },
     "breadcrumb": {
         "@context": "http://schema.org",
@@ -178,7 +173,7 @@
     "@type": "BlogPosting",
     "articleSection": "blog",
     "name": "Jenkins 03 打包 Docker image 並推送到 GCR",
-    "headline": "\u003cp\u003e\u003ca href=\u0022https:\/\/cloud.google.com\/container-registry?hl=zh-tw\u0022\n   \n    target=\u0022_blank\u0022 rel=\u0022noreferrer noopener\u0022\u003eGCR(Google Container Registry)\n\u003c\/a\u003e\n 是 Google 提供用來儲存、管理和保護 Docker 容器映像檔的服務\u003cbr\u003e\n這次要做的事是打包 Docker image，再透過 gcloud 指令推送到 GCP 以便未來部署主機時使用\u003c\/p\u003e",
+    "headline": "\u003cp\u003eGoogle Container Registry 是 Google 提供用來儲存、管理和保護 Docker 容器映像檔的服務\u003cbr\u003e\n這次要做的事是打包 Docker image，再透過 gcloud 指令推送到 GCP 以便未來部署主機時使用\u003c\/p\u003e",
     "description": "打包 Docker image 並在 pipeline 中使用 gcloud 指令推送到 Google Container Registry 儲存映像檔",
     "inLanguage": "zh-TW",
     "isFamilyFriendly": "true",
@@ -214,9 +209,9 @@
             "height":"32"
         }
     },
-    "image": [""],
+    "image": "https://tech.ray247k.com/img/main/logo.jpg",
     "url" : "https:\/\/tech.ray247k.com\/blog\/202204-jenkins-cicd-3-push-docker-image-to-gcr\/",
-    "wordCount" : "431",
+    "wordCount" : "435",
     "genre" : [ "DevOps" , "Jenkins" , "CICD" , "docker" , "GCR" , "Google Container Registry" ],
     "keywords" : [ "DevOps" , "Jenkins" , "CICD" , "docker" , "GCR" , "Google Container Registry" ]
 }
@@ -356,15 +351,16 @@
 
     </div>
     <div class="content">
-      <a href="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/" class="image" style="--bg-image: url('/img/blog/2022/04/jenkins-cicd-3-push-docker-image-to-gcr/deliver.jpeg');">
-    <img src="/img/blog/2022/04/jenkins-cicd-3-push-docker-image-to-gcr/deliver.jpeg" alt="jenkins branches">
+      <a href="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/" class="image" style="--bg-image: url('/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/featured.jpeg');">
+    <img src="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/featured.jpeg" alt="">
   </a>
-      <p><a href="https://cloud.google.com/container-registry?hl=zh-tw"
-   
-    target="_blank" rel="noreferrer noopener">GCR(Google Container Registry)
-</a>
- 是 Google 提供用來儲存、管理和保護 Docker 容器映像檔的服務<br>
+      <p>Google Container Registry 是 Google 提供用來儲存、管理和保護 Docker 容器映像檔的服務<br>
 這次要做的事是打包 Docker image，再透過 gcloud 指令推送到 GCP 以便未來部署主機時使用</p>
+<p><a href="https://cloud.google.com/container-registry?hl=zh-tw"
+   
+    target="_blank" rel="noreferrer noopener">GCR(Google Container Registry 服務)
+</a>
+</p>
 <p>首先要先有一個 Google Cloud 專案<br>
 可以根據官方文件：<a href="https://cloud.google.com/resource-manager/docs/creating-managing-projects"
    
@@ -422,7 +418,7 @@
 </blockquote>
 <p>首先<strong>停止運行 VM</strong>並進到編輯頁面<br>
 找到<code>存取權範圍</code>並開啟<code>允許所有 Cloud API 的完整存取權</code></p>
-<p><img src="/img/blog/2022/04/jenkins-cicd-3-push-docker-image-to-gcr/gcloud-error.jpg" alt="gcloud error"></p>
+<p><img src="gcloud-error.jpg" alt="gcloud error"></p>
 <p>重新啟動 VM 之後執行指令，照著提示訊息設定</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud init
 </span></span><span style="display:flex;"><span>
@@ -434,23 +430,23 @@
 <h2 id="產生-gcp-金鑰">產生 GCP 金鑰</h2>
 <p>進入 GCP 控制台的<code>API 和服務</code>左方點選<code>憑證</code>頁籤<br>
 點選<code>建立新憑證</code>並選擇<code>服務帳戶</code></p>
-<p><img src="/img/blog/2022/04/jenkins-cicd-3-push-docker-image-to-gcr/gcp-create-license.png" alt="gcp create license"></p>
+<p><img src="gcp-create-license.png" alt="gcp create license"></p>
 <p>跟著提示建立好之後點選列表中剛剛建立的帳戶進入編輯頁面<br>
 並且切換到<code>金鑰</code>頁籤中：新增金鑰 -&gt; 建立新的金鑰<br>
 並選擇「<strong>JSON</strong>」類型</p>
-<p><img src="/img/blog/2022/04/jenkins-cicd-3-push-docker-image-to-gcr/gcp-create-key.png" alt="gcp create key"></p>
+<p><img src="gcp-create-key.png" alt="gcp create key"></p>
 <p>接著就會跳出下載提示，將 JSON 格式的金鑰下載到本機中</p>
-<p><img src="/img/blog/2022/04/jenkins-cicd-3-push-docker-image-to-gcr/gcp-key-download.jpg" alt="gcp key download"></p>
+<p><img src="gcp-key-download.jpg" alt="gcp key download"></p>
 <h2 id="設定金鑰到-jenkins">設定金鑰到 Jenkins</h2>
 <p>進到<code>Jenkins -&gt; 管理 Jenkins -&gt; Manage Credentials</code><br>
 選擇作用範圍，這邊用預設的<code>Jenkins</code>也就是全域(global)</p>
-<p><img src="/img/blog/2022/04/jenkins-cicd-3-push-docker-image-to-gcr/jenkins-add-credential.png" alt="jenkins add credential"></p>
+<p><img src="jenkins-add-credential.png" alt="jenkins add credential"></p>
 <p>按下 Add Credentials 後<code>Kind</code>選擇<code>Secret file</code>並填寫相關設定</p>
 <ul>
 <li>ID：在 Jenkins 中呼叫用的唯一識別 ID，本文章範例中取叫<code>jenkins-gcr</code></li>
 <li>File：把剛剛下載的 json 金鑰上傳</li>
 </ul>
-<p><img src="/img/blog/2022/04/jenkins-cicd-3-push-docker-image-to-gcr/jenkins-set-credential.png" alt="jenkins set credential"></p>
+<p><img src="jenkins-set-credential.png" alt="jenkins set credential"></p>
 <p>如此就完成 Jenkins 金鑰設定</p>
 <h1 id="pipeline-範例">Pipeline 範例</h1>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#75715e">// jenkinsfile
@@ -498,7 +494,7 @@
 <h1 id="檢查儲存位置">檢查儲存位置</h1>
 <p>若是沒有錯誤訊息，則可以到<code>Google Cloud Registry</code>頁面查看<br>
 把剛剛上傳的 image 名稱想成在 linux 終端機下指令，就可以理解 GCR 中的資料夾結構</p>
-<p><img src="/img/blog/2022/04/jenkins-cicd-3-push-docker-image-to-gcr/gcr-store.jpg" alt="gcr store"></p>
+<p><img src="gcr-store.jpg" alt="gcr store"></p>
 
       
       
@@ -561,8 +557,8 @@
       </header>
       
       <article class="mini-post">
-          <a href="/blog/202301-ffmpeg-video-convert/" class="image" style="--bg-image: url('/img/blog/2023/01/ffmpeg-video-convert/ffmpeg-logo.png');">
-    <img src="/img/blog/2023/01/ffmpeg-video-convert/ffmpeg-logo.png" alt="ffmpeg logo">
+          <a href="/blog/202301-ffmpeg-video-convert/" class="image" style="--bg-image: url('/blog/202301-ffmpeg-video-convert/featured.png');">
+    <img src="/blog/202301-ffmpeg-video-convert/featured.png" alt="">
   </a>
         <header>
           <h2><a href="/blog/202301-ffmpeg-video-convert/">透過 FFmpeg 轉換影片格式</a></h2>
@@ -571,8 +567,8 @@
       </article>
       
       <article class="mini-post">
-          <a href="/blog/202210-aws101-what-is-sns-and-sqs/" class="image" style="--bg-image: url('/img/blog/2022/10/aws101-what-is-sns-and-sqs/pipeline.jpg');">
-    <img src="/img/blog/2022/10/aws101-what-is-sns-and-sqs/pipeline.jpg" alt="pipeline">
+          <a href="/blog/202210-aws101-what-is-sns-and-sqs/" class="image" style="--bg-image: url('/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg');">
+    <img src="/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg" alt="">
   </a>
         <header>
           <h2><a href="/blog/202210-aws101-what-is-sns-and-sqs/">[AWS 101] 什麼是 SNS 和 SQS</a></h2>
@@ -581,8 +577,8 @@
       </article>
       
       <article class="mini-post">
-          <a href="/blog/202210-what-is-serverless/" class="image" style="--bg-image: url('/img/blog/2022/10/what-is-serverless/sata.jpg');">
-    <img src="/img/blog/2022/10/what-is-serverless/sata.jpg" alt="sata">
+          <a href="/blog/202210-what-is-serverless/" class="image" style="--bg-image: url('/blog/202210-what-is-serverless/featured.jpg');">
+    <img src="/blog/202210-what-is-serverless/featured.jpg" alt="">
   </a>
         <header>
           <h2><a href="/blog/202210-what-is-serverless/">Serverless 簡介</a></h2>
@@ -591,8 +587,8 @@
       </article>
       
       <article class="mini-post">
-          <a href="/blog/202207-go-ethereum-abigen/" class="image" style="--bg-image: url('/img/blog/2022/07/go-ethereum-abigen/network.jpeg');">
-    <img src="/img/blog/2022/07/go-ethereum-abigen/network.jpeg" alt="network">
+          <a href="/blog/202207-go-ethereum-abigen/" class="image" style="--bg-image: url('/blog/202207-go-ethereum-abigen/featured.jpeg');">
+    <img src="/blog/202207-go-ethereum-abigen/featured.jpeg" alt="">
   </a>
         <header>
           <h2><a href="/blog/202207-go-ethereum-abigen/">使用 Golang 和智能合約互動</a></h2>
@@ -601,8 +597,8 @@
       </article>
       
       <article class="mini-post">
-          <a href="/blog/202206-gcp-redis/" class="image" style="--bg-image: url('/img/blog/2022/06/gcp-redis/redis-logo.png');">
-    <img src="/img/blog/2022/06/gcp-redis/redis-logo.png" alt="redis logo">
+          <a href="/blog/202206-gcp-redis/" class="image" style="--bg-image: url('/blog/202206-gcp-redis/featured.png');">
+    <img src="/blog/202206-gcp-redis/featured.png" alt="">
   </a>
         <header>
           <h2><a href="/blog/202206-gcp-redis/">在 GCP 上建立 Redis 服務</a></h2>
@@ -1055,9 +1051,6 @@
     
     <p class="copyright">
         © 2023 薛丁格的工程師
-    </p>
-    <p class="copyright" style="font-size: 0.1EM;">
-        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.109.0' target='_blank' rel='noopener'>Hugo</a>
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>

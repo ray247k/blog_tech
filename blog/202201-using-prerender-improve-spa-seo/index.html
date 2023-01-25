@@ -13,8 +13,8 @@
 <meta property="og:description" content="解決 CSR 網頁的 SEO 問題，示範自架與 SaaS 方案">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://tech.ray247k.com/blog/202201-using-prerender-improve-spa-seo/">
-    <meta property="og:image" content="https://tech.ray247k.com/img/blog/2022/01/using-prerender-improve-spa-seo/seo.jpeg">
-    <meta property="og:image:alt" content="seo logo">
+  <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.jpg">
+
 
 
   <link rel="manifest" href="/favicon/site.webmanifest?v=1">
@@ -29,23 +29,18 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.109.0"><meta property="og:site_name" content="薛丁格的工程師">
+<meta name="generator" content="Hugo 0.110.0"><meta property="og:site_name" content="薛丁格的工程師">
   <meta property="og:title" content="使用 Prerender 為 SPA 增進 SEO">
   <meta property="og:description" content="解決 CSR 網頁的 SEO 問題，示範自架與 SaaS 方案">
   <meta property="description" content="解決 CSR 網頁的 SEO 問題，示範自架與 SaaS 方案">
   <meta property="og:url" content="https://tech.ray247k.com/blog/202201-using-prerender-improve-spa-seo/">
   <meta property="og:type" content="article">
   
-    
-      <meta property="og:image" content="https://tech.ray247k.com/img/blog/2022/01/using-prerender-improve-spa-seo/seo.jpeg">
-      <meta property="og:image:alt" content="seo logo">
-    
+    <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.jpg">
   
   
             <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/github-dark.min.css">
           <link rel="stylesheet" href="/css/bundle.min.3b1b5f2e683d24b1ea3b5a08c8254622e40aa935e0ead75ba6d45c0f14c2f965.css" integrity="sha256-OxtfLmg9JLHqO1oIyCVGIuQKqTXg6tdbptRcDxTC&#43;WU="><link rel="stylesheet" href="/css/add-on.css">
-
-  
 
 
     
@@ -132,7 +127,7 @@
     "dateModified": "2022-01-31T00:00:00.00Z",
     "primaryImageOfPage": {
         "@type": "ImageObject",
-        "contentUrl": "[]"
+        "contentUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg"
     },
     "breadcrumb": {
         "@context": "http://schema.org",
@@ -214,7 +209,7 @@
             "height":"32"
         }
     },
-    "image": [""],
+    "image": "https://tech.ray247k.com/img/main/logo.jpg",
     "url" : "https:\/\/tech.ray247k.com\/blog\/202201-using-prerender-improve-spa-seo\/",
     "wordCount" : "297",
     "genre" : [ "SEO" , "Prerender" , "搜尋引擎最佳化" , "Cloudflare" , "Cloudflare Workers" ],
@@ -356,8 +351,8 @@
 
     </div>
     <div class="content">
-      <a href="/blog/202201-using-prerender-improve-spa-seo/" class="image" style="--bg-image: url('/img/blog/2022/01/using-prerender-improve-spa-seo/seo.jpeg');">
-    <img src="/img/blog/2022/01/using-prerender-improve-spa-seo/seo.jpeg" alt="seo logo">
+      <a href="/blog/202201-using-prerender-improve-spa-seo/" class="image" style="--bg-image: url('/blog/202201-using-prerender-improve-spa-seo/featured.jpeg');">
+    <img src="/blog/202201-using-prerender-improve-spa-seo/featured.jpeg" alt="">
   </a>
       <p>Single Page Application(SPA) 網站使用 Client-Side Rendering (CSR) 來渲染畫面<br>
 一開始載入時伺服器只會回傳根元件，透過後續 API 互動取得資料填入<br>
@@ -474,12 +469,12 @@
 <p>而且以前就聽過 Cloudflare Workers 也知道很強大，畢竟就像個 proxy 掛在最前面，所以能做的事情很多<br>
 但是從來沒機會使用，剛好用這次機會摸摸看</p>
 <h3 id="prerenderio-價錢方案">Prerender.io 價錢方案</h3>
-<p><img src="/img/blog/2022/01/using-prerender-improve-spa-seo/prerender-price.png" alt="prerender price"></p>
+<p><img src="prerender-price.png" alt="prerender price"></p>
 <h3 id="cloudflare-workers-價錢方案">Cloudflare workers 價錢方案</h3>
-<p><img src="/img/blog/2022/01/using-prerender-improve-spa-seo/cloudflare-workers-price.png" alt="cloudflare workers price"></p>
+<p><img src="cloudflare-workers-price.png" alt="cloudflare workers price"></p>
 <h2 id="設定">設定</h2>
 <p>進到 prerender 頁面，點擊<code>Install middleware</code>後選擇<code>cloudflare</code>選項</p>
-<p><img src="/img/blog/2022/01/using-prerender-improve-spa-seo/prerender-settings.png" alt="prerender settings"></p>
+<p><img src="prerender-settings.png" alt="prerender settings"></p>
 <p>官方已經新增了文件，只要照著文件操作，連不會寫程式的人也可以安心設定了！<br>
 照著文件按圖施工就好：<a href="https://docs.prerender.io/docs/24-cloudflare"
    
@@ -506,13 +501,13 @@
 所以在這邊使用 playground 是無法測試的</p>
 <p>在設定好 Worker 之後，開啟 Worker 頁籤<br>
 選擇<code>新增路由</code></p>
-<p><img src="/img/blog/2022/01/using-prerender-improve-spa-seo/cloudflare-workers-settings.png" alt="cloudflare workers settings"></p>
+<p><img src="cloudflare-workers-settings.png" alt="cloudflare workers settings"></p>
 <p>接著要設定<strong>要求限制失敗模式</strong><br>
 選擇<code>開啟失敗 (繼續)</code>的話，當請求進來而 Worker 失敗則會直接進到服務內<br>
 而<code>關閉失敗 (封鎖)</code>是會噴出錯誤頁面阻止使用者繼續訪問<br>
 由於我們不希望在達到免費方案限制的時候網站就無法存取，且不預先渲染內容不影響網站功能<br>
 所以選擇讓在失敗時跳過 Worker 直接執行，畢竟只是拿來做 prerender，爬蟲這次爬不到就下次再來也不要緊</p>
-<p><img src="/img/blog/2022/01/using-prerender-improve-spa-seo/cloudflare-new-route.png" alt="cloudflare new route"></p>
+<p><img src="cloudflare-new-route.png" alt="cloudflare new route"></p>
 <p>路由規則要和你在 Worker 設定的網址一樣<br>
 設定完之後要記得回到 <a href="https://prerender.io/"
    
@@ -590,8 +585,8 @@
       </header>
       
       <article class="mini-post">
-          <a href="/blog/202301-ffmpeg-video-convert/" class="image" style="--bg-image: url('/img/blog/2023/01/ffmpeg-video-convert/ffmpeg-logo.png');">
-    <img src="/img/blog/2023/01/ffmpeg-video-convert/ffmpeg-logo.png" alt="ffmpeg logo">
+          <a href="/blog/202301-ffmpeg-video-convert/" class="image" style="--bg-image: url('/blog/202301-ffmpeg-video-convert/featured.png');">
+    <img src="/blog/202301-ffmpeg-video-convert/featured.png" alt="">
   </a>
         <header>
           <h2><a href="/blog/202301-ffmpeg-video-convert/">透過 FFmpeg 轉換影片格式</a></h2>
@@ -600,8 +595,8 @@
       </article>
       
       <article class="mini-post">
-          <a href="/blog/202210-aws101-what-is-sns-and-sqs/" class="image" style="--bg-image: url('/img/blog/2022/10/aws101-what-is-sns-and-sqs/pipeline.jpg');">
-    <img src="/img/blog/2022/10/aws101-what-is-sns-and-sqs/pipeline.jpg" alt="pipeline">
+          <a href="/blog/202210-aws101-what-is-sns-and-sqs/" class="image" style="--bg-image: url('/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg');">
+    <img src="/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg" alt="">
   </a>
         <header>
           <h2><a href="/blog/202210-aws101-what-is-sns-and-sqs/">[AWS 101] 什麼是 SNS 和 SQS</a></h2>
@@ -610,8 +605,8 @@
       </article>
       
       <article class="mini-post">
-          <a href="/blog/202210-what-is-serverless/" class="image" style="--bg-image: url('/img/blog/2022/10/what-is-serverless/sata.jpg');">
-    <img src="/img/blog/2022/10/what-is-serverless/sata.jpg" alt="sata">
+          <a href="/blog/202210-what-is-serverless/" class="image" style="--bg-image: url('/blog/202210-what-is-serverless/featured.jpg');">
+    <img src="/blog/202210-what-is-serverless/featured.jpg" alt="">
   </a>
         <header>
           <h2><a href="/blog/202210-what-is-serverless/">Serverless 簡介</a></h2>
@@ -620,8 +615,8 @@
       </article>
       
       <article class="mini-post">
-          <a href="/blog/202207-go-ethereum-abigen/" class="image" style="--bg-image: url('/img/blog/2022/07/go-ethereum-abigen/network.jpeg');">
-    <img src="/img/blog/2022/07/go-ethereum-abigen/network.jpeg" alt="network">
+          <a href="/blog/202207-go-ethereum-abigen/" class="image" style="--bg-image: url('/blog/202207-go-ethereum-abigen/featured.jpeg');">
+    <img src="/blog/202207-go-ethereum-abigen/featured.jpeg" alt="">
   </a>
         <header>
           <h2><a href="/blog/202207-go-ethereum-abigen/">使用 Golang 和智能合約互動</a></h2>
@@ -630,8 +625,8 @@
       </article>
       
       <article class="mini-post">
-          <a href="/blog/202206-gcp-redis/" class="image" style="--bg-image: url('/img/blog/2022/06/gcp-redis/redis-logo.png');">
-    <img src="/img/blog/2022/06/gcp-redis/redis-logo.png" alt="redis logo">
+          <a href="/blog/202206-gcp-redis/" class="image" style="--bg-image: url('/blog/202206-gcp-redis/featured.png');">
+    <img src="/blog/202206-gcp-redis/featured.png" alt="">
   </a>
         <header>
           <h2><a href="/blog/202206-gcp-redis/">在 GCP 上建立 Redis 服務</a></h2>
@@ -1084,9 +1079,6 @@
     
     <p class="copyright">
         © 2023 薛丁格的工程師
-    </p>
-    <p class="copyright" style="font-size: 0.1EM;">
-        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.109.0' target='_blank' rel='noopener'>Hugo</a>
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>

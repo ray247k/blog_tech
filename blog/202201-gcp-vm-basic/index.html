@@ -13,8 +13,8 @@
 <meta property="og:description" content="手把手在 Google Cloud Platform (GCP) 啟動第一個 VM 執行個體及相關設定">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://tech.ray247k.com/blog/202201-gcp-vm-basic/">
-    <meta property="og:image" content="https://tech.ray247k.com/img/blog/2022/01/gcp-vm-basic/gcp-compute-engine-logo.jpg">
-    <meta property="og:image:alt" content="">
+  <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.jpg">
+
 
 
   <link rel="manifest" href="/favicon/site.webmanifest?v=1">
@@ -29,23 +29,18 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.109.0"><meta property="og:site_name" content="薛丁格的工程師">
+<meta name="generator" content="Hugo 0.110.0"><meta property="og:site_name" content="薛丁格的工程師">
   <meta property="og:title" content="第一次在 GCP 開 VM 就成功">
   <meta property="og:description" content="手把手在 Google Cloud Platform (GCP) 啟動第一個 VM 執行個體及相關設定">
   <meta property="description" content="手把手在 Google Cloud Platform (GCP) 啟動第一個 VM 執行個體及相關設定">
   <meta property="og:url" content="https://tech.ray247k.com/blog/202201-gcp-vm-basic/">
   <meta property="og:type" content="article">
   
-    
-      <meta property="og:image" content="https://tech.ray247k.com/img/blog/2022/01/gcp-vm-basic/gcp-compute-engine-logo.jpg">
-      <meta property="og:image:alt" content="">
-    
+    <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.jpg">
   
   
             <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/github-dark.min.css">
           <link rel="stylesheet" href="/css/bundle.min.3b1b5f2e683d24b1ea3b5a08c8254622e40aa935e0ead75ba6d45c0f14c2f965.css" integrity="sha256-OxtfLmg9JLHqO1oIyCVGIuQKqTXg6tdbptRcDxTC&#43;WU="><link rel="stylesheet" href="/css/add-on.css">
-
-  
 
 
     
@@ -132,7 +127,7 @@
     "dateModified": "2022-01-15T00:00:00.00Z",
     "primaryImageOfPage": {
         "@type": "ImageObject",
-        "contentUrl": "[]"
+        "contentUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg"
     },
     "breadcrumb": {
         "@context": "http://schema.org",
@@ -214,7 +209,7 @@
             "height":"32"
         }
     },
-    "image": [""],
+    "image": "https://tech.ray247k.com/img/main/logo.jpg",
     "url" : "https:\/\/tech.ray247k.com\/blog\/202201-gcp-vm-basic\/",
     "wordCount" : "137",
     "genre" : [ "GCP" , "DevOps" , "防火牆" ],
@@ -356,8 +351,8 @@
 
     </div>
     <div class="content">
-      <a href="/blog/202201-gcp-vm-basic/" class="image" style="--bg-image: url('/img/blog/2022/01/gcp-vm-basic/gcp-compute-engine-logo.jpg');">
-    <img src="/img/blog/2022/01/gcp-vm-basic/gcp-compute-engine-logo.jpg" alt="">
+      <a href="/blog/202201-gcp-vm-basic/" class="image" style="--bg-image: url('/blog/202201-gcp-vm-basic/featured.jpg');">
+    <img src="/blog/202201-gcp-vm-basic/featured.jpg" alt="">
   </a>
       <p>如何在 Google Cloud Platform (GCP) 上開啟一個 VM 虛擬主機呢？<br>
 聽起來很複雜，實際做起來十分簡單<br>
@@ -366,7 +361,7 @@
 <h1 id="開新-vm-執行個體">開新 VM 執行個體</h1>
 <p>沒什麼要注意的，進到 GCP 後台的<code>VM 執行個體</code>頁面後<br>
 直接選則要的規格，取名後點建立就好</p>
-<p><img src="/img/blog/2022/01/gcp-vm-basic/new-vm.jpg" alt="new vm"></p>
+<p><img src="new-vm.jpg" alt="new vm"></p>
 <h1 id="固定對外-ip">固定對外 IP</h1>
 <p>因為每次重啟 VM，對外的 IP 都會變動，為了讓我們的服務有一個固定的 IP<br>
 我們可以將外部 IP 的類型從「<code>臨時</code>」改為「<code>靜態</code>」</p>
@@ -375,14 +370,14 @@
 </blockquote>
 <p>首先選擇要調整的 VM 主機，點擊三個點點點形狀的「其他操作項目」選單<br>
 選擇「查看網路詳細資料」</p>
-<p><img src="/img/blog/2022/01/gcp-vm-basic/gcp-vm-network-settings.jpg" alt="gcp vm netowrk settings"></p>
+<p><img src="gcp-vm-network-settings.jpg" alt="gcp vm netowrk settings"></p>
 <p>接著在左方選單選擇「外部 IP 位址」標籤<br>
 在<code>使用者</code>欄位中找到剛剛建立的 VM 執行個體<br>
 可以發現目標的<code>名稱</code>欄位為空</p>
-<p><img src="/img/blog/2022/01/gcp-vm-basic/gcp-static-ip.jpg" alt="gcp static ip"></p>
+<p><img src="gcp-static-ip.jpg" alt="gcp static ip"></p>
 <p>按下左方的<code>保留</code>，這時候就會要你填名稱了<br>
 填好之後你 VM 主機 IP 就不會因為服務重啟而改變</p>
-<p><img src="/img/blog/2022/01/gcp-vm-basic/gcp-network-naming.png" alt="gcp network naming"></p>
+<p><img src="gcp-network-naming.png" alt="gcp network naming"></p>
 <h1 id="開啟對外-port">開啟對外 port</h1>
 <p>虛擬主機開好了，也固定對外的 IP 了！來連線吧<br>
 瀏覽器輸入 IP 連線，然後就連不進去！欸？</p>
@@ -390,13 +385,13 @@
 <p>預設開啟 VM 的時候只會開啟 ssh 連線用的<code>22</code>port<br>
 如果建立的時候你有選擇防火牆規則，則會套用<code>http-server</code>和<code>https-server</code>這兩個「網路標記」<br>
 如此就可以接收發向<code>80</code>和<code>443</code>兩個 port 的請求</p>
-<p><img src="/img/blog/2022/01/gcp-vm-basic/gcp-vm-firewall.jpg" alt="gcp vm firewall"></p>
+<p><img src="gcp-vm-firewall.jpg" alt="gcp vm firewall"></p>
 <p>如果不確定自己原本有沒有開啟，可以進到 VM 的資訊頁面查看「網路標記」區塊</p>
-<p><img src="/img/blog/2022/01/gcp-vm-basic/gcp-vm-check-firewall.jpg" alt="gcp vm check firewall"></p>
+<p><img src="gcp-vm-check-firewall.jpg" alt="gcp vm check firewall"></p>
 <p>如果發現沒有開啟，而你想開啟這兩個 port<br>
 點擊 VM 的編輯按鈕，找到<code>防火牆</code>設定<br>
 選取建立時沒勾選的<code>http-server</code>和<code>https-server</code>規則</p>
-<p><img src="/img/blog/2022/01/gcp-vm-basic/gcp-vm-select-rule.jpg" alt="gcp vm select rule"></p>
+<p><img src="gcp-vm-select-rule.jpg" alt="gcp vm select rule"></p>
 <p>套用成功之後就可以接收 80 和 443 port 進來的請求了</p>
 <h2 id="其他-port">其他 port</h2>
 <p>有些服務會需要使用到不同的 port，這時候就需要自行設定<br>
@@ -404,26 +399,26 @@
 <h3 id="建立防火牆規則">建立防火牆規則</h3>
 <p>選擇要調整的 VM 主機，最右方三點選單選擇「查看網路詳細資料」進入「虛擬私有雲網路」<br>
 選擇左方「防火牆」選單，並點擊「建立防火牆規則」</p>
-<p><img src="/img/blog/2022/01/gcp-vm-basic/gcp-create-firewall-rule.jpg" alt="gcp create firewall rule"></p>
+<p><img src="gcp-create-firewall-rule.jpg" alt="gcp create firewall rule"></p>
 <p>大部分都可以使用預設值，看說明來判斷要不要自己設定<br>
 只有幾個地方需要調整</p>
 <h4 id="目標標記">目標標記</h4>
 <p>這個是之後選擇防火牆規則時候用的網路標記<br>
 作用跟設定 80 port 時的<code>http-server</code>一樣，作為識別用途</p>
-<p><img src="/img/blog/2022/01/gcp-vm-basic/gcp-firewall-rule-tag.jpg" alt="gcp firewall rule tag"></p>
+<p><img src="gcp-firewall-rule-tag.jpg" alt="gcp firewall rule tag"></p>
 <h4 id="來源-ipv4-範圍">來源 IPv4 範圍</h4>
 <p>設定信任的 IP 位置，如果要公開就設定成<code> 0.0.0.0/0</code>接受全部來源的請求</p>
-<p><img src="/img/blog/2022/01/gcp-vm-basic/gcp-firewall-ipv4.jpg" alt="gcp firewall ipv4"></p>
+<p><img src="gcp-firewall-ipv4.jpg" alt="gcp firewall ipv4"></p>
 <h4 id="通訊協定和埠">通訊協定和埠</h4>
 <p>為了示範同時開放多個 port 所以加入 8089<br>
 如此就可以指定 tcp 的 8080 與 8089 port 對外開放</p>
 <p>可以看到 port 號之間是用<code>逗號「,」</code>分隔<br>
 若是用<code>減號「-」</code>則可以指定開放一個範圍的 port</p>
-<p><img src="/img/blog/2022/01/gcp-vm-basic/gcp-firewall-ports.jpg" alt="gcp firewall ports"></p>
+<p><img src="gcp-firewall-ports.jpg" alt="gcp firewall ports"></p>
 <h3 id="套用防火牆規則">套用防火牆規則</h3>
 <p>回到 Compute Engine 中選擇要套用規則的 VM 執行個體，點擊編輯按鈕<br>
 手動在<code>網路標記</code>輸入剛剛建立防火牆規則時填寫的<code>目標標記</code>，儲存後就可以套用囉</p>
-<p><img src="/img/blog/2022/01/gcp-vm-basic/gcp-vm-add-rule.jpg" alt="gcp vm add rule"></p>
+<p><img src="gcp-vm-add-rule.jpg" alt="gcp vm add rule"></p>
 
       
       
@@ -480,8 +475,8 @@
       </header>
       
       <article class="mini-post">
-          <a href="/blog/202301-ffmpeg-video-convert/" class="image" style="--bg-image: url('/img/blog/2023/01/ffmpeg-video-convert/ffmpeg-logo.png');">
-    <img src="/img/blog/2023/01/ffmpeg-video-convert/ffmpeg-logo.png" alt="ffmpeg logo">
+          <a href="/blog/202301-ffmpeg-video-convert/" class="image" style="--bg-image: url('/blog/202301-ffmpeg-video-convert/featured.png');">
+    <img src="/blog/202301-ffmpeg-video-convert/featured.png" alt="">
   </a>
         <header>
           <h2><a href="/blog/202301-ffmpeg-video-convert/">透過 FFmpeg 轉換影片格式</a></h2>
@@ -490,8 +485,8 @@
       </article>
       
       <article class="mini-post">
-          <a href="/blog/202210-aws101-what-is-sns-and-sqs/" class="image" style="--bg-image: url('/img/blog/2022/10/aws101-what-is-sns-and-sqs/pipeline.jpg');">
-    <img src="/img/blog/2022/10/aws101-what-is-sns-and-sqs/pipeline.jpg" alt="pipeline">
+          <a href="/blog/202210-aws101-what-is-sns-and-sqs/" class="image" style="--bg-image: url('/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg');">
+    <img src="/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg" alt="">
   </a>
         <header>
           <h2><a href="/blog/202210-aws101-what-is-sns-and-sqs/">[AWS 101] 什麼是 SNS 和 SQS</a></h2>
@@ -500,8 +495,8 @@
       </article>
       
       <article class="mini-post">
-          <a href="/blog/202210-what-is-serverless/" class="image" style="--bg-image: url('/img/blog/2022/10/what-is-serverless/sata.jpg');">
-    <img src="/img/blog/2022/10/what-is-serverless/sata.jpg" alt="sata">
+          <a href="/blog/202210-what-is-serverless/" class="image" style="--bg-image: url('/blog/202210-what-is-serverless/featured.jpg');">
+    <img src="/blog/202210-what-is-serverless/featured.jpg" alt="">
   </a>
         <header>
           <h2><a href="/blog/202210-what-is-serverless/">Serverless 簡介</a></h2>
@@ -510,8 +505,8 @@
       </article>
       
       <article class="mini-post">
-          <a href="/blog/202207-go-ethereum-abigen/" class="image" style="--bg-image: url('/img/blog/2022/07/go-ethereum-abigen/network.jpeg');">
-    <img src="/img/blog/2022/07/go-ethereum-abigen/network.jpeg" alt="network">
+          <a href="/blog/202207-go-ethereum-abigen/" class="image" style="--bg-image: url('/blog/202207-go-ethereum-abigen/featured.jpeg');">
+    <img src="/blog/202207-go-ethereum-abigen/featured.jpeg" alt="">
   </a>
         <header>
           <h2><a href="/blog/202207-go-ethereum-abigen/">使用 Golang 和智能合約互動</a></h2>
@@ -520,8 +515,8 @@
       </article>
       
       <article class="mini-post">
-          <a href="/blog/202206-gcp-redis/" class="image" style="--bg-image: url('/img/blog/2022/06/gcp-redis/redis-logo.png');">
-    <img src="/img/blog/2022/06/gcp-redis/redis-logo.png" alt="redis logo">
+          <a href="/blog/202206-gcp-redis/" class="image" style="--bg-image: url('/blog/202206-gcp-redis/featured.png');">
+    <img src="/blog/202206-gcp-redis/featured.png" alt="">
   </a>
         <header>
           <h2><a href="/blog/202206-gcp-redis/">在 GCP 上建立 Redis 服務</a></h2>
@@ -974,9 +969,6 @@
     
     <p class="copyright">
         © 2023 薛丁格的工程師
-    </p>
-    <p class="copyright" style="font-size: 0.1EM;">
-        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.109.0' target='_blank' rel='noopener'>Hugo</a>
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>

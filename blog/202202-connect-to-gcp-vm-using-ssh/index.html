@@ -13,8 +13,8 @@
 <meta property="og:description" content="在本機透過終端機 ssh 連線到 GCP VM">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://tech.ray247k.com/blog/202202-connect-to-gcp-vm-using-ssh/">
-    <meta property="og:image" content="https://tech.ray247k.com/img/blog/2022/02/connect-to-gcp-vm-using-ssh/vpn.jpeg">
-    <meta property="og:image:alt" content="vpn">
+  <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.jpg">
+
 
 
   <link rel="manifest" href="/favicon/site.webmanifest?v=1">
@@ -29,23 +29,18 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.109.0"><meta property="og:site_name" content="薛丁格的工程師">
+<meta name="generator" content="Hugo 0.110.0"><meta property="og:site_name" content="薛丁格的工程師">
   <meta property="og:title" content="使用 ssh 從本機連線到 GCP VM">
   <meta property="og:description" content="在本機透過終端機 ssh 連線到 GCP VM">
   <meta property="description" content="在本機透過終端機 ssh 連線到 GCP VM">
   <meta property="og:url" content="https://tech.ray247k.com/blog/202202-connect-to-gcp-vm-using-ssh/">
   <meta property="og:type" content="article">
   
-    
-      <meta property="og:image" content="https://tech.ray247k.com/img/blog/2022/02/connect-to-gcp-vm-using-ssh/vpn.jpeg">
-      <meta property="og:image:alt" content="vpn">
-    
+    <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.jpg">
   
   
             <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/github-dark.min.css">
           <link rel="stylesheet" href="/css/bundle.min.3b1b5f2e683d24b1ea3b5a08c8254622e40aa935e0ead75ba6d45c0f14c2f965.css" integrity="sha256-OxtfLmg9JLHqO1oIyCVGIuQKqTXg6tdbptRcDxTC&#43;WU="><link rel="stylesheet" href="/css/add-on.css">
-
-  
 
 
     
@@ -132,7 +127,7 @@
     "dateModified": "2022-02-26T00:00:00.00Z",
     "primaryImageOfPage": {
         "@type": "ImageObject",
-        "contentUrl": "[]"
+        "contentUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg"
     },
     "breadcrumb": {
         "@context": "http://schema.org",
@@ -214,7 +209,7 @@
             "height":"32"
         }
     },
-    "image": [""],
+    "image": "https://tech.ray247k.com/img/main/logo.jpg",
     "url" : "https:\/\/tech.ray247k.com\/blog\/202202-connect-to-gcp-vm-using-ssh\/",
     "wordCount" : "150",
     "genre" : [ "GCP" , "DevOps" , "ssh" , "Linux" ],
@@ -356,8 +351,8 @@
 
     </div>
     <div class="content">
-      <a href="/blog/202202-connect-to-gcp-vm-using-ssh/" class="image" style="--bg-image: url('/img/blog/2022/02/connect-to-gcp-vm-using-ssh/vpn.jpeg');">
-    <img src="/img/blog/2022/02/connect-to-gcp-vm-using-ssh/vpn.jpeg" alt="vpn">
+      <a href="/blog/202202-connect-to-gcp-vm-using-ssh/" class="image" style="--bg-image: url('/blog/202202-connect-to-gcp-vm-using-ssh/featured.jpeg');">
+    <img src="/blog/202202-connect-to-gcp-vm-using-ssh/featured.jpeg" alt="">
   </a>
       <p>原先在 GCP 開啟 VM 後每當管理主機時都要先開啟 GCP 控制台頁面，找到指定主機<br>
 按下畫面上的 SSH 連線按鈕，接著開啟 GCP 的終端機畫面<br>
@@ -374,7 +369,7 @@
 <p>在本機產生 ssh key，使用指令</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh-keygen
 </span></span></code></pre></div><p>接著複製<code>/.ssh/id_rsa.pub</code>檔案內容，新增進 GCP 的「<strong>中繼資料</strong>」</p>
-<p><img src="/img/blog/2022/02/connect-to-gcp-vm-using-ssh/gcp.jpg" alt="gcp"></p>
+<p><img src="gcp.jpg" alt="gcp"></p>
 <p>如此一來，整個專案下的所有主機都可以使用這組 key 存取<br>
 再也不需要一台一台設定，人員異動時也更便於管理</p>
 <p>加入之後就完成了，就是這麼簡單<br>
@@ -473,8 +468,8 @@
       </header>
       
       <article class="mini-post">
-          <a href="/blog/202301-ffmpeg-video-convert/" class="image" style="--bg-image: url('/img/blog/2023/01/ffmpeg-video-convert/ffmpeg-logo.png');">
-    <img src="/img/blog/2023/01/ffmpeg-video-convert/ffmpeg-logo.png" alt="ffmpeg logo">
+          <a href="/blog/202301-ffmpeg-video-convert/" class="image" style="--bg-image: url('/blog/202301-ffmpeg-video-convert/featured.png');">
+    <img src="/blog/202301-ffmpeg-video-convert/featured.png" alt="">
   </a>
         <header>
           <h2><a href="/blog/202301-ffmpeg-video-convert/">透過 FFmpeg 轉換影片格式</a></h2>
@@ -483,8 +478,8 @@
       </article>
       
       <article class="mini-post">
-          <a href="/blog/202210-aws101-what-is-sns-and-sqs/" class="image" style="--bg-image: url('/img/blog/2022/10/aws101-what-is-sns-and-sqs/pipeline.jpg');">
-    <img src="/img/blog/2022/10/aws101-what-is-sns-and-sqs/pipeline.jpg" alt="pipeline">
+          <a href="/blog/202210-aws101-what-is-sns-and-sqs/" class="image" style="--bg-image: url('/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg');">
+    <img src="/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg" alt="">
   </a>
         <header>
           <h2><a href="/blog/202210-aws101-what-is-sns-and-sqs/">[AWS 101] 什麼是 SNS 和 SQS</a></h2>
@@ -493,8 +488,8 @@
       </article>
       
       <article class="mini-post">
-          <a href="/blog/202210-what-is-serverless/" class="image" style="--bg-image: url('/img/blog/2022/10/what-is-serverless/sata.jpg');">
-    <img src="/img/blog/2022/10/what-is-serverless/sata.jpg" alt="sata">
+          <a href="/blog/202210-what-is-serverless/" class="image" style="--bg-image: url('/blog/202210-what-is-serverless/featured.jpg');">
+    <img src="/blog/202210-what-is-serverless/featured.jpg" alt="">
   </a>
         <header>
           <h2><a href="/blog/202210-what-is-serverless/">Serverless 簡介</a></h2>
@@ -503,8 +498,8 @@
       </article>
       
       <article class="mini-post">
-          <a href="/blog/202207-go-ethereum-abigen/" class="image" style="--bg-image: url('/img/blog/2022/07/go-ethereum-abigen/network.jpeg');">
-    <img src="/img/blog/2022/07/go-ethereum-abigen/network.jpeg" alt="network">
+          <a href="/blog/202207-go-ethereum-abigen/" class="image" style="--bg-image: url('/blog/202207-go-ethereum-abigen/featured.jpeg');">
+    <img src="/blog/202207-go-ethereum-abigen/featured.jpeg" alt="">
   </a>
         <header>
           <h2><a href="/blog/202207-go-ethereum-abigen/">使用 Golang 和智能合約互動</a></h2>
@@ -513,8 +508,8 @@
       </article>
       
       <article class="mini-post">
-          <a href="/blog/202206-gcp-redis/" class="image" style="--bg-image: url('/img/blog/2022/06/gcp-redis/redis-logo.png');">
-    <img src="/img/blog/2022/06/gcp-redis/redis-logo.png" alt="redis logo">
+          <a href="/blog/202206-gcp-redis/" class="image" style="--bg-image: url('/blog/202206-gcp-redis/featured.png');">
+    <img src="/blog/202206-gcp-redis/featured.png" alt="">
   </a>
         <header>
           <h2><a href="/blog/202206-gcp-redis/">在 GCP 上建立 Redis 服務</a></h2>
@@ -967,9 +962,6 @@
     
     <p class="copyright">
         © 2023 薛丁格的工程師
-    </p>
-    <p class="copyright" style="font-size: 0.1EM;">
-        Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.109.0' target='_blank' rel='noopener'>Hugo</a>
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
