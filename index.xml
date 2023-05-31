@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>薛丁格的工程師</title>
+    <title>Byte Ebi 🍤</title>
     <link>https://tech.ray247k.com/</link>
-    <description>Recent content on 薛丁格的工程師</description>
+    <description>Recent content on Byte Ebi 🍤</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
     <lastBuildDate>Sun, 01 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/index.xml" rel="self" type="application/rss+xml" />
@@ -1021,16 +1021,14 @@ Drone 是一套以 Golang 開發的一套 CI/CD 系統工具&lt;br&gt;
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://tech.ray247k.com/about/</guid>
-      <description>主要開發語言為 PHP 的後端工程師，入行用到現在
-喜歡嘗試沒碰過的技術，沒事喜歡想一些有的沒的，但是不喜歡寫前端
-持續精進自己的技術，目標是前往國外發展
-更精確地來說是去澳洲，目前也持續在加強英文能力
-對我來說程式是一種具名的創作，同時也是一個工程師態度的表現
-你寫出怎麼樣的程式碼，別人就怎麼評價你
-Your name shall speak for yourself.
-喜歡進行技術交流，對社群充滿熱情，積極地參與相關聚會吸收他人的經驗
-同時也樂於分享自身故事，在這條路上接受過太多幫助，也樂於伸出援手成為別人的英雄
-相信透過分享可以讓自己成為更好的人</description>
+      <description>寫 PHP 入門，寫過原生 PHP、CodeIgniter、WordPress、Laravel
+對前端稍有涉獵，在容器技術方面也是略懂
+目前轉戰 Golang 進行開發，同時學習 AWS 相關服務
+技術方面就東摸摸西摸摸，偶爾寫點小玩具
+歡迎透過 LinkedIn 和我交流
+平常興趣是看 Vtuber
+看 Vtuber 前對日本完全不認識也沒興趣
+現在變成一年必須去一次日本的體質</description>
     </item>
     
   </channel>
