@@ -2,22 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://tech.ray247k.com/en/about/</loc>
+    <loc>https://tech.ray247k.com/en/blog/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-tw"
-                href="https://tech.ray247k.com/about/"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://tech.ray247k.com/en/about/"
+                href="https://tech.ray247k.com/en/blog/"
                 />
   </url><url>
     <loc>https://tech.ray247k.com/en/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-tw"
+                hreflang="zh-TW"
                 href="https://tech.ray247k.com/"
                 />
     <xhtml:link
@@ -27,9 +29,10 @@
                 />
   </url><url>
     <loc>https://tech.ray247k.com/en/categories/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-tw"
+                hreflang="zh-TW"
                 href="https://tech.ray247k.com/categories/"
                 />
     <xhtml:link
@@ -38,16 +41,58 @@
                 href="https://tech.ray247k.com/en/categories/"
                 />
   </url><url>
-    <loc>https://tech.ray247k.com/en/tags/</loc>
+    <loc>https://tech.ray247k.com/en/tags/ffmpeg/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-tw"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/ffmpeg/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/ffmpeg/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/tags/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
                 href="https://tech.ray247k.com/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
                 href="https://tech.ray247k.com/en/tags/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/categories/tools/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tech.ray247k.com/en/blog/202301-ffmpeg-video-convert/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202301-ffmpeg-video-convert/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202301-ffmpeg-video-convert/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/about/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/about/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/about/"
                 />
   </url>
 </urlset>

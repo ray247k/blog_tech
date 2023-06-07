@@ -5,7 +5,19 @@
     <link>https://tech.ray247k.com/en/</link>
     <description>Recent content on Byte Ebi 🍤</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language><atom:link href="https://tech.ray247k.com/en/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Sun, 01 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/en/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using FFmpeg to convert media files</title>
+      <link>https://tech.ray247k.com/en/blog/202301-ffmpeg-video-convert/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://tech.ray247k.com/en/blog/202301-ffmpeg-video-convert/</guid>
+      <description>&lt;p&gt;Sometimes, we can use certain methods to download the .M3U8 file and then merge it into a .ts file.&lt;br&gt;
+However, computers usually cannot directly play this format.&lt;br&gt;
+We can use FFmpeg to convert it into a common .mp4 file for easy playback.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>About</title>
       <link>https://tech.ray247k.com/en/about/</link>
