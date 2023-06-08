@@ -83,6 +83,45 @@
                 href="https://tech.ray247k.com/en/blog/202301-ffmpeg-video-convert/"
                 />
   </url><url>
+    <loc>https://tech.ray247k.com/en/blog/202210-aws101-what-is-sns-and-sqs/</loc>
+    <lastmod>2022-10-06T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202210-aws101-what-is-sns-and-sqs/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202210-aws101-what-is-sns-and-sqs/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/tags/aws/</loc>
+    <lastmod>2022-10-06T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/aws/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/aws/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/categories/aws/</loc>
+    <lastmod>2022-10-06T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/categories/aws/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/categories/aws/"
+                />
+  </url><url>
     <loc>https://tech.ray247k.com/en/about/</loc>
     <xhtml:link
                 rel="alternate"

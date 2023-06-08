@@ -1,0 +1,617 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+<title>[AWS 101] What are SNS and SQS - Byte Ebi 🍤</title>
+<meta name="description" content="Briefly note what AWS SNS and SQS services do and their use cases">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta property="og:site_name" content="Byte Ebi 🍤">
+<meta property="og:title" content="[AWS 101] What are SNS and SQS">
+<meta property="og:description" content="Briefly note what AWS SNS and SQS services do and their use cases">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://tech.ray247k.com/en/blog/202210-aws101-what-is-sns-and-sqs/">
+  <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.jpg">
+
+
+
+  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
+  
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=1" color="#ffffff">
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=1">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=1">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+<meta name="generator" content="Hugo 0.113.0"><meta property="og:site_name" content="Byte Ebi 🍤">
+  <meta property="og:title" content="[AWS 101] What are SNS and SQS">
+  <meta property="og:description" content="Briefly note what AWS SNS and SQS services do and their use cases">
+  <meta property="description" content="Briefly note what AWS SNS and SQS services do and their use cases">
+  <meta property="og:url" content="https://tech.ray247k.com/en/blog/202210-aws101-what-is-sns-and-sqs/">
+  <meta property="og:type" content="article">
+  
+    <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.jpg">
+  
+  
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/felipec.min.css">
+          <link rel="stylesheet" href="/css/bundle.min.3b1b5f2e683d24b1ea3b5a08c8254622e40aa935e0ead75ba6d45c0f14c2f965.css" integrity="sha256-OxtfLmg9JLHqO1oIyCVGIuQKqTXg6tdbptRcDxTC&#43;WU="><link rel="stylesheet" href="/css/add-on.css">
+
+
+    
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', "G-LTGVYYWC2J");
+        </script>
+    
+
+
+  <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "image": {
+        "@type": "ImageObject",
+        "image": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+        "height": 648,
+        "width": 1080
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Byte Ebi 🍤",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg"
+        }
+    },
+    "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+    "headline": "About web development, software engineering, frontend, backend, chatbot, server related topics. - Byte Ebi 🍤",
+    "name": "Byte Ebi 🍤",
+    "url": "https:\/\/tech.ray247k.com",
+    "description": "About web development, software engineering, frontend, backend, chatbot, server related topics. - aws,tools,",
+    "keywords": [
+        "aws,ffmpeg,"
+    ]
+}
+</script>
+
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "legalName": "Byte Ebi 🍤",
+    "url": "https:\/\/tech.ray247k.com",
+    "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "",
+        "availableLanguage": [
+            "Mandarin",
+            "English"
+        ]
+    },
+    "sameAs": [
+        "https://ray247k.blogspot.com/"
+    ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "[AWS 101] What are SNS and SQS",
+    "description": "Briefly note what AWS SNS and SQS services do and their use cases",
+    "keywords": [
+        "AWS" 
+    ],
+    "dateCreated": "2022-10-06T00:00:00.00Z",
+    "datePublished": "2022-10-06T00:00:00.00Z",
+    "dateModified": "2022-10-06T00:00:00.00Z",
+    "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "contentUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg"
+    },
+    "breadcrumb": {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com",
+                    "name": "Byte Ebi 🍤",
+                    "url": "https:\/\/tech.ray247k.com"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com/blog",
+                    "name": "Blog",
+                    "url": "https:\/\/tech.ray247k.com/blog"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\/en\/blog\/202210-aws101-what-is-sns-and-sqs\/",
+                    "name": "[AWS 101] What are SNS and SQS",
+                    "url": "https:\/\/tech.ray247k.com\/en\/blog\/202210-aws101-what-is-sns-and-sqs\/"
+                }
+            }
+        ],
+        "itemListOrder": "Ascending",
+        "numberOfItems": 3
+    }
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "articleSection": "blog",
+    "name": "[AWS 101] What are SNS and SQS",
+    "headline": "\u003cp\u003eAmazon Simple Queue Service (SQS) and Amazon Simple Notification Service (SNS) may look similar.\u003cbr\u003e\nBut in reality, they are quite different.\u003c\/p\u003e\n\u003cp\u003eTo better clarify the differences between the two, let\u0026rsquo;s compare the notes on both services side by side.\u003c\/p\u003e",
+    "description": "Briefly note what AWS SNS and SQS services do and their use cases",
+    "inLanguage": "en",
+    "isFamilyFriendly": "true",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com\/en\/blog\/202210-aws101-what-is-sns-and-sqs\/"
+    },
+    "author" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "creator" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "accountablePerson" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "copyrightHolder" : "Byte Ebi 🍤",
+    "copyrightYear" : "2022",
+    "dateCreated": "2022-10-06T00:00:00.00Z",
+    "datePublished": "2022-10-06T00:00:00.00Z",
+    "dateModified": "2022-10-06T00:00:00.00Z",
+    "publisher":{
+        "@type":"Organization",
+        "name": "Byte Ebi 🍤",
+        "url": "https://tech.ray247k.com",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+            "width":"32",
+            "height":"32"
+        }
+    },
+    "image": "https://tech.ray247k.com/img/main/logo.jpg",
+    "url" : "https:\/\/tech.ray247k.com\/en\/blog\/202210-aws101-what-is-sns-and-sqs\/",
+    "wordCount" : "707",
+    "genre" : [ "AWS" ],
+    "keywords" : [ "AWS" ]
+}
+</script>
+
+
+
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/en/" class="nav">
+        
+          Blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/en/" class="nav link"><i class='fa fa-home'></i> home</a>
+        
+      
+        
+          
+          <a href="/en/about" class="nav link"><i class='far fa-id-card'></i> about</a>
+        
+      
+        
+          
+          <a href="/en/categories" class="nav link"><i class='fas fa-sitemap'></i> category</a>
+        
+      
+      
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    
+    <a href="#lang-menu" class="nav lang-toggle" lang="en">en</a>
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  <menu id="lang-menu" class="flyout-menu menu">
+  <a href="#" lang="en" class="nav link active">English (en)</a>
+  
+      <a href="https://tech.ray247k.com/blog/202210-aws101-what-is-sns-and-sqs/" lang="zh-tw" class="nav link">正體中文 (zh-tw)</a>
+    
+  
+</menu>
+
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/en/"><img src="/img/main/logo.jpg" class="circle" width="100" alt="一隻箱子裡的貓，看著電腦螢幕" /></a>
+  <header>
+    <h1>Byte Ebi 🍤</h1>
+  </header>
+  <main>
+    <p>A Bit everyday A Byte every week</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/ray247k" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//www.linkedin.com/in/j-ray-cheng" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="/en/blog/202210-aws101-what-is-sns-and-sqs/">[AWS 101] What are SNS and SQS</a></h2>
+    
+    
+      <p>Briefly note what AWS SNS and SQS services do and their use cases</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2022-10-06 00:00:00 &#43;0000 UTC">October 6, 2022</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+    <div id="socnet-share">
+      
+
+
+
+
+
+    </div>
+    <div class="content">
+      <a href="/en/blog/202210-aws101-what-is-sns-and-sqs/" class="image" style="--bg-image: url('/en/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg');">
+    <img src="/en/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg" alt="">
+  </a>
+      <p>Amazon Simple Queue Service (SQS) and Amazon Simple Notification Service (SNS) may look similar.<br>
+But in reality, they are quite different.</p>
+<p>To better clarify the differences between the two, let&rsquo;s compare the notes on both services side by side.</p>
+<h1 id="aws-sns">AWS SNS</h1>
+<p>Full name is: Amazon Simple Notification Service</p>
+<p>The publisher system can use Topics to distribute event messages to a large number of subscriber systems for parallel processing.</p>
+<p>The subscribers include:</p>
+<ul>
+<li>Amazon SQS</li>
+<li>AWS Lambda function</li>
+<li>HTTPS endpoint</li>
+<li>Amazon Kinesis Data Firehose</li>
+</ul>
+<p>The architecture looks like this:<br>
+<img src="aws_sns.png" alt="aws_sns"></p>
+<h2 id="features">Features:</h2>
+<ol>
+<li>Send real-time messages to all subscribers.</li>
+<li>Do not retain sent messages.</li>
+<li>Follow the Publish–subscribe pattern.</li>
+</ol>
+<h1 id="aws-sqs">AWS SQS</h1>
+<p>Full name is: Amazon Simple Queue Service (SQS)</p>
+<p>It is a fully managed message queue service.<br>
+Messages are sent to a queue and processed by the recipient who retrieves them.<br>
+It is a Serverless solution, but the executor can be either Lambda function or non-Serverless projects like Laravel.</p>
+<h2 id="type">Type</h2>
+<p>Two types of queues are provided to cater to different application requirements:</p>
+<h3 id="standard-queue"><strong>Standard Queue</strong></h3>
+<p>The application can handle messages that arrive more than once and are not ordered sequentially.</p>
+<ul>
+<li><strong>Unlimited Throughput</strong>: Standard queues support nearly unlimited transactions per second (TPS) for each API action.</li>
+<li><strong>At-Least-Once Delivery</strong>: A message is guaranteed to be delivered at least once, but occasionally, multiple copies of the message may be delivered.</li>
+<li><strong>Best-Effort Ordering</strong>: Messages are occasionally not delivered in the exact order they were sent.</li>
+</ul>
+<p><img src="sqs_standard_queue.png" alt="sqs standard queue"></p>
+<h3 id="fifo-queue"><strong>FIFO Queue</strong></h3>
+<p>When the order of operations and events is crucial or duplicates are not acceptable:</p>
+<ul>
+<li><strong>High Throughput</strong>: By default, FIFO queues support up to 300 messages per second (300 send, receive, or delete operations per second).</li>
+<li><strong>Exactly-Once Processing</strong>: Messages are delivered exactly once and remain available until the consumer processes and deletes them.</li>
+<li><strong>First-In-First-Out Delivery</strong>: Messages are strictly delivered and received in the order they were sent (First In, First Out - FIFO).</li>
+</ul>
+<p><img src="sqs_fifo_queue.png" alt="sqs fifo queue"></p>
+<h2 id="poll"><strong>Poll</strong></h2>
+<h3 id="short-polling"><strong>Short polling</strong></h3>
+<p>This method is similar to someone repeatedly asking you if there is any job available, even if there is no job.<br>
+You will get immediate results after each inquiry, even if the queue is empty.<br>
+However, to ensure you receive the latest status, you need to keep querying continuously.</p>
+<h3 id="long-polling">Long polling</h3>
+<p>After making a request, you will not receive an immediate response unless there is a timeout or a message in the queue.<br>
+This approach minimizes additional polling to reduce costs while ensuring the fastest possible reception of new messages.<br>
+When the queue is empty, a long-polling request for the next message can wait for a maximum of 20 seconds.</p>
+<h2 id="features-1">Features:</h2>
+<ol>
+<li>The receiver actively polls messages.</li>
+<li>A queue can only be associated with a single consumer.</li>
+<li>The message is deleted only after the consumer responds with the completion of the processing.</li>
+</ol>
+<h1 id="difference-between-sns-and-sqs">Difference between SNS and SQS</h1>
+<h2 id="sns">SNS</h2>
+<p>When new content is updated, event notifications are sent to all subscribers.<br>
+It follows a push-based architecture where messages are automatically pushed to the subscribers.</p>
+<blockquote>
+<h3 id="in-simple-terms-it-is-a-broadcast-notification">In simple terms, it is a broadcast notification.</h3>
+</blockquote>
+<h2 id="sqs">SQS</h2>
+<p>Separating queue tasks from the codebase involves a Pull-Based architecture<br>
+Consumers are responsible for pulling messages from the queue and processing them on their own.</p>
+<blockquote>
+<h3 id="in-simple-terms-it-is-a-queue">In simple terms, it is a Queue</h3>
+</blockquote>
+<h1 id="heres-an-example-of-how-these-features-and-architectures-can-be-combined">Here&rsquo;s an example of how these features and architectures can be combined:</h1>
+<h2 id="1-methods-for-creating-an-sns-topic-and-sqs">1. Methods for creating an SNS Topic and SQS:</h2>
+<ol>
+<li>Access the SNS service and create an SNS topic.</li>
+<li>Access the SQS service and create an SQS queue.</li>
+<li>Subscribe the newly created SQS queue to the SNS topic just created to retrieve podcast content.
+<ol>
+<li>In the SQS Dashboard, select the target SQS queue.</li>
+<li>Click on the <code>Action</code> dropdown menu and choose <code>Subscribe to Amazon SNS topic</code>.</li>
+<li>Select the topic and click &ldquo;Save.&rdquo;</li>
+</ol>
+</li>
+</ol>
+<h2 id="2-simulate-sending-a-message-from-sns">2. Simulate sending a message from SNS</h2>
+<ol>
+<li>到 SNS Topic 頁面並選擇 Topic 後，點選右上角<code>Publish message</code></li>
+<li>輸入測試用的內容，並按下<code>Publish message</code></li>
+</ol>
+<h2 id="3-confirm-if-the-subscription-message-has-been-received">3. Confirm if the subscription message has been received</h2>
+<p>After publishing a message in SNS, all endpoints subscribed to the topic should receive it.</p>
+<ol>
+<li>Open the SQS page and select the SQS queue that is subscribed to the topic.</li>
+<li>Click on <code>Send and receive message</code>.</li>
+<li>往Scroll down to the &ldquo;Receive messages&rdquo; section and select <code>Poll for Messages</code>.</li>
+<li>Once successful, you will see a list of messages appearing below, and you can click on them to view detailed content.</li>
+</ol>
+<p>Reference source: <a href="https://aws.amazon.com/tw/getting-started/hands-on/send-fanout-event-notifications/"
+   
+    target="_blank" rel="noreferrer noopener">Send Fanout Event Notifications
+</a>
+</p>
+
+      
+      
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/ray247k/button?referrer=https%3a%2f%2ftech.ray247k.com%2fen%2fblog%2f202210-aws101-what-is-sns-and-sqs%2f" width="100%" frameborder=0></iframe>
+
+    </div>
+    <footer>
+      <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/en/categories/aws/">AWS</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/en/tags/aws/">AWS</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+    </footer>
+  </article>
+  
+    
+
+  
+  <div class="pagination">
+    
+      <a href="/en/blog/202301-ffmpeg-video-convert/" class="button left"><span>Using FFmpeg to convert media files</span></a>
+    
+    
+  </div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>Recent Posts</h1>
+      </header>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202301-ffmpeg-video-convert/" class="image" style="--bg-image: url('/en/blog/202301-ffmpeg-video-convert/featured.png');">
+    <img src="/en/blog/202301-ffmpeg-video-convert/featured.png" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202301-ffmpeg-video-convert/">Using FFmpeg to convert media files</a></h2>
+          <time class="published" datetime="2023-01-01 00:00:00 &#43;0000 UTC">January 1, 2023</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202210-aws101-what-is-sns-and-sqs/" class="image" style="--bg-image: url('/en/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg');">
+    <img src="/en/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202210-aws101-what-is-sns-and-sqs/">[AWS 101] What are SNS and SQS</a></h2>
+          <time class="published" datetime="2022-10-06 00:00:00 &#43;0000 UTC">October 6, 2022</time>
+        </header>
+      </article>
+      
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="/en/categories">Categories</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/en/categories/aws/">aws<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/tools/">tools<span class="count">1</span></a>
+          </li>
+          
+        </ul>
+      </section>
+    
+  
+
+  
+  <section id="tags">
+    <header>
+      <h1><a href="/en/tags">Tags</a></h1>
+    </header>
+    <div class="li-x post-meta tags-md" style="margin-left: 0.5em;">
+      <ul>
+        
+        
+        <li>
+          <a href="/en/tags/aws/">aws (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ffmpeg/">ffmpeg (1)</a>
+        </li>
+        
+      </ul>
+
+    </div>
+  </section>
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+    
+    <p class="copyright">
+        © 2023 Byte Ebi 🍤
+    </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>
+      hljs.configure({ ignoreUnescapedHTML: true }); 
+      hljs.highlightAll();
+    </script><script src="/js/bundle.min.6955e1d1dae323acf759218afec43ecc32c3c64639e2ba535b75dd59f965a729.js" integrity="sha256-aVXh0drjI6z3WSGK/sQ&#43;zDLDxkY54rpTW3XdWfllpyk="></script>
+    <script src="/js/add-on.js"></script>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-LTGVYYWC2J', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </div>
+  </body>
+</html>
