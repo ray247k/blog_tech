@@ -163,21 +163,81 @@
   </url><url>
     <loc>https://tech.ray247k.com/tags/blockchain/</loc>
     <lastmod>2022-07-09T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/blockchain/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/blockchain/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/tags/go/</loc>
     <lastmod>2022-07-09T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/go/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/go/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/tags/golang/</loc>
     <lastmod>2022-07-09T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/golang/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/golang/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/categories/golang/</loc>
     <lastmod>2022-07-09T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/categories/golang/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/categories/golang/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/tags/smart-contract/</loc>
     <lastmod>2022-07-09T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/smart-contract/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/smart-contract/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/blog/202207-go-ethereum-abigen/</loc>
     <lastmod>2022-07-09T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202207-go-ethereum-abigen/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202207-go-ethereum-abigen/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/tags/devops/</loc>
     <lastmod>2022-06-30T00:00:00+00:00</lastmod>
