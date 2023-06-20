@@ -363,7 +363,9 @@
 
     </div>
     <div class="content">
-      
+      <a href="/blog/202106-drone-cicd-3-advanced-cron-job/" class="image" style="--bg-image: url('/blog/202106-drone-cicd-3-advanced-cron-job/drone-pipeline-feature.png');">
+    <img src="/blog/202106-drone-cicd-3-advanced-cron-job/drone-pipeline-feature.png" alt="">
+  </a>
       <p>使用 <a href="https://www.drone.io/"
    
     target="_blank" rel="noreferrer noopener">Drone
@@ -446,7 +448,7 @@ Tocken key 是 <code>Authorization</code><br>
 <p>回到 Drone 後台，點開專案的 settings 頁面會發現我們剛剛用 API 建立的 Cron Job 被加入了!<br>
 <img src="drone-settings-page.png" alt="drone settings page"></p>
 <p>等時間到就會執行 .drone.yml 中由指定 Cron Job 名稱觸發的 pipeline<br>
-<img src="drone-pipeline.png" alt="drone pipeline"></p>
+<img src="drone-pipeline-feature.png" alt="drone pipeline"></p>
 <h2 id="更新-cron-job">更新 Cron Job</h2>
 <p>更新Cron Job 使用 <code>PATCH /api/repos/{owner}/{repo}/cron/{name}</code><br>
 Body 帶入要改變的內容，例如把使用的分支換成 <code>dev</code><br>

@@ -363,7 +363,9 @@
 
     </div>
     <div class="content">
-      
+      <a href="/blog/202110-make-discord-chatbot-01-set-up/" class="image" style="--bg-image: url('/blog/202110-make-discord-chatbot-01-set-up/chat-bot-terminal-feature.png');">
+    <img src="/blog/202110-make-discord-chatbot-01-set-up/chat-bot-terminal-feature.png" alt="">
+  </a>
       <p>閒閒沒事，來寫點沒寫過的東西<br>
 最近都在 Discord 活動，就決定寫 Discord ChatBot 啦</p>
 <h1 id="新增-discord-application">新增 Discord Application</h1>
@@ -373,21 +375,21 @@
 </a>
  登入 Discord 帳號</p>
 <p>按下<code>New Application</code>命名之後按下<code>Create</code>，名字之後可以改</p>
-<p><img src="/img/blog/2021/10/make-discord-chatbot-01-set-up/create-application.png" alt="create application"></p>
+<p><img src="create-application.png" alt="create application"></p>
 <p>左邊<code>Bot</code>進入後點選<code>Add Bot</code></p>
-<p><img src="/img/blog/2021/10/make-discord-chatbot-01-set-up/add-bot.png" alt="add bot"></p>
+<p><img src="add-bot.png" alt="add bot"></p>
 <p>點選左邊<code>OAuth2</code>頁籤</p>
 <ul>
 <li><code>SCOPES</code>中點選<code>bot</code></li>
 <li><code>Bot Permissions</code> 選擇 <code>Administrator</code></li>
 </ul>
 <p>下面就是機器人的邀請連結，可以將機器人邀請到自己的群</p>
-<p><img src="/img/blog/2021/10/make-discord-chatbot-01-set-up/bot-invite-link.png" alt="bot invite link"></p>
-<p><img src="/img/blog/2021/10/make-discord-chatbot-01-set-up/bot-coming.png" alt="bot coming"></p>
+<p><img src="bot-invite-link.png" alt="bot invite link"></p>
+<p><img src="bot-coming.png" alt="bot coming"></p>
 <h1 id="安裝-pip-及-discord-py">安裝 pip 及 Discord .py</h1>
 <p>使用指令安裝<code>Discord.py</code>套件</p>
 <pre tabindex="0"><code class="language-bash=" data-lang="bash=">python3 -m pip install -U discord.py
-</code></pre><p><img src="/img/blog/2021/10/make-discord-chatbot-01-set-up/pip-install-package.png" alt="pip install package"></p>
+</code></pre><p><img src="pip-install-package.png" alt="pip install package"></p>
 <h1 id="機器人程式碼">機器人程式碼</h1>
 <p>剛剛已經建立機器人，並且把機器人加到自己的群組裡<br>
 下一步就是要來啟動機器人，讓他可以開始做事</p>
@@ -422,16 +424,16 @@
 </span></span><span style="display:flex;"><span>client<span style="color:#f92672">.</span>run(<span style="color:#e6db74">&#39;MY APP TOKEN&#39;</span>)
 </span></span></code></pre></div><p>程式說明都寫在範例中了，唯一要解釋的就是 token 要去哪裡拿？<br>
 廢話不多說，上圖！</p>
-<p><img src="/img/blog/2021/10/make-discord-chatbot-01-set-up/bot-token.png" alt="bot token"></p>
+<p><img src="bot-token.png" alt="bot token"></p>
 <p>TOKEN 在上面 Discord Developer 的<code>BOT</code>頁面中取得<br>
 他不會直接顯示在畫面上，就按<code>Copy</code>就好了，如果堅持要看的話就按下<code>Click to Reveal Token</code>就會顯示<br>
 如果覺得 TOKEN 外洩可以使用 Regenerate 重新產生</p>
 <h1 id="啟動機器人">啟動機器人</h1>
 <p>開啟你的終端機，執行剛剛的 python 檔案</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python roll_dice.py
-</span></span></code></pre></div><p><img src="/img/blog/2021/10/make-discord-chatbot-01-set-up/chat-bot-terminal.png" alt="ChatBot terminal"></p>
+</span></span></code></pre></div><p><img src="chat-bot-terminal-feature.png" alt="ChatBot terminal"></p>
 <p>接著測試指令是不是可以觸發機器人</p>
-<p><img src="/img/blog/2021/10/make-discord-chatbot-01-set-up/chat-bot-test.png" alt="ChatBot test"></p>
+<p><img src="chat-bot-test.png" alt="ChatBot test"></p>
 <p>看來成功被呼叫了呢！</p>
 
       

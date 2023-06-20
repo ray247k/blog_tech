@@ -371,15 +371,15 @@
 <h1 id="1-設定子網域">1. 設定子網域</h1>
 <p>前往 cloudflare 管理後台，點選 DNS 頁籤<br>
 建立 DNS 紀錄，選擇類型是 CNAME，並指向自己的網域</p>
-<p><img src="/img/blog/2021/05/set-custom-domain-for-github-page/cloudflare-dns-cname.png" alt="cloudflare-dns-cname"></p>
+<p><img src="cloudflare-dns-cname.png" alt="cloudflare-dns-cname"></p>
 <h1 id="2-設定-github-page-cname">2. 設定 GitHub Page CNAME</h1>
 <p>在靜態網站的根目錄下建立一個檔名為 <code>CNAME</code> 的檔案，並上傳至 GitHub<br>
 內容為子域名的完整網址，像我就是 <code>tech.ray247k.com</code></p>
-<p><img src="/img/blog/2021/05/set-custom-domain-for-github-page/github-cname.png" alt="github-cname"></p>
+<p><img src="github-cname.png" alt="github-cname"></p>
 <h1 id="3-設定-github-page-網址">3. 設定 GitHub Page 網址</h1>
 <p>前往專案 <code>Settings &gt; Pages</code> 頁籤中 <code>Custom domain</code> 區塊<br>
 貼上剛剛在 cloudflare DNS 加入且上傳到專案 CNAME 檔案中的完整網址</p>
-<p><img src="/img/blog/2021/05/set-custom-domain-for-github-page/github-page-custom-domain.png" alt="github-page-custom-domain"></p>
+<p><img src="github-page-custom-domain.png" alt="github-page-custom-domain"></p>
 <p>如此就完成了在 cloudflare 建立子網域，並自訂 GitHub Page 的網址</p>
 
       

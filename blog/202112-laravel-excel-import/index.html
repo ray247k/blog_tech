@@ -363,7 +363,9 @@
 
     </div>
     <div class="content">
-      
+      <a href="/blog/202112-laravel-excel-import/" class="image" style="--bg-image: url('/blog/202112-laravel-excel-import/feature.jpg');">
+    <img src="/blog/202112-laravel-excel-import/feature.jpg" alt="">
+  </a>
       <p>在後台介面尚未建置完成，或是使用者有大量資料不想逐筆新增<br>
 而是要透過表單一次性匯入，這時候我們就會用到 Laravel-excel 這個套件<br>
 同時也分享一次匯入大量資料的時候遇到的坑</p>
@@ -432,7 +434,7 @@
 <h1 id="上傳測試">上傳測試</h1>
 <p>用 Postman 要測試，只要在 Body 頁籤選擇<code>form-data</code>類性之後<br>
 <code>key</code>可以名稱的後面下拉選單可以選擇 file 格式</p>
-<p><img src="/img/blog/2021/12/laravel-excel-import/postman-body.png" alt="postman body"></p>
+<p><img src="postman-body.png" alt="postman body"></p>
 <hr>
 <h1 id="常見問題">常見問題</h1>
 <h2 id="413-payload-too-large">413 Payload Too Large</h2>
@@ -477,7 +479,7 @@ PHP 就用 <code>phpinfo()</code>、nginx 就用 <code>nginx -T</code></p>
 只要超過這個數字，就會無法組裝進而報錯</p>
 <p>知道發生的原因之後就很好想出解決辦法了！<br>
 那就是不要一次寫入太多資料&hellip;廢話</p>
-<p><img src="/img/blog/2021/12/laravel-excel-import/dont-do-it-meme.png" alt="dont do it meme"></p>
+<p><img src="dont-do-it-meme.png" alt="dont do it meme"></p>
 <p>言歸正傳，想要解決這個問題我們可以先將很大量的資料<br>
 比如說內含一萬筆商品內容的陣列切分成 500 筆一組的的多個陣列<br>
 一次執行 500 筆資料的寫入或修改，如此一來就可以避免 too many placeholders 的問題</p>
