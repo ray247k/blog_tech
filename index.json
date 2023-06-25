@@ -1,4 +1,10 @@
 [{
+    "title": "Golang 中 Struct 內型別用指針和值的差異和時機",
+    "date": "",
+    "description": "用範例說明 Struct 中型別用指針和值的差異和時機",
+    "body": "之前一直有個疑問「Struct 定義的時候，Type 什麼時候要傳值？什麼時候傳址？」\n網路上看了許多不同專案似乎都有不同的做法，直到最近遇到的問題讓我有了一點想法\n在專案中我們常常先定義 Request 傳入的 Struct\n再利用json.Unmarshal將傳入的 json 轉換成 Struct，以利後續的操作\n以前的 Struct 欄位需要的的預設值都是 false 所以 Type 都是直接傳值\n這次的情境是遇到一個欄位預設值 是 true 就出意外了\n直接用先看程式碼和執行結果\npackage main import ( \u0026#34;encoding/json\u0026#34; \u0026#34;fmt\u0026#34; ) type John struct { Name string `json:\u0026#34;name\u0026#34;` CanRun bool `json:\u0026#34;canRun\u0026#34;` CanFly bool `json:\u0026#34;canFly\u0026#34;` } type Doe struct { Name string `json:\u0026#34;name\u0026#34;` CanRun *bool `json:\u0026#34;canRun\u0026#34;` CanFly *bool `json:\u0026#34;canFly\u0026#34;` } func main() { var param = []byte(`{\u0026#34;Name\u0026#34;:\u0026#34;John Doe\u0026#34;, \u0026#34;canRun\u0026#34;:true}`) defult := true var john = new(John) json.Unmarshal(param, \u0026amp;john) jsondata, _ := json.Marshal(john) fmt.Println(string(jsondata)) var doe = new(Doe) json.Unmarshal(param, \u0026amp;doe) doejsondata, _ := json.Marshal(doe) fmt.Println(string(doejsondata)) if doe.CanFly == nil { doe.CanFly = \u0026amp;defult } doejsondata, _ = json.Marshal(doe) fmt.Println(string(doejsondata)) } 在範例中有兩個 Struct\n分別是 Type 為布林傳值的 John 和 Type 為布林指標的 Doe\n若CanFly這個欄位是「可選的」，並且預設值是「true」\n範例程式碼中的param模擬當使用者沒有傳入資料時的 Request\n分別指派型別為 John 和 Doe 的變數 使用json.Unmarshal將傳入的 json 字串轉成 Struct 透過json.Marshal轉成 json 字串方便閱讀並列印在畫面上 輸出結果第一行是在結構體中 Type 使用布林值的 John\n當new(John)的時候會自動帶入所謂的 zero value ，布林的預設 zero value 是 false\n而Name和CanRnu都因為有傳入的關係，所以 zero value 被覆寫了\n但是因為CanFly是選填，而使用者未傳入所以依然是 false\n我們無法在後續程式中判斷究竟是 user 傳入 false 還是那是 zero value\n若是在 Struct 中使用「指針」做為型別，則可以看到輸出結果第二行CanFly是 null\n如此就可以在後續使用條件判斷式將預設值設定成「true」\n這就是這次學習到在將 json 字串轉換成 Struct 時會遇到的預設值問題，以及如何用指標來解決這個問題\n",
+    "ref": "/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/"
+  },{
     "title": "透過 FFmpeg 轉換影片格式",
     "date": "",
     "description": "轉換 .ts 影片檔案成 .mp4 格式",

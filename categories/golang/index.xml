@@ -6,7 +6,17 @@
     <description>Recent content in Golang on Byte Ebi 🍤</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Sat, 09 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/categories/golang/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 25 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/categories/golang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Golang 中 Struct 內型別用指針和值的差異和時機</title>
+      <link>https://tech.ray247k.com/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/</link>
+      <pubDate>Sun, 25 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://tech.ray247k.com/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/</guid>
+      <description>&lt;p&gt;之前一直有個疑問「Struct 定義的時候，Type 什麼時候要傳值？什麼時候傳址？」&lt;br&gt;
+網路上看了許多不同專案似乎都有不同的做法，直到最近遇到的問題讓我有了一點想法&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>使用 Golang 和智能合約互動</title>
       <link>https://tech.ray247k.com/blog/202207-go-ethereum-abigen/</link>

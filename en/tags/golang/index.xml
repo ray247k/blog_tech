@@ -6,7 +6,18 @@
     <description>Recent content in Golang on Byte Ebi 🍤</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 09 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/en/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 25 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/en/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Different between pointer and value for struct type in golang</title>
+      <link>https://tech.ray247k.com/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/</link>
+      <pubDate>Sun, 25 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://tech.ray247k.com/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/</guid>
+      <description>&lt;p&gt;I always had a question &amp;ldquo;Should I use value for type in struct? Or using pointer?&amp;rdquo;&lt;br&gt;
+After reading many different projects on the web, it seems that they all have different practices.&lt;br&gt;
+Until I recently encountered a problem that gave me some ideas.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Interacting with smart contracts using Golang</title>
       <link>https://tech.ray247k.com/en/blog/202207-go-ethereum-abigen/</link>
