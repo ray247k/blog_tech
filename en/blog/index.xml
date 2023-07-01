@@ -64,5 +64,16 @@ Fortunately, Golang provides an official package that is both fast and solves th
 This article explains how to convert existing Smart Contract ABIs into a Go package for interacting with contracts.&lt;/p&gt;</description>
     </item>
     
+    <item>
+      <title>Create a Redis service on GCP</title>
+      <link>https://tech.ray247k.com/en/blog/202206-gcp-redis/</link>
+      <pubDate>Thu, 30 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://tech.ray247k.com/en/blog/202206-gcp-redis/</guid>
+      <description>&lt;p&gt;GCP offers the Google Cloud MemoryStore service for creating Redis or Memcached caching machine services.&lt;br&gt;
+The pricing is similar to that of setting up a database.&lt;br&gt;
+I thought it would be as inexpensive as using virtual machines (VMs).&lt;/p&gt;</description>
+    </item>
+    
   </channel>
 </rss>

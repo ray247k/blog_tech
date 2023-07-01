@@ -254,18 +254,68 @@
   </url><url>
     <loc>https://tech.ray247k.com/tags/devops/</loc>
     <lastmod>2022-06-30T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/devops/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/devops/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/categories/devops/</loc>
     <lastmod>2022-06-30T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/categories/devops/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/categories/devops/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/tags/gcp/</loc>
     <lastmod>2022-06-30T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/gcp/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/gcp/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/tags/redis/</loc>
     <lastmod>2022-06-30T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/redis/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/redis/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/blog/202206-gcp-redis/</loc>
     <lastmod>2022-06-30T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202206-gcp-redis/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202206-gcp-redis/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/tags/ngrok/</loc>
     <lastmod>2022-04-23T00:00:00+00:00</lastmod>
