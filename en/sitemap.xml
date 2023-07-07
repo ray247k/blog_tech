@@ -317,6 +317,32 @@
                 href="https://tech.ray247k.com/en/tags/redis/"
                 />
   </url><url>
+    <loc>https://tech.ray247k.com/en/blog/202204-ngrok/</loc>
+    <lastmod>2022-04-23T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202204-ngrok/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202204-ngrok/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/tags/ngrok/</loc>
+    <lastmod>2022-04-23T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/ngrok/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/ngrok/"
+                />
+  </url><url>
     <loc>https://tech.ray247k.com/en/about/</loc>
     <xhtml:link
                 rel="alternate"

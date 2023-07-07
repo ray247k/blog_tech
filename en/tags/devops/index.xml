@@ -18,5 +18,16 @@ The pricing is similar to that of setting up a database.&lt;br&gt;
 I thought it would be as inexpensive as using virtual machines (VMs).&lt;/p&gt;</description>
     </item>
     
+    <item>
+      <title>Make your computer be temporarily accessible on the internet. - Ngrok</title>
+      <link>https://tech.ray247k.com/en/blog/202204-ngrok/</link>
+      <pubDate>Sat, 23 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://tech.ray247k.com/en/blog/202204-ngrok/</guid>
+      <description>&lt;p&gt;In development, it is often encountered that testing on the local machine requires a publicly accessible URL for services.&lt;br&gt;
+Or webhooks to use as a callback. Moreover, these services often require HTTPS certification.&lt;br&gt;
+Are there any other options besides setting up a cloud server for this purpose?&lt;/p&gt;</description>
+    </item>
+    
   </channel>
 </rss>
