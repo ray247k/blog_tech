@@ -343,6 +343,58 @@
                 href="https://tech.ray247k.com/en/tags/ngrok/"
                 />
   </url><url>
+    <loc>https://tech.ray247k.com/en/blog/202204-laravel-sail/</loc>
+    <lastmod>2022-04-02T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202204-laravel-sail/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202204-laravel-sail/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/tags/laravel/</loc>
+    <lastmod>2022-04-02T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/laravel/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/laravel/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/categories/laravel/</loc>
+    <lastmod>2022-04-02T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/categories/laravel/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/categories/laravel/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/tags/php/</loc>
+    <lastmod>2022-04-02T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/php/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/php/"
+                />
+  </url><url>
     <loc>https://tech.ray247k.com/en/about/</loc>
     <xhtml:link
                 rel="alternate"

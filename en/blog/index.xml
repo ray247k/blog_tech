@@ -86,5 +86,19 @@ Or webhooks to use as a callback. Moreover, these services often require HTTPS c
 Are there any other options besides setting up a cloud server for this purpose?&lt;/p&gt;</description>
     </item>
     
+    <item>
+      <title>Introducing Laravel Sail and Basic Operations</title>
+      <link>https://tech.ray247k.com/en/blog/202204-laravel-sail/</link>
+      <pubDate>Sat, 02 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://tech.ray247k.com/en/blog/202204-laravel-sail/</guid>
+      <description>&lt;p&gt;In the context of Laravel development environment setup, both official and unofficial sources offer a plethora of approaches.&lt;br&gt;
+This time, we will be introducing a package introduced after Laravel 8: &lt;a href=&#34;https://laravel.com/docs/9.x/sail&#34;
+   
+    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Laravel Sail
+&lt;/a&gt;
+.&lt;/p&gt;</description>
+    </item>
+    
   </channel>
 </rss>

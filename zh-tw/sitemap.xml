@@ -375,15 +375,55 @@
   </url><url>
     <loc>https://tech.ray247k.com/tags/laravel/</loc>
     <lastmod>2022-04-02T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/laravel/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/laravel/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/categories/laravel/</loc>
     <lastmod>2022-04-02T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/categories/laravel/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/categories/laravel/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/tags/php/</loc>
     <lastmod>2022-04-02T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/php/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/php/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/blog/202204-laravel-sail/</loc>
     <lastmod>2022-04-02T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202204-laravel-sail/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202204-laravel-sail/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/blog/202203-jenkins-cicd-2-basic-pipeline/</loc>
     <lastmod>2022-03-30T00:00:00+00:00</lastmod>
