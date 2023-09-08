@@ -13,7 +13,7 @@
 <meta property="og:description" content="使用佇列，讓不需要馬上處理的任務延遲處理">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://tech.ray247k.com/blog/202203-laravel-queue/">
-  <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.jpg">
+  <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
 
 
 
@@ -36,7 +36,7 @@
   <meta property="og:url" content="https://tech.ray247k.com/blog/202203-laravel-queue/">
   <meta property="og:type" content="article">
   
-    <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.jpg">
+    <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
   
   
             <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/felipec.min.css">
@@ -62,7 +62,7 @@
     "@type": "Website",
     "image": {
         "@type": "ImageObject",
-        "image": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+        "image": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
         "height": 648,
         "width": 1080
     },
@@ -75,10 +75,10 @@
         "name": "Byte Ebi 🍤",
         "logo": {
             "@type": "ImageObject",
-            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg"
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png"
         }
     },
-    "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+    "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
     "headline": "討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - Byte Ebi 🍤",
     "name": "Byte Ebi 🍤",
     "url": "https:\/\/tech.ray247k.com",
@@ -98,7 +98,7 @@
     "@type": "Organization",
     "legalName": "Byte Ebi 🍤",
     "url": "https:\/\/tech.ray247k.com",
-    "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+    "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
     "contactPoint": {
         "@type": "ContactPoint",
         "email": "",
@@ -127,7 +127,7 @@
     "dateModified": "2022-03-05T00:00:00.00Z",
     "primaryImageOfPage": {
         "@type": "ImageObject",
-        "contentUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg"
+        "contentUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png"
     },
     "breadcrumb": {
         "@context": "http://schema.org",
@@ -204,12 +204,12 @@
         "url": "https://tech.ray247k.com",
         "logo": {
             "@type": "ImageObject",
-            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.jpg",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
             "width":"32",
             "height":"32"
         }
     },
-    "image": "https://tech.ray247k.com/img/main/logo.jpg",
+    "image": "https://tech.ray247k.com/img/main/logo.png",
     "url" : "https:\/\/tech.ray247k.com\/blog\/202203-laravel-queue\/",
     "wordCount" : "266",
     "genre" : [ "Laravel" , "PHP" , "queue" ],
@@ -262,12 +262,7 @@
   <menu id="lang-menu" class="flyout-menu menu">
   <a href="#" lang="zh-tw" class="nav link active">正體中文 (zh-tw)</a>
   
-    
-      
-    
-      
-        <a href="/en" lang="en" class="nav no-lang link">English (en)</a>
-      
+      <a href="https://tech.ray247k.com/en/blog/202203-laravel-queue/" lang="en" class="nav link">English (en)</a>
     
   
 </menu>
@@ -277,7 +272,7 @@
 
     <div id="wrapper">
       <section id="site-intro" >
-  <a href="/"><img src="/img/main/logo.jpg" class="circle" width="100" alt="一隻箱子裡的貓，看著電腦螢幕" /></a>
+  <a href="/"><img src="/img/main/logo.png" class="circle" width="100" alt="Byte Ebi&#39;s Logo" /></a>
   <header>
     <h1>Byte Ebi 🍤</h1>
   </header>
@@ -449,7 +444,7 @@
 </span></span></span></code></pre></div><p>我們最後一行 CMD 執行了一個 cron.sh 當作啟動點，等等會用到</p>
 <h2 id="supervisor-config">Supervisor Config</h2>
 <p>加入檔案在自己喜歡的位置</p>
-<pre tabindex="0"><code class="language-config" data-lang="config"># supervisord.conf
+<pre tabindex="0"><code># supervisord.conf
 
 [program:laravel-worker]
 process_name=%(program_name)s_%(process_num)02d
@@ -475,8 +470,10 @@ pidfile=/var/www/html/storage/logs/supervisord.pid
 </span></span><span style="display:flex;"><span>cd /var/www/html
 </span></span><span style="display:flex;"><span>supervisord -c ./docker/cron/supervisord.conf  <span style="color:#75715e"># 使用指定路徑的設定檔啟動 supervisord</span>
 </span></span><span style="display:flex;"><span>php /var/www/html/artisan schedule:work        <span style="color:#75715e"># 順便啟動 cronjob</span>
-</span></span></code></pre></div><p>當 Dockerfile 經由<code>CMD</code>執行 shell script 的時候，可以視為<br>
-<code>sh _scripts/cron.sh</code></p>
+</span></span></code></pre></div><p>當 Dockerfile 經由<code>CMD</code>執行 shell script 的時候，可以視為執行了</p>
+<blockquote>
+<p>sh _scripts/cron.sh</p>
+</blockquote>
 <p>我們在<code>cron.sh</code>裡面做了三件事</p>
 <ul>
 <li>跳到容器的 /var/www/html 路徑中</li>

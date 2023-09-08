@@ -439,9 +439,29 @@
   </url><url>
     <loc>https://tech.ray247k.com/blog/202203-laravel-queue/</loc>
     <lastmod>2022-03-05T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202203-laravel-queue/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202203-laravel-queue/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/tags/queue/</loc>
     <lastmod>2022-03-05T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/queue/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/queue/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/tags/linux/</loc>
     <lastmod>2022-02-26T00:00:00+00:00</lastmod>

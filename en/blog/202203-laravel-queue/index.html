@@ -1,0 +1,742 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+<title>Laravel Queue Usage - Byte Ebi 🍤</title>
+<meta name="description" content="Using queues to defer processing of tasks that don&#39;t need immediate attention.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta property="og:site_name" content="Byte Ebi 🍤">
+<meta property="og:title" content="Laravel Queue Usage">
+<meta property="og:description" content="Using queues to defer processing of tasks that don&#39;t need immediate attention.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://tech.ray247k.com/en/blog/202203-laravel-queue/">
+  <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
+
+
+
+  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
+  
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=1" color="#ffffff">
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=1">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=1">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+<meta name="generator" content="Hugo 0.117.0"><meta property="og:site_name" content="Byte Ebi 🍤">
+  <meta property="og:title" content="Laravel Queue Usage">
+  <meta property="og:description" content="Using queues to defer processing of tasks that don&#39;t need immediate attention.">
+  <meta property="description" content="Using queues to defer processing of tasks that don&#39;t need immediate attention.">
+  <meta property="og:url" content="https://tech.ray247k.com/en/blog/202203-laravel-queue/">
+  <meta property="og:type" content="article">
+  
+    <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
+  
+  
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/felipec.min.css">
+          <link rel="stylesheet" href="/css/bundle.min.3b1b5f2e683d24b1ea3b5a08c8254622e40aa935e0ead75ba6d45c0f14c2f965.css" integrity="sha256-OxtfLmg9JLHqO1oIyCVGIuQKqTXg6tdbptRcDxTC&#43;WU="><link rel="stylesheet" href="/css/add-on.css">
+
+
+    
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', "G-LTGVYYWC2J");
+        </script>
+    
+
+
+  <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "image": {
+        "@type": "ImageObject",
+        "image": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+        "height": 648,
+        "width": 1080
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Byte Ebi 🍤",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png"
+        }
+    },
+    "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+    "headline": "About web development, software engineering, frontend, backend, chatbot, server related topics. - Byte Ebi 🍤",
+    "name": "Byte Ebi 🍤",
+    "url": "https:\/\/tech.ray247k.com",
+    "description": "About web development, software engineering, frontend, backend, chatbot, server related topics. - aws,devops,golang,laravel,serverless,tools,",
+    "keywords": [
+        "aws,blockchain,devops,ffmpeg,gcp,go,golang,laravel,ngrok,php,queue,redis,serverless,smart-contract,"
+    ]
+}
+</script>
+
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "legalName": "Byte Ebi 🍤",
+    "url": "https:\/\/tech.ray247k.com",
+    "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "",
+        "availableLanguage": [
+            "Mandarin",
+            "English"
+        ]
+    },
+    "sameAs": [
+        "https://ray247k.blogspot.com/"
+    ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Laravel Queue Usage",
+    "description": "Using queues to defer processing of tasks that don\u0027t need immediate attention.",
+    "keywords": [
+        "Laravel" , "PHP" , "queue" 
+    ],
+    "dateCreated": "2022-03-05T00:00:00.00Z",
+    "datePublished": "2022-03-05T00:00:00.00Z",
+    "dateModified": "2022-03-05T00:00:00.00Z",
+    "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "contentUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png"
+    },
+    "breadcrumb": {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com",
+                    "name": "Byte Ebi 🍤",
+                    "url": "https:\/\/tech.ray247k.com"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com/blog",
+                    "name": "Blog",
+                    "url": "https:\/\/tech.ray247k.com/blog"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\/en\/blog\/202203-laravel-queue\/",
+                    "name": "Laravel Queue Usage",
+                    "url": "https:\/\/tech.ray247k.com\/en\/blog\/202203-laravel-queue\/"
+                }
+            }
+        ],
+        "itemListOrder": "Ascending",
+        "numberOfItems": 3
+    }
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "articleSection": "blog",
+    "name": "Laravel Queue Usage",
+    "headline": "\u003cp\u003eThe purpose of queues is to defer processing of a time-consuming task that doesn\u0026rsquo;t require immediate completion.\nLike sending emails, users don\u0026rsquo;t need to wait for the email to be sent successfully before the next step.\u003cbr\u003e\nAllowing the application to respond more quickly to web requests and smooth user experience.\u003c\/p\u003e",
+    "description": "Using queues to defer processing of tasks that don\u0027t need immediate attention.",
+    "inLanguage": "en",
+    "isFamilyFriendly": "true",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com\/en\/blog\/202203-laravel-queue\/"
+    },
+    "author" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "creator" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "accountablePerson" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "copyrightHolder" : "Byte Ebi 🍤",
+    "copyrightYear" : "2022",
+    "dateCreated": "2022-03-05T00:00:00.00Z",
+    "datePublished": "2022-03-05T00:00:00.00Z",
+    "dateModified": "2022-03-05T00:00:00.00Z",
+    "publisher":{
+        "@type":"Organization",
+        "name": "Byte Ebi 🍤",
+        "url": "https://tech.ray247k.com",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+            "width":"32",
+            "height":"32"
+        }
+    },
+    "image": "https://tech.ray247k.com/img/main/logo.png",
+    "url" : "https:\/\/tech.ray247k.com\/en\/blog\/202203-laravel-queue\/",
+    "wordCount" : "721",
+    "genre" : [ "Laravel" , "PHP" , "queue" ],
+    "keywords" : [ "Laravel" , "PHP" , "queue" ]
+}
+</script>
+
+
+
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/en/" class="nav">
+        
+          Blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/en/" class="nav link"><i class='fa fa-home'></i> home</a>
+        
+      
+        
+          
+          <a href="/en/about" class="nav link"><i class='far fa-id-card'></i> about</a>
+        
+      
+        
+          
+          <a href="/en/categories" class="nav link"><i class='fas fa-sitemap'></i> category</a>
+        
+      
+      
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    
+    <a href="#lang-menu" class="nav lang-toggle" lang="en">en</a>
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  <menu id="lang-menu" class="flyout-menu menu">
+  <a href="#" lang="en" class="nav link active">English (en)</a>
+  
+      <a href="https://tech.ray247k.com/blog/202203-laravel-queue/" lang="zh-tw" class="nav link">正體中文 (zh-tw)</a>
+    
+  
+</menu>
+
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/en/"><img src="/img/main/logo.png" class="circle" width="100" alt="Byte Ebi&#39;s Logo" /></a>
+  <header>
+    <h1>Byte Ebi 🍤</h1>
+  </header>
+  <main>
+    <p>A Bit everyday A Byte every week</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/ray247k" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//www.linkedin.com/in/j-ray-cheng" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="/en/blog/202203-laravel-queue/">Laravel Queue Usage</a></h2>
+    
+    
+      <p>Using queues to defer processing of tasks that don&#39;t need immediate attention.</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2022-03-05 00:00:00 &#43;0000 UTC">March 5, 2022</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+    <div id="socnet-share">
+      
+
+
+
+
+
+    </div>
+    <div class="content">
+      <a href="/en/blog/202203-laravel-queue/" class="image" style="--bg-image: url('/en/blog/202203-laravel-queue/featured.jpeg');">
+    <img src="/en/blog/202203-laravel-queue/featured.jpeg" alt="">
+  </a>
+      <p>The purpose of queues is to defer processing of a time-consuming task that doesn&rsquo;t require immediate completion.
+Like sending emails, users don&rsquo;t need to wait for the email to be sent successfully before the next step.<br>
+Allowing the application to respond more quickly to web requests and smooth user experience.</p>
+<h1 id="preparation">Preparation</h1>
+<p>Laravel supports multiple queue drivers</p>
+<ul>
+<li>Database</li>
+<li>Redis</li>
+<li>Amazon SQS</li>
+</ul>
+<p>If testing locally, you can configure it in the <code>.env</code> file as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-env" data-lang="env"><span style="display:flex;"><span>QUEUE_CONNECTION<span style="color:#f92672">=</span>sync
+</span></span></code></pre></div><p>This will execute immediately after sending the task, making it more convenient for testing Queue-related code.<br>
+In the following example, we will demonstrate using <code>database</code> as the driver.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-env" data-lang="env"><span style="display:flex;"><span>QUEUE_CONNECTION<span style="color:#f92672">=</span>database
+</span></span></code></pre></div><h1 id="create-queue-table">Create Queue table</h1>
+<p>Because Queue is a feature provided by Laravel.<br>
+You can directly create a database table named <code>Jobs</code> to record pending Queue information using a command.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>php artisan queue:table
+</span></span><span style="display:flex;"><span>php artisan migrate
+</span></span></code></pre></div><h1 id="create-job-files">Create Job files</h1>
+<p>You can create it manually or by using a command.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>php artisan make:job SyncBlockchainNftItemJob
+</span></span></code></pre></div><p>At this point, a file will be generated in the specified path: <code>app/Jobs/SyncBlockchainNftItemJob.php</code></p>
+<h1 id="write-the-job-program-logic">Write the Job program logic.</h1>
+<p>Just modify the <code>SyncBlockchainNftItemJob.php</code> we created earlier.<br>
+And the main functionality should be written inside the <code>handle()</code> method, like this</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">handle</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> ($this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">userId</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">Artisan</span><span style="color:#f92672">::</span><span style="color:#a6e22e">call</span>(<span style="color:#e6db74">&#34;nft-items:sync </span><span style="color:#e6db74">$this-&gt;userId</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Call an Artisan command to execute something.<br>
+The required parameters can be initialized in the <code>__construct</code> at the beginning of the Job program file and can be used as input parameters when creating Queue tasks in the future.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#66d9ef">protected</span> $userId;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> __construct($userId)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">userId</span> <span style="color:#f92672">=</span> $userId;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="call-the-job-to-create-a-task">Call the Job to create a task.</h1>
+<p>Now that the Job is ready, how do you call it from the Controller?<br>
+After including <code>SyncBlockchainNftItemJob</code>, you can use <code>dispatch</code> wherever you want to create a task and assign it to the specified Job.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>$this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">dispatch</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">SyncBlockchainNftItemJob</span>($user<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">id</span>));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Alternatively, you can keep it even simpler.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">SyncBlockchainNftItemJob</span><span style="color:#f92672">::</span><span style="color:#a6e22e">dispatch</span>($user<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">id</span>);
+</span></span></code></pre></div><h1 id="starting-queue-worker">Starting Queue Worker</h1>
+<p>If <code>sync</code> was not used as the driver earlier, the Queue won&rsquo;t execute!<br>
+You need to use a command to instruct the Queue to start working!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>php artisan queue:work
+</span></span></code></pre></div><p>It&rsquo;s important to note that once Queue Workers are started, they won&rsquo;t automatically update when there are code changes.<br>
+During the deployment phase, remember to use a command to restart the Queue worker.
+Otherwise, it will continue running the old version of the code!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>php artisan queue:restart
+</span></span></code></pre></div><h1 id="check-status">Check status</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ps -ef|grep queue:work
+</span></span></code></pre></div><h1 id="check-execution-status">Check execution status</h1>
+<p>Executing the Controller&rsquo;s code, you&rsquo;ll notice that when the Queue is triggered, a new record is added to the <code>jobs</code> table.<br>
+And during execution, the terminal will display corresponding information.</p>
+<p><img src="queue-run.png" alt="queue-run"></p>
+<p>If you see <code>Processed</code>, it means the task has been completed, and at this point, the record in <code>jobs</code> will be removed.</p>
+<hr>
+<h1 id="supervisor">Supervisor</h1>
+<p>When the Queue is running, various situations can lead to critical errors, preventing the execution of tasks.<br>
+In such cases, it&rsquo;s recommended by the official documentation to use <a href="https://laravel.com/docs/9.x/queues#supervisor-configuration"
+   
+    target="_blank" rel="noreferrer noopener">Supervisor
+</a>
+ for management.</p>
+<p>In the event that the Queue unexpectedly stops operating, Supervisor will restart the Queue service based on the configuration file, ensuring that Jobs can run continuously!</p>
+<h2 id="install-from-docker-image">Install from docker image</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> php:7.4-fpm</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> apt-get install supervisor<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">CMD</span> /var/www/html/_scripts/cron.sh<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>In the last line of our CMD, we executed a cron.sh as the entry point, which will be used later.</p>
+<h2 id="supervisor-config">Supervisor Config</h2>
+<p>Place the file wherever you like.</p>
+<pre tabindex="0"><code># supervisord.conf
+
+[program:laravel-worker]
+process_name=%(program_name)s_%(process_num)02d
+command=php /var/www/html/artisan queue:work --sleep=90 --tries=3
+autostart=true
+autorestart=true
+startsecs=5
+user=root
+numprocs=3
+redirect_stderr=true
+stdout_logfile=/var/www/html/storage/logs/supervisord.log
+stopwaitsecs=3600
+
+[supervisord]
+logfile=/var/log/supervisor/supervisord_main.log
+pidfile=/var/www/html/storage/logs/supervisord.pid
+
+[supervisorctl]
+</code></pre><h2 id="start-supervisor">Start Supervisor</h2>
+<p>Create the <code>_scripts/cron.sh</code> file in the project and mount it to the container&rsquo;s <code>/var/www/html</code> path.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>cd /var/www/html
+</span></span><span style="display:flex;"><span>supervisord -c ./docker/cron/supervisord.conf  <span style="color:#75715e"># Start supervisord using the configuration file located at the specified path</span>
+</span></span><span style="display:flex;"><span>php /var/www/html/artisan schedule:work        <span style="color:#75715e"># Simultaneously initiate the cron job.</span>
+</span></span></code></pre></div><p>When the Dockerfile executes a shell script via <code>CMD</code>, it can be considered as</p>
+<blockquote>
+<p>sh _scripts/cron.sh</p>
+</blockquote>
+<p>In <code>cron.sh</code>, we&rsquo;ve done three things:</p>
+<ul>
+<li>Navigate to the container&rsquo;s <code>/var/www/html</code> path.</li>
+<li>Start the supervisord service using the specified config.</li>
+<li>Execute <code>php artisan schedule:work</code>.</li>
+</ul>
+<p>This way, both supervisord and the cron job service are initiated.</p>
+<h2 id="check-supervisor-status">Check Supervisor status</h2>
+<p>You can use a command to confirm whether supervisord is running.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pgrep -fl supervisord
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># or</span>
+</span></span><span style="display:flex;"><span>ps aux|grep supervisord
+</span></span></code></pre></div><p>If an error message appears indicating that the <code>ps</code> or <code>pgrep</code> commands do not exist, you will need to install the package using a command.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt-get update <span style="color:#f92672">&amp;&amp;</span> apt-get install procps
+</span></span></code></pre></div><p>If you see <code>supervisord</code> listed, it means it&rsquo;s already running.</p>
+<p><img src="supervisord.jpg" alt="queue-run"></p>
+
+      
+      
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/ray247k/button?referrer=https%3a%2f%2ftech.ray247k.com%2fen%2fblog%2f202203-laravel-queue%2f" width="100%" frameborder=0></iframe>
+
+    </div>
+    <footer>
+      <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/en/categories/laravel/">Laravel</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/en/tags/laravel/">Laravel</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/php/">PHP</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/queue/">queue</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+    </footer>
+  </article>
+  
+    
+
+  
+  <div class="pagination">
+    
+      <a href="/en/blog/202204-laravel-sail/" class="button left"><span>Introducing Laravel Sail and Basic Operations</span></a>
+    
+    
+  </div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>Recent Posts</h1>
+      </header>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/" class="image" style="--bg-image: url('/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg');">
+    <img src="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/">Different between pointer and value for struct type in golang</a></h2>
+          <time class="published" datetime="2023-06-25 00:00:00 &#43;0000 UTC">June 25, 2023</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202301-ffmpeg-video-convert/" class="image" style="--bg-image: url('/en/blog/202301-ffmpeg-video-convert/featured.png');">
+    <img src="/en/blog/202301-ffmpeg-video-convert/featured.png" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202301-ffmpeg-video-convert/">Using FFmpeg to convert media files</a></h2>
+          <time class="published" datetime="2023-01-01 00:00:00 &#43;0000 UTC">January 1, 2023</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202210-aws101-what-is-sns-and-sqs/" class="image" style="--bg-image: url('/en/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg');">
+    <img src="/en/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202210-aws101-what-is-sns-and-sqs/">[AWS 101] What are SNS and SQS</a></h2>
+          <time class="published" datetime="2022-10-06 00:00:00 &#43;0000 UTC">October 6, 2022</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202210-what-is-serverless/" class="image" style="--bg-image: url('/en/blog/202210-what-is-serverless/featured.jpg');">
+    <img src="/en/blog/202210-what-is-serverless/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202210-what-is-serverless/">Serverless 101</a></h2>
+          <time class="published" datetime="2022-10-04 00:00:00 &#43;0000 UTC">October 4, 2022</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202207-go-ethereum-abigen/" class="image" style="--bg-image: url('/en/blog/202207-go-ethereum-abigen/featured.jpeg');">
+    <img src="/en/blog/202207-go-ethereum-abigen/featured.jpeg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202207-go-ethereum-abigen/">Interacting with smart contracts using Golang</a></h2>
+          <time class="published" datetime="2022-07-09 00:00:00 &#43;0000 UTC">July 9, 2022</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/en/blog/" class="button">See More</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="/en/categories">Categories</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/en/categories/devops/">devops<span class="count">2</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/golang/">golang<span class="count">2</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/laravel/">laravel<span class="count">2</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/aws/">aws<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/serverless/">serverless<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/tools/">tools<span class="count">1</span></a>
+          </li>
+          
+        </ul>
+      </section>
+    
+  
+
+  
+  <section id="tags">
+    <header>
+      <h1><a href="/en/tags">Tags</a></h1>
+    </header>
+    <div class="li-x post-meta tags-md" style="margin-left: 0.5em;">
+      <ul>
+        
+        
+        <li>
+          <a href="/en/tags/aws/">aws (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/devops/">devops (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/go/">go (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/golang/">golang (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/laravel/">laravel (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/php/">php (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/blockchain/">blockchain (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ffmpeg/">ffmpeg (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/gcp/">gcp (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ngrok/">ngrok (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/queue/">queue (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/redis/">redis (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/serverless/">serverless (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/smart-contract/">smart-contract (1)</a>
+        </li>
+        
+      </ul>
+
+    </div>
+  </section>
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+    
+    <p class="copyright">
+        © 2023 Byte Ebi 🍤
+    </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>
+      hljs.configure({ ignoreUnescapedHTML: true }); 
+      hljs.highlightAll();
+    </script><script src="/js/bundle.min.7fe05e0d4ce21f45d9ee4ecf95912d5598e101092edf657237e6f20c9cc20f56.js" integrity="sha256-f&#43;BeDUziH0XZ7k7PlZEtVZjhAQku32VyN&#43;byDJzCD1Y="></script>
+    <script src="/js/add-on.js"></script>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-LTGVYYWC2J', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </div>
+  </body>
+</html>
