@@ -471,6 +471,16 @@
   </url><url>
     <loc>https://tech.ray247k.com/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/</loc>
     <lastmod>2022-02-26T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/tags/cloudflare/</loc>
     <lastmod>2022-01-31T00:00:00+00:00</lastmod>
@@ -504,9 +514,29 @@
   </url><url>
     <loc>https://tech.ray247k.com/tags/%E9%98%B2%E7%81%AB%E7%89%86/</loc>
     <lastmod>2022-01-15T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/%E9%98%B2%E7%81%AB%E7%89%86/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/%E9%98%B2%E7%81%AB%E7%89%86/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/blog/202201-gcp-vm-basic/</loc>
     <lastmod>2022-01-15T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202201-gcp-vm-basic/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202201-gcp-vm-basic/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/blog/202112-a-tour-of-go-09-concurrency/</loc>
     <lastmod>2021-12-25T00:00:00+00:00</lastmod>
