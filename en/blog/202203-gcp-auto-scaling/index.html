@@ -1,0 +1,729 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+<title>Scalable Server 01 Auto Scaling - Byte Ebi 🍤</title>
+<meta name="description" content="Configuring Auto Scaling on GCP for Enhanced Server Flexibility">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta property="og:site_name" content="Byte Ebi 🍤">
+<meta property="og:title" content="Scalable Server 01 Auto Scaling">
+<meta property="og:description" content="Configuring Auto Scaling on GCP for Enhanced Server Flexibility">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://tech.ray247k.com/en/blog/202203-gcp-auto-scaling/">
+  <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
+
+
+
+  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
+  
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=1" color="#ffffff">
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=1">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=1">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+<meta name="generator" content="Hugo 0.118.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+  <meta property="og:title" content="Scalable Server 01 Auto Scaling">
+  <meta property="og:description" content="Configuring Auto Scaling on GCP for Enhanced Server Flexibility">
+  <meta property="description" content="Configuring Auto Scaling on GCP for Enhanced Server Flexibility">
+  <meta property="og:url" content="https://tech.ray247k.com/en/blog/202203-gcp-auto-scaling/">
+  <meta property="og:type" content="article">
+  
+    <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
+  
+  
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/felipec.min.css">
+          <link rel="stylesheet" href="/css/bundle.min.3b1b5f2e683d24b1ea3b5a08c8254622e40aa935e0ead75ba6d45c0f14c2f965.css" integrity="sha256-OxtfLmg9JLHqO1oIyCVGIuQKqTXg6tdbptRcDxTC&#43;WU="><link rel="stylesheet" href="/css/add-on.css">
+
+
+    
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', "G-LTGVYYWC2J");
+        </script>
+    
+
+
+  <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "image": {
+        "@type": "ImageObject",
+        "image": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+        "height": 648,
+        "width": 1080
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Byte Ebi 🍤",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png"
+        }
+    },
+    "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+    "headline": "About web development, software engineering, frontend, backend, chatbot, server related topics. - Byte Ebi 🍤",
+    "name": "Byte Ebi 🍤",
+    "url": "https:\/\/tech.ray247k.com",
+    "description": "About web development, software engineering, frontend, backend, chatbot, server related topics. - aws,devops,golang,laravel,serverless,tools,website-operations,",
+    "keywords": [
+        "auto-scaling,aws,blockchain,devops,ffmpeg,firewall,gcp,go,golang,laravel,ngrok,php,queue,redis,serverless,smart-contract,"
+    ]
+}
+</script>
+
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "legalName": "Byte Ebi 🍤",
+    "url": "https:\/\/tech.ray247k.com",
+    "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "",
+        "availableLanguage": [
+            "Mandarin",
+            "English"
+        ]
+    },
+    "sameAs": [
+        "https://ray247k.blogspot.com/"
+    ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Scalable Server 01 Auto Scaling",
+    "description": "Configuring Auto Scaling on GCP for Enhanced Server Flexibility",
+    "keywords": [
+        "DevOps" , "GCP" , "Auto Scaling" 
+    ],
+    "dateCreated": "2022-03-27T00:00:00.00Z",
+    "datePublished": "2022-03-27T00:00:00.00Z",
+    "dateModified": "2022-03-27T00:00:00.00Z",
+    "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "contentUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png"
+    },
+    "breadcrumb": {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com",
+                    "name": "Byte Ebi 🍤",
+                    "url": "https:\/\/tech.ray247k.com"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com/blog",
+                    "name": "Blog",
+                    "url": "https:\/\/tech.ray247k.com/blog"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\/en\/blog\/202203-gcp-auto-scaling\/",
+                    "name": "Scalable Server 01 Auto Scaling",
+                    "url": "https:\/\/tech.ray247k.com\/en\/blog\/202203-gcp-auto-scaling\/"
+                }
+            }
+        ],
+        "itemListOrder": "Ascending",
+        "numberOfItems": 3
+    }
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "articleSection": "blog",
+    "name": "Scalable Server 01 Auto Scaling",
+    "headline": "",
+    "description": "Configuring Auto Scaling on GCP for Enhanced Server Flexibility",
+    "inLanguage": "en",
+    "isFamilyFriendly": "true",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com\/en\/blog\/202203-gcp-auto-scaling\/"
+    },
+    "author" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "creator" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "accountablePerson" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "copyrightHolder" : "Byte Ebi 🍤",
+    "copyrightYear" : "2022",
+    "dateCreated": "2022-03-27T00:00:00.00Z",
+    "datePublished": "2022-03-27T00:00:00.00Z",
+    "dateModified": "2022-03-27T00:00:00.00Z",
+    "publisher":{
+        "@type":"Organization",
+        "name": "Byte Ebi 🍤",
+        "url": "https://tech.ray247k.com",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+            "width":"32",
+            "height":"32"
+        }
+    },
+    "image": "https://tech.ray247k.com/img/main/logo.png",
+    "url" : "https:\/\/tech.ray247k.com\/en\/blog\/202203-gcp-auto-scaling\/",
+    "wordCount" : "943",
+    "genre" : [ "DevOps" , "GCP" , "Auto Scaling" ],
+    "keywords" : [ "DevOps" , "GCP" , "Auto Scaling" ]
+}
+</script>
+
+
+
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/en/" class="nav">
+        
+          Blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/en/" class="nav link"><i class='fa fa-home'></i> home</a>
+        
+      
+        
+          
+          <a href="/en/about" class="nav link"><i class='far fa-id-card'></i> about</a>
+        
+      
+        
+          
+          <a href="/en/categories" class="nav link"><i class='fas fa-sitemap'></i> category</a>
+        
+      
+      
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    
+    <a href="#lang-menu" class="nav lang-toggle" lang="en">en</a>
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  <menu id="lang-menu" class="flyout-menu menu">
+  <a href="#" lang="en" class="nav link active">English (en)</a>
+  
+      <a href="https://tech.ray247k.com/blog/202203-gcp-auto-scaling/" lang="zh-tw" class="nav link">正體中文 (zh-tw)</a>
+    
+  
+</menu>
+
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/en/"><img src="/img/main/logo.png" class="circle" width="100" alt="Byte Ebi&#39;s Logo" /></a>
+  <header>
+    <h1>Byte Ebi 🍤</h1>
+  </header>
+  <main>
+    <p>A Bit everyday A Byte every week</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/ray247k" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//www.linkedin.com/in/j-ray-cheng" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="/en/blog/202203-gcp-auto-scaling/">Scalable Server 01 Auto Scaling</a></h2>
+    
+    
+      <p>Configuring Auto Scaling on GCP for Enhanced Server Flexibility</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2022-03-27 00:00:00 &#43;0000 UTC">March 27, 2022</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+    <div id="socnet-share">
+      
+
+
+
+
+
+    </div>
+    <div class="content">
+      <a href="/en/blog/202203-gcp-auto-scaling/" class="image" style="--bg-image: url('/en/blog/202203-gcp-auto-scaling/featured.jpeg');">
+    <img src="/en/blog/202203-gcp-auto-scaling/featured.jpeg" alt="">
+  </a>
+      <h1 id="create-image">Create image</h1>
+<p>First, you need to stop the specified VM.<br>
+Next, in the sidebar, navigate to <code>Storage</code> -&gt; <code>Images</code>, then click on it to select <code>Create Image</code>.<br>
+Make sure not to choose <code>Virtual Machines</code> -&gt; <code>achine Image</code> as it will lead to confusion later on!<br>
+In the beginning, I mistakenly pressed <code>Create Machine Image</code> from the VM section and got stuck in this alternate world, which wasted my whole afternoon.</p>
+<p><img src="gcp-create-vm-image.jpg" alt="gcp create vm image"></p>
+<p>The simplest way to determine this is by not stopping the VM in the first step.<br>
+When creating an image, if it doesn&rsquo;t prompt you to stop, then you&rsquo;re doing it wrong.</p>
+<p><img src="gcp-vm-image-settings.jpg" alt="gcp vm image settings"></p>
+<p>Following the instructions and successfully creating the image, you can proceed to the next step.</p>
+<h1 id="create-instance-templates">Create Instance templates</h1>
+<p>Go to <code>Instance Templates</code>, then click on <code>Create Instance Template</code>.</p>
+<h2 id="choose-the-hardware-specifications-or-hardware-rules">Choose the hardware specifications or hardware rules</h2>
+<p>This section is where you determine the specifications required for each new instance when launched within the instance group.
+The setup here resembles the configuration during VM creation.
+Additionally, you can configure the firewall settings to open ports 80 and 443 if your network service requires them.</p>
+<p><img src="gcp-instance-template.png" alt="gcp instance template"></p>
+<h2 id="select-the-vm-image-as-the-boot-template">Select the VM image as the boot template</h2>
+<p>The difference here is that we are using the recently created image as the template.<br>
+So, under the <code>boot disk</code> section, click on <code>Change</code> -&gt; <code>Custom image</code> and select the image you&rsquo;ve just created.</p>
+<p><img src="gcp-create-instance-template.jpg" alt="gcp create instance template"></p>
+<h2 id="execute-commands-automatically-at-startup">Execute commands automatically at startup</h2>
+<p>Sometimes, when you start a new VM, you need to run certain commands to start services like Docker.<br>
+Without these commands at startup, your VM will only be powered on but won&rsquo;t have services like the Docker daemon running.</p>
+<p>Click on the <code>Management</code> section to expand its contents, and you&rsquo;ll find instructions for <code>automation</code>.</p>
+<blockquote>
+<p>You can specify boot scripts that will run when the instance starts up or restarts.
+Boot scripts are useful for installing software, updating items, and ensuring that services run smoothly within the virtual machine.</p>
+</blockquote>
+<p><img src="gcp-instance-start-script.png" alt="gcp instance start script"></p>
+<p>You can include commands in this section to ensure that when the VM starts, the necessary services are initiated.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#! /bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>sudo systemctl start docker
+</span></span><span style="display:flex;"><span>sudo docker start laravel-app nginx redis
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo docker exec -i laravel-app /var/www/html/artisan migrate
+</span></span><span style="display:flex;"><span>sudo docker exec -i laravel-app /var/www/html/artisan l5-swagger:generate --all
+</span></span><span style="display:flex;"><span>sudo docker exec -i laravel-app /usr/bin/supervisord -c ./builds/docker/beta/php81/horizon.conf
+</span></span><span style="display:flex;"><span>sudo docker exec -i laravel-app /var/www/html/artisan queue:work &amp;
+</span></span></code></pre></div><p>Official documentation: <a href="https://cloud.google.com/compute/docs/instances/startup-scripts/linux"
+   
+    target="_blank" rel="noreferrer noopener">Using startup scripts on Linux VMs
+</a>
+</p>
+<h1 id="instance-group">Instance Group</h1>
+<p>When the triggering conditions are met, the instance group will automatically configure machines based on the previously set <code>instance template</code>.</p>
+<p>To begin, open the <code>Instance Groups</code> and click on <code>Create Instance Group</code>.</p>
+<p><img src="gcp-create-instance-group.png" alt="gcp create instance group"></p>
+<p>On the interface, you will see three options on the left.<br>
+The interface might have changed since the existing online articles were published.</p>
+<ul>
+<li>New managed instance group (stateless)</li>
+<li>New managed instance group (stateful)</li>
+<li>New unmanaged instance group</li>
+</ul>
+<p>Among these options, only the two under <code>Managed Instance Group</code> have Auto Scaling functionality.<br>
+Additionally, the <code>Unmanaged Instance Group</code> allows you to add existing VM instances without the need to create an instance template first.</p>
+<p>Reference documentation: <a href="https://youtu.be/xTiyKYZJ3c0"
+   
+    target="_blank" rel="noreferrer noopener">Using managed instance groups
+</a>
+</p>
+<p>Select the instance template you want to use and specify the Auto Scaling rules.
+Once done, click on the <code>Create</code> button at the bottom to complete the creation of the instance group and the Auto Scaling configuration.</p>
+<p><img src="gcp-instance-group-settings.png" alt="gcp instance group settings"></p>
+<h2 id="configure-instance-group-health-checks-and-automatic-healing">Configure instance group health checks and automatic healing</h2>
+<p>To ensure that newly started instances are available, automatically shut down any non-functional instances,
+and replace them with new ones, open the instance group&rsquo;s editing page, and scroll down to the <code>Autohealing</code> section.</p>
+<p><img src="gcp-instance-group-health-check.png" alt="gcp instance group health check"></p>
+<p>Select <code>Create Health Check</code> and configure it by providing a name and other settings.
+For example, if you choose the <code>HTTP protocol</code>, you can send requests to specific routes, while the default <code>TCP</code> option simply checks for normal transmission.</p>
+<p><img src="gcp-instance-group-health-check-detail.png" alt="gcp instance group health check detail"></p>
+<p>After configuring the health check, let it run, and then go back to the instance group&rsquo;s detailed page to check the health report.
+If everything is fine, it should indicate that everything is healthy without any issues.</p>
+<p><img src="gcp-instance-group-health-check-result.png" alt="gcp instance group health check result"></p>
+<h1 id="rolling-update">Rolling Update</h1>
+<p>When a new image is created, you&rsquo;ll need to create a new instance template first.<br>
+Then, you need to go back to the <code>instance group</code> and edit it to use the new instance template.<br>
+This ensures that new instances launched in the future will use the updated template.</p>
+<p>Modifying the template won&rsquo;t automatically restart existing instances.<br>
+If you want to achieve seamless updates for online services, you might consider implementing a <code>rolling update</code>.</p>
+<p>To perform a rolling update, go to the <code>Instance Groups</code>, select the newly created instance group, and look for a button like <code>UPDATE VMS</code>.
+The button name may vary, so please check for a similar option.</p>
+<p><img src="gcp-rolling-update.jpg" alt="gcp rolling update"></p>
+<p>Next, select the new instance template and in the <code>Update Settings</code>, choose <code>Automatic</code> for the <code>Update type</code>.<br>
+This ensures that not only new VMs but also existing ones are replaced with the new template.</p>
+<p><img src="gcp-instance-group-update.png" alt="gcp instance group update"></p>
+<p>You will see that it starts a new instance using the new instance template.</p>
+<p><img src="gcp-instance-updating.png" alt="gcp instance updating"></p>
+<p>Once the new instance template has been successfully started, it will proceed to delete the old instances.<br>
+This ensures a seamless upgrade without impacting your online services.</p>
+<p><img src="gcp-instance-update-done.png" alt="gcp instance update done"></p>
+<p>At this point, the service is not fully functional. The instance group is still a collection of individual, independent hosts.
+While it has the ability to automatically scale the number of hosts, it doesn&rsquo;t inherently handle request routing or load balancing.</p>
+<p>In accordance with the diagram below. Currently, we have only completed the Instance Group and the subsequent steps.</p>
+<p><img src="gpc-server-infra.jpg" alt="gpc server infra"></p>
+<p>We also need to use the Load Balancing service to provide a fixed IP address responsible for receiving all requests.<br>
+Through Load Balancing, we can distribute traffic to individual hosts within the instance group.</p>
+<p>We will talk about this in the further post.</p>
+
+      
+      
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/ray247k/button?referrer=https%3a%2f%2ftech.ray247k.com%2fen%2fblog%2f202203-gcp-auto-scaling%2f" width="100%" frameborder=0></iframe>
+
+    </div>
+    <footer>
+      <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/en/categories/devops/">DevOps</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/en/tags/devops/">DevOps</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/gcp/">GCP</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/auto-scaling/">Auto Scaling</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+    </footer>
+  </article>
+  
+    
+
+  
+  <div class="pagination">
+    
+      <a href="/en/blog/202204-laravel-sail/" class="button left"><span>Introducing Laravel Sail and Basic Operations</span></a>
+    
+    
+      <a href="/en/blog/202203-laravel-queue/" class="button right"><span>Laravel Queue Usage</span></a>
+    
+  </div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>Recent Posts</h1>
+      </header>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/" class="image" style="--bg-image: url('/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg');">
+    <img src="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/">Different between pointer and value for struct type in golang</a></h2>
+          <time class="published" datetime="2023-06-25 00:00:00 &#43;0000 UTC">June 25, 2023</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202301-ffmpeg-video-convert/" class="image" style="--bg-image: url('/en/blog/202301-ffmpeg-video-convert/featured.png');">
+    <img src="/en/blog/202301-ffmpeg-video-convert/featured.png" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202301-ffmpeg-video-convert/">Using FFmpeg to convert media files</a></h2>
+          <time class="published" datetime="2023-01-01 00:00:00 &#43;0000 UTC">January 1, 2023</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202210-aws101-what-is-sns-and-sqs/" class="image" style="--bg-image: url('/en/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg');">
+    <img src="/en/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202210-aws101-what-is-sns-and-sqs/">[AWS 101] What are SNS and SQS</a></h2>
+          <time class="published" datetime="2022-10-06 00:00:00 &#43;0000 UTC">October 6, 2022</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202210-what-is-serverless/" class="image" style="--bg-image: url('/en/blog/202210-what-is-serverless/featured.jpg');">
+    <img src="/en/blog/202210-what-is-serverless/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202210-what-is-serverless/">Serverless 101</a></h2>
+          <time class="published" datetime="2022-10-04 00:00:00 &#43;0000 UTC">October 4, 2022</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202207-go-ethereum-abigen/" class="image" style="--bg-image: url('/en/blog/202207-go-ethereum-abigen/featured.jpeg');">
+    <img src="/en/blog/202207-go-ethereum-abigen/featured.jpeg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202207-go-ethereum-abigen/">Interacting with smart contracts using Golang</a></h2>
+          <time class="published" datetime="2022-07-09 00:00:00 &#43;0000 UTC">July 9, 2022</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/en/blog/" class="button">See More</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="/en/categories">Categories</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/en/categories/devops/">devops<span class="count">3</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/golang/">golang<span class="count">2</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/laravel/">laravel<span class="count">2</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/aws/">aws<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/serverless/">serverless<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/tools/">tools<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/website-operations/">website-operations<span class="count">1</span></a>
+          </li>
+          
+        </ul>
+      </section>
+    
+  
+
+  
+  <section id="tags">
+    <header>
+      <h1><a href="/en/tags">Tags</a></h1>
+    </header>
+    <div class="li-x post-meta tags-md" style="margin-left: 0.5em;">
+      <ul>
+        
+        
+        <li>
+          <a href="/en/tags/devops/">devops (4)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/gcp/">gcp (3)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/aws/">aws (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/go/">go (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/golang/">golang (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/laravel/">laravel (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/php/">php (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/auto-scaling/">auto-scaling (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/blockchain/">blockchain (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ffmpeg/">ffmpeg (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/firewall/">firewall (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ngrok/">ngrok (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/queue/">queue (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/redis/">redis (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/serverless/">serverless (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/smart-contract/">smart-contract (1)</a>
+        </li>
+        
+      </ul>
+
+    </div>
+  </section>
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+    
+    <p class="copyright">
+        © 2023 Byte Ebi 🍤
+    </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>
+      hljs.configure({ ignoreUnescapedHTML: true }); 
+      hljs.highlightAll();
+    </script><script src="/js/bundle.min.7fe05e0d4ce21f45d9ee4ecf95912d5598e101092edf657237e6f20c9cc20f56.js" integrity="sha256-f&#43;BeDUziH0XZ7k7PlZEtVZjhAQku32VyN&#43;byDJzCD1Y="></script>
+    <script src="/js/add-on.js"></script>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-LTGVYYWC2J', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </div>
+  </body>
+</html>

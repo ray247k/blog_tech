@@ -430,9 +430,29 @@
   </url><url>
     <loc>https://tech.ray247k.com/tags/auto-scaling/</loc>
     <lastmod>2022-03-27T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/auto-scaling/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/auto-scaling/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/blog/202203-gcp-auto-scaling/</loc>
     <lastmod>2022-03-27T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202203-gcp-auto-scaling/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202203-gcp-auto-scaling/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/blog/202203-jenkins-cicd-1-installation/</loc>
     <lastmod>2022-03-16T00:00:00+00:00</lastmod>
@@ -471,16 +491,6 @@
   </url><url>
     <loc>https://tech.ray247k.com/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/</loc>
     <lastmod>2022-02-26T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/"
-                />
   </url><url>
     <loc>https://tech.ray247k.com/tags/cloudflare/</loc>
     <lastmod>2022-01-31T00:00:00+00:00</lastmod>
@@ -514,16 +524,6 @@
   </url><url>
     <loc>https://tech.ray247k.com/tags/%E9%98%B2%E7%81%AB%E7%89%86/</loc>
     <lastmod>2022-01-15T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/tags/%E9%98%B2%E7%81%AB%E7%89%86/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/tags/%E9%98%B2%E7%81%AB%E7%89%86/"
-                />
   </url><url>
     <loc>https://tech.ray247k.com/blog/202201-gcp-vm-basic/</loc>
     <lastmod>2022-01-15T00:00:00+00:00</lastmod>
