@@ -262,12 +262,7 @@
   <menu id="lang-menu" class="flyout-menu menu">
   <a href="#" lang="zh-tw" class="nav link active">正體中文 (zh-tw)</a>
   
-    
-      
-    
-      
-        <a href="/en" lang="en" class="nav no-lang link">English (en)</a>
-      
+      <a href="https://tech.ray247k.com/en/blog/202204-gcp-load-balancing/" lang="en" class="nav link">English (en)</a>
     
   
 </menu>
@@ -393,14 +388,14 @@
 若是我們希望可以透過固定的一組 IP 造訪，則需要在這邊建立一組 IP 位址<br>
 可以預先建立，或是透過畫面提示來預約一組固定 IP 位址
 如果你有 SSL 憑證也可以設定在這</p>
-<p><img src="gcp-load-balancer-backend-settings.png" alt="gcp load balancer frontend settings"></p>
+<p><img src="gcp-load-balancer-frontend-settings.png" alt="gcp load balancer frontend settings"></p>
 <p>儲存之後等他建立好，點進剛剛建立的負載平衡詳細資訊中<br>
 會看到<code>前端</code>區塊有一個 IP 位置，貼到瀏覽器連看看，就可以看到剛剛設定的服務了！</p>
 <p><img src="gcp-load-balancer-details.jpg" alt="gcp load balancer details"></p>
 <p>於是我們的負載平衡就建置完成！
 配合自動擴展功能，當流量上升到觸發擴展規則時就會啟動新的虛擬主機<br>
 並透過負載平衡將請求分流，達到分擔流量維持服務穩定的功能</p>
-<p>參考文章</p>
+<p><strong>參考文章</strong></p>
 <ul>
 <li><a href="https://blog.cloud-ace.tw/networking-website/load-balance/gcp-tutorial-build-resilient-fastand-secure-architecture-load-balancer-and-instance-group/#%e5%bb%ba%e7%ab%8b%e5%9f%b7%e8%a1%8c%e5%80%8b%e9%ab%94%e7%be%a4%e7%b5%84_Instance_Group"
    

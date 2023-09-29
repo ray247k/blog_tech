@@ -369,9 +369,29 @@
   </url><url>
     <loc>https://tech.ray247k.com/tags/load-balancing/</loc>
     <lastmod>2022-04-05T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/load-balancing/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/load-balancing/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/blog/202204-gcp-load-balancing/</loc>
     <lastmod>2022-04-05T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202204-gcp-load-balancing/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202204-gcp-load-balancing/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/tags/laravel/</loc>
     <lastmod>2022-04-02T00:00:00+00:00</lastmod>
