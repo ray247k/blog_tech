@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.118.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.119.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="Jenkins 02 基本 pipeline 建置及串接 Github">
   <meta property="og:description" content="建立一個基本的 pipeline 流程，並透過 Github 的 webhook 觸發建置流程">
   <meta property="description" content="建立一個基本的 pipeline 流程，並透過 Github 的 webhook 觸發建置流程">
@@ -262,12 +262,7 @@
   <menu id="lang-menu" class="flyout-menu menu">
   <a href="#" lang="zh-tw" class="nav link active">正體中文 (zh-tw)</a>
   
-    
-      
-    
-      
-        <a href="/en" lang="en" class="nav no-lang link">English (en)</a>
-      
+      <a href="https://tech.ray247k.com/en/blog/202203-jenkins-cicd-2-basic-pipeline/" lang="en" class="nav link">English (en)</a>
     
   
 </menu>
@@ -386,7 +381,6 @@ GitHub &gt; settings &gt; Developer settings &gt; Personal access tokens &gt; Ge
 <p>驗證完成之後就可以選擇專案</p>
 <p><img src="choose-repository.jpg" alt="choose repository"></p>
 <p>接著按下創建就會掃瞄 Github Repository 裡面的所有分支了！</p>
-<p><img src="jenkins-branches.png" alt="jenkins branches"></p>
 <h1 id="串接-webhook-監聽事件">串接 webhook 監聽事件</h1>
 <p>接著讓我們稍微改一下專案內容並且 commit push 到 github，會發現怎麼 Jenkins 沒動作？<br>
 那是因為我們沒設定讓 Jenkins 監聽 Github 事件！<br>

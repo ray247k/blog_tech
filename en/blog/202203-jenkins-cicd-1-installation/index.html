@@ -1,0 +1,715 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+<title>Jenkins CI/CD 01 Installation - Byte Ebi 🍤</title>
+<meta name="description" content="Setup Jenkins CI/CD step by step">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta property="og:site_name" content="Byte Ebi 🍤">
+<meta property="og:title" content="Jenkins CI/CD 01 Installation">
+<meta property="og:description" content="Setup Jenkins CI/CD step by step">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://tech.ray247k.com/en/blog/202203-jenkins-cicd-1-installation/">
+  <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
+
+
+
+  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
+  
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=1" color="#ffffff">
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=1">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=1">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+<meta name="generator" content="Hugo 0.119.0"><meta property="og:site_name" content="Byte Ebi 🍤">
+  <meta property="og:title" content="Jenkins CI/CD 01 Installation">
+  <meta property="og:description" content="Setup Jenkins CI/CD step by step">
+  <meta property="description" content="Setup Jenkins CI/CD step by step">
+  <meta property="og:url" content="https://tech.ray247k.com/en/blog/202203-jenkins-cicd-1-installation/">
+  <meta property="og:type" content="article">
+  
+    <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
+  
+  
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/felipec.min.css">
+          <link rel="stylesheet" href="/css/bundle.min.3b1b5f2e683d24b1ea3b5a08c8254622e40aa935e0ead75ba6d45c0f14c2f965.css" integrity="sha256-OxtfLmg9JLHqO1oIyCVGIuQKqTXg6tdbptRcDxTC&#43;WU="><link rel="stylesheet" href="/css/add-on.css">
+
+
+    
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', "G-LTGVYYWC2J");
+        </script>
+    
+
+
+  <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "image": {
+        "@type": "ImageObject",
+        "image": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+        "height": 648,
+        "width": 1080
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Byte Ebi 🍤",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png"
+        }
+    },
+    "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+    "headline": "About web development, software engineering, frontend, backend, chatbot, server related topics. - Byte Ebi 🍤",
+    "name": "Byte Ebi 🍤",
+    "url": "https:\/\/tech.ray247k.com",
+    "description": "About web development, software engineering, frontend, backend, chatbot, server related topics. - aws,devops,golang,laravel,serverless,tools,website-operations,",
+    "keywords": [
+        "auto-scaling,aws,blockchain,cicd,devops,ffmpeg,firewall,gcp,go,golang,jenkins,laravel,load-balancing,ngrok,php,queue,redis,serverless,smart-contract,"
+    ]
+}
+</script>
+
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "legalName": "Byte Ebi 🍤",
+    "url": "https:\/\/tech.ray247k.com",
+    "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "",
+        "availableLanguage": [
+            "Mandarin",
+            "English"
+        ]
+    },
+    "sameAs": [
+        "https://ray247k.blogspot.com/"
+    ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Jenkins CI\/CD 01 Installation",
+    "description": "Setup Jenkins CI\/CD step by step",
+    "keywords": [
+        "DevOps" , "Jenkins" , "CICD" 
+    ],
+    "dateCreated": "2022-03-16T00:00:00.00Z",
+    "datePublished": "2022-03-16T00:00:00.00Z",
+    "dateModified": "2022-03-16T00:00:00.00Z",
+    "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "contentUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png"
+    },
+    "breadcrumb": {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com",
+                    "name": "Byte Ebi 🍤",
+                    "url": "https:\/\/tech.ray247k.com"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com/blog",
+                    "name": "Blog",
+                    "url": "https:\/\/tech.ray247k.com/blog"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\/en\/blog\/202203-jenkins-cicd-1-installation\/",
+                    "name": "Jenkins CI\/CD 01 Installation",
+                    "url": "https:\/\/tech.ray247k.com\/en\/blog\/202203-jenkins-cicd-1-installation\/"
+                }
+            }
+        ],
+        "itemListOrder": "Ascending",
+        "numberOfItems": 3
+    }
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "articleSection": "blog",
+    "name": "Jenkins CI\/CD 01 Installation",
+    "headline": "\u003cp\u003eCreate Your Own Automated Deployment Service with \u003ca href=\u0022https:\/\/www.jenkins.io\/\u0022\n   \n    target=\u0022_blank\u0022 rel=\u0022noreferrer noopener\u0022\u003eJenkins\n\u003c\/a\u003e\n\u003cbr\u003e\nJenkins is a Java-based CI\/CD system tool that we are exploring in this tutorial,\u003cbr\u003e\nfollowing our previous introduction to \u003ca href=\u0022\/tags\/drone\/\u0022\n   \n   \u003eDrone\n\u003c\/a\u003e\n\u003c\/p\u003e",
+    "description": "Setup Jenkins CI\/CD step by step",
+    "inLanguage": "en",
+    "isFamilyFriendly": "true",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com\/en\/blog\/202203-jenkins-cicd-1-installation\/"
+    },
+    "author" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "creator" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "accountablePerson" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "copyrightHolder" : "Byte Ebi 🍤",
+    "copyrightYear" : "2022",
+    "dateCreated": "2022-03-16T00:00:00.00Z",
+    "datePublished": "2022-03-16T00:00:00.00Z",
+    "dateModified": "2022-03-16T00:00:00.00Z",
+    "publisher":{
+        "@type":"Organization",
+        "name": "Byte Ebi 🍤",
+        "url": "https://tech.ray247k.com",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+            "width":"32",
+            "height":"32"
+        }
+    },
+    "image": "https://tech.ray247k.com/img/main/logo.png",
+    "url" : "https:\/\/tech.ray247k.com\/en\/blog\/202203-jenkins-cicd-1-installation\/",
+    "wordCount" : "413",
+    "genre" : [ "DevOps" , "Jenkins" , "CICD" ],
+    "keywords" : [ "DevOps" , "Jenkins" , "CICD" ]
+}
+</script>
+
+
+
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/en/" class="nav">
+        
+          Blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/en/" class="nav link"><i class='fa fa-home'></i> home</a>
+        
+      
+        
+          
+          <a href="/en/about" class="nav link"><i class='far fa-id-card'></i> about</a>
+        
+      
+        
+          
+          <a href="/en/categories" class="nav link"><i class='fas fa-sitemap'></i> category</a>
+        
+      
+      
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    
+    <a href="#lang-menu" class="nav lang-toggle" lang="en">en</a>
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  <menu id="lang-menu" class="flyout-menu menu">
+  <a href="#" lang="en" class="nav link active">English (en)</a>
+  
+      <a href="https://tech.ray247k.com/blog/202203-jenkins-cicd-1-installation/" lang="zh-tw" class="nav link">正體中文 (zh-tw)</a>
+    
+  
+</menu>
+
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/en/"><img src="/img/main/logo.png" class="circle" width="100" alt="Byte Ebi&#39;s Logo" /></a>
+  <header>
+    <h1>Byte Ebi 🍤</h1>
+  </header>
+  <main>
+    <p>A Bit everyday A Byte every week</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/ray247k" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//www.linkedin.com/in/j-ray-cheng" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="/en/blog/202203-jenkins-cicd-1-installation/">Jenkins CI/CD 01 Installation</a></h2>
+    
+    
+      <p>Setup Jenkins CI/CD step by step</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2022-03-16 00:00:00 &#43;0000 UTC">March 16, 2022</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+    <div id="socnet-share">
+      
+
+
+
+
+
+    </div>
+    <div class="content">
+      <a href="/en/blog/202203-jenkins-cicd-1-installation/" class="image" style="--bg-image: url('/en/blog/202203-jenkins-cicd-1-installation/featured.png');">
+    <img src="/en/blog/202203-jenkins-cicd-1-installation/featured.png" alt="">
+  </a>
+      <p>Create Your Own Automated Deployment Service with <a href="https://www.jenkins.io/"
+   
+    target="_blank" rel="noreferrer noopener">Jenkins
+</a>
+<br>
+Jenkins is a Java-based CI/CD system tool that we are exploring in this tutorial,<br>
+following our previous introduction to <a href="/tags/drone/"
+   
+   >Drone
+</a>
+</p>
+<blockquote>
+<p>If you plan to use Docker for installation and require Docker commands within Jenkins, you&rsquo;ll need to address Docker-in-Docker issues.</p>
+<p>For those less familiar with Docker and operating systems, it is recommended to follow the method described below, installing Jenkins directly on your host machine.</p>
+</blockquote>
+<p>Below, we&rsquo;ll go through the step-by-step installation process as per the <a href="https://www.jenkins.io/doc/book/installing/linux/#debianubuntu"
+   
+    target="_blank" rel="noreferrer noopener">official installation documentation
+</a>
+</p>
+<p>First, ensure that you have Java installed:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>java -version
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo apt install openjdk-11-jre
+</span></span></code></pre></div><p>Next, install the Jenkins service on your host machine, opting for the stable version (LTS - Long Term Support):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo tee <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  /usr/share/keyrings/jenkins-keyring.asc &gt; /dev/null
+</span></span><span style="display:flex;"><span>echo deb <span style="color:#f92672">[</span>signed-by<span style="color:#f92672">=</span>/usr/share/keyrings/jenkins-keyring.asc<span style="color:#f92672">]</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  https://pkg.jenkins.io/debian-stable binary/ | sudo tee <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  /etc/apt/sources.list.d/jenkins.list &gt; /dev/null
+</span></span><span style="display:flex;"><span>sudo apt-get update
+</span></span><span style="display:flex;"><span>sudo apt-get install jenkins
+</span></span></code></pre></div><p>Start the Jenkins service using the following command, and then access it via your web browser at <code>localhost:8080</code>.<br>
+You&rsquo;ll be prompted to enter the initial admin password:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl enable --now jenkins
+</span></span></code></pre></div><p><img src="admin_password.png" alt="admin password"></p>
+<p>Retrieve the initial admin password using the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+</span></span></code></pre></div><h1 id="plugin-installation">Plugin Installation</h1>
+<p>By default, Jenkins does not support pipelines, so you&rsquo;ll need to install a pipeline plugin.<br>
+In this tutorial, we&rsquo;re using <a href="https://www.jenkins.io/projects/blueocean/"
+   
+    target="_blank" rel="noreferrer noopener">Blue Ocean
+</a>
+.</p>
+<p>To use Docker as an agent in your build process, you&rsquo;ll also need to install two additional extensions:</p>
+<ul>
+<li>Docker plugin</li>
+<li>Docker Pipeline</li>
+</ul>
+<p>You can search for and install these plugins in the Jenkins plugin management section:</p>
+<p><img src="jenkins_manage.png" alt="jenkins manage"></p>
+<p>Additionally, ensure that Docker is properly installed on your Jenkins host machine.</p>
+<h1 id="docker-command-permissions">Docker Command Permissions</h1>
+<p>To configure Docker command permissions, first switch to the Jenkins user:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo su jenkins
+</span></span></code></pre></div><p>Then, execute any Docker command, e.g., <code>docker ps</code>.<br>
+If you encounter a permission denied message like:</p>
+<blockquote>
+<p>Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post</p>
+</blockquote>
+<p>Avoid running <code>sudo chmod 777 /var/run/docker.sock</code>.<br>
+The correct approach is to add the Jenkins user to the Docker user group:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat /etc/passwd                   <span style="color:#75715e"># List all users</span>
+</span></span><span style="display:flex;"><span>sudo groupadd docker              <span style="color:#75715e"># Create a Docker user group (usually created when Docker is installed)</span>
+</span></span><span style="display:flex;"><span>sudo usermod -aG docker jenkins   <span style="color:#75715e"># Add the Jenkins user to the Docker group</span>
+</span></span></code></pre></div><p>Restart the Jenkins service. You can trigger the restart by entering the following URL in your web browser:</p>
+<blockquote>
+<p>http://jenlins_url/restart</p>
+</blockquote>
+<p><img src="jenkins_restart.png" alt="jenkins restart"></p>
+<p>Click the restart button, and once it&rsquo;s back up, it will load the new configuration.<br>
+Now you can run Docker commands as the Jenkins user.</p>
+
+      
+      
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/ray247k/button?referrer=https%3a%2f%2ftech.ray247k.com%2fen%2fblog%2f202203-jenkins-cicd-1-installation%2f" width="100%" frameborder=0></iframe>
+
+    </div>
+    <footer>
+      <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/en/categories/devops/">DevOps</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/en/tags/devops/">DevOps</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/jenkins/">Jenkins</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/cicd/">CICD</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+    </footer>
+  </article>
+  
+    
+
+  
+  <div class="pagination">
+    
+      <a href="/en/blog/202203-gcp-auto-scaling/" class="button left"><span>Scalable Server 01 Auto Scaling</span></a>
+    
+    
+      <a href="/en/blog/202203-laravel-queue/" class="button right"><span>Laravel Queue Usage</span></a>
+    
+  </div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>Recent Posts</h1>
+      </header>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/" class="image" style="--bg-image: url('/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg');">
+    <img src="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/">Different between pointer and value for struct type in golang</a></h2>
+          <time class="published" datetime="2023-06-25 00:00:00 &#43;0000 UTC">June 25, 2023</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202301-ffmpeg-video-convert/" class="image" style="--bg-image: url('/en/blog/202301-ffmpeg-video-convert/featured.png');">
+    <img src="/en/blog/202301-ffmpeg-video-convert/featured.png" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202301-ffmpeg-video-convert/">Using FFmpeg to convert media files</a></h2>
+          <time class="published" datetime="2023-01-01 00:00:00 &#43;0000 UTC">January 1, 2023</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202210-aws101-what-is-sns-and-sqs/" class="image" style="--bg-image: url('/en/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg');">
+    <img src="/en/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202210-aws101-what-is-sns-and-sqs/">[AWS 101] What are SNS and SQS</a></h2>
+          <time class="published" datetime="2022-10-06 00:00:00 &#43;0000 UTC">October 6, 2022</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202210-what-is-serverless/" class="image" style="--bg-image: url('/en/blog/202210-what-is-serverless/featured.jpg');">
+    <img src="/en/blog/202210-what-is-serverless/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202210-what-is-serverless/">Serverless 101</a></h2>
+          <time class="published" datetime="2022-10-04 00:00:00 &#43;0000 UTC">October 4, 2022</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202207-go-ethereum-abigen/" class="image" style="--bg-image: url('/en/blog/202207-go-ethereum-abigen/featured.jpeg');">
+    <img src="/en/blog/202207-go-ethereum-abigen/featured.jpeg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202207-go-ethereum-abigen/">Interacting with smart contracts using Golang</a></h2>
+          <time class="published" datetime="2022-07-09 00:00:00 &#43;0000 UTC">July 9, 2022</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/en/blog/" class="button">See More</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="/en/categories">Categories</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/en/categories/devops/">devops<span class="count">6</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/golang/">golang<span class="count">2</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/laravel/">laravel<span class="count">2</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/aws/">aws<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/serverless/">serverless<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/tools/">tools<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/website-operations/">website-operations<span class="count">1</span></a>
+          </li>
+          
+        </ul>
+      </section>
+    
+  
+
+  
+  <section id="tags">
+    <header>
+      <h1><a href="/en/tags">Tags</a></h1>
+    </header>
+    <div class="li-x post-meta tags-md" style="margin-left: 0.5em;">
+      <ul>
+        
+        
+        <li>
+          <a href="/en/tags/devops/">devops (7)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/gcp/">gcp (4)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/aws/">aws (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/cicd/">cicd (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/go/">go (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/golang/">golang (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/jenkins/">jenkins (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/laravel/">laravel (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/php/">php (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/auto-scaling/">auto-scaling (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/blockchain/">blockchain (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ffmpeg/">ffmpeg (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/firewall/">firewall (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/load-balancing/">load-balancing (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ngrok/">ngrok (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/queue/">queue (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/redis/">redis (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/serverless/">serverless (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/smart-contract/">smart-contract (1)</a>
+        </li>
+        
+      </ul>
+
+    </div>
+  </section>
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+    
+    <p class="copyright">
+        © 2023 Byte Ebi 🍤
+    </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>
+      hljs.configure({ ignoreUnescapedHTML: true }); 
+      hljs.highlightAll();
+    </script><script src="/js/bundle.min.7fe05e0d4ce21f45d9ee4ecf95912d5598e101092edf657237e6f20c9cc20f56.js" integrity="sha256-f&#43;BeDUziH0XZ7k7PlZEtVZjhAQku32VyN&#43;byDJzCD1Y="></script>
+    <script src="/js/add-on.js"></script>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-LTGVYYWC2J', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </div>
+  </body>
+</html>

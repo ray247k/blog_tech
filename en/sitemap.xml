@@ -421,6 +421,45 @@
                 href="https://tech.ray247k.com/en/tags/php/"
                 />
   </url><url>
+    <loc>https://tech.ray247k.com/en/tags/cicd/</loc>
+    <lastmod>2022-03-30T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/cicd/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/cicd/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/tags/jenkins/</loc>
+    <lastmod>2022-03-30T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/jenkins/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/jenkins/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/blog/202203-jenkins-cicd-2-basic-pipeline/</loc>
+    <lastmod>2022-03-30T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202203-jenkins-cicd-2-basic-pipeline/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202203-jenkins-cicd-2-basic-pipeline/"
+                />
+  </url><url>
     <loc>https://tech.ray247k.com/en/tags/auto-scaling/</loc>
     <lastmod>2022-03-27T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -445,6 +484,19 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tech.ray247k.com/en/blog/202203-gcp-auto-scaling/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/blog/202203-jenkins-cicd-1-installation/</loc>
+    <lastmod>2022-03-16T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202203-jenkins-cicd-1-installation/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202203-jenkins-cicd-1-installation/"
                 />
   </url><url>
     <loc>https://tech.ray247k.com/en/blog/202203-laravel-queue/</loc>
