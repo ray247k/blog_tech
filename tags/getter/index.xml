@@ -6,23 +6,21 @@
     <description>Recent content in getter on Byte Ebi 🍤</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Fri, 16 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/getter/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 16 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tech.ray247k.com/tags/getter/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 16 抽離 Vuex store 中的邏輯</title>
       <link>https://tech.ray247k.com/blog/202010-express-vue-build-ecommerce-16-refactor-vue-store/</link>
       <pubDate>Fri, 16 Oct 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202010-express-vue-build-ecommerce-16-refactor-vue-store/</guid>
       <description>&lt;p&gt;隨著我們的迷你電商網站越來越完整，在 Vuex store 中的程式也越來越龐大&lt;br&gt;
 不只有 getters、mutation 還有 actions&lt;br&gt;
 在章節中先試著將這些複雜的邏輯拆分成個別的檔案，抽出 Getters、Mutations 和 Actions 邏輯&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 15 使用 Vuex Getters 複用資料邏輯</title>
       <link>https://tech.ray247k.com/blog/202010-express-vue-build-ecommerce-15-use-vuex-getters/</link>
       <pubDate>Fri, 09 Oct 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202010-express-vue-build-ecommerce-15-use-vuex-getters/</guid>
       <description>&lt;p&gt;有時候我們需要 &lt;code&gt;computed&lt;/code&gt; store 中的 state，在每個組件中複製貼上同樣的 &lt;code&gt;computed&lt;/code&gt; 似乎不是一個明智的作法&lt;br&gt;
 &lt;a href=&#34;https://vuex.vuejs.org/zh/guide/getters.html&#34;
@@ -31,6 +29,5 @@
 &lt;/a&gt;
  是 Vuex 提供讓我們可以對 Vuex store 中 state 資料做預處理的方法，就可以達成這個目的&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -6,33 +6,29 @@
     <description>Recent content in GCP on Byte Ebi 🍤</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Thu, 30 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/gcp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Jun 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tech.ray247k.com/tags/gcp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>在 GCP 上建立 Redis 服務</title>
       <link>https://tech.ray247k.com/blog/202206-gcp-redis/</link>
       <pubDate>Thu, 30 Jun 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202206-gcp-redis/</guid>
       <description>&lt;p&gt;GCP 提供 Google Cloud MemoryStore 服務可用來建立 Redis 或是 Memcached 快取機器服務&lt;br&gt;
 價錢跟開 Database 差不多，原本以為跟 VM 一樣便宜&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Jenkins 04 在流程中使用 SSH 指令操作另一台 GCP 上的執行個體</title>
       <link>https://tech.ray247k.com/blog/202204-jenkins-cicd-4-ssh-remote-server/</link>
       <pubDate>Wed, 13 Apr 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202204-jenkins-cicd-4-ssh-remote-server/</guid>
       <description>&lt;p&gt;在沒有自動化部屬的情境下，每次都需要手動連線到伺服器主機內部&lt;br&gt;
 透過下指令或是執行將部署指令的執行檔，不僅麻煩且有人為失誤的風險&lt;br&gt;
 透過 Jenkins 的 pipeline 來取代人工執行，部署就變得輕鬆又愜意&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>伸縮自在的伺服器 02 負載平衡 Load Balancing</title>
       <link>https://tech.ray247k.com/blog/202204-gcp-load-balancing/</link>
       <pubDate>Tue, 05 Apr 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202204-gcp-load-balancing/</guid>
       <description>&lt;p&gt;在前一篇&lt;a href=&#34;https://tech.ray247k.com/blog/202203-gcp-auto-scaling/&#34;
    
@@ -42,48 +38,39 @@
 我們需要設定一組 Load Balancer 對網際網路的請求分流到不同伺服器主機處理&lt;br&gt;
 這樣可以根據流量彈性調整主機數量，並維持服務穩定運作&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>伸縮自在的伺服器 01 自動配置 Auto Scaling</title>
       <link>https://tech.ray247k.com/blog/202203-gcp-auto-scaling/</link>
       <pubDate>Sun, 27 Mar 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202203-gcp-auto-scaling/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>使用 ssh 從本機連線到 GCP VM</title>
       <link>https://tech.ray247k.com/blog/202202-connect-to-gcp-vm-using-ssh/</link>
       <pubDate>Sat, 26 Feb 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202202-connect-to-gcp-vm-using-ssh/</guid>
       <description>&lt;p&gt;原先在 GCP 開啟 VM 後每當管理主機時都要先開啟 GCP 控制台頁面，找到指定主機&lt;br&gt;
 按下畫面上的 SSH 連線按鈕，接著開啟 GCP 的終端機畫面&lt;br&gt;
 開啟的步驟實在繁瑣，而且那個終端機也沒有自己本機的用的習慣&lt;br&gt;
 這篇文章說明如何透過本機終端機 ssh 連線到 GCP 主機內&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>第一次在 GCP 開 VM 就成功</title>
       <link>https://tech.ray247k.com/blog/202201-gcp-vm-basic/</link>
       <pubDate>Sat, 15 Jan 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202201-gcp-vm-basic/</guid>
       <description>&lt;p&gt;如何在 Google Cloud Platform (GCP) 上開啟一個 VM 虛擬主機呢？&lt;br&gt;
 聽起來很複雜，實際做起來十分簡單&lt;br&gt;
 過去沒有開主機的經驗，這次就把步驟給記錄下來&lt;br&gt;
 &lt;del&gt;我不想花錢自己開，以前公司也沒開權限給我過&lt;/del&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>雲端主機啟動 Docker 服務</title>
       <link>https://tech.ray247k.com/blog/202103-enable-docker-service-in-remote-server/</link>
       <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202103-enable-docker-service-in-remote-server/</guid>
       <description>&lt;p&gt;新開主機啟用 docker 與 docker-compose 服務的操作步驟&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -6,33 +6,28 @@
     <description>Recent content in MongoDB on Byte Ebi 🍤</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Fri, 07 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/mongodb/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 07 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tech.ray247k.com/tags/mongodb/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 06 - 資料庫設計</title>
       <link>https://tech.ray247k.com/blog/202008-express-vue-build-ecommerce-06-db-schemas-and-models/</link>
       <pubDate>Fri, 07 Aug 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202008-express-vue-build-ecommerce-06-db-schemas-and-models/</guid>
       <description>&lt;p&gt;先前我們安裝好了 mongoDB 以及開啟了 CORS，這一篇要來建立資料庫架構以及 MVC 架構中的 Model 部分&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 05 - 連接 MongoDB 與 CORS</title>
       <link>https://tech.ray247k.com/blog/202007-express-vue-build-ecommerce-05-mongodb-connect-and-cors/</link>
       <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202007-express-vue-build-ecommerce-05-mongodb-connect-and-cors/</guid>
       <description>&lt;p&gt;資料庫使用 MongoDB，這篇中我們會簡單介紹基本連線方式，以及跨來源資源共(CORS)&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 04 - 進入 MongoDB 的世界</title>
       <link>https://tech.ray247k.com/blog/202007-express-vue-build-ecommerce-04-hello-mongodb/</link>
       <pubDate>Thu, 23 Jul 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202007-express-vue-build-ecommerce-04-hello-mongodb/</guid>
       <description>&lt;p&gt;資料庫使用 MongoDB，這篇中我們會簡單介紹基本指令及安裝。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -6,33 +6,29 @@
     <description>Recent content in Jenkins on Byte Ebi 🍤</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Wed, 13 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/jenkins/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 13 Apr 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tech.ray247k.com/tags/jenkins/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Jenkins 04 在流程中使用 SSH 指令操作另一台 GCP 上的執行個體</title>
       <link>https://tech.ray247k.com/blog/202204-jenkins-cicd-4-ssh-remote-server/</link>
       <pubDate>Wed, 13 Apr 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202204-jenkins-cicd-4-ssh-remote-server/</guid>
       <description>&lt;p&gt;在沒有自動化部屬的情境下，每次都需要手動連線到伺服器主機內部&lt;br&gt;
 透過下指令或是執行將部署指令的執行檔，不僅麻煩且有人為失誤的風險&lt;br&gt;
 透過 Jenkins 的 pipeline 來取代人工執行，部署就變得輕鬆又愜意&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Jenkins 03 打包 Docker image 並推送到 GCR</title>
       <link>https://tech.ray247k.com/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/</link>
       <pubDate>Fri, 08 Apr 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/</guid>
       <description>&lt;p&gt;Google Container Registry 是 Google 提供用來儲存、管理和保護 Docker 容器映像檔的服務&lt;br&gt;
 這次要做的事是打包 Docker image，再透過 gcloud 指令推送到 GCP 以便未來部署主機時使用&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Jenkins 02 基本 pipeline 建置及串接 Github</title>
       <link>https://tech.ray247k.com/blog/202203-jenkins-cicd-2-basic-pipeline/</link>
       <pubDate>Wed, 30 Mar 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202203-jenkins-cicd-2-basic-pipeline/</guid>
       <description>&lt;p&gt;在 &lt;a href=&#34;https://www.jenkins.io/&#34;
    
@@ -41,12 +37,10 @@
  中的建置流程也叫做 pipeline，也可以透過 webhook 觸發建置&lt;br&gt;
 一樣有各種觸發方式和執行方式，底下示範串接 Github webhook 和常見觸發條件範例&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Jenkins 01 安裝</title>
       <link>https://tech.ray247k.com/blog/202203-jenkins-cicd-1-installation/</link>
       <pubDate>Wed, 16 Mar 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202203-jenkins-cicd-1-installation/</guid>
       <description>&lt;p&gt;使用 &lt;a href=&#34;https://www.jenkins.io/&#34;
    
@@ -60,6 +54,5 @@ Jenkins 是一套以 Java 開發的一套 CI/CD 系統工具&lt;br&gt;
 &lt;/a&gt;
 ，於是這次就來摸摸 Jenkins 了&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

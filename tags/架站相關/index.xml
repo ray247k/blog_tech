@@ -6,34 +6,30 @@
     <description>Recent content in 架站相關 on Byte Ebi 🍤</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Tue, 18 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 18 May 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tech.ray247k.com/tags/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>透過 Cloudflare 設定子網域，並客製 GitHub Page 網址</title>
       <link>https://tech.ray247k.com/blog/202105-set-custom-domain-for-github-page/</link>
       <pubDate>Tue, 18 May 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202105-set-custom-domain-for-github-page/</guid>
       <description>&lt;p&gt;之前已經買好了自己的網址，接著要利用 Cloudflare DNS 服務建立子網域&lt;br&gt;
 並且設定給指定的 GitHub Page 專案作為客製網址&lt;br&gt;
 學會這項技能之後，只要有一組主要網址，就可以根據需求產生不同的子網域網址&lt;br&gt;
 各家 DNS 服務提供商都有這個功能，本篇以 Cloudflare 為例&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>設定 Cloudflare 免費 CDN，並啟用 DNS 代管</title>
       <link>https://tech.ray247k.com/blog/202105-cloudflare-dns-add-domain/</link>
       <pubDate>Sun, 16 May 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202105-cloudflare-dns-add-domain/</guid>
       <description>&lt;p&gt;Google Domains 服務原本就有網域名稱伺服器(Domain Name System, DNS)服務&lt;br&gt;
 透過 DNS 可以管理你的域名，加子網域什麼的&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>如何從 Google Domains 購買屬於自己的網址</title>
       <link>https://tech.ray247k.com/blog/202105-how-to-buy-a-domain-from-google/</link>
       <pubDate>Sat, 15 May 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202105-how-to-buy-a-domain-from-google/</guid>
       <description>&lt;p&gt;以前都一直是使用免費的部落(blogger)，隨著近幾年個人品牌意識崛起，以及覺得原本部落格不敷使用&lt;br&gt;
 且搬家非常不方便，還有不能自訂 SEO 和埋設追蹤碼。在媒體業做過就會想自己動手處理這些&lt;br&gt;
@@ -41,6 +37,5 @@
 而且還有程式碼內容格式會跑掉，以及想都用 markdown 語法紀錄等等原因&lt;br&gt;
 興起了自架的想法，一方面也是想要作為展現自己的能力的平台&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

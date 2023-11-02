@@ -6,28 +6,25 @@
     <description>Recent content in Linux on Byte Ebi 🍤</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Sat, 26 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 26 Feb 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tech.ray247k.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>使用 ssh 從本機連線到 GCP VM</title>
       <link>https://tech.ray247k.com/blog/202202-connect-to-gcp-vm-using-ssh/</link>
       <pubDate>Sat, 26 Feb 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202202-connect-to-gcp-vm-using-ssh/</guid>
       <description>&lt;p&gt;原先在 GCP 開啟 VM 後每當管理主機時都要先開啟 GCP 控制台頁面，找到指定主機&lt;br&gt;
 按下畫面上的 SSH 連線按鈕，接著開啟 GCP 的終端機畫面&lt;br&gt;
 開啟的步驟實在繁瑣，而且那個終端機也沒有自己本機的用的習慣&lt;br&gt;
 這篇文章說明如何透過本機終端機 ssh 連線到 GCP 主機內&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>設定 ssh 金鑰登入遠端主機</title>
       <link>https://tech.ray247k.com/blog/202104-use-ssh-key-login-remote-server/</link>
       <pubDate>Sun, 25 Apr 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202104-use-ssh-key-login-remote-server/</guid>
       <description>&lt;p&gt;一般登入伺服器是使用帳號與密碼進行登入，但是密碼可能會因為抄錄或是傳遞給人而外洩&lt;br&gt;
 安全性的程度會比較沒有像SSH key 那麼安全，而且使用SSH key 登入可以就不用每次手動輸入密碼&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

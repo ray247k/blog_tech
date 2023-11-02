@@ -6,16 +6,15 @@
     <description>Recent content in PostgreSQL on Byte Ebi 🍤</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Wed, 03 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/postgresql/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 03 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tech.ray247k.com/tags/postgresql/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PostgreSQL 資料庫建置 - 使用 Docker</title>
       <link>https://tech.ray247k.com/blog/202103-build-postgresql-database-useing-docker/</link>
       <pubDate>Wed, 03 Mar 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202103-build-postgresql-database-useing-docker/</guid>
       <description>&lt;p&gt;使用 Docker 來建置一個 PostgreSQL 資料庫&lt;br&gt;
 包含 &lt;code&gt;資料庫建置&lt;/code&gt;、&lt;code&gt;資料持久化&lt;/code&gt;、&lt;code&gt;使用 GUI 操作資料庫&lt;/code&gt;&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

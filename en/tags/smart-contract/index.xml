@@ -6,18 +6,17 @@
     <description>Recent content in Smart Contract on Byte Ebi 🍤</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 09 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/en/tags/smart-contract/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 09 Jul 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tech.ray247k.com/en/tags/smart-contract/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Interacting with smart contracts using Golang</title>
       <link>https://tech.ray247k.com/en/blog/202207-go-ethereum-abigen/</link>
       <pubDate>Sat, 09 Jul 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/en/blog/202207-go-ethereum-abigen/</guid>
       <description>&lt;p&gt;Previously, I was calling Smart Contracts through PHP, which raised two issues.&lt;br&gt;
 One was the slowness, and the other was the lack of maintenance of the package.&lt;br&gt;
 Fortunately, Golang provides an official package that is both fast and solves these two problems.&lt;br&gt;
 This article explains how to convert existing Smart Contract ABIs into a Go package for interacting with contracts.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

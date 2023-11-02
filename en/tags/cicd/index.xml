@@ -6,12 +6,20 @@
     <description>Recent content in CICD on Byte Ebi 🍤</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 30 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/en/tags/cicd/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 08 Apr 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tech.ray247k.com/en/tags/cicd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Jenkins CI/CD 03 - Building and Pushing Docker Images to GCR</title>
+      <link>https://tech.ray247k.com/en/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/</link>
+      <pubDate>Fri, 08 Apr 2022 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/</guid>
+      <description>&lt;p&gt;Google Container Registry is a service provided by Google for storing, managing, and securing Docker container images.&lt;br&gt;
+The objective at hand is to package a Docker image and push it to Google Cloud Platform (GCP) using the &amp;lsquo;gcloud&amp;rsquo; command for future deployment purposes.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Jenkins CI/CD 02 Basic Pipeline Setup and GitHub Integration</title>
       <link>https://tech.ray247k.com/en/blog/202203-jenkins-cicd-2-basic-pipeline/</link>
       <pubDate>Wed, 30 Mar 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/en/blog/202203-jenkins-cicd-2-basic-pipeline/</guid>
       <description>&lt;p&gt;In &lt;a href=&#34;https://www.jenkins.io/&#34;
    
@@ -21,12 +29,10 @@
 It can also be triggered through webhooks, offering various triggering and execution methods.&lt;br&gt;
 Below, we&amp;rsquo;ll demonstrate how to integrate GitHub webhooks and provide common trigger condition examples.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Jenkins CI/CD 01 Installation</title>
       <link>https://tech.ray247k.com/en/blog/202203-jenkins-cicd-1-installation/</link>
       <pubDate>Wed, 16 Mar 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/en/blog/202203-jenkins-cicd-1-installation/</guid>
       <description>&lt;p&gt;Create Your Own Automated Deployment Service with &lt;a href=&#34;https://www.jenkins.io/&#34;
    
@@ -40,6 +46,5 @@ following our previous introduction to &lt;a href=&#34;https://tech.ray247k.com/
 &lt;/a&gt;
 &lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

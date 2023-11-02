@@ -6,12 +6,12 @@
     <description>Recent content in Drone on Byte Ebi 🍤</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Fri, 09 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/drone/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 09 Jul 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tech.ray247k.com/tags/drone/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[用 Drone 建立自動部署] 04 drone runner 介紹</title>
       <link>https://tech.ray247k.com/blog/202107-drone-cicd-4-advanced-runner/</link>
       <pubDate>Fri, 09 Jul 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202107-drone-cicd-4-advanced-runner/</guid>
       <description>&lt;p&gt;我們在 &lt;a href=&#34;https://tech.ray247k.com/blog/202106-drone-cicd-1-basic-usage/&#34;
    
@@ -26,12 +26,10 @@
  中使用到的其實只有 docker runner&lt;br&gt;
 這篇文章來分別介紹兩個 runner，以及官方網站上提到的其他 runner&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>[用 Drone 建立自動部署] 03 部署排程設定與權限管理</title>
       <link>https://tech.ray247k.com/blog/202106-drone-cicd-3-advanced-cron-job/</link>
       <pubDate>Mon, 14 Jun 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202106-drone-cicd-3-advanced-cron-job/</guid>
       <description>&lt;p&gt;使用 &lt;a href=&#34;https://www.drone.io/&#34;
    
@@ -41,12 +39,10 @@
 Drone 是一套以 Golang 開發的一套 CI/CD 系統工具&lt;br&gt;
 本篇進行部署排程設定與權限管理的教學&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>[用 Drone 建立自動部署] 02 部署觸發條件(pipeline)設定</title>
       <link>https://tech.ray247k.com/blog/202106-drone-cicd-2-advanced-pipeline-configuration/</link>
       <pubDate>Sat, 12 Jun 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202106-drone-cicd-2-advanced-pipeline-configuration/</guid>
       <description>&lt;p&gt;使用 &lt;a href=&#34;https://www.drone.io/&#34;
    
@@ -56,12 +52,10 @@ Drone 是一套以 Golang 開發的一套 CI/CD 系統工具&lt;br&gt;
 Drone 是一套以 Golang 開發的一套 CI/CD 系統工具&lt;br&gt;
 本篇進行複數觸發條件設定，在不同觸發條件下觸發不同的部署步驟設定&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>[用 Drone 建立自動部署] 01 基本服務建置及串接 GitHub</title>
       <link>https://tech.ray247k.com/blog/202106-drone-cicd-1-basic-usage/</link>
       <pubDate>Tue, 08 Jun 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202106-drone-cicd-1-basic-usage/</guid>
       <description>&lt;p&gt;使用 &lt;a href=&#34;https://www.drone.io/&#34;
    
@@ -71,6 +65,5 @@ Drone 是一套以 Golang 開發的一套 CI/CD 系統工具&lt;br&gt;
 Drone 是一套以 Golang 開發的一套 CI/CD 系統工具&lt;br&gt;
 本篇進行基礎服務啟動設定，以及串接 GitHub&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

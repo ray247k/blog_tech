@@ -6,12 +6,12 @@
     <description>Recent content in Laravel on Byte Ebi 🍤</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Sat, 02 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/laravel/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 02 Apr 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tech.ray247k.com/tags/laravel/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>介紹 Laravel Sail 和基本操作</title>
       <link>https://tech.ray247k.com/blog/202204-laravel-sail/</link>
       <pubDate>Sat, 02 Apr 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202204-laravel-sail/</guid>
       <description>&lt;p&gt;在 Laravel 開發環境建置上官方與非官方都有提供非常多的方式&lt;br&gt;
 這次要介紹的是 Laravel 8 之後加入的套件：&lt;a href=&#34;https://laravel.com/docs/9.x/sail&#34;
@@ -20,45 +20,37 @@
 &lt;/a&gt;
 &lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Laravel Queue 使用</title>
       <link>https://tech.ray247k.com/blog/202203-laravel-queue/</link>
       <pubDate>Sat, 05 Mar 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202203-laravel-queue/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Queue&lt;/strong&gt; 臺灣這邊稱作「&lt;strong&gt;佇列&lt;/strong&gt;」，中國那邊的翻譯會用「&lt;strong&gt;隊列&lt;/strong&gt;」&lt;br&gt;
 用處是將一個耗時且不需要即時完成的任務延遲處理，例如寄送電子郵件&lt;br&gt;
 使用者不需要等寄信成功才能進行下一步操作，這樣可以讓應用程式對網頁請求有更快的反應&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>匯入 Excel 或是 csv 檔案到 Laravel</title>
       <link>https://tech.ray247k.com/blog/202112-laravel-excel-import/</link>
       <pubDate>Sat, 11 Dec 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202112-laravel-excel-import/</guid>
       <description>&lt;p&gt;在後台介面尚未建置完成，或是使用者有大量資料不想逐筆新增&lt;br&gt;
 而是要透過表單一次性匯入，這時候我們就會用到 Laravel-excel 這個套件&lt;br&gt;
 同時也分享一次匯入大量資料的時候遇到的坑&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>開發屬於自己的 Laravel 套件</title>
       <link>https://tech.ray247k.com/blog/202107-laravel-package-development/</link>
       <pubDate>Sun, 25 Jul 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202107-laravel-package-development/</guid>
       <description>&lt;p&gt;目前的 Laravel 生態中有許多好用的套件包可以使用&lt;br&gt;
 但要是找不到別人寫好的套件包，又或是必須建置公司共用的套件包怎麼辦呢？&lt;br&gt;
 本篇就來在本機進行套件包開發，並且會在本機專案中使用 composer 進行安裝並測試&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>用 Docker 建立 Laravel 開發環境</title>
       <link>https://tech.ray247k.com/blog/202107-laravel-environment-with-docker/</link>
       <pubDate>Sat, 24 Jul 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202107-laravel-environment-with-docker/</guid>
       <description>&lt;p&gt;過去在本機開發 Laravel 專案，多數是直接在本機安裝所需要服務&lt;br&gt;
 而後來改以虛擬機為主，曾經官方文件推薦開發環境的 &lt;a href=&#34;https://github.com/laravel/homestead&#34;
@@ -67,25 +59,20 @@
 &lt;/a&gt;
  是很多人第一次使用的環境&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>環境初始化主機設定(Docker &#43; Laravel)</title>
       <link>https://tech.ray247k.com/blog/202107-initialize-server-setting-with-docker-and-laravel/</link>
       <pubDate>Sat, 17 Jul 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202107-initialize-server-setting-with-docker-and-laravel/</guid>
       <description>&lt;p&gt;如果今天開啟一台全新的雲端主機，要在上面使用 Docker 建立 Laravel 開發環境&lt;br&gt;
 並且可以在遠端主機執行 Laravel 常用的 composer 與 artisan 指令&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Laravel 執行環境建置</title>
       <link>https://tech.ray247k.com/blog/202102-laravel-environment-basic-settings/</link>
       <pubDate>Thu, 25 Feb 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202102-laravel-environment-basic-settings/</guid>
       <description>&lt;p&gt;開發 Laravel 專案所需要做的設定與套件安裝，不論是在遠端主機或是本機都適用&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

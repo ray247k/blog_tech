@@ -6,54 +6,46 @@
     <description>Recent content in DevOps on Byte Ebi 🍤</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Thu, 30 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/categories/devops/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Jun 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tech.ray247k.com/categories/devops/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>在 GCP 上建立 Redis 服務</title>
       <link>https://tech.ray247k.com/blog/202206-gcp-redis/</link>
       <pubDate>Thu, 30 Jun 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202206-gcp-redis/</guid>
       <description>&lt;p&gt;GCP 提供 Google Cloud MemoryStore 服務可用來建立 Redis 或是 Memcached 快取機器服務&lt;br&gt;
 價錢跟開 Database 差不多，原本以為跟 VM 一樣便宜&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>讓你的電腦暫時公開在網路上 - Ngrok</title>
       <link>https://tech.ray247k.com/blog/202204-ngrok/</link>
       <pubDate>Sat, 23 Apr 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202204-ngrok/</guid>
       <description>&lt;p&gt;在開發上有常常會遇到，想要在本機測試但是串接的服務或是 webhook 需要有一個公開的網址作為 callback&lt;br&gt;
 還都要求要有 https 的認證！&lt;br&gt;
 這種時候除了真的去開一台雲端主機外還有沒有其他選擇呢？&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Jenkins 04 在流程中使用 SSH 指令操作另一台 GCP 上的執行個體</title>
       <link>https://tech.ray247k.com/blog/202204-jenkins-cicd-4-ssh-remote-server/</link>
       <pubDate>Wed, 13 Apr 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202204-jenkins-cicd-4-ssh-remote-server/</guid>
       <description>&lt;p&gt;在沒有自動化部屬的情境下，每次都需要手動連線到伺服器主機內部&lt;br&gt;
 透過下指令或是執行將部署指令的執行檔，不僅麻煩且有人為失誤的風險&lt;br&gt;
 透過 Jenkins 的 pipeline 來取代人工執行，部署就變得輕鬆又愜意&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Jenkins 03 打包 Docker image 並推送到 GCR</title>
       <link>https://tech.ray247k.com/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/</link>
       <pubDate>Fri, 08 Apr 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/</guid>
       <description>&lt;p&gt;Google Container Registry 是 Google 提供用來儲存、管理和保護 Docker 容器映像檔的服務&lt;br&gt;
 這次要做的事是打包 Docker image，再透過 gcloud 指令推送到 GCP 以便未來部署主機時使用&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>伸縮自在的伺服器 02 負載平衡 Load Balancing</title>
       <link>https://tech.ray247k.com/blog/202204-gcp-load-balancing/</link>
       <pubDate>Tue, 05 Apr 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202204-gcp-load-balancing/</guid>
       <description>&lt;p&gt;在前一篇&lt;a href=&#34;https://tech.ray247k.com/blog/202203-gcp-auto-scaling/&#34;
    
@@ -63,12 +55,10 @@
 我們需要設定一組 Load Balancer 對網際網路的請求分流到不同伺服器主機處理&lt;br&gt;
 這樣可以根據流量彈性調整主機數量，並維持服務穩定運作&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Jenkins 02 基本 pipeline 建置及串接 Github</title>
       <link>https://tech.ray247k.com/blog/202203-jenkins-cicd-2-basic-pipeline/</link>
       <pubDate>Wed, 30 Mar 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202203-jenkins-cicd-2-basic-pipeline/</guid>
       <description>&lt;p&gt;在 &lt;a href=&#34;https://www.jenkins.io/&#34;
    
@@ -77,21 +67,17 @@
  中的建置流程也叫做 pipeline，也可以透過 webhook 觸發建置&lt;br&gt;
 一樣有各種觸發方式和執行方式，底下示範串接 Github webhook 和常見觸發條件範例&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>伸縮自在的伺服器 01 自動配置 Auto Scaling</title>
       <link>https://tech.ray247k.com/blog/202203-gcp-auto-scaling/</link>
       <pubDate>Sun, 27 Mar 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202203-gcp-auto-scaling/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Jenkins 01 安裝</title>
       <link>https://tech.ray247k.com/blog/202203-jenkins-cicd-1-installation/</link>
       <pubDate>Wed, 16 Mar 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202203-jenkins-cicd-1-installation/</guid>
       <description>&lt;p&gt;使用 &lt;a href=&#34;https://www.jenkins.io/&#34;
    
@@ -105,12 +91,10 @@ Jenkins 是一套以 Java 開發的一套 CI/CD 系統工具&lt;br&gt;
 &lt;/a&gt;
 ，於是這次就來摸摸 Jenkins 了&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>用 Docker 建立 Laravel 開發環境</title>
       <link>https://tech.ray247k.com/blog/202107-laravel-environment-with-docker/</link>
       <pubDate>Sat, 24 Jul 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202107-laravel-environment-with-docker/</guid>
       <description>&lt;p&gt;過去在本機開發 Laravel 專案，多數是直接在本機安裝所需要服務&lt;br&gt;
 而後來改以虛擬機為主，曾經官方文件推薦開發環境的 &lt;a href=&#34;https://github.com/laravel/homestead&#34;
@@ -119,22 +103,18 @@ Jenkins 是一套以 Java 開發的一套 CI/CD 系統工具&lt;br&gt;
 &lt;/a&gt;
  是很多人第一次使用的環境&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>環境初始化主機設定(Docker &#43; Laravel)</title>
       <link>https://tech.ray247k.com/blog/202107-initialize-server-setting-with-docker-and-laravel/</link>
       <pubDate>Sat, 17 Jul 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202107-initialize-server-setting-with-docker-and-laravel/</guid>
       <description>&lt;p&gt;如果今天開啟一台全新的雲端主機，要在上面使用 Docker 建立 Laravel 開發環境&lt;br&gt;
 並且可以在遠端主機執行 Laravel 常用的 composer 與 artisan 指令&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>[用 Drone 建立自動部署] 04 drone runner 介紹</title>
       <link>https://tech.ray247k.com/blog/202107-drone-cicd-4-advanced-runner/</link>
       <pubDate>Fri, 09 Jul 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202107-drone-cicd-4-advanced-runner/</guid>
       <description>&lt;p&gt;我們在 &lt;a href=&#34;https://tech.ray247k.com/blog/202106-drone-cicd-1-basic-usage/&#34;
    
@@ -149,12 +129,10 @@ Jenkins 是一套以 Java 開發的一套 CI/CD 系統工具&lt;br&gt;
  中使用到的其實只有 docker runner&lt;br&gt;
 這篇文章來分別介紹兩個 runner，以及官方網站上提到的其他 runner&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>[用 Drone 建立自動部署] 03 部署排程設定與權限管理</title>
       <link>https://tech.ray247k.com/blog/202106-drone-cicd-3-advanced-cron-job/</link>
       <pubDate>Mon, 14 Jun 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202106-drone-cicd-3-advanced-cron-job/</guid>
       <description>&lt;p&gt;使用 &lt;a href=&#34;https://www.drone.io/&#34;
    
@@ -164,12 +142,10 @@ Jenkins 是一套以 Java 開發的一套 CI/CD 系統工具&lt;br&gt;
 Drone 是一套以 Golang 開發的一套 CI/CD 系統工具&lt;br&gt;
 本篇進行部署排程設定與權限管理的教學&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>[用 Drone 建立自動部署] 02 部署觸發條件(pipeline)設定</title>
       <link>https://tech.ray247k.com/blog/202106-drone-cicd-2-advanced-pipeline-configuration/</link>
       <pubDate>Sat, 12 Jun 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202106-drone-cicd-2-advanced-pipeline-configuration/</guid>
       <description>&lt;p&gt;使用 &lt;a href=&#34;https://www.drone.io/&#34;
    
@@ -179,12 +155,10 @@ Drone 是一套以 Golang 開發的一套 CI/CD 系統工具&lt;br&gt;
 Drone 是一套以 Golang 開發的一套 CI/CD 系統工具&lt;br&gt;
 本篇進行複數觸發條件設定，在不同觸發條件下觸發不同的部署步驟設定&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>[用 Drone 建立自動部署] 01 基本服務建置及串接 GitHub</title>
       <link>https://tech.ray247k.com/blog/202106-drone-cicd-1-basic-usage/</link>
       <pubDate>Tue, 08 Jun 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202106-drone-cicd-1-basic-usage/</guid>
       <description>&lt;p&gt;使用 &lt;a href=&#34;https://www.drone.io/&#34;
    
@@ -194,83 +168,67 @@ Drone 是一套以 Golang 開發的一套 CI/CD 系統工具&lt;br&gt;
 Drone 是一套以 Golang 開發的一套 CI/CD 系統工具&lt;br&gt;
 本篇進行基礎服務啟動設定，以及串接 GitHub&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Docker 常用指令</title>
       <link>https://tech.ray247k.com/blog/202106-docker-common-commands/</link>
       <pubDate>Sun, 06 Jun 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202106-docker-common-commands/</guid>
       <description>&lt;p&gt;一些 Docker 上常用的指令和相關參數使用方法&lt;br&gt;
 實際使用上一定不只這些指令&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>伺服器壓力測試 - 使用 Apache Bench</title>
       <link>https://tech.ray247k.com/blog/202105-web-server-stress-testing/</link>
       <pubDate>Sun, 23 May 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202105-web-server-stress-testing/</guid>
       <description>&lt;p&gt;伺服器壓力測試，上線前一定要要做，不做不行！你們想想&lt;br&gt;
 你加班幾個月、系統上了線，吃著火鍋還唱著歌，突然主機就被流量灌倒了！&lt;br&gt;
 所以，有事先壓測的系統，才是好系統！&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>設定 ssh 金鑰登入遠端主機</title>
       <link>https://tech.ray247k.com/blog/202104-use-ssh-key-login-remote-server/</link>
       <pubDate>Sun, 25 Apr 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202104-use-ssh-key-login-remote-server/</guid>
       <description>&lt;p&gt;一般登入伺服器是使用帳號與密碼進行登入，但是密碼可能會因為抄錄或是傳遞給人而外洩&lt;br&gt;
 安全性的程度會比較沒有像SSH key 那麼安全，而且使用SSH key 登入可以就不用每次手動輸入密碼&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>雲端主機啟動 Docker 服務</title>
       <link>https://tech.ray247k.com/blog/202103-enable-docker-service-in-remote-server/</link>
       <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202103-enable-docker-service-in-remote-server/</guid>
       <description>&lt;p&gt;新開主機啟用 docker 與 docker-compose 服務的操作步驟&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>PostgreSQL 資料庫建置 - 使用 Docker</title>
       <link>https://tech.ray247k.com/blog/202103-build-postgresql-database-useing-docker/</link>
       <pubDate>Wed, 03 Mar 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202103-build-postgresql-database-useing-docker/</guid>
       <description>&lt;p&gt;使用 Docker 來建置一個 PostgreSQL 資料庫&lt;br&gt;
 包含 &lt;code&gt;資料庫建置&lt;/code&gt;、&lt;code&gt;資料持久化&lt;/code&gt;、&lt;code&gt;使用 GUI 操作資料庫&lt;/code&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>反向代理 - 在 Docker 環境建置</title>
       <link>https://tech.ray247k.com/blog/202102-reverse-proxy-in-docker-service/</link>
       <pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202102-reverse-proxy-in-docker-service/</guid>
       <description>&lt;p&gt;反向代理的基本說明，以及在 Docker 容器環境中如何建置反向代理&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Ngrok 讓 localhost 可以被外部連線</title>
       <link>https://tech.ray247k.com/blog/202102-ngrok-share-your-local-development-site/</link>
       <pubDate>Sun, 14 Feb 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202102-ngrok-share-your-local-development-site/</guid>
       <description>&lt;p&gt;ngrok 做為一個轉發的伺服器，他可以把外界的請求轉發到你指定的 Port&lt;br&gt;
 使用的背景原理是連接到 ngrok 雲端伺服器將你本機指定的地址公開&lt;br&gt;
 再將由 ngrok 一串公開的網址來存取內容&lt;br&gt;
 他的優點是快速而且還提供了 https 的服務讓你使用上更安全，甚至你還可以設置密碼保護&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Portainer - 視覺化管理 Docker 的工具</title>
       <link>https://tech.ray247k.com/blog/202101-portainer-open-source-container-management-gui/</link>
       <pubDate>Sat, 16 Jan 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202101-portainer-open-source-container-management-gui/</guid>
       <description>&lt;p&gt;本機開發大部分使用指令操作，或是使用 Docker 本身的 GUI 介面管理服務&lt;br&gt;
 &lt;a href=&#34;https://github.com/portainer&#34;
@@ -283,36 +241,29 @@ Drone 是一套以 Golang 開發的一套 CI/CD 系統工具&lt;br&gt;
 在雲端主機上啟動服務的話，即使沒有 Docker 執行權限的人也可以透過帳號密碼登入&lt;br&gt;
 使用視覺化的介面進行 Docker 服務的各種管理&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Docker 筆記 3 - docker-compose</title>
       <link>https://tech.ray247k.com/blog/202101-docker-note-3-introduce-docker-compose/</link>
       <pubDate>Tue, 12 Jan 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202101-docker-note-3-introduce-docker-compose/</guid>
       <description>&lt;p&gt;如果同時要管理彼此是有關連的多個 docker 容器，單純使用 docker 指令必須要自行記得容器之間的關聯&lt;br&gt;
 而使用 docker-compose，則可以輕鬆定義多容器服務&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Docker 筆記 2 - 基本使用</title>
       <link>https://tech.ray247k.com/blog/202101-docker-note-2-basic-usage/</link>
       <pubDate>Sat, 09 Jan 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202101-docker-note-2-basic-usage/</guid>
       <description>&lt;p&gt;容器化可以隔離不同環境，將環境打包後工程師可以專注開發，不用花過多心力在開發環境安裝上&lt;br&gt;
 而 Docker 是目前非常成熟且流行的一個容器化技術&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Docker 筆記 1 - 認識 Docker</title>
       <link>https://tech.ray247k.com/blog/202101-docker-note-1-what-is-docker/</link>
       <pubDate>Sat, 02 Jan 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202101-docker-note-1-what-is-docker/</guid>
       <description>&lt;p&gt;容器化可以隔離不同環境，將環境打包後工程師可以專注開發，不用花過多心力在開發環境安裝上&lt;br&gt;
 而 Docker 是目前非常成熟且流行的一個容器化技術&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

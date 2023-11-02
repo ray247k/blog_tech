@@ -6,16 +6,15 @@
     <description>Recent content in Serverless on Byte Ebi 🍤</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Tue, 04 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/categories/serverless/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 04 Oct 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tech.ray247k.com/categories/serverless/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Serverless 簡介</title>
       <link>https://tech.ray247k.com/blog/202210-what-is-serverless/</link>
       <pubDate>Tue, 04 Oct 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202210-what-is-serverless/</guid>
       <description>&lt;p&gt;因為公司的服務都是基於 AWS，且大量使用各種無伺服器運算服務&lt;br&gt;
 以前完全沒摸過這部分，這系列算筆記整理，內容未來可能會隨時修正&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -6,12 +6,12 @@
     <description>Recent content in PHP on Byte Ebi 🍤</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Sat, 02 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/php/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 02 Apr 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tech.ray247k.com/tags/php/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>介紹 Laravel Sail 和基本操作</title>
       <link>https://tech.ray247k.com/blog/202204-laravel-sail/</link>
       <pubDate>Sat, 02 Apr 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202204-laravel-sail/</guid>
       <description>&lt;p&gt;在 Laravel 開發環境建置上官方與非官方都有提供非常多的方式&lt;br&gt;
 這次要介紹的是 Laravel 8 之後加入的套件：&lt;a href=&#34;https://laravel.com/docs/9.x/sail&#34;
@@ -20,101 +20,80 @@
 &lt;/a&gt;
 &lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Laravel Queue 使用</title>
       <link>https://tech.ray247k.com/blog/202203-laravel-queue/</link>
       <pubDate>Sat, 05 Mar 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202203-laravel-queue/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Queue&lt;/strong&gt; 臺灣這邊稱作「&lt;strong&gt;佇列&lt;/strong&gt;」，中國那邊的翻譯會用「&lt;strong&gt;隊列&lt;/strong&gt;」&lt;br&gt;
 用處是將一個耗時且不需要即時完成的任務延遲處理，例如寄送電子郵件&lt;br&gt;
 使用者不需要等寄信成功才能進行下一步操作，這樣可以讓應用程式對網頁請求有更快的反應&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>使用 PHP CodeSniffer 檢查 Coding Style</title>
       <link>https://tech.ray247k.com/blog/202201-phpcs/</link>
       <pubDate>Thu, 20 Jan 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202201-phpcs/</guid>
       <description>&lt;p&gt;透過 phpcs(PHP Code Sniffer) 檢查程式碼是否符合標準&lt;br&gt;
 使用 phpcbf(PHP Code Beautifier and Fixer) 自動修正不符合標準的程式碼&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>[LeetCode] #11 Container With Most Water (Medium)</title>
       <link>https://tech.ray247k.com/blog/202105-leetcode-no11-container-with-most-water/</link>
       <pubDate>Sun, 30 May 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202105-leetcode-no11-container-with-most-water/</guid>
       <description>&lt;p&gt;用 PHP 解 LeetCode 系列，&lt;code&gt;Container With Most Water&lt;/code&gt;，屬於 Medium&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>[LeetCode] #540 Single Element in a Sorted Array (Medium)</title>
       <link>https://tech.ray247k.com/blog/202105-leetcode-no540-single-element-in-a-sorted-array/</link>
       <pubDate>Sat, 29 May 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202105-leetcode-no540-single-element-in-a-sorted-array/</guid>
       <description>&lt;p&gt;用 PHP 解 LeetCode 系列，&lt;code&gt;Single Element in a Sorted Array&lt;/code&gt;，屬於 Medium&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>[LeetCode] #791 Custom Sort String (Medium)</title>
       <link>https://tech.ray247k.com/blog/202105-leetcode-no791-custom-sort-string/</link>
       <pubDate>Wed, 26 May 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202105-leetcode-no791-custom-sort-string/</guid>
       <description>&lt;p&gt;用 PHP 解 LeetCode 系列，&lt;code&gt;Custom Sort String&lt;/code&gt;，屬於 Medium&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>伺服器壓力測試 - 使用 Apache Bench</title>
       <link>https://tech.ray247k.com/blog/202105-web-server-stress-testing/</link>
       <pubDate>Sun, 23 May 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202105-web-server-stress-testing/</guid>
       <description>&lt;p&gt;伺服器壓力測試，上線前一定要要做，不做不行！你們想想&lt;br&gt;
 你加班幾個月、系統上了線，吃著火鍋還唱著歌，突然主機就被流量灌倒了！&lt;br&gt;
 所以，有事先壓測的系統，才是好系統！&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>[LeetCode] #1833 Maximum Ice Cream Bars (Medium)</title>
       <link>https://tech.ray247k.com/blog/202105-leetcode-no1833-maximum-ice-cream-bars/</link>
       <pubDate>Fri, 21 May 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202105-leetcode-no1833-maximum-ice-cream-bars/</guid>
       <description>&lt;p&gt;用 PHP 解 LeetCode 系列，&lt;code&gt;Maximum Ice Cream Bars&lt;/code&gt;，屬於 Medium&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>[LeetCode] #1732 Find the Highest Altitude (Easy)</title>
       <link>https://tech.ray247k.com/blog/202105-leetcode-no1732-find-the-highest-altitude/</link>
       <pubDate>Thu, 20 May 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202105-leetcode-no1732-find-the-highest-altitude/</guid>
       <description>&lt;p&gt;用 PHP 解 LeetCode 系列，&lt;code&gt;Find the Highest Altitude&lt;/code&gt;，屬於 Easy&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>[LeetCode] #1 Two Sum (Easy)</title>
       <link>https://tech.ray247k.com/blog/202105-leetcode-no1-two-sum/</link>
       <pubDate>Wed, 19 May 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202105-leetcode-no1-two-sum/</guid>
       <description>&lt;p&gt;用 PHP 解 LeetCode 系列，這次是經典題目 &lt;code&gt;Two Sum&lt;/code&gt;，屬於 Easy&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Laravel 執行環境建置</title>
       <link>https://tech.ray247k.com/blog/202102-laravel-environment-basic-settings/</link>
       <pubDate>Thu, 25 Feb 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202102-laravel-environment-basic-settings/</guid>
       <description>&lt;p&gt;開發 Laravel 專案所需要做的設定與套件安裝，不論是在遠端主機或是本機都適用&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

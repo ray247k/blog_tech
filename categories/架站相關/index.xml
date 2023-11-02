@@ -6,70 +6,60 @@
     <description>Recent content in 架站相關 on Byte Ebi 🍤</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Sat, 26 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 26 Feb 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tech.ray247k.com/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>使用 ssh 從本機連線到 GCP VM</title>
       <link>https://tech.ray247k.com/blog/202202-connect-to-gcp-vm-using-ssh/</link>
       <pubDate>Sat, 26 Feb 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202202-connect-to-gcp-vm-using-ssh/</guid>
       <description>&lt;p&gt;原先在 GCP 開啟 VM 後每當管理主機時都要先開啟 GCP 控制台頁面，找到指定主機&lt;br&gt;
 按下畫面上的 SSH 連線按鈕，接著開啟 GCP 的終端機畫面&lt;br&gt;
 開啟的步驟實在繁瑣，而且那個終端機也沒有自己本機的用的習慣&lt;br&gt;
 這篇文章說明如何透過本機終端機 ssh 連線到 GCP 主機內&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>使用 Prerender 為 SPA 增進 SEO</title>
       <link>https://tech.ray247k.com/blog/202201-using-prerender-improve-spa-seo/</link>
       <pubDate>Mon, 31 Jan 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202201-using-prerender-improve-spa-seo/</guid>
       <description>&lt;p&gt;Single Page Application(SPA) 網站使用 Client-Side Rendering (CSR) 來渲染畫面&lt;br&gt;
 一開始載入時伺服器只會回傳根元件，透過後續 API 互動取得資料填入&lt;br&gt;
 而網站排名的爬蟲，爬到就會是空空的。雖然 Google 聲稱他們的爬蟲會執行 JS，但是其他搜尋引擎不一定會執行&lt;br&gt;
 所以透過 Prerender 服務來做到預先渲染給網頁爬蟲，達成搜尋結果最佳化&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>第一次在 GCP 開 VM 就成功</title>
       <link>https://tech.ray247k.com/blog/202201-gcp-vm-basic/</link>
       <pubDate>Sat, 15 Jan 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202201-gcp-vm-basic/</guid>
       <description>&lt;p&gt;如何在 Google Cloud Platform (GCP) 上開啟一個 VM 虛擬主機呢？&lt;br&gt;
 聽起來很複雜，實際做起來十分簡單&lt;br&gt;
 過去沒有開主機的經驗，這次就把步驟給記錄下來&lt;br&gt;
 &lt;del&gt;我不想花錢自己開，以前公司也沒開權限給我過&lt;/del&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>透過 Cloudflare 設定子網域，並客製 GitHub Page 網址</title>
       <link>https://tech.ray247k.com/blog/202105-set-custom-domain-for-github-page/</link>
       <pubDate>Tue, 18 May 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202105-set-custom-domain-for-github-page/</guid>
       <description>&lt;p&gt;之前已經買好了自己的網址，接著要利用 Cloudflare DNS 服務建立子網域&lt;br&gt;
 並且設定給指定的 GitHub Page 專案作為客製網址&lt;br&gt;
 學會這項技能之後，只要有一組主要網址，就可以根據需求產生不同的子網域網址&lt;br&gt;
 各家 DNS 服務提供商都有這個功能，本篇以 Cloudflare 為例&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>設定 Cloudflare 免費 CDN，並啟用 DNS 代管</title>
       <link>https://tech.ray247k.com/blog/202105-cloudflare-dns-add-domain/</link>
       <pubDate>Sun, 16 May 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202105-cloudflare-dns-add-domain/</guid>
       <description>&lt;p&gt;Google Domains 服務原本就有網域名稱伺服器(Domain Name System, DNS)服務&lt;br&gt;
 透過 DNS 可以管理你的域名，加子網域什麼的&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>如何從 Google Domains 購買屬於自己的網址</title>
       <link>https://tech.ray247k.com/blog/202105-how-to-buy-a-domain-from-google/</link>
       <pubDate>Sat, 15 May 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202105-how-to-buy-a-domain-from-google/</guid>
       <description>&lt;p&gt;以前都一直是使用免費的部落(blogger)，隨著近幾年個人品牌意識崛起，以及覺得原本部落格不敷使用&lt;br&gt;
 且搬家非常不方便，還有不能自訂 SEO 和埋設追蹤碼。在媒體業做過就會想自己動手處理這些&lt;br&gt;
@@ -77,6 +67,5 @@
 而且還有程式碼內容格式會跑掉，以及想都用 markdown 語法紀錄等等原因&lt;br&gt;
 興起了自架的想法，一方面也是想要作為展現自己的能力的平台&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

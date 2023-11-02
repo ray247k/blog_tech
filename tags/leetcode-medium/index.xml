@@ -6,51 +6,42 @@
     <description>Recent content in LeetCode-Medium on Byte Ebi 🍤</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Fri, 24 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/leetcode-medium/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 24 Sep 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tech.ray247k.com/tags/leetcode-medium/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[LeetCode] #150 Evaluate Reverse Polish Notation (Medium)</title>
       <link>https://tech.ray247k.com/blog/202109-leetcode-no150-evaluate-reverse-polish-notation/</link>
       <pubDate>Fri, 24 Sep 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202109-leetcode-no150-evaluate-reverse-polish-notation/</guid>
       <description>&lt;p&gt;用 Python3 解 LeetCode 系列，&lt;code&gt;Evaluate Reverse Polish Notation&lt;/code&gt;，屬於 Medium&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>[LeetCode] #11 Container With Most Water (Medium)</title>
       <link>https://tech.ray247k.com/blog/202105-leetcode-no11-container-with-most-water/</link>
       <pubDate>Sun, 30 May 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202105-leetcode-no11-container-with-most-water/</guid>
       <description>&lt;p&gt;用 PHP 解 LeetCode 系列，&lt;code&gt;Container With Most Water&lt;/code&gt;，屬於 Medium&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>[LeetCode] #540 Single Element in a Sorted Array (Medium)</title>
       <link>https://tech.ray247k.com/blog/202105-leetcode-no540-single-element-in-a-sorted-array/</link>
       <pubDate>Sat, 29 May 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202105-leetcode-no540-single-element-in-a-sorted-array/</guid>
       <description>&lt;p&gt;用 PHP 解 LeetCode 系列，&lt;code&gt;Single Element in a Sorted Array&lt;/code&gt;，屬於 Medium&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>[LeetCode] #791 Custom Sort String (Medium)</title>
       <link>https://tech.ray247k.com/blog/202105-leetcode-no791-custom-sort-string/</link>
       <pubDate>Wed, 26 May 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202105-leetcode-no791-custom-sort-string/</guid>
       <description>&lt;p&gt;用 PHP 解 LeetCode 系列，&lt;code&gt;Custom Sort String&lt;/code&gt;，屬於 Medium&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>[LeetCode] #1833 Maximum Ice Cream Bars (Medium)</title>
       <link>https://tech.ray247k.com/blog/202105-leetcode-no1833-maximum-ice-cream-bars/</link>
       <pubDate>Fri, 21 May 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202105-leetcode-no1833-maximum-ice-cream-bars/</guid>
       <description>&lt;p&gt;用 PHP 解 LeetCode 系列，&lt;code&gt;Maximum Ice Cream Bars&lt;/code&gt;，屬於 Medium&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

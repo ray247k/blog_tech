@@ -6,91 +6,85 @@
     <description>Recent content on Byte Ebi 🍤</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 25 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/en/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 25 Jun 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tech.ray247k.com/en/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Different between pointer and value for struct type in golang</title>
       <link>https://tech.ray247k.com/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/</link>
       <pubDate>Sun, 25 Jun 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/</guid>
       <description>&lt;p&gt;I always had a question &amp;ldquo;Should I use value for type in struct? Or using pointer?&amp;rdquo;&lt;br&gt;
 After reading many different projects on the web, it seems that they all have different practices.&lt;br&gt;
 Until I recently encountered a problem that gave me some ideas.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Using FFmpeg to convert media files</title>
       <link>https://tech.ray247k.com/en/blog/202301-ffmpeg-video-convert/</link>
       <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/en/blog/202301-ffmpeg-video-convert/</guid>
       <description>&lt;p&gt;Sometimes, we can use certain methods to download the .M3U8 file and then merge it into a .ts file.&lt;br&gt;
 However, computers usually cannot directly play this format.&lt;br&gt;
 We can use FFmpeg to convert it into a common .mp4 file for easy playback.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>[AWS 101] What are SNS and SQS</title>
       <link>https://tech.ray247k.com/en/blog/202210-aws101-what-is-sns-and-sqs/</link>
       <pubDate>Thu, 06 Oct 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/en/blog/202210-aws101-what-is-sns-and-sqs/</guid>
       <description>&lt;p&gt;Amazon Simple Queue Service (SQS) and Amazon Simple Notification Service (SNS) may look similar.&lt;br&gt;
 But in reality, they are quite different.&lt;/p&gt;
 &lt;p&gt;To better clarify the differences between the two, let&amp;rsquo;s compare the notes on both services side by side.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Serverless 101</title>
       <link>https://tech.ray247k.com/en/blog/202210-what-is-serverless/</link>
       <pubDate>Tue, 04 Oct 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/en/blog/202210-what-is-serverless/</guid>
       <description>&lt;p&gt;Since our company&amp;rsquo;s services are built on AWS and heavily rely on various serverless computing services,&lt;br&gt;
 I had no prior experience in this area.
 This series serves as a compilation of notes for me,&lt;br&gt;
 and its content may be subject to constant revisions in the future.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Interacting with smart contracts using Golang</title>
       <link>https://tech.ray247k.com/en/blog/202207-go-ethereum-abigen/</link>
       <pubDate>Sat, 09 Jul 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/en/blog/202207-go-ethereum-abigen/</guid>
       <description>&lt;p&gt;Previously, I was calling Smart Contracts through PHP, which raised two issues.&lt;br&gt;
 One was the slowness, and the other was the lack of maintenance of the package.&lt;br&gt;
 Fortunately, Golang provides an official package that is both fast and solves these two problems.&lt;br&gt;
 This article explains how to convert existing Smart Contract ABIs into a Go package for interacting with contracts.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Create a Redis service on GCP</title>
       <link>https://tech.ray247k.com/en/blog/202206-gcp-redis/</link>
       <pubDate>Thu, 30 Jun 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/en/blog/202206-gcp-redis/</guid>
       <description>&lt;p&gt;GCP offers the Google Cloud MemoryStore service for creating Redis or Memcached caching machine services.&lt;br&gt;
 The pricing is similar to that of setting up a database.&lt;br&gt;
 I thought it would be as inexpensive as using virtual machines (VMs).&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Make your computer be temporarily accessible on the internet. - Ngrok</title>
       <link>https://tech.ray247k.com/en/blog/202204-ngrok/</link>
       <pubDate>Sat, 23 Apr 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/en/blog/202204-ngrok/</guid>
       <description>&lt;p&gt;In development, it is often encountered that testing on the local machine requires a publicly accessible URL for services.&lt;br&gt;
 Or webhooks to use as a callback. Moreover, these services often require HTTPS certification.&lt;br&gt;
 Are there any other options besides setting up a cloud server for this purpose?&lt;/p&gt;</description>
     </item>
-    
+    <item>
+      <title>Jenkins CI/CD 03 - Building and Pushing Docker Images to GCR</title>
+      <link>https://tech.ray247k.com/en/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/</link>
+      <pubDate>Fri, 08 Apr 2022 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/</guid>
+      <description>&lt;p&gt;Google Container Registry is a service provided by Google for storing, managing, and securing Docker container images.&lt;br&gt;
+The objective at hand is to package a Docker image and push it to Google Cloud Platform (GCP) using the &amp;lsquo;gcloud&amp;rsquo; command for future deployment purposes.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Scalable Server 02 Load Balancing</title>
       <link>https://tech.ray247k.com/en/blog/202204-gcp-load-balancing/</link>
       <pubDate>Tue, 05 Apr 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/en/blog/202204-gcp-load-balancing/</guid>
       <description>&lt;p&gt;In the previous post &lt;a href=&#34;https://tech.ray247k.com/en/blog/202203-gcp-auto-scaling/&#34;
    
@@ -99,12 +93,10 @@ Are there any other options besides setting up a cloud server for this purpose?&
 , it was mentioned that we need to configure a set of Load Balancers to distribute internet requests to different server hosts.&lt;br&gt;
 This allows us to dynamically adjust the number of hosts based on traffic and maintain stable service operations.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Introducing Laravel Sail and Basic Operations</title>
       <link>https://tech.ray247k.com/en/blog/202204-laravel-sail/</link>
       <pubDate>Sat, 02 Apr 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/en/blog/202204-laravel-sail/</guid>
       <description>&lt;p&gt;In the context of Laravel development environment setup, both official and unofficial sources offer a plethora of approaches.&lt;br&gt;
 This time, we will be introducing a package introduced after Laravel 8: &lt;a href=&#34;https://laravel.com/docs/9.x/sail&#34;
@@ -113,12 +105,10 @@ This time, we will be introducing a package introduced after Laravel 8: &lt;a hr
 &lt;/a&gt;
 .&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Jenkins CI/CD 02 Basic Pipeline Setup and GitHub Integration</title>
       <link>https://tech.ray247k.com/en/blog/202203-jenkins-cicd-2-basic-pipeline/</link>
       <pubDate>Wed, 30 Mar 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/en/blog/202203-jenkins-cicd-2-basic-pipeline/</guid>
       <description>&lt;p&gt;In &lt;a href=&#34;https://www.jenkins.io/&#34;
    
@@ -128,21 +118,17 @@ This time, we will be introducing a package introduced after Laravel 8: &lt;a hr
 It can also be triggered through webhooks, offering various triggering and execution methods.&lt;br&gt;
 Below, we&amp;rsquo;ll demonstrate how to integrate GitHub webhooks and provide common trigger condition examples.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Scalable Server 01 Auto Scaling</title>
       <link>https://tech.ray247k.com/en/blog/202203-gcp-auto-scaling/</link>
       <pubDate>Sun, 27 Mar 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/en/blog/202203-gcp-auto-scaling/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Jenkins CI/CD 01 Installation</title>
       <link>https://tech.ray247k.com/en/blog/202203-jenkins-cicd-1-installation/</link>
       <pubDate>Wed, 16 Mar 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/en/blog/202203-jenkins-cicd-1-installation/</guid>
       <description>&lt;p&gt;Create Your Own Automated Deployment Service with &lt;a href=&#34;https://www.jenkins.io/&#34;
    
@@ -156,34 +142,28 @@ following our previous introduction to &lt;a href=&#34;https://tech.ray247k.com/
 &lt;/a&gt;
 &lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Laravel Queue Usage</title>
       <link>https://tech.ray247k.com/en/blog/202203-laravel-queue/</link>
       <pubDate>Sat, 05 Mar 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/en/blog/202203-laravel-queue/</guid>
       <description>&lt;p&gt;The purpose of queues is to defer processing of a time-consuming task that doesn&amp;rsquo;t require immediate completion.
 Like sending emails, users don&amp;rsquo;t need to wait for the email to be sent successfully before the next step.&lt;br&gt;
 Allowing the application to respond more quickly to web requests and smooth user experience.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Successfully launched a VM on GCP on the first try</title>
       <link>https://tech.ray247k.com/en/blog/202201-gcp-vm-basic/</link>
       <pubDate>Sat, 15 Jan 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/en/blog/202201-gcp-vm-basic/</guid>
       <description>&lt;p&gt;How to launch a VM virtual machine on Google Cloud Platform (GCP)?&lt;br&gt;
 It may sound complex, but in practice, it&amp;rsquo;s quite straightforward.&lt;br&gt;
 If you haven&amp;rsquo;t had any experience with setting up a host before, this time, we&amp;rsquo;ll document the steps for you.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>About</title>
       <link>https://tech.ray247k.com/en/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/en/about/</guid>
       <description>Familiar with PHP including CodeIgniter, WordPress, Laravel.
 Know a little about frontend and have experience with container.
@@ -193,6 +173,5 @@ Feel free to contact me via LinkedIn. I wanna have some foreign friends.
 Love Japanese culture after I star watching Vtuber.
 If you want to talk about that, please do not hesitate to contact me.</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>docker on Byte Ebi 🍤</title>
+    <link>https://tech.ray247k.com/en/tags/docker/</link>
+    <description>Recent content in docker on Byte Ebi 🍤</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 08 Apr 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tech.ray247k.com/en/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Jenkins CI/CD 03 - Building and Pushing Docker Images to GCR</title>
+      <link>https://tech.ray247k.com/en/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/</link>
+      <pubDate>Fri, 08 Apr 2022 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/</guid>
+      <description>&lt;p&gt;Google Container Registry is a service provided by Google for storing, managing, and securing Docker container images.&lt;br&gt;
+The objective at hand is to package a Docker image and push it to Google Cloud Platform (GCP) using the &amp;lsquo;gcloud&amp;rsquo; command for future deployment purposes.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

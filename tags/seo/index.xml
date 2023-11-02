@@ -6,18 +6,17 @@
     <description>Recent content in SEO on Byte Ebi 🍤</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Mon, 31 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/seo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 31 Jan 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tech.ray247k.com/tags/seo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>使用 Prerender 為 SPA 增進 SEO</title>
       <link>https://tech.ray247k.com/blog/202201-using-prerender-improve-spa-seo/</link>
       <pubDate>Mon, 31 Jan 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202201-using-prerender-improve-spa-seo/</guid>
       <description>&lt;p&gt;Single Page Application(SPA) 網站使用 Client-Side Rendering (CSR) 來渲染畫面&lt;br&gt;
 一開始載入時伺服器只會回傳根元件，透過後續 API 互動取得資料填入&lt;br&gt;
 而網站排名的爬蟲，爬到就會是空空的。雖然 Google 聲稱他們的爬蟲會執行 JS，但是其他搜尋引擎不一定會執行&lt;br&gt;
 所以透過 Prerender 服務來做到預先渲染給網頁爬蟲，達成搜尋結果最佳化&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

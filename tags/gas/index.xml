@@ -6,16 +6,15 @@
     <description>Recent content in GAS on Byte Ebi 🍤</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Sun, 28 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/gas/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tech.ray247k.com/tags/gas/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>操作 Google 表單，透過 GAS(Google App Script)</title>
       <link>https://tech.ray247k.com/blog/202111-operate-google-sheet-via-google-app-script/</link>
       <pubDate>Sun, 28 Nov 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202111-operate-google-sheet-via-google-app-script/</guid>
       <description>&lt;p&gt;在管理後台尚未建立完成而前台已經上線的時候，會希望可以讓非程式人員自行調整網頁上的文案&lt;br&gt;
 又或是暫時性的紀錄內容不想因此開資料表，通常這時候我們會透過 Google 表單來管理資料&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

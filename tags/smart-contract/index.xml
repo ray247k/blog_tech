@@ -6,17 +6,16 @@
     <description>Recent content in Smart Contract on Byte Ebi 🍤</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Sat, 09 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/smart-contract/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 09 Jul 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tech.ray247k.com/tags/smart-contract/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>使用 Golang 和智能合約互動</title>
       <link>https://tech.ray247k.com/blog/202207-go-ethereum-abigen/</link>
       <pubDate>Sat, 09 Jul 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202207-go-ethereum-abigen/</guid>
       <description>&lt;p&gt;之前都是透過 PHP 去呼叫 Smart Contract，這引發兩個問題&lt;br&gt;
 一個是慢，另一個是套件不維護了。而 Golang 有官方套件可以用，速度又快，恰好解決了這兩個問題&lt;br&gt;
 這篇主要是說明如何透過工具把既有的 Smart Contract abi 轉成 Go package 來操作合約&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

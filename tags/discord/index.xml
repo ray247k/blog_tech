@@ -6,27 +6,24 @@
     <description>Recent content in Discord on Byte Ebi 🍤</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Thu, 28 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/discord/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 28 Oct 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tech.ray247k.com/tags/discord/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Discord 機器人] 02.擲骰機器人</title>
       <link>https://tech.ray247k.com/blog/202110-make-discord-chatbot-02-roll-dice-bot/</link>
       <pubDate>Thu, 28 Oct 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202110-make-discord-chatbot-02-roll-dice-bot/</guid>
       <description>&lt;p&gt;不知道大家知不知道 TTRPG 呢？&lt;br&gt;
 比較有名的大概就是龍與地下城(D&amp;amp;D)吧&lt;br&gt;
 之前看 hololive EN 在玩，就萌生了「來寫個擲骰子 Bot 玩看看好了」的想法&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>[Discord 機器人] 01.建立基本機器人</title>
       <link>https://tech.ray247k.com/blog/202110-make-discord-chatbot-01-set-up/</link>
       <pubDate>Wed, 20 Oct 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202110-make-discord-chatbot-01-set-up/</guid>
       <description>&lt;p&gt;閒閒沒事，來寫點沒寫過的東西&lt;br&gt;
 最近都在 Discord 活動，就決定寫 Discord ChatBot 啦&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

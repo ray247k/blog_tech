@@ -6,37 +6,32 @@
     <description>Recent content in mutation on Byte Ebi 🍤</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Sat, 24 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/mutation/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tech.ray247k.com/tags/mutation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 17 使用常數管理變數</title>
       <link>https://tech.ray247k.com/blog/202010-express-vue-build-ecommerce-17-use-const-instead-of-variable/</link>
       <pubDate>Sat, 24 Oct 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202010-express-vue-build-ecommerce-17-use-const-instead-of-variable/</guid>
       <description>&lt;p&gt;很多時候我們會把功能封裝到組件內，以便重複使用組件，而在組件內我們會定義很多方法名稱去呼叫不同的事件&lt;br&gt;
 這中間只要有一個字打錯，整個流程就會錯誤，並且非常難除錯，因此我們會使用常數維持一致&lt;br&gt;
 打錯字的時候就會報錯，方便除錯&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 16 抽離 Vuex store 中的邏輯</title>
       <link>https://tech.ray247k.com/blog/202010-express-vue-build-ecommerce-16-refactor-vue-store/</link>
       <pubDate>Fri, 16 Oct 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202010-express-vue-build-ecommerce-16-refactor-vue-store/</guid>
       <description>&lt;p&gt;隨著我們的迷你電商網站越來越完整，在 Vuex store 中的程式也越來越龐大&lt;br&gt;
 不只有 getters、mutation 還有 actions&lt;br&gt;
 在章節中先試著將這些複雜的邏輯拆分成個別的檔案，抽出 Getters、Mutations 和 Actions 邏輯&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 12 在 Vuex 使用 Mutation 管理狀態</title>
       <link>https://tech.ray247k.com/blog/202009-express-vue-build-ecommerce-12-vuex-mutation/</link>
       <pubDate>Fri, 18 Sep 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202009-express-vue-build-ecommerce-12-vuex-mutation/</guid>
       <description>&lt;p&gt;透過 Mutation 管理 Vuex中的狀態&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

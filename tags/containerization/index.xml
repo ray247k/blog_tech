@@ -6,12 +6,12 @@
     <description>Recent content in Containerization on Byte Ebi 🍤</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Sat, 24 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/containerization/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Jul 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tech.ray247k.com/tags/containerization/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>用 Docker 建立 Laravel 開發環境</title>
       <link>https://tech.ray247k.com/blog/202107-laravel-environment-with-docker/</link>
       <pubDate>Sat, 24 Jul 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202107-laravel-environment-with-docker/</guid>
       <description>&lt;p&gt;過去在本機開發 Laravel 專案，多數是直接在本機安裝所需要服務&lt;br&gt;
 而後來改以虛擬機為主，曾經官方文件推薦開發環境的 &lt;a href=&#34;https://github.com/laravel/homestead&#34;
@@ -20,60 +20,48 @@
 &lt;/a&gt;
  是很多人第一次使用的環境&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>環境初始化主機設定(Docker &#43; Laravel)</title>
       <link>https://tech.ray247k.com/blog/202107-initialize-server-setting-with-docker-and-laravel/</link>
       <pubDate>Sat, 17 Jul 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202107-initialize-server-setting-with-docker-and-laravel/</guid>
       <description>&lt;p&gt;如果今天開啟一台全新的雲端主機，要在上面使用 Docker 建立 Laravel 開發環境&lt;br&gt;
 並且可以在遠端主機執行 Laravel 常用的 composer 與 artisan 指令&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Docker 常用指令</title>
       <link>https://tech.ray247k.com/blog/202106-docker-common-commands/</link>
       <pubDate>Sun, 06 Jun 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202106-docker-common-commands/</guid>
       <description>&lt;p&gt;一些 Docker 上常用的指令和相關參數使用方法&lt;br&gt;
 實際使用上一定不只這些指令&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>雲端主機啟動 Docker 服務</title>
       <link>https://tech.ray247k.com/blog/202103-enable-docker-service-in-remote-server/</link>
       <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202103-enable-docker-service-in-remote-server/</guid>
       <description>&lt;p&gt;新開主機啟用 docker 與 docker-compose 服務的操作步驟&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>PostgreSQL 資料庫建置 - 使用 Docker</title>
       <link>https://tech.ray247k.com/blog/202103-build-postgresql-database-useing-docker/</link>
       <pubDate>Wed, 03 Mar 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202103-build-postgresql-database-useing-docker/</guid>
       <description>&lt;p&gt;使用 Docker 來建置一個 PostgreSQL 資料庫&lt;br&gt;
 包含 &lt;code&gt;資料庫建置&lt;/code&gt;、&lt;code&gt;資料持久化&lt;/code&gt;、&lt;code&gt;使用 GUI 操作資料庫&lt;/code&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>反向代理 - 在 Docker 環境建置</title>
       <link>https://tech.ray247k.com/blog/202102-reverse-proxy-in-docker-service/</link>
       <pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202102-reverse-proxy-in-docker-service/</guid>
       <description>&lt;p&gt;反向代理的基本說明，以及在 Docker 容器環境中如何建置反向代理&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Portainer - 視覺化管理 Docker 的工具</title>
       <link>https://tech.ray247k.com/blog/202101-portainer-open-source-container-management-gui/</link>
       <pubDate>Sat, 16 Jan 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202101-portainer-open-source-container-management-gui/</guid>
       <description>&lt;p&gt;本機開發大部分使用指令操作，或是使用 Docker 本身的 GUI 介面管理服務&lt;br&gt;
 &lt;a href=&#34;https://github.com/portainer&#34;
@@ -86,36 +74,29 @@
 在雲端主機上啟動服務的話，即使沒有 Docker 執行權限的人也可以透過帳號密碼登入&lt;br&gt;
 使用視覺化的介面進行 Docker 服務的各種管理&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Docker 筆記 3 - docker-compose</title>
       <link>https://tech.ray247k.com/blog/202101-docker-note-3-introduce-docker-compose/</link>
       <pubDate>Tue, 12 Jan 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202101-docker-note-3-introduce-docker-compose/</guid>
       <description>&lt;p&gt;如果同時要管理彼此是有關連的多個 docker 容器，單純使用 docker 指令必須要自行記得容器之間的關聯&lt;br&gt;
 而使用 docker-compose，則可以輕鬆定義多容器服務&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Docker 筆記 2 - 基本使用</title>
       <link>https://tech.ray247k.com/blog/202101-docker-note-2-basic-usage/</link>
       <pubDate>Sat, 09 Jan 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202101-docker-note-2-basic-usage/</guid>
       <description>&lt;p&gt;容器化可以隔離不同環境，將環境打包後工程師可以專注開發，不用花過多心力在開發環境安裝上&lt;br&gt;
 而 Docker 是目前非常成熟且流行的一個容器化技術&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Docker 筆記 1 - 認識 Docker</title>
       <link>https://tech.ray247k.com/blog/202101-docker-note-1-what-is-docker/</link>
       <pubDate>Sat, 02 Jan 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202101-docker-note-1-what-is-docker/</guid>
       <description>&lt;p&gt;容器化可以隔離不同環境，將環境打包後工程師可以專注開發，不用花過多心力在開發環境安裝上&lt;br&gt;
 而 Docker 是目前非常成熟且流行的一個容器化技術&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

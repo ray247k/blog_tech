@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.119.0"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.120.2"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="CICD">
   <meta property="og:description" content="About web development, software engineering, frontend, backend, chatbot, server related topics.">
   <meta property="description" content="About web development, software engineering, frontend, backend, chatbot, server related topics.">
@@ -84,7 +84,7 @@
     "url": "https:\/\/tech.ray247k.com",
     "description": "About web development, software engineering, frontend, backend, chatbot, server related topics. - aws,devops,golang,laravel,serverless,tools,website-operations,",
     "keywords": [
-        "auto-scaling,aws,blockchain,cicd,devops,ffmpeg,firewall,gcp,go,golang,jenkins,laravel,load-balancing,ngrok,php,queue,redis,serverless,smart-contract,"
+        "auto-scaling,aws,blockchain,cicd,devops,docker,ffmpeg,firewall,gcp,gcr,go,golang,google-container-registry,jenkins,laravel,load-balancing,ngrok,php,queue,redis,serverless,smart-contract,"
     ]
 }
 </script>
@@ -210,6 +210,68 @@
   <header>
   <div class="title">
     
+      <h2><a href="/en/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/">Jenkins CI/CD 03 - Building and Pushing Docker Images to GCR</a></h2>
+    
+    
+      <p>This article discusses the process of building a Docker image and pushing it to the Google Container Registry (GCR) within a Jenkins pipeline using the &#39;gcloud&#39; command.</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2022-04-08 00:00:00 &#43;0000 UTC">April 8, 2022</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+  <div class="content">
+    <a href="/en/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/" class="image" style="--bg-image: url('/en/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/featured.jpeg');">
+    <img src="/en/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/featured.jpeg" alt="">
+  </a>
+    
+    &lt;p&gt;Google Container Registry is a service provided by Google for storing, managing, and securing Docker container images.&lt;br&gt;
+The objective at hand is to package a Docker image and push it to Google Cloud Platform (GCP) using the &lsquo;gcloud&rsquo; command for future deployment purposes.&lt;/p&gt;
+  </div>
+  <footer>
+    <a href="/en/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/" class="button big">Read More</a>
+    <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/en/categories/devops/">DevOps</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/en/tags/devops/">DevOps</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/jenkins/">Jenkins</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/cicd/">CICD</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/docker/">docker</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/gcr/">GCR</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/google-container-registry/">Google Container Registry</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+  </footer>
+</article>
+
+  
+    <article class="post">
+  <header>
+  <div class="title">
+    
       <h2><a href="/en/blog/202203-jenkins-cicd-2-basic-pipeline/">Jenkins CI/CD 02 Basic Pipeline Setup and GitHub Integration</a></h2>
     
     
@@ -228,13 +290,13 @@
     <img src="/en/blog/202203-jenkins-cicd-2-basic-pipeline/featured.png" alt="">
   </a>
     
-    <p>In <a href="https://www.jenkins.io/"
+    &lt;p&gt;In &lt;a href=&#34;https://www.jenkins.io/&#34;
    
-    target="_blank" rel="noreferrer noopener">Jenkins
-</a>
-, the build process is known as a pipeline.<br>
-It can also be triggered through webhooks, offering various triggering and execution methods.<br>
-Below, we&rsquo;ll demonstrate how to integrate GitHub webhooks and provide common trigger condition examples.</p>
+    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Jenkins
+&lt;/a&gt;
+, the build process is known as a pipeline.&lt;br&gt;
+It can also be triggered through webhooks, offering various triggering and execution methods.&lt;br&gt;
+Below, we&rsquo;ll demonstrate how to integrate GitHub webhooks and provide common trigger condition examples.&lt;/p&gt;
   </div>
   <footer>
     <a href="/en/blog/202203-jenkins-cicd-2-basic-pipeline/" class="button big">Read More</a>
@@ -289,17 +351,17 @@ Below, we&rsquo;ll demonstrate how to integrate GitHub webhooks and provide comm
     <img src="/en/blog/202203-jenkins-cicd-1-installation/featured.png" alt="">
   </a>
     
-    <p>Create Your Own Automated Deployment Service with <a href="https://www.jenkins.io/"
+    &lt;p&gt;Create Your Own Automated Deployment Service with &lt;a href=&#34;https://www.jenkins.io/&#34;
    
-    target="_blank" rel="noreferrer noopener">Jenkins
-</a>
-<br>
-Jenkins is a Java-based CI/CD system tool that we are exploring in this tutorial,<br>
-following our previous introduction to <a href="/tags/drone/"
+    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Jenkins
+&lt;/a&gt;
+&lt;br&gt;
+Jenkins is a Java-based CI/CD system tool that we are exploring in this tutorial,&lt;br&gt;
+following our previous introduction to &lt;a href=&#34;/tags/drone/&#34;
    
-   >Drone
-</a>
-</p>
+   &gt;Drone
+&lt;/a&gt;
+&lt;/p&gt;
   </div>
   <footer>
     <a href="/en/blog/202203-jenkins-cicd-1-installation/" class="button big">Read More</a>
@@ -414,7 +476,7 @@ following our previous introduction to <a href="/tags/drone/"
           
           
           <li>
-              <a href="/en/categories/devops/">devops<span class="count">6</span></a>
+              <a href="/en/categories/devops/">devops<span class="count">7</span></a>
           </li>
           
           <li>
@@ -456,7 +518,7 @@ following our previous introduction to <a href="/tags/drone/"
         
         
         <li>
-          <a href="/en/tags/devops/">devops (7)</a>
+          <a href="/en/tags/devops/">devops (8)</a>
         </li>
         
         <li>
@@ -464,11 +526,15 @@ following our previous introduction to <a href="/tags/drone/"
         </li>
         
         <li>
-          <a href="/en/tags/aws/">aws (2)</a>
+          <a href="/en/tags/cicd/">cicd (3)</a>
         </li>
         
         <li>
-          <a href="/en/tags/cicd/">cicd (2)</a>
+          <a href="/en/tags/jenkins/">jenkins (3)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/aws/">aws (2)</a>
         </li>
         
         <li>
@@ -477,10 +543,6 @@ following our previous introduction to <a href="/tags/drone/"
         
         <li>
           <a href="/en/tags/golang/">golang (2)</a>
-        </li>
-        
-        <li>
-          <a href="/en/tags/jenkins/">jenkins (2)</a>
         </li>
         
         <li>
@@ -500,11 +562,23 @@ following our previous introduction to <a href="/tags/drone/"
         </li>
         
         <li>
+          <a href="/en/tags/docker/">docker (1)</a>
+        </li>
+        
+        <li>
           <a href="/en/tags/ffmpeg/">ffmpeg (1)</a>
         </li>
         
         <li>
           <a href="/en/tags/firewall/">firewall (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/gcr/">gcr (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/google-container-registry/">google-container-registry (1)</a>
         </li>
         
         <li>
@@ -553,7 +627,7 @@ following our previous introduction to <a href="/tags/drone/"
     <script>
       hljs.configure({ ignoreUnescapedHTML: true }); 
       hljs.highlightAll();
-    </script><script src="/js/bundle.min.7fe05e0d4ce21f45d9ee4ecf95912d5598e101092edf657237e6f20c9cc20f56.js" integrity="sha256-f&#43;BeDUziH0XZ7k7PlZEtVZjhAQku32VyN&#43;byDJzCD1Y="></script>
+    </script><script src="/js/bundle.min.e4e4ee5bfcb8738f4f5394083f0bcdec4206411345917b04467e21d06758accd.js" integrity="sha256-5OTuW/y4c49PU5QIPwvN7EIGQRNFkXsERn4h0GdYrM0="></script>
     <script src="/js/add-on.js"></script>
 <script type="application/javascript">
 var doNotTrack = false;

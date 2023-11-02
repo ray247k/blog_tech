@@ -6,12 +6,12 @@
     <description>Recent content in Load Balancing on Byte Ebi 🍤</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Tue, 05 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/load-balancing/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 05 Apr 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tech.ray247k.com/tags/load-balancing/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>伸縮自在的伺服器 02 負載平衡 Load Balancing</title>
       <link>https://tech.ray247k.com/blog/202204-gcp-load-balancing/</link>
       <pubDate>Tue, 05 Apr 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202204-gcp-load-balancing/</guid>
       <description>&lt;p&gt;在前一篇&lt;a href=&#34;https://tech.ray247k.com/blog/202203-gcp-auto-scaling/&#34;
    
@@ -21,6 +21,5 @@
 我們需要設定一組 Load Balancer 對網際網路的請求分流到不同伺服器主機處理&lt;br&gt;
 這樣可以根據流量彈性調整主機數量，並維持服務穩定運作&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

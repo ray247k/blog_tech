@@ -6,18 +6,17 @@
     <description>Recent content in Serverless on Byte Ebi 🍤</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 04 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/en/tags/serverless/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 04 Oct 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tech.ray247k.com/en/tags/serverless/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Serverless 101</title>
       <link>https://tech.ray247k.com/en/blog/202210-what-is-serverless/</link>
       <pubDate>Tue, 04 Oct 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/en/blog/202210-what-is-serverless/</guid>
       <description>&lt;p&gt;Since our company&amp;rsquo;s services are built on AWS and heavily rely on various serverless computing services,&lt;br&gt;
 I had no prior experience in this area.
 This series serves as a compilation of notes for me,&lt;br&gt;
 and its content may be subject to constant revisions in the future.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

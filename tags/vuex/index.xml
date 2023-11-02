@@ -6,34 +6,30 @@
     <description>Recent content in vuex on Byte Ebi 🍤</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Sat, 24 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/vuex/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tech.ray247k.com/tags/vuex/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 17 使用常數管理變數</title>
       <link>https://tech.ray247k.com/blog/202010-express-vue-build-ecommerce-17-use-const-instead-of-variable/</link>
       <pubDate>Sat, 24 Oct 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202010-express-vue-build-ecommerce-17-use-const-instead-of-variable/</guid>
       <description>&lt;p&gt;很多時候我們會把功能封裝到組件內，以便重複使用組件，而在組件內我們會定義很多方法名稱去呼叫不同的事件&lt;br&gt;
 這中間只要有一個字打錯，整個流程就會錯誤，並且非常難除錯，因此我們會使用常數維持一致&lt;br&gt;
 打錯字的時候就會報錯，方便除錯&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 16 抽離 Vuex store 中的邏輯</title>
       <link>https://tech.ray247k.com/blog/202010-express-vue-build-ecommerce-16-refactor-vue-store/</link>
       <pubDate>Fri, 16 Oct 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202010-express-vue-build-ecommerce-16-refactor-vue-store/</guid>
       <description>&lt;p&gt;隨著我們的迷你電商網站越來越完整，在 Vuex store 中的程式也越來越龐大&lt;br&gt;
 不只有 getters、mutation 還有 actions&lt;br&gt;
 在章節中先試著將這些複雜的邏輯拆分成個別的檔案，抽出 Getters、Mutations 和 Actions 邏輯&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 15 使用 Vuex Getters 複用資料邏輯</title>
       <link>https://tech.ray247k.com/blog/202010-express-vue-build-ecommerce-15-use-vuex-getters/</link>
       <pubDate>Fri, 09 Oct 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202010-express-vue-build-ecommerce-15-use-vuex-getters/</guid>
       <description>&lt;p&gt;有時候我們需要 &lt;code&gt;computed&lt;/code&gt; store 中的 state，在每個組件中複製貼上同樣的 &lt;code&gt;computed&lt;/code&gt; 似乎不是一個明智的作法&lt;br&gt;
 &lt;a href=&#34;https://vuex.vuejs.org/zh/guide/getters.html&#34;
@@ -42,30 +38,24 @@
 &lt;/a&gt;
  是 Vuex 提供讓我們可以對 Vuex store 中 state 資料做預處理的方法，就可以達成這個目的&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 13 使用 Axios 取得 API 資料</title>
       <link>https://tech.ray247k.com/blog/202009-express-vue-build-ecommerce-13-how-to-use-axios/</link>
       <pubDate>Sat, 26 Sep 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202009-express-vue-build-ecommerce-13-how-to-use-axios/</guid>
       <description>&lt;p&gt;使用 Axios 取得後端 API 的資料&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 12 在 Vuex 使用 Mutation 管理狀態</title>
       <link>https://tech.ray247k.com/blog/202009-express-vue-build-ecommerce-12-vuex-mutation/</link>
       <pubDate>Fri, 18 Sep 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202009-express-vue-build-ecommerce-12-vuex-mutation/</guid>
       <description>&lt;p&gt;透過 Mutation 管理 Vuex中的狀態&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 11 認識 vuex</title>
       <link>https://tech.ray247k.com/blog/202009-express-vue-build-ecommerce-11-install_vuex/</link>
       <pubDate>Sat, 12 Sep 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202009-express-vue-build-ecommerce-11-install_vuex/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://vuex.vuejs.org/zh/&#34;
    
@@ -75,6 +65,5 @@
 使得組件只需要專注於渲染頁面，而前端狀態都保留在 vuex 中建立的狀態庫中&lt;br&gt;
 所謂狀態庫，其實也就是一個 Javascript 物件&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -6,18 +6,17 @@
     <description>Recent content in GitHub Page on Byte Ebi 🍤</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Tue, 18 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/github-page/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 18 May 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tech.ray247k.com/tags/github-page/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>透過 Cloudflare 設定子網域，並客製 GitHub Page 網址</title>
       <link>https://tech.ray247k.com/blog/202105-set-custom-domain-for-github-page/</link>
       <pubDate>Tue, 18 May 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202105-set-custom-domain-for-github-page/</guid>
       <description>&lt;p&gt;之前已經買好了自己的網址，接著要利用 Cloudflare DNS 服務建立子網域&lt;br&gt;
 並且設定給指定的 GitHub Page 專案作為客製網址&lt;br&gt;
 學會這項技能之後，只要有一組主要網址，就可以根據需求產生不同的子網域網址&lt;br&gt;
 各家 DNS 服務提供商都有這個功能，本篇以 Cloudflare 為例&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

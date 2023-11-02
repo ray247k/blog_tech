@@ -6,26 +6,23 @@
     <description>Recent content in nginx on Byte Ebi 🍤</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Sun, 23 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 23 May 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tech.ray247k.com/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>伺服器壓力測試 - 使用 Apache Bench</title>
       <link>https://tech.ray247k.com/blog/202105-web-server-stress-testing/</link>
       <pubDate>Sun, 23 May 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202105-web-server-stress-testing/</guid>
       <description>&lt;p&gt;伺服器壓力測試，上線前一定要要做，不做不行！你們想想&lt;br&gt;
 你加班幾個月、系統上了線，吃著火鍋還唱著歌，突然主機就被流量灌倒了！&lt;br&gt;
 所以，有事先壓測的系統，才是好系統！&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>反向代理 - 在 Docker 環境建置</title>
       <link>https://tech.ray247k.com/blog/202102-reverse-proxy-in-docker-service/</link>
       <pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202102-reverse-proxy-in-docker-service/</guid>
       <description>&lt;p&gt;反向代理的基本說明，以及在 Docker 容器環境中如何建置反向代理&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -6,33 +6,29 @@
     <description>Recent content in Golang on Byte Ebi 🍤</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Sun, 25 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 25 Jun 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tech.ray247k.com/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Golang 中 Struct 內型別用指針和值的差異和時機</title>
       <link>https://tech.ray247k.com/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/</link>
       <pubDate>Sun, 25 Jun 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/</guid>
       <description>&lt;p&gt;之前一直有個疑問「Struct 定義的時候，Type 什麼時候要傳值？什麼時候傳址？」&lt;br&gt;
 網路上看了許多不同專案似乎都有不同的做法，直到最近遇到的問題讓我有了一點想法&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>使用 Golang 和智能合約互動</title>
       <link>https://tech.ray247k.com/blog/202207-go-ethereum-abigen/</link>
       <pubDate>Sat, 09 Jul 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202207-go-ethereum-abigen/</guid>
       <description>&lt;p&gt;之前都是透過 PHP 去呼叫 Smart Contract，這引發兩個問題&lt;br&gt;
 一個是慢，另一個是套件不維護了。而 Golang 有官方套件可以用，速度又快，恰好解決了這兩個問題&lt;br&gt;
 這篇主要是說明如何透過工具把既有的 Smart Contract abi 轉成 Go package 來操作合約&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>[A Tour of Go 學習筆記] 09 併發(concurrency)</title>
       <link>https://tech.ray247k.com/blog/202112-a-tour-of-go-09-concurrency/</link>
       <pubDate>Sat, 25 Dec 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202112-a-tour-of-go-09-concurrency/</guid>
       <description>&lt;p&gt;初入 Golang 的世界，首先我們使用官方教學：&lt;a href=&#34;https://tour.golang.org/welcome/1&#34;
    
@@ -41,12 +37,10 @@
  來認識基本的 Golang 使用&lt;br&gt;
 這篇介紹 go 強大的併發（concurrency）&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>[A Tour of Go 學習筆記] 08 interface 和 error</title>
       <link>https://tech.ray247k.com/blog/202112-a-tour-of-go-08-interface-and-error/</link>
       <pubDate>Sat, 18 Dec 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202112-a-tour-of-go-08-interface-and-error/</guid>
       <description>&lt;p&gt;初入 Golang 的世界，首先我們使用官方教學：&lt;a href=&#34;https://tour.golang.org/welcome/1&#34;
    
@@ -55,12 +49,10 @@
  來認識基本的 Golang 使用&lt;br&gt;
 這篇介紹 interface 和 error&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>[A Tour of Go 學習筆記] 07 method</title>
       <link>https://tech.ray247k.com/blog/202112-a-tour-of-go-07-method/</link>
       <pubDate>Thu, 16 Dec 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202112-a-tour-of-go-07-method/</guid>
       <description>&lt;p&gt;初入 Golang 的世界，首先我們使用官方教學：&lt;a href=&#34;https://tour.golang.org/welcome/1&#34;
    
@@ -69,12 +61,10 @@
  來認識基本的 Golang 使用&lt;br&gt;
 這篇介紹 method&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>[A Tour of Go 學習筆記] 06 Range、Map 和 function</title>
       <link>https://tech.ray247k.com/blog/202112-a-tour-of-go-06-range-and-map/</link>
       <pubDate>Wed, 08 Dec 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202112-a-tour-of-go-06-range-and-map/</guid>
       <description>&lt;p&gt;初入 Golang 的世界，首先我們使用官方教學：&lt;a href=&#34;https://tour.golang.org/welcome/1&#34;
    
@@ -83,12 +73,10 @@
  來認識基本的 Golang 使用&lt;br&gt;
 這篇介紹 Range、Map 和 function&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>[A Tour of Go 學習筆記] 05 陣列和切片</title>
       <link>https://tech.ray247k.com/blog/202111-a-tour-of-go-05-array-and-slice/</link>
       <pubDate>Tue, 23 Nov 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202111-a-tour-of-go-05-array-and-slice/</guid>
       <description>&lt;p&gt;初入 Golang 的世界，首先我們使用官方教學：&lt;a href=&#34;https://tour.golang.org/welcome/1&#34;
    
@@ -97,12 +85,10 @@
  來認識基本的 Golang 使用&lt;br&gt;
 這篇介紹陣列和切片的概念&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>[A Tour of Go 學習筆記] 04 指針和結構</title>
       <link>https://tech.ray247k.com/blog/202111-a-tour-of-go-04-pointer-and-struct/</link>
       <pubDate>Wed, 17 Nov 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202111-a-tour-of-go-04-pointer-and-struct/</guid>
       <description>&lt;p&gt;初入 Golang 的世界，首先我們使用官方教學：&lt;a href=&#34;https://tour.golang.org/welcome/1&#34;
    
@@ -111,12 +97,10 @@
  來認識基本的 Golang 使用&lt;br&gt;
 這篇介紹指針和結構的使用&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>[A Tour of Go 學習筆記] 03 流程控制</title>
       <link>https://tech.ray247k.com/blog/202111-a-tour-of-go-03-flow-control-statements/</link>
       <pubDate>Sun, 14 Nov 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202111-a-tour-of-go-03-flow-control-statements/</guid>
       <description>&lt;p&gt;初入 Golang 的世界，首先我們使用官方教學：&lt;a href=&#34;https://tour.golang.org/welcome/1&#34;
    
@@ -125,12 +109,10 @@
  來認識基本的 Golang 使用&lt;br&gt;
 這篇是流程控制相關的筆記，說明一些 if else for switch 還有 defer&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>[A Tour of Go 學習筆記] 02 變數與型別</title>
       <link>https://tech.ray247k.com/blog/202111-a-tour-of-go-02-variables-and-types/</link>
       <pubDate>Fri, 12 Nov 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202111-a-tour-of-go-02-variables-and-types/</guid>
       <description>&lt;p&gt;初入 Golang 的世界，首先我們使用官方教學：&lt;a href=&#34;https://tour.golang.org/welcome/1&#34;
    
@@ -139,12 +121,10 @@
  來認識基本的 Golang 使用&lt;br&gt;
 這篇是變數與型別的筆記&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>[A Tour of Go 學習筆記] 01 Packages 和 Functions</title>
       <link>https://tech.ray247k.com/blog/202111-a-tour-of-go-01-packages-and-functions/</link>
       <pubDate>Wed, 10 Nov 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202111-a-tour-of-go-01-packages-and-functions/</guid>
       <description>&lt;p&gt;初入 Golang 的世界，首先我們使用官方教學：&lt;a href=&#34;https://tour.golang.org/welcome/1&#34;
    
@@ -153,6 +133,5 @@
  來認識基本的 Golang 使用&lt;br&gt;
 本篇包含基本套件包和函數的基礎&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

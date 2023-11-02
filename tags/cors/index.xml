@@ -6,15 +6,14 @@
     <description>Recent content in CORS on Byte Ebi 🍤</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Thu, 30 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://tech.ray247k.com/tags/cors/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tech.ray247k.com/tags/cors/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 05 - 連接 MongoDB 與 CORS</title>
       <link>https://tech.ray247k.com/blog/202007-express-vue-build-ecommerce-05-mongodb-connect-and-cors/</link>
       <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://tech.ray247k.com/blog/202007-express-vue-build-ecommerce-05-mongodb-connect-and-cors/</guid>
       <description>&lt;p&gt;資料庫使用 MongoDB，這篇中我們會簡單介紹基本連線方式，以及跨來源資源共(CORS)&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>
