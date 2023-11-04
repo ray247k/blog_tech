@@ -84,7 +84,7 @@
     "url": "https:\/\/tech.ray247k.com",
     "description": "About web development, software engineering, frontend, backend, chatbot, server related topics. - aws,devops,golang,laravel,serverless,tools,website-operations,",
     "keywords": [
-        "auto-scaling,aws,blockchain,cicd,devops,docker,ffmpeg,firewall,gcp,gcr,go,golang,google-container-registry,jenkins,laravel,load-balancing,ngrok,php,queue,redis,serverless,smart-contract,"
+        "auto-scaling,aws,blockchain,ci\/cd,cicd,devops,docker,ffmpeg,firewall,gcp,gcr,go,golang,google-container-registry,jenkins,laravel,load-balancing,ngrok,php,queue,redis,serverless,smart-contract,ssh,"
     ]
 }
 </script>
@@ -205,6 +205,69 @@
       <main id="site-main">
         
   
+  
+    <article class="post">
+  <header>
+  <div class="title">
+    
+      <h2><a href="/en/blog/202204-jenkins-cicd-4-ssh-remote-server/">Jenkins CI/CD 04 - Using SSH Commands to Operate another VM Instance in GCP</a></h2>
+    
+    
+      <p>Enable Jenkins to perform remote operations on a remote host through SSH, replacing manual deployment.</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2022-04-13 00:00:00 &#43;0000 UTC">April 13, 2022</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+  <div class="content">
+    <a href="/en/blog/202204-jenkins-cicd-4-ssh-remote-server/" class="image" style="--bg-image: url('/en/blog/202204-jenkins-cicd-4-ssh-remote-server/featured.jpeg');">
+    <img src="/en/blog/202204-jenkins-cicd-4-ssh-remote-server/featured.jpeg" alt="">
+  </a>
+    
+    &lt;p&gt;In a non-automated deployment scenario, manually connecting to the server host&rsquo;s internals is required every time.&lt;br&gt;
+Executing deployment commands or running deployment command executables not only involves inconvenience but also carries the risk of human error.&lt;br&gt;
+With Jenkins&rsquo; pipeline, we can replace manual execution, making deployments easier and more pleasant.&lt;/p&gt;
+  </div>
+  <footer>
+    <a href="/en/blog/202204-jenkins-cicd-4-ssh-remote-server/" class="button big">Read More</a>
+    <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/en/categories/devops/">DevOps</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/en/tags/devops/">DevOps</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/jenkins/">Jenkins</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/ci/cd/">CI/CD</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/docker/">Docker</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/gcp/">GCP</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/ssh/">SSH</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+  </footer>
+</article>
+
   
     <article class="post">
   <header>
@@ -570,63 +633,6 @@ following our previous introduction to &lt;a href=&#34;/tags/drone/&#34;
 </article>
 
   
-    <article class="post">
-  <header>
-  <div class="title">
-    
-      <h2><a href="/en/blog/202203-laravel-queue/">Laravel Queue Usage</a></h2>
-    
-    
-      <p>Using queues to defer processing of tasks that don&#39;t need immediate attention.</p>
-    
-  </div>
-  <div class="meta">
-    <time datetime="2022-03-05 00:00:00 &#43;0000 UTC">March 5, 2022</time>
-    <p>Ray</p>
-    
-  </div>
-</header>
-
-  <div class="content">
-    <a href="/en/blog/202203-laravel-queue/" class="image" style="--bg-image: url('/en/blog/202203-laravel-queue/featured.jpeg');">
-    <img src="/en/blog/202203-laravel-queue/featured.jpeg" alt="">
-  </a>
-    
-    &lt;p&gt;The purpose of queues is to defer processing of a time-consuming task that doesn&rsquo;t require immediate completion.
-Like sending emails, users don&rsquo;t need to wait for the email to be sent successfully before the next step.&lt;br&gt;
-Allowing the application to respond more quickly to web requests and smooth user experience.&lt;/p&gt;
-  </div>
-  <footer>
-    <a href="/en/blog/202203-laravel-queue/" class="button big">Read More</a>
-    <div class="stats">
-  
-    <ul class="categories">
-      
-        
-          <li><a class="article-terms-link" href="/en/categories/laravel/">Laravel</a></li>
-        
-      
-    </ul>
-  
-  
-    <ul class="tags">
-      
-        
-          <li><a class="article-terms-link" href="/en/tags/laravel/">Laravel</a></li>
-        
-          <li><a class="article-terms-link" href="/en/tags/php/">PHP</a></li>
-        
-          <li><a class="article-terms-link" href="/en/tags/queue/">queue</a></li>
-        
-      
-    </ul>
-  
-</div>
-
-  </footer>
-</article>
-
-  
   <div class="pagination">
     
       <a href="/en/blog/" class="button left"><span>Previous Page</span></a>
@@ -713,7 +719,7 @@ Allowing the application to respond more quickly to web requests and smooth user
           
           
           <li>
-              <a href="/en/categories/devops/">devops<span class="count">7</span></a>
+              <a href="/en/categories/devops/">devops<span class="count">8</span></a>
           </li>
           
           <li>
@@ -755,11 +761,15 @@ Allowing the application to respond more quickly to web requests and smooth user
         
         
         <li>
-          <a href="/en/tags/devops/">devops (8)</a>
+          <a href="/en/tags/devops/">devops (9)</a>
         </li>
         
         <li>
-          <a href="/en/tags/gcp/">gcp (4)</a>
+          <a href="/en/tags/gcp/">gcp (5)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/jenkins/">jenkins (4)</a>
         </li>
         
         <li>
@@ -767,11 +777,11 @@ Allowing the application to respond more quickly to web requests and smooth user
         </li>
         
         <li>
-          <a href="/en/tags/jenkins/">jenkins (3)</a>
+          <a href="/en/tags/aws/">aws (2)</a>
         </li>
         
         <li>
-          <a href="/en/tags/aws/">aws (2)</a>
+          <a href="/en/tags/docker/">docker (2)</a>
         </li>
         
         <li>
@@ -799,7 +809,7 @@ Allowing the application to respond more quickly to web requests and smooth user
         </li>
         
         <li>
-          <a href="/en/tags/docker/">docker (1)</a>
+          <a href="/en/tags/ci/cd/">ci/cd (1)</a>
         </li>
         
         <li>
@@ -840,6 +850,10 @@ Allowing the application to respond more quickly to web requests and smooth user
         
         <li>
           <a href="/en/tags/smart-contract/">smart-contract (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ssh/">ssh (1)</a>
         </li>
         
       </ul>

@@ -1,0 +1,737 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+<title>Jenkins CI/CD 04 - Using SSH Commands to Operate another VM Instance in GCP - Byte Ebi 🍤</title>
+<meta name="description" content="Enable Jenkins to perform remote operations on a remote host through SSH, replacing manual deployment.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta property="og:site_name" content="Byte Ebi 🍤">
+<meta property="og:title" content="Jenkins CI/CD 04 - Using SSH Commands to Operate another VM Instance in GCP">
+<meta property="og:description" content="Enable Jenkins to perform remote operations on a remote host through SSH, replacing manual deployment.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://tech.ray247k.com/en/blog/202204-jenkins-cicd-4-ssh-remote-server/">
+  <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
+
+
+
+  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
+  
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=1" color="#ffffff">
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=1">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=1">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+<meta name="generator" content="Hugo 0.120.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+  <meta property="og:title" content="Jenkins CI/CD 04 - Using SSH Commands to Operate another VM Instance in GCP">
+  <meta property="og:description" content="Enable Jenkins to perform remote operations on a remote host through SSH, replacing manual deployment.">
+  <meta property="description" content="Enable Jenkins to perform remote operations on a remote host through SSH, replacing manual deployment.">
+  <meta property="og:url" content="https://tech.ray247k.com/en/blog/202204-jenkins-cicd-4-ssh-remote-server/">
+  <meta property="og:type" content="article">
+  
+    <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
+  
+  
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/felipec.min.css">
+          <link rel="stylesheet" href="/css/bundle.min.3b1b5f2e683d24b1ea3b5a08c8254622e40aa935e0ead75ba6d45c0f14c2f965.css" integrity="sha256-OxtfLmg9JLHqO1oIyCVGIuQKqTXg6tdbptRcDxTC&#43;WU="><link rel="stylesheet" href="/css/add-on.css">
+
+
+    
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', "G-LTGVYYWC2J");
+        </script>
+    
+
+
+  <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "image": {
+        "@type": "ImageObject",
+        "image": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+        "height": 648,
+        "width": 1080
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Byte Ebi 🍤",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png"
+        }
+    },
+    "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+    "headline": "About web development, software engineering, frontend, backend, chatbot, server related topics. - Byte Ebi 🍤",
+    "name": "Byte Ebi 🍤",
+    "url": "https:\/\/tech.ray247k.com",
+    "description": "About web development, software engineering, frontend, backend, chatbot, server related topics. - aws,devops,golang,laravel,serverless,tools,website-operations,",
+    "keywords": [
+        "auto-scaling,aws,blockchain,ci\/cd,cicd,devops,docker,ffmpeg,firewall,gcp,gcr,go,golang,google-container-registry,jenkins,laravel,load-balancing,ngrok,php,queue,redis,serverless,smart-contract,ssh,"
+    ]
+}
+</script>
+
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "legalName": "Byte Ebi 🍤",
+    "url": "https:\/\/tech.ray247k.com",
+    "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "",
+        "availableLanguage": [
+            "Mandarin",
+            "English"
+        ]
+    },
+    "sameAs": [
+        "https://ray247k.blogspot.com/"
+    ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Jenkins CI\/CD 04 - Using SSH Commands to Operate another VM Instance in GCP",
+    "description": "Enable Jenkins to perform remote operations on a remote host through SSH, replacing manual deployment.",
+    "keywords": [
+        "DevOps" , "Jenkins" , "CI\/CD" , "Docker" , "GCP" , "SSH" 
+    ],
+    "dateCreated": "2022-04-13T00:00:00.00Z",
+    "datePublished": "2022-04-13T00:00:00.00Z",
+    "dateModified": "2022-04-13T00:00:00.00Z",
+    "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "contentUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png"
+    },
+    "breadcrumb": {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com",
+                    "name": "Byte Ebi 🍤",
+                    "url": "https:\/\/tech.ray247k.com"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com/blog",
+                    "name": "Blog",
+                    "url": "https:\/\/tech.ray247k.com/blog"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\/en\/blog\/202204-jenkins-cicd-4-ssh-remote-server\/",
+                    "name": "Jenkins CI\/CD 04 - Using SSH Commands to Operate another VM Instance in GCP",
+                    "url": "https:\/\/tech.ray247k.com\/en\/blog\/202204-jenkins-cicd-4-ssh-remote-server\/"
+                }
+            }
+        ],
+        "itemListOrder": "Ascending",
+        "numberOfItems": 3
+    }
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "articleSection": "blog",
+    "name": "Jenkins CI\/CD 04 - Using SSH Commands to Operate another VM Instance in GCP",
+    "headline": "\u003cp\u003eIn a non-automated deployment scenario, manually connecting to the server host\u0026rsquo;s internals is required every time.\u003cbr\u003e\nExecuting deployment commands or running deployment command executables not only involves inconvenience but also carries the risk of human error.\u003cbr\u003e\nWith Jenkins\u0026rsquo; pipeline, we can replace manual execution, making deployments easier and more pleasant.\u003c\/p\u003e",
+    "description": "Enable Jenkins to perform remote operations on a remote host through SSH, replacing manual deployment.",
+    "inLanguage": "en",
+    "isFamilyFriendly": "true",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com\/en\/blog\/202204-jenkins-cicd-4-ssh-remote-server\/"
+    },
+    "author" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "creator" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "accountablePerson" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "copyrightHolder" : "Byte Ebi 🍤",
+    "copyrightYear" : "2022",
+    "dateCreated": "2022-04-13T00:00:00.00Z",
+    "datePublished": "2022-04-13T00:00:00.00Z",
+    "dateModified": "2022-04-13T00:00:00.00Z",
+    "publisher":{
+        "@type":"Organization",
+        "name": "Byte Ebi 🍤",
+        "url": "https://tech.ray247k.com",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+            "width":"32",
+            "height":"32"
+        }
+    },
+    "image": "https://tech.ray247k.com/img/main/logo.png",
+    "url" : "https:\/\/tech.ray247k.com\/en\/blog\/202204-jenkins-cicd-4-ssh-remote-server\/",
+    "wordCount" : "545",
+    "genre" : [ "DevOps" , "Jenkins" , "CI\/CD" , "Docker" , "GCP" , "SSH" ],
+    "keywords" : [ "DevOps" , "Jenkins" , "CI\/CD" , "Docker" , "GCP" , "SSH" ]
+}
+</script>
+
+
+
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/en/" class="nav">
+        
+          Blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/en/" class="nav link"><i class='fa fa-home'></i> home</a>
+        
+      
+        
+          
+          <a href="/en/about" class="nav link"><i class='far fa-id-card'></i> about</a>
+        
+      
+        
+          
+          <a href="/en/categories" class="nav link"><i class='fas fa-sitemap'></i> category</a>
+        
+      
+      
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    
+    <a href="#lang-menu" class="nav lang-toggle" lang="en">en</a>
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  <menu id="lang-menu" class="flyout-menu menu">
+  <a href="#" lang="en" class="nav link active">English (en)</a>
+  
+      <a href="https://tech.ray247k.com/blog/202204-jenkins-cicd-4-ssh-remote-server/" lang="zh-tw" class="nav link">正體中文 (zh-tw)</a>
+    
+  
+</menu>
+
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/en/"><img src="/img/main/logo.png" class="circle" width="100" alt="Byte Ebi&#39;s Logo" /></a>
+  <header>
+    <h1>Byte Ebi 🍤</h1>
+  </header>
+  <main>
+    <p>A Bit everyday A Byte every week</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/ray247k" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//www.linkedin.com/in/j-ray-cheng" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="/en/blog/202204-jenkins-cicd-4-ssh-remote-server/">Jenkins CI/CD 04 - Using SSH Commands to Operate another VM Instance in GCP</a></h2>
+    
+    
+      <p>Enable Jenkins to perform remote operations on a remote host through SSH, replacing manual deployment.</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2022-04-13 00:00:00 &#43;0000 UTC">April 13, 2022</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+    <div id="socnet-share">
+      
+
+
+
+
+
+    </div>
+    <div class="content">
+      <a href="/en/blog/202204-jenkins-cicd-4-ssh-remote-server/" class="image" style="--bg-image: url('/en/blog/202204-jenkins-cicd-4-ssh-remote-server/featured.jpeg');">
+    <img src="/en/blog/202204-jenkins-cicd-4-ssh-remote-server/featured.jpeg" alt="">
+  </a>
+      <p>In a non-automated deployment scenario, manually connecting to the server host&rsquo;s internals is required every time.<br>
+Executing deployment commands or running deployment command executables not only involves inconvenience but also carries the risk of human error.<br>
+With Jenkins&rsquo; pipeline, we can replace manual execution, making deployments easier and more pleasant.</p>
+<h1 id="package-installation">Package Installation</h1>
+<p>Yes, you guessed it; we need to install a package again.</p>
+<blockquote>
+<p>Spoiler alert: Don&rsquo;t install it just yet. Consider it after reading the next paragraph.</p>
+</blockquote>
+<p>This time, we need to install support for the pipeline: <a href="https://plugins.jenkins.io/ssh-steps/"
+   
+    target="_blank" rel="noreferrer noopener">SSH Pipeline Steps
+</a>
+.<br>
+The installation process is the same as for other packages.<br>
+In the side menu, select <code>Manage Jenkins</code> -&gt; <code>Manage Plugins</code> and search for <strong>ssh-steps</strong>.<br>
+Then install the <code>SSH Pipeline StepsVersion</code> package.</p>
+<h1 id="using-gcloud-for-login">Using gcloud for Login</h1>
+<p>Then it suddenly occurred to me that we had installed gcloud earlier,
+and gcloud itself has the capability to directly connect via SSH to other instances within the same project!
+No need to install additional packages! Congratulations!</p>
+<p>If you haven&rsquo;t installed the gcloud command yet, you can refer to the tutorial in a previous article: <a href="/en/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/"
+   
+   >Jenkins CI/CD 03 - Building and Pushing Docker Images to GCR
+</a>
+.</p>
+<p>The prerequisite for using gcloud for SSH commands is to have the corresponding permissions set in your <code>Identity and Access Management (IAM).</code><br>
+If the commands in the following steps are denied, you&rsquo;ll have to figure it out yourself.<br>
+If you see an error message, adjust the permissions on the IAM page as suggested.</p>
+<p>First, switch the user to Jenkins on the Jenkins host:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo su jenkins
+</span></span></code></pre></div><p>Then, enter the command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud compute ssh INTERNAL_INSTANCE_NAME --zone<span style="color:#f92672">=</span>ZONE --internal-ip
+</span></span></code></pre></div><p>The first time you connect, it will prompt you to generate and add an SSH key.<br>
+This is where IAM permissions issues are most likely to occur.<br>
+If you can&rsquo;t log in, it means you need to adjust the permissions for the key you previously set.<br>
+After setting up the IAM correctly, follow the prompts to generate an SSH key, which will be automatically added to the <code>metadata</code> in Compute Engine. Afterward, you will be able to log in directly.</p>
+<p><img src="gcloud-ssh.png" alt="gcloud ssh"></p>
+<h1 id="connecting-with-gcloud-commands-in-the-pipeline">Connecting with gcloud Commands in the Pipeline</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#75715e">// jenkinsfile
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">pipeline</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">agent</span> <span style="color:#a6e22e">any</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">stages</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">stage</span>(<span style="color:#e6db74">&#39;Deploy branch: develop to beta&#39;</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">when</span> {
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">branch</span> <span style="color:#e6db74">&#39;develop&#39;</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">steps</span> {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;ssh to store-beta-api instance.&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">withCredentials</span>([<span style="color:#a6e22e">file</span>(<span style="color:#a6e22e">credentialsId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;jenkins-gcr&#39;</span>, <span style="color:#a6e22e">variable</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;GC_KEY&#39;</span>)]) {
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">sh</span> <span style="color:#e6db74">&#34;gcloud compute ssh store-beta-api --zone=asia-east1-b --internal-ip --command &#39;cd /data/store-backend &amp;&amp; sudo sh ./_scripts/deploy_beta.sh&#39;&#34;</span>
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;Deploy beta done&#34;</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>A crucial point to note is that you need to use <code>--command</code> to specify the remote command, and it should be a single command string.
+because the connection is terminated after executing that line. The state doesn&rsquo;t persist!</p>
+<p>In the example, we demonstrate SSH connection using gcloud commands to a VM instance named <code>store-beta-api</code> within the same GCP project in the <code>asia-east1-b</code> region, accessed through its internal <code>static IP address</code>.</p>
+<p>Once the connection is successful, two commands are executed: one to enter the <code>/data/store-backend</code> directory and the other to run the <code>./_scripts/deploy_beta.sh</code> executable file within that directory.</p>
+<p>In small-scale services or internal testing environments, you typically have only one VM instance running.<br>
+With this example, you can automatically connect to the host&rsquo;s internals for deployment when the trigger conditions are met.</p>
+<p>Reference: <a href="https://cloud.google.com/sdk/gcloud/reference/compute/ssh"
+   
+    target="_blank" rel="noreferrer noopener">gcloud compute ssh
+</a>
+</p>
+
+      
+      
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/ray247k/button?referrer=https%3a%2f%2ftech.ray247k.com%2fen%2fblog%2f202204-jenkins-cicd-4-ssh-remote-server%2f" width="100%" frameborder=0></iframe>
+
+    </div>
+    <footer>
+      <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/en/categories/devops/">DevOps</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/en/tags/devops/">DevOps</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/jenkins/">Jenkins</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/ci/cd/">CI/CD</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/docker/">Docker</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/gcp/">GCP</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/ssh/">SSH</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+    </footer>
+  </article>
+  
+    
+
+  
+  <div class="pagination">
+    
+      <a href="/en/blog/202204-ngrok/" class="button left"><span>Make your computer be temporarily accessible on the internet. - Ngrok</span></a>
+    
+    
+      <a href="/en/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/" class="button right"><span>Jenkins CI/CD 03 - Building and Pushing Docker Images to GCR</span></a>
+    
+  </div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>Recent Posts</h1>
+      </header>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/" class="image" style="--bg-image: url('/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg');">
+    <img src="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/">Different between pointer and value for struct type in golang</a></h2>
+          <time class="published" datetime="2023-06-25 00:00:00 &#43;0000 UTC">June 25, 2023</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202301-ffmpeg-video-convert/" class="image" style="--bg-image: url('/en/blog/202301-ffmpeg-video-convert/featured.png');">
+    <img src="/en/blog/202301-ffmpeg-video-convert/featured.png" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202301-ffmpeg-video-convert/">Using FFmpeg to convert media files</a></h2>
+          <time class="published" datetime="2023-01-01 00:00:00 &#43;0000 UTC">January 1, 2023</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202210-aws101-what-is-sns-and-sqs/" class="image" style="--bg-image: url('/en/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg');">
+    <img src="/en/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202210-aws101-what-is-sns-and-sqs/">[AWS 101] What are SNS and SQS</a></h2>
+          <time class="published" datetime="2022-10-06 00:00:00 &#43;0000 UTC">October 6, 2022</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202210-what-is-serverless/" class="image" style="--bg-image: url('/en/blog/202210-what-is-serverless/featured.jpg');">
+    <img src="/en/blog/202210-what-is-serverless/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202210-what-is-serverless/">Serverless 101</a></h2>
+          <time class="published" datetime="2022-10-04 00:00:00 &#43;0000 UTC">October 4, 2022</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202207-go-ethereum-abigen/" class="image" style="--bg-image: url('/en/blog/202207-go-ethereum-abigen/featured.jpeg');">
+    <img src="/en/blog/202207-go-ethereum-abigen/featured.jpeg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202207-go-ethereum-abigen/">Interacting with smart contracts using Golang</a></h2>
+          <time class="published" datetime="2022-07-09 00:00:00 &#43;0000 UTC">July 9, 2022</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/en/blog/" class="button">See More</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="/en/categories">Categories</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/en/categories/devops/">devops<span class="count">8</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/golang/">golang<span class="count">2</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/laravel/">laravel<span class="count">2</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/aws/">aws<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/serverless/">serverless<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/tools/">tools<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/website-operations/">website-operations<span class="count">1</span></a>
+          </li>
+          
+        </ul>
+      </section>
+    
+  
+
+  
+  <section id="tags">
+    <header>
+      <h1><a href="/en/tags">Tags</a></h1>
+    </header>
+    <div class="li-x post-meta tags-md" style="margin-left: 0.5em;">
+      <ul>
+        
+        
+        <li>
+          <a href="/en/tags/devops/">devops (9)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/gcp/">gcp (5)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/jenkins/">jenkins (4)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/cicd/">cicd (3)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/aws/">aws (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/docker/">docker (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/go/">go (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/golang/">golang (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/laravel/">laravel (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/php/">php (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/auto-scaling/">auto-scaling (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/blockchain/">blockchain (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ci/cd/">ci/cd (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ffmpeg/">ffmpeg (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/firewall/">firewall (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/gcr/">gcr (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/google-container-registry/">google-container-registry (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/load-balancing/">load-balancing (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ngrok/">ngrok (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/queue/">queue (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/redis/">redis (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/serverless/">serverless (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/smart-contract/">smart-contract (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ssh/">ssh (1)</a>
+        </li>
+        
+      </ul>
+
+    </div>
+  </section>
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+    
+    <p class="copyright">
+        © 2023 Byte Ebi 🍤
+    </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>
+      hljs.configure({ ignoreUnescapedHTML: true }); 
+      hljs.highlightAll();
+    </script><script src="/js/bundle.min.e4e4ee5bfcb8738f4f5394083f0bcdec4206411345917b04467e21d06758accd.js" integrity="sha256-5OTuW/y4c49PU5QIPwvN7EIGQRNFkXsERn4h0GdYrM0="></script>
+    <script src="/js/add-on.js"></script>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-LTGVYYWC2J', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </div>
+  </body>
+</html>

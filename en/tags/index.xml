@@ -86,17 +86,31 @@
       <description></description>
     </item>
     <item>
+      <title>docker</title>
+      <link>https://tech.ray247k.com/en/tags/docker/</link>
+      <pubDate>Wed, 13 Apr 2022 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/tags/docker/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Jenkins</title>
+      <link>https://tech.ray247k.com/en/tags/jenkins/</link>
+      <pubDate>Wed, 13 Apr 2022 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/tags/jenkins/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SSH</title>
+      <link>https://tech.ray247k.com/en/tags/ssh/</link>
+      <pubDate>Wed, 13 Apr 2022 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/tags/ssh/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>CICD</title>
       <link>https://tech.ray247k.com/en/tags/cicd/</link>
       <pubDate>Fri, 08 Apr 2022 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/en/tags/cicd/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>docker</title>
-      <link>https://tech.ray247k.com/en/tags/docker/</link>
-      <pubDate>Fri, 08 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/tags/docker/</guid>
       <description></description>
     </item>
     <item>
@@ -111,13 +125,6 @@
       <link>https://tech.ray247k.com/en/tags/google-container-registry/</link>
       <pubDate>Fri, 08 Apr 2022 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/en/tags/google-container-registry/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Jenkins</title>
-      <link>https://tech.ray247k.com/en/tags/jenkins/</link>
-      <pubDate>Fri, 08 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/tags/jenkins/</guid>
       <description></description>
     </item>
     <item>
@@ -160,6 +167,13 @@
       <link>https://tech.ray247k.com/en/tags/firewall/</link>
       <pubDate>Sat, 15 Jan 2022 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/en/tags/firewall/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CI/CD</title>
+      <link>https://tech.ray247k.com/en/tags/ci/cd/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/tags/ci/cd/</guid>
       <description></description>
     </item>
   </channel>

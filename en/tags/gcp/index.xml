@@ -18,6 +18,15 @@ The pricing is similar to that of setting up a database.&lt;br&gt;
 I thought it would be as inexpensive as using virtual machines (VMs).&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Jenkins CI/CD 04 - Using SSH Commands to Operate another VM Instance in GCP</title>
+      <link>https://tech.ray247k.com/en/blog/202204-jenkins-cicd-4-ssh-remote-server/</link>
+      <pubDate>Wed, 13 Apr 2022 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202204-jenkins-cicd-4-ssh-remote-server/</guid>
+      <description>&lt;p&gt;In a non-automated deployment scenario, manually connecting to the server host&amp;rsquo;s internals is required every time.&lt;br&gt;
+Executing deployment commands or running deployment command executables not only involves inconvenience but also carries the risk of human error.&lt;br&gt;
+With Jenkins&amp;rsquo; pipeline, we can replace manual execution, making deployments easier and more pleasant.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Scalable Server 02 Load Balancing</title>
       <link>https://tech.ray247k.com/en/blog/202204-gcp-load-balancing/</link>
       <pubDate>Tue, 05 Apr 2022 00:00:00 +0000</pubDate>
