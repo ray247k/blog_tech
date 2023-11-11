@@ -1,0 +1,854 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+<title>Enhancing SEO for SPA with Prerender - Byte Ebi 🍤</title>
+<meta name="description" content="Addressing SEO challenges for CSR web pages, demonstrating both self-hosted and SaaS solutions">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta property="og:site_name" content="Byte Ebi 🍤">
+<meta property="og:title" content="Enhancing SEO for SPA with Prerender">
+<meta property="og:description" content="Addressing SEO challenges for CSR web pages, demonstrating both self-hosted and SaaS solutions">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://tech.ray247k.com/en/blog/202201-using-prerender-improve-spa-seo/">
+  <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
+
+
+
+  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
+  
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=1" color="#ffffff">
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=1">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=1">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+<meta name="generator" content="Hugo 0.120.4"><meta property="og:site_name" content="Byte Ebi 🍤">
+  <meta property="og:title" content="Enhancing SEO for SPA with Prerender">
+  <meta property="og:description" content="Addressing SEO challenges for CSR web pages, demonstrating both self-hosted and SaaS solutions">
+  <meta property="description" content="Addressing SEO challenges for CSR web pages, demonstrating both self-hosted and SaaS solutions">
+  <meta property="og:url" content="https://tech.ray247k.com/en/blog/202201-using-prerender-improve-spa-seo/">
+  <meta property="og:type" content="article">
+  
+    <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
+  
+  
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/felipec.min.css">
+          <link rel="stylesheet" href="/css/bundle.min.3b1b5f2e683d24b1ea3b5a08c8254622e40aa935e0ead75ba6d45c0f14c2f965.css" integrity="sha256-OxtfLmg9JLHqO1oIyCVGIuQKqTXg6tdbptRcDxTC&#43;WU="><link rel="stylesheet" href="/css/add-on.css">
+
+
+    
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', "G-LTGVYYWC2J");
+        </script>
+    
+
+
+  <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "image": {
+        "@type": "ImageObject",
+        "image": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+        "height": 648,
+        "width": 1080
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Byte Ebi 🍤",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png"
+        }
+    },
+    "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+    "headline": "About web development, software engineering, frontend, backend, chatbot, server related topics. - Byte Ebi 🍤",
+    "name": "Byte Ebi 🍤",
+    "url": "https:\/\/tech.ray247k.com",
+    "description": "About web development, software engineering, frontend, backend, chatbot, server related topics. - aws,devops,golang,laravel,serverless,tools,website-operations,",
+    "keywords": [
+        "auto-scaling,aws,blockchain,ci\/cd,cicd,cloudflare,cloudflare-workers,devops,docker,ffmpeg,firewall,gcp,gcr,go,golang,google-container-registry,jenkins,laravel,load-balancing,ngrok,php,prerender,queue,redis,search-engine-optimization,seo,serverless,smart-contract,ssh,"
+    ]
+}
+</script>
+
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "legalName": "Byte Ebi 🍤",
+    "url": "https:\/\/tech.ray247k.com",
+    "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "",
+        "availableLanguage": [
+            "Mandarin",
+            "English"
+        ]
+    },
+    "sameAs": [
+        "https://ray247k.blogspot.com/"
+    ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Enhancing SEO for SPA with Prerender",
+    "description": "Addressing SEO challenges for CSR web pages, demonstrating both self-hosted and SaaS solutions",
+    "keywords": [
+        "SEO" , "Prerender" , "Search Engine Optimization" , "Cloudflare" , "Cloudflare Workers" 
+    ],
+    "dateCreated": "2022-01-31T00:00:00.00Z",
+    "datePublished": "2022-01-31T00:00:00.00Z",
+    "dateModified": "2022-01-31T00:00:00.00Z",
+    "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "contentUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png"
+    },
+    "breadcrumb": {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com",
+                    "name": "Byte Ebi 🍤",
+                    "url": "https:\/\/tech.ray247k.com"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com/blog",
+                    "name": "Blog",
+                    "url": "https:\/\/tech.ray247k.com/blog"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\/en\/blog\/202201-using-prerender-improve-spa-seo\/",
+                    "name": "Enhancing SEO for SPA with Prerender",
+                    "url": "https:\/\/tech.ray247k.com\/en\/blog\/202201-using-prerender-improve-spa-seo\/"
+                }
+            }
+        ],
+        "itemListOrder": "Ascending",
+        "numberOfItems": 3
+    }
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "articleSection": "blog",
+    "name": "Enhancing SEO for SPA with Prerender",
+    "headline": "\u003cp\u003eA Single Page Application (SPA) website utilizes Client-Side Rendering (CSR) to render its content.\u003cbr\u003e\nUpon initial loading, the server only returns the root component, and subsequent data is fetched through API interactions.\u003cbr\u003e\nHowever, for web crawlers responsible for ranking websites, the content obtained during crawling may appear empty.\u003cbr\u003e\nWhile Google claims that their crawler executes JavaScript, other search engines may not necessarily do so.\u003cbr\u003e\nTo address this issue, a Prerender service is employed to achieve pre-rendering for web crawlers, optimizing search results.\u003c\/p\u003e",
+    "description": "Addressing SEO challenges for CSR web pages, demonstrating both self-hosted and SaaS solutions",
+    "inLanguage": "en",
+    "isFamilyFriendly": "true",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com\/en\/blog\/202201-using-prerender-improve-spa-seo\/"
+    },
+    "author" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "creator" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "accountablePerson" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "copyrightHolder" : "Byte Ebi 🍤",
+    "copyrightYear" : "2022",
+    "dateCreated": "2022-01-31T00:00:00.00Z",
+    "datePublished": "2022-01-31T00:00:00.00Z",
+    "dateModified": "2022-01-31T00:00:00.00Z",
+    "publisher":{
+        "@type":"Organization",
+        "name": "Byte Ebi 🍤",
+        "url": "https://tech.ray247k.com",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+            "width":"32",
+            "height":"32"
+        }
+    },
+    "image": "https://tech.ray247k.com/img/main/logo.png",
+    "url" : "https:\/\/tech.ray247k.com\/en\/blog\/202201-using-prerender-improve-spa-seo\/",
+    "wordCount" : "1123",
+    "genre" : [ "SEO" , "Prerender" , "Search Engine Optimization" , "Cloudflare" , "Cloudflare Workers" ],
+    "keywords" : [ "SEO" , "Prerender" , "Search Engine Optimization" , "Cloudflare" , "Cloudflare Workers" ]
+}
+</script>
+
+
+
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/en/" class="nav">
+        
+          Blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/en/" class="nav link"><i class='fa fa-home'></i> home</a>
+        
+      
+        
+          
+          <a href="/en/about" class="nav link"><i class='far fa-id-card'></i> about</a>
+        
+      
+        
+          
+          <a href="/en/categories" class="nav link"><i class='fas fa-sitemap'></i> category</a>
+        
+      
+      
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    
+    <a href="#lang-menu" class="nav lang-toggle" lang="en">en</a>
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  <menu id="lang-menu" class="flyout-menu menu">
+  <a href="#" lang="en" class="nav link active">English (en)</a>
+  
+      <a href="https://tech.ray247k.com/blog/202201-using-prerender-improve-spa-seo/" lang="zh-tw" class="nav link">正體中文 (zh-tw)</a>
+    
+  
+</menu>
+
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/en/"><img src="/img/main/logo.png" class="circle" width="100" alt="Byte Ebi&#39;s Logo" /></a>
+  <header>
+    <h1>Byte Ebi 🍤</h1>
+  </header>
+  <main>
+    <p>A Bit everyday A Byte every week</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/ray247k" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//www.linkedin.com/in/j-ray-cheng" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="/en/blog/202201-using-prerender-improve-spa-seo/">Enhancing SEO for SPA with Prerender</a></h2>
+    
+    
+      <p>Addressing SEO challenges for CSR web pages, demonstrating both self-hosted and SaaS solutions</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2022-01-31 00:00:00 &#43;0000 UTC">January 31, 2022</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+    <div id="socnet-share">
+      
+
+
+
+
+
+    </div>
+    <div class="content">
+      <a href="/en/blog/202201-using-prerender-improve-spa-seo/" class="image" style="--bg-image: url('/en/blog/202201-using-prerender-improve-spa-seo/featured.jpeg');">
+    <img src="/en/blog/202201-using-prerender-improve-spa-seo/featured.jpeg" alt="">
+  </a>
+      <p>A Single Page Application (SPA) website utilizes Client-Side Rendering (CSR) to render its content.<br>
+Upon initial loading, the server only returns the root component, and subsequent data is fetched through API interactions.<br>
+However, for web crawlers responsible for ranking websites, the content obtained during crawling may appear empty.<br>
+While Google claims that their crawler executes JavaScript, other search engines may not necessarily do so.<br>
+To address this issue, a Prerender service is employed to achieve pre-rendering for web crawlers, optimizing search results.</p>
+<h1 id="prerender">Prerender</h1>
+<p>The principle involves setting up an internal headless Chrome to achieve pre-rendering of the webpage.</p>
+<p>Two methods for using Prerender will be introduced below:</p>
+<ul>
+<li>Self-hosted: <a href="https://github.com/prerender/prerender"
+   
+    target="_blank" rel="noreferrer noopener">prerender
+</a>
+</li>
+<li>SaaS service: <a href="https://prerender.io/"
+   
+    target="_blank" rel="noreferrer noopener">Prerender.io
+</a>
+</li>
+</ul>
+<p>For self-hosting, a reverse proxy needs to be established.<br>
+Upon incoming requests, the user agent is checked. If it is a bot, the request is sent to the self-hosted Prerender service.<br>
+The service itself includes a headless Chrome, allowing rendering of HTML to be returned.<br>
+If it&rsquo;s a regular user, the request is forwarded to the frontend server without rendering.</p>
+<p>Using the <a href="https://prerender.io/"
+   
+    target="_blank" rel="noreferrer noopener">Prerender.io
+</a>
+ SaaS service comes with limitations and may require payment if exceeding the free usage limits.
+However, it eliminates the need for self-management and setup. The advantage of self-hosting is greater flexibility in configuration.</p>
+<p>Both solutions can be evaluated based on the use case.<br>
+If opting for the <a href="https://prerender.io/"
+   
+    target="_blank" rel="noreferrer noopener">Prerender.io
+</a>
+ solution, configuration can only be done when the website is already online.</p>
+<h1 id="self-hosted">Self-hosted</h1>
+<p>Package: <a href="https://github.com/prerender/prerender"
+   
+    target="_blank" rel="noreferrer noopener">Prerender
+</a>
+
+The documentation is quite clear, and the setup is straightforward. Below is a step-by-step demonstration.</p>
+<h2 id="1-installation">1. Installation</h2>
+<p>Create a folder, for convenience, let&rsquo;s call it <code>prerender</code>.<br>
+Inside the folder, enter the command in the terminal:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm install prerender
+</span></span></code></pre></div><p>This completes the installation.</p>
+<h2 id="2-configuration">2. Configuration</h2>
+<p>In the prerender folder, create a file named <code>server.js</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">prerender</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;prerender&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">server</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">prerender</span>();
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">server</span>.<span style="color:#a6e22e">start</span>();
+</span></span></code></pre></div><h2 id="3-start">3. Start</h2>
+<p>Enter the command in the terminal to start the service.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>node server.js
+</span></span></code></pre></div><p>The service will start on localhost at port 3000. If your service is also running on port 3000, choose a different port.</p>
+<p>While your frontend project is running, open the terminal and enter:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl <span style="color:#e6db74">&#34;https://www.google.com.tw/&#34;</span> <span style="color:#75715e"># Your SPA project URL</span>
+</span></span></code></pre></div><p>You will receive an empty DOM with only the root component, as the JS for fetching component content has not been executed.<br>
+This is a reason for poor SEO in SPAs. Although Google claims that their crawler executes JS, other search engines may not.</p>
+<p>Now comes the magic moment. Open the terminal and enter:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl <span style="color:#e6db74">&#34;http://localhost:3000/render?url=https://www.google.com.tw/&#34;</span> <span style="color:#75715e"># Your SPA project URL</span>
+</span></span></code></pre></div><p>You will get a large package of rendered results!<br>
+The preceding URL is the Prerender service address, and the parameter includes your project URL.<br>
+Prerender internally starts a headless Chrome to render the page and then returns the result.</p>
+<h2 id="cache-configuration">Cache Configuration</h2>
+<p>Usually, when you self-host a Prerender service, it will re-render the page each time a request is made.<br>
+However, in practice, frequent re-rendering is unnecessary.<br>
+This can be optimized by setting up caching to retain rendered results for a certain period.</p>
+<p>Cache package used: <a href="https://github.com/prerender/prerender-memory-cache"
+   
+    target="_blank" rel="noreferrer noopener">prerender-memory-cache
+</a>
+</p>
+<h3 id="1-installation-1">1. Installation</h3>
+<p>In the terminal, enter the command in the <code>prerender</code> folder:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm install prerender-memory-cache --save
+</span></span></code></pre></div><h3 id="2-configuration-1">2. Configuration</h3>
+<p>Open the <code>server.js</code> file in the prerender folder and add the configuration declaration before <code>server.start();</code>;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">server</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;prerender-memory-cache&#39;</span>))
+</span></span></code></pre></div><p>That&rsquo;s it. The second request should use the cached result.</p>
+<h3 id="3-parameters">3. Parameters</h3>
+<p>You can also set parameters in the <code>prerender</code> folder using the terminal.</p>
+<p><strong>Cache Maximum Number of Items</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export CACHE_MAXSIZE<span style="color:#f92672">=</span><span style="color:#ae81ff">1000</span>
+</span></span></code></pre></div><p>default: 100</p>
+<p><strong>Cache Lifespan (seconds)</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export CACHE_TTL<span style="color:#f92672">=</span><span style="color:#ae81ff">600</span>
+</span></span></code></pre></div><p>default: 60</p>
+<h3 id="4-testing">4. Testing</h3>
+<p>After setting the lifespan, use the terminal to test:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl <span style="color:#e6db74">&#34;http://localhost:3000/render?url=http://localhost:3030/&#34;</span> <span style="color:#75715e"># Your SPA project URL</span>
+</span></span></code></pre></div><p>打完第一次之後，去修改自己專案的一些內容（footer, title 之類）<br>
+確認用瀏覽器直接造訪畫面有出現變更<br>
+接著再重新使用終端機測試，應該會出現舊的 HTML 內容</p>
+<p>這就證明他是使用快取的內容，而不是請求一來就重新渲染<br>
+所以剛剛才會建議修改 footer 或是 title，因為比較好確認</p>
+<p>After the first test, modify some content in your project (footer, title, etc.) and confirm the changes by directly visiting the page in the browser.
+Then, retest using the terminal. You should see the old HTML content.<br>
+This proves that it is using the cached content rather than re-rendering with each request.</p>
+<h2 id="online-service-pricing-plans">Online Service Pricing Plans</h2>
+<p>Below is an example using <a href="https://www.cloudflare.com/zh-tw/products/workers-kv/"
+   
+    target="_blank" rel="noreferrer noopener">Cloudflare Workers
+</a>
+ to set up the Prerender.io service.<br>
+This is because the frontend project seems to have its own Nginx service, and I don&rsquo;t want to intervene too much.</p>
+<p>Besides, I&rsquo;ve heard that Cloudflare Workers are powerful. It&rsquo;s like a proxy at the forefront, so it can do many things.<br>
+Although I&rsquo;ve never had the chance to use it, it seems like a good opportunity.</p>
+<h3 id="prerenderio-pricing-plans">Prerender.io Pricing Plans</h3>
+<p><img src="prerender-price.png" alt="prerender price"></p>
+<h3 id="cloudflare-workers-pricing-plans">Cloudflare Workers Pricing Plans</h3>
+<p><img src="cloudflare-workers-price.png" alt="cloudflare workers price"></p>
+<h2 id="configuration">Configuration</h2>
+<p>Go to the Prerender page, click on <code>Install middleware</code> and select the <code>cloudflare</code> option.</p>
+<p><img src="prerender-settings.png" alt="prerender settings"></p>
+<p>The official documentation has been updated.<br>
+Just follow the instructions in the document, and even those who can&rsquo;t code can configure it confidently!<br>
+Follow the document and pictures for <a href="https://docs.prerender.io/docs/24-cloudflare"
+   
+    target="_blank" rel="noreferrer noopener">Cloudflare Integration
+</a>
+.</p>
+<p>Open the sample configuration file as prompted: <a href="https://github.com/prerender/prerender-cloudflare-worker"
+   
+    target="_blank" rel="noreferrer noopener">prerender/prerender-cloudflare-worker
+</a>
+.<br>
+You&rsquo;ll see the <code>index.js</code> example. The only things to change are <code>API_KEY</code> and <code>PRERENDERED_DOMAINS</code>.</p>
+<ul>
+<li>API_KEY：The <code>token</code> in the top left corner of the Prerender.io dashboard.</li>
+<li>PRERENDERED_DOMAINS：The target domain for which routing rules will be set later.</li>
+</ul>
+<p>Create a Cloudflare worker and paste the configuration file.<br>
+Ordinary Workers can be tested using the provided <a href="https://developers.cloudflare.com/workers/learning/playground"
+   
+    target="_blank" rel="noreferrer noopener">playground
+</a>
+ by Cloudflare, but since we&rsquo;re using a third-party service, it must be verified by Prerender to take effect.<br>
+Therefore, testing with the playground here is not possible.</p>
+<p>After configuring the worker, open the Worker tab and choose <code>Add route</code>.</p>
+<p><img src="cloudflare-workers-settings.png" alt="cloudflare workers settings"></p>
+<p>Next, set the <code>Request Limit Failure Mode</code>.</p>
+<p><code>Open Failure (Continue)</code> means that if the Worker fails when a request comes in, it will go directly to the service.<br>
+<code>Close Failure (Block)</code> will throw an error page, preventing users from continuing to access.<br>
+Since we don&rsquo;t want the website to be inaccessible when reaching the free plan limit and not pre-rendering content doesn&rsquo;t affect the website&rsquo;s functionality,
+choose to skip the Worker and execute it directly in case of failure.<br>
+After all, it&rsquo;s just for pre-rendering, and it doesn&rsquo;t matter if crawlers can&rsquo;t access it this time; they can come back next time.</p>
+<p><img src="cloudflare-new-route.png" alt="cloudflare new route"></p>
+<p>The routing rules should match the URL you set in the Worker configuration.<br>
+After setting it up, remember to go back to <a href="https://prerender.io/"
+   
+    target="_blank" rel="noreferrer noopener">Prerender.io
+</a>
+ and click &ldquo;Next&rdquo; to complete the verification.<br>
+Then, wait for the verification to be completed.</p>
+<p>Usually, after clicking &ldquo;Verify,&rdquo; the verification results will appear after a few seconds.<br>
+If you want to simulate the result obtained when crawling after verification, you can use:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -A Googlebot <span style="color:#e6db74">&#34;https://{your-online-service-url}&#34;</span>
+</span></span></code></pre></div><p>This simulates the result obtained by the <code>Googlebot</code> crawler.<br>
+Since we specified a specific user agent in the Worker&rsquo;s Nginx configuration file, the Cloudflare Worker will determine whether to forward it to the <a href="https://prerender.io/"
+   
+    target="_blank" rel="noreferrer noopener">Prerender.io
+</a>
+ service for processing.</p>
+<p>Without the <code>-A Googlebot</code> parameter, it won&rsquo;t forward for rendering.<br>
+It will return the CSR result that regular users would get, which is the unrendered webpage content.</p>
+
+      
+      
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/ray247k/button?referrer=https%3a%2f%2ftech.ray247k.com%2fen%2fblog%2f202201-using-prerender-improve-spa-seo%2f" width="100%" frameborder=0></iframe>
+
+    </div>
+    <footer>
+      <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/en/categories/website-operations/">Website Operations</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/en/tags/seo/">SEO</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/prerender/">Prerender</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/search-engine-optimization/">Search Engine Optimization</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/cloudflare/">Cloudflare</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/cloudflare-workers/">Cloudflare Workers</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+    </footer>
+  </article>
+  
+    
+
+  
+  <div class="pagination">
+    
+      <a href="/en/blog/202203-laravel-queue/" class="button left"><span>Laravel Queue Usage</span></a>
+    
+    
+      <a href="/en/blog/202201-gcp-vm-basic/" class="button right"><span>Successfully launched a VM on GCP on the first try</span></a>
+    
+  </div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>Recent Posts</h1>
+      </header>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/" class="image" style="--bg-image: url('/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg');">
+    <img src="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/">Different between pointer and value for struct type in golang</a></h2>
+          <time class="published" datetime="2023-06-25 00:00:00 &#43;0000 UTC">June 25, 2023</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202301-ffmpeg-video-convert/" class="image" style="--bg-image: url('/en/blog/202301-ffmpeg-video-convert/featured.png');">
+    <img src="/en/blog/202301-ffmpeg-video-convert/featured.png" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202301-ffmpeg-video-convert/">Using FFmpeg to convert media files</a></h2>
+          <time class="published" datetime="2023-01-01 00:00:00 &#43;0000 UTC">January 1, 2023</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202210-aws101-what-is-sns-and-sqs/" class="image" style="--bg-image: url('/en/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg');">
+    <img src="/en/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202210-aws101-what-is-sns-and-sqs/">[AWS 101] What are SNS and SQS</a></h2>
+          <time class="published" datetime="2022-10-06 00:00:00 &#43;0000 UTC">October 6, 2022</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202210-what-is-serverless/" class="image" style="--bg-image: url('/en/blog/202210-what-is-serverless/featured.jpg');">
+    <img src="/en/blog/202210-what-is-serverless/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202210-what-is-serverless/">Serverless 101</a></h2>
+          <time class="published" datetime="2022-10-04 00:00:00 &#43;0000 UTC">October 4, 2022</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202207-go-ethereum-abigen/" class="image" style="--bg-image: url('/en/blog/202207-go-ethereum-abigen/featured.jpeg');">
+    <img src="/en/blog/202207-go-ethereum-abigen/featured.jpeg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202207-go-ethereum-abigen/">Interacting with smart contracts using Golang</a></h2>
+          <time class="published" datetime="2022-07-09 00:00:00 &#43;0000 UTC">July 9, 2022</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/en/blog/" class="button">See More</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="/en/categories">Categories</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/en/categories/devops/">devops<span class="count">8</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/golang/">golang<span class="count">2</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/laravel/">laravel<span class="count">2</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/website-operations/">website-operations<span class="count">2</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/aws/">aws<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/serverless/">serverless<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/tools/">tools<span class="count">1</span></a>
+          </li>
+          
+        </ul>
+      </section>
+    
+  
+
+  
+  <section id="tags">
+    <header>
+      <h1><a href="/en/tags">Tags</a></h1>
+    </header>
+    <div class="li-x post-meta tags-md" style="margin-left: 0.5em;">
+      <ul>
+        
+        
+        <li>
+          <a href="/en/tags/devops/">devops (9)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/gcp/">gcp (5)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/jenkins/">jenkins (4)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/cicd/">cicd (3)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/aws/">aws (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/docker/">docker (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/go/">go (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/golang/">golang (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/laravel/">laravel (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/php/">php (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/auto-scaling/">auto-scaling (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/blockchain/">blockchain (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ci/cd/">ci/cd (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/cloudflare/">cloudflare (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/cloudflare-workers/">cloudflare-workers (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ffmpeg/">ffmpeg (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/firewall/">firewall (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/gcr/">gcr (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/google-container-registry/">google-container-registry (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/load-balancing/">load-balancing (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ngrok/">ngrok (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/prerender/">prerender (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/queue/">queue (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/redis/">redis (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/search-engine-optimization/">search-engine-optimization (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/seo/">seo (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/serverless/">serverless (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/smart-contract/">smart-contract (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ssh/">ssh (1)</a>
+        </li>
+        
+      </ul>
+
+    </div>
+  </section>
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+    
+    <p class="copyright">
+        © 2023 Byte Ebi 🍤
+    </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>
+      hljs.configure({ ignoreUnescapedHTML: true }); 
+      hljs.highlightAll();
+    </script><script src="/js/bundle.min.e4e4ee5bfcb8738f4f5394083f0bcdec4206411345917b04467e21d06758accd.js" integrity="sha256-5OTuW/y4c49PU5QIPwvN7EIGQRNFkXsERn4h0GdYrM0="></script>
+    <script src="/js/add-on.js"></script>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-LTGVYYWC2J', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </div>
+  </body>
+</html>

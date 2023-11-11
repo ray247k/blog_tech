@@ -161,6 +161,17 @@ Like sending emails, users don&amp;rsquo;t need to wait for the email to be sent
 Allowing the application to respond more quickly to web requests and smooth user experience.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Enhancing SEO for SPA with Prerender</title>
+      <link>https://tech.ray247k.com/en/blog/202201-using-prerender-improve-spa-seo/</link>
+      <pubDate>Mon, 31 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202201-using-prerender-improve-spa-seo/</guid>
+      <description>&lt;p&gt;A Single Page Application (SPA) website utilizes Client-Side Rendering (CSR) to render its content.&lt;br&gt;
+Upon initial loading, the server only returns the root component, and subsequent data is fetched through API interactions.&lt;br&gt;
+However, for web crawlers responsible for ranking websites, the content obtained during crawling may appear empty.&lt;br&gt;
+While Google claims that their crawler executes JavaScript, other search engines may not necessarily do so.&lt;br&gt;
+To address this issue, a Prerender service is employed to achieve pre-rendering for web crawlers, optimizing search results.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Successfully launched a VM on GCP on the first try</title>
       <link>https://tech.ray247k.com/en/blog/202201-gcp-vm-basic/</link>
       <pubDate>Sat, 15 Jan 2022 00:00:00 +0000</pubDate>

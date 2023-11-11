@@ -603,6 +603,77 @@
                 href="https://tech.ray247k.com/en/tags/queue/"
                 />
   </url><url>
+    <loc>https://tech.ray247k.com/en/tags/cloudflare/</loc>
+    <lastmod>2022-01-31T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/cloudflare/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/cloudflare/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/tags/cloudflare-workers/</loc>
+    <lastmod>2022-01-31T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/cloudflare-workers/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/cloudflare-workers/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/blog/202201-using-prerender-improve-spa-seo/</loc>
+    <lastmod>2022-01-31T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202201-using-prerender-improve-spa-seo/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202201-using-prerender-improve-spa-seo/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/tags/prerender/</loc>
+    <lastmod>2022-01-31T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/prerender/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/prerender/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/tags/search-engine-optimization/</loc>
+    <lastmod>2022-01-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tech.ray247k.com/en/tags/seo/</loc>
+    <lastmod>2022-01-31T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/seo/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/seo/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/categories/website-operations/</loc>
+    <lastmod>2022-01-31T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://tech.ray247k.com/en/tags/firewall/</loc>
     <lastmod>2022-01-15T00:00:00+00:00</lastmod>
   </url><url>
@@ -618,9 +689,6 @@
                 hreflang="en"
                 href="https://tech.ray247k.com/en/blog/202201-gcp-vm-basic/"
                 />
-  </url><url>
-    <loc>https://tech.ray247k.com/en/categories/website-operations/</loc>
-    <lastmod>2022-01-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/en/about/</loc>
     <xhtml:link
