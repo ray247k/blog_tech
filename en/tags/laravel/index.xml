@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Laravel on Byte Ebi 🍤</title>
+    <title>laravel on Byte Ebi 🍤</title>
     <link>https://tech.ray247k.com/en/tags/laravel/</link>
-    <description>Recent content in Laravel on Byte Ebi 🍤</description>
+    <description>Recent content in laravel on Byte Ebi 🍤</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sat, 02 Apr 2022 00:00:00 +0000</lastBuildDate>
@@ -28,6 +28,15 @@ This time, we will be introducing a package introduced after Laravel 8: &lt;a hr
       <description>&lt;p&gt;The purpose of queues is to defer processing of a time-consuming task that doesn&amp;rsquo;t require immediate completion.
 Like sending emails, users don&amp;rsquo;t need to wait for the email to be sent successfully before the next step.&lt;br&gt;
 Allowing the application to respond more quickly to web requests and smooth user experience.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Importing Excel or CSV Files into Laravel</title>
+      <link>https://tech.ray247k.com/en/blog/202112-laravel-excel-import/</link>
+      <pubDate>Sat, 11 Dec 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202112-laravel-excel-import/</guid>
+      <description>&lt;p&gt;When the backend interface isn&amp;rsquo;t fully developed or when users have extensive data that they prefer not to input manually, opting for a bulk import via a form becomes essential.&lt;br&gt;
+This is where the Laravel-excel package comes into play.
+Additionally, it&amp;rsquo;s worth discussing the challenges encountered when importing a large volume of data at once.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

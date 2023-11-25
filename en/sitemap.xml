@@ -690,6 +690,58 @@
                 href="https://tech.ray247k.com/en/blog/202201-gcp-vm-basic/"
                 />
   </url><url>
+    <loc>https://tech.ray247k.com/en/tags/csv/</loc>
+    <lastmod>2021-12-11T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/csv/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/csv/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/tags/excel/</loc>
+    <lastmod>2021-12-11T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/excel/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/excel/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/blog/202112-laravel-excel-import/</loc>
+    <lastmod>2021-12-11T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202112-laravel-excel-import/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202112-laravel-excel-import/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/tags/laravel-excel/</loc>
+    <lastmod>2021-12-11T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/laravel-excel/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/laravel-excel/"
+                />
+  </url><url>
     <loc>https://tech.ray247k.com/en/blog/202111-git-global-gitignore/</loc>
     <lastmod>2021-11-06T00:00:00+00:00</lastmod>
     <xhtml:link

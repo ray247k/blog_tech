@@ -181,6 +181,15 @@ It may sound complex, but in practice, it&amp;rsquo;s quite straightforward.&lt;
 If you haven&amp;rsquo;t had any experience with setting up a host before, this time, we&amp;rsquo;ll document the steps for you.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Importing Excel or CSV Files into Laravel</title>
+      <link>https://tech.ray247k.com/en/blog/202112-laravel-excel-import/</link>
+      <pubDate>Sat, 11 Dec 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202112-laravel-excel-import/</guid>
+      <description>&lt;p&gt;When the backend interface isn&amp;rsquo;t fully developed or when users have extensive data that they prefer not to input manually, opting for a bulk import via a form becomes essential.&lt;br&gt;
+This is where the Laravel-excel package comes into play.
+Additionally, it&amp;rsquo;s worth discussing the challenges encountered when importing a large volume of data at once.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>[Git Tutorial] Configuring Global gitignore Locally</title>
       <link>https://tech.ray247k.com/en/blog/202111-git-global-gitignore/</link>
       <pubDate>Sat, 06 Nov 2021 00:00:00 +0000</pubDate>
