@@ -690,6 +690,51 @@
                 href="https://tech.ray247k.com/en/blog/202201-gcp-vm-basic/"
                 />
   </url><url>
+    <loc>https://tech.ray247k.com/en/blog/202111-git-global-gitignore/</loc>
+    <lastmod>2021-11-06T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202111-git-global-gitignore/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202111-git-global-gitignore/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/tags/git/</loc>
+    <lastmod>2021-11-06T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/git/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/git/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/tags/github/</loc>
+    <lastmod>2021-11-06T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/github/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/github/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/tags/version-control/</loc>
+    <lastmod>2021-11-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tech.ray247k.com/en/categories/version-control/</loc>
+    <lastmod>2021-11-06T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://tech.ray247k.com/en/about/</loc>
     <xhtml:link
                 rel="alternate"

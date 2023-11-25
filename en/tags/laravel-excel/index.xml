@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>laravel-excel on Byte Ebi 🍤</title>
+    <link>https://tech.ray247k.com/en/tags/laravel-excel/</link>
+    <description>Recent content in laravel-excel on Byte Ebi 🍤</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 11 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tech.ray247k.com/en/tags/laravel-excel/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>匯入 Excel 或是 csv 檔案到 Laravel</title>
+      <link>https://tech.ray247k.com/en/blog/202112-laravel-excel-import/</link>
+      <pubDate>Sat, 11 Dec 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202112-laravel-excel-import/</guid>
+      <description>&lt;p&gt;在後台介面尚未建置完成，或是使用者有大量資料不想逐筆新增&lt;br&gt;
+而是要透過表單一次性匯入，這時候我們就會用到 Laravel-excel 這個套件&lt;br&gt;
+同時也分享一次匯入大量資料的時候遇到的坑&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
