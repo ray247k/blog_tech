@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Third-party Services on Byte Ebi 🍤</title>
+    <link>https://tech.ray247k.com/en/categories/third-party-services/</link>
+    <description>Recent content in Third-party Services on Byte Ebi 🍤</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 28 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tech.ray247k.com/en/categories/third-party-services/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Operating Google Forms with GAS (Google App Script)</title>
+      <link>https://tech.ray247k.com/en/blog/202111-operate-google-sheet-via-google-app-script/</link>
+      <pubDate>Sun, 28 Nov 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202111-operate-google-sheet-via-google-app-script/</guid>
+      <description>&lt;p&gt;When the back office isn&amp;rsquo;t fully established but the frontend is already live, there&amp;rsquo;s a desire to enable non-programmers to autonomously adjust the website&amp;rsquo;s content.&lt;br&gt;
+Alternatively, in cases where temporary content needs to be recorded without creating a dedicated database table, we often resort to managing this data through Google Forms.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

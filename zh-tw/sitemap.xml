@@ -774,18 +774,58 @@
   </url><url>
     <loc>https://tech.ray247k.com/tags/gas/</loc>
     <lastmod>2021-11-28T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/gas/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/gas/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/tags/google-app-script/</loc>
     <lastmod>2021-11-28T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/google-app-script/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/google-app-script/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/tags/google-sheets/</loc>
     <lastmod>2021-11-28T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/google-sheets/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/google-sheets/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/categories/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%9C%8D%E5%8B%99/</loc>
     <lastmod>2021-11-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/blog/202111-operate-google-sheet-via-google-app-script/</loc>
     <lastmod>2021-11-28T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202111-operate-google-sheet-via-google-app-script/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202111-operate-google-sheet-via-google-app-script/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/blog/202111-a-tour-of-go-05-array-and-slice/</loc>
     <lastmod>2021-11-23T00:00:00+00:00</lastmod>
