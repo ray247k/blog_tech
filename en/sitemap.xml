@@ -797,6 +797,19 @@
     <loc>https://tech.ray247k.com/en/categories/third-party-services/</loc>
     <lastmod>2021-11-28T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://tech.ray247k.com/en/blog/202111-a-tour-of-go-01-packages-and-functions/</loc>
+    <lastmod>2021-11-10T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202111-a-tour-of-go-01-packages-and-functions/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202111-a-tour-of-go-01-packages-and-functions/"
+                />
+  </url><url>
     <loc>https://tech.ray247k.com/en/blog/202111-git-global-gitignore/</loc>
     <lastmod>2021-11-06T00:00:00+00:00</lastmod>
     <xhtml:link

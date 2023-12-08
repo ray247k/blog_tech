@@ -27,5 +27,17 @@ One was the slowness, and the other was the lack of maintenance of the package.&
 Fortunately, Golang provides an official package that is both fast and solves these two problems.&lt;br&gt;
 This article explains how to convert existing Smart Contract ABIs into a Go package for interacting with contracts.&lt;/p&gt;</description>
     </item>
+    <item>
+      <title>[A Tour of Go Study Notes] 01 Packages and Functions</title>
+      <link>https://tech.ray247k.com/en/blog/202111-a-tour-of-go-01-packages-and-functions/</link>
+      <pubDate>Wed, 10 Nov 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202111-a-tour-of-go-01-packages-and-functions/</guid>
+      <description>&lt;p&gt;Entering the world of Golang for beginners, we start with the basics of Golang using the official tutorial: &lt;a href=&#34;https://tour.golang.org/welcome/1&#34;
+   
+    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;A Tour of Go
+&lt;/a&gt;
+.&lt;br&gt;
+This piece covers the fundamental aspects of basic packages and functions in Golang.&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>
