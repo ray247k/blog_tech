@@ -198,6 +198,30 @@ Additionally, it&amp;rsquo;s worth discussing the challenges encountered when im
 Alternatively, in cases where temporary content needs to be recorded without creating a dedicated database table, we often resort to managing this data through Google Forms.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>[A Tour of Go Study Notes] 03 Flow Control</title>
+      <link>https://tech.ray247k.com/en/blog/202111-a-tour-of-go-03-flow-control-statements/</link>
+      <pubDate>Sun, 14 Nov 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202111-a-tour-of-go-03-flow-control-statements/</guid>
+      <description>&lt;p&gt;Entering the world of Golang, we first use the official tutorial: &lt;a href=&#34;https://tour.golang.org/welcome/1&#34;
+   
+    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;A Tour of Go
+&lt;/a&gt;
+ to learn the basics of using Golang.&lt;br&gt;
+This article is a note on flow control, explaining some concepts like if, else, for, switch, and defer.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[A Tour of Go Study Notes] 02 Variables and Types</title>
+      <link>https://tech.ray247k.com/en/blog/202111-a-tour-of-go-02-variables-and-types/</link>
+      <pubDate>Fri, 12 Nov 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202111-a-tour-of-go-02-variables-and-types/</guid>
+      <description>&lt;p&gt;Entering the world of Golang, we first use the official tutorial: &lt;a href=&#34;https://tour.golang.org/welcome/1&#34;
+   
+    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;A Tour of Go
+&lt;/a&gt;
+ to learn the basics of using Golang.&lt;br&gt;
+This article is a note on variables and types.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>[A Tour of Go Study Notes] 01 Packages and Functions</title>
       <link>https://tech.ray247k.com/en/blog/202111-a-tour-of-go-01-packages-and-functions/</link>
       <pubDate>Wed, 10 Nov 2021 00:00:00 +0000</pubDate>
