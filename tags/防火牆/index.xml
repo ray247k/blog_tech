@@ -13,10 +13,7 @@
       <link>https://tech.ray247k.com/blog/202201-gcp-vm-basic/</link>
       <pubDate>Sat, 15 Jan 2022 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202201-gcp-vm-basic/</guid>
-      <description>&lt;p&gt;如何在 Google Cloud Platform (GCP) 上開啟一個 VM 虛擬主機呢？&lt;br&gt;
-聽起來很複雜，實際做起來十分簡單&lt;br&gt;
-過去沒有開主機的經驗，這次就把步驟給記錄下來&lt;br&gt;
-&lt;del&gt;我不想花錢自己開，以前公司也沒開權限給我過&lt;/del&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;如何在 Google Cloud Platform (GCP) 上開啟一個 VM 虛擬主機呢？&lt;br&gt;&#xA;聽起來很複雜，實際做起來十分簡單&lt;br&gt;&#xA;過去沒有開主機的經驗，這次就把步驟給記錄下來&lt;br&gt;&#xA;&lt;del&gt;我不想花錢自己開，以前公司也沒開權限給我過&lt;/del&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

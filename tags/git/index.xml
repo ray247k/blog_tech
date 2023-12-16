@@ -13,8 +13,7 @@
       <link>https://tech.ray247k.com/blog/202111-git-global-gitignore/</link>
       <pubDate>Sat, 06 Nov 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202111-git-global-gitignore/</guid>
-      <description>&lt;p&gt;在開發專案時，你會不會把編輯器自動產生的設定檔加入 .gitignore 裡呢？&lt;br&gt;
-為什麼要把你的個人的環境設定加到專案中呢？&lt;/p&gt;</description>
+      <description>&lt;p&gt;在開發專案時，你會不會把編輯器自動產生的設定檔加入 .gitignore 裡呢？&lt;br&gt;&#xA;為什麼要把你的個人的環境設定加到專案中呢？&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

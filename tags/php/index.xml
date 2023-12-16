@@ -13,29 +13,21 @@
       <link>https://tech.ray247k.com/blog/202204-laravel-sail/</link>
       <pubDate>Sat, 02 Apr 2022 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202204-laravel-sail/</guid>
-      <description>&lt;p&gt;在 Laravel 開發環境建置上官方與非官方都有提供非常多的方式&lt;br&gt;
-這次要介紹的是 Laravel 8 之後加入的套件：&lt;a href=&#34;https://laravel.com/docs/9.x/sail&#34;
-   
-    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Laravel Sail
-&lt;/a&gt;
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;在 Laravel 開發環境建置上官方與非官方都有提供非常多的方式&lt;br&gt;&#xA;這次要介紹的是 Laravel 8 之後加入的套件：&lt;a href=&#34;https://laravel.com/docs/9.x/sail&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Laravel Sail&#xA;&lt;/a&gt;&#xA;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Laravel Queue 使用</title>
       <link>https://tech.ray247k.com/blog/202203-laravel-queue/</link>
       <pubDate>Sat, 05 Mar 2022 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202203-laravel-queue/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Queue&lt;/strong&gt; 臺灣這邊稱作「&lt;strong&gt;佇列&lt;/strong&gt;」，中國那邊的翻譯會用「&lt;strong&gt;隊列&lt;/strong&gt;」&lt;br&gt;
-用處是將一個耗時且不需要即時完成的任務延遲處理，例如寄送電子郵件&lt;br&gt;
-使用者不需要等寄信成功才能進行下一步操作，這樣可以讓應用程式對網頁請求有更快的反應&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;strong&gt;Queue&lt;/strong&gt; 臺灣這邊稱作「&lt;strong&gt;佇列&lt;/strong&gt;」，中國那邊的翻譯會用「&lt;strong&gt;隊列&lt;/strong&gt;」&lt;br&gt;&#xA;用處是將一個耗時且不需要即時完成的任務延遲處理，例如寄送電子郵件&lt;br&gt;&#xA;使用者不需要等寄信成功才能進行下一步操作，這樣可以讓應用程式對網頁請求有更快的反應&lt;/p&gt;</description>
     </item>
     <item>
       <title>使用 PHP CodeSniffer 檢查 Coding Style</title>
       <link>https://tech.ray247k.com/blog/202201-phpcs/</link>
       <pubDate>Thu, 20 Jan 2022 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202201-phpcs/</guid>
-      <description>&lt;p&gt;透過 phpcs(PHP Code Sniffer) 檢查程式碼是否符合標準&lt;br&gt;
-使用 phpcbf(PHP Code Beautifier and Fixer) 自動修正不符合標準的程式碼&lt;/p&gt;</description>
+      <description>&lt;p&gt;透過 phpcs(PHP Code Sniffer) 檢查程式碼是否符合標準&lt;br&gt;&#xA;使用 phpcbf(PHP Code Beautifier and Fixer) 自動修正不符合標準的程式碼&lt;/p&gt;</description>
     </item>
     <item>
       <title>[LeetCode] #11 Container With Most Water (Medium)</title>
@@ -63,9 +55,7 @@
       <link>https://tech.ray247k.com/blog/202105-web-server-stress-testing/</link>
       <pubDate>Sun, 23 May 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202105-web-server-stress-testing/</guid>
-      <description>&lt;p&gt;伺服器壓力測試，上線前一定要要做，不做不行！你們想想&lt;br&gt;
-你加班幾個月、系統上了線，吃著火鍋還唱著歌，突然主機就被流量灌倒了！&lt;br&gt;
-所以，有事先壓測的系統，才是好系統！&lt;/p&gt;</description>
+      <description>&lt;p&gt;伺服器壓力測試，上線前一定要要做，不做不行！你們想想&lt;br&gt;&#xA;你加班幾個月、系統上了線，吃著火鍋還唱著歌，突然主機就被流量灌倒了！&lt;br&gt;&#xA;所以，有事先壓測的系統，才是好系統！&lt;/p&gt;</description>
     </item>
     <item>
       <title>[LeetCode] #1833 Maximum Ice Cream Bars (Medium)</title>

@@ -13,9 +13,7 @@
       <link>https://tech.ray247k.com/blog/202203-laravel-queue/</link>
       <pubDate>Sat, 05 Mar 2022 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202203-laravel-queue/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Queue&lt;/strong&gt; 臺灣這邊稱作「&lt;strong&gt;佇列&lt;/strong&gt;」，中國那邊的翻譯會用「&lt;strong&gt;隊列&lt;/strong&gt;」&lt;br&gt;
-用處是將一個耗時且不需要即時完成的任務延遲處理，例如寄送電子郵件&lt;br&gt;
-使用者不需要等寄信成功才能進行下一步操作，這樣可以讓應用程式對網頁請求有更快的反應&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;strong&gt;Queue&lt;/strong&gt; 臺灣這邊稱作「&lt;strong&gt;佇列&lt;/strong&gt;」，中國那邊的翻譯會用「&lt;strong&gt;隊列&lt;/strong&gt;」&lt;br&gt;&#xA;用處是將一個耗時且不需要即時完成的任務延遲處理，例如寄送電子郵件&lt;br&gt;&#xA;使用者不需要等寄信成功才能進行下一步操作，這樣可以讓應用程式對網頁請求有更快的反應&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -13,112 +13,84 @@
       <link>https://tech.ray247k.com/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/</link>
       <pubDate>Sun, 25 Jun 2023 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/</guid>
-      <description>&lt;p&gt;之前一直有個疑問「Struct 定義的時候，Type 什麼時候要傳值？什麼時候傳址？」&lt;br&gt;
-網路上看了許多不同專案似乎都有不同的做法，直到最近遇到的問題讓我有了一點想法&lt;/p&gt;</description>
+      <description>&lt;p&gt;之前一直有個疑問「Struct 定義的時候，Type 什麼時候要傳值？什麼時候傳址？」&lt;br&gt;&#xA;網路上看了許多不同專案似乎都有不同的做法，直到最近遇到的問題讓我有了一點想法&lt;/p&gt;</description>
     </item>
     <item>
       <title>透過 FFmpeg 轉換影片格式</title>
       <link>https://tech.ray247k.com/blog/202301-ffmpeg-video-convert/</link>
       <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202301-ffmpeg-video-convert/</guid>
-      <description>&lt;p&gt;有時候會透過某些方法把 .M3U8 檔下載回來後會整合成一隻 .ts 為副檔名的檔案&lt;br&gt;
-而電腦通常不能直接播放這種格式，我們可以透過 FFmpeg 轉成常見的 .mp4 檔案便於播放&lt;/p&gt;</description>
+      <description>&lt;p&gt;有時候會透過某些方法把 .M3U8 檔下載回來後會整合成一隻 .ts 為副檔名的檔案&lt;br&gt;&#xA;而電腦通常不能直接播放這種格式，我們可以透過 FFmpeg 轉成常見的 .mp4 檔案便於播放&lt;/p&gt;</description>
     </item>
     <item>
       <title>[AWS 101] 什麼是 SNS 和 SQS</title>
       <link>https://tech.ray247k.com/blog/202210-aws101-what-is-sns-and-sqs/</link>
       <pubDate>Thu, 06 Oct 2022 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202210-aws101-what-is-sns-and-sqs/</guid>
-      <description>&lt;p&gt;Amazon Simple Queue Service (SQS) 和 Amazon Simple Notification Service (SNS) 看起來很像，實際上又不太一樣&lt;br&gt;
-為了更好釐清兩者，就把兩個服務的筆記放在一起比較&lt;/p&gt;</description>
+      <description>&lt;p&gt;Amazon Simple Queue Service (SQS) 和 Amazon Simple Notification Service (SNS) 看起來很像，實際上又不太一樣&lt;br&gt;&#xA;為了更好釐清兩者，就把兩個服務的筆記放在一起比較&lt;/p&gt;</description>
     </item>
     <item>
       <title>Serverless 簡介</title>
       <link>https://tech.ray247k.com/blog/202210-what-is-serverless/</link>
       <pubDate>Tue, 04 Oct 2022 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202210-what-is-serverless/</guid>
-      <description>&lt;p&gt;因為公司的服務都是基於 AWS，且大量使用各種無伺服器運算服務&lt;br&gt;
-以前完全沒摸過這部分，這系列算筆記整理，內容未來可能會隨時修正&lt;/p&gt;</description>
+      <description>&lt;p&gt;因為公司的服務都是基於 AWS，且大量使用各種無伺服器運算服務&lt;br&gt;&#xA;以前完全沒摸過這部分，這系列算筆記整理，內容未來可能會隨時修正&lt;/p&gt;</description>
     </item>
     <item>
       <title>使用 Golang 和智能合約互動</title>
       <link>https://tech.ray247k.com/blog/202207-go-ethereum-abigen/</link>
       <pubDate>Sat, 09 Jul 2022 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202207-go-ethereum-abigen/</guid>
-      <description>&lt;p&gt;之前都是透過 PHP 去呼叫 Smart Contract，這引發兩個問題&lt;br&gt;
-一個是慢，另一個是套件不維護了。而 Golang 有官方套件可以用，速度又快，恰好解決了這兩個問題&lt;br&gt;
-這篇主要是說明如何透過工具把既有的 Smart Contract abi 轉成 Go package 來操作合約&lt;/p&gt;</description>
+      <description>&lt;p&gt;之前都是透過 PHP 去呼叫 Smart Contract，這引發兩個問題&lt;br&gt;&#xA;一個是慢，另一個是套件不維護了。而 Golang 有官方套件可以用，速度又快，恰好解決了這兩個問題&lt;br&gt;&#xA;這篇主要是說明如何透過工具把既有的 Smart Contract abi 轉成 Go package 來操作合約&lt;/p&gt;</description>
     </item>
     <item>
       <title>在 GCP 上建立 Redis 服務</title>
       <link>https://tech.ray247k.com/blog/202206-gcp-redis/</link>
       <pubDate>Thu, 30 Jun 2022 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202206-gcp-redis/</guid>
-      <description>&lt;p&gt;GCP 提供 Google Cloud MemoryStore 服務可用來建立 Redis 或是 Memcached 快取機器服務&lt;br&gt;
-價錢跟開 Database 差不多，原本以為跟 VM 一樣便宜&lt;/p&gt;</description>
+      <description>&lt;p&gt;GCP 提供 Google Cloud MemoryStore 服務可用來建立 Redis 或是 Memcached 快取機器服務&lt;br&gt;&#xA;價錢跟開 Database 差不多，原本以為跟 VM 一樣便宜&lt;/p&gt;</description>
     </item>
     <item>
       <title>讓你的電腦暫時公開在網路上 - Ngrok</title>
       <link>https://tech.ray247k.com/blog/202204-ngrok/</link>
       <pubDate>Sat, 23 Apr 2022 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202204-ngrok/</guid>
-      <description>&lt;p&gt;在開發上有常常會遇到，想要在本機測試但是串接的服務或是 webhook 需要有一個公開的網址作為 callback&lt;br&gt;
-還都要求要有 https 的認證！&lt;br&gt;
-這種時候除了真的去開一台雲端主機外還有沒有其他選擇呢？&lt;/p&gt;</description>
+      <description>&lt;p&gt;在開發上有常常會遇到，想要在本機測試但是串接的服務或是 webhook 需要有一個公開的網址作為 callback&lt;br&gt;&#xA;還都要求要有 https 的認證！&lt;br&gt;&#xA;這種時候除了真的去開一台雲端主機外還有沒有其他選擇呢？&lt;/p&gt;</description>
     </item>
     <item>
       <title>Jenkins 04 在流程中使用 SSH 指令操作 GCP 上另一台執行個體</title>
       <link>https://tech.ray247k.com/blog/202204-jenkins-cicd-4-ssh-remote-server/</link>
       <pubDate>Wed, 13 Apr 2022 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202204-jenkins-cicd-4-ssh-remote-server/</guid>
-      <description>&lt;p&gt;在沒有自動化部屬的情境下，每次都需要手動連線到伺服器主機內部&lt;br&gt;
-透過下指令或是執行將部署指令的執行檔，不僅麻煩且有人為失誤的風險&lt;br&gt;
-透過 Jenkins 的 pipeline 來取代人工執行，部署就變得輕鬆又愜意&lt;/p&gt;</description>
+      <description>&lt;p&gt;在沒有自動化部屬的情境下，每次都需要手動連線到伺服器主機內部&lt;br&gt;&#xA;透過下指令或是執行將部署指令的執行檔，不僅麻煩且有人為失誤的風險&lt;br&gt;&#xA;透過 Jenkins 的 pipeline 來取代人工執行，部署就變得輕鬆又愜意&lt;/p&gt;</description>
     </item>
     <item>
       <title>Jenkins 03 打包 Docker image 並推送到 GCR</title>
       <link>https://tech.ray247k.com/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/</link>
       <pubDate>Fri, 08 Apr 2022 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/</guid>
-      <description>&lt;p&gt;Google Container Registry 是 Google 提供用來儲存、管理和保護 Docker 容器映像檔的服務&lt;br&gt;
-這次要做的事是打包 Docker image，再透過 gcloud 指令推送到 GCP 以便未來部署主機時使用&lt;/p&gt;</description>
+      <description>&lt;p&gt;Google Container Registry 是 Google 提供用來儲存、管理和保護 Docker 容器映像檔的服務&lt;br&gt;&#xA;這次要做的事是打包 Docker image，再透過 gcloud 指令推送到 GCP 以便未來部署主機時使用&lt;/p&gt;</description>
     </item>
     <item>
       <title>伸縮自在的伺服器 02 負載平衡 Load Balancing</title>
       <link>https://tech.ray247k.com/blog/202204-gcp-load-balancing/</link>
       <pubDate>Tue, 05 Apr 2022 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202204-gcp-load-balancing/</guid>
-      <description>&lt;p&gt;在前一篇&lt;a href=&#34;https://tech.ray247k.com/blog/202203-gcp-auto-scaling/&#34;
-   
-   &gt;伸縮自在的伺服器 01 自動配置 Auto Scaling
-&lt;/a&gt;
-中有提到&lt;br&gt;
-我們需要設定一組 Load Balancer 對網際網路的請求分流到不同伺服器主機處理&lt;br&gt;
-這樣可以根據流量彈性調整主機數量，並維持服務穩定運作&lt;/p&gt;</description>
+      <description>&lt;p&gt;在前一篇&lt;a href=&#34;https://tech.ray247k.com/blog/202203-gcp-auto-scaling/&#34;&#xA;   &#xA;   &gt;伸縮自在的伺服器 01 自動配置 Auto Scaling&#xA;&lt;/a&gt;&#xA;中有提到&lt;br&gt;&#xA;我們需要設定一組 Load Balancer 對網際網路的請求分流到不同伺服器主機處理&lt;br&gt;&#xA;這樣可以根據流量彈性調整主機數量，並維持服務穩定運作&lt;/p&gt;</description>
     </item>
     <item>
       <title>介紹 Laravel Sail 和基本操作</title>
       <link>https://tech.ray247k.com/blog/202204-laravel-sail/</link>
       <pubDate>Sat, 02 Apr 2022 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202204-laravel-sail/</guid>
-      <description>&lt;p&gt;在 Laravel 開發環境建置上官方與非官方都有提供非常多的方式&lt;br&gt;
-這次要介紹的是 Laravel 8 之後加入的套件：&lt;a href=&#34;https://laravel.com/docs/9.x/sail&#34;
-   
-    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Laravel Sail
-&lt;/a&gt;
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;在 Laravel 開發環境建置上官方與非官方都有提供非常多的方式&lt;br&gt;&#xA;這次要介紹的是 Laravel 8 之後加入的套件：&lt;a href=&#34;https://laravel.com/docs/9.x/sail&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Laravel Sail&#xA;&lt;/a&gt;&#xA;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Jenkins 02 基本 pipeline 建置及串接 Github</title>
       <link>https://tech.ray247k.com/blog/202203-jenkins-cicd-2-basic-pipeline/</link>
       <pubDate>Wed, 30 Mar 2022 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202203-jenkins-cicd-2-basic-pipeline/</guid>
-      <description>&lt;p&gt;在 &lt;a href=&#34;https://www.jenkins.io/&#34;
-   
-    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Jenkins
-&lt;/a&gt;
- 中的建置流程也叫做 pipeline，也可以透過 webhook 觸發建置&lt;br&gt;
-一樣有各種觸發方式和執行方式，底下示範串接 Github webhook 和常見觸發條件範例&lt;/p&gt;</description>
+      <description>&lt;p&gt;在 &lt;a href=&#34;https://www.jenkins.io/&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Jenkins&#xA;&lt;/a&gt;&#xA; 中的建置流程也叫做 pipeline，也可以透過 webhook 觸發建置&lt;br&gt;&#xA;一樣有各種觸發方式和執行方式，底下示範串接 Github webhook 和常見觸發條件範例&lt;/p&gt;</description>
     </item>
     <item>
       <title>伸縮自在的伺服器 01 自動配置 Auto Scaling</title>
@@ -132,214 +104,140 @@
       <link>https://tech.ray247k.com/blog/202203-jenkins-cicd-1-installation/</link>
       <pubDate>Wed, 16 Mar 2022 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202203-jenkins-cicd-1-installation/</guid>
-      <description>&lt;p&gt;使用 &lt;a href=&#34;https://www.jenkins.io/&#34;
-   
-    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Jenkins
-&lt;/a&gt;
- 建立自己的自動部署服務&lt;br&gt;
-Jenkins 是一套以 Java 開發的一套 CI/CD 系統工具&lt;br&gt;
-之前介紹過 &lt;a href=&#34;https://tech.ray247k.com/tags/drone/&#34;
-   
-   &gt;Drone
-&lt;/a&gt;
-，於是這次就來摸摸 Jenkins 了&lt;/p&gt;</description>
+      <description>&lt;p&gt;使用 &lt;a href=&#34;https://www.jenkins.io/&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Jenkins&#xA;&lt;/a&gt;&#xA; 建立自己的自動部署服務&lt;br&gt;&#xA;Jenkins 是一套以 Java 開發的一套 CI/CD 系統工具&lt;br&gt;&#xA;之前介紹過 &lt;a href=&#34;https://tech.ray247k.com/tags/drone/&#34;&#xA;   &#xA;   &gt;Drone&#xA;&lt;/a&gt;&#xA;，於是這次就來摸摸 Jenkins 了&lt;/p&gt;</description>
     </item>
     <item>
       <title>Laravel Queue 使用</title>
       <link>https://tech.ray247k.com/blog/202203-laravel-queue/</link>
       <pubDate>Sat, 05 Mar 2022 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202203-laravel-queue/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Queue&lt;/strong&gt; 臺灣這邊稱作「&lt;strong&gt;佇列&lt;/strong&gt;」，中國那邊的翻譯會用「&lt;strong&gt;隊列&lt;/strong&gt;」&lt;br&gt;
-用處是將一個耗時且不需要即時完成的任務延遲處理，例如寄送電子郵件&lt;br&gt;
-使用者不需要等寄信成功才能進行下一步操作，這樣可以讓應用程式對網頁請求有更快的反應&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;strong&gt;Queue&lt;/strong&gt; 臺灣這邊稱作「&lt;strong&gt;佇列&lt;/strong&gt;」，中國那邊的翻譯會用「&lt;strong&gt;隊列&lt;/strong&gt;」&lt;br&gt;&#xA;用處是將一個耗時且不需要即時完成的任務延遲處理，例如寄送電子郵件&lt;br&gt;&#xA;使用者不需要等寄信成功才能進行下一步操作，這樣可以讓應用程式對網頁請求有更快的反應&lt;/p&gt;</description>
     </item>
     <item>
       <title>使用 ssh 從本機連線到 GCP VM</title>
       <link>https://tech.ray247k.com/blog/202202-connect-to-gcp-vm-using-ssh/</link>
       <pubDate>Sat, 26 Feb 2022 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202202-connect-to-gcp-vm-using-ssh/</guid>
-      <description>&lt;p&gt;原先在 GCP 開啟 VM 後每當管理主機時都要先開啟 GCP 控制台頁面，找到指定主機&lt;br&gt;
-按下畫面上的 SSH 連線按鈕，接著開啟 GCP 的終端機畫面&lt;br&gt;
-開啟的步驟實在繁瑣，而且那個終端機也沒有自己本機的用的習慣&lt;br&gt;
-這篇文章說明如何透過本機終端機 ssh 連線到 GCP 主機內&lt;/p&gt;</description>
+      <description>&lt;p&gt;原先在 GCP 開啟 VM 後每當管理主機時都要先開啟 GCP 控制台頁面，找到指定主機&lt;br&gt;&#xA;按下畫面上的 SSH 連線按鈕，接著開啟 GCP 的終端機畫面&lt;br&gt;&#xA;開啟的步驟實在繁瑣，而且那個終端機也沒有自己本機的用的習慣&lt;br&gt;&#xA;這篇文章說明如何透過本機終端機 ssh 連線到 GCP 主機內&lt;/p&gt;</description>
     </item>
     <item>
       <title>使用 Prerender 為 SPA 增進 SEO</title>
       <link>https://tech.ray247k.com/blog/202201-using-prerender-improve-spa-seo/</link>
       <pubDate>Mon, 31 Jan 2022 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202201-using-prerender-improve-spa-seo/</guid>
-      <description>&lt;p&gt;Single Page Application(SPA) 網站使用 Client-Side Rendering (CSR) 來渲染畫面&lt;br&gt;
-一開始載入時伺服器只會回傳根元件，透過後續 API 互動取得資料填入&lt;br&gt;
-而網站排名的爬蟲，爬到就會是空空的。雖然 Google 聲稱他們的爬蟲會執行 JS，但是其他搜尋引擎不一定會執行&lt;br&gt;
-所以透過 Prerender 服務來做到預先渲染給網頁爬蟲，達成搜尋結果最佳化&lt;/p&gt;</description>
+      <description>&lt;p&gt;Single Page Application(SPA) 網站使用 Client-Side Rendering (CSR) 來渲染畫面&lt;br&gt;&#xA;一開始載入時伺服器只會回傳根元件，透過後續 API 互動取得資料填入&lt;br&gt;&#xA;而網站排名的爬蟲，爬到就會是空空的。雖然 Google 聲稱他們的爬蟲會執行 JS，但是其他搜尋引擎不一定會執行&lt;br&gt;&#xA;所以透過 Prerender 服務來做到預先渲染給網頁爬蟲，達成搜尋結果最佳化&lt;/p&gt;</description>
     </item>
     <item>
       <title>使用 PHP CodeSniffer 檢查 Coding Style</title>
       <link>https://tech.ray247k.com/blog/202201-phpcs/</link>
       <pubDate>Thu, 20 Jan 2022 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202201-phpcs/</guid>
-      <description>&lt;p&gt;透過 phpcs(PHP Code Sniffer) 檢查程式碼是否符合標準&lt;br&gt;
-使用 phpcbf(PHP Code Beautifier and Fixer) 自動修正不符合標準的程式碼&lt;/p&gt;</description>
+      <description>&lt;p&gt;透過 phpcs(PHP Code Sniffer) 檢查程式碼是否符合標準&lt;br&gt;&#xA;使用 phpcbf(PHP Code Beautifier and Fixer) 自動修正不符合標準的程式碼&lt;/p&gt;</description>
     </item>
     <item>
       <title>第一次在 GCP 開 VM 就成功</title>
       <link>https://tech.ray247k.com/blog/202201-gcp-vm-basic/</link>
       <pubDate>Sat, 15 Jan 2022 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202201-gcp-vm-basic/</guid>
-      <description>&lt;p&gt;如何在 Google Cloud Platform (GCP) 上開啟一個 VM 虛擬主機呢？&lt;br&gt;
-聽起來很複雜，實際做起來十分簡單&lt;br&gt;
-過去沒有開主機的經驗，這次就把步驟給記錄下來&lt;br&gt;
-&lt;del&gt;我不想花錢自己開，以前公司也沒開權限給我過&lt;/del&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;如何在 Google Cloud Platform (GCP) 上開啟一個 VM 虛擬主機呢？&lt;br&gt;&#xA;聽起來很複雜，實際做起來十分簡單&lt;br&gt;&#xA;過去沒有開主機的經驗，這次就把步驟給記錄下來&lt;br&gt;&#xA;&lt;del&gt;我不想花錢自己開，以前公司也沒開權限給我過&lt;/del&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>[A Tour of Go 學習筆記] 09 併發(concurrency)</title>
       <link>https://tech.ray247k.com/blog/202112-a-tour-of-go-09-concurrency/</link>
       <pubDate>Sat, 25 Dec 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202112-a-tour-of-go-09-concurrency/</guid>
-      <description>&lt;p&gt;初入 Golang 的世界，首先我們使用官方教學：&lt;a href=&#34;https://tour.golang.org/welcome/1&#34;
-   
-    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;A Tour of Go
-&lt;/a&gt;
- 來認識基本的 Golang 使用&lt;br&gt;
-這篇介紹 go 強大的併發（concurrency）&lt;/p&gt;</description>
+      <description>&lt;p&gt;初入 Golang 的世界，首先我們使用官方教學：&lt;a href=&#34;https://tour.golang.org/welcome/1&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;A Tour of Go&#xA;&lt;/a&gt;&#xA; 來認識基本的 Golang 使用&lt;br&gt;&#xA;這篇介紹 go 強大的併發（concurrency）&lt;/p&gt;</description>
     </item>
     <item>
       <title>[A Tour of Go 學習筆記] 08 interface 和 error</title>
       <link>https://tech.ray247k.com/blog/202112-a-tour-of-go-08-interface-and-error/</link>
       <pubDate>Sat, 18 Dec 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202112-a-tour-of-go-08-interface-and-error/</guid>
-      <description>&lt;p&gt;初入 Golang 的世界，首先我們使用官方教學：&lt;a href=&#34;https://tour.golang.org/welcome/1&#34;
-   
-    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;A Tour of Go
-&lt;/a&gt;
- 來認識基本的 Golang 使用&lt;br&gt;
-這篇介紹 interface 和 error&lt;/p&gt;</description>
+      <description>&lt;p&gt;初入 Golang 的世界，首先我們使用官方教學：&lt;a href=&#34;https://tour.golang.org/welcome/1&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;A Tour of Go&#xA;&lt;/a&gt;&#xA; 來認識基本的 Golang 使用&lt;br&gt;&#xA;這篇介紹 interface 和 error&lt;/p&gt;</description>
     </item>
     <item>
       <title>[A Tour of Go 學習筆記] 07 method</title>
       <link>https://tech.ray247k.com/blog/202112-a-tour-of-go-07-method/</link>
       <pubDate>Thu, 16 Dec 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202112-a-tour-of-go-07-method/</guid>
-      <description>&lt;p&gt;初入 Golang 的世界，首先我們使用官方教學：&lt;a href=&#34;https://tour.golang.org/welcome/1&#34;
-   
-    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;A Tour of Go
-&lt;/a&gt;
- 來認識基本的 Golang 使用&lt;br&gt;
-這篇介紹 method&lt;/p&gt;</description>
+      <description>&lt;p&gt;初入 Golang 的世界，首先我們使用官方教學：&lt;a href=&#34;https://tour.golang.org/welcome/1&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;A Tour of Go&#xA;&lt;/a&gt;&#xA; 來認識基本的 Golang 使用&lt;br&gt;&#xA;這篇介紹 method&lt;/p&gt;</description>
     </item>
     <item>
       <title>匯入 Excel 或是 csv 檔案到 Laravel</title>
       <link>https://tech.ray247k.com/blog/202112-laravel-excel-import/</link>
       <pubDate>Sat, 11 Dec 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202112-laravel-excel-import/</guid>
-      <description>&lt;p&gt;在後台介面尚未建置完成，或是使用者有大量資料不想逐筆新增&lt;br&gt;
-而是要透過表單一次性匯入，這時候我們就會用到 Laravel-excel 這個套件&lt;br&gt;
-同時也分享一次匯入大量資料的時候遇到的坑&lt;/p&gt;</description>
+      <description>&lt;p&gt;在後台介面尚未建置完成，或是使用者有大量資料不想逐筆新增&lt;br&gt;&#xA;而是要透過表單一次性匯入，這時候我們就會用到 Laravel-excel 這個套件&lt;br&gt;&#xA;同時也分享一次匯入大量資料的時候遇到的坑&lt;/p&gt;</description>
     </item>
     <item>
       <title>[A Tour of Go 學習筆記] 06 Range、Map 和 function</title>
       <link>https://tech.ray247k.com/blog/202112-a-tour-of-go-06-range-and-map/</link>
       <pubDate>Wed, 08 Dec 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202112-a-tour-of-go-06-range-and-map/</guid>
-      <description>&lt;p&gt;初入 Golang 的世界，首先我們使用官方教學：&lt;a href=&#34;https://tour.golang.org/welcome/1&#34;
-   
-    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;A Tour of Go
-&lt;/a&gt;
- 來認識基本的 Golang 使用&lt;br&gt;
-這篇介紹 Range、Map 和 function&lt;/p&gt;</description>
+      <description>&lt;p&gt;初入 Golang 的世界，首先我們使用官方教學：&lt;a href=&#34;https://tour.golang.org/welcome/1&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;A Tour of Go&#xA;&lt;/a&gt;&#xA; 來認識基本的 Golang 使用&lt;br&gt;&#xA;這篇介紹 Range、Map 和 function&lt;/p&gt;</description>
     </item>
     <item>
       <title>操作 Google 表單，透過 GAS(Google App Script)</title>
       <link>https://tech.ray247k.com/blog/202111-operate-google-sheet-via-google-app-script/</link>
       <pubDate>Sun, 28 Nov 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202111-operate-google-sheet-via-google-app-script/</guid>
-      <description>&lt;p&gt;在管理後台尚未建立完成而前台已經上線的時候，會希望可以讓非程式人員自行調整網頁上的文案&lt;br&gt;
-又或是暫時性的紀錄內容不想因此開資料表，通常這時候我們會透過 Google 表單來管理資料&lt;/p&gt;</description>
+      <description>&lt;p&gt;在管理後台尚未建立完成而前台已經上線的時候，會希望可以讓非程式人員自行調整網頁上的文案&lt;br&gt;&#xA;又或是暫時性的紀錄內容不想因此開資料表，通常這時候我們會透過 Google 表單來管理資料&lt;/p&gt;</description>
     </item>
     <item>
       <title>[A Tour of Go 學習筆記] 05 陣列和切片</title>
       <link>https://tech.ray247k.com/blog/202111-a-tour-of-go-05-array-and-slice/</link>
       <pubDate>Tue, 23 Nov 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202111-a-tour-of-go-05-array-and-slice/</guid>
-      <description>&lt;p&gt;初入 Golang 的世界，首先我們使用官方教學：&lt;a href=&#34;https://tour.golang.org/welcome/1&#34;
-   
-    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;A Tour of Go
-&lt;/a&gt;
- 來認識基本的 Golang 使用&lt;br&gt;
-這篇介紹陣列和切片的概念&lt;/p&gt;</description>
+      <description>&lt;p&gt;初入 Golang 的世界，首先我們使用官方教學：&lt;a href=&#34;https://tour.golang.org/welcome/1&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;A Tour of Go&#xA;&lt;/a&gt;&#xA; 來認識基本的 Golang 使用&lt;br&gt;&#xA;這篇介紹陣列和切片的概念&lt;/p&gt;</description>
     </item>
     <item>
       <title>[A Tour of Go 學習筆記] 04 指針和結構</title>
       <link>https://tech.ray247k.com/blog/202111-a-tour-of-go-04-pointer-and-struct/</link>
       <pubDate>Wed, 17 Nov 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202111-a-tour-of-go-04-pointer-and-struct/</guid>
-      <description>&lt;p&gt;初入 Golang 的世界，首先我們使用官方教學：&lt;a href=&#34;https://tour.golang.org/welcome/1&#34;
-   
-    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;A Tour of Go
-&lt;/a&gt;
- 來認識基本的 Golang 使用&lt;br&gt;
-這篇介紹指針和結構的使用&lt;/p&gt;</description>
+      <description>&lt;p&gt;初入 Golang 的世界，首先我們使用官方教學：&lt;a href=&#34;https://tour.golang.org/welcome/1&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;A Tour of Go&#xA;&lt;/a&gt;&#xA; 來認識基本的 Golang 使用&lt;br&gt;&#xA;這篇介紹指針和結構的使用&lt;/p&gt;</description>
     </item>
     <item>
       <title>[A Tour of Go 學習筆記] 03 流程控制</title>
       <link>https://tech.ray247k.com/blog/202111-a-tour-of-go-03-flow-control-statements/</link>
       <pubDate>Sun, 14 Nov 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202111-a-tour-of-go-03-flow-control-statements/</guid>
-      <description>&lt;p&gt;初入 Golang 的世界，首先我們使用官方教學：&lt;a href=&#34;https://tour.golang.org/welcome/1&#34;
-   
-    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;A Tour of Go
-&lt;/a&gt;
- 來認識基本的 Golang 使用&lt;br&gt;
-這篇是流程控制相關的筆記，說明一些 if else for switch 還有 defer&lt;/p&gt;</description>
+      <description>&lt;p&gt;初入 Golang 的世界，首先我們使用官方教學：&lt;a href=&#34;https://tour.golang.org/welcome/1&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;A Tour of Go&#xA;&lt;/a&gt;&#xA; 來認識基本的 Golang 使用&lt;br&gt;&#xA;這篇是流程控制相關的筆記，說明一些 if else for switch 還有 defer&lt;/p&gt;</description>
     </item>
     <item>
       <title>[A Tour of Go 學習筆記] 02 變數與型別</title>
       <link>https://tech.ray247k.com/blog/202111-a-tour-of-go-02-variables-and-types/</link>
       <pubDate>Fri, 12 Nov 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202111-a-tour-of-go-02-variables-and-types/</guid>
-      <description>&lt;p&gt;初入 Golang 的世界，首先我們使用官方教學：&lt;a href=&#34;https://tour.golang.org/welcome/1&#34;
-   
-    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;A Tour of Go
-&lt;/a&gt;
- 來認識基本的 Golang 使用&lt;br&gt;
-這篇是變數與型別的筆記&lt;/p&gt;</description>
+      <description>&lt;p&gt;初入 Golang 的世界，首先我們使用官方教學：&lt;a href=&#34;https://tour.golang.org/welcome/1&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;A Tour of Go&#xA;&lt;/a&gt;&#xA; 來認識基本的 Golang 使用&lt;br&gt;&#xA;這篇是變數與型別的筆記&lt;/p&gt;</description>
     </item>
     <item>
       <title>[A Tour of Go 學習筆記] 01 Packages 和 Functions</title>
       <link>https://tech.ray247k.com/blog/202111-a-tour-of-go-01-packages-and-functions/</link>
       <pubDate>Wed, 10 Nov 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202111-a-tour-of-go-01-packages-and-functions/</guid>
-      <description>&lt;p&gt;初入 Golang 的世界，首先我們使用官方教學：&lt;a href=&#34;https://tour.golang.org/welcome/1&#34;
-   
-    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;A Tour of Go
-&lt;/a&gt;
- 來認識基本的 Golang 使用&lt;br&gt;
-本篇包含基本套件包和函數的基礎&lt;/p&gt;</description>
+      <description>&lt;p&gt;初入 Golang 的世界，首先我們使用官方教學：&lt;a href=&#34;https://tour.golang.org/welcome/1&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;A Tour of Go&#xA;&lt;/a&gt;&#xA; 來認識基本的 Golang 使用&lt;br&gt;&#xA;本篇包含基本套件包和函數的基礎&lt;/p&gt;</description>
     </item>
     <item>
       <title>[Git 教學] 設定本機全域 gitignore</title>
       <link>https://tech.ray247k.com/blog/202111-git-global-gitignore/</link>
       <pubDate>Sat, 06 Nov 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202111-git-global-gitignore/</guid>
-      <description>&lt;p&gt;在開發專案時，你會不會把編輯器自動產生的設定檔加入 .gitignore 裡呢？&lt;br&gt;
-為什麼要把你的個人的環境設定加到專案中呢？&lt;/p&gt;</description>
+      <description>&lt;p&gt;在開發專案時，你會不會把編輯器自動產生的設定檔加入 .gitignore 裡呢？&lt;br&gt;&#xA;為什麼要把你的個人的環境設定加到專案中呢？&lt;/p&gt;</description>
     </item>
     <item>
       <title>[Discord 機器人] 02.擲骰機器人</title>
       <link>https://tech.ray247k.com/blog/202110-make-discord-chatbot-02-roll-dice-bot/</link>
       <pubDate>Thu, 28 Oct 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202110-make-discord-chatbot-02-roll-dice-bot/</guid>
-      <description>&lt;p&gt;不知道大家知不知道 TTRPG 呢？&lt;br&gt;
-比較有名的大概就是龍與地下城(D&amp;amp;D)吧&lt;br&gt;
-之前看 hololive EN 在玩，就萌生了「來寫個擲骰子 Bot 玩看看好了」的想法&lt;/p&gt;</description>
+      <description>&lt;p&gt;不知道大家知不知道 TTRPG 呢？&lt;br&gt;&#xA;比較有名的大概就是龍與地下城(D&amp;amp;D)吧&lt;br&gt;&#xA;之前看 hololive EN 在玩，就萌生了「來寫個擲骰子 Bot 玩看看好了」的想法&lt;/p&gt;</description>
     </item>
     <item>
       <title>[Discord 機器人] 01.建立基本機器人</title>
       <link>https://tech.ray247k.com/blog/202110-make-discord-chatbot-01-set-up/</link>
       <pubDate>Wed, 20 Oct 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202110-make-discord-chatbot-01-set-up/</guid>
-      <description>&lt;p&gt;閒閒沒事，來寫點沒寫過的東西&lt;br&gt;
-最近都在 Discord 活動，就決定寫 Discord ChatBot 啦&lt;/p&gt;</description>
+      <description>&lt;p&gt;閒閒沒事，來寫點沒寫過的東西&lt;br&gt;&#xA;最近都在 Discord 活動，就決定寫 Discord ChatBot 啦&lt;/p&gt;</description>
     </item>
     <item>
       <title>[LeetCode] #404 Sum of Left Leaves (Easy)</title>
@@ -395,104 +293,63 @@ Jenkins 是一套以 Java 開發的一套 CI/CD 系統工具&lt;br&gt;
       <link>https://tech.ray247k.com/blog/202107-grumphp-a-php-code-quality-tool/</link>
       <pubDate>Sat, 31 Jul 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202107-grumphp-a-php-code-quality-tool/</guid>
-      <description>&lt;p&gt;多人一起開發的環境下，Code Review 是一件非常重要的事情&lt;br&gt;
-因為如果有人寫出一些不符合規則的程式，或是無法通過測試的程式時會造成專案出錯&lt;br&gt;
-而人工檢查語法或是手動執行測試耗時費力 no fashion，這種事情應該讓程式自動做&lt;br&gt;
-於是 &lt;code&gt;GrumPHP&lt;/code&gt; 登場了&lt;/p&gt;</description>
+      <description>&lt;p&gt;多人一起開發的環境下，Code Review 是一件非常重要的事情&lt;br&gt;&#xA;因為如果有人寫出一些不符合規則的程式，或是無法通過測試的程式時會造成專案出錯&lt;br&gt;&#xA;而人工檢查語法或是手動執行測試耗時費力 no fashion，這種事情應該讓程式自動做&lt;br&gt;&#xA;於是 &lt;code&gt;GrumPHP&lt;/code&gt; 登場了&lt;/p&gt;</description>
     </item>
     <item>
       <title>開發屬於自己的 Laravel 套件</title>
       <link>https://tech.ray247k.com/blog/202107-laravel-package-development/</link>
       <pubDate>Sun, 25 Jul 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202107-laravel-package-development/</guid>
-      <description>&lt;p&gt;目前的 Laravel 生態中有許多好用的套件包可以使用&lt;br&gt;
-但要是找不到別人寫好的套件包，又或是必須建置公司共用的套件包怎麼辦呢？&lt;br&gt;
-本篇就來在本機進行套件包開發，並且會在本機專案中使用 composer 進行安裝並測試&lt;/p&gt;</description>
+      <description>&lt;p&gt;目前的 Laravel 生態中有許多好用的套件包可以使用&lt;br&gt;&#xA;但要是找不到別人寫好的套件包，又或是必須建置公司共用的套件包怎麼辦呢？&lt;br&gt;&#xA;本篇就來在本機進行套件包開發，並且會在本機專案中使用 composer 進行安裝並測試&lt;/p&gt;</description>
     </item>
     <item>
       <title>用 Docker 建立 Laravel 開發環境</title>
       <link>https://tech.ray247k.com/blog/202107-laravel-environment-with-docker/</link>
       <pubDate>Sat, 24 Jul 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202107-laravel-environment-with-docker/</guid>
-      <description>&lt;p&gt;過去在本機開發 Laravel 專案，多數是直接在本機安裝所需要服務&lt;br&gt;
-而後來改以虛擬機為主，曾經官方文件推薦開發環境的 &lt;a href=&#34;https://github.com/laravel/homestead&#34;
-   
-    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Homestead
-&lt;/a&gt;
- 是很多人第一次使用的環境&lt;/p&gt;</description>
+      <description>&lt;p&gt;過去在本機開發 Laravel 專案，多數是直接在本機安裝所需要服務&lt;br&gt;&#xA;而後來改以虛擬機為主，曾經官方文件推薦開發環境的 &lt;a href=&#34;https://github.com/laravel/homestead&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Homestead&#xA;&lt;/a&gt;&#xA; 是很多人第一次使用的環境&lt;/p&gt;</description>
     </item>
     <item>
       <title>環境初始化主機設定(Docker &#43; Laravel)</title>
       <link>https://tech.ray247k.com/blog/202107-initialize-server-setting-with-docker-and-laravel/</link>
       <pubDate>Sat, 17 Jul 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202107-initialize-server-setting-with-docker-and-laravel/</guid>
-      <description>&lt;p&gt;如果今天開啟一台全新的雲端主機，要在上面使用 Docker 建立 Laravel 開發環境&lt;br&gt;
-並且可以在遠端主機執行 Laravel 常用的 composer 與 artisan 指令&lt;/p&gt;</description>
+      <description>&lt;p&gt;如果今天開啟一台全新的雲端主機，要在上面使用 Docker 建立 Laravel 開發環境&lt;br&gt;&#xA;並且可以在遠端主機執行 Laravel 常用的 composer 與 artisan 指令&lt;/p&gt;</description>
     </item>
     <item>
       <title>[用 Drone 建立自動部署] 04 drone runner 介紹</title>
       <link>https://tech.ray247k.com/blog/202107-drone-cicd-4-advanced-runner/</link>
       <pubDate>Fri, 09 Jul 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202107-drone-cicd-4-advanced-runner/</guid>
-      <description>&lt;p&gt;我們在 &lt;a href=&#34;https://tech.ray247k.com/blog/202106-drone-cicd-1-basic-usage/&#34;
-   
-   &gt;[用 Drone 建立自動部署] 01 基本服務建置及串接 GitHub
-&lt;/a&gt;
- 文章中有 &lt;code&gt;docker-compose.yml&lt;/code&gt; 的範例&lt;br&gt;
-在範例中建立了兩個 docker runner，分別是 &lt;code&gt;drone_runner_docker&lt;/code&gt; 和 &lt;code&gt;drone-runner-ssh&lt;/code&gt;&lt;br&gt;
-而在 &lt;a href=&#34;https://tech.ray247k.com/blog/202106-drone-cicd-2-advanced-pipeline-configuration/&#34;
-   
-   &gt;[用 Drone 建立自動部署] 02 部署觸發條件(pipeline)設定
-&lt;/a&gt;
- 中使用到的其實只有 docker runner&lt;br&gt;
-這篇文章來分別介紹兩個 runner，以及官方網站上提到的其他 runner&lt;/p&gt;</description>
+      <description>&lt;p&gt;我們在 &lt;a href=&#34;https://tech.ray247k.com/blog/202106-drone-cicd-1-basic-usage/&#34;&#xA;   &#xA;   &gt;[用 Drone 建立自動部署] 01 基本服務建置及串接 GitHub&#xA;&lt;/a&gt;&#xA; 文章中有 &lt;code&gt;docker-compose.yml&lt;/code&gt; 的範例&lt;br&gt;&#xA;在範例中建立了兩個 docker runner，分別是 &lt;code&gt;drone_runner_docker&lt;/code&gt; 和 &lt;code&gt;drone-runner-ssh&lt;/code&gt;&lt;br&gt;&#xA;而在 &lt;a href=&#34;https://tech.ray247k.com/blog/202106-drone-cicd-2-advanced-pipeline-configuration/&#34;&#xA;   &#xA;   &gt;[用 Drone 建立自動部署] 02 部署觸發條件(pipeline)設定&#xA;&lt;/a&gt;&#xA; 中使用到的其實只有 docker runner&lt;br&gt;&#xA;這篇文章來分別介紹兩個 runner，以及官方網站上提到的其他 runner&lt;/p&gt;</description>
     </item>
     <item>
       <title>[用 Drone 建立自動部署] 03 部署排程設定與權限管理</title>
       <link>https://tech.ray247k.com/blog/202106-drone-cicd-3-advanced-cron-job/</link>
       <pubDate>Mon, 14 Jun 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202106-drone-cicd-3-advanced-cron-job/</guid>
-      <description>&lt;p&gt;使用 &lt;a href=&#34;https://www.drone.io/&#34;
-   
-    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Drone
-&lt;/a&gt;
- 建立自己的自動部署服務&lt;br&gt;
-Drone 是一套以 Golang 開發的一套 CI/CD 系統工具&lt;br&gt;
-本篇進行部署排程設定與權限管理的教學&lt;/p&gt;</description>
+      <description>&lt;p&gt;使用 &lt;a href=&#34;https://www.drone.io/&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Drone&#xA;&lt;/a&gt;&#xA; 建立自己的自動部署服務&lt;br&gt;&#xA;Drone 是一套以 Golang 開發的一套 CI/CD 系統工具&lt;br&gt;&#xA;本篇進行部署排程設定與權限管理的教學&lt;/p&gt;</description>
     </item>
     <item>
       <title>[用 Drone 建立自動部署] 02 部署觸發條件(pipeline)設定</title>
       <link>https://tech.ray247k.com/blog/202106-drone-cicd-2-advanced-pipeline-configuration/</link>
       <pubDate>Sat, 12 Jun 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202106-drone-cicd-2-advanced-pipeline-configuration/</guid>
-      <description>&lt;p&gt;使用 &lt;a href=&#34;https://www.drone.io/&#34;
-   
-    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Drone
-&lt;/a&gt;
- 建立自己的自動部署服務&lt;br&gt;
-Drone 是一套以 Golang 開發的一套 CI/CD 系統工具&lt;br&gt;
-本篇進行複數觸發條件設定，在不同觸發條件下觸發不同的部署步驟設定&lt;/p&gt;</description>
+      <description>&lt;p&gt;使用 &lt;a href=&#34;https://www.drone.io/&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Drone&#xA;&lt;/a&gt;&#xA; 建立自己的自動部署服務&lt;br&gt;&#xA;Drone 是一套以 Golang 開發的一套 CI/CD 系統工具&lt;br&gt;&#xA;本篇進行複數觸發條件設定，在不同觸發條件下觸發不同的部署步驟設定&lt;/p&gt;</description>
     </item>
     <item>
       <title>[用 Drone 建立自動部署] 01 基本服務建置及串接 GitHub</title>
       <link>https://tech.ray247k.com/blog/202106-drone-cicd-1-basic-usage/</link>
       <pubDate>Tue, 08 Jun 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202106-drone-cicd-1-basic-usage/</guid>
-      <description>&lt;p&gt;使用 &lt;a href=&#34;https://www.drone.io/&#34;
-   
-    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Drone
-&lt;/a&gt;
- 建立自己的自動部署服務&lt;br&gt;
-Drone 是一套以 Golang 開發的一套 CI/CD 系統工具&lt;br&gt;
-本篇進行基礎服務啟動設定，以及串接 GitHub&lt;/p&gt;</description>
+      <description>&lt;p&gt;使用 &lt;a href=&#34;https://www.drone.io/&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Drone&#xA;&lt;/a&gt;&#xA; 建立自己的自動部署服務&lt;br&gt;&#xA;Drone 是一套以 Golang 開發的一套 CI/CD 系統工具&lt;br&gt;&#xA;本篇進行基礎服務啟動設定，以及串接 GitHub&lt;/p&gt;</description>
     </item>
     <item>
       <title>Docker 常用指令</title>
       <link>https://tech.ray247k.com/blog/202106-docker-common-commands/</link>
       <pubDate>Sun, 06 Jun 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202106-docker-common-commands/</guid>
-      <description>&lt;p&gt;一些 Docker 上常用的指令和相關參數使用方法&lt;br&gt;
-實際使用上一定不只這些指令&lt;/p&gt;</description>
+      <description>&lt;p&gt;一些 Docker 上常用的指令和相關參數使用方法&lt;br&gt;&#xA;實際使用上一定不只這些指令&lt;/p&gt;</description>
     </item>
     <item>
       <title>[LeetCode] #11 Container With Most Water (Medium)</title>
@@ -520,9 +377,7 @@ Drone 是一套以 Golang 開發的一套 CI/CD 系統工具&lt;br&gt;
       <link>https://tech.ray247k.com/blog/202105-web-server-stress-testing/</link>
       <pubDate>Sun, 23 May 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202105-web-server-stress-testing/</guid>
-      <description>&lt;p&gt;伺服器壓力測試，上線前一定要要做，不做不行！你們想想&lt;br&gt;
-你加班幾個月、系統上了線，吃著火鍋還唱著歌，突然主機就被流量灌倒了！&lt;br&gt;
-所以，有事先壓測的系統，才是好系統！&lt;/p&gt;</description>
+      <description>&lt;p&gt;伺服器壓力測試，上線前一定要要做，不做不行！你們想想&lt;br&gt;&#xA;你加班幾個月、系統上了線，吃著火鍋還唱著歌，突然主機就被流量灌倒了！&lt;br&gt;&#xA;所以，有事先壓測的系統，才是好系統！&lt;/p&gt;</description>
     </item>
     <item>
       <title>[LeetCode] #1833 Maximum Ice Cream Bars (Medium)</title>
@@ -550,37 +405,28 @@ Drone 是一套以 Golang 開發的一套 CI/CD 系統工具&lt;br&gt;
       <link>https://tech.ray247k.com/blog/202105-set-custom-domain-for-github-page/</link>
       <pubDate>Tue, 18 May 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202105-set-custom-domain-for-github-page/</guid>
-      <description>&lt;p&gt;之前已經買好了自己的網址，接著要利用 Cloudflare DNS 服務建立子網域&lt;br&gt;
-並且設定給指定的 GitHub Page 專案作為客製網址&lt;br&gt;
-學會這項技能之後，只要有一組主要網址，就可以根據需求產生不同的子網域網址&lt;br&gt;
-各家 DNS 服務提供商都有這個功能，本篇以 Cloudflare 為例&lt;/p&gt;</description>
+      <description>&lt;p&gt;之前已經買好了自己的網址，接著要利用 Cloudflare DNS 服務建立子網域&lt;br&gt;&#xA;並且設定給指定的 GitHub Page 專案作為客製網址&lt;br&gt;&#xA;學會這項技能之後，只要有一組主要網址，就可以根據需求產生不同的子網域網址&lt;br&gt;&#xA;各家 DNS 服務提供商都有這個功能，本篇以 Cloudflare 為例&lt;/p&gt;</description>
     </item>
     <item>
       <title>設定 Cloudflare 免費 CDN，並啟用 DNS 代管</title>
       <link>https://tech.ray247k.com/blog/202105-cloudflare-dns-add-domain/</link>
       <pubDate>Sun, 16 May 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202105-cloudflare-dns-add-domain/</guid>
-      <description>&lt;p&gt;Google Domains 服務原本就有網域名稱伺服器(Domain Name System, DNS)服務&lt;br&gt;
-透過 DNS 可以管理你的域名，加子網域什麼的&lt;/p&gt;</description>
+      <description>&lt;p&gt;Google Domains 服務原本就有網域名稱伺服器(Domain Name System, DNS)服務&lt;br&gt;&#xA;透過 DNS 可以管理你的域名，加子網域什麼的&lt;/p&gt;</description>
     </item>
     <item>
       <title>如何從 Google Domains 購買屬於自己的網址</title>
       <link>https://tech.ray247k.com/blog/202105-how-to-buy-a-domain-from-google/</link>
       <pubDate>Sat, 15 May 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202105-how-to-buy-a-domain-from-google/</guid>
-      <description>&lt;p&gt;以前都一直是使用免費的部落(blogger)，隨著近幾年個人品牌意識崛起，以及覺得原本部落格不敷使用&lt;br&gt;
-且搬家非常不方便，還有不能自訂 SEO 和埋設追蹤碼。在媒體業做過就會想自己動手處理這些&lt;br&gt;
-當初一度從 blogger 搬到 medium，又搬回 blogger轉移十分麻煩&lt;br&gt;
-而且還有程式碼內容格式會跑掉，以及想都用 markdown 語法紀錄等等原因&lt;br&gt;
-興起了自架的想法，一方面也是想要作為展現自己的能力的平台&lt;/p&gt;</description>
+      <description>&lt;p&gt;以前都一直是使用免費的部落(blogger)，隨著近幾年個人品牌意識崛起，以及覺得原本部落格不敷使用&lt;br&gt;&#xA;且搬家非常不方便，還有不能自訂 SEO 和埋設追蹤碼。在媒體業做過就會想自己動手處理這些&lt;br&gt;&#xA;當初一度從 blogger 搬到 medium，又搬回 blogger轉移十分麻煩&lt;br&gt;&#xA;而且還有程式碼內容格式會跑掉，以及想都用 markdown 語法紀錄等等原因&lt;br&gt;&#xA;興起了自架的想法，一方面也是想要作為展現自己的能力的平台&lt;/p&gt;</description>
     </item>
     <item>
       <title>設定 ssh 金鑰登入遠端主機</title>
       <link>https://tech.ray247k.com/blog/202104-use-ssh-key-login-remote-server/</link>
       <pubDate>Sun, 25 Apr 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202104-use-ssh-key-login-remote-server/</guid>
-      <description>&lt;p&gt;一般登入伺服器是使用帳號與密碼進行登入，但是密碼可能會因為抄錄或是傳遞給人而外洩&lt;br&gt;
-安全性的程度會比較沒有像SSH key 那麼安全，而且使用SSH key 登入可以就不用每次手動輸入密碼&lt;/p&gt;</description>
+      <description>&lt;p&gt;一般登入伺服器是使用帳號與密碼進行登入，但是密碼可能會因為抄錄或是傳遞給人而外洩&lt;br&gt;&#xA;安全性的程度會比較沒有像SSH key 那麼安全，而且使用SSH key 登入可以就不用每次手動輸入密碼&lt;/p&gt;</description>
     </item>
     <item>
       <title>雲端主機啟動 Docker 服務</title>
@@ -594,8 +440,7 @@ Drone 是一套以 Golang 開發的一套 CI/CD 系統工具&lt;br&gt;
       <link>https://tech.ray247k.com/blog/202103-build-postgresql-database-useing-docker/</link>
       <pubDate>Wed, 03 Mar 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202103-build-postgresql-database-useing-docker/</guid>
-      <description>&lt;p&gt;使用 Docker 來建置一個 PostgreSQL 資料庫&lt;br&gt;
-包含 &lt;code&gt;資料庫建置&lt;/code&gt;、&lt;code&gt;資料持久化&lt;/code&gt;、&lt;code&gt;使用 GUI 操作資料庫&lt;/code&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;使用 Docker 來建置一個 PostgreSQL 資料庫&lt;br&gt;&#xA;包含 &lt;code&gt;資料庫建置&lt;/code&gt;、&lt;code&gt;資料持久化&lt;/code&gt;、&lt;code&gt;使用 GUI 操作資料庫&lt;/code&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>反向代理 - 在 Docker 環境建置</title>
@@ -616,134 +461,98 @@ Drone 是一套以 Golang 開發的一套 CI/CD 系統工具&lt;br&gt;
       <link>https://tech.ray247k.com/blog/202102-ngrok-share-your-local-development-site/</link>
       <pubDate>Sun, 14 Feb 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202102-ngrok-share-your-local-development-site/</guid>
-      <description>&lt;p&gt;ngrok 做為一個轉發的伺服器，他可以把外界的請求轉發到你指定的 Port&lt;br&gt;
-使用的背景原理是連接到 ngrok 雲端伺服器將你本機指定的地址公開&lt;br&gt;
-再將由 ngrok 一串公開的網址來存取內容&lt;br&gt;
-他的優點是快速而且還提供了 https 的服務讓你使用上更安全，甚至你還可以設置密碼保護&lt;/p&gt;</description>
+      <description>&lt;p&gt;ngrok 做為一個轉發的伺服器，他可以把外界的請求轉發到你指定的 Port&lt;br&gt;&#xA;使用的背景原理是連接到 ngrok 雲端伺服器將你本機指定的地址公開&lt;br&gt;&#xA;再將由 ngrok 一串公開的網址來存取內容&lt;br&gt;&#xA;他的優點是快速而且還提供了 https 的服務讓你使用上更安全，甚至你還可以設置密碼保護&lt;/p&gt;</description>
     </item>
     <item>
       <title>Portainer - 視覺化管理 Docker 的工具</title>
       <link>https://tech.ray247k.com/blog/202101-portainer-open-source-container-management-gui/</link>
       <pubDate>Sat, 16 Jan 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202101-portainer-open-source-container-management-gui/</guid>
-      <description>&lt;p&gt;本機開發大部分使用指令操作，或是使用 Docker 本身的 GUI 介面管理服務&lt;br&gt;
-&lt;a href=&#34;https://github.com/portainer&#34;
-   
-    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Portainer
-&lt;/a&gt;
- 是一個 open-source 的 UI tool&lt;br&gt;
-可以查看 docker image, container，並執行 start, stop, restart, remove 等動作&lt;br&gt;
-也可查看每個 container 的 log 及 error&lt;br&gt;
-在雲端主機上啟動服務的話，即使沒有 Docker 執行權限的人也可以透過帳號密碼登入&lt;br&gt;
-使用視覺化的介面進行 Docker 服務的各種管理&lt;/p&gt;</description>
+      <description>&lt;p&gt;本機開發大部分使用指令操作，或是使用 Docker 本身的 GUI 介面管理服務&lt;br&gt;&#xA;&lt;a href=&#34;https://github.com/portainer&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Portainer&#xA;&lt;/a&gt;&#xA; 是一個 open-source 的 UI tool&lt;br&gt;&#xA;可以查看 docker image, container，並執行 start, stop, restart, remove 等動作&lt;br&gt;&#xA;也可查看每個 container 的 log 及 error&lt;br&gt;&#xA;在雲端主機上啟動服務的話，即使沒有 Docker 執行權限的人也可以透過帳號密碼登入&lt;br&gt;&#xA;使用視覺化的介面進行 Docker 服務的各種管理&lt;/p&gt;</description>
     </item>
     <item>
       <title>Docker 筆記 3 - docker-compose</title>
       <link>https://tech.ray247k.com/blog/202101-docker-note-3-introduce-docker-compose/</link>
       <pubDate>Tue, 12 Jan 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202101-docker-note-3-introduce-docker-compose/</guid>
-      <description>&lt;p&gt;如果同時要管理彼此是有關連的多個 docker 容器，單純使用 docker 指令必須要自行記得容器之間的關聯&lt;br&gt;
-而使用 docker-compose，則可以輕鬆定義多容器服務&lt;/p&gt;</description>
+      <description>&lt;p&gt;如果同時要管理彼此是有關連的多個 docker 容器，單純使用 docker 指令必須要自行記得容器之間的關聯&lt;br&gt;&#xA;而使用 docker-compose，則可以輕鬆定義多容器服務&lt;/p&gt;</description>
     </item>
     <item>
       <title>Docker 筆記 2 - 基本使用</title>
       <link>https://tech.ray247k.com/blog/202101-docker-note-2-basic-usage/</link>
       <pubDate>Sat, 09 Jan 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202101-docker-note-2-basic-usage/</guid>
-      <description>&lt;p&gt;容器化可以隔離不同環境，將環境打包後工程師可以專注開發，不用花過多心力在開發環境安裝上&lt;br&gt;
-而 Docker 是目前非常成熟且流行的一個容器化技術&lt;/p&gt;</description>
+      <description>&lt;p&gt;容器化可以隔離不同環境，將環境打包後工程師可以專注開發，不用花過多心力在開發環境安裝上&lt;br&gt;&#xA;而 Docker 是目前非常成熟且流行的一個容器化技術&lt;/p&gt;</description>
     </item>
     <item>
       <title>Docker 筆記 1 - 認識 Docker</title>
       <link>https://tech.ray247k.com/blog/202101-docker-note-1-what-is-docker/</link>
       <pubDate>Sat, 02 Jan 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202101-docker-note-1-what-is-docker/</guid>
-      <description>&lt;p&gt;容器化可以隔離不同環境，將環境打包後工程師可以專注開發，不用花過多心力在開發環境安裝上&lt;br&gt;
-而 Docker 是目前非常成熟且流行的一個容器化技術&lt;/p&gt;</description>
+      <description>&lt;p&gt;容器化可以隔離不同環境，將環境打包後工程師可以專注開發，不用花過多心力在開發環境安裝上&lt;br&gt;&#xA;而 Docker 是目前非常成熟且流行的一個容器化技術&lt;/p&gt;</description>
     </item>
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 22 使用 Docker 將專案容器化</title>
       <link>https://tech.ray247k.com/blog/202012-express-vue-build-ecommerce-22-docker-containerized/</link>
       <pubDate>Thu, 03 Dec 2020 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202012-express-vue-build-ecommerce-22-docker-containerized/</guid>
-      <description>&lt;p&gt;接著我們會把整個專案使用 &lt;a href=&#34;https://www.docker.com/&#34;
-   
-    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Docker
-&lt;/a&gt;
- 來將服務容器化，也會在 MongoDB 設定身份驗證機制&lt;br&gt;
-如果對 Docker 不熟的話必須先去了解，才有辦法進行&lt;br&gt;
-或是直接跳過這個章節 &lt;del&gt;交給熱心的攤主處理&lt;/del&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;接著我們會把整個專案使用 &lt;a href=&#34;https://www.docker.com/&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Docker&#xA;&lt;/a&gt;&#xA; 來將服務容器化，也會在 MongoDB 設定身份驗證機制&lt;br&gt;&#xA;如果對 Docker 不熟的話必須先去了解，才有辦法進行&lt;br&gt;&#xA;或是直接跳過這個章節 &lt;del&gt;交給熱心的攤主處理&lt;/del&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 21 使用 Element UI 加入載入過動畫</title>
       <link>https://tech.ray247k.com/blog/202011-express-vue-build-ecommerce-21-elemen-ui-loading-animation/</link>
       <pubDate>Fri, 27 Nov 2020 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202011-express-vue-build-ecommerce-21-elemen-ui-loading-animation/</guid>
-      <description>&lt;p&gt;等待的時候很無聊，所以我們加點動畫&lt;br&gt;
-基本的動畫是用來告訴使用者動作執行結果，做到這樣使用者才知道自己剛剛做的事情有沒有完成&lt;/p&gt;</description>
+      <description>&lt;p&gt;等待的時候很無聊，所以我們加點動畫&lt;br&gt;&#xA;基本的動畫是用來告訴使用者動作執行結果，做到這樣使用者才知道自己剛剛做的事情有沒有完成&lt;/p&gt;</description>
     </item>
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 20 重構後的頁面功能恢復</title>
       <link>https://tech.ray247k.com/blog/202011-express-vue-build-ecommerce-20-element-ui-fix-function/</link>
       <pubDate>Fri, 20 Nov 2020 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202011-express-vue-build-ecommerce-20-element-ui-fix-function/</guid>
-      <description>&lt;p&gt;要是你跟老闆說：&lt;strong&gt;現在我們專案的畫面好看了，但是功能全壞了&lt;/strong&gt;&lt;br&gt;
-老闆應該會一臉問號問你在講什麼？&lt;br&gt;
-廢話不多說，趕快來修好上一篇中被我們弄壞的功能！&lt;/p&gt;</description>
+      <description>&lt;p&gt;要是你跟老闆說：&lt;strong&gt;現在我們專案的畫面好看了，但是功能全壞了&lt;/strong&gt;&lt;br&gt;&#xA;老闆應該會一臉問號問你在講什麼？&lt;br&gt;&#xA;廢話不多說，趕快來修好上一篇中被我們弄壞的功能！&lt;/p&gt;</description>
     </item>
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 19 使用 Element UI 重構畫面</title>
       <link>https://tech.ray247k.com/blog/202011-express-vue-build-ecommerce-19-elemen-ui-refactor-page/</link>
       <pubDate>Fri, 13 Nov 2020 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202011-express-vue-build-ecommerce-19-elemen-ui-refactor-page/</guid>
-      <description>&lt;p&gt;重構可能會造成一些功能癱瘓，本章先著重在畫面，讓畫面變美美噠&lt;br&gt;
-後續的文章會把功能修復，莫急莫慌莫害怕&lt;/p&gt;</description>
+      <description>&lt;p&gt;重構可能會造成一些功能癱瘓，本章先著重在畫面，讓畫面變美美噠&lt;br&gt;&#xA;後續的文章會把功能修復，莫急莫慌莫害怕&lt;/p&gt;</description>
     </item>
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 18 套用 Element UI 到頁面上</title>
       <link>https://tech.ray247k.com/blog/202011-express-vue-build-ecommerce-18-element-ui-product-list/</link>
       <pubDate>Fri, 06 Nov 2020 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202011-express-vue-build-ecommerce-18-element-ui-product-list/</guid>
-      <description>&lt;p&gt;先前我們已經把電商的基本功能完成了，只是畫面有點差強人意。&lt;br&gt;
-在這一節中我們使用 &lt;code&gt;Element UI&lt;/code&gt; 來讓畫面更加美觀&lt;/p&gt;</description>
+      <description>&lt;p&gt;先前我們已經把電商的基本功能完成了，只是畫面有點差強人意。&lt;br&gt;&#xA;在這一節中我們使用 &lt;code&gt;Element UI&lt;/code&gt; 來讓畫面更加美觀&lt;/p&gt;</description>
     </item>
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 17 使用常數管理變數</title>
       <link>https://tech.ray247k.com/blog/202010-express-vue-build-ecommerce-17-use-const-instead-of-variable/</link>
       <pubDate>Sat, 24 Oct 2020 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202010-express-vue-build-ecommerce-17-use-const-instead-of-variable/</guid>
-      <description>&lt;p&gt;很多時候我們會把功能封裝到組件內，以便重複使用組件，而在組件內我們會定義很多方法名稱去呼叫不同的事件&lt;br&gt;
-這中間只要有一個字打錯，整個流程就會錯誤，並且非常難除錯，因此我們會使用常數維持一致&lt;br&gt;
-打錯字的時候就會報錯，方便除錯&lt;/p&gt;</description>
+      <description>&lt;p&gt;很多時候我們會把功能封裝到組件內，以便重複使用組件，而在組件內我們會定義很多方法名稱去呼叫不同的事件&lt;br&gt;&#xA;這中間只要有一個字打錯，整個流程就會錯誤，並且非常難除錯，因此我們會使用常數維持一致&lt;br&gt;&#xA;打錯字的時候就會報錯，方便除錯&lt;/p&gt;</description>
     </item>
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 16 抽離 Vuex store 中的邏輯</title>
       <link>https://tech.ray247k.com/blog/202010-express-vue-build-ecommerce-16-refactor-vue-store/</link>
       <pubDate>Fri, 16 Oct 2020 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202010-express-vue-build-ecommerce-16-refactor-vue-store/</guid>
-      <description>&lt;p&gt;隨著我們的迷你電商網站越來越完整，在 Vuex store 中的程式也越來越龐大&lt;br&gt;
-不只有 getters、mutation 還有 actions&lt;br&gt;
-在章節中先試著將這些複雜的邏輯拆分成個別的檔案，抽出 Getters、Mutations 和 Actions 邏輯&lt;/p&gt;</description>
+      <description>&lt;p&gt;隨著我們的迷你電商網站越來越完整，在 Vuex store 中的程式也越來越龐大&lt;br&gt;&#xA;不只有 getters、mutation 還有 actions&lt;br&gt;&#xA;在章節中先試著將這些複雜的邏輯拆分成個別的檔案，抽出 Getters、Mutations 和 Actions 邏輯&lt;/p&gt;</description>
     </item>
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 15 使用 Vuex Getters 複用資料邏輯</title>
       <link>https://tech.ray247k.com/blog/202010-express-vue-build-ecommerce-15-use-vuex-getters/</link>
       <pubDate>Fri, 09 Oct 2020 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202010-express-vue-build-ecommerce-15-use-vuex-getters/</guid>
-      <description>&lt;p&gt;有時候我們需要 &lt;code&gt;computed&lt;/code&gt; store 中的 state，在每個組件中複製貼上同樣的 &lt;code&gt;computed&lt;/code&gt; 似乎不是一個明智的作法&lt;br&gt;
-&lt;a href=&#34;https://vuex.vuejs.org/zh/guide/getters.html&#34;
-   
-    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Vuex Getter
-&lt;/a&gt;
- 是 Vuex 提供讓我們可以對 Vuex store 中 state 資料做預處理的方法，就可以達成這個目的&lt;/p&gt;</description>
+      <description>&lt;p&gt;有時候我們需要 &lt;code&gt;computed&lt;/code&gt; store 中的 state，在每個組件中複製貼上同樣的 &lt;code&gt;computed&lt;/code&gt; 似乎不是一個明智的作法&lt;br&gt;&#xA;&lt;a href=&#34;https://vuex.vuejs.org/zh/guide/getters.html&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Vuex Getter&#xA;&lt;/a&gt;&#xA; 是 Vuex 提供讓我們可以對 Vuex store 中 state 資料做預處理的方法，就可以達成這個目的&lt;/p&gt;</description>
     </item>
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 14 使用組件思維重構頁面邏輯</title>
       <link>https://tech.ray247k.com/blog/202010-express-vue-build-ecommerce-14-refactor-component/</link>
       <pubDate>Sat, 03 Oct 2020 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202010-express-vue-build-ecommerce-14-refactor-component/</guid>
-      <description>&lt;p&gt;在先前我們學會怎麼使用 Vuex 進行狀態管理、如何使用 Action 取得 API 資料，以及使用 Mutation 更改狀態&lt;br&gt;
-而這一篇中將透過 Vue 的組件化思維簡化原本複雜且分散於各個頁面的邏輯&lt;/p&gt;</description>
+      <description>&lt;p&gt;在先前我們學會怎麼使用 Vuex 進行狀態管理、如何使用 Action 取得 API 資料，以及使用 Mutation 更改狀態&lt;br&gt;&#xA;而這一篇中將透過 Vue 的組件化思維簡化原本複雜且分散於各個頁面的邏輯&lt;/p&gt;</description>
     </item>
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 13 使用 Axios 取得 API 資料</title>
@@ -764,21 +573,14 @@ Drone 是一套以 Golang 開發的一套 CI/CD 系統工具&lt;br&gt;
       <link>https://tech.ray247k.com/blog/202009-express-vue-build-ecommerce-11-install_vuex/</link>
       <pubDate>Sat, 12 Sep 2020 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202009-express-vue-build-ecommerce-11-install_vuex/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://vuex.vuejs.org/zh/&#34;
-   
-    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;vuex
-&lt;/a&gt;
- 來協助我們集中管理組件狀態，就不用到處維護狀態&lt;br&gt;
-使得組件只需要專注於渲染頁面，而前端狀態都保留在 vuex 中建立的狀態庫中&lt;br&gt;
-所謂狀態庫，其實也就是一個 Javascript 物件&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://vuex.vuejs.org/zh/&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;vuex&#xA;&lt;/a&gt;&#xA; 來協助我們集中管理組件狀態，就不用到處維護狀態&lt;br&gt;&#xA;使得組件只需要專注於渲染頁面，而前端狀態都保留在 vuex 中建立的狀態庫中&lt;br&gt;&#xA;所謂狀態庫，其實也就是一個 Javascript 物件&lt;/p&gt;</description>
     </item>
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 10 用 vue 建立一個表單</title>
       <link>https://tech.ray247k.com/blog/202009-express-vue-build-ecommerce-10-new-product-page/</link>
       <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202009-express-vue-build-ecommerce-10-new-product-page/</guid>
-      <description>&lt;p&gt;後端的 API 上次已經開了出來，接著來建立前端使用的表單&lt;br&gt;
-這次的目標是建立新增商品時所用的表單，會使用到基本的 Vue 知識，如果沒看過文件的可以先了解一下官方文件&lt;/p&gt;</description>
+      <description>&lt;p&gt;後端的 API 上次已經開了出來，接著來建立前端使用的表單&lt;br&gt;&#xA;這次的目標是建立新增商品時所用的表單，會使用到基本的 Vue 知識，如果沒看過文件的可以先了解一下官方文件&lt;/p&gt;</description>
     </item>
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 09 API 測試</title>
@@ -834,8 +636,7 @@ Drone 是一套以 Golang 開發的一套 CI/CD 系統工具&lt;br&gt;
       <link>https://tech.ray247k.com/blog/202007-express-vue-build-ecommerce-02-vue-router/</link>
       <pubDate>Wed, 08 Jul 2020 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202007-express-vue-build-ecommerce-02-vue-router/</guid>
-      <description>&lt;p&gt;在接下來的內容中會學習 vue-router 的使用方法與學習路由基礎知識&lt;br&gt;
-並使用 vue-router 來進行多個頁面的跳轉&lt;/p&gt;</description>
+      <description>&lt;p&gt;在接下來的內容中會學習 vue-router 的使用方法與學習路由基礎知識&lt;br&gt;&#xA;並使用 vue-router 來進行多個頁面的跳轉&lt;/p&gt;</description>
     </item>
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 01- 初始設定</title>

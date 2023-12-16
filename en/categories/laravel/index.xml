@@ -13,30 +13,21 @@
       <link>https://tech.ray247k.com/en/blog/202204-laravel-sail/</link>
       <pubDate>Sat, 02 Apr 2022 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/en/blog/202204-laravel-sail/</guid>
-      <description>&lt;p&gt;In the context of Laravel development environment setup, both official and unofficial sources offer a plethora of approaches.&lt;br&gt;
-This time, we will be introducing a package introduced after Laravel 8: &lt;a href=&#34;https://laravel.com/docs/9.x/sail&#34;
-   
-    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Laravel Sail
-&lt;/a&gt;
-.&lt;/p&gt;</description>
+      <description>&lt;p&gt;In the context of Laravel development environment setup, both official and unofficial sources offer a plethora of approaches.&lt;br&gt;&#xA;This time, we will be introducing a package introduced after Laravel 8: &lt;a href=&#34;https://laravel.com/docs/9.x/sail&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Laravel Sail&#xA;&lt;/a&gt;&#xA;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Laravel Queue Usage</title>
       <link>https://tech.ray247k.com/en/blog/202203-laravel-queue/</link>
       <pubDate>Sat, 05 Mar 2022 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/en/blog/202203-laravel-queue/</guid>
-      <description>&lt;p&gt;The purpose of queues is to defer processing of a time-consuming task that doesn&amp;rsquo;t require immediate completion.
-Like sending emails, users don&amp;rsquo;t need to wait for the email to be sent successfully before the next step.&lt;br&gt;
-Allowing the application to respond more quickly to web requests and smooth user experience.&lt;/p&gt;</description>
+      <description>&lt;p&gt;The purpose of queues is to defer processing of a time-consuming task that doesn&amp;rsquo;t require immediate completion.&#xA;Like sending emails, users don&amp;rsquo;t need to wait for the email to be sent successfully before the next step.&lt;br&gt;&#xA;Allowing the application to respond more quickly to web requests and smooth user experience.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Importing Excel or CSV Files into Laravel</title>
       <link>https://tech.ray247k.com/en/blog/202112-laravel-excel-import/</link>
       <pubDate>Sat, 11 Dec 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/en/blog/202112-laravel-excel-import/</guid>
-      <description>&lt;p&gt;When the backend interface isn&amp;rsquo;t fully developed or when users have extensive data that they prefer not to input manually, opting for a bulk import via a form becomes essential.&lt;br&gt;
-This is where the Laravel-excel package comes into play.
-Additionally, it&amp;rsquo;s worth discussing the challenges encountered when importing a large volume of data at once.&lt;/p&gt;</description>
+      <description>&lt;p&gt;When the backend interface isn&amp;rsquo;t fully developed or when users have extensive data that they prefer not to input manually, opting for a bulk import via a form becomes essential.&lt;br&gt;&#xA;This is where the Laravel-excel package comes into play.&#xA;Additionally, it&amp;rsquo;s worth discussing the challenges encountered when importing a large volume of data at once.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

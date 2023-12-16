@@ -13,16 +13,14 @@
       <link>https://tech.ray247k.com/blog/202010-express-vue-build-ecommerce-14-refactor-component/</link>
       <pubDate>Sat, 03 Oct 2020 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202010-express-vue-build-ecommerce-14-refactor-component/</guid>
-      <description>&lt;p&gt;在先前我們學會怎麼使用 Vuex 進行狀態管理、如何使用 Action 取得 API 資料，以及使用 Mutation 更改狀態&lt;br&gt;
-而這一篇中將透過 Vue 的組件化思維簡化原本複雜且分散於各個頁面的邏輯&lt;/p&gt;</description>
+      <description>&lt;p&gt;在先前我們學會怎麼使用 Vuex 進行狀態管理、如何使用 Action 取得 API 資料，以及使用 Mutation 更改狀態&lt;br&gt;&#xA;而這一篇中將透過 Vue 的組件化思維簡化原本複雜且分散於各個頁面的邏輯&lt;/p&gt;</description>
     </item>
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 10 用 vue 建立一個表單</title>
       <link>https://tech.ray247k.com/blog/202009-express-vue-build-ecommerce-10-new-product-page/</link>
       <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202009-express-vue-build-ecommerce-10-new-product-page/</guid>
-      <description>&lt;p&gt;後端的 API 上次已經開了出來，接著來建立前端使用的表單&lt;br&gt;
-這次的目標是建立新增商品時所用的表單，會使用到基本的 Vue 知識，如果沒看過文件的可以先了解一下官方文件&lt;/p&gt;</description>
+      <description>&lt;p&gt;後端的 API 上次已經開了出來，接著來建立前端使用的表單&lt;br&gt;&#xA;這次的目標是建立新增商品時所用的表單，會使用到基本的 Vue 知識，如果沒看過文件的可以先了解一下官方文件&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

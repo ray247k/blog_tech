@@ -13,8 +13,7 @@
       <link>https://tech.ray247k.com/blog/202105-cloudflare-dns-add-domain/</link>
       <pubDate>Sun, 16 May 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202105-cloudflare-dns-add-domain/</guid>
-      <description>&lt;p&gt;Google Domains 服務原本就有網域名稱伺服器(Domain Name System, DNS)服務&lt;br&gt;
-透過 DNS 可以管理你的域名，加子網域什麼的&lt;/p&gt;</description>
+      <description>&lt;p&gt;Google Domains 服務原本就有網域名稱伺服器(Domain Name System, DNS)服務&lt;br&gt;&#xA;透過 DNS 可以管理你的域名，加子網域什麼的&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

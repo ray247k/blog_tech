@@ -13,9 +13,7 @@
       <link>https://tech.ray247k.com/blog/202105-web-server-stress-testing/</link>
       <pubDate>Sun, 23 May 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202105-web-server-stress-testing/</guid>
-      <description>&lt;p&gt;伺服器壓力測試，上線前一定要要做，不做不行！你們想想&lt;br&gt;
-你加班幾個月、系統上了線，吃著火鍋還唱著歌，突然主機就被流量灌倒了！&lt;br&gt;
-所以，有事先壓測的系統，才是好系統！&lt;/p&gt;</description>
+      <description>&lt;p&gt;伺服器壓力測試，上線前一定要要做，不做不行！你們想想&lt;br&gt;&#xA;你加班幾個月、系統上了線，吃著火鍋還唱著歌，突然主機就被流量灌倒了！&lt;br&gt;&#xA;所以，有事先壓測的系統，才是好系統！&lt;/p&gt;</description>
     </item>
     <item>
       <title>反向代理 - 在 Docker 環境建置</title>

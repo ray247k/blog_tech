@@ -13,8 +13,7 @@
       <link>https://tech.ray247k.com/en/blog/202111-git-global-gitignore/</link>
       <pubDate>Sat, 06 Nov 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/en/blog/202111-git-global-gitignore/</guid>
-      <description>&lt;p&gt;Do you include automatically generated editor configuration files in your .gitignore while developing a project?&lt;br&gt;
-Why add your personal environment settings to the project?&lt;/p&gt;</description>
+      <description>&lt;p&gt;Do you include automatically generated editor configuration files in your .gitignore while developing a project?&lt;br&gt;&#xA;Why add your personal environment settings to the project?&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -13,84 +13,63 @@
       <link>https://tech.ray247k.com/blog/202012-express-vue-build-ecommerce-22-docker-containerized/</link>
       <pubDate>Thu, 03 Dec 2020 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202012-express-vue-build-ecommerce-22-docker-containerized/</guid>
-      <description>&lt;p&gt;接著我們會把整個專案使用 &lt;a href=&#34;https://www.docker.com/&#34;
-   
-    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Docker
-&lt;/a&gt;
- 來將服務容器化，也會在 MongoDB 設定身份驗證機制&lt;br&gt;
-如果對 Docker 不熟的話必須先去了解，才有辦法進行&lt;br&gt;
-或是直接跳過這個章節 &lt;del&gt;交給熱心的攤主處理&lt;/del&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;接著我們會把整個專案使用 &lt;a href=&#34;https://www.docker.com/&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Docker&#xA;&lt;/a&gt;&#xA; 來將服務容器化，也會在 MongoDB 設定身份驗證機制&lt;br&gt;&#xA;如果對 Docker 不熟的話必須先去了解，才有辦法進行&lt;br&gt;&#xA;或是直接跳過這個章節 &lt;del&gt;交給熱心的攤主處理&lt;/del&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 21 使用 Element UI 加入載入過動畫</title>
       <link>https://tech.ray247k.com/blog/202011-express-vue-build-ecommerce-21-elemen-ui-loading-animation/</link>
       <pubDate>Fri, 27 Nov 2020 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202011-express-vue-build-ecommerce-21-elemen-ui-loading-animation/</guid>
-      <description>&lt;p&gt;等待的時候很無聊，所以我們加點動畫&lt;br&gt;
-基本的動畫是用來告訴使用者動作執行結果，做到這樣使用者才知道自己剛剛做的事情有沒有完成&lt;/p&gt;</description>
+      <description>&lt;p&gt;等待的時候很無聊，所以我們加點動畫&lt;br&gt;&#xA;基本的動畫是用來告訴使用者動作執行結果，做到這樣使用者才知道自己剛剛做的事情有沒有完成&lt;/p&gt;</description>
     </item>
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 20 重構後的頁面功能恢復</title>
       <link>https://tech.ray247k.com/blog/202011-express-vue-build-ecommerce-20-element-ui-fix-function/</link>
       <pubDate>Fri, 20 Nov 2020 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202011-express-vue-build-ecommerce-20-element-ui-fix-function/</guid>
-      <description>&lt;p&gt;要是你跟老闆說：&lt;strong&gt;現在我們專案的畫面好看了，但是功能全壞了&lt;/strong&gt;&lt;br&gt;
-老闆應該會一臉問號問你在講什麼？&lt;br&gt;
-廢話不多說，趕快來修好上一篇中被我們弄壞的功能！&lt;/p&gt;</description>
+      <description>&lt;p&gt;要是你跟老闆說：&lt;strong&gt;現在我們專案的畫面好看了，但是功能全壞了&lt;/strong&gt;&lt;br&gt;&#xA;老闆應該會一臉問號問你在講什麼？&lt;br&gt;&#xA;廢話不多說，趕快來修好上一篇中被我們弄壞的功能！&lt;/p&gt;</description>
     </item>
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 19 使用 Element UI 重構畫面</title>
       <link>https://tech.ray247k.com/blog/202011-express-vue-build-ecommerce-19-elemen-ui-refactor-page/</link>
       <pubDate>Fri, 13 Nov 2020 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202011-express-vue-build-ecommerce-19-elemen-ui-refactor-page/</guid>
-      <description>&lt;p&gt;重構可能會造成一些功能癱瘓，本章先著重在畫面，讓畫面變美美噠&lt;br&gt;
-後續的文章會把功能修復，莫急莫慌莫害怕&lt;/p&gt;</description>
+      <description>&lt;p&gt;重構可能會造成一些功能癱瘓，本章先著重在畫面，讓畫面變美美噠&lt;br&gt;&#xA;後續的文章會把功能修復，莫急莫慌莫害怕&lt;/p&gt;</description>
     </item>
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 18 套用 Element UI 到頁面上</title>
       <link>https://tech.ray247k.com/blog/202011-express-vue-build-ecommerce-18-element-ui-product-list/</link>
       <pubDate>Fri, 06 Nov 2020 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202011-express-vue-build-ecommerce-18-element-ui-product-list/</guid>
-      <description>&lt;p&gt;先前我們已經把電商的基本功能完成了，只是畫面有點差強人意。&lt;br&gt;
-在這一節中我們使用 &lt;code&gt;Element UI&lt;/code&gt; 來讓畫面更加美觀&lt;/p&gt;</description>
+      <description>&lt;p&gt;先前我們已經把電商的基本功能完成了，只是畫面有點差強人意。&lt;br&gt;&#xA;在這一節中我們使用 &lt;code&gt;Element UI&lt;/code&gt; 來讓畫面更加美觀&lt;/p&gt;</description>
     </item>
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 17 使用常數管理變數</title>
       <link>https://tech.ray247k.com/blog/202010-express-vue-build-ecommerce-17-use-const-instead-of-variable/</link>
       <pubDate>Sat, 24 Oct 2020 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202010-express-vue-build-ecommerce-17-use-const-instead-of-variable/</guid>
-      <description>&lt;p&gt;很多時候我們會把功能封裝到組件內，以便重複使用組件，而在組件內我們會定義很多方法名稱去呼叫不同的事件&lt;br&gt;
-這中間只要有一個字打錯，整個流程就會錯誤，並且非常難除錯，因此我們會使用常數維持一致&lt;br&gt;
-打錯字的時候就會報錯，方便除錯&lt;/p&gt;</description>
+      <description>&lt;p&gt;很多時候我們會把功能封裝到組件內，以便重複使用組件，而在組件內我們會定義很多方法名稱去呼叫不同的事件&lt;br&gt;&#xA;這中間只要有一個字打錯，整個流程就會錯誤，並且非常難除錯，因此我們會使用常數維持一致&lt;br&gt;&#xA;打錯字的時候就會報錯，方便除錯&lt;/p&gt;</description>
     </item>
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 16 抽離 Vuex store 中的邏輯</title>
       <link>https://tech.ray247k.com/blog/202010-express-vue-build-ecommerce-16-refactor-vue-store/</link>
       <pubDate>Fri, 16 Oct 2020 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202010-express-vue-build-ecommerce-16-refactor-vue-store/</guid>
-      <description>&lt;p&gt;隨著我們的迷你電商網站越來越完整，在 Vuex store 中的程式也越來越龐大&lt;br&gt;
-不只有 getters、mutation 還有 actions&lt;br&gt;
-在章節中先試著將這些複雜的邏輯拆分成個別的檔案，抽出 Getters、Mutations 和 Actions 邏輯&lt;/p&gt;</description>
+      <description>&lt;p&gt;隨著我們的迷你電商網站越來越完整，在 Vuex store 中的程式也越來越龐大&lt;br&gt;&#xA;不只有 getters、mutation 還有 actions&lt;br&gt;&#xA;在章節中先試著將這些複雜的邏輯拆分成個別的檔案，抽出 Getters、Mutations 和 Actions 邏輯&lt;/p&gt;</description>
     </item>
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 15 使用 Vuex Getters 複用資料邏輯</title>
       <link>https://tech.ray247k.com/blog/202010-express-vue-build-ecommerce-15-use-vuex-getters/</link>
       <pubDate>Fri, 09 Oct 2020 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202010-express-vue-build-ecommerce-15-use-vuex-getters/</guid>
-      <description>&lt;p&gt;有時候我們需要 &lt;code&gt;computed&lt;/code&gt; store 中的 state，在每個組件中複製貼上同樣的 &lt;code&gt;computed&lt;/code&gt; 似乎不是一個明智的作法&lt;br&gt;
-&lt;a href=&#34;https://vuex.vuejs.org/zh/guide/getters.html&#34;
-   
-    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Vuex Getter
-&lt;/a&gt;
- 是 Vuex 提供讓我們可以對 Vuex store 中 state 資料做預處理的方法，就可以達成這個目的&lt;/p&gt;</description>
+      <description>&lt;p&gt;有時候我們需要 &lt;code&gt;computed&lt;/code&gt; store 中的 state，在每個組件中複製貼上同樣的 &lt;code&gt;computed&lt;/code&gt; 似乎不是一個明智的作法&lt;br&gt;&#xA;&lt;a href=&#34;https://vuex.vuejs.org/zh/guide/getters.html&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Vuex Getter&#xA;&lt;/a&gt;&#xA; 是 Vuex 提供讓我們可以對 Vuex store 中 state 資料做預處理的方法，就可以達成這個目的&lt;/p&gt;</description>
     </item>
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 14 使用組件思維重構頁面邏輯</title>
       <link>https://tech.ray247k.com/blog/202010-express-vue-build-ecommerce-14-refactor-component/</link>
       <pubDate>Sat, 03 Oct 2020 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202010-express-vue-build-ecommerce-14-refactor-component/</guid>
-      <description>&lt;p&gt;在先前我們學會怎麼使用 Vuex 進行狀態管理、如何使用 Action 取得 API 資料，以及使用 Mutation 更改狀態&lt;br&gt;
-而這一篇中將透過 Vue 的組件化思維簡化原本複雜且分散於各個頁面的邏輯&lt;/p&gt;</description>
+      <description>&lt;p&gt;在先前我們學會怎麼使用 Vuex 進行狀態管理、如何使用 Action 取得 API 資料，以及使用 Mutation 更改狀態&lt;br&gt;&#xA;而這一篇中將透過 Vue 的組件化思維簡化原本複雜且分散於各個頁面的邏輯&lt;/p&gt;</description>
     </item>
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 13 使用 Axios 取得 API 資料</title>
@@ -111,29 +90,21 @@
       <link>https://tech.ray247k.com/blog/202009-express-vue-build-ecommerce-11-install_vuex/</link>
       <pubDate>Sat, 12 Sep 2020 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202009-express-vue-build-ecommerce-11-install_vuex/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://vuex.vuejs.org/zh/&#34;
-   
-    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;vuex
-&lt;/a&gt;
- 來協助我們集中管理組件狀態，就不用到處維護狀態&lt;br&gt;
-使得組件只需要專注於渲染頁面，而前端狀態都保留在 vuex 中建立的狀態庫中&lt;br&gt;
-所謂狀態庫，其實也就是一個 Javascript 物件&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://vuex.vuejs.org/zh/&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;vuex&#xA;&lt;/a&gt;&#xA; 來協助我們集中管理組件狀態，就不用到處維護狀態&lt;br&gt;&#xA;使得組件只需要專注於渲染頁面，而前端狀態都保留在 vuex 中建立的狀態庫中&lt;br&gt;&#xA;所謂狀態庫，其實也就是一個 Javascript 物件&lt;/p&gt;</description>
     </item>
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 10 用 vue 建立一個表單</title>
       <link>https://tech.ray247k.com/blog/202009-express-vue-build-ecommerce-10-new-product-page/</link>
       <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202009-express-vue-build-ecommerce-10-new-product-page/</guid>
-      <description>&lt;p&gt;後端的 API 上次已經開了出來，接著來建立前端使用的表單&lt;br&gt;
-這次的目標是建立新增商品時所用的表單，會使用到基本的 Vue 知識，如果沒看過文件的可以先了解一下官方文件&lt;/p&gt;</description>
+      <description>&lt;p&gt;後端的 API 上次已經開了出來，接著來建立前端使用的表單&lt;br&gt;&#xA;這次的目標是建立新增商品時所用的表單，會使用到基本的 Vue 知識，如果沒看過文件的可以先了解一下官方文件&lt;/p&gt;</description>
     </item>
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 02 - vue-router 的使用</title>
       <link>https://tech.ray247k.com/blog/202007-express-vue-build-ecommerce-02-vue-router/</link>
       <pubDate>Wed, 08 Jul 2020 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202007-express-vue-build-ecommerce-02-vue-router/</guid>
-      <description>&lt;p&gt;在接下來的內容中會學習 vue-router 的使用方法與學習路由基礎知識&lt;br&gt;
-並使用 vue-router 來進行多個頁面的跳轉&lt;/p&gt;</description>
+      <description>&lt;p&gt;在接下來的內容中會學習 vue-router 的使用方法與學習路由基礎知識&lt;br&gt;&#xA;並使用 vue-router 來進行多個頁面的跳轉&lt;/p&gt;</description>
     </item>
     <item>
       <title>[Express&#43;Vue 搭建電商網站] 01- 初始設定</title>

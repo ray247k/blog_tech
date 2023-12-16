@@ -797,6 +797,32 @@
     <loc>https://tech.ray247k.com/en/categories/third-party-services/</loc>
     <lastmod>2021-11-28T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://tech.ray247k.com/en/blog/202111-a-tour-of-go-05-array-and-slice/</loc>
+    <lastmod>2021-11-23T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202111-a-tour-of-go-05-array-and-slice/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202111-a-tour-of-go-05-array-and-slice/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/blog/202111-a-tour-of-go-04-pointer-and-struct/</loc>
+    <lastmod>2021-11-17T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202111-a-tour-of-go-04-pointer-and-struct/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202111-a-tour-of-go-04-pointer-and-struct/"
+                />
+  </url><url>
     <loc>https://tech.ray247k.com/en/blog/202111-a-tour-of-go-03-flow-control-statements/</loc>
     <lastmod>2021-11-14T00:00:00+00:00</lastmod>
     <xhtml:link

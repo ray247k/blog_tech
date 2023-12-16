@@ -13,8 +13,7 @@
       <link>https://tech.ray247k.com/en/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/</link>
       <pubDate>Fri, 08 Apr 2022 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/en/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/</guid>
-      <description>&lt;p&gt;Google Container Registry is a service provided by Google for storing, managing, and securing Docker container images.&lt;br&gt;
-The objective at hand is to package a Docker image and push it to Google Cloud Platform (GCP) using the &amp;lsquo;gcloud&amp;rsquo; command for future deployment purposes.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Google Container Registry is a service provided by Google for storing, managing, and securing Docker container images.&lt;br&gt;&#xA;The objective at hand is to package a Docker image and push it to Google Cloud Platform (GCP) using the &amp;lsquo;gcloud&amp;rsquo; command for future deployment purposes.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

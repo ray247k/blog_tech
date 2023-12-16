@@ -13,19 +13,14 @@
       <link>https://tech.ray247k.com/blog/202204-ngrok/</link>
       <pubDate>Sat, 23 Apr 2022 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202204-ngrok/</guid>
-      <description>&lt;p&gt;在開發上有常常會遇到，想要在本機測試但是串接的服務或是 webhook 需要有一個公開的網址作為 callback&lt;br&gt;
-還都要求要有 https 的認證！&lt;br&gt;
-這種時候除了真的去開一台雲端主機外還有沒有其他選擇呢？&lt;/p&gt;</description>
+      <description>&lt;p&gt;在開發上有常常會遇到，想要在本機測試但是串接的服務或是 webhook 需要有一個公開的網址作為 callback&lt;br&gt;&#xA;還都要求要有 https 的認證！&lt;br&gt;&#xA;這種時候除了真的去開一台雲端主機外還有沒有其他選擇呢？&lt;/p&gt;</description>
     </item>
     <item>
       <title>Ngrok 讓 localhost 可以被外部連線</title>
       <link>https://tech.ray247k.com/blog/202102-ngrok-share-your-local-development-site/</link>
       <pubDate>Sun, 14 Feb 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202102-ngrok-share-your-local-development-site/</guid>
-      <description>&lt;p&gt;ngrok 做為一個轉發的伺服器，他可以把外界的請求轉發到你指定的 Port&lt;br&gt;
-使用的背景原理是連接到 ngrok 雲端伺服器將你本機指定的地址公開&lt;br&gt;
-再將由 ngrok 一串公開的網址來存取內容&lt;br&gt;
-他的優點是快速而且還提供了 https 的服務讓你使用上更安全，甚至你還可以設置密碼保護&lt;/p&gt;</description>
+      <description>&lt;p&gt;ngrok 做為一個轉發的伺服器，他可以把外界的請求轉發到你指定的 Port&lt;br&gt;&#xA;使用的背景原理是連接到 ngrok 雲端伺服器將你本機指定的地址公開&lt;br&gt;&#xA;再將由 ngrok 一串公開的網址來存取內容&lt;br&gt;&#xA;他的優點是快速而且還提供了 https 的服務讓你使用上更安全，甚至你還可以設置密碼保護&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

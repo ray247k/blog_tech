@@ -12,9 +12,7 @@
       <link>https://tech.ray247k.com/en/blog/202204-jenkins-cicd-4-ssh-remote-server/</link>
       <pubDate>Wed, 13 Apr 2022 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/en/blog/202204-jenkins-cicd-4-ssh-remote-server/</guid>
-      <description>&lt;p&gt;In a non-automated deployment scenario, manually connecting to the server host&amp;rsquo;s internals is required every time.&lt;br&gt;
-Executing deployment commands or running deployment command executables not only involves inconvenience but also carries the risk of human error.&lt;br&gt;
-With Jenkins&amp;rsquo; pipeline, we can replace manual execution, making deployments easier and more pleasant.&lt;/p&gt;</description>
+      <description>&lt;p&gt;In a non-automated deployment scenario, manually connecting to the server host&amp;rsquo;s internals is required every time.&lt;br&gt;&#xA;Executing deployment commands or running deployment command executables not only involves inconvenience but also carries the risk of human error.&lt;br&gt;&#xA;With Jenkins&amp;rsquo; pipeline, we can replace manual execution, making deployments easier and more pleasant.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

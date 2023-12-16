@@ -13,8 +13,7 @@
       <link>https://tech.ray247k.com/en/blog/202111-operate-google-sheet-via-google-app-script/</link>
       <pubDate>Sun, 28 Nov 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/en/blog/202111-operate-google-sheet-via-google-app-script/</guid>
-      <description>&lt;p&gt;When the back office isn&amp;rsquo;t fully established but the frontend is already live, there&amp;rsquo;s a desire to enable non-programmers to autonomously adjust the website&amp;rsquo;s content.&lt;br&gt;
-Alternatively, in cases where temporary content needs to be recorded without creating a dedicated database table, we often resort to managing this data through Google Forms.&lt;/p&gt;</description>
+      <description>&lt;p&gt;When the back office isn&amp;rsquo;t fully established but the frontend is already live, there&amp;rsquo;s a desire to enable non-programmers to autonomously adjust the website&amp;rsquo;s content.&lt;br&gt;&#xA;Alternatively, in cases where temporary content needs to be recorded without creating a dedicated database table, we often resort to managing this data through Google Forms.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

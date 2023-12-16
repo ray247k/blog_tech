@@ -13,60 +13,42 @@
       <link>https://tech.ray247k.com/en/blog/202206-gcp-redis/</link>
       <pubDate>Thu, 30 Jun 2022 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/en/blog/202206-gcp-redis/</guid>
-      <description>&lt;p&gt;GCP offers the Google Cloud MemoryStore service for creating Redis or Memcached caching machine services.&lt;br&gt;
-The pricing is similar to that of setting up a database.&lt;br&gt;
-I thought it would be as inexpensive as using virtual machines (VMs).&lt;/p&gt;</description>
+      <description>&lt;p&gt;GCP offers the Google Cloud MemoryStore service for creating Redis or Memcached caching machine services.&lt;br&gt;&#xA;The pricing is similar to that of setting up a database.&lt;br&gt;&#xA;I thought it would be as inexpensive as using virtual machines (VMs).&lt;/p&gt;</description>
     </item>
     <item>
       <title>Make your computer be temporarily accessible on the internet. - Ngrok</title>
       <link>https://tech.ray247k.com/en/blog/202204-ngrok/</link>
       <pubDate>Sat, 23 Apr 2022 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/en/blog/202204-ngrok/</guid>
-      <description>&lt;p&gt;In development, it is often encountered that testing on the local machine requires a publicly accessible URL for services.&lt;br&gt;
-Or webhooks to use as a callback. Moreover, these services often require HTTPS certification.&lt;br&gt;
-Are there any other options besides setting up a cloud server for this purpose?&lt;/p&gt;</description>
+      <description>&lt;p&gt;In development, it is often encountered that testing on the local machine requires a publicly accessible URL for services.&lt;br&gt;&#xA;Or webhooks to use as a callback. Moreover, these services often require HTTPS certification.&lt;br&gt;&#xA;Are there any other options besides setting up a cloud server for this purpose?&lt;/p&gt;</description>
     </item>
     <item>
       <title>Jenkins CI/CD 04 - Using SSH Commands to Operate another VM Instance in GCP</title>
       <link>https://tech.ray247k.com/en/blog/202204-jenkins-cicd-4-ssh-remote-server/</link>
       <pubDate>Wed, 13 Apr 2022 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/en/blog/202204-jenkins-cicd-4-ssh-remote-server/</guid>
-      <description>&lt;p&gt;In a non-automated deployment scenario, manually connecting to the server host&amp;rsquo;s internals is required every time.&lt;br&gt;
-Executing deployment commands or running deployment command executables not only involves inconvenience but also carries the risk of human error.&lt;br&gt;
-With Jenkins&amp;rsquo; pipeline, we can replace manual execution, making deployments easier and more pleasant.&lt;/p&gt;</description>
+      <description>&lt;p&gt;In a non-automated deployment scenario, manually connecting to the server host&amp;rsquo;s internals is required every time.&lt;br&gt;&#xA;Executing deployment commands or running deployment command executables not only involves inconvenience but also carries the risk of human error.&lt;br&gt;&#xA;With Jenkins&amp;rsquo; pipeline, we can replace manual execution, making deployments easier and more pleasant.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Jenkins CI/CD 03 - Building and Pushing Docker Images to GCR</title>
       <link>https://tech.ray247k.com/en/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/</link>
       <pubDate>Fri, 08 Apr 2022 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/en/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/</guid>
-      <description>&lt;p&gt;Google Container Registry is a service provided by Google for storing, managing, and securing Docker container images.&lt;br&gt;
-The objective at hand is to package a Docker image and push it to Google Cloud Platform (GCP) using the &amp;lsquo;gcloud&amp;rsquo; command for future deployment purposes.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Google Container Registry is a service provided by Google for storing, managing, and securing Docker container images.&lt;br&gt;&#xA;The objective at hand is to package a Docker image and push it to Google Cloud Platform (GCP) using the &amp;lsquo;gcloud&amp;rsquo; command for future deployment purposes.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Scalable Server 02 Load Balancing</title>
       <link>https://tech.ray247k.com/en/blog/202204-gcp-load-balancing/</link>
       <pubDate>Tue, 05 Apr 2022 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/en/blog/202204-gcp-load-balancing/</guid>
-      <description>&lt;p&gt;In the previous post &lt;a href=&#34;https://tech.ray247k.com/en/blog/202203-gcp-auto-scaling/&#34;
-   
-   &gt;Scalable Server 01 Auto Scaling
-&lt;/a&gt;
-, it was mentioned that we need to configure a set of Load Balancers to distribute internet requests to different server hosts.&lt;br&gt;
-This allows us to dynamically adjust the number of hosts based on traffic and maintain stable service operations.&lt;/p&gt;</description>
+      <description>&lt;p&gt;In the previous post &lt;a href=&#34;https://tech.ray247k.com/en/blog/202203-gcp-auto-scaling/&#34;&#xA;   &#xA;   &gt;Scalable Server 01 Auto Scaling&#xA;&lt;/a&gt;&#xA;, it was mentioned that we need to configure a set of Load Balancers to distribute internet requests to different server hosts.&lt;br&gt;&#xA;This allows us to dynamically adjust the number of hosts based on traffic and maintain stable service operations.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Jenkins CI/CD 02 Basic Pipeline Setup and GitHub Integration</title>
       <link>https://tech.ray247k.com/en/blog/202203-jenkins-cicd-2-basic-pipeline/</link>
       <pubDate>Wed, 30 Mar 2022 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/en/blog/202203-jenkins-cicd-2-basic-pipeline/</guid>
-      <description>&lt;p&gt;In &lt;a href=&#34;https://www.jenkins.io/&#34;
-   
-    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Jenkins
-&lt;/a&gt;
-, the build process is known as a pipeline.&lt;br&gt;
-It can also be triggered through webhooks, offering various triggering and execution methods.&lt;br&gt;
-Below, we&amp;rsquo;ll demonstrate how to integrate GitHub webhooks and provide common trigger condition examples.&lt;/p&gt;</description>
+      <description>&lt;p&gt;In &lt;a href=&#34;https://www.jenkins.io/&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Jenkins&#xA;&lt;/a&gt;&#xA;, the build process is known as a pipeline.&lt;br&gt;&#xA;It can also be triggered through webhooks, offering various triggering and execution methods.&lt;br&gt;&#xA;Below, we&amp;rsquo;ll demonstrate how to integrate GitHub webhooks and provide common trigger condition examples.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Scalable Server 01 Auto Scaling</title>
@@ -80,26 +62,14 @@ Below, we&amp;rsquo;ll demonstrate how to integrate GitHub webhooks and provide 
       <link>https://tech.ray247k.com/en/blog/202203-jenkins-cicd-1-installation/</link>
       <pubDate>Wed, 16 Mar 2022 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/en/blog/202203-jenkins-cicd-1-installation/</guid>
-      <description>&lt;p&gt;Create Your Own Automated Deployment Service with &lt;a href=&#34;https://www.jenkins.io/&#34;
-   
-    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Jenkins
-&lt;/a&gt;
-&lt;br&gt;
-Jenkins is a Java-based CI/CD system tool that we are exploring in this tutorial,&lt;br&gt;
-following our previous introduction to &lt;a href=&#34;https://tech.ray247k.com/tags/drone/&#34;
-   
-   &gt;Drone
-&lt;/a&gt;
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;Create Your Own Automated Deployment Service with &lt;a href=&#34;https://www.jenkins.io/&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Jenkins&#xA;&lt;/a&gt;&#xA;&lt;br&gt;&#xA;Jenkins is a Java-based CI/CD system tool that we are exploring in this tutorial,&lt;br&gt;&#xA;following our previous introduction to &lt;a href=&#34;https://tech.ray247k.com/tags/drone/&#34;&#xA;   &#xA;   &gt;Drone&#xA;&lt;/a&gt;&#xA;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Successfully launched a VM on GCP on the first try</title>
       <link>https://tech.ray247k.com/en/blog/202201-gcp-vm-basic/</link>
       <pubDate>Sat, 15 Jan 2022 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/en/blog/202201-gcp-vm-basic/</guid>
-      <description>&lt;p&gt;How to launch a VM virtual machine on Google Cloud Platform (GCP)?&lt;br&gt;
-It may sound complex, but in practice, it&amp;rsquo;s quite straightforward.&lt;br&gt;
-If you haven&amp;rsquo;t had any experience with setting up a host before, this time, we&amp;rsquo;ll document the steps for you.&lt;/p&gt;</description>
+      <description>&lt;p&gt;How to launch a VM virtual machine on Google Cloud Platform (GCP)?&lt;br&gt;&#xA;It may sound complex, but in practice, it&amp;rsquo;s quite straightforward.&lt;br&gt;&#xA;If you haven&amp;rsquo;t had any experience with setting up a host before, this time, we&amp;rsquo;ll document the steps for you.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

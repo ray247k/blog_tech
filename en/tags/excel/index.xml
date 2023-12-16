@@ -13,9 +13,7 @@
       <link>https://tech.ray247k.com/en/blog/202112-laravel-excel-import/</link>
       <pubDate>Sat, 11 Dec 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/en/blog/202112-laravel-excel-import/</guid>
-      <description>&lt;p&gt;When the backend interface isn&amp;rsquo;t fully developed or when users have extensive data that they prefer not to input manually, opting for a bulk import via a form becomes essential.&lt;br&gt;
-This is where the Laravel-excel package comes into play.
-Additionally, it&amp;rsquo;s worth discussing the challenges encountered when importing a large volume of data at once.&lt;/p&gt;</description>
+      <description>&lt;p&gt;When the backend interface isn&amp;rsquo;t fully developed or when users have extensive data that they prefer not to input manually, opting for a bulk import via a form becomes essential.&lt;br&gt;&#xA;This is where the Laravel-excel package comes into play.&#xA;Additionally, it&amp;rsquo;s worth discussing the challenges encountered when importing a large volume of data at once.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

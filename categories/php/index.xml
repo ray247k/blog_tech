@@ -13,8 +13,7 @@
       <link>https://tech.ray247k.com/blog/202201-phpcs/</link>
       <pubDate>Thu, 20 Jan 2022 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202201-phpcs/</guid>
-      <description>&lt;p&gt;透過 phpcs(PHP Code Sniffer) 檢查程式碼是否符合標準&lt;br&gt;
-使用 phpcbf(PHP Code Beautifier and Fixer) 自動修正不符合標準的程式碼&lt;/p&gt;</description>
+      <description>&lt;p&gt;透過 phpcs(PHP Code Sniffer) 檢查程式碼是否符合標準&lt;br&gt;&#xA;使用 phpcbf(PHP Code Beautifier and Fixer) 自動修正不符合標準的程式碼&lt;/p&gt;</description>
     </item>
     <item>
       <title>[LeetCode] #11 Container With Most Water (Medium)</title>

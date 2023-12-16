@@ -13,19 +13,14 @@
       <link>https://tech.ray247k.com/en/blog/202210-aws101-what-is-sns-and-sqs/</link>
       <pubDate>Thu, 06 Oct 2022 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/en/blog/202210-aws101-what-is-sns-and-sqs/</guid>
-      <description>&lt;p&gt;Amazon Simple Queue Service (SQS) and Amazon Simple Notification Service (SNS) may look similar.&lt;br&gt;
-But in reality, they are quite different.&lt;/p&gt;
-&lt;p&gt;To better clarify the differences between the two, let&amp;rsquo;s compare the notes on both services side by side.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Amazon Simple Queue Service (SQS) and Amazon Simple Notification Service (SNS) may look similar.&lt;br&gt;&#xA;But in reality, they are quite different.&lt;/p&gt;&#xA;&lt;p&gt;To better clarify the differences between the two, let&amp;rsquo;s compare the notes on both services side by side.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Serverless 101</title>
       <link>https://tech.ray247k.com/en/blog/202210-what-is-serverless/</link>
       <pubDate>Tue, 04 Oct 2022 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/en/blog/202210-what-is-serverless/</guid>
-      <description>&lt;p&gt;Since our company&amp;rsquo;s services are built on AWS and heavily rely on various serverless computing services,&lt;br&gt;
-I had no prior experience in this area.
-This series serves as a compilation of notes for me,&lt;br&gt;
-and its content may be subject to constant revisions in the future.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Since our company&amp;rsquo;s services are built on AWS and heavily rely on various serverless computing services,&lt;br&gt;&#xA;I had no prior experience in this area.&#xA;This series serves as a compilation of notes for me,&lt;br&gt;&#xA;and its content may be subject to constant revisions in the future.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

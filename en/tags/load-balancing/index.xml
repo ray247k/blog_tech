@@ -13,12 +13,7 @@
       <link>https://tech.ray247k.com/en/blog/202204-gcp-load-balancing/</link>
       <pubDate>Tue, 05 Apr 2022 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/en/blog/202204-gcp-load-balancing/</guid>
-      <description>&lt;p&gt;In the previous post &lt;a href=&#34;https://tech.ray247k.com/en/blog/202203-gcp-auto-scaling/&#34;
-   
-   &gt;Scalable Server 01 Auto Scaling
-&lt;/a&gt;
-, it was mentioned that we need to configure a set of Load Balancers to distribute internet requests to different server hosts.&lt;br&gt;
-This allows us to dynamically adjust the number of hosts based on traffic and maintain stable service operations.&lt;/p&gt;</description>
+      <description>&lt;p&gt;In the previous post &lt;a href=&#34;https://tech.ray247k.com/en/blog/202203-gcp-auto-scaling/&#34;&#xA;   &#xA;   &gt;Scalable Server 01 Auto Scaling&#xA;&lt;/a&gt;&#xA;, it was mentioned that we need to configure a set of Load Balancers to distribute internet requests to different server hosts.&lt;br&gt;&#xA;This allows us to dynamically adjust the number of hosts based on traffic and maintain stable service operations.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

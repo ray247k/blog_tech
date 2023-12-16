@@ -13,9 +13,7 @@
       <link>https://tech.ray247k.com/blog/202112-laravel-excel-import/</link>
       <pubDate>Sat, 11 Dec 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202112-laravel-excel-import/</guid>
-      <description>&lt;p&gt;在後台介面尚未建置完成，或是使用者有大量資料不想逐筆新增&lt;br&gt;
-而是要透過表單一次性匯入，這時候我們就會用到 Laravel-excel 這個套件&lt;br&gt;
-同時也分享一次匯入大量資料的時候遇到的坑&lt;/p&gt;</description>
+      <description>&lt;p&gt;在後台介面尚未建置完成，或是使用者有大量資料不想逐筆新增&lt;br&gt;&#xA;而是要透過表單一次性匯入，這時候我們就會用到 Laravel-excel 這個套件&lt;br&gt;&#xA;同時也分享一次匯入大量資料的時候遇到的坑&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
