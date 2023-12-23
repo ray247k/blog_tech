@@ -1,18 +1,18 @@
 <!doctype html>
-<html lang="zh-tw">
+<html lang="en">
   <head>
   <meta charset="utf-8">
-<title>[A Tour of Go 學習筆記] 06 Range、Map 和 function - Byte Ebi 🍤</title>
-<meta name="description" content="使用官方教學瞭解 Go Range、Map 和 function">
+<title>[A Tour of Go Study Notes] 06 Range, Map, and Function - Byte Ebi 🍤</title>
+<meta name="description" content="Understanding Go Range, Map, and Function using official tutorials">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <meta name="twitter:card" content="summary_large_image">
 
 <meta property="og:site_name" content="Byte Ebi 🍤">
-<meta property="og:title" content="[A Tour of Go 學習筆記] 06 Range、Map 和 function">
-<meta property="og:description" content="使用官方教學瞭解 Go Range、Map 和 function">
+<meta property="og:title" content="[A Tour of Go Study Notes] 06 Range, Map, and Function">
+<meta property="og:description" content="Understanding Go Range, Map, and Function using official tutorials">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://tech.ray247k.com/blog/202112-a-tour-of-go-06-range-and-map/">
+<meta property="og:url" content="https://tech.ray247k.com/en/blog/202112-a-tour-of-go-06-range-and-map/">
   <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
 
 
@@ -30,10 +30,10 @@
   <meta name="theme-color" content="#ffffff">
 
 <meta name="generator" content="Hugo 0.121.1"><meta property="og:site_name" content="Byte Ebi 🍤">
-  <meta property="og:title" content="[A Tour of Go 學習筆記] 06 Range、Map 和 function">
-  <meta property="og:description" content="使用官方教學瞭解 Go Range、Map 和 function">
-  <meta property="description" content="使用官方教學瞭解 Go Range、Map 和 function">
-  <meta property="og:url" content="https://tech.ray247k.com/blog/202112-a-tour-of-go-06-range-and-map/">
+  <meta property="og:title" content="[A Tour of Go Study Notes] 06 Range, Map, and Function">
+  <meta property="og:description" content="Understanding Go Range, Map, and Function using official tutorials">
+  <meta property="description" content="Understanding Go Range, Map, and Function using official tutorials">
+  <meta property="og:url" content="https://tech.ray247k.com/en/blog/202112-a-tour-of-go-06-range-and-map/">
   <meta property="og:type" content="article">
   
     <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
@@ -79,12 +79,12 @@
         }
     },
     "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
-    "headline": "討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - Byte Ebi 🍤",
+    "headline": "About web development, software engineering, frontend, backend, chatbot, server related topics. - Byte Ebi 🍤",
     "name": "Byte Ebi 🍤",
     "url": "https:\/\/tech.ray247k.com",
-    "description": "討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - aws,devops,golang,laravel,leetcode,node.js,php,python3,serverless,實用工具,架站相關,版本控制,第三方服務,",
+    "description": "About web development, software engineering, frontend, backend, chatbot, server related topics. - aws,devops,golang,laravel,serverless,third-party-services,tools,version-control,website-operations,",
     "keywords": [
-        "apache-bench,auto-scaling,aws,axios,blockchain,cdn,chatbot,cicd,cloudflare,cloudflare-workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker-compose,domain-name,drone,element-ui,excel,express,ffmpeg,gas,gcp,gcr,getter,git,github,github-page,go,golang,google-app-script,google-container-registry,google-domains,google-sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load-balancing,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,phpcbf,phpcs,portainer,postgresql,prerender,proxy,python3,queue,redis,restful,seo,server,serverless,smart-contract,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
+        "auto-scaling,aws,blockchain,ci\/cd,cicd,cloudflare,cloudflare-workers,csv,devops,docker,excel,ffmpeg,firewall,gas,gcp,gcr,git,github,go,golang,google-app-script,google-container-registry,google-sheets,jenkins,laravel,laravel-excel,load-balancing,ngrok,php,prerender,queue,redis,search-engine-optimization,seo,serverless,smart-contract,ssh,version-control,"
     ]
 }
 </script>
@@ -117,8 +117,8 @@
 {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "[A Tour of Go 學習筆記] 06 Range、Map 和 function",
-    "description": "使用官方教學瞭解 Go Range、Map 和 function",
+    "name": "[A Tour of Go Study Notes] 06 Range, Map, and Function",
+    "description": "Understanding Go Range, Map, and Function using official tutorials",
     "keywords": [
         "Golang" , "Go" 
     ],
@@ -155,9 +155,9 @@
                 "@type": "ListItem",
                 "position": 3,
                 "item": {
-                    "@id": "https:\/\/tech.ray247k.com\/blog\/202112-a-tour-of-go-06-range-and-map\/",
-                    "name": "[A Tour of Go 學習筆記] 06 Range、Map 和 function",
-                    "url": "https:\/\/tech.ray247k.com\/blog\/202112-a-tour-of-go-06-range-and-map\/"
+                    "@id": "https:\/\/tech.ray247k.com\/en\/blog\/202112-a-tour-of-go-06-range-and-map\/",
+                    "name": "[A Tour of Go Study Notes] 06 Range, Map, and Function",
+                    "url": "https:\/\/tech.ray247k.com\/en\/blog\/202112-a-tour-of-go-06-range-and-map\/"
                 }
             }
         ],
@@ -172,14 +172,14 @@
     "@context": "http://schema.org",
     "@type": "BlogPosting",
     "articleSection": "blog",
-    "name": "[A Tour of Go 學習筆記] 06 Range、Map 和 function",
-    "headline": "\u003cp\u003e初入 Golang 的世界，首先我們使用官方教學：\u003ca href=\u0022https:\/\/tour.golang.org\/welcome\/1\u0022\n   \n    target=\u0022_blank\u0022 rel=\u0022noreferrer noopener\u0022\u003eA Tour of Go\n\u003c\/a\u003e\n 來認識基本的 Golang 使用\u003cbr\u003e\n這篇介紹 Range、Map 和 function\u003c\/p\u003e",
-    "description": "使用官方教學瞭解 Go Range、Map 和 function",
-    "inLanguage": "zh-TW",
+    "name": "[A Tour of Go Study Notes] 06 Range, Map, and Function",
+    "headline": "\u003cp\u003eEntering the world of Golang, we first acquaint ourselves with basic Golang usage using the official tutorial: \u003ca href=\u0022https:\/\/tour.golang.org\/welcome\/1\u0022\n   \n    target=\u0022_blank\u0022 rel=\u0022noreferrer noopener\u0022\u003eA Tour of Go\n\u003c\/a\u003e\n.\u003cbr\u003e\nThis article introduces Range, Map, and Function.\u003c\/p\u003e",
+    "description": "Understanding Go Range, Map, and Function using official tutorials",
+    "inLanguage": "en",
     "isFamilyFriendly": "true",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https:\/\/tech.ray247k.com\/blog\/202112-a-tour-of-go-06-range-and-map\/"
+        "@id": "https:\/\/tech.ray247k.com\/en\/blog\/202112-a-tour-of-go-06-range-and-map\/"
     },
     "author" : {
     "@type": "Person",
@@ -210,8 +210,8 @@
         }
     },
     "image": "https://tech.ray247k.com/img/main/logo.png",
-    "url" : "https:\/\/tech.ray247k.com\/blog\/202112-a-tour-of-go-06-range-and-map\/",
-    "wordCount" : "561",
+    "url" : "https:\/\/tech.ray247k.com\/en\/blog\/202112-a-tour-of-go-06-range-and-map\/",
+    "wordCount" : "887",
     "genre" : [ "Golang" , "Go" ],
     "keywords" : [ "Golang" , "Go" ]
 }
@@ -227,7 +227,7 @@
 <header id="site-header">
   <nav id="site-nav">
     <h1 class="nav-title">
-      <a href="/" class="nav">
+      <a href="/en/" class="nav">
         
           Blog
         
@@ -237,17 +237,17 @@
       
         
           
-          <a href="/" class="nav link"><i class='fa fa-home'></i> home</a>
+          <a href="/en/" class="nav link"><i class='fa fa-home'></i> home</a>
         
       
         
           
-          <a href="/about" class="nav link"><i class='far fa-id-card'></i> about</a>
+          <a href="/en/about" class="nav link"><i class='far fa-id-card'></i> about</a>
         
       
         
           
-          <a href="/categories" class="nav link"><i class='fas fa-sitemap'></i> category</a>
+          <a href="/en/categories" class="nav link"><i class='fas fa-sitemap'></i> category</a>
         
       
       
@@ -255,14 +255,14 @@
     </menu>
     <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
     
-    <a href="#lang-menu" class="nav lang-toggle" lang="zh-tw">zh-tw</a>
+    <a href="#lang-menu" class="nav lang-toggle" lang="en">en</a>
     <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
   </nav>
   <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
   <menu id="lang-menu" class="flyout-menu menu">
-  <a href="#" lang="zh-tw" class="nav link active">正體中文 (zh-tw)</a>
+  <a href="#" lang="en" class="nav link active">English (en)</a>
   
-      <a href="https://tech.ray247k.com/en/blog/202112-a-tour-of-go-06-range-and-map/" lang="en" class="nav link">English (en)</a>
+      <a href="https://tech.ray247k.com/blog/202112-a-tour-of-go-06-range-and-map/" lang="zh-tw" class="nav link">正體中文 (zh-tw)</a>
     
   
 </menu>
@@ -272,12 +272,12 @@
 
     <div id="wrapper">
       <section id="site-intro" >
-  <a href="/"><img src="/img/main/logo.png" class="circle" width="100" alt="Byte Ebi&#39;s Logo" /></a>
+  <a href="/en/"><img src="/img/main/logo.png" class="circle" width="100" alt="Byte Ebi&#39;s Logo" /></a>
   <header>
     <h1>Byte Ebi 🍤</h1>
   </header>
   <main>
-    <p>每天一小口，蝦米變鯨魚</p>
+    <p>A Bit everyday A Byte every week</p>
   </main>
   
     <footer>
@@ -336,14 +336,14 @@
     <header>
   <div class="title">
     
-      <h2><a href="/blog/202112-a-tour-of-go-06-range-and-map/">[A Tour of Go 學習筆記] 06 Range、Map 和 function</a></h2>
+      <h2><a href="/en/blog/202112-a-tour-of-go-06-range-and-map/">[A Tour of Go Study Notes] 06 Range, Map, and Function</a></h2>
     
     
-      <p>使用官方教學瞭解 Go Range、Map 和 function</p>
+      <p>Understanding Go Range, Map, and Function using official tutorials</p>
     
   </div>
   <div class="meta">
-    <time datetime="2021-12-08 00:00:00 &#43;0000 UTC">2021/12/08</time>
+    <time datetime="2021-12-08 00:00:00 &#43;0000 UTC">December 8, 2021</time>
     <p>Ray</p>
     
   </div>
@@ -358,18 +358,19 @@
 
     </div>
     <div class="content">
-      <a href="/blog/202112-a-tour-of-go-06-range-and-map/" class="image" style="--bg-image: url('/blog/202112-a-tour-of-go-06-range-and-map/feature.jpg');">
-    <img src="/blog/202112-a-tour-of-go-06-range-and-map/feature.jpg" alt="">
+      <a href="/en/blog/202112-a-tour-of-go-06-range-and-map/" class="image" style="--bg-image: url('/en/blog/202112-a-tour-of-go-06-range-and-map/feature.jpg');">
+    <img src="/en/blog/202112-a-tour-of-go-06-range-and-map/feature.jpg" alt="">
   </a>
-      <p>初入 Golang 的世界，首先我們使用官方教學：<a href="https://tour.golang.org/welcome/1"
+      <p>Entering the world of Golang, we first acquaint ourselves with basic Golang usage using the official tutorial: <a href="https://tour.golang.org/welcome/1"
    
     target="_blank" rel="noreferrer noopener">A Tour of Go
 </a>
- 來認識基本的 Golang 使用<br>
-這篇介紹 Range、Map 和 function</p>
+.<br>
+This article introduces Range, Map, and Function.</p>
 <h1 id="range">Range</h1>
-<p>用 for 迴圈的<code>range</code>形式可以遍歷切片或是 map，類似於其他語言的 foreach 用法<br>
-當使用 for 迴圈遍歷切片的時候，每次迭代都會回傳兩個值。第一個值是元素的 index，第二個值是元素內容的副本。</p>
+<p>The <code>range</code> form of a for loop can iterate over a slice or map, similar to the foreach usage in other languages.<br>
+When iterating over a slice with a for loop, each iteration returns two values.<br>
+The first value is the element&rsquo;s index, and the second value is a copy of the element&rsquo;s content.</p>
 <pre tabindex="0"><code class="language-go=" data-lang="go=">package main
 
 import &#34;fmt&#34;
@@ -391,13 +392,13 @@ func main() {
 &gt;&gt;&gt; 2**6 = 64
 &gt;&gt;&gt; 2**7 = 128
 */
-</code></pre><p>如果不需要某個值（通常是 index）可以用<code>_</code>來忽略他<br>
-因為 golang 對定義卻沒用的變數很在意，會出錯誤：<code>key declared but not used</code></p>
+</code></pre><p>If a value isn&rsquo;t needed (usually the index), it can be ignored using <code>_</code>.<br>
+Golang is sensitive to defining variables that aren&rsquo;t used, which causes an error: <code>key declared but not used</code>.</p>
 <pre tabindex="0"><code class="language-go=" data-lang="go=">for i, _ := range pow
 for _, value := range pow
-</code></pre><p>如果只需要 index，可以直接忽略第二個變數</p>
+</code></pre><p>If only the index is needed, the second variable can be ignored directly.</p>
 <pre tabindex="0"><code class="language-go=" data-lang="go=">for i := range pow
-</code></pre><p>底下是一個只取 index 的範例：</p>
+</code></pre><p>Here&rsquo;s an example that only retrieves the index:</p>
 <pre tabindex="0"><code class="language-go=" data-lang="go=">package main
 
 import &#34;fmt&#34;
@@ -405,7 +406,7 @@ import &#34;fmt&#34;
 func main() {
 	pow := make([]int, 10)
 	for i := range pow {
-		pow[i] = 1 &lt;&lt; uint(i) // 把值設為 index 左移一位元，等於 2 的 i 次方
+		pow[i] = 1 &lt;&lt; uint(i) // Sets the value to left shift the index, equivalent to 2 to the power of i
 	}
 	for _, value := range pow {
 		fmt.Printf(&#34;%d\n&#34;, value)
@@ -424,10 +425,11 @@ func main() {
 &gt;&gt;&gt; 512
 */
 </code></pre><h1 id="map">Map</h1>
-<p>前面介紹的不管是陣列或是切片，都是以數字當 index，而 map 可以使用字串作為 index<br>
-用在<code>Key-Value</code>的組合</p>
-<p>在初始化沒有賦值時 map 的初始值(zero value)是<code>nil</code>，一個<code>nil</code> map 沒有 key 也不能加入 key<br>
-使用<code>make</code>函數可以初始化指定型別 map 並回傳</p>
+<p>In previous examples, whether an array or slice, numeric values were used as indexes, while maps can use strings as indexes.
+They are used in a <code>Key-Value</code> combination.</p>
+<p>When a map is uninitialized or lacks assignments, the initial value of the map (zero value) is <code>nil</code>.<br>
+A <code>nil</code> map lacks keys and cannot have keys added.<br>
+Using the <code>make</code> function initializes a map of a specified type and returns it.</p>
 <pre tabindex="0"><code class="language-go=" data-lang="go=">package main
 
 import &#34;fmt&#34;
@@ -448,7 +450,7 @@ func main() {
 /*
 &gt;&gt;&gt; {40.68433 -74.39967}
 */
-</code></pre><p>map 和 struct 類似，但是 key 是必須的</p>
+</code></pre><p>Maps are similar to structs, but keys are mandatory.</p>
 <pre tabindex="0"><code class="language-go=" data-lang="go=">package main
 
 import &#34;fmt&#34;
@@ -468,7 +470,7 @@ func main() {
 /*
 &gt;&gt;&gt; map[Bell Labs:{40.68433 -74.39967} Google:{37.42202 -122.08408}]
 */
-</code></pre><p>如果最頂層的型別只是一種類別名稱，則可以省略不寫</p>
+</code></pre><p>If the top-level type is just a type name, it can be omitted.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
@@ -488,20 +490,20 @@ func main() {
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/*
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">&gt;&gt;&gt; map[Bell Labs:{40.68433 -74.39967} Google:{37.42202 -122.08408}]
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
-</span></span></code></pre></div><h1 id="修改-map-中的值">修改 map 中的值</h1>
-<p>在 map 中插入或修改元素</p>
+</span></span></code></pre></div><h1 id="modifying-values-in-maps">Modifying Values in Maps</h1>
+<p>Inserting or modifying elements in a map:</p>
 <pre tabindex="0"><code class="language-go=" data-lang="go=">m[key] = elem
-</code></pre><p>取得元素</p>
+</code></pre><p>Retrieving an element:</p>
 <pre tabindex="0"><code class="language-go=" data-lang="go=">elem = m[key]
-</code></pre><p>刪除元素</p>
+</code></pre><p>Deleting an element:</p>
 <pre tabindex="0"><code class="language-go=" data-lang="go=">delete(m, key)
-</code></pre><p>透過雙賦值(two-value assignment)檢查某個鍵值是否存在</p>
+</code></pre><p>Checking if a certain key exists using two-value assignment:</p>
 <pre tabindex="0"><code class="language-go=" data-lang="go=">elem, ok = m[key]
-</code></pre><p>如果 key 存在 m 中<code>ok = true</code>，否則<code>ok = false</code><br>
-若讀取不存在的鍵值時，會得到 map 的元素類型的預設值<br>
-在使用時若<code>elem</code>或是<code>ok</code>還沒被定義，可以使用<code>:</code>做簡短變數聲明</p>
+</code></pre><p>If the key exists in <code>m</code>, <code>ok = true</code>; otherwise, <code>ok = false</code>.<br>
+When reading a non-existent key, you get the default value of the map&rsquo;s element type.<br>
+In cases where <code>elem</code> or <code>ok</code> aren&rsquo;t defined during usage, <code>:</code> can be used for short variable declaration.</p>
 <pre tabindex="0"><code class="language-go=" data-lang="go=">elem, ok := m[key]
-</code></pre><p>實際操作起來就：</p>
+</code></pre><p>In practice:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
@@ -527,10 +529,9 @@ func main() {
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">&gt;&gt;&gt; The value: 0
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">&gt;&gt;&gt; The value: 0 Present? false
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
-</span></span></code></pre></div><h1 id="函數-function">函數 Function</h1>
+</span></span></code></pre></div><h1 id="function">Function</h1>
 <h2 id="function-values">Function values</h2>
-<p>function 也是值，也可以被傳遞<br>
-函數可以作為函數的參數或是回傳值</p>
+<p>Functions are also values and can be passed around. They can be used as parameters or return values for functions.</p>
 <pre tabindex="0"><code class="language-go=" data-lang="go=">package main
 
 import (
@@ -556,11 +557,11 @@ func main() {
 &gt;&gt;&gt; 5
 &gt;&gt;&gt; 81
 */
-</code></pre><h2 id="閉包-function-closures">閉包 Function closures</h2>
-<p>Go function 也可以是一個閉包<br>
-閉包是一個函數值，引用了函數本身外部的變數。閉包函數被指定給變數，並且可以存取變數。<br>
-換句話說，閉包函數跟變數被「綁定」在一起。</p>
-<p>範例中的<code>adder</code>這個 function 回傳一個閉包，所以每個<code>sum</code>變數都擁有自己的閉包函數</p>
+</code></pre><h2 id="function-closures">Function Closures</h2>
+<p>A Go function can also be a closure. A closure is a function value that references variables outside its body.<br>
+The closure function is assigned to a variable and can access the variables.<br>
+In other words, closure functions are &ldquo;bound&rdquo; to variables.</p>
+<p>In the example, the <code>adder</code> function returns a closure, so each <code>sum</code> variable has its own closure function.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
@@ -569,7 +570,7 @@ func main() {
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">x</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
 </span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">x</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">sum</span>
+</span></span><span style="display:flex;"><span>	    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">sum</span>
 </span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
@@ -594,11 +595,12 @@ func main() {
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">&gt;&gt;&gt; 36 -72
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">&gt;&gt;&gt; 45 -90
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
-</span></span></code></pre></div>
+</span></span></code></pre></div><p>This example demonstrates that the <code>adder</code> function returns a closure, allowing each <code>sum</code> variable to possess its own enclosed function.
+Within the <code>main</code> function, <code>pos</code> and <code>neg</code> leverage two distinct closure functions for operations.</p>
 
       
       
-<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/ray247k/button?referrer=https%3a%2f%2ftech.ray247k.com%2fblog%2f202112-a-tour-of-go-06-range-and-map%2f" width="100%" frameborder=0></iframe>
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/ray247k/button?referrer=https%3a%2f%2ftech.ray247k.com%2fen%2fblog%2f202112-a-tour-of-go-06-range-and-map%2f" width="100%" frameborder=0></iframe>
 
     </div>
     <footer>
@@ -607,7 +609,7 @@ func main() {
     <ul class="categories">
       
         
-          <li><a class="article-terms-link" href="/categories/golang/">Golang</a></li>
+          <li><a class="article-terms-link" href="/en/categories/golang/">Golang</a></li>
         
       
     </ul>
@@ -616,9 +618,9 @@ func main() {
     <ul class="tags">
       
         
-          <li><a class="article-terms-link" href="/tags/golang/">Golang</a></li>
+          <li><a class="article-terms-link" href="/en/tags/golang/">Golang</a></li>
         
-          <li><a class="article-terms-link" href="/tags/go/">Go</a></li>
+          <li><a class="article-terms-link" href="/en/tags/go/">Go</a></li>
         
       
     </ul>
@@ -633,10 +635,10 @@ func main() {
   
   <div class="pagination">
     
-      <a href="/blog/202112-laravel-excel-import/" class="button left"><span>匯入 Excel 或是 csv 檔案到 Laravel</span></a>
+      <a href="/en/blog/202112-laravel-excel-import/" class="button left"><span>Importing Excel or CSV Files into Laravel</span></a>
     
     
-      <a href="/blog/202111-operate-google-sheet-via-google-app-script/" class="button right"><span>操作 Google 表單，透過 GAS(Google App Script)</span></a>
+      <a href="/en/blog/202111-operate-google-sheet-via-google-app-script/" class="button right"><span>Operating Google Forms with GAS (Google App Script)</span></a>
     
   </div>
 
@@ -645,62 +647,62 @@ func main() {
   
     <section id="recent-posts">
       <header>
-        <h1>最新文章</h1>
+        <h1>Recent Posts</h1>
       </header>
       
       <article class="mini-post">
-          <a href="/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/" class="image" style="--bg-image: url('/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg');">
-    <img src="/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg" alt="">
+          <a href="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/" class="image" style="--bg-image: url('/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg');">
+    <img src="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg" alt="">
   </a>
         <header>
-          <h2><a href="/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/">Golang 中 Struct 內型別用指針和值的差異和時機</a></h2>
-          <time class="published" datetime="2023-06-25 00:00:00 &#43;0000 UTC">2023/06/25</time>
+          <h2><a href="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/">Different between pointer and value for struct type in golang</a></h2>
+          <time class="published" datetime="2023-06-25 00:00:00 &#43;0000 UTC">June 25, 2023</time>
         </header>
       </article>
       
       <article class="mini-post">
-          <a href="/blog/202301-ffmpeg-video-convert/" class="image" style="--bg-image: url('/blog/202301-ffmpeg-video-convert/featured.png');">
-    <img src="/blog/202301-ffmpeg-video-convert/featured.png" alt="">
+          <a href="/en/blog/202301-ffmpeg-video-convert/" class="image" style="--bg-image: url('/en/blog/202301-ffmpeg-video-convert/featured.png');">
+    <img src="/en/blog/202301-ffmpeg-video-convert/featured.png" alt="">
   </a>
         <header>
-          <h2><a href="/blog/202301-ffmpeg-video-convert/">透過 FFmpeg 轉換影片格式</a></h2>
-          <time class="published" datetime="2023-01-01 00:00:00 &#43;0000 UTC">2023/01/01</time>
+          <h2><a href="/en/blog/202301-ffmpeg-video-convert/">Using FFmpeg to convert media files</a></h2>
+          <time class="published" datetime="2023-01-01 00:00:00 &#43;0000 UTC">January 1, 2023</time>
         </header>
       </article>
       
       <article class="mini-post">
-          <a href="/blog/202210-aws101-what-is-sns-and-sqs/" class="image" style="--bg-image: url('/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg');">
-    <img src="/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg" alt="">
+          <a href="/en/blog/202210-aws101-what-is-sns-and-sqs/" class="image" style="--bg-image: url('/en/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg');">
+    <img src="/en/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg" alt="">
   </a>
         <header>
-          <h2><a href="/blog/202210-aws101-what-is-sns-and-sqs/">[AWS 101] 什麼是 SNS 和 SQS</a></h2>
-          <time class="published" datetime="2022-10-06 00:00:00 &#43;0000 UTC">2022/10/06</time>
+          <h2><a href="/en/blog/202210-aws101-what-is-sns-and-sqs/">[AWS 101] What are SNS and SQS</a></h2>
+          <time class="published" datetime="2022-10-06 00:00:00 &#43;0000 UTC">October 6, 2022</time>
         </header>
       </article>
       
       <article class="mini-post">
-          <a href="/blog/202210-what-is-serverless/" class="image" style="--bg-image: url('/blog/202210-what-is-serverless/featured.jpg');">
-    <img src="/blog/202210-what-is-serverless/featured.jpg" alt="">
+          <a href="/en/blog/202210-what-is-serverless/" class="image" style="--bg-image: url('/en/blog/202210-what-is-serverless/featured.jpg');">
+    <img src="/en/blog/202210-what-is-serverless/featured.jpg" alt="">
   </a>
         <header>
-          <h2><a href="/blog/202210-what-is-serverless/">Serverless 簡介</a></h2>
-          <time class="published" datetime="2022-10-04 00:00:00 &#43;0000 UTC">2022/10/04</time>
+          <h2><a href="/en/blog/202210-what-is-serverless/">Serverless 101</a></h2>
+          <time class="published" datetime="2022-10-04 00:00:00 &#43;0000 UTC">October 4, 2022</time>
         </header>
       </article>
       
       <article class="mini-post">
-          <a href="/blog/202207-go-ethereum-abigen/" class="image" style="--bg-image: url('/blog/202207-go-ethereum-abigen/featured.jpeg');">
-    <img src="/blog/202207-go-ethereum-abigen/featured.jpeg" alt="">
+          <a href="/en/blog/202207-go-ethereum-abigen/" class="image" style="--bg-image: url('/en/blog/202207-go-ethereum-abigen/featured.jpeg');">
+    <img src="/en/blog/202207-go-ethereum-abigen/featured.jpeg" alt="">
   </a>
         <header>
-          <h2><a href="/blog/202207-go-ethereum-abigen/">使用 Golang 和智能合約互動</a></h2>
-          <time class="published" datetime="2022-07-09 00:00:00 &#43;0000 UTC">2022/07/09</time>
+          <h2><a href="/en/blog/202207-go-ethereum-abigen/">Interacting with smart contracts using Golang</a></h2>
+          <time class="published" datetime="2022-07-09 00:00:00 &#43;0000 UTC">July 9, 2022</time>
         </header>
       </article>
       
       
         <footer>
-          <a href="/blog/" class="button">查看更多</a>
+          <a href="/en/blog/" class="button">See More</a>
         </footer>
       
     </section>
@@ -711,61 +713,45 @@ func main() {
 
       <section id="categories">
         <header>
-          <h1><a href="/categories">Category</a></h1>
+          <h1><a href="/en/categories">Categories</a></h1>
         </header>
         <ul>
           
           
           <li>
-              <a href="/categories/devops/">devops<span class="count">25</span></a>
+              <a href="/en/categories/devops/">devops<span class="count">8</span></a>
           </li>
           
           <li>
-              <a href="/categories/node.js/">node.js<span class="count">22</span></a>
+              <a href="/en/categories/golang/">golang<span class="count">8</span></a>
           </li>
           
           <li>
-              <a href="/categories/leetcode/">leetcode<span class="count">13</span></a>
+              <a href="/en/categories/laravel/">laravel<span class="count">3</span></a>
           </li>
           
           <li>
-              <a href="/categories/golang/">golang<span class="count">11</span></a>
+              <a href="/en/categories/website-operations/">website-operations<span class="count">2</span></a>
           </li>
           
           <li>
-              <a href="/categories/python3/">python3<span class="count">9</span></a>
+              <a href="/en/categories/aws/">aws<span class="count">1</span></a>
           </li>
           
           <li>
-              <a href="/categories/php/">php<span class="count">7</span></a>
+              <a href="/en/categories/serverless/">serverless<span class="count">1</span></a>
           </li>
           
           <li>
-              <a href="/categories/laravel/">laravel<span class="count">6</span></a>
+              <a href="/en/categories/third-party-services/">third-party-services<span class="count">1</span></a>
           </li>
           
           <li>
-              <a href="/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/">架站相關<span class="count">6</span></a>
+              <a href="/en/categories/tools/">tools<span class="count">1</span></a>
           </li>
           
           <li>
-              <a href="/categories/aws/">aws<span class="count">1</span></a>
-          </li>
-          
-          <li>
-              <a href="/categories/serverless/">serverless<span class="count">1</span></a>
-          </li>
-          
-          <li>
-              <a href="/categories/%E5%AF%A6%E7%94%A8%E5%B7%A5%E5%85%B7/">實用工具<span class="count">1</span></a>
-          </li>
-          
-          <li>
-              <a href="/categories/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">版本控制<span class="count">1</span></a>
-          </li>
-          
-          <li>
-              <a href="/categories/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%9C%8D%E5%8B%99/">第三方服務<span class="count">1</span></a>
+              <a href="/en/categories/version-control/">version-control<span class="count">1</span></a>
           </li>
           
         </ul>
@@ -776,358 +762,162 @@ func main() {
   
   <section id="tags">
     <header>
-      <h1><a href="/tags">Tag</a></h1>
+      <h1><a href="/en/tags">Tags</a></h1>
     </header>
     <div class="li-x post-meta tags-md" style="margin-left: 0.5em;">
       <ul>
         
         
         <li>
-          <a href="/tags/devops/">devops (28)</a>
+          <a href="/en/tags/devops/">devops (9)</a>
         </li>
         
         <li>
-          <a href="/tags/node.js/">node.js (22)</a>
+          <a href="/en/tags/go/">go (8)</a>
         </li>
         
         <li>
-          <a href="/tags/vue/">vue (15)</a>
+          <a href="/en/tags/golang/">golang (8)</a>
         </li>
         
         <li>
-          <a href="/tags/leetcode/">leetcode (13)</a>
+          <a href="/en/tags/gcp/">gcp (5)</a>
         </li>
         
         <li>
-          <a href="/tags/docker/">docker (12)</a>
+          <a href="/en/tags/jenkins/">jenkins (4)</a>
         </li>
         
         <li>
-          <a href="/tags/go/">go (11)</a>
+          <a href="/en/tags/cicd/">cicd (3)</a>
         </li>
         
         <li>
-          <a href="/tags/golang/">golang (11)</a>
+          <a href="/en/tags/laravel/">laravel (3)</a>
         </li>
         
         <li>
-          <a href="/tags/php/">php (11)</a>
+          <a href="/en/tags/aws/">aws (2)</a>
         </li>
         
         <li>
-          <a href="/tags/containerization/">containerization (10)</a>
+          <a href="/en/tags/docker/">docker (2)</a>
         </li>
         
         <li>
-          <a href="/tags/%E5%AE%B9%E5%99%A8%E6%8A%80%E8%A1%93/">容器技術 (10)</a>
+          <a href="/en/tags/php/">php (2)</a>
         </li>
         
         <li>
-          <a href="/tags/express/">express (9)</a>
+          <a href="/en/tags/auto-scaling/">auto-scaling (1)</a>
         </li>
         
         <li>
-          <a href="/tags/python3/">python3 (9)</a>
+          <a href="/en/tags/blockchain/">blockchain (1)</a>
         </li>
         
         <li>
-          <a href="/tags/cicd/">cicd (8)</a>
+          <a href="/en/tags/ci/cd/">ci/cd (1)</a>
         </li>
         
         <li>
-          <a href="/tags/leetcode-easy/">leetcode-easy (8)</a>
+          <a href="/en/tags/cloudflare/">cloudflare (1)</a>
         </li>
         
         <li>
-          <a href="/tags/gcp/">gcp (7)</a>
+          <a href="/en/tags/cloudflare-workers/">cloudflare-workers (1)</a>
         </li>
         
         <li>
-          <a href="/tags/laravel/">laravel (7)</a>
+          <a href="/en/tags/csv/">csv (1)</a>
         </li>
         
         <li>
-          <a href="/tags/docker-compose/">docker-compose (6)</a>
+          <a href="/en/tags/excel/">excel (1)</a>
         </li>
         
         <li>
-          <a href="/tags/vuex/">vuex (6)</a>
+          <a href="/en/tags/ffmpeg/">ffmpeg (1)</a>
         </li>
         
         <li>
-          <a href="/tags/composer/">composer (5)</a>
+          <a href="/en/tags/firewall/">firewall (1)</a>
         </li>
         
         <li>
-          <a href="/tags/element-ui/">element-ui (5)</a>
+          <a href="/en/tags/gas/">gas (1)</a>
         </li>
         
         <li>
-          <a href="/tags/leetcode-medium/">leetcode-medium (5)</a>
+          <a href="/en/tags/gcr/">gcr (1)</a>
         </li>
         
         <li>
-          <a href="/tags/drone/">drone (4)</a>
+          <a href="/en/tags/git/">git (1)</a>
         </li>
         
         <li>
-          <a href="/tags/jenkins/">jenkins (4)</a>
+          <a href="/en/tags/github/">github (1)</a>
         </li>
         
         <li>
-          <a href="/tags/aws/">aws (3)</a>
+          <a href="/en/tags/google-app-script/">google-app-script (1)</a>
         </li>
         
         <li>
-          <a href="/tags/cloudflare/">cloudflare (3)</a>
+          <a href="/en/tags/google-container-registry/">google-container-registry (1)</a>
         </li>
         
         <li>
-          <a href="/tags/mongodb/">mongodb (3)</a>
+          <a href="/en/tags/google-sheets/">google-sheets (1)</a>
         </li>
         
         <li>
-          <a href="/tags/mutation/">mutation (3)</a>
+          <a href="/en/tags/laravel-excel/">laravel-excel (1)</a>
         </li>
         
         <li>
-          <a href="/tags/restful/">restful (3)</a>
+          <a href="/en/tags/load-balancing/">load-balancing (1)</a>
         </li>
         
         <li>
-          <a href="/tags/ssh/">ssh (3)</a>
+          <a href="/en/tags/ngrok/">ngrok (1)</a>
         </li>
         
         <li>
-          <a href="/tags/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/">架站相關 (3)</a>
+          <a href="/en/tags/prerender/">prerender (1)</a>
         </li>
         
         <li>
-          <a href="/tags/chatbot/">chatbot (2)</a>
+          <a href="/en/tags/queue/">queue (1)</a>
         </li>
         
         <li>
-          <a href="/tags/component/">component (2)</a>
+          <a href="/en/tags/redis/">redis (1)</a>
         </li>
         
         <li>
-          <a href="/tags/discord/">discord (2)</a>
+          <a href="/en/tags/search-engine-optimization/">search-engine-optimization (1)</a>
         </li>
         
         <li>
-          <a href="/tags/dns/">dns (2)</a>
+          <a href="/en/tags/seo/">seo (1)</a>
         </li>
         
         <li>
-          <a href="/tags/getter/">getter (2)</a>
+          <a href="/en/tags/serverless/">serverless (1)</a>
         </li>
         
         <li>
-          <a href="/tags/google-domains/">google-domains (2)</a>
+          <a href="/en/tags/smart-contract/">smart-contract (1)</a>
         </li>
         
         <li>
-          <a href="/tags/linux/">linux (2)</a>
+          <a href="/en/tags/ssh/">ssh (1)</a>
         </li>
         
         <li>
-          <a href="/tags/nginx/">nginx (2)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/ngrok/">ngrok (2)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/vue-router/">vue-router (2)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/vue-ui/">vue-ui (2)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/apache-bench/">apache-bench (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/auto-scaling/">auto-scaling (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/axios/">axios (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/blockchain/">blockchain (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/cdn/">cdn (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/cloudflare-workers/">cloudflare-workers (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/cors/">cors (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/csv/">csv (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/domain-name/">domain-name (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/excel/">excel (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/ffmpeg/">ffmpeg (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/gas/">gas (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/gcr/">gcr (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/git/">git (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/github/">github (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/github-page/">github-page (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/google-app-script/">google-app-script (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/google-container-registry/">google-container-registry (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/google-sheets/">google-sheets (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/grumphp/">grumphp (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/laravel-excel/">laravel-excel (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/load-balancing/">load-balancing (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/php-fpm/">php-fpm (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/phpcbf/">phpcbf (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/phpcs/">phpcs (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/portainer/">portainer (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/postgresql/">postgresql (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/prerender/">prerender (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/proxy/">proxy (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/queue/">queue (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/redis/">redis (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/seo/">seo (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/server/">server (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/serverless/">serverless (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/smart-contract/">smart-contract (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/stress-testing/">stress-testing (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/subdomain/">subdomain (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/%E4%BC%BA%E6%9C%8D%E5%99%A8/">伺服器 (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/%E5%80%8B%E4%BA%BA%E5%93%81%E7%89%8C/">個人品牌 (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/%E5%9F%9F%E5%90%8D/">域名 (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/%E5%A3%93%E5%8A%9B%E6%B8%AC%E8%A9%A6/">壓力測試 (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/%E5%AD%90%E7%B6%B2%E5%9F%9F/">子網域 (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/%E6%90%9C%E5%B0%8B%E5%BC%95%E6%93%8E%E6%9C%80%E4%BD%B3%E5%8C%96/">搜尋引擎最佳化 (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">版本控制 (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/%E8%B2%B7%E7%B6%B2%E5%9D%80/">買網址 (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/%E9%98%B2%E7%81%AB%E7%89%86/">防火牆 (1)</a>
+          <a href="/en/tags/version-control/">version-control (1)</a>
         </li>
         
       </ul>
