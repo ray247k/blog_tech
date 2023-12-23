@@ -128,6 +128,13 @@
       <description>&lt;p&gt;How to launch a VM virtual machine on Google Cloud Platform (GCP)?&lt;br&gt;&#xA;It may sound complex, but in practice, it&amp;rsquo;s quite straightforward.&lt;br&gt;&#xA;If you haven&amp;rsquo;t had any experience with setting up a host before, this time, we&amp;rsquo;ll document the steps for you.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>[A Tour of Go Study Notes] 07 method</title>
+      <link>https://tech.ray247k.com/en/blog/202112-a-tour-of-go-07-method/</link>
+      <pubDate>Thu, 16 Dec 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202112-a-tour-of-go-07-method/</guid>
+      <description>&lt;p&gt;Entering the world of Golang, we first acquaint ourselves with basic Golang usage using the official tutorial: &lt;a href=&#34;https://tour.golang.org/welcome/1&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;A Tour of Go&#xA;&lt;/a&gt;&#xA;.&lt;br&gt;&#xA;This article introduces methods in Go.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Importing Excel or CSV Files into Laravel</title>
       <link>https://tech.ray247k.com/en/blog/202112-laravel-excel-import/</link>
       <pubDate>Sat, 11 Dec 2021 00:00:00 +0000</pubDate>

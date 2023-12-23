@@ -23,6 +23,13 @@
       <description>&lt;p&gt;Previously, I was calling Smart Contracts through PHP, which raised two issues.&lt;br&gt;&#xA;One was the slowness, and the other was the lack of maintenance of the package.&lt;br&gt;&#xA;Fortunately, Golang provides an official package that is both fast and solves these two problems.&lt;br&gt;&#xA;This article explains how to convert existing Smart Contract ABIs into a Go package for interacting with contracts.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>[A Tour of Go Study Notes] 07 method</title>
+      <link>https://tech.ray247k.com/en/blog/202112-a-tour-of-go-07-method/</link>
+      <pubDate>Thu, 16 Dec 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202112-a-tour-of-go-07-method/</guid>
+      <description>&lt;p&gt;Entering the world of Golang, we first acquaint ourselves with basic Golang usage using the official tutorial: &lt;a href=&#34;https://tour.golang.org/welcome/1&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;A Tour of Go&#xA;&lt;/a&gt;&#xA;.&lt;br&gt;&#xA;This article introduces methods in Go.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>[A Tour of Go Study Notes] 06 Range, Map, and Function</title>
       <link>https://tech.ray247k.com/en/blog/202112-a-tour-of-go-06-range-and-map/</link>
       <pubDate>Wed, 08 Dec 2021 00:00:00 +0000</pubDate>
