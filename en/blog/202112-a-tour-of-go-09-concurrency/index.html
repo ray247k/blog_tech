@@ -1,18 +1,18 @@
 <!doctype html>
-<html lang="zh-tw">
+<html lang="en">
   <head>
   <meta charset="utf-8">
-<title>[A Tour of Go 學習筆記] 09 併發(concurrency) - Byte Ebi 🍤</title>
-<meta name="description" content="使用官方教學瞭解 Go 的併發">
+<title>[A Tour of Go Study Notes] 09 concurrency - Byte Ebi 🍤</title>
+<meta name="description" content="Understanding Go concurrency using the official tutorial">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <meta name="twitter:card" content="summary_large_image">
 
 <meta property="og:site_name" content="Byte Ebi 🍤">
-<meta property="og:title" content="[A Tour of Go 學習筆記] 09 併發(concurrency)">
-<meta property="og:description" content="使用官方教學瞭解 Go 的併發">
+<meta property="og:title" content="[A Tour of Go Study Notes] 09 concurrency">
+<meta property="og:description" content="Understanding Go concurrency using the official tutorial">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://tech.ray247k.com/blog/202112-a-tour-of-go-09-concurrency/">
+<meta property="og:url" content="https://tech.ray247k.com/en/blog/202112-a-tour-of-go-09-concurrency/">
   <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
 
 
@@ -30,10 +30,10 @@
   <meta name="theme-color" content="#ffffff">
 
 <meta name="generator" content="Hugo 0.121.1"><meta property="og:site_name" content="Byte Ebi 🍤">
-  <meta property="og:title" content="[A Tour of Go 學習筆記] 09 併發(concurrency)">
-  <meta property="og:description" content="使用官方教學瞭解 Go 的併發">
-  <meta property="description" content="使用官方教學瞭解 Go 的併發">
-  <meta property="og:url" content="https://tech.ray247k.com/blog/202112-a-tour-of-go-09-concurrency/">
+  <meta property="og:title" content="[A Tour of Go Study Notes] 09 concurrency">
+  <meta property="og:description" content="Understanding Go concurrency using the official tutorial">
+  <meta property="description" content="Understanding Go concurrency using the official tutorial">
+  <meta property="og:url" content="https://tech.ray247k.com/en/blog/202112-a-tour-of-go-09-concurrency/">
   <meta property="og:type" content="article">
   
     <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
@@ -79,12 +79,12 @@
         }
     },
     "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
-    "headline": "討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - Byte Ebi 🍤",
+    "headline": "About web development, software engineering, frontend, backend, chatbot, server related topics. - Byte Ebi 🍤",
     "name": "Byte Ebi 🍤",
     "url": "https:\/\/tech.ray247k.com",
-    "description": "討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - aws,devops,golang,laravel,leetcode,node.js,php,python3,serverless,實用工具,架站相關,版本控制,第三方服務,",
+    "description": "About web development, software engineering, frontend, backend, chatbot, server related topics. - aws,devops,golang,laravel,serverless,third-party-services,tools,version-control,website-operations,",
     "keywords": [
-        "apache-bench,auto-scaling,aws,axios,blockchain,cdn,chatbot,cicd,cloudflare,cloudflare-workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker-compose,domain-name,drone,element-ui,excel,express,ffmpeg,gas,gcp,gcr,getter,git,github,github-page,go,golang,google-app-script,google-container-registry,google-domains,google-sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load-balancing,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,phpcbf,phpcs,portainer,postgresql,prerender,proxy,python3,queue,redis,restful,seo,server,serverless,smart-contract,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
+        "auto-scaling,aws,blockchain,ci\/cd,cicd,cloudflare,cloudflare-workers,csv,devops,docker,excel,ffmpeg,firewall,gas,gcp,gcr,git,github,go,golang,google-app-script,google-container-registry,google-sheets,jenkins,laravel,laravel-excel,load-balancing,ngrok,php,prerender,queue,redis,search-engine-optimization,seo,serverless,smart-contract,ssh,version-control,"
     ]
 }
 </script>
@@ -117,8 +117,8 @@
 {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "[A Tour of Go 學習筆記] 09 併發(concurrency)",
-    "description": "使用官方教學瞭解 Go 的併發",
+    "name": "[A Tour of Go Study Notes] 09 concurrency",
+    "description": "Understanding Go concurrency using the official tutorial",
     "keywords": [
         "Golang" , "Go" 
     ],
@@ -155,9 +155,9 @@
                 "@type": "ListItem",
                 "position": 3,
                 "item": {
-                    "@id": "https:\/\/tech.ray247k.com\/blog\/202112-a-tour-of-go-09-concurrency\/",
-                    "name": "[A Tour of Go 學習筆記] 09 併發(concurrency)",
-                    "url": "https:\/\/tech.ray247k.com\/blog\/202112-a-tour-of-go-09-concurrency\/"
+                    "@id": "https:\/\/tech.ray247k.com\/en\/blog\/202112-a-tour-of-go-09-concurrency\/",
+                    "name": "[A Tour of Go Study Notes] 09 concurrency",
+                    "url": "https:\/\/tech.ray247k.com\/en\/blog\/202112-a-tour-of-go-09-concurrency\/"
                 }
             }
         ],
@@ -172,14 +172,14 @@
     "@context": "http://schema.org",
     "@type": "BlogPosting",
     "articleSection": "blog",
-    "name": "[A Tour of Go 學習筆記] 09 併發(concurrency)",
-    "headline": "\u003cp\u003e初入 Golang 的世界，首先我們使用官方教學：\u003ca href=\u0022https:\/\/tour.golang.org\/welcome\/1\u0022\n   \n    target=\u0022_blank\u0022 rel=\u0022noreferrer noopener\u0022\u003eA Tour of Go\n\u003c\/a\u003e\n 來認識基本的 Golang 使用\u003cbr\u003e\n這篇介紹 go 強大的併發（concurrency）\u003c\/p\u003e",
-    "description": "使用官方教學瞭解 Go 的併發",
-    "inLanguage": "zh-TW",
+    "name": "[A Tour of Go Study Notes] 09 concurrency",
+    "headline": "\u003cp\u003eEntering the world of Golang, we first explore basic Golang usage using the official tutorial: \u003ca href=\u0022https:\/\/tour.golang.org\/welcome\/1\u0022\n   \n    target=\u0022_blank\u0022 rel=\u0022noreferrer noopener\u0022\u003eA Tour of Go\n\u003c\/a\u003e\n.\u003cbr\u003e\nThis section introduces the powerful concurrency feature of Go.\u003c\/p\u003e",
+    "description": "Understanding Go concurrency using the official tutorial",
+    "inLanguage": "en",
     "isFamilyFriendly": "true",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https:\/\/tech.ray247k.com\/blog\/202112-a-tour-of-go-09-concurrency\/"
+        "@id": "https:\/\/tech.ray247k.com\/en\/blog\/202112-a-tour-of-go-09-concurrency\/"
     },
     "author" : {
     "@type": "Person",
@@ -210,8 +210,8 @@
         }
     },
     "image": "https://tech.ray247k.com/img/main/logo.png",
-    "url" : "https:\/\/tech.ray247k.com\/blog\/202112-a-tour-of-go-09-concurrency\/",
-    "wordCount" : "683",
+    "url" : "https:\/\/tech.ray247k.com\/en\/blog\/202112-a-tour-of-go-09-concurrency\/",
+    "wordCount" : "1118",
     "genre" : [ "Golang" , "Go" ],
     "keywords" : [ "Golang" , "Go" ]
 }
@@ -227,7 +227,7 @@
 <header id="site-header">
   <nav id="site-nav">
     <h1 class="nav-title">
-      <a href="/" class="nav">
+      <a href="/en/" class="nav">
         
           Blog
         
@@ -237,17 +237,17 @@
       
         
           
-          <a href="/" class="nav link"><i class='fa fa-home'></i> home</a>
+          <a href="/en/" class="nav link"><i class='fa fa-home'></i> home</a>
         
       
         
           
-          <a href="/about" class="nav link"><i class='far fa-id-card'></i> about</a>
+          <a href="/en/about" class="nav link"><i class='far fa-id-card'></i> about</a>
         
       
         
           
-          <a href="/categories" class="nav link"><i class='fas fa-sitemap'></i> category</a>
+          <a href="/en/categories" class="nav link"><i class='fas fa-sitemap'></i> category</a>
         
       
       
@@ -255,14 +255,14 @@
     </menu>
     <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
     
-    <a href="#lang-menu" class="nav lang-toggle" lang="zh-tw">zh-tw</a>
+    <a href="#lang-menu" class="nav lang-toggle" lang="en">en</a>
     <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
   </nav>
   <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
   <menu id="lang-menu" class="flyout-menu menu">
-  <a href="#" lang="zh-tw" class="nav link active">正體中文 (zh-tw)</a>
+  <a href="#" lang="en" class="nav link active">English (en)</a>
   
-      <a href="https://tech.ray247k.com/en/blog/202112-a-tour-of-go-09-concurrency/" lang="en" class="nav link">English (en)</a>
+      <a href="https://tech.ray247k.com/blog/202112-a-tour-of-go-09-concurrency/" lang="zh-tw" class="nav link">正體中文 (zh-tw)</a>
     
   
 </menu>
@@ -272,12 +272,12 @@
 
     <div id="wrapper">
       <section id="site-intro" >
-  <a href="/"><img src="/img/main/logo.png" class="circle" width="100" alt="Byte Ebi&#39;s Logo" /></a>
+  <a href="/en/"><img src="/img/main/logo.png" class="circle" width="100" alt="Byte Ebi&#39;s Logo" /></a>
   <header>
     <h1>Byte Ebi 🍤</h1>
   </header>
   <main>
-    <p>每天一小口，蝦米變鯨魚</p>
+    <p>A Bit everyday A Byte every week</p>
   </main>
   
     <footer>
@@ -336,14 +336,14 @@
     <header>
   <div class="title">
     
-      <h2><a href="/blog/202112-a-tour-of-go-09-concurrency/">[A Tour of Go 學習筆記] 09 併發(concurrency)</a></h2>
+      <h2><a href="/en/blog/202112-a-tour-of-go-09-concurrency/">[A Tour of Go Study Notes] 09 concurrency</a></h2>
     
     
-      <p>使用官方教學瞭解 Go 的併發</p>
+      <p>Understanding Go concurrency using the official tutorial</p>
     
   </div>
   <div class="meta">
-    <time datetime="2021-12-25 00:00:00 &#43;0000 UTC">2021/12/25</time>
+    <time datetime="2021-12-25 00:00:00 &#43;0000 UTC">December 25, 2021</time>
     <p>Ray</p>
     
   </div>
@@ -359,24 +359,22 @@
     </div>
     <div class="content">
       
-      <p>初入 Golang 的世界，首先我們使用官方教學：<a href="https://tour.golang.org/welcome/1"
+      <p>Entering the world of Golang, we first explore basic Golang usage using the official tutorial: <a href="https://tour.golang.org/welcome/1"
    
     target="_blank" rel="noreferrer noopener">A Tour of Go
 </a>
- 來認識基本的 Golang 使用<br>
-這篇介紹 go 強大的併發（concurrency）</p>
+.<br>
+This section introduces the powerful concurrency feature of Go.</p>
 <h1 id="goroutine">Goroutine</h1>
-<p>透過 Go runtime 運作的輕量級的執行緒管理<br>
-會啟動並執行一個新的<strong>Goroutine</strong>，可以理解為建立了一個新的 Thread</p>
+<p>Lightweight thread management operated by Go runtime.<br>
+Starting and executing a new <strong>Goroutine</strong> can be understood as creating a new Thread.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">go</span> <span style="color:#a6e22e">f</span>(<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span>, <span style="color:#a6e22e">z</span>)
-</span></span></code></pre></div><p>以<code>go</code>開頭來調用函式，可以使指定的函式 f 跑在另一個 Goroutine 上</p>
-<p><code>f</code>,<code>x</code>,<code>y</code>,<code>z</code> 取自目前的 Goroutine，而<code>main</code>也是執行在同一個 Thread 裡</p>
-<p>下面範例中<code>say(&quot;world&quot;)</code>會開啟另一個執行序，並行於原本的執行序<br>
-而原本的執行序會執行<code>say(&quot;hello&quot;)</code></p>
-<p>一般情況下會先執行<code>say(&quot;world&quot;)</code>，待執行完才執行<code>say(&quot;hello&quot;)</code><br>
-如果加上<code>go</code>關鍵字調用<code>say(&quot;world&quot;)</code>，變成<code>go say(&quot;world&quot;)</code><br>
-會開啟一個新的 Goroutine，而原本的執行序會繼續執行<code>say(&quot;hello&quot;)</code><br>
-兩個執行緒會同時運行，當 Main Goroutine 執行結束後，其他的 Goroutine 會被強制關閉</p>
+</span></span></code></pre></div><p>Using <code>go</code> followed by a function call enables the specified function <code>f</code> to run on a new Goroutine.</p>
+<p><code>f</code>, <code>x</code>, <code>y</code>, <code>z</code> are taken from the current Goroutine, and <code>main</code> also executes within the same thread.</p>
+<p>In the example below, <code>say(&quot;world&quot;)</code> will start another execution sequence concurrently with the original one executing <code>say(&quot;hello&quot;)</code>.</p>
+<p>Usually, <code>say(&quot;world&quot;)</code> will execute first, followed by <code>say(&quot;hello&quot;)</code> upon completion.<br>
+However, if <code>go</code> is added before <code>say(&quot;world&quot;)</code>, changing it to <code>go say(&quot;world&quot;)</code>, it will initiate a new Goroutine while the original sequence continues with <code>say(&quot;hello&quot;)</code>.</p>
+<p>Both threads will run concurrently, and after the main Goroutine finishes execution, other Goroutines will be forcefully closed.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
@@ -407,88 +405,87 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">&gt;&gt;&gt; hello
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
 </span></span></code></pre></div><h1 id="channels">Channels</h1>
-<p>Channel 是帶有類型的通訊，可以透過 <code>&lt;-</code> 來發送或是接收值<br>
-具有<code>阻塞</code>的特性，可以讓執行緒進行等待</p>
-<p>和 maps 跟 slices 一樣，在使用前必須先建立 channels</p>
-<pre tabindex="0"><code class="language-go=" data-lang="go=">ch := make(chan int)
-</code></pre><p>因為 Channel 就像水管一樣，發送和接收會暫停直到另一邊準備完成<br>
-直到另一端完成推入或是拉出的動作後才會繼續往下處理，可以被用在 Goroutines 間同步資料內容</p>
-<pre tabindex="0"><code class="language-go=" data-lang="go=">ch &lt;- v    // 將 v 發送到 channel ch
-v := &lt;-ch  // 從 ch 接收值，並且指派給 v
-</code></pre><p>以下範例示範了對切片中的數求和，再將任務分配給兩個 Goroutines<br>
-要等到兩個 Goroutines 內的計算都被完成，才會計算出最終結果</p>
-<pre tabindex="0"><code class="language-go=" data-lang="go=">package main
-
-import &#34;fmt&#34;
-
-func sum(s []int, ch chan int) {
-	sum := 0
-	for _, v := range s {
-		sum += v
-	}
-	ch &lt;- sum // send sum to ch
-}
-
-func main() {
-	s := []int{7, 2, 8, -9, 4, 0}
-
-	ch := make(chan int)
-	go sum(s[:len(s)/2], ch)
-	go sum(s[len(s)/2:], ch)
-	x, y := &lt;-ch, &lt;-ch // receive from ch
-
-	fmt.Println(x, y, x+y)
-}
-/*
-&gt;&gt;&gt; -5 17 12
-*/
-</code></pre><h1 id="buffered-channels">Buffered Channels</h1>
-<p>Channels 可以帶有緩衝(buffered)，將緩衝長度作為 channel 初始化時候的第二個參數傳入</p>
-<p>前面提到的一般 Channel 具有以下特色</p>
+<p>Channels are typed communications that use <code>&lt;-</code> to send or receive values. They possess a <code>blocking</code> nature, enabling threads to wait.</p>
+<p>Similar to maps and slices, channels must be created before use.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a6e22e">ch</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">int</span>)
+</span></span></code></pre></div><p>As channels function like pipelines, sending or receiving halts until the other end is ready.<br>
+They can be used for synchronizing data content among Goroutines.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a6e22e">ch</span> <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">v</span>    <span style="color:#75715e">// Send v to channel ch
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">v</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">ch</span>  <span style="color:#75715e">// Receive a value from ch and assign it to v
+</span></span></span></code></pre></div><p>The following example demonstrates summing numbers in a slice, distributing the task among two Goroutines.<br>
+The final result is computed only when both Goroutines complete their calculations.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">sum</span>(<span style="color:#a6e22e">s</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">ch</span> <span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">int</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">v</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">s</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">v</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ch</span> <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">sum</span> <span style="color:#75715e">// send sum to ch
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">s</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">8</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">0</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ch</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">int</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">go</span> <span style="color:#a6e22e">sum</span>(<span style="color:#a6e22e">s</span>[:len(<span style="color:#a6e22e">s</span>)<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>], <span style="color:#a6e22e">ch</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">go</span> <span style="color:#a6e22e">sum</span>(<span style="color:#a6e22e">s</span>[len(<span style="color:#a6e22e">s</span>)<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>:], <span style="color:#a6e22e">ch</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">ch</span>, <span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">ch</span> <span style="color:#75715e">// receive from ch
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span>, <span style="color:#a6e22e">x</span><span style="color:#f92672">+</span><span style="color:#a6e22e">y</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">&gt;&gt;&gt; -5 17 12
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span></code></pre></div><h1 id="buffered-channels">Buffered Channels</h1>
+<p>Channels can have a buffer, where the buffer length is provided as the second argument during channel initialization.</p>
+<p>Regular channels, as mentioned earlier, exhibit:</p>
 <ul>
-<li>推入一個資料卻還未拉取資料時，會造成推入方的等待其他 Goroutine 拉出</li>
-<li>Goroutine 拉出時 Channel 中沒有資料，會造成拉出方的等待其他 Goroutine 推入</li>
+<li>Blocking the sender when data is pushed without a receiver.</li>
+<li>Blocking the receiver when pulling from an empty channel.</li>
 </ul>
-<p>而若是帶上了緩衝，則會變成只會在 Buffered 中資料填滿以後才會阻塞造成等待</p>
-<p>如以下範例中，只有到第<code>101</code>個資料被推入後，推入方的 Goroutine 才會開始進行等待</p>
-<pre tabindex="0"><code class="language-go=" data-lang="go=">ch := make(chan int, 100)
-</code></pre><p>緩衝長度代表這個 channel 可以緩衝儲存的資料數量，如果傳入大於緩衝長度的元素數量則會發生<code>deadlock</code></p>
-<pre tabindex="0"><code class="language-go=" data-lang="go=">package main
-
-import &#34;fmt&#34;
-
-func main() {
-	ch := make(chan int, 1)
-	ch &lt;- 1
-	ch &lt;- 2
-	fmt.Println(&lt;-ch)
-	fmt.Println(&lt;-ch)
-}
-/*
-&gt;&gt;&gt; fatal error: all goroutines are asleep - deadlock!
-*/
-</code></pre><p>如果有取出就不會發生錯誤</p>
-<pre tabindex="0"><code class="language-go=" data-lang="go=">package main
-
-import &#34;fmt&#34;
-
-func main() {
-	ch := make(chan int, 1)
-	ch &lt;- 1
-	fmt.Println(&lt;-ch)
-	ch &lt;- 2
-	fmt.Println(&lt;-ch)
-}
-/*
-&gt;&gt;&gt; 1
-&gt;&gt;&gt; 2
-*/
-</code></pre><h1 id="range-和-close">Range 和 Close</h1>
-<p>發送者可以透過<code>close</code>關閉一個 Channel 來表示沒有需要發送的值了<br>
-接收者可以通過第二個參數來測試 Channel 是不是被關閉</p>
-<p>若沒有值可以接收，且 channel 被關閉的話<code>ok</code>會被設為 <code>false</code></p>
-<pre tabindex="0"><code class="language-go=" data-lang="go=">v, ok := &lt;-ch
-</code></pre><p>如果對一個 channel 做 for 迴圈<code>for i := range c</code>則會不斷從 Channel 接收值，直到他被關閉</p>
+<p>With buffering, blocking occurs only when the buffer is full.</p>
+<p>In the following example, only after the <code>101st</code> data is pushed does the sender Goroutine start waiting:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a6e22e">ch</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">100</span>)
+</span></span></code></pre></div><p>The buffer length determines how many elements the channel can store.<br>
+Sending more elements than the buffer length leads to a <code>deadlock</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ch</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ch</span> <span style="color:#f92672">&lt;-</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ch</span> <span style="color:#f92672">&lt;-</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">ch</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">ch</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">&gt;&gt;&gt; fatal error: all goroutines are asleep - deadlock!
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span></code></pre></div><p>No error occurs if values are retrieved.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ch</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ch</span> <span style="color:#f92672">&lt;-</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">ch</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ch</span> <span style="color:#f92672">&lt;-</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">ch</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">&gt;&gt;&gt; 1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">&gt;&gt;&gt; 2
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span></code></pre></div><h1 id="range-and-close">Range and Close</h1>
+<p>Senders can <code>close</code> a channel to signify no more values to be sent.<br>
+Receivers can test if a channel is closed using the second argument.</p>
+<p>If there are no values to receive and the channel is closed, <code>ok</code> is set to <code>false</code>.</p>
+<p>When a channel is iterated using a for loop like <code>for i := range c</code>, it continuously receives values until the channel is closed.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
@@ -523,18 +520,19 @@ func main() {
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">&gt;&gt;&gt; 21
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">&gt;&gt;&gt; 34
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
-</span></span></code></pre></div><p>若是向已經關閉的 channel 發送資料會引發<code>panic</code>，所以應該由推入的 Goroutine 執行關閉 Channel</p>
-<p>還有就是 Channel 和檔案不同，通常情況下不需要手動關閉<br>
-只有在必須告訴接收者不再有新的值的時候，例如一個<code>range</code>迴圈，才需要關閉</p>
+</span></span></code></pre></div><p>Sending data to a closed channel will cause a <code>panic</code>.<br>
+Thus, the channel should be closed by the Goroutine that is sending data.</p>
+<p>Additionally, channels differ from files; typically, they don’t need manual closing.<br>
+Closing is only necessary when it&rsquo;s crucial to inform receivers that no new values will be sent, such as in a <code>range</code> loop.</p>
 <h1 id="select">Select</h1>
-<p>可以透過<code>select</code>處理 Channel 的多種情況，其中包括阻塞時的處理</p>
+<p>Using <code>select</code>, various scenarios involving channels can be handled, including handling during blocking.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">select</span> {
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">case</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">c</span>:
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// use i
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">default</span>:
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// receiving from c would block
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
-</span></span></code></pre></div><p>當所有 case 都沒符合的時候會執行<code>default</code></p>
+</span></span></code></pre></div><p>When none of the cases match, the <code>default</code> case executes.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
@@ -577,23 +575,21 @@ func main() {
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">&gt;&gt;&gt; BOOM!
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
 </span></span></code></pre></div><h1 id="syncmutex">sync.Mutex</h1>
-<p>前面我們使用 Channel 讓 Goroutine 之前可以進行溝通傳遞資料<br>
-因為阻塞的特點，當拉取時若沒資料，便會等待其他的 Goroutine 將資料推入 Channel</p>
-<p>那如果我們不使用 Channel，而是直接在多個 Goroutine 之間共用變數的話呢？</p>
-<p>當多個 Goroutine 之間共用變數，同時對一個變數做操作<br>
-便會發生 Race Condition，這時候會沒辦法保證運算結果的正確性</p>
-<p>這牽涉到 <strong>互斥(mutual exclusion)</strong> 的概念，可以使用 <strong>互斥鎖(Mutex)</strong> 來避免衝突</p>
-<p>Go 提供了一個 struct：<a href="https://pkg.go.dev/sync#Mutex"
+<p>Previously, we used channels to facilitate communication and data transfer between Goroutines. Due to their blocking</p>
+<p>nature, when pulling data without any, it waits for other Goroutines to push data into the channel.</p>
+<p>However, what if we don’t use channels and directly share variables among multiple Goroutines?</p>
+<p>When multiple Goroutines share a variable and simultaneously operate on it, a Race Condition occurs, where ensuring the correctness of computation results becomes challenging.</p>
+<p>This involves the concept of <strong>mutual exclusion</strong>, which can be handled using a <strong>Mutex</strong> to prevent conflicts.</p>
+<p>Go provides a struct: <a href="https://pkg.go.dev/sync#Mutex"
    
     target="_blank" rel="noreferrer noopener">sync.Mutex
 </a>
-<br>
-提供兩個方法</p>
+, offering two methods:</p>
 <ul>
 <li>Lock</li>
 <li>Unlock</li>
 </ul>
-<p>在<code>Lock</code>和<code>Unlock</code>之間的操作，會使其他的 Goroutine 進入等待</p>
+<p>Operations between <code>Lock</code> and <code>Unlock</code> make other Goroutines wait.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
@@ -640,7 +636,7 @@ func main() {
 
       
       
-<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/ray247k/button?referrer=https%3a%2f%2ftech.ray247k.com%2fblog%2f202112-a-tour-of-go-09-concurrency%2f" width="100%" frameborder=0></iframe>
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/ray247k/button?referrer=https%3a%2f%2ftech.ray247k.com%2fen%2fblog%2f202112-a-tour-of-go-09-concurrency%2f" width="100%" frameborder=0></iframe>
 
     </div>
     <footer>
@@ -649,7 +645,7 @@ func main() {
     <ul class="categories">
       
         
-          <li><a class="article-terms-link" href="/categories/golang/">Golang</a></li>
+          <li><a class="article-terms-link" href="/en/categories/golang/">Golang</a></li>
         
       
     </ul>
@@ -658,9 +654,9 @@ func main() {
     <ul class="tags">
       
         
-          <li><a class="article-terms-link" href="/tags/golang/">Golang</a></li>
+          <li><a class="article-terms-link" href="/en/tags/golang/">Golang</a></li>
         
-          <li><a class="article-terms-link" href="/tags/go/">Go</a></li>
+          <li><a class="article-terms-link" href="/en/tags/go/">Go</a></li>
         
       
     </ul>
@@ -675,10 +671,10 @@ func main() {
   
   <div class="pagination">
     
-      <a href="/blog/202201-gcp-vm-basic/" class="button left"><span>第一次在 GCP 開 VM 就成功</span></a>
+      <a href="/en/blog/202201-gcp-vm-basic/" class="button left"><span>Successfully launched a VM on GCP on the first try</span></a>
     
     
-      <a href="/blog/202112-a-tour-of-go-08-interface-and-error/" class="button right"><span>[A Tour of Go 學習筆記] 08 interface 和 error</span></a>
+      <a href="/en/blog/202112-a-tour-of-go-08-interface-and-error/" class="button right"><span>[A Tour of Go Study Notes] 08 interface and error</span></a>
     
   </div>
 
@@ -687,62 +683,62 @@ func main() {
   
     <section id="recent-posts">
       <header>
-        <h1>最新文章</h1>
+        <h1>Recent Posts</h1>
       </header>
       
       <article class="mini-post">
-          <a href="/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/" class="image" style="--bg-image: url('/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg');">
-    <img src="/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg" alt="">
+          <a href="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/" class="image" style="--bg-image: url('/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg');">
+    <img src="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg" alt="">
   </a>
         <header>
-          <h2><a href="/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/">Golang 中 Struct 內型別用指針和值的差異和時機</a></h2>
-          <time class="published" datetime="2023-06-25 00:00:00 &#43;0000 UTC">2023/06/25</time>
+          <h2><a href="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/">Different between pointer and value for struct type in golang</a></h2>
+          <time class="published" datetime="2023-06-25 00:00:00 &#43;0000 UTC">June 25, 2023</time>
         </header>
       </article>
       
       <article class="mini-post">
-          <a href="/blog/202301-ffmpeg-video-convert/" class="image" style="--bg-image: url('/blog/202301-ffmpeg-video-convert/featured.png');">
-    <img src="/blog/202301-ffmpeg-video-convert/featured.png" alt="">
+          <a href="/en/blog/202301-ffmpeg-video-convert/" class="image" style="--bg-image: url('/en/blog/202301-ffmpeg-video-convert/featured.png');">
+    <img src="/en/blog/202301-ffmpeg-video-convert/featured.png" alt="">
   </a>
         <header>
-          <h2><a href="/blog/202301-ffmpeg-video-convert/">透過 FFmpeg 轉換影片格式</a></h2>
-          <time class="published" datetime="2023-01-01 00:00:00 &#43;0000 UTC">2023/01/01</time>
+          <h2><a href="/en/blog/202301-ffmpeg-video-convert/">Using FFmpeg to convert media files</a></h2>
+          <time class="published" datetime="2023-01-01 00:00:00 &#43;0000 UTC">January 1, 2023</time>
         </header>
       </article>
       
       <article class="mini-post">
-          <a href="/blog/202210-aws101-what-is-sns-and-sqs/" class="image" style="--bg-image: url('/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg');">
-    <img src="/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg" alt="">
+          <a href="/en/blog/202210-aws101-what-is-sns-and-sqs/" class="image" style="--bg-image: url('/en/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg');">
+    <img src="/en/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg" alt="">
   </a>
         <header>
-          <h2><a href="/blog/202210-aws101-what-is-sns-and-sqs/">[AWS 101] 什麼是 SNS 和 SQS</a></h2>
-          <time class="published" datetime="2022-10-06 00:00:00 &#43;0000 UTC">2022/10/06</time>
+          <h2><a href="/en/blog/202210-aws101-what-is-sns-and-sqs/">[AWS 101] What are SNS and SQS</a></h2>
+          <time class="published" datetime="2022-10-06 00:00:00 &#43;0000 UTC">October 6, 2022</time>
         </header>
       </article>
       
       <article class="mini-post">
-          <a href="/blog/202210-what-is-serverless/" class="image" style="--bg-image: url('/blog/202210-what-is-serverless/featured.jpg');">
-    <img src="/blog/202210-what-is-serverless/featured.jpg" alt="">
+          <a href="/en/blog/202210-what-is-serverless/" class="image" style="--bg-image: url('/en/blog/202210-what-is-serverless/featured.jpg');">
+    <img src="/en/blog/202210-what-is-serverless/featured.jpg" alt="">
   </a>
         <header>
-          <h2><a href="/blog/202210-what-is-serverless/">Serverless 簡介</a></h2>
-          <time class="published" datetime="2022-10-04 00:00:00 &#43;0000 UTC">2022/10/04</time>
+          <h2><a href="/en/blog/202210-what-is-serverless/">Serverless 101</a></h2>
+          <time class="published" datetime="2022-10-04 00:00:00 &#43;0000 UTC">October 4, 2022</time>
         </header>
       </article>
       
       <article class="mini-post">
-          <a href="/blog/202207-go-ethereum-abigen/" class="image" style="--bg-image: url('/blog/202207-go-ethereum-abigen/featured.jpeg');">
-    <img src="/blog/202207-go-ethereum-abigen/featured.jpeg" alt="">
+          <a href="/en/blog/202207-go-ethereum-abigen/" class="image" style="--bg-image: url('/en/blog/202207-go-ethereum-abigen/featured.jpeg');">
+    <img src="/en/blog/202207-go-ethereum-abigen/featured.jpeg" alt="">
   </a>
         <header>
-          <h2><a href="/blog/202207-go-ethereum-abigen/">使用 Golang 和智能合約互動</a></h2>
-          <time class="published" datetime="2022-07-09 00:00:00 &#43;0000 UTC">2022/07/09</time>
+          <h2><a href="/en/blog/202207-go-ethereum-abigen/">Interacting with smart contracts using Golang</a></h2>
+          <time class="published" datetime="2022-07-09 00:00:00 &#43;0000 UTC">July 9, 2022</time>
         </header>
       </article>
       
       
         <footer>
-          <a href="/blog/" class="button">查看更多</a>
+          <a href="/en/blog/" class="button">See More</a>
         </footer>
       
     </section>
@@ -753,61 +749,45 @@ func main() {
 
       <section id="categories">
         <header>
-          <h1><a href="/categories">Category</a></h1>
+          <h1><a href="/en/categories">Categories</a></h1>
         </header>
         <ul>
           
           
           <li>
-              <a href="/categories/devops/">devops<span class="count">25</span></a>
+              <a href="/en/categories/golang/">golang<span class="count">11</span></a>
           </li>
           
           <li>
-              <a href="/categories/node.js/">node.js<span class="count">22</span></a>
+              <a href="/en/categories/devops/">devops<span class="count">8</span></a>
           </li>
           
           <li>
-              <a href="/categories/leetcode/">leetcode<span class="count">13</span></a>
+              <a href="/en/categories/laravel/">laravel<span class="count">3</span></a>
           </li>
           
           <li>
-              <a href="/categories/golang/">golang<span class="count">11</span></a>
+              <a href="/en/categories/website-operations/">website-operations<span class="count">2</span></a>
           </li>
           
           <li>
-              <a href="/categories/python3/">python3<span class="count">9</span></a>
+              <a href="/en/categories/aws/">aws<span class="count">1</span></a>
           </li>
           
           <li>
-              <a href="/categories/php/">php<span class="count">7</span></a>
+              <a href="/en/categories/serverless/">serverless<span class="count">1</span></a>
           </li>
           
           <li>
-              <a href="/categories/laravel/">laravel<span class="count">6</span></a>
+              <a href="/en/categories/third-party-services/">third-party-services<span class="count">1</span></a>
           </li>
           
           <li>
-              <a href="/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/">架站相關<span class="count">6</span></a>
+              <a href="/en/categories/tools/">tools<span class="count">1</span></a>
           </li>
           
           <li>
-              <a href="/categories/aws/">aws<span class="count">1</span></a>
-          </li>
-          
-          <li>
-              <a href="/categories/serverless/">serverless<span class="count">1</span></a>
-          </li>
-          
-          <li>
-              <a href="/categories/%E5%AF%A6%E7%94%A8%E5%B7%A5%E5%85%B7/">實用工具<span class="count">1</span></a>
-          </li>
-          
-          <li>
-              <a href="/categories/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">版本控制<span class="count">1</span></a>
-          </li>
-          
-          <li>
-              <a href="/categories/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%9C%8D%E5%8B%99/">第三方服務<span class="count">1</span></a>
+              <a href="/en/categories/version-control/">version-control<span class="count">1</span></a>
           </li>
           
         </ul>
@@ -818,358 +798,162 @@ func main() {
   
   <section id="tags">
     <header>
-      <h1><a href="/tags">Tag</a></h1>
+      <h1><a href="/en/tags">Tags</a></h1>
     </header>
     <div class="li-x post-meta tags-md" style="margin-left: 0.5em;">
       <ul>
         
         
         <li>
-          <a href="/tags/devops/">devops (28)</a>
+          <a href="/en/tags/go/">go (11)</a>
         </li>
         
         <li>
-          <a href="/tags/node.js/">node.js (22)</a>
+          <a href="/en/tags/golang/">golang (11)</a>
         </li>
         
         <li>
-          <a href="/tags/vue/">vue (15)</a>
+          <a href="/en/tags/devops/">devops (9)</a>
         </li>
         
         <li>
-          <a href="/tags/leetcode/">leetcode (13)</a>
+          <a href="/en/tags/gcp/">gcp (5)</a>
         </li>
         
         <li>
-          <a href="/tags/docker/">docker (12)</a>
+          <a href="/en/tags/jenkins/">jenkins (4)</a>
         </li>
         
         <li>
-          <a href="/tags/go/">go (11)</a>
+          <a href="/en/tags/cicd/">cicd (3)</a>
         </li>
         
         <li>
-          <a href="/tags/golang/">golang (11)</a>
+          <a href="/en/tags/laravel/">laravel (3)</a>
         </li>
         
         <li>
-          <a href="/tags/php/">php (11)</a>
+          <a href="/en/tags/aws/">aws (2)</a>
         </li>
         
         <li>
-          <a href="/tags/containerization/">containerization (10)</a>
+          <a href="/en/tags/docker/">docker (2)</a>
         </li>
         
         <li>
-          <a href="/tags/%E5%AE%B9%E5%99%A8%E6%8A%80%E8%A1%93/">容器技術 (10)</a>
+          <a href="/en/tags/php/">php (2)</a>
         </li>
         
         <li>
-          <a href="/tags/express/">express (9)</a>
+          <a href="/en/tags/auto-scaling/">auto-scaling (1)</a>
         </li>
         
         <li>
-          <a href="/tags/python3/">python3 (9)</a>
+          <a href="/en/tags/blockchain/">blockchain (1)</a>
         </li>
         
         <li>
-          <a href="/tags/cicd/">cicd (8)</a>
+          <a href="/en/tags/ci/cd/">ci/cd (1)</a>
         </li>
         
         <li>
-          <a href="/tags/leetcode-easy/">leetcode-easy (8)</a>
+          <a href="/en/tags/cloudflare/">cloudflare (1)</a>
         </li>
         
         <li>
-          <a href="/tags/gcp/">gcp (7)</a>
+          <a href="/en/tags/cloudflare-workers/">cloudflare-workers (1)</a>
         </li>
         
         <li>
-          <a href="/tags/laravel/">laravel (7)</a>
+          <a href="/en/tags/csv/">csv (1)</a>
         </li>
         
         <li>
-          <a href="/tags/docker-compose/">docker-compose (6)</a>
+          <a href="/en/tags/excel/">excel (1)</a>
         </li>
         
         <li>
-          <a href="/tags/vuex/">vuex (6)</a>
+          <a href="/en/tags/ffmpeg/">ffmpeg (1)</a>
         </li>
         
         <li>
-          <a href="/tags/composer/">composer (5)</a>
+          <a href="/en/tags/firewall/">firewall (1)</a>
         </li>
         
         <li>
-          <a href="/tags/element-ui/">element-ui (5)</a>
+          <a href="/en/tags/gas/">gas (1)</a>
         </li>
         
         <li>
-          <a href="/tags/leetcode-medium/">leetcode-medium (5)</a>
+          <a href="/en/tags/gcr/">gcr (1)</a>
         </li>
         
         <li>
-          <a href="/tags/drone/">drone (4)</a>
+          <a href="/en/tags/git/">git (1)</a>
         </li>
         
         <li>
-          <a href="/tags/jenkins/">jenkins (4)</a>
+          <a href="/en/tags/github/">github (1)</a>
         </li>
         
         <li>
-          <a href="/tags/aws/">aws (3)</a>
+          <a href="/en/tags/google-app-script/">google-app-script (1)</a>
         </li>
         
         <li>
-          <a href="/tags/cloudflare/">cloudflare (3)</a>
+          <a href="/en/tags/google-container-registry/">google-container-registry (1)</a>
         </li>
         
         <li>
-          <a href="/tags/mongodb/">mongodb (3)</a>
+          <a href="/en/tags/google-sheets/">google-sheets (1)</a>
         </li>
         
         <li>
-          <a href="/tags/mutation/">mutation (3)</a>
+          <a href="/en/tags/laravel-excel/">laravel-excel (1)</a>
         </li>
         
         <li>
-          <a href="/tags/restful/">restful (3)</a>
+          <a href="/en/tags/load-balancing/">load-balancing (1)</a>
         </li>
         
         <li>
-          <a href="/tags/ssh/">ssh (3)</a>
+          <a href="/en/tags/ngrok/">ngrok (1)</a>
         </li>
         
         <li>
-          <a href="/tags/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/">架站相關 (3)</a>
+          <a href="/en/tags/prerender/">prerender (1)</a>
         </li>
         
         <li>
-          <a href="/tags/chatbot/">chatbot (2)</a>
+          <a href="/en/tags/queue/">queue (1)</a>
         </li>
         
         <li>
-          <a href="/tags/component/">component (2)</a>
+          <a href="/en/tags/redis/">redis (1)</a>
         </li>
         
         <li>
-          <a href="/tags/discord/">discord (2)</a>
+          <a href="/en/tags/search-engine-optimization/">search-engine-optimization (1)</a>
         </li>
         
         <li>
-          <a href="/tags/dns/">dns (2)</a>
+          <a href="/en/tags/seo/">seo (1)</a>
         </li>
         
         <li>
-          <a href="/tags/getter/">getter (2)</a>
+          <a href="/en/tags/serverless/">serverless (1)</a>
         </li>
         
         <li>
-          <a href="/tags/google-domains/">google-domains (2)</a>
+          <a href="/en/tags/smart-contract/">smart-contract (1)</a>
         </li>
         
         <li>
-          <a href="/tags/linux/">linux (2)</a>
+          <a href="/en/tags/ssh/">ssh (1)</a>
         </li>
         
         <li>
-          <a href="/tags/nginx/">nginx (2)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/ngrok/">ngrok (2)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/vue-router/">vue-router (2)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/vue-ui/">vue-ui (2)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/apache-bench/">apache-bench (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/auto-scaling/">auto-scaling (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/axios/">axios (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/blockchain/">blockchain (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/cdn/">cdn (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/cloudflare-workers/">cloudflare-workers (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/cors/">cors (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/csv/">csv (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/domain-name/">domain-name (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/excel/">excel (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/ffmpeg/">ffmpeg (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/gas/">gas (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/gcr/">gcr (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/git/">git (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/github/">github (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/github-page/">github-page (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/google-app-script/">google-app-script (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/google-container-registry/">google-container-registry (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/google-sheets/">google-sheets (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/grumphp/">grumphp (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/laravel-excel/">laravel-excel (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/load-balancing/">load-balancing (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/php-fpm/">php-fpm (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/phpcbf/">phpcbf (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/phpcs/">phpcs (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/portainer/">portainer (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/postgresql/">postgresql (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/prerender/">prerender (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/proxy/">proxy (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/queue/">queue (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/redis/">redis (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/seo/">seo (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/server/">server (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/serverless/">serverless (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/smart-contract/">smart-contract (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/stress-testing/">stress-testing (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/subdomain/">subdomain (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/%E4%BC%BA%E6%9C%8D%E5%99%A8/">伺服器 (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/%E5%80%8B%E4%BA%BA%E5%93%81%E7%89%8C/">個人品牌 (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/%E5%9F%9F%E5%90%8D/">域名 (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/%E5%A3%93%E5%8A%9B%E6%B8%AC%E8%A9%A6/">壓力測試 (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/%E5%AD%90%E7%B6%B2%E5%9F%9F/">子網域 (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/%E6%90%9C%E5%B0%8B%E5%BC%95%E6%93%8E%E6%9C%80%E4%BD%B3%E5%8C%96/">搜尋引擎最佳化 (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">版本控制 (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/%E8%B2%B7%E7%B6%B2%E5%9D%80/">買網址 (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/%E9%98%B2%E7%81%AB%E7%89%86/">防火牆 (1)</a>
+          <a href="/en/tags/version-control/">version-control (1)</a>
         </li>
         
       </ul>
