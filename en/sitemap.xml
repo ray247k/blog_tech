@@ -1037,6 +1037,61 @@
                 href="https://tech.ray247k.com/en/blog/202110-make-discord-chatbot-01-set-up/"
                 />
   </url><url>
+    <loc>https://tech.ray247k.com/en/tags/composer/</loc>
+    <lastmod>2021-07-17T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/composer/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/composer/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/tags/container-technology/</loc>
+    <lastmod>2021-07-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tech.ray247k.com/en/tags/containerization/</loc>
+    <lastmod>2021-07-17T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/containerization/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/containerization/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/tags/docker-compose/</loc>
+    <lastmod>2021-07-17T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/docker-compose/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/docker-compose/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/blog/202107-initialize-server-setting-with-docker-and-laravel/</loc>
+    <lastmod>2021-07-17T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202107-initialize-server-setting-with-docker-and-laravel/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202107-initialize-server-setting-with-docker-and-laravel/"
+                />
+  </url><url>
     <loc>https://tech.ray247k.com/en/about/</loc>
     <xhtml:link
                 rel="alternate"

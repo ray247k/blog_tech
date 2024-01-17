@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Containerization on Byte Ebi 🍤</title>
+    <link>https://tech.ray247k.com/en/tags/containerization/</link>
+    <description>Recent content in Containerization on Byte Ebi 🍤</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 17 Jul 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tech.ray247k.com/en/tags/containerization/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Environment Initialization and Server Configuration (Docker &#43; Laravel)</title>
+      <link>https://tech.ray247k.com/en/blog/202107-initialize-server-setting-with-docker-and-laravel/</link>
+      <pubDate>Sat, 17 Jul 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202107-initialize-server-setting-with-docker-and-laravel/</guid>
+      <description>&lt;p&gt;If you are setting up a new cloud server and want to create a Laravel development environment using Docker on it.&lt;br&gt;&#xA;And run Laravel&amp;rsquo;s common composer and artisan commands remotely, here&amp;rsquo;s a guide for you.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

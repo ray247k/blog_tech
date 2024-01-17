@@ -1090,6 +1090,16 @@
   </url><url>
     <loc>https://tech.ray247k.com/tags/composer/</loc>
     <lastmod>2021-07-31T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/composer/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/composer/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/tags/grumphp/</loc>
     <lastmod>2021-07-31T00:00:00+00:00</lastmod>
@@ -1102,9 +1112,29 @@
   </url><url>
     <loc>https://tech.ray247k.com/tags/containerization/</loc>
     <lastmod>2021-07-24T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/containerization/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/containerization/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/tags/docker-compose/</loc>
     <lastmod>2021-07-24T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/docker-compose/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/docker-compose/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/blog/202107-laravel-environment-with-docker/</loc>
     <lastmod>2021-07-24T00:00:00+00:00</lastmod>
@@ -1114,6 +1144,16 @@
   </url><url>
     <loc>https://tech.ray247k.com/blog/202107-initialize-server-setting-with-docker-and-laravel/</loc>
     <lastmod>2021-07-17T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202107-initialize-server-setting-with-docker-and-laravel/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202107-initialize-server-setting-with-docker-and-laravel/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/blog/202107-drone-cicd-4-advanced-runner/</loc>
     <lastmod>2021-07-09T00:00:00+00:00</lastmod>
