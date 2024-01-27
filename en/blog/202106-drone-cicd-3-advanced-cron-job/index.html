@@ -1,0 +1,898 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+<title>[CI/CD with Drone 101] 03 Deployment Schedule Configuration and Permission Management - Byte Ebi 🍤</title>
+<meta name="description" content="Tutorial on configuring deployment schedules and managing permissions through Drone for automated deployment.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta property="og:site_name" content="Byte Ebi 🍤">
+<meta property="og:title" content="[CI/CD with Drone 101] 03 Deployment Schedule Configuration and Permission Management">
+<meta property="og:description" content="Tutorial on configuring deployment schedules and managing permissions through Drone for automated deployment.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://tech.ray247k.com/en/blog/202106-drone-cicd-3-advanced-cron-job/">
+  <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
+
+
+
+  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
+  
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=1" color="#ffffff">
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=1">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=1">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+<meta name="generator" content="Hugo 0.121.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+  <meta property="og:title" content="[CI/CD with Drone 101] 03 Deployment Schedule Configuration and Permission Management">
+  <meta property="og:description" content="Tutorial on configuring deployment schedules and managing permissions through Drone for automated deployment.">
+  <meta property="description" content="Tutorial on configuring deployment schedules and managing permissions through Drone for automated deployment.">
+  <meta property="og:url" content="https://tech.ray247k.com/en/blog/202106-drone-cicd-3-advanced-cron-job/">
+  <meta property="og:type" content="article">
+  
+    <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
+  
+  
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/felipec.min.css">
+          <link rel="stylesheet" href="/css/bundle.min.3b1b5f2e683d24b1ea3b5a08c8254622e40aa935e0ead75ba6d45c0f14c2f965.css" integrity="sha256-OxtfLmg9JLHqO1oIyCVGIuQKqTXg6tdbptRcDxTC&#43;WU="><link rel="stylesheet" href="/css/add-on.css">
+
+
+    
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', "");
+        </script>
+    
+
+
+  <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "image": {
+        "@type": "ImageObject",
+        "image": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+        "height": 648,
+        "width": 1080
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Byte Ebi 🍤",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png"
+        }
+    },
+    "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+    "headline": "About web development, software engineering, frontend, backend, chatbot, server related topics. - Byte Ebi 🍤",
+    "name": "Byte Ebi 🍤",
+    "url": "https:\/\/tech.ray247k.com",
+    "description": "About web development, software engineering, frontend, backend, chatbot, server related topics. - aws,devops,golang,laravel,python3,serverless,third-party-services,tools,version-control,website-operations,",
+    "keywords": [
+        "auto-scaling,aws,blockchain,chatbot,ci\/cd,cicd,cloudflare,cloudflare-workers,composer,container-technology,containerization,csv,devops,discord,docker,docker-compose,drone,excel,ffmpeg,firewall,gas,gcp,gcr,git,github,go,golang,google-app-script,google-container-registry,google-sheets,jenkins,laravel,laravel-excel,load-balancing,ngrok,php,prerender,python3,queue,redis,search-engine-optimization,seo,serverless,smart-contract,ssh,version-control,"
+    ]
+}
+</script>
+
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "legalName": "Byte Ebi 🍤",
+    "url": "https:\/\/tech.ray247k.com",
+    "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "",
+        "availableLanguage": [
+            "Mandarin",
+            "English"
+        ]
+    },
+    "sameAs": [
+        "https://ray247k.blogspot.com/"
+    ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "[CI\/CD with Drone 101] 03 Deployment Schedule Configuration and Permission Management",
+    "description": "Tutorial on configuring deployment schedules and managing permissions through Drone for automated deployment.",
+    "keywords": [
+        "DevOps" , "Drone" , "CICD" 
+    ],
+    "dateCreated": "2021-06-14T00:00:00.00Z",
+    "datePublished": "2021-06-14T00:00:00.00Z",
+    "dateModified": "2021-06-14T00:00:00.00Z",
+    "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "contentUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png"
+    },
+    "breadcrumb": {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com",
+                    "name": "Byte Ebi 🍤",
+                    "url": "https:\/\/tech.ray247k.com"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com/blog",
+                    "name": "Blog",
+                    "url": "https:\/\/tech.ray247k.com/blog"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\/en\/blog\/202106-drone-cicd-3-advanced-cron-job\/",
+                    "name": "[CI\/CD with Drone 101] 03 Deployment Schedule Configuration and Permission Management",
+                    "url": "https:\/\/tech.ray247k.com\/en\/blog\/202106-drone-cicd-3-advanced-cron-job\/"
+                }
+            }
+        ],
+        "itemListOrder": "Ascending",
+        "numberOfItems": 3
+    }
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "articleSection": "blog",
+    "name": "[CI\/CD with Drone 101] 03 Deployment Schedule Configuration and Permission Management",
+    "headline": "\u003cp\u003eUtilizing \u003ca href=\u0022https:\/\/www.drone.io\/\u0022\n   \n    target=\u0022_blank\u0022 rel=\u0022noreferrer noopener\u0022\u003eDrone\n\u003c\/a\u003e\n to establish a custom automated deployment service.\u003cbr\u003e\nDrone is a CI\/CD system tool developed in Golang.\u003cbr\u003e\nThis tutorial focuses on configuring deployment schedules and managing permissions.\u003c\/p\u003e",
+    "description": "Tutorial on configuring deployment schedules and managing permissions through Drone for automated deployment.",
+    "inLanguage": "en",
+    "isFamilyFriendly": "true",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com\/en\/blog\/202106-drone-cicd-3-advanced-cron-job\/"
+    },
+    "author" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "creator" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "accountablePerson" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "copyrightHolder" : "Byte Ebi 🍤",
+    "copyrightYear" : "2021",
+    "dateCreated": "2021-06-14T00:00:00.00Z",
+    "datePublished": "2021-06-14T00:00:00.00Z",
+    "dateModified": "2021-06-14T00:00:00.00Z",
+    "publisher":{
+        "@type":"Organization",
+        "name": "Byte Ebi 🍤",
+        "url": "https://tech.ray247k.com",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+            "width":"32",
+            "height":"32"
+        }
+    },
+    "image": "https://tech.ray247k.com/img/main/logo.png",
+    "url" : "https:\/\/tech.ray247k.com\/en\/blog\/202106-drone-cicd-3-advanced-cron-job\/",
+    "wordCount" : "727",
+    "genre" : [ "DevOps" , "Drone" , "CICD" ],
+    "keywords" : [ "DevOps" , "Drone" , "CICD" ]
+}
+</script>
+
+
+
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/en/" class="nav">
+        
+          Blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/en/" class="nav link"><i class='fa fa-home'></i> home</a>
+        
+      
+        
+          
+          <a href="/en/about" class="nav link"><i class='far fa-id-card'></i> about</a>
+        
+      
+        
+          
+          <a href="/en/categories" class="nav link"><i class='fas fa-sitemap'></i> category</a>
+        
+      
+      
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    
+    <a href="#lang-menu" class="nav lang-toggle" lang="en">en</a>
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  <menu id="lang-menu" class="flyout-menu menu">
+  <a href="#" lang="en" class="nav link active">English (en)</a>
+  
+      <a href="https://tech.ray247k.com/blog/202106-drone-cicd-3-advanced-cron-job/" lang="zh-tw" class="nav link">正體中文 (zh-tw)</a>
+    
+  
+</menu>
+
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/en/"><img src="/img/main/logo.png" class="circle" width="100" alt="Byte Ebi&#39;s Logo" /></a>
+  <header>
+    <h1>Byte Ebi 🍤</h1>
+  </header>
+  <main>
+    <p>A Bit everyday A Byte every week</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/ray247k" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//www.linkedin.com/in/j-ray-cheng" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="/en/blog/202106-drone-cicd-3-advanced-cron-job/">[CI/CD with Drone 101] 03 Deployment Schedule Configuration and Permission Management</a></h2>
+    
+    
+      <p>Tutorial on configuring deployment schedules and managing permissions through Drone for automated deployment.</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2021-06-14 00:00:00 &#43;0000 UTC">June 14, 2021</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+    <div id="socnet-share">
+      
+
+
+
+
+
+    </div>
+    <div class="content">
+      <a href="/en/blog/202106-drone-cicd-3-advanced-cron-job/" class="image" style="--bg-image: url('/en/blog/202106-drone-cicd-3-advanced-cron-job/drone-pipeline-feature.png');">
+    <img src="/en/blog/202106-drone-cicd-3-advanced-cron-job/drone-pipeline-feature.png" alt="">
+  </a>
+      <p>Utilizing <a href="https://www.drone.io/"
+   
+    target="_blank" rel="noreferrer noopener">Drone
+</a>
+ to establish a custom automated deployment service.<br>
+Drone is a CI/CD system tool developed in Golang.<br>
+This tutorial focuses on configuring deployment schedules and managing permissions.</p>
+<h1 id="scheduled-execution-cron-job">Scheduled Execution (Cron Job)</h1>
+<p>Setting up schedules was quite challenging initially.
+If setting up the service itself took three days, the schedule configuration took about half a month with constant document checking, forum discussions, testing, and debugging.<br>
+Many details were only addressed by the author on Gitter or in forum threads, without being included in the official documentation.<br>
+Additionally, certain features were not supported for those using Bitbucket.</p>
+<h2 id="custom-execution-time">Custom Execution Time</h2>
+<h3 id="service-limitations">Service Limitations</h3>
+<p>In Drone 1.0, customizing the schedule on the interface is not allowed due to potential errors (<a href="https://gitter.im/drone/drone?at=5d5d5b8d2cdb146ad612536f"
+   
+    target="_blank" rel="noreferrer noopener">source
+</a>
+).<br>
+Also, the minimum repeat execution time is once every half an hour (<a href="https://discourse.drone.io/t/how-to-use-cron-scheduling-in-drone-1-0-0-rc-1/2999"
+   
+    target="_blank" rel="noreferrer noopener">source
+</a>
+).</p>
+<h3 id="configuration-in-project-files">Configuration in Project Files</h3>
+<p>The author suggests defining the cron job name in the project&rsquo;s <code>.drone.yml</code> file using the CLI, rather than using expressions (<a href="https://discourse.drone.io/t/cron-job-definition/8027/2"
+   
+    target="_blank" rel="noreferrer noopener">Cron job definition
+</a>
+).</p>
+<h3 id="timezone-in-expressions-is-fixed">Timezone in Expressions is Fixed</h3>
+<p>The official documentation mentions that the timezone for scheduling is fixed to UTC (i.e., +0 timezone), so manual conversion is necessary (<a href="https://docs.drone.io/cron/#timezones"
+   
+    target="_blank" rel="noreferrer noopener">Cron Timezones
+</a>
+).</p>
+<blockquote>
+<p>The current implementation calculates the execution time based on UTC as opposed to local time.</p>
+</blockquote>
+<p>However, the official documentation also notes that custom schedule times may not be triggered at precise times and may have a slight deviation (<a href="https://docs.drone.io/cron/#scheduling"
+   
+    target="_blank" rel="noreferrer noopener">reference
+</a>
+).</p>
+<h2 id="creating-a-cron-job">Creating a Cron Job</h2>
+<p>While many tutorials use the Drone CLI, it was discovered on the official website that an API can also be used for creating cron jobs (<a href="https://docs.drone.io/api/cron/cron_create/"
+   
+    target="_blank" rel="noreferrer noopener">API drone cron create
+</a>
+).<br>
+To do this, obtain the token from the <code>User Settings</code> on the Drone page to use as the header in the Post request.<br>
+In Postman, create a <code>POST /api/repos/{owner}/{repo}/cron</code> request and add the token to the <code>Headers</code> tab, where the token key is <code>Authorization</code> and the corresponding value has the format <code>Bearer {a string of alphanumeric characters}</code>.</p>
+<p>The <code>Body</code> is then used to set the cron job name, execution conditions, and the branch to be executed.</p>
+<pre tabindex="0"><code>{
+  &#34;name&#34;: &#34;every2hour&#34;,
+  &#34;expr&#34;: &#34;0 0 */2 * * *&#34;,
+  &#34;branch&#34;: &#34;main&#34;
+}
+</code></pre><p>In this example, the condition is <code>0 0 8-16,*/2 * * *</code>, meaning &ldquo;execute every two hours from 8 AM to 4 PM&rdquo;.<br>
+Alternatively, it can be set as <code>0 0 10,12,14,16 * * *</code> to &ldquo;execute every day at 10 AM, 12 PM, 2 PM, and 4 PM&rdquo;.</p>
+<p>An <a href="https://www.freeformatter.com/cron-expression-generator-quartz.html"
+   
+    target="_blank" rel="noreferrer noopener">online tool
+</a>
+ can be used to generate conditions based on requirements.</p>
+<blockquote>
+<p>Note! The author uses a time format with <strong>six digits, including seconds</strong>!</p>
+</blockquote>
+<h2 id="viewing-cron-jobs">Viewing Cron Jobs</h2>
+<h3 id="cron-list">Cron List</h3>
+<p>After creation, you can use <code>GET /api/repos/{owner}/{repo}/cron</code> to view the list of all cron jobs.</p>
+<p><img src="postman-cron-list.png" alt="postman cron list"></p>
+<h3 id="cron-info">Cron Info</h3>
+<p>Using <code>GET /api/repos/{owner}/{repo}/cron/{name}</code> to view detailed information about a specific cron job.</p>
+<p><img src="postman-cron-info.png" alt="postman cron info"></p>
+<p>Returning to the Drone backend, accessing the settings page for the project reveals the cron job created using the API!</p>
+<p><img src="drone-settings-page.png" alt="drone settings page"></p>
+<p>When the scheduled time arrives, the pipeline triggered by the specified cron job name in the .drone.yml file will be executed.</p>
+<p><img src="drone-pipeline-feature.png" alt="drone pipeline"></p>
+<h2 id="updating-cron-jobs">Updating Cron Jobs</h2>
+<p>To update a cron job, use <code>PATCH /api/repos/{owner}/{repo}/cron/{name}</code>.<br>
+The body includes the changes, such as switching the branch to <code>dev</code> or adjusting the execution time to a fixed time each day.</p>
+<pre tabindex="0"><code>{
+  &#34;name&#34;: &#34;every2hour&#34;,
+  &#34;expr&#34;: &#34;0 0 2,4,6,8 * * *&#34;,
+  &#34;branch&#34;: &#34;dev&#34;
+}
+</code></pre><h2 id="deleting-cron-jobs">Deleting Cron Jobs</h2>
+<p>Cron jobs created previously can be deleted using <code>DELETE /api/repos/{owner}/{repo}/cron/{name}</code>.<br>
+However, the author prefers using the UI interface to click on DELETE.</p>
+<p><img src="delete-cronjob.png" alt="delete cronjob"></p>
+<p>Another option is the Drone CLI, which was not used this time but is provided for reference.</p>
+<ul>
+<li><a href="https://docs.drone.io/cron/"
+   
+    target="_blank" rel="noreferrer noopener">Drone CLI Cron
+</a>
+</li>
+<li><a href="https://docs.drone.io/cli/cron/drone-cron-add/"
+   
+    target="_blank" rel="noreferrer noopener">CLI drone cron add
+</a>
+</li>
+</ul>
+<h1 id="permission-control">Permission Control</h1>
+<p>If no user is set, the service is open to the public on the online URL (<a href="https://docs.drone.io/server/user/registration/"
+   
+    target="_blank" rel="noreferrer noopener">official explanation
+</a>
+).</p>
+<blockquote>
+<p><font color="red">Drone registration is open by default. This means any user can register an account and use the system.</font></p>
+</blockquote>
+<h2 id="admin-permission-configuration">Admin Permission Configuration</h2>
+<p>Admin rights must be set up in the <code>drone_server</code> to manage other accounts (<a href="https://docs.drone.io/server/reference/drone-user-create/"
+   
+    target="_blank" rel="noreferrer noopener">DRONE_USER_CREATE
+</a>
+).</p>
+<pre tabindex="0"><code class="language-yaml=" data-lang="yaml=">- DRONE_USER_CREATE=username:ray247k,admin:true
+</code></pre><h2 id="user-list-configuration">User List Configuration</h2>
+<p>Restrict access by setting a user list (<a href="https://docs.drone.io/server/reference/drone-user-filter/"
+   
+    target="_blank" rel="noreferrer noopener">official documentation
+</a>
+).
+Use organizations or user IDs in the list.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>- <span style="color:#ae81ff">DRONE_USER_FILTER=ray247k,lemon,JohnDoe</span>
+</span></span></code></pre></div><p>However, if Bitbucket is used as the version control platform, organization restriction is not supported (<a href="https://gitter.im/drone/drone?at=5c5314b9ca428b0645318a1e"
+   
+    target="_blank" rel="noreferrer noopener">forum thread explanation
+</a>
+).
+Therefore, anyone with write permissions can access the settings page.</p>
+<p><img src="bitbucket-not-supported.png" alt="bitbucket not supported"></p>
+<p>Testing with GitHub shows that organization-based access control is possible and the setting page is not open to everyone.</p>
+
+      
+      
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/ray247k/button?referrer=https%3a%2f%2ftech.ray247k.com%2fen%2fblog%2f202106-drone-cicd-3-advanced-cron-job%2f" width="100%" frameborder=0></iframe>
+
+    </div>
+    <footer>
+      <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/en/categories/devops/">DevOps</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/en/tags/devops/">DevOps</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/drone/">Drone</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/cicd/">CICD</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+    </footer>
+  </article>
+  
+    
+
+  
+  <div class="pagination">
+    
+      <a href="/en/blog/202107-drone-cicd-4-advanced-runner/" class="button left"><span>[CI/CD with Drone 101] 04 Introduction to Drone Runners</span></a>
+    
+    
+      <a href="/en/blog/202106-drone-cicd-2-advanced-pipeline-configuration/" class="button right"><span>[CI/CD with Drone 101] 02 Setting Deployment Trigger Conditions (Pipeline)</span></a>
+    
+  </div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>Recent Posts</h1>
+      </header>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/" class="image" style="--bg-image: url('/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg');">
+    <img src="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/">Different between pointer and value for struct type in golang</a></h2>
+          <time class="published" datetime="2023-06-25 00:00:00 &#43;0000 UTC">June 25, 2023</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202301-ffmpeg-video-convert/" class="image" style="--bg-image: url('/en/blog/202301-ffmpeg-video-convert/featured.png');">
+    <img src="/en/blog/202301-ffmpeg-video-convert/featured.png" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202301-ffmpeg-video-convert/">Using FFmpeg to convert media files</a></h2>
+          <time class="published" datetime="2023-01-01 00:00:00 &#43;0000 UTC">January 1, 2023</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202210-aws101-what-is-sns-and-sqs/" class="image" style="--bg-image: url('/en/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg');">
+    <img src="/en/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202210-aws101-what-is-sns-and-sqs/">[AWS 101] What are SNS and SQS</a></h2>
+          <time class="published" datetime="2022-10-06 00:00:00 &#43;0000 UTC">October 6, 2022</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202210-what-is-serverless/" class="image" style="--bg-image: url('/en/blog/202210-what-is-serverless/featured.jpg');">
+    <img src="/en/blog/202210-what-is-serverless/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202210-what-is-serverless/">Serverless 101</a></h2>
+          <time class="published" datetime="2022-10-04 00:00:00 &#43;0000 UTC">October 4, 2022</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202207-go-ethereum-abigen/" class="image" style="--bg-image: url('/en/blog/202207-go-ethereum-abigen/featured.jpeg');">
+    <img src="/en/blog/202207-go-ethereum-abigen/featured.jpeg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202207-go-ethereum-abigen/">Interacting with smart contracts using Golang</a></h2>
+          <time class="published" datetime="2022-07-09 00:00:00 &#43;0000 UTC">July 9, 2022</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/en/blog/" class="button">See More</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="/en/categories">Categories</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/en/categories/devops/">devops<span class="count">14</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/golang/">golang<span class="count">11</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/laravel/">laravel<span class="count">3</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/python3/">python3<span class="count">2</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/website-operations/">website-operations<span class="count">2</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/aws/">aws<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/serverless/">serverless<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/third-party-services/">third-party-services<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/tools/">tools<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/version-control/">version-control<span class="count">1</span></a>
+          </li>
+          
+        </ul>
+      </section>
+    
+  
+
+  
+  <section id="tags">
+    <header>
+      <h1><a href="/en/tags">Tags</a></h1>
+    </header>
+    <div class="li-x post-meta tags-md" style="margin-left: 0.5em;">
+      <ul>
+        
+        
+        <li>
+          <a href="/en/tags/devops/">devops (15)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/go/">go (11)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/golang/">golang (11)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/cicd/">cicd (7)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/gcp/">gcp (5)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/docker/">docker (4)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/drone/">drone (4)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/jenkins/">jenkins (4)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/laravel/">laravel (4)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/aws/">aws (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/chatbot/">chatbot (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/container-technology/">container-technology (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/containerization/">containerization (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/discord/">discord (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/php/">php (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/python3/">python3 (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/auto-scaling/">auto-scaling (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/blockchain/">blockchain (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ci/cd/">ci/cd (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/cloudflare/">cloudflare (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/cloudflare-workers/">cloudflare-workers (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/composer/">composer (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/csv/">csv (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/docker-compose/">docker-compose (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/excel/">excel (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ffmpeg/">ffmpeg (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/firewall/">firewall (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/gas/">gas (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/gcr/">gcr (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/git/">git (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/github/">github (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/google-app-script/">google-app-script (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/google-container-registry/">google-container-registry (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/google-sheets/">google-sheets (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/laravel-excel/">laravel-excel (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/load-balancing/">load-balancing (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ngrok/">ngrok (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/prerender/">prerender (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/queue/">queue (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/redis/">redis (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/search-engine-optimization/">search-engine-optimization (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/seo/">seo (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/serverless/">serverless (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/smart-contract/">smart-contract (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ssh/">ssh (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/version-control/">version-control (1)</a>
+        </li>
+        
+      </ul>
+
+    </div>
+  </section>
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+    
+    <p class="copyright">
+        © 2023 Byte Ebi 🍤
+    </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>
+      hljs.configure({ ignoreUnescapedHTML: true }); 
+      hljs.highlightAll();
+    </script><script src="/js/bundle.min.b8ecc205622548252ae685817642568fed404d2f04df7ea571a8b71e3091ffe7.js" integrity="sha256-uOzCBWIlSCUq5oWBdkJWj&#43;1ATS8E336lcai3HjCR/&#43;c="></script>
+    <script src="/js/add-on.js"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-LTGVYYWC2J', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </div>
+  </body>
+</html>

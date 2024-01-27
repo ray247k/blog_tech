@@ -84,7 +84,7 @@
     "url": "https:\/\/tech.ray247k.com",
     "description": "About web development, software engineering, frontend, backend, chatbot, server related topics. - aws,devops,golang,laravel,python3,serverless,third-party-services,tools,version-control,website-operations,",
     "keywords": [
-        "auto-scaling,aws,blockchain,chatbot,ci\/cd,cicd,cloudflare,cloudflare-workers,composer,container-technology,containerization,csv,devops,discord,docker,docker-compose,excel,ffmpeg,firewall,gas,gcp,gcr,git,github,go,golang,google-app-script,google-container-registry,google-sheets,jenkins,laravel,laravel-excel,load-balancing,ngrok,php,prerender,python3,queue,redis,search-engine-optimization,seo,serverless,smart-contract,ssh,version-control,"
+        "auto-scaling,aws,blockchain,chatbot,ci\/cd,cicd,cloudflare,cloudflare-workers,composer,container-technology,containerization,csv,devops,discord,docker,docker-compose,drone,excel,ffmpeg,firewall,gas,gcp,gcr,git,github,go,golang,google-app-script,google-container-registry,google-sheets,jenkins,laravel,laravel-excel,load-balancing,ngrok,php,prerender,python3,queue,redis,search-engine-optimization,seo,serverless,smart-contract,ssh,version-control,"
     ]
 }
 </script>
@@ -442,10 +442,198 @@ And run Laravel&rsquo;s common composer and artisan commands remotely, here&rsqu
 </article>
 
   
+    <article class="post">
+  <header>
+  <div class="title">
+    
+      <h2><a href="/en/blog/202107-drone-cicd-4-advanced-runner/">[CI/CD with Drone 101] 04 Introduction to Drone Runners</a></h2>
+    
+    
+      <p>Building an automated deployment process with Drone, introducing different drone runners.</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2021-07-09 00:00:00 &#43;0000 UTC">July 9, 2021</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+  <div class="content">
+    
+    
+    <p>In our previous post, &ldquo;<a href="/en/blog/202106-drone-cicd-1-basic-usage/"
+   
+   >[CI/CD with Drone 101] 01 Basic Service Setup and GitHub Integration
+</a>
+&rdquo; there is an example <code>docker-compose.yml</code> file that creates two Docker runners: <code>drone_runner_docker</code> and <code>drone-runner-ssh</code>.<br>
+However, in &ldquo;<a href="/en/blog/202106-drone-cicd-2-advanced-pipeline-configuration/"
+   
+   >[CI/CD with Drone 101] 02 Setting Deployment Trigger Conditions (Pipeline)
+</a>
+&rdquo; only the Docker runner is used.<br>
+This post will introduce both runners, along with other runners mentioned on the official website.</p>
+
+  </div>
+  <footer>
+    <a href="/en/blog/202107-drone-cicd-4-advanced-runner/" class="button big">Read More</a>
+    <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/en/categories/devops/">DevOps</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/en/tags/devops/">DevOps</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/drone/">Drone</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/cicd/">CICD</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+  </footer>
+</article>
+
+  
+    <article class="post">
+  <header>
+  <div class="title">
+    
+      <h2><a href="/en/blog/202106-drone-cicd-3-advanced-cron-job/">[CI/CD with Drone 101] 03 Deployment Schedule Configuration and Permission Management</a></h2>
+    
+    
+      <p>Tutorial on configuring deployment schedules and managing permissions through Drone for automated deployment.</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2021-06-14 00:00:00 &#43;0000 UTC">June 14, 2021</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+  <div class="content">
+    <a href="/en/blog/202106-drone-cicd-3-advanced-cron-job/" class="image" style="--bg-image: url('/en/blog/202106-drone-cicd-3-advanced-cron-job/drone-pipeline-feature.png');">
+    <img src="/en/blog/202106-drone-cicd-3-advanced-cron-job/drone-pipeline-feature.png" alt="">
+  </a>
+    
+    <p>Utilizing <a href="https://www.drone.io/"
+   
+    target="_blank" rel="noreferrer noopener">Drone
+</a>
+ to establish a custom automated deployment service.<br>
+Drone is a CI/CD system tool developed in Golang.<br>
+This tutorial focuses on configuring deployment schedules and managing permissions.</p>
+
+  </div>
+  <footer>
+    <a href="/en/blog/202106-drone-cicd-3-advanced-cron-job/" class="button big">Read More</a>
+    <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/en/categories/devops/">DevOps</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/en/tags/devops/">DevOps</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/drone/">Drone</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/cicd/">CICD</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+  </footer>
+</article>
+
+  
+    <article class="post">
+  <header>
+  <div class="title">
+    
+      <h2><a href="/en/blog/202106-drone-cicd-2-advanced-pipeline-configuration/">[CI/CD with Drone 101] 02 Setting Deployment Trigger Conditions (Pipeline)</a></h2>
+    
+    
+      <p>Setting up deployment trigger conditions (pipeline) through Drone for automated deployment.</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2021-06-12 00:00:00 &#43;0000 UTC">June 12, 2021</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+  <div class="content">
+    
+    
+    <p>Utilizing <a href="https://www.drone.io/"
+   
+    target="_blank" rel="noreferrer noopener">Drone
+</a>
+ to establish a custom automated deployment service.<br>
+Drone is a CI/CD system tool developed in Golang.<br>
+In this article, we&rsquo;ll configure multiple trigger conditions to initiate different deployment steps under various circumstances.</p>
+
+  </div>
+  <footer>
+    <a href="/en/blog/202106-drone-cicd-2-advanced-pipeline-configuration/" class="button big">Read More</a>
+    <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/en/categories/devops/">DevOps</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/en/tags/devops/">DevOps</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/drone/">Drone</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/cicd/">CICD</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+  </footer>
+</article>
+
+  
   <div class="pagination">
     
       <a href="/en/blog/page/4/" class="button left"><span>Previous Page</span></a>
     
+    
+      <a href="/en/blog/page/6/" class="button right"><span>Next Page</span></a>
     
   </div>
 
@@ -526,11 +714,11 @@ And run Laravel&rsquo;s common composer and artisan commands remotely, here&rsqu
           
           
           <li>
-              <a href="/en/categories/golang/">golang<span class="count">11</span></a>
+              <a href="/en/categories/devops/">devops<span class="count">14</span></a>
           </li>
           
           <li>
-              <a href="/en/categories/devops/">devops<span class="count">9</span></a>
+              <a href="/en/categories/golang/">golang<span class="count">11</span></a>
           </li>
           
           <li>
@@ -580,6 +768,10 @@ And run Laravel&rsquo;s common composer and artisan commands remotely, here&rsqu
         
         
         <li>
+          <a href="/en/tags/devops/">devops (15)</a>
+        </li>
+        
+        <li>
           <a href="/en/tags/go/">go (11)</a>
         </li>
         
@@ -588,11 +780,19 @@ And run Laravel&rsquo;s common composer and artisan commands remotely, here&rsqu
         </li>
         
         <li>
-          <a href="/en/tags/devops/">devops (10)</a>
+          <a href="/en/tags/cicd/">cicd (7)</a>
         </li>
         
         <li>
           <a href="/en/tags/gcp/">gcp (5)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/docker/">docker (4)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/drone/">drone (4)</a>
         </li>
         
         <li>
@@ -604,19 +804,19 @@ And run Laravel&rsquo;s common composer and artisan commands remotely, here&rsqu
         </li>
         
         <li>
-          <a href="/en/tags/cicd/">cicd (3)</a>
-        </li>
-        
-        <li>
-          <a href="/en/tags/docker/">docker (3)</a>
-        </li>
-        
-        <li>
           <a href="/en/tags/aws/">aws (2)</a>
         </li>
         
         <li>
           <a href="/en/tags/chatbot/">chatbot (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/container-technology/">container-technology (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/containerization/">containerization (2)</a>
         </li>
         
         <li>
@@ -653,14 +853,6 @@ And run Laravel&rsquo;s common composer and artisan commands remotely, here&rsqu
         
         <li>
           <a href="/en/tags/composer/">composer (1)</a>
-        </li>
-        
-        <li>
-          <a href="/en/tags/container-technology/">container-technology (1)</a>
-        </li>
-        
-        <li>
-          <a href="/en/tags/containerization/">containerization (1)</a>
         </li>
         
         <li>

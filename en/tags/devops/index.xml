@@ -78,5 +78,40 @@
       <guid>https://tech.ray247k.com/en/blog/202107-initialize-server-setting-with-docker-and-laravel/</guid>
       <description>&lt;p&gt;If you are setting up a new cloud server and want to create a Laravel development environment using Docker on it.&lt;br&gt;&#xA;And run Laravel&amp;rsquo;s common composer and artisan commands remotely, here&amp;rsquo;s a guide for you.&lt;/p&gt;</description>
     </item>
+    <item>
+      <title>[CI/CD with Drone 101] 04 Introduction to Drone Runners</title>
+      <link>https://tech.ray247k.com/en/blog/202107-drone-cicd-4-advanced-runner/</link>
+      <pubDate>Fri, 09 Jul 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202107-drone-cicd-4-advanced-runner/</guid>
+      <description>&lt;p&gt;In our previous post, &amp;ldquo;&lt;a href=&#34;https://tech.ray247k.com/en/blog/202106-drone-cicd-1-basic-usage/&#34;&#xA;   &#xA;   &gt;[CI/CD with Drone 101] 01 Basic Service Setup and GitHub Integration&#xA;&lt;/a&gt;&#xA;&amp;rdquo; there is an example &lt;code&gt;docker-compose.yml&lt;/code&gt; file that creates two Docker runners: &lt;code&gt;drone_runner_docker&lt;/code&gt; and &lt;code&gt;drone-runner-ssh&lt;/code&gt;.&lt;br&gt;&#xA;However, in &amp;ldquo;&lt;a href=&#34;https://tech.ray247k.com/en/blog/202106-drone-cicd-2-advanced-pipeline-configuration/&#34;&#xA;   &#xA;   &gt;[CI/CD with Drone 101] 02 Setting Deployment Trigger Conditions (Pipeline)&#xA;&lt;/a&gt;&#xA;&amp;rdquo; only the Docker runner is used.&lt;br&gt;&#xA;This post will introduce both runners, along with other runners mentioned on the official website.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[CI/CD with Drone 101] 03 Deployment Schedule Configuration and Permission Management</title>
+      <link>https://tech.ray247k.com/en/blog/202106-drone-cicd-3-advanced-cron-job/</link>
+      <pubDate>Mon, 14 Jun 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202106-drone-cicd-3-advanced-cron-job/</guid>
+      <description>&lt;p&gt;Utilizing &lt;a href=&#34;https://www.drone.io/&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Drone&#xA;&lt;/a&gt;&#xA; to establish a custom automated deployment service.&lt;br&gt;&#xA;Drone is a CI/CD system tool developed in Golang.&lt;br&gt;&#xA;This tutorial focuses on configuring deployment schedules and managing permissions.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[CI/CD with Drone 101] 02 Setting Deployment Trigger Conditions (Pipeline)</title>
+      <link>https://tech.ray247k.com/en/blog/202106-drone-cicd-2-advanced-pipeline-configuration/</link>
+      <pubDate>Sat, 12 Jun 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202106-drone-cicd-2-advanced-pipeline-configuration/</guid>
+      <description>&lt;p&gt;Utilizing &lt;a href=&#34;https://www.drone.io/&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Drone&#xA;&lt;/a&gt;&#xA; to establish a custom automated deployment service.&lt;br&gt;&#xA;Drone is a CI/CD system tool developed in Golang.&lt;br&gt;&#xA;In this article, we&amp;rsquo;ll configure multiple trigger conditions to initiate different deployment steps under various circumstances.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[CI/CD with Drone 101] 01 Basic Service Setup and GitHub Integration</title>
+      <link>https://tech.ray247k.com/en/blog/202106-drone-cicd-1-basic-usage/</link>
+      <pubDate>Tue, 08 Jun 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202106-drone-cicd-1-basic-usage/</guid>
+      <description>&lt;p&gt;Utilizing &lt;a href=&#34;https://www.drone.io/&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Drone&#xA;&lt;/a&gt;&#xA; to establish your own automated deployment service.&lt;br&gt;&#xA;Drone is a CI/CD system tool developed in Golang.&lt;br&gt;&#xA;This article covers the configuration of basic services and integration with GitHub.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Common Docker Commands</title>
+      <link>https://tech.ray247k.com/en/blog/202106-docker-common-commands/</link>
+      <pubDate>Sun, 06 Jun 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202106-docker-common-commands/</guid>
+      <description>&lt;p&gt;Some commonly used commands and related parameters on Docker and their usage.&lt;br&gt;&#xA;In actual use, there are definitely more commands than those listed here.&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>
