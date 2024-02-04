@@ -1,0 +1,1142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+<title>Develop Your Own Laravel Package - Byte Ebi 🍤</title>
+<meta name="description" content="Guide on developing and testing Laravel packages locally and installing them using composer in a local project.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta property="og:site_name" content="Byte Ebi 🍤">
+<meta property="og:title" content="Develop Your Own Laravel Package">
+<meta property="og:description" content="Guide on developing and testing Laravel packages locally and installing them using composer in a local project.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://tech.ray247k.com/en/blog/202107-laravel-package-development/">
+  <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
+
+
+
+  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
+  
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=1" color="#ffffff">
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=1">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=1">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+<meta name="generator" content="Hugo 0.122.0"><meta property="og:site_name" content="Byte Ebi 🍤">
+  <meta property="og:title" content="Develop Your Own Laravel Package">
+  <meta property="og:description" content="Guide on developing and testing Laravel packages locally and installing them using composer in a local project.">
+  <meta property="description" content="Guide on developing and testing Laravel packages locally and installing them using composer in a local project.">
+  <meta property="og:url" content="https://tech.ray247k.com/en/blog/202107-laravel-package-development/">
+  <meta property="og:type" content="article">
+  
+    <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
+  
+  
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/felipec.min.css">
+          <link rel="stylesheet" href="/css/bundle.min.3b1b5f2e683d24b1ea3b5a08c8254622e40aa935e0ead75ba6d45c0f14c2f965.css" integrity="sha256-OxtfLmg9JLHqO1oIyCVGIuQKqTXg6tdbptRcDxTC&#43;WU="><link rel="stylesheet" href="/css/add-on.css">
+
+
+    
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', "");
+        </script>
+    
+
+
+  <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "image": {
+        "@type": "ImageObject",
+        "image": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+        "height": 648,
+        "width": 1080
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Byte Ebi 🍤",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png"
+        }
+    },
+    "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+    "headline": "About web development, software engineering, frontend, backend, chatbot, server related topics. - Byte Ebi 🍤",
+    "name": "Byte Ebi 🍤",
+    "url": "https:\/\/tech.ray247k.com",
+    "description": "About web development, software engineering, frontend, backend, chatbot, server related topics. - aws,devops,golang,laravel,python3,serverless,third-party-services,tools,version-control,website-operations,",
+    "keywords": [
+        "auto-scaling,aws,blockchain,chatbot,ci\/cd,cicd,cloudflare,cloudflare-workers,composer,container-technology,containerization,csv,devops,discord,docker,docker-compose,drone,excel,ffmpeg,firewall,gas,gcp,gcr,git,github,go,golang,google-app-script,google-container-registry,google-sheets,grumphp,jenkins,laravel,laravel-excel,load-balancing,ngrok,php,prerender,python3,queue,redis,search-engine-optimization,seo,serverless,smart-contract,ssh,version-control,"
+    ]
+}
+</script>
+
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "legalName": "Byte Ebi 🍤",
+    "url": "https:\/\/tech.ray247k.com",
+    "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "",
+        "availableLanguage": [
+            "Mandarin",
+            "English"
+        ]
+    },
+    "sameAs": [
+        "https://ray247k.blogspot.com/"
+    ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Develop Your Own Laravel Package",
+    "description": "Guide on developing and testing Laravel packages locally and installing them using composer in a local project.",
+    "keywords": [
+        "Laravel" , "composer" 
+    ],
+    "dateCreated": "2021-07-25T00:00:00.00Z",
+    "datePublished": "2021-07-25T00:00:00.00Z",
+    "dateModified": "2021-07-25T00:00:00.00Z",
+    "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "contentUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png"
+    },
+    "breadcrumb": {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com",
+                    "name": "Byte Ebi 🍤",
+                    "url": "https:\/\/tech.ray247k.com"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com/blog",
+                    "name": "Blog",
+                    "url": "https:\/\/tech.ray247k.com/blog"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\/en\/blog\/202107-laravel-package-development\/",
+                    "name": "Develop Your Own Laravel Package",
+                    "url": "https:\/\/tech.ray247k.com\/en\/blog\/202107-laravel-package-development\/"
+                }
+            }
+        ],
+        "itemListOrder": "Ascending",
+        "numberOfItems": 3
+    }
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "articleSection": "blog",
+    "name": "Develop Your Own Laravel Package",
+    "headline": "\u003cp\u003eThe Laravel ecosystem offers numerous convenient packages for various purposes.\u003cbr\u003e\nHowever, what if you can\u0026rsquo;t find a suitable package or need to create a company-specific one?\u003cbr\u003e\nThis article demonstrates how to develop a package locally and install it in a Laravel project using composer, ensuring smooth development and testing.\u003c\/p\u003e",
+    "description": "Guide on developing and testing Laravel packages locally and installing them using composer in a local project.",
+    "inLanguage": "en",
+    "isFamilyFriendly": "true",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com\/en\/blog\/202107-laravel-package-development\/"
+    },
+    "author" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "creator" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "accountablePerson" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "copyrightHolder" : "Byte Ebi 🍤",
+    "copyrightYear" : "2021",
+    "dateCreated": "2021-07-25T00:00:00.00Z",
+    "datePublished": "2021-07-25T00:00:00.00Z",
+    "dateModified": "2021-07-25T00:00:00.00Z",
+    "publisher":{
+        "@type":"Organization",
+        "name": "Byte Ebi 🍤",
+        "url": "https://tech.ray247k.com",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+            "width":"32",
+            "height":"32"
+        }
+    },
+    "image": "https://tech.ray247k.com/img/main/logo.png",
+    "url" : "https:\/\/tech.ray247k.com\/en\/blog\/202107-laravel-package-development\/",
+    "wordCount" : "1720",
+    "genre" : [ "Laravel" , "composer" ],
+    "keywords" : [ "Laravel" , "composer" ]
+}
+</script>
+
+
+
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/en/" class="nav">
+        
+          Blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/en/" class="nav link"><i class='fa fa-home'></i> home</a>
+        
+      
+        
+          
+          <a href="/en/about" class="nav link"><i class='far fa-id-card'></i> about</a>
+        
+      
+        
+          
+          <a href="/en/categories" class="nav link"><i class='fas fa-sitemap'></i> category</a>
+        
+      
+      
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    
+    <a href="#lang-menu" class="nav lang-toggle" lang="en">en</a>
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  <menu id="lang-menu" class="flyout-menu menu">
+  <a href="#" lang="en" class="nav link active">English (en)</a>
+  
+      <a href="https://tech.ray247k.com/blog/202107-laravel-package-development/" lang="zh-tw" class="nav link">正體中文 (zh-tw)</a>
+    
+  
+</menu>
+
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/en/"><img src="/img/main/logo.png" class="circle" width="100" alt="Byte Ebi&#39;s Logo" /></a>
+  <header>
+    <h1>Byte Ebi 🍤</h1>
+  </header>
+  <main>
+    <p>A Bit everyday A Byte every week</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/ray247k" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//www.linkedin.com/in/j-ray-cheng" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="/en/blog/202107-laravel-package-development/">Develop Your Own Laravel Package</a></h2>
+    
+    
+      <p>Guide on developing and testing Laravel packages locally and installing them using composer in a local project.</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2021-07-25 00:00:00 &#43;0000 UTC">July 25, 2021</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+    <div id="socnet-share">
+      
+
+
+
+
+
+    </div>
+    <div class="content">
+      <a href="/en/blog/202107-laravel-package-development/" class="image" style="--bg-image: url('/en/blog/202107-laravel-package-development/peko-test-feature.png');">
+    <img src="/en/blog/202107-laravel-package-development/peko-test-feature.png" alt="">
+  </a>
+      <p>The Laravel ecosystem offers numerous convenient packages for various purposes.<br>
+However, what if you can&rsquo;t find a suitable package or need to create a company-specific one?<br>
+This article demonstrates how to develop a package locally and install it in a Laravel project using composer, ensuring smooth development and testing.</p>
+<p>Some articles suggest creating a <code>packages</code> folder within an existing Laravel project for package development.<br>
+However, this approach has drawbacks. Imagine deleting your project one day—your package project would be deleted too.<br>
+Additionally, this method doesn&rsquo;t facilitate testing the installation via composer. This article presents an alternative approach.</p>
+<h1 id="1-initialize-package-project">1. Initialize Package Project</h1>
+<p>First, create a folder for your package; for example, we&rsquo;ll use <code>larapeko</code> as a sample.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mkdir larapeko
+</span></span></code></pre></div><p>Navigate to the newly created <code>larapeko</code> folder and run the following command to initialize the package.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cd larapeko
+</span></span><span style="display:flex;"><span>composer init
+</span></span></code></pre></div><p>You&rsquo;ll be prompted with a series of questions to configure basic package information.</p>
+<p><img src="larapeko-composer-init.png" alt="larapeko composer init"></p>
+<p>Afterward, you&rsquo;ll find the <code>composer.json</code> file in the folder.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;ray247k/larapeko&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;A package for demo peko&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;license&#34;</span>: <span style="color:#e6db74">&#34;MIT&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;authors&#34;</span>: [
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Ray&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;email&#34;</span>: <span style="color:#e6db74">&#34;ray247k@gmail.com&#34;</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    ],
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;minimum-stability&#34;</span>: <span style="color:#e6db74">&#34;dev&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;require&#34;</span>: {}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="2-write-package-code">2. Write Package Code</h1>
+<p>Create a <code>src</code> folder in the <code>larapeko</code> directory to host the package code.<br>
+Inside, create a file named <code>LaraPeko.php</code> and set the appropriate namespace.<br>
+For demonstration purposes, let&rsquo;s start with a simple function.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># LaraPeko.php
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">namespace</span> <span style="color:#a6e22e">Ray247k\LaraPeko</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LaraPeko</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">sayPeko</span>()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;peko peko</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="3-serviceprovider">3. ServiceProvider</h1>
+<p>Create a ServiceProvider file in the <code>src</code> directory, named <code>LaraPekoServiceProvider.php</code>.<br>
+In the <code>register</code> method, use a singleton to register a class named <code>LaraPeko</code> and return a new instance of it.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># LaraPekoServiceProvider.php
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">namespace</span> <span style="color:#a6e22e">Ray247k\LaraPeko</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Illuminate\Support\ServiceProvider</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LaraPekoServiceProvider</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">ServiceProvider</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">boot</span>()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Register the package
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">register</span>()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">app</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">singleton</span>(<span style="color:#e6db74">&#39;LaraPeko&#39;</span>, <span style="color:#66d9ef">function</span> ($app) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">LaraPeko</span>();
+</span></span><span style="display:flex;"><span>        });
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="4-facade">4. Facade</h1>
+<p><a href="https://laravel.com/docs/8.x/facades"
+   
+    target="_blank" rel="noreferrer noopener">Facades
+</a>
+ provide a static interface to call registered classes directly.<br>
+Create a Facade file in the <code>src</code> directory, named <code>LaraPekoFacade.php</code>, and use the <code>LaraPeko</code> class registered in the ServiceProvider as the Laravel Facade object.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># LaraPekoFacade.php
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">namespace</span> <span style="color:#a6e22e">Ray247k\LaraPeko</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Illuminate\Support\Facades\Facade</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LaraPekoFacade</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Facade</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getFacadeAccessor</span>()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;LaraPeko&#39;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="5-default-config-and-usage">5. Default Config and Usage</h1>
+<p>Sometimes, users may want to customize parameters through a configuration file.<br>
+Create a <code>config</code> folder in the package directory and add a configuration file, <code>lara_peko.php</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># lara_peko.php
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">return</span> [
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;best_girl&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;Yagoo&#39;</span>,
+</span></span><span style="display:flex;"><span>];
+</span></span></code></pre></div><p>Edit the <code>LaraPekoServiceProvider.php</code> file to include publishing the configuration file.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># LaraPekoServiceProvider.php
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">namespace</span> <span style="color:#a6e22e">Ray247k\LaraPeko</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Illuminate\Support\ServiceProvider</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LaraPekoServiceProvider</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">ServiceProvider</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">boot</span>()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        $source <span style="color:#f92672">=</span> <span style="color:#a6e22e">realpath</span>($raw <span style="color:#f92672">=</span> <span style="color:#66d9ef">__DIR__</span><span style="color:#f92672">.</span><span style="color:#e6db74">&#39;/../config/lara_peko.php&#39;</span>) <span style="color:#f92672">?:</span> $raw;
+</span></span><span style="display:flex;"><span>        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">publishes</span>([
+</span></span><span style="display:flex;"><span>            $source <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">config_path</span>(<span style="color:#e6db74">&#39;lara_peko.php&#39;</span>),
+</span></span><span style="display:flex;"><span>        ]);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Register the package
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">register</span>()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        $configPath <span style="color:#f92672">=</span> <span style="color:#66d9ef">__DIR__</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/../config/lara_peko.php&#39;</span>;
+</span></span><span style="display:flex;"><span>        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">mergeConfigFrom</span>($configPath, <span style="color:#e6db74">&#39;lara_peko&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">app</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">singleton</span>(<span style="color:#e6db74">&#39;LaraPeko&#39;</span>, <span style="color:#66d9ef">function</span> ($app) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">LaraPeko</span>();
+</span></span><span style="display:flex;"><span>        });
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>After running <code>php artisan vendor:publish</code>, choose the corresponding number for the package when prompted.<br>
+This will generate a configuration template file in the project&rsquo;s config directory.</p>
+<p>If you are sure which package&rsquo;s config file you want to create, you can directly specify the provider tag.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>php artisan vendor:publish --provider<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Ray247k\LaraPeko\LaraPekoServiceProvider&#34;</span>
+</span></span></code></pre></div><p>In the <code>register</code> method, the default and new configuration files are merged.<br>
+If users modify the project&rsquo;s configuration file, it will override the default configuration, allowing for customization.</p>
+<h2 id="clear-configuration-cache">Clear Configuration Cache</h2>
+<p>When the configuration changes, use the following commands to clear the project&rsquo;s configuration cache.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>php artisan config:clear   <span style="color:#75715e"># Clear the configuration cache</span>
+</span></span><span style="display:flex;"><span>php artisan cache:clear    <span style="color:#75715e"># Clear the general cache</span>
+</span></span></code></pre></div><h2 id="using-config-parameters">Using Config Parameters</h2>
+<p>To use the configuration in your code, employ the <code>config()</code> method.<br>
+In the <code>LaraPeko.php</code> file, create a <code>getBestGirl</code> method to retrieve the <code>best_girl</code> parameter from the configuration.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># LaraPeko.php
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">namespace</span> <span style="color:#a6e22e">Ray247k\LaraPeko</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LaraPeko</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">sayPeko</span>()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;peko peko</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getBestGirl</span>()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">config</span>(<span style="color:#e6db74">&#39;lara_peko.best_girl&#39;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="6-package-auto-discovery">6. Package Auto-discovery</h1>
+<p>Introduced in Laravel 5.5, this feature allows users to reduce the steps required during package installation by configuring the package settings.
+The goal is to eliminate manual editing of the <code>config/app.php</code> file&rsquo;s <code>providers</code> and <code>aliases</code> arrays after running <code>composer install</code>.</p>
+<p>Keywords: Package Auto-discovery, Laravel Extension Package Auto-discovery.</p>
+<p>Procedure:
+Add the following content to the <code>autoload</code> and <code>extra</code> sections in the package&rsquo;s <code>composer.json</code>.<br>
+Due to length constraints, only the added parts are shown:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;autoload&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;psr-4&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;Ray\\LaraPeko\\&#34;</span>: <span style="color:#e6db74">&#34;src&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;extra&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;laravel&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;providers&#34;</span>: [
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;Ray\\LaraPeko\\LaraPekoServiceProvider&#34;</span>
+</span></span><span style="display:flex;"><span>      ],
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;aliases&#34;</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;LaraPeko&#34;</span>:  <span style="color:#e6db74">&#34;Ray\\LaraPeko\\LaraPekoFacade&#34;</span>
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Through the laravel definition in the extra section, a data entry is added to the <code>providers</code> and <code>aliases</code> arrays for registration.<br>
+The <code>autoload</code> uses the PSR-4 rule to point the specified namespace to the folder where our package code is located (<code>src</code>).</p>
+<h1 id="7-package-dependencies">7. Package Dependencies</h1>
+<p>If your package depends on another package, such as the commonly used <code>Guzzle</code>, include the required item in the package&rsquo;s <code>composer.json</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;ray247k/larapeko&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;A package for demo peko&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;license&#34;</span>: <span style="color:#e6db74">&#34;MIT&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;authors&#34;</span>: [
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Ray&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;email&#34;</span>: <span style="color:#e6db74">&#34;ray247k@gmail.com&#34;</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    ],
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;minimum-stability&#34;</span>: <span style="color:#e6db74">&#34;dev&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;require&#34;</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;php&#34;</span>: <span style="color:#e6db74">&#34;&gt;=7.3&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;laravel/framework&#34;</span>: <span style="color:#e6db74">&#34;5.5.*||^6.0|^7.0|^8.0&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;guzzlehttp/guzzle&#34;</span>: <span style="color:#e6db74">&#34;^6.3&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>In addition to requiring Guzzle, we have specified the required PHP version and Laravel framework version.</p>
+<h1 id="8-package-testing">8. Package Testing</h1>
+<h2 id="setting-up-a-test-project">Setting up a Test Project</h2>
+<p>After the above process, our package is almost configured. Next, we&rsquo;ll enter the testing phase.<br>
+Since we intend to use it in a Laravel project, let&rsquo;s create a new Laravel project for testing, named &ldquo;lara-ahoy&rdquo;:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>laravel new lara-ahoy
+</span></span></code></pre></div><p>You can check the installed Laravel version with the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd &lt;project directory&gt;
+</span></span><span style="display:flex;"><span>php artisan -V
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Laravel Framework 6.20.30</span>
+</span></span></code></pre></div><h2 id="including-the-package-in-the-project">Including the Package in the Project</h2>
+<h3 id="add-package-entry">Add Package Entry</h3>
+<p>To use the package in the project, use the following command to add the package&rsquo;s version storage location to the <code>composer.json</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>composer config repositories.ray247k path ../larapeko
+</span></span></code></pre></div><p>This assumes that the package (larapeko) and the test project (lara-ahoy) are in the same directory.</p>
+<p>After running the command, open the composer.json file in the lara-ahoy project, and you&rsquo;ll see a new section:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;repositories&#34;</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;ray247k&#34;</span>: {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;path&#34;</span>, 
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;url&#34;</span>: <span style="color:#e6db74">&#34;../larapeko&#34;</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }   
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>You can manually add this section if you prefer not to use the command.</p>
+<p>If the package is in a remote repository, change the type to <code>vcs</code> and add the URL:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>composer config repositories.ray247k vcs https://github.com/ray247k/larapeko
+</span></span></code></pre></div><p>Or manually adjust the repositories setting in composer.json:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;repositories&#34;</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;ray247k&#34;</span>: {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;vcs&#34;</span>, 
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;url&#34;</span>: <span style="color:#e6db74">&#34;https://github.com/ray247k/larapeko&#34;</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }   
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The remote URL can use either https or ssh. If the repository is private, use ssh<br>
+(e.g., <code>git@github.com:ray247k/larapeko.git</code>).</p>
+<h3 id="add-dependency">Add Dependency</h3>
+<p>You can use the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>composer require ray247k/larapeko @dev
+</span></span></code></pre></div><p>Or manually add the following content to the require section in composer.json:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;require&#34;</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;ray247k/larapeko&#34;</span>: <span style="color:#e6db74">&#34;@dev&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>If an error occurs during the require command due to an issue with a dependency&rsquo;s version, you can use the <code>--ignore-platform-reqs</code> parameter to ignore the platform:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>composer require ray247k/larapeko --ignore-platform-reqs
+</span></span></code></pre></div><p>After adding the local dependency, it will automatically fetch the latest code each time it is used.<br>
+If it doesn&rsquo;t automatically fetch or if you prefer to run <code>composer require</code> every time to update, adjust the symlink setting in the test project&rsquo;s composer.json under the repositories section:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;repositories&#34;</span>: [
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;path&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;url&#34;</span>: <span style="color:#e6db74">&#34;../../packages/my-package&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;options&#34;</span>: {
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;symlink&#34;</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="install-the-package">Install the Package</h3>
+<p>Install the package using:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>composer install
+</span></span></code></pre></div><p>In the output, you should see that the package has been discovered and installed:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Discovered Package: ray247k/larapeko
+</span></span><span style="display:flex;"><span>Package manifest generated successfully.
+</span></span></code></pre></div><p>If a version error occurs similar to during the require command, use the <code>--ignore-platform-reqs</code> parameter:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>composer install --ignore-platform-reqs
+</span></span></code></pre></div><p>Open the <code>composer.lock</code> file in the lara-ahoy project to verify that the package has been successfully installed.</p>
+<p>If you have previously run the project, you must clear the existing autoload cache:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>composer dump-autoload
+</span></span></code></pre></div><h2 id="testing-the-package">Testing the Package</h2>
+<p>In the previous steps, we installed our larapeko package into the test project lara-ahoy.<br>
+Now, we&rsquo;ll test whether the package has been correctly integrated using two methods: file testing and unit testing.</p>
+<h3 id="method-1-file-testing">Method 1: File Testing</h3>
+<p>Create a file named <code>test-autoload.php</code> directly in the Laravel project&rsquo;s root directory.<br>
+In this file, load the autoload and call the package method:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># test-autoload.php
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Ray247k\LaraPeko\LaraPeko</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">require_once</span> <span style="color:#e6db74">&#39;./vendor/autoload.php&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">LaraPeko</span><span style="color:#f92672">::</span><span style="color:#a6e22e">sayPeko</span>();
+</span></span></code></pre></div><p>Run the test file in the lara-ahoy project directory:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>php test-autoload.php
+</span></span></code></pre></div><p>If the autoload is successful, you should see the result of the <code>sayPeko()</code> method, even if a PHP Deprecated message appears:</p>
+<p><img src="file-test.png" alt="file test"></p>
+<p>Although a PHP Deprecated message is displayed, the default string content is still successfully printed.<br>
+This indicates that the Facade aliases registered in the ServiceProvider were called successfully!</p>
+<p>To suppress the PHP Deprecated message, add <code>error_reporting(0);</code> to the <code>test-autoload.php</code> file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">error_reporting</span>(<span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Ray247k\LaraP</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">eko\LaraPeko</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">require_once</span> <span style="color:#e6db74">&#39;./vendor/autoload.php&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">LaraPeko</span><span style="color:#f92672">::</span><span style="color:#a6e22e">sayPeko</span>();
+</span></span></code></pre></div><p>Now, you won&rsquo;t see the PHP Deprecated message:</p>
+<p><img src="peko-test-feature.png" alt="peko test"></p>
+<h3 id="method-2-unit-testing">Method 2: Unit Testing</h3>
+<p>Next, let&rsquo;s use PHPUnit to perform unit tests. Run the following command in the project directory:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>php vendor/bin/phpunit
+</span></span></code></pre></div><p>If you encounter an error related to an invalid value for PHP_VERSION, consider using Homebrew to install PHP or running the tests in a Docker environment.</p>
+<p>If <code>php vendor/bin/phpunit</code> works, proceed to build the unit test file.</p>
+<p>Add a testing method <code>getAhoy()</code> to <code>LaraPeko.php</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getAhoy</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;ahoy&#34;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Create a <code>tests</code> folder inside the package project and add a test file named <code>LaraPekoTest.php</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">namespace</span> <span style="color:#a6e22e">Ray247k\LaraPeko</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">use</span> <span style="color:#a6e22e">PHPUnit\Framework\TestCase</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LaraPekoTest</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">TestCase</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">     * @test
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">     *
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">     * @return void
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">     */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">testClassInstance</span>()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">assertInstanceOf</span>(<span style="color:#a6e22e">LaraPekoTest</span><span style="color:#f92672">::</span><span style="color:#a6e22e">class</span>, <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">LaraPekoTest</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">testGetAhoy</span>()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        $larapeko <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">LaraPeko</span>();
+</span></span><span style="display:flex;"><span>        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">assertEquals</span>(<span style="color:#e6db74">&#39;ahoy&#39;</span>, $larapeko<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getAhoy</span>());
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This test checks whether the class instance is correctly created and whether the <code>getAhoy()</code> method returns &ldquo;ahoy&rdquo;.<br>
+Run the test using the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>php vendor/bin/phpunit vendor/ray247k/larapeko/tests
+</span></span></code></pre></div><p>You should see the PHPUnit results:</p>
+<p><img src="phpunit-result.png" alt="phpunit result"></p>
+<p><strong>Note:</strong>
+Suppose there is a private function <code>testMethod()</code> in the LaraPeko package:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">testMethod</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;Haha&#39;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>To test a private function, you can use the <code>bindTo()</code> method within a closure.<br>
+After creating an object, manually inject it into the closure object to replace <code>$this</code> in the closure.<br>
+This way, it&rsquo;s like directly calling the <code>testMethod()</code> method using the LaraPeko object:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#e6db74">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"> * @test
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"> *
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"> * @return void
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">testMethodTest</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    $contentSegment <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">LaraPeko</span>();
+</span></span><span style="display:flex;"><span>    $closure <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">testMethod</span>();
+</span></span><span style="display:flex;"><span>    };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    $closure_bind <span style="color:#f92672">=</span> $closure<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">bindTo</span>($contentSegment, $contentSegment);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">assertEquals</span>(<span style="color:#e6db74">&#39;Haha&#39;</span>, $closure_bind());
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This allows testing private methods effectively!</p>
+<hr>
+<p>The above is a comprehensive guide for developing your own Laravel package.<br>
+If you have any further questions or topics to discuss, feel free to let me know. I&rsquo;m happy to assist!</p>
+
+      
+      
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/ray247k/button?referrer=https%3a%2f%2ftech.ray247k.com%2fen%2fblog%2f202107-laravel-package-development%2f" width="100%" frameborder=0></iframe>
+
+    </div>
+    <footer>
+      <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/en/categories/laravel/">Laravel</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/en/tags/laravel/">Laravel</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/composer/">composer</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+    </footer>
+  </article>
+  
+    
+
+  
+  <div class="pagination">
+    
+      <a href="/en/blog/202107-grumphp-a-php-code-quality-tool/" class="button left"><span>Guarding Code Quality with GrumPHP</span></a>
+    
+    
+      <a href="/en/blog/202107-laravel-environment-with-docker/" class="button right"><span>Setting up Laravel Development Environment with Docker</span></a>
+    
+  </div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>Recent Posts</h1>
+      </header>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/" class="image" style="--bg-image: url('/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg');">
+    <img src="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/">Different between pointer and value for struct type in golang</a></h2>
+          <time class="published" datetime="2023-06-25 00:00:00 &#43;0000 UTC">June 25, 2023</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202301-ffmpeg-video-convert/" class="image" style="--bg-image: url('/en/blog/202301-ffmpeg-video-convert/featured.png');">
+    <img src="/en/blog/202301-ffmpeg-video-convert/featured.png" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202301-ffmpeg-video-convert/">Using FFmpeg to convert media files</a></h2>
+          <time class="published" datetime="2023-01-01 00:00:00 &#43;0000 UTC">January 1, 2023</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202210-aws101-what-is-sns-and-sqs/" class="image" style="--bg-image: url('/en/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg');">
+    <img src="/en/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202210-aws101-what-is-sns-and-sqs/">[AWS 101] What are SNS and SQS</a></h2>
+          <time class="published" datetime="2022-10-06 00:00:00 &#43;0000 UTC">October 6, 2022</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202210-what-is-serverless/" class="image" style="--bg-image: url('/en/blog/202210-what-is-serverless/featured.jpg');">
+    <img src="/en/blog/202210-what-is-serverless/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202210-what-is-serverless/">Serverless 101</a></h2>
+          <time class="published" datetime="2022-10-04 00:00:00 &#43;0000 UTC">October 4, 2022</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202207-go-ethereum-abigen/" class="image" style="--bg-image: url('/en/blog/202207-go-ethereum-abigen/featured.jpeg');">
+    <img src="/en/blog/202207-go-ethereum-abigen/featured.jpeg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202207-go-ethereum-abigen/">Interacting with smart contracts using Golang</a></h2>
+          <time class="published" datetime="2022-07-09 00:00:00 &#43;0000 UTC">July 9, 2022</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/en/blog/" class="button">See More</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="/en/categories">Categories</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/en/categories/devops/">devops<span class="count">15</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/golang/">golang<span class="count">11</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/laravel/">laravel<span class="count">5</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/python3/">python3<span class="count">2</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/website-operations/">website-operations<span class="count">2</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/aws/">aws<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/serverless/">serverless<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/third-party-services/">third-party-services<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/tools/">tools<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/version-control/">version-control<span class="count">1</span></a>
+          </li>
+          
+        </ul>
+      </section>
+    
+  
+
+  
+  <section id="tags">
+    <header>
+      <h1><a href="/en/tags">Tags</a></h1>
+    </header>
+    <div class="li-x post-meta tags-md" style="margin-left: 0.5em;">
+      <ul>
+        
+        
+        <li>
+          <a href="/en/tags/devops/">devops (16)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/go/">go (11)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/golang/">golang (11)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/cicd/">cicd (7)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/laravel/">laravel (6)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/docker/">docker (5)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/gcp/">gcp (5)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/composer/">composer (4)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/drone/">drone (4)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/jenkins/">jenkins (4)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/container-technology/">container-technology (3)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/containerization/">containerization (3)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/aws/">aws (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/chatbot/">chatbot (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/discord/">discord (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/docker-compose/">docker-compose (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/php/">php (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/python3/">python3 (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/auto-scaling/">auto-scaling (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/blockchain/">blockchain (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ci/cd/">ci/cd (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/cloudflare/">cloudflare (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/cloudflare-workers/">cloudflare-workers (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/csv/">csv (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/excel/">excel (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ffmpeg/">ffmpeg (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/firewall/">firewall (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/gas/">gas (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/gcr/">gcr (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/git/">git (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/github/">github (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/google-app-script/">google-app-script (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/google-container-registry/">google-container-registry (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/google-sheets/">google-sheets (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/grumphp/">grumphp (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/laravel-excel/">laravel-excel (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/load-balancing/">load-balancing (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ngrok/">ngrok (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/prerender/">prerender (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/queue/">queue (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/redis/">redis (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/search-engine-optimization/">search-engine-optimization (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/seo/">seo (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/serverless/">serverless (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/smart-contract/">smart-contract (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ssh/">ssh (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/version-control/">version-control (1)</a>
+        </li>
+        
+      </ul>
+
+    </div>
+  </section>
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+    
+    <p class="copyright">
+        © 2023 Byte Ebi 🍤
+    </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>
+      hljs.configure({ ignoreUnescapedHTML: true }); 
+      hljs.highlightAll();
+    </script><script src="/js/bundle.min.b8ecc205622548252ae685817642568fed404d2f04df7ea571a8b71e3091ffe7.js" integrity="sha256-uOzCBWIlSCUq5oWBdkJWj&#43;1ATS8E336lcai3HjCR/&#43;c="></script>
+    <script src="/js/add-on.js"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-LTGVYYWC2J', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </div>
+  </body>
+</html>

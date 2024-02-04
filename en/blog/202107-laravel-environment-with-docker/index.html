@@ -1,0 +1,1100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+<title>Setting up Laravel Development Environment with Docker - Byte Ebi 🍤</title>
+<meta name="description" content="Introduction to building a basic Laravel development environment using Docker">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta property="og:site_name" content="Byte Ebi 🍤">
+<meta property="og:title" content="Setting up Laravel Development Environment with Docker">
+<meta property="og:description" content="Introduction to building a basic Laravel development environment using Docker">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://tech.ray247k.com/en/blog/202107-laravel-environment-with-docker/">
+  <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
+
+
+
+  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
+  
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=1" color="#ffffff">
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=1">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=1">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+<meta name="generator" content="Hugo 0.122.0"><meta property="og:site_name" content="Byte Ebi 🍤">
+  <meta property="og:title" content="Setting up Laravel Development Environment with Docker">
+  <meta property="og:description" content="Introduction to building a basic Laravel development environment using Docker">
+  <meta property="description" content="Introduction to building a basic Laravel development environment using Docker">
+  <meta property="og:url" content="https://tech.ray247k.com/en/blog/202107-laravel-environment-with-docker/">
+  <meta property="og:type" content="article">
+  
+    <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
+  
+  
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/felipec.min.css">
+          <link rel="stylesheet" href="/css/bundle.min.3b1b5f2e683d24b1ea3b5a08c8254622e40aa935e0ead75ba6d45c0f14c2f965.css" integrity="sha256-OxtfLmg9JLHqO1oIyCVGIuQKqTXg6tdbptRcDxTC&#43;WU="><link rel="stylesheet" href="/css/add-on.css">
+
+
+    
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', "");
+        </script>
+    
+
+
+  <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "image": {
+        "@type": "ImageObject",
+        "image": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+        "height": 648,
+        "width": 1080
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Byte Ebi 🍤",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png"
+        }
+    },
+    "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+    "headline": "About web development, software engineering, frontend, backend, chatbot, server related topics. - Byte Ebi 🍤",
+    "name": "Byte Ebi 🍤",
+    "url": "https:\/\/tech.ray247k.com",
+    "description": "About web development, software engineering, frontend, backend, chatbot, server related topics. - aws,devops,golang,laravel,python3,serverless,third-party-services,tools,version-control,website-operations,",
+    "keywords": [
+        "auto-scaling,aws,blockchain,chatbot,ci\/cd,cicd,cloudflare,cloudflare-workers,composer,container-technology,containerization,csv,devops,discord,docker,docker-compose,drone,excel,ffmpeg,firewall,gas,gcp,gcr,git,github,go,golang,google-app-script,google-container-registry,google-sheets,grumphp,jenkins,laravel,laravel-excel,load-balancing,ngrok,php,prerender,python3,queue,redis,search-engine-optimization,seo,serverless,smart-contract,ssh,version-control,"
+    ]
+}
+</script>
+
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "legalName": "Byte Ebi 🍤",
+    "url": "https:\/\/tech.ray247k.com",
+    "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "",
+        "availableLanguage": [
+            "Mandarin",
+            "English"
+        ]
+    },
+    "sameAs": [
+        "https://ray247k.blogspot.com/"
+    ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Setting up Laravel Development Environment with Docker",
+    "description": "Introduction to building a basic Laravel development environment using Docker",
+    "keywords": [
+        "DevOps" , "Laravel" , "Docker" , "Docker compose" , "Container technology" , "Containerization" , "composer" 
+    ],
+    "dateCreated": "2021-07-24T00:00:00.00Z",
+    "datePublished": "2021-07-24T00:00:00.00Z",
+    "dateModified": "2021-07-24T00:00:00.00Z",
+    "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "contentUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png"
+    },
+    "breadcrumb": {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com",
+                    "name": "Byte Ebi 🍤",
+                    "url": "https:\/\/tech.ray247k.com"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com/blog",
+                    "name": "Blog",
+                    "url": "https:\/\/tech.ray247k.com/blog"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\/en\/blog\/202107-laravel-environment-with-docker\/",
+                    "name": "Setting up Laravel Development Environment with Docker",
+                    "url": "https:\/\/tech.ray247k.com\/en\/blog\/202107-laravel-environment-with-docker\/"
+                }
+            }
+        ],
+        "itemListOrder": "Ascending",
+        "numberOfItems": 3
+    }
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "articleSection": "blog",
+    "name": "Setting up Laravel Development Environment with Docker",
+    "headline": "\u003cp\u003eIn the past, developing Laravel projects locally mostly involved installing the required services directly on the machine.\u003cbr\u003e\nLater, the recommended development environment by the official documentation, \u003ca href=\u0022https:\/\/github.com\/laravel\/homestead\u0022\n   \n    target=\u0022_blank\u0022 rel=\u0022noreferrer noopener\u0022\u003eHomestead\n\u003c\/a\u003e\n, became a popular choice.\u003c\/p\u003e",
+    "description": "Introduction to building a basic Laravel development environment using Docker",
+    "inLanguage": "en",
+    "isFamilyFriendly": "true",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com\/en\/blog\/202107-laravel-environment-with-docker\/"
+    },
+    "author" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "creator" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "accountablePerson" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "copyrightHolder" : "Byte Ebi 🍤",
+    "copyrightYear" : "2021",
+    "dateCreated": "2021-07-24T00:00:00.00Z",
+    "datePublished": "2021-07-24T00:00:00.00Z",
+    "dateModified": "2021-07-24T00:00:00.00Z",
+    "publisher":{
+        "@type":"Organization",
+        "name": "Byte Ebi 🍤",
+        "url": "https://tech.ray247k.com",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+            "width":"32",
+            "height":"32"
+        }
+    },
+    "image": "https://tech.ray247k.com/img/main/logo.png",
+    "url" : "https:\/\/tech.ray247k.com\/en\/blog\/202107-laravel-environment-with-docker\/",
+    "wordCount" : "1786",
+    "genre" : [ "DevOps" , "Laravel" , "Docker" , "Docker compose" , "Container technology" , "Containerization" , "composer" ],
+    "keywords" : [ "DevOps" , "Laravel" , "Docker" , "Docker compose" , "Container technology" , "Containerization" , "composer" ]
+}
+</script>
+
+
+
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/en/" class="nav">
+        
+          Blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/en/" class="nav link"><i class='fa fa-home'></i> home</a>
+        
+      
+        
+          
+          <a href="/en/about" class="nav link"><i class='far fa-id-card'></i> about</a>
+        
+      
+        
+          
+          <a href="/en/categories" class="nav link"><i class='fas fa-sitemap'></i> category</a>
+        
+      
+      
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    
+    <a href="#lang-menu" class="nav lang-toggle" lang="en">en</a>
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  <menu id="lang-menu" class="flyout-menu menu">
+  <a href="#" lang="en" class="nav link active">English (en)</a>
+  
+      <a href="https://tech.ray247k.com/blog/202107-laravel-environment-with-docker/" lang="zh-tw" class="nav link">正體中文 (zh-tw)</a>
+    
+  
+</menu>
+
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/en/"><img src="/img/main/logo.png" class="circle" width="100" alt="Byte Ebi&#39;s Logo" /></a>
+  <header>
+    <h1>Byte Ebi 🍤</h1>
+  </header>
+  <main>
+    <p>A Bit everyday A Byte every week</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/ray247k" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//www.linkedin.com/in/j-ray-cheng" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="/en/blog/202107-laravel-environment-with-docker/">Setting up Laravel Development Environment with Docker</a></h2>
+    
+    
+      <p>Introduction to building a basic Laravel development environment using Docker</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2021-07-24 00:00:00 &#43;0000 UTC">July 24, 2021</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+    <div id="socnet-share">
+      
+
+
+
+
+
+    </div>
+    <div class="content">
+      <a href="/en/blog/202107-laravel-environment-with-docker/" class="image" style="--bg-image: url('/en/blog/202107-laravel-environment-with-docker/docker-and-laravel-logo-feature.png');">
+    <img src="/en/blog/202107-laravel-environment-with-docker/docker-and-laravel-logo-feature.png" alt="">
+  </a>
+      <p>In the past, developing Laravel projects locally mostly involved installing the required services directly on the machine.<br>
+Later, the recommended development environment by the official documentation, <a href="https://github.com/laravel/homestead"
+   
+    target="_blank" rel="noreferrer noopener">Homestead
+</a>
+, became a popular choice.</p>
+<p>Subsequently, <a href="https://laradock.io/"
+   
+    target="_blank" rel="noreferrer noopener">Laradock
+</a>
+ emerged as a containerized PHP development environment, pre-configured with commonly used containers.
+Laradock can be considered the harbinger of Laravel&rsquo;s container era.<br>
+In the latest version of <a href="https://laravel.com/docs/8.x"
+   
+    target="_blank" rel="noreferrer noopener">Laravel 8
+</a>
+, container environment is directly integrated.</p>
+<p><a href="https://laravel.com/docs/8.x/sail"
+   
+    target="_blank" rel="noreferrer noopener">Laravel Sail
+</a>
+ is a lightweight CLI that provides a container for Laravel projects built with PHP, MySQL, and Redis.<br>
+It allows usage of the container without requiring prior Docker experience.</p>
+<p>But why bother learning Docker and setting up the environment on your own when <a href="https://laravel.com/docs/8.x/sail"
+   
+    target="_blank" rel="noreferrer noopener">Laravel Sail
+</a>
+ is available?<br>
+Well, because it didn&rsquo;t exist initially.<br>
+While local development may not encounter situations requiring configuration file adjustments, you may face scenarios where services you need are not provided by <a href="https://laravel.com/docs/8.x/sail"
+   
+    target="_blank" rel="noreferrer noopener">Laravel Sail
+</a>
+.<br>
+If you want to switch your online environment to use Docker or need to know how to build an environment with Docker, understanding Docker and configuring related services becomes necessary.</p>
+<hr>
+<p>After a lengthy introduction, let&rsquo;s get to the main content.</p>
+<h1 id="setting-up-laravel-project-environment">Setting up Laravel Project Environment</h1>
+<p>Use <code>docker-compose</code> to construct the Laravel project environment. A Laravel project typically requires the following services:</p>
+<ul>
+<li>nginx</li>
+<li>php</li>
+<li>redis</li>
+<li>PostgreSQL</li>
+</ul>
+<p>For the database, we&rsquo;ll use PostgreSQL, but if you prefer MySQL, the configuration is also provided in the code.<br>
+Choose one when starting!</p>
+<h2 id="1-docker-composeyml">1. docker-compose.yml</h2>
+<p>Start by creating a project folder, let&rsquo;s call it <code>docker_env</code> for clarity. Inside the <code>docker_env</code> folder, create a file named <code>docker-compose.yml</code> to serve as the configuration file for Docker-compose services.</p>
+<h2 id="complete-code">Complete Code</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># docker-compose.yml</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;3&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">networks</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">server</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">data</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">services</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">nginx</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">docker_env_nginx</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">nginx:1.18</span> <span style="color:#75715e"># stable version</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">networks</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">server</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;80:80&#34;</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;443:443&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">./nginx/conf.d/:/etc/nginx/conf.d/</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">./nginx/ssl/:/ssl/</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">&lt;local project path&gt;:/var/www/html/&lt;project name&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">always</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">php</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">docker_env_php</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">build</span>: <span style="color:#ae81ff">./php/</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">expose</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">9000</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">networks</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">server</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">data</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">/trp/web/home/:/var/trp/</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">always</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">redis</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">docker_env_redis</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">redis:6.0</span> <span style="color:#75715e"># stable version</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;6379:6379&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">networks</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">data</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">always</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">postgre</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">docker_env_postgre</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;5432:5432&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#e6db74">&#34;postgres:12.6&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">/trp/database/dev/database_data:/var/lib/postgresql/data</span> <span style="color:#75715e"># persist data even if container shuts down</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">networks</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">data</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">environment</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">POSTGRES_DB</span>: <span style="color:#ae81ff">${DB_NAME}</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">POSTGRES_USER</span>: <span style="color:#ae81ff">${DB_USER}</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">POSTGRES_PASSWORD</span>: <span style="color:#ae81ff">${DB_PASSWORD}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">always</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">mysql</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">docker_env_mysql</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;3306:3306&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">mysql:5.7.23</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">/var/lib/mysql</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">networks</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">data</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">environment</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">MYSQL_ROOT_PASSWORD</span>: <span style="color:#ae81ff">${DB_ROOT_PASSWORD}</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">MYSQL_USER</span>: <span style="color:#ae81ff">${DB_USER}</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">MYSQL_PASSWORD</span>: <span style="color:#ae81ff">${DB_PASSWORD}</span>
+</span></span></code></pre></div><h2 id="section-explanation">Section Explanation</h2>
+<p>Here, we will explain the contents of the <code>services</code> section and complete the necessary configurations.<br>
+If you simply copy and paste the above, the services are likely to fail.</p>
+<h3 id="nginx">nginx</h3>
+<p>Uses nginx as the web server for our application.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>  <span style="color:#f92672">nginx</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">docker_env_nginx</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">nginx:1.18</span> <span style="color:#75715e"># stable version</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">networks</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">server</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;80:80&#34;</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;443:443&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">./nginx/conf.d/:/etc/nginx/conf.d/</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">./nginx/ssl/:/ssl/</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">&lt;local project path&gt;:/var/www/html/&lt;project name&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">always</span>
+</span></span></code></pre></div><p><code>ports</code> defines the mapping of ports between the host machine and the nginx container.<br>
+In the provided code, it may not be immediately apparent.<br>
+To clarify, using <code>8080:80</code> means mapping the host&rsquo;s 8080 port to the nginx container&rsquo;s 80 port.</p>
+<p><code>volumes</code> block indicates files to be mounted into the Docker container.<br>
+The third line mounts the specified Laravel project into the container&rsquo;s designated directory.<br>
+If you don&rsquo;t have a Laravel project yet, create one.</p>
+<p>The second line mounts SSL certificates if you want to use HTTPS locally.<br>
+You can generate a self-signed certificate and place it in the <code>docker_env/nginx/ssl/</code> directory.<br>
+While this will display as insecure, it will still be an HTTPS URL.</p>
+<p>The first line mounts the <code>nginx</code> folder in the same level as the <code>docker-compose.yml</code> into <code>/etc/nginx/conf.d/</code>, which is the directory used by the nginx service for configuration files.<br>
+Therefore, we need to create an nginx config file in the <code>docker_env/nginx/</code> folder.</p>
+<pre tabindex="0"><code># dev.project.com.conf
+server {
+    listen 80;
+    listen [::]:80;
+
+    # Redirect all HTTP requests to HTTPS with a 301 Moved Permanently response.
+    return 301 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+
+    root /var/www/html/&lt;laravel project name&gt;/public;
+    index index.php index.html index.htm;
+
+    ssl_certificate /ssl/ssl.crt;
+    ssl_certificate_key /ssl/ssl.key;
+
+    server_name dev.project.com;
+    
+    location / {
+        try_files $uri $uri/ /index.php$is_args$args;
+    }
+
+    location ~ \.php$ {
+        try_files $uri /index.php =404;
+        fastcgi_pass docker_env_php:9000;
+        fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+
+    location ~ /\.ht {
+        deny all;
+    }
+}
+</code></pre><p>In the above config, the part listening on port 80 immediately redirects to port 443 (HTTPS).</p>
+<p>The <code>root</code> specifies the location of the project folder, and <code>public</code> is the entry point for Laravel projects.<br>
+The SSL certificate paths correspond to the mounted paths specified in the <code>volumes</code> section.</p>
+<p>The <code>fastcgi_pass</code> setting specifies the container_name and port of the container with PHP-FPM installed.<br>
+Note that the names and ports used are not fixed!</p>
+<h3 id="php">php</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>  <span style="color:#f92672">php</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">docker_env_php</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">build</span>: <span style="color:#ae81ff">./php/</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">expose</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">9000</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">networks</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">server</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">data</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">/trp/web/home/:/var/trp/</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">always</span>
+</span></span></code></pre></div><p>As the PHP container doesn&rsquo;t need an external port, <code>expose</code> is used to make the container&rsquo;s 9000 port accessible within the Docker network.
+Volume mounting is similar to the nginx service.</p>
+<p>To use Laravel, some additional PHP extensions need to be installed. This is done with the <code>build</code> command, which rebuilds our own Docker image.<br>
+It installs necessary Laravel PHP extensions, and the database extension depends on the chosen database.<br>
+The example below demonstrates the setup for PostgreSQL.</p>
+<p>Here, we also show how to install Composer. Uncomment the relevant lines if needed.<br>
+However, since PHP doesn&rsquo;t require pre-compilation, you can make changes directly in the files mounted by the volumes, enabling internal program modifications without installing Composer inside the container.<br>
+Unless there&rsquo;s a specific reason to run commands inside the container, it&rsquo;s not recommended to install Composer in the container.</p>
+<p>Create a <code>php</code> folder in the <code>docker_env</code> directory and add a file named <code>Dockerfile</code> with the following content:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span><span style="color:#75715e"># Dockerfile</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> php:7.4-fpm</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">WORKDIR</span><span style="color:#e6db74"> /var</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> apt-get update <span style="color:#f92672">&amp;&amp;</span> apt-get install -y libpq-dev libpng-dev libzip-dev zip<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> docker-php-ext-install pgsql pdo_pgsql gd zip<span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#f92672">&amp;&amp;</span> docker-php-ext-enable opcache<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># To use mysql, install pdo pdo_mysql instead of pgsql pdo_pgsql</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Install composer Latest</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># RUN php -r &#34;copy(&#39;https://getcomposer.org/installer&#39;, &#39;composer-setup.php&#39;);&#34; \</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># &amp;&amp; php -r &#34;if (hash_file(&#39;sha384&#39;, &#39;composer-setup.php&#39;) === &#39;756890a4488ce9024fc62c56153228907f1545c228516cbf63f885e036d37e9a59d27d63f46af1d4d07ee0f76181c7d3&#39;) { echo &#39;Installer verified&#39;; } else { echo &#39;Installer corrupt&#39;; unlink(&#39;composer-setup.php&#39;); } echo PHP_EOL;&#34; \</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># &amp;&amp; php composer-setup.php \</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># &amp;&amp; php -r &#34;unlink(&#39;composer-setup.php&#39;);&#34; \</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># &amp;&amp; mv composer.phar /usr/local/bin/composer</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><h3 id="database">database</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>  <span style="color:#f92672">postgre</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">docker_env_postgre</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;5432:5432&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#e6db74">&#34;postgres:12.6&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">/trp/database/dev/database_data:/var/lib/postgresql/data</span> <span style="color:#75715e"># persist data even if container shuts down</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">networks</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">data</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">environment</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">POSTGRES_DB</span>: <span style="color:#ae81ff">${DB_NAME}</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">POSTGRES_USER</span>: <span style="color:#ae81ff">${DB_USER}</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">POSTGRES_PASSWORD</span>: <span style="color:#ae81ff">${DB_PASSWORD}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">always</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">mysql</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">docker_env_mysql</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;3306:3306&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">mysql:5.7.23</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">/var/lib/mysql</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">networks</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">data</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">environment</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">MYSQL_ROOT_PASSWORD</span>: <span style="color:#ae81ff">${DB_ROOT_PASSWORD}</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">MYSQL_USER</span>: <span style="color:#ae81ff">${DB_USER}</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">MYSQL_PASSWORD</span>: <span style="color:#ae81ff">${DB_PASSWORD}</span>
+</span></span></code></pre></div><p>The <code>volumes</code> setting for the database mainly focuses on data persistence.<br>
+Even if the container is shut down, the data is retained. Database-related environment parameters are set in the <code>environment</code> section.</p>
+<p>As these parameters may include sensitive information, you can create an <code>.env</code> file in the <code>docker_env</code> folder to store them without version control:</p>
+<pre tabindex="0"><code># .env
+DB_USER=db_user
+DB_PASSWORD=db_password
+DB_NAME=my_database
+</code></pre><p>The keys on the left side can be called in the <code>docker-compose.yml</code> file using <code>${key}</code>, allowing retrieval of the values set on the left side.</p>
+<h2 id="starting-the-containers">Starting the Containers</h2>
+<p>After these steps, with Docker service running, navigate to the <code>docker_env</code> folder and run the command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker-compose up -d
+</span></span></code></pre></div><p>If everything is correct, the containers will start in the background.<br>
+This completes the goal of &ldquo;Setting up Laravel Environment with Docker!&rdquo;</p>
+<p>To check the container status, you can use the command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker ps -a
+</span></span></code></pre></div><p>If I were personally writing a new <code>docker-compose.yml</code> configuration, I would first use:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker-compose up
+</span></span></code></pre></div><p>to display logs in real-time. This makes debugging much easier.<br>
+Common issues might include missing volume directories like nginx config, SSL, or the Laravel project.</p>
+<h2 id="laravel-env-configuration">Laravel .env Configuration</h2>
+<p>After successfully starting the Docker environment, configure the Laravel project&rsquo;s environment file.<br>
+Open the <code>.env</code> file in the root directory and modify its content.<br>
+In the example below, PostgreSQL is used for the database configuration, and it aligns with the settings in the <code>docker-compose.yml</code> file:</p>
+<pre tabindex="0"><code># .env
+DB_CONNECTION=pgsql
+DB_HOST=docker_env_postgre
+DB_PORT=5432
+DB_DATABASE=my_database
+DB_USERNAME=db_user
+DB_PASSWORD=db_password
+</code></pre><p>Now, Laravel can access the database container through the internal Docker network.</p>
+<h2 id="setting-up-local-test-url">Setting Up Local Test URL</h2>
+<p>With Docker setting up Laravel development environment - Done<br>
+Connecting Laravel to Docker Database - Done</p>
+<p>Now, we need to make sure that we can open the local Laravel project in the browser.<br>
+Open your terminal, whether it&rsquo;s bash or zsh:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo vim /etc/hosts 
+</span></span></code></pre></div><p>Add the following line in <code>/etc/hosts</code>:</p>
+<pre tabindex="0"><code>127.0.0.1       dev.project.com
+</code></pre><p>This line directs requests for <code>dev.project.com</code> to the localhost IP.<br>
+When entering <code>dev.project.com</code> in the browser&rsquo;s address bar, the request will be sent to the localhost.</p>
+<p>But how does this make the Laravel project visible? This is because in the earlier nginx config settings, a <code>server_name</code> was defined:</p>
+<pre tabindex="0"><code>server_name dev.project.com;
+</code></pre><p>So, when the Docker nginx service, listening on ports 80 and 443, detects an incoming request that matches the <code>server_name</code> configuration, it processes the request.</p>
+<p>If you have another nginx config file with <code>default_server</code> appended to the listen port, like this:</p>
+<pre tabindex="0"><code>listen 80 default_server;
+</code></pre><p>It means that if no other nginx config rules match, nginx will use this configuration. If all config files don&rsquo;t</p>
+<p>set <code>default_server</code>, then the first config file sorted alphabetically will be used.</p>
+<p>With this setup, you should be able to access the Laravel project&rsquo;s interface.</p>
+<h2 id="running-laravel-commands">Running Laravel Commands</h2>
+<p>If you want to run Laravel commands related to the database, such as:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>php artisan migrate
+</span></span></code></pre></div><p>You first need to enter the PHP container:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker exec -ti docker_env_php bash
+</span></span></code></pre></div><p>Inside the container, navigate to the project directory and run the command.<br>
+If successful, you&rsquo;ll see the command executed correctly.<br>
+If you run the migrate command without entering the container, you&rsquo;ll encounter an error message like:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>SQLSTATE<span style="color:#f92672">[</span>08006<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>7<span style="color:#f92672">]</span> could not translate host name <span style="color:#e6db74">&#34;docker_env_postgre&#34;</span> to address: nodename nor servname provided, or not known
+</span></span></code></pre></div><p>This is because the program doesn&rsquo;t recognize the host &ldquo;docker_env_postgre.&rdquo;<br>
+If we modify the .env file&rsquo;s DB_HOST to the real location using the <code>docker inspect</code> command, it would work, but this is not a sustainable solution.</p>
+<p>If you find it cumbersome to enter the container or want to run commands directly in the local project folder, what should you do? Modify the <code>etc/hosts</code> file again by adding:</p>
+<pre tabindex="0"><code>127.0.0.1     docker_env_postgre
+</code></pre><p>Now you&rsquo;re done! Running migrate in the local project folder will direct it to the local container.</p>
+<hr>
+<p>The above is the entire content of this guide on &ldquo;Building a Laravel Development Environment with Docker.&rdquo;<br>
+It took several hours to complete this piece, and it&rsquo;s a culmination of a lot of server knowledge.<br>
+If you&rsquo;re not familiar with these concepts, it&rsquo;s recommended to understand them before proceeding.</p>
+<p>Due to space limitations, I could only provide a brief explanation of the configurations and skip many details and practices.<br>
+There are also many aspects not covered, such as Docker network segmentation and usage.</p>
+
+      
+      
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/ray247k/button?referrer=https%3a%2f%2ftech.ray247k.com%2fen%2fblog%2f202107-laravel-environment-with-docker%2f" width="100%" frameborder=0></iframe>
+
+    </div>
+    <footer>
+      <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/en/categories/devops/">DevOps</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/en/tags/devops/">DevOps</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/laravel/">Laravel</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/docker/">Docker</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/docker-compose/">Docker compose</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/container-technology/">Container technology</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/containerization/">Containerization</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/composer/">composer</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+    </footer>
+  </article>
+  
+    
+
+  
+  <div class="pagination">
+    
+      <a href="/en/blog/202107-laravel-package-development/" class="button left"><span>Develop Your Own Laravel Package</span></a>
+    
+    
+      <a href="/en/blog/202107-initialize-server-setting-with-docker-and-laravel/" class="button right"><span>Environment Initialization and Server Configuration (Docker &#43; Laravel)</span></a>
+    
+  </div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>Recent Posts</h1>
+      </header>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/" class="image" style="--bg-image: url('/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg');">
+    <img src="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/">Different between pointer and value for struct type in golang</a></h2>
+          <time class="published" datetime="2023-06-25 00:00:00 &#43;0000 UTC">June 25, 2023</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202301-ffmpeg-video-convert/" class="image" style="--bg-image: url('/en/blog/202301-ffmpeg-video-convert/featured.png');">
+    <img src="/en/blog/202301-ffmpeg-video-convert/featured.png" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202301-ffmpeg-video-convert/">Using FFmpeg to convert media files</a></h2>
+          <time class="published" datetime="2023-01-01 00:00:00 &#43;0000 UTC">January 1, 2023</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202210-aws101-what-is-sns-and-sqs/" class="image" style="--bg-image: url('/en/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg');">
+    <img src="/en/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202210-aws101-what-is-sns-and-sqs/">[AWS 101] What are SNS and SQS</a></h2>
+          <time class="published" datetime="2022-10-06 00:00:00 &#43;0000 UTC">October 6, 2022</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202210-what-is-serverless/" class="image" style="--bg-image: url('/en/blog/202210-what-is-serverless/featured.jpg');">
+    <img src="/en/blog/202210-what-is-serverless/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202210-what-is-serverless/">Serverless 101</a></h2>
+          <time class="published" datetime="2022-10-04 00:00:00 &#43;0000 UTC">October 4, 2022</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202207-go-ethereum-abigen/" class="image" style="--bg-image: url('/en/blog/202207-go-ethereum-abigen/featured.jpeg');">
+    <img src="/en/blog/202207-go-ethereum-abigen/featured.jpeg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202207-go-ethereum-abigen/">Interacting with smart contracts using Golang</a></h2>
+          <time class="published" datetime="2022-07-09 00:00:00 &#43;0000 UTC">July 9, 2022</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/en/blog/" class="button">See More</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="/en/categories">Categories</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/en/categories/devops/">devops<span class="count">15</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/golang/">golang<span class="count">11</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/laravel/">laravel<span class="count">5</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/python3/">python3<span class="count">2</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/website-operations/">website-operations<span class="count">2</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/aws/">aws<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/serverless/">serverless<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/third-party-services/">third-party-services<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/tools/">tools<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/version-control/">version-control<span class="count">1</span></a>
+          </li>
+          
+        </ul>
+      </section>
+    
+  
+
+  
+  <section id="tags">
+    <header>
+      <h1><a href="/en/tags">Tags</a></h1>
+    </header>
+    <div class="li-x post-meta tags-md" style="margin-left: 0.5em;">
+      <ul>
+        
+        
+        <li>
+          <a href="/en/tags/devops/">devops (16)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/go/">go (11)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/golang/">golang (11)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/cicd/">cicd (7)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/laravel/">laravel (6)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/docker/">docker (5)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/gcp/">gcp (5)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/composer/">composer (4)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/drone/">drone (4)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/jenkins/">jenkins (4)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/container-technology/">container-technology (3)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/containerization/">containerization (3)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/aws/">aws (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/chatbot/">chatbot (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/discord/">discord (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/docker-compose/">docker-compose (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/php/">php (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/python3/">python3 (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/auto-scaling/">auto-scaling (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/blockchain/">blockchain (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ci/cd/">ci/cd (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/cloudflare/">cloudflare (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/cloudflare-workers/">cloudflare-workers (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/csv/">csv (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/excel/">excel (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ffmpeg/">ffmpeg (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/firewall/">firewall (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/gas/">gas (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/gcr/">gcr (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/git/">git (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/github/">github (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/google-app-script/">google-app-script (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/google-container-registry/">google-container-registry (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/google-sheets/">google-sheets (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/grumphp/">grumphp (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/laravel-excel/">laravel-excel (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/load-balancing/">load-balancing (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ngrok/">ngrok (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/prerender/">prerender (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/queue/">queue (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/redis/">redis (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/search-engine-optimization/">search-engine-optimization (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/seo/">seo (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/serverless/">serverless (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/smart-contract/">smart-contract (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ssh/">ssh (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/version-control/">version-control (1)</a>
+        </li>
+        
+      </ul>
+
+    </div>
+  </section>
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+    
+    <p class="copyright">
+        © 2023 Byte Ebi 🍤
+    </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>
+      hljs.configure({ ignoreUnescapedHTML: true }); 
+      hljs.highlightAll();
+    </script><script src="/js/bundle.min.b8ecc205622548252ae685817642568fed404d2f04df7ea571a8b71e3091ffe7.js" integrity="sha256-uOzCBWIlSCUq5oWBdkJWj&#43;1ATS8E336lcai3HjCR/&#43;c="></script>
+    <script src="/js/add-on.js"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-LTGVYYWC2J', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </div>
+  </body>
+</html>

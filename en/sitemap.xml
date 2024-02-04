@@ -1038,7 +1038,7 @@
                 />
   </url><url>
     <loc>https://tech.ray247k.com/en/tags/composer/</loc>
-    <lastmod>2021-07-17T00:00:00+00:00</lastmod>
+    <lastmod>2021-07-31T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-TW"
@@ -1050,11 +1050,50 @@
                 href="https://tech.ray247k.com/en/tags/composer/"
                 />
   </url><url>
+    <loc>https://tech.ray247k.com/en/tags/grumphp/</loc>
+    <lastmod>2021-07-31T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/grumphp/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/grumphp/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/blog/202107-grumphp-a-php-code-quality-tool/</loc>
+    <lastmod>2021-07-31T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202107-grumphp-a-php-code-quality-tool/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202107-grumphp-a-php-code-quality-tool/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/blog/202107-laravel-package-development/</loc>
+    <lastmod>2021-07-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202107-laravel-package-development/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202107-laravel-package-development/"
+                />
+  </url><url>
     <loc>https://tech.ray247k.com/en/tags/container-technology/</loc>
-    <lastmod>2021-07-17T00:00:00+00:00</lastmod>
+    <lastmod>2021-07-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/en/tags/containerization/</loc>
-    <lastmod>2021-07-17T00:00:00+00:00</lastmod>
+    <lastmod>2021-07-24T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-TW"
@@ -1067,7 +1106,7 @@
                 />
   </url><url>
     <loc>https://tech.ray247k.com/en/tags/docker-compose/</loc>
-    <lastmod>2021-07-17T00:00:00+00:00</lastmod>
+    <lastmod>2021-07-24T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-TW"
@@ -1077,6 +1116,19 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tech.ray247k.com/en/tags/docker-compose/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/blog/202107-laravel-environment-with-docker/</loc>
+    <lastmod>2021-07-24T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202107-laravel-environment-with-docker/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202107-laravel-environment-with-docker/"
                 />
   </url><url>
     <loc>https://tech.ray247k.com/en/blog/202107-initialize-server-setting-with-docker-and-laravel/</loc>

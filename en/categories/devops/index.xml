@@ -65,6 +65,13 @@
       <description>&lt;p&gt;Create Your Own Automated Deployment Service with &lt;a href=&#34;https://www.jenkins.io/&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Jenkins&#xA;&lt;/a&gt;&#xA;&lt;br&gt;&#xA;Jenkins is a Java-based CI/CD system tool that we are exploring in this tutorial,&lt;br&gt;&#xA;following our previous introduction to &lt;a href=&#34;https://tech.ray247k.com/tags/drone/&#34;&#xA;   &#xA;   &gt;Drone&#xA;&lt;/a&gt;&#xA;&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Setting up Laravel Development Environment with Docker</title>
+      <link>https://tech.ray247k.com/en/blog/202107-laravel-environment-with-docker/</link>
+      <pubDate>Sat, 24 Jul 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202107-laravel-environment-with-docker/</guid>
+      <description>&lt;p&gt;In the past, developing Laravel projects locally mostly involved installing the required services directly on the machine.&lt;br&gt;&#xA;Later, the recommended development environment by the official documentation, &lt;a href=&#34;https://github.com/laravel/homestead&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Homestead&#xA;&lt;/a&gt;&#xA;, became a popular choice.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Environment Initialization and Server Configuration (Docker &#43; Laravel)</title>
       <link>https://tech.ray247k.com/en/blog/202107-initialize-server-setting-with-docker-and-laravel/</link>
       <pubDate>Sat, 17 Jul 2021 00:00:00 +0000</pubDate>

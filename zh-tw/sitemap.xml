@@ -1103,12 +1103,42 @@
   </url><url>
     <loc>https://tech.ray247k.com/tags/grumphp/</loc>
     <lastmod>2021-07-31T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/grumphp/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/grumphp/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/blog/202107-grumphp-a-php-code-quality-tool/</loc>
     <lastmod>2021-07-31T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202107-grumphp-a-php-code-quality-tool/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202107-grumphp-a-php-code-quality-tool/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/blog/202107-laravel-package-development/</loc>
     <lastmod>2021-07-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202107-laravel-package-development/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202107-laravel-package-development/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/tags/containerization/</loc>
     <lastmod>2021-07-24T00:00:00+00:00</lastmod>
@@ -1138,6 +1168,16 @@
   </url><url>
     <loc>https://tech.ray247k.com/blog/202107-laravel-environment-with-docker/</loc>
     <lastmod>2021-07-24T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202107-laravel-environment-with-docker/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202107-laravel-environment-with-docker/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/tags/%E5%AE%B9%E5%99%A8%E6%8A%80%E8%A1%93/</loc>
     <lastmod>2021-07-24T00:00:00+00:00</lastmod>

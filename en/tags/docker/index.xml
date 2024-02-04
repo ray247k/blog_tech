@@ -23,6 +23,13 @@
       <description>&lt;p&gt;Google Container Registry is a service provided by Google for storing, managing, and securing Docker container images.&lt;br&gt;&#xA;The objective at hand is to package a Docker image and push it to Google Cloud Platform (GCP) using the &amp;lsquo;gcloud&amp;rsquo; command for future deployment purposes.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Setting up Laravel Development Environment with Docker</title>
+      <link>https://tech.ray247k.com/en/blog/202107-laravel-environment-with-docker/</link>
+      <pubDate>Sat, 24 Jul 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202107-laravel-environment-with-docker/</guid>
+      <description>&lt;p&gt;In the past, developing Laravel projects locally mostly involved installing the required services directly on the machine.&lt;br&gt;&#xA;Later, the recommended development environment by the official documentation, &lt;a href=&#34;https://github.com/laravel/homestead&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Homestead&#xA;&lt;/a&gt;&#xA;, became a popular choice.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Environment Initialization and Server Configuration (Docker &#43; Laravel)</title>
       <link>https://tech.ray247k.com/en/blog/202107-initialize-server-setting-with-docker-and-laravel/</link>
       <pubDate>Sat, 17 Jul 2021 00:00:00 +0000</pubDate>

@@ -29,5 +29,19 @@
       <guid>https://tech.ray247k.com/en/blog/202112-laravel-excel-import/</guid>
       <description>&lt;p&gt;When the backend interface isn&amp;rsquo;t fully developed or when users have extensive data that they prefer not to input manually, opting for a bulk import via a form becomes essential.&lt;br&gt;&#xA;This is where the Laravel-excel package comes into play.&#xA;Additionally, it&amp;rsquo;s worth discussing the challenges encountered when importing a large volume of data at once.&lt;/p&gt;</description>
     </item>
+    <item>
+      <title>Guarding Code Quality with GrumPHP</title>
+      <link>https://tech.ray247k.com/en/blog/202107-grumphp-a-php-code-quality-tool/</link>
+      <pubDate>Sat, 31 Jul 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202107-grumphp-a-php-code-quality-tool/</guid>
+      <description>&lt;p&gt;In a collaborative development environment, Code Review is a crucial process.&lt;br&gt;&#xA;If someone writes code that violates rules or fails tests, it can lead to project errors.&lt;br&gt;&#xA;Manual syntax checks or running tests manually are time-consuming and not fashionable.&lt;br&gt;&#xA;These tasks should be automated, and that&amp;rsquo;s where &lt;code&gt;GrumPHP&lt;/code&gt; comes in.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Develop Your Own Laravel Package</title>
+      <link>https://tech.ray247k.com/en/blog/202107-laravel-package-development/</link>
+      <pubDate>Sun, 25 Jul 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202107-laravel-package-development/</guid>
+      <description>&lt;p&gt;The Laravel ecosystem offers numerous convenient packages for various purposes.&lt;br&gt;&#xA;However, what if you can&amp;rsquo;t find a suitable package or need to create a company-specific one?&lt;br&gt;&#xA;This article demonstrates how to develop a package locally and install it in a Laravel project using composer, ensuring smooth development and testing.&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>

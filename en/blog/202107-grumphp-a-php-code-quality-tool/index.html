@@ -1,0 +1,933 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+<title>Guarding Code Quality with GrumPHP - Byte Ebi 🍤</title>
+<meta name="description" content="Check if your code smells before you make a mistake.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta property="og:site_name" content="Byte Ebi 🍤">
+<meta property="og:title" content="Guarding Code Quality with GrumPHP">
+<meta property="og:description" content="Check if your code smells before you make a mistake.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://tech.ray247k.com/en/blog/202107-grumphp-a-php-code-quality-tool/">
+  <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
+
+
+
+  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
+  
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=1" color="#ffffff">
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=1">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=1">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+<meta name="generator" content="Hugo 0.122.0"><meta property="og:site_name" content="Byte Ebi 🍤">
+  <meta property="og:title" content="Guarding Code Quality with GrumPHP">
+  <meta property="og:description" content="Check if your code smells before you make a mistake.">
+  <meta property="description" content="Check if your code smells before you make a mistake.">
+  <meta property="og:url" content="https://tech.ray247k.com/en/blog/202107-grumphp-a-php-code-quality-tool/">
+  <meta property="og:type" content="article">
+  
+    <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
+  
+  
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/felipec.min.css">
+          <link rel="stylesheet" href="/css/bundle.min.3b1b5f2e683d24b1ea3b5a08c8254622e40aa935e0ead75ba6d45c0f14c2f965.css" integrity="sha256-OxtfLmg9JLHqO1oIyCVGIuQKqTXg6tdbptRcDxTC&#43;WU="><link rel="stylesheet" href="/css/add-on.css">
+
+
+    
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', "");
+        </script>
+    
+
+
+  <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "image": {
+        "@type": "ImageObject",
+        "image": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+        "height": 648,
+        "width": 1080
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Byte Ebi 🍤",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png"
+        }
+    },
+    "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+    "headline": "About web development, software engineering, frontend, backend, chatbot, server related topics. - Byte Ebi 🍤",
+    "name": "Byte Ebi 🍤",
+    "url": "https:\/\/tech.ray247k.com",
+    "description": "About web development, software engineering, frontend, backend, chatbot, server related topics. - aws,devops,golang,laravel,python3,serverless,third-party-services,tools,version-control,website-operations,",
+    "keywords": [
+        "auto-scaling,aws,blockchain,chatbot,ci\/cd,cicd,cloudflare,cloudflare-workers,composer,container-technology,containerization,csv,devops,discord,docker,docker-compose,drone,excel,ffmpeg,firewall,gas,gcp,gcr,git,github,go,golang,google-app-script,google-container-registry,google-sheets,grumphp,jenkins,laravel,laravel-excel,load-balancing,ngrok,php,prerender,python3,queue,redis,search-engine-optimization,seo,serverless,smart-contract,ssh,version-control,"
+    ]
+}
+</script>
+
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "legalName": "Byte Ebi 🍤",
+    "url": "https:\/\/tech.ray247k.com",
+    "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "",
+        "availableLanguage": [
+            "Mandarin",
+            "English"
+        ]
+    },
+    "sameAs": [
+        "https://ray247k.blogspot.com/"
+    ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Guarding Code Quality with GrumPHP",
+    "description": "Check if your code smells before you make a mistake.",
+    "keywords": [
+        "GrumPHP" , "composer" 
+    ],
+    "dateCreated": "2021-07-31T00:00:00.00Z",
+    "datePublished": "2021-07-31T00:00:00.00Z",
+    "dateModified": "2021-07-31T00:00:00.00Z",
+    "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "contentUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png"
+    },
+    "breadcrumb": {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com",
+                    "name": "Byte Ebi 🍤",
+                    "url": "https:\/\/tech.ray247k.com"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com/blog",
+                    "name": "Blog",
+                    "url": "https:\/\/tech.ray247k.com/blog"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\/en\/blog\/202107-grumphp-a-php-code-quality-tool\/",
+                    "name": "Guarding Code Quality with GrumPHP",
+                    "url": "https:\/\/tech.ray247k.com\/en\/blog\/202107-grumphp-a-php-code-quality-tool\/"
+                }
+            }
+        ],
+        "itemListOrder": "Ascending",
+        "numberOfItems": 3
+    }
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "articleSection": "blog",
+    "name": "Guarding Code Quality with GrumPHP",
+    "headline": "\u003cp\u003eIn a collaborative development environment, Code Review is a crucial process.\u003cbr\u003e\nIf someone writes code that violates rules or fails tests, it can lead to project errors.\u003cbr\u003e\nManual syntax checks or running tests manually are time-consuming and not fashionable.\u003cbr\u003e\nThese tasks should be automated, and that\u0026rsquo;s where \u003ccode\u003eGrumPHP\u003c\/code\u003e comes in.\u003c\/p\u003e",
+    "description": "Check if your code smells before you make a mistake.",
+    "inLanguage": "en",
+    "isFamilyFriendly": "true",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com\/en\/blog\/202107-grumphp-a-php-code-quality-tool\/"
+    },
+    "author" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "creator" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "accountablePerson" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "copyrightHolder" : "Byte Ebi 🍤",
+    "copyrightYear" : "2021",
+    "dateCreated": "2021-07-31T00:00:00.00Z",
+    "datePublished": "2021-07-31T00:00:00.00Z",
+    "dateModified": "2021-07-31T00:00:00.00Z",
+    "publisher":{
+        "@type":"Organization",
+        "name": "Byte Ebi 🍤",
+        "url": "https://tech.ray247k.com",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+            "width":"32",
+            "height":"32"
+        }
+    },
+    "image": "https://tech.ray247k.com/img/main/logo.png",
+    "url" : "https:\/\/tech.ray247k.com\/en\/blog\/202107-grumphp-a-php-code-quality-tool\/",
+    "wordCount" : "803",
+    "genre" : [ "GrumPHP" , "composer" ],
+    "keywords" : [ "GrumPHP" , "composer" ]
+}
+</script>
+
+
+
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/en/" class="nav">
+        
+          Blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/en/" class="nav link"><i class='fa fa-home'></i> home</a>
+        
+      
+        
+          
+          <a href="/en/about" class="nav link"><i class='far fa-id-card'></i> about</a>
+        
+      
+        
+          
+          <a href="/en/categories" class="nav link"><i class='fas fa-sitemap'></i> category</a>
+        
+      
+      
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    
+    <a href="#lang-menu" class="nav lang-toggle" lang="en">en</a>
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  <menu id="lang-menu" class="flyout-menu menu">
+  <a href="#" lang="en" class="nav link active">English (en)</a>
+  
+      <a href="https://tech.ray247k.com/blog/202107-grumphp-a-php-code-quality-tool/" lang="zh-tw" class="nav link">正體中文 (zh-tw)</a>
+    
+  
+</menu>
+
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/en/"><img src="/img/main/logo.png" class="circle" width="100" alt="Byte Ebi&#39;s Logo" /></a>
+  <header>
+    <h1>Byte Ebi 🍤</h1>
+  </header>
+  <main>
+    <p>A Bit everyday A Byte every week</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/ray247k" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//www.linkedin.com/in/j-ray-cheng" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="/en/blog/202107-grumphp-a-php-code-quality-tool/">Guarding Code Quality with GrumPHP</a></h2>
+    
+    
+      <p>Check if your code smells before you make a mistake.</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2021-07-31 00:00:00 &#43;0000 UTC">July 31, 2021</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+    <div id="socnet-share">
+      
+
+
+
+
+
+    </div>
+    <div class="content">
+      <a href="/en/blog/202107-grumphp-a-php-code-quality-tool/" class="image" style="--bg-image: url('/en/blog/202107-grumphp-a-php-code-quality-tool/feature.png');">
+    <img src="/en/blog/202107-grumphp-a-php-code-quality-tool/feature.png" alt="">
+  </a>
+      <p>In a collaborative development environment, Code Review is a crucial process.<br>
+If someone writes code that violates rules or fails tests, it can lead to project errors.<br>
+Manual syntax checks or running tests manually are time-consuming and not fashionable.<br>
+These tasks should be automated, and that&rsquo;s where <code>GrumPHP</code> comes in.</p>
+<h1 id="what-is-grumphp">What is GrumPHP</h1>
+<p>GrumPHP is an open-source Composer package that utilizes git hooks.<br>
+When someone changes the code and commits it, GrumPHP checks the code content based on predefined tasks.<br>
+If the tests fail, the commit is aborted.</p>
+<p>GrumPHP comes with a set of common tasks built-in, allowing you to use it with minimal custom configuration.<br>
+You can find most of the tasks you might need on the <a href="https://github.com/phpro/grumphp/blob/master/doc/tasks.md"
+   
+    target="_blank" rel="noreferrer noopener">Tasks
+</a>
+ page in the official documentation.<br>
+Let&rsquo;s go through the installation process and add four commonly used tasks.</p>
+<h1 id="installing-grumphp">Installing GrumPHP</h1>
+<p>Let&rsquo;s use the partially developed LaraPeko package as an example.<br>
+The term &ldquo;project&rdquo; mentioned here refers to this package.</p>
+<p>First, navigate to the project directory and execute:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>composer require --dev phpro/grumphp
+</span></span></code></pre></div><p>An interactive prompt will appear, asking if you want to create the configuration file <code>grumphp.yml</code> with various options.<br>
+You can choose any option or skip this step. The next step involves installing <code>yamllint</code>.<br>
+If you chose yamllint in the previous step, you&rsquo;re good to go.</p>
+<p>You can test if the checks are working by running:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vendor/bin/grumphp run
+</span></span></code></pre></div><p>If you run:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>composer install
+</span></span></code></pre></div><p>and see the message &ldquo;GrumPHP is sniffing your commits!&rdquo; it means GrumPHP is now sniffing your commits.</p>
+<p><img src="grumphp-composer-install.png" alt="grumphp composer install"></p>
+<h1 id="adding-check-tasks">Adding Check Tasks</h1>
+<p>Let&rsquo;s gradually install and explain four basic check tasks:</p>
+<ol>
+<li>yamllint</li>
+<li>PHPLint</li>
+<li>Phpunit</li>
+<li>Phpcs</li>
+</ol>
+<p>If you didn&rsquo;t create <code>grumphp.yml</code> in the previous step, create the file in the project root directory with the following content:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">grumphp</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">tasks</span>: {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><p>You can find an example <code>grumphp.yml</code> configuration file on the official GitHub page, and the <a href="https://github.com/phpro/grumphp/blob/master/doc/parameters.md"
+   
+    target="_blank" rel="noreferrer noopener">Parameters file
+</a>
+ provides detailed explanations and settings.</p>
+<h2 id="1-yamllint">1. yamllint</h2>
+<p>Checks the validity of the yaml file structure in your project, useful for configuration files in formats such as Drone.</p>
+<p>According to the <a href="https://github.com/phpro/grumphp/blob/master/doc/tasks/yamllint.md"
+   
+    target="_blank" rel="noreferrer noopener">YamlLint documentation
+</a>
+, no additional configuration is required.<br>
+Just add yamllint to the tasks list in <code>grumphp.yml</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">grumphp</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">tasks</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">yamllint</span>: <span style="color:#66d9ef">null</span>,
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><h2 id="2-phplint">2. PHPLint</h2>
+<p>Checks for syntax errors, such as missing commas that might result in red syntax error warnings in IDEs.</p>
+<p>Follow the official documentation for the PHPLint task: <a href="https://github.com/phpro/grumphp/blob/master/doc/tasks/phplint.md"
+   
+    target="_blank" rel="noreferrer noopener">PHPLint
+</a>
+.<br>
+Start by installing the required dependency only in the test environment:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>composer require --dev php-parallel-lint/php-parallel-lint
+</span></span></code></pre></div><p>Add the phplint task to <code>grumphp.yml</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">grumphp</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">tasks</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">yamllint</span>: <span style="color:#66d9ef">null</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">phplint</span>: <span style="color:#ae81ff">~,</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><p>Refer to the documentation for many adjustable rules. For simplicity, we&rsquo;ll stick with the default values.</p>
+<h2 id="3-phpunit">3. Phpunit</h2>
+<p>Runs tests in a specified path. Fails the task if any tests fail.</p>
+<p>Follow the documentation for the Phpunit task: <a href="https://github.com/phpro/grumphp/blob/master/doc/tasks/phpunit.md"
+   
+    target="_blank" rel="noreferrer noopener">Phpunit
+</a>
+.
+Install Phpunit in the test environment:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>composer require --dev phpunit/phpunit
+</span></span></code></pre></div><p>Create the <code>phpunit.xml</code> configuration file as required:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;phpunit</span> <span style="color:#a6e22e">xmlns:xsi=</span><span style="color:#e6db74">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#a6e22e">xsi:noNamespaceSchemaLocation=</span><span style="color:#e6db74">&#34;./vendor/phpunit/phpunit/phpunit.xsd&#34;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#a6e22e">bootstrap=</span><span style="color:#e6db74">&#34;vendor/autoload.php&#34;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#a6e22e">colors=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;testsuites&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;testsuite</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;Unit&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;directory</span> <span style="color:#a6e22e">suffix=</span><span style="color:#e6db74">&#34;Test.php&#34;</span><span style="color:#f92672">&gt;</span>./tests/Unit<span style="color:#f92672">&lt;/directory&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;/testsuite&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;testsuite</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;Feature&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;directory</span> <span style="color:#a6e22e">suffix=</span><span style="color:#e6db74">&#34;Test.php&#34;</span><span style="color:#f92672">&gt;</span>./tests/Feature<span style="color:#f92672">&lt;/directory&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;/testsuite&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/testsuites&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;filter&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;whitelist</span> <span style="color:#a6e22e">processUncoveredFilesFromWhitelist=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;directory</span> <span style="color:#a6e22e">suffix=</span><span style="color:#e6db74">&#34;.php&#34;</span><span style="color:#f92672">&gt;</span>./app<span style="color:#f92672">&lt;/directory&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;/whitelist&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/filter&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/phpunit&gt;</span>
+</span></span></code></pre></div><p>Test if the tasks are executed by running the following command.<br>
+Since we configured Phpunit to look for tests in specific folders, ensure those folders exist in the project.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vendor/bin/grumphp run
+</span></span></code></pre></div><p>You should see a green happy face indicating that the tests passed.</p>
+<p><img src="phpunit-pass.png" alt="phpunit pass"></p>
+<p>If we modify a test method to make it fail:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">testGetAhoy</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    $larapeko <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">LaraPeko</span>();
+</span></span><span style="display:flex;"><span>    $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">assertEquals</span>(<span style="color:#e6db74">&#39;ahoy&#39;</span>, <span style="color:#e6db74">&#39;DD&#39;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>And run the command again, you will see a red sad face along with an error message, making it clear which test failed.</p>
+<p><img src="phpunit-fail-a.png" alt="phpunit fail">
+<img src="phpunit-fail-b.png" alt="phpunit fail"></p>
+<h2 id="4-phpcs">4. Phpcs</h2>
+<p>Checks if the submitted PHP code adheres to <a href="https://www.php-fig.org/psr/"
+   
+    target="_blank" rel="noreferrer noopener">PSR standards
+</a>
+.</p>
+<p>Install the required dependency following the Phpcs task documentation: <a href="https://github.com/phpro/grumphp/blob/master/doc/tasks/phpcs.md"
+   
+    target="_blank" rel="noreferrer noopener">Phpcs
+</a>
+.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>composer require --dev squizlabs/php_codesniffer
+</span></span></code></pre></div><p>Create a <code>phpcs.xml</code> configuration file to set the rules you want to check. Here, we use the basic PSR-12 rules:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34;?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;ruleset</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;PSR12&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;description&gt;</span>The PSR12 coding standard.<span style="color:#f92672">&lt;/description&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;rule</span> <span style="color:#a6e22e">ref=</span><span style="color:#e6db74">&#34;PSR12&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;file&gt;</span>app/<span style="color:#f92672">&lt;/file&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;file&gt;</span>config/<span style="color:#f92672">&lt;/file&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;file&gt;</span>routes/<span style="color:#f92672">&lt;/file&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;exclude-pattern&gt;</span>public/index.php<span style="color:#f92672">&lt;/exclude-pattern&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;exclude-pattern&gt;</span>server.php<span style="color:#f92672">&lt;/exclude-pattern&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;exclude-pattern&gt;</span>laravel-nova-*<span style="color:#f92672">&lt;/exclude-pattern&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;exclude-pattern&gt;</span>vendor<span style="color:#f92672">&lt;/exclude-pattern&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;exclude-pattern&gt;</span>resources<span style="color:#f92672">&lt;/exclude-pattern&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;exclude-pattern&gt;</span>database/<span style="color:#f92672">&lt;/exclude-pattern&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;exclude-pattern</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;</span>storage/<span style="color:#f92672">&lt;/exclude-pattern&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;exclude-pattern&gt;</span>node_modules/<span style="color:#f92672">&lt;/exclude-pattern&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;exclude-pattern&gt;</span>tests<span style="color:#f92672">&lt;/exclude-pattern&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/ruleset&gt;</span>
+</span></span></code></pre></div><p>Now, run the check:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vendor/bin/grumphp run
+</span></span></code></pre></div><p>You should see that all configured tests have passed.</p>
+<p><img src="phpcs-pass.png" alt="phpcs pass"></p>
+<p>If there are issues violating PSR-12, you will see a frowning face and details about the problems.</p>
+<p><img src="phpcs-fail.png" alt="phpcs fail"></p>
+<h1 id="automatic-listening">Automatic Listening</h1>
+<p>All the tasks we did above were manual executions. It would be better if the code quality check happens automatically.<br>
+To achieve this, we can modify the <code>composer.json</code> file by adding scripts that run during the Composer process.</p>
+<p>Add the following script to the <code>composer.json</code> file to initialize GrumPHP during the post-installation command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;scripts&#34;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;post-install-cmd&#34;</span><span style="color:#f92672">:</span> [
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;@php ./vendor/bin/grumphp git:init&#34;</span>
+</span></span><span style="display:flex;"><span>        ]
+</span></span><span style="display:flex;"><span>    },
+</span></span></code></pre></div><p>This way, whether you run <code>git commit</code> in the command line or perform the commit through a GUI, the defined GrumPHP tasks will be triggered before the commit.</p>
+<p>Below is an example of a failure status message triggered by the phpcs task through a GUI.</p>
+<p><img src="grumphp-gui-fail.png" alt="grumphp gui fail"></p>
+
+      
+      
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/ray247k/button?referrer=https%3a%2f%2ftech.ray247k.com%2fen%2fblog%2f202107-grumphp-a-php-code-quality-tool%2f" width="100%" frameborder=0></iframe>
+
+    </div>
+    <footer>
+      <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/en/categories/laravel/">Laravel</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/en/tags/grumphp/">GrumPHP</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/composer/">composer</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+    </footer>
+  </article>
+  
+    
+
+  
+  <div class="pagination">
+    
+      <a href="/en/blog/202110-make-discord-chatbot-01-set-up/" class="button left"><span>[Discord Bot] 01. Creating a Basic Bot</span></a>
+    
+    
+      <a href="/en/blog/202107-laravel-package-development/" class="button right"><span>Develop Your Own Laravel Package</span></a>
+    
+  </div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>Recent Posts</h1>
+      </header>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/" class="image" style="--bg-image: url('/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg');">
+    <img src="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/">Different between pointer and value for struct type in golang</a></h2>
+          <time class="published" datetime="2023-06-25 00:00:00 &#43;0000 UTC">June 25, 2023</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202301-ffmpeg-video-convert/" class="image" style="--bg-image: url('/en/blog/202301-ffmpeg-video-convert/featured.png');">
+    <img src="/en/blog/202301-ffmpeg-video-convert/featured.png" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202301-ffmpeg-video-convert/">Using FFmpeg to convert media files</a></h2>
+          <time class="published" datetime="2023-01-01 00:00:00 &#43;0000 UTC">January 1, 2023</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202210-aws101-what-is-sns-and-sqs/" class="image" style="--bg-image: url('/en/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg');">
+    <img src="/en/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202210-aws101-what-is-sns-and-sqs/">[AWS 101] What are SNS and SQS</a></h2>
+          <time class="published" datetime="2022-10-06 00:00:00 &#43;0000 UTC">October 6, 2022</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202210-what-is-serverless/" class="image" style="--bg-image: url('/en/blog/202210-what-is-serverless/featured.jpg');">
+    <img src="/en/blog/202210-what-is-serverless/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202210-what-is-serverless/">Serverless 101</a></h2>
+          <time class="published" datetime="2022-10-04 00:00:00 &#43;0000 UTC">October 4, 2022</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202207-go-ethereum-abigen/" class="image" style="--bg-image: url('/en/blog/202207-go-ethereum-abigen/featured.jpeg');">
+    <img src="/en/blog/202207-go-ethereum-abigen/featured.jpeg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202207-go-ethereum-abigen/">Interacting with smart contracts using Golang</a></h2>
+          <time class="published" datetime="2022-07-09 00:00:00 &#43;0000 UTC">July 9, 2022</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/en/blog/" class="button">See More</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="/en/categories">Categories</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/en/categories/devops/">devops<span class="count">15</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/golang/">golang<span class="count">11</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/laravel/">laravel<span class="count">5</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/python3/">python3<span class="count">2</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/website-operations/">website-operations<span class="count">2</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/aws/">aws<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/serverless/">serverless<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/third-party-services/">third-party-services<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/tools/">tools<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/version-control/">version-control<span class="count">1</span></a>
+          </li>
+          
+        </ul>
+      </section>
+    
+  
+
+  
+  <section id="tags">
+    <header>
+      <h1><a href="/en/tags">Tags</a></h1>
+    </header>
+    <div class="li-x post-meta tags-md" style="margin-left: 0.5em;">
+      <ul>
+        
+        
+        <li>
+          <a href="/en/tags/devops/">devops (16)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/go/">go (11)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/golang/">golang (11)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/cicd/">cicd (7)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/laravel/">laravel (6)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/docker/">docker (5)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/gcp/">gcp (5)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/composer/">composer (4)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/drone/">drone (4)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/jenkins/">jenkins (4)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/container-technology/">container-technology (3)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/containerization/">containerization (3)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/aws/">aws (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/chatbot/">chatbot (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/discord/">discord (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/docker-compose/">docker-compose (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/php/">php (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/python3/">python3 (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/auto-scaling/">auto-scaling (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/blockchain/">blockchain (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ci/cd/">ci/cd (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/cloudflare/">cloudflare (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/cloudflare-workers/">cloudflare-workers (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/csv/">csv (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/excel/">excel (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ffmpeg/">ffmpeg (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/firewall/">firewall (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/gas/">gas (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/gcr/">gcr (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/git/">git (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/github/">github (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/google-app-script/">google-app-script (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/google-container-registry/">google-container-registry (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/google-sheets/">google-sheets (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/grumphp/">grumphp (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/laravel-excel/">laravel-excel (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/load-balancing/">load-balancing (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ngrok/">ngrok (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/prerender/">prerender (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/queue/">queue (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/redis/">redis (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/search-engine-optimization/">search-engine-optimization (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/seo/">seo (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/serverless/">serverless (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/smart-contract/">smart-contract (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ssh/">ssh (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/version-control/">version-control (1)</a>
+        </li>
+        
+      </ul>
+
+    </div>
+  </section>
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+    
+    <p class="copyright">
+        © 2023 Byte Ebi 🍤
+    </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>
+      hljs.configure({ ignoreUnescapedHTML: true }); 
+      hljs.highlightAll();
+    </script><script src="/js/bundle.min.b8ecc205622548252ae685817642568fed404d2f04df7ea571a8b71e3091ffe7.js" integrity="sha256-uOzCBWIlSCUq5oWBdkJWj&#43;1ATS8E336lcai3HjCR/&#43;c="></script>
+    <script src="/js/add-on.js"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-LTGVYYWC2J', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </div>
+  </body>
+</html>

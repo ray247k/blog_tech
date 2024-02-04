@@ -6,8 +6,29 @@
     <description>Recent content in composer on Byte Ebi 🍤</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 17 Jul 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 31 Jul 2021 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://tech.ray247k.com/en/tags/composer/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Guarding Code Quality with GrumPHP</title>
+      <link>https://tech.ray247k.com/en/blog/202107-grumphp-a-php-code-quality-tool/</link>
+      <pubDate>Sat, 31 Jul 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202107-grumphp-a-php-code-quality-tool/</guid>
+      <description>&lt;p&gt;In a collaborative development environment, Code Review is a crucial process.&lt;br&gt;&#xA;If someone writes code that violates rules or fails tests, it can lead to project errors.&lt;br&gt;&#xA;Manual syntax checks or running tests manually are time-consuming and not fashionable.&lt;br&gt;&#xA;These tasks should be automated, and that&amp;rsquo;s where &lt;code&gt;GrumPHP&lt;/code&gt; comes in.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Develop Your Own Laravel Package</title>
+      <link>https://tech.ray247k.com/en/blog/202107-laravel-package-development/</link>
+      <pubDate>Sun, 25 Jul 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202107-laravel-package-development/</guid>
+      <description>&lt;p&gt;The Laravel ecosystem offers numerous convenient packages for various purposes.&lt;br&gt;&#xA;However, what if you can&amp;rsquo;t find a suitable package or need to create a company-specific one?&lt;br&gt;&#xA;This article demonstrates how to develop a package locally and install it in a Laravel project using composer, ensuring smooth development and testing.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Setting up Laravel Development Environment with Docker</title>
+      <link>https://tech.ray247k.com/en/blog/202107-laravel-environment-with-docker/</link>
+      <pubDate>Sat, 24 Jul 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202107-laravel-environment-with-docker/</guid>
+      <description>&lt;p&gt;In the past, developing Laravel projects locally mostly involved installing the required services directly on the machine.&lt;br&gt;&#xA;Later, the recommended development environment by the official documentation, &lt;a href=&#34;https://github.com/laravel/homestead&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Homestead&#xA;&lt;/a&gt;&#xA;, became a popular choice.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Environment Initialization and Server Configuration (Docker &#43; Laravel)</title>
       <link>https://tech.ray247k.com/en/blog/202107-initialize-server-setting-with-docker-and-laravel/</link>
