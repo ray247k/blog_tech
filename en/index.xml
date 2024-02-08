@@ -289,6 +289,34 @@
       <description>&lt;p&gt;Some commonly used commands and related parameters on Docker and their usage.&lt;br&gt;&#xA;In actual use, there are definitely more commands than those listed here.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Server Stress Testing - Using Apache Bench</title>
+      <link>https://tech.ray247k.com/en/blog/202105-web-server-stress-testing/</link>
+      <pubDate>Sun, 23 May 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202105-web-server-stress-testing/</guid>
+      <description>&lt;p&gt;Server stress testing is a must before going live, no exceptions!&lt;br&gt;&#xA;Just imagine you&amp;rsquo;ve been working overtime for months, the system goes online.&lt;br&gt;&#xA;And you&amp;rsquo;re celebrating with pizza and cocktail, only to find out suddenly the server crashes due to overwhelming traffic!&lt;br&gt;&#xA;That&amp;rsquo;s why conducting stress tests beforehand makes a good system!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Setting Up Subdomain with Cloudflare and Customizing GitHub Page URL</title>
+      <link>https://tech.ray247k.com/en/blog/202105-set-custom-domain-for-github-page/</link>
+      <pubDate>Tue, 18 May 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202105-set-custom-domain-for-github-page/</guid>
+      <description>&lt;p&gt;Previously, I purchased my own domain.Now, I want to use Cloudflare DNS service to set up a subdomain.&lt;br&gt;&#xA;And assign it to a specified GitHub Page project as a customized URL.&lt;br&gt;&#xA;Once you master this skill, with just one main domain, you can generate different subdomain URLs as needed.&lt;br&gt;&#xA;All major DNS service providers offer this feature, and this article uses Cloudflare as an example.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Setting Up Cloudflare Free CDN and Enabling DNS Hosting</title>
+      <link>https://tech.ray247k.com/en/blog/202105-cloudflare-dns-add-domain/</link>
+      <pubDate>Sun, 16 May 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202105-cloudflare-dns-add-domain/</guid>
+      <description>&lt;p&gt;Google Domains service already provides Domain Name System (DNS) services, allowing you to manage your domain, including adding subdomains.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>How to Purchase Your Own Domain from Google Domains</title>
+      <link>https://tech.ray247k.com/en/blog/202105-how-to-buy-a-domain-from-google/</link>
+      <pubDate>Sat, 15 May 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202105-how-to-buy-a-domain-from-google/</guid>
+      <description>&lt;p&gt;Previously, I&amp;rsquo;ve been using free blogging platforms like Blogger.&lt;br&gt;&#xA;However, with the rise of personal branding awareness in recent years and feeling limited by the features of the original blog,&lt;br&gt;&#xA;not to mention the inconvenience of moving, and the inability to customize SEO and embed tracking codes,&lt;br&gt;&#xA;I felt the need to take matters into my own hands.&lt;br&gt;&#xA;Having worked in the media industry, I realized that if you want something done right, you have to do it yourself.&lt;br&gt;&#xA;I initially moved from Blogger to Medium, then back to Blogger, finding the transition quite cumbersome.&lt;br&gt;&#xA;Furthermore, the formatting of code content often gets distorted, and I wanted to record everything using Markdown syntax.&lt;br&gt;&#xA;This led me to consider self-hosting, partly as a platform to showcase my skills.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>About</title>
       <link>https://tech.ray247k.com/en/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

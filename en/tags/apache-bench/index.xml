@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Apache Bench on Byte Ebi 🍤</title>
+    <link>https://tech.ray247k.com/en/tags/apache-bench/</link>
+    <description>Recent content in Apache Bench on Byte Ebi 🍤</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 23 May 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tech.ray247k.com/en/tags/apache-bench/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Server Stress Testing - Using Apache Bench</title>
+      <link>https://tech.ray247k.com/en/blog/202105-web-server-stress-testing/</link>
+      <pubDate>Sun, 23 May 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202105-web-server-stress-testing/</guid>
+      <description>&lt;p&gt;Server stress testing is a must before going live, no exceptions!&lt;br&gt;&#xA;Just imagine you&amp;rsquo;ve been working overtime for months, the system goes online.&lt;br&gt;&#xA;And you&amp;rsquo;re celebrating with pizza and cocktail, only to find out suddenly the server crashes due to overwhelming traffic!&lt;br&gt;&#xA;That&amp;rsquo;s why conducting stress tests beforehand makes a good system!&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

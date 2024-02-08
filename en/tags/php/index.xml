@@ -22,5 +22,12 @@
       <guid>https://tech.ray247k.com/en/blog/202203-laravel-queue/</guid>
       <description>&lt;p&gt;The purpose of queues is to defer processing of a time-consuming task that doesn&amp;rsquo;t require immediate completion.&#xA;Like sending emails, users don&amp;rsquo;t need to wait for the email to be sent successfully before the next step.&lt;br&gt;&#xA;Allowing the application to respond more quickly to web requests and smooth user experience.&lt;/p&gt;</description>
     </item>
+    <item>
+      <title>Server Stress Testing - Using Apache Bench</title>
+      <link>https://tech.ray247k.com/en/blog/202105-web-server-stress-testing/</link>
+      <pubDate>Sun, 23 May 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202105-web-server-stress-testing/</guid>
+      <description>&lt;p&gt;Server stress testing is a must before going live, no exceptions!&lt;br&gt;&#xA;Just imagine you&amp;rsquo;ve been working overtime for months, the system goes online.&lt;br&gt;&#xA;And you&amp;rsquo;re celebrating with pizza and cocktail, only to find out suddenly the server crashes due to overwhelming traffic!&lt;br&gt;&#xA;That&amp;rsquo;s why conducting stress tests beforehand makes a good system!&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>

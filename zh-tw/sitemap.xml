@@ -1284,24 +1284,84 @@
   </url><url>
     <loc>https://tech.ray247k.com/tags/apache-bench/</loc>
     <lastmod>2021-05-23T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/apache-bench/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/apache-bench/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/tags/nginx/</loc>
     <lastmod>2021-05-23T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/nginx/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/nginx/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/tags/php-fpm/</loc>
     <lastmod>2021-05-23T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/php-fpm/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/php-fpm/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/tags/server/</loc>
     <lastmod>2021-05-23T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/server/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/server/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/tags/stress-testing/</loc>
     <lastmod>2021-05-23T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/stress-testing/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/stress-testing/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/tags/%E4%BC%BA%E6%9C%8D%E5%99%A8/</loc>
     <lastmod>2021-05-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/blog/202105-web-server-stress-testing/</loc>
     <lastmod>2021-05-23T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202105-web-server-stress-testing/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202105-web-server-stress-testing/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/tags/%E5%A3%93%E5%8A%9B%E6%B8%AC%E8%A9%A6/</loc>
     <lastmod>2021-05-23T00:00:00+00:00</lastmod>
@@ -1317,12 +1377,42 @@
   </url><url>
     <loc>https://tech.ray247k.com/tags/dns/</loc>
     <lastmod>2021-05-18T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/dns/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/dns/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/tags/github-page/</loc>
     <lastmod>2021-05-18T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/github-page/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/github-page/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/tags/subdomain/</loc>
     <lastmod>2021-05-18T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/subdomain/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/subdomain/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/tags/%E5%AD%90%E7%B6%B2%E5%9F%9F/</loc>
     <lastmod>2021-05-18T00:00:00+00:00</lastmod>
@@ -1332,21 +1422,81 @@
   </url><url>
     <loc>https://tech.ray247k.com/blog/202105-set-custom-domain-for-github-page/</loc>
     <lastmod>2021-05-18T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202105-set-custom-domain-for-github-page/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202105-set-custom-domain-for-github-page/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/tags/cdn/</loc>
     <lastmod>2021-05-16T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/cdn/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/cdn/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/tags/google-domains/</loc>
     <lastmod>2021-05-16T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/google-domains/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/google-domains/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/blog/202105-cloudflare-dns-add-domain/</loc>
     <lastmod>2021-05-16T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202105-cloudflare-dns-add-domain/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202105-cloudflare-dns-add-domain/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/tags/domain-name/</loc>
     <lastmod>2021-05-15T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/domain-name/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/domain-name/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/blog/202105-how-to-buy-a-domain-from-google/</loc>
     <lastmod>2021-05-15T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202105-how-to-buy-a-domain-from-google/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202105-how-to-buy-a-domain-from-google/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/tags/%E5%80%8B%E4%BA%BA%E5%93%81%E7%89%8C/</loc>
     <lastmod>2021-05-15T00:00:00+00:00</lastmod>

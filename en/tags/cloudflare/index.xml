@@ -15,5 +15,19 @@
       <guid>https://tech.ray247k.com/en/blog/202201-using-prerender-improve-spa-seo/</guid>
       <description>&lt;p&gt;A Single Page Application (SPA) website utilizes Client-Side Rendering (CSR) to render its content.&lt;br&gt;&#xA;Upon initial loading, the server only returns the root component, and subsequent data is fetched through API interactions.&lt;br&gt;&#xA;However, for web crawlers responsible for ranking websites, the content obtained during crawling may appear empty.&lt;br&gt;&#xA;While Google claims that their crawler executes JavaScript, other search engines may not necessarily do so.&lt;br&gt;&#xA;To address this issue, a Prerender service is employed to achieve pre-rendering for web crawlers, optimizing search results.&lt;/p&gt;</description>
     </item>
+    <item>
+      <title>Setting Up Subdomain with Cloudflare and Customizing GitHub Page URL</title>
+      <link>https://tech.ray247k.com/en/blog/202105-set-custom-domain-for-github-page/</link>
+      <pubDate>Tue, 18 May 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202105-set-custom-domain-for-github-page/</guid>
+      <description>&lt;p&gt;Previously, I purchased my own domain.Now, I want to use Cloudflare DNS service to set up a subdomain.&lt;br&gt;&#xA;And assign it to a specified GitHub Page project as a customized URL.&lt;br&gt;&#xA;Once you master this skill, with just one main domain, you can generate different subdomain URLs as needed.&lt;br&gt;&#xA;All major DNS service providers offer this feature, and this article uses Cloudflare as an example.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Setting Up Cloudflare Free CDN and Enabling DNS Hosting</title>
+      <link>https://tech.ray247k.com/en/blog/202105-cloudflare-dns-add-domain/</link>
+      <pubDate>Sun, 16 May 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202105-cloudflare-dns-add-domain/</guid>
+      <description>&lt;p&gt;Google Domains service already provides Domain Name System (DNS) services, allowing you to manage your domain, including adding subdomains.&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>
