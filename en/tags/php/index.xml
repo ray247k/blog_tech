@@ -29,5 +29,12 @@
       <guid>https://tech.ray247k.com/en/blog/202105-web-server-stress-testing/</guid>
       <description>&lt;p&gt;Server stress testing is a must before going live, no exceptions!&lt;br&gt;&#xA;Just imagine you&amp;rsquo;ve been working overtime for months, the system goes online.&lt;br&gt;&#xA;And you&amp;rsquo;re celebrating with pizza and cocktail, only to find out suddenly the server crashes due to overwhelming traffic!&lt;br&gt;&#xA;That&amp;rsquo;s why conducting stress tests beforehand makes a good system!&lt;/p&gt;</description>
     </item>
+    <item>
+      <title>Laravel environment basic settings</title>
+      <link>https://tech.ray247k.com/en/blog/202102-laravel-environment-basic-settings/</link>
+      <pubDate>Thu, 25 Feb 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202102-laravel-environment-basic-settings/</guid>
+      <description>&lt;p&gt;Configuration and package installation required for developing Laravel projects, applicable whether on remote hosts or local machines.&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>

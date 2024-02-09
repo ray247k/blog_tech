@@ -43,5 +43,26 @@
       <guid>https://tech.ray247k.com/en/blog/202106-docker-common-commands/</guid>
       <description>&lt;p&gt;Some commonly used commands and related parameters on Docker and their usage.&lt;br&gt;&#xA;In actual use, there are definitely more commands than those listed here.&lt;/p&gt;</description>
     </item>
+    <item>
+      <title>Enable docker service in remote server</title>
+      <link>https://tech.ray247k.com/en/blog/202103-enable-docker-service-in-remote-server/</link>
+      <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202103-enable-docker-service-in-remote-server/</guid>
+      <description>&lt;p&gt;Step-by-step guide for enabling Docker and Docker-compose services on a new cloud host.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Setting up postgreSQL database with docker</title>
+      <link>https://tech.ray247k.com/en/blog/202103-setting-up-postgresql-database-with-docker/</link>
+      <pubDate>Wed, 03 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202103-setting-up-postgresql-database-with-docker/</guid>
+      <description>&lt;p&gt;Setting up a PostgreSQL Database with Docker&lt;br&gt;&#xA;Including &lt;code&gt;Database Setup&lt;/code&gt;, &lt;code&gt;Data Persistence&lt;/code&gt;, &lt;code&gt;Using GUI to Operate the Database&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Reverse Proxy Setup in Docker Environment</title>
+      <link>https://tech.ray247k.com/en/blog/202102-reverse-proxy-in-docker-service/</link>
+      <pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202102-reverse-proxy-in-docker-service/</guid>
+      <description>This article provides a basic explanation of reverse proxies and how to set them up in a Docker container environment.&#xA;Reverse Proxy Overview System Design - Forward Proxy vs Reverse Proxy Different Physical Hosts Using nginx proxy-pass Objective Users visit a specified web page path /new_path or the root / Configure the test machine&amp;rsquo;s nginx proxy_pass to redirect to another host&amp;rsquo;s project under the same path Ensure that the user&amp;rsquo;s IP address is not replaced by the proxy server&amp;rsquo;s IP Ensure that the project on the target server can read cookies Ensure that the payload of POST requests is forwarded Configure nginx config Configuration on the First Host&amp;rsquo;s nginx # Forward all requests to domain/new_path to another host location /new_path { # Proxy to the specified URL proxy_pass http://laravel55.</description>
+    </item>
   </channel>
 </rss>

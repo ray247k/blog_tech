@@ -1,0 +1,1079 @@
+<!doctype html>
+<html lang="zh-tw">
+  <head>
+  <meta charset="utf-8">
+<title>PostgreSQL 資料庫建置 - 使用 Docker - Byte Ebi 🍤</title>
+<meta name="description" content="介紹如何使用 Docker 建置 PostgreSQL 資料庫">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta property="og:site_name" content="Byte Ebi 🍤">
+<meta property="og:title" content="PostgreSQL 資料庫建置 - 使用 Docker">
+<meta property="og:description" content="介紹如何使用 Docker 建置 PostgreSQL 資料庫">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://tech.ray247k.com/blog/202103-setting-up-postgresql-database-with-docker/">
+  <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
+
+
+
+  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
+  
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=1" color="#ffffff">
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=1">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=1">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+<meta name="generator" content="Hugo 0.122.0"><meta property="og:site_name" content="Byte Ebi 🍤">
+  <meta property="og:title" content="PostgreSQL 資料庫建置 - 使用 Docker">
+  <meta property="og:description" content="介紹如何使用 Docker 建置 PostgreSQL 資料庫">
+  <meta property="description" content="介紹如何使用 Docker 建置 PostgreSQL 資料庫">
+  <meta property="og:url" content="https://tech.ray247k.com/blog/202103-setting-up-postgresql-database-with-docker/">
+  <meta property="og:type" content="article">
+  
+    <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
+  
+  
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/felipec.min.css">
+          <link rel="stylesheet" href="/css/bundle.min.3b1b5f2e683d24b1ea3b5a08c8254622e40aa935e0ead75ba6d45c0f14c2f965.css" integrity="sha256-OxtfLmg9JLHqO1oIyCVGIuQKqTXg6tdbptRcDxTC&#43;WU="><link rel="stylesheet" href="/css/add-on.css">
+
+
+    
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', "");
+        </script>
+    
+
+
+  <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "image": {
+        "@type": "ImageObject",
+        "image": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+        "height": 648,
+        "width": 1080
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Byte Ebi 🍤",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png"
+        }
+    },
+    "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+    "headline": "討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - Byte Ebi 🍤",
+    "name": "Byte Ebi 🍤",
+    "url": "https:\/\/tech.ray247k.com",
+    "description": "討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - aws,devops,golang,laravel,leetcode,node.js,php,python3,serverless,實用工具,架站相關,版本控制,第三方服務,",
+    "keywords": [
+        "apache-bench,auto-scaling,aws,axios,blockchain,cdn,chatbot,cicd,cloudflare,cloudflare-workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker-compose,domain-name,drone,element-ui,excel,express,ffmpeg,gas,gcp,gcr,getter,git,github,github-page,go,golang,google-app-script,google-container-registry,google-domains,google-sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load-balancing,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,phpcbf,phpcs,portainer,postgresql,prerender,proxy,python3,queue,redis,restful,seo,server,serverless,smart-contract,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
+    ]
+}
+</script>
+
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "legalName": "Byte Ebi 🍤",
+    "url": "https:\/\/tech.ray247k.com",
+    "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "",
+        "availableLanguage": [
+            "Mandarin",
+            "English"
+        ]
+    },
+    "sameAs": [
+        "https://ray247k.blogspot.com/"
+    ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "PostgreSQL 資料庫建置 - 使用 Docker",
+    "description": "介紹如何使用 Docker 建置 PostgreSQL 資料庫",
+    "keywords": [
+        "DevOps" , "Docker" , "容器技術" , "Containerization" , "Docker compose" , "PostgreSQL" 
+    ],
+    "dateCreated": "2021-03-03T00:00:00.00Z",
+    "datePublished": "2021-03-03T00:00:00.00Z",
+    "dateModified": "2021-03-03T00:00:00.00Z",
+    "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "contentUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png"
+    },
+    "breadcrumb": {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com",
+                    "name": "Byte Ebi 🍤",
+                    "url": "https:\/\/tech.ray247k.com"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com/blog",
+                    "name": "Blog",
+                    "url": "https:\/\/tech.ray247k.com/blog"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\/blog\/202103-setting-up-postgresql-database-with-docker\/",
+                    "name": "PostgreSQL 資料庫建置 - 使用 Docker",
+                    "url": "https:\/\/tech.ray247k.com\/blog\/202103-setting-up-postgresql-database-with-docker\/"
+                }
+            }
+        ],
+        "itemListOrder": "Ascending",
+        "numberOfItems": 3
+    }
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "articleSection": "blog",
+    "name": "PostgreSQL 資料庫建置 - 使用 Docker",
+    "headline": "\u003cp\u003e使用 Docker 來建置一個 PostgreSQL 資料庫\u003cbr\u003e\n包含 \u003ccode\u003e資料庫建置\u003c\/code\u003e、\u003ccode\u003e資料持久化\u003c\/code\u003e、\u003ccode\u003e使用 GUI 操作資料庫\u003c\/code\u003e\u003c\/p\u003e",
+    "description": "介紹如何使用 Docker 建置 PostgreSQL 資料庫",
+    "inLanguage": "zh-TW",
+    "isFamilyFriendly": "true",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com\/blog\/202103-setting-up-postgresql-database-with-docker\/"
+    },
+    "author" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "creator" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "accountablePerson" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "copyrightHolder" : "Byte Ebi 🍤",
+    "copyrightYear" : "2021",
+    "dateCreated": "2021-03-03T00:00:00.00Z",
+    "datePublished": "2021-03-03T00:00:00.00Z",
+    "dateModified": "2021-03-03T00:00:00.00Z",
+    "publisher":{
+        "@type":"Organization",
+        "name": "Byte Ebi 🍤",
+        "url": "https://tech.ray247k.com",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+            "width":"32",
+            "height":"32"
+        }
+    },
+    "image": "https://tech.ray247k.com/img/main/logo.png",
+    "url" : "https:\/\/tech.ray247k.com\/blog\/202103-setting-up-postgresql-database-with-docker\/",
+    "wordCount" : "316",
+    "genre" : [ "DevOps" , "Docker" , "容器技術" , "Containerization" , "Docker compose" , "PostgreSQL" ],
+    "keywords" : [ "DevOps" , "Docker" , "容器技術" , "Containerization" , "Docker compose" , "PostgreSQL" ]
+}
+</script>
+
+
+
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/" class="nav">
+        
+          Blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/" class="nav link"><i class='fa fa-home'></i> home</a>
+        
+      
+        
+          
+          <a href="/about" class="nav link"><i class='far fa-id-card'></i> about</a>
+        
+      
+        
+          
+          <a href="/categories" class="nav link"><i class='fas fa-sitemap'></i> category</a>
+        
+      
+      
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    
+    <a href="#lang-menu" class="nav lang-toggle" lang="zh-tw">zh-tw</a>
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  <menu id="lang-menu" class="flyout-menu menu">
+  <a href="#" lang="zh-tw" class="nav link active">正體中文 (zh-tw)</a>
+  
+      <a href="https://tech.ray247k.com/en/blog/202103-setting-up-postgresql-database-with-docker/" lang="en" class="nav link">English (en)</a>
+    
+  
+</menu>
+
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/"><img src="/img/main/logo.png" class="circle" width="100" alt="Byte Ebi&#39;s Logo" /></a>
+  <header>
+    <h1>Byte Ebi 🍤</h1>
+  </header>
+  <main>
+    <p>每天一小口，蝦米變鯨魚</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/ray247k" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//www.linkedin.com/in/j-ray-cheng" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="/blog/202103-setting-up-postgresql-database-with-docker/">PostgreSQL 資料庫建置 - 使用 Docker</a></h2>
+    
+    
+      <p>介紹如何使用 Docker 建置 PostgreSQL 資料庫</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2021-03-03 00:00:00 &#43;0000 UTC">2021/03/03</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+    <div id="socnet-share">
+      
+
+
+
+
+
+    </div>
+    <div class="content">
+      
+      <p>使用 Docker 來建置一個 PostgreSQL 資料庫<br>
+包含 <code>資料庫建置</code>、<code>資料持久化</code>、<code>使用 GUI 操作資料庫</code></p>
+<p>PostgreSQL 基礎教學：<a href="https://ithelp.ithome.com.tw/users/20105865/ironman/2865"
+   
+    target="_blank" rel="noreferrer noopener">後端前進PostgreSQL 系列
+</a>
+</p>
+<h1 id="環境建置---使用-docker-compose">環境建置 - 使用 Docker-compose</h1>
+<p>使用的映像檔：<a href="https://hub.docker.com/_/postgres"
+   
+    target="_blank" rel="noreferrer noopener">postgres: alpine
+</a>
+<br>
+參考文章：<a href="https://medium.com/analytics-vidhya/getting-started-with-postgresql-using-docker-compose-34d6b808c47c"
+   
+    target="_blank" rel="noreferrer noopener">Getting Started with PostgreSQL using Docker-Compose
+</a>
+</p>
+<h2 id="docker-composeyml">docker-compose.yml</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;3&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">services</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">postgres</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">postgres</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>: 
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;5432:5432&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#e6db74">&#34;postgres:alpine&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">database-data:/var/lib/postgresql/data</span> <span style="color:#75715e"># persist data even if container shuts down</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">always</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">environment</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">POSTGRES_USER</span>: <span style="color:#ae81ff">superuser</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">POSTGRES_PASSWORD</span>: <span style="color:#ae81ff">superpassword</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">POSTGRES_DB</span>: <span style="color:#ae81ff">demo_db</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">volumes</span>: 
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">database-data</span>: <span style="color:#75715e"># named volumes can be managed easier using docker-compose</span>
+</span></span></code></pre></div><p>啟動容器：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker-compose up
+</span></span></code></pre></div><hr>
+<h1 id="gui">GUI</h1>
+<h2 id="安裝">安裝</h2>
+<p>因為 sequel ace 不支援 PostgreSQL 所以另外裝一個 GUI 來用<br>
+安裝 <a href="https://dbeaver.com/"
+   
+    target="_blank" rel="noreferrer noopener">DBeaver
+</a>
+</p>
+<p>會需要安裝 JAVA 包</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew install --cask dbeaver-community
+</span></span></code></pre></div><h2 id="存取在遠端的-postgresql-container">存取在遠端的 PostgreSQL container</h2>
+<p>取得該遠端的對外 ip 作為 host 之後連線到指定的 port (5432)<br>
+就可以在其他機器上存取 PostgreSQL container</p>
+<hr>
+<h1 id="資料持久化-persist-data">資料持久化 (persist data)</h1>
+<p><a href="https://docs.docker.com/storage/volumes/"
+   
+    target="_blank" rel="noreferrer noopener">官方文件說明
+</a>
+<br>
+<a href="https://www.tpisoftware.com/tpu/articleDetails/1826"
+   
+    target="_blank" rel="noreferrer noopener">使用docker-compose啟動服務時，初始化資料庫和資料(以Mysql為例)
+</a>
+<br>
+<a href="https://success.mirantis.com/article/different-types-of-volumes"
+   
+    target="_blank" rel="noreferrer noopener">Different Types of Volumes
+</a>
+</p>
+<h2 id="named-volume">named volume：</h2>
+<ol>
+<li><code>docker-compose up</code> 啟動容器</li>
+<li><code>docker volume ls</code> 確認有建立 volume</li>
+<li><code>docker-compose stop</code> 停止容器</li>
+<li><code>docker-compose up</code>，使用 GUI 連線容器確認資料有被重新掛載</li>
+<li><code>docker-compose down</code>，移除容器</li>
+<li><code>docker ps -a</code> 確認容器確實被移除</li>
+<li><code>docker-compose up</code>，volume 成功掛載回去</li>
+</ol>
+<h2 id="host-volume">host volume</h2>
+<p>調整容器內 volume 目標資料夾位置到本機特定資料夾下<br>
+如果有多台容器需要一起掛載同一份資料：<a href="https://docs.docker.com/storage/volumes/#share-data-among-machines"
+   
+    target="_blank" rel="noreferrer noopener">官方文件
+</a>
+<br>
+這個做法使用 <code>docker volume ls</code> 就不會有結果，要自己去看指定的路徑。因為管理 volume 已經不是透過 docker</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;3&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">services</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">postgres</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">postgres</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>: 
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;5432:5432&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#e6db74">&#34;postgres:alpine&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">./database_data:/var/lib/postgresql/data</span> <span style="color:#75715e"># persist data even if container shuts down</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">always</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">environment</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">POSTGRES_USER</span>: <span style="color:#ae81ff">superuser</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">POSTGRES_PASSWORD</span>: <span style="color:#ae81ff">superpassword</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">POSTGRES_DB</span>: <span style="color:#ae81ff">database_name</span>
+</span></span></code></pre></div><ol>
+<li>調整 yml 檔 service 內 volumes，改為指定路徑</li>
+<li><code>docker-compose up</code> 啟動容器</li>
+<li>使用路徑管理 volume 後 <code>docker volume ls</code> 不會有反應</li>
+<li>查看指定路徑 <code>./database_data</code>，volume 檔案成功寫入</li>
+<li><code>docker-compose up</code>，使用 GUI 連線容器確認資料有被重新掛載</li>
+<li><code>docker-compose down</code>，用 <code>docker ps -a</code> 確認 container 確實被移除</li>
+<li><code>docker-compose up</code>，volume 成功掛載回去</li>
+</ol>
+<h1 id="補充">補充</h1>
+<p>如果在同一台機器上想要啟用多個 PostgreSQL 容器<br>
+則 5432 port 會被佔用，當然可以將外部 port 改為不衝突的 port<br>
+但是內部 port 使用的依然是 5432
+如果在容器網路內直接溝通，例如 Laravel 的 .env 設定的 port<br>
+當透過容器外部網路線連線時使用調整後錯開的 port 連線正常<br>
+但是當執行 <code>php artisan migrate</code> 之類指令，執行者是容器時<br>
+要使用的卻是內部的 5432 port，如此在管理上會十分麻煩</p>
+<p>此情境下可以透啟動容器時指定內部運行的 port 來解決</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>  <span style="color:#f92672">postgre</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">stage_postgre</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;5430:5430&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#e6db74">&#34;postgres:12.6&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">/project/database/stage/database_data:/var/lib/postgresql/data</span> <span style="color:#75715e"># persist data even if container shuts down</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">command</span>: -<span style="color:#ae81ff">p 5430</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">environment</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">POSTGRES_USER</span>: <span style="color:#ae81ff">${DB_USER}</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">POSTGRES_PASSWORD</span>: <span style="color:#ae81ff">${DB_PASSWORD}</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">POSTGRES_DB</span>: <span style="color:#ae81ff">${DB_NAME}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">always</span>
+</span></span></code></pre></div><p>如上面的設定中 <code>command: -p 5430</code> 指定了內部 postgres 使用的 port<br>
+所以在 <code>ports:</code> 設定中就直接將外部 port 5430 指定給內部的 port 5430<br>
+這樣不管在容器內或外部都可以使用一樣的 port 來進行連線</p>
+<h2 id="使用-gui-存取在遠端的-postgresql-container">使用 GUI 存取在遠端的 PostgreSQL container</h2>
+<p>取得該遠端的對外 ip 作為 host 之後連線到指定的 port (5432)<br>
+就可以在其他機器上存取 PostgreSQL container</p>
+
+      
+      
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/ray247k/button?referrer=https%3a%2f%2ftech.ray247k.com%2fblog%2f202103-setting-up-postgresql-database-with-docker%2f" width="100%" frameborder=0></iframe>
+
+    </div>
+    <footer>
+      <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/devops/">DevOps</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/devops/">DevOps</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/docker/">Docker</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/%e5%ae%b9%e5%99%a8%e6%8a%80%e8%a1%93/">容器技術</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/containerization/">Containerization</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/docker-compose/">Docker compose</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/postgresql/">PostgreSQL</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+    </footer>
+  </article>
+  
+    
+
+  
+  <div class="pagination">
+    
+      <a href="/blog/202103-enable-docker-service-in-remote-server/" class="button left"><span>雲端主機啟動 Docker 服務</span></a>
+    
+    
+      <a href="/blog/202102-reverse-proxy-in-docker-service/" class="button right"><span>反向代理 - 在 Docker 環境建置</span></a>
+    
+  </div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>最新文章</h1>
+      </header>
+      
+      <article class="mini-post">
+          <a href="/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/" class="image" style="--bg-image: url('/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg');">
+    <img src="/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/">Golang 中 Struct 內型別用指針和值的差異和時機</a></h2>
+          <time class="published" datetime="2023-06-25 00:00:00 &#43;0000 UTC">2023/06/25</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202301-ffmpeg-video-convert/" class="image" style="--bg-image: url('/blog/202301-ffmpeg-video-convert/featured.png');">
+    <img src="/blog/202301-ffmpeg-video-convert/featured.png" alt="">
+  </a>
+        <header>
+          <h2><a href="/blog/202301-ffmpeg-video-convert/">透過 FFmpeg 轉換影片格式</a></h2>
+          <time class="published" datetime="2023-01-01 00:00:00 &#43;0000 UTC">2023/01/01</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202210-aws101-what-is-sns-and-sqs/" class="image" style="--bg-image: url('/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg');">
+    <img src="/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/blog/202210-aws101-what-is-sns-and-sqs/">[AWS 101] 什麼是 SNS 和 SQS</a></h2>
+          <time class="published" datetime="2022-10-06 00:00:00 &#43;0000 UTC">2022/10/06</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202210-what-is-serverless/" class="image" style="--bg-image: url('/blog/202210-what-is-serverless/featured.jpg');">
+    <img src="/blog/202210-what-is-serverless/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/blog/202210-what-is-serverless/">Serverless 簡介</a></h2>
+          <time class="published" datetime="2022-10-04 00:00:00 &#43;0000 UTC">2022/10/04</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202207-go-ethereum-abigen/" class="image" style="--bg-image: url('/blog/202207-go-ethereum-abigen/featured.jpeg');">
+    <img src="/blog/202207-go-ethereum-abigen/featured.jpeg" alt="">
+  </a>
+        <header>
+          <h2><a href="/blog/202207-go-ethereum-abigen/">使用 Golang 和智能合約互動</a></h2>
+          <time class="published" datetime="2022-07-09 00:00:00 &#43;0000 UTC">2022/07/09</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/blog/" class="button">查看更多</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="/categories">Category</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/categories/devops/">devops<span class="count">24</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/node.js/">node.js<span class="count">22</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/leetcode/">leetcode<span class="count">13</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/golang/">golang<span class="count">11</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/python3/">python3<span class="count">9</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/php/">php<span class="count">7</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/laravel/">laravel<span class="count">6</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/">架站相關<span class="count">6</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/aws/">aws<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/serverless/">serverless<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/%E5%AF%A6%E7%94%A8%E5%B7%A5%E5%85%B7/">實用工具<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">版本控制<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%9C%8D%E5%8B%99/">第三方服務<span class="count">1</span></a>
+          </li>
+          
+        </ul>
+      </section>
+    
+  
+
+  
+  <section id="tags">
+    <header>
+      <h1><a href="/tags">Tag</a></h1>
+    </header>
+    <div class="li-x post-meta tags-md" style="margin-left: 0.5em;">
+      <ul>
+        
+        
+        <li>
+          <a href="/tags/devops/">devops (27)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/node.js/">node.js (22)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/vue/">vue (15)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/leetcode/">leetcode (13)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/docker/">docker (12)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/go/">go (11)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/golang/">golang (11)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/php/">php (11)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/containerization/">containerization (10)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%AE%B9%E5%99%A8%E6%8A%80%E8%A1%93/">容器技術 (10)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/express/">express (9)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/python3/">python3 (9)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cicd/">cicd (8)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/leetcode-easy/">leetcode-easy (8)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/gcp/">gcp (7)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/laravel/">laravel (7)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/docker-compose/">docker-compose (6)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/vuex/">vuex (6)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/composer/">composer (5)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/element-ui/">element-ui (5)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/leetcode-medium/">leetcode-medium (5)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/drone/">drone (4)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/jenkins/">jenkins (4)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/aws/">aws (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cloudflare/">cloudflare (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/mongodb/">mongodb (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/mutation/">mutation (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/restful/">restful (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/ssh/">ssh (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/">架站相關 (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/chatbot/">chatbot (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/component/">component (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/discord/">discord (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/dns/">dns (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/getter/">getter (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/google-domains/">google-domains (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/linux/">linux (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/nginx/">nginx (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/vue-router/">vue-router (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/vue-ui/">vue-ui (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/apache-bench/">apache-bench (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/auto-scaling/">auto-scaling (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/axios/">axios (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/blockchain/">blockchain (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cdn/">cdn (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cloudflare-workers/">cloudflare-workers (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cors/">cors (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/csv/">csv (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/domain-name/">domain-name (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/excel/">excel (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/ffmpeg/">ffmpeg (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/gas/">gas (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/gcr/">gcr (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/git/">git (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/github/">github (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/github-page/">github-page (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/google-app-script/">google-app-script (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/google-container-registry/">google-container-registry (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/google-sheets/">google-sheets (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/grumphp/">grumphp (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/laravel-excel/">laravel-excel (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/load-balancing/">load-balancing (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/ngrok/">ngrok (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/php-fpm/">php-fpm (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/phpcbf/">phpcbf (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/phpcs/">phpcs (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/portainer/">portainer (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/postgresql/">postgresql (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/prerender/">prerender (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/proxy/">proxy (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/queue/">queue (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/redis/">redis (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/seo/">seo (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/server/">server (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/serverless/">serverless (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/smart-contract/">smart-contract (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/stress-testing/">stress-testing (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/subdomain/">subdomain (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E4%BC%BA%E6%9C%8D%E5%99%A8/">伺服器 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%80%8B%E4%BA%BA%E5%93%81%E7%89%8C/">個人品牌 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%9F%9F%E5%90%8D/">域名 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%A3%93%E5%8A%9B%E6%B8%AC%E8%A9%A6/">壓力測試 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%AD%90%E7%B6%B2%E5%9F%9F/">子網域 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E6%90%9C%E5%B0%8B%E5%BC%95%E6%93%8E%E6%9C%80%E4%BD%B3%E5%8C%96/">搜尋引擎最佳化 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">版本控制 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E8%B2%B7%E7%B6%B2%E5%9D%80/">買網址 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E9%98%B2%E7%81%AB%E7%89%86/">防火牆 (1)</a>
+        </li>
+        
+      </ul>
+
+    </div>
+  </section>
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+    
+    <p class="copyright">
+        © 2023 Byte Ebi 🍤
+    </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>
+      hljs.configure({ ignoreUnescapedHTML: true }); 
+      hljs.highlightAll();
+    </script><script src="/js/bundle.min.b8ecc205622548252ae685817642568fed404d2f04df7ea571a8b71e3091ffe7.js" integrity="sha256-uOzCBWIlSCUq5oWBdkJWj&#43;1ATS8E336lcai3HjCR/&#43;c="></script>
+    <script src="/js/add-on.js"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-LTGVYYWC2J', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </div>
+  </body>
+</html>

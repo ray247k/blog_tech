@@ -36,5 +36,12 @@
       <guid>https://tech.ray247k.com/en/blog/202107-initialize-server-setting-with-docker-and-laravel/</guid>
       <description>&lt;p&gt;If you are setting up a new cloud server and want to create a Laravel development environment using Docker on it.&lt;br&gt;&#xA;And run Laravel&amp;rsquo;s common composer and artisan commands remotely, here&amp;rsquo;s a guide for you.&lt;/p&gt;</description>
     </item>
+    <item>
+      <title>Laravel environment basic settings</title>
+      <link>https://tech.ray247k.com/en/blog/202102-laravel-environment-basic-settings/</link>
+      <pubDate>Thu, 25 Feb 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202102-laravel-environment-basic-settings/</guid>
+      <description>&lt;p&gt;Configuration and package installation required for developing Laravel projects, applicable whether on remote hosts or local machines.&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>

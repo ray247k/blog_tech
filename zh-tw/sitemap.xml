@@ -605,6 +605,16 @@
   </url><url>
     <loc>https://tech.ray247k.com/tags/linux/</loc>
     <lastmod>2022-02-26T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/linux/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/linux/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/blog/202202-connect-to-gcp-vm-using-ssh/</loc>
     <lastmod>2022-02-26T00:00:00+00:00</lastmod>
@@ -1509,27 +1519,94 @@
   </url><url>
     <loc>https://tech.ray247k.com/blog/202104-use-ssh-key-login-remote-server/</loc>
     <lastmod>2021-04-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202104-use-ssh-key-login-remote-server/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202104-use-ssh-key-login-remote-server/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/blog/202103-enable-docker-service-in-remote-server/</loc>
     <lastmod>2021-03-13T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202103-enable-docker-service-in-remote-server/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202103-enable-docker-service-in-remote-server/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/tags/postgresql/</loc>
     <lastmod>2021-03-03T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/postgresql/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/postgresql/"
+                />
   </url><url>
-    <loc>https://tech.ray247k.com/blog/202103-build-postgresql-database-useing-docker/</loc>
+    <loc>https://tech.ray247k.com/blog/202103-setting-up-postgresql-database-with-docker/</loc>
     <lastmod>2021-03-03T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202103-setting-up-postgresql-database-with-docker/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202103-setting-up-postgresql-database-with-docker/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/tags/proxy/</loc>
     <lastmod>2021-02-27T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/proxy/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/proxy/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/blog/202102-reverse-proxy-in-docker-service/</loc>
     <lastmod>2021-02-27T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202102-reverse-proxy-in-docker-service/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202102-reverse-proxy-in-docker-service/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/blog/202102-laravel-environment-basic-settings/</loc>
     <lastmod>2021-02-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tech.ray247k.com/blog/202102-ngrok-share-your-local-development-site/</loc>
-    <lastmod>2021-02-14T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202102-laravel-environment-basic-settings/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202102-laravel-environment-basic-settings/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/tags/portainer/</loc>
     <lastmod>2021-01-16T00:00:00+00:00</lastmod>

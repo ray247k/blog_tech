@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on Byte Ebi 🍤</title>
+    <link>https://tech.ray247k.com/en/tags/linux/</link>
+    <description>Recent content in Linux on Byte Ebi 🍤</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 25 Apr 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tech.ray247k.com/en/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Use ssh key login remote server</title>
+      <link>https://tech.ray247k.com/en/blog/202104-use-ssh-key-login-remote-server/</link>
+      <pubDate>Sun, 25 Apr 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202104-use-ssh-key-login-remote-server/</guid>
+      <description>Normally, logging into a server involves using a username and password,&#xA;but passwords can be compromised through interception or sharing.&#xA;The security level is not as robust as using SSH keys, which also eliminate the need for manual password entry each time.&#xA;Creating SSH Keys for Login Generating SSH keys on the client side using the command: ssh-keygen Note: SSH keys should be in RSA format; if using OPENSSH, errors may persist.</description>
+    </item>
+  </channel>
+</rss>

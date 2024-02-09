@@ -1,0 +1,982 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+<title>Setting up postgreSQL database with docker - Byte Ebi 🍤</title>
+<meta name="description" content="Guide on setting up PostgreSQL database using Docker">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta property="og:site_name" content="Byte Ebi 🍤">
+<meta property="og:title" content="Setting up postgreSQL database with docker">
+<meta property="og:description" content="Guide on setting up PostgreSQL database using Docker">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://tech.ray247k.com/en/blog/202103-setting-up-postgresql-database-with-docker/">
+  <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
+
+
+
+  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
+  
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=1" color="#ffffff">
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=1">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=1">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+<meta name="generator" content="Hugo 0.122.0"><meta property="og:site_name" content="Byte Ebi 🍤">
+  <meta property="og:title" content="Setting up postgreSQL database with docker">
+  <meta property="og:description" content="Guide on setting up PostgreSQL database using Docker">
+  <meta property="description" content="Guide on setting up PostgreSQL database using Docker">
+  <meta property="og:url" content="https://tech.ray247k.com/en/blog/202103-setting-up-postgresql-database-with-docker/">
+  <meta property="og:type" content="article">
+  
+    <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
+  
+  
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/felipec.min.css">
+          <link rel="stylesheet" href="/css/bundle.min.3b1b5f2e683d24b1ea3b5a08c8254622e40aa935e0ead75ba6d45c0f14c2f965.css" integrity="sha256-OxtfLmg9JLHqO1oIyCVGIuQKqTXg6tdbptRcDxTC&#43;WU="><link rel="stylesheet" href="/css/add-on.css">
+
+
+    
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', "");
+        </script>
+    
+
+
+  <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "image": {
+        "@type": "ImageObject",
+        "image": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+        "height": 648,
+        "width": 1080
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Byte Ebi 🍤",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png"
+        }
+    },
+    "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+    "headline": "About web development, software engineering, frontend, backend, chatbot, server related topics. - Byte Ebi 🍤",
+    "name": "Byte Ebi 🍤",
+    "url": "https:\/\/tech.ray247k.com",
+    "description": "About web development, software engineering, frontend, backend, chatbot, server related topics. - aws,devops,golang,laravel,python3,serverless,third-party-services,tools,version-control,web-hosting,website-operations,",
+    "keywords": [
+        "apache-bench,auto-scaling,aws,blockchain,cdn,chatbot,ci\/cd,cicd,cloudflare,cloudflare-workers,composer,container-technology,containerization,csv,devops,discord,dns,docker,docker-compose,domain,domain-name,drone,excel,ffmpeg,firewall,gas,gcp,gcr,git,github,github-page,go,golang,google-app-script,google-container-registry,google-domains,google-sheets,grumphp,jenkins,laravel,laravel-excel,linux,load-balancing,nginx,ngrok,personal-brand,php,php-fpm,postgresql,prerender,proxy,purchase-domain,python3,queue,redis,search-engine-optimization,seo,server,serverless,smart-contract,ssh,stress-testing,subdomain,version-control,web-hosting,"
+    ]
+}
+</script>
+
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "legalName": "Byte Ebi 🍤",
+    "url": "https:\/\/tech.ray247k.com",
+    "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "",
+        "availableLanguage": [
+            "Mandarin",
+            "English"
+        ]
+    },
+    "sameAs": [
+        "https://ray247k.blogspot.com/"
+    ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Setting up postgreSQL database with docker",
+    "description": "Guide on setting up PostgreSQL database using Docker",
+    "keywords": [
+        "DevOps" , "Docker" , "Container Technology" , "Containerization" , "Docker compose" , "PostgreSQL" 
+    ],
+    "dateCreated": "2021-03-03T00:00:00.00Z",
+    "datePublished": "2021-03-03T00:00:00.00Z",
+    "dateModified": "2021-03-03T00:00:00.00Z",
+    "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "contentUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png"
+    },
+    "breadcrumb": {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com",
+                    "name": "Byte Ebi 🍤",
+                    "url": "https:\/\/tech.ray247k.com"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com/blog",
+                    "name": "Blog",
+                    "url": "https:\/\/tech.ray247k.com/blog"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\/en\/blog\/202103-setting-up-postgresql-database-with-docker\/",
+                    "name": "Setting up postgreSQL database with docker",
+                    "url": "https:\/\/tech.ray247k.com\/en\/blog\/202103-setting-up-postgresql-database-with-docker\/"
+                }
+            }
+        ],
+        "itemListOrder": "Ascending",
+        "numberOfItems": 3
+    }
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "articleSection": "blog",
+    "name": "Setting up postgreSQL database with docker",
+    "headline": "\u003cp\u003eSetting up a PostgreSQL Database with Docker\u003cbr\u003e\nIncluding \u003ccode\u003eDatabase Setup\u003c\/code\u003e, \u003ccode\u003eData Persistence\u003c\/code\u003e, \u003ccode\u003eUsing GUI to Operate the Database\u003c\/code\u003e\u003c\/p\u003e",
+    "description": "Guide on setting up PostgreSQL database using Docker",
+    "inLanguage": "en",
+    "isFamilyFriendly": "true",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com\/en\/blog\/202103-setting-up-postgresql-database-with-docker\/"
+    },
+    "author" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "creator" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "accountablePerson" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "copyrightHolder" : "Byte Ebi 🍤",
+    "copyrightYear" : "2021",
+    "dateCreated": "2021-03-03T00:00:00.00Z",
+    "datePublished": "2021-03-03T00:00:00.00Z",
+    "dateModified": "2021-03-03T00:00:00.00Z",
+    "publisher":{
+        "@type":"Organization",
+        "name": "Byte Ebi 🍤",
+        "url": "https://tech.ray247k.com",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+            "width":"32",
+            "height":"32"
+        }
+    },
+    "image": "https://tech.ray247k.com/img/main/logo.png",
+    "url" : "https:\/\/tech.ray247k.com\/en\/blog\/202103-setting-up-postgresql-database-with-docker\/",
+    "wordCount" : "607",
+    "genre" : [ "DevOps" , "Docker" , "Container Technology" , "Containerization" , "Docker compose" , "PostgreSQL" ],
+    "keywords" : [ "DevOps" , "Docker" , "Container Technology" , "Containerization" , "Docker compose" , "PostgreSQL" ]
+}
+</script>
+
+
+
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/en/" class="nav">
+        
+          Blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/en/" class="nav link"><i class='fa fa-home'></i> home</a>
+        
+      
+        
+          
+          <a href="/en/about" class="nav link"><i class='far fa-id-card'></i> about</a>
+        
+      
+        
+          
+          <a href="/en/categories" class="nav link"><i class='fas fa-sitemap'></i> category</a>
+        
+      
+      
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    
+    <a href="#lang-menu" class="nav lang-toggle" lang="en">en</a>
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  <menu id="lang-menu" class="flyout-menu menu">
+  <a href="#" lang="en" class="nav link active">English (en)</a>
+  
+      <a href="https://tech.ray247k.com/blog/202103-setting-up-postgresql-database-with-docker/" lang="zh-tw" class="nav link">正體中文 (zh-tw)</a>
+    
+  
+</menu>
+
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/en/"><img src="/img/main/logo.png" class="circle" width="100" alt="Byte Ebi&#39;s Logo" /></a>
+  <header>
+    <h1>Byte Ebi 🍤</h1>
+  </header>
+  <main>
+    <p>A Bit everyday A Byte every week</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/ray247k" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//www.linkedin.com/in/j-ray-cheng" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="/en/blog/202103-setting-up-postgresql-database-with-docker/">Setting up postgreSQL database with docker</a></h2>
+    
+    
+      <p>Guide on setting up PostgreSQL database using Docker</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2021-03-03 00:00:00 &#43;0000 UTC">March 3, 2021</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+    <div id="socnet-share">
+      
+
+
+
+
+
+    </div>
+    <div class="content">
+      
+      <p>Setting up a PostgreSQL Database with Docker<br>
+Including <code>Database Setup</code>, <code>Data Persistence</code>, <code>Using GUI to Operate the Database</code></p>
+<p>PostgreSQL Basic Tutorial: <a href="https://ithelp.ithome.com.tw/users/20105865/ironman/2865"
+   
+    target="_blank" rel="noreferrer noopener">Backend Advancement PostgreSQL Series
+</a>
+</p>
+<h1 id="environment-setup---using-docker-compose">Environment Setup - Using Docker-compose</h1>
+<p>Image Used: <a href="https://hub.docker.com/_/postgres"
+   
+    target="_blank" rel="noreferrer noopener">postgres: alpine
+</a>
+<br>
+Reference Article: <a href="https://medium.com/analytics-vidhya/getting-started-with-postgresql-using-docker-compose-34d6b808c47c"
+   
+    target="_blank" rel="noreferrer noopener">Getting Started with PostgreSQL using Docker-Compose
+</a>
+</p>
+<h2 id="docker-composeyml">docker-compose.yml</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;3&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">services</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">postgres</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">postgres</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>: 
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;5432:5432&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#e6db74">&#34;postgres:alpine&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">database-data:/var/lib/postgresql/data</span> <span style="color:#75715e"># persist data even if container shuts down</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">always</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">environment</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">POSTGRES_USER</span>: <span style="color:#ae81ff">superuser</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">POSTGRES_PASSWORD</span>: <span style="color:#ae81ff">superpassword</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">POSTGRES_DB</span>: <span style="color:#ae81ff">demo_db</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">volumes</span>: 
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">database-data</span>: <span style="color:#75715e"># named volumes can be managed easier using docker-compose</span>
+</span></span></code></pre></div><p>Start the container:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker-compose up
+</span></span></code></pre></div><hr>
+<h1 id="gui">GUI</h1>
+<h2 id="installation">Installation</h2>
+<p>As Sequel Ace does not support PostgreSQL, install another GUI for use<br>
+Install <a href="https://dbeaver.com/"
+   
+    target="_blank" rel="noreferrer noopener">DBeaver
+</a>
+</p>
+<p>Java package is required</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew install --cask dbeaver-community
+</span></span></code></pre></div><h2 id="accessing-postgresql-container-remotely">Accessing PostgreSQL container remotely</h2>
+<p>Obtain the external IP of the remote host and connect to the specified port (5432)<br>
+to access the PostgreSQL container on other machines</p>
+<hr>
+<h1 id="data-persistence">Data Persistence</h1>
+<p><a href="https://docs.docker.com/storage/volumes/"
+   
+    target="_blank" rel="noreferrer noopener">Official documentation
+</a>
+<br>
+<a href="https://www.tpisoftware.com/tpu/articleDetails/1826"
+   
+    target="_blank" rel="noreferrer noopener">Initializing Database and Data When Starting Services with docker-compose (using MySQL as an example)
+</a>
+<br>
+<a href="https://success.mirantis.com/article/different-types-of-volumes"
+   
+    target="_blank" rel="noreferrer noopener">Different Types of Volumes
+</a>
+</p>
+<h2 id="named-volume">Named Volume:</h2>
+<ol>
+<li>Start the container with <code>docker-compose up</code></li>
+<li>Verify that the volume is created with <code>docker volume ls</code></li>
+<li>Stop the container with <code>docker-compose stop</code></li>
+<li>Start the container again with <code>docker-compose up</code> and verify data persistence using GUI connection</li>
+<li>Remove the container with <code>docker-compose down</code></li>
+<li>Check with <code>docker ps -a</code> to ensure the container is removed</li>
+<li>Start the container again with <code>docker-compose up</code>, and the volume should be mounted successfully</li>
+</ol>
+<h2 id="host-volume">Host Volume</h2>
+<p>Adjust the target folder location of the volume inside the container to a specific local folder<br>
+If multiple containers need to mount the same data together: <a href="https://docs.docker.com/storage/volumes/#share-data-among-machines"
+   
+    target="_blank" rel="noreferrer noopener">Official documentation
+</a>
+<br>
+This method does not show results with <code>docker volume ls</code> as volume management is no longer done through docker</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;3&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">services</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">postgres</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">postgres</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>: 
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;5432:5432&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#e6db74">&#34;postgres:alpine&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">./database_data:/var/lib/postgresql/data</span> <span style="color:#75715e"># persist data even if container shuts down</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">always</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">environment</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">POSTGRES_USER</span>: <span style="color:#ae81ff">superuser</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">POSTGRES_PASSWORD</span>: <span style="color:#ae81ff">superpassword</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">POSTGRES_DB</span>: <span style="color:#ae81ff">database_name</span>
+</span></span></code></pre></div><ol>
+<li>Modify the path in the yml file under service volumes</li>
+<li>Start the container with <code>docker-compose up</code></li>
+<li>After managing the volume with the path, <code>docker volume ls</code> will not show a response</li>
+<li>Check the specified path <code>./database_data</code>, and the volume files should be successfully written</li>
+<li>Start the container again with <code>docker-compose up</code> and verify data persistence using GUI connection</li>
+<li>Remove the container with <code>docker-compose down</code> and confirm removal with <code>docker ps -a</code></li>
+<li>Start the container again with <code>docker-compose up</code>, and the volume should be mounted successfully</li>
+</ol>
+<h1 id="supplementary">Supplementary</h1>
+<p>If multiple PostgreSQL containers need to be enabled on the same machine<br>
+Port 5432 will be occupied, external ports can be changed to non-conflicting ports<br>
+But the internal port remains 5432
+If communicating directly within the container network, for example, the port set in Laravel&rsquo;s .env configuration</p>
+<p>When connecting via the container&rsquo;s external network, use the adjusted ports to connect normally<br>
+However, when executing commands like <code>php artisan migrate</code> within the container<br>
+The internal port 5432 needs to be used, which can be cumbersome for management</p>
+<p>In this scenario, specifying the internal running port when starting the container can resolve the issue</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>  <span style="color:#f92672">postgre</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">stage_postgre</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;5430:5430&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#e6db74">&#34;postgres:12.6&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">/project/database/stage/database_data:/var/lib/postgresql/data</span> <span style="color:#75715e"># persist data even if container shuts down</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">command</span>: -<span style="color:#ae81ff">p 5430</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">environment</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">POSTGRES_USER</span>: <span style="color:#ae81ff">${DB_USER}</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">POSTGRES_PASSWORD</span>: <span style="color:#ae81ff">${DB_PASSWORD}</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">POSTGRES_DB</span>: <span style="color:#ae81ff">${DB_NAME}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">always</span>
+</span></span></code></pre></div><p>In the above configuration, <code>command: -p 5430</code> specifies the internal port used by postgres<br>
+So in the <code>ports:</code> setting, the external port 5430 is directly assigned to the internal port 5430<br>
+This way, the same port can be used for connections both inside and outside the container</p>
+<h2 id="using-gui-to-access-postgresql-container-remotely">Using GUI to Access PostgreSQL container remotely</h2>
+<p>Obtain the external IP of the remote host and connect to the 5432 port to access the PostgreSQL container on other machines.</p>
+
+      
+      
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/ray247k/button?referrer=https%3a%2f%2ftech.ray247k.com%2fen%2fblog%2f202103-setting-up-postgresql-database-with-docker%2f" width="100%" frameborder=0></iframe>
+
+    </div>
+    <footer>
+      <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/en/categories/devops/">DevOps</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/en/tags/devops/">DevOps</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/docker/">Docker</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/container-technology/">Container Technology</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/containerization/">Containerization</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/docker-compose/">Docker compose</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/postgresql/">PostgreSQL</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+    </footer>
+  </article>
+  
+    
+
+  
+  <div class="pagination">
+    
+      <a href="/en/blog/202103-enable-docker-service-in-remote-server/" class="button left"><span>Enable docker service in remote server</span></a>
+    
+    
+      <a href="/en/blog/202102-reverse-proxy-in-docker-service/" class="button right"><span>Reverse Proxy Setup in Docker Environment</span></a>
+    
+  </div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>Recent Posts</h1>
+      </header>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/" class="image" style="--bg-image: url('/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg');">
+    <img src="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/">Different between pointer and value for struct type in golang</a></h2>
+          <time class="published" datetime="2023-06-25 00:00:00 &#43;0000 UTC">June 25, 2023</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202301-ffmpeg-video-convert/" class="image" style="--bg-image: url('/en/blog/202301-ffmpeg-video-convert/featured.png');">
+    <img src="/en/blog/202301-ffmpeg-video-convert/featured.png" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202301-ffmpeg-video-convert/">Using FFmpeg to convert media files</a></h2>
+          <time class="published" datetime="2023-01-01 00:00:00 &#43;0000 UTC">January 1, 2023</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202210-aws101-what-is-sns-and-sqs/" class="image" style="--bg-image: url('/en/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg');">
+    <img src="/en/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202210-aws101-what-is-sns-and-sqs/">[AWS 101] What are SNS and SQS</a></h2>
+          <time class="published" datetime="2022-10-06 00:00:00 &#43;0000 UTC">October 6, 2022</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202210-what-is-serverless/" class="image" style="--bg-image: url('/en/blog/202210-what-is-serverless/featured.jpg');">
+    <img src="/en/blog/202210-what-is-serverless/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202210-what-is-serverless/">Serverless 101</a></h2>
+          <time class="published" datetime="2022-10-04 00:00:00 &#43;0000 UTC">October 4, 2022</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202207-go-ethereum-abigen/" class="image" style="--bg-image: url('/en/blog/202207-go-ethereum-abigen/featured.jpeg');">
+    <img src="/en/blog/202207-go-ethereum-abigen/featured.jpeg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202207-go-ethereum-abigen/">Interacting with smart contracts using Golang</a></h2>
+          <time class="published" datetime="2022-07-09 00:00:00 &#43;0000 UTC">July 9, 2022</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/en/blog/" class="button">See More</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="/en/categories">Categories</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/en/categories/devops/">devops<span class="count">20</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/golang/">golang<span class="count">11</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/laravel/">laravel<span class="count">6</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/web-hosting/">web-hosting<span class="count">3</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/python3/">python3<span class="count">2</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/website-operations/">website-operations<span class="count">2</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/aws/">aws<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/serverless/">serverless<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/third-party-services/">third-party-services<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/tools/">tools<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/version-control/">version-control<span class="count">1</span></a>
+          </li>
+          
+        </ul>
+      </section>
+    
+  
+
+  
+  <section id="tags">
+    <header>
+      <h1><a href="/en/tags">Tags</a></h1>
+    </header>
+    <div class="li-x post-meta tags-md" style="margin-left: 0.5em;">
+      <ul>
+        
+        
+        <li>
+          <a href="/en/tags/devops/">devops (22)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/go/">go (11)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/golang/">golang (11)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/docker/">docker (8)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/cicd/">cicd (7)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/laravel/">laravel (7)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/container-technology/">container-technology (6)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/containerization/">containerization (6)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/gcp/">gcp (6)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/composer/">composer (5)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/docker-compose/">docker-compose (4)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/drone/">drone (4)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/jenkins/">jenkins (4)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/php/">php (4)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/aws/">aws (3)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/cloudflare/">cloudflare (3)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/web-hosting/">web-hosting (3)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/chatbot/">chatbot (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/discord/">discord (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/dns/">dns (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/google-domains/">google-domains (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/nginx/">nginx (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/python3/">python3 (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ssh/">ssh (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/apache-bench/">apache-bench (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/auto-scaling/">auto-scaling (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/blockchain/">blockchain (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/cdn/">cdn (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ci/cd/">ci/cd (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/cloudflare-workers/">cloudflare-workers (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/csv/">csv (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/domain/">domain (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/domain-name/">domain-name (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/excel/">excel (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ffmpeg/">ffmpeg (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/firewall/">firewall (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/gas/">gas (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/gcr/">gcr (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/git/">git (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/github/">github (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/github-page/">github-page (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/google-app-script/">google-app-script (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/google-container-registry/">google-container-registry (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/google-sheets/">google-sheets (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/grumphp/">grumphp (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/laravel-excel/">laravel-excel (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/linux/">linux (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/load-balancing/">load-balancing (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ngrok/">ngrok (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/personal-brand/">personal-brand (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/php-fpm/">php-fpm (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/postgresql/">postgresql (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/prerender/">prerender (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/proxy/">proxy (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/purchase-domain/">purchase-domain (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/queue/">queue (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/redis/">redis (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/search-engine-optimization/">search-engine-optimization (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/seo/">seo (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/server/">server (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/serverless/">serverless (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/smart-contract/">smart-contract (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/stress-testing/">stress-testing (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/subdomain/">subdomain (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/version-control/">version-control (1)</a>
+        </li>
+        
+      </ul>
+
+    </div>
+  </section>
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+    
+    <p class="copyright">
+        © 2023 Byte Ebi 🍤
+    </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>
+      hljs.configure({ ignoreUnescapedHTML: true }); 
+      hljs.highlightAll();
+    </script><script src="/js/bundle.min.b8ecc205622548252ae685817642568fed404d2f04df7ea571a8b71e3091ffe7.js" integrity="sha256-uOzCBWIlSCUq5oWBdkJWj&#43;1ATS8E336lcai3HjCR/&#43;c="></script>
+    <script src="/js/add-on.js"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-LTGVYYWC2J', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </div>
+  </body>
+</html>

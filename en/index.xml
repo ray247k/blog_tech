@@ -317,6 +317,41 @@
       <description>&lt;p&gt;Previously, I&amp;rsquo;ve been using free blogging platforms like Blogger.&lt;br&gt;&#xA;However, with the rise of personal branding awareness in recent years and feeling limited by the features of the original blog,&lt;br&gt;&#xA;not to mention the inconvenience of moving, and the inability to customize SEO and embed tracking codes,&lt;br&gt;&#xA;I felt the need to take matters into my own hands.&lt;br&gt;&#xA;Having worked in the media industry, I realized that if you want something done right, you have to do it yourself.&lt;br&gt;&#xA;I initially moved from Blogger to Medium, then back to Blogger, finding the transition quite cumbersome.&lt;br&gt;&#xA;Furthermore, the formatting of code content often gets distorted, and I wanted to record everything using Markdown syntax.&lt;br&gt;&#xA;This led me to consider self-hosting, partly as a platform to showcase my skills.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Use ssh key login remote server</title>
+      <link>https://tech.ray247k.com/en/blog/202104-use-ssh-key-login-remote-server/</link>
+      <pubDate>Sun, 25 Apr 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202104-use-ssh-key-login-remote-server/</guid>
+      <description>Normally, logging into a server involves using a username and password,&#xA;but passwords can be compromised through interception or sharing.&#xA;The security level is not as robust as using SSH keys, which also eliminate the need for manual password entry each time.&#xA;Creating SSH Keys for Login Generating SSH keys on the client side using the command: ssh-keygen Note: SSH keys should be in RSA format; if using OPENSSH, errors may persist.</description>
+    </item>
+    <item>
+      <title>Enable docker service in remote server</title>
+      <link>https://tech.ray247k.com/en/blog/202103-enable-docker-service-in-remote-server/</link>
+      <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202103-enable-docker-service-in-remote-server/</guid>
+      <description>&lt;p&gt;Step-by-step guide for enabling Docker and Docker-compose services on a new cloud host.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Setting up postgreSQL database with docker</title>
+      <link>https://tech.ray247k.com/en/blog/202103-setting-up-postgresql-database-with-docker/</link>
+      <pubDate>Wed, 03 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202103-setting-up-postgresql-database-with-docker/</guid>
+      <description>&lt;p&gt;Setting up a PostgreSQL Database with Docker&lt;br&gt;&#xA;Including &lt;code&gt;Database Setup&lt;/code&gt;, &lt;code&gt;Data Persistence&lt;/code&gt;, &lt;code&gt;Using GUI to Operate the Database&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Reverse Proxy Setup in Docker Environment</title>
+      <link>https://tech.ray247k.com/en/blog/202102-reverse-proxy-in-docker-service/</link>
+      <pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202102-reverse-proxy-in-docker-service/</guid>
+      <description>This article provides a basic explanation of reverse proxies and how to set them up in a Docker container environment.&#xA;Reverse Proxy Overview System Design - Forward Proxy vs Reverse Proxy Different Physical Hosts Using nginx proxy-pass Objective Users visit a specified web page path /new_path or the root / Configure the test machine&amp;rsquo;s nginx proxy_pass to redirect to another host&amp;rsquo;s project under the same path Ensure that the user&amp;rsquo;s IP address is not replaced by the proxy server&amp;rsquo;s IP Ensure that the project on the target server can read cookies Ensure that the payload of POST requests is forwarded Configure nginx config Configuration on the First Host&amp;rsquo;s nginx # Forward all requests to domain/new_path to another host location /new_path { # Proxy to the specified URL proxy_pass http://laravel55.</description>
+    </item>
+    <item>
+      <title>Laravel environment basic settings</title>
+      <link>https://tech.ray247k.com/en/blog/202102-laravel-environment-basic-settings/</link>
+      <pubDate>Thu, 25 Feb 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202102-laravel-environment-basic-settings/</guid>
+      <description>&lt;p&gt;Configuration and package installation required for developing Laravel projects, applicable whether on remote hosts or local machines.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>About</title>
       <link>https://tech.ray247k.com/en/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

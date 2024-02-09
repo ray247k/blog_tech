@@ -127,5 +127,40 @@
       <guid>https://tech.ray247k.com/en/blog/202105-web-server-stress-testing/</guid>
       <description>&lt;p&gt;Server stress testing is a must before going live, no exceptions!&lt;br&gt;&#xA;Just imagine you&amp;rsquo;ve been working overtime for months, the system goes online.&lt;br&gt;&#xA;And you&amp;rsquo;re celebrating with pizza and cocktail, only to find out suddenly the server crashes due to overwhelming traffic!&lt;br&gt;&#xA;That&amp;rsquo;s why conducting stress tests beforehand makes a good system!&lt;/p&gt;</description>
     </item>
+    <item>
+      <title>Use ssh key login remote server</title>
+      <link>https://tech.ray247k.com/en/blog/202104-use-ssh-key-login-remote-server/</link>
+      <pubDate>Sun, 25 Apr 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202104-use-ssh-key-login-remote-server/</guid>
+      <description>Normally, logging into a server involves using a username and password,&#xA;but passwords can be compromised through interception or sharing.&#xA;The security level is not as robust as using SSH keys, which also eliminate the need for manual password entry each time.&#xA;Creating SSH Keys for Login Generating SSH keys on the client side using the command: ssh-keygen Note: SSH keys should be in RSA format; if using OPENSSH, errors may persist.</description>
+    </item>
+    <item>
+      <title>Enable docker service in remote server</title>
+      <link>https://tech.ray247k.com/en/blog/202103-enable-docker-service-in-remote-server/</link>
+      <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202103-enable-docker-service-in-remote-server/</guid>
+      <description>&lt;p&gt;Step-by-step guide for enabling Docker and Docker-compose services on a new cloud host.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Setting up postgreSQL database with docker</title>
+      <link>https://tech.ray247k.com/en/blog/202103-setting-up-postgresql-database-with-docker/</link>
+      <pubDate>Wed, 03 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202103-setting-up-postgresql-database-with-docker/</guid>
+      <description>&lt;p&gt;Setting up a PostgreSQL Database with Docker&lt;br&gt;&#xA;Including &lt;code&gt;Database Setup&lt;/code&gt;, &lt;code&gt;Data Persistence&lt;/code&gt;, &lt;code&gt;Using GUI to Operate the Database&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Reverse Proxy Setup in Docker Environment</title>
+      <link>https://tech.ray247k.com/en/blog/202102-reverse-proxy-in-docker-service/</link>
+      <pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202102-reverse-proxy-in-docker-service/</guid>
+      <description>This article provides a basic explanation of reverse proxies and how to set them up in a Docker container environment.&#xA;Reverse Proxy Overview System Design - Forward Proxy vs Reverse Proxy Different Physical Hosts Using nginx proxy-pass Objective Users visit a specified web page path /new_path or the root / Configure the test machine&amp;rsquo;s nginx proxy_pass to redirect to another host&amp;rsquo;s project under the same path Ensure that the user&amp;rsquo;s IP address is not replaced by the proxy server&amp;rsquo;s IP Ensure that the project on the target server can read cookies Ensure that the payload of POST requests is forwarded Configure nginx config Configuration on the First Host&amp;rsquo;s nginx # Forward all requests to domain/new_path to another host location /new_path { # Proxy to the specified URL proxy_pass http://laravel55.</description>
+    </item>
+    <item>
+      <title>Laravel environment basic settings</title>
+      <link>https://tech.ray247k.com/en/blog/202102-laravel-environment-basic-settings/</link>
+      <pubDate>Thu, 25 Feb 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202102-laravel-environment-basic-settings/</guid>
+      <description>&lt;p&gt;Configuration and package installation required for developing Laravel projects, applicable whether on remote hosts or local machines.&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>

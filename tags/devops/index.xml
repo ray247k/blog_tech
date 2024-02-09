@@ -150,9 +150,9 @@
     </item>
     <item>
       <title>PostgreSQL 資料庫建置 - 使用 Docker</title>
-      <link>https://tech.ray247k.com/blog/202103-build-postgresql-database-useing-docker/</link>
+      <link>https://tech.ray247k.com/blog/202103-setting-up-postgresql-database-with-docker/</link>
       <pubDate>Wed, 03 Mar 2021 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202103-build-postgresql-database-useing-docker/</guid>
+      <guid>https://tech.ray247k.com/blog/202103-setting-up-postgresql-database-with-docker/</guid>
       <description>&lt;p&gt;使用 Docker 來建置一個 PostgreSQL 資料庫&lt;br&gt;&#xA;包含 &lt;code&gt;資料庫建置&lt;/code&gt;、&lt;code&gt;資料持久化&lt;/code&gt;、&lt;code&gt;使用 GUI 操作資料庫&lt;/code&gt;&lt;/p&gt;</description>
     </item>
     <item>
@@ -168,13 +168,6 @@
       <pubDate>Thu, 25 Feb 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202102-laravel-environment-basic-settings/</guid>
       <description>&lt;p&gt;開發 Laravel 專案所需要做的設定與套件安裝，不論是在遠端主機或是本機都適用&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Ngrok 讓 localhost 可以被外部連線</title>
-      <link>https://tech.ray247k.com/blog/202102-ngrok-share-your-local-development-site/</link>
-      <pubDate>Sun, 14 Feb 2021 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202102-ngrok-share-your-local-development-site/</guid>
-      <description>&lt;p&gt;ngrok 做為一個轉發的伺服器，他可以把外界的請求轉發到你指定的 Port&lt;br&gt;&#xA;使用的背景原理是連接到 ngrok 雲端伺服器將你本機指定的地址公開&lt;br&gt;&#xA;再將由 ngrok 一串公開的網址來存取內容&lt;br&gt;&#xA;他的優點是快速而且還提供了 https 的服務讓你使用上更安全，甚至你還可以設置密碼保護&lt;/p&gt;</description>
     </item>
     <item>
       <title>Portainer - 視覺化管理 Docker 的工具</title>

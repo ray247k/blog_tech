@@ -1,0 +1,1091 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+<title>Reverse Proxy Setup in Docker Environment - Byte Ebi 🍤</title>
+<meta name="description" content="You may know about reverse proxies, but have you tried setting them up in Docker?">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta property="og:site_name" content="Byte Ebi 🍤">
+<meta property="og:title" content="Reverse Proxy Setup in Docker Environment">
+<meta property="og:description" content="You may know about reverse proxies, but have you tried setting them up in Docker?">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://tech.ray247k.com/en/blog/202102-reverse-proxy-in-docker-service/">
+  <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
+
+
+
+  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
+  
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=1" color="#ffffff">
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=1">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=1">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+<meta name="generator" content="Hugo 0.122.0"><meta property="og:site_name" content="Byte Ebi 🍤">
+  <meta property="og:title" content="Reverse Proxy Setup in Docker Environment">
+  <meta property="og:description" content="You may know about reverse proxies, but have you tried setting them up in Docker?">
+  <meta property="description" content="You may know about reverse proxies, but have you tried setting them up in Docker?">
+  <meta property="og:url" content="https://tech.ray247k.com/en/blog/202102-reverse-proxy-in-docker-service/">
+  <meta property="og:type" content="article">
+  
+    <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
+  
+  
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/felipec.min.css">
+          <link rel="stylesheet" href="/css/bundle.min.3b1b5f2e683d24b1ea3b5a08c8254622e40aa935e0ead75ba6d45c0f14c2f965.css" integrity="sha256-OxtfLmg9JLHqO1oIyCVGIuQKqTXg6tdbptRcDxTC&#43;WU="><link rel="stylesheet" href="/css/add-on.css">
+
+
+    
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', "");
+        </script>
+    
+
+
+  <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "image": {
+        "@type": "ImageObject",
+        "image": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+        "height": 648,
+        "width": 1080
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Byte Ebi 🍤",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png"
+        }
+    },
+    "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+    "headline": "About web development, software engineering, frontend, backend, chatbot, server related topics. - Byte Ebi 🍤",
+    "name": "Byte Ebi 🍤",
+    "url": "https:\/\/tech.ray247k.com",
+    "description": "About web development, software engineering, frontend, backend, chatbot, server related topics. - aws,devops,golang,laravel,python3,serverless,third-party-services,tools,version-control,web-hosting,website-operations,",
+    "keywords": [
+        "apache-bench,auto-scaling,aws,blockchain,cdn,chatbot,ci\/cd,cicd,cloudflare,cloudflare-workers,composer,container-technology,containerization,csv,devops,discord,dns,docker,docker-compose,domain,domain-name,drone,excel,ffmpeg,firewall,gas,gcp,gcr,git,github,github-page,go,golang,google-app-script,google-container-registry,google-domains,google-sheets,grumphp,jenkins,laravel,laravel-excel,linux,load-balancing,nginx,ngrok,personal-brand,php,php-fpm,postgresql,prerender,proxy,purchase-domain,python3,queue,redis,search-engine-optimization,seo,server,serverless,smart-contract,ssh,stress-testing,subdomain,version-control,web-hosting,"
+    ]
+}
+</script>
+
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "legalName": "Byte Ebi 🍤",
+    "url": "https:\/\/tech.ray247k.com",
+    "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "",
+        "availableLanguage": [
+            "Mandarin",
+            "English"
+        ]
+    },
+    "sameAs": [
+        "https://ray247k.blogspot.com/"
+    ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Reverse Proxy Setup in Docker Environment",
+    "description": "You may know about reverse proxies, but have you tried setting them up in Docker?",
+    "keywords": [
+        "DevOps" , "nginx" , "proxy" , "Docker" , "Container Technology" , "Containerization" 
+    ],
+    "dateCreated": "2021-02-27T00:00:00.00Z",
+    "datePublished": "2021-02-27T00:00:00.00Z",
+    "dateModified": "2021-02-27T00:00:00.00Z",
+    "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "contentUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png"
+    },
+    "breadcrumb": {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com",
+                    "name": "Byte Ebi 🍤",
+                    "url": "https:\/\/tech.ray247k.com"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com/blog",
+                    "name": "Blog",
+                    "url": "https:\/\/tech.ray247k.com/blog"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\/en\/blog\/202102-reverse-proxy-in-docker-service\/",
+                    "name": "Reverse Proxy Setup in Docker Environment",
+                    "url": "https:\/\/tech.ray247k.com\/en\/blog\/202102-reverse-proxy-in-docker-service\/"
+                }
+            }
+        ],
+        "itemListOrder": "Ascending",
+        "numberOfItems": 3
+    }
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "articleSection": "blog",
+    "name": "Reverse Proxy Setup in Docker Environment",
+    "headline": "This article provides a basic explanation of reverse proxies and how to set them up in a Docker container environment.\nReverse Proxy Overview System Design - Forward Proxy vs Reverse Proxy Different Physical Hosts Using nginx proxy-pass Objective Users visit a specified web page path \/new_path or the root \/ Configure the test machine\u0026rsquo;s nginx proxy_pass to redirect to another host\u0026rsquo;s project under the same path Ensure that the user\u0026rsquo;s IP address is not replaced by the proxy server\u0026rsquo;s IP Ensure that the project on the target server can read cookies Ensure that the payload of POST requests is forwarded Configure nginx config Configuration on the First Host\u0026rsquo;s nginx # Forward all requests to domain\/new_path to another host location \/new_path { # Proxy to the specified URL proxy_pass http:\/\/laravel55.",
+    "description": "You may know about reverse proxies, but have you tried setting them up in Docker?",
+    "inLanguage": "en",
+    "isFamilyFriendly": "true",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com\/en\/blog\/202102-reverse-proxy-in-docker-service\/"
+    },
+    "author" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "creator" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "accountablePerson" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "copyrightHolder" : "Byte Ebi 🍤",
+    "copyrightYear" : "2021",
+    "dateCreated": "2021-02-27T00:00:00.00Z",
+    "datePublished": "2021-02-27T00:00:00.00Z",
+    "dateModified": "2021-02-27T00:00:00.00Z",
+    "publisher":{
+        "@type":"Organization",
+        "name": "Byte Ebi 🍤",
+        "url": "https://tech.ray247k.com",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+            "width":"32",
+            "height":"32"
+        }
+    },
+    "image": "https://tech.ray247k.com/img/main/logo.png",
+    "url" : "https:\/\/tech.ray247k.com\/en\/blog\/202102-reverse-proxy-in-docker-service\/",
+    "wordCount" : "923",
+    "genre" : [ "DevOps" , "nginx" , "proxy" , "Docker" , "Container Technology" , "Containerization" ],
+    "keywords" : [ "DevOps" , "nginx" , "proxy" , "Docker" , "Container Technology" , "Containerization" ]
+}
+</script>
+
+
+
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/en/" class="nav">
+        
+          Blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/en/" class="nav link"><i class='fa fa-home'></i> home</a>
+        
+      
+        
+          
+          <a href="/en/about" class="nav link"><i class='far fa-id-card'></i> about</a>
+        
+      
+        
+          
+          <a href="/en/categories" class="nav link"><i class='fas fa-sitemap'></i> category</a>
+        
+      
+      
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    
+    <a href="#lang-menu" class="nav lang-toggle" lang="en">en</a>
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  <menu id="lang-menu" class="flyout-menu menu">
+  <a href="#" lang="en" class="nav link active">English (en)</a>
+  
+      <a href="https://tech.ray247k.com/blog/202102-reverse-proxy-in-docker-service/" lang="zh-tw" class="nav link">正體中文 (zh-tw)</a>
+    
+  
+</menu>
+
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/en/"><img src="/img/main/logo.png" class="circle" width="100" alt="Byte Ebi&#39;s Logo" /></a>
+  <header>
+    <h1>Byte Ebi 🍤</h1>
+  </header>
+  <main>
+    <p>A Bit everyday A Byte every week</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/ray247k" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//www.linkedin.com/in/j-ray-cheng" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="/en/blog/202102-reverse-proxy-in-docker-service/">Reverse Proxy Setup in Docker Environment</a></h2>
+    
+    
+      <p>You may know about reverse proxies, but have you tried setting them up in Docker?</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2021-02-27 00:00:00 &#43;0000 UTC">February 27, 2021</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+    <div id="socnet-share">
+      
+
+
+
+
+
+    </div>
+    <div class="content">
+      <a href="/en/blog/202102-reverse-proxy-in-docker-service/" class="image" style="--bg-image: url('/en/blog/202102-reverse-proxy-in-docker-service/feature.jpeg');">
+    <img src="/en/blog/202102-reverse-proxy-in-docker-service/feature.jpeg" alt="">
+  </a>
+      <p>This article provides a basic explanation of reverse proxies and how to set them up in a Docker container environment.</p>
+<h1 id="reverse-proxy-overview">Reverse Proxy Overview</h1>
+<p><a href="https://www.jyt0532.com/2019/11/18/proxy-reverse-proxy/"
+   
+    target="_blank" rel="noreferrer noopener">System Design - Forward Proxy vs Reverse Proxy
+</a>
+</p>
+<h1 id="different-physical-hosts">Different Physical Hosts</h1>
+<h2 id="using-nginx-proxy-pass">Using nginx proxy-pass</h2>
+<h3 id="objective">Objective</h3>
+<ul>
+<li>Users visit a specified web page path <code>/new_path</code> or the root <code>/</code></li>
+<li>Configure the test machine&rsquo;s nginx proxy_pass to redirect to another host&rsquo;s project under the same path</li>
+<li>Ensure that the user&rsquo;s IP address is not replaced by the proxy server&rsquo;s IP</li>
+<li>Ensure that the project on the target server can read cookies</li>
+<li>Ensure that the payload of POST requests is forwarded</li>
+</ul>
+<h3 id="configure-nginx-config">Configure nginx config</h3>
+<h4 id="configuration-on-the-first-hosts-nginx">Configuration on the First Host&rsquo;s nginx</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nginx" data-lang="nginx"><span style="display:flex;"><span><span style="color:#75715e"># Forward all requests to domain/new_path to another host
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">location</span> <span style="color:#e6db74">/new_path</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Proxy to the specified URL
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">proxy_pass</span> <span style="color:#e6db74">http://laravel55.test.com</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Send the user&#39;s real IP to the target host
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Real-IP</span> $remote_addr;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Set the server as the original server before the proxy, otherwise HTTP_HOST will become the address of the proxy server
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">Host</span> $host;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Set cookie forwarding
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">Cookie</span> $http_cookie;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Identify the original client&#39;s IP
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Forwarded-Host</span> $host;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Record each proxy passed through by the client
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Forwarded-For</span> $proxy_add_x_forwarded_for;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Identify the network connection protocol
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Forwarded-Proto</span> $scheme;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Hide server information
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">proxy_hide_header</span> <span style="color:#e6db74">Server</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">proxy_hide_header</span> <span style="color:#e6db74">X-Powered-By</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Increase space due to additional headers
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">proxy_headers_hash_bucket_size</span> <span style="color:#ae81ff">128</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">proxy_headers_hash_max_size</span> <span style="color:#ae81ff">512</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="configuration-on-the-second-hosts-nginx">Configuration on the Second Host&rsquo;s nginx</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nginx" data-lang="nginx"><span style="display:flex;"><span><span style="color:#66d9ef">server</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">listen</span> <span style="color:#ae81ff">80</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">server_name</span> <span style="color:#e6db74">ray200</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">root</span> <span style="color:#e6db74">/home/toc/www/laravel55/public</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">access_log</span> <span style="color:#e6db74">/var/log/nginx/www/laravel55.access.log</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">error_log</span> <span style="color:#e6db74">/var/log/nginx/www/laravel55.error.log</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">index</span> <span style="color:#e6db74">index.php</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">location</span> <span style="color:#e6db74">/</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">try_files</span> $uri $uri/ <span style="color:#e6db74">/index.php</span>$is_args$args;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">location</span> ~<span style="color:#e6db74">*</span> <span style="color:#e6db74">\.(jpg|jpeg|gif|css|png|js|ico|html|svg|ttf|woff|woff2|eotD)</span>$ {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">access_log</span> <span style="color:#66d9ef">off</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">expires</span> <span style="color:#e6db74">max</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">location</span> ~ <span style="color:#e6db74">\.php$</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">include</span> <span style="color:#e6db74">snippets/fastcgi-php.conf</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">fastcgi_pass</span> 127.0.0.1:<span style="color:#ae81ff">9000</span>; 
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="note">Note</h4>
+<ul>
+<li><code>server_name</code> must match the domain to which proxy_pass redirects.<br>
+Otherwise, the request will go to the default server_name.</li>
+<li>Modify the method of determining the real IP address in the program to read <code>x-real-ip</code> from the header.</li>
+</ul>
+<h3 id="verify-cookie-reading">Verify Cookie Reading</h3>
+<p>If the nginx configuration includes <code>proxy_set_header Cookie $http_cookie;</code>, <code>dump($_COOKIE);</code> will capture cookies,
+but Laravel&rsquo;s <code>request()-&gt;cookie();</code> won&rsquo;t.</p>
+<p>This is because Laravel&rsquo;s default web middleware <strong>\App\Http\Middleware\EncryptCookies::class,</strong> requires encrypted cookies.<br>
+Either add the cookie name to <code>$except</code> in the <code>EncryptCookies</code> class or comment out the middleware to resolve the issue.</p>
+<hr>
+<h1 id="using-docker">Using Docker</h1>
+<p>This section focuses on setting up reverse proxies in a Docker environment.</p>
+<h2 id="architecture-diagram">Architecture Diagram</h2>
+<p><img src="infra.png" alt="Infrastructure"></p>
+<p>Reference: <a href="https://dev.to/sukhbirsekhon/what-is-docker-reverse-proxy-45mm"
+   
+    target="_blank" rel="noreferrer noopener">How to set up NGINX Docker Reverse Proxy?
+</a>
+</p>
+<h2 id="steps">Steps</h2>
+<h3 id="1-create-a-network-manually">1. Create a network manually</h3>
+<blockquote>
+<p>The reverse proxy redirects requests based on the loaded configuration file to the specified container names. Therefore, the target containers for proxy must be in the same network to use container names directly.</p>
+</blockquote>
+<p>Manually create a network to avoid adding prefixes and dependencies:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker network create nginx-network
+</span></span></code></pre></div><p>Since this scenario involves an external nginx-proxy, an additional <code>external network</code> is needed for connections.<br>
+All services that need to connect to this network must be configured:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">networks</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">default</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">external</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">name</span>: <span style="color:#ae81ff">nginx-network</span>
+</span></span></code></pre></div><p>This allows services from different <code>docker-compose.yml</code> files to communicate with each other. <a href="https://docs.docker.com/compose/networking/#use-a-pre-existing-network"
+   
+    target="_blank" rel="noreferrer noopener">Official documentation
+</a>
+</p>
+<h3 id="2-set-up-a-test-service">2. Set up a test service</h3>
+<p>To simplify, use an existing service like &ldquo;portainer&rdquo; as the proxy target. This service is launched on port 8080.<br>
+After starting the service, check if portainer is accessible via <code>localhost:8080</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;3&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">networks</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">default</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">external</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">name</span>: <span style="color:#ae81ff">nginx-network</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">services</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">portainer</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">nginx_test_portainer</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">portainer/portainer-ce</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">command</span>: -<span style="color:#ae81ff">H unix:///var/run/docker.sock</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">always</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">8080</span>:<span style="color:#ae81ff">9000</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">/var/run/docker.sock:/var/run/docker.sock</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">portainer_data:/data</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">portainer_data</span>:
+</span></span></code></pre></div><h3 id="3-configure-nginx-proxy">3. Configure Nginx proxy</h3>
+<h4 id="31-configure-docker-composeyml">3.1 Configure <code>docker-compose.yml</code></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;3&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">networks</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">default</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">external</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">name</span>: <span style="color:#ae81ff">nginx-network</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">services</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">nginx</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">test_nginx</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">nginx:1.18</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;80:80&#34;</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;443:443&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">./conf.d/:/etc/nginx/conf.d/</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">./ssl/:/ssl/</span>
+</span></span></code></pre></div><h4 id="32-mount-the-nginx-config-for-use-by-the-reverse-proxy-server">3.2 Mount the nginx config for use by the reverse proxy server</h4>
+<p>In the configuration, all requests to &ldquo;test.example&rdquo; are redirected to <code>http://nginx_test_portainer:9000</code>. The format used is:</p>
+<blockquote>
+<p>http://{container_name}:{port}</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nginx" data-lang="nginx"><span style="display:flex;"><span><span style="color:#66d9ef">server</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">listen</span> <span style="color:#ae81ff">80</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">listen</span> <span style="color:#e6db74">[::]:80</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">server_name</span> <span style="color:#e6db74">test.example</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">return</span> <span style="color:#ae81ff">301</span> <span style="color:#e6db74">https://</span>$host$request_uri;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">server</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">listen</span> <span style="color:#ae81ff">443</span> <span style="color:#e6db74">ssl</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">listen</span> <span style="color:#e6db74">[::]:443</span> <span style="color:#e6db74">ssl</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">server_name</span> <span style="color:#e6db74">test.example</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ssl_certificate</span> <span style="color:#e6db74">/ssl/ssl.crt</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ssl_certificate_key</span> <span style="color:#e6db74">/ssl/ssl.key</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">access_log</span> <span style="color:#e6db74">/var/log/nginx/access.log</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">error_log</span> <span style="color:#e6db74">/var/log/nginx/error.log</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">location</span> <span style="color:#e6db74">/</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">Host</span> $host;
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">Cookie</span> $http_cookie;
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Real-IP</span> $remote_addr;
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Forwarded-Host</span> $host;
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">proxy_pass</span> <span style="color:#e6db74">http://nginx_test_portainer:9000</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Ensure to include <code>http://</code> in the <code>proxy_pass</code> target URL.<br>
+If the redirected URL has its own HTTPS certificate validation (e.g., another nginx environment), it must start with <code>https://</code>.</p>
+<p>Reference: <a href="https://www.digitalocean.com/community/questions/what-value-should-i-use-for-nginx-proxy_pass-running-in-docker"
+   
+    target="_blank" rel="noreferrer noopener">What value should I use for Nginx proxy_pass running in Docker?
+</a>
+</p>
+<h4 id="33-edit-etchosts">3.3 Edit <code>etc/hosts</code></h4>
+<pre tabindex="0"><code>127.0.0.1       test.example
+</code></pre><p>Start the nginx service.</p>
+<p>If configured correctly, the nginx service listening on port 80 should forward all requests to &ldquo;test.example&rdquo; to the portainer container&rsquo;s specified port, displaying the portainer service&rsquo;s interface.</p>
+<blockquote>
+<p>Start the reverse proxy service after all services are running, or it will throw errors indicating that the target container for proxy doesn&rsquo;t exist.</p>
+</blockquote>
+<h1 id="notes">Notes</h1>
+<p>If you want to handle all unmatched <code>server_name</code> requests uniformly, add <code>default_server</code> to the specified nginx config.</p>
+<p><font color="red"><strong>If <code>default_server</code> is not defined, the first server will be set as the default server by default.</strong></font></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nginx" data-lang="nginx"><span style="display:flex;"><span><span style="color:#66d9ef">server</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">listen</span> <span style="color:#ae81ff">8080</span> <span style="color:#e6db74">ssl</span> <span style="color:#e6db74">default_server</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">listen</span> <span style="color:#e6db74">[::]:8080</span> <span style="color:#e6db74">ssl</span> <span style="color:#e6db74">default_server</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ssl_certificate</span> <span style="color:#e6db74">/ssl/ssl.crt</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ssl_certificate_key</span> <span style="color:#e6db74">/ssl/ssl.key</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Virtual Host Domain
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">server_name</span> <span style="color:#e6db74">_</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># where code is
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">root</span> <span style="color:#e6db74">/var/project/dev/www/my_backend/public</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">index</span> <span style="color:#e6db74">index.php</span> <span style="color:#e6db74">index.html</span> <span style="color:#e6db74">index.htm</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">access_log</span> <span style="color:#e6db74">/var/log/nginx/access.log</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">error_log</span> <span style="color:#e6db74">/var/log/nginx/error.log</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">location</span> <span style="color:#e6db74">/</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">try_files</span> $uri $uri/ <span style="color:#e6db74">/index.php</span>$is_args$args;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">location</span> ~ <span style="color:#e6db74">\.php$</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">try_files</span> $uri <span style="color:#e6db74">/index.php</span> =<span style="color:#ae81ff">404</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">fastcgi_pass</span> <span style="color:#e6db74">dev_php:9000</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">fastcgi_index</span> <span style="color:#e6db74">index.php</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">fastcgi_param</span> <span style="color:#e6db74">SCRIPT_FILENAME</span> $document_root$fastcgi_script_name;
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">include</span> <span style="color:#e6db74">fastcgi_params</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">location</span> ~ <span style="color:#e6db74">/\.ht</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">deny</span> <span style="color:#e6db74">all</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This scenario occurs when the frontend&rsquo;s API configuration file uses a path address specified by the backend container name.<br>
+Since the request is sent directly to the container without passing through the reverse proxy, and there are multiple server config settings in the nginx container,
+nginx does not know which config to use if there is no <code>server_name</code>.<br>
+Therefore, &ldquo;dev_backend&rdquo; is set as <code>default_server</code> to handle such requests.</p>
+
+
+      
+      
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/ray247k/button?referrer=https%3a%2f%2ftech.ray247k.com%2fen%2fblog%2f202102-reverse-proxy-in-docker-service%2f" width="100%" frameborder=0></iframe>
+
+    </div>
+    <footer>
+      <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/en/categories/devops/">DevOps</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/en/tags/devops/">DevOps</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/nginx/">nginx</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/proxy/">proxy</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/docker/">Docker</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/container-technology/">Container Technology</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/containerization/">Containerization</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+    </footer>
+  </article>
+  
+    
+
+  
+  <div class="pagination">
+    
+      <a href="/en/blog/202103-setting-up-postgresql-database-with-docker/" class="button left"><span>Setting up postgreSQL database with docker</span></a>
+    
+    
+      <a href="/en/blog/202102-laravel-environment-basic-settings/" class="button right"><span>Laravel environment basic settings</span></a>
+    
+  </div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>Recent Posts</h1>
+      </header>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/" class="image" style="--bg-image: url('/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg');">
+    <img src="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/">Different between pointer and value for struct type in golang</a></h2>
+          <time class="published" datetime="2023-06-25 00:00:00 &#43;0000 UTC">June 25, 2023</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202301-ffmpeg-video-convert/" class="image" style="--bg-image: url('/en/blog/202301-ffmpeg-video-convert/featured.png');">
+    <img src="/en/blog/202301-ffmpeg-video-convert/featured.png" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202301-ffmpeg-video-convert/">Using FFmpeg to convert media files</a></h2>
+          <time class="published" datetime="2023-01-01 00:00:00 &#43;0000 UTC">January 1, 2023</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202210-aws101-what-is-sns-and-sqs/" class="image" style="--bg-image: url('/en/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg');">
+    <img src="/en/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202210-aws101-what-is-sns-and-sqs/">[AWS 101] What are SNS and SQS</a></h2>
+          <time class="published" datetime="2022-10-06 00:00:00 &#43;0000 UTC">October 6, 2022</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202210-what-is-serverless/" class="image" style="--bg-image: url('/en/blog/202210-what-is-serverless/featured.jpg');">
+    <img src="/en/blog/202210-what-is-serverless/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202210-what-is-serverless/">Serverless 101</a></h2>
+          <time class="published" datetime="2022-10-04 00:00:00 &#43;0000 UTC">October 4, 2022</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202207-go-ethereum-abigen/" class="image" style="--bg-image: url('/en/blog/202207-go-ethereum-abigen/featured.jpeg');">
+    <img src="/en/blog/202207-go-ethereum-abigen/featured.jpeg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202207-go-ethereum-abigen/">Interacting with smart contracts using Golang</a></h2>
+          <time class="published" datetime="2022-07-09 00:00:00 &#43;0000 UTC">July 9, 2022</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/en/blog/" class="button">See More</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="/en/categories">Categories</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/en/categories/devops/">devops<span class="count">20</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/golang/">golang<span class="count">11</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/laravel/">laravel<span class="count">6</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/web-hosting/">web-hosting<span class="count">3</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/python3/">python3<span class="count">2</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/website-operations/">website-operations<span class="count">2</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/aws/">aws<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/serverless/">serverless<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/third-party-services/">third-party-services<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/tools/">tools<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/version-control/">version-control<span class="count">1</span></a>
+          </li>
+          
+        </ul>
+      </section>
+    
+  
+
+  
+  <section id="tags">
+    <header>
+      <h1><a href="/en/tags">Tags</a></h1>
+    </header>
+    <div class="li-x post-meta tags-md" style="margin-left: 0.5em;">
+      <ul>
+        
+        
+        <li>
+          <a href="/en/tags/devops/">devops (22)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/go/">go (11)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/golang/">golang (11)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/docker/">docker (8)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/cicd/">cicd (7)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/laravel/">laravel (7)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/container-technology/">container-technology (6)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/containerization/">containerization (6)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/gcp/">gcp (6)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/composer/">composer (5)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/docker-compose/">docker-compose (4)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/drone/">drone (4)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/jenkins/">jenkins (4)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/php/">php (4)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/aws/">aws (3)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/cloudflare/">cloudflare (3)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/web-hosting/">web-hosting (3)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/chatbot/">chatbot (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/discord/">discord (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/dns/">dns (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/google-domains/">google-domains (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/nginx/">nginx (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/python3/">python3 (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ssh/">ssh (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/apache-bench/">apache-bench (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/auto-scaling/">auto-scaling (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/blockchain/">blockchain (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/cdn/">cdn (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ci/cd/">ci/cd (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/cloudflare-workers/">cloudflare-workers (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/csv/">csv (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/domain/">domain (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/domain-name/">domain-name (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/excel/">excel (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ffmpeg/">ffmpeg (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/firewall/">firewall (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/gas/">gas (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/gcr/">gcr (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/git/">git (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/github/">github (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/github-page/">github-page (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/google-app-script/">google-app-script (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/google-container-registry/">google-container-registry (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/google-sheets/">google-sheets (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/grumphp/">grumphp (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/laravel-excel/">laravel-excel (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/linux/">linux (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/load-balancing/">load-balancing (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ngrok/">ngrok (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/personal-brand/">personal-brand (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/php-fpm/">php-fpm (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/postgresql/">postgresql (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/prerender/">prerender (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/proxy/">proxy (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/purchase-domain/">purchase-domain (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/queue/">queue (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/redis/">redis (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/search-engine-optimization/">search-engine-optimization (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/seo/">seo (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/server/">server (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/serverless/">serverless (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/smart-contract/">smart-contract (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/stress-testing/">stress-testing (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/subdomain/">subdomain (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/version-control/">version-control (1)</a>
+        </li>
+        
+      </ul>
+
+    </div>
+  </section>
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+    
+    <p class="copyright">
+        © 2023 Byte Ebi 🍤
+    </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>
+      hljs.configure({ ignoreUnescapedHTML: true }); 
+      hljs.highlightAll();
+    </script><script src="/js/bundle.min.b8ecc205622548252ae685817642568fed404d2f04df7ea571a8b71e3091ffe7.js" integrity="sha256-uOzCBWIlSCUq5oWBdkJWj&#43;1ATS8E336lcai3HjCR/&#43;c="></script>
+    <script src="/js/add-on.js"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-LTGVYYWC2J', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </div>
+  </body>
+</html>

@@ -43,5 +43,12 @@
       <guid>https://tech.ray247k.com/en/blog/202201-gcp-vm-basic/</guid>
       <description>&lt;p&gt;How to launch a VM virtual machine on Google Cloud Platform (GCP)?&lt;br&gt;&#xA;It may sound complex, but in practice, it&amp;rsquo;s quite straightforward.&lt;br&gt;&#xA;If you haven&amp;rsquo;t had any experience with setting up a host before, this time, we&amp;rsquo;ll document the steps for you.&lt;/p&gt;</description>
     </item>
+    <item>
+      <title>Enable docker service in remote server</title>
+      <link>https://tech.ray247k.com/en/blog/202103-enable-docker-service-in-remote-server/</link>
+      <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202103-enable-docker-service-in-remote-server/</guid>
+      <description>&lt;p&gt;Step-by-step guide for enabling Docker and Docker-compose services on a new cloud host.&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>proxy on Byte Ebi 🍤</title>
+    <link>https://tech.ray247k.com/en/tags/proxy/</link>
+    <description>Recent content in proxy on Byte Ebi 🍤</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 27 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tech.ray247k.com/en/tags/proxy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reverse Proxy Setup in Docker Environment</title>
+      <link>https://tech.ray247k.com/en/blog/202102-reverse-proxy-in-docker-service/</link>
+      <pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202102-reverse-proxy-in-docker-service/</guid>
+      <description>This article provides a basic explanation of reverse proxies and how to set them up in a Docker container environment.&#xA;Reverse Proxy Overview System Design - Forward Proxy vs Reverse Proxy Different Physical Hosts Using nginx proxy-pass Objective Users visit a specified web page path /new_path or the root / Configure the test machine&amp;rsquo;s nginx proxy_pass to redirect to another host&amp;rsquo;s project under the same path Ensure that the user&amp;rsquo;s IP address is not replaced by the proxy server&amp;rsquo;s IP Ensure that the project on the target server can read cookies Ensure that the payload of POST requests is forwarded Configure nginx config Configuration on the First Host&amp;rsquo;s nginx # Forward all requests to domain/new_path to another host location /new_path { # Proxy to the specified URL proxy_pass http://laravel55.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>SSH on Byte Ebi 🍤</title>
+    <title>ssh on Byte Ebi 🍤</title>
     <link>https://tech.ray247k.com/en/tags/ssh/</link>
-    <description>Recent content in SSH on Byte Ebi 🍤</description>
+    <description>Recent content in ssh on Byte Ebi 🍤</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Wed, 13 Apr 2022 00:00:00 +0000</lastBuildDate>
@@ -14,6 +14,13 @@
       <pubDate>Wed, 13 Apr 2022 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/en/blog/202204-jenkins-cicd-4-ssh-remote-server/</guid>
       <description>&lt;p&gt;In a non-automated deployment scenario, manually connecting to the server host&amp;rsquo;s internals is required every time.&lt;br&gt;&#xA;Executing deployment commands or running deployment command executables not only involves inconvenience but also carries the risk of human error.&lt;br&gt;&#xA;With Jenkins&amp;rsquo; pipeline, we can replace manual execution, making deployments easier and more pleasant.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Use ssh key login remote server</title>
+      <link>https://tech.ray247k.com/en/blog/202104-use-ssh-key-login-remote-server/</link>
+      <pubDate>Sun, 25 Apr 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202104-use-ssh-key-login-remote-server/</guid>
+      <description>Normally, logging into a server involves using a username and password,&#xA;but passwords can be compromised through interception or sharing.&#xA;The security level is not as robust as using SSH keys, which also eliminate the need for manual password entry each time.&#xA;Creating SSH Keys for Login Generating SSH keys on the client side using the command: ssh-keygen Note: SSH keys should be in RSA format; if using OPENSSH, errors may persist.</description>
     </item>
   </channel>
 </rss>
