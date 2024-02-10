@@ -1536,6 +1536,71 @@
                 href="https://tech.ray247k.com/en/blog/202102-laravel-environment-basic-settings/"
                 />
   </url><url>
+    <loc>https://tech.ray247k.com/en/tags/portainer/</loc>
+    <lastmod>2021-01-16T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/portainer/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/portainer/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/blog/202101-portainer-open-source-container-management-gui/</loc>
+    <lastmod>2021-01-16T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202101-portainer-open-source-container-management-gui/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202101-portainer-open-source-container-management-gui/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/blog/202101-docker-note-3-introduce-docker-compose/</loc>
+    <lastmod>2021-01-12T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202101-docker-note-3-introduce-docker-compose/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202101-docker-note-3-introduce-docker-compose/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/blog/202101-docker-note-2-basic-usage/</loc>
+    <lastmod>2021-01-09T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202101-docker-note-2-basic-usage/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202101-docker-note-2-basic-usage/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/blog/202101-docker-note-1-what-is-docker/</loc>
+    <lastmod>2021-01-02T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202101-docker-note-1-what-is-docker/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202101-docker-note-1-what-is-docker/"
+                />
+  </url><url>
     <loc>https://tech.ray247k.com/en/about/</loc>
     <xhtml:link
                 rel="alternate"

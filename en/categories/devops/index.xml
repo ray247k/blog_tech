@@ -148,5 +148,33 @@
       <guid>https://tech.ray247k.com/en/blog/202102-reverse-proxy-in-docker-service/</guid>
       <description>This article provides a basic explanation of reverse proxies and how to set them up in a Docker container environment.&#xA;Reverse Proxy Overview System Design - Forward Proxy vs Reverse Proxy Different Physical Hosts Using nginx proxy-pass Objective Users visit a specified web page path /new_path or the root / Configure the test machine&amp;rsquo;s nginx proxy_pass to redirect to another host&amp;rsquo;s project under the same path Ensure that the user&amp;rsquo;s IP address is not replaced by the proxy server&amp;rsquo;s IP Ensure that the project on the target server can read cookies Ensure that the payload of POST requests is forwarded Configure nginx config Configuration on the First Host&amp;rsquo;s nginx # Forward all requests to domain/new_path to another host location /new_path { # Proxy to the specified URL proxy_pass http://laravel55.</description>
     </item>
+    <item>
+      <title>Portainer - A Visual Docker Management Tool</title>
+      <link>https://tech.ray247k.com/en/blog/202101-portainer-open-source-container-management-gui/</link>
+      <pubDate>Sat, 16 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202101-portainer-open-source-container-management-gui/</guid>
+      <description>&lt;p&gt;Local development mostly involves command-line operations or using Docker&amp;rsquo;s GUI interface for service management.&lt;br&gt;&#xA;&lt;a href=&#34;https://github.com/portainer&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Portainer&#xA;&lt;/a&gt;&#xA; is an open-source UI tool that allows viewing Docker images and containers,&#xA;and executing actions such as start, stop, restart, and remove. It also enables viewing logs and errors for each container.&lt;br&gt;&#xA;Even individuals without Docker execution permissions can log in using credentials when deploying services on cloud-hosted servers,&#xA;utilizing the visual interface for various Docker service management tasks.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Docker Notes 3 - docker-compose</title>
+      <link>https://tech.ray247k.com/en/blog/202101-docker-note-3-introduce-docker-compose/</link>
+      <pubDate>Tue, 12 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202101-docker-note-3-introduce-docker-compose/</guid>
+      <description>&lt;p&gt;When it comes to managing multiple Docker containers that are related to each other, using plain Docker commands requires remembering the relationships between containers.&lt;br&gt;&#xA;However, with docker-compose, managing multiple containers becomes straightforward through easy definition of multi-container services.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Docker Notes 2 - Basic Usage</title>
+      <link>https://tech.ray247k.com/en/blog/202101-docker-note-2-basic-usage/</link>
+      <pubDate>Sat, 09 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202101-docker-note-2-basic-usage/</guid>
+      <description>&lt;p&gt;Containerization isolates different environments, allowing engineers to focus on development without spending excessive effort on environment setup.&lt;br&gt;&#xA;Docker is currently a mature and popular containerization technology.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Docker Notes 1 - Understanding Docker</title>
+      <link>https://tech.ray247k.com/en/blog/202101-docker-note-1-what-is-docker/</link>
+      <pubDate>Sat, 02 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202101-docker-note-1-what-is-docker/</guid>
+      <description>&lt;p&gt;Containerization isolates different environments, allowing engineers to focus on development without spending excessive effort on environment setup.&lt;br&gt;&#xA;Docker is currently a mature and popular containerization technology.&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>
