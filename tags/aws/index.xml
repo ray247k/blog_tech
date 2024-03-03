@@ -6,8 +6,15 @@
     <description>Recent content in AWS on Byte Ebi 🍤</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Thu, 06 Oct 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 03 Nov 2023 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://tech.ray247k.com/tags/aws/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS DynamoDB 時間點還原 point-in-time recovery (PITR)</title>
+      <link>https://tech.ray247k.com/blog/202311-aws-dynamodb-pitr/</link>
+      <pubDate>Fri, 03 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/blog/202311-aws-dynamodb-pitr/</guid>
+      <description>&lt;p&gt;時間點還原 (PITR) 是一種強大的資料恢復功能，對於 AWS DynamoDB 和其他數據庫服務至關重要。&lt;br&gt;&#xA;透過 PITR，可以在意外數據丟失或損壞的情況下，將資料還原至先前的狀態，進而保護業務的持續運作。&lt;br&gt;&#xA;此外，PITR 可以定期備份資料並保留多個時間點的版本，這有助於追蹤和修復可能發生的錯誤。&lt;br&gt;&#xA;最重要的是，PITR 可以按照需求靈活的還原資料，而不會影響其他系統操作，從而提高了系統的可靠性和穩定性。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>[AWS 101] 什麼是 SNS 和 SQS</title>
       <link>https://tech.ray247k.com/blog/202210-aws101-what-is-sns-and-sqs/</link>
