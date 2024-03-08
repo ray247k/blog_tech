@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.122.0"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.123.7"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="[AWS 101] What are SNS and SQS">
   <meta property="og:description" content="Briefly note what AWS SNS and SQS services do and their use cases">
   <meta property="description" content="Briefly note what AWS SNS and SQS services do and their use cases">
@@ -68,7 +68,7 @@
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https:\/\/tech.ray247k.com"
+        "@id": "https:\/\/tech.ray247k.com\/"
     },
     "publisher": {
         "@type": "Organization",
@@ -81,10 +81,10 @@
     "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
     "headline": "About web development, software engineering, frontend, backend, chatbot, server related topics. - Byte Ebi 🍤",
     "name": "Byte Ebi 🍤",
-    "url": "https:\/\/tech.ray247k.com",
-    "description": "About web development, software engineering, frontend, backend, chatbot, server related topics. - aws,devops,golang,laravel,python3,serverless,third-party-services,tools,version-control,web-hosting,website-operations,",
+    "url": "https:\/\/tech.ray247k.com\/",
+    "description": "About web development, software engineering, frontend, backend, chatbot, server related topics. - aws,devops,golang,laravel,python3,serverless,third-party services,tools,version control,web hosting,website operations,",
     "keywords": [
-        "apache-bench,auto-scaling,aws,blockchain,cdn,chatbot,ci\/cd,cicd,cloudflare,cloudflare-workers,composer,container-technology,containerization,csv,devops,discord,dns,docker,docker-compose,domain,domain-name,drone,excel,ffmpeg,firewall,gas,gcp,gcr,git,github,github-page,go,golang,google-app-script,google-container-registry,google-domains,google-sheets,grumphp,jenkins,laravel,laravel-excel,linux,load-balancing,nginx,ngrok,personal-brand,php,php-fpm,portainer,postgresql,prerender,proxy,purchase-domain,python3,queue,redis,search-engine-optimization,seo,server,serverless,smart-contract,ssh,stress-testing,subdomain,version-control,web-hosting,"
+        "apache bench,auto scaling,aws,blockchain,cdn,chatbot,ci\/cd,cicd,cloudflare,cloudflare workers,composer,container technology,containerization,csv,devops,discord,dns,docker,docker compose,domain,domain name,drone,excel,ffmpeg,firewall,gas,gcp,gcr,git,github,github page,go,golang,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,linux,load balancing,nginx,ngrok,personal brand,php,php-fpm,portainer,postgresql,prerender,proxy,purchase domain,python3,queue,redis,search engine optimization,seo,server,serverless,smart contract,ssh,stress testing,subdomain,version control,web hosting,"
     ]
 }
 </script>
@@ -97,7 +97,7 @@
     "@context": "https://schema.org",
     "@type": "Organization",
     "legalName": "Byte Ebi 🍤",
-    "url": "https:\/\/tech.ray247k.com",
+    "url": "https:\/\/tech.ray247k.com\/",
     "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
     "contactPoint": {
         "@type": "ContactPoint",
@@ -137,18 +137,18 @@
                 "@type": "ListItem",
                 "position": 1,
                 "item": {
-                    "@id": "https:\/\/tech.ray247k.com",
+                    "@id": "https:\/\/tech.ray247k.com\/",
                     "name": "Byte Ebi 🍤",
-                    "url": "https:\/\/tech.ray247k.com"
+                    "url": "https:\/\/tech.ray247k.com\/"
                 }
             },
             {
                 "@type": "ListItem",
                 "position": 2,
                 "item": {
-                    "@id": "https:\/\/tech.ray247k.com/blog",
+                    "@id": "https:\/\/tech.ray247k.com\//blog",
                     "name": "Blog",
-                    "url": "https:\/\/tech.ray247k.com/blog"
+                    "url": "https:\/\/tech.ray247k.com\//blog"
                 }
             },
             {
@@ -201,7 +201,7 @@
     "publisher":{
         "@type":"Organization",
         "name": "Byte Ebi 🍤",
-        "url": "https://tech.ray247k.com",
+        "url": "https://tech.ray247k.com/",
         "logo": {
             "@type": "ImageObject",
             "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
@@ -358,8 +358,8 @@
 
     </div>
     <div class="content">
-      <a href="/en/blog/202210-aws101-what-is-sns-and-sqs/" class="image" style="--bg-image: url('/en/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg');">
-    <img src="/en/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg" alt="">
+      <a href="/en/blog/202210-aws101-what-is-sns-and-sqs/" class="image" style="--bg-image: url('/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg');">
+    <img src="/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg" alt="">
   </a>
       <p>Amazon Simple Queue Service (SQS) and Amazon Simple Notification Service (SNS) may look similar.<br>
 But in reality, they are quite different.</p>
@@ -375,7 +375,7 @@ But in reality, they are quite different.</p>
 <li>Amazon Kinesis Data Firehose</li>
 </ul>
 <p>The architecture looks like this:<br>
-<img src="aws_sns.png" alt="aws_sns"></p>
+<img alt="aws_sns" src="/blog/202210-aws101-what-is-sns-and-sqs/aws_sns.png"></p>
 <h2 id="features">Features:</h2>
 <ol>
 <li>Send real-time messages to all subscribers.</li>
@@ -396,7 +396,7 @@ It is a Serverless solution, but the executor can be either Lambda function or n
 <li><strong>At-Least-Once Delivery</strong>: A message is guaranteed to be delivered at least once, but occasionally, multiple copies of the message may be delivered.</li>
 <li><strong>Best-Effort Ordering</strong>: Messages are occasionally not delivered in the exact order they were sent.</li>
 </ul>
-<p><img src="sqs_standard_queue.png" alt="sqs standard queue"></p>
+<p><img alt="sqs standard queue" src="/blog/202210-aws101-what-is-sns-and-sqs/sqs_standard_queue.png"></p>
 <h3 id="fifo-queue"><strong>FIFO Queue</strong></h3>
 <p>When the order of operations and events is crucial or duplicates are not acceptable:</p>
 <ul>
@@ -404,7 +404,7 @@ It is a Serverless solution, but the executor can be either Lambda function or n
 <li><strong>Exactly-Once Processing</strong>: Messages are delivered exactly once and remain available until the consumer processes and deletes them.</li>
 <li><strong>First-In-First-Out Delivery</strong>: Messages are strictly delivered and received in the order they were sent (First In, First Out - FIFO).</li>
 </ul>
-<p><img src="sqs_fifo_queue.png" alt="sqs fifo queue"></p>
+<p><img alt="sqs fifo queue" src="/blog/202210-aws101-what-is-sns-and-sqs/sqs_fifo_queue.png"></p>
 <h2 id="poll"><strong>Poll</strong></h2>
 <h3 id="short-polling"><strong>Short polling</strong></h3>
 <p>This method is similar to someone repeatedly asking you if there is any job available, even if there is no job.<br>
@@ -516,8 +516,8 @@ Consumers are responsible for pulling messages from the queue and processing the
       </header>
       
       <article class="mini-post">
-          <a href="/en/blog/202311-aws-dynamodb-pitr/" class="image" style="--bg-image: url('/en/blog/202311-aws-dynamodb-pitr/featured.jpg');">
-    <img src="/en/blog/202311-aws-dynamodb-pitr/featured.jpg" alt="">
+          <a href="/en/blog/202311-aws-dynamodb-pitr/" class="image" style="--bg-image: url('/blog/202311-aws-dynamodb-pitr/featured.jpg');">
+    <img src="/blog/202311-aws-dynamodb-pitr/featured.jpg" alt="">
   </a>
         <header>
           <h2><a href="/en/blog/202311-aws-dynamodb-pitr/">AWS DynamoDB Point-in-Time Recovery (PITR): Simplifying Data Restoration</a></h2>
@@ -526,8 +526,8 @@ Consumers are responsible for pulling messages from the queue and processing the
       </article>
       
       <article class="mini-post">
-          <a href="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/" class="image" style="--bg-image: url('/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg');">
-    <img src="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg" alt="">
+          <a href="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/" class="image" style="--bg-image: url('/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg');">
+    <img src="/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg" alt="">
   </a>
         <header>
           <h2><a href="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/">Different between pointer and value for struct type in golang</a></h2>
@@ -536,8 +536,8 @@ Consumers are responsible for pulling messages from the queue and processing the
       </article>
       
       <article class="mini-post">
-          <a href="/en/blog/202301-ffmpeg-video-convert/" class="image" style="--bg-image: url('/en/blog/202301-ffmpeg-video-convert/featured.png');">
-    <img src="/en/blog/202301-ffmpeg-video-convert/featured.png" alt="">
+          <a href="/en/blog/202301-ffmpeg-video-convert/" class="image" style="--bg-image: url('/blog/202301-ffmpeg-video-convert/featured.png');">
+    <img src="/blog/202301-ffmpeg-video-convert/featured.png" alt="">
   </a>
         <header>
           <h2><a href="/en/blog/202301-ffmpeg-video-convert/">Using FFmpeg to convert media files</a></h2>
@@ -546,8 +546,8 @@ Consumers are responsible for pulling messages from the queue and processing the
       </article>
       
       <article class="mini-post">
-          <a href="/en/blog/202210-aws101-what-is-sns-and-sqs/" class="image" style="--bg-image: url('/en/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg');">
-    <img src="/en/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg" alt="">
+          <a href="/en/blog/202210-aws101-what-is-sns-and-sqs/" class="image" style="--bg-image: url('/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg');">
+    <img src="/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg" alt="">
   </a>
         <header>
           <h2><a href="/en/blog/202210-aws101-what-is-sns-and-sqs/">[AWS 101] What are SNS and SQS</a></h2>
@@ -556,8 +556,8 @@ Consumers are responsible for pulling messages from the queue and processing the
       </article>
       
       <article class="mini-post">
-          <a href="/en/blog/202210-what-is-serverless/" class="image" style="--bg-image: url('/en/blog/202210-what-is-serverless/featured.jpg');">
-    <img src="/en/blog/202210-what-is-serverless/featured.jpg" alt="">
+          <a href="/en/blog/202210-what-is-serverless/" class="image" style="--bg-image: url('/blog/202210-what-is-serverless/featured.jpg');">
+    <img src="/blog/202210-what-is-serverless/featured.jpg" alt="">
   </a>
         <header>
           <h2><a href="/en/blog/202210-what-is-serverless/">Serverless 101</a></h2>
@@ -596,7 +596,7 @@ Consumers are responsible for pulling messages from the queue and processing the
           </li>
           
           <li>
-              <a href="/en/categories/web-hosting/">web-hosting<span class="count">3</span></a>
+              <a href="/en/categories/web-hosting/">web hosting<span class="count">3</span></a>
           </li>
           
           <li>
@@ -608,7 +608,7 @@ Consumers are responsible for pulling messages from the queue and processing the
           </li>
           
           <li>
-              <a href="/en/categories/website-operations/">website-operations<span class="count">2</span></a>
+              <a href="/en/categories/website-operations/">website operations<span class="count">2</span></a>
           </li>
           
           <li>
@@ -616,7 +616,7 @@ Consumers are responsible for pulling messages from the queue and processing the
           </li>
           
           <li>
-              <a href="/en/categories/third-party-services/">third-party-services<span class="count">1</span></a>
+              <a href="/en/categories/third-party-services/">third-party services<span class="count">1</span></a>
           </li>
           
           <li>
@@ -624,7 +624,7 @@ Consumers are responsible for pulling messages from the queue and processing the
           </li>
           
           <li>
-              <a href="/en/categories/version-control/">version-control<span class="count">1</span></a>
+              <a href="/en/categories/version-control/">version control<span class="count">1</span></a>
           </li>
           
         </ul>
@@ -658,7 +658,7 @@ Consumers are responsible for pulling messages from the queue and processing the
         </li>
         
         <li>
-          <a href="/en/tags/container-technology/">container-technology (10)</a>
+          <a href="/en/tags/container-technology/">container technology (10)</a>
         </li>
         
         <li>
@@ -674,7 +674,7 @@ Consumers are responsible for pulling messages from the queue and processing the
         </li>
         
         <li>
-          <a href="/en/tags/docker-compose/">docker-compose (6)</a>
+          <a href="/en/tags/docker-compose/">docker compose (6)</a>
         </li>
         
         <li>
@@ -706,7 +706,7 @@ Consumers are responsible for pulling messages from the queue and processing the
         </li>
         
         <li>
-          <a href="/en/tags/web-hosting/">web-hosting (3)</a>
+          <a href="/en/tags/web-hosting/">web hosting (3)</a>
         </li>
         
         <li>
@@ -722,7 +722,7 @@ Consumers are responsible for pulling messages from the queue and processing the
         </li>
         
         <li>
-          <a href="/en/tags/google-domains/">google-domains (2)</a>
+          <a href="/en/tags/google-domains/">google domains (2)</a>
         </li>
         
         <li>
@@ -738,11 +738,11 @@ Consumers are responsible for pulling messages from the queue and processing the
         </li>
         
         <li>
-          <a href="/en/tags/apache-bench/">apache-bench (1)</a>
+          <a href="/en/tags/apache-bench/">apache bench (1)</a>
         </li>
         
         <li>
-          <a href="/en/tags/auto-scaling/">auto-scaling (1)</a>
+          <a href="/en/tags/auto-scaling/">auto scaling (1)</a>
         </li>
         
         <li>
@@ -758,7 +758,7 @@ Consumers are responsible for pulling messages from the queue and processing the
         </li>
         
         <li>
-          <a href="/en/tags/cloudflare-workers/">cloudflare-workers (1)</a>
+          <a href="/en/tags/cloudflare-workers/">cloudflare workers (1)</a>
         </li>
         
         <li>
@@ -770,7 +770,7 @@ Consumers are responsible for pulling messages from the queue and processing the
         </li>
         
         <li>
-          <a href="/en/tags/domain-name/">domain-name (1)</a>
+          <a href="/en/tags/domain-name/">domain name (1)</a>
         </li>
         
         <li>
@@ -802,19 +802,19 @@ Consumers are responsible for pulling messages from the queue and processing the
         </li>
         
         <li>
-          <a href="/en/tags/github-page/">github-page (1)</a>
+          <a href="/en/tags/github-page/">github page (1)</a>
         </li>
         
         <li>
-          <a href="/en/tags/google-app-script/">google-app-script (1)</a>
+          <a href="/en/tags/google-app-script/">google app script (1)</a>
         </li>
         
         <li>
-          <a href="/en/tags/google-container-registry/">google-container-registry (1)</a>
+          <a href="/en/tags/google-container-registry/">google container registry (1)</a>
         </li>
         
         <li>
-          <a href="/en/tags/google-sheets/">google-sheets (1)</a>
+          <a href="/en/tags/google-sheets/">google sheets (1)</a>
         </li>
         
         <li>
@@ -830,7 +830,7 @@ Consumers are responsible for pulling messages from the queue and processing the
         </li>
         
         <li>
-          <a href="/en/tags/load-balancing/">load-balancing (1)</a>
+          <a href="/en/tags/load-balancing/">load balancing (1)</a>
         </li>
         
         <li>
@@ -838,7 +838,7 @@ Consumers are responsible for pulling messages from the queue and processing the
         </li>
         
         <li>
-          <a href="/en/tags/personal-brand/">personal-brand (1)</a>
+          <a href="/en/tags/personal-brand/">personal brand (1)</a>
         </li>
         
         <li>
@@ -862,7 +862,7 @@ Consumers are responsible for pulling messages from the queue and processing the
         </li>
         
         <li>
-          <a href="/en/tags/purchase-domain/">purchase-domain (1)</a>
+          <a href="/en/tags/purchase-domain/">purchase domain (1)</a>
         </li>
         
         <li>
@@ -874,7 +874,7 @@ Consumers are responsible for pulling messages from the queue and processing the
         </li>
         
         <li>
-          <a href="/en/tags/search-engine-optimization/">search-engine-optimization (1)</a>
+          <a href="/en/tags/search-engine-optimization/">search engine optimization (1)</a>
         </li>
         
         <li>
@@ -890,11 +890,11 @@ Consumers are responsible for pulling messages from the queue and processing the
         </li>
         
         <li>
-          <a href="/en/tags/smart-contract/">smart-contract (1)</a>
+          <a href="/en/tags/smart-contract/">smart contract (1)</a>
         </li>
         
         <li>
-          <a href="/en/tags/stress-testing/">stress-testing (1)</a>
+          <a href="/en/tags/stress-testing/">stress testing (1)</a>
         </li>
         
         <li>
@@ -902,7 +902,7 @@ Consumers are responsible for pulling messages from the queue and processing the
         </li>
         
         <li>
-          <a href="/en/tags/version-control/">version-control (1)</a>
+          <a href="/en/tags/version-control/">version control (1)</a>
         </li>
         
       </ul>
@@ -927,7 +927,7 @@ Consumers are responsible for pulling messages from the queue and processing the
     <script>
       hljs.configure({ ignoreUnescapedHTML: true }); 
       hljs.highlightAll();
-    </script><script src="/js/bundle.min.b8ecc205622548252ae685817642568fed404d2f04df7ea571a8b71e3091ffe7.js" integrity="sha256-uOzCBWIlSCUq5oWBdkJWj&#43;1ATS8E336lcai3HjCR/&#43;c="></script>
+    </script><script src="/js/bundle.min.a95078f9ef9e8d5748b63296d221d3c71357db75caa6ef260b251d5c8bbc8997.js" integrity="sha256-qVB4&#43;e&#43;ejVdItjKW0iHTxxNX23XKpu8mCyUdXIu8iZc="></script>
     <script src="/js/add-on.js"></script>
 <script>
 var doNotTrack = false;

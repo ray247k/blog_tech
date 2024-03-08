@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.122.0"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.123.7"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="[Discord 機器人] 01.建立基本機器人">
   <meta property="og:description" content="使用 Python3 建立基本的 Discord 聊天機器人">
   <meta property="description" content="使用 Python3 建立基本的 Discord 聊天機器人">
@@ -68,7 +68,7 @@
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https:\/\/tech.ray247k.com"
+        "@id": "https:\/\/tech.ray247k.com\/"
     },
     "publisher": {
         "@type": "Organization",
@@ -81,10 +81,10 @@
     "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
     "headline": "討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - Byte Ebi 🍤",
     "name": "Byte Ebi 🍤",
-    "url": "https:\/\/tech.ray247k.com",
+    "url": "https:\/\/tech.ray247k.com\/",
     "description": "討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - aws,devops,golang,laravel,leetcode,node.js,php,python3,serverless,實用工具,架站相關,版本控制,第三方服務,",
     "keywords": [
-        "apache-bench,auto-scaling,aws,axios,blockchain,cdn,chatbot,cicd,cloudflare,cloudflare-workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker-compose,domain-name,drone,element-ui,excel,express,ffmpeg,gas,gcp,gcr,getter,git,github,github-page,go,golang,google-app-script,google-container-registry,google-domains,google-sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load-balancing,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,phpcbf,phpcs,portainer,postgresql,prerender,proxy,python3,queue,redis,restful,seo,server,serverless,smart-contract,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
+        "apache bench,auto scaling,aws,axios,blockchain,cdn,chatbot,cicd,cloudflare,cloudflare workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker compose,domain name,drone,element-ui,excel,express,ffmpeg,gas,gcp,gcr,getter,git,github,github page,go,golang,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load balancing,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,phpcbf,phpcs,portainer,postgresql,prerender,proxy,python3,queue,redis,restful,seo,server,serverless,smart contract,ssh,stress testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
     ]
 }
 </script>
@@ -97,7 +97,7 @@
     "@context": "https://schema.org",
     "@type": "Organization",
     "legalName": "Byte Ebi 🍤",
-    "url": "https:\/\/tech.ray247k.com",
+    "url": "https:\/\/tech.ray247k.com\/",
     "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
     "contactPoint": {
         "@type": "ContactPoint",
@@ -137,18 +137,18 @@
                 "@type": "ListItem",
                 "position": 1,
                 "item": {
-                    "@id": "https:\/\/tech.ray247k.com",
+                    "@id": "https:\/\/tech.ray247k.com\/",
                     "name": "Byte Ebi 🍤",
-                    "url": "https:\/\/tech.ray247k.com"
+                    "url": "https:\/\/tech.ray247k.com\/"
                 }
             },
             {
                 "@type": "ListItem",
                 "position": 2,
                 "item": {
-                    "@id": "https:\/\/tech.ray247k.com/blog",
+                    "@id": "https:\/\/tech.ray247k.com\//blog",
                     "name": "Blog",
-                    "url": "https:\/\/tech.ray247k.com/blog"
+                    "url": "https:\/\/tech.ray247k.com\//blog"
                 }
             },
             {
@@ -201,7 +201,7 @@
     "publisher":{
         "@type":"Organization",
         "name": "Byte Ebi 🍤",
-        "url": "https://tech.ray247k.com",
+        "url": "https://tech.ray247k.com/",
         "logo": {
             "@type": "ImageObject",
             "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
@@ -370,21 +370,21 @@
 </a>
  登入 Discord 帳號</p>
 <p>按下<code>New Application</code>命名之後按下<code>Create</code>，名字之後可以改</p>
-<p><img src="create-application.png" alt="create application"></p>
+<p><img alt="create application" src="/blog/202110-make-discord-chatbot-01-set-up/create-application.png"></p>
 <p>左邊<code>Bot</code>進入後點選<code>Add Bot</code></p>
-<p><img src="add-bot.png" alt="add bot"></p>
+<p><img alt="add bot" src="/blog/202110-make-discord-chatbot-01-set-up/add-bot.png"></p>
 <p>點選左邊<code>OAuth2</code>頁籤</p>
 <ul>
 <li><code>SCOPES</code>中點選<code>bot</code></li>
 <li><code>Bot Permissions</code> 選擇 <code>Administrator</code></li>
 </ul>
 <p>下面就是機器人的邀請連結，可以將機器人邀請到自己的群</p>
-<p><img src="bot-invite-link.png" alt="bot invite link"></p>
-<p><img src="bot-coming.png" alt="bot coming"></p>
+<p><img alt="bot invite link" src="/blog/202110-make-discord-chatbot-01-set-up/bot-invite-link.png"></p>
+<p><img alt="bot coming" src="/blog/202110-make-discord-chatbot-01-set-up/bot-coming.png"></p>
 <h1 id="安裝-pip-及-discord-py">安裝 pip 及 Discord .py</h1>
 <p>使用指令安裝<code>Discord.py</code>套件</p>
 <pre tabindex="0"><code class="language-bash=" data-lang="bash=">python3 -m pip install -U discord.py
-</code></pre><p><img src="pip-install-package.png" alt="pip install package"></p>
+</code></pre><p><img alt="pip install package" src="/blog/202110-make-discord-chatbot-01-set-up/pip-install-package.png"></p>
 <h1 id="機器人程式碼">機器人程式碼</h1>
 <p>剛剛已經建立機器人，並且把機器人加到自己的群組裡<br>
 下一步就是要來啟動機器人，讓他可以開始做事</p>
@@ -419,16 +419,16 @@
 </span></span><span style="display:flex;"><span>client<span style="color:#f92672">.</span>run(<span style="color:#e6db74">&#39;MY APP TOKEN&#39;</span>)
 </span></span></code></pre></div><p>程式說明都寫在範例中了，唯一要解釋的就是 token 要去哪裡拿？<br>
 廢話不多說，上圖！</p>
-<p><img src="bot-token.png" alt="bot token"></p>
+<p><img alt="bot token" src="/blog/202110-make-discord-chatbot-01-set-up/bot-token.png"></p>
 <p>TOKEN 在上面 Discord Developer 的<code>BOT</code>頁面中取得<br>
 他不會直接顯示在畫面上，就按<code>Copy</code>就好了，如果堅持要看的話就按下<code>Click to Reveal Token</code>就會顯示<br>
 如果覺得 TOKEN 外洩可以使用 Regenerate 重新產生</p>
 <h1 id="啟動機器人">啟動機器人</h1>
 <p>開啟你的終端機，執行剛剛的 python 檔案</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python roll_dice.py
-</span></span></code></pre></div><p><img src="chat-bot-terminal-feature.png" alt="ChatBot terminal"></p>
+</span></span></code></pre></div><p><img alt="ChatBot terminal" src="/blog/202110-make-discord-chatbot-01-set-up/chat-bot-terminal-feature.png"></p>
 <p>接著測試指令是不是可以觸發機器人</p>
-<p><img src="chat-bot-test.png" alt="ChatBot test"></p>
+<p><img alt="ChatBot test" src="/blog/202110-make-discord-chatbot-01-set-up/chat-bot-test.png"></p>
 <p>看來成功被呼叫了呢！</p>
 
       
@@ -684,7 +684,7 @@
         </li>
         
         <li>
-          <a href="/tags/docker-compose/">docker-compose (6)</a>
+          <a href="/tags/docker-compose/">docker compose (6)</a>
         </li>
         
         <li>
@@ -760,7 +760,7 @@
         </li>
         
         <li>
-          <a href="/tags/google-domains/">google-domains (2)</a>
+          <a href="/tags/google-domains/">google domains (2)</a>
         </li>
         
         <li>
@@ -780,11 +780,11 @@
         </li>
         
         <li>
-          <a href="/tags/apache-bench/">apache-bench (1)</a>
+          <a href="/tags/apache-bench/">apache bench (1)</a>
         </li>
         
         <li>
-          <a href="/tags/auto-scaling/">auto-scaling (1)</a>
+          <a href="/tags/auto-scaling/">auto scaling (1)</a>
         </li>
         
         <li>
@@ -800,7 +800,7 @@
         </li>
         
         <li>
-          <a href="/tags/cloudflare-workers/">cloudflare-workers (1)</a>
+          <a href="/tags/cloudflare-workers/">cloudflare workers (1)</a>
         </li>
         
         <li>
@@ -812,7 +812,7 @@
         </li>
         
         <li>
-          <a href="/tags/domain-name/">domain-name (1)</a>
+          <a href="/tags/domain-name/">domain name (1)</a>
         </li>
         
         <li>
@@ -840,19 +840,19 @@
         </li>
         
         <li>
-          <a href="/tags/github-page/">github-page (1)</a>
+          <a href="/tags/github-page/">github page (1)</a>
         </li>
         
         <li>
-          <a href="/tags/google-app-script/">google-app-script (1)</a>
+          <a href="/tags/google-app-script/">google app script (1)</a>
         </li>
         
         <li>
-          <a href="/tags/google-container-registry/">google-container-registry (1)</a>
+          <a href="/tags/google-container-registry/">google container registry (1)</a>
         </li>
         
         <li>
-          <a href="/tags/google-sheets/">google-sheets (1)</a>
+          <a href="/tags/google-sheets/">google sheets (1)</a>
         </li>
         
         <li>
@@ -864,7 +864,7 @@
         </li>
         
         <li>
-          <a href="/tags/load-balancing/">load-balancing (1)</a>
+          <a href="/tags/load-balancing/">load balancing (1)</a>
         </li>
         
         <li>
@@ -920,11 +920,11 @@
         </li>
         
         <li>
-          <a href="/tags/smart-contract/">smart-contract (1)</a>
+          <a href="/tags/smart-contract/">smart contract (1)</a>
         </li>
         
         <li>
-          <a href="/tags/stress-testing/">stress-testing (1)</a>
+          <a href="/tags/stress-testing/">stress testing (1)</a>
         </li>
         
         <li>
@@ -989,7 +989,7 @@
     <script>
       hljs.configure({ ignoreUnescapedHTML: true }); 
       hljs.highlightAll();
-    </script><script src="/js/bundle.min.b8ecc205622548252ae685817642568fed404d2f04df7ea571a8b71e3091ffe7.js" integrity="sha256-uOzCBWIlSCUq5oWBdkJWj&#43;1ATS8E336lcai3HjCR/&#43;c="></script>
+    </script><script src="/js/bundle.min.a95078f9ef9e8d5748b63296d221d3c71357db75caa6ef260b251d5c8bbc8997.js" integrity="sha256-qVB4&#43;e&#43;ejVdItjKW0iHTxxNX23XKpu8mCyUdXIu8iZc="></script>
     <script src="/js/add-on.js"></script>
 <script>
 var doNotTrack = false;

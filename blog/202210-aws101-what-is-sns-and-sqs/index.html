@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.122.0"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.123.7"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="[AWS 101] 什麼是 SNS 和 SQS">
   <meta property="og:description" content="簡單筆記一下 AWS SNS 和 SQS 服務在幹嘛，還有使用情境">
   <meta property="description" content="簡單筆記一下 AWS SNS 和 SQS 服務在幹嘛，還有使用情境">
@@ -68,7 +68,7 @@
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https:\/\/tech.ray247k.com"
+        "@id": "https:\/\/tech.ray247k.com\/"
     },
     "publisher": {
         "@type": "Organization",
@@ -81,10 +81,10 @@
     "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
     "headline": "討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - Byte Ebi 🍤",
     "name": "Byte Ebi 🍤",
-    "url": "https:\/\/tech.ray247k.com",
+    "url": "https:\/\/tech.ray247k.com\/",
     "description": "討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - aws,devops,golang,laravel,leetcode,node.js,php,python3,serverless,實用工具,架站相關,版本控制,第三方服務,",
     "keywords": [
-        "apache-bench,auto-scaling,aws,axios,blockchain,cdn,chatbot,cicd,cloudflare,cloudflare-workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker-compose,domain-name,drone,element-ui,excel,express,ffmpeg,gas,gcp,gcr,getter,git,github,github-page,go,golang,google-app-script,google-container-registry,google-domains,google-sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load-balancing,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,phpcbf,phpcs,portainer,postgresql,prerender,proxy,python3,queue,redis,restful,seo,server,serverless,smart-contract,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
+        "apache bench,auto scaling,aws,axios,blockchain,cdn,chatbot,cicd,cloudflare,cloudflare workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker compose,domain name,drone,element-ui,excel,express,ffmpeg,gas,gcp,gcr,getter,git,github,github page,go,golang,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load balancing,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,phpcbf,phpcs,portainer,postgresql,prerender,proxy,python3,queue,redis,restful,seo,server,serverless,smart contract,ssh,stress testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
     ]
 }
 </script>
@@ -97,7 +97,7 @@
     "@context": "https://schema.org",
     "@type": "Organization",
     "legalName": "Byte Ebi 🍤",
-    "url": "https:\/\/tech.ray247k.com",
+    "url": "https:\/\/tech.ray247k.com\/",
     "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
     "contactPoint": {
         "@type": "ContactPoint",
@@ -137,18 +137,18 @@
                 "@type": "ListItem",
                 "position": 1,
                 "item": {
-                    "@id": "https:\/\/tech.ray247k.com",
+                    "@id": "https:\/\/tech.ray247k.com\/",
                     "name": "Byte Ebi 🍤",
-                    "url": "https:\/\/tech.ray247k.com"
+                    "url": "https:\/\/tech.ray247k.com\/"
                 }
             },
             {
                 "@type": "ListItem",
                 "position": 2,
                 "item": {
-                    "@id": "https:\/\/tech.ray247k.com/blog",
+                    "@id": "https:\/\/tech.ray247k.com\//blog",
                     "name": "Blog",
-                    "url": "https:\/\/tech.ray247k.com/blog"
+                    "url": "https:\/\/tech.ray247k.com\//blog"
                 }
             },
             {
@@ -201,7 +201,7 @@
     "publisher":{
         "@type":"Organization",
         "name": "Byte Ebi 🍤",
-        "url": "https://tech.ray247k.com",
+        "url": "https://tech.ray247k.com/",
         "logo": {
             "@type": "ImageObject",
             "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
@@ -374,7 +374,7 @@
 <li>Amazon Kinesis Data Firehose</li>
 </ul>
 <p>架構看起來像這樣<br>
-<img src="aws_sns.png" alt="aws_sns"></p>
+<img alt="aws_sns" src="/blog/202210-aws101-what-is-sns-and-sqs/aws_sns.png"></p>
 <h2 id="特點">特點</h2>
 <ol>
 <li>發送即時性的 message 給<code>所有</code>訂閱者</li>
@@ -395,7 +395,7 @@
 <li><strong>至少傳遞一次</strong>：一個訊息至少傳遞一次，但偶爾會傳遞一個以上的訊息副本</li>
 <li><strong>盡力按順序傳遞</strong>：訊息偶爾不會按照傳送順序傳遞</li>
 </ul>
-<p><img src="sqs_standard_queue.png" alt="sqs standard queue"></p>
+<p><img alt="sqs standard queue" src="/blog/202210-aws101-what-is-sns-and-sqs/sqs_standard_queue.png"></p>
 <h3 id="fifo-佇列"><strong>FIFO 佇列</strong></h3>
 <p>當操作和事件的順序很重要或者不能接受重複項目時</p>
 <ul>
@@ -403,7 +403,7 @@
 <li><strong>恰好處理一次</strong>：訊息只會傳遞一次並保持可用狀態，直到消費者(consumer)處理訊息並將之刪除</li>
 <li><strong>先入先出傳送</strong>：嚴格保持訊息傳送和接收的順序 (<strong>First In First Out</strong>)</li>
 </ul>
-<p><img src="sqs_fifo_queue.png" alt="sqs fifo queue"></p>
+<p><img alt="sqs fifo queue" src="/blog/202210-aws101-what-is-sns-and-sqs/sqs_fifo_queue.png"></p>
 <h2 id="poll"><strong>Poll</strong></h2>
 <h3 id="short-polling"><strong>Short polling</strong></h3>
 <p>詢問之後會馬上取得結果，即使 queue 裡沒東西也會告訴你沒東西<br>
@@ -713,7 +713,7 @@
         </li>
         
         <li>
-          <a href="/tags/docker-compose/">docker-compose (6)</a>
+          <a href="/tags/docker-compose/">docker compose (6)</a>
         </li>
         
         <li>
@@ -789,7 +789,7 @@
         </li>
         
         <li>
-          <a href="/tags/google-domains/">google-domains (2)</a>
+          <a href="/tags/google-domains/">google domains (2)</a>
         </li>
         
         <li>
@@ -809,11 +809,11 @@
         </li>
         
         <li>
-          <a href="/tags/apache-bench/">apache-bench (1)</a>
+          <a href="/tags/apache-bench/">apache bench (1)</a>
         </li>
         
         <li>
-          <a href="/tags/auto-scaling/">auto-scaling (1)</a>
+          <a href="/tags/auto-scaling/">auto scaling (1)</a>
         </li>
         
         <li>
@@ -829,7 +829,7 @@
         </li>
         
         <li>
-          <a href="/tags/cloudflare-workers/">cloudflare-workers (1)</a>
+          <a href="/tags/cloudflare-workers/">cloudflare workers (1)</a>
         </li>
         
         <li>
@@ -841,7 +841,7 @@
         </li>
         
         <li>
-          <a href="/tags/domain-name/">domain-name (1)</a>
+          <a href="/tags/domain-name/">domain name (1)</a>
         </li>
         
         <li>
@@ -869,19 +869,19 @@
         </li>
         
         <li>
-          <a href="/tags/github-page/">github-page (1)</a>
+          <a href="/tags/github-page/">github page (1)</a>
         </li>
         
         <li>
-          <a href="/tags/google-app-script/">google-app-script (1)</a>
+          <a href="/tags/google-app-script/">google app script (1)</a>
         </li>
         
         <li>
-          <a href="/tags/google-container-registry/">google-container-registry (1)</a>
+          <a href="/tags/google-container-registry/">google container registry (1)</a>
         </li>
         
         <li>
-          <a href="/tags/google-sheets/">google-sheets (1)</a>
+          <a href="/tags/google-sheets/">google sheets (1)</a>
         </li>
         
         <li>
@@ -893,7 +893,7 @@
         </li>
         
         <li>
-          <a href="/tags/load-balancing/">load-balancing (1)</a>
+          <a href="/tags/load-balancing/">load balancing (1)</a>
         </li>
         
         <li>
@@ -949,11 +949,11 @@
         </li>
         
         <li>
-          <a href="/tags/smart-contract/">smart-contract (1)</a>
+          <a href="/tags/smart-contract/">smart contract (1)</a>
         </li>
         
         <li>
-          <a href="/tags/stress-testing/">stress-testing (1)</a>
+          <a href="/tags/stress-testing/">stress testing (1)</a>
         </li>
         
         <li>
@@ -1018,7 +1018,7 @@
     <script>
       hljs.configure({ ignoreUnescapedHTML: true }); 
       hljs.highlightAll();
-    </script><script src="/js/bundle.min.b8ecc205622548252ae685817642568fed404d2f04df7ea571a8b71e3091ffe7.js" integrity="sha256-uOzCBWIlSCUq5oWBdkJWj&#43;1ATS8E336lcai3HjCR/&#43;c="></script>
+    </script><script src="/js/bundle.min.a95078f9ef9e8d5748b63296d221d3c71357db75caa6ef260b251d5c8bbc8997.js" integrity="sha256-qVB4&#43;e&#43;ejVdItjKW0iHTxxNX23XKpu8mCyUdXIu8iZc="></script>
     <script src="/js/add-on.js"></script>
 <script>
 var doNotTrack = false;

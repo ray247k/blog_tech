@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.122.0"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.123.7"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="[Express&#43;Vue 搭建電商網站] 02 - vue-router 的使用">
   <meta property="og:description" content="使用 Express &#43; Vue 搭建一個電商網站 - vue-router 的使用">
   <meta property="description" content="使用 Express &#43; Vue 搭建一個電商網站 - vue-router 的使用">
@@ -68,7 +68,7 @@
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https:\/\/tech.ray247k.com"
+        "@id": "https:\/\/tech.ray247k.com\/"
     },
     "publisher": {
         "@type": "Organization",
@@ -81,10 +81,10 @@
     "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
     "headline": "討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - Byte Ebi 🍤",
     "name": "Byte Ebi 🍤",
-    "url": "https:\/\/tech.ray247k.com",
+    "url": "https:\/\/tech.ray247k.com\/",
     "description": "討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - aws,devops,golang,laravel,leetcode,node.js,php,python3,serverless,實用工具,架站相關,版本控制,第三方服務,",
     "keywords": [
-        "apache-bench,auto-scaling,aws,axios,blockchain,cdn,chatbot,cicd,cloudflare,cloudflare-workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker-compose,domain-name,drone,element-ui,excel,express,ffmpeg,gas,gcp,gcr,getter,git,github,github-page,go,golang,google-app-script,google-container-registry,google-domains,google-sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load-balancing,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,phpcbf,phpcs,portainer,postgresql,prerender,proxy,python3,queue,redis,restful,seo,server,serverless,smart-contract,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
+        "apache bench,auto scaling,aws,axios,blockchain,cdn,chatbot,cicd,cloudflare,cloudflare workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker compose,domain name,drone,element-ui,excel,express,ffmpeg,gas,gcp,gcr,getter,git,github,github page,go,golang,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load balancing,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,phpcbf,phpcs,portainer,postgresql,prerender,proxy,python3,queue,redis,restful,seo,server,serverless,smart contract,ssh,stress testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
     ]
 }
 </script>
@@ -97,7 +97,7 @@
     "@context": "https://schema.org",
     "@type": "Organization",
     "legalName": "Byte Ebi 🍤",
-    "url": "https:\/\/tech.ray247k.com",
+    "url": "https:\/\/tech.ray247k.com\/",
     "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
     "contactPoint": {
         "@type": "ContactPoint",
@@ -137,18 +137,18 @@
                 "@type": "ListItem",
                 "position": 1,
                 "item": {
-                    "@id": "https:\/\/tech.ray247k.com",
+                    "@id": "https:\/\/tech.ray247k.com\/",
                     "name": "Byte Ebi 🍤",
-                    "url": "https:\/\/tech.ray247k.com"
+                    "url": "https:\/\/tech.ray247k.com\/"
                 }
             },
             {
                 "@type": "ListItem",
                 "position": 2,
                 "item": {
-                    "@id": "https:\/\/tech.ray247k.com/blog",
+                    "@id": "https:\/\/tech.ray247k.com\//blog",
                     "name": "Blog",
-                    "url": "https:\/\/tech.ray247k.com/blog"
+                    "url": "https:\/\/tech.ray247k.com\//blog"
                 }
             },
             {
@@ -201,7 +201,7 @@
     "publisher":{
         "@type":"Organization",
         "name": "Byte Ebi 🍤",
-        "url": "https://tech.ray247k.com",
+        "url": "https://tech.ray247k.com/",
         "logo": {
             "@type": "ImageObject",
             "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
@@ -481,7 +481,7 @@
 <p>剛剛示範了怎麼在 <code>/views/Home.vue</code> 中引入 <code>src/components/Home.vue</code><br>
 但在這邊先簡單一點，直接在 <code>/views/</code> 目錄下建立如同 <code>src/components/Home.vue</code> 內容的檔案<br>
 這時候 <code>/views/</code> 資料夾應該會長得像這樣<br>
-<img src="folder-tree.png" alt="folder-tree"></p>
+<img alt="folder-tree" src="/blog/202007-express-vue-build-ecommerce-02-vue-router/folder-tree.png"></p>
 <p>這時候其實可以把剛剛的 <code>Home.vue</code> 搬移進 <code>/views/</code> 中，我們原本的引用在這邊有點多此一舉了<br>
 但是在搬移過後會發現瀏覽器提示我們發生了一些問題，原來是 Home.vue 找不到檔案，但是為什麼呢？<br>
 我們不是在 vue-router 裡面指定路徑 &lsquo;/‘ 要到 <code>Home.vue</code> 嗎？<br>
@@ -531,7 +531,7 @@
 </blockquote>
 <p>這樣做可以大幅度的減少我們使用 <code>../</code> 這種作法造成目錄結構變換就專案大爆炸，或是為了存取深層的檔案，畫面被一堆點點斜線佔滿</p>
 <p>在完成了以上動作之後，打開瀏覽器預覽一下<br>
-<img src="router-demo.gif" alt="router-demo"></p>
+<img alt="router-demo" src="/blog/202007-express-vue-build-ecommerce-02-vue-router/router-demo.gif"></p>
 <p>看來我們剛剛完成了一個簡單的基於 Vue 的多頁面網站了！</p>
 <h2 id="嵌套路由">嵌套路由</h2>
 <p>有點經驗的工程師就知道，路由絕對不是這麼簡單的<br>
@@ -897,7 +897,7 @@
         </li>
         
         <li>
-          <a href="/tags/docker-compose/">docker-compose (6)</a>
+          <a href="/tags/docker-compose/">docker compose (6)</a>
         </li>
         
         <li>
@@ -973,7 +973,7 @@
         </li>
         
         <li>
-          <a href="/tags/google-domains/">google-domains (2)</a>
+          <a href="/tags/google-domains/">google domains (2)</a>
         </li>
         
         <li>
@@ -993,11 +993,11 @@
         </li>
         
         <li>
-          <a href="/tags/apache-bench/">apache-bench (1)</a>
+          <a href="/tags/apache-bench/">apache bench (1)</a>
         </li>
         
         <li>
-          <a href="/tags/auto-scaling/">auto-scaling (1)</a>
+          <a href="/tags/auto-scaling/">auto scaling (1)</a>
         </li>
         
         <li>
@@ -1013,7 +1013,7 @@
         </li>
         
         <li>
-          <a href="/tags/cloudflare-workers/">cloudflare-workers (1)</a>
+          <a href="/tags/cloudflare-workers/">cloudflare workers (1)</a>
         </li>
         
         <li>
@@ -1025,7 +1025,7 @@
         </li>
         
         <li>
-          <a href="/tags/domain-name/">domain-name (1)</a>
+          <a href="/tags/domain-name/">domain name (1)</a>
         </li>
         
         <li>
@@ -1053,19 +1053,19 @@
         </li>
         
         <li>
-          <a href="/tags/github-page/">github-page (1)</a>
+          <a href="/tags/github-page/">github page (1)</a>
         </li>
         
         <li>
-          <a href="/tags/google-app-script/">google-app-script (1)</a>
+          <a href="/tags/google-app-script/">google app script (1)</a>
         </li>
         
         <li>
-          <a href="/tags/google-container-registry/">google-container-registry (1)</a>
+          <a href="/tags/google-container-registry/">google container registry (1)</a>
         </li>
         
         <li>
-          <a href="/tags/google-sheets/">google-sheets (1)</a>
+          <a href="/tags/google-sheets/">google sheets (1)</a>
         </li>
         
         <li>
@@ -1077,7 +1077,7 @@
         </li>
         
         <li>
-          <a href="/tags/load-balancing/">load-balancing (1)</a>
+          <a href="/tags/load-balancing/">load balancing (1)</a>
         </li>
         
         <li>
@@ -1133,11 +1133,11 @@
         </li>
         
         <li>
-          <a href="/tags/smart-contract/">smart-contract (1)</a>
+          <a href="/tags/smart-contract/">smart contract (1)</a>
         </li>
         
         <li>
-          <a href="/tags/stress-testing/">stress-testing (1)</a>
+          <a href="/tags/stress-testing/">stress testing (1)</a>
         </li>
         
         <li>
@@ -1202,7 +1202,7 @@
     <script>
       hljs.configure({ ignoreUnescapedHTML: true }); 
       hljs.highlightAll();
-    </script><script src="/js/bundle.min.b8ecc205622548252ae685817642568fed404d2f04df7ea571a8b71e3091ffe7.js" integrity="sha256-uOzCBWIlSCUq5oWBdkJWj&#43;1ATS8E336lcai3HjCR/&#43;c="></script>
+    </script><script src="/js/bundle.min.a95078f9ef9e8d5748b63296d221d3c71357db75caa6ef260b251d5c8bbc8997.js" integrity="sha256-qVB4&#43;e&#43;ejVdItjKW0iHTxxNX23XKpu8mCyUdXIu8iZc="></script>
     <script src="/js/add-on.js"></script>
 <script>
 var doNotTrack = false;

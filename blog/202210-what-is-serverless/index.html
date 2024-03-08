@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.122.0"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.123.7"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="Serverless 簡介">
   <meta property="og:description" content="使用 AWS 服務簡單介紹什麼是 Serverless">
   <meta property="description" content="使用 AWS 服務簡單介紹什麼是 Serverless">
@@ -68,7 +68,7 @@
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https:\/\/tech.ray247k.com"
+        "@id": "https:\/\/tech.ray247k.com\/"
     },
     "publisher": {
         "@type": "Organization",
@@ -81,10 +81,10 @@
     "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
     "headline": "討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - Byte Ebi 🍤",
     "name": "Byte Ebi 🍤",
-    "url": "https:\/\/tech.ray247k.com",
+    "url": "https:\/\/tech.ray247k.com\/",
     "description": "討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - aws,devops,golang,laravel,leetcode,node.js,php,python3,serverless,實用工具,架站相關,版本控制,第三方服務,",
     "keywords": [
-        "apache-bench,auto-scaling,aws,axios,blockchain,cdn,chatbot,cicd,cloudflare,cloudflare-workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker-compose,domain-name,drone,element-ui,excel,express,ffmpeg,gas,gcp,gcr,getter,git,github,github-page,go,golang,google-app-script,google-container-registry,google-domains,google-sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load-balancing,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,phpcbf,phpcs,portainer,postgresql,prerender,proxy,python3,queue,redis,restful,seo,server,serverless,smart-contract,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
+        "apache bench,auto scaling,aws,axios,blockchain,cdn,chatbot,cicd,cloudflare,cloudflare workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker compose,domain name,drone,element-ui,excel,express,ffmpeg,gas,gcp,gcr,getter,git,github,github page,go,golang,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load balancing,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,phpcbf,phpcs,portainer,postgresql,prerender,proxy,python3,queue,redis,restful,seo,server,serverless,smart contract,ssh,stress testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
     ]
 }
 </script>
@@ -97,7 +97,7 @@
     "@context": "https://schema.org",
     "@type": "Organization",
     "legalName": "Byte Ebi 🍤",
-    "url": "https:\/\/tech.ray247k.com",
+    "url": "https:\/\/tech.ray247k.com\/",
     "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
     "contactPoint": {
         "@type": "ContactPoint",
@@ -137,18 +137,18 @@
                 "@type": "ListItem",
                 "position": 1,
                 "item": {
-                    "@id": "https:\/\/tech.ray247k.com",
+                    "@id": "https:\/\/tech.ray247k.com\/",
                     "name": "Byte Ebi 🍤",
-                    "url": "https:\/\/tech.ray247k.com"
+                    "url": "https:\/\/tech.ray247k.com\/"
                 }
             },
             {
                 "@type": "ListItem",
                 "position": 2,
                 "item": {
-                    "@id": "https:\/\/tech.ray247k.com/blog",
+                    "@id": "https:\/\/tech.ray247k.com\//blog",
                     "name": "Blog",
-                    "url": "https:\/\/tech.ray247k.com/blog"
+                    "url": "https:\/\/tech.ray247k.com\//blog"
                 }
             },
             {
@@ -201,7 +201,7 @@
     "publisher":{
         "@type":"Organization",
         "name": "Byte Ebi 🍤",
-        "url": "https://tech.ray247k.com",
+        "url": "https://tech.ray247k.com/",
         "logo": {
             "@type": "ImageObject",
             "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
@@ -368,7 +368,7 @@
 後端工程師常常都要兼職管理伺服器，都懂這有多痛苦<br>
 而透過 Serverless 的架構<br>
 只需要寫好設定檔（並掏出老闆的神奇小卡）就可以把基礎設施管理交給雲端服務商</p>
-<p><img src="magic_card.gif" alt="magic card"></p>
+<p><img alt="magic card" src="/blog/202210-what-is-serverless/magic_card.gif"></p>
 <p>常見的雲端服務商都有各自的 Serverless 服務</p>
 <ul>
 <li>AWS：Lambda</li>
@@ -376,7 +376,7 @@
 <li>Google：Cloud Functions</li>
 </ul>
 <p>而 AWS 提供的 Serverless 相關服務大致上分成這些<br>
-<img src="aws_serverless_services.png" alt="aws serverless services"></p>
+<img alt="aws serverless services" src="/blog/202210-what-is-serverless/aws_serverless_services.png"></p>
 <h1 id="serverless--lambda-function">Serverless ≠ Lambda Function</h1>
 <p>這是一個很常見的誤會<br>
 除了 Lambda Function 外，Serverless 也包含事件來源及其他資源的組合<br>
@@ -413,7 +413,7 @@
 <p>以簡單的代辦事項應用程式來說，若是使用 Serverless 的系統架構圖大概就會長這樣<br>
 主要可以關注圖的右邊<code>ToDo App</code>那塊虛線的部分<br>
 該部分符合上面提到的<code>來源事件 -&gt; Lambda 函式 -&gt; 服務</code>流程</p>
-<p><img src="arch-diagrams_serverless.jpg" alt="arch-diagrams serverless.jpg"></p>
+<p><img alt="arch-diagrams serverless.jpg" src="/blog/202210-what-is-serverless/arch-diagrams_serverless.jpg"></p>
 
       
       
@@ -666,7 +666,7 @@
         </li>
         
         <li>
-          <a href="/tags/docker-compose/">docker-compose (6)</a>
+          <a href="/tags/docker-compose/">docker compose (6)</a>
         </li>
         
         <li>
@@ -742,7 +742,7 @@
         </li>
         
         <li>
-          <a href="/tags/google-domains/">google-domains (2)</a>
+          <a href="/tags/google-domains/">google domains (2)</a>
         </li>
         
         <li>
@@ -762,11 +762,11 @@
         </li>
         
         <li>
-          <a href="/tags/apache-bench/">apache-bench (1)</a>
+          <a href="/tags/apache-bench/">apache bench (1)</a>
         </li>
         
         <li>
-          <a href="/tags/auto-scaling/">auto-scaling (1)</a>
+          <a href="/tags/auto-scaling/">auto scaling (1)</a>
         </li>
         
         <li>
@@ -782,7 +782,7 @@
         </li>
         
         <li>
-          <a href="/tags/cloudflare-workers/">cloudflare-workers (1)</a>
+          <a href="/tags/cloudflare-workers/">cloudflare workers (1)</a>
         </li>
         
         <li>
@@ -794,7 +794,7 @@
         </li>
         
         <li>
-          <a href="/tags/domain-name/">domain-name (1)</a>
+          <a href="/tags/domain-name/">domain name (1)</a>
         </li>
         
         <li>
@@ -822,19 +822,19 @@
         </li>
         
         <li>
-          <a href="/tags/github-page/">github-page (1)</a>
+          <a href="/tags/github-page/">github page (1)</a>
         </li>
         
         <li>
-          <a href="/tags/google-app-script/">google-app-script (1)</a>
+          <a href="/tags/google-app-script/">google app script (1)</a>
         </li>
         
         <li>
-          <a href="/tags/google-container-registry/">google-container-registry (1)</a>
+          <a href="/tags/google-container-registry/">google container registry (1)</a>
         </li>
         
         <li>
-          <a href="/tags/google-sheets/">google-sheets (1)</a>
+          <a href="/tags/google-sheets/">google sheets (1)</a>
         </li>
         
         <li>
@@ -846,7 +846,7 @@
         </li>
         
         <li>
-          <a href="/tags/load-balancing/">load-balancing (1)</a>
+          <a href="/tags/load-balancing/">load balancing (1)</a>
         </li>
         
         <li>
@@ -902,11 +902,11 @@
         </li>
         
         <li>
-          <a href="/tags/smart-contract/">smart-contract (1)</a>
+          <a href="/tags/smart-contract/">smart contract (1)</a>
         </li>
         
         <li>
-          <a href="/tags/stress-testing/">stress-testing (1)</a>
+          <a href="/tags/stress-testing/">stress testing (1)</a>
         </li>
         
         <li>
@@ -971,7 +971,7 @@
     <script>
       hljs.configure({ ignoreUnescapedHTML: true }); 
       hljs.highlightAll();
-    </script><script src="/js/bundle.min.b8ecc205622548252ae685817642568fed404d2f04df7ea571a8b71e3091ffe7.js" integrity="sha256-uOzCBWIlSCUq5oWBdkJWj&#43;1ATS8E336lcai3HjCR/&#43;c="></script>
+    </script><script src="/js/bundle.min.a95078f9ef9e8d5748b63296d221d3c71357db75caa6ef260b251d5c8bbc8997.js" integrity="sha256-qVB4&#43;e&#43;ejVdItjKW0iHTxxNX23XKpu8mCyUdXIu8iZc="></script>
     <script src="/js/add-on.js"></script>
 <script>
 var doNotTrack = false;

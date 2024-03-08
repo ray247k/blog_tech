@@ -104,7 +104,7 @@
       <link>https://tech.ray247k.com/blog/202203-gcp-auto-scaling/</link>
       <pubDate>Sun, 27 Mar 2022 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/blog/202203-gcp-auto-scaling/</guid>
-      <description></description>
+      <description>建立映像檔 首先要把指定的 VM 停止&#xA;接著在側邊欄找到儲存空間-&amp;gt;映像檔點進去選擇建立映像檔&#xA;不要選成虛擬機器-&amp;gt;機器映像檔不然等等就會鬼打牆選不到！&#xA;一開始自作聰明從 VM 那邊按建立機器映像檔就被送到這個異世界，卡了一下午&#xA;最簡單的判斷方式就是第一步的 VM 不要停止&#xA;建立映像檔的時候如果沒有提醒你要停止就是錯的&#xA;照著提示把映像檔建立完成就可以進行下一步&#xA;建立執行個體範本 Instance templates 進入執行個體範本按下建立執行個體範本&#xA;硬體規則選擇 這邊是決定未來在執行個體群組內，每次啟動新的執行個體所需要的規格&#xA;所以設定的畫面長得跟在建立 VM 的時候的畫面很像&#xA;底下也有防火牆，如果是會用到 80 跟 443 port 的網路服務會就開起來&#xA;選擇 VM 映像檔作為開機範本 不同的是這次我們要用剛剛建立過的映像檔作為範本！&#xA;所以在開機磁碟的地方按下變更-&amp;gt;自訂映像檔並選擇剛剛建立的映像檔&#xA;啟動時自動執行指令 有些時候我們在新的 VM 啟動時需要運行一些指令把服務開啟，例如 docker&#xA;如果沒有再啟動時運行，你的 VM 就只是開了一台機器起來而不會運行 docker daemon&#xA;點開管理的摺疊內容，可以看到自動化的說明&#xA;您可以指定會在執行個體開機或重新啟動時執行的開機指令碼。開機指令碼可用來安裝軟體和更新項目，以及確保服務可在虛擬機器中順利運作&#xA;所以我們在區塊中加入指令，讓 VM 在使用範本啟動時將服務啟動&#xA;#! /bin/bash sudo systemctl start docker sudo docker start laravel-app nginx redis sudo docker exec -i laravel-app /var/www/html/artisan migrate sudo docker exec -i laravel-app /var/www/html/artisan l5-swagger:generate --all sudo docker exec -i laravel-app /usr/bin/supervisord -c .</description>
     </item>
     <item>
       <title>Jenkins 01 安裝</title>

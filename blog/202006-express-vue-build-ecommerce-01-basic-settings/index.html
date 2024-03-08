@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.122.0"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.123.7"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="[Express&#43;Vue 搭建電商網站] 01- 初始設定">
   <meta property="og:description" content="使用 Express &#43; Vue 搭建一個電商網站 - 初始設定">
   <meta property="description" content="使用 Express &#43; Vue 搭建一個電商網站 - 初始設定">
@@ -68,7 +68,7 @@
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https:\/\/tech.ray247k.com"
+        "@id": "https:\/\/tech.ray247k.com\/"
     },
     "publisher": {
         "@type": "Organization",
@@ -81,10 +81,10 @@
     "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
     "headline": "討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - Byte Ebi 🍤",
     "name": "Byte Ebi 🍤",
-    "url": "https:\/\/tech.ray247k.com",
+    "url": "https:\/\/tech.ray247k.com\/",
     "description": "討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - aws,devops,golang,laravel,leetcode,node.js,php,python3,serverless,實用工具,架站相關,版本控制,第三方服務,",
     "keywords": [
-        "apache-bench,auto-scaling,aws,axios,blockchain,cdn,chatbot,cicd,cloudflare,cloudflare-workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker-compose,domain-name,drone,element-ui,excel,express,ffmpeg,gas,gcp,gcr,getter,git,github,github-page,go,golang,google-app-script,google-container-registry,google-domains,google-sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load-balancing,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,phpcbf,phpcs,portainer,postgresql,prerender,proxy,python3,queue,redis,restful,seo,server,serverless,smart-contract,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
+        "apache bench,auto scaling,aws,axios,blockchain,cdn,chatbot,cicd,cloudflare,cloudflare workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker compose,domain name,drone,element-ui,excel,express,ffmpeg,gas,gcp,gcr,getter,git,github,github page,go,golang,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load balancing,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,phpcbf,phpcs,portainer,postgresql,prerender,proxy,python3,queue,redis,restful,seo,server,serverless,smart contract,ssh,stress testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
     ]
 }
 </script>
@@ -97,7 +97,7 @@
     "@context": "https://schema.org",
     "@type": "Organization",
     "legalName": "Byte Ebi 🍤",
-    "url": "https:\/\/tech.ray247k.com",
+    "url": "https:\/\/tech.ray247k.com\/",
     "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
     "contactPoint": {
         "@type": "ContactPoint",
@@ -137,18 +137,18 @@
                 "@type": "ListItem",
                 "position": 1,
                 "item": {
-                    "@id": "https:\/\/tech.ray247k.com",
+                    "@id": "https:\/\/tech.ray247k.com\/",
                     "name": "Byte Ebi 🍤",
-                    "url": "https:\/\/tech.ray247k.com"
+                    "url": "https:\/\/tech.ray247k.com\/"
                 }
             },
             {
                 "@type": "ListItem",
                 "position": 2,
                 "item": {
-                    "@id": "https:\/\/tech.ray247k.com/blog",
+                    "@id": "https:\/\/tech.ray247k.com\//blog",
                     "name": "Blog",
-                    "url": "https:\/\/tech.ray247k.com/blog"
+                    "url": "https:\/\/tech.ray247k.com\//blog"
                 }
             },
             {
@@ -201,7 +201,7 @@
     "publisher":{
         "@type":"Organization",
         "name": "Byte Ebi 🍤",
-        "url": "https://tech.ray247k.com",
+        "url": "https://tech.ray247k.com/",
         "logo": {
             "@type": "ImageObject",
             "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
@@ -385,12 +385,12 @@
 <pre tabindex="0"><code>vue ui
 </code></pre><p>就可以起動，根據提示我們開啟 vue-ui 的畫面
 按下新增之後選擇指定的位置，根據畫面上提示來建立新專案</p>
-<p><img src="vue-ui.png" alt="vue-ui"></p>
+<p><img alt="vue-ui" src="/blog/202006-express-vue-build-ecommerce-01-basic-settings/vue-ui.png"></p>
 <p>接著就是等待他執行完成，在終端機進到剛剛建立專案的資料夾下會發現一個 vue 專案已經被建立</p>
 <p>根據 README 的說明執行以下指令後，可以打開 <code>http://localhost:8080/</code> 來預覽執行結果</p>
 <pre tabindex="0"><code>npm install
 npm run serve
-</code></pre><p><img src="hello-vue.png" alt="hello-vue"></p>
+</code></pre><p><img alt="hello-vue" src="/blog/202006-express-vue-build-ecommerce-01-basic-settings/hello-vue.png"></p>
 <h2 id="安裝-vue-router">安裝 vue-router</h2>
 <p>接著還要安裝一個我們會用上的東西：<a href="https://router.vuejs.org/zh/"
    
@@ -399,7 +399,7 @@ npm run serve
 </p>
 <p>可以選擇下指令，或是同樣的使用 vue-ui 來完成，既然剛剛使用 vue-ui 建立專案，這邊繼續使用 vue-ui 安裝 vue-router</p>
 <p>打開 vue-ui 頁面，最上方搜尋欄的左邊看「新增 vue-router」給他按下去就會開始安裝了
-<img src="vue-router-install.png" alt="vue-router-install"></p>
+<img alt="vue-router-install" src="/blog/202006-express-vue-build-ecommerce-01-basic-settings/vue-router-install.png"></p>
 <p>安裝好之後可以進入 <code>main.js</code> 查看，友善的自動安裝已經幫我們引入了呢！<br>
 如此就完成了我們前端 vue 專案的初始設定</p>
 <hr>
@@ -664,7 +664,7 @@ npm run serve
         </li>
         
         <li>
-          <a href="/tags/docker-compose/">docker-compose (6)</a>
+          <a href="/tags/docker-compose/">docker compose (6)</a>
         </li>
         
         <li>
@@ -740,7 +740,7 @@ npm run serve
         </li>
         
         <li>
-          <a href="/tags/google-domains/">google-domains (2)</a>
+          <a href="/tags/google-domains/">google domains (2)</a>
         </li>
         
         <li>
@@ -760,11 +760,11 @@ npm run serve
         </li>
         
         <li>
-          <a href="/tags/apache-bench/">apache-bench (1)</a>
+          <a href="/tags/apache-bench/">apache bench (1)</a>
         </li>
         
         <li>
-          <a href="/tags/auto-scaling/">auto-scaling (1)</a>
+          <a href="/tags/auto-scaling/">auto scaling (1)</a>
         </li>
         
         <li>
@@ -780,7 +780,7 @@ npm run serve
         </li>
         
         <li>
-          <a href="/tags/cloudflare-workers/">cloudflare-workers (1)</a>
+          <a href="/tags/cloudflare-workers/">cloudflare workers (1)</a>
         </li>
         
         <li>
@@ -792,7 +792,7 @@ npm run serve
         </li>
         
         <li>
-          <a href="/tags/domain-name/">domain-name (1)</a>
+          <a href="/tags/domain-name/">domain name (1)</a>
         </li>
         
         <li>
@@ -820,19 +820,19 @@ npm run serve
         </li>
         
         <li>
-          <a href="/tags/github-page/">github-page (1)</a>
+          <a href="/tags/github-page/">github page (1)</a>
         </li>
         
         <li>
-          <a href="/tags/google-app-script/">google-app-script (1)</a>
+          <a href="/tags/google-app-script/">google app script (1)</a>
         </li>
         
         <li>
-          <a href="/tags/google-container-registry/">google-container-registry (1)</a>
+          <a href="/tags/google-container-registry/">google container registry (1)</a>
         </li>
         
         <li>
-          <a href="/tags/google-sheets/">google-sheets (1)</a>
+          <a href="/tags/google-sheets/">google sheets (1)</a>
         </li>
         
         <li>
@@ -844,7 +844,7 @@ npm run serve
         </li>
         
         <li>
-          <a href="/tags/load-balancing/">load-balancing (1)</a>
+          <a href="/tags/load-balancing/">load balancing (1)</a>
         </li>
         
         <li>
@@ -900,11 +900,11 @@ npm run serve
         </li>
         
         <li>
-          <a href="/tags/smart-contract/">smart-contract (1)</a>
+          <a href="/tags/smart-contract/">smart contract (1)</a>
         </li>
         
         <li>
-          <a href="/tags/stress-testing/">stress-testing (1)</a>
+          <a href="/tags/stress-testing/">stress testing (1)</a>
         </li>
         
         <li>
@@ -969,7 +969,7 @@ npm run serve
     <script>
       hljs.configure({ ignoreUnescapedHTML: true }); 
       hljs.highlightAll();
-    </script><script src="/js/bundle.min.b8ecc205622548252ae685817642568fed404d2f04df7ea571a8b71e3091ffe7.js" integrity="sha256-uOzCBWIlSCUq5oWBdkJWj&#43;1ATS8E336lcai3HjCR/&#43;c="></script>
+    </script><script src="/js/bundle.min.a95078f9ef9e8d5748b63296d221d3c71357db75caa6ef260b251d5c8bbc8997.js" integrity="sha256-qVB4&#43;e&#43;ejVdItjKW0iHTxxNX23XKpu8mCyUdXIu8iZc="></script>
     <script src="/js/add-on.js"></script>
 <script>
 var doNotTrack = false;

@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.122.0"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.123.7"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="[用 Drone 建立自動部署] 03 部署排程設定與權限管理">
   <meta property="og:description" content="透過 Drone 建立自動部署流程，部署排程設定與權限管理">
   <meta property="description" content="透過 Drone 建立自動部署流程，部署排程設定與權限管理">
@@ -68,7 +68,7 @@
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https:\/\/tech.ray247k.com"
+        "@id": "https:\/\/tech.ray247k.com\/"
     },
     "publisher": {
         "@type": "Organization",
@@ -81,10 +81,10 @@
     "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
     "headline": "討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - Byte Ebi 🍤",
     "name": "Byte Ebi 🍤",
-    "url": "https:\/\/tech.ray247k.com",
+    "url": "https:\/\/tech.ray247k.com\/",
     "description": "討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - aws,devops,golang,laravel,leetcode,node.js,php,python3,serverless,實用工具,架站相關,版本控制,第三方服務,",
     "keywords": [
-        "apache-bench,auto-scaling,aws,axios,blockchain,cdn,chatbot,cicd,cloudflare,cloudflare-workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker-compose,domain-name,drone,element-ui,excel,express,ffmpeg,gas,gcp,gcr,getter,git,github,github-page,go,golang,google-app-script,google-container-registry,google-domains,google-sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load-balancing,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,phpcbf,phpcs,portainer,postgresql,prerender,proxy,python3,queue,redis,restful,seo,server,serverless,smart-contract,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
+        "apache bench,auto scaling,aws,axios,blockchain,cdn,chatbot,cicd,cloudflare,cloudflare workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker compose,domain name,drone,element-ui,excel,express,ffmpeg,gas,gcp,gcr,getter,git,github,github page,go,golang,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load balancing,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,phpcbf,phpcs,portainer,postgresql,prerender,proxy,python3,queue,redis,restful,seo,server,serverless,smart contract,ssh,stress testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
     ]
 }
 </script>
@@ -97,7 +97,7 @@
     "@context": "https://schema.org",
     "@type": "Organization",
     "legalName": "Byte Ebi 🍤",
-    "url": "https:\/\/tech.ray247k.com",
+    "url": "https:\/\/tech.ray247k.com\/",
     "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
     "contactPoint": {
         "@type": "ContactPoint",
@@ -137,18 +137,18 @@
                 "@type": "ListItem",
                 "position": 1,
                 "item": {
-                    "@id": "https:\/\/tech.ray247k.com",
+                    "@id": "https:\/\/tech.ray247k.com\/",
                     "name": "Byte Ebi 🍤",
-                    "url": "https:\/\/tech.ray247k.com"
+                    "url": "https:\/\/tech.ray247k.com\/"
                 }
             },
             {
                 "@type": "ListItem",
                 "position": 2,
                 "item": {
-                    "@id": "https:\/\/tech.ray247k.com/blog",
+                    "@id": "https:\/\/tech.ray247k.com\//blog",
                     "name": "Blog",
-                    "url": "https:\/\/tech.ray247k.com/blog"
+                    "url": "https:\/\/tech.ray247k.com\//blog"
                 }
             },
             {
@@ -201,7 +201,7 @@
     "publisher":{
         "@type":"Organization",
         "name": "Byte Ebi 🍤",
-        "url": "https://tech.ray247k.com",
+        "url": "https://tech.ray247k.com/",
         "logo": {
             "@type": "ImageObject",
             "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
@@ -436,14 +436,14 @@ Tocken key 是 <code>Authorization</code><br>
 <h2 id="查看-cron-job">查看 Cron Job</h2>
 <h3 id="cron-list">Cron List</h3>
 <p>建立完成之後可以使用 <code>GET /api/repos/{owner}/{repo}/cron</code> 查看所有 Cron Job 列表<br>
-<img src="postman-cron-list.png" alt="postman cron list"></p>
+<img alt="postman cron list" src="/blog/202106-drone-cicd-3-advanced-cron-job/postman-cron-list.png"></p>
 <h3 id="cron-info">Cron Info</h3>
 <p>使用 <code>GET /api/repos/{owner}/{repo}/cron/{name}</code> 則可以查看指定 Cron Job 的詳細資訊<br>
-<img src="postman-cron-info.png" alt="postman cron info"></p>
+<img alt="postman cron info" src="/blog/202106-drone-cicd-3-advanced-cron-job/postman-cron-info.png"></p>
 <p>回到 Drone 後台，點開專案的 settings 頁面會發現我們剛剛用 API 建立的 Cron Job 被加入了!<br>
-<img src="drone-settings-page.png" alt="drone settings page"></p>
+<img alt="drone settings page" src="/blog/202106-drone-cicd-3-advanced-cron-job/drone-settings-page.png"></p>
 <p>等時間到就會執行 .drone.yml 中由指定 Cron Job 名稱觸發的 pipeline<br>
-<img src="drone-pipeline-feature.png" alt="drone pipeline"></p>
+<img alt="drone pipeline" src="/blog/202106-drone-cicd-3-advanced-cron-job/drone-pipeline-feature.png"></p>
 <h2 id="更新-cron-job">更新 Cron Job</h2>
 <p>更新Cron Job 使用 <code>PATCH /api/repos/{owner}/{repo}/cron/{name}</code><br>
 Body 帶入要改變的內容，例如把使用的分支換成 <code>dev</code><br>
@@ -456,7 +456,7 @@ Body 帶入要改變的內容，例如把使用的分支換成 <code>dev</code><
 </code></pre><h2 id="刪除-cron-job">刪除 Cron Job</h2>
 <p>可以使用 <code>DELETE /api/repos/{owner}/{repo}/cron/{name}</code> 刪除之前建立的 Cron Job<br>
 但是我更偏好用後台的 UI 介面按下 DELETE 就好<br>
-<img src="delete-cronjob.png" alt="delete cronjob"></p>
+<img alt="delete cronjob" src="/blog/202106-drone-cicd-3-advanced-cron-job/delete-cronjob.png"></p>
 <p>另外一種操作方式是 Drone CLI，不過這次沒用上，提供給各位參考</p>
 <ul>
 <li><a href="https://docs.drone.io/cron/"
@@ -500,7 +500,7 @@ Body 帶入要改變的內容，例如把使用的分支換成 <code>dev</code><
 </a>
 <br>
 所以只要有寫入權限就可以看到 setting 頁面<br>
-<img src="bitbucket-not-supported.png" alt="bitbucket not supported"></p>
+<img alt="bitbucket not supported" src="/blog/202106-drone-cicd-3-advanced-cron-job/bitbucket-not-supported.png"></p>
 <p>使用 GitHub 測試，結果是可以使用組織進行權限控管的，並且不會開放 setting 分頁給所有人</p>
 
       
@@ -756,7 +756,7 @@ Body 帶入要改變的內容，例如把使用的分支換成 <code>dev</code><
         </li>
         
         <li>
-          <a href="/tags/docker-compose/">docker-compose (6)</a>
+          <a href="/tags/docker-compose/">docker compose (6)</a>
         </li>
         
         <li>
@@ -832,7 +832,7 @@ Body 帶入要改變的內容，例如把使用的分支換成 <code>dev</code><
         </li>
         
         <li>
-          <a href="/tags/google-domains/">google-domains (2)</a>
+          <a href="/tags/google-domains/">google domains (2)</a>
         </li>
         
         <li>
@@ -852,11 +852,11 @@ Body 帶入要改變的內容，例如把使用的分支換成 <code>dev</code><
         </li>
         
         <li>
-          <a href="/tags/apache-bench/">apache-bench (1)</a>
+          <a href="/tags/apache-bench/">apache bench (1)</a>
         </li>
         
         <li>
-          <a href="/tags/auto-scaling/">auto-scaling (1)</a>
+          <a href="/tags/auto-scaling/">auto scaling (1)</a>
         </li>
         
         <li>
@@ -872,7 +872,7 @@ Body 帶入要改變的內容，例如把使用的分支換成 <code>dev</code><
         </li>
         
         <li>
-          <a href="/tags/cloudflare-workers/">cloudflare-workers (1)</a>
+          <a href="/tags/cloudflare-workers/">cloudflare workers (1)</a>
         </li>
         
         <li>
@@ -884,7 +884,7 @@ Body 帶入要改變的內容，例如把使用的分支換成 <code>dev</code><
         </li>
         
         <li>
-          <a href="/tags/domain-name/">domain-name (1)</a>
+          <a href="/tags/domain-name/">domain name (1)</a>
         </li>
         
         <li>
@@ -912,19 +912,19 @@ Body 帶入要改變的內容，例如把使用的分支換成 <code>dev</code><
         </li>
         
         <li>
-          <a href="/tags/github-page/">github-page (1)</a>
+          <a href="/tags/github-page/">github page (1)</a>
         </li>
         
         <li>
-          <a href="/tags/google-app-script/">google-app-script (1)</a>
+          <a href="/tags/google-app-script/">google app script (1)</a>
         </li>
         
         <li>
-          <a href="/tags/google-container-registry/">google-container-registry (1)</a>
+          <a href="/tags/google-container-registry/">google container registry (1)</a>
         </li>
         
         <li>
-          <a href="/tags/google-sheets/">google-sheets (1)</a>
+          <a href="/tags/google-sheets/">google sheets (1)</a>
         </li>
         
         <li>
@@ -936,7 +936,7 @@ Body 帶入要改變的內容，例如把使用的分支換成 <code>dev</code><
         </li>
         
         <li>
-          <a href="/tags/load-balancing/">load-balancing (1)</a>
+          <a href="/tags/load-balancing/">load balancing (1)</a>
         </li>
         
         <li>
@@ -992,11 +992,11 @@ Body 帶入要改變的內容，例如把使用的分支換成 <code>dev</code><
         </li>
         
         <li>
-          <a href="/tags/smart-contract/">smart-contract (1)</a>
+          <a href="/tags/smart-contract/">smart contract (1)</a>
         </li>
         
         <li>
-          <a href="/tags/stress-testing/">stress-testing (1)</a>
+          <a href="/tags/stress-testing/">stress testing (1)</a>
         </li>
         
         <li>
@@ -1061,7 +1061,7 @@ Body 帶入要改變的內容，例如把使用的分支換成 <code>dev</code><
     <script>
       hljs.configure({ ignoreUnescapedHTML: true }); 
       hljs.highlightAll();
-    </script><script src="/js/bundle.min.b8ecc205622548252ae685817642568fed404d2f04df7ea571a8b71e3091ffe7.js" integrity="sha256-uOzCBWIlSCUq5oWBdkJWj&#43;1ATS8E336lcai3HjCR/&#43;c="></script>
+    </script><script src="/js/bundle.min.a95078f9ef9e8d5748b63296d221d3c71357db75caa6ef260b251d5c8bbc8997.js" integrity="sha256-qVB4&#43;e&#43;ejVdItjKW0iHTxxNX23XKpu8mCyUdXIu8iZc="></script>
     <script src="/js/add-on.js"></script>
 <script>
 var doNotTrack = false;

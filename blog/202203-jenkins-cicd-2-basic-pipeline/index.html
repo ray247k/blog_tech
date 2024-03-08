@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.122.0"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.123.7"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="Jenkins 02 基本 pipeline 建置及串接 Github">
   <meta property="og:description" content="建立一個基本的 pipeline 流程，並透過 Github 的 webhook 觸發建置流程">
   <meta property="description" content="建立一個基本的 pipeline 流程，並透過 Github 的 webhook 觸發建置流程">
@@ -68,7 +68,7 @@
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https:\/\/tech.ray247k.com"
+        "@id": "https:\/\/tech.ray247k.com\/"
     },
     "publisher": {
         "@type": "Organization",
@@ -81,10 +81,10 @@
     "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
     "headline": "討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - Byte Ebi 🍤",
     "name": "Byte Ebi 🍤",
-    "url": "https:\/\/tech.ray247k.com",
+    "url": "https:\/\/tech.ray247k.com\/",
     "description": "討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - aws,devops,golang,laravel,leetcode,node.js,php,python3,serverless,實用工具,架站相關,版本控制,第三方服務,",
     "keywords": [
-        "apache-bench,auto-scaling,aws,axios,blockchain,cdn,chatbot,cicd,cloudflare,cloudflare-workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker-compose,domain-name,drone,element-ui,excel,express,ffmpeg,gas,gcp,gcr,getter,git,github,github-page,go,golang,google-app-script,google-container-registry,google-domains,google-sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load-balancing,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,phpcbf,phpcs,portainer,postgresql,prerender,proxy,python3,queue,redis,restful,seo,server,serverless,smart-contract,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
+        "apache bench,auto scaling,aws,axios,blockchain,cdn,chatbot,cicd,cloudflare,cloudflare workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker compose,domain name,drone,element-ui,excel,express,ffmpeg,gas,gcp,gcr,getter,git,github,github page,go,golang,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load balancing,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,phpcbf,phpcs,portainer,postgresql,prerender,proxy,python3,queue,redis,restful,seo,server,serverless,smart contract,ssh,stress testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
     ]
 }
 </script>
@@ -97,7 +97,7 @@
     "@context": "https://schema.org",
     "@type": "Organization",
     "legalName": "Byte Ebi 🍤",
-    "url": "https:\/\/tech.ray247k.com",
+    "url": "https:\/\/tech.ray247k.com\/",
     "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
     "contactPoint": {
         "@type": "ContactPoint",
@@ -137,18 +137,18 @@
                 "@type": "ListItem",
                 "position": 1,
                 "item": {
-                    "@id": "https:\/\/tech.ray247k.com",
+                    "@id": "https:\/\/tech.ray247k.com\/",
                     "name": "Byte Ebi 🍤",
-                    "url": "https:\/\/tech.ray247k.com"
+                    "url": "https:\/\/tech.ray247k.com\/"
                 }
             },
             {
                 "@type": "ListItem",
                 "position": 2,
                 "item": {
-                    "@id": "https:\/\/tech.ray247k.com/blog",
+                    "@id": "https:\/\/tech.ray247k.com\//blog",
                     "name": "Blog",
-                    "url": "https:\/\/tech.ray247k.com/blog"
+                    "url": "https:\/\/tech.ray247k.com\//blog"
                 }
             },
             {
@@ -201,7 +201,7 @@
     "publisher":{
         "@type":"Organization",
         "name": "Byte Ebi 🍤",
-        "url": "https://tech.ray247k.com",
+        "url": "https://tech.ray247k.com/",
         "logo": {
             "@type": "ImageObject",
             "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
@@ -370,16 +370,16 @@
 <h1 id="建立第一個-pipeline">建立第一個 pipeline</h1>
 <p>側邊欄點選 Open Blue Ocean 來建置新的 pipeline<br>
 依照提示建立 access token，這邊為了示範我把舊的給砍了所以才會出現 Token 被刪除的錯誤訊息</p>
-<p><img src="create-pipeline.png" alt="create pipeline"></p>
+<p><img alt="create pipeline" src="/blog/202203-jenkins-cicd-2-basic-pipeline/create-pipeline.png"></p>
 <p>按下<code>Create an access token here.</code>會開啟 Github 的<code>personal access token</code>建立頁面</p>
 <p>如果自己要找的話是在<br>
 GitHub &gt; settings &gt; Developer settings &gt; Personal access tokens &gt; Generate new token</p>
 <p>基本上他已經帶入需要的權限了，直接按下<code>Generate token</code></p>
-<p><img src="new-personal-access-token.jpg" alt="new personal access token"></p>
+<p><img alt="new personal access token" src="/blog/202203-jenkins-cicd-2-basic-pipeline/new-personal-access-token.jpg"></p>
 <p>然後複製產生的 token 貼到 jenkins<br>
 如果這時候沒有複製下來就只能重新產生了！</p>
 <p>驗證完成之後就可以選擇專案</p>
-<p><img src="choose-repository.jpg" alt="choose repository"></p>
+<p><img alt="choose repository" src="/blog/202203-jenkins-cicd-2-basic-pipeline/choose-repository.jpg"></p>
 <p>接著按下創建就會掃瞄 Github Repository 裡面的所有分支了！</p>
 <h1 id="串接-webhook-監聽事件">串接 webhook 監聽事件</h1>
 <p>接著讓我們稍微改一下專案內容並且 commit push 到 github，會發現怎麼 Jenkins 沒動作？<br>
@@ -391,10 +391,10 @@ GitHub &gt; settings &gt; Developer settings &gt; Personal access tokens &gt; Ge
 <p>進入專案的 Settings &gt; Webhook &gt; Add webhook<br>
 在<code>Payload URL</code>填入<code>jenkins主機網址/github-webhook/</code></p>
 <p>如果 port 不是使用 80 或 443，則要完整輸入。例如 Jenkins 預設使用的是<code>8080</code>port</p>
-<p><img src="webhook.png" alt="webhook"></p>
+<p><img alt="webhook" src="/blog/202203-jenkins-cicd-2-basic-pipeline/webhook.png"></p>
 <p>按下 Add webhook 新增後會測試連線<br>
 如果失敗，可以再調整後點擊右側三個點的選單，按下<code>Redeliver</code>來重新測試</p>
-<p><img src="redeliver.jpg" alt="redeliver"></p>
+<p><img alt="redeliver" src="/blog/202203-jenkins-cicd-2-basic-pipeline/redeliver.jpg"></p>
 <p>接著每次有 push 事件發生（根據 webhook 設定），都會通知 Jenkins<br>
 於是就達成我們想在有 push 新的內容到 Github 的時候觸發 Jenkins 建置流程</p>
 <h1 id="監聽-tag-事件">監聽 tag 事件</h1>
@@ -409,7 +409,7 @@ GitHub &gt; settings &gt; Developer settings &gt; Personal access tokens &gt; Ge
 <p>預設 Jenkins 是沒有建立 tag 監聽的，必須進入你的 pipeline 設定中<br>
 在<code>Branch Sources</code>設定中的<code>Behaviours</code>區塊最下方的<code>Add</code>勾選<code>Discover tags</code>來啟用<br>
 至今我仍然沒參透為什麼要這樣設計</p>
-<p><img src="tag-discover.jpg" alt="tag discover"></p>
+<p><img alt="tag discover" src="/blog/202203-jenkins-cicd-2-basic-pipeline/tag-discover.jpg"></p>
 <h1 id="pipeline-基本範例">pipeline 基本範例</h1>
 <p>這邊會基本示範幾種常用的觸發條件的條件判斷，至於觸發後要進行什麼行為之後再來介紹<br>
 首先在專案的根目錄下建立名為<code>jenkinsfile</code>的檔案，預設 Jenkins 會使用這個檔案作為 pipeline 流程</p>
@@ -723,7 +723,7 @@ GitHub &gt; settings &gt; Developer settings &gt; Personal access tokens &gt; Ge
         </li>
         
         <li>
-          <a href="/tags/docker-compose/">docker-compose (6)</a>
+          <a href="/tags/docker-compose/">docker compose (6)</a>
         </li>
         
         <li>
@@ -799,7 +799,7 @@ GitHub &gt; settings &gt; Developer settings &gt; Personal access tokens &gt; Ge
         </li>
         
         <li>
-          <a href="/tags/google-domains/">google-domains (2)</a>
+          <a href="/tags/google-domains/">google domains (2)</a>
         </li>
         
         <li>
@@ -819,11 +819,11 @@ GitHub &gt; settings &gt; Developer settings &gt; Personal access tokens &gt; Ge
         </li>
         
         <li>
-          <a href="/tags/apache-bench/">apache-bench (1)</a>
+          <a href="/tags/apache-bench/">apache bench (1)</a>
         </li>
         
         <li>
-          <a href="/tags/auto-scaling/">auto-scaling (1)</a>
+          <a href="/tags/auto-scaling/">auto scaling (1)</a>
         </li>
         
         <li>
@@ -839,7 +839,7 @@ GitHub &gt; settings &gt; Developer settings &gt; Personal access tokens &gt; Ge
         </li>
         
         <li>
-          <a href="/tags/cloudflare-workers/">cloudflare-workers (1)</a>
+          <a href="/tags/cloudflare-workers/">cloudflare workers (1)</a>
         </li>
         
         <li>
@@ -851,7 +851,7 @@ GitHub &gt; settings &gt; Developer settings &gt; Personal access tokens &gt; Ge
         </li>
         
         <li>
-          <a href="/tags/domain-name/">domain-name (1)</a>
+          <a href="/tags/domain-name/">domain name (1)</a>
         </li>
         
         <li>
@@ -879,19 +879,19 @@ GitHub &gt; settings &gt; Developer settings &gt; Personal access tokens &gt; Ge
         </li>
         
         <li>
-          <a href="/tags/github-page/">github-page (1)</a>
+          <a href="/tags/github-page/">github page (1)</a>
         </li>
         
         <li>
-          <a href="/tags/google-app-script/">google-app-script (1)</a>
+          <a href="/tags/google-app-script/">google app script (1)</a>
         </li>
         
         <li>
-          <a href="/tags/google-container-registry/">google-container-registry (1)</a>
+          <a href="/tags/google-container-registry/">google container registry (1)</a>
         </li>
         
         <li>
-          <a href="/tags/google-sheets/">google-sheets (1)</a>
+          <a href="/tags/google-sheets/">google sheets (1)</a>
         </li>
         
         <li>
@@ -903,7 +903,7 @@ GitHub &gt; settings &gt; Developer settings &gt; Personal access tokens &gt; Ge
         </li>
         
         <li>
-          <a href="/tags/load-balancing/">load-balancing (1)</a>
+          <a href="/tags/load-balancing/">load balancing (1)</a>
         </li>
         
         <li>
@@ -959,11 +959,11 @@ GitHub &gt; settings &gt; Developer settings &gt; Personal access tokens &gt; Ge
         </li>
         
         <li>
-          <a href="/tags/smart-contract/">smart-contract (1)</a>
+          <a href="/tags/smart-contract/">smart contract (1)</a>
         </li>
         
         <li>
-          <a href="/tags/stress-testing/">stress-testing (1)</a>
+          <a href="/tags/stress-testing/">stress testing (1)</a>
         </li>
         
         <li>
@@ -1028,7 +1028,7 @@ GitHub &gt; settings &gt; Developer settings &gt; Personal access tokens &gt; Ge
     <script>
       hljs.configure({ ignoreUnescapedHTML: true }); 
       hljs.highlightAll();
-    </script><script src="/js/bundle.min.b8ecc205622548252ae685817642568fed404d2f04df7ea571a8b71e3091ffe7.js" integrity="sha256-uOzCBWIlSCUq5oWBdkJWj&#43;1ATS8E336lcai3HjCR/&#43;c="></script>
+    </script><script src="/js/bundle.min.a95078f9ef9e8d5748b63296d221d3c71357db75caa6ef260b251d5c8bbc8997.js" integrity="sha256-qVB4&#43;e&#43;ejVdItjKW0iHTxxNX23XKpu8mCyUdXIu8iZc="></script>
     <script src="/js/add-on.js"></script>
 <script>
 var doNotTrack = false;

@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.122.0"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.123.7"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="伸縮自在的伺服器 01 自動配置 Auto Scaling">
   <meta property="og:description" content="設定 GCP 上的 Auto Scaling 讓伺服器更加彈性">
   <meta property="description" content="設定 GCP 上的 Auto Scaling 讓伺服器更加彈性">
@@ -68,7 +68,7 @@
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https:\/\/tech.ray247k.com"
+        "@id": "https:\/\/tech.ray247k.com\/"
     },
     "publisher": {
         "@type": "Organization",
@@ -81,10 +81,10 @@
     "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
     "headline": "討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - Byte Ebi 🍤",
     "name": "Byte Ebi 🍤",
-    "url": "https:\/\/tech.ray247k.com",
+    "url": "https:\/\/tech.ray247k.com\/",
     "description": "討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - aws,devops,golang,laravel,leetcode,node.js,php,python3,serverless,實用工具,架站相關,版本控制,第三方服務,",
     "keywords": [
-        "apache-bench,auto-scaling,aws,axios,blockchain,cdn,chatbot,cicd,cloudflare,cloudflare-workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker-compose,domain-name,drone,element-ui,excel,express,ffmpeg,gas,gcp,gcr,getter,git,github,github-page,go,golang,google-app-script,google-container-registry,google-domains,google-sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load-balancing,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,phpcbf,phpcs,portainer,postgresql,prerender,proxy,python3,queue,redis,restful,seo,server,serverless,smart-contract,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
+        "apache bench,auto scaling,aws,axios,blockchain,cdn,chatbot,cicd,cloudflare,cloudflare workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker compose,domain name,drone,element-ui,excel,express,ffmpeg,gas,gcp,gcr,getter,git,github,github page,go,golang,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load balancing,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,phpcbf,phpcs,portainer,postgresql,prerender,proxy,python3,queue,redis,restful,seo,server,serverless,smart contract,ssh,stress testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
     ]
 }
 </script>
@@ -97,7 +97,7 @@
     "@context": "https://schema.org",
     "@type": "Organization",
     "legalName": "Byte Ebi 🍤",
-    "url": "https:\/\/tech.ray247k.com",
+    "url": "https:\/\/tech.ray247k.com\/",
     "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
     "contactPoint": {
         "@type": "ContactPoint",
@@ -137,18 +137,18 @@
                 "@type": "ListItem",
                 "position": 1,
                 "item": {
-                    "@id": "https:\/\/tech.ray247k.com",
+                    "@id": "https:\/\/tech.ray247k.com\/",
                     "name": "Byte Ebi 🍤",
-                    "url": "https:\/\/tech.ray247k.com"
+                    "url": "https:\/\/tech.ray247k.com\/"
                 }
             },
             {
                 "@type": "ListItem",
                 "position": 2,
                 "item": {
-                    "@id": "https:\/\/tech.ray247k.com/blog",
+                    "@id": "https:\/\/tech.ray247k.com\//blog",
                     "name": "Blog",
-                    "url": "https:\/\/tech.ray247k.com/blog"
+                    "url": "https:\/\/tech.ray247k.com\//blog"
                 }
             },
             {
@@ -173,7 +173,7 @@
     "@type": "BlogPosting",
     "articleSection": "blog",
     "name": "伸縮自在的伺服器 01 自動配置 Auto Scaling",
-    "headline": "",
+    "headline": "建立映像檔 首先要把指定的 VM 停止\n接著在側邊欄找到儲存空間-\u0026gt;映像檔點進去選擇建立映像檔\n不要選成虛擬機器-\u0026gt;機器映像檔不然等等就會鬼打牆選不到！\n一開始自作聰明從 VM 那邊按建立機器映像檔就被送到這個異世界，卡了一下午\n最簡單的判斷方式就是第一步的 VM 不要停止\n建立映像檔的時候如果沒有提醒你要停止就是錯的\n照著提示把映像檔建立完成就可以進行下一步\n建立執行個體範本 Instance templates 進入執行個體範本按下建立執行個體範本\n硬體規則選擇 這邊是決定未來在執行個體群組內，每次啟動新的執行個體所需要的規格\n所以設定的畫面長得跟在建立 VM 的時候的畫面很像\n底下也有防火牆，如果是會用到 80 跟 443 port 的網路服務會就開起來\n選擇 VM 映像檔作為開機範本 不同的是這次我們要用剛剛建立過的映像檔作為範本！\n所以在開機磁碟的地方按下變更-\u0026gt;自訂映像檔並選擇剛剛建立的映像檔\n啟動時自動執行指令 有些時候我們在新的 VM 啟動時需要運行一些指令把服務開啟，例如 docker\n如果沒有再啟動時運行，你的 VM 就只是開了一台機器起來而不會運行 docker daemon\n點開管理的摺疊內容，可以看到自動化的說明\n您可以指定會在執行個體開機或重新啟動時執行的開機指令碼。開機指令碼可用來安裝軟體和更新項目，以及確保服務可在虛擬機器中順利運作\n所以我們在區塊中加入指令，讓 VM 在使用範本啟動時將服務啟動\n#! \/bin\/bash sudo systemctl start docker sudo docker start laravel-app nginx redis sudo docker exec -i laravel-app \/var\/www\/html\/artisan migrate sudo docker exec -i laravel-app \/var\/www\/html\/artisan l5-swagger:generate --all sudo docker exec -i laravel-app \/usr\/bin\/supervisord -c .",
     "description": "設定 GCP 上的 Auto Scaling 讓伺服器更加彈性",
     "inLanguage": "zh-TW",
     "isFamilyFriendly": "true",
@@ -201,7 +201,7 @@
     "publisher":{
         "@type":"Organization",
         "name": "Byte Ebi 🍤",
-        "url": "https://tech.ray247k.com",
+        "url": "https://tech.ray247k.com/",
         "logo": {
             "@type": "ImageObject",
             "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
@@ -366,10 +366,10 @@
 接著在側邊欄找到<code>儲存空間</code>-&gt;<code>映像檔</code>點進去選擇建立映像檔<br>
 不要選成<code>虛擬機器</code>-&gt;<code>機器映像檔</code>不然等等就會鬼打牆選不到！<br>
 一開始自作聰明從 VM 那邊按<code>建立機器映像檔</code>就被送到這個異世界，卡了一下午</p>
-<p><img src="gcp-create-vm-image.jpg" alt="gcp create vm image"></p>
+<p><img alt="gcp create vm image" src="/blog/202203-gcp-auto-scaling/gcp-create-vm-image.jpg"></p>
 <p>最簡單的判斷方式就是第一步的 VM 不要停止<br>
 建立映像檔的時候如果沒有提醒你要停止就是錯的</p>
-<p><img src="gcp-vm-image-settings.jpg" alt="gcp vm image settings"></p>
+<p><img alt="gcp vm image settings" src="/blog/202203-gcp-auto-scaling/gcp-vm-image-settings.jpg"></p>
 <p>照著提示把映像檔建立完成就可以進行下一步</p>
 <h1 id="建立執行個體範本-instance-templates">建立執行個體範本 Instance templates</h1>
 <p>進入<code>執行個體範本</code>按下<code>建立執行個體範本</code></p>
@@ -377,11 +377,11 @@
 <p>這邊是決定未來在執行個體群組內，每次啟動新的執行個體所需要的規格<br>
 所以設定的畫面長得跟在建立 VM 的時候的畫面很像<br>
 底下也有防火牆，如果是會用到 80 跟 443 port 的網路服務會就開起來</p>
-<p><img src="gcp-instance-template.png" alt="gcp instance template"></p>
+<p><img alt="gcp instance template" src="/blog/202203-gcp-auto-scaling/gcp-instance-template.png"></p>
 <h2 id="選擇-vm-映像檔作為開機範本">選擇 VM 映像檔作為開機範本</h2>
 <p>不同的是這次我們要用剛剛建立過的映像檔作為範本！<br>
 所以在<code>開機磁碟</code>的地方按下<code>變更</code>-&gt;<code>自訂映像檔</code>並選擇剛剛建立的映像檔</p>
-<p><img src="gcp-create-instance-template.jpg" alt="gcp create instance template"></p>
+<p><img alt="gcp create instance template" src="/blog/202203-gcp-auto-scaling/gcp-create-instance-template.jpg"></p>
 <h2 id="啟動時自動執行指令">啟動時自動執行指令</h2>
 <p>有些時候我們在新的 VM 啟動時需要運行一些指令把服務開啟，例如 docker<br>
 如果沒有再啟動時運行，你的 VM 就只是開了一台機器起來而不會運行 docker daemon</p>
@@ -389,7 +389,7 @@
 <blockquote>
 <p>您可以指定會在執行個體開機或重新啟動時執行的開機指令碼。開機指令碼可用來安裝軟體和更新項目，以及確保服務可在虛擬機器中順利運作</p>
 </blockquote>
-<p><img src="gcp-instance-start-script.png" alt="gcp instance start script"></p>
+<p><img alt="gcp instance start script" src="/blog/202203-gcp-auto-scaling/gcp-instance-start-script.png"></p>
 <p>所以我們在區塊中加入指令，讓 VM 在使用範本啟動時將服務啟動</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#! /bin/bash
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>sudo systemctl start docker
@@ -407,7 +407,7 @@
 <h1 id="建立執行個體群組-instance-group">建立執行個體群組 Instance Group</h1>
 <p>在觸發條件時，執行個體群組會依照剛剛設定的<code>執行個體範本</code>自動配置機器</p>
 <p>首先開啟<code>執行個體群組</code>，按下<code>建立執行個體群組</code></p>
-<p><img src="gcp-create-instance-group.png" alt="gcp create instance group"></p>
+<p><img alt="gcp create instance group" src="/blog/202203-gcp-auto-scaling/gcp-create-instance-group.png"></p>
 <p>介面會看到左邊有三個選項，和網路上現有的文章都不一樣，大概是又改畫面了</p>
 <ul>
 <li>New managed instance group (stateless)</li>
@@ -423,18 +423,18 @@
 </p>
 <p>選擇要使用的執行個體範本並制定 Auto Scaling 規則
 完成後按下最下方<code>建立</code>就完成執行個體群組的建立以及 Auto Scaling 設定</p>
-<p><img src="gcp-instance-group-settings.png" alt="gcp instance group settings"></p>
+<p><img alt="gcp instance group settings" src="/blog/202203-gcp-auto-scaling/gcp-instance-group-settings.png"></p>
 <h2 id="設定執行個體群組健康狀態檢查與自動修復">設定執行個體群組健康狀態檢查與自動修復</h2>
 <p>啟動新的執行個體我們要確定他是可用的<br>
 自動讓不可使用的執行個體關閉，並且開新的執行個體取代之</p>
 <p>開啟執行個體群組的編輯頁面，下滑到<code>自動修復</code>區塊</p>
-<p><img src="gcp-instance-group-health-check.png" alt="gcp instance group health check"></p>
+<p><img alt="gcp instance group health check" src="/blog/202203-gcp-auto-scaling/gcp-instance-group-health-check.png"></p>
 <p>選擇<code>建立健康健康狀態檢查</code>並設定名稱以及其他設定<br>
 例如通訊協定選擇<code>HTTP</code>的話可以針對特定路由發送請求，預設的<code>TCP</code>則是單純確認傳輸正常</p>
-<p><img src="gcp-instance-group-health-check-detail.png" alt="gcp instance group health check detail"></p>
+<p><img alt="gcp instance group health check detail" src="/blog/202203-gcp-auto-scaling/gcp-instance-group-health-check-detail.png"></p>
 <p>完成之後就等他跑一下，接著回到執行個體群組詳細頁去查看<br>
 可以看到健康報告，沒意外是一切健康</p>
-<p><img src="gcp-instance-group-health-check-result.png" alt="gcp instance group health check result"></p>
+<p><img alt="gcp instance group health check result" src="/blog/202203-gcp-auto-scaling/gcp-instance-group-health-check-result.png"></p>
 <h1 id="輪動式更新-rolling-update">輪動式更新 Rolling Update</h1>
 <p>當有新的映像檔建立後，需要先建立新的執行個體範本(Instance template)<br>
 我們需要回到<code>執行個體群組</code>編輯所使用的執行個體範本，這樣未來啟動新執行個體才會使用新的範本</p>
@@ -442,19 +442,19 @@
 就是<code>輪動式更新</code>上場的時候！</p>
 <p>到<code>執行個體群組</code>選擇新建立的執行個體群組，並且按下<code>UPDATE VMS</code><br>
 這個按鈕名字換來換去，就差不多位置找看看</p>
-<p><img src="gcp-rolling-update.jpg" alt="gcp rolling update"></p>
+<p><img alt="gcp rolling update" src="/blog/202203-gcp-auto-scaling/gcp-rolling-update.jpg"></p>
 <p>接著選擇新的執行個體範本，並且<code>更新設定</code>中的<code>Update type</code>要選擇<code>自動</code><br>
 否則只會在新啟動的 VM 套用新的範例，但是我們想要的是把既有的 VM 也替換成新的！</p>
-<p><img src="gcp-instance-group-update.png" alt="gcp instance group update"></p>
+<p><img alt="gcp instance group update" src="/blog/202203-gcp-auto-scaling/gcp-instance-group-update.png"></p>
 <p>可以看到會使用新的執行個體範本啟動一個新的執行個體</p>
-<p><img src="gcp-instance-updating.png" alt="gcp instance updating"></p>
+<p><img alt="gcp instance updating" src="/blog/202203-gcp-auto-scaling/gcp-instance-updating.png"></p>
 <p>當新的執行個體範本開啟完成之後，才會把舊的執行個體刪除<br>
 如此就達到不影響線上服務而達到無痛升級！</p>
-<p><img src="gcp-instance-update-done.png" alt="gcp instance update done"></p>
+<p><img alt="gcp instance update done" src="/blog/202203-gcp-auto-scaling/gcp-instance-update-done.png"></p>
 <p>但是現在服務還不完整，執行個體群組還是個別的獨立主機<br>
 雖然具有自動擴展的能力可以增加主機數量，但也就只是增加可以個別連線的主機而已，並不能自動對請求作分流</p>
 <p>如下圖所示，目前只做完了 Instance Group 以及後面的部分</p>
-<p><img src="gpc-server-infra.jpg" alt="gpc server infra"></p>
+<p><img alt="gpc server infra" src="/blog/202203-gcp-auto-scaling/gpc-server-infra.jpg"></p>
 <p>我們還需要使用 Load Balance 服務，提供一組負責接收所有請求的固定 IP 位址<br>
 並透過 Load Balance 將流量分流到執行個體群組內個別的主機處理<br>
 這就留到<a href="/blog/202204-gcp-load-balancing/"
@@ -716,7 +716,7 @@
         </li>
         
         <li>
-          <a href="/tags/docker-compose/">docker-compose (6)</a>
+          <a href="/tags/docker-compose/">docker compose (6)</a>
         </li>
         
         <li>
@@ -792,7 +792,7 @@
         </li>
         
         <li>
-          <a href="/tags/google-domains/">google-domains (2)</a>
+          <a href="/tags/google-domains/">google domains (2)</a>
         </li>
         
         <li>
@@ -812,11 +812,11 @@
         </li>
         
         <li>
-          <a href="/tags/apache-bench/">apache-bench (1)</a>
+          <a href="/tags/apache-bench/">apache bench (1)</a>
         </li>
         
         <li>
-          <a href="/tags/auto-scaling/">auto-scaling (1)</a>
+          <a href="/tags/auto-scaling/">auto scaling (1)</a>
         </li>
         
         <li>
@@ -832,7 +832,7 @@
         </li>
         
         <li>
-          <a href="/tags/cloudflare-workers/">cloudflare-workers (1)</a>
+          <a href="/tags/cloudflare-workers/">cloudflare workers (1)</a>
         </li>
         
         <li>
@@ -844,7 +844,7 @@
         </li>
         
         <li>
-          <a href="/tags/domain-name/">domain-name (1)</a>
+          <a href="/tags/domain-name/">domain name (1)</a>
         </li>
         
         <li>
@@ -872,19 +872,19 @@
         </li>
         
         <li>
-          <a href="/tags/github-page/">github-page (1)</a>
+          <a href="/tags/github-page/">github page (1)</a>
         </li>
         
         <li>
-          <a href="/tags/google-app-script/">google-app-script (1)</a>
+          <a href="/tags/google-app-script/">google app script (1)</a>
         </li>
         
         <li>
-          <a href="/tags/google-container-registry/">google-container-registry (1)</a>
+          <a href="/tags/google-container-registry/">google container registry (1)</a>
         </li>
         
         <li>
-          <a href="/tags/google-sheets/">google-sheets (1)</a>
+          <a href="/tags/google-sheets/">google sheets (1)</a>
         </li>
         
         <li>
@@ -896,7 +896,7 @@
         </li>
         
         <li>
-          <a href="/tags/load-balancing/">load-balancing (1)</a>
+          <a href="/tags/load-balancing/">load balancing (1)</a>
         </li>
         
         <li>
@@ -952,11 +952,11 @@
         </li>
         
         <li>
-          <a href="/tags/smart-contract/">smart-contract (1)</a>
+          <a href="/tags/smart-contract/">smart contract (1)</a>
         </li>
         
         <li>
-          <a href="/tags/stress-testing/">stress-testing (1)</a>
+          <a href="/tags/stress-testing/">stress testing (1)</a>
         </li>
         
         <li>
@@ -1021,7 +1021,7 @@
     <script>
       hljs.configure({ ignoreUnescapedHTML: true }); 
       hljs.highlightAll();
-    </script><script src="/js/bundle.min.b8ecc205622548252ae685817642568fed404d2f04df7ea571a8b71e3091ffe7.js" integrity="sha256-uOzCBWIlSCUq5oWBdkJWj&#43;1ATS8E336lcai3HjCR/&#43;c="></script>
+    </script><script src="/js/bundle.min.a95078f9ef9e8d5748b63296d221d3c71357db75caa6ef260b251d5c8bbc8997.js" integrity="sha256-qVB4&#43;e&#43;ejVdItjKW0iHTxxNX23XKpu8mCyUdXIu8iZc="></script>
     <script src="/js/add-on.js"></script>
 <script>
 var doNotTrack = false;

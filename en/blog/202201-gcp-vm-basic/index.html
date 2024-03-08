@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.122.0"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.123.7"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="Successfully launched a VM on GCP on the first try">
   <meta property="og:description" content="Step-by-step guide to launching your first VM instance and configuring it on Google Cloud Platform (GCP).">
   <meta property="description" content="Step-by-step guide to launching your first VM instance and configuring it on Google Cloud Platform (GCP).">
@@ -68,7 +68,7 @@
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https:\/\/tech.ray247k.com"
+        "@id": "https:\/\/tech.ray247k.com\/"
     },
     "publisher": {
         "@type": "Organization",
@@ -81,10 +81,10 @@
     "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
     "headline": "About web development, software engineering, frontend, backend, chatbot, server related topics. - Byte Ebi 🍤",
     "name": "Byte Ebi 🍤",
-    "url": "https:\/\/tech.ray247k.com",
-    "description": "About web development, software engineering, frontend, backend, chatbot, server related topics. - aws,devops,golang,laravel,python3,serverless,third-party-services,tools,version-control,web-hosting,website-operations,",
+    "url": "https:\/\/tech.ray247k.com\/",
+    "description": "About web development, software engineering, frontend, backend, chatbot, server related topics. - aws,devops,golang,laravel,python3,serverless,third-party services,tools,version control,web hosting,website operations,",
     "keywords": [
-        "apache-bench,auto-scaling,aws,blockchain,cdn,chatbot,ci\/cd,cicd,cloudflare,cloudflare-workers,composer,container-technology,containerization,csv,devops,discord,dns,docker,docker-compose,domain,domain-name,drone,excel,ffmpeg,firewall,gas,gcp,gcr,git,github,github-page,go,golang,google-app-script,google-container-registry,google-domains,google-sheets,grumphp,jenkins,laravel,laravel-excel,linux,load-balancing,nginx,ngrok,personal-brand,php,php-fpm,portainer,postgresql,prerender,proxy,purchase-domain,python3,queue,redis,search-engine-optimization,seo,server,serverless,smart-contract,ssh,stress-testing,subdomain,version-control,web-hosting,"
+        "apache bench,auto scaling,aws,blockchain,cdn,chatbot,ci\/cd,cicd,cloudflare,cloudflare workers,composer,container technology,containerization,csv,devops,discord,dns,docker,docker compose,domain,domain name,drone,excel,ffmpeg,firewall,gas,gcp,gcr,git,github,github page,go,golang,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,linux,load balancing,nginx,ngrok,personal brand,php,php-fpm,portainer,postgresql,prerender,proxy,purchase domain,python3,queue,redis,search engine optimization,seo,server,serverless,smart contract,ssh,stress testing,subdomain,version control,web hosting,"
     ]
 }
 </script>
@@ -97,7 +97,7 @@
     "@context": "https://schema.org",
     "@type": "Organization",
     "legalName": "Byte Ebi 🍤",
-    "url": "https:\/\/tech.ray247k.com",
+    "url": "https:\/\/tech.ray247k.com\/",
     "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
     "contactPoint": {
         "@type": "ContactPoint",
@@ -137,18 +137,18 @@
                 "@type": "ListItem",
                 "position": 1,
                 "item": {
-                    "@id": "https:\/\/tech.ray247k.com",
+                    "@id": "https:\/\/tech.ray247k.com\/",
                     "name": "Byte Ebi 🍤",
-                    "url": "https:\/\/tech.ray247k.com"
+                    "url": "https:\/\/tech.ray247k.com\/"
                 }
             },
             {
                 "@type": "ListItem",
                 "position": 2,
                 "item": {
-                    "@id": "https:\/\/tech.ray247k.com/blog",
+                    "@id": "https:\/\/tech.ray247k.com\//blog",
                     "name": "Blog",
-                    "url": "https:\/\/tech.ray247k.com/blog"
+                    "url": "https:\/\/tech.ray247k.com\//blog"
                 }
             },
             {
@@ -201,7 +201,7 @@
     "publisher":{
         "@type":"Organization",
         "name": "Byte Ebi 🍤",
-        "url": "https://tech.ray247k.com",
+        "url": "https://tech.ray247k.com/",
         "logo": {
             "@type": "ImageObject",
             "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
@@ -358,15 +358,15 @@
 
     </div>
     <div class="content">
-      <a href="/en/blog/202201-gcp-vm-basic/" class="image" style="--bg-image: url('/en/blog/202201-gcp-vm-basic/featured.jpg');">
-    <img src="/en/blog/202201-gcp-vm-basic/featured.jpg" alt="">
+      <a href="/en/blog/202201-gcp-vm-basic/" class="image" style="--bg-image: url('/blog/202201-gcp-vm-basic/featured.jpg');">
+    <img src="/blog/202201-gcp-vm-basic/featured.jpg" alt="">
   </a>
       <p>How to launch a VM virtual machine on Google Cloud Platform (GCP)?<br>
 It may sound complex, but in practice, it&rsquo;s quite straightforward.<br>
 If you haven&rsquo;t had any experience with setting up a host before, this time, we&rsquo;ll document the steps for you.</p>
 <h1 id="create-a-new-vm-instance">Create a new VM instance</h1>
 <p>There&rsquo;s not much to be concerned about. Once you&rsquo;re in the GCP console and on the <code>VM instances</code> page, simply choose the desired specifications, give it a name, and click &lsquo;Create&rsquo;.</p>
-<p><img src="new-vm.jpg" alt="new vm"></p>
+<p><img alt="new vm" src="/blog/202201-gcp-vm-basic/new-vm.jpg"></p>
 <h1 id="assigning-a-static-external-ip-address">Assigning a static external IP address</h1>
 <p>To ensure that our service has a consistent IP address, we can change the external IP type from <code>ephemeral</code> to <code>static</code>.</p>
 <blockquote>
@@ -374,14 +374,14 @@ If you haven&rsquo;t had any experience with setting up a host before, this time
 </blockquote>
 <p>First, select the VM instance you want to modify.<br>
 Click on the ellipsis menu (the three dots), and choose <code>View network details</code>.</p>
-<p><img src="gcp-vm-network-settings.jpg" alt="gcp vm netowrk settings"></p>
+<p><img alt="gcp vm netowrk settings" src="/blog/202201-gcp-vm-basic/gcp-vm-network-settings.jpg"></p>
 <p>Next, from the left-hand menu, select the &lsquo;External IP addresses&rsquo; tab.<br>
 In the <code>Users</code> column, locate the VM instance you just created.<br>
 You&rsquo;ll notice that the <code>Name</code> field for the target is currently empty.</p>
-<p><img src="gcp-static-ip.jpg" alt="gcp static ip"></p>
+<p><img alt="gcp static ip" src="/blog/202201-gcp-vm-basic/gcp-static-ip.jpg"></p>
 <p>Click on <code>Reserve</code> on the left-hand side, and at this point, it will prompt you to enter a name.<br>
 Once you&rsquo;ve provided a name, your VM instance&rsquo;s IP address will remain unchanged even after service restarts.</p>
-<p><img src="gcp-network-naming.png" alt="gcp network naming"></p>
+<p><img alt="gcp network naming" src="/blog/202201-gcp-vm-basic/gcp-network-naming.png"></p>
 <h1 id="opening-external-ports">Opening external ports</h1>
 <p>Your virtual machine is up and running, and you&rsquo;ve also secured a static external IP.<br>
 Now, it&rsquo;s time to establish a connection!<br>
@@ -389,12 +389,12 @@ You enter the IP address in your browser and&hellip; can&rsquo;t access it! Huh?
 <h2 id="commonly-used-network-service-ports">Commonly used network service ports</h2>
 <p>By default, when you create a VM, only <code>port 22</code> for SSH connections is open.<br>
 If you set up firewall rules during the creation, it will apply the <code>http-server</code> and <code>https-server</code> network tags, allowing your VM to receive requests on ports <code>80</code> and <code>443</code>.</p>
-<p><img src="gcp-vm-firewall.jpg" alt="gcp vm firewall"></p>
+<p><img alt="gcp vm firewall" src="/blog/202201-gcp-vm-basic/gcp-vm-firewall.jpg"></p>
 <p>You can check the &lsquo;Network tags&rsquo; section in the VM&rsquo;s information page.</p>
-<p><img src="gcp-vm-check-firewall.jpg" alt="gcp vm check firewall"></p>
+<p><img alt="gcp vm check firewall" src="/blog/202201-gcp-vm-basic/gcp-vm-check-firewall.jpg"></p>
 <p>If you find that these ports are not open, and you wish to enable them, click on the &lsquo;Edit&rsquo; button for the VM, and navigate to the <code>Firewall</code> settings.<br>
 Select the <code>http-server</code> and <code>https-server</code> rules that were not checked during initial setup.</p>
-<p><img src="gcp-vm-select-rule.jpg" alt="gcp vm select rule"></p>
+<p><img alt="gcp vm select rule" src="/blog/202201-gcp-vm-basic/gcp-vm-select-rule.jpg"></p>
 <p>After successfully applying these changes, your VM will be able to receive incoming requests on ports 80 and 443.</p>
 <h2 id="other-port">Other port</h2>
 <p>If your service requires the use of a different port, you will need to configure it manually.<br>
@@ -402,29 +402,29 @@ Let&rsquo;s use port <code>8080</code> as an example for configuration.</p>
 <h3 id="create-a-firewall-rule">Create a firewall rule</h3>
 <p>Select the VM instance you want to modify, and from the rightmost three-dot menu, choose &lsquo;View network details&rsquo; to access the &lsquo;Virtual Private Cloud network.<br>
 Then, on the left-hand menu, select &lsquo;Firewall&rsquo; and click on &lsquo;Create firewall rule&rsquo;.</p>
-<p><img src="gcp-create-firewall-rule.jpg" alt="gcp create firewall rule"></p>
+<p><img alt="gcp create firewall rule" src="/blog/202201-gcp-vm-basic/gcp-create-firewall-rule.jpg"></p>
 <p>For the most part, you can use the default values.
 Determine if you need to customize based on the provided explanations.<br>
 There are only a few areas that require adjustments.</p>
 <h4 id="target-tags">Target tags</h4>
 <p>These are network tags used when selecting firewall rules later on.<br>
 They serve the same purpose as the <code>http-server</code> tag when configuring port 80, acting as identifiers.</p>
-<p><img src="gcp-firewall-rule-tag.jpg" alt="gcp firewall rule tag"></p>
+<p><img alt="gcp firewall rule tag" src="/blog/202201-gcp-vm-basic/gcp-firewall-rule-tag.jpg"></p>
 <h4 id="source-ipv4-range">Source IPv4 range</h4>
 <p>This is where you specify trusted IP locations.<br>
 If you want to make it publicly accessible, set it to <code>0.0.0.0/0</code> to accept requests from all sources.</p>
-<p><img src="gcp-firewall-ipv4.jpg" alt="gcp firewall ipv4"></p>
+<p><img alt="gcp firewall ipv4" src="/blog/202201-gcp-vm-basic/gcp-firewall-ipv4.jpg"></p>
 <h4 id="protocol-and-ports">Protocol and Ports</h4>
 <p>To demonstrate opening multiple ports simultaneously, we&rsquo;ve added port 8089.<br>
 This allows you to specify the external availability of both TCP ports 8080 and 8089.</p>
 <p>You can observe that ports are separated by a comma <code>,</code>.<br>
 If you use a dash <code>-</code>, you can specify a range of ports to be opened.</p>
-<p><img src="gcp-firewall-ports.jpg" alt="gcp firewall ports"></p>
+<p><img alt="gcp firewall ports" src="/blog/202201-gcp-vm-basic/gcp-firewall-ports.jpg"></p>
 <h3 id="applying-the-firewall-rule">Applying the Firewall Rule</h3>
 <p>Go back to Compute Engine and select the VM instance where you want to apply the rule. Click the &lsquo;Edit&rsquo; button.</p>
 <p>Manually enter the <code>Target tags</code> you filled out when creating the firewall rule in the <code>Network tags</code> field.<br>
 After saving, the rule will be applied.</p>
-<p><img src="gcp-vm-add-rule.jpg" alt="gcp vm add rule"></p>
+<p><img alt="gcp vm add rule" src="/blog/202201-gcp-vm-basic/gcp-vm-add-rule.jpg"></p>
 
       
       
@@ -481,8 +481,8 @@ After saving, the rule will be applied.</p>
       </header>
       
       <article class="mini-post">
-          <a href="/en/blog/202311-aws-dynamodb-pitr/" class="image" style="--bg-image: url('/en/blog/202311-aws-dynamodb-pitr/featured.jpg');">
-    <img src="/en/blog/202311-aws-dynamodb-pitr/featured.jpg" alt="">
+          <a href="/en/blog/202311-aws-dynamodb-pitr/" class="image" style="--bg-image: url('/blog/202311-aws-dynamodb-pitr/featured.jpg');">
+    <img src="/blog/202311-aws-dynamodb-pitr/featured.jpg" alt="">
   </a>
         <header>
           <h2><a href="/en/blog/202311-aws-dynamodb-pitr/">AWS DynamoDB Point-in-Time Recovery (PITR): Simplifying Data Restoration</a></h2>
@@ -491,8 +491,8 @@ After saving, the rule will be applied.</p>
       </article>
       
       <article class="mini-post">
-          <a href="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/" class="image" style="--bg-image: url('/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg');">
-    <img src="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg" alt="">
+          <a href="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/" class="image" style="--bg-image: url('/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg');">
+    <img src="/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg" alt="">
   </a>
         <header>
           <h2><a href="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/">Different between pointer and value for struct type in golang</a></h2>
@@ -501,8 +501,8 @@ After saving, the rule will be applied.</p>
       </article>
       
       <article class="mini-post">
-          <a href="/en/blog/202301-ffmpeg-video-convert/" class="image" style="--bg-image: url('/en/blog/202301-ffmpeg-video-convert/featured.png');">
-    <img src="/en/blog/202301-ffmpeg-video-convert/featured.png" alt="">
+          <a href="/en/blog/202301-ffmpeg-video-convert/" class="image" style="--bg-image: url('/blog/202301-ffmpeg-video-convert/featured.png');">
+    <img src="/blog/202301-ffmpeg-video-convert/featured.png" alt="">
   </a>
         <header>
           <h2><a href="/en/blog/202301-ffmpeg-video-convert/">Using FFmpeg to convert media files</a></h2>
@@ -511,8 +511,8 @@ After saving, the rule will be applied.</p>
       </article>
       
       <article class="mini-post">
-          <a href="/en/blog/202210-aws101-what-is-sns-and-sqs/" class="image" style="--bg-image: url('/en/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg');">
-    <img src="/en/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg" alt="">
+          <a href="/en/blog/202210-aws101-what-is-sns-and-sqs/" class="image" style="--bg-image: url('/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg');">
+    <img src="/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg" alt="">
   </a>
         <header>
           <h2><a href="/en/blog/202210-aws101-what-is-sns-and-sqs/">[AWS 101] What are SNS and SQS</a></h2>
@@ -521,8 +521,8 @@ After saving, the rule will be applied.</p>
       </article>
       
       <article class="mini-post">
-          <a href="/en/blog/202210-what-is-serverless/" class="image" style="--bg-image: url('/en/blog/202210-what-is-serverless/featured.jpg');">
-    <img src="/en/blog/202210-what-is-serverless/featured.jpg" alt="">
+          <a href="/en/blog/202210-what-is-serverless/" class="image" style="--bg-image: url('/blog/202210-what-is-serverless/featured.jpg');">
+    <img src="/blog/202210-what-is-serverless/featured.jpg" alt="">
   </a>
         <header>
           <h2><a href="/en/blog/202210-what-is-serverless/">Serverless 101</a></h2>
@@ -561,7 +561,7 @@ After saving, the rule will be applied.</p>
           </li>
           
           <li>
-              <a href="/en/categories/web-hosting/">web-hosting<span class="count">3</span></a>
+              <a href="/en/categories/web-hosting/">web hosting<span class="count">3</span></a>
           </li>
           
           <li>
@@ -573,7 +573,7 @@ After saving, the rule will be applied.</p>
           </li>
           
           <li>
-              <a href="/en/categories/website-operations/">website-operations<span class="count">2</span></a>
+              <a href="/en/categories/website-operations/">website operations<span class="count">2</span></a>
           </li>
           
           <li>
@@ -581,7 +581,7 @@ After saving, the rule will be applied.</p>
           </li>
           
           <li>
-              <a href="/en/categories/third-party-services/">third-party-services<span class="count">1</span></a>
+              <a href="/en/categories/third-party-services/">third-party services<span class="count">1</span></a>
           </li>
           
           <li>
@@ -589,7 +589,7 @@ After saving, the rule will be applied.</p>
           </li>
           
           <li>
-              <a href="/en/categories/version-control/">version-control<span class="count">1</span></a>
+              <a href="/en/categories/version-control/">version control<span class="count">1</span></a>
           </li>
           
         </ul>
@@ -623,7 +623,7 @@ After saving, the rule will be applied.</p>
         </li>
         
         <li>
-          <a href="/en/tags/container-technology/">container-technology (10)</a>
+          <a href="/en/tags/container-technology/">container technology (10)</a>
         </li>
         
         <li>
@@ -639,7 +639,7 @@ After saving, the rule will be applied.</p>
         </li>
         
         <li>
-          <a href="/en/tags/docker-compose/">docker-compose (6)</a>
+          <a href="/en/tags/docker-compose/">docker compose (6)</a>
         </li>
         
         <li>
@@ -671,7 +671,7 @@ After saving, the rule will be applied.</p>
         </li>
         
         <li>
-          <a href="/en/tags/web-hosting/">web-hosting (3)</a>
+          <a href="/en/tags/web-hosting/">web hosting (3)</a>
         </li>
         
         <li>
@@ -687,7 +687,7 @@ After saving, the rule will be applied.</p>
         </li>
         
         <li>
-          <a href="/en/tags/google-domains/">google-domains (2)</a>
+          <a href="/en/tags/google-domains/">google domains (2)</a>
         </li>
         
         <li>
@@ -703,11 +703,11 @@ After saving, the rule will be applied.</p>
         </li>
         
         <li>
-          <a href="/en/tags/apache-bench/">apache-bench (1)</a>
+          <a href="/en/tags/apache-bench/">apache bench (1)</a>
         </li>
         
         <li>
-          <a href="/en/tags/auto-scaling/">auto-scaling (1)</a>
+          <a href="/en/tags/auto-scaling/">auto scaling (1)</a>
         </li>
         
         <li>
@@ -723,7 +723,7 @@ After saving, the rule will be applied.</p>
         </li>
         
         <li>
-          <a href="/en/tags/cloudflare-workers/">cloudflare-workers (1)</a>
+          <a href="/en/tags/cloudflare-workers/">cloudflare workers (1)</a>
         </li>
         
         <li>
@@ -735,7 +735,7 @@ After saving, the rule will be applied.</p>
         </li>
         
         <li>
-          <a href="/en/tags/domain-name/">domain-name (1)</a>
+          <a href="/en/tags/domain-name/">domain name (1)</a>
         </li>
         
         <li>
@@ -767,19 +767,19 @@ After saving, the rule will be applied.</p>
         </li>
         
         <li>
-          <a href="/en/tags/github-page/">github-page (1)</a>
+          <a href="/en/tags/github-page/">github page (1)</a>
         </li>
         
         <li>
-          <a href="/en/tags/google-app-script/">google-app-script (1)</a>
+          <a href="/en/tags/google-app-script/">google app script (1)</a>
         </li>
         
         <li>
-          <a href="/en/tags/google-container-registry/">google-container-registry (1)</a>
+          <a href="/en/tags/google-container-registry/">google container registry (1)</a>
         </li>
         
         <li>
-          <a href="/en/tags/google-sheets/">google-sheets (1)</a>
+          <a href="/en/tags/google-sheets/">google sheets (1)</a>
         </li>
         
         <li>
@@ -795,7 +795,7 @@ After saving, the rule will be applied.</p>
         </li>
         
         <li>
-          <a href="/en/tags/load-balancing/">load-balancing (1)</a>
+          <a href="/en/tags/load-balancing/">load balancing (1)</a>
         </li>
         
         <li>
@@ -803,7 +803,7 @@ After saving, the rule will be applied.</p>
         </li>
         
         <li>
-          <a href="/en/tags/personal-brand/">personal-brand (1)</a>
+          <a href="/en/tags/personal-brand/">personal brand (1)</a>
         </li>
         
         <li>
@@ -827,7 +827,7 @@ After saving, the rule will be applied.</p>
         </li>
         
         <li>
-          <a href="/en/tags/purchase-domain/">purchase-domain (1)</a>
+          <a href="/en/tags/purchase-domain/">purchase domain (1)</a>
         </li>
         
         <li>
@@ -839,7 +839,7 @@ After saving, the rule will be applied.</p>
         </li>
         
         <li>
-          <a href="/en/tags/search-engine-optimization/">search-engine-optimization (1)</a>
+          <a href="/en/tags/search-engine-optimization/">search engine optimization (1)</a>
         </li>
         
         <li>
@@ -855,11 +855,11 @@ After saving, the rule will be applied.</p>
         </li>
         
         <li>
-          <a href="/en/tags/smart-contract/">smart-contract (1)</a>
+          <a href="/en/tags/smart-contract/">smart contract (1)</a>
         </li>
         
         <li>
-          <a href="/en/tags/stress-testing/">stress-testing (1)</a>
+          <a href="/en/tags/stress-testing/">stress testing (1)</a>
         </li>
         
         <li>
@@ -867,7 +867,7 @@ After saving, the rule will be applied.</p>
         </li>
         
         <li>
-          <a href="/en/tags/version-control/">version-control (1)</a>
+          <a href="/en/tags/version-control/">version control (1)</a>
         </li>
         
       </ul>
@@ -892,7 +892,7 @@ After saving, the rule will be applied.</p>
     <script>
       hljs.configure({ ignoreUnescapedHTML: true }); 
       hljs.highlightAll();
-    </script><script src="/js/bundle.min.b8ecc205622548252ae685817642568fed404d2f04df7ea571a8b71e3091ffe7.js" integrity="sha256-uOzCBWIlSCUq5oWBdkJWj&#43;1ATS8E336lcai3HjCR/&#43;c="></script>
+    </script><script src="/js/bundle.min.a95078f9ef9e8d5748b63296d221d3c71357db75caa6ef260b251d5c8bbc8997.js" integrity="sha256-qVB4&#43;e&#43;ejVdItjKW0iHTxxNX23XKpu8mCyUdXIu8iZc="></script>
     <script src="/js/add-on.js"></script>
 <script>
 var doNotTrack = false;

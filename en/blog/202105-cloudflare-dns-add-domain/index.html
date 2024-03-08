@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.122.0"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.123.7"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="Setting Up Cloudflare Free CDN and Enabling DNS Hosting">
   <meta property="og:description" content="Transferring DNS hosting from Google Domains to Cloudflare and setting up Cloudflare&#39;s free CDN.">
   <meta property="description" content="Transferring DNS hosting from Google Domains to Cloudflare and setting up Cloudflare&#39;s free CDN.">
@@ -68,7 +68,7 @@
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https:\/\/tech.ray247k.com"
+        "@id": "https:\/\/tech.ray247k.com\/"
     },
     "publisher": {
         "@type": "Organization",
@@ -81,10 +81,10 @@
     "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
     "headline": "About web development, software engineering, frontend, backend, chatbot, server related topics. - Byte Ebi 🍤",
     "name": "Byte Ebi 🍤",
-    "url": "https:\/\/tech.ray247k.com",
-    "description": "About web development, software engineering, frontend, backend, chatbot, server related topics. - aws,devops,golang,laravel,python3,serverless,third-party-services,tools,version-control,web-hosting,website-operations,",
+    "url": "https:\/\/tech.ray247k.com\/",
+    "description": "About web development, software engineering, frontend, backend, chatbot, server related topics. - aws,devops,golang,laravel,python3,serverless,third-party services,tools,version control,web hosting,website operations,",
     "keywords": [
-        "apache-bench,auto-scaling,aws,blockchain,cdn,chatbot,ci\/cd,cicd,cloudflare,cloudflare-workers,composer,container-technology,containerization,csv,devops,discord,dns,docker,docker-compose,domain,domain-name,drone,excel,ffmpeg,firewall,gas,gcp,gcr,git,github,github-page,go,golang,google-app-script,google-container-registry,google-domains,google-sheets,grumphp,jenkins,laravel,laravel-excel,linux,load-balancing,nginx,ngrok,personal-brand,php,php-fpm,portainer,postgresql,prerender,proxy,purchase-domain,python3,queue,redis,search-engine-optimization,seo,server,serverless,smart-contract,ssh,stress-testing,subdomain,version-control,web-hosting,"
+        "apache bench,auto scaling,aws,blockchain,cdn,chatbot,ci\/cd,cicd,cloudflare,cloudflare workers,composer,container technology,containerization,csv,devops,discord,dns,docker,docker compose,domain,domain name,drone,excel,ffmpeg,firewall,gas,gcp,gcr,git,github,github page,go,golang,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,linux,load balancing,nginx,ngrok,personal brand,php,php-fpm,portainer,postgresql,prerender,proxy,purchase domain,python3,queue,redis,search engine optimization,seo,server,serverless,smart contract,ssh,stress testing,subdomain,version control,web hosting,"
     ]
 }
 </script>
@@ -97,7 +97,7 @@
     "@context": "https://schema.org",
     "@type": "Organization",
     "legalName": "Byte Ebi 🍤",
-    "url": "https:\/\/tech.ray247k.com",
+    "url": "https:\/\/tech.ray247k.com\/",
     "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
     "contactPoint": {
         "@type": "ContactPoint",
@@ -137,18 +137,18 @@
                 "@type": "ListItem",
                 "position": 1,
                 "item": {
-                    "@id": "https:\/\/tech.ray247k.com",
+                    "@id": "https:\/\/tech.ray247k.com\/",
                     "name": "Byte Ebi 🍤",
-                    "url": "https:\/\/tech.ray247k.com"
+                    "url": "https:\/\/tech.ray247k.com\/"
                 }
             },
             {
                 "@type": "ListItem",
                 "position": 2,
                 "item": {
-                    "@id": "https:\/\/tech.ray247k.com/blog",
+                    "@id": "https:\/\/tech.ray247k.com\//blog",
                     "name": "Blog",
-                    "url": "https:\/\/tech.ray247k.com/blog"
+                    "url": "https:\/\/tech.ray247k.com\//blog"
                 }
             },
             {
@@ -201,7 +201,7 @@
     "publisher":{
         "@type":"Organization",
         "name": "Byte Ebi 🍤",
-        "url": "https://tech.ray247k.com",
+        "url": "https://tech.ray247k.com/",
         "logo": {
             "@type": "ImageObject",
             "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
@@ -374,24 +374,24 @@ That&rsquo;s why I initially chose the <code>.com</code> top-level domain instea
 <p>It&rsquo;s straightforward, just follow the website&rsquo;s registration process.</p>
 <h2 id="2-follow-cloudflares-guidance-to-add-a-website-domain">2. Follow Cloudflare&rsquo;s Guidance to Add a Website (Domain)</h2>
 <p>Add the domain you purchased to the management list.</p>
-<p><img src="cloudflare-add-domain.png" alt="cloudflare-add-domain"></p>
+<p><img alt="cloudflare-add-domain" src="/blog/202105-cloudflare-dns-add-domain/cloudflare-add-domain.png"></p>
 <h2 id="3-adjust-dns-servers">3. Adjust DNS Servers</h2>
 <p>After adding the website, we&rsquo;ll see this prompt in Cloudflare.</p>
-<p><img src="cloudflare-setting-hint.png" alt="cloudflare-setting-hint"></p>
+<p><img alt="cloudflare-setting-hint" src="/blog/202105-cloudflare-dns-add-domain/cloudflare-setting-hint.png"></p>
 <p>Next, go to the DNS tab in Google Domains.<br>
 You&rsquo;ll see that the default DNS servers are the ones Cloudflare asked us to remove in the previous step.</p>
-<p><img src="google-dns-default.png" alt="google-dns-default"></p>
+<p><img alt="google-dns-default" src="/blog/202105-cloudflare-dns-add-domain/google-dns-default.png"></p>
 <p>Click &ldquo;Use custom nameservers&rdquo; and enter the two addresses provided by Cloudflare.</p>
-<p><img src="google-dns-cloudflare.png" alt="google-dns-cloudflare"></p>
+<p><img alt="google-dns-cloudflare" src="/blog/202105-cloudflare-dns-add-domain/google-dns-cloudflare.png"></p>
 <h2 id="4-receive-notification-email-confirming-cloudflare-activation">4. Receive Notification Email Confirming Cloudflare Activation</h2>
-<p><img src="cloudflare-email.png" alt="cloudflare-email"></p>
+<p><img alt="cloudflare-email" src="/blog/202105-cloudflare-dns-add-domain/cloudflare-email.png"></p>
 <h2 id="5-enable-always-use-https">5. Enable Always Use HTTPS</h2>
 <p>Redirect all requests made via the &ldquo;http&rdquo; protocol to &ldquo;https&rdquo;.<br>
 Because Cloudflare has default SSL/TLS certificates, you can enable HTTPS without purchasing your own.<br>
 This will display a &ldquo;lock&rdquo; icon in the browser&rsquo;s address bar indicating a secure connection!</p>
 <p>We only need to enable the redirection service.<br>
 Go to the <code>SSL/TLS</code> tab, scroll down to &ldquo;Always Use HTTPS,&rdquo; toggle it to enable, and wait for the settings to take effect.</p>
-<p><img src="cloudflare-ssl-tls.png" alt="cloudflare-ssl-tls"></p>
+<p><img alt="cloudflare-ssl-tls" src="/blog/202105-cloudflare-dns-add-domain/cloudflare-ssl-tls.png"></p>
 <p>Once enabled, even if you visit the webpage using http, it will automatically redirect to a page starting with https!</p>
 
       
@@ -453,8 +453,8 @@ Go to the <code>SSL/TLS</code> tab, scroll down to &ldquo;Always Use HTTPS,&rdqu
       </header>
       
       <article class="mini-post">
-          <a href="/en/blog/202311-aws-dynamodb-pitr/" class="image" style="--bg-image: url('/en/blog/202311-aws-dynamodb-pitr/featured.jpg');">
-    <img src="/en/blog/202311-aws-dynamodb-pitr/featured.jpg" alt="">
+          <a href="/en/blog/202311-aws-dynamodb-pitr/" class="image" style="--bg-image: url('/blog/202311-aws-dynamodb-pitr/featured.jpg');">
+    <img src="/blog/202311-aws-dynamodb-pitr/featured.jpg" alt="">
   </a>
         <header>
           <h2><a href="/en/blog/202311-aws-dynamodb-pitr/">AWS DynamoDB Point-in-Time Recovery (PITR): Simplifying Data Restoration</a></h2>
@@ -463,8 +463,8 @@ Go to the <code>SSL/TLS</code> tab, scroll down to &ldquo;Always Use HTTPS,&rdqu
       </article>
       
       <article class="mini-post">
-          <a href="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/" class="image" style="--bg-image: url('/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg');">
-    <img src="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg" alt="">
+          <a href="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/" class="image" style="--bg-image: url('/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg');">
+    <img src="/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg" alt="">
   </a>
         <header>
           <h2><a href="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/">Different between pointer and value for struct type in golang</a></h2>
@@ -473,8 +473,8 @@ Go to the <code>SSL/TLS</code> tab, scroll down to &ldquo;Always Use HTTPS,&rdqu
       </article>
       
       <article class="mini-post">
-          <a href="/en/blog/202301-ffmpeg-video-convert/" class="image" style="--bg-image: url('/en/blog/202301-ffmpeg-video-convert/featured.png');">
-    <img src="/en/blog/202301-ffmpeg-video-convert/featured.png" alt="">
+          <a href="/en/blog/202301-ffmpeg-video-convert/" class="image" style="--bg-image: url('/blog/202301-ffmpeg-video-convert/featured.png');">
+    <img src="/blog/202301-ffmpeg-video-convert/featured.png" alt="">
   </a>
         <header>
           <h2><a href="/en/blog/202301-ffmpeg-video-convert/">Using FFmpeg to convert media files</a></h2>
@@ -483,8 +483,8 @@ Go to the <code>SSL/TLS</code> tab, scroll down to &ldquo;Always Use HTTPS,&rdqu
       </article>
       
       <article class="mini-post">
-          <a href="/en/blog/202210-aws101-what-is-sns-and-sqs/" class="image" style="--bg-image: url('/en/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg');">
-    <img src="/en/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg" alt="">
+          <a href="/en/blog/202210-aws101-what-is-sns-and-sqs/" class="image" style="--bg-image: url('/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg');">
+    <img src="/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg" alt="">
   </a>
         <header>
           <h2><a href="/en/blog/202210-aws101-what-is-sns-and-sqs/">[AWS 101] What are SNS and SQS</a></h2>
@@ -493,8 +493,8 @@ Go to the <code>SSL/TLS</code> tab, scroll down to &ldquo;Always Use HTTPS,&rdqu
       </article>
       
       <article class="mini-post">
-          <a href="/en/blog/202210-what-is-serverless/" class="image" style="--bg-image: url('/en/blog/202210-what-is-serverless/featured.jpg');">
-    <img src="/en/blog/202210-what-is-serverless/featured.jpg" alt="">
+          <a href="/en/blog/202210-what-is-serverless/" class="image" style="--bg-image: url('/blog/202210-what-is-serverless/featured.jpg');">
+    <img src="/blog/202210-what-is-serverless/featured.jpg" alt="">
   </a>
         <header>
           <h2><a href="/en/blog/202210-what-is-serverless/">Serverless 101</a></h2>
@@ -533,7 +533,7 @@ Go to the <code>SSL/TLS</code> tab, scroll down to &ldquo;Always Use HTTPS,&rdqu
           </li>
           
           <li>
-              <a href="/en/categories/web-hosting/">web-hosting<span class="count">3</span></a>
+              <a href="/en/categories/web-hosting/">web hosting<span class="count">3</span></a>
           </li>
           
           <li>
@@ -545,7 +545,7 @@ Go to the <code>SSL/TLS</code> tab, scroll down to &ldquo;Always Use HTTPS,&rdqu
           </li>
           
           <li>
-              <a href="/en/categories/website-operations/">website-operations<span class="count">2</span></a>
+              <a href="/en/categories/website-operations/">website operations<span class="count">2</span></a>
           </li>
           
           <li>
@@ -553,7 +553,7 @@ Go to the <code>SSL/TLS</code> tab, scroll down to &ldquo;Always Use HTTPS,&rdqu
           </li>
           
           <li>
-              <a href="/en/categories/third-party-services/">third-party-services<span class="count">1</span></a>
+              <a href="/en/categories/third-party-services/">third-party services<span class="count">1</span></a>
           </li>
           
           <li>
@@ -561,7 +561,7 @@ Go to the <code>SSL/TLS</code> tab, scroll down to &ldquo;Always Use HTTPS,&rdqu
           </li>
           
           <li>
-              <a href="/en/categories/version-control/">version-control<span class="count">1</span></a>
+              <a href="/en/categories/version-control/">version control<span class="count">1</span></a>
           </li>
           
         </ul>
@@ -595,7 +595,7 @@ Go to the <code>SSL/TLS</code> tab, scroll down to &ldquo;Always Use HTTPS,&rdqu
         </li>
         
         <li>
-          <a href="/en/tags/container-technology/">container-technology (10)</a>
+          <a href="/en/tags/container-technology/">container technology (10)</a>
         </li>
         
         <li>
@@ -611,7 +611,7 @@ Go to the <code>SSL/TLS</code> tab, scroll down to &ldquo;Always Use HTTPS,&rdqu
         </li>
         
         <li>
-          <a href="/en/tags/docker-compose/">docker-compose (6)</a>
+          <a href="/en/tags/docker-compose/">docker compose (6)</a>
         </li>
         
         <li>
@@ -643,7 +643,7 @@ Go to the <code>SSL/TLS</code> tab, scroll down to &ldquo;Always Use HTTPS,&rdqu
         </li>
         
         <li>
-          <a href="/en/tags/web-hosting/">web-hosting (3)</a>
+          <a href="/en/tags/web-hosting/">web hosting (3)</a>
         </li>
         
         <li>
@@ -659,7 +659,7 @@ Go to the <code>SSL/TLS</code> tab, scroll down to &ldquo;Always Use HTTPS,&rdqu
         </li>
         
         <li>
-          <a href="/en/tags/google-domains/">google-domains (2)</a>
+          <a href="/en/tags/google-domains/">google domains (2)</a>
         </li>
         
         <li>
@@ -675,11 +675,11 @@ Go to the <code>SSL/TLS</code> tab, scroll down to &ldquo;Always Use HTTPS,&rdqu
         </li>
         
         <li>
-          <a href="/en/tags/apache-bench/">apache-bench (1)</a>
+          <a href="/en/tags/apache-bench/">apache bench (1)</a>
         </li>
         
         <li>
-          <a href="/en/tags/auto-scaling/">auto-scaling (1)</a>
+          <a href="/en/tags/auto-scaling/">auto scaling (1)</a>
         </li>
         
         <li>
@@ -695,7 +695,7 @@ Go to the <code>SSL/TLS</code> tab, scroll down to &ldquo;Always Use HTTPS,&rdqu
         </li>
         
         <li>
-          <a href="/en/tags/cloudflare-workers/">cloudflare-workers (1)</a>
+          <a href="/en/tags/cloudflare-workers/">cloudflare workers (1)</a>
         </li>
         
         <li>
@@ -707,7 +707,7 @@ Go to the <code>SSL/TLS</code> tab, scroll down to &ldquo;Always Use HTTPS,&rdqu
         </li>
         
         <li>
-          <a href="/en/tags/domain-name/">domain-name (1)</a>
+          <a href="/en/tags/domain-name/">domain name (1)</a>
         </li>
         
         <li>
@@ -739,19 +739,19 @@ Go to the <code>SSL/TLS</code> tab, scroll down to &ldquo;Always Use HTTPS,&rdqu
         </li>
         
         <li>
-          <a href="/en/tags/github-page/">github-page (1)</a>
+          <a href="/en/tags/github-page/">github page (1)</a>
         </li>
         
         <li>
-          <a href="/en/tags/google-app-script/">google-app-script (1)</a>
+          <a href="/en/tags/google-app-script/">google app script (1)</a>
         </li>
         
         <li>
-          <a href="/en/tags/google-container-registry/">google-container-registry (1)</a>
+          <a href="/en/tags/google-container-registry/">google container registry (1)</a>
         </li>
         
         <li>
-          <a href="/en/tags/google-sheets/">google-sheets (1)</a>
+          <a href="/en/tags/google-sheets/">google sheets (1)</a>
         </li>
         
         <li>
@@ -767,7 +767,7 @@ Go to the <code>SSL/TLS</code> tab, scroll down to &ldquo;Always Use HTTPS,&rdqu
         </li>
         
         <li>
-          <a href="/en/tags/load-balancing/">load-balancing (1)</a>
+          <a href="/en/tags/load-balancing/">load balancing (1)</a>
         </li>
         
         <li>
@@ -775,7 +775,7 @@ Go to the <code>SSL/TLS</code> tab, scroll down to &ldquo;Always Use HTTPS,&rdqu
         </li>
         
         <li>
-          <a href="/en/tags/personal-brand/">personal-brand (1)</a>
+          <a href="/en/tags/personal-brand/">personal brand (1)</a>
         </li>
         
         <li>
@@ -799,7 +799,7 @@ Go to the <code>SSL/TLS</code> tab, scroll down to &ldquo;Always Use HTTPS,&rdqu
         </li>
         
         <li>
-          <a href="/en/tags/purchase-domain/">purchase-domain (1)</a>
+          <a href="/en/tags/purchase-domain/">purchase domain (1)</a>
         </li>
         
         <li>
@@ -811,7 +811,7 @@ Go to the <code>SSL/TLS</code> tab, scroll down to &ldquo;Always Use HTTPS,&rdqu
         </li>
         
         <li>
-          <a href="/en/tags/search-engine-optimization/">search-engine-optimization (1)</a>
+          <a href="/en/tags/search-engine-optimization/">search engine optimization (1)</a>
         </li>
         
         <li>
@@ -827,11 +827,11 @@ Go to the <code>SSL/TLS</code> tab, scroll down to &ldquo;Always Use HTTPS,&rdqu
         </li>
         
         <li>
-          <a href="/en/tags/smart-contract/">smart-contract (1)</a>
+          <a href="/en/tags/smart-contract/">smart contract (1)</a>
         </li>
         
         <li>
-          <a href="/en/tags/stress-testing/">stress-testing (1)</a>
+          <a href="/en/tags/stress-testing/">stress testing (1)</a>
         </li>
         
         <li>
@@ -839,7 +839,7 @@ Go to the <code>SSL/TLS</code> tab, scroll down to &ldquo;Always Use HTTPS,&rdqu
         </li>
         
         <li>
-          <a href="/en/tags/version-control/">version-control (1)</a>
+          <a href="/en/tags/version-control/">version control (1)</a>
         </li>
         
       </ul>
@@ -864,7 +864,7 @@ Go to the <code>SSL/TLS</code> tab, scroll down to &ldquo;Always Use HTTPS,&rdqu
     <script>
       hljs.configure({ ignoreUnescapedHTML: true }); 
       hljs.highlightAll();
-    </script><script src="/js/bundle.min.b8ecc205622548252ae685817642568fed404d2f04df7ea571a8b71e3091ffe7.js" integrity="sha256-uOzCBWIlSCUq5oWBdkJWj&#43;1ATS8E336lcai3HjCR/&#43;c="></script>
+    </script><script src="/js/bundle.min.a95078f9ef9e8d5748b63296d221d3c71357db75caa6ef260b251d5c8bbc8997.js" integrity="sha256-qVB4&#43;e&#43;ejVdItjKW0iHTxxNX23XKpu8mCyUdXIu8iZc="></script>
     <script src="/js/add-on.js"></script>
 <script>
 var doNotTrack = false;

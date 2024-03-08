@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.122.0"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.123.7"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="Jenkins CI/CD 03 - Building and Pushing Docker Images to GCR">
   <meta property="og:description" content="This article discusses the process of building a Docker image and pushing it to the Google Container Registry (GCR) within a Jenkins pipeline using the &#39;gcloud&#39; command.">
   <meta property="description" content="This article discusses the process of building a Docker image and pushing it to the Google Container Registry (GCR) within a Jenkins pipeline using the &#39;gcloud&#39; command.">
@@ -68,7 +68,7 @@
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https:\/\/tech.ray247k.com"
+        "@id": "https:\/\/tech.ray247k.com\/"
     },
     "publisher": {
         "@type": "Organization",
@@ -81,10 +81,10 @@
     "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
     "headline": "About web development, software engineering, frontend, backend, chatbot, server related topics. - Byte Ebi 🍤",
     "name": "Byte Ebi 🍤",
-    "url": "https:\/\/tech.ray247k.com",
-    "description": "About web development, software engineering, frontend, backend, chatbot, server related topics. - aws,devops,golang,laravel,python3,serverless,third-party-services,tools,version-control,web-hosting,website-operations,",
+    "url": "https:\/\/tech.ray247k.com\/",
+    "description": "About web development, software engineering, frontend, backend, chatbot, server related topics. - aws,devops,golang,laravel,python3,serverless,third-party services,tools,version control,web hosting,website operations,",
     "keywords": [
-        "apache-bench,auto-scaling,aws,blockchain,cdn,chatbot,ci\/cd,cicd,cloudflare,cloudflare-workers,composer,container-technology,containerization,csv,devops,discord,dns,docker,docker-compose,domain,domain-name,drone,excel,ffmpeg,firewall,gas,gcp,gcr,git,github,github-page,go,golang,google-app-script,google-container-registry,google-domains,google-sheets,grumphp,jenkins,laravel,laravel-excel,linux,load-balancing,nginx,ngrok,personal-brand,php,php-fpm,portainer,postgresql,prerender,proxy,purchase-domain,python3,queue,redis,search-engine-optimization,seo,server,serverless,smart-contract,ssh,stress-testing,subdomain,version-control,web-hosting,"
+        "apache bench,auto scaling,aws,blockchain,cdn,chatbot,ci\/cd,cicd,cloudflare,cloudflare workers,composer,container technology,containerization,csv,devops,discord,dns,docker,docker compose,domain,domain name,drone,excel,ffmpeg,firewall,gas,gcp,gcr,git,github,github page,go,golang,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,linux,load balancing,nginx,ngrok,personal brand,php,php-fpm,portainer,postgresql,prerender,proxy,purchase domain,python3,queue,redis,search engine optimization,seo,server,serverless,smart contract,ssh,stress testing,subdomain,version control,web hosting,"
     ]
 }
 </script>
@@ -97,7 +97,7 @@
     "@context": "https://schema.org",
     "@type": "Organization",
     "legalName": "Byte Ebi 🍤",
-    "url": "https:\/\/tech.ray247k.com",
+    "url": "https:\/\/tech.ray247k.com\/",
     "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
     "contactPoint": {
         "@type": "ContactPoint",
@@ -137,18 +137,18 @@
                 "@type": "ListItem",
                 "position": 1,
                 "item": {
-                    "@id": "https:\/\/tech.ray247k.com",
+                    "@id": "https:\/\/tech.ray247k.com\/",
                     "name": "Byte Ebi 🍤",
-                    "url": "https:\/\/tech.ray247k.com"
+                    "url": "https:\/\/tech.ray247k.com\/"
                 }
             },
             {
                 "@type": "ListItem",
                 "position": 2,
                 "item": {
-                    "@id": "https:\/\/tech.ray247k.com/blog",
+                    "@id": "https:\/\/tech.ray247k.com\//blog",
                     "name": "Blog",
-                    "url": "https:\/\/tech.ray247k.com/blog"
+                    "url": "https:\/\/tech.ray247k.com\//blog"
                 }
             },
             {
@@ -201,7 +201,7 @@
     "publisher":{
         "@type":"Organization",
         "name": "Byte Ebi 🍤",
-        "url": "https://tech.ray247k.com",
+        "url": "https://tech.ray247k.com/",
         "logo": {
             "@type": "ImageObject",
             "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
@@ -358,8 +358,8 @@
 
     </div>
     <div class="content">
-      <a href="/en/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/" class="image" style="--bg-image: url('/en/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/featured.jpeg');">
-    <img src="/en/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/featured.jpeg" alt="">
+      <a href="/en/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/" class="image" style="--bg-image: url('/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/featured.jpeg');">
+    <img src="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/featured.jpeg" alt="">
   </a>
       <p>Google Container Registry is a service provided by Google for storing, managing, and securing Docker container images.<br>
 The objective at hand is to package a Docker image and push it to Google Cloud Platform (GCP) using the &lsquo;gcloud&rsquo; command for future deployment purposes.</p>
@@ -426,7 +426,7 @@ Instead, the VM host is used as the login account, and the command will prompt f
 </blockquote>
 <p>First <strong>stop the VM</strong> and navigate to the editing page.<br>
 Find the <code>Access scopes</code> section and enable <code>Full access to all Cloud APIs</code>.</p>
-<p><img src="gcloud-error.jpg" alt="gcloud error"></p>
+<p><img alt="gcloud error" src="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/gcloud-error.jpg"></p>
 <p>After restarting the VM, execute the command and follow the prompts:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud init
 </span></span><span style="display:flex;"><span>
@@ -438,24 +438,24 @@ Find the <code>Access scopes</code> section and enable <code>Full access to all 
 <h2 id="generate-a-gcp-key">Generate a GCP Key</h2>
 <p>Navigate to the GCP Console, click on <code>APIs &amp; Services</code>, and select the <code>Credentials</code> tab.<br>
 Click <code>Create credentials</code> and choose <code>Service Account</code>.</p>
-<p><img src="gcp-create-license.png" alt="gcp create license"></p>
+<p><img alt="gcp create license" src="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/gcp-create-license.png"></p>
 <p>Follow the prompts to create the service account, then click on the account you just created to enter the edit page.<br>
 Switch to the <code>Keys</code> tab and click &ldquo;Add Key -&gt; create a new key&rdquo; choosing the &ldquo;<strong>JSON</strong>&rdquo; type.</p>
-<p><img src="gcp-create-key.png" alt="gcp create key"></p>
+<p><img alt="gcp create key" src="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/gcp-create-key.png"></p>
 <p>A download prompt will appear; download the JSON key file to your local machine.</p>
-<p><img src="gcp-key-download.jpg" alt="gcp key download"></p>
+<p><img alt="gcp key download" src="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/gcp-key-download.jpg"></p>
 <h2 id="configure-the-key-in-jenkins">Configure the Key in Jenkins</h2>
 <p>進到<code>Jenkins -&gt; 管理 Jenkins -&gt; Manage Credentials</code><br>
 選擇作用範圍，這邊用預設的<code>Jenkins</code>也就是全域(global)</p>
 <p>Navigate to <code>Jenkins -&gt; Manage Jenkins -&gt; Manage Credentials</code>.<br>
 Choose the scope, which, in this example, is the default <code>Jenkins</code> as global.</p>
-<p><img src="jenkins-add-credential.png" alt="jenkins add credential"></p>
+<p><img alt="jenkins add credential" src="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/jenkins-add-credential.png"></p>
 <p>Click &ldquo;Add Credentials&rdquo; and select <code>Secret file</code>. Fill in the required information:</p>
 <ul>
 <li>ID: A unique identifier for calling within Jenkins, in this example, it is named <code>jenkins-gcr</code>.</li>
 <li>File: Upload the JSON key file you downloaded earlier.</li>
 </ul>
-<p><img src="jenkins-set-credential.png" alt="jenkins set credential"></p>
+<p><img alt="jenkins set credential" src="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/jenkins-set-credential.png"></p>
 <p>This completes the Jenkins key setup.</p>
 <h1 id="pipeline-example">Pipeline Example</h1>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#75715e">// jenkinsfile
@@ -505,7 +505,7 @@ Choose the scope, which, in this example, is the default <code>Jenkins</code> as
 把剛剛上傳的 image 名稱想成在 linux 終端機下指令，就可以理解 GCR 中的資料夾結構</p>
 <p>If no error messages were encountered, you can check the <code>Google Cloud Registry</code> page to view the image.<br>
 The image name in GCR is analogous to the path structure in Linux.</p>
-<p><img src="gcr-store.jpg" alt="gcr store"></p>
+<p><img alt="gcr store" src="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/gcr-store.jpg"></p>
 
       
       
@@ -568,8 +568,8 @@ The image name in GCR is analogous to the path structure in Linux.</p>
       </header>
       
       <article class="mini-post">
-          <a href="/en/blog/202311-aws-dynamodb-pitr/" class="image" style="--bg-image: url('/en/blog/202311-aws-dynamodb-pitr/featured.jpg');">
-    <img src="/en/blog/202311-aws-dynamodb-pitr/featured.jpg" alt="">
+          <a href="/en/blog/202311-aws-dynamodb-pitr/" class="image" style="--bg-image: url('/blog/202311-aws-dynamodb-pitr/featured.jpg');">
+    <img src="/blog/202311-aws-dynamodb-pitr/featured.jpg" alt="">
   </a>
         <header>
           <h2><a href="/en/blog/202311-aws-dynamodb-pitr/">AWS DynamoDB Point-in-Time Recovery (PITR): Simplifying Data Restoration</a></h2>
@@ -578,8 +578,8 @@ The image name in GCR is analogous to the path structure in Linux.</p>
       </article>
       
       <article class="mini-post">
-          <a href="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/" class="image" style="--bg-image: url('/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg');">
-    <img src="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg" alt="">
+          <a href="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/" class="image" style="--bg-image: url('/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg');">
+    <img src="/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg" alt="">
   </a>
         <header>
           <h2><a href="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/">Different between pointer and value for struct type in golang</a></h2>
@@ -588,8 +588,8 @@ The image name in GCR is analogous to the path structure in Linux.</p>
       </article>
       
       <article class="mini-post">
-          <a href="/en/blog/202301-ffmpeg-video-convert/" class="image" style="--bg-image: url('/en/blog/202301-ffmpeg-video-convert/featured.png');">
-    <img src="/en/blog/202301-ffmpeg-video-convert/featured.png" alt="">
+          <a href="/en/blog/202301-ffmpeg-video-convert/" class="image" style="--bg-image: url('/blog/202301-ffmpeg-video-convert/featured.png');">
+    <img src="/blog/202301-ffmpeg-video-convert/featured.png" alt="">
   </a>
         <header>
           <h2><a href="/en/blog/202301-ffmpeg-video-convert/">Using FFmpeg to convert media files</a></h2>
@@ -598,8 +598,8 @@ The image name in GCR is analogous to the path structure in Linux.</p>
       </article>
       
       <article class="mini-post">
-          <a href="/en/blog/202210-aws101-what-is-sns-and-sqs/" class="image" style="--bg-image: url('/en/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg');">
-    <img src="/en/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg" alt="">
+          <a href="/en/blog/202210-aws101-what-is-sns-and-sqs/" class="image" style="--bg-image: url('/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg');">
+    <img src="/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg" alt="">
   </a>
         <header>
           <h2><a href="/en/blog/202210-aws101-what-is-sns-and-sqs/">[AWS 101] What are SNS and SQS</a></h2>
@@ -608,8 +608,8 @@ The image name in GCR is analogous to the path structure in Linux.</p>
       </article>
       
       <article class="mini-post">
-          <a href="/en/blog/202210-what-is-serverless/" class="image" style="--bg-image: url('/en/blog/202210-what-is-serverless/featured.jpg');">
-    <img src="/en/blog/202210-what-is-serverless/featured.jpg" alt="">
+          <a href="/en/blog/202210-what-is-serverless/" class="image" style="--bg-image: url('/blog/202210-what-is-serverless/featured.jpg');">
+    <img src="/blog/202210-what-is-serverless/featured.jpg" alt="">
   </a>
         <header>
           <h2><a href="/en/blog/202210-what-is-serverless/">Serverless 101</a></h2>
@@ -648,7 +648,7 @@ The image name in GCR is analogous to the path structure in Linux.</p>
           </li>
           
           <li>
-              <a href="/en/categories/web-hosting/">web-hosting<span class="count">3</span></a>
+              <a href="/en/categories/web-hosting/">web hosting<span class="count">3</span></a>
           </li>
           
           <li>
@@ -660,7 +660,7 @@ The image name in GCR is analogous to the path structure in Linux.</p>
           </li>
           
           <li>
-              <a href="/en/categories/website-operations/">website-operations<span class="count">2</span></a>
+              <a href="/en/categories/website-operations/">website operations<span class="count">2</span></a>
           </li>
           
           <li>
@@ -668,7 +668,7 @@ The image name in GCR is analogous to the path structure in Linux.</p>
           </li>
           
           <li>
-              <a href="/en/categories/third-party-services/">third-party-services<span class="count">1</span></a>
+              <a href="/en/categories/third-party-services/">third-party services<span class="count">1</span></a>
           </li>
           
           <li>
@@ -676,7 +676,7 @@ The image name in GCR is analogous to the path structure in Linux.</p>
           </li>
           
           <li>
-              <a href="/en/categories/version-control/">version-control<span class="count">1</span></a>
+              <a href="/en/categories/version-control/">version control<span class="count">1</span></a>
           </li>
           
         </ul>
@@ -710,7 +710,7 @@ The image name in GCR is analogous to the path structure in Linux.</p>
         </li>
         
         <li>
-          <a href="/en/tags/container-technology/">container-technology (10)</a>
+          <a href="/en/tags/container-technology/">container technology (10)</a>
         </li>
         
         <li>
@@ -726,7 +726,7 @@ The image name in GCR is analogous to the path structure in Linux.</p>
         </li>
         
         <li>
-          <a href="/en/tags/docker-compose/">docker-compose (6)</a>
+          <a href="/en/tags/docker-compose/">docker compose (6)</a>
         </li>
         
         <li>
@@ -758,7 +758,7 @@ The image name in GCR is analogous to the path structure in Linux.</p>
         </li>
         
         <li>
-          <a href="/en/tags/web-hosting/">web-hosting (3)</a>
+          <a href="/en/tags/web-hosting/">web hosting (3)</a>
         </li>
         
         <li>
@@ -774,7 +774,7 @@ The image name in GCR is analogous to the path structure in Linux.</p>
         </li>
         
         <li>
-          <a href="/en/tags/google-domains/">google-domains (2)</a>
+          <a href="/en/tags/google-domains/">google domains (2)</a>
         </li>
         
         <li>
@@ -790,11 +790,11 @@ The image name in GCR is analogous to the path structure in Linux.</p>
         </li>
         
         <li>
-          <a href="/en/tags/apache-bench/">apache-bench (1)</a>
+          <a href="/en/tags/apache-bench/">apache bench (1)</a>
         </li>
         
         <li>
-          <a href="/en/tags/auto-scaling/">auto-scaling (1)</a>
+          <a href="/en/tags/auto-scaling/">auto scaling (1)</a>
         </li>
         
         <li>
@@ -810,7 +810,7 @@ The image name in GCR is analogous to the path structure in Linux.</p>
         </li>
         
         <li>
-          <a href="/en/tags/cloudflare-workers/">cloudflare-workers (1)</a>
+          <a href="/en/tags/cloudflare-workers/">cloudflare workers (1)</a>
         </li>
         
         <li>
@@ -822,7 +822,7 @@ The image name in GCR is analogous to the path structure in Linux.</p>
         </li>
         
         <li>
-          <a href="/en/tags/domain-name/">domain-name (1)</a>
+          <a href="/en/tags/domain-name/">domain name (1)</a>
         </li>
         
         <li>
@@ -854,19 +854,19 @@ The image name in GCR is analogous to the path structure in Linux.</p>
         </li>
         
         <li>
-          <a href="/en/tags/github-page/">github-page (1)</a>
+          <a href="/en/tags/github-page/">github page (1)</a>
         </li>
         
         <li>
-          <a href="/en/tags/google-app-script/">google-app-script (1)</a>
+          <a href="/en/tags/google-app-script/">google app script (1)</a>
         </li>
         
         <li>
-          <a href="/en/tags/google-container-registry/">google-container-registry (1)</a>
+          <a href="/en/tags/google-container-registry/">google container registry (1)</a>
         </li>
         
         <li>
-          <a href="/en/tags/google-sheets/">google-sheets (1)</a>
+          <a href="/en/tags/google-sheets/">google sheets (1)</a>
         </li>
         
         <li>
@@ -882,7 +882,7 @@ The image name in GCR is analogous to the path structure in Linux.</p>
         </li>
         
         <li>
-          <a href="/en/tags/load-balancing/">load-balancing (1)</a>
+          <a href="/en/tags/load-balancing/">load balancing (1)</a>
         </li>
         
         <li>
@@ -890,7 +890,7 @@ The image name in GCR is analogous to the path structure in Linux.</p>
         </li>
         
         <li>
-          <a href="/en/tags/personal-brand/">personal-brand (1)</a>
+          <a href="/en/tags/personal-brand/">personal brand (1)</a>
         </li>
         
         <li>
@@ -914,7 +914,7 @@ The image name in GCR is analogous to the path structure in Linux.</p>
         </li>
         
         <li>
-          <a href="/en/tags/purchase-domain/">purchase-domain (1)</a>
+          <a href="/en/tags/purchase-domain/">purchase domain (1)</a>
         </li>
         
         <li>
@@ -926,7 +926,7 @@ The image name in GCR is analogous to the path structure in Linux.</p>
         </li>
         
         <li>
-          <a href="/en/tags/search-engine-optimization/">search-engine-optimization (1)</a>
+          <a href="/en/tags/search-engine-optimization/">search engine optimization (1)</a>
         </li>
         
         <li>
@@ -942,11 +942,11 @@ The image name in GCR is analogous to the path structure in Linux.</p>
         </li>
         
         <li>
-          <a href="/en/tags/smart-contract/">smart-contract (1)</a>
+          <a href="/en/tags/smart-contract/">smart contract (1)</a>
         </li>
         
         <li>
-          <a href="/en/tags/stress-testing/">stress-testing (1)</a>
+          <a href="/en/tags/stress-testing/">stress testing (1)</a>
         </li>
         
         <li>
@@ -954,7 +954,7 @@ The image name in GCR is analogous to the path structure in Linux.</p>
         </li>
         
         <li>
-          <a href="/en/tags/version-control/">version-control (1)</a>
+          <a href="/en/tags/version-control/">version control (1)</a>
         </li>
         
       </ul>
@@ -979,7 +979,7 @@ The image name in GCR is analogous to the path structure in Linux.</p>
     <script>
       hljs.configure({ ignoreUnescapedHTML: true }); 
       hljs.highlightAll();
-    </script><script src="/js/bundle.min.b8ecc205622548252ae685817642568fed404d2f04df7ea571a8b71e3091ffe7.js" integrity="sha256-uOzCBWIlSCUq5oWBdkJWj&#43;1ATS8E336lcai3HjCR/&#43;c="></script>
+    </script><script src="/js/bundle.min.a95078f9ef9e8d5748b63296d221d3c71357db75caa6ef260b251d5c8bbc8997.js" integrity="sha256-qVB4&#43;e&#43;ejVdItjKW0iHTxxNX23XKpu8mCyUdXIu8iZc="></script>
     <script src="/js/add-on.js"></script>
 <script>
 var doNotTrack = false;

@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.122.0"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.123.7"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="使用 GrumPHP 做程式碼品質的守門員">
   <meta property="og:description" content="檢查你的程式有沒有怪味道，在你犯錯前就制止你。一生只督你一人">
   <meta property="description" content="檢查你的程式有沒有怪味道，在你犯錯前就制止你。一生只督你一人">
@@ -68,7 +68,7 @@
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https:\/\/tech.ray247k.com"
+        "@id": "https:\/\/tech.ray247k.com\/"
     },
     "publisher": {
         "@type": "Organization",
@@ -81,10 +81,10 @@
     "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
     "headline": "討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - Byte Ebi 🍤",
     "name": "Byte Ebi 🍤",
-    "url": "https:\/\/tech.ray247k.com",
+    "url": "https:\/\/tech.ray247k.com\/",
     "description": "討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - aws,devops,golang,laravel,leetcode,node.js,php,python3,serverless,實用工具,架站相關,版本控制,第三方服務,",
     "keywords": [
-        "apache-bench,auto-scaling,aws,axios,blockchain,cdn,chatbot,cicd,cloudflare,cloudflare-workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker-compose,domain-name,drone,element-ui,excel,express,ffmpeg,gas,gcp,gcr,getter,git,github,github-page,go,golang,google-app-script,google-container-registry,google-domains,google-sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load-balancing,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,phpcbf,phpcs,portainer,postgresql,prerender,proxy,python3,queue,redis,restful,seo,server,serverless,smart-contract,ssh,stress-testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
+        "apache bench,auto scaling,aws,axios,blockchain,cdn,chatbot,cicd,cloudflare,cloudflare workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker compose,domain name,drone,element-ui,excel,express,ffmpeg,gas,gcp,gcr,getter,git,github,github page,go,golang,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load balancing,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,phpcbf,phpcs,portainer,postgresql,prerender,proxy,python3,queue,redis,restful,seo,server,serverless,smart contract,ssh,stress testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
     ]
 }
 </script>
@@ -97,7 +97,7 @@
     "@context": "https://schema.org",
     "@type": "Organization",
     "legalName": "Byte Ebi 🍤",
-    "url": "https:\/\/tech.ray247k.com",
+    "url": "https:\/\/tech.ray247k.com\/",
     "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
     "contactPoint": {
         "@type": "ContactPoint",
@@ -137,18 +137,18 @@
                 "@type": "ListItem",
                 "position": 1,
                 "item": {
-                    "@id": "https:\/\/tech.ray247k.com",
+                    "@id": "https:\/\/tech.ray247k.com\/",
                     "name": "Byte Ebi 🍤",
-                    "url": "https:\/\/tech.ray247k.com"
+                    "url": "https:\/\/tech.ray247k.com\/"
                 }
             },
             {
                 "@type": "ListItem",
                 "position": 2,
                 "item": {
-                    "@id": "https:\/\/tech.ray247k.com/blog",
+                    "@id": "https:\/\/tech.ray247k.com\//blog",
                     "name": "Blog",
-                    "url": "https:\/\/tech.ray247k.com/blog"
+                    "url": "https:\/\/tech.ray247k.com\//blog"
                 }
             },
             {
@@ -201,7 +201,7 @@
     "publisher":{
         "@type":"Organization",
         "name": "Byte Ebi 🍤",
-        "url": "https://tech.ray247k.com",
+        "url": "https://tech.ray247k.com/",
         "logo": {
             "@type": "ImageObject",
             "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
@@ -388,7 +388,7 @@
 </span></span></code></pre></div><p>若是執行</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>composer install
 </span></span></code></pre></div><p>可以看到提示<code>GrumPHP is sniffing your commits!</code>代表 GrumPHP 已經在嗅探我們的 commit 了</p>
-<p><img src="grumphp-composer-install.png" alt="grumphp composer install"></p>
+<p><img alt="grumphp composer install" src="/blog/202107-grumphp-a-php-code-quality-tool/grumphp-composer-install.png"></p>
 <h1 id="加入檢查任務">加入檢查任務</h1>
 <p>這邊會逐步安裝並說明四個常用的基本檢查任務</p>
 <ul>
@@ -479,7 +479,7 @@
 </span></span></code></pre></div><p>來測試一下任務是否有執行上次套件包中的測試吧！<br>
 因為配合 phpunit.xml 的設定，所以把上次寫在 tests 資料夾內的測試搬到 tests/unit 內<br>
 執行指令<code>vendor/bin/grumphp run</code>可以看到通過的綠色的開心老頭</p>
-<p><img src="phpunit-pass.png" alt="phpunit pass"></p>
+<p><img alt="phpunit pass" src="/blog/202107-grumphp-a-php-code-quality-tool/phpunit-pass.png"></p>
 <p>若我們修改測試方法，讓測試無法通過</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">testGetAhoy</span>()
 </span></span><span style="display:flex;"><span>{
@@ -488,8 +488,8 @@
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>接著再一次執行指令便會看到一個生氣的紅色老頭，以及其錯誤訊息<br>
 透過提示訊息，我們可以清楚的知道是哪個測試沒有通過</p>
-<p><img src="phpunit-fail-a.png" alt="phpunit fail">
-<img src="phpunit-fail-b.png" alt="phpunit fail"></p>
+<p><img alt="phpunit fail" src="/blog/202107-grumphp-a-php-code-quality-tool/phpunit-fail-a.png">
+<img alt="phpunit fail" src="/blog/202107-grumphp-a-php-code-quality-tool/phpunit-fail-b.png"></p>
 <h2 id="4-phpcs">4. Phpcs</h2>
 <p>這個任務，可以檢查提交的 PHP 內容是不是符合 <a href="https://www.php-fig.org/psr/"
    
@@ -523,12 +523,12 @@
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/ruleset&gt;</span>
 </span></span></code></pre></div><p>既然設定好了就執行看看吧</p>
 <pre tabindex="0"><code>vendor/bin/grumphp run
-</code></pre><p><img src="phpcs-pass.png" alt="phpcs pass"></p>
+</code></pre><p><img alt="phpcs pass" src="/blog/202107-grumphp-a-php-code-quality-tool/phpcs-pass.png"></p>
 <p>可以看到我們設定的測試都有通過了</p>
 <p>那如果有一些不符合 PSR12 規則的東西會發生什麼事情呢？<br>
 為了測試，我們隨便找一段 PHP 程式，在分號後面再加一個分號<br>
 這麼做並不會觸發先前安裝的 phplint 檢查，因為這不屬於語法錯誤，但這麼做不符合 PSR12 規則</p>
-<p><img src="phpcs-fail.png" alt="phpcs fail"></p>
+<p><img alt="phpcs fail" src="/blog/202107-grumphp-a-php-code-quality-tool/phpcs-fail.png"></p>
 <p>於是我們又看到了生氣的老頭，指出哪裡有問題</p>
 <h1 id="自動監聽">自動監聽</h1>
 <p>以上都是我們手動執行套件的任務來測試程式碼的品質，好還要更好<br>
@@ -548,7 +548,7 @@
 </span></span><span style="display:flex;"><span>    },
 </span></span></code></pre></div><p>這樣不論是在 CLI 執行<code>git commit</code>或是使用 GUI 操作，都可以在 commit 前觸發我們定義的 tasks<br>
 如下圖就是使用 GUI 觸發 phpcs 這個任務的失敗狀態跳出的訊息</p>
-<p><img src="grumphp-gui-fail.png" alt="grumphp gui fail"></p>
+<p><img alt="grumphp gui fail" src="/blog/202107-grumphp-a-php-code-quality-tool/grumphp-gui-fail.png"></p>
 
       
       
@@ -801,7 +801,7 @@
         </li>
         
         <li>
-          <a href="/tags/docker-compose/">docker-compose (6)</a>
+          <a href="/tags/docker-compose/">docker compose (6)</a>
         </li>
         
         <li>
@@ -877,7 +877,7 @@
         </li>
         
         <li>
-          <a href="/tags/google-domains/">google-domains (2)</a>
+          <a href="/tags/google-domains/">google domains (2)</a>
         </li>
         
         <li>
@@ -897,11 +897,11 @@
         </li>
         
         <li>
-          <a href="/tags/apache-bench/">apache-bench (1)</a>
+          <a href="/tags/apache-bench/">apache bench (1)</a>
         </li>
         
         <li>
-          <a href="/tags/auto-scaling/">auto-scaling (1)</a>
+          <a href="/tags/auto-scaling/">auto scaling (1)</a>
         </li>
         
         <li>
@@ -917,7 +917,7 @@
         </li>
         
         <li>
-          <a href="/tags/cloudflare-workers/">cloudflare-workers (1)</a>
+          <a href="/tags/cloudflare-workers/">cloudflare workers (1)</a>
         </li>
         
         <li>
@@ -929,7 +929,7 @@
         </li>
         
         <li>
-          <a href="/tags/domain-name/">domain-name (1)</a>
+          <a href="/tags/domain-name/">domain name (1)</a>
         </li>
         
         <li>
@@ -957,19 +957,19 @@
         </li>
         
         <li>
-          <a href="/tags/github-page/">github-page (1)</a>
+          <a href="/tags/github-page/">github page (1)</a>
         </li>
         
         <li>
-          <a href="/tags/google-app-script/">google-app-script (1)</a>
+          <a href="/tags/google-app-script/">google app script (1)</a>
         </li>
         
         <li>
-          <a href="/tags/google-container-registry/">google-container-registry (1)</a>
+          <a href="/tags/google-container-registry/">google container registry (1)</a>
         </li>
         
         <li>
-          <a href="/tags/google-sheets/">google-sheets (1)</a>
+          <a href="/tags/google-sheets/">google sheets (1)</a>
         </li>
         
         <li>
@@ -981,7 +981,7 @@
         </li>
         
         <li>
-          <a href="/tags/load-balancing/">load-balancing (1)</a>
+          <a href="/tags/load-balancing/">load balancing (1)</a>
         </li>
         
         <li>
@@ -1037,11 +1037,11 @@
         </li>
         
         <li>
-          <a href="/tags/smart-contract/">smart-contract (1)</a>
+          <a href="/tags/smart-contract/">smart contract (1)</a>
         </li>
         
         <li>
-          <a href="/tags/stress-testing/">stress-testing (1)</a>
+          <a href="/tags/stress-testing/">stress testing (1)</a>
         </li>
         
         <li>
@@ -1106,7 +1106,7 @@
     <script>
       hljs.configure({ ignoreUnescapedHTML: true }); 
       hljs.highlightAll();
-    </script><script src="/js/bundle.min.b8ecc205622548252ae685817642568fed404d2f04df7ea571a8b71e3091ffe7.js" integrity="sha256-uOzCBWIlSCUq5oWBdkJWj&#43;1ATS8E336lcai3HjCR/&#43;c="></script>
+    </script><script src="/js/bundle.min.a95078f9ef9e8d5748b63296d221d3c71357db75caa6ef260b251d5c8bbc8997.js" integrity="sha256-qVB4&#43;e&#43;ejVdItjKW0iHTxxNX23XKpu8mCyUdXIu8iZc="></script>
     <script src="/js/add-on.js"></script>
 <script>
 var doNotTrack = false;

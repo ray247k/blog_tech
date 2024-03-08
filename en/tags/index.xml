@@ -79,10 +79,17 @@
       <description></description>
     </item>
     <item>
-      <title>ngrok</title>
+      <title>Ngrok</title>
       <link>https://tech.ray247k.com/en/tags/ngrok/</link>
       <pubDate>Sat, 23 Apr 2022 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/en/tags/ngrok/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CI/CD</title>
+      <link>https://tech.ray247k.com/en/tags/ci/cd/</link>
+      <pubDate>Wed, 13 Apr 2022 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/tags/ci/cd/</guid>
       <description></description>
     </item>
     <item>
@@ -100,7 +107,7 @@
       <description></description>
     </item>
     <item>
-      <title>ssh</title>
+      <title>SSH</title>
       <link>https://tech.ray247k.com/en/tags/ssh/</link>
       <pubDate>Wed, 13 Apr 2022 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/en/tags/ssh/</guid>
@@ -156,7 +163,7 @@
       <description></description>
     </item>
     <item>
-      <title>queue</title>
+      <title>Queue</title>
       <link>https://tech.ray247k.com/en/tags/queue/</link>
       <pubDate>Sat, 05 Mar 2022 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/en/tags/queue/</guid>
@@ -205,21 +212,21 @@
       <description></description>
     </item>
     <item>
-      <title>csv</title>
+      <title>Csv</title>
       <link>https://tech.ray247k.com/en/tags/csv/</link>
       <pubDate>Sat, 11 Dec 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/en/tags/csv/</guid>
       <description></description>
     </item>
     <item>
-      <title>excel</title>
+      <title>Excel</title>
       <link>https://tech.ray247k.com/en/tags/excel/</link>
       <pubDate>Sat, 11 Dec 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/en/tags/excel/</guid>
       <description></description>
     </item>
     <item>
-      <title>laravel-excel</title>
+      <title>Laravel-Excel</title>
       <link>https://tech.ray247k.com/en/tags/laravel-excel/</link>
       <pubDate>Sat, 11 Dec 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/en/tags/laravel-excel/</guid>
@@ -247,7 +254,7 @@
       <description></description>
     </item>
     <item>
-      <title>git</title>
+      <title>Git</title>
       <link>https://tech.ray247k.com/en/tags/git/</link>
       <pubDate>Sat, 06 Nov 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/en/tags/git/</guid>
@@ -261,7 +268,7 @@
       <description></description>
     </item>
     <item>
-      <title>version control</title>
+      <title>Version Control</title>
       <link>https://tech.ray247k.com/en/tags/version-control/</link>
       <pubDate>Sat, 06 Nov 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/en/tags/version-control/</guid>
@@ -289,7 +296,7 @@
       <description></description>
     </item>
     <item>
-      <title>composer</title>
+      <title>Composer</title>
       <link>https://tech.ray247k.com/en/tags/composer/</link>
       <pubDate>Sat, 31 Jul 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/en/tags/composer/</guid>
@@ -317,7 +324,7 @@
       <description></description>
     </item>
     <item>
-      <title>docker-compose</title>
+      <title>Docker Compose</title>
       <link>https://tech.ray247k.com/en/tags/docker-compose/</link>
       <pubDate>Sat, 24 Jul 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/en/tags/docker-compose/</guid>
@@ -338,7 +345,7 @@
       <description></description>
     </item>
     <item>
-      <title>nginx</title>
+      <title>Nginx</title>
       <link>https://tech.ray247k.com/en/tags/nginx/</link>
       <pubDate>Sun, 23 May 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/en/tags/nginx/</guid>
@@ -352,14 +359,14 @@
       <description></description>
     </item>
     <item>
-      <title>server</title>
+      <title>Server</title>
       <link>https://tech.ray247k.com/en/tags/server/</link>
       <pubDate>Sun, 23 May 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/en/tags/server/</guid>
       <description></description>
     </item>
     <item>
-      <title>stress testing</title>
+      <title>Stress Testing</title>
       <link>https://tech.ray247k.com/en/tags/stress-testing/</link>
       <pubDate>Sun, 23 May 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/en/tags/stress-testing/</guid>
@@ -380,7 +387,7 @@
       <description></description>
     </item>
     <item>
-      <title>subdomain</title>
+      <title>Subdomain</title>
       <link>https://tech.ray247k.com/en/tags/subdomain/</link>
       <pubDate>Tue, 18 May 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/en/tags/subdomain/</guid>
@@ -450,7 +457,7 @@
       <description></description>
     </item>
     <item>
-      <title>proxy</title>
+      <title>Proxy</title>
       <link>https://tech.ray247k.com/en/tags/proxy/</link>
       <pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/en/tags/proxy/</guid>
@@ -461,13 +468,6 @@
       <link>https://tech.ray247k.com/en/tags/portainer/</link>
       <pubDate>Sat, 16 Jan 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/en/tags/portainer/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>CI/CD</title>
-      <link>https://tech.ray247k.com/en/tags/ci/cd/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/tags/ci/cd/</guid>
       <description></description>
     </item>
   </channel>

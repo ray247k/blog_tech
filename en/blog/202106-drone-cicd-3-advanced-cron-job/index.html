@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.122.0"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.123.7"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="[CI/CD with Drone 101] 03 Deployment Schedule Configuration and Permission Management">
   <meta property="og:description" content="Tutorial on configuring deployment schedules and managing permissions through Drone for automated deployment.">
   <meta property="description" content="Tutorial on configuring deployment schedules and managing permissions through Drone for automated deployment.">
@@ -68,7 +68,7 @@
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https:\/\/tech.ray247k.com"
+        "@id": "https:\/\/tech.ray247k.com\/"
     },
     "publisher": {
         "@type": "Organization",
@@ -81,10 +81,10 @@
     "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
     "headline": "About web development, software engineering, frontend, backend, chatbot, server related topics. - Byte Ebi 🍤",
     "name": "Byte Ebi 🍤",
-    "url": "https:\/\/tech.ray247k.com",
-    "description": "About web development, software engineering, frontend, backend, chatbot, server related topics. - aws,devops,golang,laravel,python3,serverless,third-party-services,tools,version-control,web-hosting,website-operations,",
+    "url": "https:\/\/tech.ray247k.com\/",
+    "description": "About web development, software engineering, frontend, backend, chatbot, server related topics. - aws,devops,golang,laravel,python3,serverless,third-party services,tools,version control,web hosting,website operations,",
     "keywords": [
-        "apache-bench,auto-scaling,aws,blockchain,cdn,chatbot,ci\/cd,cicd,cloudflare,cloudflare-workers,composer,container-technology,containerization,csv,devops,discord,dns,docker,docker-compose,domain,domain-name,drone,excel,ffmpeg,firewall,gas,gcp,gcr,git,github,github-page,go,golang,google-app-script,google-container-registry,google-domains,google-sheets,grumphp,jenkins,laravel,laravel-excel,linux,load-balancing,nginx,ngrok,personal-brand,php,php-fpm,portainer,postgresql,prerender,proxy,purchase-domain,python3,queue,redis,search-engine-optimization,seo,server,serverless,smart-contract,ssh,stress-testing,subdomain,version-control,web-hosting,"
+        "apache bench,auto scaling,aws,blockchain,cdn,chatbot,ci\/cd,cicd,cloudflare,cloudflare workers,composer,container technology,containerization,csv,devops,discord,dns,docker,docker compose,domain,domain name,drone,excel,ffmpeg,firewall,gas,gcp,gcr,git,github,github page,go,golang,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,linux,load balancing,nginx,ngrok,personal brand,php,php-fpm,portainer,postgresql,prerender,proxy,purchase domain,python3,queue,redis,search engine optimization,seo,server,serverless,smart contract,ssh,stress testing,subdomain,version control,web hosting,"
     ]
 }
 </script>
@@ -97,7 +97,7 @@
     "@context": "https://schema.org",
     "@type": "Organization",
     "legalName": "Byte Ebi 🍤",
-    "url": "https:\/\/tech.ray247k.com",
+    "url": "https:\/\/tech.ray247k.com\/",
     "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
     "contactPoint": {
         "@type": "ContactPoint",
@@ -137,18 +137,18 @@
                 "@type": "ListItem",
                 "position": 1,
                 "item": {
-                    "@id": "https:\/\/tech.ray247k.com",
+                    "@id": "https:\/\/tech.ray247k.com\/",
                     "name": "Byte Ebi 🍤",
-                    "url": "https:\/\/tech.ray247k.com"
+                    "url": "https:\/\/tech.ray247k.com\/"
                 }
             },
             {
                 "@type": "ListItem",
                 "position": 2,
                 "item": {
-                    "@id": "https:\/\/tech.ray247k.com/blog",
+                    "@id": "https:\/\/tech.ray247k.com\//blog",
                     "name": "Blog",
-                    "url": "https:\/\/tech.ray247k.com/blog"
+                    "url": "https:\/\/tech.ray247k.com\//blog"
                 }
             },
             {
@@ -201,7 +201,7 @@
     "publisher":{
         "@type":"Organization",
         "name": "Byte Ebi 🍤",
-        "url": "https://tech.ray247k.com",
+        "url": "https://tech.ray247k.com/",
         "logo": {
             "@type": "ImageObject",
             "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
@@ -358,8 +358,8 @@
 
     </div>
     <div class="content">
-      <a href="/en/blog/202106-drone-cicd-3-advanced-cron-job/" class="image" style="--bg-image: url('/en/blog/202106-drone-cicd-3-advanced-cron-job/drone-pipeline-feature.png');">
-    <img src="/en/blog/202106-drone-cicd-3-advanced-cron-job/drone-pipeline-feature.png" alt="">
+      <a href="/en/blog/202106-drone-cicd-3-advanced-cron-job/" class="image" style="--bg-image: url('/blog/202106-drone-cicd-3-advanced-cron-job/drone-pipeline-feature.png');">
+    <img src="/blog/202106-drone-cicd-3-advanced-cron-job/drone-pipeline-feature.png" alt="">
   </a>
       <p>Utilizing <a href="https://www.drone.io/"
    
@@ -432,14 +432,14 @@ Alternatively, it can be set as <code>0 0 10,12,14,16 * * *</code> to &ldquo;exe
 <h2 id="viewing-cron-jobs">Viewing Cron Jobs</h2>
 <h3 id="cron-list">Cron List</h3>
 <p>After creation, you can use <code>GET /api/repos/{owner}/{repo}/cron</code> to view the list of all cron jobs.</p>
-<p><img src="postman-cron-list.png" alt="postman cron list"></p>
+<p><img alt="postman cron list" src="/blog/202106-drone-cicd-3-advanced-cron-job/postman-cron-list.png"></p>
 <h3 id="cron-info">Cron Info</h3>
 <p>Using <code>GET /api/repos/{owner}/{repo}/cron/{name}</code> to view detailed information about a specific cron job.</p>
-<p><img src="postman-cron-info.png" alt="postman cron info"></p>
+<p><img alt="postman cron info" src="/blog/202106-drone-cicd-3-advanced-cron-job/postman-cron-info.png"></p>
 <p>Returning to the Drone backend, accessing the settings page for the project reveals the cron job created using the API!</p>
-<p><img src="drone-settings-page.png" alt="drone settings page"></p>
+<p><img alt="drone settings page" src="/blog/202106-drone-cicd-3-advanced-cron-job/drone-settings-page.png"></p>
 <p>When the scheduled time arrives, the pipeline triggered by the specified cron job name in the .drone.yml file will be executed.</p>
-<p><img src="drone-pipeline-feature.png" alt="drone pipeline"></p>
+<p><img alt="drone pipeline" src="/blog/202106-drone-cicd-3-advanced-cron-job/drone-pipeline-feature.png"></p>
 <h2 id="updating-cron-jobs">Updating Cron Jobs</h2>
 <p>To update a cron job, use <code>PATCH /api/repos/{owner}/{repo}/cron/{name}</code>.<br>
 The body includes the changes, such as switching the branch to <code>dev</code> or adjusting the execution time to a fixed time each day.</p>
@@ -451,7 +451,7 @@ The body includes the changes, such as switching the branch to <code>dev</code> 
 </code></pre><h2 id="deleting-cron-jobs">Deleting Cron Jobs</h2>
 <p>Cron jobs created previously can be deleted using <code>DELETE /api/repos/{owner}/{repo}/cron/{name}</code>.<br>
 However, the author prefers using the UI interface to click on DELETE.</p>
-<p><img src="delete-cronjob.png" alt="delete cronjob"></p>
+<p><img alt="delete cronjob" src="/blog/202106-drone-cicd-3-advanced-cron-job/delete-cronjob.png"></p>
 <p>Another option is the Drone CLI, which was not used this time but is provided for reference.</p>
 <ul>
 <li><a href="https://docs.drone.io/cron/"
@@ -495,7 +495,7 @@ Use organizations or user IDs in the list.</p>
 </a>
 ).
 Therefore, anyone with write permissions can access the settings page.</p>
-<p><img src="bitbucket-not-supported.png" alt="bitbucket not supported"></p>
+<p><img alt="bitbucket not supported" src="/blog/202106-drone-cicd-3-advanced-cron-job/bitbucket-not-supported.png"></p>
 <p>Testing with GitHub shows that organization-based access control is possible and the setting page is not open to everyone.</p>
 
       
@@ -553,8 +553,8 @@ Therefore, anyone with write permissions can access the settings page.</p>
       </header>
       
       <article class="mini-post">
-          <a href="/en/blog/202311-aws-dynamodb-pitr/" class="image" style="--bg-image: url('/en/blog/202311-aws-dynamodb-pitr/featured.jpg');">
-    <img src="/en/blog/202311-aws-dynamodb-pitr/featured.jpg" alt="">
+          <a href="/en/blog/202311-aws-dynamodb-pitr/" class="image" style="--bg-image: url('/blog/202311-aws-dynamodb-pitr/featured.jpg');">
+    <img src="/blog/202311-aws-dynamodb-pitr/featured.jpg" alt="">
   </a>
         <header>
           <h2><a href="/en/blog/202311-aws-dynamodb-pitr/">AWS DynamoDB Point-in-Time Recovery (PITR): Simplifying Data Restoration</a></h2>
@@ -563,8 +563,8 @@ Therefore, anyone with write permissions can access the settings page.</p>
       </article>
       
       <article class="mini-post">
-          <a href="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/" class="image" style="--bg-image: url('/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg');">
-    <img src="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg" alt="">
+          <a href="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/" class="image" style="--bg-image: url('/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg');">
+    <img src="/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg" alt="">
   </a>
         <header>
           <h2><a href="/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/">Different between pointer and value for struct type in golang</a></h2>
@@ -573,8 +573,8 @@ Therefore, anyone with write permissions can access the settings page.</p>
       </article>
       
       <article class="mini-post">
-          <a href="/en/blog/202301-ffmpeg-video-convert/" class="image" style="--bg-image: url('/en/blog/202301-ffmpeg-video-convert/featured.png');">
-    <img src="/en/blog/202301-ffmpeg-video-convert/featured.png" alt="">
+          <a href="/en/blog/202301-ffmpeg-video-convert/" class="image" style="--bg-image: url('/blog/202301-ffmpeg-video-convert/featured.png');">
+    <img src="/blog/202301-ffmpeg-video-convert/featured.png" alt="">
   </a>
         <header>
           <h2><a href="/en/blog/202301-ffmpeg-video-convert/">Using FFmpeg to convert media files</a></h2>
@@ -583,8 +583,8 @@ Therefore, anyone with write permissions can access the settings page.</p>
       </article>
       
       <article class="mini-post">
-          <a href="/en/blog/202210-aws101-what-is-sns-and-sqs/" class="image" style="--bg-image: url('/en/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg');">
-    <img src="/en/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg" alt="">
+          <a href="/en/blog/202210-aws101-what-is-sns-and-sqs/" class="image" style="--bg-image: url('/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg');">
+    <img src="/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg" alt="">
   </a>
         <header>
           <h2><a href="/en/blog/202210-aws101-what-is-sns-and-sqs/">[AWS 101] What are SNS and SQS</a></h2>
@@ -593,8 +593,8 @@ Therefore, anyone with write permissions can access the settings page.</p>
       </article>
       
       <article class="mini-post">
-          <a href="/en/blog/202210-what-is-serverless/" class="image" style="--bg-image: url('/en/blog/202210-what-is-serverless/featured.jpg');">
-    <img src="/en/blog/202210-what-is-serverless/featured.jpg" alt="">
+          <a href="/en/blog/202210-what-is-serverless/" class="image" style="--bg-image: url('/blog/202210-what-is-serverless/featured.jpg');">
+    <img src="/blog/202210-what-is-serverless/featured.jpg" alt="">
   </a>
         <header>
           <h2><a href="/en/blog/202210-what-is-serverless/">Serverless 101</a></h2>
@@ -633,7 +633,7 @@ Therefore, anyone with write permissions can access the settings page.</p>
           </li>
           
           <li>
-              <a href="/en/categories/web-hosting/">web-hosting<span class="count">3</span></a>
+              <a href="/en/categories/web-hosting/">web hosting<span class="count">3</span></a>
           </li>
           
           <li>
@@ -645,7 +645,7 @@ Therefore, anyone with write permissions can access the settings page.</p>
           </li>
           
           <li>
-              <a href="/en/categories/website-operations/">website-operations<span class="count">2</span></a>
+              <a href="/en/categories/website-operations/">website operations<span class="count">2</span></a>
           </li>
           
           <li>
@@ -653,7 +653,7 @@ Therefore, anyone with write permissions can access the settings page.</p>
           </li>
           
           <li>
-              <a href="/en/categories/third-party-services/">third-party-services<span class="count">1</span></a>
+              <a href="/en/categories/third-party-services/">third-party services<span class="count">1</span></a>
           </li>
           
           <li>
@@ -661,7 +661,7 @@ Therefore, anyone with write permissions can access the settings page.</p>
           </li>
           
           <li>
-              <a href="/en/categories/version-control/">version-control<span class="count">1</span></a>
+              <a href="/en/categories/version-control/">version control<span class="count">1</span></a>
           </li>
           
         </ul>
@@ -695,7 +695,7 @@ Therefore, anyone with write permissions can access the settings page.</p>
         </li>
         
         <li>
-          <a href="/en/tags/container-technology/">container-technology (10)</a>
+          <a href="/en/tags/container-technology/">container technology (10)</a>
         </li>
         
         <li>
@@ -711,7 +711,7 @@ Therefore, anyone with write permissions can access the settings page.</p>
         </li>
         
         <li>
-          <a href="/en/tags/docker-compose/">docker-compose (6)</a>
+          <a href="/en/tags/docker-compose/">docker compose (6)</a>
         </li>
         
         <li>
@@ -743,7 +743,7 @@ Therefore, anyone with write permissions can access the settings page.</p>
         </li>
         
         <li>
-          <a href="/en/tags/web-hosting/">web-hosting (3)</a>
+          <a href="/en/tags/web-hosting/">web hosting (3)</a>
         </li>
         
         <li>
@@ -759,7 +759,7 @@ Therefore, anyone with write permissions can access the settings page.</p>
         </li>
         
         <li>
-          <a href="/en/tags/google-domains/">google-domains (2)</a>
+          <a href="/en/tags/google-domains/">google domains (2)</a>
         </li>
         
         <li>
@@ -775,11 +775,11 @@ Therefore, anyone with write permissions can access the settings page.</p>
         </li>
         
         <li>
-          <a href="/en/tags/apache-bench/">apache-bench (1)</a>
+          <a href="/en/tags/apache-bench/">apache bench (1)</a>
         </li>
         
         <li>
-          <a href="/en/tags/auto-scaling/">auto-scaling (1)</a>
+          <a href="/en/tags/auto-scaling/">auto scaling (1)</a>
         </li>
         
         <li>
@@ -795,7 +795,7 @@ Therefore, anyone with write permissions can access the settings page.</p>
         </li>
         
         <li>
-          <a href="/en/tags/cloudflare-workers/">cloudflare-workers (1)</a>
+          <a href="/en/tags/cloudflare-workers/">cloudflare workers (1)</a>
         </li>
         
         <li>
@@ -807,7 +807,7 @@ Therefore, anyone with write permissions can access the settings page.</p>
         </li>
         
         <li>
-          <a href="/en/tags/domain-name/">domain-name (1)</a>
+          <a href="/en/tags/domain-name/">domain name (1)</a>
         </li>
         
         <li>
@@ -839,19 +839,19 @@ Therefore, anyone with write permissions can access the settings page.</p>
         </li>
         
         <li>
-          <a href="/en/tags/github-page/">github-page (1)</a>
+          <a href="/en/tags/github-page/">github page (1)</a>
         </li>
         
         <li>
-          <a href="/en/tags/google-app-script/">google-app-script (1)</a>
+          <a href="/en/tags/google-app-script/">google app script (1)</a>
         </li>
         
         <li>
-          <a href="/en/tags/google-container-registry/">google-container-registry (1)</a>
+          <a href="/en/tags/google-container-registry/">google container registry (1)</a>
         </li>
         
         <li>
-          <a href="/en/tags/google-sheets/">google-sheets (1)</a>
+          <a href="/en/tags/google-sheets/">google sheets (1)</a>
         </li>
         
         <li>
@@ -867,7 +867,7 @@ Therefore, anyone with write permissions can access the settings page.</p>
         </li>
         
         <li>
-          <a href="/en/tags/load-balancing/">load-balancing (1)</a>
+          <a href="/en/tags/load-balancing/">load balancing (1)</a>
         </li>
         
         <li>
@@ -875,7 +875,7 @@ Therefore, anyone with write permissions can access the settings page.</p>
         </li>
         
         <li>
-          <a href="/en/tags/personal-brand/">personal-brand (1)</a>
+          <a href="/en/tags/personal-brand/">personal brand (1)</a>
         </li>
         
         <li>
@@ -899,7 +899,7 @@ Therefore, anyone with write permissions can access the settings page.</p>
         </li>
         
         <li>
-          <a href="/en/tags/purchase-domain/">purchase-domain (1)</a>
+          <a href="/en/tags/purchase-domain/">purchase domain (1)</a>
         </li>
         
         <li>
@@ -911,7 +911,7 @@ Therefore, anyone with write permissions can access the settings page.</p>
         </li>
         
         <li>
-          <a href="/en/tags/search-engine-optimization/">search-engine-optimization (1)</a>
+          <a href="/en/tags/search-engine-optimization/">search engine optimization (1)</a>
         </li>
         
         <li>
@@ -927,11 +927,11 @@ Therefore, anyone with write permissions can access the settings page.</p>
         </li>
         
         <li>
-          <a href="/en/tags/smart-contract/">smart-contract (1)</a>
+          <a href="/en/tags/smart-contract/">smart contract (1)</a>
         </li>
         
         <li>
-          <a href="/en/tags/stress-testing/">stress-testing (1)</a>
+          <a href="/en/tags/stress-testing/">stress testing (1)</a>
         </li>
         
         <li>
@@ -939,7 +939,7 @@ Therefore, anyone with write permissions can access the settings page.</p>
         </li>
         
         <li>
-          <a href="/en/tags/version-control/">version-control (1)</a>
+          <a href="/en/tags/version-control/">version control (1)</a>
         </li>
         
       </ul>
@@ -964,7 +964,7 @@ Therefore, anyone with write permissions can access the settings page.</p>
     <script>
       hljs.configure({ ignoreUnescapedHTML: true }); 
       hljs.highlightAll();
-    </script><script src="/js/bundle.min.b8ecc205622548252ae685817642568fed404d2f04df7ea571a8b71e3091ffe7.js" integrity="sha256-uOzCBWIlSCUq5oWBdkJWj&#43;1ATS8E336lcai3HjCR/&#43;c="></script>
+    </script><script src="/js/bundle.min.a95078f9ef9e8d5748b63296d221d3c71357db75caa6ef260b251d5c8bbc8997.js" integrity="sha256-qVB4&#43;e&#43;ejVdItjKW0iHTxxNX23XKpu8mCyUdXIu8iZc="></script>
     <script src="/js/add-on.js"></script>
 <script>
 var doNotTrack = false;
