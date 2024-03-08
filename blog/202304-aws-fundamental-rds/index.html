@@ -1,0 +1,1038 @@
+<!doctype html>
+<html lang="zh-tw">
+  <head>
+  <meta charset="utf-8">
+<title>[大話 AWS 雲端架構筆記] RDS - Byte Ebi 🍤</title>
+<meta name="description" content="簡介 RDS 和使用方法和運作機制">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta property="og:site_name" content="Byte Ebi 🍤">
+<meta property="og:title" content="[大話 AWS 雲端架構筆記] RDS">
+<meta property="og:description" content="簡介 RDS 和使用方法和運作機制">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://tech.ray247k.com/blog/202304-aws-fundamental-rds/">
+  <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
+
+
+
+  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
+  
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=1" color="#ffffff">
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=1">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=1">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+<meta name="generator" content="Hugo 0.123.7"><meta property="og:site_name" content="Byte Ebi 🍤">
+  <meta property="og:title" content="[大話 AWS 雲端架構筆記] RDS">
+  <meta property="og:description" content="簡介 RDS 和使用方法和運作機制">
+  <meta property="description" content="簡介 RDS 和使用方法和運作機制">
+  <meta property="og:url" content="https://tech.ray247k.com/blog/202304-aws-fundamental-rds/">
+  <meta property="og:type" content="article">
+  
+    <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
+  
+  
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/felipec.min.css">
+          <link rel="stylesheet" href="/css/bundle.min.3b1b5f2e683d24b1ea3b5a08c8254622e40aa935e0ead75ba6d45c0f14c2f965.css" integrity="sha256-OxtfLmg9JLHqO1oIyCVGIuQKqTXg6tdbptRcDxTC&#43;WU="><link rel="stylesheet" href="/css/add-on.css">
+
+
+    
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', "");
+        </script>
+    
+
+
+  <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "image": {
+        "@type": "ImageObject",
+        "image": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+        "height": 648,
+        "width": 1080
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com\/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Byte Ebi 🍤",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png"
+        }
+    },
+    "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+    "headline": "討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - Byte Ebi 🍤",
+    "name": "Byte Ebi 🍤",
+    "url": "https:\/\/tech.ray247k.com\/",
+    "description": "討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - aws,devops,golang,laravel,leetcode,node.js,php,python3,serverless,實用工具,架站相關,版本控制,第三方服務,",
+    "keywords": [
+        "apache bench,auto scaling,aws,axios,blockchain,cdn,chatbot,cicd,cloudflare,cloudflare workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker compose,domain name,drone,element-ui,excel,express,ffmpeg,gas,gcp,gcr,getter,git,github,github page,go,golang,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load balancing,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,phpcbf,phpcs,portainer,postgresql,prerender,proxy,python3,queue,redis,restful,seo,server,serverless,smart contract,ssh,stress testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
+    ]
+}
+</script>
+
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "legalName": "Byte Ebi 🍤",
+    "url": "https:\/\/tech.ray247k.com\/",
+    "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "",
+        "availableLanguage": [
+            "Mandarin",
+            "English"
+        ]
+    },
+    "sameAs": [
+        "https://ray247k.blogspot.com/"
+    ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "[大話 AWS 雲端架構筆記] RDS",
+    "description": "簡介 RDS 和使用方法和運作機制",
+    "keywords": [
+        "AWS" 
+    ],
+    "dateCreated": "2023-04-05T00:00:00.00Z",
+    "datePublished": "2023-04-05T00:00:00.00Z",
+    "dateModified": "2023-04-05T00:00:00.00Z",
+    "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "contentUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png"
+    },
+    "breadcrumb": {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\/",
+                    "name": "Byte Ebi 🍤",
+                    "url": "https:\/\/tech.ray247k.com\/"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\//blog",
+                    "name": "Blog",
+                    "url": "https:\/\/tech.ray247k.com\//blog"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\/blog\/202304-aws-fundamental-rds\/",
+                    "name": "[大話 AWS 雲端架構筆記] RDS",
+                    "url": "https:\/\/tech.ray247k.com\/blog\/202304-aws-fundamental-rds\/"
+                }
+            }
+        ],
+        "itemListOrder": "Ascending",
+        "numberOfItems": 3
+    }
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "articleSection": "blog",
+    "name": "[大話 AWS 雲端架構筆記] RDS",
+    "headline": "\u003cp\u003e只要按幾下即可在雲端設定、操作和擴展關聯式資料庫\u003c\/p\u003e",
+    "description": "簡介 RDS 和使用方法和運作機制",
+    "inLanguage": "zh-TW",
+    "isFamilyFriendly": "true",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com\/blog\/202304-aws-fundamental-rds\/"
+    },
+    "author" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "creator" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "accountablePerson" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "copyrightHolder" : "Byte Ebi 🍤",
+    "copyrightYear" : "2023",
+    "dateCreated": "2023-04-05T00:00:00.00Z",
+    "datePublished": "2023-04-05T00:00:00.00Z",
+    "dateModified": "2023-04-05T00:00:00.00Z",
+    "publisher":{
+        "@type":"Organization",
+        "name": "Byte Ebi 🍤",
+        "url": "https://tech.ray247k.com/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+            "width":"32",
+            "height":"32"
+        }
+    },
+    "image": "https://tech.ray247k.com/img/main/logo.png",
+    "url" : "https:\/\/tech.ray247k.com\/blog\/202304-aws-fundamental-rds\/",
+    "wordCount" : "108",
+    "genre" : [ "AWS" ],
+    "keywords" : [ "AWS" ]
+}
+</script>
+
+
+
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/" class="nav">
+        
+          Blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/" class="nav link"><i class='fa fa-home'></i> home</a>
+        
+      
+        
+          
+          <a href="/about" class="nav link"><i class='far fa-id-card'></i> about</a>
+        
+      
+        
+          
+          <a href="/categories" class="nav link"><i class='fas fa-sitemap'></i> category</a>
+        
+      
+      
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    
+    <a href="#lang-menu" class="nav lang-toggle" lang="zh-tw">zh-tw</a>
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  <menu id="lang-menu" class="flyout-menu menu">
+  <a href="#" lang="zh-tw" class="nav link active">正體中文 (zh-tw)</a>
+  
+    
+      
+    
+      
+        <a href="/en" lang="en" class="nav no-lang link">English (en)</a>
+      
+    
+  
+</menu>
+
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/"><img src="/img/main/logo.png" class="circle" width="100" alt="Byte Ebi&#39;s Logo" /></a>
+  <header>
+    <h1>Byte Ebi 🍤</h1>
+  </header>
+  <main>
+    <p>每天一小口，蝦米變鯨魚</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/ray247k" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//www.linkedin.com/in/j-ray-cheng" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="/blog/202304-aws-fundamental-rds/">[大話 AWS 雲端架構筆記] RDS</a></h2>
+    
+    
+      <p>簡介 RDS 和使用方法和運作機制</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2023-04-05 00:00:00 &#43;0000 UTC">2023/04/05</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+    <div id="socnet-share">
+      
+
+
+
+
+
+    </div>
+    <div class="content">
+      <a href="/blog/202304-aws-fundamental-rds/" class="image" style="--bg-image: url('/blog/202304-aws-fundamental-rds/featured.png');">
+    <img src="/blog/202304-aws-fundamental-rds/featured.png" alt="">
+  </a>
+      <p>只要按幾下即可在雲端設定、操作和擴展關聯式資料庫</p>
+<table>
+<thead>
+<tr>
+<th>型態</th>
+<th>可控性</th>
+<th>資料庫引擎</th>
+<th>管理</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>自建</td>
+<td>系統底層</td>
+<td>自由選擇</td>
+<td>自行規劃可用性與備援</td>
+</tr>
+<tr>
+<td>RDS</td>
+<td>有限</td>
+<td>支援有限</td>
+<td>提供快照與備援機制</td>
+</tr>
+</tbody>
+</table>
+<h1 id="備援與高可用性">備援與高可用性</h1>
+<h2 id="multi-az-異地同步備份部署">Multi-AZ 異地同步備份部署</h2>
+<p>使用「多機構部署」的高可用方案，在不同的 AZ 分別準備資料庫系統<br>
+透過 Subnet Group 在不同 AZ 間建立「<strong>主從式資料庫</strong>」
+主要資料庫的資料會同步複製到備援用資料庫中，會產生較高費用</p>
+<p><img alt="Multi-AZ" src="/blog/202304-aws-fundamental-rds/maz.png"></p>
+<h2 id="snapshot-方案">Snapshot 方案</h2>
+<p>針對主要資料庫定期自動備份，也可以手動進行備份</p>
+<p>刪除 RDS 時</p>
+<ul>
+<li>定期備份：只留下最後一個備份</li>
+<li>手動備份：全部被保留</li>
+</ul>
+<h2 id="read-replicas-僅供讀取複本">Read Replicas 僅供讀取複本</h2>
+<p>為了舒緩主資料庫的流量，可使用「<strong>唯讀副本</strong>」服務來接收資料查詢的任務<br>
+Read Replicas 會跟主資料庫做<code>異步備份</code> 也能夠很快還原資料庫</p>
+<p><img alt="Read Replicas" src="/blog/202304-aws-fundamental-rds/rp.png"></p>
+<h2 id="常見架構">常見架構</h2>
+<p>透過 Multi-AZ 功能，因為主要與備援資料庫會即時同步<br>
+所以可以將建立 Snapshot 與 Read Replicas 的工作交給備援用資料庫</p>
+<p>主要資料庫的讀寫負擔減輕，且一但主資料庫停止運作<br>
+可以在短時間皆換成備用資料庫</p>
+<table>
+<thead>
+<tr>
+<th>Multi-AZ</th>
+<th>Read Replica</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主要目的是高可用性</td>
+<td>主要目的是可擴展性</td>
+</tr>
+<tr>
+<td>同步複寫</td>
+<td>非同步複寫</td>
+</tr>
+<tr>
+<td>僅主要執行個體處於作用中狀態</td>
+<td>皆可供存取，且可用於讀取擴展</td>
+</tr>
+<tr>
+<td>在單一區域內一律跨越至少兩個可用區域</td>
+<td>可以在一個可用區域內、跨可用區域或跨區域</td>
+</tr>
+</tbody>
+</table>
+<h1 id="效能調校">效能調校</h1>
+<h2 id="param-groups-使用參數群組">Param Groups 使用參數群組</h2>
+<p>RDS 不開放作業系統底層，為了方便調校資料庫參數所以提供了 <a href="https://docs.aws.amazon.com/zh_tw/AmazonRDS/latest/UserGuide/USER_WorkingWithParamGroups.html"
+   
+    target="_blank" rel="noreferrer noopener">Param Groups
+</a>
+ 功能</p>
+<h1 id="安全性">安全性</h1>
+<h2 id="rds-proxy">RDS Proxy</h2>
+<p>為了協助控管資料庫連線，AWS 推出了 <a href="https://docs.aws.amazon.com/zh_tw/AmazonRDS/latest/UserGuide/rds-proxy.html"
+   
+    target="_blank" rel="noreferrer noopener">RDS Proxy
+</a>
+ 來簡化 RDS 資料庫執行個體連線管理<br>
+當有多個 Server 要求存取資料庫，RDS Proxy 可以協助管理資料庫連線<br>
+避免大量連線造成資料庫(<del>和工程師</del>)崩潰</p>
+<p>可以在不將資料庫帳號密碼公開的情況下<br>
+讓應用程式後透過 IAM 權限到串接到 RDS Proxy<br>
+並將憑證安全地存放在 <a href="https://docs.aws.amazon.com/zh_tw/secretsmanager/latest/userguide/intro.html"
+   
+    target="_blank" rel="noreferrer noopener">AWS Secrets Manager
+</a>
+</p>
+<p>交由 RDS Proxy 搭配 Secret Manager 來協助和資料庫進行連線<br>
+讓員工在不知道帳號密碼的情況下也可以連線到資料庫，加強連線安全</p>
+
+      
+      
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/ray247k/button?referrer=https%3a%2f%2ftech.ray247k.com%2fblog%2f202304-aws-fundamental-rds%2f" width="100%" frameborder=0></iframe>
+
+    </div>
+    <footer>
+      <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/aws/">AWS</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/aws/">AWS</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+    </footer>
+  </article>
+  
+    
+
+  
+  <div class="pagination">
+    
+      <a href="/blog/202304-aws-fundamental-route53/" class="button left"><span>[大話 AWS 雲端架構筆記] Route 53</span></a>
+    
+    
+      <a href="/blog/202303-aws-fundamental-s3/" class="button right"><span>[大話 AWS 雲端架構筆記] S3</span></a>
+    
+  </div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>最新文章</h1>
+      </header>
+      
+      <article class="mini-post">
+          <a href="/blog/202311-aws-dynamodb-pitr/" class="image" style="--bg-image: url('/blog/202311-aws-dynamodb-pitr/featured.jpg');">
+    <img src="/blog/202311-aws-dynamodb-pitr/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/blog/202311-aws-dynamodb-pitr/">AWS DynamoDB 時間點還原 point-in-time recovery (PITR)</a></h2>
+          <time class="published" datetime="2023-11-03 00:00:00 &#43;0000 UTC">2023/11/03</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/" class="image" style="--bg-image: url('/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg');">
+    <img src="/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/">Golang 中 Struct 內型別用指針和值的差異和時機</a></h2>
+          <time class="published" datetime="2023-06-25 00:00:00 &#43;0000 UTC">2023/06/25</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202304-aws-fundamental-cloudwatch-and-cloudtrail/" class="image" style="--bg-image: url('/blog/202304-aws-fundamental-cloudwatch-and-cloudtrail/featured.png');">
+    <img src="/blog/202304-aws-fundamental-cloudwatch-and-cloudtrail/featured.png" alt="">
+  </a>
+        <header>
+          <h2><a href="/blog/202304-aws-fundamental-cloudwatch-and-cloudtrail/">[大話 AWS 雲端架構筆記] CloudWatch 與 CloudTrail</a></h2>
+          <time class="published" datetime="2023-04-25 00:00:00 &#43;0000 UTC">2023/04/25</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202304-aws-fundamental-route53/" class="image" style="--bg-image: url('/blog/202304-aws-fundamental-route53/featured.png');">
+    <img src="/blog/202304-aws-fundamental-route53/featured.png" alt="">
+  </a>
+        <header>
+          <h2><a href="/blog/202304-aws-fundamental-route53/">[大話 AWS 雲端架構筆記] Route 53</a></h2>
+          <time class="published" datetime="2023-04-15 00:00:00 &#43;0000 UTC">2023/04/15</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202304-aws-fundamental-rds/" class="image" style="--bg-image: url('/blog/202304-aws-fundamental-rds/featured.png');">
+    <img src="/blog/202304-aws-fundamental-rds/featured.png" alt="">
+  </a>
+        <header>
+          <h2><a href="/blog/202304-aws-fundamental-rds/">[大話 AWS 雲端架構筆記] RDS</a></h2>
+          <time class="published" datetime="2023-04-05 00:00:00 &#43;0000 UTC">2023/04/05</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/blog/" class="button">查看更多</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="/categories">Category</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/categories/devops/">devops<span class="count">24</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/node.js/">node.js<span class="count">22</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/leetcode/">leetcode<span class="count">13</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/golang/">golang<span class="count">11</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/aws/">aws<span class="count">9</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/python3/">python3<span class="count">9</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/php/">php<span class="count">7</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/laravel/">laravel<span class="count">6</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/">架站相關<span class="count">6</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/serverless/">serverless<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/%E5%AF%A6%E7%94%A8%E5%B7%A5%E5%85%B7/">實用工具<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">版本控制<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%9C%8D%E5%8B%99/">第三方服務<span class="count">1</span></a>
+          </li>
+          
+        </ul>
+      </section>
+    
+  
+
+  
+  <section id="tags">
+    <header>
+      <h1><a href="/tags">Tag</a></h1>
+    </header>
+    <div class="li-x post-meta tags-md" style="margin-left: 0.5em;">
+      <ul>
+        
+        
+        <li>
+          <a href="/tags/devops/">devops (27)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/node.js/">node.js (22)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/vue/">vue (15)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/leetcode/">leetcode (13)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/docker/">docker (12)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/aws/">aws (11)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/go/">go (11)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/golang/">golang (11)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/php/">php (11)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/containerization/">containerization (10)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%AE%B9%E5%99%A8%E6%8A%80%E8%A1%93/">容器技術 (10)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/express/">express (9)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/python3/">python3 (9)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cicd/">cicd (8)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/leetcode-easy/">leetcode-easy (8)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/gcp/">gcp (7)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/laravel/">laravel (7)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/docker-compose/">docker compose (6)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/vuex/">vuex (6)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/composer/">composer (5)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/element-ui/">element-ui (5)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/leetcode-medium/">leetcode-medium (5)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/drone/">drone (4)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/jenkins/">jenkins (4)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cloudflare/">cloudflare (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/mongodb/">mongodb (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/mutation/">mutation (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/restful/">restful (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/ssh/">ssh (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/">架站相關 (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/chatbot/">chatbot (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/component/">component (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/discord/">discord (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/dns/">dns (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/getter/">getter (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/google-domains/">google domains (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/linux/">linux (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/nginx/">nginx (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/vue-router/">vue-router (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/vue-ui/">vue-ui (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/apache-bench/">apache bench (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/auto-scaling/">auto scaling (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/axios/">axios (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/blockchain/">blockchain (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cdn/">cdn (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cloudflare-workers/">cloudflare workers (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cors/">cors (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/csv/">csv (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/domain-name/">domain name (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/excel/">excel (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/ffmpeg/">ffmpeg (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/gas/">gas (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/gcr/">gcr (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/git/">git (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/github/">github (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/github-page/">github page (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/google-app-script/">google app script (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/google-container-registry/">google container registry (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/google-sheets/">google sheets (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/grumphp/">grumphp (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/laravel-excel/">laravel-excel (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/load-balancing/">load balancing (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/ngrok/">ngrok (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/php-fpm/">php-fpm (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/phpcbf/">phpcbf (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/phpcs/">phpcs (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/portainer/">portainer (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/postgresql/">postgresql (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/prerender/">prerender (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/proxy/">proxy (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/queue/">queue (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/redis/">redis (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/seo/">seo (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/server/">server (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/serverless/">serverless (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/smart-contract/">smart contract (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/stress-testing/">stress testing (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/subdomain/">subdomain (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E4%BC%BA%E6%9C%8D%E5%99%A8/">伺服器 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%80%8B%E4%BA%BA%E5%93%81%E7%89%8C/">個人品牌 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%9F%9F%E5%90%8D/">域名 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%A3%93%E5%8A%9B%E6%B8%AC%E8%A9%A6/">壓力測試 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%AD%90%E7%B6%B2%E5%9F%9F/">子網域 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E6%90%9C%E5%B0%8B%E5%BC%95%E6%93%8E%E6%9C%80%E4%BD%B3%E5%8C%96/">搜尋引擎最佳化 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">版本控制 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E8%B2%B7%E7%B6%B2%E5%9D%80/">買網址 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E9%98%B2%E7%81%AB%E7%89%86/">防火牆 (1)</a>
+        </li>
+        
+      </ul>
+
+    </div>
+  </section>
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+    
+    <p class="copyright">
+        © 2023 Byte Ebi 🍤
+    </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>
+      hljs.configure({ ignoreUnescapedHTML: true }); 
+      hljs.highlightAll();
+    </script><script src="/js/bundle.min.a95078f9ef9e8d5748b63296d221d3c71357db75caa6ef260b251d5c8bbc8997.js" integrity="sha256-qVB4&#43;e&#43;ejVdItjKW0iHTxxNX23XKpu8mCyUdXIu8iZc="></script>
+    <script src="/js/add-on.js"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-LTGVYYWC2J', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </div>
+  </body>
+  
+</html>

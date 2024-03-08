@@ -16,6 +16,55 @@
       <description>&lt;p&gt;時間點還原 (PITR) 是一種強大的資料恢復功能，對於 AWS DynamoDB 和其他數據庫服務至關重要。&lt;br&gt;&#xA;透過 PITR，可以在意外數據丟失或損壞的情況下，將資料還原至先前的狀態，進而保護業務的持續運作。&lt;br&gt;&#xA;此外，PITR 可以定期備份資料並保留多個時間點的版本，這有助於追蹤和修復可能發生的錯誤。&lt;br&gt;&#xA;最重要的是，PITR 可以按照需求靈活的還原資料，而不會影響其他系統操作，從而提高了系統的可靠性和穩定性。&lt;/p&gt;</description>
     </item>
     <item>
+      <title>[大話 AWS 雲端架構筆記] CloudWatch 與 CloudTrail</title>
+      <link>https://tech.ray247k.com/blog/202304-aws-fundamental-cloudwatch-and-cloudtrail/</link>
+      <pubDate>Tue, 25 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/blog/202304-aws-fundamental-cloudwatch-and-cloudtrail/</guid>
+      <description>&lt;p&gt;Amazon CloudWatch 監控您的 Amazon Web Services（AWS）資源和您實時運行AWS的應用程序&lt;br&gt;&#xA;AWS CloudTrail 是一種AWS 服務，可協助您實現AWS 帳戶的操作與風險稽核、治理和合規&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[大話 AWS 雲端架構筆記] Route 53</title>
+      <link>https://tech.ray247k.com/blog/202304-aws-fundamental-route53/</link>
+      <pubDate>Sat, 15 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/blog/202304-aws-fundamental-route53/</guid>
+      <description>&lt;p&gt;提供域名購買、域名解析轉發、系統健康檢查、流量轉送&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[大話 AWS 雲端架構筆記] RDS</title>
+      <link>https://tech.ray247k.com/blog/202304-aws-fundamental-rds/</link>
+      <pubDate>Wed, 05 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/blog/202304-aws-fundamental-rds/</guid>
+      <description>&lt;p&gt;只要按幾下即可在雲端設定、操作和擴展關聯式資料庫&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[大話 AWS 雲端架構筆記] S3</title>
+      <link>https://tech.ray247k.com/blog/202303-aws-fundamental-s3/</link>
+      <pubDate>Sat, 25 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/blog/202303-aws-fundamental-s3/</guid>
+      <description>&lt;p&gt;可擴展性、資料可用性、安全性和效能的雲端物件儲存&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[大話 AWS 雲端架構筆記] EC2</title>
+      <link>https://tech.ray247k.com/blog/202303-aws-fundamental-ec2/</link>
+      <pubDate>Mon, 20 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/blog/202303-aws-fundamental-ec2/</guid>
+      <description>&lt;p&gt;讓使用者可以租用雲端電腦運行所需應用的系統&lt;br&gt;&#xA;EC2藉由提供Web服務的方式讓使用者可以彈性地運行自己的Amazon機器映像檔，使用者將可以在這個虛擬機器上運行任何自己想要的軟體或應用程式&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[大話 AWS 雲端架構筆記] VPC</title>
+      <link>https://tech.ray247k.com/blog/202303-aws-fundamental-vpc/</link>
+      <pubDate>Fri, 10 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/blog/202303-aws-fundamental-vpc/</guid>
+      <description>&lt;p&gt;Amazon Virtual Private Cloud (Amazon VPC) 可讓您完全控制虛擬聯網環境，包括資源置放、連線和安全&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[大話 AWS 雲端架構筆記] IAM</title>
+      <link>https://tech.ray247k.com/blog/202301-aws-fundamental-iam/</link>
+      <pubDate>Tue, 10 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/blog/202301-aws-fundamental-iam/</guid>
+      <description>&lt;p&gt;因為 root 權限太大，必須切割成多個用戶和群組來設定權限&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>[AWS 101] 什麼是 SNS 和 SQS</title>
       <link>https://tech.ray247k.com/blog/202210-aws101-what-is-sns-and-sqs/</link>
       <pubDate>Thu, 06 Oct 2022 00:00:00 +0000</pubDate>

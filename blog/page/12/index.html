@@ -210,14 +210,14 @@
   <header>
   <div class="title">
     
-      <h2><a href="/blog/202010-express-vue-build-ecommerce-14-refactor-component/">[Express&#43;Vue 搭建電商網站] 14 使用組件思維重構頁面邏輯</a></h2>
+      <h2><a href="/blog/202011-express-vue-build-ecommerce-21-elemen-ui-loading-animation/">[Express&#43;Vue 搭建電商網站] 21 使用 Element UI 加入載入過動畫</a></h2>
     
     
-      <p>使用 Express &#43; Vue 搭建一個電商網站 - 使用組件思維重構頁面邏輯</p>
+      <p>使用 Express &#43; Vue 搭建一個電商網站 - 套用 Element UI 加入載入動畫</p>
     
   </div>
   <div class="meta">
-    <time datetime="2020-10-03 00:00:00 &#43;0000 UTC">2020/10/03</time>
+    <time datetime="2020-11-27 00:00:00 &#43;0000 UTC">2020/11/27</time>
     <p>Ray</p>
     
   </div>
@@ -226,12 +226,12 @@
   <div class="content">
     
     
-    <p>在先前我們學會怎麼使用 Vuex 進行狀態管理、如何使用 Action 取得 API 資料，以及使用 Mutation 更改狀態<br>
-而這一篇中將透過 Vue 的組件化思維簡化原本複雜且分散於各個頁面的邏輯</p>
+    <p>等待的時候很無聊，所以我們加點動畫<br>
+基本的動畫是用來告訴使用者動作執行結果，做到這樣使用者才知道自己剛剛做的事情有沒有完成</p>
 
   </div>
   <footer>
-    <a href="/blog/202010-express-vue-build-ecommerce-14-refactor-component/" class="button big">閱讀全文</a>
+    <a href="/blog/202011-express-vue-build-ecommerce-21-elemen-ui-loading-animation/" class="button big">閱讀全文</a>
     <div class="stats">
   
     <ul class="categories">
@@ -250,7 +250,7 @@
         
           <li><a class="article-terms-link" href="/tags/node.js/">node.js</a></li>
         
-          <li><a class="article-terms-link" href="/tags/component/">component</a></li>
+          <li><a class="article-terms-link" href="/tags/element-ui/">element-ui</a></li>
         
       
     </ul>
@@ -265,14 +265,14 @@
   <header>
   <div class="title">
     
-      <h2><a href="/blog/202009-express-vue-build-ecommerce-13-how-to-use-axios/">[Express&#43;Vue 搭建電商網站] 13 使用 Axios 取得 API 資料</a></h2>
+      <h2><a href="/blog/202011-express-vue-build-ecommerce-20-element-ui-fix-function/">[Express&#43;Vue 搭建電商網站] 20 重構後的頁面功能恢復</a></h2>
     
     
-      <p>使用 Express &#43; Vue 搭建一個電商網站 - 使用 Axios 取得 API 資料</p>
+      <p>使用 Express &#43; Vue 搭建一個電商網站 - 重構後的頁面功能恢復</p>
     
   </div>
   <div class="meta">
-    <time datetime="2020-09-26 00:00:00 &#43;0000 UTC">2020/09/26</time>
+    <time datetime="2020-11-20 00:00:00 &#43;0000 UTC">2020/11/20</time>
     <p>Ray</p>
     
   </div>
@@ -281,11 +281,13 @@
   <div class="content">
     
     
-    <p>使用 Axios 取得後端 API 的資料</p>
+    <p>要是你跟老闆說：<strong>現在我們專案的畫面好看了，但是功能全壞了</strong><br>
+老闆應該會一臉問號問你在講什麼？<br>
+廢話不多說，趕快來修好上一篇中被我們弄壞的功能！</p>
 
   </div>
   <footer>
-    <a href="/blog/202009-express-vue-build-ecommerce-13-how-to-use-axios/" class="button big">閱讀全文</a>
+    <a href="/blog/202011-express-vue-build-ecommerce-20-element-ui-fix-function/" class="button big">閱讀全文</a>
     <div class="stats">
   
     <ul class="categories">
@@ -304,9 +306,7 @@
         
           <li><a class="article-terms-link" href="/tags/node.js/">node.js</a></li>
         
-          <li><a class="article-terms-link" href="/tags/vuex/">vuex</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/axios/">axios</a></li>
+          <li><a class="article-terms-link" href="/tags/element-ui/">element-ui</a></li>
         
       
     </ul>
@@ -321,14 +321,14 @@
   <header>
   <div class="title">
     
-      <h2><a href="/blog/202009-express-vue-build-ecommerce-12-vuex-mutation/">[Express&#43;Vue 搭建電商網站] 12 在 Vuex 使用 Mutation 管理狀態</a></h2>
+      <h2><a href="/blog/202011-express-vue-build-ecommerce-19-elemen-ui-refactor-page/">[Express&#43;Vue 搭建電商網站] 19 使用 Element UI 重構畫面</a></h2>
     
     
-      <p>使用 Express &#43; Vue 搭建一個電商網站 - 在 Vuex 使用 Mutation 管理狀態</p>
+      <p>使用 Express &#43; Vue 搭建一個電商網站 - 套用 Element UI 到頁面上</p>
     
   </div>
   <div class="meta">
-    <time datetime="2020-09-18 00:00:00 &#43;0000 UTC">2020/09/18</time>
+    <time datetime="2020-11-13 00:00:00 &#43;0000 UTC">2020/11/13</time>
     <p>Ray</p>
     
   </div>
@@ -337,11 +337,123 @@
   <div class="content">
     
     
-    <p>透過 Mutation 管理 Vuex中的狀態</p>
+    <p>重構可能會造成一些功能癱瘓，本章先著重在畫面，讓畫面變美美噠<br>
+後續的文章會把功能修復，莫急莫慌莫害怕</p>
 
   </div>
   <footer>
-    <a href="/blog/202009-express-vue-build-ecommerce-12-vuex-mutation/" class="button big">閱讀全文</a>
+    <a href="/blog/202011-express-vue-build-ecommerce-19-elemen-ui-refactor-page/" class="button big">閱讀全文</a>
+    <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/node.js/">node.js</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/vue/">vue</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/node.js/">node.js</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/element-ui/">element-ui</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+  </footer>
+</article>
+
+  
+    <article class="post">
+  <header>
+  <div class="title">
+    
+      <h2><a href="/blog/202011-express-vue-build-ecommerce-18-element-ui-product-list/">[Express&#43;Vue 搭建電商網站] 18 套用 Element UI 到頁面上</a></h2>
+    
+    
+      <p>使用 Express &#43; Vue 搭建一個電商網站 - 套用 Element UI 到頁面上</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2020-11-06 00:00:00 &#43;0000 UTC">2020/11/06</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+  <div class="content">
+    
+    
+    <p>先前我們已經把電商的基本功能完成了，只是畫面有點差強人意。<br>
+在這一節中我們使用 <code>Element UI</code> 來讓畫面更加美觀</p>
+
+  </div>
+  <footer>
+    <a href="/blog/202011-express-vue-build-ecommerce-18-element-ui-product-list/" class="button big">閱讀全文</a>
+    <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/node.js/">node.js</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/vue/">vue</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/node.js/">node.js</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/element-ui/">element-ui</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+  </footer>
+</article>
+
+  
+    <article class="post">
+  <header>
+  <div class="title">
+    
+      <h2><a href="/blog/202010-express-vue-build-ecommerce-17-use-const-instead-of-variable/">[Express&#43;Vue 搭建電商網站] 17 使用常數管理變數</a></h2>
+    
+    
+      <p>使用 Express &#43; Vue 搭建一個電商網站 - 使用常數管理變數</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2020-10-24 00:00:00 &#43;0000 UTC">2020/10/24</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+  <div class="content">
+    
+    
+    <p>很多時候我們會把功能封裝到組件內，以便重複使用組件，而在組件內我們會定義很多方法名稱去呼叫不同的事件<br>
+這中間只要有一個字打錯，整個流程就會錯誤，並且非常難除錯，因此我們會使用常數維持一致<br>
+打錯字的時候就會報錯，方便除錯</p>
+
+  </div>
+  <footer>
+    <a href="/blog/202010-express-vue-build-ecommerce-17-use-const-instead-of-variable/" class="button big">閱讀全文</a>
     <div class="stats">
   
     <ul class="categories">
@@ -377,14 +489,14 @@
   <header>
   <div class="title">
     
-      <h2><a href="/blog/202009-express-vue-build-ecommerce-11-install_vuex/">[Express&#43;Vue 搭建電商網站] 11 認識 vuex</a></h2>
+      <h2><a href="/blog/202010-express-vue-build-ecommerce-16-refactor-vue-store/">[Express&#43;Vue 搭建電商網站] 16 抽離 Vuex store 中的邏輯</a></h2>
     
     
-      <p>使用 Express &#43; Vue 搭建一個電商網站 - 認識 vuex</p>
+      <p>使用 Express &#43; Vue 搭建一個電商網站 - 抽離 Vuex store 中的邏輯</p>
     
   </div>
   <div class="meta">
-    <time datetime="2020-09-12 00:00:00 &#43;0000 UTC">2020/09/12</time>
+    <time datetime="2020-10-16 00:00:00 &#43;0000 UTC">2020/10/16</time>
     <p>Ray</p>
     
   </div>
@@ -393,17 +505,13 @@
   <div class="content">
     
     
-    <p><a href="https://vuex.vuejs.org/zh/"
-   
-    target="_blank" rel="noreferrer noopener">vuex
-</a>
- 來協助我們集中管理組件狀態，就不用到處維護狀態<br>
-使得組件只需要專注於渲染頁面，而前端狀態都保留在 vuex 中建立的狀態庫中<br>
-所謂狀態庫，其實也就是一個 Javascript 物件</p>
+    <p>隨著我們的迷你電商網站越來越完整，在 Vuex store 中的程式也越來越龐大<br>
+不只有 getters、mutation 還有 actions<br>
+在章節中先試著將這些複雜的邏輯拆分成個別的檔案，抽出 Getters、Mutations 和 Actions 邏輯</p>
 
   </div>
   <footer>
-    <a href="/blog/202009-express-vue-build-ecommerce-11-install_vuex/" class="button big">閱讀全文</a>
+    <a href="/blog/202010-express-vue-build-ecommerce-16-refactor-vue-store/" class="button big">閱讀全文</a>
     <div class="stats">
   
     <ul class="categories">
@@ -424,6 +532,10 @@
         
           <li><a class="article-terms-link" href="/tags/vuex/">vuex</a></li>
         
+          <li><a class="article-terms-link" href="/tags/mutation/">mutation</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/getter/">getter</a></li>
+        
       
     </ul>
   
@@ -437,14 +549,14 @@
   <header>
   <div class="title">
     
-      <h2><a href="/blog/202009-express-vue-build-ecommerce-10-new-product-page/">[Express&#43;Vue 搭建電商網站] 10 用 vue 建立一個表單</a></h2>
+      <h2><a href="/blog/202010-express-vue-build-ecommerce-15-use-vuex-getters/">[Express&#43;Vue 搭建電商網站] 15 使用 Vuex Getters 複用資料邏輯</a></h2>
     
     
-      <p>使用 Express &#43; Vue 搭建一個電商網站 - 用 vue 建立一個表單</p>
+      <p>使用 Express &#43; Vue 搭建一個電商網站 - 使用 Vuex Getters 複用資料邏輯</p>
     
   </div>
   <div class="meta">
-    <time datetime="2020-09-04 00:00:00 &#43;0000 UTC">2020/09/04</time>
+    <time datetime="2020-10-09 00:00:00 &#43;0000 UTC">2020/10/09</time>
     <p>Ray</p>
     
   </div>
@@ -453,12 +565,16 @@
   <div class="content">
     
     
-    <p>後端的 API 上次已經開了出來，接著來建立前端使用的表單<br>
-這次的目標是建立新增商品時所用的表單，會使用到基本的 Vue 知識，如果沒看過文件的可以先了解一下官方文件</p>
+    <p>有時候我們需要 <code>computed</code> store 中的 state，在每個組件中複製貼上同樣的 <code>computed</code> 似乎不是一個明智的作法<br>
+<a href="https://vuex.vuejs.org/zh/guide/getters.html"
+   
+    target="_blank" rel="noreferrer noopener">Vuex Getter
+</a>
+ 是 Vuex 提供讓我們可以對 Vuex store 中 state 資料做預處理的方法，就可以達成這個目的</p>
 
   </div>
   <footer>
-    <a href="/blog/202009-express-vue-build-ecommerce-10-new-product-page/" class="button big">閱讀全文</a>
+    <a href="/blog/202010-express-vue-build-ecommerce-15-use-vuex-getters/" class="button big">閱讀全文</a>
     <div class="stats">
   
     <ul class="categories">
@@ -477,115 +593,9 @@
         
           <li><a class="article-terms-link" href="/tags/node.js/">node.js</a></li>
         
-          <li><a class="article-terms-link" href="/tags/component/">component</a></li>
+          <li><a class="article-terms-link" href="/tags/vuex/">vuex</a></li>
         
-      
-    </ul>
-  
-</div>
-
-  </footer>
-</article>
-
-  
-    <article class="post">
-  <header>
-  <div class="title">
-    
-      <h2><a href="/blog/202008-express-vue-build-ecommerce-09-test-api/">[Express&#43;Vue 搭建電商網站] 09 API 測試</a></h2>
-    
-    
-      <p>使用 Express &#43; Vue 搭建一個電商網站 - API 測試</p>
-    
-  </div>
-  <div class="meta">
-    <time datetime="2020-08-28 00:00:00 &#43;0000 UTC">2020/08/28</time>
-    <p>Ray</p>
-    
-  </div>
-</header>
-
-  <div class="content">
-    
-    
-    <p>在上一篇中完成了第一個 API，這一篇要來測試 API 是不是正常工作</p>
-
-  </div>
-  <footer>
-    <a href="/blog/202008-express-vue-build-ecommerce-09-test-api/" class="button big">閱讀全文</a>
-    <div class="stats">
-  
-    <ul class="categories">
-      
-        
-          <li><a class="article-terms-link" href="/categories/node.js/">node.js</a></li>
-        
-      
-    </ul>
-  
-  
-    <ul class="tags">
-      
-        
-          <li><a class="article-terms-link" href="/tags/express/">express</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/node.js/">node.js</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/restful/">RESTful</a></li>
-        
-      
-    </ul>
-  
-</div>
-
-  </footer>
-</article>
-
-  
-    <article class="post">
-  <header>
-  <div class="title">
-    
-      <h2><a href="/blog/202008-express-vue-build-ecommerce-08-build-api/">[Express&#43;Vue 搭建電商網站] 08 API 建立</a></h2>
-    
-    
-      <p>使用 Express &#43; Vue 搭建一個電商網站 - API 建立</p>
-    
-  </div>
-  <div class="meta">
-    <time datetime="2020-08-21 00:00:00 &#43;0000 UTC">2020/08/21</time>
-    <p>Ray</p>
-    
-  </div>
-</header>
-
-  <div class="content">
-    
-    
-    <p>在上一篇中建立了 Router，這一篇要做的就是將 Controller 完成，如此就完成了第一個 API</p>
-
-  </div>
-  <footer>
-    <a href="/blog/202008-express-vue-build-ecommerce-08-build-api/" class="button big">閱讀全文</a>
-    <div class="stats">
-  
-    <ul class="categories">
-      
-        
-          <li><a class="article-terms-link" href="/categories/node.js/">node.js</a></li>
-        
-      
-    </ul>
-  
-  
-    <ul class="tags">
-      
-        
-          <li><a class="article-terms-link" href="/tags/express/">express</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/node.js/">node.js</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/restful/">RESTful</a></li>
+          <li><a class="article-terms-link" href="/tags/getter/">getter</a></li>
         
       
     </ul>
@@ -634,32 +644,32 @@
       </article>
       
       <article class="mini-post">
-          <a href="/blog/202301-ffmpeg-video-convert/" class="image" style="--bg-image: url('/blog/202301-ffmpeg-video-convert/featured.png');">
-    <img src="/blog/202301-ffmpeg-video-convert/featured.png" alt="">
+          <a href="/blog/202304-aws-fundamental-cloudwatch-and-cloudtrail/" class="image" style="--bg-image: url('/blog/202304-aws-fundamental-cloudwatch-and-cloudtrail/featured.png');">
+    <img src="/blog/202304-aws-fundamental-cloudwatch-and-cloudtrail/featured.png" alt="">
   </a>
         <header>
-          <h2><a href="/blog/202301-ffmpeg-video-convert/">透過 FFmpeg 轉換影片格式</a></h2>
-          <time class="published" datetime="2023-01-01 00:00:00 &#43;0000 UTC">2023/01/01</time>
+          <h2><a href="/blog/202304-aws-fundamental-cloudwatch-and-cloudtrail/">[大話 AWS 雲端架構筆記] CloudWatch 與 CloudTrail</a></h2>
+          <time class="published" datetime="2023-04-25 00:00:00 &#43;0000 UTC">2023/04/25</time>
         </header>
       </article>
       
       <article class="mini-post">
-          <a href="/blog/202210-aws101-what-is-sns-and-sqs/" class="image" style="--bg-image: url('/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg');">
-    <img src="/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg" alt="">
+          <a href="/blog/202304-aws-fundamental-route53/" class="image" style="--bg-image: url('/blog/202304-aws-fundamental-route53/featured.png');">
+    <img src="/blog/202304-aws-fundamental-route53/featured.png" alt="">
   </a>
         <header>
-          <h2><a href="/blog/202210-aws101-what-is-sns-and-sqs/">[AWS 101] 什麼是 SNS 和 SQS</a></h2>
-          <time class="published" datetime="2022-10-06 00:00:00 &#43;0000 UTC">2022/10/06</time>
+          <h2><a href="/blog/202304-aws-fundamental-route53/">[大話 AWS 雲端架構筆記] Route 53</a></h2>
+          <time class="published" datetime="2023-04-15 00:00:00 &#43;0000 UTC">2023/04/15</time>
         </header>
       </article>
       
       <article class="mini-post">
-          <a href="/blog/202210-what-is-serverless/" class="image" style="--bg-image: url('/blog/202210-what-is-serverless/featured.jpg');">
-    <img src="/blog/202210-what-is-serverless/featured.jpg" alt="">
+          <a href="/blog/202304-aws-fundamental-rds/" class="image" style="--bg-image: url('/blog/202304-aws-fundamental-rds/featured.png');">
+    <img src="/blog/202304-aws-fundamental-rds/featured.png" alt="">
   </a>
         <header>
-          <h2><a href="/blog/202210-what-is-serverless/">Serverless 簡介</a></h2>
-          <time class="published" datetime="2022-10-04 00:00:00 &#43;0000 UTC">2022/10/04</time>
+          <h2><a href="/blog/202304-aws-fundamental-rds/">[大話 AWS 雲端架構筆記] RDS</a></h2>
+          <time class="published" datetime="2023-04-05 00:00:00 &#43;0000 UTC">2023/04/05</time>
         </header>
       </article>
       
@@ -698,6 +708,10 @@
           </li>
           
           <li>
+              <a href="/categories/aws/">aws<span class="count">9</span></a>
+          </li>
+          
+          <li>
               <a href="/categories/python3/">python3<span class="count">9</span></a>
           </li>
           
@@ -711,10 +725,6 @@
           
           <li>
               <a href="/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/">架站相關<span class="count">6</span></a>
-          </li>
-          
-          <li>
-              <a href="/categories/aws/">aws<span class="count">2</span></a>
           </li>
           
           <li>
@@ -765,6 +775,10 @@
         
         <li>
           <a href="/tags/docker/">docker (12)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/aws/">aws (11)</a>
         </li>
         
         <li>
@@ -829,10 +843,6 @@
         
         <li>
           <a href="/tags/leetcode-medium/">leetcode-medium (5)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/aws/">aws (4)</a>
         </li>
         
         <li>
@@ -1132,4 +1142,5 @@ if (!doNotTrack) {
 
     </div>
   </body>
+  
 </html>
