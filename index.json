@@ -11,6 +11,48 @@
     "body": "之前一直有個疑問「Struct 定義的時候，Type 什麼時候要傳值？什麼時候傳址？」\n網路上看了許多不同專案似乎都有不同的做法，直到最近遇到的問題讓我有了一點想法\n在專案中我們常常先定義 Request 傳入的 Struct\n再利用json.Unmarshal將傳入的 json 轉換成 Struct，以利後續的操作\n以前的 Struct 欄位需要的的預設值都是 false 所以 Type 都是直接傳值\n這次的情境是遇到一個欄位預設值 是 true 就出意外了\n直接用先看程式碼和執行結果\npackage main import ( \u0026#34;encoding/json\u0026#34; \u0026#34;fmt\u0026#34; ) type John struct { Name string `json:\u0026#34;name\u0026#34;` CanRun bool `json:\u0026#34;canRun\u0026#34;` CanFly bool `json:\u0026#34;canFly\u0026#34;` } type Doe struct { Name string `json:\u0026#34;name\u0026#34;` CanRun *bool `json:\u0026#34;canRun\u0026#34;` CanFly *bool `json:\u0026#34;canFly\u0026#34;` } func main() { var param = []byte(`{\u0026#34;Name\u0026#34;:\u0026#34;John Doe\u0026#34;, \u0026#34;canRun\u0026#34;:true}`) defult := true var john = new(John) json.Unmarshal(param, \u0026amp;john) jsondata, _ := json.Marshal(john) fmt.Println(string(jsondata)) var doe = new(Doe) json.Unmarshal(param, \u0026amp;doe) doejsondata, _ := json.Marshal(doe) fmt.Println(string(doejsondata)) if doe.CanFly == nil { doe.CanFly = \u0026amp;defult } doejsondata, _ = json.Marshal(doe) fmt.Println(string(doejsondata)) } 在範例中有兩個 Struct\n分別是 Type 為布林傳值的 John 和 Type 為布林指標的 Doe\n若CanFly這個欄位是「可選的」，並且預設值是「true」\n範例程式碼中的param模擬當使用者沒有傳入資料時的 Request\n分別指派型別為 John 和 Doe 的變數 使用json.Unmarshal將傳入的 json 字串轉成 Struct 透過json.Marshal轉成 json 字串方便閱讀並列印在畫面上 輸出結果第一行是在結構體中 Type 使用布林值的 John\n當new(John)的時候會自動帶入所謂的 zero value ，布林的預設 zero value 是 false\n而Name和CanRnu都因為有傳入的關係，所以 zero value 被覆寫了\n但是因為CanFly是選填，而使用者未傳入所以依然是 false\n我們無法在後續程式中判斷究竟是 user 傳入 false 還是那是 zero value\n若是在 Struct 中使用「指針」做為型別，則可以看到輸出結果第二行CanFly是 null\n如此就可以在後續使用條件判斷式將預設值設定成「true」\n這就是這次學習到在將 json 字串轉換成 Struct 時會遇到的預設值問題，以及如何用指標來解決這個問題\n",
     "ref": "/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/"
   },{
+    "title": "[大話 AWS 雲端架構筆記] CloudFormation",
+    "date": "",
+    "description": "簡介 CloudFormation 和使用方法和運作機制",
+    "body": "CloudFormation 是 AWS 原生的 Infrastructure as Code(IaC) 服務\n將基礎設施視為程式碼，可讓您對 AWS 和第三方資源進行建模、佈建和管理\nCloudFormation Designer AWS CloudFormation 設計工具是一種圖形工具\n可用於建立、檢視和修改 AWS CloudFormation 範本\n名詞 Template 使用 JSON 或是 YAML 格式宣告要使用的 AWS 資源\n內容組成 Resources：要建立的 AWS 資源 Parameters：使用這個 Template 時需要提供的參數 Mappings：有些設定如 region id 可以預先定義好 Outputs：在 Stack 建立完成後產生的輸出值 Stack 在 Template 內用來表達一系列 AWS 資源\n一個 Template 內可以有多個 Stack\n可以將相關的服務包含在同一個 Stack 下，例如：Web 伺服器、資料庫\n只要將 Stack 刪除就可以一口氣刪除相關資源\nChange Set 可以預覽 Stack 變更對執行中的資源造成的影響\n屬性 DependsOn 當資源彼此有相依性時使用，會按照順序建立/刪除\n例如在 RDS 啟用之後才啟用 EC2 服務\n在關閉時也會先關閉 EC2 才關閉 RDS\nWaitCondition 在軟體安裝好之前先阻止後面的資源建立\n例如等待應用程式的伺服器安裝軟體後才啟用 ELB 服務\n",
+    "ref": "/blog/202306-aws-fundamental-cloudformation/"
+  },{
+    "title": "[大話 AWS 雲端架構筆記] ElastiCache",
+    "date": "",
+    "description": "簡介 ElastiCache 和使用方法和運作機制",
+    "body": "雲端快取服務，底層有 Redis 和 Memcached 兩種引擎\n可協助施作分片(Shard)機制\n應用場景：\n臨時狀態 資料庫中常讀取少寫入的資料 名詞 Lazy Loading 使用者第一次從資料庫取得資料時才寫入 Cache\n優點：只有被查詢過的資料進行快取，節省記憶體空間 缺點：第一次存取資料時會相對較慢 Write Through 資料每次寫入資料庫時就存一份進 Cache\n優點：寫入後無論何時使用者讀取都不需要等待查詢 缺點：冷門資料 Cache 佔用緩存空間 Redis Amazon ElastiCache for Redis 記憶體上的資料庫\n透過 Parameter Group 調整參數及效能調校\n必須先定義 Subnet Group\n接著 ElastiCache 會在子網路群組中開啟 Node\n節點裡面會使用多個 Shard 來儲存資料，並把 Shard 分散在多個節點\n如此可以避免 Node 失效後的資料遺失\n且具有 Snapshot 功能\nSubnet Group 一群 Subnet 的集合，ElastiCache 會將節點放置在其中\nNode 節點 裝載 ElastiCache 應用的 Server，每個節點都有自己的網域名\nShard 分片 在叢集模式中 Redis 會將資料拆做多份，分別儲存在多個 Redis Node 上稱作 Shard\n可以提升讀取效率與可用性\nMemcached 可做成叢集，資料會分佈在各個節點上\n但不採 Shard 的方式，如果有節點壞掉則資料就遺失了\nElastiCache 的建議就是多開一些節點，這樣一次遺失的資料就會少一點\n由於 Memcached 的資料不會同步至個節點上，所以讀取時有可能找錯節點\nAuto Discovery 為了解決 Memcached 可能會找錯節點的問題\n當使用者在尋找資料時發現找錯節點，可以自動探勘到正確的節點上\n",
+    "ref": "/blog/202306-aws-fundamental-elasticache/"
+  },{
+    "title": "[大話 AWS 雲端架構筆記] DynamoDB",
+    "date": "",
+    "description": "簡介 DynamoDB 和使用方法和運作機制",
+    "body": "分散式 NoSQL 資料庫服務\n資料存取必須透過 IAM 取得對應的 Role(EC2) 或是使用 Credential(開發者)\n名詞 Table 管理資料的基礎單位，是資料的集合\nItem 每一筆存放在 Table 中的資料\n內部以Key-Attribute的方式存在，每個Attribute內可能有多個Value\nPartition Key 作為資料分區的依據，關係到資料在分散式資料庫中擺放位置的機制\n例如將班級設為 Partition Key 則相同班級的人就會被分到同一分區\nSort Key 當進入相同 Partition 後會依照 Sort Key 進行資料排序\n例如進入班級的 Partition 後將 Sort Key 設為身高，則會依據身高進行排序\n二級索引(Secondary Index) 如果不滿意原先的 Partition Key 或是 Sort Key 配置\n可以使用二級索引來重設/增加\nLocal Secondary Index(LSI) 本機次要索引 ：是一種與基礎資料表擁有相同分割區索引鍵但不同排序索引鍵的索引\n每個分割區都會列入基礎資料表分割區的範圍，其中分割區索引鍵的值皆相同\nPartition Key 不變，只是調整 Partition 內的資料 按照新的 Sort Key 調整 必須在 Table 建立時一併建立，不能追加或是修改\n例如把 Sort Key 調整成出生月份\nGlobal Secondary Index(GSI) 全域次要索引 ：一種含分割區索引鍵或排序索引鍵的索引，索引鍵皆可與基礎資料表上的索引鍵不同\n會儲存在基本資料表以外的專屬分割區空間，且會和基本資料表分開調整\n可以把 Partition Key 和 Sort Key 一併更換\n例如改成居住縣市作為 Partition Key 並選擇學號作為 Sort Key\n計費方式 DynamoDB 依照讀寫請求的資料傳輸量來計費\n備份方案 On-Demand Backup and Restore：隨需備份與還原 Point-in-time Recovery：時間點復原 On-Demand Backup and Restore Point-in-time Recovery 備份時間 用戶自行定義 AWS 自動備份 還原 還原到用戶有備份的時間點 最近 35 天內 ",
+    "ref": "/blog/202306-aws-fundamental-dynamodb/"
+  },{
+    "title": "[大話 AWS 雲端架構筆記] SQS",
+    "date": "",
+    "description": "簡介 SQS 和使用方法和運作機制",
+    "body": "Amazon Simple Queue Service 作為任務暫存器，不需要及時處理的任務可以丟進去存放\n等系統有多餘的資源時再進行處理，可以解耦應用程式\ngraph LR; 消息產生--\u003e消息存放--\u003e消息取用; Amazon SQS 不會自動刪除訊息，且不保證消費者會實際接收到訊息\n名詞解釋 Producer 負責將使用者需求轉換成 Message，並轉送至 Queue\nMessage 在服務間傳遞的任務資訊\n預設最大值256KB\n大型檔案建議存放到 S3，Message 則紀錄檔案位置\nQueue 存放待處理任務的訊息佇列，提供給 Consumer 取用\n放到 Queue 裡的 Message 都有保留時間，時間一到就會被 SQS 刪除\n預設保留時間為 4 天，可用範圍為 60 秒~1209600 秒 ( 14 天)\nConsumer 從佇列中取出 Message 並按照內容進行任務處理\n類型 Amazon SQS 佇列類型 Consumer 對 Queue 中的 Message 處理順序分為兩種\nStandard：散落不考慮順序 FIFO：先進先出(First in first out) 消息可見性 避免任務重複處理以及設定 timeout 時間\nInvisibility 當第一個 Consumer 拉取 Message 後，Message 就會進入 Invisibility 狀態\n將 Message 暫時隱藏就不會被其他 Consumer 重複拉取\n而在處理完 Message 後需要發送Delete Message來避免重複處理\nVisibility Timeout 當一個 Consumer 在接收某個 message 時\n其他 Consumer 會有一段時間看不到該 message\n當任務沒有在 timeout 時間內被處理完\n在 timeout 後其他 Consumer 又可以看到這則 message，並開始處理\n這代表一則訊息有可能會被傳送多次\nVisibility Timeout 預設為 30 秒，下限為 0 秒，上限為 12 小時\n拉取頻率 Amazon SQS 短和長輪詢 Short polling：頻繁存取，預設情境 Long polling：存取頻率較低，成本較少 ",
+    "ref": "/blog/202305-aws-fundamental-sqs/"
+  },{
+    "title": "[大話 AWS 雲端架構筆記] Auto Scaling",
+    "date": "",
+    "description": "簡介 Auto Scaling 和使用方法和運作機制",
+    "body": "監控應用程式並按照流量變化自動增減機器，盡可能以最低成本維持穩定、可預測的效能\nLaunch Template/Configuration 告訴 EC2 Auto Scaling 要開什麼樣的機器\nEC2 Auto Scaling 提供了 Launch Template/Configuration 兩個服務\n可以使用點擊的方式做出機器啟用時的設定檔\nAuto Scaling Group 有效管理自動增減的機器，對 Instance 做群組化管裡\nAuto Scaling Group 預設會檢查其中的 EC2 狀態\n若狀態檢查失敗，則會啟動新的 EC2 來代替\n而在 Auto Scaling Group 和 ELB 一起使用的情境下\n可以變更 Auto Scaling Group 預設檢查的目標為 ELB 的 health check\nScaling Policy 告訴 EC2 Auto Scaling 增減機器的時機\n三大觸發方向\n機器數量(Maintain Size)：維持固定數量，確保關鍵任務必然有機器可處理 時間排程(Schedule Scaling)：應對固定時段會有高流量的情境 效能指標： Simple Scaling：設定閥值，超過增加機器數量，低於則減少 Step Scaling：設定多個階段(例如：CPU 使用率)，不同階段時可漸進式啟動/關閉機器 ",
+    "ref": "/blog/202305-aws-fundamental-auto-scaling/"
+  },{
+    "title": "[大話 AWS 雲端架構筆記] Elastic Load Balancer",
+    "date": "",
+    "description": "簡介 Elastic Load Balancer 和使用方法和運作機制",
+    "body": "透過 Elastic Load Balancer 達到流量附載分流的效果\nELB 會將傳入的應用程式流量分配在一個或多個可用區域 (AZ) 中的多個目標和虛擬設備上\n並產生 Access log 留存\nHealth Check Elastic Load Balancer 會定期對後面的 EC2 主機指定頁面進行 HTTP 存取\n若 EC2 沒有回應則視為健康檢查失敗，則不會將流量傳遞給該 EC2 主機\nELB 協助加解密 Elastic Load Balancer 可以直接將加密的流量傳到 EC2 上\n或是可以使用 SSL Negotiation 功能\n讓 ELB 使用我方給予的 SSL證書代為解密後，再傳送至 EC2 主機\n傳統單機應用 在 Stateful 的架構下，用戶登入的相關訊息會存在主機上\n若是下一次使用者請求被轉發到另一台主機\n則無法判斷使用者登入狀態，進而無法進行相對應的操作\n那只好趕快換成 Stateless 架構\n為了解決這個問題，ELB 提供了Sticky Session\n讓 ELB 可以把同一個用戶的流量分派到同一台主機上！\n什麼都不用改，還能享受到 Elastic Load Balancer 的好處\nStateless 架構是指將用戶狀態從伺服器中切割開來 存放在後方的儲存實體，讓不同 Server 可以共享\n容器技術應用 在容器架構中可能在多台主機內有多 port 各自負責不同應用\n這時候就不只在不同機器間轉換，同時也會在不同的 port 號間切換\n為了因應這種新架構，AWS推出了新款的 ELB：Application Load Balancer 可以將流量轉發到多台機器的多個 Prot\n四種 Load Balancer Application Load Balancer：作用在網路層(Layer 7)，處理 HTTP/HTTPS/gRPC 請求 Gateway Load Balancer：閘道負載平衡器端點，以便跨 VPC 邊界安全交換流量 Network Load Balancer：作用在傳輸層(Layer 4)，適合高效能的請求 Classic Load Balancer：自動將傳入流量分配到一或多個可用區域中的多個目標，可提高應用程式的容錯能力 ",
+    "ref": "/blog/202305-aws-fundamental-elastic-load-balancer/"
+  },{
+    "title": "[大話 AWS 雲端架構筆記] CloudFront",
+    "date": "",
+    "description": "簡介 CloudFront 和使用方法和運作機制",
+    "body": "Amazon CloudFront 是一項內容交付網路 (CDN) 服務\n可以解決 DDoS 與靜態資源重複存取問題\n名詞解釋 Distribution 按照地理位置將 CloudFront 服務的內容切成多個區域\n可以指定 Distribution 做群組化操作，例如：地區限制\nEdge Location Distribution 裡會有多個站點，稱作Edge Location\n流量會透過 Edge Location 送回我方伺服器\nOrigin 資料內容的源頭，例如 S3 或是網路服務伺服器\n應用情境 DDoS 藉由地區限制來解決 DDoS 的問題\n靜態資源重複存取 當資源是是靜態的 HTML 或是圖片時，可以考慮不重複發送請求給伺服器\n而是將資源儲存至 S3 內，並只允許 CloudFront 存取\n又稱為 OAI(Origin Access Identity) CloudFront 使用 OAI 存取 S3 提供資源給使用者\n但使用者無法直接使用 S3 的 url 取得 S3 內的資源\n補充 如何使用 CloudFront 為託管在 Amazon S3 上的靜態網站提供服務？ ",
+    "ref": "/blog/202305-aws-fundamental-cloudfront/"
+  },{
     "title": "[大話 AWS 雲端架構筆記] CloudWatch 與 CloudTrail",
     "date": "",
     "description": "簡介 CloudWatch 與 CloudTrail 的使用方法和運作機制",

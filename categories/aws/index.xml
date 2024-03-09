@@ -16,6 +16,55 @@
       <description>&lt;p&gt;時間點還原 (PITR) 是一種強大的資料恢復功能，對於 AWS DynamoDB 和其他數據庫服務至關重要。&lt;br&gt;&#xA;透過 PITR，可以在意外數據丟失或損壞的情況下，將資料還原至先前的狀態，進而保護業務的持續運作。&lt;br&gt;&#xA;此外，PITR 可以定期備份資料並保留多個時間點的版本，這有助於追蹤和修復可能發生的錯誤。&lt;br&gt;&#xA;最重要的是，PITR 可以按照需求靈活的還原資料，而不會影響其他系統操作，從而提高了系統的可靠性和穩定性。&lt;/p&gt;</description>
     </item>
     <item>
+      <title>[大話 AWS 雲端架構筆記] CloudFormation</title>
+      <link>https://tech.ray247k.com/blog/202306-aws-fundamental-cloudformation/</link>
+      <pubDate>Sun, 18 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/blog/202306-aws-fundamental-cloudformation/</guid>
+      <description>&lt;p&gt;CloudFormation 是 AWS 原生的 Infrastructure as Code(IaC) 服務&lt;br&gt;&#xA;將基礎設施視為程式碼，可讓您對 AWS 和第三方資源進行建模、佈建和管理&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[大話 AWS 雲端架構筆記] ElastiCache</title>
+      <link>https://tech.ray247k.com/blog/202306-aws-fundamental-elasticache/</link>
+      <pubDate>Tue, 13 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/blog/202306-aws-fundamental-elasticache/</guid>
+      <description>&lt;p&gt;雲端快取服務，底層有 &lt;a href=&#34;#Redis&#34;&#xA;   &#xA;   &gt;Redis&#xA;&lt;/a&gt;&#xA; 和 &lt;a href=&#34;#Memcached&#34;&#xA;   &#xA;   &gt;Memcached&#xA;&lt;/a&gt;&#xA; 兩種引擎&lt;br&gt;&#xA;可協助施作&lt;code&gt;分片(Shard)&lt;/code&gt;機制&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[大話 AWS 雲端架構筆記] DynamoDB</title>
+      <link>https://tech.ray247k.com/blog/202306-aws-fundamental-dynamodb/</link>
+      <pubDate>Fri, 02 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/blog/202306-aws-fundamental-dynamodb/</guid>
+      <description>&lt;p&gt;分散式 NoSQL 資料庫服務&lt;br&gt;&#xA;資料存取必須透過 IAM 取得對應的 Role(EC2) 或是使用 Credential(開發者)&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[大話 AWS 雲端架構筆記] SQS</title>
+      <link>https://tech.ray247k.com/blog/202305-aws-fundamental-sqs/</link>
+      <pubDate>Tue, 30 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/blog/202305-aws-fundamental-sqs/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://docs.aws.amazon.com/zh_tw/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Amazon Simple Queue Service&#xA;&lt;/a&gt;&#xA;&#xA;作為任務暫存器，不需要及時處理的任務可以丟進去存放&lt;br&gt;&#xA;等系統有多餘的資源時再進行處理，可以解耦應用程式&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[大話 AWS 雲端架構筆記] Auto Scaling</title>
+      <link>https://tech.ray247k.com/blog/202305-aws-fundamental-auto-scaling/</link>
+      <pubDate>Tue, 23 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/blog/202305-aws-fundamental-auto-scaling/</guid>
+      <description>&lt;p&gt;監控應用程式並按照流量變化自動增減機器，盡可能以最低成本維持穩定、可預測的效能&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[大話 AWS 雲端架構筆記] Elastic Load Balancer</title>
+      <link>https://tech.ray247k.com/blog/202305-aws-fundamental-elastic-load-balancer/</link>
+      <pubDate>Thu, 11 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/blog/202305-aws-fundamental-elastic-load-balancer/</guid>
+      <description>&lt;p&gt;透過 &lt;a href=&#34;https://aws.amazon.com/tw/elasticloadbalancing/&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Elastic Load Balancer&#xA;&lt;/a&gt;&#xA; 達到流量附載分流的效果&lt;br&gt;&#xA;ELB 會將傳入的應用程式流量分配在一個或多個可用區域 (AZ) 中的多個目標和虛擬設備上&lt;br&gt;&#xA;並產生 Access log 留存&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[大話 AWS 雲端架構筆記] CloudFront</title>
+      <link>https://tech.ray247k.com/blog/202305-aws-fundamental-cloudfront/</link>
+      <pubDate>Wed, 03 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/blog/202305-aws-fundamental-cloudfront/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://aws.amazon.com/tw/cloudfront/&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Amazon CloudFront&#xA;&lt;/a&gt;&#xA; 是一項內容交付網路 (CDN) 服務&lt;br&gt;&#xA;可以解決 DDoS 與靜態資源重複存取問題&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>[大話 AWS 雲端架構筆記] CloudWatch 與 CloudTrail</title>
       <link>https://tech.ray247k.com/blog/202304-aws-fundamental-cloudwatch-and-cloudtrail/</link>
       <pubDate>Tue, 25 Apr 2023 00:00:00 +0000</pubDate>
