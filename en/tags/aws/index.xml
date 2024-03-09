@@ -16,6 +16,55 @@
       <description>&lt;p&gt;Point-in-Time Recovery (PITR) is a crucial data recovery feature for AWS DynamoDB and other database services.&lt;br&gt;&#xA;It allows you to restore data to a previous state in case of accidental loss or corruption, ensuring business continuity.&lt;br&gt;&#xA;PITR also enables regular data backups and retention of multiple versions, aiding in error tracking and resolution.&lt;br&gt;&#xA;It&amp;rsquo;s flexibility in restoring data on demand without affecting other operations enhances system reliability and stability.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>[AWS Cloud Fundamental Notes] CloudFormation</title>
+      <link>https://tech.ray247k.com/en/blog/202306-aws-fundamental-cloudformation/</link>
+      <pubDate>Sun, 18 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202306-aws-fundamental-cloudformation/</guid>
+      <description>&lt;p&gt;CloudFormation is AWS&amp;rsquo;s native Infrastructure as Code (IaC) service, which treats infrastructure as code,&#xA;allowing you to model, provision, and manage AWS and third-party resources.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[AWS Cloud Fundamental Notes] ElastiCache</title>
+      <link>https://tech.ray247k.com/en/blog/202306-aws-fundamental-elasticache/</link>
+      <pubDate>Tue, 13 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202306-aws-fundamental-elasticache/</guid>
+      <description>&lt;p&gt;Cloud caching service with two underlying engines: &lt;a href=&#34;#Redis&#34;&#xA;   &#xA;   &gt;Redis&#xA;&lt;/a&gt;&#xA; and &lt;a href=&#34;#Memcached&#34;&#xA;   &#xA;   &gt;Memcached&#xA;&lt;/a&gt;&#xA;.&lt;br&gt;&#xA;It can assist in implementing &lt;code&gt;Shard&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[AWS Cloud Fundamental Notes] DynamoDB</title>
+      <link>https://tech.ray247k.com/en/blog/202306-aws-fundamental-dynamodb/</link>
+      <pubDate>Fri, 02 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202306-aws-fundamental-dynamodb/</guid>
+      <description>&lt;p&gt;Distributed NoSQL database service.&lt;br&gt;&#xA;Data access must be obtained through the corresponding Role (EC2) or using Credentials (developer) with IAM.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[AWS Cloud Fundamental Notes] SQS</title>
+      <link>https://tech.ray247k.com/en/blog/202305-aws-fundamental-sqs/</link>
+      <pubDate>Tue, 30 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202305-aws-fundamental-sqs/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://docs.aws.amazon.com/sqs/latest/dev/sqs-dg.pdf&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Amazon Simple Queue Service&#xA;&lt;/a&gt;&#xA; (SQS) serves as a task buffer, allowing tasks that do not require immediate processing to be placed in the queue for storage.&lt;br&gt;&#xA;When the system has spare resources, it processes these tasks, which helps decouple applications.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[AWS Cloud Fundamental Notes] Auto Scaling</title>
+      <link>https://tech.ray247k.com/en/blog/202305-aws-fundamental-auto-scaling/</link>
+      <pubDate>Tue, 23 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202305-aws-fundamental-auto-scaling/</guid>
+      <description>&lt;p&gt;Monitoring applications and automatically scaling machines based on traffic changes,&#xA;aiming to maintain stable and predictable performance at the lowest possible cost.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[AWS Cloud Fundamental Notes] Elastic Load Balancer</title>
+      <link>https://tech.ray247k.com/en/blog/202305-aws-fundamental-elastic-load-balancer/</link>
+      <pubDate>Thu, 11 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202305-aws-fundamental-elastic-load-balancer/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://aws.amazon.com/elasticloadbalancing/&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Elastic Load Balancer&#xA;&lt;/a&gt;&#xA; (ELB) achieves traffic distribution and load balancing.&lt;br&gt;&#xA;ELB distributes incoming application traffic across multiple targets and virtual devices in one or more Availability Zones(AZ) and generates Access logs.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[AWS Cloud Fundamental Notes] CloudFront</title>
+      <link>https://tech.ray247k.com/en/blog/202305-aws-fundamental-cloudfront/</link>
+      <pubDate>Wed, 03 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202305-aws-fundamental-cloudfront/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://aws.amazon.com/cloudfront/&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Amazon CloudFront&#xA;&lt;/a&gt;&#xA; is a content delivery network (CDN) service that addresses DDoS and repetitive access to static resources.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>[AWS Cloud Fundamental Notes] CloudWatch and CloudTrail</title>
       <link>https://tech.ray247k.com/en/blog/202304-aws-fundamental-cloudwatch-and-cloudtrail/</link>
       <pubDate>Tue, 25 Apr 2023 00:00:00 +0000</pubDate>
