@@ -23,6 +23,55 @@
       <description>&lt;p&gt;I always had a question &amp;ldquo;Should I use value for type in struct? Or using pointer?&amp;rdquo;&lt;br&gt;&#xA;After reading many different projects on the web, it seems that they all have different practices.&lt;br&gt;&#xA;Until I recently encountered a problem that gave me some ideas.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>[AWS Cloud Fundamental Notes] CloudWatch and CloudTrail</title>
+      <link>https://tech.ray247k.com/en/blog/202304-aws-fundamental-cloudwatch-and-cloudtrail/</link>
+      <pubDate>Tue, 25 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202304-aws-fundamental-cloudwatch-and-cloudtrail/</guid>
+      <description>&lt;p&gt;Amazon CloudWatch monitors your Amazon Web Services (AWS) resources and the applications you run on AWS in real-time.&lt;br&gt;&#xA;AWS CloudTrail is an AWS service that helps you enable governance, compliance, and operational and risk auditing of your AWS account.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[AWS Cloud Fundamental Notes] Route 53</title>
+      <link>https://tech.ray247k.com/en/blog/202304-aws-fundamental-route53/</link>
+      <pubDate>Sat, 15 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202304-aws-fundamental-route53/</guid>
+      <description>&lt;p&gt;Provide domain name purchase, domain name resolution forwarding, system health checks, and traffic forwarding.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[AWS Cloud Fundamental Notes] RDS</title>
+      <link>https://tech.ray247k.com/en/blog/202304-aws-fundamental-rds/</link>
+      <pubDate>Wed, 05 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202304-aws-fundamental-rds/</guid>
+      <description>&lt;p&gt;Setting up, operating, and scaling relational databases in the cloud is just a few clicks away.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[AWS Cloud Fundamental Notes] S3</title>
+      <link>https://tech.ray247k.com/en/blog/202303-aws-fundamental-s3/</link>
+      <pubDate>Sat, 25 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202303-aws-fundamental-s3/</guid>
+      <description>&lt;p&gt;Scalable, available, secure, and efficient cloud object storage&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[AWS Cloud Fundamental Notes] EC2</title>
+      <link>https://tech.ray247k.com/en/blog/202303-aws-fundamental-ec2/</link>
+      <pubDate>Mon, 20 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202303-aws-fundamental-ec2/</guid>
+      <description>&lt;p&gt;Allow users to rent cloud computers to run their applications.&lt;br&gt;&#xA;EC2 allows users to flexibly run their Amazon machine images (AMIs) by providing web services, enabling users to run any software or application they desire on these virtual machines.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[AWS Cloud Fundamental Notes] VPC</title>
+      <link>https://tech.ray247k.com/en/blog/202303-aws-fundamental-vpc/</link>
+      <pubDate>Fri, 10 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202303-aws-fundamental-vpc/</guid>
+      <description>&lt;p&gt;Amazon Virtual Private Cloud (Amazon VPC) allows you to have full control over a virtual networking environment, including resource placement, connectivity, and security.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[AWS Cloud Fundamental Notes] IAM</title>
+      <link>https://tech.ray247k.com/en/blog/202301-aws-fundamental-iam/</link>
+      <pubDate>Tue, 10 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202301-aws-fundamental-iam/</guid>
+      <description>Due to the excessive power of root permissions, it is necessary to divide them into multiple users and groups to set permissions.&#xA;AWS IAM What is IAM? Operation Mechanism The architecture of IAM is as follows:&#xA;graph LR; Policy1--&gt;Permission; Policy2--&gt;Permission; Policy3--&gt;Permission; Permission--&gt;Role; Permission--&gt;Group; Group--&gt;User; User--&gt;Password; User--&gt;Credentail; Role--&gt;id1[External Users]; Role--&gt;id2[AWS Internal Services]; Policy Official Documentation When a policy is attached to a user or group, it allows or denies permission for the user to perform specific tasks on specific resources.</description>
+    </item>
+    <item>
       <title>Using FFmpeg to convert media files</title>
       <link>https://tech.ray247k.com/en/blog/202301-ffmpeg-video-convert/</link>
       <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
