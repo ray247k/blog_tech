@@ -6,8 +6,43 @@
     <description>Recent content on Byte Ebi 🍤</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 03 Nov 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 18 Feb 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://tech.ray247k.com/en/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[AWS Cloud Fundamental Notes] Overview of Common AWS Architectures</title>
+      <link>https://tech.ray247k.com/en/blog/202402-aws-fundamental-architectures/</link>
+      <pubDate>Sun, 18 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202402-aws-fundamental-architectures/</guid>
+      <description>&lt;p&gt;Introducing various common application architecture components and their evolution.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[AWS Cloud Fundamental Notes] Hybrid Cloud</title>
+      <link>https://tech.ray247k.com/en/blog/202402-aws-fundamental-hybrid-cloud/</link>
+      <pubDate>Tue, 13 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202402-aws-fundamental-hybrid-cloud/</guid>
+      <description>&lt;p&gt;Hybrid cloud integrates a company&amp;rsquo;s internal IT resources with third-party cloud providers&amp;rsquo; infrastructure and services.&lt;br&gt;&#xA;AWS hybrid cloud services offer a consistent AWS experience from the cloud to on-premises to the edge, allowing you to store data and run applications across multiple environments.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[AWS Cloud Fundamental Notes] Cyber Security</title>
+      <link>https://tech.ray247k.com/en/blog/202401-aws-fundamental-cyber-security/</link>
+      <pubDate>Sat, 06 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202401-aws-fundamental-cyber-security/</guid>
+      <description>&lt;p&gt;In cloud services, enterprises use a large number of accounts, which causes fragmentation in architecture and security,&#xA;increasing management difficulty.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[AWS Cloud Fundamental Notes] Lambda</title>
+      <link>https://tech.ray247k.com/en/blog/202312-aws-fundamental-lambda/</link>
+      <pubDate>Wed, 27 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202312-aws-fundamental-lambda/</guid>
+      <description>&lt;p&gt;Uploading the program to the Lambda service enables quick activation when network packets are sent in for request access,&#xA;achieving a pay-as-you-go model.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[AWS Cloud Fundamental Notes] API Gateway</title>
+      <link>https://tech.ray247k.com/en/blog/202312-aws-fundamental-api-gateway/</link>
+      <pubDate>Sun, 17 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202312-aws-fundamental-api-gateway/</guid>
+      <description>&lt;p&gt;As the &amp;ldquo;front door&amp;rdquo; for applications to access data, business logic, or functionality from backend services.&lt;br&gt;&#xA;When using API Gateway, you can create RESTful APIs and WebSocket APIs to enable real-time bidirectional communication applications.&lt;br&gt;&#xA;API Gateway supports containerized, serverless workloads, and web applications.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>AWS DynamoDB Point-in-Time Recovery (PITR): Simplifying Data Restoration</title>
       <link>https://tech.ray247k.com/en/blog/202311-aws-dynamodb-pitr/</link>

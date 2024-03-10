@@ -2,8 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://tech.ray247k.com/blog/202402-aws-fundamental-architectures/</loc>
+    <lastmod>2024-02-18T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202402-aws-fundamental-architectures/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202402-aws-fundamental-architectures/"
+                />
+  </url><url>
     <loc>https://tech.ray247k.com/tags/aws/</loc>
-    <lastmod>2023-11-03T00:00:00+00:00</lastmod>
+    <lastmod>2024-02-18T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -16,7 +29,7 @@
                 />
   </url><url>
     <loc>https://tech.ray247k.com/categories/aws/</loc>
-    <lastmod>2023-11-03T00:00:00+00:00</lastmod>
+    <lastmod>2024-02-18T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -26,6 +39,110 @@
                 rel="alternate"
                 hreflang="zh-TW"
                 href="https://tech.ray247k.com/categories/aws/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/blog/</loc>
+    <lastmod>2024-02-18T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/</loc>
+    <lastmod>2024-02-18T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/categories/</loc>
+    <lastmod>2024-02-18T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/categories/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/tags/</loc>
+    <lastmod>2024-02-18T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/blog/202402-aws-fundamental-hybrid-cloud/</loc>
+    <lastmod>2024-02-13T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202402-aws-fundamental-hybrid-cloud/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202402-aws-fundamental-hybrid-cloud/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/blog/202401-aws-fundamental-cyber-security/</loc>
+    <lastmod>2024-01-06T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202401-aws-fundamental-cyber-security/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202401-aws-fundamental-cyber-security/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/blog/202312-aws-fundamental-lambda/</loc>
+    <lastmod>2023-12-27T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202312-aws-fundamental-lambda/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202312-aws-fundamental-lambda/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/blog/202312-aws-fundamental-api-gateway/</loc>
+    <lastmod>2023-12-17T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202312-aws-fundamental-api-gateway/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202312-aws-fundamental-api-gateway/"
                 />
   </url><url>
     <loc>https://tech.ray247k.com/blog/202311-aws-dynamodb-pitr/</loc>
@@ -39,58 +156,6 @@
                 rel="alternate"
                 hreflang="zh-TW"
                 href="https://tech.ray247k.com/blog/202311-aws-dynamodb-pitr/"
-                />
-  </url><url>
-    <loc>https://tech.ray247k.com/blog/</loc>
-    <lastmod>2023-11-03T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/blog/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/blog/"
-                />
-  </url><url>
-    <loc>https://tech.ray247k.com/</loc>
-    <lastmod>2023-11-03T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/"
-                />
-  </url><url>
-    <loc>https://tech.ray247k.com/categories/</loc>
-    <lastmod>2023-11-03T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/categories/"
-                />
-  </url><url>
-    <loc>https://tech.ray247k.com/tags/</loc>
-    <lastmod>2023-11-03T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/tags/"
                 />
   </url><url>
     <loc>https://tech.ray247k.com/blog/202310-aws-fundamental-kinesis-emr-and-redshift/</loc>

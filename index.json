@@ -1,4 +1,34 @@
 [{
+    "title": "[大話 AWS 雲端架構筆記] AWS 常見架構總覽",
+    "date": "",
+    "description": "快速了解各類應用常見架構",
+    "body": "簡介各種常見的應用架構元件和演進\n架構演進史： 藉由把要開發功能的涵蓋面變小，縮短功能的開發部署週期\n為了解決系統硬體不足的問題：從實體建置轉為雲端經典架構\n為了承受更多的使用者：從雲端經典架構改為高併發架構\n為了減少停機時間：從高併發架構擴展為敏捷式架構\n經典雲端架構 AWS 服務 功能 Route 53 DNS 服務 EC2 伺服器 RDS 資料庫 S3 檔案儲存 IAM 權限管理 CloudTrail 使用者行為監控 CloudWatch 資源監控 Serverless 架構總覽 網路封包進入調度管理服務，調度管理服務啟動應用程式伺服器來處理封包請求\nAPI Gateway：調度管理服務 Lambda：應用程式伺服器 各別功能分別打包，在需要使用的時候快速啟動\n彼此之間功能不互相影響\n手機應用總覽 手機 APP 兩大需求\n1. 社群登入 透過社群軟體做身份登入驗證，不需重新註冊\nAWS Cognito 2. 訊息通知 發送 App 內通知與 Email 到使用者端\nAWS SNS 高併發架構 流量經過 CloudFront 到達 ELB ，接著透過 Auto Scaling 增減機器\n長期任務轉發至 SQS 交由公司伺服器處理，並將狀態寫入 ElastiCache\n並將相關資料寫入 DunamoDB\nCloudFront Amazon CloudFront 是一項內容交付網路 (CDN) 服務\nELB Elastic Load Balancing (ELB) 分配網路流量以提高應用程式可擴展性\n會自動將傳入的應用程式流量分配在一個或多個可用區域 (AZ) 中的多個目標和虛擬設備上\nAuto Scaling AWS Auto Scaling 監控應用程式並自動調整容量\nSQS Amazon SQS 任務消息的暫存，當有伺服器資源的時候再提取出來處理\n",
+    "ref": "/blog/202402-aws-fundamental-architectures/"
+  },{
+    "title": "[大話 AWS 雲端架構筆記] 混合雲",
+    "date": "",
+    "description": "混合雲快速一覽",
+    "body": "混合雲端是一種IT 基礎設施設計，它可將公司的內部IT 資源與第三方雲端供應商的基礎設施和服務整合在一起\nAWS 混合雲端服務可在您需要的任何地方提供一致的AWS 體驗– 從雲端、內部部署到邊緣\n藉助混合雲端，您可以儲存資料並跨多個環境執行應用程式\n第一代混合雲 Direct Connect ：建立實體機房和 AWS 的私有專用網路連線 Storage Gateway ：在本地模擬一個網路檔案系統(Network File System, NFS)\n使用者上傳檔案到既有機房時會同步上傳到雲端上(S3, EBS, Glacier) VM Import/Export ：遷移虛擬機器，把實體伺服器內的 VM 轉換到雲端(EC2) 第二代混合雲的崛起 保留架構彈性，引入容器，增強乘載能力\nRoute53 ：雲端 DNS 將流量平均分散到本地機房和雲端機房 Direct Connect ：雲端和本地雙邊資料同步用的私有專線 FSx ：高速資料同步，縮短同步延遲時間 ECS Anywhere ：AWS 的本地容器代管服務，可以用 AWS 的介面管理本地應用的容器 VM Import/Export ：匯入/匯出 EC2 映像檔，自由遷移 ",
+    "ref": "/blog/202402-aws-fundamental-hybrid-cloud/"
+  },{
+    "title": "[大話 AWS 雲端架構筆記] 資安架構總覽",
+    "date": "",
+    "description": "簡介 AWS 的資安架構",
+    "body": "雲服務中企業使用大量帳號，造成架構與安全的破碎化，增加管理難度\nAWS WAF 在 VPC 內，審視進入的是否為惡意封包\n針對各種條件篩選 Web 流量，這些條件包含 IP 地址、HTTP 標頭和內文，或自訂 URI\nAWS Shield 在 VPC 外阻擋 DDoS 攻擊\nFirewall Manager 一種安全管理服務，可在 AWS Organizations 中跨帳戶和應用程式集中設定和管理防火牆規則\n當新應用程式建立，Firewall Manager 強制執行一組通用的安全規則，讓新應用程式和資源合規\n使用中央管理員帳戶管理多個 AWS 帳戶的防火牆規則 在不同帳戶中部署受管規則，例如在您的應用程式上預先設定WAF 規則 在不同的現有資源和新建立資源中，自動強制施行您定義的安全性政策 集中部署基準安全群組規則，以保護您的虛擬私有雲端(VPC) ",
+    "ref": "/blog/202401-aws-fundamental-cyber-security/"
+  },{
+    "title": "[大話 AWS 雲端架構筆記] Lambda",
+    "date": "",
+    "description": "簡介 Lambda 的使用方法和運作機制",
+    "body": "把程式上傳到 Lambda 服務裡，有網路封包傳入請求存取時快速啟用\n達成用多少付多少的目的\n核心結構 Enent 當外部用戶或是 AWS 服務有請求時，發送 Enent 給 Lambda\nTrigger 在 Lambda 裡面負責接收 Event，會啟動相應的 Function\nFunction 用來處例 Enent，並且可以配置 IAM Role 讓 Function 可以調度其他 AWS Resource\n版本控管 透過 Version 做版本控管，可以發布新版本進行 Beta 測試而不影響正式環境\n可透過 Alias 對不同環境指定不同 Version\n計費 記憶體越大，Lambda 運算能力越強，收費越貴 運算時間越長，費用就越高 ",
+    "ref": "/blog/202312-aws-fundamental-lambda/"
+  },{
+    "title": "[大話 AWS 雲端架構筆記] API Gateway",
+    "date": "",
+    "description": "簡介 API Gateway 的使用方法和運作機制",
+    "body": "作為應用程式的「前門」，以便從後端服務存取資料、商業邏輯或功能\n使用 API Gateway 時，您可以建立 RESTful API 和 WebSocket API，以啟用即時雙向通訊應用程式\nAPI Gateway 支援容器化、無伺服器工作負載和 Web 應用程式\n大型資訊架構內有多個資訊系統，如果讓用戶分別存取不同的系統\n除了曝露過多介面給用戶的風險外，外部用戶在調度時 API 路徑過於碎片化\n這時候就需要一個整合性接口作為前門，AWS 推出 API Gateway 服務\n協助開發人員輕鬆地建立、發佈、維護、監控和保護 API\n",
+    "ref": "/blog/202312-aws-fundamental-api-gateway/"
+  },{
     "title": "AWS DynamoDB 時間點還原 point-in-time recovery (PITR)",
     "date": "",
     "description": "「時間點還原 (PITR)」讓您可以將資料還原至特定時間點，確保資料完整性並將潛在的資料遺失降至最低",
@@ -14,7 +44,7 @@
     "title": "[大話 AWS 雲端架構筆記] 成本控管",
     "date": "",
     "description": "單帳號和多帳號下的成本控管方式",
-    "body": "使用 AWS 定價計算工具：AWS Pricing Calculator 透過機房思維進行雲端架構成本預估\nAWS Organizations 將多個 AWS 帳戶合併成一個組織集中管理\n可以在組織中建立帳戶，並邀請現有的帳戶加入組織\n包含帳戶管理和合併帳單功能，並符合預算、安全及合規需求\n單帳號的成本控管 graph LR; 單帳號成本控管--\u003e成本計算; 單帳號成本控管--\u003e成本管理; 單帳號成本控管--\u003e付費方案; 成本計算--\u003eid1[AWS Pricing Calculator]; 成本管理--\u003eid2[AWS cost allocation tags]; 付費方案--\u003eid3[On Demand]; 付費方案--\u003eReserved; 付費方案--\u003eSpot; 付費方案--\u003eid4[Saving Plans]; 三大收費方向 不同資源使用多寡對於費用的影響\n運算：佔費用最高 儲存：介於中間 對外傳輸量：相對便宜 成本追蹤 使用 AWS 成本分配標籤：AWS cost allocation tags 輕鬆分類和追蹤 AWS 成本\n透過 Tag 套用代表業務類別（例如：部門、專案）的標籤，來整理多個服務中的成本\n計費方案 根據使用情境提供了多種不同的計費方案\nOn Demand Reserved Spot Saving Plans 說明 經典用法：需要的時候開不需要的時候關 套用到帳戶中隨需執行個體用量的計費折扣 設定成本競標：有被競標失敗被關閉機器的風險 一年或三年期每小時用量承諾 費用 高 節省 30~70% 不等 按當前競標價決定 節省 30~70% 不等 Saving Plans 是新一代的 Reserved 方案，節省的金額相同但是有更大的靈活性\n提供彈性使用執行個體設定達到更佳的需求，且持續的節省金費\n而不是與特定的執行個體設定綁約\nSavings Plans 常見問答集 單帳號的問題 多部門共用帳號 雲端資源搶佔：有租用上限的實體無法分配資源 成本難以切割：使用費無法有效被紀錄 幽靈資源：開了機器沒使用，造成資源浪費且無法知道責任歸屬 多環境共用帳號 環境內容洩漏：內部人員權限過大 多帳號解決方案 部門獨立帳號 用量獨立 費用獨立 部門為資源負責 環境切割帳號 存取權限明顯區分 多帳號的問題 各部門均持有 Root 帳號 權限過高 不同部門不一定有對應的專業人士 無法跨部門共享用量折扣 AWS Organizations 什麼是 AWS Organizations？ 可讓您將多個 AWS 帳戶 合併成一個組織\n讓您可以建立和集中管理。AWS Organizations 包括帳戶管理和合併帳單功能\n就像是總公司和分公司之間的關係\n總公司下有多個分公司，分公司又有許多部門\n部分之間彼此是獨立運作的\n在 AWS Organizations 裡面\nOrganization root：總公司 Organization Unit(OU)：分公司 Member accounts：部門 (底下有 IAM User) 在 Organization root 的Management Account可以集中用量\n用量的累計可以享受價格折扣優惠\nManagement Account 下達「Service Control Policy」\n在 Organization Unit 內的 Member Root Account 必須遵守\n如此可以限制 Root Account 的執行權限\n",
+    "body": "使用 AWS 定價計算工具：AWS Pricing Calculator 透過機房思維進行雲端架構成本預估\nAWS Organizations 將多個 AWS 帳戶合併成一個組織集中管理\n可以在組織中建立帳戶，並邀請現有的帳戶加入組織\n包含帳戶管理和合併帳單功能，並符合預算、安全及合規需求\n單帳號的成本控管 graph LR; 單帳號成本控管--\u003e成本計算; 單帳號成本控管--\u003e成本管理; 單帳號成本控管--\u003e付費方案; 成本計算--\u003eid1[AWS Pricing Calculator]; 成本管理--\u003eid2[AWS cost allocation tags]; 付費方案--\u003eid3[On Demand]; 付費方案--\u003eReserved; 付費方案--\u003eSpot; 付費方案--\u003eid4[Saving Plans]; 三大收費方向 不同資源使用多寡對於費用的影響\n運算：佔費用最高 儲存：介於中間 對外傳輸量：相對便宜 成本追蹤 使用 AWS 成本分配標籤：AWS cost allocation tags 輕鬆分類和追蹤 AWS 成本\n透過 Tag 套用代表業務類別（例如：部門、專案）的標籤，來整理多個服務中的成本\n計費方案 根據使用情境提供了多種不同的計費方案\nOn Demand Reserved Spot Saving Plans 說明 經典用法：需要的時候開不需要的時候關 套用到帳戶中隨需執行個體用量的計費折扣 設定成本競標：有被競標失敗被關閉機器的風險 一年或三年期每小時用量承諾 費用 高 節省 30~70% 不等 按當前競標價決定 節省 30~70% 不等 Saving Plans 是新一代的 Reserved 方案，節省的金額相同但是有更大的靈活性\n提供彈性使用執行個體設定達到更佳的需求，且持續的節省金費\n而不是與特定的執行個體設定綁約\nSavings Plans 常見問答集 單帳號的問題 多部門共用帳號 雲端資源搶佔：有租用上限的實體無法分配資源 成本難以切割：使用費無法有效被紀錄 幽靈資源：開了機器沒使用，造成資源浪費且無法知道責任歸屬 多環境共用帳號 環境內容洩漏：內部人員權限過大 多帳號解決方案 部門獨立帳號 用量獨立 費用獨立 部門為資源負責 環境切割帳號 存取權限明顯區分 多帳號的問題 各部門均持有 Root 帳號 權限過高 不同部門不一定有對應的專業人士 無法跨部門共享用量折扣 AWS Organizations 什麼是 AWS Organizations？ 可讓您將多個 AWS 帳戶 合併成一個組織\n讓您可以建立和集中管理。AWS Organizations 包括帳戶管理和合併帳單功能\n包含帳戶管理和合併帳單功能，並符合預算、安全及合規需求\n就像是總公司和分公司之間的關係\n總公司下有多個分公司，分公司又有許多部門\n部分之間彼此是獨立運作的\n在 AWS Organizations 裡面\nOrganization root：總公司 Organization Unit(OU)：分公司 Member accounts：部門 (底下有 IAM User) 在 Organization root 的Management Account可以集中用量\n用量的累計可以享受價格折扣優惠\nManagement Account 下達「Service Control Policy」\n在 Organization Unit 內的 Member Root Account 必須遵守\n如此可以限制 Root Account 的執行權限\n",
     "ref": "/blog/202309-aws-fundamental-cost-control/"
   },{
     "title": "[大話 AWS 雲端架構筆記] SNS",

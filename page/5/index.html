@@ -210,6 +210,306 @@
   <header>
   <div class="title">
     
+      <h2><a href="/blog/202207-go-ethereum-abigen/">使用 Golang 和智能合約互動</a></h2>
+    
+    
+      <p>藉由 abigen 產出能與智能合約互動的 Go package 來操作合約</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2022-07-09 00:00:00 &#43;0000 UTC">2022/07/09</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+  <div class="content">
+    <a href="/blog/202207-go-ethereum-abigen/" class="image" style="--bg-image: url('/blog/202207-go-ethereum-abigen/featured.jpeg');">
+    <img src="/blog/202207-go-ethereum-abigen/featured.jpeg" alt="">
+  </a>
+    
+    <p>之前都是透過 PHP 去呼叫 Smart Contract，這引發兩個問題<br>
+一個是慢，另一個是套件不維護了。而 Golang 有官方套件可以用，速度又快，恰好解決了這兩個問題<br>
+這篇主要是說明如何透過工具把既有的 Smart Contract abi 轉成 Go package 來操作合約</p>
+
+  </div>
+  <footer>
+    <a href="/blog/202207-go-ethereum-abigen/" class="button big">閱讀全文</a>
+    <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/golang/">Golang</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/golang/">Golang</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/go/">Go</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/blockchain/">Blockchain</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/smart-contract/">Smart Contract</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+  </footer>
+</article>
+
+  
+    <article class="post">
+  <header>
+  <div class="title">
+    
+      <h2><a href="/blog/202206-gcp-redis/">在 GCP 上建立 Redis 服務</a></h2>
+    
+    
+      <p>透過 Google Cloud MemoryStore 建立 Redis 服務</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2022-06-30 00:00:00 &#43;0000 UTC">2022/06/30</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+  <div class="content">
+    <a href="/blog/202206-gcp-redis/" class="image" style="--bg-image: url('/blog/202206-gcp-redis/featured.png');">
+    <img src="/blog/202206-gcp-redis/featured.png" alt="">
+  </a>
+    
+    <p>GCP 提供 Google Cloud MemoryStore 服務可用來建立 Redis 或是 Memcached 快取機器服務<br>
+價錢跟開 Database 差不多，原本以為跟 VM 一樣便宜</p>
+
+  </div>
+  <footer>
+    <a href="/blog/202206-gcp-redis/" class="button big">閱讀全文</a>
+    <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/devops/">DevOps</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/devops/">DevOps</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/gcp/">GCP</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/redis/">Redis</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+  </footer>
+</article>
+
+  
+    <article class="post">
+  <header>
+  <div class="title">
+    
+      <h2><a href="/blog/202204-ngrok/">讓你的電腦暫時公開在網路上 - Ngrok</a></h2>
+    
+    
+      <p>使用 Ngrok 讓你的電腦暫時取得一組對外開放的網址</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2022-04-23 00:00:00 &#43;0000 UTC">2022/04/23</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+  <div class="content">
+    <a href="/blog/202204-ngrok/" class="image" style="--bg-image: url('/blog/202204-ngrok/featured.jpeg');">
+    <img src="/blog/202204-ngrok/featured.jpeg" alt="">
+  </a>
+    
+    <p>在開發上有常常會遇到，想要在本機測試但是串接的服務或是 webhook 需要有一個公開的網址作為 callback<br>
+還都要求要有 https 的認證！<br>
+這種時候除了真的去開一台雲端主機外還有沒有其他選擇呢？</p>
+
+  </div>
+  <footer>
+    <a href="/blog/202204-ngrok/" class="button big">閱讀全文</a>
+    <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/devops/">DevOps</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/devops/">DevOps</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/ngrok/">ngrok</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+  </footer>
+</article>
+
+  
+    <article class="post">
+  <header>
+  <div class="title">
+    
+      <h2><a href="/blog/202204-jenkins-cicd-4-ssh-remote-server/">Jenkins 04 在流程中使用 SSH 指令操作 GCP 上另一台執行個體</a></h2>
+    
+    
+      <p>讓 Jenkins 透過 SSH 連線操作遠端主機，代替手動連線部署</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2022-04-13 00:00:00 &#43;0000 UTC">2022/04/13</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+  <div class="content">
+    <a href="/blog/202204-jenkins-cicd-4-ssh-remote-server/" class="image" style="--bg-image: url('/blog/202204-jenkins-cicd-4-ssh-remote-server/featured.jpeg');">
+    <img src="/blog/202204-jenkins-cicd-4-ssh-remote-server/featured.jpeg" alt="">
+  </a>
+    
+    <p>在沒有自動化部屬的情境下，每次都需要手動連線到伺服器主機內部<br>
+透過下指令或是執行將部署指令的執行檔，不僅麻煩且有人為失誤的風險<br>
+透過 Jenkins 的 pipeline 來取代人工執行，部署就變得輕鬆又愜意</p>
+
+  </div>
+  <footer>
+    <a href="/blog/202204-jenkins-cicd-4-ssh-remote-server/" class="button big">閱讀全文</a>
+    <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/devops/">DevOps</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/devops/">DevOps</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/jenkins/">Jenkins</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/cicd/">CICD</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/docker/">docker</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/gcp/">GCP</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/ssh/">ssh</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+  </footer>
+</article>
+
+  
+    <article class="post">
+  <header>
+  <div class="title">
+    
+      <h2><a href="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/">Jenkins 03 打包 Docker image 並推送到 GCR</a></h2>
+    
+    
+      <p>打包 Docker image 並在 pipeline 中使用 gcloud 指令推送到 Google Container Registry 儲存映像檔</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2022-04-08 00:00:00 &#43;0000 UTC">2022/04/08</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+  <div class="content">
+    <a href="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/" class="image" style="--bg-image: url('/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/featured.jpeg');">
+    <img src="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/featured.jpeg" alt="">
+  </a>
+    
+    <p>Google Container Registry 是 Google 提供用來儲存、管理和保護 Docker 容器映像檔的服務<br>
+這次要做的事是打包 Docker image，再透過 gcloud 指令推送到 GCP 以便未來部署主機時使用</p>
+
+  </div>
+  <footer>
+    <a href="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/" class="button big">閱讀全文</a>
+    <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/devops/">DevOps</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/devops/">DevOps</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/jenkins/">Jenkins</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/cicd/">CICD</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/docker/">docker</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/gcr/">GCR</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/google-container-registry/">Google Container Registry</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+  </footer>
+</article>
+
+  
+    <article class="post">
+  <header>
+  <div class="title">
+    
       <h2><a href="/blog/202204-gcp-load-balancing/">伸縮自在的伺服器 02 負載平衡 Load Balancing</a></h2>
     
     
@@ -327,311 +627,6 @@
 </article>
 
   
-    <article class="post">
-  <header>
-  <div class="title">
-    
-      <h2><a href="/blog/202203-jenkins-cicd-2-basic-pipeline/">Jenkins 02 基本 pipeline 建置及串接 Github</a></h2>
-    
-    
-      <p>建立一個基本的 pipeline 流程，並透過 Github 的 webhook 觸發建置流程</p>
-    
-  </div>
-  <div class="meta">
-    <time datetime="2022-03-30 00:00:00 &#43;0000 UTC">2022/03/30</time>
-    <p>Ray</p>
-    
-  </div>
-</header>
-
-  <div class="content">
-    <a href="/blog/202203-jenkins-cicd-2-basic-pipeline/" class="image" style="--bg-image: url('/blog/202203-jenkins-cicd-2-basic-pipeline/featured.png');">
-    <img src="/blog/202203-jenkins-cicd-2-basic-pipeline/featured.png" alt="">
-  </a>
-    
-    <p>在 <a href="https://www.jenkins.io/"
-   
-    target="_blank" rel="noreferrer noopener">Jenkins
-</a>
- 中的建置流程也叫做 pipeline，也可以透過 webhook 觸發建置<br>
-一樣有各種觸發方式和執行方式，底下示範串接 Github webhook 和常見觸發條件範例</p>
-
-  </div>
-  <footer>
-    <a href="/blog/202203-jenkins-cicd-2-basic-pipeline/" class="button big">閱讀全文</a>
-    <div class="stats">
-  
-    <ul class="categories">
-      
-        
-          <li><a class="article-terms-link" href="/categories/devops/">DevOps</a></li>
-        
-      
-    </ul>
-  
-  
-    <ul class="tags">
-      
-        
-          <li><a class="article-terms-link" href="/tags/devops/">DevOps</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/jenkins/">Jenkins</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/cicd/">CICD</a></li>
-        
-      
-    </ul>
-  
-</div>
-
-  </footer>
-</article>
-
-  
-    <article class="post">
-  <header>
-  <div class="title">
-    
-      <h2><a href="/blog/202203-gcp-auto-scaling/">伸縮自在的伺服器 01 自動配置 Auto Scaling</a></h2>
-    
-    
-      <p>設定 GCP 上的 Auto Scaling 讓伺服器更加彈性</p>
-    
-  </div>
-  <div class="meta">
-    <time datetime="2022-03-27 00:00:00 &#43;0000 UTC">2022/03/27</time>
-    <p>Ray</p>
-    
-  </div>
-</header>
-
-  <div class="content">
-    <a href="/blog/202203-gcp-auto-scaling/" class="image" style="--bg-image: url('/blog/202203-gcp-auto-scaling/featured.jpeg');">
-    <img src="/blog/202203-gcp-auto-scaling/featured.jpeg" alt="">
-  </a>
-    
-    <p>首先要把指定的 VM 停止<br>
-接著在側邊欄找到<code>儲存空間</code>-&gt;<code>映像檔</code>點進去選擇建立映像檔<br>
-不要選成<code>虛擬機器</code>-&gt;<code>機器映像檔</code>不然等等就會鬼打牆選不到！<br>
-一開始自作聰明從 VM 那邊按<code>建立機器映像檔</code>就被送到這個異世界，卡了一下午</p>
-
-  </div>
-  <footer>
-    <a href="/blog/202203-gcp-auto-scaling/" class="button big">閱讀全文</a>
-    <div class="stats">
-  
-    <ul class="categories">
-      
-        
-          <li><a class="article-terms-link" href="/categories/devops/">DevOps</a></li>
-        
-      
-    </ul>
-  
-  
-    <ul class="tags">
-      
-        
-          <li><a class="article-terms-link" href="/tags/devops/">DevOps</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/gcp/">GCP</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/auto-scaling/">Auto Scaling</a></li>
-        
-      
-    </ul>
-  
-</div>
-
-  </footer>
-</article>
-
-  
-    <article class="post">
-  <header>
-  <div class="title">
-    
-      <h2><a href="/blog/202203-jenkins-cicd-1-installation/">Jenkins 01 安裝</a></h2>
-    
-    
-      <p>一步一步安裝 Jenkins</p>
-    
-  </div>
-  <div class="meta">
-    <time datetime="2022-03-16 00:00:00 &#43;0000 UTC">2022/03/16</time>
-    <p>Ray</p>
-    
-  </div>
-</header>
-
-  <div class="content">
-    <a href="/blog/202203-jenkins-cicd-1-installation/" class="image" style="--bg-image: url('/blog/202203-jenkins-cicd-1-installation/featured.png');">
-    <img src="/blog/202203-jenkins-cicd-1-installation/featured.png" alt="">
-  </a>
-    
-    <p>使用 <a href="https://www.jenkins.io/"
-   
-    target="_blank" rel="noreferrer noopener">Jenkins
-</a>
- 建立自己的自動部署服務<br>
-Jenkins 是一套以 Java 開發的一套 CI/CD 系統工具<br>
-之前介紹過 <a href="/tags/drone/"
-   
-   >Drone
-</a>
-，於是這次就來摸摸 Jenkins 了</p>
-
-  </div>
-  <footer>
-    <a href="/blog/202203-jenkins-cicd-1-installation/" class="button big">閱讀全文</a>
-    <div class="stats">
-  
-    <ul class="categories">
-      
-        
-          <li><a class="article-terms-link" href="/categories/devops/">DevOps</a></li>
-        
-      
-    </ul>
-  
-  
-    <ul class="tags">
-      
-        
-          <li><a class="article-terms-link" href="/tags/devops/">DevOps</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/jenkins/">Jenkins</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/cicd/">CICD</a></li>
-        
-      
-    </ul>
-  
-</div>
-
-  </footer>
-</article>
-
-  
-    <article class="post">
-  <header>
-  <div class="title">
-    
-      <h2><a href="/blog/202203-laravel-queue/">Laravel Queue 使用</a></h2>
-    
-    
-      <p>使用佇列，讓不需要馬上處理的任務延遲處理</p>
-    
-  </div>
-  <div class="meta">
-    <time datetime="2022-03-05 00:00:00 &#43;0000 UTC">2022/03/05</time>
-    <p>Ray</p>
-    
-  </div>
-</header>
-
-  <div class="content">
-    <a href="/blog/202203-laravel-queue/" class="image" style="--bg-image: url('/blog/202203-laravel-queue/featured.jpeg');">
-    <img src="/blog/202203-laravel-queue/featured.jpeg" alt="">
-  </a>
-    
-    <p><strong>Queue</strong> 臺灣這邊稱作「<strong>佇列</strong>」，中國那邊的翻譯會用「<strong>隊列</strong>」<br>
-用處是將一個耗時且不需要即時完成的任務延遲處理，例如寄送電子郵件<br>
-使用者不需要等寄信成功才能進行下一步操作，這樣可以讓應用程式對網頁請求有更快的反應</p>
-
-  </div>
-  <footer>
-    <a href="/blog/202203-laravel-queue/" class="button big">閱讀全文</a>
-    <div class="stats">
-  
-    <ul class="categories">
-      
-        
-          <li><a class="article-terms-link" href="/categories/laravel/">Laravel</a></li>
-        
-      
-    </ul>
-  
-  
-    <ul class="tags">
-      
-        
-          <li><a class="article-terms-link" href="/tags/laravel/">Laravel</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/php/">PHP</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/queue/">queue</a></li>
-        
-      
-    </ul>
-  
-</div>
-
-  </footer>
-</article>
-
-  
-    <article class="post">
-  <header>
-  <div class="title">
-    
-      <h2><a href="/blog/202202-connect-to-gcp-vm-using-ssh/">使用 ssh 從本機連線到 GCP VM</a></h2>
-    
-    
-      <p>在本機透過終端機 ssh 連線到 GCP VM</p>
-    
-  </div>
-  <div class="meta">
-    <time datetime="2022-02-26 00:00:00 &#43;0000 UTC">2022/02/26</time>
-    <p>Ray</p>
-    
-  </div>
-</header>
-
-  <div class="content">
-    <a href="/blog/202202-connect-to-gcp-vm-using-ssh/" class="image" style="--bg-image: url('/blog/202202-connect-to-gcp-vm-using-ssh/featured.jpeg');">
-    <img src="/blog/202202-connect-to-gcp-vm-using-ssh/featured.jpeg" alt="">
-  </a>
-    
-    <p>原先在 GCP 開啟 VM 後每當管理主機時都要先開啟 GCP 控制台頁面，找到指定主機<br>
-按下畫面上的 SSH 連線按鈕，接著開啟 GCP 的終端機畫面<br>
-開啟的步驟實在繁瑣，而且那個終端機也沒有自己本機的用的習慣<br>
-這篇文章說明如何透過本機終端機 ssh 連線到 GCP 主機內</p>
-
-  </div>
-  <footer>
-    <a href="/blog/202202-connect-to-gcp-vm-using-ssh/" class="button big">閱讀全文</a>
-    <div class="stats">
-  
-    <ul class="categories">
-      
-        
-          <li><a class="article-terms-link" href="/categories/%e6%9e%b6%e7%ab%99%e7%9b%b8%e9%97%9c/">架站相關</a></li>
-        
-      
-    </ul>
-  
-  
-    <ul class="tags">
-      
-        
-          <li><a class="article-terms-link" href="/tags/gcp/">GCP</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/devops/">DevOps</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/ssh/">ssh</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/linux/">Linux</a></li>
-        
-      
-    </ul>
-  
-</div>
-
-  </footer>
-</article>
-
-  
   <div class="pagination">
     
       <a href="/page/4/" class="button left"><span>上一頁</span></a>
@@ -650,52 +645,52 @@ Jenkins 是一套以 Java 開發的一套 CI/CD 系統工具<br>
       </header>
       
       <article class="mini-post">
-          <a href="/blog/202311-aws-dynamodb-pitr/" class="image" style="--bg-image: url('/blog/202311-aws-dynamodb-pitr/featured.jpg');">
-    <img src="/blog/202311-aws-dynamodb-pitr/featured.jpg" alt="">
+          <a href="/blog/202402-aws-fundamental-architectures/" class="image" style="--bg-image: url('/blog/202402-aws-fundamental-architectures/featured.jpg');">
+    <img src="/blog/202402-aws-fundamental-architectures/featured.jpg" alt="">
   </a>
         <header>
-          <h2><a href="/blog/202311-aws-dynamodb-pitr/">AWS DynamoDB 時間點還原 point-in-time recovery (PITR)</a></h2>
-          <time class="published" datetime="2023-11-03 00:00:00 &#43;0000 UTC">2023/11/03</time>
+          <h2><a href="/blog/202402-aws-fundamental-architectures/">[大話 AWS 雲端架構筆記] AWS 常見架構總覽</a></h2>
+          <time class="published" datetime="2024-02-18 00:00:00 &#43;0000 UTC">2024/02/18</time>
         </header>
       </article>
       
       <article class="mini-post">
-          <a href="/blog/202310-aws-fundamental-kinesis-emr-and-redshift/" class="image" style="--bg-image: url('/blog/202310-aws-fundamental-kinesis-emr-and-redshift/featured.png');">
-    <img src="/blog/202310-aws-fundamental-kinesis-emr-and-redshift/featured.png" alt="">
+          <a href="/blog/202402-aws-fundamental-hybrid-cloud/" class="image" style="--bg-image: url('/blog/202402-aws-fundamental-hybrid-cloud/featured.png');">
+    <img src="/blog/202402-aws-fundamental-hybrid-cloud/featured.png" alt="">
   </a>
         <header>
-          <h2><a href="/blog/202310-aws-fundamental-kinesis-emr-and-redshift/">[大話 AWS 雲端架構筆記] Kinesis、EMR 與 Redshift</a></h2>
-          <time class="published" datetime="2023-10-27 00:00:00 &#43;0000 UTC">2023/10/27</time>
+          <h2><a href="/blog/202402-aws-fundamental-hybrid-cloud/">[大話 AWS 雲端架構筆記] 混合雲</a></h2>
+          <time class="published" datetime="2024-02-13 00:00:00 &#43;0000 UTC">2024/02/13</time>
         </header>
       </article>
       
       <article class="mini-post">
-          <a href="/blog/202309-aws-fundamental-cost-control/" class="image" style="--bg-image: url('/blog/202309-aws-fundamental-cost-control/featured.png');">
-    <img src="/blog/202309-aws-fundamental-cost-control/featured.png" alt="">
+          <a href="/blog/202401-aws-fundamental-cyber-security/" class="image" style="--bg-image: url('/blog/202401-aws-fundamental-cyber-security/featured.jpg');">
+    <img src="/blog/202401-aws-fundamental-cyber-security/featured.jpg" alt="">
   </a>
         <header>
-          <h2><a href="/blog/202309-aws-fundamental-cost-control/">[大話 AWS 雲端架構筆記] 成本控管</a></h2>
-          <time class="published" datetime="2023-09-17 00:00:00 &#43;0000 UTC">2023/09/17</time>
+          <h2><a href="/blog/202401-aws-fundamental-cyber-security/">[大話 AWS 雲端架構筆記] 資安架構總覽</a></h2>
+          <time class="published" datetime="2024-01-06 00:00:00 &#43;0000 UTC">2024/01/06</time>
         </header>
       </article>
       
       <article class="mini-post">
-          <a href="/blog/202308-aws-fundamental-sns/" class="image" style="--bg-image: url('/blog/202308-aws-fundamental-sns/featured.png');">
-    <img src="/blog/202308-aws-fundamental-sns/featured.png" alt="">
+          <a href="/blog/202312-aws-fundamental-lambda/" class="image" style="--bg-image: url('/blog/202312-aws-fundamental-lambda/featured.jpg');">
+    <img src="/blog/202312-aws-fundamental-lambda/featured.jpg" alt="">
   </a>
         <header>
-          <h2><a href="/blog/202308-aws-fundamental-sns/">[大話 AWS 雲端架構筆記] SNS</a></h2>
-          <time class="published" datetime="2023-08-13 00:00:00 &#43;0000 UTC">2023/08/13</time>
+          <h2><a href="/blog/202312-aws-fundamental-lambda/">[大話 AWS 雲端架構筆記] Lambda</a></h2>
+          <time class="published" datetime="2023-12-27 00:00:00 &#43;0000 UTC">2023/12/27</time>
         </header>
       </article>
       
       <article class="mini-post">
-          <a href="/blog/202307-aws-fundamental-cognito/" class="image" style="--bg-image: url('/blog/202307-aws-fundamental-cognito/featured.jpg');">
-    <img src="/blog/202307-aws-fundamental-cognito/featured.jpg" alt="">
+          <a href="/blog/202312-aws-fundamental-api-gateway/" class="image" style="--bg-image: url('/blog/202312-aws-fundamental-api-gateway/featured.png');">
+    <img src="/blog/202312-aws-fundamental-api-gateway/featured.png" alt="">
   </a>
         <header>
-          <h2><a href="/blog/202307-aws-fundamental-cognito/">[大話 AWS 雲端架構筆記] Cognito</a></h2>
-          <time class="published" datetime="2023-07-07 00:00:00 &#43;0000 UTC">2023/07/07</time>
+          <h2><a href="/blog/202312-aws-fundamental-api-gateway/">[大話 AWS 雲端架構筆記] API Gateway</a></h2>
+          <time class="published" datetime="2023-12-17 00:00:00 &#43;0000 UTC">2023/12/17</time>
         </header>
       </article>
       
@@ -718,15 +713,15 @@ Jenkins 是一套以 Java 開發的一套 CI/CD 系統工具<br>
           
           
           <li>
+              <a href="/categories/aws/">aws<span class="count">25</span></a>
+          </li>
+          
+          <li>
               <a href="/categories/devops/">devops<span class="count">24</span></a>
           </li>
           
           <li>
               <a href="/categories/node.js/">node.js<span class="count">22</span></a>
-          </li>
-          
-          <li>
-              <a href="/categories/aws/">aws<span class="count">20</span></a>
           </li>
           
           <li>
@@ -784,11 +779,11 @@ Jenkins 是一套以 Java 開發的一套 CI/CD 系統工具<br>
         
         
         <li>
-          <a href="/tags/devops/">devops (27)</a>
+          <a href="/tags/aws/">aws (27)</a>
         </li>
         
         <li>
-          <a href="/tags/aws/">aws (22)</a>
+          <a href="/tags/devops/">devops (27)</a>
         </li>
         
         <li>
@@ -1143,7 +1138,7 @@ Jenkins 是一套以 Java 開發的一套 CI/CD 系統工具<br>
       <footer id="site-footer">
     
     <p class="copyright">
-        © 2023 Byte Ebi 🍤
+        © 2024 Byte Ebi 🍤
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
