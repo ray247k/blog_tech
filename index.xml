@@ -16,6 +16,34 @@
       <description>&lt;p&gt;時間點還原 (PITR) 是一種強大的資料恢復功能，對於 AWS DynamoDB 和其他數據庫服務至關重要。&lt;br&gt;&#xA;透過 PITR，可以在意外數據丟失或損壞的情況下，將資料還原至先前的狀態，進而保護業務的持續運作。&lt;br&gt;&#xA;此外，PITR 可以定期備份資料並保留多個時間點的版本，這有助於追蹤和修復可能發生的錯誤。&lt;br&gt;&#xA;最重要的是，PITR 可以按照需求靈活的還原資料，而不會影響其他系統操作，從而提高了系統的可靠性和穩定性。&lt;/p&gt;</description>
     </item>
     <item>
+      <title>[大話 AWS 雲端架構筆記] Kinesis、EMR 與 Redshift</title>
+      <link>https://tech.ray247k.com/blog/202310-aws-fundamental-kinesis-emr-and-redshift/</link>
+      <pubDate>Fri, 27 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/blog/202310-aws-fundamental-kinesis-emr-and-redshift/</guid>
+      <description>&lt;p&gt;用於大數據架構&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[大話 AWS 雲端架構筆記] 成本控管</title>
+      <link>https://tech.ray247k.com/blog/202309-aws-fundamental-cost-control/</link>
+      <pubDate>Sun, 17 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/blog/202309-aws-fundamental-cost-control/</guid>
+      <description>&lt;p&gt;使用 AWS 定價計算工具：&lt;a href=&#34;https://calculator.aws/#/&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;AWS Pricing Calculator&#xA;&lt;/a&gt;&#xA; 透過機房思維進行雲端架構成本預估&lt;br&gt;&#xA;&lt;a href=&#34;https://docs.aws.amazon.com/zh_tw/organizations/latest/userguide/orgs_introduction.html&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;AWS Organizations&#xA;&lt;/a&gt;&#xA;&#xA;將多個 AWS 帳戶合併成一個組織集中管理&lt;br&gt;&#xA;可以在組織中建立帳戶，並邀請現有的帳戶加入組織&lt;br&gt;&#xA;包含帳戶管理和合併帳單功能，並符合預算、安全及合規需求&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[大話 AWS 雲端架構筆記] SNS</title>
+      <link>https://tech.ray247k.com/blog/202308-aws-fundamental-sns/</link>
+      <pubDate>Sun, 13 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/blog/202308-aws-fundamental-sns/</guid>
+      <description>&lt;p&gt;應用於寄送簡訊或 E-mail 以及推播通知：&lt;a href=&#34;https://docs.aws.amazon.com/zh_tw/sns/latest/dg/welcome.html&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Simple Notification Servic&#xA;&lt;/a&gt;&#xA;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[大話 AWS 雲端架構筆記] Cognito</title>
+      <link>https://tech.ray247k.com/blog/202307-aws-fundamental-cognito/</link>
+      <pubDate>Fri, 07 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/blog/202307-aws-fundamental-cognito/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://aws.amazon.com/tw/cognito/&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Amazon Cognito&#xA;&lt;/a&gt;&#xA;：當流量進來時，必須先做身份確認，確認可以使用的 AWS 雲端資源&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Golang 中 Struct 內型別用指針和值的差異和時機</title>
       <link>https://tech.ray247k.com/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/</link>
       <pubDate>Sun, 25 Jun 2023 00:00:00 +0000</pubDate>

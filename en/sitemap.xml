@@ -93,6 +93,58 @@
                 href="https://tech.ray247k.com/en/tags/"
                 />
   </url><url>
+    <loc>https://tech.ray247k.com/en/blog/202310-aws-fundamental-kinesis-emr-and-redshift/</loc>
+    <lastmod>2023-10-27T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202310-aws-fundamental-kinesis-emr-and-redshift/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202310-aws-fundamental-kinesis-emr-and-redshift/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/blog/202309-aws-fundamental-cost-control/</loc>
+    <lastmod>2023-09-17T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202309-aws-fundamental-cost-control/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202309-aws-fundamental-cost-control/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/blog/202308-aws-fundamental-sns/</loc>
+    <lastmod>2023-08-13T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202308-aws-fundamental-sns/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202308-aws-fundamental-sns/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/blog/202307-aws-fundamental-cognito/</loc>
+    <lastmod>2023-07-07T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202307-aws-fundamental-cognito/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202307-aws-fundamental-cognito/"
+                />
+  </url><url>
     <loc>https://tech.ray247k.com/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/</loc>
     <lastmod>2023-06-25T00:00:00+00:00</lastmod>
     <xhtml:link

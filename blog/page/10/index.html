@@ -210,6 +210,255 @@
   <header>
   <div class="title">
     
+      <h2><a href="/blog/202107-drone-cicd-4-advanced-runner/">[用 Drone 建立自動部署] 04 drone runner 介紹</a></h2>
+    
+    
+      <p>透過 Drone 建立自動部署流程，drone runner 介紹</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2021-07-09 00:00:00 &#43;0000 UTC">2021/07/09</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+  <div class="content">
+    
+    
+    <p>我們在 <a href="/blog/202106-drone-cicd-1-basic-usage/"
+   
+   >[用 Drone 建立自動部署] 01 基本服務建置及串接 GitHub
+</a>
+ 文章中有 <code>docker-compose.yml</code> 的範例<br>
+在範例中建立了兩個 docker runner，分別是 <code>drone_runner_docker</code> 和 <code>drone-runner-ssh</code><br>
+而在 <a href="/blog/202106-drone-cicd-2-advanced-pipeline-configuration/"
+   
+   >[用 Drone 建立自動部署] 02 部署觸發條件(pipeline)設定
+</a>
+ 中使用到的其實只有 docker runner<br>
+這篇文章來分別介紹兩個 runner，以及官方網站上提到的其他 runner</p>
+
+  </div>
+  <footer>
+    <a href="/blog/202107-drone-cicd-4-advanced-runner/" class="button big">閱讀全文</a>
+    <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/devops/">DevOps</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/devops/">DevOps</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/drone/">Drone</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/cicd/">CICD</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+  </footer>
+</article>
+
+  
+    <article class="post">
+  <header>
+  <div class="title">
+    
+      <h2><a href="/blog/202106-drone-cicd-3-advanced-cron-job/">[用 Drone 建立自動部署] 03 部署排程設定與權限管理</a></h2>
+    
+    
+      <p>透過 Drone 建立自動部署流程，部署排程設定與權限管理</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2021-06-14 00:00:00 &#43;0000 UTC">2021/06/14</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+  <div class="content">
+    <a href="/blog/202106-drone-cicd-3-advanced-cron-job/" class="image" style="--bg-image: url('/blog/202106-drone-cicd-3-advanced-cron-job/drone-pipeline-feature.png');">
+    <img src="/blog/202106-drone-cicd-3-advanced-cron-job/drone-pipeline-feature.png" alt="">
+  </a>
+    
+    <p>使用 <a href="https://www.drone.io/"
+   
+    target="_blank" rel="noreferrer noopener">Drone
+</a>
+ 建立自己的自動部署服務<br>
+Drone 是一套以 Golang 開發的一套 CI/CD 系統工具<br>
+本篇進行部署排程設定與權限管理的教學</p>
+
+  </div>
+  <footer>
+    <a href="/blog/202106-drone-cicd-3-advanced-cron-job/" class="button big">閱讀全文</a>
+    <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/devops/">DevOps</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/devops/">DevOps</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/drone/">Drone</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/cicd/">CICD</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+  </footer>
+</article>
+
+  
+    <article class="post">
+  <header>
+  <div class="title">
+    
+      <h2><a href="/blog/202106-drone-cicd-2-advanced-pipeline-configuration/">[用 Drone 建立自動部署] 02 部署觸發條件(pipeline)設定</a></h2>
+    
+    
+      <p>透過 Drone 建立自動部署流程，部署觸發條件(pipeline)設定</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2021-06-12 00:00:00 &#43;0000 UTC">2021/06/12</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+  <div class="content">
+    
+    
+    <p>使用 <a href="https://www.drone.io/"
+   
+    target="_blank" rel="noreferrer noopener">Drone
+</a>
+ 建立自己的自動部署服務<br>
+Drone 是一套以 Golang 開發的一套 CI/CD 系統工具<br>
+本篇進行複數觸發條件設定，在不同觸發條件下觸發不同的部署步驟設定</p>
+
+  </div>
+  <footer>
+    <a href="/blog/202106-drone-cicd-2-advanced-pipeline-configuration/" class="button big">閱讀全文</a>
+    <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/devops/">DevOps</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/devops/">DevOps</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/drone/">Drone</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/cicd/">CICD</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+  </footer>
+</article>
+
+  
+    <article class="post">
+  <header>
+  <div class="title">
+    
+      <h2><a href="/blog/202106-drone-cicd-1-basic-usage/">[用 Drone 建立自動部署] 01 基本服務建置及串接 GitHub</a></h2>
+    
+    
+      <p>透過 Drone 建立自動部署流程，基本服務建置及串接 GitHub</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2021-06-08 00:00:00 &#43;0000 UTC">2021/06/08</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+  <div class="content">
+    <a href="/blog/202106-drone-cicd-1-basic-usage/" class="image" style="--bg-image: url('/blog/202106-drone-cicd-1-basic-usage/ngrok-start-feature.png');">
+    <img src="/blog/202106-drone-cicd-1-basic-usage/ngrok-start-feature.png" alt="">
+  </a>
+    
+    <p>使用 <a href="https://www.drone.io/"
+   
+    target="_blank" rel="noreferrer noopener">Drone
+</a>
+ 建立自己的自動部署服務<br>
+Drone 是一套以 Golang 開發的一套 CI/CD 系統工具<br>
+本篇進行基礎服務啟動設定，以及串接 GitHub</p>
+
+  </div>
+  <footer>
+    <a href="/blog/202106-drone-cicd-1-basic-usage/" class="button big">閱讀全文</a>
+    <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/devops/">DevOps</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/devops/">DevOps</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/drone/">Drone</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/cicd/">CICD</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+  </footer>
+</article>
+
+  
+    <article class="post">
+  <header>
+  <div class="title">
+    
       <h2><a href="/blog/202106-docker-common-commands/">Docker 常用指令</a></h2>
     
     
@@ -379,246 +628,6 @@
 </article>
 
   
-    <article class="post">
-  <header>
-  <div class="title">
-    
-      <h2><a href="/blog/202105-leetcode-no791-custom-sort-string/">[LeetCode] #791 Custom Sort String (Medium)</a></h2>
-    
-    
-      <p>LeetCode 第 791 題 Custom Sort String，難度 Medium</p>
-    
-  </div>
-  <div class="meta">
-    <time datetime="2021-05-26 00:00:00 &#43;0000 UTC">2021/05/26</time>
-    <p>Ray</p>
-    
-  </div>
-</header>
-
-  <div class="content">
-    <a href="/blog/202105-leetcode-no791-custom-sort-string/" class="image" style="--bg-image: url('/blog/202105-leetcode-no791-custom-sort-string/no791-cover.png');">
-    <img src="/blog/202105-leetcode-no791-custom-sort-string/no791-cover.png" alt="">
-  </a>
-    
-    <p>用 PHP 解 LeetCode 系列，<code>Custom Sort String</code>，屬於 Medium</p>
-
-  </div>
-  <footer>
-    <a href="/blog/202105-leetcode-no791-custom-sort-string/" class="button big">閱讀全文</a>
-    <div class="stats">
-  
-    <ul class="categories">
-      
-        
-          <li><a class="article-terms-link" href="/categories/leetcode/">LeetCode</a></li>
-        
-          <li><a class="article-terms-link" href="/categories/php/">PHP</a></li>
-        
-      
-    </ul>
-  
-  
-    <ul class="tags">
-      
-        
-          <li><a class="article-terms-link" href="/tags/leetcode/">LeetCode</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/leetcode-medium/">LeetCode-Medium</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/php/">PHP</a></li>
-        
-      
-    </ul>
-  
-</div>
-
-  </footer>
-</article>
-
-  
-    <article class="post">
-  <header>
-  <div class="title">
-    
-      <h2><a href="/blog/202105-web-server-stress-testing/">伺服器壓力測試 - 使用 Apache Bench</a></h2>
-    
-    
-      <p>使用 Apache Bench 進行伺服器壓力測試，測試伺服器性能</p>
-    
-  </div>
-  <div class="meta">
-    <time datetime="2021-05-23 00:00:00 &#43;0000 UTC">2021/05/23</time>
-    <p>Ray</p>
-    
-  </div>
-</header>
-
-  <div class="content">
-    <a href="/blog/202105-web-server-stress-testing/" class="image" style="--bg-image: url('/blog/202105-web-server-stress-testing/lego-blocks-feature.jpeg');">
-    <img src="/blog/202105-web-server-stress-testing/lego-blocks-feature.jpeg" alt="">
-  </a>
-    
-    <p>伺服器壓力測試，上線前一定要要做，不做不行！你們想想<br>
-你加班幾個月、系統上了線，吃著火鍋還唱著歌，突然主機就被流量灌倒了！<br>
-所以，有事先壓測的系統，才是好系統！</p>
-
-  </div>
-  <footer>
-    <a href="/blog/202105-web-server-stress-testing/" class="button big">閱讀全文</a>
-    <div class="stats">
-  
-    <ul class="categories">
-      
-        
-          <li><a class="article-terms-link" href="/categories/devops/">DevOps</a></li>
-        
-      
-    </ul>
-  
-  
-    <ul class="tags">
-      
-        
-          <li><a class="article-terms-link" href="/tags/devops/">DevOps</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/php/">PHP</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/php-fpm/">PHP-FPM</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/nginx/">nginx</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/%e5%a3%93%e5%8a%9b%e6%b8%ac%e8%a9%a6/">壓力測試</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/stress-testing/">Stress Testing</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/apache-bench/">Apache Bench</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/server/">server</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/%e4%bc%ba%e6%9c%8d%e5%99%a8/">伺服器</a></li>
-        
-      
-    </ul>
-  
-</div>
-
-  </footer>
-</article>
-
-  
-    <article class="post">
-  <header>
-  <div class="title">
-    
-      <h2><a href="/blog/202105-leetcode-no1833-maximum-ice-cream-bars/">[LeetCode] #1833 Maximum Ice Cream Bars (Medium)</a></h2>
-    
-    
-      <p>LeetCode 第 1833 題 Maximum Ice Cream Bars，難度 Medium</p>
-    
-  </div>
-  <div class="meta">
-    <time datetime="2021-05-21 00:00:00 &#43;0000 UTC">2021/05/21</time>
-    <p>Ray</p>
-    
-  </div>
-</header>
-
-  <div class="content">
-    
-    
-    <p>用 PHP 解 LeetCode 系列，<code>Maximum Ice Cream Bars</code>，屬於 Medium</p>
-
-  </div>
-  <footer>
-    <a href="/blog/202105-leetcode-no1833-maximum-ice-cream-bars/" class="button big">閱讀全文</a>
-    <div class="stats">
-  
-    <ul class="categories">
-      
-        
-          <li><a class="article-terms-link" href="/categories/leetcode/">LeetCode</a></li>
-        
-          <li><a class="article-terms-link" href="/categories/php/">PHP</a></li>
-        
-      
-    </ul>
-  
-  
-    <ul class="tags">
-      
-        
-          <li><a class="article-terms-link" href="/tags/leetcode/">LeetCode</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/leetcode-medium/">LeetCode-Medium</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/php/">PHP</a></li>
-        
-      
-    </ul>
-  
-</div>
-
-  </footer>
-</article>
-
-  
-    <article class="post">
-  <header>
-  <div class="title">
-    
-      <h2><a href="/blog/202105-leetcode-no1732-find-the-highest-altitude/">[LeetCode] #1732 Find the Highest Altitude (Easy)</a></h2>
-    
-    
-      <p>LeetCode 第 1732 題 Find the Highest Altitude，難度 Easy</p>
-    
-  </div>
-  <div class="meta">
-    <time datetime="2021-05-20 00:00:00 &#43;0000 UTC">2021/05/20</time>
-    <p>Ray</p>
-    
-  </div>
-</header>
-
-  <div class="content">
-    
-    
-    <p>用 PHP 解 LeetCode 系列，<code>Find the Highest Altitude</code>，屬於 Easy</p>
-
-  </div>
-  <footer>
-    <a href="/blog/202105-leetcode-no1732-find-the-highest-altitude/" class="button big">閱讀全文</a>
-    <div class="stats">
-  
-    <ul class="categories">
-      
-        
-          <li><a class="article-terms-link" href="/categories/leetcode/">LeetCode</a></li>
-        
-          <li><a class="article-terms-link" href="/categories/php/">PHP</a></li>
-        
-      
-    </ul>
-  
-  
-    <ul class="tags">
-      
-        
-          <li><a class="article-terms-link" href="/tags/leetcode/">LeetCode</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/leetcode-easy/">LeetCode-Easy</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/php/">PHP</a></li>
-        
-      
-    </ul>
-  
-</div>
-
-  </footer>
-</article>
-
-  
   <div class="pagination">
     
       <a href="/blog/page/9/" class="button left"><span>上一頁</span></a>
@@ -647,42 +656,42 @@
       </article>
       
       <article class="mini-post">
-          <a href="/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/" class="image" style="--bg-image: url('/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg');">
-    <img src="/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/feature.jpg" alt="">
+          <a href="/blog/202310-aws-fundamental-kinesis-emr-and-redshift/" class="image" style="--bg-image: url('/blog/202310-aws-fundamental-kinesis-emr-and-redshift/featured.png');">
+    <img src="/blog/202310-aws-fundamental-kinesis-emr-and-redshift/featured.png" alt="">
   </a>
         <header>
-          <h2><a href="/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/">Golang 中 Struct 內型別用指針和值的差異和時機</a></h2>
-          <time class="published" datetime="2023-06-25 00:00:00 &#43;0000 UTC">2023/06/25</time>
+          <h2><a href="/blog/202310-aws-fundamental-kinesis-emr-and-redshift/">[大話 AWS 雲端架構筆記] Kinesis、EMR 與 Redshift</a></h2>
+          <time class="published" datetime="2023-10-27 00:00:00 &#43;0000 UTC">2023/10/27</time>
         </header>
       </article>
       
       <article class="mini-post">
-          <a href="/blog/202306-aws-fundamental-cloudformation/" class="image" style="--bg-image: url('/blog/202306-aws-fundamental-cloudformation/featured.png');">
-    <img src="/blog/202306-aws-fundamental-cloudformation/featured.png" alt="">
+          <a href="/blog/202309-aws-fundamental-cost-control/" class="image" style="--bg-image: url('/blog/202309-aws-fundamental-cost-control/featured.png');">
+    <img src="/blog/202309-aws-fundamental-cost-control/featured.png" alt="">
   </a>
         <header>
-          <h2><a href="/blog/202306-aws-fundamental-cloudformation/">[大話 AWS 雲端架構筆記] CloudFormation</a></h2>
-          <time class="published" datetime="2023-06-18 00:00:00 &#43;0000 UTC">2023/06/18</time>
+          <h2><a href="/blog/202309-aws-fundamental-cost-control/">[大話 AWS 雲端架構筆記] 成本控管</a></h2>
+          <time class="published" datetime="2023-09-17 00:00:00 &#43;0000 UTC">2023/09/17</time>
         </header>
       </article>
       
       <article class="mini-post">
-          <a href="/blog/202306-aws-fundamental-elasticache/" class="image" style="--bg-image: url('/blog/202306-aws-fundamental-elasticache/featured.png');">
-    <img src="/blog/202306-aws-fundamental-elasticache/featured.png" alt="">
+          <a href="/blog/202308-aws-fundamental-sns/" class="image" style="--bg-image: url('/blog/202308-aws-fundamental-sns/featured.png');">
+    <img src="/blog/202308-aws-fundamental-sns/featured.png" alt="">
   </a>
         <header>
-          <h2><a href="/blog/202306-aws-fundamental-elasticache/">[大話 AWS 雲端架構筆記] ElastiCache</a></h2>
-          <time class="published" datetime="2023-06-13 00:00:00 &#43;0000 UTC">2023/06/13</time>
+          <h2><a href="/blog/202308-aws-fundamental-sns/">[大話 AWS 雲端架構筆記] SNS</a></h2>
+          <time class="published" datetime="2023-08-13 00:00:00 &#43;0000 UTC">2023/08/13</time>
         </header>
       </article>
       
       <article class="mini-post">
-          <a href="/blog/202306-aws-fundamental-dynamodb/" class="image" style="--bg-image: url('/blog/202306-aws-fundamental-dynamodb/featured.png');">
-    <img src="/blog/202306-aws-fundamental-dynamodb/featured.png" alt="">
+          <a href="/blog/202307-aws-fundamental-cognito/" class="image" style="--bg-image: url('/blog/202307-aws-fundamental-cognito/featured.jpg');">
+    <img src="/blog/202307-aws-fundamental-cognito/featured.jpg" alt="">
   </a>
         <header>
-          <h2><a href="/blog/202306-aws-fundamental-dynamodb/">[大話 AWS 雲端架構筆記] DynamoDB</a></h2>
-          <time class="published" datetime="2023-06-02 00:00:00 &#43;0000 UTC">2023/06/02</time>
+          <h2><a href="/blog/202307-aws-fundamental-cognito/">[大話 AWS 雲端架構筆記] Cognito</a></h2>
+          <time class="published" datetime="2023-07-07 00:00:00 &#43;0000 UTC">2023/07/07</time>
         </header>
       </article>
       
@@ -713,7 +722,7 @@
           </li>
           
           <li>
-              <a href="/categories/aws/">aws<span class="count">16</span></a>
+              <a href="/categories/aws/">aws<span class="count">20</span></a>
           </li>
           
           <li>
@@ -775,11 +784,11 @@
         </li>
         
         <li>
-          <a href="/tags/node.js/">node.js (22)</a>
+          <a href="/tags/aws/">aws (22)</a>
         </li>
         
         <li>
-          <a href="/tags/aws/">aws (18)</a>
+          <a href="/tags/node.js/">node.js (22)</a>
         </li>
         
         <li>

@@ -16,6 +16,34 @@
       <description>&lt;p&gt;Point-in-Time Recovery (PITR) is a crucial data recovery feature for AWS DynamoDB and other database services.&lt;br&gt;&#xA;It allows you to restore data to a previous state in case of accidental loss or corruption, ensuring business continuity.&lt;br&gt;&#xA;PITR also enables regular data backups and retention of multiple versions, aiding in error tracking and resolution.&lt;br&gt;&#xA;It&amp;rsquo;s flexibility in restoring data on demand without affecting other operations enhances system reliability and stability.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>[AWS Cloud Fundamental Notes] Kinesis、EMR and Redshift</title>
+      <link>https://tech.ray247k.com/en/blog/202310-aws-fundamental-kinesis-emr-and-redshift/</link>
+      <pubDate>Fri, 27 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202310-aws-fundamental-kinesis-emr-and-redshift/</guid>
+      <description>&lt;p&gt;Used for big data architecture&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[AWS Cloud Fundamental Notes] Cost Control</title>
+      <link>https://tech.ray247k.com/en/blog/202309-aws-fundamental-cost-control/</link>
+      <pubDate>Sun, 17 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202309-aws-fundamental-cost-control/</guid>
+      <description>&lt;p&gt;Using the &lt;a href=&#34;https://calculator.aws/#/&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;AWS Pricing Calculator&#xA;&lt;/a&gt;&#xA;, you can estimate the cost of cloud architecture through a data center perspective.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://docs.aws.amazon.com/zh_tw/organizations/latest/userguide/orgs_introduction.html&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;AWS Organizations&#xA;&lt;/a&gt;&#xA; consolidates multiple AWS accounts into one organization for centralized management.&lt;br&gt;&#xA;You can create accounts within the organization and invite existing accounts to join.&lt;br&gt;&#xA;It includes account management and consolidated billing features, meeting budget, security, and compliance requirements.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[AWS Cloud Fundamental Notes] SNS</title>
+      <link>https://tech.ray247k.com/en/blog/202308-aws-fundamental-sns/</link>
+      <pubDate>Sun, 13 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202308-aws-fundamental-sns/</guid>
+      <description>&lt;p&gt;Used for sending SMS or E-mail as well as push notifications: &lt;a href=&#34;https://docs.aws.amazon.com/zh_tw/sns/latest/dg/welcome.html&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Simple Notification Service&#xA;&lt;/a&gt;&#xA;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[AWS Cloud Fundamental Notes] Cognito</title>
+      <link>https://tech.ray247k.com/en/blog/202307-aws-fundamental-cognito/</link>
+      <pubDate>Fri, 07 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202307-aws-fundamental-cognito/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://aws.amazon.com/tw/cognito/&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Amazon Cognito&#xA;&lt;/a&gt;&#xA;: When traffic comes in, identity verification must be done first to confirm access to AWS cloud resources.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>[AWS Cloud Fundamental Notes] CloudFormation</title>
       <link>https://tech.ray247k.com/en/blog/202306-aws-fundamental-cloudformation/</link>
       <pubDate>Sun, 18 Jun 2023 00:00:00 +0000</pubDate>

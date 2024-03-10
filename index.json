@@ -5,6 +5,30 @@
     "body": "時間點還原 (PITR) 是一種強大的資料恢復功能，對於 AWS DynamoDB 和其他數據庫服務至關重要。\n透過 PITR，可以在意外數據丟失或損壞的情況下，將資料還原至先前的狀態，進而保護業務的持續運作。\n此外，PITR 可以定期備份資料並保留多個時間點的版本，這有助於追蹤和修復可能發生的錯誤。\n最重要的是，PITR 可以按照需求靈活的還原資料，而不會影響其他系統操作，從而提高了系統的可靠性和穩定性。\n簡介 持續備份與 point-in-time 還原 (PITR) Amazon DynamoDB 的 point-in-time-recovery (PITR) 是一種功能，可讓將 DynamoDB 表恢復到過去的任意時間點\nPITR 使用 DynamoDB 自動維護的增量備份來執行此操作，可用於保護 DynamoDB 表免受意外刪除或寫入操作\n例如，如果意外刪除了表中的所有數據，可以使用 PITR 將表恢復到刪除之前的狀態\n要使用 PITR，需要先啟用它。啟用 PITR 後，DynamoDB 將開始為的表創建增量備份\n這些備份以每秒為單位進行，因此可以將表恢復到過去 35 天中的任何時間點\n要將表恢復到過去的時間點，需要指定日期和時間\n可以使用 AWS Management Console、AWS CLI 或 DynamoDB API 執行此操作\nPITR 的優點： 可幫助保護的 DynamoDB 表免受意外刪除或寫入操作 可讓恢復的表到過去的任意時間點 易於使用 PITR 的限制： 需要額外費用 可能會影響的表的性能 使用 terraform 啟用 PITR aws_dynamodb_table point_in_time_recovery resource \u0026#34;aws_dynamodb_table\u0026#34; \u0026#34;my_table\u0026#34; { name = \u0026#34;my-table\u0026#34; hash_key = \u0026#34;id\u0026#34; billing_mode = \u0026#34;PAY_PER_REQUEST\u0026#34; point_in_time_recovery { enabled = true retention_period_days = 35 } } 在這個範例中，我們使用 point_in_time_recovery 資源來指定 PITR 配置\n我們將 enabled 參數設置為 true 來啟用 PITR。我們還將 retention_period_days 參數設置為 35 天，以指定要保留的備份保留期\ndeletion_protection_enabled deletion_protection_enabled 標籤是一種 DynamoDB 標籤，可用於防止表被意外刪除\n當將此標籤添加到表時，DynamoDB 將拒絕刪除該表，即使使用 AWS Management Console、AWS CLI 或 DynamoDB API 進行刪除\n操作 PITR AWS Management Console 要使用 AWS Management Console 操作 PITR，可以按照以下步驟操作：\n在 AWS Management Console 中，導航到 DynamoDB 服務 選擇的表 在左側導航窗格中，選擇 Point-in-time recovery 啟用 PITR 要啟用 PITR，請選擇 Enable point-in-time recovery\n指定備份保留期 可以指定要保留的備份保留期\n備份保留期以天為單位，最小為 1 天，最大為 35 天\n還原表 要將表恢復到過去的時間點，請選擇 Restore table\n指定恢復日期和時間 指定要恢復表的日期和時間 保存變更 選擇 Restore AWS CLI 要使用 AWS CLI 操作 PITR，可以使用以下命令：\n啟用 PITR 要啟用 PITR，請使用以下命令：\naws dynamodb enable-point-in-time-recovery --table-name my-table 指定備份保留期 要指定備份保留期，請使用以下命令：\naws dynamodb update-table --table-name my-table --point-in-time-recovery-retention-period-in-days 35 還原表 要將表恢復到過去的時間點，請使用以下命令：\naws dynamodb restore-table-from-point-in-time --table-name my-table --restore-time 2023-08-02T12:00:00Z ",
     "ref": "/blog/202311-aws-dynamodb-pitr/"
   },{
+    "title": "[大話 AWS 雲端架構筆記] Kinesis、EMR 與 Redshift",
+    "date": "",
+    "description": "簡介 Kinesis、EMR 與 Redshift 的使用方法和運作機制",
+    "body": "用於大數據架構\ngraph LR; 資料接收--\u003e資料處理--\u003e資料倉儲; 對應服務 資料接收：Kinesis 資料處理：EMR 資料倉儲：Redshift Amazon Kinesis Kinesis ：專門做大數據的搜集與串流，支援兩大數據類型\n影片：使用 Kinesis Video Stream 一般資料：使用 Kinesis Data Stream 負責上傳資料到 Kinesis 的一方，例如各種感測器被稱為Kinesis Producer\n產出來的數據稱作Data Record，會存放到 Kinesis Stream 裡面\nShard 在 Stream 中有多個「分片(Shard)」，負責做數據的分散緩衝\n當數據流量提升時，需要增加 Shard 數量確保足夠的處理速度\n每個 Shard 每秒最多寫入 1000 筆數據，總和不超過 1MB\n每秒最多讀取總和不超過 2MB\nKinesis Consumer 提取數據操作的系統被稱作Kinesis Consumer\nAmazon Elastic MapReduce(EMR) AWS EMR 的底層引擎是開源大數據處理系統 Hadoop\n是最常見的 Kinesis Consumer，是 Hadoop 的 AWS 雲端版本\n服務的底層是 EC2 Instance\n能透過 SSH 連進 EMR 內的作業系統進行操作\n整理後的資料會送到S3 或是 Redshift\nRedshift Redshift ：資料分析用的大數據資料倉儲，是一個 column-base 的叢集化資料庫\n主要用途：\n資料倉儲：儲存密集型(Dense Storage)的機器 資料分析：運算密集型(Dense Compute)的機器 ",
+    "ref": "/blog/202310-aws-fundamental-kinesis-emr-and-redshift/"
+  },{
+    "title": "[大話 AWS 雲端架構筆記] 成本控管",
+    "date": "",
+    "description": "單帳號和多帳號下的成本控管方式",
+    "body": "使用 AWS 定價計算工具：AWS Pricing Calculator 透過機房思維進行雲端架構成本預估\nAWS Organizations 將多個 AWS 帳戶合併成一個組織集中管理\n可以在組織中建立帳戶，並邀請現有的帳戶加入組織\n包含帳戶管理和合併帳單功能，並符合預算、安全及合規需求\n單帳號的成本控管 graph LR; 單帳號成本控管--\u003e成本計算; 單帳號成本控管--\u003e成本管理; 單帳號成本控管--\u003e付費方案; 成本計算--\u003eid1[AWS Pricing Calculator]; 成本管理--\u003eid2[AWS cost allocation tags]; 付費方案--\u003eid3[On Demand]; 付費方案--\u003eReserved; 付費方案--\u003eSpot; 付費方案--\u003eid4[Saving Plans]; 三大收費方向 不同資源使用多寡對於費用的影響\n運算：佔費用最高 儲存：介於中間 對外傳輸量：相對便宜 成本追蹤 使用 AWS 成本分配標籤：AWS cost allocation tags 輕鬆分類和追蹤 AWS 成本\n透過 Tag 套用代表業務類別（例如：部門、專案）的標籤，來整理多個服務中的成本\n計費方案 根據使用情境提供了多種不同的計費方案\nOn Demand Reserved Spot Saving Plans 說明 經典用法：需要的時候開不需要的時候關 套用到帳戶中隨需執行個體用量的計費折扣 設定成本競標：有被競標失敗被關閉機器的風險 一年或三年期每小時用量承諾 費用 高 節省 30~70% 不等 按當前競標價決定 節省 30~70% 不等 Saving Plans 是新一代的 Reserved 方案，節省的金額相同但是有更大的靈活性\n提供彈性使用執行個體設定達到更佳的需求，且持續的節省金費\n而不是與特定的執行個體設定綁約\nSavings Plans 常見問答集 單帳號的問題 多部門共用帳號 雲端資源搶佔：有租用上限的實體無法分配資源 成本難以切割：使用費無法有效被紀錄 幽靈資源：開了機器沒使用，造成資源浪費且無法知道責任歸屬 多環境共用帳號 環境內容洩漏：內部人員權限過大 多帳號解決方案 部門獨立帳號 用量獨立 費用獨立 部門為資源負責 環境切割帳號 存取權限明顯區分 多帳號的問題 各部門均持有 Root 帳號 權限過高 不同部門不一定有對應的專業人士 無法跨部門共享用量折扣 AWS Organizations 什麼是 AWS Organizations？ 可讓您將多個 AWS 帳戶 合併成一個組織\n讓您可以建立和集中管理。AWS Organizations 包括帳戶管理和合併帳單功能\n就像是總公司和分公司之間的關係\n總公司下有多個分公司，分公司又有許多部門\n部分之間彼此是獨立運作的\n在 AWS Organizations 裡面\nOrganization root：總公司 Organization Unit(OU)：分公司 Member accounts：部門 (底下有 IAM User) 在 Organization root 的Management Account可以集中用量\n用量的累計可以享受價格折扣優惠\nManagement Account 下達「Service Control Policy」\n在 Organization Unit 內的 Member Root Account 必須遵守\n如此可以限制 Root Account 的執行權限\n",
+    "ref": "/blog/202309-aws-fundamental-cost-control/"
+  },{
+    "title": "[大話 AWS 雲端架構筆記] SNS",
+    "date": "",
+    "description": "簡介 SNS 和使用方法和運作機制",
+    "body": "應用於寄送簡訊或 E-mail 以及推播通知：Simple Notification Servic 將多個服務整合成一個\n透過 Publisher 推送消息到 Topic\n而 Subscriber 藉由訂閱 Topic 來獲得通知並進行後續步驟\n一個 Topic 可以同時有多個 Subscriber\n可以達到同一個來自 Publisher 的消息可被不同 Subscriber 重複利用\nSNS+SQS 組合拳 Publisher 將訊息推送到 Topic\nSQS 作為 Subscriber 通過訂閱 Topic 將待處理的事件放入佇列中\n交由後續 Instance 拉取 SQS 中的訊息進行處理\n如此就可以交由不同人員實作不同功能，甚至以不同程式語言進行開發\n",
+    "ref": "/blog/202308-aws-fundamental-sns/"
+  },{
+    "title": "[大話 AWS 雲端架構筆記] Cognito",
+    "date": "",
+    "description": "簡介 Cognito 和使用方法和運作機制",
+    "body": "Amazon Cognito ：當流量進來時，必須先做身份確認，確認可以使用的 AWS 雲端資源\n節省使用者註冊的步驟，使用既有的社群登入消除註冊的顧慮\n身份驗證 透過 User Pool 來和社群軟體溝通完成使用者身份驗證\n並取得權限\nUser Pool 透過社交身份供應商(Google, Facebook, Amazon, Apple) 以及 SAML 身份供應商(Ping One) 登入\n權限驗證 將權限轉換為 AWS 憑證\n使用 Identity Pool 決定使用者可以存取哪些 AWS 資源\nIdentity Pool 提供短期 Credential 讓使用者可以存取 AWS 資源\n",
+    "ref": "/blog/202307-aws-fundamental-cognito/"
+  },{
     "title": "Golang 中 Struct 內型別用指針和值的差異和時機",
     "date": "",
     "description": "用範例說明 Struct 中型別用指針和值的差異和時機",
