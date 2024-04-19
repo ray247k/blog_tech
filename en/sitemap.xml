@@ -989,6 +989,58 @@
     <loc>https://tech.ray247k.com/en/categories/website-operations/</loc>
     <lastmod>2022-01-31T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://tech.ray247k.com/en/categories/php/</loc>
+    <lastmod>2022-01-20T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/categories/php/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/categories/php/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/tags/phpcbf/</loc>
+    <lastmod>2022-01-20T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/phpcbf/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/phpcbf/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/tags/phpcs/</loc>
+    <lastmod>2022-01-20T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/phpcs/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/phpcs/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/blog/202201-phpcs/</loc>
+    <lastmod>2022-01-20T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202201-phpcs/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202201-phpcs/"
+                />
+  </url><url>
     <loc>https://tech.ray247k.com/en/tags/firewall/</loc>
     <lastmod>2022-01-15T00:00:00+00:00</lastmod>
   </url><url>

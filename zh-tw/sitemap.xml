@@ -1004,15 +1004,55 @@
   </url><url>
     <loc>https://tech.ray247k.com/categories/php/</loc>
     <lastmod>2022-01-20T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/categories/php/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/categories/php/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/tags/phpcbf/</loc>
     <lastmod>2022-01-20T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/phpcbf/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/phpcbf/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/tags/phpcs/</loc>
     <lastmod>2022-01-20T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/phpcs/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/phpcs/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/blog/202201-phpcs/</loc>
     <lastmod>2022-01-20T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202201-phpcs/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202201-phpcs/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/tags/%E9%98%B2%E7%81%AB%E7%89%86/</loc>
     <lastmod>2022-01-15T00:00:00+00:00</lastmod>

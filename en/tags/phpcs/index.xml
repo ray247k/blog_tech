@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Phpcs on Byte Ebi 🍤</title>
+    <link>https://tech.ray247k.com/en/tags/phpcs/</link>
+    <description>Recent content in Phpcs on Byte Ebi 🍤</description>
+    <generator>Hugo 0.125.1</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 20 Jan 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tech.ray247k.com/en/tags/phpcs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using PHP CodeSniffer to Check Coding Style</title>
+      <link>https://tech.ray247k.com/en/blog/202201-phpcs/</link>
+      <pubDate>Thu, 20 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202201-phpcs/</guid>
+      <description>&lt;p&gt;Checking code conformity with standards using phpcs (PHP Code Sniffer)&lt;br&gt;&#xA;Automatically correcting non-conforming code using phpcbf (PHP Code Beautifier and Fixer)&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

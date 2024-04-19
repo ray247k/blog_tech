@@ -4,7 +4,7 @@
     <title>PHP on Byte Ebi 🍤</title>
     <link>https://tech.ray247k.com/en/tags/php/</link>
     <description>Recent content in PHP on Byte Ebi 🍤</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo 0.125.1</generator>
     <language>en</language>
     <lastBuildDate>Sat, 02 Apr 2022 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://tech.ray247k.com/en/tags/php/index.xml" rel="self" type="application/rss+xml" />
@@ -21,6 +21,13 @@
       <pubDate>Sat, 05 Mar 2022 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/en/blog/202203-laravel-queue/</guid>
       <description>&lt;p&gt;The purpose of queues is to defer processing of a time-consuming task that doesn&amp;rsquo;t require immediate completion.&#xA;Like sending emails, users don&amp;rsquo;t need to wait for the email to be sent successfully before the next step.&lt;br&gt;&#xA;Allowing the application to respond more quickly to web requests and smooth user experience.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Using PHP CodeSniffer to Check Coding Style</title>
+      <link>https://tech.ray247k.com/en/blog/202201-phpcs/</link>
+      <pubDate>Thu, 20 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202201-phpcs/</guid>
+      <description>&lt;p&gt;Checking code conformity with standards using phpcs (PHP Code Sniffer)&lt;br&gt;&#xA;Automatically correcting non-conforming code using phpcbf (PHP Code Beautifier and Fixer)&lt;/p&gt;</description>
     </item>
     <item>
       <title>Server Stress Testing - Using Apache Bench</title>
