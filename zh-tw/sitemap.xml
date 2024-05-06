@@ -2,6 +2,97 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://tech.ray247k.com/blog/</loc>
+    <lastmod>2024-05-06T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/</loc>
+    <lastmod>2024-05-06T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/categories/</loc>
+    <lastmod>2024-05-06T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/categories/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/categories/golang/</loc>
+    <lastmod>2024-05-06T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/categories/golang/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/categories/golang/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/tags/golang-hugo/</loc>
+    <lastmod>2024-05-06T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/golang-hugo/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/golang-hugo/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/tags/</loc>
+    <lastmod>2024-05-06T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/blog/202405-create-static-web-site-with-hugo/</loc>
+    <lastmod>2024-05-06T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202405-create-static-web-site-with-hugo/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202405-create-static-web-site-with-hugo/"
+                />
+  </url><url>
     <loc>https://tech.ray247k.com/blog/202402-aws-fundamental-architectures/</loc>
     <lastmod>2024-02-18T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -39,58 +130,6 @@
                 rel="alternate"
                 hreflang="zh-TW"
                 href="https://tech.ray247k.com/categories/aws/"
-                />
-  </url><url>
-    <loc>https://tech.ray247k.com/blog/</loc>
-    <lastmod>2024-02-18T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/blog/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/blog/"
-                />
-  </url><url>
-    <loc>https://tech.ray247k.com/</loc>
-    <lastmod>2024-02-18T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/"
-                />
-  </url><url>
-    <loc>https://tech.ray247k.com/categories/</loc>
-    <lastmod>2024-02-18T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/categories/"
-                />
-  </url><url>
-    <loc>https://tech.ray247k.com/tags/</loc>
-    <lastmod>2024-02-18T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/tags/"
                 />
   </url><url>
     <loc>https://tech.ray247k.com/blog/202402-aws-fundamental-hybrid-cloud/</loc>
@@ -234,19 +273,6 @@
                 rel="alternate"
                 hreflang="zh-TW"
                 href="https://tech.ray247k.com/tags/golang/"
-                />
-  </url><url>
-    <loc>https://tech.ray247k.com/categories/golang/</loc>
-    <lastmod>2023-06-25T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/categories/golang/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/categories/golang/"
                 />
   </url><url>
     <loc>https://tech.ray247k.com/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/</loc>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Golang, Hugo on Byte Ebi 🍤</title>
+    <link>https://tech.ray247k.com/en/tags/golang-hugo/</link>
+    <description>Recent content in Golang, Hugo on Byte Ebi 🍤</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 06 May 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tech.ray247k.com/en/tags/golang-hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building a Static Website with Hugo</title>
+      <link>https://tech.ray247k.com/en/blog/202405-create-static-web-site-with-hugo/</link>
+      <pubDate>Mon, 06 May 2024 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202405-create-static-web-site-with-hugo/</guid>
+      <description>&lt;p&gt;Building a blog and migrating it each time can be a super painful task, especially since every platform has different export formats!&#xA;Why not build one yourself? Write articles using markdown syntax and then generate a static website.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,4 +1,10 @@
 [{
+    "title": "Building a Static Website with Hugo",
+    "date": "",
+    "description": "Quickly create a personal website using markdown syntax",
+    "body": "Building a blog and migrating it each time can be a super painful task, especially since every platform has different export formats! Why not build one yourself? Write articles using markdown syntax and then generate a static website.\nHUGO is a static website generator written in Go.\nInstallation brew install hugo Verify the installation:\nhugo version Creating a New Website hugo new site myblog Adding a Theme After setting up your blog, of course, you\u0026rsquo;ll want to choose a theme you like. There are many themes created by others on the official hugo theme website.\nOne thing to note is that because Hugo is continuously updated, some themes that haven\u0026rsquo;t been updated for a long time may not be able to use new features due to updates to Hugo or Google Analytics, etc.\nFor example, using the blowfish theme:\ncd myblog git init git submodule add -b main https://github.com/nunocoracao/blowfish.git themes/blowfish Modify the configuration file config.toml to set the default theme:\ntheme = \u0026#34;blowfish\u0026#34; Alternatively, you can use the terminal:\necho \u0026#39;theme = \u0026#34;blowfish\u0026#34;\u0026#39; \u0026gt;\u0026gt; config.toml First Post You can use the command:\nhugo new posts/first_post.md Or directly open an editor to create a file. Then, you can start writing your article.\nLocal Preview You can preview the site locally using the command:\nhugo serve -D Go to http://localhost:1313 to view the site.\nWhen running hugo serve, the page will automatically update when the content changes.\nDeployment hugo This will generate a public directory containing all the static content and resources for your website. You can now deploy it to any web server or use GitHub Pages for free hosting.\n",
+    "ref": "/en/blog/202405-create-static-web-site-with-hugo/"
+  },{
     "title": "[AWS Cloud Fundamental Notes] Overview of Common AWS Architectures",
     "date": "",
     "description": "Quickly understand common architectures for various applications.",

@@ -4,10 +4,17 @@
     <title>Blog on Byte Ebi 🍤</title>
     <link>https://tech.ray247k.com/en/blog/</link>
     <description>Recent content in Blog on Byte Ebi 🍤</description>
-    <generator>Hugo 0.125.1</generator>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 18 Feb 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 06 May 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://tech.ray247k.com/en/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building a Static Website with Hugo</title>
+      <link>https://tech.ray247k.com/en/blog/202405-create-static-web-site-with-hugo/</link>
+      <pubDate>Mon, 06 May 2024 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202405-create-static-web-site-with-hugo/</guid>
+      <description>&lt;p&gt;Building a blog and migrating it each time can be a super painful task, especially since every platform has different export formats!&#xA;Why not build one yourself? Write articles using markdown syntax and then generate a static website.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>[AWS Cloud Fundamental Notes] Overview of Common AWS Architectures</title>
       <link>https://tech.ray247k.com/en/blog/202402-aws-fundamental-architectures/</link>

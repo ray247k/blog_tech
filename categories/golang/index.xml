@@ -4,10 +4,17 @@
     <title>Golang on Byte Ebi 🍤</title>
     <link>https://tech.ray247k.com/categories/golang/</link>
     <description>Recent content in Golang on Byte Ebi 🍤</description>
-    <generator>Hugo 0.125.1</generator>
+    <generator>Hugo</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Sun, 25 Jun 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 06 May 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://tech.ray247k.com/categories/golang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用 Hugo 建立靜態網站</title>
+      <link>https://tech.ray247k.com/blog/202405-create-static-web-site-with-hugo/</link>
+      <pubDate>Mon, 06 May 2024 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/blog/202405-create-static-web-site-with-hugo/</guid>
+      <description>&lt;p&gt;部落格每次搬遷都是一件超級痛苦的事情，每個平台匯出格式都不一樣！&lt;br&gt;&#xA;乾脆自己來架一個吧！用 markdown 語法撰寫文章，然後生成靜態網站&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Golang 中 Struct 內型別用指針和值的差異和時機</title>
       <link>https://tech.ray247k.com/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/</link>
