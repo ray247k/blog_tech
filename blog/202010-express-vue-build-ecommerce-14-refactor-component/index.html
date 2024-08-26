@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.125.5"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.133.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="[Express&#43;Vue 搭建電商網站] 14 使用組件思維重構頁面邏輯">
   <meta property="og:description" content="使用 Express &#43; Vue 搭建一個電商網站 - 使用組件思維重構頁面邏輯">
   <meta property="description" content="使用 Express &#43; Vue 搭建一個電商網站 - 使用組件思維重構頁面邏輯">
@@ -223,7 +223,6 @@
 </script>
 
 
-
 </head>
 
   <body>
@@ -293,7 +292,8 @@
     <footer>
       <ul class="socnet-icons">
         
-        <li><a href="//github.com/ray247k" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+        <li><a href="//github.com/ray247k" target="_blank" rel="noopener" title="GitHub"
+        class="fab fa-github"></a></li>
 
 
 
@@ -305,8 +305,8 @@
 
 
 
-<li><a href="//www.linkedin.com/in/j-ray-cheng" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
-
+<li><a href="//www.linkedin.com/in/j-ray-cheng" target="_blank" rel="noopener"
+        title="LinkedIn" class="fab fa-linkedin"></a></li>
 
 
 
@@ -376,8 +376,8 @@
 準備用這個組件替換掉操作購物車中狀態按鈕的組件</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#f92672">template</span>&gt;
 </span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">div</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">button</span> <span style="color:#f92672">v-if</span><span style="color:#e6db74">=&#34;isAdding&#34; class=&#34;button&#34; @click=&#34;addToCart&#34;&gt;加入購物車&lt;/button&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;button v-else class=&#34;button&#34; @click=&#34;removeFromCart(product._id)&#34;</span>&gt;<span style="color:#a6e22e">從購物車移除</span>&lt;/<span style="color:#f92672">button</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">button</span> <span style="color:#f92672">v-if</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;isAdding&#34; class=&#34;button&#34; @click=&#34;addToCart&#34;</span>&gt;<span style="color:#a6e22e">加入購物車</span>&lt;/<span style="color:#f92672">button</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">v</span><span style="color:#f92672">-else</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span> <span style="color:#f92672">@click</span><span style="color:#e6db74">=&#34;removeFromCart(product._id)&#34;</span>&gt;<span style="color:#a6e22e">從購物車移除</span>&lt;/<span style="color:#f92672">button</span>&gt;
 </span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">div</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">template</span>&gt;
 </span></span><span style="display:flex;"><span>
@@ -428,8 +428,8 @@
 </span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;product__description&#34;</span>&gt;<span style="color:#a6e22e">簡介</span><span style="color:#960050;background-color:#1e0010">：</span>{{<span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">description</span>}}&lt;/<span style="color:#f92672">p</span>&gt;
 </span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;product__price&#34;</span>&gt;<span style="color:#a6e22e">售價</span><span style="color:#960050;background-color:#1e0010">：</span>{{<span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">price</span>}}&lt;/<span style="color:#f92672">p</span>&gt;
 </span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;product.manufacturer&#34;</span>&gt;<span style="color:#a6e22e">生產商</span><span style="color:#960050;background-color:#1e0010">：</span>{{<span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">manufacturer</span>.<span style="color:#a6e22e">name</span>}}&lt;/<span style="color:#f92672">p</span>&gt;
-</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">img</span> <span style="color:#f92672">:src</span><span style="color:#e6db74">=&#34;product.image&#34;</span> <span style="color:#a6e22e">alt</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;product__image&#34;</span> /&gt;
-</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">product-button</span> <span style="color:#f92672">:product</span><span style="color:#e6db74">=&#34;product&#34;</span>&gt;<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/product-button&gt;</span>
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">img</span> <span style="color:#f92672">:src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;product.image&#34;</span> <span style="color:#a6e22e">alt</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;product__image&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">product-button</span> <span style="color:#f92672">:product</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;product&#34;</span>&gt;&lt;/<span style="color:#f92672">product-button</span>&gt;
 </span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">div</span>&gt;
 </span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">div</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">template</span>&gt;
@@ -454,8 +454,8 @@
 </span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">div</span>&gt;
 </span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;products&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;<span style="color:#a6e22e">This</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">ProductList</span>&lt;/<span style="color:#f92672">div</span>&gt;
-</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">template</span> <span style="color:#f92672">v-for</span><span style="color:#e6db74">=&#34;product in products&#34;&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;product-item :product=&#34;product&#34; :key=&#34;product._id&#34;</span>&gt;<span style="color:#960050;background-color:#1e0010">&lt;/</span><span style="color:#a6e22e">product</span><span style="color:#f92672">-item</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">template</span> <span style="color:#f92672">v-for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;product in products&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">product-item</span> <span style="color:#f92672">:product</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;product&#34;</span> <span style="color:#f92672">:key</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;product._id&#34;</span>&gt;&lt;/<span style="color:#f92672">product-item</span>&gt;
 </span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">template</span>&gt;
 </span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">div</span>&gt;
 </span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">div</span>&gt;
@@ -500,8 +500,8 @@
 </span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;title&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">h1</span>&gt;{{<span style="color:#a6e22e">msg</span>}}&lt;/<span style="color:#f92672">h1</span>&gt;
 </span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">div</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">template</span> <span style="color:#f92672">v-for</span><span style="color:#e6db74">=&#34;product in cart&#34;&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;product-item :product=&#34;product&#34; :key=&#34;product._id&#34;</span>&gt;<span style="color:#960050;background-color:#1e0010">&lt;/</span><span style="color:#a6e22e">product</span><span style="color:#f92672">-item</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">template</span> <span style="color:#f92672">v-for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;product in cart&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">product-item</span> <span style="color:#f92672">:product</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;product&#34;</span> <span style="color:#f92672">:key</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;product._id&#34;</span>&gt;&lt;/<span style="color:#f92672">product-item</span>&gt;
 </span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">template</span>&gt;
 </span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">div</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">template</span>&gt;
@@ -1108,7 +1108,7 @@
     <script>
       hljs.configure({ ignoreUnescapedHTML: true }); 
       hljs.highlightAll();
-    </script><script src="/js/bundle.min.2866e4da25149062e36d0ce1fcf74c172f459cee483e2a9ca199f9ebed2ff221.js" integrity="sha256-KGbk2iUUkGLjbQzh/PdMFy9FnO5IPiqcoZn56&#43;0v8iE="></script>
+    </script><script src="/js/bundle.min.842958c73d004b6fea3e9cf3064bed8257f04bc120697c21b4e4e7fef4b91040.js" integrity="sha256-hClYxz0AS2/qPpzzBkvtglfwS8EgaXwhtOTn/vS5EEA="></script>
     <script src="/js/add-on.js"></script>
 
 

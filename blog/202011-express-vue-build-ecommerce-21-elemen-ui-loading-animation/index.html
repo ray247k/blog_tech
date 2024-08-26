@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.125.5"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.133.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="[Express&#43;Vue 搭建電商網站] 21 使用 Element UI 加入載入過動畫">
   <meta property="og:description" content="使用 Express &#43; Vue 搭建一個電商網站 - 套用 Element UI 加入載入動畫">
   <meta property="description" content="使用 Express &#43; Vue 搭建一個電商網站 - 套用 Element UI 加入載入動畫">
@@ -223,7 +223,6 @@
 </script>
 
 
-
 </head>
 
   <body>
@@ -293,7 +292,8 @@
     <footer>
       <ul class="socnet-icons">
         
-        <li><a href="//github.com/ray247k" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+        <li><a href="//github.com/ray247k" target="_blank" rel="noopener" title="GitHub"
+        class="fab fa-github"></a></li>
 
 
 
@@ -305,8 +305,8 @@
 
 
 
-<li><a href="//www.linkedin.com/in/j-ray-cheng" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
-
+<li><a href="//www.linkedin.com/in/j-ray-cheng" target="_blank" rel="noopener"
+        title="LinkedIn" class="fab fa-linkedin"></a></li>
 
 
 
@@ -379,24 +379,24 @@
 </span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form&#34;</span>
 </span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">ref</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form&#34;</span>
 </span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">label</span><span style="color:#f92672">-width</span><span style="color:#960050;background-color:#1e0010">=&#34;</span><span style="color:#a6e22e">180px</span><span style="color:#960050;background-color:#1e0010">&#34;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">v-loading</span><span style="color:#e6db74">=&#34;loading&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      element-loading-text=&#34;Loading...&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      element-loading-spinner=&#34;el-icon-loading&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      element-loading-background=&#34;rgba(0, 0, 0, 0.8)&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;el-form-item label=&#34;Name&#34;&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;el-input v-model=&#34;manufacturerData.name&#34;&gt;&lt;/el-input&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;/el-form-item&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;el-form-item&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;el-button
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          v-if=&#34;isEditing&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          type=&#34;primary&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          native-type=&#34;submit&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          @click=&#34;onSubmit&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &gt;Update Manufacturer&lt;/el-button&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;el-button v-else @click=&#34;onSubmit&#34;</span>&gt;<span style="color:#a6e22e">Add</span> <span style="color:#a6e22e">Manufacturer</span><span style="color:#960050;background-color:#1e0010">&lt;/</span><span style="color:#a6e22e">el</span><span style="color:#f92672">-button</span>&gt;
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-form-item&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-form&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">v-loading</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;loading&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">element</span><span style="color:#f92672">-loading-text</span><span style="color:#960050;background-color:#1e0010">=&#34;</span><span style="color:#a6e22e">Loading...</span><span style="color:#960050;background-color:#1e0010">&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">element</span><span style="color:#f92672">-loading-spinner</span><span style="color:#960050;background-color:#1e0010">=&#34;</span><span style="color:#a6e22e">el</span><span style="color:#f92672">-icon-loading</span><span style="color:#960050;background-color:#1e0010">&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">element</span><span style="color:#f92672">-loading-background</span><span style="color:#960050;background-color:#1e0010">=&#34;</span><span style="color:#a6e22e">rgba</span><span style="color:#960050;background-color:#1e0010">(</span><span style="color:#a6e22e">0</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">0</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">0</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">0.8</span><span style="color:#960050;background-color:#1e0010">)&#34;</span>
+</span></span><span style="display:flex;"><span>    &gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">el-form-item</span> <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Name&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">el-input</span> <span style="color:#f92672">v-model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;manufacturerData.name&#34;</span>&gt;<span style="color:#960050;background-color:#1e0010">&lt;/</span><span style="color:#a6e22e">el</span><span style="color:#f92672">-input</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">el-form-item</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">el-form-item</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">el-button</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">v-if</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;isEditing&#34;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;primary&#34;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">native</span><span style="color:#f92672">-type</span><span style="color:#960050;background-color:#1e0010">=&#34;</span><span style="color:#a6e22e">submit</span><span style="color:#960050;background-color:#1e0010">&#34;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">@click</span><span style="color:#e6db74">=&#34;onSubmit&#34;</span>
+</span></span><span style="display:flex;"><span>        &gt;<span style="color:#a6e22e">Update</span> <span style="color:#a6e22e">Manufacturer</span>&lt;/<span style="color:#f92672">el-button</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">el-button</span> <span style="color:#a6e22e">v</span><span style="color:#f92672">-else</span> <span style="color:#f92672">@click</span><span style="color:#e6db74">=&#34;onSubmit&#34;</span>&gt;<span style="color:#a6e22e">Add</span> <span style="color:#a6e22e">Manufacturer</span><span style="color:#960050;background-color:#1e0010">&lt;/</span><span style="color:#a6e22e">el</span><span style="color:#f92672">-button</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">el-form-item</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">el-form</span>&gt;
 </span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">div</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">template</span>&gt;
 </span></span><span style="display:flex;"><span>
@@ -440,43 +440,43 @@
 </span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form&#34;</span>
 </span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">ref</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form&#34;</span>
 </span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">label</span><span style="color:#f92672">-width</span><span style="color:#960050;background-color:#1e0010">=&#34;</span><span style="color:#a6e22e">180px</span><span style="color:#960050;background-color:#1e0010">&#34;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">v-loading</span><span style="color:#e6db74">=&#34;loading&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      element-loading-text=&#34;Loading...&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      element-loading-spinner=&#34;el-icon-loading&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      element-loading-background=&#34;rgba(0, 0, 0, 0.8)&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;el-form-item label=&#34;Name&#34;&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;el-input v-model=&#34;modelData.name&#34;&gt;&lt;/el-input&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;/el-form-item&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;el-form-item label=&#34;Price&#34;&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;el-input v-model=&#34;modelData.price&#34;&gt;&lt;/el-input&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;/el-form-item&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;el-form-item label=&#34;Manufacturer &#34;&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;el-select v-model=&#34;modelData.manufacturer.name&#34; clearable placeholder=&#34;請選擇製造商&#34;&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;el-option
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            v-for=&#34;manufacturer in manufacturers&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            :key=&#34;manufacturer._id&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            :label=&#34;manufacturer.name&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            :value=&#34;manufacturer.name&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &gt;&lt;/el-option&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;/el-select&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;/el-form-item&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;el-form-item label=&#34;Image &#34;&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;el-input v-model=&#34;modelData.image&#34;&gt;&lt;/el-input&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;/el-form-item&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;el-form-item label=&#34;Description &#34;&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;el-input type=&#34;textarea&#34; v-model=&#34;modelData.description&#34;&gt;&lt;/el-input&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;/el-form-item&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;el-form-item&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;el-button
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          v-if=&#34;isEditing&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          type=&#34;primary&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          native-type=&#34;submit&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          @click=&#34;onSubmit&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &gt;Update Product&lt;/el-button&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;el-button v-else @click=&#34;onSubmit&#34;</span>&gt;<span style="color:#a6e22e">Add</span> <span style="color:#a6e22e">Product</span><span style="color:#960050;background-color:#1e0010">&lt;/</span><span style="color:#a6e22e">el</span><span style="color:#f92672">-button</span>&gt;
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-form-item&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-form&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">v-loading</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;loading&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">element</span><span style="color:#f92672">-loading-text</span><span style="color:#960050;background-color:#1e0010">=&#34;</span><span style="color:#a6e22e">Loading...</span><span style="color:#960050;background-color:#1e0010">&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">element</span><span style="color:#f92672">-loading-spinner</span><span style="color:#960050;background-color:#1e0010">=&#34;</span><span style="color:#a6e22e">el</span><span style="color:#f92672">-icon-loading</span><span style="color:#960050;background-color:#1e0010">&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">element</span><span style="color:#f92672">-loading-background</span><span style="color:#960050;background-color:#1e0010">=&#34;</span><span style="color:#a6e22e">rgba</span><span style="color:#960050;background-color:#1e0010">(</span><span style="color:#a6e22e">0</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">0</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">0</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">0.8</span><span style="color:#960050;background-color:#1e0010">)&#34;</span>
+</span></span><span style="display:flex;"><span>    &gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">el-form-item</span> <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Name&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">el-input</span> <span style="color:#f92672">v-model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;modelData.name&#34;</span>&gt;<span style="color:#960050;background-color:#1e0010">&lt;/</span><span style="color:#a6e22e">el</span><span style="color:#f92672">-input</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">el-form-item</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">el-form-item</span> <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Price&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">el-input</span> <span style="color:#f92672">v-model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;modelData.price&#34;</span>&gt;<span style="color:#960050;background-color:#1e0010">&lt;/</span><span style="color:#a6e22e">el</span><span style="color:#f92672">-input</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">el-form-item</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">el-form-item</span> <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Manufacturer &#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">el-select</span> <span style="color:#f92672">v-model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;modelData.manufacturer.name&#34; clearable placeholder=&#34;請選擇製造商&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>          &lt;<span style="color:#f92672">el-option</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">v-for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;manufacturer in manufacturers&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">:key</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;manufacturer._id&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">:label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;manufacturer.name&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">:value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;manufacturer.name&#34;</span>
+</span></span><span style="display:flex;"><span>          &gt;&lt;/<span style="color:#f92672">el-option</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">el-select</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">el-form-item</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">el-form-item</span> <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Image &#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">el-input</span> <span style="color:#f92672">v-model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;modelData.image&#34;</span>&gt;<span style="color:#960050;background-color:#1e0010">&lt;/</span><span style="color:#a6e22e">el</span><span style="color:#f92672">-input</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">el-form-item</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">el-form-item</span> <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Description &#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">el-input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;textarea&#34;</span> <span style="color:#f92672">v-model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;modelData.description&#34;</span>&gt;<span style="color:#960050;background-color:#1e0010">&lt;/</span><span style="color:#a6e22e">el</span><span style="color:#f92672">-input</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">el-form-item</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">el-form-item</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">el-button</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">v-if</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;isEditing&#34;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;primary&#34;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">native</span><span style="color:#f92672">-type</span><span style="color:#960050;background-color:#1e0010">=&#34;</span><span style="color:#a6e22e">submit</span><span style="color:#960050;background-color:#1e0010">&#34;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">@click</span><span style="color:#e6db74">=&#34;onSubmit&#34;</span>
+</span></span><span style="display:flex;"><span>        &gt;<span style="color:#a6e22e">Update</span> <span style="color:#a6e22e">Product</span>&lt;/<span style="color:#f92672">el-button</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">el-button</span> <span style="color:#a6e22e">v</span><span style="color:#f92672">-else</span> <span style="color:#f92672">@click</span><span style="color:#e6db74">=&#34;onSubmit&#34;</span>&gt;<span style="color:#a6e22e">Add</span> <span style="color:#a6e22e">Product</span><span style="color:#960050;background-color:#1e0010">&lt;/</span><span style="color:#a6e22e">el</span><span style="color:#f92672">-button</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">el-form-item</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">el-form</span>&gt;
 </span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">div</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">template</span>&gt;
 </span></span><span style="display:flex;"><span>
@@ -1383,7 +1383,7 @@
     <script>
       hljs.configure({ ignoreUnescapedHTML: true }); 
       hljs.highlightAll();
-    </script><script src="/js/bundle.min.2866e4da25149062e36d0ce1fcf74c172f459cee483e2a9ca199f9ebed2ff221.js" integrity="sha256-KGbk2iUUkGLjbQzh/PdMFy9FnO5IPiqcoZn56&#43;0v8iE="></script>
+    </script><script src="/js/bundle.min.842958c73d004b6fea3e9cf3064bed8257f04bc120697c21b4e4e7fef4b91040.js" integrity="sha256-hClYxz0AS2/qPpzzBkvtglfwS8EgaXwhtOTn/vS5EEA="></script>
     <script src="/js/add-on.js"></script>
 
 

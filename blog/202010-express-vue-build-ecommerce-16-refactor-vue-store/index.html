@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.125.5"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.133.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="[Express&#43;Vue 搭建電商網站] 16 抽離 Vuex store 中的邏輯">
   <meta property="og:description" content="使用 Express &#43; Vue 搭建一個電商網站 - 抽離 Vuex store 中的邏輯">
   <meta property="description" content="使用 Express &#43; Vue 搭建一個電商網站 - 抽離 Vuex store 中的邏輯">
@@ -223,7 +223,6 @@
 </script>
 
 
-
 </head>
 
   <body>
@@ -293,7 +292,8 @@
     <footer>
       <ul class="socnet-icons">
         
-        <li><a href="//github.com/ray247k" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+        <li><a href="//github.com/ray247k" target="_blank" rel="noopener" title="GitHub"
+        class="fab fa-github"></a></li>
 
 
 
@@ -305,8 +305,8 @@
 
 
 
-<li><a href="//www.linkedin.com/in/j-ray-cheng" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
-
+<li><a href="//www.linkedin.com/in/j-ray-cheng" target="_blank" rel="noopener"
+        title="LinkedIn" class="fab fa-linkedin"></a></li>
 
 
 
@@ -381,17 +381,17 @@
 </span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col-lg-3 col-md-3 col-sm-12 col-xs-12&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>          &lt;<span style="color:#f92672">ul</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;admin-menu&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">li</span>&gt;
-</span></span><span style="display:flex;"><span>              &lt;<span style="color:#f92672">router-link</span> <span style="color:#a6e22e">to</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/admin&#34;</span>&gt;<span style="color:#a6e22e">查看商品</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/router-link&gt;</span>
+</span></span><span style="display:flex;"><span>              &lt;<span style="color:#f92672">router-link</span> <span style="color:#a6e22e">to</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/admin&#34;</span>&gt;<span style="color:#a6e22e">查看商品</span>&lt;/<span style="color:#f92672">router-link</span>&gt;
 </span></span><span style="display:flex;"><span>            &lt;/<span style="color:#f92672">li</span>&gt;
 </span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">li</span>&gt;
-</span></span><span style="display:flex;"><span>              &lt;<span style="color:#f92672">router-link</span> <span style="color:#a6e22e">to</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/admin/new&#34;</span>&gt;<span style="color:#a6e22e">新建商品</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/router-link&gt;</span>
+</span></span><span style="display:flex;"><span>              &lt;<span style="color:#f92672">router-link</span> <span style="color:#a6e22e">to</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/admin/new&#34;</span>&gt;<span style="color:#a6e22e">新建商品</span>&lt;/<span style="color:#f92672">router-link</span>&gt;
 </span></span><span style="display:flex;"><span>            &lt;/<span style="color:#f92672">li</span>&gt;
 </span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">li</span>&gt;
-</span></span><span style="display:flex;"><span>              &lt;<span style="color:#f92672">router-link</span> <span style="color:#a6e22e">to</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/admin/manufacturers&#34;</span>&gt;<span style="color:#a6e22e">查看製造商</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/router-link&gt;</span>
+</span></span><span style="display:flex;"><span>              &lt;<span style="color:#f92672">router-link</span> <span style="color:#a6e22e">to</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/admin/manufacturers&#34;</span>&gt;<span style="color:#a6e22e">查看製造商</span>&lt;/<span style="color:#f92672">router-link</span>&gt;
 </span></span><span style="display:flex;"><span>            &lt;/<span style="color:#f92672">li</span>&gt;
 </span></span><span style="display:flex;"><span>          &lt;/<span style="color:#f92672">ul</span>&gt;
 </span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">div</span>&gt;
-</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">router-view</span>&gt;<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/router-view&gt;</span>
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">router-view</span>&gt;&lt;/<span style="color:#f92672">router-view</span>&gt;
 </span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">div</span>&gt;
 </span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">div</span>&gt;
 </span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">div</span>&gt;
@@ -410,13 +410,13 @@
 </span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">tr</span>&gt;
 </span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">thead</span>&gt;
 </span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">tbody</span>&gt;
-</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">tr</span> <span style="color:#f92672">v-for</span><span style="color:#e6db74">=&#34;manufacturer in manufacturers&#34; :key=&#34;manufacturer._id&#34;&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;td&gt;{{manufacturer.name}}&lt;/td&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;td class=&#34;modify&#34;&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &lt;router-link :to=&#34;&#39;/admin/manufacturers/edit/&#39; + manufacturer._id&#34;&gt;修改&lt;/router-link&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;/td&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;td class=&#34;remove&#34;&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &lt;a @click=&#34;removeManufacturer(manufacturer._id)&#34; href=&#34;#&#34;</span>&gt;<span style="color:#a6e22e">刪除</span>&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">tr</span> <span style="color:#f92672">v-for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;manufacturer in manufacturers&#34; :key=&#34;manufacturer._id&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>          &lt;<span style="color:#f92672">td</span>&gt;{{<span style="color:#a6e22e">manufacturer</span>.<span style="color:#a6e22e">name</span>}}&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>          &lt;<span style="color:#f92672">td</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;modify&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">router-link</span> <span style="color:#f92672">:</span><span style="color:#a6e22e">to</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#39;/admin/manufacturers/edit/&#39; + manufacturer._id&#34;</span>&gt;<span style="color:#a6e22e">修改</span>&lt;/<span style="color:#f92672">router-link</span>&gt;
+</span></span><span style="display:flex;"><span>          &lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>          &lt;<span style="color:#f92672">td</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;remove&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">a</span> <span style="color:#f92672">@click</span><span style="color:#e6db74">=&#34;removeManufacturer(manufacturer._id)&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span>&gt;<span style="color:#a6e22e">刪除</span>&lt;/<span style="color:#f92672">a</span>&gt;
 </span></span><span style="display:flex;"><span>          &lt;/<span style="color:#f92672">td</span>&gt;
 </span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">tr</span>&gt;
 </span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">tbody</span>&gt;
@@ -480,15 +480,15 @@
 </span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">tr</span>&gt;
 </span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">thead</span>&gt;
 </span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">tbody</span>&gt;
-</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">tr</span> <span style="color:#f92672">v-for</span><span style="color:#e6db74">=&#34;product in products&#34; :key=&#34;product._id&#34;&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;td&gt;{{product.name}}&lt;/td&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;td&gt;{{product.price}}&lt;/td&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;td&gt;{{product.manufacturer.name}}&lt;/td&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;td class=&#34;modify&#34;&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &lt;router-link :to=&#34;&#39;/admin/edit/&#39; + product._id&#34;&gt;修改&lt;/router-link&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;/td&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;td class=&#34;remove&#34;&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &lt;a @click=&#34;removeProduct(product._id)&#34; href=&#34;#&#34;</span>&gt;<span style="color:#a6e22e">刪除</span>&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">tr</span> <span style="color:#f92672">v-for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;product in products&#34; :key=&#34;product._id&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>          &lt;<span style="color:#f92672">td</span>&gt;{{<span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">name</span>}}&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>          &lt;<span style="color:#f92672">td</span>&gt;{{<span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">price</span>}}&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>          &lt;<span style="color:#f92672">td</span>&gt;{{<span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">manufacturer</span>.<span style="color:#a6e22e">name</span>}}&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>          &lt;<span style="color:#f92672">td</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;modify&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">router-link</span> <span style="color:#f92672">:</span><span style="color:#a6e22e">to</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#39;/admin/edit/&#39; + product._id&#34;</span>&gt;<span style="color:#a6e22e">修改</span>&lt;/<span style="color:#f92672">router-link</span>&gt;
+</span></span><span style="display:flex;"><span>          &lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>          &lt;<span style="color:#f92672">td</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;remove&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">a</span> <span style="color:#f92672">@click</span><span style="color:#e6db74">=&#34;removeProduct(product._id)&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span>&gt;<span style="color:#a6e22e">刪除</span>&lt;/<span style="color:#f92672">a</span>&gt;
 </span></span><span style="display:flex;"><span>          &lt;/<span style="color:#f92672">td</span>&gt;
 </span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">tr</span>&gt;
 </span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">tbody</span>&gt;
@@ -760,10 +760,10 @@
 </span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">div</span>&gt;
 </span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">product-form</span>
 </span></span><span style="display:flex;"><span>      <span style="color:#f92672">@save-product</span><span style="color:#e6db74">=&#34;updateProduct&#34;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">:model</span><span style="color:#e6db74">=&#34;model&#34;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">:manufacturers</span><span style="color:#e6db74">=&#34;manufacturers&#34;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">:isEditing</span><span style="color:#e6db74">=&#34;true&#34;</span>
-</span></span><span style="display:flex;"><span>    &gt;<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/product-form&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">:model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;model&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">:manufacturers</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;manufacturers&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">:isEditing</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span>
+</span></span><span style="display:flex;"><span>    &gt;&lt;/<span style="color:#f92672">product-form</span>&gt;
 </span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">div</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">template</span>&gt;
 </span></span><span style="display:flex;"><span>
@@ -817,7 +817,7 @@
 只是一個負責新增商品，一個修改</p>
 <p>在這邊我們將組件中原本寫死的資料改為從後端動態取得，並將資料傳入給子組件 <code>ProductForm</code></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#f92672">template</span>&gt;
-</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">product-form</span> <span style="color:#f92672">@save-product</span><span style="color:#e6db74">=&#34;addProduct&#34;</span> <span style="color:#f92672">:model</span><span style="color:#e6db74">=&#34;model&#34;</span> <span style="color:#f92672">:manufacturers</span><span style="color:#e6db74">=&#34;manufacturers&#34;</span>&gt;<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/product-form&gt;</span>
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">product-form</span> <span style="color:#f92672">@save-product</span><span style="color:#e6db74">=&#34;addProduct&#34;</span> <span style="color:#f92672">:model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;model&#34;</span> <span style="color:#f92672">:manufacturers</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;manufacturers&#34;</span>&gt;&lt;/<span style="color:#f92672">product-form</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">template</span>&gt;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
@@ -1576,7 +1576,7 @@
     <script>
       hljs.configure({ ignoreUnescapedHTML: true }); 
       hljs.highlightAll();
-    </script><script src="/js/bundle.min.2866e4da25149062e36d0ce1fcf74c172f459cee483e2a9ca199f9ebed2ff221.js" integrity="sha256-KGbk2iUUkGLjbQzh/PdMFy9FnO5IPiqcoZn56&#43;0v8iE="></script>
+    </script><script src="/js/bundle.min.842958c73d004b6fea3e9cf3064bed8257f04bc120697c21b4e4e7fef4b91040.js" integrity="sha256-hClYxz0AS2/qPpzzBkvtglfwS8EgaXwhtOTn/vS5EEA="></script>
     <script src="/js/add-on.js"></script>
 
 
