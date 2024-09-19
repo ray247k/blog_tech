@@ -6,8 +6,15 @@
     <description>Recent content in Categories on Byte Ebi 🍤</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 06 May 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 19 Sep 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://tech.ray247k.com/en/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Version Control</title>
+      <link>https://tech.ray247k.com/en/categories/version-control/</link>
+      <pubDate>Thu, 19 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/categories/version-control/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Golang</title>
       <link>https://tech.ray247k.com/en/categories/golang/</link>
@@ -69,13 +76,6 @@
       <link>https://tech.ray247k.com/en/categories/third-party-services/</link>
       <pubDate>Sun, 28 Nov 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/en/categories/third-party-services/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Version Control</title>
-      <link>https://tech.ray247k.com/en/categories/version-control/</link>
-      <pubDate>Sat, 06 Nov 2021 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/categories/version-control/</guid>
       <description></description>
     </item>
     <item>

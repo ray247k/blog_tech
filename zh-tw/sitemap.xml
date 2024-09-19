@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://tech.ray247k.com/blog/</loc>
-    <lastmod>2024-05-06T00:00:00+00:00</lastmod>
+    <lastmod>2024-09-19T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -16,7 +16,7 @@
                 />
   </url><url>
     <loc>https://tech.ray247k.com/</loc>
-    <lastmod>2024-05-06T00:00:00+00:00</lastmod>
+    <lastmod>2024-09-19T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -29,7 +29,7 @@
                 />
   </url><url>
     <loc>https://tech.ray247k.com/categories/</loc>
-    <lastmod>2024-05-06T00:00:00+00:00</lastmod>
+    <lastmod>2024-09-19T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -40,6 +40,61 @@
                 hreflang="zh-TW"
                 href="https://tech.ray247k.com/categories/"
                 />
+  </url><url>
+    <loc>https://tech.ray247k.com/tags/github/</loc>
+    <lastmod>2024-09-19T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/github/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/github/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/tags/ssh/</loc>
+    <lastmod>2024-09-19T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/ssh/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/ssh/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/tags/</loc>
+    <lastmod>2024-09-19T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/blog/202409-multiple-github-accounts-with-ssh-keys/</loc>
+    <lastmod>2024-09-19T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202409-multiple-github-accounts-with-ssh-keys/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202409-multiple-github-accounts-with-ssh-keys/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/categories/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/</loc>
+    <lastmod>2024-09-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/categories/golang/</loc>
     <lastmod>2024-05-06T00:00:00+00:00</lastmod>
@@ -65,19 +120,6 @@
                 rel="alternate"
                 hreflang="zh-TW"
                 href="https://tech.ray247k.com/tags/golang-hugo/"
-                />
-  </url><url>
-    <loc>https://tech.ray247k.com/tags/</loc>
-    <lastmod>2024-05-06T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/tags/"
                 />
   </url><url>
     <loc>https://tech.ray247k.com/blog/202405-create-static-web-site-with-hugo/</loc>
@@ -733,19 +775,6 @@
                 href="https://tech.ray247k.com/blog/202204-jenkins-cicd-4-ssh-remote-server/"
                 />
   </url><url>
-    <loc>https://tech.ray247k.com/tags/ssh/</loc>
-    <lastmod>2022-04-13T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/tags/ssh/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/tags/ssh/"
-                />
-  </url><url>
     <loc>https://tech.ray247k.com/tags/gcr/</loc>
     <lastmod>2022-04-08T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -1346,23 +1375,7 @@
                 href="https://tech.ray247k.com/tags/git/"
                 />
   </url><url>
-    <loc>https://tech.ray247k.com/tags/github/</loc>
-    <lastmod>2021-11-06T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/tags/github/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/tags/github/"
-                />
-  </url><url>
     <loc>https://tech.ray247k.com/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/</loc>
-    <lastmod>2021-11-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tech.ray247k.com/categories/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/</loc>
     <lastmod>2021-11-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/blog/202110-make-discord-chatbot-02-roll-dice-bot/</loc>

@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.133.0"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.134.2"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="Interacting with smart contracts using Golang">
   <meta property="og:description" content="Generating a Go package with abigen tool to interact with smart contracts and perform contract operations">
   <meta property="description" content="Generating a Go package with abigen tool to interact with smart contracts and perform contract operations">
@@ -41,8 +41,6 @@
   
             <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/felipec.min.css">
           <link rel="stylesheet" href="/css/bundle.min.8c2311cfb8e6e4d1336dda60a34b39f11c555c4c782dc22be9632165dcca8ad9.css" integrity="sha256-jCMRz7jm5NEzbdpgo0s58RxVXEx4LcIr6WMhZdzKitk="><link rel="stylesheet" href="/css/add-on.css">
-  
-    
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
       <script>
         var doNotTrack = false;
@@ -57,10 +55,6 @@
           gtag('config', 'G-LTGVYYWC2J');
         }
       </script>
-    
-  
-
-
   <script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -399,35 +393,35 @@ If you require a more in-depth explanation of smart contract operations in the f
 <p>Once you have obtained the <code>abi.json</code> file for the smart contract, you can proceed with the following command execution:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>abigen --abi<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;./erc721.abi.json&#34;</span> --type<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;erc721&#34;</span> --pkg<span style="color:#f92672">=</span>erc721 --out<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;erc721.go&#34;</span>
 </span></span></code></pre></div><table>
-<thead>
-<tr>
-<th>flags</th>
-<th>description</th>
-<th>usage</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>&ndash;abi</td>
-<td>file path for smart contract abi.json</td>
-<td>./erc721.abi.json</td>
-</tr>
-<tr>
-<td>&ndash;type</td>
-<td>type name in struct</td>
-<td>erc721</td>
-</tr>
-<tr>
-<td>&ndash;pkg</td>
-<td>go package name in output file</td>
-<td>erc721</td>
-</tr>
-<tr>
-<td>&ndash;out</td>
-<td>output file name</td>
-<td>erc721.go</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">flags</th>
+          <th style="text-align: left">description</th>
+          <th style="text-align: left">usage</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">&ndash;abi</td>
+          <td style="text-align: left">file path for smart contract abi.json</td>
+          <td style="text-align: left">./erc721.abi.json</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">&ndash;type</td>
+          <td style="text-align: left">type name in struct</td>
+          <td style="text-align: left">erc721</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">&ndash;pkg</td>
+          <td style="text-align: left">go package name in output file</td>
+          <td style="text-align: left">erc721</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">&ndash;out</td>
+          <td style="text-align: left">output file name</td>
+          <td style="text-align: left">erc721.go</td>
+      </tr>
+  </tbody>
 </table>
 <p>As a result, you will have a file named <code>erc721.go</code>, and upon opening it, you will find that the package name is <code>erc721</code>.<br>
 By comparing the functions inside the file, you will notice that they correspond to the functions in the abi.<br>
@@ -525,6 +519,16 @@ There are other applications to explore in the future as opportunities arise for
       </header>
       
       <article class="mini-post">
+          <a href="/en/blog/202409-multiple-github-accounts-with-ssh-keys/" class="image" style="--bg-image: url('/blog/202409-multiple-github-accounts-with-ssh-keys/featured.jpg');">
+    <img src="/blog/202409-multiple-github-accounts-with-ssh-keys/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202409-multiple-github-accounts-with-ssh-keys/">Setting up multiple GitHub accounts on one computer</a></h2>
+          <time class="published" datetime="2024-09-19 00:00:00 &#43;0000 UTC">September 19, 2024</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
           <a href="/en/blog/202405-create-static-web-site-with-hugo/" class="image" style="--bg-image: url('/blog/202405-create-static-web-site-with-hugo/featured.jpeg');">
     <img src="/blog/202405-create-static-web-site-with-hugo/featured.jpeg" alt="">
   </a>
@@ -561,16 +565,6 @@ There are other applications to explore in the future as opportunities arise for
         <header>
           <h2><a href="/en/blog/202401-aws-fundamental-cyber-security/">[AWS Cloud Fundamental Notes] Cyber Security</a></h2>
           <time class="published" datetime="2024-01-06 00:00:00 &#43;0000 UTC">January 6, 2024</time>
-        </header>
-      </article>
-      
-      <article class="mini-post">
-          <a href="/en/blog/202312-aws-fundamental-lambda/" class="image" style="--bg-image: url('/blog/202312-aws-fundamental-lambda/featured.jpg');">
-    <img src="/blog/202312-aws-fundamental-lambda/featured.jpg" alt="">
-  </a>
-        <header>
-          <h2><a href="/en/blog/202312-aws-fundamental-lambda/">[AWS Cloud Fundamental Notes] Lambda</a></h2>
-          <time class="published" datetime="2023-12-27 00:00:00 &#43;0000 UTC">December 27, 2023</time>
         </header>
       </article>
       
@@ -617,6 +611,10 @@ There are other applications to explore in the future as opportunities arise for
           </li>
           
           <li>
+              <a href="/en/categories/version-control/">version control<span class="count">2</span></a>
+          </li>
+          
+          <li>
               <a href="/en/categories/website-operations/">website operations<span class="count">2</span></a>
           </li>
           
@@ -634,10 +632,6 @@ There are other applications to explore in the future as opportunities arise for
           
           <li>
               <a href="/en/categories/tools/">tools<span class="count">1</span></a>
-          </li>
-          
-          <li>
-              <a href="/en/categories/version-control/">version control<span class="count">1</span></a>
           </li>
           
         </ul>
@@ -719,6 +713,10 @@ There are other applications to explore in the future as opportunities arise for
         </li>
         
         <li>
+          <a href="/en/tags/ssh/">ssh (3)</a>
+        </li>
+        
+        <li>
           <a href="/en/tags/web-hosting/">web hosting (3)</a>
         </li>
         
@@ -735,6 +733,10 @@ There are other applications to explore in the future as opportunities arise for
         </li>
         
         <li>
+          <a href="/en/tags/github/">github (2)</a>
+        </li>
+        
+        <li>
           <a href="/en/tags/google-domains/">google domains (2)</a>
         </li>
         
@@ -744,10 +746,6 @@ There are other applications to explore in the future as opportunities arise for
         
         <li>
           <a href="/en/tags/python3/">python3 (2)</a>
-        </li>
-        
-        <li>
-          <a href="/en/tags/ssh/">ssh (2)</a>
         </li>
         
         <li>
@@ -808,10 +806,6 @@ There are other applications to explore in the future as opportunities arise for
         
         <li>
           <a href="/en/tags/git/">git (1)</a>
-        </li>
-        
-        <li>
-          <a href="/en/tags/github/">github (1)</a>
         </li>
         
         <li>

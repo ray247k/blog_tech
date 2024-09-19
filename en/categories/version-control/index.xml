@@ -6,8 +6,15 @@
     <description>Recent content in Version Control on Byte Ebi 🍤</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 06 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 19 Sep 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://tech.ray247k.com/en/categories/version-control/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setting up multiple GitHub accounts on one computer</title>
+      <link>https://tech.ray247k.com/en/blog/202409-multiple-github-accounts-with-ssh-keys/</link>
+      <pubDate>Thu, 19 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202409-multiple-github-accounts-with-ssh-keys/</guid>
+      <description>&lt;p&gt;Due to my remote work setup, I needed to configure a company GitHub account on my personal computer.&lt;br&gt;&#xA;However, GitHub doesn&amp;rsquo;t allow the same SSH key to be used across multiple accounts, which means I can&amp;rsquo;t assign my personal SSH key to the company&amp;rsquo;s GitHub account.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>[Git Tutorial] Configuring Global gitignore Locally</title>
       <link>https://tech.ray247k.com/en/blog/202111-git-global-gitignore/</link>

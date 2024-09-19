@@ -6,8 +6,15 @@
     <description>Recent content in Blog on Byte Ebi 🍤</description>
     <generator>Hugo</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Mon, 06 May 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 19 Sep 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://tech.ray247k.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>在同一台電腦設定多組 GitHub 帳號</title>
+      <link>https://tech.ray247k.com/blog/202409-multiple-github-accounts-with-ssh-keys/</link>
+      <pubDate>Thu, 19 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/blog/202409-multiple-github-accounts-with-ssh-keys/</guid>
+      <description>&lt;p&gt;因為遠端工作的關係，我要在自己的電腦上設定公司的 GitHub 帳號&lt;br&gt;&#xA;然而 GitHub 是不會讓你把同一組 SSH Key 設定給不同的帳號的&lt;br&gt;&#xA;所以無法把私人帳號的 SSH Key 設定到公司提供的 GitHub 帳號上&lt;/p&gt;</description>
+    </item>
     <item>
       <title>使用 Hugo 建立靜態網站</title>
       <link>https://tech.ray247k.com/blog/202405-create-static-web-site-with-hugo/</link>

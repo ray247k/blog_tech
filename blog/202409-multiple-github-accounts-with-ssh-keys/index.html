@@ -1,0 +1,1048 @@
+<!doctype html>
+<html lang="zh-tw">
+  <head>
+  <meta charset="utf-8">
+<title>在同一台電腦設定多組 GitHub 帳號 - Byte Ebi 🍤</title>
+<meta name="description" content="設定多組 Github 帳號，並使用 ssh 連線">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta property="og:site_name" content="Byte Ebi 🍤">
+<meta property="og:title" content="在同一台電腦設定多組 GitHub 帳號">
+<meta property="og:description" content="設定多組 Github 帳號，並使用 ssh 連線">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://tech.ray247k.com/blog/202409-multiple-github-accounts-with-ssh-keys/">
+  <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
+
+
+
+  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
+  
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=1" color="#ffffff">
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=1">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=1">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+<meta name="generator" content="Hugo 0.134.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+  <meta property="og:title" content="在同一台電腦設定多組 GitHub 帳號">
+  <meta property="og:description" content="設定多組 Github 帳號，並使用 ssh 連線">
+  <meta property="description" content="設定多組 Github 帳號，並使用 ssh 連線">
+  <meta property="og:url" content="https://tech.ray247k.com/blog/202409-multiple-github-accounts-with-ssh-keys/">
+  <meta property="og:type" content="article">
+  
+    <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
+  
+  
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/felipec.min.css">
+          <link rel="stylesheet" href="/css/bundle.min.8c2311cfb8e6e4d1336dda60a34b39f11c555c4c782dc22be9632165dcca8ad9.css" integrity="sha256-jCMRz7jm5NEzbdpgo0s58RxVXEx4LcIr6WMhZdzKitk="><link rel="stylesheet" href="/css/add-on.css">
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-LTGVYYWC2J');
+        }
+      </script>
+  <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "image": {
+        "@type": "ImageObject",
+        "image": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+        "height": 648,
+        "width": 1080
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com\/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Byte Ebi 🍤",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png"
+        }
+    },
+    "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+    "headline": "討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - Byte Ebi 🍤",
+    "name": "Byte Ebi 🍤",
+    "url": "https:\/\/tech.ray247k.com\/",
+    "description": "討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - aws,devops,golang,laravel,leetcode,node.js,php,python3,serverless,實用工具,架站相關,版本控制,第三方服務,",
+    "keywords": [
+        "apache bench,auto scaling,aws,axios,blockchain,cdn,chatbot,cicd,cloudflare,cloudflare workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker compose,domain name,drone,element-ui,excel,express,ffmpeg,gas,gcp,gcr,getter,git,github,github page,go,golang,golang, hugo,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load balancing,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,phpcbf,phpcs,portainer,postgresql,prerender,proxy,python3,queue,redis,restful,seo,server,serverless,smart contract,ssh,stress testing,subdomain,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
+    ]
+}
+</script>
+
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "legalName": "Byte Ebi 🍤",
+    "url": "https:\/\/tech.ray247k.com\/",
+    "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "",
+        "availableLanguage": [
+            "Mandarin",
+            "English"
+        ]
+    },
+    "sameAs": [
+        "https://ray247k.blogspot.com/"
+    ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "在同一台電腦設定多組 GitHub 帳號",
+    "description": "設定多組 Github 帳號，並使用 ssh 連線",
+    "keywords": [
+        "github" , "ssh" 
+    ],
+    "dateCreated": "2024-09-19T00:00:00.00Z",
+    "datePublished": "2024-09-19T00:00:00.00Z",
+    "dateModified": "2024-09-19T00:00:00.00Z",
+    "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "contentUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png"
+    },
+    "breadcrumb": {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\/",
+                    "name": "Byte Ebi 🍤",
+                    "url": "https:\/\/tech.ray247k.com\/"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\//blog",
+                    "name": "Blog",
+                    "url": "https:\/\/tech.ray247k.com\//blog"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\/blog\/202409-multiple-github-accounts-with-ssh-keys\/",
+                    "name": "在同一台電腦設定多組 GitHub 帳號",
+                    "url": "https:\/\/tech.ray247k.com\/blog\/202409-multiple-github-accounts-with-ssh-keys\/"
+                }
+            }
+        ],
+        "itemListOrder": "Ascending",
+        "numberOfItems": 3
+    }
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "articleSection": "blog",
+    "name": "在同一台電腦設定多組 GitHub 帳號",
+    "headline": "\u003cp\u003e因為遠端工作的關係，我要在自己的電腦上設定公司的 GitHub 帳號\u003cbr\u003e\n然而 GitHub 是不會讓你把同一組 SSH Key 設定給不同的帳號的\u003cbr\u003e\n所以無法把私人帳號的 SSH Key 設定到公司提供的 GitHub 帳號上\u003c\/p\u003e",
+    "description": "設定多組 Github 帳號，並使用 ssh 連線",
+    "inLanguage": "zh-TW",
+    "isFamilyFriendly": "true",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com\/blog\/202409-multiple-github-accounts-with-ssh-keys\/"
+    },
+    "author" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "creator" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "accountablePerson" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "copyrightHolder" : "Byte Ebi 🍤",
+    "copyrightYear" : "2024",
+    "dateCreated": "2024-09-19T00:00:00.00Z",
+    "datePublished": "2024-09-19T00:00:00.00Z",
+    "dateModified": "2024-09-19T00:00:00.00Z",
+    "publisher":{
+        "@type":"Organization",
+        "name": "Byte Ebi 🍤",
+        "url": "https://tech.ray247k.com/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+            "width":"32",
+            "height":"32"
+        }
+    },
+    "image": "https://tech.ray247k.com/img/main/logo.png",
+    "url" : "https:\/\/tech.ray247k.com\/blog\/202409-multiple-github-accounts-with-ssh-keys\/",
+    "wordCount" : "256",
+    "genre" : [ "github" , "ssh" ],
+    "keywords" : [ "github" , "ssh" ]
+}
+</script>
+
+
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/" class="nav">
+        
+          Blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/" class="nav link"><i class='fa fa-home'></i> home</a>
+        
+      
+        
+          
+          <a href="/about" class="nav link"><i class='far fa-id-card'></i> about</a>
+        
+      
+        
+          
+          <a href="/categories" class="nav link"><i class='fas fa-sitemap'></i> category</a>
+        
+      
+      
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    
+    <a href="#lang-menu" class="nav lang-toggle" lang="zh-tw">zh-tw</a>
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  <menu id="lang-menu" class="flyout-menu menu">
+  <a href="#" lang="zh-tw" class="nav link active">正體中文 (zh-tw)</a>
+  
+      <a href="https://tech.ray247k.com/en/blog/202409-multiple-github-accounts-with-ssh-keys/" lang="en" class="nav link">English (en)</a>
+    
+  
+</menu>
+
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/"><img src="/img/main/logo.png" class="circle" width="100" alt="Byte Ebi&#39;s Logo" /></a>
+  <header>
+    <h1>Byte Ebi 🍤</h1>
+  </header>
+  <main>
+    <p>每天一小口，蝦米變鯨魚</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/ray247k" target="_blank" rel="noopener" title="GitHub"
+        class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//www.linkedin.com/in/j-ray-cheng" target="_blank" rel="noopener"
+        title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="/blog/202409-multiple-github-accounts-with-ssh-keys/">在同一台電腦設定多組 GitHub 帳號</a></h2>
+    
+    
+      <p>設定多組 Github 帳號，並使用 ssh 連線</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2024-09-19 00:00:00 &#43;0000 UTC">2024/09/19</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+    <div id="socnet-share">
+      
+
+
+
+
+
+    </div>
+    <div class="content">
+      <a href="/blog/202409-multiple-github-accounts-with-ssh-keys/" class="image" style="--bg-image: url('/blog/202409-multiple-github-accounts-with-ssh-keys/featured.jpg');">
+    <img src="/blog/202409-multiple-github-accounts-with-ssh-keys/featured.jpg" alt="">
+  </a>
+      <p>因為遠端工作的關係，我要在自己的電腦上設定公司的 GitHub 帳號<br>
+然而 GitHub 是不會讓你把同一組 SSH Key 設定給不同的帳號的<br>
+所以無法把私人帳號的 SSH Key 設定到公司提供的 GitHub 帳號上</p>
+<p>目標：在一台電腦上設定兩組 SSH Key，並且在執行<code>git</code>指令時自動選擇對應的 SSH Key</p>
+<p>參考資料：<a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=mac"
+   
+    target="_blank" rel="noreferrer noopener">Generating a new SSH key and adding it to the ssh-agent
+
+</a>
+</p>
+<h1 id="1-使用指令建立新的-ssh-key">1. 使用指令建立新的 ssh key</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>ssh-keygen -t rsa -C <span style="color:#e6db74">&#39;{company_email@company.com}&#39;</span> -f ~/.ssh/id_rsa_company
+</span></span></code></pre></div><p>產生出來的 ssh key 會存在以下路徑</p>
+<ul>
+<li>Mac：<code>/Users/username/.ssh</code></li>
+<li>Windows：<code>C:\Users\username\.ssh</code></li>
+</ul>
+<p>此時先複製產生出來的 <code>id_rsa.pub</code> 內容</p>
+<h1 id="2-在公司-github-帳號下新增-ssh-key">2. 在公司 github 帳號下新增 SSH key</h1>
+<p>首先進到帳號的 <a href="https://github.com/settings/keys"
+   
+    target="_blank" rel="noreferrer noopener">SSH keys 管理頁面
+</a>
+<br>
+並按下畫面右方的<code>New SSH key</code>按鈕</p>
+<p><img alt="add ssh key" src="/blog/202409-multiple-github-accounts-with-ssh-keys/add_ssh_key.png"></p>
+<p>名稱選自己好識別的，內容貼上剛剛產生的 <code>id_rsa.pub</code> 內容</p>
+<h1 id="3-ssh-config-設定">3. ssh config 設定</h1>
+<h2 id="3-1-清除已設定的全部金鑰">3-1. 清除已設定的全部金鑰</h2>
+<p>這個指令只會刪除設定相關，並不會把金鑰檔案刪除！</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>ssh-add -D
+</span></span></code></pre></div><p>這邊嘗試好幾次，金鑰越來越亂，最後只能放棄重來<br>
+索性再往下操作前都清除掉原有的金鑰設定<br>
+反正重新加入很簡單，而且在接下來的流程中也會新增</p>
+<h2 id="32-查看當前已經產生哪些金鑰">3.2. 查看當前已經產生哪些金鑰</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>ls .ssh
+</span></span></code></pre></div><h2 id="33-重新加入金鑰">3.3. 重新加入金鑰</h2>
+<p>在前面已經產生一組新的 ssh key<code>id_rsa_company</code><br>
+而電腦原有的個人金鑰叫做<code>id_rsa</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>ssh-add ~/.ssh/id_rsa
+</span></span><span style="display:flex;"><span>ssh-add ~/.ssh/id_rsa_company
+</span></span></code></pre></div><p>可以使用指令查看是否成功加入</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>ssh-add -l
+</span></span></code></pre></div><h2 id="34-修改-ssh-的-config-設定">3.4. 修改 ssh 的 config 設定</h2>
+<p>首先我們要確定<code>~/.ssh/config</code>檔案存在，如果不存在則建立</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>cd ~/.ssh/
+</span></span><span style="display:flex;"><span>touch config
+</span></span><span style="display:flex;"><span>open config
+</span></span></code></pre></div><p>開啟<code>config</code>檔案後，將內容修改成如下：</p>
+<pre tabindex="0"><code># Personal GitHub account
+
+Host github.com
+    HostName github.com
+    AddKeysToAgent yes
+    UseKeychain yes
+    IdentityFile ~/.ssh/id_rsa
+
+# Work GitHub account
+
+Host github.com-company
+    HostName github.com
+    AddKeysToAgent yes
+    UseKeychain yes
+    IdentityFile ~/.ssh/id_rsa_company
+</code></pre><p>我們設定了兩組 ssh key，一組用於個人帳號，一組用於公司帳號</p>
+<ul>
+<li><strong>Host</strong>：代表呼叫的主機，可以是 IP 或是域名</li>
+<li><strong>IdentityFile</strong>： 代表要使用的 ssh key 檔案</li>
+<li><strong>AddKeysToAgent</strong>： 表示是否要將 ssh key 加入到 ssh-agent 中</li>
+<li><strong>UseKeychain</strong>： 表示是否要使用 ssh-keychain 來管理 ssh key</li>
+</ul>
+<h1 id="4-測試連線">4. 測試連線</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>ssh -T git@github.com
+</span></span><span style="display:flex;"><span>ssh -T git@github.com-company
+</span></span></code></pre></div><p>如果成功的話應該會分別顯示不同帳號的歡迎訊息</p>
+<p><img alt="ssh test" src="/blog/202409-multiple-github-accounts-with-ssh-keys/ssh-test.png"></p>
+<h1 id="5-從遠端-clone-到本機">5. 從遠端 clone 到本機</h1>
+<p>原本的個人帳號不需要做任何調整<br>
+若是要 clone 公司帳號的專案，則要將指令內的 host 改為 config 中的公司帳號 Host<br>
+後面的專案名稱什麼的不需要更動</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git clone git@github.com-company:<span style="color:#f92672">{</span>company/repository.git<span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>範例中就是把 GitHub 預設的 <code>github.com</code> 換成 <code>github.com-company</code><br>
+如此一來在下指令時就會根據 Host 自動識別到對應的 ssh key 來進行連線！</p>
+<p>要注意的是有些 Git 的 GUI 軟體不支援使用多組 ssh key 連線，可能會出現錯誤訊息<br>
+甚至是把你預設的 ssh key 也變成公司那組<br>
+下連線測試指令，不知道為什麼就一直連到公司帳號，而且還成功連線&hellip;</p>
+<p>具體原因沒有去查，索性直接<a href="#3-1-%e6%b8%85%e9%99%a4%e5%b7%b2%e8%a8%ad%e5%ae%9a%e7%9a%84%e5%85%a8%e9%83%a8%e9%87%91%e9%91%b0"
+   
+   >清除已設定的全部金鑰
+</a>
+</p>
+<p>比較建議的做法是，依然可以使用慣用的 GUI 進行本機的 Git 操作<br>
+像是<code>commit</code>或是看線圖之類</p>
+<p>而 push, pull 之類會和進行遠端操作的指令就直接開 terminal 執行吧</p>
+<h1 id="6-調整既專案">6. 調整既專案</h1>
+<p>如果是已經 clone 下來的專案的話，打開專案資料夾內<code>/.git/config</code>檔案<br>
+並修改<code>[remote &quot;origin&quot;]</code>下方的 url 為公司帳號的 url</p>
+<pre tabindex="0"><code>[remote &#34;origin&#34;]
+	url = git@github.com-company:company/repository.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+</code></pre><p>如果 GUI 支援編輯遠端的 url 的話，直接在 GUI 上修改更好</p>
+<p>以上就是這次的踩坑經驗了！<br>
+之前一直都用公司配發的電腦開發，很久沒遇到這種問題<br>
+但是其實以前做過類似的設定，當時覺得這不是會頻繁出現問題就沒有寫下來<br>
+導致這次多花時間研究了一陣子，就是不頻繁出現才應該記下來<br>
+否則再次出現又要從頭摸索</p>
+
+      
+      
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/ray247k/button?referrer=https%3a%2f%2ftech.ray247k.com%2fblog%2f202409-multiple-github-accounts-with-ssh-keys%2f" width="100%" frameborder=0></iframe>
+
+    </div>
+    <footer>
+      <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/%e7%89%88%e6%9c%ac%e6%8e%a7%e5%88%b6/">版本控制</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/github/">github</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/ssh/">ssh</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+    </footer>
+  </article>
+  
+    
+
+  
+  <div class="pagination">
+    
+    
+      <a href="/blog/202405-create-static-web-site-with-hugo/" class="button right"><span>使用 Hugo 建立靜態網站</span></a>
+    
+  </div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>最新文章</h1>
+      </header>
+      
+      <article class="mini-post">
+          <a href="/blog/202409-multiple-github-accounts-with-ssh-keys/" class="image" style="--bg-image: url('/blog/202409-multiple-github-accounts-with-ssh-keys/featured.jpg');">
+    <img src="/blog/202409-multiple-github-accounts-with-ssh-keys/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/blog/202409-multiple-github-accounts-with-ssh-keys/">在同一台電腦設定多組 GitHub 帳號</a></h2>
+          <time class="published" datetime="2024-09-19 00:00:00 &#43;0000 UTC">2024/09/19</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202405-create-static-web-site-with-hugo/" class="image" style="--bg-image: url('/blog/202405-create-static-web-site-with-hugo/featured.jpeg');">
+    <img src="/blog/202405-create-static-web-site-with-hugo/featured.jpeg" alt="">
+  </a>
+        <header>
+          <h2><a href="/blog/202405-create-static-web-site-with-hugo/">使用 Hugo 建立靜態網站</a></h2>
+          <time class="published" datetime="2024-05-06 00:00:00 &#43;0000 UTC">2024/05/06</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202402-aws-fundamental-architectures/" class="image" style="--bg-image: url('/blog/202402-aws-fundamental-architectures/featured.jpg');">
+    <img src="/blog/202402-aws-fundamental-architectures/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/blog/202402-aws-fundamental-architectures/">[大話 AWS 雲端架構筆記] AWS 常見架構總覽</a></h2>
+          <time class="published" datetime="2024-02-18 00:00:00 &#43;0000 UTC">2024/02/18</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202402-aws-fundamental-hybrid-cloud/" class="image" style="--bg-image: url('/blog/202402-aws-fundamental-hybrid-cloud/featured.png');">
+    <img src="/blog/202402-aws-fundamental-hybrid-cloud/featured.png" alt="">
+  </a>
+        <header>
+          <h2><a href="/blog/202402-aws-fundamental-hybrid-cloud/">[大話 AWS 雲端架構筆記] 混合雲</a></h2>
+          <time class="published" datetime="2024-02-13 00:00:00 &#43;0000 UTC">2024/02/13</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202401-aws-fundamental-cyber-security/" class="image" style="--bg-image: url('/blog/202401-aws-fundamental-cyber-security/featured.jpg');">
+    <img src="/blog/202401-aws-fundamental-cyber-security/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/blog/202401-aws-fundamental-cyber-security/">[大話 AWS 雲端架構筆記] 資安架構總覽</a></h2>
+          <time class="published" datetime="2024-01-06 00:00:00 &#43;0000 UTC">2024/01/06</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/blog/" class="button">查看更多</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="/categories">Category</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/categories/aws/">aws<span class="count">25</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/devops/">devops<span class="count">24</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/node.js/">node.js<span class="count">22</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/leetcode/">leetcode<span class="count">13</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/golang/">golang<span class="count">12</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/python3/">python3<span class="count">9</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/php/">php<span class="count">7</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/laravel/">laravel<span class="count">6</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/">架站相關<span class="count">6</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">版本控制<span class="count">2</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/serverless/">serverless<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/%E5%AF%A6%E7%94%A8%E5%B7%A5%E5%85%B7/">實用工具<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%9C%8D%E5%8B%99/">第三方服務<span class="count">1</span></a>
+          </li>
+          
+        </ul>
+      </section>
+    
+  
+
+  
+  <section id="tags">
+    <header>
+      <h1><a href="/tags">Tag</a></h1>
+    </header>
+    <div class="li-x post-meta tags-md" style="margin-left: 0.5em;">
+      <ul>
+        
+        
+        <li>
+          <a href="/tags/aws/">aws (27)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/devops/">devops (27)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/node.js/">node.js (22)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/vue/">vue (15)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/leetcode/">leetcode (13)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/docker/">docker (12)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/go/">go (11)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/golang/">golang (11)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/php/">php (11)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/containerization/">containerization (10)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%AE%B9%E5%99%A8%E6%8A%80%E8%A1%93/">容器技術 (10)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/express/">express (9)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/python3/">python3 (9)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cicd/">cicd (8)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/leetcode-easy/">leetcode-easy (8)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/gcp/">gcp (7)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/laravel/">laravel (7)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/docker-compose/">docker compose (6)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/vuex/">vuex (6)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/composer/">composer (5)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/element-ui/">element-ui (5)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/leetcode-medium/">leetcode-medium (5)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/drone/">drone (4)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/jenkins/">jenkins (4)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/ssh/">ssh (4)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cloudflare/">cloudflare (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/mongodb/">mongodb (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/mutation/">mutation (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/restful/">restful (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/">架站相關 (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/chatbot/">chatbot (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/component/">component (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/discord/">discord (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/dns/">dns (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/getter/">getter (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/github/">github (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/google-domains/">google domains (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/linux/">linux (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/nginx/">nginx (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/vue-router/">vue-router (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/vue-ui/">vue-ui (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/apache-bench/">apache bench (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/auto-scaling/">auto scaling (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/axios/">axios (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/blockchain/">blockchain (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cdn/">cdn (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cloudflare-workers/">cloudflare workers (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cors/">cors (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/csv/">csv (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/domain-name/">domain name (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/excel/">excel (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/ffmpeg/">ffmpeg (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/gas/">gas (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/gcr/">gcr (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/git/">git (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/github-page/">github page (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/golang-hugo/">golang, hugo (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/google-app-script/">google app script (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/google-container-registry/">google container registry (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/google-sheets/">google sheets (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/grumphp/">grumphp (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/laravel-excel/">laravel-excel (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/load-balancing/">load balancing (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/ngrok/">ngrok (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/php-fpm/">php-fpm (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/phpcbf/">phpcbf (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/phpcs/">phpcs (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/portainer/">portainer (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/postgresql/">postgresql (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/prerender/">prerender (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/proxy/">proxy (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/queue/">queue (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/redis/">redis (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/seo/">seo (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/server/">server (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/serverless/">serverless (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/smart-contract/">smart contract (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/stress-testing/">stress testing (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/subdomain/">subdomain (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E4%BC%BA%E6%9C%8D%E5%99%A8/">伺服器 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%80%8B%E4%BA%BA%E5%93%81%E7%89%8C/">個人品牌 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%9F%9F%E5%90%8D/">域名 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%A3%93%E5%8A%9B%E6%B8%AC%E8%A9%A6/">壓力測試 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%AD%90%E7%B6%B2%E5%9F%9F/">子網域 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E6%90%9C%E5%B0%8B%E5%BC%95%E6%93%8E%E6%9C%80%E4%BD%B3%E5%8C%96/">搜尋引擎最佳化 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">版本控制 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E8%B2%B7%E7%B6%B2%E5%9D%80/">買網址 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E9%98%B2%E7%81%AB%E7%89%86/">防火牆 (1)</a>
+        </li>
+        
+      </ul>
+
+    </div>
+  </section>
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+    
+    <p class="copyright">
+        © 2024 Byte Ebi 🍤
+    </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>
+      hljs.configure({ ignoreUnescapedHTML: true }); 
+      hljs.highlightAll();
+    </script><script src="/js/bundle.min.842958c73d004b6fea3e9cf3064bed8257f04bc120697c21b4e4e7fef4b91040.js" integrity="sha256-hClYxz0AS2/qPpzzBkvtglfwS8EgaXwhtOTn/vS5EEA="></script>
+    <script src="/js/add-on.js"></script>
+
+
+    
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', "G-LTGVYYWC2J");
+        </script>
+    
+
+
+    </div>
+  </body>
+  
+</html>

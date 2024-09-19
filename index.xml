@@ -6,8 +6,15 @@
     <description>Recent content on Byte Ebi 🍤</description>
     <generator>Hugo</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Mon, 06 May 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 19 Sep 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://tech.ray247k.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>在同一台電腦設定多組 GitHub 帳號</title>
+      <link>https://tech.ray247k.com/blog/202409-multiple-github-accounts-with-ssh-keys/</link>
+      <pubDate>Thu, 19 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/blog/202409-multiple-github-accounts-with-ssh-keys/</guid>
+      <description>&lt;p&gt;因為遠端工作的關係，我要在自己的電腦上設定公司的 GitHub 帳號&lt;br&gt;&#xA;然而 GitHub 是不會讓你把同一組 SSH Key 設定給不同的帳號的&lt;br&gt;&#xA;所以無法把私人帳號的 SSH Key 設定到公司提供的 GitHub 帳號上&lt;/p&gt;</description>
+    </item>
     <item>
       <title>使用 Hugo 建立靜態網站</title>
       <link>https://tech.ray247k.com/blog/202405-create-static-web-site-with-hugo/</link>
@@ -818,7 +825,7 @@
       <link>https://tech.ray247k.com/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/about/</guid>
-      <description>寫 PHP 入門，寫過原生 PHP、CodeIgniter、WordPress、Laravel&#xA;對前端稍有涉獵，在容器技術方面也是有所涉獵&#xA;目前轉戰 Golang 進行開發，同時學習 AWS 相關服務&#xA;技術方面就東摸摸西摸摸，偶爾寫點小玩具&#xA;歡迎透過 LinkedIn 和我交流&#xA;平常興趣是看 Vtuber&#xA;看 Vtuber 前對日本完全不認識也沒興趣&#xA;現在開始尋找前往日本工作的機會&#xA;目前正在尋找新的工作機會 </description>
+      <description>&lt;p&gt;寫 PHP 入門，寫過原生 PHP、CodeIgniter、WordPress、Laravel&lt;br&gt;&#xA;對前端稍有涉獵，在容器技術方面也是有所涉獵&lt;/p&gt;&#xA;&lt;p&gt;目前轉戰 Golang 進行開發，同時學習 AWS 相關服務&lt;br&gt;&#xA;技術方面就東摸摸西摸摸，偶爾寫點小玩具&lt;br&gt;&#xA;歡迎透過 LinkedIn 和我交流&lt;/p&gt;&#xA;&lt;p&gt;平常興趣是看 Vtuber&lt;br&gt;&#xA;看 Vtuber 前對日本完全不認識也沒興趣&lt;br&gt;&#xA;現在開始尋找前往日本工作的機會&lt;/p&gt;&#xA;&lt;div data-iframe-width=&#34;150&#34; data-iframe-height=&#34;270&#34; data-share-badge-id=&#34;a7e00477-7377-49c3-8463-4cc1de66e988&#34; data-share-badge-host=&#34;https://www.credly.com&#34;&gt;&lt;/div&gt;&lt;script type=&#34;text/javascript&#34; async src=&#34;//cdn.credly.com/assets/utilities/embed.js&#34;&gt;&lt;/script&gt;&#xA;&lt;h1 id=&#34;目前正在尋找新的工作機會&#34;&gt;目前正在尋找新的工作機會&lt;/h1&gt;</description>
     </item>
   </channel>
 </rss>

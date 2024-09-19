@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>SSH on Byte Ebi 🍤</title>
+    <title>Ssh on Byte Ebi 🍤</title>
     <link>https://tech.ray247k.com/en/tags/ssh/</link>
-    <description>Recent content in SSH on Byte Ebi 🍤</description>
+    <description>Recent content in Ssh on Byte Ebi 🍤</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 13 Apr 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 19 Sep 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://tech.ray247k.com/en/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setting up multiple GitHub accounts on one computer</title>
+      <link>https://tech.ray247k.com/en/blog/202409-multiple-github-accounts-with-ssh-keys/</link>
+      <pubDate>Thu, 19 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202409-multiple-github-accounts-with-ssh-keys/</guid>
+      <description>&lt;p&gt;Due to my remote work setup, I needed to configure a company GitHub account on my personal computer.&lt;br&gt;&#xA;However, GitHub doesn&amp;rsquo;t allow the same SSH key to be used across multiple accounts, which means I can&amp;rsquo;t assign my personal SSH key to the company&amp;rsquo;s GitHub account.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Jenkins CI/CD 04 - Using SSH Commands to Operate another VM Instance in GCP</title>
       <link>https://tech.ray247k.com/en/blog/202204-jenkins-cicd-4-ssh-remote-server/</link>
@@ -20,7 +27,7 @@
       <link>https://tech.ray247k.com/en/blog/202104-use-ssh-key-login-remote-server/</link>
       <pubDate>Sun, 25 Apr 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/en/blog/202104-use-ssh-key-login-remote-server/</guid>
-      <description>Normally, logging into a server involves using a username and password,&#xA;but passwords can be compromised through interception or sharing.&#xA;The security level is not as robust as using SSH keys, which also eliminate the need for manual password entry each time.&#xA;Creating SSH Keys for Login Generating SSH keys on the client side using the command: ssh-keygen Note: SSH keys should be in RSA format; if using OPENSSH, errors may persist.</description>
+      <description>&lt;p&gt;Normally, logging into a server involves using a username and password,&lt;br&gt;&#xA;but passwords can be compromised through interception or sharing.&lt;br&gt;&#xA;The security level is not as robust as using SSH keys, which also eliminate the need for manual password entry each time.&lt;/p&gt;&#xA;&lt;h1 id=&#34;creating-ssh-keys-for-login&#34;&gt;Creating SSH Keys for Login&lt;/h1&gt;&#xA;&lt;h2 id=&#34;generating-ssh-keys-on-the-client-side-using-the-command&#34;&gt;Generating SSH keys on the client side using the command:&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ssh-keygen&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;&#xA;&lt;p&gt;Note: SSH keys should be in RSA format; if using OPENSSH, errors may persist.&lt;br&gt;&#xA;Reference: &lt;a href=&#34;https://ray247k.blogspot.com/2019/03/mac-majave-10141-ssh-keygen.html&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;mac majave 10.14.1 ssh-keygen Key Format Issue&#xA;&lt;/a&gt;&#xA;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -1,0 +1,956 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+<title>Setting up multiple GitHub accounts on one computer - Byte Ebi 🍤</title>
+<meta name="description" content="Configuring multiple GitHub accounts with SSH connections">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta property="og:site_name" content="Byte Ebi 🍤">
+<meta property="og:title" content="Setting up multiple GitHub accounts on one computer">
+<meta property="og:description" content="Configuring multiple GitHub accounts with SSH connections">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://tech.ray247k.com/en/blog/202409-multiple-github-accounts-with-ssh-keys/">
+  <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
+
+
+
+  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
+  
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=1" color="#ffffff">
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=1">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=1">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+<meta name="generator" content="Hugo 0.134.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+  <meta property="og:title" content="Setting up multiple GitHub accounts on one computer">
+  <meta property="og:description" content="Configuring multiple GitHub accounts with SSH connections">
+  <meta property="description" content="Configuring multiple GitHub accounts with SSH connections">
+  <meta property="og:url" content="https://tech.ray247k.com/en/blog/202409-multiple-github-accounts-with-ssh-keys/">
+  <meta property="og:type" content="article">
+  
+    <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
+  
+  
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/felipec.min.css">
+          <link rel="stylesheet" href="/css/bundle.min.8c2311cfb8e6e4d1336dda60a34b39f11c555c4c782dc22be9632165dcca8ad9.css" integrity="sha256-jCMRz7jm5NEzbdpgo0s58RxVXEx4LcIr6WMhZdzKitk="><link rel="stylesheet" href="/css/add-on.css">
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-LTGVYYWC2J');
+        }
+      </script>
+  <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "image": {
+        "@type": "ImageObject",
+        "image": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+        "height": 648,
+        "width": 1080
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com\/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Byte Ebi 🍤",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png"
+        }
+    },
+    "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+    "headline": "About web development, software engineering, frontend, backend, chatbot, server related topics. - Byte Ebi 🍤",
+    "name": "Byte Ebi 🍤",
+    "url": "https:\/\/tech.ray247k.com\/",
+    "description": "About web development, software engineering, frontend, backend, chatbot, server related topics. - aws,devops,golang,laravel,php,python3,serverless,third-party services,tools,version control,web hosting,website operations,",
+    "keywords": [
+        "apache bench,auto scaling,aws,blockchain,cdn,chatbot,ci\/cd,cicd,cloudflare,cloudflare workers,composer,container technology,containerization,csv,devops,discord,dns,docker,docker compose,domain,domain name,drone,excel,ffmpeg,firewall,gas,gcp,gcr,git,github,github page,go,golang,golang, hugo,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,linux,load balancing,nginx,ngrok,personal brand,php,php-fpm,phpcbf,phpcs,portainer,postgresql,prerender,proxy,purchase domain,python3,queue,redis,search engine optimization,seo,server,serverless,smart contract,ssh,stress testing,subdomain,version control,web hosting,"
+    ]
+}
+</script>
+
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "legalName": "Byte Ebi 🍤",
+    "url": "https:\/\/tech.ray247k.com\/",
+    "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "",
+        "availableLanguage": [
+            "Mandarin",
+            "English"
+        ]
+    },
+    "sameAs": [
+        "https://ray247k.blogspot.com/"
+    ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Setting up multiple GitHub accounts on one computer",
+    "description": "Configuring multiple GitHub accounts with SSH connections",
+    "keywords": [
+        "github" , "ssh" 
+    ],
+    "dateCreated": "2024-09-19T00:00:00.00Z",
+    "datePublished": "2024-09-19T00:00:00.00Z",
+    "dateModified": "2024-09-19T00:00:00.00Z",
+    "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "contentUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png"
+    },
+    "breadcrumb": {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\/",
+                    "name": "Byte Ebi 🍤",
+                    "url": "https:\/\/tech.ray247k.com\/"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\//blog",
+                    "name": "Blog",
+                    "url": "https:\/\/tech.ray247k.com\//blog"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\/en\/blog\/202409-multiple-github-accounts-with-ssh-keys\/",
+                    "name": "Setting up multiple GitHub accounts on one computer",
+                    "url": "https:\/\/tech.ray247k.com\/en\/blog\/202409-multiple-github-accounts-with-ssh-keys\/"
+                }
+            }
+        ],
+        "itemListOrder": "Ascending",
+        "numberOfItems": 3
+    }
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "articleSection": "blog",
+    "name": "Setting up multiple GitHub accounts on one computer",
+    "headline": "\u003cp\u003eDue to my remote work setup, I needed to configure a company GitHub account on my personal computer.\u003cbr\u003e\nHowever, GitHub doesn\u0026rsquo;t allow the same SSH key to be used across multiple accounts, which means I can\u0026rsquo;t assign my personal SSH key to the company\u0026rsquo;s GitHub account.\u003c\/p\u003e",
+    "description": "Configuring multiple GitHub accounts with SSH connections",
+    "inLanguage": "en",
+    "isFamilyFriendly": "true",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com\/en\/blog\/202409-multiple-github-accounts-with-ssh-keys\/"
+    },
+    "author" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "creator" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "accountablePerson" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "copyrightHolder" : "Byte Ebi 🍤",
+    "copyrightYear" : "2024",
+    "dateCreated": "2024-09-19T00:00:00.00Z",
+    "datePublished": "2024-09-19T00:00:00.00Z",
+    "dateModified": "2024-09-19T00:00:00.00Z",
+    "publisher":{
+        "@type":"Organization",
+        "name": "Byte Ebi 🍤",
+        "url": "https://tech.ray247k.com/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+            "width":"32",
+            "height":"32"
+        }
+    },
+    "image": "https://tech.ray247k.com/img/main/logo.png",
+    "url" : "https:\/\/tech.ray247k.com\/en\/blog\/202409-multiple-github-accounts-with-ssh-keys\/",
+    "wordCount" : "615",
+    "genre" : [ "github" , "ssh" ],
+    "keywords" : [ "github" , "ssh" ]
+}
+</script>
+
+
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/en/" class="nav">
+        
+          Blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/en/" class="nav link"><i class='fa fa-home'></i> home</a>
+        
+      
+        
+          
+          <a href="/en/about" class="nav link"><i class='far fa-id-card'></i> about</a>
+        
+      
+        
+          
+          <a href="/en/categories" class="nav link"><i class='fas fa-sitemap'></i> category</a>
+        
+      
+      
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    
+    <a href="#lang-menu" class="nav lang-toggle" lang="en">en</a>
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  <menu id="lang-menu" class="flyout-menu menu">
+  <a href="#" lang="en" class="nav link active">English (en)</a>
+  
+      <a href="https://tech.ray247k.com/blog/202409-multiple-github-accounts-with-ssh-keys/" lang="zh-tw" class="nav link">正體中文 (zh-tw)</a>
+    
+  
+</menu>
+
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/en/"><img src="/img/main/logo.png" class="circle" width="100" alt="Byte Ebi&#39;s Logo" /></a>
+  <header>
+    <h1>Byte Ebi 🍤</h1>
+  </header>
+  <main>
+    <p>A Bit everyday A Byte every week</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/ray247k" target="_blank" rel="noopener" title="GitHub"
+        class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//www.linkedin.com/in/j-ray-cheng" target="_blank" rel="noopener"
+        title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="/en/blog/202409-multiple-github-accounts-with-ssh-keys/">Setting up multiple GitHub accounts on one computer</a></h2>
+    
+    
+      <p>Configuring multiple GitHub accounts with SSH connections</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2024-09-19 00:00:00 &#43;0000 UTC">September 19, 2024</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+    <div id="socnet-share">
+      
+
+
+
+
+
+    </div>
+    <div class="content">
+      <a href="/en/blog/202409-multiple-github-accounts-with-ssh-keys/" class="image" style="--bg-image: url('/blog/202409-multiple-github-accounts-with-ssh-keys/featured.jpg');">
+    <img src="/blog/202409-multiple-github-accounts-with-ssh-keys/featured.jpg" alt="">
+  </a>
+      <p>Due to my remote work setup, I needed to configure a company GitHub account on my personal computer.<br>
+However, GitHub doesn&rsquo;t allow the same SSH key to be used across multiple accounts, which means I can&rsquo;t assign my personal SSH key to the company&rsquo;s GitHub account.</p>
+<p>Goal: Set up two SSH keys on one computer, and automatically use the correct one when executing Git commands.</p>
+<p>[For reference]: <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=mac"
+   
+    target="_blank" rel="noreferrer noopener">Generating a new SSH key and adding it to the ssh-agent
+
+</a>
+</p>
+<h1 id="1-generate-a-new-ssh-key">1. Generate a New SSH Key</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>ssh-keygen -t rsa -C <span style="color:#e6db74">&#39;{company_email@company.com}&#39;</span> -f ~/.ssh/id_rsa_company
+</span></span></code></pre></div><p>The SSH key will be saved to:</p>
+<ul>
+<li>Mac: <code>/Users/username/.ssh</code></li>
+<li>Windows <code>C:\Users\username\.ssh</code></li>
+</ul>
+<p>Next, copy the contents of the generated <code>id_rsa.pub</code>.</p>
+<h1 id="2-add-the-ssh-key-to-your-company-github-account">2. Add the SSH Key to Your Company GitHub Account</h1>
+<p>Navigate to the <a href="https://github.com/settings/keys"
+   
+    target="_blank" rel="noreferrer noopener">SSH keys management page
+</a>
+ in your company account and click <code>New SSH key</code>.</p>
+<p><img alt="add ssh key" src="/blog/202409-multiple-github-accounts-with-ssh-keys/add_ssh_key.png"></p>
+<p>Give it a name you can easily recognize and paste the <code>id_rsa.pub</code> content you copied earlier.</p>
+<h1 id="3-ssh-config-setup">3. SSH Config Setup</h1>
+<h2 id="3-1-clear-all-ssh-keys">3-1. Clear All SSH Keys</h2>
+<p>This command will clear the configuration, but it won&rsquo;t delete the SSH key files.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>ssh-add -D
+</span></span></code></pre></div><p>After several attempts, my keys got pretty messy, so I decided to clear everything before proceeding.<br>
+Adding keys back is simple and will be part of the next steps.</p>
+<h2 id="32-check-existing-ssh-keys">3.2. Check Existing SSH Keys</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>ls .ssh
+</span></span></code></pre></div><h2 id="33-re-add-the-ssh-keys">3.3. Re-add the SSH Keys</h2>
+<p>We previously generated a new SSH key, <code>id_rsa_company</code>, while the personal key is called <code>id_rsa</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>ssh-add ~/.ssh/id_rsa
+</span></span><span style="display:flex;"><span>ssh-add ~/.ssh/id_rsa_company
+</span></span></code></pre></div><p>You can verify they were added successfully:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>ssh-add -l
+</span></span></code></pre></div><h2 id="34-modify-ssh-config">3.4. Modify SSH Config</h2>
+<p>First, ensure the <code>~/.ssh/config</code> file exists. If not, create it.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>cd ~/.ssh/
+</span></span><span style="display:flex;"><span>touch config
+</span></span><span style="display:flex;"><span>open config
+</span></span></code></pre></div><p>Then, edit the file to look like this:</p>
+<pre tabindex="0"><code># Personal GitHub account
+
+Host github.com
+    HostName github.com
+    AddKeysToAgent yes
+    UseKeychain yes
+    IdentityFile ~/.ssh/id_rsa
+
+# Work GitHub account
+
+Host github.com-company
+    HostName github.com
+    AddKeysToAgent yes
+    UseKeychain yes
+    IdentityFile ~/.ssh/id_rsa_company
+</code></pre><p>Here, we&rsquo;ve set up two SSH keys: one for the personal account and one for the company account.</p>
+<ul>
+<li><strong>Host</strong>: refers to the server (either an IP or domain).</li>
+<li><strong>IdentityFile</strong>: points to the SSH key file.</li>
+<li><strong>AddKeysToAgent</strong>: indicates whether the key should be added to the <code>ssh-agent</code>.</li>
+<li><strong>UseKeychain</strong>: specific to macOS and allows the key to be stored in the keychain.</li>
+</ul>
+<h1 id="4-test-the-connection">4. Test the Connection</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>ssh -T git@github.com
+</span></span><span style="display:flex;"><span>ssh -T git@github.com-company
+</span></span></code></pre></div><p>If successful, you should see welcome messages from the respective accounts.</p>
+<p><img alt="ssh test" src="/blog/202409-multiple-github-accounts-with-ssh-keys/ssh-test.png"></p>
+<h1 id="5-clone-a-repository">5. Clone a Repository</h1>
+<p>For your personal account, no changes are needed.<br>
+However, for company projects, replace the default <code>github.com</code> with <code>github.com-company</code> in the clone command.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git clone git@github.com-company:<span style="color:#f92672">{</span>company/repository.git<span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>In this example, we&rsquo;ve replaced <code>github.com</code> with <code>github.com-company</code> so that Git automatically uses the correct SSH key.</p>
+<p>Some Git GUI tools might not support multiple SSH keys and could give errors, even attempting to use the wrong key (e.g., connecting to the company account when you meant to use your personal one).</p>
+<p>If this happens, you might need to <a href="#3-1-clear-all-ssh-keys"
+   
+   >clear all SSH keys
+</a>
+ again.</p>
+<p>A more reliable approach is to continue using your favorite GUI for local Git operations, like <code>commit</code> or viewing branches, but run remote commands (e.g., push, pull) directly in the terminal.</p>
+<h1 id="6-adjust-existing-projects">6. Adjust Existing Projects</h1>
+<p>For existing projects, open the <code>/.git/config</code> file in your project folder, and update the URL under
+<code>[remote &quot;origin&quot;]</code> to point to the company account&rsquo;s URL.</p>
+<pre tabindex="0"><code>[remote &#34;origin&#34;]
+	url = git@github.com-company:company/repository.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+</code></pre><p>If your GUI tool allows editing the remote URL, that&rsquo;s even easier.</p>
+<p>That&rsquo;s it for this guide! I hadn&rsquo;t faced this issue for a while since I was using a company-issued computer for development.<br>
+Although I had done this setup before, I didn&rsquo;t document it, thinking it wouldn&rsquo;t come up often.<br>
+However, rare problems like this are exactly why we should document them—to avoid spending extra time figuring it out again!</p>
+
+      
+      
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/ray247k/button?referrer=https%3a%2f%2ftech.ray247k.com%2fen%2fblog%2f202409-multiple-github-accounts-with-ssh-keys%2f" width="100%" frameborder=0></iframe>
+
+    </div>
+    <footer>
+      <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/en/categories/version-control/">version control</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/en/tags/github/">github</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/ssh/">ssh</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+    </footer>
+  </article>
+  
+    
+
+  
+  <div class="pagination">
+    
+    
+      <a href="/en/blog/202405-create-static-web-site-with-hugo/" class="button right"><span>Building a Static Website with Hugo</span></a>
+    
+  </div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>Recent Posts</h1>
+      </header>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202409-multiple-github-accounts-with-ssh-keys/" class="image" style="--bg-image: url('/blog/202409-multiple-github-accounts-with-ssh-keys/featured.jpg');">
+    <img src="/blog/202409-multiple-github-accounts-with-ssh-keys/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202409-multiple-github-accounts-with-ssh-keys/">Setting up multiple GitHub accounts on one computer</a></h2>
+          <time class="published" datetime="2024-09-19 00:00:00 &#43;0000 UTC">September 19, 2024</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202405-create-static-web-site-with-hugo/" class="image" style="--bg-image: url('/blog/202405-create-static-web-site-with-hugo/featured.jpeg');">
+    <img src="/blog/202405-create-static-web-site-with-hugo/featured.jpeg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202405-create-static-web-site-with-hugo/">Building a Static Website with Hugo</a></h2>
+          <time class="published" datetime="2024-05-06 00:00:00 &#43;0000 UTC">May 6, 2024</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202402-aws-fundamental-architectures/" class="image" style="--bg-image: url('/blog/202402-aws-fundamental-architectures/featured.jpg');">
+    <img src="/blog/202402-aws-fundamental-architectures/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202402-aws-fundamental-architectures/">[AWS Cloud Fundamental Notes] Overview of Common AWS Architectures</a></h2>
+          <time class="published" datetime="2024-02-18 00:00:00 &#43;0000 UTC">February 18, 2024</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202402-aws-fundamental-hybrid-cloud/" class="image" style="--bg-image: url('/blog/202402-aws-fundamental-hybrid-cloud/featured.png');">
+    <img src="/blog/202402-aws-fundamental-hybrid-cloud/featured.png" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202402-aws-fundamental-hybrid-cloud/">[AWS Cloud Fundamental Notes] Hybrid Cloud</a></h2>
+          <time class="published" datetime="2024-02-13 00:00:00 &#43;0000 UTC">February 13, 2024</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202401-aws-fundamental-cyber-security/" class="image" style="--bg-image: url('/blog/202401-aws-fundamental-cyber-security/featured.jpg');">
+    <img src="/blog/202401-aws-fundamental-cyber-security/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202401-aws-fundamental-cyber-security/">[AWS Cloud Fundamental Notes] Cyber Security</a></h2>
+          <time class="published" datetime="2024-01-06 00:00:00 &#43;0000 UTC">January 6, 2024</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/en/blog/" class="button">See More</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="/en/categories">Categories</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/en/categories/aws/">aws<span class="count">25</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/devops/">devops<span class="count">24</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/golang/">golang<span class="count">12</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/laravel/">laravel<span class="count">6</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/web-hosting/">web hosting<span class="count">3</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/python3/">python3<span class="count">2</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/version-control/">version control<span class="count">2</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/website-operations/">website operations<span class="count">2</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/php/">php<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/serverless/">serverless<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/third-party-services/">third-party services<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/tools/">tools<span class="count">1</span></a>
+          </li>
+          
+        </ul>
+      </section>
+    
+  
+
+  
+  <section id="tags">
+    <header>
+      <h1><a href="/en/tags">Tags</a></h1>
+    </header>
+    <div class="li-x post-meta tags-md" style="margin-left: 0.5em;">
+      <ul>
+        
+        
+        <li>
+          <a href="/en/tags/aws/">aws (27)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/devops/">devops (26)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/docker/">docker (12)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/go/">go (11)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/golang/">golang (11)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/container-technology/">container technology (10)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/containerization/">containerization (10)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/cicd/">cicd (7)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/laravel/">laravel (7)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/docker-compose/">docker compose (6)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/gcp/">gcp (6)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/composer/">composer (5)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/php/">php (5)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/drone/">drone (4)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/jenkins/">jenkins (4)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/cloudflare/">cloudflare (3)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ssh/">ssh (3)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/web-hosting/">web hosting (3)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/chatbot/">chatbot (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/discord/">discord (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/dns/">dns (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/github/">github (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/google-domains/">google domains (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/nginx/">nginx (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/python3/">python3 (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/apache-bench/">apache bench (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/auto-scaling/">auto scaling (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/blockchain/">blockchain (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/cdn/">cdn (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ci/cd/">ci/cd (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/cloudflare-workers/">cloudflare workers (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/csv/">csv (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/domain/">domain (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/domain-name/">domain name (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/excel/">excel (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ffmpeg/">ffmpeg (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/firewall/">firewall (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/gas/">gas (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/gcr/">gcr (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/git/">git (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/github-page/">github page (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/golang-hugo/">golang, hugo (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/google-app-script/">google app script (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/google-container-registry/">google container registry (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/google-sheets/">google sheets (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/grumphp/">grumphp (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/laravel-excel/">laravel-excel (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/linux/">linux (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/load-balancing/">load balancing (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ngrok/">ngrok (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/personal-brand/">personal brand (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/php-fpm/">php-fpm (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/phpcbf/">phpcbf (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/phpcs/">phpcs (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/portainer/">portainer (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/postgresql/">postgresql (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/prerender/">prerender (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/proxy/">proxy (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/purchase-domain/">purchase domain (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/queue/">queue (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/redis/">redis (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/search-engine-optimization/">search engine optimization (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/seo/">seo (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/server/">server (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/serverless/">serverless (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/smart-contract/">smart contract (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/stress-testing/">stress testing (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/subdomain/">subdomain (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/version-control/">version control (1)</a>
+        </li>
+        
+      </ul>
+
+    </div>
+  </section>
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+    
+    <p class="copyright">
+        © 2024 Byte Ebi 🍤
+    </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>
+      hljs.configure({ ignoreUnescapedHTML: true }); 
+      hljs.highlightAll();
+    </script><script src="/js/bundle.min.842958c73d004b6fea3e9cf3064bed8257f04bc120697c21b4e4e7fef4b91040.js" integrity="sha256-hClYxz0AS2/qPpzzBkvtglfwS8EgaXwhtOTn/vS5EEA="></script>
+    <script src="/js/add-on.js"></script>
+
+
+    
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', "G-LTGVYYWC2J");
+        </script>
+    
+
+
+    </div>
+  </body>
+  
+</html>
