@@ -210,7 +210,7 @@
     },
     "image": "https://tech.ray247k.com/img/main/logo.png",
     "url" : "https:\/\/tech.ray247k.com\/blog\/202409-multiple-github-accounts-with-ssh-keys\/",
-    "wordCount" : "256",
+    "wordCount" : "260",
     "genre" : [ "github" , "ssh" ],
     "keywords" : [ "github" , "ssh" ]
 }
@@ -416,6 +416,7 @@ Host github.com
     AddKeysToAgent yes
     UseKeychain yes
     IdentityFile ~/.ssh/id_rsa
+    IdentitiesOnly yes
 
 # Work GitHub account
 
@@ -424,6 +425,7 @@ Host github.com-company
     AddKeysToAgent yes
     UseKeychain yes
     IdentityFile ~/.ssh/id_rsa_company
+    IdentitiesOnly yes
 </code></pre><p>我們設定了兩組 ssh key，一組用於個人帳號，一組用於公司帳號</p>
 <ul>
 <li><strong>Host</strong>：代表呼叫的主機，可以是 IP 或是域名</li>
