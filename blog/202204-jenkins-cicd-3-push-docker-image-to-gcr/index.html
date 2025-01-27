@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.134.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.142.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="Jenkins 03 打包 Docker image 並推送到 GCR">
   <meta property="og:description" content="打包 Docker image 並在 pipeline 中使用 gcloud 指令推送到 Google Container Registry 儲存映像檔">
   <meta property="description" content="打包 Docker image 並在 pipeline 中使用 gcloud 指令推送到 Google Container Registry 儲存映像檔">
@@ -424,7 +424,7 @@
 </blockquote>
 <p>首先<strong>停止運行 VM</strong>並進到編輯頁面<br>
 找到<code>存取權範圍</code>並開啟<code>允許所有 Cloud API 的完整存取權</code></p>
-<p><img alt="gcloud error" src="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/gcloud-error.jpg"></p>
+<p><img src="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/gcloud-error.jpg" alt="gcloud error"></p>
 <p>重新啟動 VM 之後執行指令，照著提示訊息設定</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud init
 </span></span><span style="display:flex;"><span>
@@ -436,23 +436,23 @@
 <h2 id="產生-gcp-金鑰">產生 GCP 金鑰</h2>
 <p>進入 GCP 控制台的<code>API 和服務</code>左方點選<code>憑證</code>頁籤<br>
 點選<code>建立新憑證</code>並選擇<code>服務帳戶</code></p>
-<p><img alt="gcp create license" src="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/gcp-create-license.png"></p>
+<p><img src="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/gcp-create-license.png" alt="gcp create license"></p>
 <p>跟著提示建立好之後點選列表中剛剛建立的帳戶進入編輯頁面<br>
 並且切換到<code>金鑰</code>頁籤中：新增金鑰 -&gt; 建立新的金鑰<br>
 並選擇「<strong>JSON</strong>」類型</p>
-<p><img alt="gcp create key" src="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/gcp-create-key.png"></p>
+<p><img src="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/gcp-create-key.png" alt="gcp create key"></p>
 <p>接著就會跳出下載提示，將 JSON 格式的金鑰下載到本機中</p>
-<p><img alt="gcp key download" src="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/gcp-key-download.jpg"></p>
+<p><img src="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/gcp-key-download.jpg" alt="gcp key download"></p>
 <h2 id="設定金鑰到-jenkins">設定金鑰到 Jenkins</h2>
 <p>進到<code>Jenkins -&gt; 管理 Jenkins -&gt; Manage Credentials</code><br>
 選擇作用範圍，這邊用預設的<code>Jenkins</code>也就是全域(global)</p>
-<p><img alt="jenkins add credential" src="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/jenkins-add-credential.png"></p>
+<p><img src="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/jenkins-add-credential.png" alt="jenkins add credential"></p>
 <p>按下 Add Credentials 後<code>Kind</code>選擇<code>Secret file</code>並填寫相關設定</p>
 <ul>
 <li>ID：在 Jenkins 中呼叫用的唯一識別 ID，本文章範例中取叫<code>jenkins-gcr</code></li>
 <li>File：把剛剛下載的 json 金鑰上傳</li>
 </ul>
-<p><img alt="jenkins set credential" src="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/jenkins-set-credential.png"></p>
+<p><img src="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/jenkins-set-credential.png" alt="jenkins set credential"></p>
 <p>如此就完成 Jenkins 金鑰設定</p>
 <h1 id="pipeline-範例">Pipeline 範例</h1>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#75715e">// jenkinsfile
@@ -500,7 +500,7 @@
 <h1 id="檢查儲存位置">檢查儲存位置</h1>
 <p>若是沒有錯誤訊息，則可以到<code>Google Cloud Registry</code>頁面查看<br>
 把剛剛上傳的 image 名稱想成在 linux 終端機下指令，就可以理解 GCR 中的資料夾結構</p>
-<p><img alt="gcr store" src="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/gcr-store.jpg"></p>
+<p><img src="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/gcr-store.jpg" alt="gcr store"></p>
 
       
       

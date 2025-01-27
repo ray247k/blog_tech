@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.134.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.142.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="[CI/CD with Drone 101] 03 Deployment Schedule Configuration and Permission Management">
   <meta property="og:description" content="Tutorial on configuring deployment schedules and managing permissions through Drone for automated deployment.">
   <meta property="description" content="Tutorial on configuring deployment schedules and managing permissions through Drone for automated deployment.">
@@ -431,14 +431,14 @@ Alternatively, it can be set as <code>0 0 10,12,14,16 * * *</code> to &ldquo;exe
 <h2 id="viewing-cron-jobs">Viewing Cron Jobs</h2>
 <h3 id="cron-list">Cron List</h3>
 <p>After creation, you can use <code>GET /api/repos/{owner}/{repo}/cron</code> to view the list of all cron jobs.</p>
-<p><img alt="postman cron list" src="/blog/202106-drone-cicd-3-advanced-cron-job/postman-cron-list.png"></p>
+<p><img src="/blog/202106-drone-cicd-3-advanced-cron-job/postman-cron-list.png" alt="postman cron list"></p>
 <h3 id="cron-info">Cron Info</h3>
 <p>Using <code>GET /api/repos/{owner}/{repo}/cron/{name}</code> to view detailed information about a specific cron job.</p>
-<p><img alt="postman cron info" src="/blog/202106-drone-cicd-3-advanced-cron-job/postman-cron-info.png"></p>
+<p><img src="/blog/202106-drone-cicd-3-advanced-cron-job/postman-cron-info.png" alt="postman cron info"></p>
 <p>Returning to the Drone backend, accessing the settings page for the project reveals the cron job created using the API!</p>
-<p><img alt="drone settings page" src="/blog/202106-drone-cicd-3-advanced-cron-job/drone-settings-page.png"></p>
+<p><img src="/blog/202106-drone-cicd-3-advanced-cron-job/drone-settings-page.png" alt="drone settings page"></p>
 <p>When the scheduled time arrives, the pipeline triggered by the specified cron job name in the .drone.yml file will be executed.</p>
-<p><img alt="drone pipeline" src="/blog/202106-drone-cicd-3-advanced-cron-job/drone-pipeline-feature.png"></p>
+<p><img src="/blog/202106-drone-cicd-3-advanced-cron-job/drone-pipeline-feature.png" alt="drone pipeline"></p>
 <h2 id="updating-cron-jobs">Updating Cron Jobs</h2>
 <p>To update a cron job, use <code>PATCH /api/repos/{owner}/{repo}/cron/{name}</code>.<br>
 The body includes the changes, such as switching the branch to <code>dev</code> or adjusting the execution time to a fixed time each day.</p>
@@ -450,7 +450,7 @@ The body includes the changes, such as switching the branch to <code>dev</code> 
 </code></pre><h2 id="deleting-cron-jobs">Deleting Cron Jobs</h2>
 <p>Cron jobs created previously can be deleted using <code>DELETE /api/repos/{owner}/{repo}/cron/{name}</code>.<br>
 However, the author prefers using the UI interface to click on DELETE.</p>
-<p><img alt="delete cronjob" src="/blog/202106-drone-cicd-3-advanced-cron-job/delete-cronjob.png"></p>
+<p><img src="/blog/202106-drone-cicd-3-advanced-cron-job/delete-cronjob.png" alt="delete cronjob"></p>
 <p>Another option is the Drone CLI, which was not used this time but is provided for reference.</p>
 <ul>
 <li><a href="https://docs.drone.io/cron/"
@@ -494,7 +494,7 @@ Use organizations or user IDs in the list.</p>
 </a>
 ).
 Therefore, anyone with write permissions can access the settings page.</p>
-<p><img alt="bitbucket not supported" src="/blog/202106-drone-cicd-3-advanced-cron-job/bitbucket-not-supported.png"></p>
+<p><img src="/blog/202106-drone-cicd-3-advanced-cron-job/bitbucket-not-supported.png" alt="bitbucket not supported"></p>
 <p>Testing with GitHub shows that organization-based access control is possible and the setting page is not open to everyone.</p>
 
       

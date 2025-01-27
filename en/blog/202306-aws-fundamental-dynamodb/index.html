@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.134.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.142.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="[AWS Cloud Fundamental Notes] DynamoDB">
   <meta property="og:description" content="Introduction to DynamoDB and its usage and operational mechanism">
   <meta property="description" content="Introduction to DynamoDB and its usage and operational mechanism">
@@ -365,7 +365,7 @@ Data access must be obtained through the corresponding Role (EC2) or using Crede
 <h1 id="terminology">Terminology</h1>
 <h2 id="table">Table</h2>
 <p>The basic unit for managing data, representing a collection of data.</p>
-<p><img alt="struct" src="/blog/202306-aws-fundamental-dynamodb/struct.png"></p>
+<p><img src="/blog/202306-aws-fundamental-dynamodb/struct.png" alt="struct"></p>
 <h2 id="item">Item</h2>
 <p>Each piece of data stored in a Table, internally structured as Key-Attributes, where each Attribute may have multiple Values.</p>
 <h2 id="partition-key">Partition Key</h2>
@@ -418,21 +418,21 @@ It is stored in its own partition space separate from the base table and is adju
 <table>
   <thead>
       <tr>
-          <th style="text-align: left"></th>
-          <th style="text-align: left">On-Demand Backup and Restore</th>
-          <th style="text-align: left">Point-in-time Recovery</th>
+          <th></th>
+          <th>On-Demand Backup and Restore</th>
+          <th>Point-in-time Recovery</th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td style="text-align: left">Backup Time</td>
-          <td style="text-align: left">User-defined</td>
-          <td style="text-align: left">AWS automatic backup</td>
+          <td>Backup Time</td>
+          <td>User-defined</td>
+          <td>AWS automatic backup</td>
       </tr>
       <tr>
-          <td style="text-align: left">Restore</td>
-          <td style="text-align: left">Restore to a user-defined time point</td>
-          <td style="text-align: left">Within the last 35 days</td>
+          <td>Restore</td>
+          <td>Restore to a user-defined time point</td>
+          <td>Within the last 35 days</td>
       </tr>
   </tbody>
 </table>

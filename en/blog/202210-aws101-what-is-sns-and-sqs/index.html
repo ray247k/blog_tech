@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.134.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.142.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="[AWS 101] What are SNS and SQS">
   <meta property="og:description" content="Briefly note what AWS SNS and SQS services do and their use cases">
   <meta property="description" content="Briefly note what AWS SNS and SQS services do and their use cases">
@@ -374,7 +374,7 @@ But in reality, they are quite different.</p>
 <li>Amazon Kinesis Data Firehose</li>
 </ul>
 <p>The architecture looks like this:<br>
-<img alt="aws_sns" src="/blog/202210-aws101-what-is-sns-and-sqs/aws_sns.png"></p>
+<img src="/blog/202210-aws101-what-is-sns-and-sqs/aws_sns.png" alt="aws_sns"></p>
 <h2 id="features">Features:</h2>
 <ol>
 <li>Send real-time messages to all subscribers.</li>
@@ -395,7 +395,7 @@ It is a Serverless solution, but the executor can be either Lambda function or n
 <li><strong>At-Least-Once Delivery</strong>: A message is guaranteed to be delivered at least once, but occasionally, multiple copies of the message may be delivered.</li>
 <li><strong>Best-Effort Ordering</strong>: Messages are occasionally not delivered in the exact order they were sent.</li>
 </ul>
-<p><img alt="sqs standard queue" src="/blog/202210-aws101-what-is-sns-and-sqs/sqs_standard_queue.png"></p>
+<p><img src="/blog/202210-aws101-what-is-sns-and-sqs/sqs_standard_queue.png" alt="sqs standard queue"></p>
 <h3 id="fifo-queue"><strong>FIFO Queue</strong></h3>
 <p>When the order of operations and events is crucial or duplicates are not acceptable:</p>
 <ul>
@@ -403,7 +403,7 @@ It is a Serverless solution, but the executor can be either Lambda function or n
 <li><strong>Exactly-Once Processing</strong>: Messages are delivered exactly once and remain available until the consumer processes and deletes them.</li>
 <li><strong>First-In-First-Out Delivery</strong>: Messages are strictly delivered and received in the order they were sent (First In, First Out - FIFO).</li>
 </ul>
-<p><img alt="sqs fifo queue" src="/blog/202210-aws101-what-is-sns-and-sqs/sqs_fifo_queue.png"></p>
+<p><img src="/blog/202210-aws101-what-is-sns-and-sqs/sqs_fifo_queue.png" alt="sqs fifo queue"></p>
 <h2 id="poll"><strong>Poll</strong></h2>
 <h3 id="short-polling"><strong>Short polling</strong></h3>
 <p>This method is similar to someone repeatedly asking you if there is any job available, even if there is no job.<br>

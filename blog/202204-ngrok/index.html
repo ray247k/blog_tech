@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.134.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.142.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="讓你的電腦暫時公開在網路上 - Ngrok">
   <meta property="og:description" content="使用 Ngrok 讓你的電腦暫時取得一組對外開放的網址">
   <meta property="description" content="使用 Ngrok 讓你的電腦暫時取得一組對外開放的網址">
@@ -382,7 +382,7 @@
 </span></span></code></pre></div><h2 id="linux">Linux</h2>
 <p>確認自己的主機硬體架構</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat /proc/cpuinfo
-</span></span></code></pre></div><p><img alt="cpuinfo" src="/blog/202204-ngrok/cpuinfo.png"></p>
+</span></span></code></pre></div><p><img src="/blog/202204-ngrok/cpuinfo.png" alt="cpuinfo"></p>
 <p>再去官網下載指定檔案依照 <a href="https://ngrok.com/download"
    
     target="_blank" rel="noreferrer noopener">官網安裝
@@ -396,7 +396,7 @@
 <p>輸入指令啟動並監聽 8080 Port</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ngrok http <span style="color:#ae81ff">8080</span>
 </span></span></code></pre></div><p>就可以看到對外開放的網址</p>
-<p><img alt="public-info" src="/blog/202204-ngrok/public-info.png"></p>
+<p><img src="/blog/202204-ngrok/public-info.png" alt="public-info"></p>
 <h1 id="註冊-ngrok">註冊 ngrok</h1>
 <p>沒有註冊也是可以直接使用服務，但是過一段時間就會被斷線，重新啟動會配發一組新的網址<br>
 但是在測試 webhook 或是提供給其他人使用的時候，重新配發網址意味著你要重新設定 webhook 或是通知其他人<br>

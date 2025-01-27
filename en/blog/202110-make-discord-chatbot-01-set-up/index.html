@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.134.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.142.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="[Discord Bot] 01. Creating a Basic Bot">
   <meta property="og:description" content="Creating a basic Discord chat bot using Python3">
   <meta property="description" content="Creating a basic Discord chat bot using Python3">
@@ -369,21 +369,21 @@ Lately, I&rsquo;ve been active on Discord, so I&rsquo;ve decided to create a Dis
 </a>
  and log in to your Discord account.</p>
 <p>Click on <code>New Application</code>, name it, and then click <code>Create</code>. You can change the name later.</p>
-<p><img alt="create application" src="/blog/202110-make-discord-chatbot-01-set-up/create-application.png"></p>
+<p><img src="/blog/202110-make-discord-chatbot-01-set-up/create-application.png" alt="create application"></p>
 <p>Navigate to <code>Bot</code> on the left and click on <code>Add Bot</code>.</p>
-<p><img alt="add bot" src="/blog/202110-make-discord-chatbot-01-set-up/add-bot.png"></p>
+<p><img src="/blog/202110-make-discord-chatbot-01-set-up/add-bot.png" alt="add bot"></p>
 <p>Click on the <code>OAuth2</code> tab on the left.</p>
 <ul>
 <li>In <code>SCOPES</code>, select <code>bot</code>.</li>
 <li>Under <code>Bot Permissions</code>, choose <code>Administrator</code>.</li>
 </ul>
 <p>The link for inviting the bot to your server is shown below.</p>
-<p><img alt="bot invite link" src="/blog/202110-make-discord-chatbot-01-set-up/bot-invite-link.png"></p>
-<p><img alt="bot coming" src="/blog/202110-make-discord-chatbot-01-set-up/bot-coming.png"></p>
+<p><img src="/blog/202110-make-discord-chatbot-01-set-up/bot-invite-link.png" alt="bot invite link"></p>
+<p><img src="/blog/202110-make-discord-chatbot-01-set-up/bot-coming.png" alt="bot coming"></p>
 <h1 id="installing-pip-and-discordpy">Installing pip and Discord.py</h1>
 <p>Use the following command to install the <code>Discord.py</code> library.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python3 -m pip install -U discord.py
-</span></span></code></pre></div><p><img alt="pip install package" src="/blog/202110-make-discord-chatbot-01-set-up/pip-install-package.png"></p>
+</span></span></code></pre></div><p><img src="/blog/202110-make-discord-chatbot-01-set-up/pip-install-package.png" alt="pip install package"></p>
 <h1 id="bot-code">Bot Code</h1>
 <p>We&rsquo;ve just created a bot and added it to our server. The next step is to start the bot and make it do something.</p>
 <p>As an example, let&rsquo;s write the simplest bot and see how it performs.</p>
@@ -417,7 +417,7 @@ Lately, I&rsquo;ve been active on Discord, so I&rsquo;ve decided to create a Dis
 </span></span><span style="display:flex;"><span>client<span style="color:#f92672">.</span>run(<span style="color:#e6db74">&#39;MY APP TOKEN&#39;</span>)
 </span></span></code></pre></div><p>The explanation is provided in the example. The only thing to explain is where to get the token.</p>
 <p>No more talking, let&rsquo;s see the image!</p>
-<p><img alt="bot token" src="/blog/202110-make-discord-chatbot-01-set-up/bot-token.png"></p>
+<p><img src="/blog/202110-make-discord-chatbot-01-set-up/bot-token.png" alt="bot token"></p>
 <p>You can obtain the TOKEN on the <code>BOT</code> page in Discord Developer.<br>
 It won&rsquo;t be directly displayed on the screen; just click <code>Copy</code>.<br>
 If you insist on viewing it, click <code>Click to Reveal Token</code>, and it will be displayed.<br>
@@ -425,9 +425,9 @@ If you think the TOKEN is compromised, you can use <code>Regenerate</code> to ge
 <h1 id="starting-the-bot">Starting the Bot</h1>
 <p>Open your terminal and run the Python file you just created.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python roll_dice.py
-</span></span></code></pre></div><p><img alt="ChatBot terminal" src="/blog/202110-make-discord-chatbot-01-set-up/chat-bot-terminal-feature.png"></p>
+</span></span></code></pre></div><p><img src="/blog/202110-make-discord-chatbot-01-set-up/chat-bot-terminal-feature.png" alt="ChatBot terminal"></p>
 <p>Now, test whether the command triggers the bot.</p>
-<p><img alt="ChatBot test" src="/blog/202110-make-discord-chatbot-01-set-up/chat-bot-test.png"></p>
+<p><img src="/blog/202110-make-discord-chatbot-01-set-up/chat-bot-test.png" alt="ChatBot test"></p>
 <p>Looks like it was successfully called!</p>
 
       

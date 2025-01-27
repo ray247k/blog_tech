@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.134.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.142.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="[大話 AWS 雲端架構筆記] RDS">
   <meta property="og:description" content="簡介 RDS 和使用方法和運作機制">
   <meta property="description" content="簡介 RDS 和使用方法和運作機制">
@@ -364,24 +364,24 @@
 <table>
   <thead>
       <tr>
-          <th style="text-align: left">型態</th>
-          <th style="text-align: left">可控性</th>
-          <th style="text-align: left">資料庫引擎</th>
-          <th style="text-align: left">管理</th>
+          <th>型態</th>
+          <th>可控性</th>
+          <th>資料庫引擎</th>
+          <th>管理</th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td style="text-align: left">自建</td>
-          <td style="text-align: left">系統底層</td>
-          <td style="text-align: left">自由選擇</td>
-          <td style="text-align: left">自行規劃可用性與備援</td>
+          <td>自建</td>
+          <td>系統底層</td>
+          <td>自由選擇</td>
+          <td>自行規劃可用性與備援</td>
       </tr>
       <tr>
-          <td style="text-align: left">RDS</td>
-          <td style="text-align: left">有限</td>
-          <td style="text-align: left">支援有限</td>
-          <td style="text-align: left">提供快照與備援機制</td>
+          <td>RDS</td>
+          <td>有限</td>
+          <td>支援有限</td>
+          <td>提供快照與備援機制</td>
       </tr>
   </tbody>
 </table>
@@ -390,7 +390,7 @@
 <p>使用「多機構部署」的高可用方案，在不同的 AZ 分別準備資料庫系統<br>
 透過 Subnet Group 在不同 AZ 間建立「<strong>主從式資料庫</strong>」
 主要資料庫的資料會同步複製到備援用資料庫中，會產生較高費用</p>
-<p><img alt="Multi-AZ" src="/blog/202304-aws-fundamental-rds/maz.png"></p>
+<p><img src="/blog/202304-aws-fundamental-rds/maz.png" alt="Multi-AZ"></p>
 <h2 id="snapshot-方案">Snapshot 方案</h2>
 <p>針對主要資料庫定期自動備份，也可以手動進行備份</p>
 <p>刪除 RDS 時</p>
@@ -401,7 +401,7 @@
 <h2 id="read-replicas-僅供讀取複本">Read Replicas 僅供讀取複本</h2>
 <p>為了舒緩主資料庫的流量，可使用「<strong>唯讀副本</strong>」服務來接收資料查詢的任務<br>
 Read Replicas 會跟主資料庫做<code>異步備份</code> 也能夠很快還原資料庫</p>
-<p><img alt="Read Replicas" src="/blog/202304-aws-fundamental-rds/rp.png"></p>
+<p><img src="/blog/202304-aws-fundamental-rds/rp.png" alt="Read Replicas"></p>
 <h2 id="常見架構">常見架構</h2>
 <p>透過 Multi-AZ 功能，因為主要與備援資料庫會即時同步<br>
 所以可以將建立 Snapshot 與 Read Replicas 的工作交給備援用資料庫</p>
@@ -410,26 +410,26 @@ Read Replicas 會跟主資料庫做<code>異步備份</code> 也能夠很快還�
 <table>
   <thead>
       <tr>
-          <th style="text-align: left">Multi-AZ</th>
-          <th style="text-align: left">Read Replica</th>
+          <th>Multi-AZ</th>
+          <th>Read Replica</th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td style="text-align: left">主要目的是高可用性</td>
-          <td style="text-align: left">主要目的是可擴展性</td>
+          <td>主要目的是高可用性</td>
+          <td>主要目的是可擴展性</td>
       </tr>
       <tr>
-          <td style="text-align: left">同步複寫</td>
-          <td style="text-align: left">非同步複寫</td>
+          <td>同步複寫</td>
+          <td>非同步複寫</td>
       </tr>
       <tr>
-          <td style="text-align: left">僅主要執行個體處於作用中狀態</td>
-          <td style="text-align: left">皆可供存取，且可用於讀取擴展</td>
+          <td>僅主要執行個體處於作用中狀態</td>
+          <td>皆可供存取，且可用於讀取擴展</td>
       </tr>
       <tr>
-          <td style="text-align: left">在單一區域內一律跨越至少兩個可用區域</td>
-          <td style="text-align: left">可以在一個可用區域內、跨可用區域或跨區域</td>
+          <td>在單一區域內一律跨越至少兩個可用區域</td>
+          <td>可以在一個可用區域內、跨可用區域或跨區域</td>
       </tr>
   </tbody>
 </table>

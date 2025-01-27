@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.134.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.142.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="Setting Up Subdomain with Cloudflare and Customizing GitHub Page URL">
   <meta property="og:description" content="After purchasing a domain, you can set up subdomains for different websites. This article demonstrates using Cloudflare &#43; GitHub Page for a static website.">
   <meta property="description" content="After purchasing a domain, you can set up subdomains for different websites. This article demonstrates using Cloudflare &#43; GitHub Page for a static website.">
@@ -365,15 +365,15 @@ All major DNS service providers offer this feature, and this article uses Cloudf
 <h1 id="1-setting-up-subdomain">1. Setting Up Subdomain</h1>
 <p>Go to the Cloudflare management dashboard and click on the DNS tab.<br>
 Create a DNS record, select the type as CNAME, and point it to your domain.</p>
-<p><img alt="cloudflare-dns-cname" src="/blog/202105-set-custom-domain-for-github-page/cloudflare-dns-cname.png"></p>
+<p><img src="/blog/202105-set-custom-domain-for-github-page/cloudflare-dns-cname.png" alt="cloudflare-dns-cname"></p>
 <h1 id="2-setting-github-page-cname">2. Setting GitHub Page CNAME</h1>
 <p>Create a file named <code>CNAME</code> in the root directory of your static website and upload it to GitHub.<br>
 The content should be the complete URL of the subdomain, for example, <code>tech.ray247k.com</code>.</p>
-<p><img alt="github-cname" src="/blog/202105-set-custom-domain-for-github-page/github-cname.png"></p>
+<p><img src="/blog/202105-set-custom-domain-for-github-page/github-cname.png" alt="github-cname"></p>
 <h1 id="3-setting-github-page-url">3. Setting GitHub Page URL</h1>
 <p>Go to the project <code>Settings &gt; Pages</code> tab and locate the <code>Custom domain</code> section.<br>
 Paste the complete URL that was added to Cloudflare DNS and uploaded to the project&rsquo;s CNAME file.</p>
-<p><img alt="github-page-custom-domain" src="/blog/202105-set-custom-domain-for-github-page/github-page-custom-domain.png"></p>
+<p><img src="/blog/202105-set-custom-domain-for-github-page/github-page-custom-domain.png" alt="github-page-custom-domain"></p>
 <p>By following these steps, you have successfully set up a subdomain with Cloudflare and customized the GitHub Page URL.</p>
 
       

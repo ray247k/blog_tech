@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.134.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.142.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="[用 Drone 建立自動部署] 01 基本服務建置及串接 GitHub">
   <meta property="og:description" content="透過 Drone 建立自動部署流程，基本服務建置及串接 GitHub">
   <meta property="description" content="透過 Drone 建立自動部署流程，基本服務建置及串接 GitHub">
@@ -487,35 +487,35 @@ DRONE_CRON_INTERVAL=1m
 <p>把剛剛架設的 drone 伺服器 localhost 的 8089 端口綁定到特定的 ngrok 網址<br>
 這邊的網址等下需要複製貼上綁定到 Github OAuth App 上</p>
 <pre tabindex="0"><code class="language-bash=" data-lang="bash=">ngrok http 8089
-</code></pre><p><img alt="ngrok result" src="/blog/202106-drone-cicd-1-basic-usage/ngrok-start-feature.png"></p>
+</code></pre><p><img src="/blog/202106-drone-cicd-1-basic-usage/ngrok-start-feature.png" alt="ngrok result"></p>
 <h2 id="step-3---設定-github-的-oauth-app">STEP 3 - 設定 Github 的 OAuth App</h2>
 <p>進入 github 的 OAuth App 設定頁面新增 OAuth 應用程式<br>
 <code>右上個人大頭貼-&gt;settings-&gt;左邊頁籤 Developer settings-&gt;OAuth Apps</code><br>
-<img alt="github oauth app page" src="/blog/202106-drone-cicd-1-basic-usage/github-oauth-app.png"></p>
+<img src="/blog/202106-drone-cicd-1-basic-usage/github-oauth-app.png" alt="github oauth app page"></p>
 <p>開始新建 OAuth App<br>
 填入剛剛建立好的 ngrok 網址，註冊 OAuth 應用程式<br>
 callback 網址設為 <code>/login</code><br>
-<img alt="new oauth application" src="/blog/202106-drone-cicd-1-basic-usage/new-oauth-application.png"></p>
+<img src="/blog/202106-drone-cicd-1-basic-usage/new-oauth-application.png" alt="new oauth application"></p>
 <p>建立後就要開始串接 Drone CI 到 Github 了</p>
 <h2 id="step-4">STEP 4</h2>
 <h3 id="修改-drone-設定">修改 Drone 設定</h3>
 <p>點開剛剛建立的 github APP 設定<br>
-<img alt="github app settings" src="/blog/202106-drone-cicd-1-basic-usage/github-app-settings.png"></p>
+<img src="/blog/202106-drone-cicd-1-basic-usage/github-app-settings.png" alt="github app settings"></p>
 <p>修改剛剛 docker-compose.yml <code>DRONE_GITHUB_CLIENT_ID</code> 和 <code>DRONE_GITHUB_CLIENT_SECRET</code><br>
 對應頁面上的 <code>Client ID</code> 和 <code>Client secrets</code> 內容</p>
 <p>完成後重啟 drone 的 docker-compose.yml 服務，訪問你的 ngrok 網址查看<br>
-<img alt="github authorize page" src="/blog/202106-drone-cicd-1-basic-usage/github-authorize-page.png"></p>
+<img src="/blog/202106-drone-cicd-1-basic-usage/github-authorize-page.png" alt="github authorize page"></p>
 <p>驗證登入後代表你的 Drone CI 串接完成！可喜可賀！可喜可賀！</p>
 <h2 id="step-5">STEP 5</h2>
 <h3 id="啟用服務">啟用服務</h3>
 <p>依照剛剛的步驟，應該可以開啟 ngrok 網址看到 Drone 的後台<br>
 一進去是你所有的 Repository<br>
 隨便點一個進去之後按下正中央的 <code>ACTIVAE REPOSITORY</code> 就可以在專案中啟用 webhook 啦<br>
-<img alt="drone panel" src="/blog/202106-drone-cicd-1-basic-usage/drone-panel.png"></p>
+<img src="/blog/202106-drone-cicd-1-basic-usage/drone-panel.png" alt="drone panel"></p>
 <p>如果想要確認的話，可以打開 Github 上剛剛的 <code>Repository-&gt;Settings-&gt;Webhooks</code> 應該會看到如圖上的畫面<br>
 有一個 Webhook 正在使用中<br>
 點進去可以看到更多設定，或是查看 Webhook 發送過的請求<br>
-<img alt="github webhooks page" src="/blog/202106-drone-cicd-1-basic-usage/github-webhooks-page.png"></p>
+<img src="/blog/202106-drone-cicd-1-basic-usage/github-webhooks-page.png" alt="github webhooks page"></p>
 
       
       

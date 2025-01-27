@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.134.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.142.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="使用 GrumPHP 做程式碼品質的守門員">
   <meta property="og:description" content="檢查你的程式有沒有怪味道，在你犯錯前就制止你。一生只督你一人">
   <meta property="description" content="檢查你的程式有沒有怪味道，在你犯錯前就制止你。一生只督你一人">
@@ -387,7 +387,7 @@
 </span></span></code></pre></div><p>若是執行</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>composer install
 </span></span></code></pre></div><p>可以看到提示<code>GrumPHP is sniffing your commits!</code>代表 GrumPHP 已經在嗅探我們的 commit 了</p>
-<p><img alt="grumphp composer install" src="/blog/202107-grumphp-a-php-code-quality-tool/grumphp-composer-install.png"></p>
+<p><img src="/blog/202107-grumphp-a-php-code-quality-tool/grumphp-composer-install.png" alt="grumphp composer install"></p>
 <h1 id="加入檢查任務">加入檢查任務</h1>
 <p>這邊會逐步安裝並說明四個常用的基本檢查任務</p>
 <ul>
@@ -478,7 +478,7 @@
 </span></span></code></pre></div><p>來測試一下任務是否有執行上次套件包中的測試吧！<br>
 因為配合 phpunit.xml 的設定，所以把上次寫在 tests 資料夾內的測試搬到 tests/unit 內<br>
 執行指令<code>vendor/bin/grumphp run</code>可以看到通過的綠色的開心老頭</p>
-<p><img alt="phpunit pass" src="/blog/202107-grumphp-a-php-code-quality-tool/phpunit-pass.png"></p>
+<p><img src="/blog/202107-grumphp-a-php-code-quality-tool/phpunit-pass.png" alt="phpunit pass"></p>
 <p>若我們修改測試方法，讓測試無法通過</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">testGetAhoy</span>()
 </span></span><span style="display:flex;"><span>{
@@ -487,8 +487,8 @@
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>接著再一次執行指令便會看到一個生氣的紅色老頭，以及其錯誤訊息<br>
 透過提示訊息，我們可以清楚的知道是哪個測試沒有通過</p>
-<p><img alt="phpunit fail" src="/blog/202107-grumphp-a-php-code-quality-tool/phpunit-fail-a.png">
-<img alt="phpunit fail" src="/blog/202107-grumphp-a-php-code-quality-tool/phpunit-fail-b.png"></p>
+<p><img src="/blog/202107-grumphp-a-php-code-quality-tool/phpunit-fail-a.png" alt="phpunit fail">
+<img src="/blog/202107-grumphp-a-php-code-quality-tool/phpunit-fail-b.png" alt="phpunit fail"></p>
 <h2 id="4-phpcs">4. Phpcs</h2>
 <p>這個任務，可以檢查提交的 PHP 內容是不是符合 <a href="https://www.php-fig.org/psr/"
    
@@ -522,12 +522,12 @@
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/ruleset&gt;</span>
 </span></span></code></pre></div><p>既然設定好了就執行看看吧</p>
 <pre tabindex="0"><code>vendor/bin/grumphp run
-</code></pre><p><img alt="phpcs pass" src="/blog/202107-grumphp-a-php-code-quality-tool/phpcs-pass.png"></p>
+</code></pre><p><img src="/blog/202107-grumphp-a-php-code-quality-tool/phpcs-pass.png" alt="phpcs pass"></p>
 <p>可以看到我們設定的測試都有通過了</p>
 <p>那如果有一些不符合 PSR12 規則的東西會發生什麼事情呢？<br>
 為了測試，我們隨便找一段 PHP 程式，在分號後面再加一個分號<br>
 這麼做並不會觸發先前安裝的 phplint 檢查，因為這不屬於語法錯誤，但這麼做不符合 PSR12 規則</p>
-<p><img alt="phpcs fail" src="/blog/202107-grumphp-a-php-code-quality-tool/phpcs-fail.png"></p>
+<p><img src="/blog/202107-grumphp-a-php-code-quality-tool/phpcs-fail.png" alt="phpcs fail"></p>
 <p>於是我們又看到了生氣的老頭，指出哪裡有問題</p>
 <h1 id="自動監聽">自動監聽</h1>
 <p>以上都是我們手動執行套件的任務來測試程式碼的品質，好還要更好<br>
@@ -547,7 +547,7 @@
 </span></span><span style="display:flex;"><span>    },
 </span></span></code></pre></div><p>這樣不論是在 CLI 執行<code>git commit</code>或是使用 GUI 操作，都可以在 commit 前觸發我們定義的 tasks<br>
 如下圖就是使用 GUI 觸發 phpcs 這個任務的失敗狀態跳出的訊息</p>
-<p><img alt="grumphp gui fail" src="/blog/202107-grumphp-a-php-code-quality-tool/grumphp-gui-fail.png"></p>
+<p><img src="/blog/202107-grumphp-a-php-code-quality-tool/grumphp-gui-fail.png" alt="grumphp gui fail"></p>
 
       
       

@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.134.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.142.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="[AWS Cloud Fundamental Notes] IAM">
   <meta property="og:description" content="Introduction to IAM and its usage and operational mechanism">
   <meta property="description" content="Introduction to IAM and its usage and operational mechanism">
@@ -172,7 +172,7 @@
     "@type": "BlogPosting",
     "articleSection": "blog",
     "name": "[AWS Cloud Fundamental Notes] IAM",
-    "headline": "\u003cp\u003eDue to the excessive power of root permissions, it is necessary to divide them into multiple users and groups to set permissions.\u003c\/p\u003e\n\u003cp\u003e\u003ca href=\u0022https:\/\/aws.amazon.com\/tw\/iam\/\u0022\n   \n    target=\u0022_blank\u0022 rel=\u0022noreferrer noopener\u0022\u003eAWS IAM\n\u003c\/a\u003e\n\u003cbr\u003e\n\u003ca href=\u0022https:\/\/docs.aws.amazon.com\/zh_tw\/IAM\/latest\/UserGuide\/introduction.html\u0022\n   \n    target=\u0022_blank\u0022 rel=\u0022noreferrer noopener\u0022\u003eWhat is IAM?\n\u003c\/a\u003e\n\u003c\/p\u003e\n\u003cp\u003e\u003cimg alt=\u0022IAM Architecture\u0022 src=\u0022https:\/\/i.imgur.com\/OtEOMd4.png\u0022\u003e\u003c\/p\u003e\n\u003ch2 id=\u0022operation-mechanism\u0022\u003eOperation Mechanism\u003c\/h2\u003e\n\u003cp\u003eThe architecture of IAM is as follows:\u003c\/p\u003e\n\u003cpre class=\u0022mermaid\u0022\u003egraph LR;\n\nPolicy1--\u003ePermission;\nPolicy2--\u003ePermission;\nPolicy3--\u003ePermission;\nPermission--\u003eRole;\nPermission--\u003eGroup;\nGroup--\u003eUser;\nUser--\u003ePassword;\nUser--\u003eCredentail;\nRole--\u003eid1[External Users];\nRole--\u003eid2[AWS Internal Services];\n\u003c\/pre\u003e\n\n\u003chr\u003e\n\u003ch2 id=\u0022policy\u0022\u003ePolicy\u003c\/h2\u003e\n\u003cp\u003e\u003ca href=\u0022https:\/\/docs.aws.amazon.com\/zh_tw\/AWSEC2\/latest\/UserGuide\/iam-policy-structure.html\u0022\n   \n    target=\u0022_blank\u0022 rel=\u0022noreferrer noopener\u0022\u003eOfficial Documentation\n\u003c\/a\u003e\n\u003c\/p\u003e\n\u003cp\u003eWhen a policy is attached to a user or group, it allows or denies permission for the user to perform specific tasks on specific resources.\u003c\/p\u003e",
+    "headline": "\u003cp\u003eDue to the excessive power of root permissions, it is necessary to divide them into multiple users and groups to set permissions.\u003c\/p\u003e\n\u003cp\u003e\u003ca href=\u0022https:\/\/aws.amazon.com\/tw\/iam\/\u0022\n   \n    target=\u0022_blank\u0022 rel=\u0022noreferrer noopener\u0022\u003eAWS IAM\n\u003c\/a\u003e\n\u003cbr\u003e\n\u003ca href=\u0022https:\/\/docs.aws.amazon.com\/zh_tw\/IAM\/latest\/UserGuide\/introduction.html\u0022\n   \n    target=\u0022_blank\u0022 rel=\u0022noreferrer noopener\u0022\u003eWhat is IAM?\n\u003c\/a\u003e\n\u003c\/p\u003e\n\u003cp\u003e\u003cimg src=\u0022https:\/\/i.imgur.com\/OtEOMd4.png\u0022 alt=\u0022IAM Architecture\u0022\u003e\u003c\/p\u003e\n\u003ch2 id=\u0022operation-mechanism\u0022\u003eOperation Mechanism\u003c\/h2\u003e\n\u003cp\u003eThe architecture of IAM is as follows:\u003c\/p\u003e\n\u003cpre class=\u0022mermaid\u0022\u003egraph LR;\n\nPolicy1--\u003ePermission;\nPolicy2--\u003ePermission;\nPolicy3--\u003ePermission;\nPermission--\u003eRole;\nPermission--\u003eGroup;\nGroup--\u003eUser;\nUser--\u003ePassword;\nUser--\u003eCredentail;\nRole--\u003eid1[External Users];\nRole--\u003eid2[AWS Internal Services];\n\u003c\/pre\u003e\n\n\u003chr\u003e\n\u003ch2 id=\u0022policy\u0022\u003ePolicy\u003c\/h2\u003e\n\u003cp\u003e\u003ca href=\u0022https:\/\/docs.aws.amazon.com\/zh_tw\/AWSEC2\/latest\/UserGuide\/iam-policy-structure.html\u0022\n   \n    target=\u0022_blank\u0022 rel=\u0022noreferrer noopener\u0022\u003eOfficial Documentation\n\u003c\/a\u003e\n\u003c\/p\u003e\n\u003cp\u003eWhen a policy is attached to a user or group, it allows or denies permission for the user to perform specific tasks on specific resources.\u003c\/p\u003e",
     "description": "Introduction to IAM and its usage and operational mechanism",
     "inLanguage": "en",
     "isFamilyFriendly": "true",
@@ -371,7 +371,7 @@
     target="_blank" rel="noreferrer noopener">What is IAM?
 </a>
 </p>
-<p><img alt="IAM Architecture" src="https://i.imgur.com/OtEOMd4.png"></p>
+<p><img src="https://i.imgur.com/OtEOMd4.png" alt="IAM Architecture"></p>
 <h2 id="operation-mechanism">Operation Mechanism</h2>
 <p>The architecture of IAM is as follows:</p>
 <pre class="mermaid">graph LR;

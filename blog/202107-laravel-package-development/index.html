@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.134.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.142.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="開發屬於自己的 Laravel 套件">
   <meta property="og:description" content="介紹如何在本機進行 Laravel 套件開發及撰寫測試，並在本機專案透過 composer 安裝自行開發的套件">
   <meta property="description" content="介紹如何在本機進行 Laravel 套件開發及撰寫測試，並在本機專案透過 composer 安裝自行開發的套件">
@@ -373,7 +373,7 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cd larapeko
 </span></span><span style="display:flex;"><span>composer init
 </span></span></code></pre></div><p>會經過一連串的問答協助你設定套件的基本資訊<br>
-<img alt="larapeko composer init" src="/blog/202107-laravel-package-development/larapeko-composer-init.png"></p>
+<img src="/blog/202107-laravel-package-development/larapeko-composer-init.png" alt="larapeko composer init"></p>
 <p>接著就會在資料夾內看到剛剛初始化的套件 composer.json 檔案</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;ray247k/larapeko&#34;</span>,
@@ -576,7 +576,7 @@
 接著就要進入測試流程，因為我們是要在 Laravel 專案中使用的<br>
 所以就建立一個新的 Laravel 專案來進行測試，叫做 lara-ahoy</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>laravel new lara-ahoy
-</span></span></code></pre></div><p><img alt="new laravel" src="/blog/202107-laravel-package-development/new-laravel.png"></p>
+</span></span></code></pre></div><p><img src="/blog/202107-laravel-package-development/new-laravel.png" alt="new laravel"></p>
 <p>可以藉由指令查看安裝的 Laravel 版本</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd &lt;專案目錄&gt;
 </span></span><span style="display:flex;"><span>php artisan -V
@@ -649,7 +649,7 @@
 </span></span></code></pre></div><h3 id="安裝套件">安裝套件</h3>
 <p>使用套件安裝指令</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>composer install
-</span></span></code></pre></div><p><img alt="composer install" src="/blog/202107-laravel-package-development/composer-install.png"></p>
+</span></span></code></pre></div><p><img src="/blog/202107-laravel-package-development/composer-install.png" alt="composer install"></p>
 <p>在上圖中可以看到剛剛的套件已經成功被發現，並且安裝</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Discovered Package: ray247k/larapeko
 </span></span><span style="display:flex;"><span>Package manifest generated successfully.
@@ -676,7 +676,7 @@
 </span></span></code></pre></div><p>在 lara-ahoy 專案目錄下執行測試檔案</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>php test-autoload.php
 </span></span></code></pre></div><p>如果成功載入應該會出現套件中<code>sayPeko()</code>的執行結果<br>
-<img alt="file test" src="/blog/202107-laravel-package-development/file-test.png"></p>
+<img src="/blog/202107-laravel-package-development/file-test.png" alt="file test"></p>
 <p>雖然跳出了 PHP Deprecated，但是還是有成功印出我們的預設字串內容<br>
 代表剛剛在 ServiceProvider 註冊的 Facade aliases 有成功被呼叫了！</p>
 <p>如果真的很不想看到那個錯誤訊息<br>
@@ -691,7 +691,7 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">LaraPeko</span><span style="color:#f92672">::</span><span style="color:#a6e22e">sayPeko</span>();
 </span></span></code></pre></div><p>如此就不會看到 PHP Deprecated 的提示了<br>
-<img alt="peko test" src="/blog/202107-laravel-package-development/peko-test-feature.png"></p>
+<img src="/blog/202107-laravel-package-development/peko-test-feature.png" alt="peko test"></p>
 <h3 id="方法二使用單元測試">方法二、使用單元測試</h3>
 <p>接著就是使用單元測試來測試套件，參考文件：<a href="https://laravelpackage.com/04-testing.html"
    
@@ -761,7 +761,7 @@ Please use a different PHP interpreter.
 使用 <code>assertEquals</code> 的測試斷言式判斷回傳值是不是等於「ahoy」</p>
 <p>建立好 test file 之後進到容器中的 Laravel 專案的根目錄，使用指令執行指定路徑下的測試</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>php vendor/bin/phpunit vendor/ray247k/larapeko/tests
-</span></span></code></pre></div><p><img alt="phpunit result" src="/blog/202107-laravel-package-development/phpunit-result.png"></p>
+</span></span></code></pre></div><p><img src="/blog/202107-laravel-package-development/phpunit-result.png" alt="phpunit result"></p>
 <p><strong>補充</strong><br>
 假設現在 LaraPeko 套件裡有個 private function 叫做 testMethod</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">testMethod</span>()

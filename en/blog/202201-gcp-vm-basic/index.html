@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.134.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.142.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="Successfully launched a VM on GCP on the first try">
   <meta property="og:description" content="Step-by-step guide to launching your first VM instance and configuring it on Google Cloud Platform (GCP).">
   <meta property="description" content="Step-by-step guide to launching your first VM instance and configuring it on Google Cloud Platform (GCP).">
@@ -365,7 +365,7 @@ It may sound complex, but in practice, it&rsquo;s quite straightforward.<br>
 If you haven&rsquo;t had any experience with setting up a host before, this time, we&rsquo;ll document the steps for you.</p>
 <h1 id="create-a-new-vm-instance">Create a new VM instance</h1>
 <p>There&rsquo;s not much to be concerned about. Once you&rsquo;re in the GCP console and on the <code>VM instances</code> page, simply choose the desired specifications, give it a name, and click &lsquo;Create&rsquo;.</p>
-<p><img alt="new vm" src="/blog/202201-gcp-vm-basic/new-vm.jpg"></p>
+<p><img src="/blog/202201-gcp-vm-basic/new-vm.jpg" alt="new vm"></p>
 <h1 id="assigning-a-static-external-ip-address">Assigning a static external IP address</h1>
 <p>To ensure that our service has a consistent IP address, we can change the external IP type from <code>ephemeral</code> to <code>static</code>.</p>
 <blockquote>
@@ -373,14 +373,14 @@ If you haven&rsquo;t had any experience with setting up a host before, this time
 </blockquote>
 <p>First, select the VM instance you want to modify.<br>
 Click on the ellipsis menu (the three dots), and choose <code>View network details</code>.</p>
-<p><img alt="gcp vm netowrk settings" src="/blog/202201-gcp-vm-basic/gcp-vm-network-settings.jpg"></p>
+<p><img src="/blog/202201-gcp-vm-basic/gcp-vm-network-settings.jpg" alt="gcp vm netowrk settings"></p>
 <p>Next, from the left-hand menu, select the &lsquo;External IP addresses&rsquo; tab.<br>
 In the <code>Users</code> column, locate the VM instance you just created.<br>
 You&rsquo;ll notice that the <code>Name</code> field for the target is currently empty.</p>
-<p><img alt="gcp static ip" src="/blog/202201-gcp-vm-basic/gcp-static-ip.jpg"></p>
+<p><img src="/blog/202201-gcp-vm-basic/gcp-static-ip.jpg" alt="gcp static ip"></p>
 <p>Click on <code>Reserve</code> on the left-hand side, and at this point, it will prompt you to enter a name.<br>
 Once you&rsquo;ve provided a name, your VM instance&rsquo;s IP address will remain unchanged even after service restarts.</p>
-<p><img alt="gcp network naming" src="/blog/202201-gcp-vm-basic/gcp-network-naming.png"></p>
+<p><img src="/blog/202201-gcp-vm-basic/gcp-network-naming.png" alt="gcp network naming"></p>
 <h1 id="opening-external-ports">Opening external ports</h1>
 <p>Your virtual machine is up and running, and you&rsquo;ve also secured a static external IP.<br>
 Now, it&rsquo;s time to establish a connection!<br>
@@ -388,12 +388,12 @@ You enter the IP address in your browser and&hellip; can&rsquo;t access it! Huh?
 <h2 id="commonly-used-network-service-ports">Commonly used network service ports</h2>
 <p>By default, when you create a VM, only <code>port 22</code> for SSH connections is open.<br>
 If you set up firewall rules during the creation, it will apply the <code>http-server</code> and <code>https-server</code> network tags, allowing your VM to receive requests on ports <code>80</code> and <code>443</code>.</p>
-<p><img alt="gcp vm firewall" src="/blog/202201-gcp-vm-basic/gcp-vm-firewall.jpg"></p>
+<p><img src="/blog/202201-gcp-vm-basic/gcp-vm-firewall.jpg" alt="gcp vm firewall"></p>
 <p>You can check the &lsquo;Network tags&rsquo; section in the VM&rsquo;s information page.</p>
-<p><img alt="gcp vm check firewall" src="/blog/202201-gcp-vm-basic/gcp-vm-check-firewall.jpg"></p>
+<p><img src="/blog/202201-gcp-vm-basic/gcp-vm-check-firewall.jpg" alt="gcp vm check firewall"></p>
 <p>If you find that these ports are not open, and you wish to enable them, click on the &lsquo;Edit&rsquo; button for the VM, and navigate to the <code>Firewall</code> settings.<br>
 Select the <code>http-server</code> and <code>https-server</code> rules that were not checked during initial setup.</p>
-<p><img alt="gcp vm select rule" src="/blog/202201-gcp-vm-basic/gcp-vm-select-rule.jpg"></p>
+<p><img src="/blog/202201-gcp-vm-basic/gcp-vm-select-rule.jpg" alt="gcp vm select rule"></p>
 <p>After successfully applying these changes, your VM will be able to receive incoming requests on ports 80 and 443.</p>
 <h2 id="other-port">Other port</h2>
 <p>If your service requires the use of a different port, you will need to configure it manually.<br>
@@ -401,29 +401,29 @@ Let&rsquo;s use port <code>8080</code> as an example for configuration.</p>
 <h3 id="create-a-firewall-rule">Create a firewall rule</h3>
 <p>Select the VM instance you want to modify, and from the rightmost three-dot menu, choose &lsquo;View network details&rsquo; to access the &lsquo;Virtual Private Cloud network.<br>
 Then, on the left-hand menu, select &lsquo;Firewall&rsquo; and click on &lsquo;Create firewall rule&rsquo;.</p>
-<p><img alt="gcp create firewall rule" src="/blog/202201-gcp-vm-basic/gcp-create-firewall-rule.jpg"></p>
+<p><img src="/blog/202201-gcp-vm-basic/gcp-create-firewall-rule.jpg" alt="gcp create firewall rule"></p>
 <p>For the most part, you can use the default values.
 Determine if you need to customize based on the provided explanations.<br>
 There are only a few areas that require adjustments.</p>
 <h4 id="target-tags">Target tags</h4>
 <p>These are network tags used when selecting firewall rules later on.<br>
 They serve the same purpose as the <code>http-server</code> tag when configuring port 80, acting as identifiers.</p>
-<p><img alt="gcp firewall rule tag" src="/blog/202201-gcp-vm-basic/gcp-firewall-rule-tag.jpg"></p>
+<p><img src="/blog/202201-gcp-vm-basic/gcp-firewall-rule-tag.jpg" alt="gcp firewall rule tag"></p>
 <h4 id="source-ipv4-range">Source IPv4 range</h4>
 <p>This is where you specify trusted IP locations.<br>
 If you want to make it publicly accessible, set it to <code>0.0.0.0/0</code> to accept requests from all sources.</p>
-<p><img alt="gcp firewall ipv4" src="/blog/202201-gcp-vm-basic/gcp-firewall-ipv4.jpg"></p>
+<p><img src="/blog/202201-gcp-vm-basic/gcp-firewall-ipv4.jpg" alt="gcp firewall ipv4"></p>
 <h4 id="protocol-and-ports">Protocol and Ports</h4>
 <p>To demonstrate opening multiple ports simultaneously, we&rsquo;ve added port 8089.<br>
 This allows you to specify the external availability of both TCP ports 8080 and 8089.</p>
 <p>You can observe that ports are separated by a comma <code>,</code>.<br>
 If you use a dash <code>-</code>, you can specify a range of ports to be opened.</p>
-<p><img alt="gcp firewall ports" src="/blog/202201-gcp-vm-basic/gcp-firewall-ports.jpg"></p>
+<p><img src="/blog/202201-gcp-vm-basic/gcp-firewall-ports.jpg" alt="gcp firewall ports"></p>
 <h3 id="applying-the-firewall-rule">Applying the Firewall Rule</h3>
 <p>Go back to Compute Engine and select the VM instance where you want to apply the rule. Click the &lsquo;Edit&rsquo; button.</p>
 <p>Manually enter the <code>Target tags</code> you filled out when creating the firewall rule in the <code>Network tags</code> field.<br>
 After saving, the rule will be applied.</p>
-<p><img alt="gcp vm add rule" src="/blog/202201-gcp-vm-basic/gcp-vm-add-rule.jpg"></p>
+<p><img src="/blog/202201-gcp-vm-basic/gcp-vm-add-rule.jpg" alt="gcp vm add rule"></p>
 
       
       

@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.134.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.142.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="Jenkins CI/CD 01 Installation">
   <meta property="og:description" content="Setup Jenkins CI/CD step by step">
   <meta property="description" content="Setup Jenkins CI/CD step by step">
@@ -395,7 +395,7 @@ following our previous introduction to <a href="/tags/drone/"
 </span></span></code></pre></div><p>Start the Jenkins service using the following command, and then access it via your web browser at <code>localhost:8080</code>.<br>
 You&rsquo;ll be prompted to enter the initial admin password:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl enable --now jenkins
-</span></span></code></pre></div><p><img alt="admin password" src="/blog/202203-jenkins-cicd-1-installation/admin_password.png"></p>
+</span></span></code></pre></div><p><img src="/blog/202203-jenkins-cicd-1-installation/admin_password.png" alt="admin password"></p>
 <p>Retrieve the initial admin password using the following command:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 </span></span></code></pre></div><h1 id="plugin-installation">Plugin Installation</h1>
@@ -411,7 +411,7 @@ In this tutorial, we&rsquo;re using <a href="https://www.jenkins.io/projects/blu
 <li>Docker Pipeline</li>
 </ul>
 <p>You can search for and install these plugins in the Jenkins plugin management section:</p>
-<p><img alt="jenkins manage" src="/blog/202203-jenkins-cicd-1-installation/jenkins_manage.png"></p>
+<p><img src="/blog/202203-jenkins-cicd-1-installation/jenkins_manage.png" alt="jenkins manage"></p>
 <p>Additionally, ensure that Docker is properly installed on your Jenkins host machine.</p>
 <h1 id="docker-command-permissions">Docker Command Permissions</h1>
 <p>To configure Docker command permissions, first switch to the Jenkins user:</p>
@@ -430,7 +430,7 @@ The correct approach is to add the Jenkins user to the Docker user group:</p>
 <blockquote>
 <p>http://jenlins_url/restart</p>
 </blockquote>
-<p><img alt="jenkins restart" src="/blog/202203-jenkins-cicd-1-installation/jenkins_restart.png"></p>
+<p><img src="/blog/202203-jenkins-cicd-1-installation/jenkins_restart.png" alt="jenkins restart"></p>
 <p>Click the restart button, and once it&rsquo;s back up, it will load the new configuration.<br>
 Now you can run Docker commands as the Jenkins user.</p>
 

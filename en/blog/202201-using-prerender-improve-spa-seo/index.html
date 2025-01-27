@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.134.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.142.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="Enhancing SEO for SPA with Prerender">
   <meta property="og:description" content="Addressing SEO challenges for CSR web pages, demonstrating both self-hosted and SaaS solutions">
   <meta property="description" content="Addressing SEO challenges for CSR web pages, demonstrating both self-hosted and SaaS solutions">
@@ -471,12 +471,12 @@ This is because the frontend project seems to have its own Nginx service, and I 
 <p>Besides, I&rsquo;ve heard that Cloudflare Workers are powerful. It&rsquo;s like a proxy at the forefront, so it can do many things.<br>
 Although I&rsquo;ve never had the chance to use it, it seems like a good opportunity.</p>
 <h3 id="prerenderio-pricing-plans">Prerender.io Pricing Plans</h3>
-<p><img alt="prerender price" src="/blog/202201-using-prerender-improve-spa-seo/prerender-price.png"></p>
+<p><img src="/blog/202201-using-prerender-improve-spa-seo/prerender-price.png" alt="prerender price"></p>
 <h3 id="cloudflare-workers-pricing-plans">Cloudflare Workers Pricing Plans</h3>
-<p><img alt="cloudflare workers price" src="/blog/202201-using-prerender-improve-spa-seo/cloudflare-workers-price.png"></p>
+<p><img src="/blog/202201-using-prerender-improve-spa-seo/cloudflare-workers-price.png" alt="cloudflare workers price"></p>
 <h2 id="configuration">Configuration</h2>
 <p>Go to the Prerender page, click on <code>Install middleware</code> and select the <code>cloudflare</code> option.</p>
-<p><img alt="prerender settings" src="/blog/202201-using-prerender-improve-spa-seo/prerender-settings.png"></p>
+<p><img src="/blog/202201-using-prerender-improve-spa-seo/prerender-settings.png" alt="prerender settings"></p>
 <p>The official documentation has been updated.<br>
 Just follow the instructions in the document, and even those who can&rsquo;t code can configure it confidently!<br>
 Follow the document and pictures for <a href="https://docs.prerender.io/docs/24-cloudflare"
@@ -502,14 +502,14 @@ Ordinary Workers can be tested using the provided <a href="https://developers.cl
  by Cloudflare, but since we&rsquo;re using a third-party service, it must be verified by Prerender to take effect.<br>
 Therefore, testing with the playground here is not possible.</p>
 <p>After configuring the worker, open the Worker tab and choose <code>Add route</code>.</p>
-<p><img alt="cloudflare workers settings" src="/blog/202201-using-prerender-improve-spa-seo/cloudflare-workers-settings.png"></p>
+<p><img src="/blog/202201-using-prerender-improve-spa-seo/cloudflare-workers-settings.png" alt="cloudflare workers settings"></p>
 <p>Next, set the <code>Request Limit Failure Mode</code>.</p>
 <p><code>Open Failure (Continue)</code> means that if the Worker fails when a request comes in, it will go directly to the service.<br>
 <code>Close Failure (Block)</code> will throw an error page, preventing users from continuing to access.<br>
 Since we don&rsquo;t want the website to be inaccessible when reaching the free plan limit and not pre-rendering content doesn&rsquo;t affect the website&rsquo;s functionality,
 choose to skip the Worker and execute it directly in case of failure.<br>
 After all, it&rsquo;s just for pre-rendering, and it doesn&rsquo;t matter if crawlers can&rsquo;t access it this time; they can come back next time.</p>
-<p><img alt="cloudflare new route" src="/blog/202201-using-prerender-improve-spa-seo/cloudflare-new-route.png"></p>
+<p><img src="/blog/202201-using-prerender-improve-spa-seo/cloudflare-new-route.png" alt="cloudflare new route"></p>
 <p>The routing rules should match the URL you set in the Worker configuration.<br>
 After setting it up, remember to go back to <a href="https://prerender.io/"
    

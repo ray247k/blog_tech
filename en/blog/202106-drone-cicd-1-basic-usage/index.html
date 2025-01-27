@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.134.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.142.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="[CI/CD with Drone 101] 01 Basic Service Setup and GitHub Integration">
   <meta property="og:description" content="Setting up automated deployment process with Drone, including basic service configuration and GitHub integration">
   <meta property="description" content="Setting up automated deployment process with Drone, including basic service configuration and GitHub integration">
@@ -486,33 +486,33 @@ DRONE_CRON_INTERVAL=1m
 <p>Bind the localhost port 8089 of the recently set up Drone server to a specific ngrok URL.<br>
 This URL will need to be copied and pasted into the GitHub OAuth App settings later.</p>
 <pre tabindex="0"><code class="language-bash=" data-lang="bash=">ngrok http 8089
-</code></pre><p><img alt="ngrok result" src="/blog/202106-drone-cicd-1-basic-usage/ngrok-start-feature.png"></p>
+</code></pre><p><img src="/blog/202106-drone-cicd-1-basic-usage/ngrok-start-feature.png" alt="ngrok result"></p>
 <h2 id="step-3---github-oauth-app-configuration">STEP 3 - GitHub OAuth App Configuration</h2>
 <p>Navigate to the GitHub OAuth App settings page to create a new OAuth application.<br>
 <code>Profile Picture (top-right)-&gt;Settings-&gt;Developer settings tab on the left-&gt;OAuth Apps</code></p>
-<p><img alt="github oauth app page" src="/blog/202106-drone-cicd-1-basic-usage/github-oauth-app.png"></p>
+<p><img src="/blog/202106-drone-cicd-1-basic-usage/github-oauth-app.png" alt="github oauth app page"></p>
 <p>Start by creating a new OAuth App.<br>
 Enter the ngrok URL you just created and register the OAuth application.<br>
 Set the callback URL to <code>/login</code>.<br>
-<img alt="new oauth application" src="/blog/202106-drone-cicd-1-basic-usage/new-oauth-application.png"></p>
+<img src="/blog/202106-drone-cicd-1-basic-usage/new-oauth-application.png" alt="new oauth application"></p>
 <p>After creating, it&rsquo;s time to integrate Drone CI with GitHub.</p>
 <h2 id="step-4">STEP 4</h2>
 <h3 id="modify-drone-configuration">Modify Drone Configuration</h3>
 <p>Open the GitHub APP settings you just created.<br>
-<img alt="github app settings" src="/blog/202106-drone-cicd-1-basic-usage/github-app-settings.png"></p>
+<img src="/blog/202106-drone-cicd-1-basic-usage/github-app-settings.png" alt="github app settings"></p>
 <p>Modify the <code>DRONE_GITHUB_CLIENT_ID</code> and <code>DRONE_GITHUB_CLIENT_SECRET</code> in the docker-compose.yml file to match the values of <code>Client ID</code> and <code>Client Secret</code> on the GitHub App settings page.</p>
 <p>After making the changes, restart the Drone service using docker-compose.yml, and access your ngrok URL to check the setup.<br>
-<img alt="github authorize page" src="/blog/202106-drone-cicd-1-basic-usage/github-authorize-page.png"></p>
+<img src="/blog/202106-drone-cicd-1-basic-usage/github-authorize-page.png" alt="github authorize page"></p>
 <p>Once you successfully authenticate, it means your Drone CI integration is complete! Congratulations!</p>
 <h2 id="step-5">STEP 5</h2>
 <h3 id="activate-services">Activate Services</h3>
 <p>Following the previous steps, you should be able to open your ngrok URL and see the Drone dashboard.<br>
 Upon entering, you&rsquo;ll find all your repositories.<br>
 Choose any repository, click on it, and press the &ldquo;ACTIVATE REPOSITORY&rdquo; button in the center to enable the webhook for the project.<br>
-<img alt="drone panel" src="/blog/202106-drone-cicd-1-basic-usage/drone-panel.png"></p>
+<img src="/blog/202106-drone-cicd-1-basic-usage/drone-panel.png" alt="drone panel"></p>
 <p>To confirm, you can open the &ldquo;Repository -&gt; Settings -&gt; Webhooks&rdquo; on GitHub, and you should see a webhook in use.<br>
 Clicking on it will reveal more settings or allow you to view the requests sent by the webhook.<br>
-<img alt="github webhooks page" src="/blog/202106-drone-cicd-1-basic-usage/github-webhooks-page.png"></p>
+<img src="/blog/202106-drone-cicd-1-basic-usage/github-webhooks-page.png" alt="github webhooks page"></p>
 
       
       

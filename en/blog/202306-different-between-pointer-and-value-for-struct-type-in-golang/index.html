@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.134.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.142.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="Different between pointer and value for struct type in golang">
   <meta property="og:description" content="The different between pointer and value for struct type in golang with examples">
   <meta property="description" content="The different between pointer and value for struct type in golang with examples">
@@ -407,7 +407,7 @@ In this case, the default value is <strong>true</strong> and the problem happene
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">doejsondata</span>, <span style="color:#a6e22e">_</span> = <span style="color:#a6e22e">json</span>.<span style="color:#a6e22e">Marshal</span>(<span style="color:#a6e22e">doe</span>)
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(string(<span style="color:#a6e22e">doejsondata</span>))
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p><img alt="result" src="/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/result.png"></p>
+</span></span></code></pre></div><p><img src="/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/result.png" alt="result"></p>
 <p>In the example, there are two Structs.<br>
 John, whose Type is a Bollinger pass by value, and Doe, whose Type is a Bollinger pass by pointer.</p>
 <p>If the <code>CanFly</code> field is &ldquo;<strong>optional</strong>&rdquo; and the default value is &ldquo;<strong>true</strong>&rdquo;</p>

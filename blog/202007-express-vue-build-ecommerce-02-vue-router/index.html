@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.134.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.142.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="[Express&#43;Vue 搭建電商網站] 02 - vue-router 的使用">
   <meta property="og:description" content="使用 Express &#43; Vue 搭建一個電商網站 - vue-router 的使用">
   <meta property="description" content="使用 Express &#43; Vue 搭建一個電商網站 - vue-router 的使用">
@@ -480,7 +480,7 @@
 <p>剛剛示範了怎麼在 <code>/views/Home.vue</code> 中引入 <code>src/components/Home.vue</code><br>
 但在這邊先簡單一點，直接在 <code>/views/</code> 目錄下建立如同 <code>src/components/Home.vue</code> 內容的檔案<br>
 這時候 <code>/views/</code> 資料夾應該會長得像這樣<br>
-<img alt="folder-tree" src="/blog/202007-express-vue-build-ecommerce-02-vue-router/folder-tree.png"></p>
+<img src="/blog/202007-express-vue-build-ecommerce-02-vue-router/folder-tree.png" alt="folder-tree"></p>
 <p>這時候其實可以把剛剛的 <code>Home.vue</code> 搬移進 <code>/views/</code> 中，我們原本的引用在這邊有點多此一舉了<br>
 但是在搬移過後會發現瀏覽器提示我們發生了一些問題，原來是 Home.vue 找不到檔案，但是為什麼呢？<br>
 我們不是在 vue-router 裡面指定路徑 &lsquo;/‘ 要到 <code>Home.vue</code> 嗎？<br>
@@ -530,7 +530,7 @@
 </blockquote>
 <p>這樣做可以大幅度的減少我們使用 <code>../</code> 這種作法造成目錄結構變換就專案大爆炸，或是為了存取深層的檔案，畫面被一堆點點斜線佔滿</p>
 <p>在完成了以上動作之後，打開瀏覽器預覽一下<br>
-<img alt="router-demo" src="/blog/202007-express-vue-build-ecommerce-02-vue-router/router-demo.gif"></p>
+<img src="/blog/202007-express-vue-build-ecommerce-02-vue-router/router-demo.gif" alt="router-demo"></p>
 <p>看來我們剛剛完成了一個簡單的基於 Vue 的多頁面網站了！</p>
 <h2 id="嵌套路由">嵌套路由</h2>
 <p>有點經驗的工程師就知道，路由絕對不是這麼簡單的<br>

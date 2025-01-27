@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.134.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.142.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="Develop Your Own Laravel Package">
   <meta property="og:description" content="Guide on developing and testing Laravel packages locally and installing them using composer in a local project.">
   <meta property="description" content="Guide on developing and testing Laravel packages locally and installing them using composer in a local project.">
@@ -373,7 +373,7 @@ Additionally, this method doesn&rsquo;t facilitate testing the installation via 
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cd larapeko
 </span></span><span style="display:flex;"><span>composer init
 </span></span></code></pre></div><p>You&rsquo;ll be prompted with a series of questions to configure basic package information.</p>
-<p><img alt="larapeko composer init" src="/blog/202107-laravel-package-development/larapeko-composer-init.png"></p>
+<p><img src="/blog/202107-laravel-package-development/larapeko-composer-init.png" alt="larapeko composer init"></p>
 <p>Afterward, you&rsquo;ll find the <code>composer.json</code> file in the folder.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;ray247k/larapeko&#34;</span>,
@@ -652,7 +652,7 @@ In this file, load the autoload and call the package method:</p>
 </span></span></code></pre></div><p>Run the test file in the lara-ahoy project directory:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>php test-autoload.php
 </span></span></code></pre></div><p>If the autoload is successful, you should see the result of the <code>sayPeko()</code> method, even if a PHP Deprecated message appears:</p>
-<p><img alt="file test" src="/blog/202107-laravel-package-development/file-test.png"></p>
+<p><img src="/blog/202107-laravel-package-development/file-test.png" alt="file test"></p>
 <p>Although a PHP Deprecated message is displayed, the default string content is still successfully printed.<br>
 This indicates that the Facade aliases registered in the ServiceProvider were called successfully!</p>
 <p>To suppress the PHP Deprecated message, add <code>error_reporting(0);</code> to the <code>test-autoload.php</code> file:</p>
@@ -668,7 +668,7 @@ This indicates that the Facade aliases registered in the ServiceProvider were ca
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">LaraPeko</span><span style="color:#f92672">::</span><span style="color:#a6e22e">sayPeko</span>();
 </span></span></code></pre></div><p>Now, you won&rsquo;t see the PHP Deprecated message:</p>
-<p><img alt="peko test" src="/blog/202107-laravel-package-development/peko-test-feature.png"></p>
+<p><img src="/blog/202107-laravel-package-development/peko-test-feature.png" alt="peko test"></p>
 <h3 id="method-2-unit-testing">Method 2: Unit Testing</h3>
 <p>Next, let&rsquo;s use PHPUnit to perform unit tests. Run the following command in the project directory:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>php vendor/bin/phpunit
@@ -708,7 +708,7 @@ This indicates that the Facade aliases registered in the ServiceProvider were ca
 Run the test using the following command:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>php vendor/bin/phpunit vendor/ray247k/larapeko/tests
 </span></span></code></pre></div><p>You should see the PHPUnit results:</p>
-<p><img alt="phpunit result" src="/blog/202107-laravel-package-development/phpunit-result.png"></p>
+<p><img src="/blog/202107-laravel-package-development/phpunit-result.png" alt="phpunit result"></p>
 <p><strong>Note:</strong>
 Suppose there is a private function <code>testMethod()</code> in the LaraPeko package:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">testMethod</span>()

@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.134.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.142.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="第一次在 GCP 開 VM 就成功">
   <meta property="og:description" content="手把手在 Google Cloud Platform (GCP) 啟動第一個 VM 執行個體及相關設定">
   <meta property="description" content="手把手在 Google Cloud Platform (GCP) 啟動第一個 VM 執行個體及相關設定">
@@ -367,7 +367,7 @@
 <h1 id="開新-vm-執行個體">開新 VM 執行個體</h1>
 <p>沒什麼要注意的，進到 GCP 後台的<code>VM 執行個體</code>頁面後<br>
 直接選則要的規格，取名後點建立就好</p>
-<p><img alt="new vm" src="/blog/202201-gcp-vm-basic/new-vm.jpg"></p>
+<p><img src="/blog/202201-gcp-vm-basic/new-vm.jpg" alt="new vm"></p>
 <h1 id="固定對外-ip">固定對外 IP</h1>
 <p>因為每次重啟 VM，對外的 IP 都會變動，為了讓我們的服務有一個固定的 IP<br>
 我們可以將外部 IP 的類型從「<code>臨時</code>」改為「<code>靜態</code>」</p>
@@ -376,14 +376,14 @@
 </blockquote>
 <p>首先選擇要調整的 VM 主機，點擊三個點點點形狀的「其他操作項目」選單<br>
 選擇「查看網路詳細資料」</p>
-<p><img alt="gcp vm netowrk settings" src="/blog/202201-gcp-vm-basic/gcp-vm-network-settings.jpg"></p>
+<p><img src="/blog/202201-gcp-vm-basic/gcp-vm-network-settings.jpg" alt="gcp vm netowrk settings"></p>
 <p>接著在左方選單選擇「外部 IP 位址」標籤<br>
 在<code>使用者</code>欄位中找到剛剛建立的 VM 執行個體<br>
 可以發現目標的<code>名稱</code>欄位為空</p>
-<p><img alt="gcp static ip" src="/blog/202201-gcp-vm-basic/gcp-static-ip.jpg"></p>
+<p><img src="/blog/202201-gcp-vm-basic/gcp-static-ip.jpg" alt="gcp static ip"></p>
 <p>按下左方的<code>保留</code>，這時候就會要你填名稱了<br>
 填好之後你 VM 主機 IP 就不會因為服務重啟而改變</p>
-<p><img alt="gcp network naming" src="/blog/202201-gcp-vm-basic/gcp-network-naming.png"></p>
+<p><img src="/blog/202201-gcp-vm-basic/gcp-network-naming.png" alt="gcp network naming"></p>
 <h1 id="開啟對外-port">開啟對外 port</h1>
 <p>虛擬主機開好了，也固定對外的 IP 了！來連線吧<br>
 瀏覽器輸入 IP 連線，然後就連不進去！欸？</p>
@@ -391,13 +391,13 @@
 <p>預設開啟 VM 的時候只會開啟 ssh 連線用的<code>22</code>port<br>
 如果建立的時候你有選擇防火牆規則，則會套用<code>http-server</code>和<code>https-server</code>這兩個「網路標記」<br>
 如此就可以接收發向<code>80</code>和<code>443</code>兩個 port 的請求</p>
-<p><img alt="gcp vm firewall" src="/blog/202201-gcp-vm-basic/gcp-vm-firewall.jpg"></p>
+<p><img src="/blog/202201-gcp-vm-basic/gcp-vm-firewall.jpg" alt="gcp vm firewall"></p>
 <p>如果不確定自己原本有沒有開啟，可以進到 VM 的資訊頁面查看「網路標記」區塊</p>
-<p><img alt="gcp vm check firewall" src="/blog/202201-gcp-vm-basic/gcp-vm-check-firewall.jpg"></p>
+<p><img src="/blog/202201-gcp-vm-basic/gcp-vm-check-firewall.jpg" alt="gcp vm check firewall"></p>
 <p>如果發現沒有開啟，而你想開啟這兩個 port<br>
 點擊 VM 的編輯按鈕，找到<code>防火牆</code>設定<br>
 選取建立時沒勾選的<code>http-server</code>和<code>https-server</code>規則</p>
-<p><img alt="gcp vm select rule" src="/blog/202201-gcp-vm-basic/gcp-vm-select-rule.jpg"></p>
+<p><img src="/blog/202201-gcp-vm-basic/gcp-vm-select-rule.jpg" alt="gcp vm select rule"></p>
 <p>套用成功之後就可以接收 80 和 443 port 進來的請求了</p>
 <h2 id="其他-port">其他 port</h2>
 <p>有些服務會需要使用到不同的 port，這時候就需要自行設定<br>
@@ -405,26 +405,26 @@
 <h3 id="建立防火牆規則">建立防火牆規則</h3>
 <p>選擇要調整的 VM 主機，最右方三點選單選擇「查看網路詳細資料」進入「虛擬私有雲網路」<br>
 選擇左方「防火牆」選單，並點擊「建立防火牆規則」</p>
-<p><img alt="gcp create firewall rule" src="/blog/202201-gcp-vm-basic/gcp-create-firewall-rule.jpg"></p>
+<p><img src="/blog/202201-gcp-vm-basic/gcp-create-firewall-rule.jpg" alt="gcp create firewall rule"></p>
 <p>大部分都可以使用預設值，看說明來判斷要不要自己設定<br>
 只有幾個地方需要調整</p>
 <h4 id="目標標記">目標標記</h4>
 <p>這個是之後選擇防火牆規則時候用的網路標記<br>
 作用跟設定 80 port 時的<code>http-server</code>一樣，作為識別用途</p>
-<p><img alt="gcp firewall rule tag" src="/blog/202201-gcp-vm-basic/gcp-firewall-rule-tag.jpg"></p>
+<p><img src="/blog/202201-gcp-vm-basic/gcp-firewall-rule-tag.jpg" alt="gcp firewall rule tag"></p>
 <h4 id="來源-ipv4-範圍">來源 IPv4 範圍</h4>
 <p>設定信任的 IP 位置，如果要公開就設定成<code> 0.0.0.0/0</code>接受全部來源的請求</p>
-<p><img alt="gcp firewall ipv4" src="/blog/202201-gcp-vm-basic/gcp-firewall-ipv4.jpg"></p>
+<p><img src="/blog/202201-gcp-vm-basic/gcp-firewall-ipv4.jpg" alt="gcp firewall ipv4"></p>
 <h4 id="通訊協定和埠">通訊協定和埠</h4>
 <p>為了示範同時開放多個 port 所以加入 8089<br>
 如此就可以指定 tcp 的 8080 與 8089 port 對外開放</p>
 <p>可以看到 port 號之間是用<code>逗號「,」</code>分隔<br>
 若是用<code>減號「-」</code>則可以指定開放一個範圍的 port</p>
-<p><img alt="gcp firewall ports" src="/blog/202201-gcp-vm-basic/gcp-firewall-ports.jpg"></p>
+<p><img src="/blog/202201-gcp-vm-basic/gcp-firewall-ports.jpg" alt="gcp firewall ports"></p>
 <h3 id="套用防火牆規則">套用防火牆規則</h3>
 <p>回到 Compute Engine 中選擇要套用規則的 VM 執行個體，點擊編輯按鈕<br>
 手動在<code>網路標記</code>輸入剛剛建立防火牆規則時填寫的<code>目標標記</code>，儲存後就可以套用囉</p>
-<p><img alt="gcp vm add rule" src="/blog/202201-gcp-vm-basic/gcp-vm-add-rule.jpg"></p>
+<p><img src="/blog/202201-gcp-vm-basic/gcp-vm-add-rule.jpg" alt="gcp vm add rule"></p>
 
       
       

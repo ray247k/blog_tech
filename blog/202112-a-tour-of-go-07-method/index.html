@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.134.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.142.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="[A Tour of Go 學習筆記] 07 method">
   <meta property="og:description" content="使用官方教學瞭解 Go method">
   <meta property="description" content="使用官方教學瞭解 Go method">
@@ -525,26 +525,26 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span> 
 </span></span></code></pre></div><p>和前面兩個範例做比較，會發現會注意到帶有參數的 functions 必須傳入一個指針，否則</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">v</span> <span style="color:#a6e22e">Vertex</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ScaleFunc</span>(<span style="color:#a6e22e">v</span>, <span style="color:#ae81ff">5</span>)  <span style="color:#75715e">// Compile error!
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">ScaleFunc</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">v</span>, <span style="color:#ae81ff">5</span>) <span style="color:#75715e">// OK
-</span></span></span></code></pre></div><p>但是帶有 pointer receiver 的 methods 在被呼叫時可以接受一個值或一個指針</p>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ScaleFunc</span>(<span style="color:#a6e22e">v</span>, <span style="color:#ae81ff">5</span>)  <span style="color:#75715e">// Compile error!</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ScaleFunc</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">v</span>, <span style="color:#ae81ff">5</span>) <span style="color:#75715e">// OK</span>
+</span></span></code></pre></div><p>但是帶有 pointer receiver 的 methods 在被呼叫時可以接受一個值或一個指針</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">v</span> <span style="color:#a6e22e">Vertex</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Scale</span>(<span style="color:#ae81ff">5</span>)  <span style="color:#75715e">// OK
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">p</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">v</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">Scale</span>(<span style="color:#ae81ff">10</span>) <span style="color:#75715e">// OK
-</span></span></span></code></pre></div><p>對於<code>v.Scale(5)</code>即使<code>v</code>是個值而非指針，帶有 pointer receiver 的 methods 也能被直接呼叫<br>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Scale</span>(<span style="color:#ae81ff">5</span>)  <span style="color:#75715e">// OK</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">p</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">v</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">Scale</span>(<span style="color:#ae81ff">10</span>) <span style="color:#75715e">// OK</span>
+</span></span></code></pre></div><p>對於<code>v.Scale(5)</code>即使<code>v</code>是個值而非指針，帶有 pointer receiver 的 methods 也能被直接呼叫<br>
 也就是說，由於<code>Scale</code> method 有一個 pointer receiver<br>
 為方便起見，Go 會將<code>v.Scale(5)</code>視為<code>(&amp;v).Scale(5)</code></p>
 <p>同樣的事情也發生在相反的情況，若是對傳值的 function 傳入指針</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">v</span> <span style="color:#a6e22e">Vertex</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">AbsFunc</span>(<span style="color:#a6e22e">v</span>))  <span style="color:#75715e">// OK
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">AbsFunc</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">v</span>)) <span style="color:#75715e">// Compile error!
-</span></span></span></code></pre></div><p>但是作為 method 使用的時候，又可以直接傳入指針</p>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">AbsFunc</span>(<span style="color:#a6e22e">v</span>))  <span style="color:#75715e">// OK</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">AbsFunc</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">v</span>)) <span style="color:#75715e">// Compile error!</span>
+</span></span></code></pre></div><p>但是作為 method 使用的時候，又可以直接傳入指針</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">v</span> <span style="color:#a6e22e">Vertex</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Abs</span>()) <span style="color:#75715e">// OK
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">p</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">v</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">Abs</span>()) <span style="color:#75715e">// OK
-</span></span></span></code></pre></div><p>因為這種情況下<code>p.Abs()</code>會被解釋為<code>(*p).Abs()</code></p>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Abs</span>()) <span style="color:#75715e">// OK</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">p</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">v</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">Abs</span>()) <span style="color:#75715e">// OK</span>
+</span></span></code></pre></div><p>因為這種情況下<code>p.Abs()</code>會被解釋為<code>(*p).Abs()</code></p>
 <h1 id="receiver-類型怎麼選值指針">receiver 類型怎麼選（值/指針）</h1>
 <p>通常來說使用「指針」作為 receiver 是因為</p>
 <ul>

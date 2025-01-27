@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.134.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.142.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="Setting up multiple GitHub accounts on one computer">
   <meta property="og:description" content="Configuring multiple GitHub accounts with SSH connections">
   <meta property="description" content="Configuring multiple GitHub accounts with SSH connections">
@@ -383,7 +383,7 @@ However, GitHub doesn&rsquo;t allow the same SSH key to be used across multiple 
     target="_blank" rel="noreferrer noopener">SSH keys management page
 </a>
  in your company account and click <code>New SSH key</code>.</p>
-<p><img alt="add ssh key" src="/blog/202409-multiple-github-accounts-with-ssh-keys/add_ssh_key.png"></p>
+<p><img src="/blog/202409-multiple-github-accounts-with-ssh-keys/add_ssh_key.png" alt="add ssh key"></p>
 <p>Give it a name you can easily recognize and paste the <code>id_rsa.pub</code> content you copied earlier.</p>
 <h1 id="3-ssh-config-setup">3. SSH Config Setup</h1>
 <h2 id="3-1-clear-all-ssh-keys">3-1. Clear All SSH Keys</h2>
@@ -433,7 +433,7 @@ Host github.com-company
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>ssh -T git@github.com
 </span></span><span style="display:flex;"><span>ssh -T git@github.com-company
 </span></span></code></pre></div><p>If successful, you should see welcome messages from the respective accounts.</p>
-<p><img alt="ssh test" src="/blog/202409-multiple-github-accounts-with-ssh-keys/ssh-test.png"></p>
+<p><img src="/blog/202409-multiple-github-accounts-with-ssh-keys/ssh-test.png" alt="ssh test"></p>
 <h1 id="5-clone-a-repository">5. Clone a Repository</h1>
 <p>For your personal account, no changes are needed.<br>
 However, for company projects, replace the default <code>github.com</code> with <code>github.com-company</code> in the clone command.</p>

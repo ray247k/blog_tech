@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.134.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.142.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="使用 Prerender 為 SPA 增進 SEO">
   <meta property="og:description" content="解決 CSR 網頁的 SEO 問題，示範自架與 SaaS 方案">
   <meta property="description" content="解決 CSR 網頁的 SEO 問題，示範自架與 SaaS 方案">
@@ -475,12 +475,12 @@
 <p>而且以前就聽過 Cloudflare Workers 也知道很強大，畢竟就像個 proxy 掛在最前面，所以能做的事情很多<br>
 但是從來沒機會使用，剛好用這次機會摸摸看</p>
 <h3 id="prerenderio-價錢方案">Prerender.io 價錢方案</h3>
-<p><img alt="prerender price" src="/blog/202201-using-prerender-improve-spa-seo/prerender-price.png"></p>
+<p><img src="/blog/202201-using-prerender-improve-spa-seo/prerender-price.png" alt="prerender price"></p>
 <h3 id="cloudflare-workers-價錢方案">Cloudflare workers 價錢方案</h3>
-<p><img alt="cloudflare workers price" src="/blog/202201-using-prerender-improve-spa-seo/cloudflare-workers-price.png"></p>
+<p><img src="/blog/202201-using-prerender-improve-spa-seo/cloudflare-workers-price.png" alt="cloudflare workers price"></p>
 <h2 id="設定">設定</h2>
 <p>進到 prerender 頁面，點擊<code>Install middleware</code>後選擇<code>cloudflare</code>選項</p>
-<p><img alt="prerender settings" src="/blog/202201-using-prerender-improve-spa-seo/prerender-settings.png"></p>
+<p><img src="/blog/202201-using-prerender-improve-spa-seo/prerender-settings.png" alt="prerender settings"></p>
 <p>官方已經新增了文件，只要照著文件操作，連不會寫程式的人也可以安心設定了！<br>
 照著文件按圖施工就好：<a href="https://docs.prerender.io/docs/24-cloudflare"
    
@@ -507,13 +507,13 @@
 所以在這邊使用 playground 是無法測試的</p>
 <p>在設定好 Worker 之後，開啟 Worker 頁籤<br>
 選擇<code>新增路由</code></p>
-<p><img alt="cloudflare workers settings" src="/blog/202201-using-prerender-improve-spa-seo/cloudflare-workers-settings.png"></p>
+<p><img src="/blog/202201-using-prerender-improve-spa-seo/cloudflare-workers-settings.png" alt="cloudflare workers settings"></p>
 <p>接著要設定<strong>要求限制失敗模式</strong><br>
 選擇<code>開啟失敗 (繼續)</code>的話，當請求進來而 Worker 失敗則會直接進到服務內<br>
 而<code>關閉失敗 (封鎖)</code>是會噴出錯誤頁面阻止使用者繼續訪問<br>
 由於我們不希望在達到免費方案限制的時候網站就無法存取，且不預先渲染內容不影響網站功能<br>
 所以選擇讓在失敗時跳過 Worker 直接執行，畢竟只是拿來做 prerender，爬蟲這次爬不到就下次再來也不要緊</p>
-<p><img alt="cloudflare new route" src="/blog/202201-using-prerender-improve-spa-seo/cloudflare-new-route.png"></p>
+<p><img src="/blog/202201-using-prerender-improve-spa-seo/cloudflare-new-route.png" alt="cloudflare new route"></p>
 <p>路由規則要和你在 Worker 設定的網址一樣<br>
 設定完之後要記得回到 <a href="https://prerender.io/"
    

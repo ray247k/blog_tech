@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.134.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.142.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="Laravel Queue Usage">
   <meta property="og:description" content="Using queues to defer processing of tasks that don&#39;t need immediate attention.">
   <meta property="description" content="Using queues to defer processing of tasks that don&#39;t need immediate attention.">
@@ -420,7 +420,7 @@ Otherwise, it will continue running the old version of the code!</p>
 </span></span></code></pre></div><h1 id="check-execution-status">Check execution status</h1>
 <p>Executing the Controller&rsquo;s code, you&rsquo;ll notice that when the Queue is triggered, a new record is added to the <code>jobs</code> table.<br>
 And during execution, the terminal will display corresponding information.</p>
-<p><img alt="queue-run" src="/blog/202203-laravel-queue/queue-run.png"></p>
+<p><img src="/blog/202203-laravel-queue/queue-run.png" alt="queue-run"></p>
 <p>If you see <code>Processed</code>, it means the task has been completed, and at this point, the record in <code>jobs</code> will be removed.</p>
 <hr>
 <h1 id="supervisor">Supervisor</h1>
@@ -485,7 +485,7 @@ pidfile=/var/www/html/storage/logs/supervisord.pid
 </span></span></code></pre></div><p>If an error message appears indicating that the <code>ps</code> or <code>pgrep</code> commands do not exist, you will need to install the package using a command.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt-get update <span style="color:#f92672">&amp;&amp;</span> apt-get install procps
 </span></span></code></pre></div><p>If you see <code>supervisord</code> listed, it means it&rsquo;s already running.</p>
-<p><img alt="queue-run" src="/blog/202203-laravel-queue/supervisord.jpg"></p>
+<p><img src="/blog/202203-laravel-queue/supervisord.jpg" alt="queue-run"></p>
 
       
       

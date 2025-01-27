@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.134.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.142.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="Jenkins 01 安裝">
   <meta property="og:description" content="一步一步安裝 Jenkins">
   <meta property="description" content="一步一步安裝 Jenkins">
@@ -394,7 +394,7 @@ Jenkins 是一套以 Java 開發的一套 CI/CD 系統工具<br>
 </span></span><span style="display:flex;"><span>sudo apt-get install jenkins
 </span></span></code></pre></div><p>使用指令啟動 jenkins 服務並在瀏覽器輸入<code>localhost:8080</code>後會看到驗證初始密碼的提示</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl enable --now jenkins
-</span></span></code></pre></div><p><img alt="admin password" src="/blog/202203-jenkins-cicd-1-installation/admin_password.png"></p>
+</span></span></code></pre></div><p><img src="/blog/202203-jenkins-cicd-1-installation/admin_password.png" alt="admin password"></p>
 <p>可以用指令查看提示路徑中的初始 admin 密碼</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 </span></span></code></pre></div><h1 id="外掛安裝">外掛安裝</h1>
@@ -411,7 +411,7 @@ Jenkins 是一套以 Java 開發的一套 CI/CD 系統工具<br>
 <li>Docker Pipeline</li>
 </ul>
 <p>可以在管理外掛程式的地方進行搜尋和安裝</p>
-<p><img alt="jenkins manage" src="/blog/202203-jenkins-cicd-1-installation/jenkins_manage.png"></p>
+<p><img src="/blog/202203-jenkins-cicd-1-installation/jenkins_manage.png" alt="jenkins manage"></p>
 <p>當然還有就是你 Jenkins 的 Host 主機也要裝好 Docker</p>
 <h1 id="docker-指令的權限設定">docker 指令的權限設定</h1>
 <p>首先先切換到 jenkins 身份</p>
@@ -430,7 +430,7 @@ Jenkins 是一套以 Java 開發的一套 CI/CD 系統工具<br>
 <blockquote>
 <p>http://jenlins_url/restart</p>
 </blockquote>
-<p><img alt="jenkins restart" src="/blog/202203-jenkins-cicd-1-installation/jenkins_restart.png"></p>
+<p><img src="/blog/202203-jenkins-cicd-1-installation/jenkins_restart.png" alt="jenkins restart"></p>
 <p>按下就可以等他重新啟動後就會載入新的設定，就可以在 jenkins 身份下執行 docker 指令了</p>
 
       

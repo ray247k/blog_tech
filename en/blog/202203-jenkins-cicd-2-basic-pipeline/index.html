@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.134.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.142.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="Jenkins CI/CD 02 Basic Pipeline Setup and GitHub Integration">
   <meta property="og:description" content="Creating a basic pipeline workflow and triggering it through GitHub webhooks">
   <meta property="description" content="Creating a basic pipeline workflow and triggering it through GitHub webhooks">
@@ -370,18 +370,18 @@ Below, we&rsquo;ll demonstrate how to integrate GitHub webhooks and provide comm
 <h1 id="creating-the-first-pipeline">Creating the First Pipeline</h1>
 <p>Navigate to <code>Open Blue Ocean</code> in the sidebar to create a new pipeline.<br>
 Follow the prompts to create an access token. In this demonstration, I had to generate a new token because I deleted the old one, resulting in a <code>Token deleted</code> error message.</p>
-<p><img alt="create pipeline" src="/blog/202203-jenkins-cicd-2-basic-pipeline/create-pipeline.png"></p>
+<p><img src="/blog/202203-jenkins-cicd-2-basic-pipeline/create-pipeline.png" alt="create pipeline"></p>
 <p>Click <code>Create an access token here</code> to open the <code>personal access token</code> creation page on GitHub.</p>
 <p>You can also find it by going to</p>
 <blockquote>
 <p>GitHub &gt; Settings &gt; Developer settings &gt; Personal access tokens &gt; Generate new token</p>
 </blockquote>
 <p>The necessary permissions are typically pre-filled; simply click <code>Generate token</code>.</p>
-<p><img alt="new personal access token" src="/blog/202203-jenkins-cicd-2-basic-pipeline/new-personal-access-token.jpg"></p>
+<p><img src="/blog/202203-jenkins-cicd-2-basic-pipeline/new-personal-access-token.jpg" alt="new personal access token"></p>
 <p>Copy the generated token and paste it into Jenkins.<br>
 If you forget to do so at this point, you&rsquo;ll need to regenerate the token.</p>
 <p>Once verification is complete, you can select a project.</p>
-<p><img alt="choose repository" src="/blog/202203-jenkins-cicd-2-basic-pipeline/choose-repository.jpg"></p>
+<p><img src="/blog/202203-jenkins-cicd-2-basic-pipeline/choose-repository.jpg" alt="choose repository"></p>
 <p>Click &ldquo;Create,&rdquo; and Jenkins will scan all branches within the GitHub repository.</p>
 <h1 id="connecting-webhooks-to-listen-for-events">Connecting Webhooks to Listen for Events</h1>
 <p>進入專案的 Settings &gt; Webhook &gt; Add webhook<br>
@@ -402,10 +402,10 @@ This is typically automated in <a href="/tags/drone/"
 In the <code>Payload URL</code> field, enter your Jenkins server&rsquo;s URL followed by <code>/github-webhook/</code>.<br>
 If your port isn&rsquo;t 80 or 443, you should include the complete URL.<br>
 For example, if Jenkins is using the default port <code>8080</code>:</p>
-<p><img alt="webhook" src="/blog/202203-jenkins-cicd-2-basic-pipeline/webhook.png"></p>
+<p><img src="/blog/202203-jenkins-cicd-2-basic-pipeline/webhook.png" alt="webhook"></p>
 <p>Click &ldquo;Add webhook&rdquo; to create it and then test the connection.<br>
 If the test fails, you can adjust the settings and click the three dots on the right to <code>Redeliver</code> for a retest.</p>
-<p><img alt="redeliver" src="/blog/202203-jenkins-cicd-2-basic-pipeline/redeliver.jpg"></p>
+<p><img src="/blog/202203-jenkins-cicd-2-basic-pipeline/redeliver.jpg" alt="redeliver"></p>
 <p>From now on, every time a push event occurs(based on the webhook settings), Jenkins will be notified.<br>
 This way, we achieve the goal of triggering a Jenkins build process when new content is pushed to GitHub.</p>
 <h1 id="listening-for-tag-events">Listening for Tag Events</h1>
@@ -420,7 +420,7 @@ I struggled with this for a while until I found the solution in the official doc
 <p>By default, Jenkins doesn&rsquo;t set up tag listening.<br>
 You need to access your pipeline settings, navigate to <code>Branch Sources</code>, and in the <code>Behaviours</code> section at the bottom, check <code>Discover tags</code> to enable tag listening.</p>
 <p>I&rsquo;m still not entirely sure why this design choice was made.</p>
-<p><img alt="tag discover" src="/blog/202203-jenkins-cicd-2-basic-pipeline/tag-discover.jpg"></p>
+<p><img src="/blog/202203-jenkins-cicd-2-basic-pipeline/tag-discover.jpg" alt="tag discover"></p>
 <h1 id="basic-pipeline-example">Basic Pipeline Example</h1>
 <p>Here, I&rsquo;ll provide a basic demonstration of several commonly used trigger conditions.<br>
 Details on what actions to take after triggering will be discussed later.<br>

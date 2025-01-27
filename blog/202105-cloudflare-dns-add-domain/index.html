@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.134.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.142.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="設定 Cloudflare 免費 CDN，並啟用 DNS 代管">
   <meta property="og:description" content="從 Google Domains 把 DNS 代管交給 Cloudflare 管理">
   <meta property="description" content="從 Google Domains 把 DNS 代管交給 Cloudflare 管理">
@@ -375,24 +375,24 @@
 <p>沒什麼難度，就照著網站流程註冊就好</p>
 <h2 id="2-跟著-cloudflare-引導加入網站domain">2. 跟著 cloudflare 引導加入網站(Domain)</h2>
 <p>把之前買的網址加入管理列表<br>
-<img alt="cloudflare-add-domain" src="/blog/202105-cloudflare-dns-add-domain/cloudflare-add-domain.png"></p>
+<img src="/blog/202105-cloudflare-dns-add-domain/cloudflare-add-domain.png" alt="cloudflare-add-domain"></p>
 <h2 id="3-調整-dns-伺服器">3. 調整 DNS 伺服器</h2>
 <p>加入網站後我們會在 cloudflare 看到這個提示<br>
-<img alt="cloudflare-setting-hint" src="/blog/202105-cloudflare-dns-add-domain/cloudflare-setting-hint.png"></p>
+<img src="/blog/202105-cloudflare-dns-add-domain/cloudflare-setting-hint.png" alt="cloudflare-setting-hint"></p>
 <p>接著去 Google Domain 那邊 DNS 的頁籤畫面<br>
 可以看到預設的 DNS 是上一步驟中 cloudflare 叫我們移除的 DNS 伺服器<br>
-<img alt="google-dns-default" src="/blog/202105-cloudflare-dns-add-domain/google-dns-default.png"></p>
+<img src="/blog/202105-cloudflare-dns-add-domain/google-dns-default.png" alt="google-dns-default"></p>
 <p>點「使用自訂名稱伺服器」換成他給的兩個網址即可<br>
-<img alt="google-dns-cloudflare" src="/blog/202105-cloudflare-dns-add-domain/google-dns-cloudflare.png"></p>
+<img src="/blog/202105-cloudflare-dns-add-domain/google-dns-cloudflare.png" alt="google-dns-cloudflare"></p>
 <h2 id="4-收到信通知網站-cloudflare-已經啟用">4. 收到信通知網站 cloudflare 已經啟用</h2>
-<p><img alt="cloudflare-email" src="/blog/202105-cloudflare-dns-add-domain/cloudflare-email.png"></p>
+<p><img src="/blog/202105-cloudflare-dns-add-domain/cloudflare-email.png" alt="cloudflare-email"></p>
 <h2 id="5-啟用一律使用-https">5. 啟用一律使用 HTTPS</h2>
 <p>將所有透過「http」協定的所有請求重新導向至「https」<br>
 因為 cloudflare 有預設的 SSL/TLS 憑證，並不用自己購買就可以開啟 https<br>
 如此在瀏覽器網址最前面有「鎖頭」顯示為安全的連線！</p>
 <p>我們只需要做去啟用重新導向的服務<br>
 前往<code>SSL/TLS</code> 頁籤，往下滑看到「一律使用HTTPS」把他點成開啟，然後等待陣子讓設定生效<br>
-<img alt="cloudflare-ssl-tls" src="/blog/202105-cloudflare-dns-add-domain/cloudflare-ssl-tls.png"></p>
+<img src="/blog/202105-cloudflare-dns-add-domain/cloudflare-ssl-tls.png" alt="cloudflare-ssl-tls"></p>
 <p>啟用之後，就算你使用 http 造訪網頁也會自動導轉到 https 開頭的網頁囉！</p>
 
       

@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.134.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.142.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="[大話 AWS 雲端架構筆記] DynamoDB">
   <meta property="og:description" content="簡介 DynamoDB 和使用方法和運作機制">
   <meta property="description" content="簡介 DynamoDB 和使用方法和運作機制">
@@ -365,7 +365,7 @@
 <h1 id="名詞">名詞</h1>
 <h2 id="table">Table</h2>
 <p>管理資料的基礎單位，是資料的集合</p>
-<p><img alt="struct" src="/blog/202306-aws-fundamental-dynamodb/struct.png"></p>
+<p><img src="/blog/202306-aws-fundamental-dynamodb/struct.png" alt="struct"></p>
 <h2 id="item">Item</h2>
 <p>每一筆存放在 Table 中的資料<br>
 內部以<code>Key-Attribute</code>的方式存在，每個<code>Attribute</code>內可能有多個<code>Value</code></p>
@@ -420,21 +420,21 @@
 <table>
   <thead>
       <tr>
-          <th style="text-align: left"></th>
-          <th style="text-align: left">On-Demand Backup and Restore</th>
-          <th style="text-align: left">Point-in-time Recovery</th>
+          <th></th>
+          <th>On-Demand Backup and Restore</th>
+          <th>Point-in-time Recovery</th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td style="text-align: left">備份時間</td>
-          <td style="text-align: left">用戶自行定義</td>
-          <td style="text-align: left">AWS 自動備份</td>
+          <td>備份時間</td>
+          <td>用戶自行定義</td>
+          <td>AWS 自動備份</td>
       </tr>
       <tr>
-          <td style="text-align: left">還原</td>
-          <td style="text-align: left">還原到用戶有備份的時間點</td>
-          <td style="text-align: left">最近 35 天內</td>
+          <td>還原</td>
+          <td>還原到用戶有備份的時間點</td>
+          <td>最近 35 天內</td>
       </tr>
   </tbody>
 </table>

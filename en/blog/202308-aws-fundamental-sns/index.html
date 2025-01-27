@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.134.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.142.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="[AWS Cloud Fundamental Notes] SNS">
   <meta property="og:description" content="Introduction to  SNS and its usage and operational mechanism">
   <meta property="description" content="Introduction to  SNS and its usage and operational mechanism">
@@ -369,7 +369,7 @@
 <p>Publishers push messages to topics, and subscribers receive notifications and take subsequent steps by subscribing to topics.</p>
 <p>A topic can have multiple subscribers, allowing the same message from a publisher to be reused by different subscribers.</p>
 <h1 id="snssqs-combo">SNS+SQS Combo</h1>
-<p><img alt="blueprint" src="/blog/202308-aws-fundamental-sns/blueprint.png"></p>
+<p><img src="/blog/202308-aws-fundamental-sns/blueprint.png" alt="blueprint"></p>
 <p>Publishers push messages to topics.<br>
 SQS, as a subscriber, puts events to be processed into a queue by subscribing to topics.<br>
 The subsequent instance pulls messages from SQS for processing.<br>

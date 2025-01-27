@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.134.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.142.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="Create a Redis service on GCP">
   <meta property="og:description" content="Set up a Redis service using Google Cloud MemoryStore.">
   <meta property="description" content="Set up a Redis service using Google Cloud MemoryStore.">
@@ -365,14 +365,14 @@ The pricing is similar to that of setting up a database.<br>
 I thought it would be as inexpensive as using virtual machines (VMs).</p>
 <h1 id="creating-redis">Creating Redis</h1>
 <p>Go to the <code>MemoryStore</code> page and click on either &ldquo;Redis&rdquo; or &ldquo;Memcached&rdquo; to begin the setup process.</p>
-<p><img alt="gcp memory store" src="/blog/202206-gcp-redis/memory-store.jpg"></p>
+<p><img src="/blog/202206-gcp-redis/memory-store.jpg" alt="gcp memory store"></p>
 <p>In this example, for Redis, click on &ldquo;Create Instance&rdquo; to proceed.</p>
-<p><img alt="gcp redis settings" src="/blog/202206-gcp-redis/redis-create.jpg"></p>
+<p><img src="/blog/202206-gcp-redis/redis-create.jpg" alt="gcp redis settings"></p>
 <p>Enter some basic configurations, which mainly involve adjusting the size and name.</p>
-<p><img alt="gcp redis settings" src="/blog/202206-gcp-redis/redis-settings.png"></p>
+<p><img src="/blog/202206-gcp-redis/redis-settings.png" alt="gcp redis settings"></p>
 <p>After configuring the options as prompted, click on &ldquo;Create Instance&rdquo; and then wait for it to be created.<br>
 At this point, there will be a short waiting period, so you can take a break in the meantime.</p>
-<p><img alt="gcp redis result" src="/blog/202206-gcp-redis/result.jpg"></p>
+<p><img src="/blog/202206-gcp-redis/result.jpg" alt="gcp redis result"></p>
 <p>This is the method to create Redis on GCP.<br>
 Once created, you only need to map the endpoint in your application to the IP of the Redis instance to start using it.<br>
 Alternatively, you can also use third-party GUI tools like <a href="https://github.com/qishibo/AnotherRedisDesktopManager"

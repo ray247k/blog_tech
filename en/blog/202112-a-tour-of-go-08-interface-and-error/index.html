@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.134.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.142.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="[A Tour of Go Study Notes] 08 interface and error">
   <meta property="og:description" content="Understanding Go interface and error using official tutorials">
   <meta property="description" content="Understanding Go interface and error using official tutorials">
@@ -391,9 +391,9 @@ Regardless of the data type, as long as it implements the definitions within an 
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">S</span> <span style="color:#66d9ef">string</span>
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// This method means type T implements the interface I,
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// but we don&#39;t need to explicitly declare that it does so.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">t</span> <span style="color:#a6e22e">T</span>) <span style="color:#a6e22e">M</span>() {
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// This method means type T implements the interface I,</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// but we don&#39;t need to explicitly declare that it does so.</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">t</span> <span style="color:#a6e22e">T</span>) <span style="color:#a6e22e">M</span>() {
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">S</span>)
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
@@ -413,7 +413,7 @@ Regardless of the data type, as long as it implements the definitions within an 
 <p>&ldquo;When I see a bird that walks like a duck and swims like a duck and quacks like a duck, I call that bird a duck.&rdquo;</p>
 </blockquote>
 <p>It can be explained that when an object implements all the definitions of a duck interface, it&rsquo;s considered a duck.</p>
-<p><img alt="i am a duck" src="/blog/202112-a-tour-of-go-08-interface-and-error/i-am-a-duck.jpg"></p>
+<p><img src="/blog/202112-a-tour-of-go-08-interface-and-error/i-am-a-duck.jpg" alt="i am a duck"></p>
 <h1 id="error">Error</h1>
 <p>In Go, <code>error</code> is used to represent error states.<br>
 Similar to <code>fmt.Stringer</code>, the error type is a built-in interface.</p>

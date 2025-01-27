@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.134.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.142.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="[大話 AWS 雲端架構筆記] SNS">
   <meta property="og:description" content="簡介 SNS 和使用方法和運作機制">
   <meta property="description" content="簡介 SNS 和使用方法和運作機制">
@@ -371,7 +371,7 @@
 <p>一個 Topic 可以同時有多個 Subscriber<br>
 可以達到同一個來自 Publisher 的消息可被不同 Subscriber 重複利用</p>
 <h1 id="snssqs-組合拳">SNS+SQS 組合拳</h1>
-<p><img alt="blueprint" src="/blog/202308-aws-fundamental-sns/blueprint.png"></p>
+<p><img src="/blog/202308-aws-fundamental-sns/blueprint.png" alt="blueprint"></p>
 <p>Publisher 將訊息推送到 Topic<br>
 SQS 作為 Subscriber 通過訂閱 Topic 將待處理的事件放入佇列中<br>
 交由後續 Instance 拉取 SQS 中的訊息進行處理<br>

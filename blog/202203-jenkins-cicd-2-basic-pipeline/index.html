@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.134.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.142.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="Jenkins 02 基本 pipeline 建置及串接 Github">
   <meta property="og:description" content="建立一個基本的 pipeline 流程，並透過 Github 的 webhook 觸發建置流程">
   <meta property="description" content="建立一個基本的 pipeline 流程，並透過 Github 的 webhook 觸發建置流程">
@@ -369,16 +369,16 @@
 <h1 id="建立第一個-pipeline">建立第一個 pipeline</h1>
 <p>側邊欄點選 Open Blue Ocean 來建置新的 pipeline<br>
 依照提示建立 access token，這邊為了示範我把舊的給砍了所以才會出現 Token 被刪除的錯誤訊息</p>
-<p><img alt="create pipeline" src="/blog/202203-jenkins-cicd-2-basic-pipeline/create-pipeline.png"></p>
+<p><img src="/blog/202203-jenkins-cicd-2-basic-pipeline/create-pipeline.png" alt="create pipeline"></p>
 <p>按下<code>Create an access token here.</code>會開啟 Github 的<code>personal access token</code>建立頁面</p>
 <p>如果自己要找的話是在<br>
 GitHub &gt; settings &gt; Developer settings &gt; Personal access tokens &gt; Generate new token</p>
 <p>基本上他已經帶入需要的權限了，直接按下<code>Generate token</code></p>
-<p><img alt="new personal access token" src="/blog/202203-jenkins-cicd-2-basic-pipeline/new-personal-access-token.jpg"></p>
+<p><img src="/blog/202203-jenkins-cicd-2-basic-pipeline/new-personal-access-token.jpg" alt="new personal access token"></p>
 <p>然後複製產生的 token 貼到 jenkins<br>
 如果這時候沒有複製下來就只能重新產生了！</p>
 <p>驗證完成之後就可以選擇專案</p>
-<p><img alt="choose repository" src="/blog/202203-jenkins-cicd-2-basic-pipeline/choose-repository.jpg"></p>
+<p><img src="/blog/202203-jenkins-cicd-2-basic-pipeline/choose-repository.jpg" alt="choose repository"></p>
 <p>接著按下創建就會掃瞄 Github Repository 裡面的所有分支了！</p>
 <h1 id="串接-webhook-監聽事件">串接 webhook 監聽事件</h1>
 <p>接著讓我們稍微改一下專案內容並且 commit push 到 github，會發現怎麼 Jenkins 沒動作？<br>
@@ -390,10 +390,10 @@ GitHub &gt; settings &gt; Developer settings &gt; Personal access tokens &gt; Ge
 <p>進入專案的 Settings &gt; Webhook &gt; Add webhook<br>
 在<code>Payload URL</code>填入<code>jenkins主機網址/github-webhook/</code></p>
 <p>如果 port 不是使用 80 或 443，則要完整輸入。例如 Jenkins 預設使用的是<code>8080</code>port</p>
-<p><img alt="webhook" src="/blog/202203-jenkins-cicd-2-basic-pipeline/webhook.png"></p>
+<p><img src="/blog/202203-jenkins-cicd-2-basic-pipeline/webhook.png" alt="webhook"></p>
 <p>按下 Add webhook 新增後會測試連線<br>
 如果失敗，可以再調整後點擊右側三個點的選單，按下<code>Redeliver</code>來重新測試</p>
-<p><img alt="redeliver" src="/blog/202203-jenkins-cicd-2-basic-pipeline/redeliver.jpg"></p>
+<p><img src="/blog/202203-jenkins-cicd-2-basic-pipeline/redeliver.jpg" alt="redeliver"></p>
 <p>接著每次有 push 事件發生（根據 webhook 設定），都會通知 Jenkins<br>
 於是就達成我們想在有 push 新的內容到 Github 的時候觸發 Jenkins 建置流程</p>
 <h1 id="監聽-tag-事件">監聽 tag 事件</h1>
@@ -408,7 +408,7 @@ GitHub &gt; settings &gt; Developer settings &gt; Personal access tokens &gt; Ge
 <p>預設 Jenkins 是沒有建立 tag 監聽的，必須進入你的 pipeline 設定中<br>
 在<code>Branch Sources</code>設定中的<code>Behaviours</code>區塊最下方的<code>Add</code>勾選<code>Discover tags</code>來啟用<br>
 至今我仍然沒參透為什麼要這樣設計</p>
-<p><img alt="tag discover" src="/blog/202203-jenkins-cicd-2-basic-pipeline/tag-discover.jpg"></p>
+<p><img src="/blog/202203-jenkins-cicd-2-basic-pipeline/tag-discover.jpg" alt="tag discover"></p>
 <h1 id="pipeline-基本範例">pipeline 基本範例</h1>
 <p>這邊會基本示範幾種常用的觸發條件的條件判斷，至於觸發後要進行什麼行為之後再來介紹<br>
 首先在專案的根目錄下建立名為<code>jenkinsfile</code>的檔案，預設 Jenkins 會使用這個檔案作為 pipeline 流程</p>

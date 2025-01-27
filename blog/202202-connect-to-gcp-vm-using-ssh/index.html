@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.134.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.142.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="使用 ssh 從本機連線到 GCP VM">
   <meta property="og:description" content="在本機透過終端機 ssh 連線到 GCP VM">
   <meta property="description" content="在本機透過終端機 ssh 連線到 GCP VM">
@@ -380,7 +380,7 @@
 <p>在本機產生 ssh key，使用指令</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh-keygen
 </span></span></code></pre></div><p>接著複製<code>/.ssh/id_rsa.pub</code>檔案內容，新增進 GCP 的「<strong>中繼資料</strong>」</p>
-<p><img alt="gcp" src="/blog/202202-connect-to-gcp-vm-using-ssh/gcp.jpg"></p>
+<p><img src="/blog/202202-connect-to-gcp-vm-using-ssh/gcp.jpg" alt="gcp"></p>
 <p>如此一來，整個專案下的所有主機都可以使用這組 key 存取<br>
 再也不需要一台一台設定，人員異動時也更便於管理</p>
 <p>加入之後就完成了，就是這麼簡單<br>

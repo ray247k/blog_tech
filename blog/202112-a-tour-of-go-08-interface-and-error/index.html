@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.134.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.142.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="[A Tour of Go 學習筆記] 08 interface 和 error">
   <meta property="og:description" content="使用官方教學瞭解 Go interface 和 error">
   <meta property="description" content="使用官方教學瞭解 Go interface 和 error">
@@ -391,9 +391,9 @@
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">S</span> <span style="color:#66d9ef">string</span>
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// This method means type T implements the interface I,
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// but we don&#39;t need to explicitly declare that it does so.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">t</span> <span style="color:#a6e22e">T</span>) <span style="color:#a6e22e">M</span>() {
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// This method means type T implements the interface I,</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// but we don&#39;t need to explicitly declare that it does so.</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">t</span> <span style="color:#a6e22e">T</span>) <span style="color:#a6e22e">M</span>() {
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">S</span>)
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
@@ -413,7 +413,7 @@
 <p>「當看到一隻鳥走起來像鴨子、游泳起來像鴨子、叫起來也像鴨子，那麼這隻鳥就可以被稱為鴨子。」</p>
 </blockquote>
 <p>可以解釋為，當一個物件有實作鴨子這個 interface 的所有定義，那他就是鴨子</p>
-<p><img alt="i am a duck" src="/blog/202112-a-tour-of-go-08-interface-and-error/i-am-a-duck.jpg"></p>
+<p><img src="/blog/202112-a-tour-of-go-08-interface-and-error/i-am-a-duck.jpg" alt="i am a duck"></p>
 <h1 id="error">error</h1>
 <p>在 Go 中使用<code>error</code>來表示錯誤狀態<br>
 和<code>fmt.Stringer</code>類似，error 類型是一個內建(built-in) 的 interface</p>

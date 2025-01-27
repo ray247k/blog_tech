@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.134.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.142.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="[A Tour of Go Study Notes] 07 method">
   <meta property="og:description" content="Understanding Go method using official tutorials">
   <meta property="description" content="Understanding Go method using official tutorials">
@@ -523,25 +523,25 @@ Because methods often modify the receiver, pointers are commonly used as receive
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span> 
 </span></span></code></pre></div><p>Comparing with the previous two examples, you&rsquo;ll notice that functions with parameters must receive a pointer, or else:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">v</span> <span style="color:#a6e22e">Vertex</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ScaleFunc</span>(<span style="color:#a6e22e">v</span>, <span style="color:#ae81ff">5</span>)  <span style="color:#75715e">// Compile error!
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">ScaleFunc</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">v</span>, <span style="color:#ae81ff">5</span>) <span style="color:#75715e">// OK
-</span></span></span></code></pre></div><p>But methods with a pointer receiver can be directly called with a value or pointer:</p>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ScaleFunc</span>(<span style="color:#a6e22e">v</span>, <span style="color:#ae81ff">5</span>)  <span style="color:#75715e">// Compile error!</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ScaleFunc</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">v</span>, <span style="color:#ae81ff">5</span>) <span style="color:#75715e">// OK</span>
+</span></span></code></pre></div><p>But methods with a pointer receiver can be directly called with a value or pointer:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">v</span> <span style="color:#a6e22e">Vertex</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Scale</span>(<span style="color:#ae81ff">5</span>)  <span style="color:#75715e">// OK
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">p</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">v</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">Scale</span>(<span style="color:#ae81ff">10</span>) <span style="color:#75715e">// OK
-</span></span></span></code></pre></div><p>For <code>v.Scale(5)</code>, even though <code>v</code> is a value rather than a pointer, a method with a pointer receiver can still be called.<br>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Scale</span>(<span style="color:#ae81ff">5</span>)  <span style="color:#75715e">// OK</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">p</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">v</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">Scale</span>(<span style="color:#ae81ff">10</span>) <span style="color:#75715e">// OK</span>
+</span></span></code></pre></div><p>For <code>v.Scale(5)</code>, even though <code>v</code> is a value rather than a pointer, a method with a pointer receiver can still be called.<br>
 Essentially, Go interprets <code>v.Scale(5)</code> as <code>(&amp;v).Scale(5)</code> for convenience.</p>
 <p>The same happens in reverse; if a function with parameters expects a value, and a pointer is passed:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">v</span> <span style="color:#a6e22e">Vertex</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">AbsFunc</span>(<span style="color:#a6e22e">v</span>))  <span style="color:#75715e">// OK
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">AbsFunc</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">v</span>)) <span style="color:#75715e">// Compile error!
-</span></span></span></code></pre></div><p>But when used as a method, both values and pointers can be passed directly:</p>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">AbsFunc</span>(<span style="color:#a6e22e">v</span>))  <span style="color:#75715e">// OK</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">AbsFunc</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">v</span>)) <span style="color:#75715e">// Compile error!</span>
+</span></span></code></pre></div><p>But when used as a method, both values and pointers can be passed directly:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">v</span> <span style="color:#a6e22e">Vertex</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Abs</span>()) <span style="color:#75715e">// OK
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">p</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">v</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">Abs</span>()) <span style="color:#75715e">// OK
-</span></span></span></code></pre></div><p>Because <code>p.Abs()</code> is interpreted as <code>(*p).Abs()</code> in this case.</p>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Abs</span>()) <span style="color:#75715e">// OK</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">p</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">v</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">Abs</span>()) <span style="color:#75715e">// OK</span>
+</span></span></code></pre></div><p>Because <code>p.Abs()</code> is interpreted as <code>(*p).Abs()</code> in this case.</p>
 <h1 id="choosing-a-receiver-type-valuepointer">Choosing a Receiver Type (Value/Pointer)</h1>
 <p>Typically, using a &ldquo;pointer&rdquo; as a receiver is chosen because:</p>
 <ul>

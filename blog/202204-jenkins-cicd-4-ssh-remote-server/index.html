@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.134.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.142.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="Jenkins 04 在流程中使用 SSH 指令操作 GCP 上另一台執行個體">
   <meta property="og:description" content="讓 Jenkins 透過 SSH 連線操作遠端主機，代替手動連線部署">
   <meta property="description" content="讓 Jenkins 透過 SSH 連線操作遠端主機，代替手動連線部署">
@@ -393,7 +393,7 @@
 基本上寫不進去，就是看錯誤訊息提示要加什麼權限給先前設定的那組金鑰，然後到 IAM 頁面進行調整<br>
 若 IAM 設定沒問題，照著提示按一按產生 ssh key 後會自動加入 Compute Engine 裡面的<code>中繼資料</code>中<br>
 之後就會直接登入了</p>
-<p><img alt="gcloud ssh" src="/blog/202204-jenkins-cicd-4-ssh-remote-server/gcloud-ssh.png"></p>
+<p><img src="/blog/202204-jenkins-cicd-4-ssh-remote-server/gcloud-ssh.png" alt="gcloud ssh"></p>
 <h1 id="在-pipeline-中使用-gcloud-指令連線">在 pipeline 中使用 gcloud 指令連線</h1>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#75715e">// jenkinsfile
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">pipeline</span> {

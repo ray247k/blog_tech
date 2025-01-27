@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.134.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.142.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="[AWS Cloud Fundamental Notes] Cost Control">
   <meta property="og:description" content="Cost management methods under single account and multi-account configurations">
   <meta property="description" content="Cost management methods under single account and multi-account configurations">
@@ -404,27 +404,27 @@ Apply tags representing business categories (e.g., department, project) to organ
 <table>
   <thead>
       <tr>
-          <th style="text-align: left"></th>
-          <th style="text-align: left">On Demand</th>
-          <th style="text-align: left">Reserved</th>
-          <th style="text-align: left">Spot</th>
-          <th style="text-align: left">Saving Plans</th>
+          <th></th>
+          <th>On Demand</th>
+          <th>Reserved</th>
+          <th>Spot</th>
+          <th>Saving Plans</th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td style="text-align: left">Description</td>
-          <td style="text-align: left">Classic usage: Turn on when needed and off when not needed</td>
-          <td style="text-align: left">Apply discounts to account for on-demand instance usage</td>
-          <td style="text-align: left">Set cost bidding: Risk of machine closure due to failed bidding</td>
-          <td style="text-align: left">Hourly usage commitment for one or three years</td>
+          <td>Description</td>
+          <td>Classic usage: Turn on when needed and off when not needed</td>
+          <td>Apply discounts to account for on-demand instance usage</td>
+          <td>Set cost bidding: Risk of machine closure due to failed bidding</td>
+          <td>Hourly usage commitment for one or three years</td>
       </tr>
       <tr>
-          <td style="text-align: left">Cost</td>
-          <td style="text-align: left">High</td>
-          <td style="text-align: left">Save 30-70%</td>
-          <td style="text-align: left">Determined by current bidding price</td>
-          <td style="text-align: left">Save 30-70%</td>
+          <td>Cost</td>
+          <td>High</td>
+          <td>Save 30-70%</td>
+          <td>Determined by current bidding price</td>
+          <td>Save 30-70%</td>
       </tr>
   </tbody>
 </table>
@@ -478,7 +478,7 @@ Including account management and merging billing functions, and meeting budget, 
 <p>It&rsquo;s like the relationship between a headquarters and its branches.<br>
 The headquarters has multiple branches, and each branch has many departments.<br>
 The departments operate independently from each other.</p>
-<p><img alt="struct" src="/blog/202309-aws-fundamental-cost-control/struct.png"></p>
+<p><img src="/blog/202309-aws-fundamental-cost-control/struct.png" alt="struct"></p>
 <p>In AWS Organizations:</p>
 <ul>
 <li><strong>Organization root</strong>: Headquarters</li>

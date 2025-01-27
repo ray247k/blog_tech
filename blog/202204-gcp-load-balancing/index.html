@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.134.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.142.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="伸縮自在的伺服器 02 負載平衡 Load Balancing">
   <meta property="og:description" content="設定 GCP 上的 Load Balancing 打造穩健雲端伺服器">
   <meta property="description" content="設定 GCP 上的 Load Balancing 打造穩健雲端伺服器">
@@ -372,25 +372,25 @@
 這樣可以保證一定程度的安全和系統穩定性，原有主機不會因為負載過重而崩潰</p>
 <h1 id="建立負載平衡">建立負載平衡</h1>
 <p>首先在側邊選單找到<code>網路服務</code>並選擇<code>負載平衡</code></p>
-<p><img alt="gcp menu" src="/blog/202204-gcp-load-balancing/gcp-menu.png"></p>
+<p><img src="/blog/202204-gcp-load-balancing/gcp-menu.png" alt="gcp menu"></p>
 <p>按下上方工具列的<code>建立負載平衡器</code>之後選擇<code>HTTP(S)負載平衡</code></p>
-<p><img alt="gpc load balancer" src="/blog/202204-gcp-load-balancing/gpc-load-balancer.png"></p>
+<p><img src="/blog/202204-gcp-load-balancing/gpc-load-balancer.png" alt="gpc load balancer"></p>
 <p>因為流量是從網際網路傳入，所以選擇<code>從網際網路傳送至 VM 或無伺服器服務</code></p>
-<p><img alt="gcp load balancer create" src="/blog/202204-gcp-load-balancing/gcp-load-balancer-create.png"></p>
+<p><img src="/blog/202204-gcp-load-balancing/gcp-load-balancer-create.png" alt="gcp load balancer create"></p>
 <h2 id="負載平衡---後端設定">負載平衡 - 後端設定</h2>
 <p>接著選擇<code>建立後端服務</code></p>
-<p><img alt="gcp load balancer backend settings" src="/blog/202204-gcp-load-balancing/gcp-load-balancer-backend-settings.png"></p>
+<p><img src="/blog/202204-gcp-load-balancing/gcp-load-balancer-backend-settings.png" alt="gcp load balancer backend settings"></p>
 <p>內部溝通用的通訊埠編號通通選擇<code>80</code>，因為我們內部主機沒有掛 SSL 憑證</p>
-<p><img alt="gcp load balancer backend port" src="/blog/202204-gcp-load-balancing/gcp-load-balancer-backend-port.png"></p>
+<p><img src="/blog/202204-gcp-load-balancing/gcp-load-balancer-backend-port.png" alt="gcp load balancer backend port"></p>
 <h2 id="負載平衡---前端設定">負載平衡 - 前端設定</h2>
 <p>接著到<code>前端設定</code><br>
 若是我們希望可以透過固定的一組 IP 造訪，則需要在這邊建立一組 IP 位址<br>
 可以預先建立，或是透過畫面提示來預約一組固定 IP 位址
 如果你有 SSL 憑證也可以設定在這</p>
-<p><img alt="gcp load balancer frontend settings" src="/blog/202204-gcp-load-balancing/gcp-load-balancer-frontend-settings.png"></p>
+<p><img src="/blog/202204-gcp-load-balancing/gcp-load-balancer-frontend-settings.png" alt="gcp load balancer frontend settings"></p>
 <p>儲存之後等他建立好，點進剛剛建立的負載平衡詳細資訊中<br>
 會看到<code>前端</code>區塊有一個 IP 位置，貼到瀏覽器連看看，就可以看到剛剛設定的服務了！</p>
-<p><img alt="gcp load balancer details" src="/blog/202204-gcp-load-balancing/gcp-load-balancer-details.jpg"></p>
+<p><img src="/blog/202204-gcp-load-balancing/gcp-load-balancer-details.jpg" alt="gcp load balancer details"></p>
 <p>於是我們的負載平衡就建置完成！
 配合自動擴展功能，當流量上升到觸發擴展規則時就會啟動新的虛擬主機<br>
 並透過負載平衡將請求分流，達到分擔流量維持服務穩定的功能</p>

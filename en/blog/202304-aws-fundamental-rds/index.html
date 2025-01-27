@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.134.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.142.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="[AWS Cloud Fundamental Notes] RDS">
   <meta property="og:description" content="Introduction to RDS and its usage and operational mechanism">
   <meta property="description" content="Introduction to RDS and its usage and operational mechanism">
@@ -364,24 +364,24 @@
 <table>
   <thead>
       <tr>
-          <th style="text-align: left">Type</th>
-          <th style="text-align: left">Control</th>
-          <th style="text-align: left">Database Engine</th>
-          <th style="text-align: left">Management</th>
+          <th>Type</th>
+          <th>Control</th>
+          <th>Database Engine</th>
+          <th>Management</th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td style="text-align: left">Self-built</td>
-          <td style="text-align: left">System-level</td>
-          <td style="text-align: left">Free choice</td>
-          <td style="text-align: left">Self-planned availability and redundancy</td>
+          <td>Self-built</td>
+          <td>System-level</td>
+          <td>Free choice</td>
+          <td>Self-planned availability and redundancy</td>
       </tr>
       <tr>
-          <td style="text-align: left">RDS</td>
-          <td style="text-align: left">Limited</td>
-          <td style="text-align: left">Limited support</td>
-          <td style="text-align: left">Provides snapshot and backup mechanisms</td>
+          <td>RDS</td>
+          <td>Limited</td>
+          <td>Limited support</td>
+          <td>Provides snapshot and backup mechanisms</td>
       </tr>
   </tbody>
 </table>
@@ -390,7 +390,7 @@
 <p>Utilizes a &ldquo;multi-institution deployment&rdquo; high-availability solution, preparing database systems in different Availability Zones (AZ) respectively.<br>
 A &ldquo;master-slave database&rdquo; is established between different AZs using Subnet Groups.<br>
 The data from the primary database is synchronously replicated to the backup database, incurring higher costs.</p>
-<p><img alt="Multi-AZ" src="/blog/202304-aws-fundamental-rds/maz.png"></p>
+<p><img src="/blog/202304-aws-fundamental-rds/maz.png" alt="Multi-AZ"></p>
 <h2 id="snapshot-solution">Snapshot Solution</h2>
 <p>Regular automatic backups are taken of the primary database and can also be done manually.</p>
 <p>When deleting an RDS instance:</p>
@@ -401,33 +401,33 @@ The data from the primary database is synchronously replicated to the backup dat
 <h2 id="read-replicas-for-read-only-replicas">Read Replicas for Read-Only Replicas</h2>
 <p>To alleviate the traffic on the primary database, a &ldquo;read-only replica&rdquo; service can be used to receive data query tasks.<br>
 Read Replicas asynchronously replicate with the primary database and can quickly restore the database.</p>
-<p><img alt="Read Replicas" src="/blog/202304-aws-fundamental-rds/rp.png"></p>
+<p><img src="/blog/202304-aws-fundamental-rds/rp.png" alt="Read Replicas"></p>
 <h2 id="common-architectures">Common Architectures</h2>
 <p>Through the Multi-AZ feature, because the primary and backup databases are synchronized in real-time, the tasks of creating Snapshots and Read Replicas can be handed over to the backup database.</p>
 <p>The read-write burden on the primary database is reduced, and once the primary database stops working, it can be quickly switched to the backup database.</p>
 <table>
   <thead>
       <tr>
-          <th style="text-align: left">Multi-AZ</th>
-          <th style="text-align: left">Read Replica</th>
+          <th>Multi-AZ</th>
+          <th>Read Replica</th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td style="text-align: left">Mainly for high availability</td>
-          <td style="text-align: left">Mainly for scalability</td>
+          <td>Mainly for high availability</td>
+          <td>Mainly for scalability</td>
       </tr>
       <tr>
-          <td style="text-align: left">Synchronous replication</td>
-          <td style="text-align: left">Asynchronous replication</td>
+          <td>Synchronous replication</td>
+          <td>Asynchronous replication</td>
       </tr>
       <tr>
-          <td style="text-align: left">Only the primary instance is active</td>
-          <td style="text-align: left">All can be accessed and used for read scaling</td>
+          <td>Only the primary instance is active</td>
+          <td>All can be accessed and used for read scaling</td>
       </tr>
       <tr>
-          <td style="text-align: left">Crosses at least two available zones within a single region</td>
-          <td style="text-align: left">Can be within a single availability zone, across availability zones, or across regions</td>
+          <td>Crosses at least two available zones within a single region</td>
+          <td>Can be within a single availability zone, across availability zones, or across regions</td>
       </tr>
   </tbody>
 </table>

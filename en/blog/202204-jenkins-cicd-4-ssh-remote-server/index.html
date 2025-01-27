@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.134.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.142.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="Jenkins CI/CD 04 - Using SSH Commands to Operate another VM Instance in GCP">
   <meta property="og:description" content="Enable Jenkins to perform remote operations on a remote host through SSH, replacing manual deployment.">
   <meta property="description" content="Enable Jenkins to perform remote operations on a remote host through SSH, replacing manual deployment.">
@@ -396,7 +396,7 @@ If you see an error message, adjust the permissions on the IAM page as suggested
 This is where IAM permissions issues are most likely to occur.<br>
 If you can&rsquo;t log in, it means you need to adjust the permissions for the key you previously set.<br>
 After setting up the IAM correctly, follow the prompts to generate an SSH key, which will be automatically added to the <code>metadata</code> in Compute Engine. Afterward, you will be able to log in directly.</p>
-<p><img alt="gcloud ssh" src="/blog/202204-jenkins-cicd-4-ssh-remote-server/gcloud-ssh.png"></p>
+<p><img src="/blog/202204-jenkins-cicd-4-ssh-remote-server/gcloud-ssh.png" alt="gcloud ssh"></p>
 <h1 id="connecting-with-gcloud-commands-in-the-pipeline">Connecting with gcloud Commands in the Pipeline</h1>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#75715e">// jenkinsfile
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">pipeline</span> {

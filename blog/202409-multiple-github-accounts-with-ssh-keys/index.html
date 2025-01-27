@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.134.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.142.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="在同一台電腦設定多組 GitHub 帳號">
   <meta property="og:description" content="設定多組 Github 帳號，並使用 ssh 連線">
   <meta property="description" content="設定多組 Github 帳號，並使用 ssh 連線">
@@ -385,7 +385,7 @@
 </a>
 <br>
 並按下畫面右方的<code>New SSH key</code>按鈕</p>
-<p><img alt="add ssh key" src="/blog/202409-multiple-github-accounts-with-ssh-keys/add_ssh_key.png"></p>
+<p><img src="/blog/202409-multiple-github-accounts-with-ssh-keys/add_ssh_key.png" alt="add ssh key"></p>
 <p>名稱選自己好識別的，內容貼上剛剛產生的 <code>id_rsa.pub</code> 內容</p>
 <h1 id="3-ssh-config-設定">3. ssh config 設定</h1>
 <h2 id="3-1-清除已設定的全部金鑰">3-1. 清除已設定的全部金鑰</h2>
@@ -437,7 +437,7 @@ Host github.com-company
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>ssh -T git@github.com
 </span></span><span style="display:flex;"><span>ssh -T git@github.com-company
 </span></span></code></pre></div><p>如果成功的話應該會分別顯示不同帳號的歡迎訊息</p>
-<p><img alt="ssh test" src="/blog/202409-multiple-github-accounts-with-ssh-keys/ssh-test.png"></p>
+<p><img src="/blog/202409-multiple-github-accounts-with-ssh-keys/ssh-test.png" alt="ssh test"></p>
 <h1 id="5-從遠端-clone-到本機">5. 從遠端 clone 到本機</h1>
 <p>原本的個人帳號不需要做任何調整<br>
 若是要 clone 公司帳號的專案，則要將指令內的 host 改為 config 中的公司帳號 Host<br>

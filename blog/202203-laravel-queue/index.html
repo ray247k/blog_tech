@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.134.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.142.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="Laravel Queue 使用">
   <meta property="og:description" content="使用佇列，讓不需要馬上處理的任務延遲處理">
   <meta property="description" content="使用佇列，讓不需要馬上處理的任務延遲處理">
@@ -422,7 +422,7 @@
 <p>執行 Controller 的程式碼會發現<br>
 當 Queue 被觸發後會在<code>jobs</code>這張表新增一筆紀錄</p>
 <p>而執行時終端機也會有對應的顯示內容</p>
-<p><img alt="queue-run" src="/blog/202203-laravel-queue/queue-run.png"></p>
+<p><img src="/blog/202203-laravel-queue/queue-run.png" alt="queue-run"></p>
 <p>如果看到<code>Processed</code>代表已經執行完成，這時候<code>jobs</code>中的記錄會被移除</p>
 <hr>
 <h1 id="supervisor">Supervisor</h1>
@@ -488,7 +488,7 @@ pidfile=/var/www/html/storage/logs/supervisord.pid
 </span></span></code></pre></div><p>若是出現錯誤訊息顯示<code>ps</code>或是<code>pgrep</code>指令不存在，則需要先透過指令安裝套件</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt-get update <span style="color:#f92672">&amp;&amp;</span> apt-get install procps
 </span></span></code></pre></div><p>若是看到有出現<code>supervisord</code>則代表已經在運行中了</p>
-<p><img alt="queue-run" src="/blog/202203-laravel-queue/supervisord.jpg"></p>
+<p><img src="/blog/202203-laravel-queue/supervisord.jpg" alt="queue-run"></p>
 
       
       

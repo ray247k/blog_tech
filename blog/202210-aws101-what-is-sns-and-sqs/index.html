@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.134.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.142.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="[AWS 101] 什麼是 SNS 和 SQS">
   <meta property="og:description" content="簡單筆記一下 AWS SNS 和 SQS 服務在幹嘛，還有使用情境">
   <meta property="description" content="簡單筆記一下 AWS SNS 和 SQS 服務在幹嘛，還有使用情境">
@@ -373,7 +373,7 @@
 <li>Amazon Kinesis Data Firehose</li>
 </ul>
 <p>架構看起來像這樣<br>
-<img alt="aws_sns" src="/blog/202210-aws101-what-is-sns-and-sqs/aws_sns.png"></p>
+<img src="/blog/202210-aws101-what-is-sns-and-sqs/aws_sns.png" alt="aws_sns"></p>
 <h2 id="特點">特點</h2>
 <ol>
 <li>發送即時性的 message 給<code>所有</code>訂閱者</li>
@@ -394,7 +394,7 @@
 <li><strong>至少傳遞一次</strong>：一個訊息至少傳遞一次，但偶爾會傳遞一個以上的訊息副本</li>
 <li><strong>盡力按順序傳遞</strong>：訊息偶爾不會按照傳送順序傳遞</li>
 </ul>
-<p><img alt="sqs standard queue" src="/blog/202210-aws101-what-is-sns-and-sqs/sqs_standard_queue.png"></p>
+<p><img src="/blog/202210-aws101-what-is-sns-and-sqs/sqs_standard_queue.png" alt="sqs standard queue"></p>
 <h3 id="fifo-佇列"><strong>FIFO 佇列</strong></h3>
 <p>當操作和事件的順序很重要或者不能接受重複項目時</p>
 <ul>
@@ -402,7 +402,7 @@
 <li><strong>恰好處理一次</strong>：訊息只會傳遞一次並保持可用狀態，直到消費者(consumer)處理訊息並將之刪除</li>
 <li><strong>先入先出傳送</strong>：嚴格保持訊息傳送和接收的順序 (<strong>First In First Out</strong>)</li>
 </ul>
-<p><img alt="sqs fifo queue" src="/blog/202210-aws101-what-is-sns-and-sqs/sqs_fifo_queue.png"></p>
+<p><img src="/blog/202210-aws101-what-is-sns-and-sqs/sqs_fifo_queue.png" alt="sqs fifo queue"></p>
 <h2 id="poll"><strong>Poll</strong></h2>
 <h3 id="short-polling"><strong>Short polling</strong></h3>
 <p>詢問之後會馬上取得結果，即使 queue 裡沒東西也會告訴你沒東西<br>

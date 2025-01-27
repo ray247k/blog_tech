@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.134.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.142.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="Jenkins CI/CD 03 - Building and Pushing Docker Images to GCR">
   <meta property="og:description" content="This article discusses the process of building a Docker image and pushing it to the Google Container Registry (GCR) within a Jenkins pipeline using the &#39;gcloud&#39; command.">
   <meta property="description" content="This article discusses the process of building a Docker image and pushing it to the Google Container Registry (GCR) within a Jenkins pipeline using the &#39;gcloud&#39; command.">
@@ -425,7 +425,7 @@ Instead, the VM host is used as the login account, and the command will prompt f
 </blockquote>
 <p>First <strong>stop the VM</strong> and navigate to the editing page.<br>
 Find the <code>Access scopes</code> section and enable <code>Full access to all Cloud APIs</code>.</p>
-<p><img alt="gcloud error" src="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/gcloud-error.jpg"></p>
+<p><img src="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/gcloud-error.jpg" alt="gcloud error"></p>
 <p>After restarting the VM, execute the command and follow the prompts:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud init
 </span></span><span style="display:flex;"><span>
@@ -437,24 +437,24 @@ Find the <code>Access scopes</code> section and enable <code>Full access to all 
 <h2 id="generate-a-gcp-key">Generate a GCP Key</h2>
 <p>Navigate to the GCP Console, click on <code>APIs &amp; Services</code>, and select the <code>Credentials</code> tab.<br>
 Click <code>Create credentials</code> and choose <code>Service Account</code>.</p>
-<p><img alt="gcp create license" src="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/gcp-create-license.png"></p>
+<p><img src="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/gcp-create-license.png" alt="gcp create license"></p>
 <p>Follow the prompts to create the service account, then click on the account you just created to enter the edit page.<br>
 Switch to the <code>Keys</code> tab and click &ldquo;Add Key -&gt; create a new key&rdquo; choosing the &ldquo;<strong>JSON</strong>&rdquo; type.</p>
-<p><img alt="gcp create key" src="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/gcp-create-key.png"></p>
+<p><img src="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/gcp-create-key.png" alt="gcp create key"></p>
 <p>A download prompt will appear; download the JSON key file to your local machine.</p>
-<p><img alt="gcp key download" src="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/gcp-key-download.jpg"></p>
+<p><img src="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/gcp-key-download.jpg" alt="gcp key download"></p>
 <h2 id="configure-the-key-in-jenkins">Configure the Key in Jenkins</h2>
 <p>進到<code>Jenkins -&gt; 管理 Jenkins -&gt; Manage Credentials</code><br>
 選擇作用範圍，這邊用預設的<code>Jenkins</code>也就是全域(global)</p>
 <p>Navigate to <code>Jenkins -&gt; Manage Jenkins -&gt; Manage Credentials</code>.<br>
 Choose the scope, which, in this example, is the default <code>Jenkins</code> as global.</p>
-<p><img alt="jenkins add credential" src="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/jenkins-add-credential.png"></p>
+<p><img src="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/jenkins-add-credential.png" alt="jenkins add credential"></p>
 <p>Click &ldquo;Add Credentials&rdquo; and select <code>Secret file</code>. Fill in the required information:</p>
 <ul>
 <li>ID: A unique identifier for calling within Jenkins, in this example, it is named <code>jenkins-gcr</code>.</li>
 <li>File: Upload the JSON key file you downloaded earlier.</li>
 </ul>
-<p><img alt="jenkins set credential" src="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/jenkins-set-credential.png"></p>
+<p><img src="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/jenkins-set-credential.png" alt="jenkins set credential"></p>
 <p>This completes the Jenkins key setup.</p>
 <h1 id="pipeline-example">Pipeline Example</h1>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#75715e">// jenkinsfile
@@ -504,7 +504,7 @@ Choose the scope, which, in this example, is the default <code>Jenkins</code> as
 把剛剛上傳的 image 名稱想成在 linux 終端機下指令，就可以理解 GCR 中的資料夾結構</p>
 <p>If no error messages were encountered, you can check the <code>Google Cloud Registry</code> page to view the image.<br>
 The image name in GCR is analogous to the path structure in Linux.</p>
-<p><img alt="gcr store" src="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/gcr-store.jpg"></p>
+<p><img src="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/gcr-store.jpg" alt="gcr store"></p>
 
       
       

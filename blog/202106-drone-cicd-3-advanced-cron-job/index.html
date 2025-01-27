@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.134.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.142.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="[用 Drone 建立自動部署] 03 部署排程設定與權限管理">
   <meta property="og:description" content="透過 Drone 建立自動部署流程，部署排程設定與權限管理">
   <meta property="description" content="透過 Drone 建立自動部署流程，部署排程設定與權限管理">
@@ -435,14 +435,14 @@ Tocken key 是 <code>Authorization</code><br>
 <h2 id="查看-cron-job">查看 Cron Job</h2>
 <h3 id="cron-list">Cron List</h3>
 <p>建立完成之後可以使用 <code>GET /api/repos/{owner}/{repo}/cron</code> 查看所有 Cron Job 列表<br>
-<img alt="postman cron list" src="/blog/202106-drone-cicd-3-advanced-cron-job/postman-cron-list.png"></p>
+<img src="/blog/202106-drone-cicd-3-advanced-cron-job/postman-cron-list.png" alt="postman cron list"></p>
 <h3 id="cron-info">Cron Info</h3>
 <p>使用 <code>GET /api/repos/{owner}/{repo}/cron/{name}</code> 則可以查看指定 Cron Job 的詳細資訊<br>
-<img alt="postman cron info" src="/blog/202106-drone-cicd-3-advanced-cron-job/postman-cron-info.png"></p>
+<img src="/blog/202106-drone-cicd-3-advanced-cron-job/postman-cron-info.png" alt="postman cron info"></p>
 <p>回到 Drone 後台，點開專案的 settings 頁面會發現我們剛剛用 API 建立的 Cron Job 被加入了!<br>
-<img alt="drone settings page" src="/blog/202106-drone-cicd-3-advanced-cron-job/drone-settings-page.png"></p>
+<img src="/blog/202106-drone-cicd-3-advanced-cron-job/drone-settings-page.png" alt="drone settings page"></p>
 <p>等時間到就會執行 .drone.yml 中由指定 Cron Job 名稱觸發的 pipeline<br>
-<img alt="drone pipeline" src="/blog/202106-drone-cicd-3-advanced-cron-job/drone-pipeline-feature.png"></p>
+<img src="/blog/202106-drone-cicd-3-advanced-cron-job/drone-pipeline-feature.png" alt="drone pipeline"></p>
 <h2 id="更新-cron-job">更新 Cron Job</h2>
 <p>更新Cron Job 使用 <code>PATCH /api/repos/{owner}/{repo}/cron/{name}</code><br>
 Body 帶入要改變的內容，例如把使用的分支換成 <code>dev</code><br>
@@ -455,7 +455,7 @@ Body 帶入要改變的內容，例如把使用的分支換成 <code>dev</code><
 </code></pre><h2 id="刪除-cron-job">刪除 Cron Job</h2>
 <p>可以使用 <code>DELETE /api/repos/{owner}/{repo}/cron/{name}</code> 刪除之前建立的 Cron Job<br>
 但是我更偏好用後台的 UI 介面按下 DELETE 就好<br>
-<img alt="delete cronjob" src="/blog/202106-drone-cicd-3-advanced-cron-job/delete-cronjob.png"></p>
+<img src="/blog/202106-drone-cicd-3-advanced-cron-job/delete-cronjob.png" alt="delete cronjob"></p>
 <p>另外一種操作方式是 Drone CLI，不過這次沒用上，提供給各位參考</p>
 <ul>
 <li><a href="https://docs.drone.io/cron/"
@@ -499,7 +499,7 @@ Body 帶入要改變的內容，例如把使用的分支換成 <code>dev</code><
 </a>
 <br>
 所以只要有寫入權限就可以看到 setting 頁面<br>
-<img alt="bitbucket not supported" src="/blog/202106-drone-cicd-3-advanced-cron-job/bitbucket-not-supported.png"></p>
+<img src="/blog/202106-drone-cicd-3-advanced-cron-job/bitbucket-not-supported.png" alt="bitbucket not supported"></p>
 <p>使用 GitHub 測試，結果是可以使用組織進行權限控管的，並且不會開放 setting 分頁給所有人</p>
 
       

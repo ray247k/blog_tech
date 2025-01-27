@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.134.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.142.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="Scalable Server 02 Load Balancing">
   <meta property="og:description" content="Configuring Load Balancing on GCP for Enhanced Server Flexibility">
   <meta property="description" content="Configuring Load Balancing on GCP for Enhanced Server Flexibility">
@@ -371,27 +371,27 @@ However, using <code>load balancing</code> allows us to conceal the individual i
 This ensures a certain level of security and system stability, preventing the original hosts from crashing due to excessive load.</p>
 <h1 id="create-a-load-balancing">Create a Load Balancing</h1>
 <p>First, locate <code>Network Services</code> in the sidebar menu and select <code>Load Balancing</code>.</p>
-<p><img alt="gcp menu" src="/blog/202204-gcp-load-balancing/gcp-menu.png"></p>
+<p><img src="/blog/202204-gcp-load-balancing/gcp-menu.png" alt="gcp menu"></p>
 <p>After pressing <code>Create Load Balancer</code> on the top toolbar, select <code>HTTP(S) Load Balancer</code>.</p>
-<p><img alt="gpc load balancer" src="/blog/202204-gcp-load-balancing/gpc-load-balancer.png"></p>
+<p><img src="/blog/202204-gcp-load-balancing/gpc-load-balancer.png" alt="gpc load balancer"></p>
 <p>Since the traffic is coming from the internet, select <code>From the internet to VM or serverless service</code>.</p>
-<p><img alt="gcp load balancer create" src="/blog/202204-gcp-load-balancing/gcp-load-balancer-create.png"></p>
+<p><img src="/blog/202204-gcp-load-balancing/gcp-load-balancer-create.png" alt="gcp load balancer create"></p>
 <h2 id="backend-service-configuration">Backend Service configuration</h2>
 <p>Next, select <code>Create a backend service</code></p>
-<p><img alt="gcp load balancer backend settings" src="/blog/202204-gcp-load-balancing/gcp-load-balancer-backend-settings.png"></p>
+<p><img src="/blog/202204-gcp-load-balancing/gcp-load-balancer-backend-settings.png" alt="gcp load balancer backend settings"></p>
 <p>Choose port number <code>80</code> for internal communication, as our internal servers do not have SSL certificates attached.</p>
-<p><img alt="gcp load balancer backend port" src="/blog/202204-gcp-load-balancing/gcp-load-balancer-backend-port.png"></p>
+<p><img src="/blog/202204-gcp-load-balancing/gcp-load-balancer-backend-port.png" alt="gcp load balancer backend port"></p>
 <h2 id="frontend-service-configuration">Frontend Service configuration</h2>
 <p>Next, go to <code>Frontend Configuration</code>.<br>
 If we want to allow access via a fixed set of IP addresses, we&rsquo;ll need to create a set of IP addresses here.<br>
 You can either pre-create them or reserve a set of fixed IP addresses through on-screen prompts.<br>
 If you have an SSL certificate, you can also configure it here.</p>
-<p><img alt="gcp load balancer frontend settings" src="/blog/202204-gcp-load-balancing/gcp-load-balancer-frontend-settings.png"></p>
+<p><img src="/blog/202204-gcp-load-balancing/gcp-load-balancer-frontend-settings.png" alt="gcp load balancer frontend settings"></p>
 <p>After saving, wait for it to be created.<br>
 Then, click into the details of the newly created load balancer.<br>
 In the <code>Frontend</code> section, you&rsquo;ll find an IP address.<br>
 Paste this into your browser to access the service you just configured!</p>
-<p><img alt="gcp load balancer details" src="/blog/202204-gcp-load-balancing/gcp-load-balancer-details.jpg"></p>
+<p><img src="/blog/202204-gcp-load-balancing/gcp-load-balancer-details.jpg" alt="gcp load balancer details"></p>
 <p>So, our load balancer is now successfully set up!<br>
 With the automatic scaling feature, when traffic increases and triggers the scaling rules, new virtual machines will be launched.<br>
 The load balancer will distribute requests, helping us handle the traffic and maintain stable service operations.</p>

@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.134.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.142.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="在 GCP 上建立 Redis 服務">
   <meta property="og:description" content="透過 Google Cloud MemoryStore 建立 Redis 服務">
   <meta property="description" content="透過 Google Cloud MemoryStore 建立 Redis 服務">
@@ -364,14 +364,14 @@
 價錢跟開 Database 差不多，原本以為跟 VM 一樣便宜</p>
 <h1 id="建立-redis">建立 Redis</h1>
 <p>進入<code>MemoryStore</code>頁面點選則「Redis」或是「Memcached」就可以開始建立了</p>
-<p><img alt="gcp memory store" src="/blog/202206-gcp-redis/memory-store.jpg"></p>
+<p><img src="/blog/202206-gcp-redis/memory-store.jpg" alt="gcp memory store"></p>
 <p>這邊以 Redis 為例，點選「建立執行個體」</p>
-<p><img alt="gcp redis settings" src="/blog/202206-gcp-redis/redis-create.jpg"></p>
+<p><img src="/blog/202206-gcp-redis/redis-create.jpg" alt="gcp redis settings"></p>
 <p>輸入一些基本設定，基本上就是調整大小跟名稱而已</p>
-<p><img alt="gcp redis settings" src="/blog/202206-gcp-redis/redis-settings.png"></p>
+<p><img src="/blog/202206-gcp-redis/redis-settings.png" alt="gcp redis settings"></p>
 <p>照提示選項設定完之後按下「建立執行個體」接著就是等他建立好了<br>
 這邊會要稍微等待，可以稍微去休息一下</p>
-<p><img alt="gcp redis result" src="/blog/202206-gcp-redis/result.jpg"></p>
+<p><img src="/blog/202206-gcp-redis/result.jpg" alt="gcp redis result"></p>
 <p>以上就是在 GCP 上建立 Redis 的方法<br>
 只需要將應用程式中的端點對應到 Redis 執行個體的 IP 就可以使用<br>
 也可以直接使用第三方 GUI，比如 <a href="https://github.com/qishibo/AnotherRedisDesktopManager"
