@@ -6,8 +6,15 @@
     <description>Recent content in TypeScript on Byte Ebi 🍤</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 20 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 24 Mar 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://tech.ray247k.com/en/categories/typescript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Class and Interface in TypeScript</title>
+      <link>https://tech.ray247k.com/en/blog/202503-typescript-class-and-interface/</link>
+      <pubDate>Mon, 24 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202503-typescript-class-and-interface/</guid>
+      <description>&lt;p&gt;Introduces the basic concepts of TypeScript Classes and Interfaces.&lt;br&gt;&#xA;It also covers class implementation and interface inheritance examples.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Basic Data Type in TypeScript</title>
       <link>https://tech.ray247k.com/en/blog/202503-typescript-basic-data-type/</link>

@@ -6,8 +6,15 @@
     <description>Recent content in TypeScript on Byte Ebi 🍤</description>
     <generator>Hugo</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Thu, 20 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 24 Mar 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://tech.ray247k.com/categories/typescript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TypeScript 的 Class 及 Interface</title>
+      <link>https://tech.ray247k.com/blog/202503-typescript-class-and-interface/</link>
+      <pubDate>Mon, 24 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/blog/202503-typescript-class-and-interface/</guid>
+      <description>&lt;p&gt;介紹 TypeScript 的 Class 和 Interface 基本概念&lt;br&gt;&#xA;包含 Class 的實踐與介面繼承的範例&lt;/p&gt;</description>
+    </item>
     <item>
       <title>TypeScript 的基本資料型別</title>
       <link>https://tech.ray247k.com/blog/202503-typescript-basic-data-type/</link>
