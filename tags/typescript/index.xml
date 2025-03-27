@@ -6,8 +6,15 @@
     <description>Recent content in TypeScript on Byte Ebi 🍤</description>
     <generator>Hugo</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Tue, 18 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 20 Mar 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://tech.ray247k.com/tags/typescript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TypeScript 的基本資料型別</title>
+      <link>https://tech.ray247k.com/blog/202503-typescript-basic-data-type/</link>
+      <pubDate>Thu, 20 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/blog/202503-typescript-basic-data-type/</guid>
+      <description>&lt;p&gt;介紹 TypeScript 的基本型別與語法範例&lt;br&gt;&#xA;包含基本函式語法、箭頭函式、匿名函式及函式多載的範例&lt;/p&gt;</description>
+    </item>
     <item>
       <title>TypeScript 環境建置</title>
       <link>https://tech.ray247k.com/blog/202503-typescript-environment-setup/</link>

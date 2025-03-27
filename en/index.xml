@@ -6,8 +6,15 @@
     <description>Recent content on Byte Ebi 🍤</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 18 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 20 Mar 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://tech.ray247k.com/en/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Basic Data Type in TypeScript</title>
+      <link>https://tech.ray247k.com/en/blog/202503-typescript-basic-data-type/</link>
+      <pubDate>Thu, 20 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202503-typescript-basic-data-type/</guid>
+      <description>&lt;p&gt;Introduction to TypeScript&amp;rsquo;s basic types and syntax examples,&lt;br&gt;&#xA;including examples of basic function syntax, arrow functions, anonymous functions, and function overloading.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>TypeScript Environment Setup</title>
       <link>https://tech.ray247k.com/en/blog/202503-typescript-environment-setup/</link>

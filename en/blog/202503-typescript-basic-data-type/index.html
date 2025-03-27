@@ -1,0 +1,1031 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+<title>Basic Data Type in TypeScript - Byte Ebi 🍤</title>
+<meta name="description" content="Summarizes the basic types and syntax applications in TypeScript">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta property="og:site_name" content="Byte Ebi 🍤">
+<meta property="og:title" content="Basic Data Type in TypeScript">
+<meta property="og:description" content="Summarizes the basic types and syntax applications in TypeScript">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://tech.ray247k.com/en/blog/202503-typescript-basic-data-type/">
+  <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
+
+
+
+  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
+  
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=1" color="#ffffff">
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=1">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=1">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+<meta name="generator" content="Hugo 0.145.0"><meta property="og:site_name" content="Byte Ebi 🍤">
+  <meta property="og:title" content="Basic Data Type in TypeScript">
+  <meta property="og:description" content="Summarizes the basic types and syntax applications in TypeScript">
+  <meta property="description" content="Summarizes the basic types and syntax applications in TypeScript">
+  <meta property="og:url" content="https://tech.ray247k.com/en/blog/202503-typescript-basic-data-type/">
+  <meta property="og:type" content="article">
+  
+    <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
+  
+  
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/felipec.min.css">
+          <link rel="stylesheet" href="/css/bundle.min.8c2311cfb8e6e4d1336dda60a34b39f11c555c4c782dc22be9632165dcca8ad9.css" integrity="sha256-jCMRz7jm5NEzbdpgo0s58RxVXEx4LcIr6WMhZdzKitk="><link rel="stylesheet" href="/css/add-on.css">
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-LTGVYYWC2J');
+        }
+      </script>
+  <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "image": {
+        "@type": "ImageObject",
+        "image": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+        "height": 648,
+        "width": 1080
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com\/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Byte Ebi 🍤",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png"
+        }
+    },
+    "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+    "headline": "About web development, software engineering, frontend, backend, chatbot, server related topics. - Byte Ebi 🍤",
+    "name": "Byte Ebi 🍤",
+    "url": "https:\/\/tech.ray247k.com\/",
+    "description": "About web development, software engineering, frontend, backend, chatbot, server related topics. - aws,devops,golang,laravel,php,python3,serverless,third-party services,tools,typescript,version control,web hosting,website operations,",
+    "keywords": [
+        "apache bench,auto scaling,aws,blockchain,cdn,chatbot,ci\/cd,cicd,cloudflare,cloudflare workers,composer,container technology,containerization,csv,devops,discord,dns,docker,docker compose,domain,domain name,drone,excel,ffmpeg,firewall,gas,gcp,gcr,git,github,github page,go,golang,golang, hugo,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,linux,load balancing,nginx,ngrok,personal brand,php,php-fpm,phpcbf,phpcs,portainer,postgresql,prerender,proxy,purchase domain,python3,queue,redis,search engine optimization,seo,server,serverless,smart contract,ssh,stress testing,subdomain,typescript,version control,web hosting,"
+    ]
+}
+</script>
+
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "legalName": "Byte Ebi 🍤",
+    "url": "https:\/\/tech.ray247k.com\/",
+    "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "",
+        "availableLanguage": [
+            "Mandarin",
+            "English"
+        ]
+    },
+    "sameAs": [
+        "https://ray247k.blogspot.com/"
+    ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Basic Data Type in TypeScript",
+    "description": "Summarizes the basic types and syntax applications in TypeScript",
+    "keywords": [
+        "TypeScript" 
+    ],
+    "dateCreated": "2025-03-20T00:00:00.00Z",
+    "datePublished": "2025-03-20T00:00:00.00Z",
+    "dateModified": "2025-03-20T00:00:00.00Z",
+    "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "contentUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png"
+    },
+    "breadcrumb": {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\/",
+                    "name": "Byte Ebi 🍤",
+                    "url": "https:\/\/tech.ray247k.com\/"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\//blog",
+                    "name": "Blog",
+                    "url": "https:\/\/tech.ray247k.com\//blog"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\/en\/blog\/202503-typescript-basic-data-type\/",
+                    "name": "Basic Data Type in TypeScript",
+                    "url": "https:\/\/tech.ray247k.com\/en\/blog\/202503-typescript-basic-data-type\/"
+                }
+            }
+        ],
+        "itemListOrder": "Ascending",
+        "numberOfItems": 3
+    }
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "articleSection": "blog",
+    "name": "Basic Data Type in TypeScript",
+    "headline": "\u003cp\u003eIntroduction to TypeScript\u0026rsquo;s basic types and syntax examples,\u003cbr\u003e\nincluding examples of basic function syntax, arrow functions, anonymous functions, and function overloading.\u003c\/p\u003e",
+    "description": "Summarizes the basic types and syntax applications in TypeScript",
+    "inLanguage": "en",
+    "isFamilyFriendly": "true",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com\/en\/blog\/202503-typescript-basic-data-type\/"
+    },
+    "author" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "creator" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "accountablePerson" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "copyrightHolder" : "Byte Ebi 🍤",
+    "copyrightYear" : "2025",
+    "dateCreated": "2025-03-20T00:00:00.00Z",
+    "datePublished": "2025-03-20T00:00:00.00Z",
+    "dateModified": "2025-03-20T00:00:00.00Z",
+    "publisher":{
+        "@type":"Organization",
+        "name": "Byte Ebi 🍤",
+        "url": "https://tech.ray247k.com/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+            "width":"32",
+            "height":"32"
+        }
+    },
+    "image": "https://tech.ray247k.com/img/main/logo.png",
+    "url" : "https:\/\/tech.ray247k.com\/en\/blog\/202503-typescript-basic-data-type\/",
+    "wordCount" : "548",
+    "genre" : [ "TypeScript" ],
+    "keywords" : [ "TypeScript" ]
+}
+</script>
+
+
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/en/" class="nav">
+        
+          Blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/en/" class="nav link"><i class='fa fa-home'></i> home</a>
+        
+      
+        
+          
+          <a href="/en/about" class="nav link"><i class='far fa-id-card'></i> about</a>
+        
+      
+        
+          
+          <a href="/en/categories" class="nav link"><i class='fas fa-sitemap'></i> category</a>
+        
+      
+      
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    
+    <a href="#lang-menu" class="nav lang-toggle" lang="en">en</a>
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  <menu id="lang-menu" class="flyout-menu menu">
+  <a href="#" lang="en" class="nav link active">English (en)</a>
+  
+      <a href="https://tech.ray247k.com/blog/202503-typescript-basic-data-type/" lang="zh-tw" class="nav link">正體中文 (zh-tw)</a>
+    
+  
+</menu>
+
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/en/"><img src="/img/main/logo.png" class="circle" width="100" alt="Byte Ebi&#39;s Logo" /></a>
+  <header>
+    <h1>Byte Ebi 🍤</h1>
+  </header>
+  <main>
+    <p>A Bit everyday A Byte every week</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/ray247k" target="_blank" rel="noopener" title="GitHub"
+        class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//www.linkedin.com/in/j-ray-cheng" target="_blank" rel="noopener"
+        title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="/en/blog/202503-typescript-basic-data-type/">Basic Data Type in TypeScript</a></h2>
+    
+    
+      <p>Summarizes the basic types and syntax applications in TypeScript</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2025-03-20 00:00:00 &#43;0000 UTC">March 20, 2025</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+    <div id="socnet-share">
+      
+
+
+
+
+
+    </div>
+    <div class="content">
+      <a href="/en/blog/202503-typescript-basic-data-type/" class="image" style="--bg-image: url('/blog/202503-typescript-basic-data-type/featured.jpg');">
+    <img src="/blog/202503-typescript-basic-data-type/featured.jpg" alt="">
+  </a>
+      <p>Introduction to TypeScript&rsquo;s basic types and syntax examples,<br>
+including examples of basic function syntax, arrow functions, anonymous functions, and function overloading.</p>
+<h1 id="string">String</h1>
+<h2 id="constant-const">Constant <code>const</code></h2>
+<blockquote>
+<p>Cannot be reassigned!</p></blockquote>
+<h2 id="variable-let">Variable <code>let</code></h2>
+<blockquote>
+<p>Can override the original value</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ts" data-lang="ts"><span style="display:flex;"><span><span style="color:#75715e">// string
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">msg</span>: <span style="color:#66d9ef">string</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;hello ts!&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">msg1</span>: <span style="color:#66d9ef">string</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;123&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">msgStr</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`$(msg} $(msg1}`</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">msgStr</span>); <span style="color:#75715e">// hello ts! 123
+</span></span></span></code></pre></div><h1 id="boolean">Boolean</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ts" data-lang="ts"><span style="display:flex;"><span><span style="color:#75715e">// boolean
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">bool</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">boolean</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span></code></pre></div><h1 id="any">any</h1>
+<p>Equivalent to <code>var</code> in ES5, representing any type.</p>
+<blockquote>
+<p>Can directly call any method on the Prototype Chain.</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ts" data-lang="ts"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">x</span>: <span style="color:#66d9ef">any</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">123</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;123&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> () <span style="color:#f92672">=&gt;</span> {};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">x</span>.<span style="color:#a6e22e">toFix</span>(<span style="color:#ae81ff">2</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">x</span>.<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#34;-&#34;</span>);
+</span></span></code></pre></div><h1 id="void">void</h1>
+<p>No type, can only be assigned to <code>undefined</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ts" data-lang="ts"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">x</span>: <span style="color:#66d9ef">void</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">undefined</span>;
+</span></span></code></pre></div><h1 id="unknown">unknown</h1>
+<p>Unknown type</p>
+<blockquote>
+<p>You must perform type checking before calling any method on the Prototype Chain.</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ts" data-lang="ts"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">x</span>: <span style="color:#66d9ef">unknown</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;123123&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">123</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">undefined</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;number&#34;</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">x</span>.<span style="color:#a6e22e">toFixed</span>(<span style="color:#ae81ff">2</span>);
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;object&#34;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">x</span> <span style="color:#66d9ef">instanceof</span> Array) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">x</span>.<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#34;-&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="tuple">tuple</h1>
+<blockquote>
+<p>An array with fixed types and length</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ts" data-lang="ts"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">idolInfo</span><span style="color:#f92672">:</span> [<span style="color:#66d9ef">string</span>, <span style="color:#66d9ef">string</span>, <span style="color:#66d9ef">number</span>] <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;JP&#34;</span>, <span style="color:#e6db74">&#34;Gen2&#34;</span>, <span style="color:#ae81ff">17</span>];
+</span></span></code></pre></div><h1 id="enum">enum</h1>
+<blockquote>
+<p>Lists all possible constants, can be used like an array.</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ts" data-lang="ts"><span style="display:flex;"><span><span style="color:#66d9ef">enum</span> <span style="color:#a6e22e">Direction</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Up</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Down</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Left</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Right</span>,
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">Direction</span>.<span style="color:#a6e22e">Up</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">Direction</span>[<span style="color:#ae81ff">0</span>]);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">Direction</span>[<span style="color:#ae81ff">1</span>]);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">Direction</span>[<span style="color:#ae81ff">5</span>]);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">0
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">Down
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">Left
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">undefined
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">**/</span>
+</span></span></code></pre></div><blockquote>
+<p>Indexes are continuous and can be modified.</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ts" data-lang="ts"><span style="display:flex;"><span><span style="color:#66d9ef">enum</span> <span style="color:#a6e22e">Direction</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Up</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Down</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Left</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Right</span>,
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">Direction</span>.<span style="color:#a6e22e">Up</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">Direction</span>.<span style="color:#a6e22e">Down</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">Direction</span>.<span style="color:#a6e22e">Left</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">Direction</span>[<span style="color:#ae81ff">103</span>]);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">100
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">101
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">102
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">Right
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">**/</span>
+</span></span></code></pre></div><h1 id="object">object</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ts" data-lang="ts"><span style="display:flex;"><span><span style="color:#75715e">// object
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">obj</span>: <span style="color:#66d9ef">object</span> <span style="color:#f92672">=</span> {};
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">obj1</span><span style="color:#f92672">:</span> {} <span style="color:#f92672">=</span> {};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">obj2</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">msg</span>: <span style="color:#66d9ef">string</span>; <span style="color:#a6e22e">num</span>: <span style="color:#66d9ef">number</span> } <span style="color:#f92672">=</span> { <span style="color:#a6e22e">msg</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;hello&#34;</span>, <span style="color:#a6e22e">num</span>: <span style="color:#66d9ef">0</span> };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Optional properties use &#34;?&#34; and must be placed at the end.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">obj3</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">msg</span>: <span style="color:#66d9ef">string</span>; <span style="color:#a6e22e">num?</span>: <span style="color:#66d9ef">number</span> } <span style="color:#f92672">=</span> { <span style="color:#a6e22e">msg</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;hello&#34;</span> };
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Modifying object properties later
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">obj3</span>.<span style="color:#a6e22e">num</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">obj3</span>.<span style="color:#a6e22e">num</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">123</span>;
+</span></span></code></pre></div><h1 id="array">array</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ts" data-lang="ts"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">arr</span><span style="color:#f92672">:</span> [] <span style="color:#f92672">=</span> [];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">arr1</span>: <span style="color:#66d9ef">Array</span>&lt;<span style="color:#f92672">string</span>&gt; <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;111&#34;</span>];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">arr3</span>: <span style="color:#66d9ef">string</span>[] <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;333&#34;</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Union Types
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">arr2</span>: <span style="color:#66d9ef">Array</span>&lt;<span style="color:#f92672">string</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#a6e22e">number</span>&gt; <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;222&#34;</span>, <span style="color:#ae81ff">222</span>];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">arr4</span><span style="color:#f92672">:</span> (<span style="color:#66d9ef">string</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">number</span>)[] <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;444&#34;</span>, <span style="color:#ae81ff">444</span>];
+</span></span></code></pre></div><h1 id="function">function</h1>
+<h2 id="basic-syntax">Basic syntax</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ts" data-lang="ts"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">add</span>(<span style="color:#a6e22e">arg1</span>: <span style="color:#66d9ef">number</span>, <span style="color:#a6e22e">arg2</span>: <span style="color:#66d9ef">number</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">number</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">arg1</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">arg2</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Type inference
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">add</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>);
+</span></span></code></pre></div><h2 id="arrow-function">Arrow function</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ts" data-lang="ts"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">add</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">arg1</span>: <span style="color:#66d9ef">number</span>, <span style="color:#a6e22e">arg2</span>: <span style="color:#66d9ef">number</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">number</span> <span style="color:#f92672">=&gt;</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">arg1</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">arg2</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Type inference
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">add</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>);
+</span></span></code></pre></div><h2 id="anonymous-function">Anonymous function</h2>
+<p>JavaScript syntax:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ts" data-lang="ts"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fn</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> {}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">fn</span> <span style="color:#f92672">=</span> () <span style="color:#f92672">=&gt;</span> {}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">add</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">arg1</span>, <span style="color:#a6e22e">arg2</span>) <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">arg1</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">arg2</span>
+</span></span></code></pre></div><p>Add types to become TypeScript syntax:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ts" data-lang="ts"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">add</span><span style="color:#f92672">:</span> (<span style="color:#a6e22e">arg1</span>: <span style="color:#66d9ef">number</span>, <span style="color:#a6e22e">arg2</span>: <span style="color:#66d9ef">number</span>) <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">number</span> <span style="color:#f92672">=</span> (
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">arg1</span>: <span style="color:#66d9ef">number</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">arg2</span>: <span style="color:#66d9ef">number</span>
+</span></span><span style="display:flex;"><span>) <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">arg1</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">arg2</span>;
+</span></span></code></pre></div><h2 id="function-overloading">Function overloading</h2>
+<p>Only <code>function</code> can be used for definition, arrow functions cannot be used!</p>
+<blockquote>
+<p>Function overloading allows creating multiple methods with the same name but different parameter types or counts.</p>
+<p>By providing multiple function type definitions, the compiler will handle the function calls accordingly.</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ts" data-lang="ts"><span style="display:flex;"><span><span style="color:#75715e">// Declare acceptable variable types and return types
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">handleDate</span>(<span style="color:#a6e22e">x</span>: <span style="color:#66d9ef">string</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">string</span>[];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">handleDate</span>(<span style="color:#a6e22e">x</span>: <span style="color:#66d9ef">number</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">string</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Implementation logic
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">handleDate</span>(<span style="color:#a6e22e">x</span>: <span style="color:#66d9ef">any</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">any</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;string&#34;</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">x</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#34;&#34;</span>);
+</span></span><span style="display:flex;"><span>  } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">x</span>.<span style="color:#a6e22e">toString</span>().<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#34;&#34;</span>).<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#34;-&#34;</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">handleDate</span>(<span style="color:#e6db74">&#34;abc&#34;</span>).<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#34;-&#34;</span>); <span style="color:#75715e">// Returns string[], so array methods can be used
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">handleDate</span>(<span style="color:#ae81ff">123</span>).<span style="color:#a6e22e">length</span>; <span style="color:#75715e">// Returns string, so only string methods can be used
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">handleDate</span>(<span style="color:#66d9ef">false</span>); <span style="color:#75715e">// Error, because this overload is not declared
+</span></span></span></code></pre></div>
+
+      
+      
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/ray247k/button?referrer=https%3a%2f%2ftech.ray247k.com%2fen%2fblog%2f202503-typescript-basic-data-type%2f" width="100%" frameborder=0></iframe>
+
+    </div>
+    <footer>
+      <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/en/categories/typescript/">TypeScript</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/en/tags/typescript/">TypeScript</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+    </footer>
+  </article>
+  
+    
+
+  
+  <div class="pagination">
+    
+    
+      <a href="/en/blog/202503-typescript-environment-setup/" class="button right"><span>TypeScript Environment Setup</span></a>
+    
+  </div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>Recent Posts</h1>
+      </header>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202503-typescript-basic-data-type/" class="image" style="--bg-image: url('/blog/202503-typescript-basic-data-type/featured.jpg');">
+    <img src="/blog/202503-typescript-basic-data-type/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202503-typescript-basic-data-type/">Basic Data Type in TypeScript</a></h2>
+          <time class="published" datetime="2025-03-20 00:00:00 &#43;0000 UTC">March 20, 2025</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202503-typescript-environment-setup/" class="image" style="--bg-image: url('/blog/202503-typescript-environment-setup/featured.jpg');">
+    <img src="/blog/202503-typescript-environment-setup/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202503-typescript-environment-setup/">TypeScript Environment Setup</a></h2>
+          <time class="published" datetime="2025-03-18 00:00:00 &#43;0000 UTC">March 18, 2025</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202409-multiple-github-accounts-with-ssh-keys/" class="image" style="--bg-image: url('/blog/202409-multiple-github-accounts-with-ssh-keys/featured.jpg');">
+    <img src="/blog/202409-multiple-github-accounts-with-ssh-keys/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202409-multiple-github-accounts-with-ssh-keys/">Setting up multiple GitHub accounts on one computer</a></h2>
+          <time class="published" datetime="2024-09-19 00:00:00 &#43;0000 UTC">September 19, 2024</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202405-create-static-web-site-with-hugo/" class="image" style="--bg-image: url('/blog/202405-create-static-web-site-with-hugo/featured.jpeg');">
+    <img src="/blog/202405-create-static-web-site-with-hugo/featured.jpeg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202405-create-static-web-site-with-hugo/">Building a Static Website with Hugo</a></h2>
+          <time class="published" datetime="2024-05-06 00:00:00 &#43;0000 UTC">May 6, 2024</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202402-aws-fundamental-architectures/" class="image" style="--bg-image: url('/blog/202402-aws-fundamental-architectures/featured.jpg');">
+    <img src="/blog/202402-aws-fundamental-architectures/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202402-aws-fundamental-architectures/">[AWS Cloud Fundamental Notes] Overview of Common AWS Architectures</a></h2>
+          <time class="published" datetime="2024-02-18 00:00:00 &#43;0000 UTC">February 18, 2024</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/en/blog/" class="button">See More</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="/en/categories">Categories</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/en/categories/aws/">aws<span class="count">25</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/devops/">devops<span class="count">24</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/golang/">golang<span class="count">12</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/laravel/">laravel<span class="count">6</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/web-hosting/">web hosting<span class="count">3</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/python3/">python3<span class="count">2</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/typescript/">typescript<span class="count">2</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/version-control/">version control<span class="count">2</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/website-operations/">website operations<span class="count">2</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/php/">php<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/serverless/">serverless<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/third-party-services/">third-party services<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/tools/">tools<span class="count">1</span></a>
+          </li>
+          
+        </ul>
+      </section>
+    
+  
+
+  
+  <section id="tags">
+    <header>
+      <h1><a href="/en/tags">Tags</a></h1>
+    </header>
+    <div class="li-x post-meta tags-md" style="margin-left: 0.5em;">
+      <ul>
+        
+        
+        <li>
+          <a href="/en/tags/aws/">aws (27)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/devops/">devops (26)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/docker/">docker (12)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/go/">go (11)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/golang/">golang (11)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/container-technology/">container technology (10)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/containerization/">containerization (10)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/cicd/">cicd (7)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/laravel/">laravel (7)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/docker-compose/">docker compose (6)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/gcp/">gcp (6)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/composer/">composer (5)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/php/">php (5)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/drone/">drone (4)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/jenkins/">jenkins (4)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/cloudflare/">cloudflare (3)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ssh/">ssh (3)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/web-hosting/">web hosting (3)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/chatbot/">chatbot (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/discord/">discord (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/dns/">dns (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/github/">github (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/google-domains/">google domains (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/nginx/">nginx (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/python3/">python3 (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/typescript/">typescript (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/apache-bench/">apache bench (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/auto-scaling/">auto scaling (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/blockchain/">blockchain (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/cdn/">cdn (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ci/cd/">ci/cd (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/cloudflare-workers/">cloudflare workers (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/csv/">csv (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/domain/">domain (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/domain-name/">domain name (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/excel/">excel (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ffmpeg/">ffmpeg (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/firewall/">firewall (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/gas/">gas (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/gcr/">gcr (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/git/">git (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/github-page/">github page (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/golang-hugo/">golang, hugo (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/google-app-script/">google app script (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/google-container-registry/">google container registry (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/google-sheets/">google sheets (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/grumphp/">grumphp (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/laravel-excel/">laravel-excel (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/linux/">linux (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/load-balancing/">load balancing (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ngrok/">ngrok (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/personal-brand/">personal brand (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/php-fpm/">php-fpm (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/phpcbf/">phpcbf (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/phpcs/">phpcs (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/portainer/">portainer (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/postgresql/">postgresql (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/prerender/">prerender (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/proxy/">proxy (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/purchase-domain/">purchase domain (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/queue/">queue (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/redis/">redis (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/search-engine-optimization/">search engine optimization (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/seo/">seo (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/server/">server (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/serverless/">serverless (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/smart-contract/">smart contract (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/stress-testing/">stress testing (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/subdomain/">subdomain (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/version-control/">version control (1)</a>
+        </li>
+        
+      </ul>
+
+    </div>
+  </section>
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+    
+    <p class="copyright">
+        © 2025 Byte Ebi 🍤
+    </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>
+      hljs.configure({ ignoreUnescapedHTML: true }); 
+      hljs.highlightAll();
+    </script><script src="/js/bundle.min.ddae304a0896033ae704e62a0392fcca27e1a5ee9bc7c70d7ccf2cf377b5760a.js" integrity="sha256-3a4wSgiWAzrnBOYqA5L8yifhpe6bx8cNfM8s83e1dgo="></script>
+    <script src="/js/add-on.js"></script>
+
+
+    
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', "G-LTGVYYWC2J");
+        </script>
+    
+
+
+    </div>
+  </body>
+  
+</html>
