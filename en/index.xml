@@ -6,8 +6,15 @@
     <description>Recent content on Byte Ebi 🍤</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 19 Sep 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 18 Mar 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://tech.ray247k.com/en/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TypeScript Environment Setup</title>
+      <link>https://tech.ray247k.com/en/blog/202503-typescript-environment-setup/</link>
+      <pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202503-typescript-environment-setup/</guid>
+      <description>&lt;p&gt;Set up a TypeScript development environment&lt;br&gt;&#xA;Using NVM to install Node.js and npm, installing development tools.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Setting up multiple GitHub accounts on one computer</title>
       <link>https://tech.ray247k.com/en/blog/202409-multiple-github-accounts-with-ssh-keys/</link>

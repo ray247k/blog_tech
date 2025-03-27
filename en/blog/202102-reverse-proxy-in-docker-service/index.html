@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.142.0"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.145.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="Reverse Proxy Setup in Docker Environment">
   <meta property="og:description" content="You may know about reverse proxies, but have you tried setting them up in Docker?">
   <meta property="description" content="You may know about reverse proxies, but have you tried setting them up in Docker?">
@@ -81,9 +81,9 @@
     "headline": "About web development, software engineering, frontend, backend, chatbot, server related topics. - Byte Ebi 🍤",
     "name": "Byte Ebi 🍤",
     "url": "https:\/\/tech.ray247k.com\/",
-    "description": "About web development, software engineering, frontend, backend, chatbot, server related topics. - aws,devops,golang,laravel,php,python3,serverless,third-party services,tools,version control,web hosting,website operations,",
+    "description": "About web development, software engineering, frontend, backend, chatbot, server related topics. - aws,devops,golang,laravel,php,python3,serverless,third-party services,tools,typescript,version control,web hosting,website operations,",
     "keywords": [
-        "apache bench,auto scaling,aws,blockchain,cdn,chatbot,ci\/cd,cicd,cloudflare,cloudflare workers,composer,container technology,containerization,csv,devops,discord,dns,docker,docker compose,domain,domain name,drone,excel,ffmpeg,firewall,gas,gcp,gcr,git,github,github page,go,golang,golang, hugo,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,linux,load balancing,nginx,ngrok,personal brand,php,php-fpm,phpcbf,phpcs,portainer,postgresql,prerender,proxy,purchase domain,python3,queue,redis,search engine optimization,seo,server,serverless,smart contract,ssh,stress testing,subdomain,version control,web hosting,"
+        "apache bench,auto scaling,aws,blockchain,cdn,chatbot,ci\/cd,cicd,cloudflare,cloudflare workers,composer,container technology,containerization,csv,devops,discord,dns,docker,docker compose,domain,domain name,drone,excel,ffmpeg,firewall,gas,gcp,gcr,git,github,github page,go,golang,golang, hugo,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,linux,load balancing,nginx,ngrok,personal brand,php,php-fpm,phpcbf,phpcs,portainer,postgresql,prerender,proxy,purchase domain,python3,queue,redis,search engine optimization,seo,server,serverless,smart contract,ssh,stress testing,subdomain,typescript,version control,web hosting,"
     ]
 }
 </script>
@@ -458,8 +458,7 @@ Either add the cookie name to <code>$except</code> in the <code>EncryptCookies</
 <h2 id="steps">Steps</h2>
 <h3 id="1-create-a-network-manually">1. Create a network manually</h3>
 <blockquote>
-<p>The reverse proxy redirects requests based on the loaded configuration file to the specified container names. Therefore, the target containers for proxy must be in the same network to use container names directly.</p>
-</blockquote>
+<p>The reverse proxy redirects requests based on the loaded configuration file to the specified container names. Therefore, the target containers for proxy must be in the same network to use container names directly.</p></blockquote>
 <p>Manually create a network to avoid adding prefixes and dependencies:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker network create nginx-network
 </span></span></code></pre></div><p>Since this scenario involves an external nginx-proxy, an additional <code>external network</code> is needed for connections.<br>
@@ -519,8 +518,7 @@ After starting the service, check if portainer is accessible via <code>localhost
 </span></span></code></pre></div><h4 id="32-mount-the-nginx-config-for-use-by-the-reverse-proxy-server">3.2 Mount the nginx config for use by the reverse proxy server</h4>
 <p>In the configuration, all requests to &ldquo;test.example&rdquo; are redirected to <code>http://nginx_test_portainer:9000</code>. The format used is:</p>
 <blockquote>
-<p>http://{container_name}:{port}</p>
-</blockquote>
+<p>http://{container_name}:{port}</p></blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nginx" data-lang="nginx"><span style="display:flex;"><span><span style="color:#66d9ef">server</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">listen</span> <span style="color:#ae81ff">80</span>;
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">listen</span> <span style="color:#e6db74">[::]:80</span>;
@@ -560,8 +558,7 @@ If the redirected URL has its own HTTPS certificate validation (e.g., another ng
 </code></pre><p>Start the nginx service.</p>
 <p>If configured correctly, the nginx service listening on port 80 should forward all requests to &ldquo;test.example&rdquo; to the portainer container&rsquo;s specified port, displaying the portainer service&rsquo;s interface.</p>
 <blockquote>
-<p>Start the reverse proxy service after all services are running, or it will throw errors indicating that the target container for proxy doesn&rsquo;t exist.</p>
-</blockquote>
+<p>Start the reverse proxy service after all services are running, or it will throw errors indicating that the target container for proxy doesn&rsquo;t exist.</p></blockquote>
 <h1 id="notes">Notes</h1>
 <p>If you want to handle all unmatched <code>server_name</code> requests uniformly, add <code>default_server</code> to the specified nginx config.</p>
 <p><font color="red"><strong>If <code>default_server</code> is not defined, the first server will be set as the default server by default.</strong></font></p>
@@ -665,6 +662,16 @@ Therefore, &ldquo;dev_backend&rdquo; is set as <code>default_server</code> to ha
       </header>
       
       <article class="mini-post">
+          <a href="/en/blog/202503-typescript-environment-setup/" class="image" style="--bg-image: url('/blog/202503-typescript-environment-setup/featured.jpg');">
+    <img src="/blog/202503-typescript-environment-setup/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202503-typescript-environment-setup/">TypeScript Environment Setup</a></h2>
+          <time class="published" datetime="2025-03-18 00:00:00 &#43;0000 UTC">March 18, 2025</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
           <a href="/en/blog/202409-multiple-github-accounts-with-ssh-keys/" class="image" style="--bg-image: url('/blog/202409-multiple-github-accounts-with-ssh-keys/featured.jpg');">
     <img src="/blog/202409-multiple-github-accounts-with-ssh-keys/featured.jpg" alt="">
   </a>
@@ -701,16 +708,6 @@ Therefore, &ldquo;dev_backend&rdquo; is set as <code>default_server</code> to ha
         <header>
           <h2><a href="/en/blog/202402-aws-fundamental-hybrid-cloud/">[AWS Cloud Fundamental Notes] Hybrid Cloud</a></h2>
           <time class="published" datetime="2024-02-13 00:00:00 &#43;0000 UTC">February 13, 2024</time>
-        </header>
-      </article>
-      
-      <article class="mini-post">
-          <a href="/en/blog/202401-aws-fundamental-cyber-security/" class="image" style="--bg-image: url('/blog/202401-aws-fundamental-cyber-security/featured.jpg');">
-    <img src="/blog/202401-aws-fundamental-cyber-security/featured.jpg" alt="">
-  </a>
-        <header>
-          <h2><a href="/en/blog/202401-aws-fundamental-cyber-security/">[AWS Cloud Fundamental Notes] Cyber Security</a></h2>
-          <time class="published" datetime="2024-01-06 00:00:00 &#43;0000 UTC">January 6, 2024</time>
         </header>
       </article>
       
@@ -778,6 +775,10 @@ Therefore, &ldquo;dev_backend&rdquo; is set as <code>default_server</code> to ha
           
           <li>
               <a href="/en/categories/tools/">tools<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/typescript/">typescript<span class="count">1</span></a>
           </li>
           
         </ul>
@@ -1067,6 +1068,10 @@ Therefore, &ldquo;dev_backend&rdquo; is set as <code>default_server</code> to ha
         </li>
         
         <li>
+          <a href="/en/tags/typescript/">typescript (1)</a>
+        </li>
+        
+        <li>
           <a href="/en/tags/version-control/">version control (1)</a>
         </li>
         
@@ -1082,7 +1087,7 @@ Therefore, &ldquo;dev_backend&rdquo; is set as <code>default_server</code> to ha
       <footer id="site-footer">
     
     <p class="copyright">
-        © 2024 Byte Ebi 🍤
+        © 2025 Byte Ebi 🍤
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
@@ -1092,7 +1097,7 @@ Therefore, &ldquo;dev_backend&rdquo; is set as <code>default_server</code> to ha
     <script>
       hljs.configure({ ignoreUnescapedHTML: true }); 
       hljs.highlightAll();
-    </script><script src="/js/bundle.min.842958c73d004b6fea3e9cf3064bed8257f04bc120697c21b4e4e7fef4b91040.js" integrity="sha256-hClYxz0AS2/qPpzzBkvtglfwS8EgaXwhtOTn/vS5EEA="></script>
+    </script><script src="/js/bundle.min.ddae304a0896033ae704e62a0392fcca27e1a5ee9bc7c70d7ccf2cf377b5760a.js" integrity="sha256-3a4wSgiWAzrnBOYqA5L8yifhpe6bx8cNfM8s83e1dgo="></script>
     <script src="/js/add-on.js"></script>
 
 

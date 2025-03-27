@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.142.0"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.145.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="Jenkins CI/CD 03 - Building and Pushing Docker Images to GCR">
   <meta property="og:description" content="This article discusses the process of building a Docker image and pushing it to the Google Container Registry (GCR) within a Jenkins pipeline using the &#39;gcloud&#39; command.">
   <meta property="description" content="This article discusses the process of building a Docker image and pushing it to the Google Container Registry (GCR) within a Jenkins pipeline using the &#39;gcloud&#39; command.">
@@ -81,9 +81,9 @@
     "headline": "About web development, software engineering, frontend, backend, chatbot, server related topics. - Byte Ebi 🍤",
     "name": "Byte Ebi 🍤",
     "url": "https:\/\/tech.ray247k.com\/",
-    "description": "About web development, software engineering, frontend, backend, chatbot, server related topics. - aws,devops,golang,laravel,php,python3,serverless,third-party services,tools,version control,web hosting,website operations,",
+    "description": "About web development, software engineering, frontend, backend, chatbot, server related topics. - aws,devops,golang,laravel,php,python3,serverless,third-party services,tools,typescript,version control,web hosting,website operations,",
     "keywords": [
-        "apache bench,auto scaling,aws,blockchain,cdn,chatbot,ci\/cd,cicd,cloudflare,cloudflare workers,composer,container technology,containerization,csv,devops,discord,dns,docker,docker compose,domain,domain name,drone,excel,ffmpeg,firewall,gas,gcp,gcr,git,github,github page,go,golang,golang, hugo,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,linux,load balancing,nginx,ngrok,personal brand,php,php-fpm,phpcbf,phpcs,portainer,postgresql,prerender,proxy,purchase domain,python3,queue,redis,search engine optimization,seo,server,serverless,smart contract,ssh,stress testing,subdomain,version control,web hosting,"
+        "apache bench,auto scaling,aws,blockchain,cdn,chatbot,ci\/cd,cicd,cloudflare,cloudflare workers,composer,container technology,containerization,csv,devops,discord,dns,docker,docker compose,domain,domain name,drone,excel,ffmpeg,firewall,gas,gcp,gcr,git,github,github page,go,golang,golang, hugo,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,linux,load balancing,nginx,ngrok,personal brand,php,php-fpm,phpcbf,phpcs,portainer,postgresql,prerender,proxy,purchase domain,python3,queue,redis,search engine optimization,seo,server,serverless,smart contract,ssh,stress testing,subdomain,typescript,version control,web hosting,"
     ]
 }
 </script>
@@ -421,8 +421,7 @@ Instead, the VM host is used as the login account, and the command will prompt f
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud projects list
 </span></span></code></pre></div><p>If you encounter the error message:</p>
 <blockquote>
-<p>ERROR: (gcloud.projects.list) PERMISSION_DENIED: Request had insufficient authentication scopes.</p>
-</blockquote>
+<p>ERROR: (gcloud.projects.list) PERMISSION_DENIED: Request had insufficient authentication scopes.</p></blockquote>
 <p>First <strong>stop the VM</strong> and navigate to the editing page.<br>
 Find the <code>Access scopes</code> section and enable <code>Full access to all Cloud APIs</code>.</p>
 <p><img src="/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/gcloud-error.jpg" alt="gcloud error"></p>
@@ -567,6 +566,16 @@ The image name in GCR is analogous to the path structure in Linux.</p>
       </header>
       
       <article class="mini-post">
+          <a href="/en/blog/202503-typescript-environment-setup/" class="image" style="--bg-image: url('/blog/202503-typescript-environment-setup/featured.jpg');">
+    <img src="/blog/202503-typescript-environment-setup/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202503-typescript-environment-setup/">TypeScript Environment Setup</a></h2>
+          <time class="published" datetime="2025-03-18 00:00:00 &#43;0000 UTC">March 18, 2025</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
           <a href="/en/blog/202409-multiple-github-accounts-with-ssh-keys/" class="image" style="--bg-image: url('/blog/202409-multiple-github-accounts-with-ssh-keys/featured.jpg');">
     <img src="/blog/202409-multiple-github-accounts-with-ssh-keys/featured.jpg" alt="">
   </a>
@@ -603,16 +612,6 @@ The image name in GCR is analogous to the path structure in Linux.</p>
         <header>
           <h2><a href="/en/blog/202402-aws-fundamental-hybrid-cloud/">[AWS Cloud Fundamental Notes] Hybrid Cloud</a></h2>
           <time class="published" datetime="2024-02-13 00:00:00 &#43;0000 UTC">February 13, 2024</time>
-        </header>
-      </article>
-      
-      <article class="mini-post">
-          <a href="/en/blog/202401-aws-fundamental-cyber-security/" class="image" style="--bg-image: url('/blog/202401-aws-fundamental-cyber-security/featured.jpg');">
-    <img src="/blog/202401-aws-fundamental-cyber-security/featured.jpg" alt="">
-  </a>
-        <header>
-          <h2><a href="/en/blog/202401-aws-fundamental-cyber-security/">[AWS Cloud Fundamental Notes] Cyber Security</a></h2>
-          <time class="published" datetime="2024-01-06 00:00:00 &#43;0000 UTC">January 6, 2024</time>
         </header>
       </article>
       
@@ -680,6 +679,10 @@ The image name in GCR is analogous to the path structure in Linux.</p>
           
           <li>
               <a href="/en/categories/tools/">tools<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/typescript/">typescript<span class="count">1</span></a>
           </li>
           
         </ul>
@@ -969,6 +972,10 @@ The image name in GCR is analogous to the path structure in Linux.</p>
         </li>
         
         <li>
+          <a href="/en/tags/typescript/">typescript (1)</a>
+        </li>
+        
+        <li>
           <a href="/en/tags/version-control/">version control (1)</a>
         </li>
         
@@ -984,7 +991,7 @@ The image name in GCR is analogous to the path structure in Linux.</p>
       <footer id="site-footer">
     
     <p class="copyright">
-        © 2024 Byte Ebi 🍤
+        © 2025 Byte Ebi 🍤
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
@@ -994,7 +1001,7 @@ The image name in GCR is analogous to the path structure in Linux.</p>
     <script>
       hljs.configure({ ignoreUnescapedHTML: true }); 
       hljs.highlightAll();
-    </script><script src="/js/bundle.min.842958c73d004b6fea3e9cf3064bed8257f04bc120697c21b4e4e7fef4b91040.js" integrity="sha256-hClYxz0AS2/qPpzzBkvtglfwS8EgaXwhtOTn/vS5EEA="></script>
+    </script><script src="/js/bundle.min.ddae304a0896033ae704e62a0392fcca27e1a5ee9bc7c70d7ccf2cf377b5760a.js" integrity="sha256-3a4wSgiWAzrnBOYqA5L8yifhpe6bx8cNfM8s83e1dgo="></script>
     <script src="/js/add-on.js"></script>
 
 

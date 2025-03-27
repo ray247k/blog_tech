@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TypeScript on Byte Ebi 🍤</title>
+    <link>https://tech.ray247k.com/en/categories/typescript/</link>
+    <description>Recent content in TypeScript on Byte Ebi 🍤</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 18 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tech.ray247k.com/en/categories/typescript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TypeScript Environment Setup</title>
+      <link>https://tech.ray247k.com/en/blog/202503-typescript-environment-setup/</link>
+      <pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202503-typescript-environment-setup/</guid>
+      <description>&lt;p&gt;Set up a TypeScript development environment&lt;br&gt;&#xA;Using NVM to install Node.js and npm, installing development tools.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

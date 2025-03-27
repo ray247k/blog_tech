@@ -1,4 +1,10 @@
 [{
+    "title": "TypeScript Environment Setup",
+    "date": "",
+    "description": "Setting up a TypeScript development environment",
+    "body": "Set up a TypeScript development environment\nUsing NVM to install Node.js and npm, installing development tools.\nNVM \u0026amp; NPM Installing and Updating curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash or\nwget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash After installation, use the command below to check the npm version:\nnpm -v Development Environment typescript Compiles .ts files into .js.\nnodemon Monitors all files in the directory where the command is executed and automatically restarts when a file changes.\nts-node Executes TypeScript files directly.\nnpx ts-node your-typescript-file.ts Initializing the Project First, navigate to the project directory!\nnpm init -y # Initialize the project npm install -D typescript nodemon ts-node # Install development tools Modify the script/start section in package.json:\nnodemon --exec ts-node index.ts Initialize TypeScript configuration:\nnpx tsc --init After running the command, a tsconfig.json file will be created.\n",
+    "ref": "/en/blog/202503-typescript-environment-setup/"
+  },{
     "title": "Setting up multiple GitHub accounts on one computer",
     "date": "",
     "description": "Configuring multiple GitHub accounts with SSH connections",

@@ -1,4 +1,10 @@
 [{
+    "title": "TypeScript 環境建置",
+    "date": "",
+    "description": "設定 TypeScript 開發環境",
+    "body": "建立 TypeScript 的開發環境\n使用 NVM 安裝 Node.js 及 npm，安裝typescript、nodemon和ts-node等開發工具\nNVM\u0026amp;NPM Installing and Updating curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash or\nwget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash 安裝完之後使用指令確認 npm 版本\nnpm -v 開發環境 typescript 負責編譯 ts 成 js\nnodemon 監視啟動指令時的資料夾下全部檔案，如果有檔案變動會自動重啟\nts-node 直接執行 ts 檔案\nnpx ts-node your-typescript-file.ts 初始化專案 首先要進入專案資料夾底下！\nnpm init -y # 初始化專案 npm install -D typescript nodemon ts-node # 安裝開發工具 調整package.json 中的 script/start\nnodemon --exec ts-node index.ts 初始化 ts 設定\nnpx tsc --init 執行完會建立tsconfig.json檔案\n",
+    "ref": "/blog/202503-typescript-environment-setup/"
+  },{
     "title": "在同一台電腦設定多組 GitHub 帳號",
     "date": "",
     "description": "設定多組 Github 帳號，並使用 ssh 連線",

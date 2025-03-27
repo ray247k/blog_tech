@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://tech.ray247k.com/en/blog/</loc>
-    <lastmod>2024-09-19T00:00:00+00:00</lastmod>
+    <lastmod>2025-03-18T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-TW"
@@ -16,7 +16,7 @@
                 />
   </url><url>
     <loc>https://tech.ray247k.com/en/</loc>
-    <lastmod>2024-09-19T00:00:00+00:00</lastmod>
+    <lastmod>2025-03-18T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-TW"
@@ -29,7 +29,7 @@
                 />
   </url><url>
     <loc>https://tech.ray247k.com/en/categories/</loc>
-    <lastmod>2024-09-19T00:00:00+00:00</lastmod>
+    <lastmod>2025-03-18T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-TW"
@@ -39,6 +39,58 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tech.ray247k.com/en/categories/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/tags/</loc>
+    <lastmod>2025-03-18T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/categories/typescript/</loc>
+    <lastmod>2025-03-18T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/categories/typescript/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/categories/typescript/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/tags/typescript/</loc>
+    <lastmod>2025-03-18T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/typescript/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/typescript/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/blog/202503-typescript-environment-setup/</loc>
+    <lastmod>2025-03-18T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202503-typescript-environment-setup/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202503-typescript-environment-setup/"
                 />
   </url><url>
     <loc>https://tech.ray247k.com/en/tags/github/</loc>
@@ -78,19 +130,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tech.ray247k.com/en/tags/ssh/"
-                />
-  </url><url>
-    <loc>https://tech.ray247k.com/en/tags/</loc>
-    <lastmod>2024-09-19T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/tags/"
                 />
   </url><url>
     <loc>https://tech.ray247k.com/en/categories/version-control/</loc>
@@ -148,19 +187,6 @@
                 href="https://tech.ray247k.com/en/blog/202402-aws-fundamental-architectures/"
                 />
   </url><url>
-    <loc>https://tech.ray247k.com/en/tags/aws/</loc>
-    <lastmod>2024-02-18T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/tags/aws/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/tags/aws/"
-                />
-  </url><url>
     <loc>https://tech.ray247k.com/en/categories/aws/</loc>
     <lastmod>2024-02-18T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -172,6 +198,19 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tech.ray247k.com/en/categories/aws/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/tags/aws/</loc>
+    <lastmod>2024-02-18T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/aws/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/aws/"
                 />
   </url><url>
     <loc>https://tech.ray247k.com/en/blog/202402-aws-fundamental-hybrid-cloud/</loc>
@@ -554,19 +593,6 @@
                 href="https://tech.ray247k.com/en/blog/202210-aws101-what-is-sns-and-sqs/"
                 />
   </url><url>
-    <loc>https://tech.ray247k.com/en/tags/serverless/</loc>
-    <lastmod>2022-10-04T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/tags/serverless/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/tags/serverless/"
-                />
-  </url><url>
     <loc>https://tech.ray247k.com/en/categories/serverless/</loc>
     <lastmod>2022-10-04T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -578,6 +604,19 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tech.ray247k.com/en/categories/serverless/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/tags/serverless/</loc>
+    <lastmod>2022-10-04T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/serverless/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/serverless/"
                 />
   </url><url>
     <loc>https://tech.ray247k.com/en/blog/202210-what-is-serverless/</loc>
@@ -645,19 +684,6 @@
                 href="https://tech.ray247k.com/en/blog/202206-gcp-redis/"
                 />
   </url><url>
-    <loc>https://tech.ray247k.com/en/tags/devops/</loc>
-    <lastmod>2022-06-30T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/tags/devops/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/tags/devops/"
-                />
-  </url><url>
     <loc>https://tech.ray247k.com/en/categories/devops/</loc>
     <lastmod>2022-06-30T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -669,6 +695,19 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tech.ray247k.com/en/categories/devops/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/tags/devops/</loc>
+    <lastmod>2022-06-30T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/devops/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/devops/"
                 />
   </url><url>
     <loc>https://tech.ray247k.com/en/tags/gcp/</loc>
@@ -856,19 +895,6 @@
                 href="https://tech.ray247k.com/en/blog/202204-laravel-sail/"
                 />
   </url><url>
-    <loc>https://tech.ray247k.com/en/tags/laravel/</loc>
-    <lastmod>2022-04-02T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/tags/laravel/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/tags/laravel/"
-                />
-  </url><url>
     <loc>https://tech.ray247k.com/en/categories/laravel/</loc>
     <lastmod>2022-04-02T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -880,6 +906,19 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tech.ray247k.com/en/categories/laravel/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/tags/laravel/</loc>
+    <lastmod>2022-04-02T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/laravel/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/laravel/"
                 />
   </url><url>
     <loc>https://tech.ray247k.com/en/tags/php/</loc>
@@ -1404,19 +1443,6 @@
                 href="https://tech.ray247k.com/en/tags/discord/"
                 />
   </url><url>
-    <loc>https://tech.ray247k.com/en/tags/python3/</loc>
-    <lastmod>2021-10-28T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/tags/python3/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/tags/python3/"
-                />
-  </url><url>
     <loc>https://tech.ray247k.com/en/categories/python3/</loc>
     <lastmod>2021-10-28T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -1428,6 +1454,19 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tech.ray247k.com/en/categories/python3/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/tags/python3/</loc>
+    <lastmod>2021-10-28T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/python3/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/python3/"
                 />
   </url><url>
     <loc>https://tech.ray247k.com/en/blog/202110-make-discord-chatbot-01-set-up/</loc>
@@ -1758,10 +1797,10 @@
                 href="https://tech.ray247k.com/en/tags/subdomain/"
                 />
   </url><url>
-    <loc>https://tech.ray247k.com/en/tags/web-hosting/</loc>
+    <loc>https://tech.ray247k.com/en/categories/web-hosting/</loc>
     <lastmod>2021-05-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://tech.ray247k.com/en/categories/web-hosting/</loc>
+    <loc>https://tech.ray247k.com/en/tags/web-hosting/</loc>
     <lastmod>2021-05-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/en/tags/cdn/</loc>
