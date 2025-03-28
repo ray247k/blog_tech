@@ -1,4 +1,10 @@
 [{
+    "title": "TypeScript 泛型(Generic)",
+    "date": "",
+    "description": "使用 TypeScript 泛型來撰寫可重用且型別安全的程式碼",
+    "body": "介紹 TypeScript 的泛型，說明如何透過定義靈活的函式、介面與類別來提高程式的可重用性\n在定義方法、介面或類別時不預先指定資料型別，而在使用時再指定型別的特性\n// 原方法，不同型別需要寫多份相似的程式碼 const pushStrArr = (arr: string[], item: string): string[] =\u0026gt; { arr.push(item); return arr; }; const pushNumarr = (arr: number[], item: number): number[] =\u0026gt; { arr.push(item); return arr; }; // 使用泛型，「T」只是一個代號，必須大寫 const pushArr = \u0026lt;T\u0026gt;(arr: T[], item: T): T[] =\u0026gt; { arr.push(item); return arr; }; // 透過聲明 \u0026lt;T\u0026gt; 的內容來宣告使用的型別 pushArr\u0026lt;number\u0026gt;([1, 2, 3, 4], 5); pushArr\u0026lt;string\u0026gt;([\u0026#34;a\u0026#34;, \u0026#34;b\u0026#34;, \u0026#34;c\u0026#34;], \u0026#34;d\u0026#34;); // 使用多個型別的泛型 function swapGeneric\u0026lt;T, U\u0026gt;(tuple: [T, U]): [U, T] { return [tuple[1], tuple[0]]; // 前後交換位置 } /** 聲明 T = string, U = number 後續使用到 T, U 就會識別成這兩個型別 **/ const res = swapGeneric\u0026lt;string, number\u0026gt;([\u0026#34;123\u0026#34;, 456]); // res = [456, \u0026#39;123\u0026#39;] ",
+    "ref": "/blog/202503-typescript-generic/"
+  },{
     "title": "TypeScript 的 Class 及 Interface",
     "date": "",
     "description": "TypeScript 的 Class 及 Interface 與語法範例",

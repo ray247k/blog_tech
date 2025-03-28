@@ -6,8 +6,15 @@
     <description>Recent content in TypeScript on Byte Ebi 🍤</description>
     <generator>Hugo</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Mon, 24 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 26 Mar 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://tech.ray247k.com/categories/typescript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TypeScript 泛型(Generic)</title>
+      <link>https://tech.ray247k.com/blog/202503-typescript-generic/</link>
+      <pubDate>Wed, 26 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/blog/202503-typescript-generic/</guid>
+      <description>&lt;p&gt;介紹 TypeScript 的泛型，說明如何透過定義靈活的函式、介面與類別來提高程式的可重用性&lt;/p&gt;</description>
+    </item>
     <item>
       <title>TypeScript 的 Class 及 Interface</title>
       <link>https://tech.ray247k.com/blog/202503-typescript-class-and-interface/</link>

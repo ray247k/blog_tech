@@ -6,8 +6,15 @@
     <description>Recent content in Blog on Byte Ebi 🍤</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 24 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 26 Mar 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://tech.ray247k.com/en/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TypeScript Generics</title>
+      <link>https://tech.ray247k.com/en/blog/202503-typescript-generic/</link>
+      <pubDate>Wed, 26 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202503-typescript-generic/</guid>
+      <description>&lt;p&gt;Introduces TypeScript generics, demonstrating how to enhance code reusability by defining flexible methods, interfaces, and classes that adapt to different types.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Class and Interface in TypeScript</title>
       <link>https://tech.ray247k.com/en/blog/202503-typescript-class-and-interface/</link>

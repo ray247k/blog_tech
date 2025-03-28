@@ -1,4 +1,10 @@
 [{
+    "title": "TypeScript Generics",
+    "date": "",
+    "description": "Using TypeScript generics to write reusable and type-safe code",
+    "body": "Introduces TypeScript generics, demonstrating how to enhance code reusability by defining flexible methods, interfaces, and classes that adapt to different types.\nThe ability to define methods, interfaces, or classes without specifying data types in advance, and determining the types when used.\n// Original method: requires writing similar code for different types const pushStrArr = (arr: string[], item: string): string[] =\u0026gt; { arr.push(item); return arr; }; const pushNumArr = (arr: number[], item: number): number[] =\u0026gt; { arr.push(item); return arr; }; // Using generics, where \u0026#34;T\u0026#34; is just a placeholder and must be uppercase const pushArr = \u0026lt;T\u0026gt;(arr: T[], item: T): T[] =\u0026gt; { arr.push(item); return arr; }; // Declare the type to be used by specifying \u0026lt;T\u0026gt; pushArr\u0026lt;number\u0026gt;([1, 2, 3, 4], 5); pushArr\u0026lt;string\u0026gt;([\u0026#34;a\u0026#34;, \u0026#34;b\u0026#34;, \u0026#34;c\u0026#34;], \u0026#34;d\u0026#34;); // Using generics with multiple types function swapGeneric\u0026lt;T, U\u0026gt;(tuple: [T, U]): [U, T] { return [tuple[1], tuple[0]]; // Swap positions } /** Declare T = string, U = number Subsequent usage of T and U will be recognized as these types **/ const res = swapGeneric\u0026lt;string, number\u0026gt;([\u0026#34;123\u0026#34;, 456]); // res = [456, \u0026#39;123\u0026#39;] ",
+    "ref": "/en/blog/202503-typescript-generic/"
+  },{
     "title": "Class and Interface in TypeScript",
     "date": "",
     "description": "Dive into TypeScript Classes and Interfaces with syntax examples.",

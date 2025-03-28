@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://tech.ray247k.com/en/blog/</loc>
-    <lastmod>2025-03-24T00:00:00+00:00</lastmod>
+    <lastmod>2025-03-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-TW"
@@ -16,7 +16,7 @@
                 />
   </url><url>
     <loc>https://tech.ray247k.com/en/</loc>
-    <lastmod>2025-03-24T00:00:00+00:00</lastmod>
+    <lastmod>2025-03-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-TW"
@@ -29,7 +29,7 @@
                 />
   </url><url>
     <loc>https://tech.ray247k.com/en/categories/</loc>
-    <lastmod>2025-03-24T00:00:00+00:00</lastmod>
+    <lastmod>2025-03-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-TW"
@@ -39,6 +39,58 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tech.ray247k.com/en/categories/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/tags/</loc>
+    <lastmod>2025-03-26T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/categories/typescript/</loc>
+    <lastmod>2025-03-26T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/categories/typescript/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/categories/typescript/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/tags/typescript/</loc>
+    <lastmod>2025-03-26T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/typescript/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/typescript/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/blog/202503-typescript-generic/</loc>
+    <lastmod>2025-03-26T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202503-typescript-generic/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202503-typescript-generic/"
                 />
   </url><url>
     <loc>https://tech.ray247k.com/en/blog/202503-typescript-class-and-interface/</loc>
@@ -52,45 +104,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tech.ray247k.com/en/blog/202503-typescript-class-and-interface/"
-                />
-  </url><url>
-    <loc>https://tech.ray247k.com/en/tags/</loc>
-    <lastmod>2025-03-24T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/tags/"
-                />
-  </url><url>
-    <loc>https://tech.ray247k.com/en/categories/typescript/</loc>
-    <lastmod>2025-03-24T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/categories/typescript/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/categories/typescript/"
-                />
-  </url><url>
-    <loc>https://tech.ray247k.com/en/tags/typescript/</loc>
-    <lastmod>2025-03-24T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/tags/typescript/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/tags/typescript/"
                 />
   </url><url>
     <loc>https://tech.ray247k.com/en/blog/202503-typescript-basic-data-type/</loc>
