@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.145.0"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.147.9"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="[Express&#43;Vue 搭建電商網站] 17 使用常數管理變數">
   <meta property="og:description" content="使用 Express &#43; Vue 搭建一個電商網站 - 使用常數管理變數">
   <meta property="description" content="使用 Express &#43; Vue 搭建一個電商網站 - 使用常數管理變數">
@@ -40,7 +40,7 @@
   
   
             <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/felipec.min.css">
-          <link rel="stylesheet" href="/css/bundle.min.8c2311cfb8e6e4d1336dda60a34b39f11c555c4c782dc22be9632165dcca8ad9.css" integrity="sha256-jCMRz7jm5NEzbdpgo0s58RxVXEx4LcIr6WMhZdzKitk="><link rel="stylesheet" href="/css/add-on.css">
+          <link rel="stylesheet" href="/css/bundle.min.ab6f0b6f1e10859cc4f1dd183c65d284967651f85c0f1a47375cc146742b7e3b.css" integrity="sha256-q28Lbx4QhZzE8d0YPGXShJZ2UfhcDxpHN1zBRnQrfjs="><link rel="stylesheet" href="/css/add-on.css">
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
       <script>
         var doNotTrack = false;
@@ -412,7 +412,7 @@
 <p>在建立好顯示製造商資訊的表單組件 <code>ManufacturerForm</code> 以及設定好取得資料的 getter 之後<br>
 我們要來建立編輯製造商的頁面 <code>src/views/admin/EditManufacturers.vue</code></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#f92672">template</span>&gt;
-</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">manufacturer-form</span> <span style="color:#f92672">@save-manufacturer</span><span style="color:#e6db74">=&#34;addManufacturer&#34;</span> <span style="color:#f92672">:model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;model&#34;</span> <span style="color:#f92672">:isEditing</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span>&gt;&lt;/<span style="color:#f92672">manufacturer-form</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">manufacturer-form</span> <span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">save</span><span style="color:#f92672">-manufacturer</span><span style="color:#960050;background-color:#1e0010">=&#34;</span><span style="color:#a6e22e">addManufacturer</span><span style="color:#960050;background-color:#1e0010">&#34;</span> <span style="color:#f92672">:model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;model&#34;</span> <span style="color:#f92672">:isEditing</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span>&gt;&lt;/<span style="color:#f92672">manufacturer-form</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">template</span>&gt;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
@@ -450,7 +450,7 @@
 <h1 id="建立-newmanufacturers-頁面">建立 NewManufacturers 頁面</h1>
 <p>跟剛剛的編輯頁面邏輯差不多，這邊要建立新增頁面 <code>src/views/admin/NewManufacturers.vue</code></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#f92672">template</span>&gt;
-</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">manufacturer-form</span> <span style="color:#f92672">@save-manufacturer</span><span style="color:#e6db74">=&#34;addManufacturer&#34;</span> <span style="color:#f92672">:model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;model&#34;</span>&gt;&lt;/<span style="color:#f92672">manufacturer-form</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">manufacturer-form</span> <span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">save</span><span style="color:#f92672">-manufacturer</span><span style="color:#960050;background-color:#1e0010">=&#34;</span><span style="color:#a6e22e">addManufacturer</span><span style="color:#960050;background-color:#1e0010">&#34;</span> <span style="color:#f92672">:model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;model&#34;</span>&gt;&lt;/<span style="color:#f92672">manufacturer-form</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">template</span>&gt;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
@@ -1395,7 +1395,7 @@
     <script>
       hljs.configure({ ignoreUnescapedHTML: true }); 
       hljs.highlightAll();
-    </script><script src="/js/bundle.min.ddae304a0896033ae704e62a0392fcca27e1a5ee9bc7c70d7ccf2cf377b5760a.js" integrity="sha256-3a4wSgiWAzrnBOYqA5L8yifhpe6bx8cNfM8s83e1dgo="></script>
+    </script><script src="/js/bundle.min.04d0be7a7e5c603fcb60180437663d2cdaf0db120a187376a9da544938a75534.js" integrity="sha256-BNC&#43;en5cYD/LYBgEN2Y9LNrw2xIKGHN2qdpUSTinVTQ="></script>
     <script src="/js/add-on.js"></script>
 
 
