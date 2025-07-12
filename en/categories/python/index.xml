@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on Byte Ebi 🍤</title>
+    <link>https://tech.ray247k.com/en/categories/python/</link>
+    <description>Recent content in Python on Byte Ebi 🍤</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 21 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tech.ray247k.com/en/categories/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setting up Python Development Environment</title>
+      <link>https://tech.ray247k.com/en/blog/202506-set-up-a-python-development-environment/</link>
+      <pubDate>Sat, 21 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202506-set-up-a-python-development-environment/</guid>
+      <description>&lt;p&gt;This is my first time using Python in a work environment, so I&amp;rsquo;m documenting the environment setup. Many of these packages are new to me, not having used them when I was self-learning a few years ago. I guess that reveals how long it&amp;rsquo;s been since I touched Python!&lt;/p&gt;&#xA;&lt;h1 id=&#34;mac-setup&#34;&gt;Mac Setup&lt;/h1&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;There are dependencies, so you must install them in order!&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;homebrew&#34;&gt;&lt;a href=&#34;https://brew.sh/&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Homebrew&#xA;&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;A package manager for Mac. I don&amp;rsquo;t know what I&amp;rsquo;d do without it on a Mac. And now it can be used on Linux too!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[Discord Bot] 02. Dice Rolling Bot</title>
+      <link>https://tech.ray247k.com/en/blog/202110-make-discord-chatbot-02-roll-dice-bot/</link>
+      <pubDate>Thu, 28 Oct 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202110-make-discord-chatbot-02-roll-dice-bot/</guid>
+      <description>&lt;p&gt;Do you know about TTRPG? One of the most well-known is probably Dungeons &amp;amp; Dragons (D&amp;amp;D).&lt;br&gt;&#xA;After watching hololive EN play, I thought, &amp;ldquo;Let&amp;rsquo;s create a dice rolling bot and give it a try.&amp;rdquo;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[Discord Bot] 01. Creating a Basic Bot</title>
+      <link>https://tech.ray247k.com/en/blog/202110-make-discord-chatbot-01-set-up/</link>
+      <pubDate>Wed, 20 Oct 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202110-make-discord-chatbot-01-set-up/</guid>
+      <description>&lt;p&gt;Just for fun, let&amp;rsquo;s write something I haven&amp;rsquo;t written before.&lt;br&gt;&#xA;Lately, I&amp;rsquo;ve been active on Discord, so I&amp;rsquo;ve decided to create a Discord ChatBot.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

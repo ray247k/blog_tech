@@ -1,0 +1,1191 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+<title>Setting up Python Development Environment - Byte Ebi 🍤</title>
+<meta name="description" content="Setting up a Python development environment on Mac">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta property="og:site_name" content="Byte Ebi 🍤">
+<meta property="og:title" content="Setting up Python Development Environment">
+<meta property="og:description" content="Setting up a Python development environment on Mac">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://tech.ray247k.com/en/blog/202506-set-up-a-python-development-environment/">
+  <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
+
+
+
+  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
+  
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=1" color="#ffffff">
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=1">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=1">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+<meta name="generator" content="Hugo 0.147.9"><meta property="og:site_name" content="Byte Ebi 🍤">
+  <meta property="og:title" content="Setting up Python Development Environment">
+  <meta property="og:description" content="Setting up a Python development environment on Mac">
+  <meta property="description" content="Setting up a Python development environment on Mac">
+  <meta property="og:url" content="https://tech.ray247k.com/en/blog/202506-set-up-a-python-development-environment/">
+  <meta property="og:type" content="article">
+  
+    <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
+  
+  
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/felipec.min.css">
+          <link rel="stylesheet" href="/css/bundle.min.ab6f0b6f1e10859cc4f1dd183c65d284967651f85c0f1a47375cc146742b7e3b.css" integrity="sha256-q28Lbx4QhZzE8d0YPGXShJZ2UfhcDxpHN1zBRnQrfjs="><link rel="stylesheet" href="/css/add-on.css">
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-LTGVYYWC2J');
+        }
+      </script>
+  <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "image": {
+        "@type": "ImageObject",
+        "image": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+        "height": 648,
+        "width": 1080
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com\/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Byte Ebi 🍤",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png"
+        }
+    },
+    "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+    "headline": "About web development, software engineering, frontend, backend, chatbot, server related topics. - Byte Ebi 🍤",
+    "name": "Byte Ebi 🍤",
+    "url": "https:\/\/tech.ray247k.com\/",
+    "description": "About web development, software engineering, frontend, backend, chatbot, server related topics. - aws,devops,golang,laravel,php,python,serverless,third-party services,tools,typescript,version control,web hosting,website operations,",
+    "keywords": [
+        "apache bench,auto scaling,aws,blockchain,cdn,chatbot,ci\/cd,cicd,cloudflare,cloudflare workers,composer,container technology,containerization,csv,devops,discord,dns,docker,docker compose,domain,domain name,drone,excel,ffmpeg,firewall,gas,gcp,gcr,git,github,github page,go,golang,golang, hugo,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,linux,load balancing,nginx,ngrok,personal brand,php,php-fpm,phpcbf,phpcs,portainer,postgresql,prerender,proxy,purchase domain,python,queue,redis,search engine optimization,seo,server,serverless,smart contract,ssh,stress testing,subdomain,typescript,version control,web hosting,"
+    ]
+}
+</script>
+
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "legalName": "Byte Ebi 🍤",
+    "url": "https:\/\/tech.ray247k.com\/",
+    "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "",
+        "availableLanguage": [
+            "Mandarin",
+            "English"
+        ]
+    },
+    "sameAs": [
+        "https://ray247k.blogspot.com/"
+    ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Setting up Python Development Environment",
+    "description": "Setting up a Python development environment on Mac",
+    "keywords": [
+        "Python" 
+    ],
+    "dateCreated": "2025-06-21T00:00:00.00Z",
+    "datePublished": "2025-06-21T00:00:00.00Z",
+    "dateModified": "2025-06-21T00:00:00.00Z",
+    "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "contentUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png"
+    },
+    "breadcrumb": {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\/",
+                    "name": "Byte Ebi 🍤",
+                    "url": "https:\/\/tech.ray247k.com\/"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\//blog",
+                    "name": "Blog",
+                    "url": "https:\/\/tech.ray247k.com\//blog"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\/en\/blog\/202506-set-up-a-python-development-environment\/",
+                    "name": "Setting up Python Development Environment",
+                    "url": "https:\/\/tech.ray247k.com\/en\/blog\/202506-set-up-a-python-development-environment\/"
+                }
+            }
+        ],
+        "itemListOrder": "Ascending",
+        "numberOfItems": 3
+    }
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "articleSection": "blog",
+    "name": "Setting up Python Development Environment",
+    "headline": "\u003cp\u003eThis is my first time using Python in a work environment, so I\u0026rsquo;m documenting the environment setup. Many of these packages are new to me, not having used them when I was self-learning a few years ago. I guess that reveals how long it\u0026rsquo;s been since I touched Python!\u003c\/p\u003e\n\u003ch1 id=\u0022mac-setup\u0022\u003eMac Setup\u003c\/h1\u003e\n\u003cblockquote\u003e\n\u003cp\u003eThere are dependencies, so you must install them in order!\u003c\/p\u003e\u003c\/blockquote\u003e\n\u003ch2 id=\u0022homebrew\u0022\u003e\u003ca href=\u0022https:\/\/brew.sh\/\u0022\n   \n    target=\u0022_blank\u0022 rel=\u0022noreferrer noopener\u0022\u003eHomebrew\n\u003c\/a\u003e\n\u003c\/h2\u003e\n\u003cp\u003eA package manager for Mac. I don\u0026rsquo;t know what I\u0026rsquo;d do without it on a Mac. And now it can be used on Linux too!\u003c\/p\u003e",
+    "description": "Setting up a Python development environment on Mac",
+    "inLanguage": "en",
+    "isFamilyFriendly": "true",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com\/en\/blog\/202506-set-up-a-python-development-environment\/"
+    },
+    "author" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "creator" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "accountablePerson" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "copyrightHolder" : "Byte Ebi 🍤",
+    "copyrightYear" : "2025",
+    "dateCreated": "2025-06-21T00:00:00.00Z",
+    "datePublished": "2025-06-21T00:00:00.00Z",
+    "dateModified": "2025-06-21T00:00:00.00Z",
+    "publisher":{
+        "@type":"Organization",
+        "name": "Byte Ebi 🍤",
+        "url": "https://tech.ray247k.com/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+            "width":"32",
+            "height":"32"
+        }
+    },
+    "image": "https://tech.ray247k.com/img/main/logo.png",
+    "url" : "https:\/\/tech.ray247k.com\/en\/blog\/202506-set-up-a-python-development-environment\/",
+    "wordCount" : "904",
+    "genre" : [ "Python" ],
+    "keywords" : [ "Python" ]
+}
+</script>
+
+
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/en/" class="nav">
+        
+          Blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/en/" class="nav link"><i class='fa fa-home'></i> home</a>
+        
+      
+        
+          
+          <a href="/en/about" class="nav link"><i class='far fa-id-card'></i> about</a>
+        
+      
+        
+          
+          <a href="/en/categories" class="nav link"><i class='fas fa-sitemap'></i> category</a>
+        
+      
+      
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    
+    <a href="#lang-menu" class="nav lang-toggle" lang="en">en</a>
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  <menu id="lang-menu" class="flyout-menu menu">
+  <a href="#" lang="en" class="nav link active">English (en)</a>
+  
+      <a href="https://tech.ray247k.com/blog/202506-set-up-a-python-development-environment/" lang="zh-tw" class="nav link">正體中文 (zh-tw)</a>
+    
+  
+</menu>
+
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/en/"><img src="/img/main/logo.png" class="circle" width="100" alt="Byte Ebi&#39;s Logo" /></a>
+  <header>
+    <h1>Byte Ebi 🍤</h1>
+  </header>
+  <main>
+    <p>A Bit everyday A Byte every week</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/ray247k" target="_blank" rel="noopener" title="GitHub"
+        class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//www.linkedin.com/in/j-ray-cheng" target="_blank" rel="noopener"
+        title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+<article class="post">
+  <header>
+  <div class="title">
+    
+      <h2><a href="/en/blog/202506-set-up-a-python-development-environment/">Setting up Python Development Environment</a></h2>
+    
+    
+      <p>Setting up a Python development environment on Mac</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2025-06-21 00:00:00 &#43;0000 UTC">June 21, 2025</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+  <div id="socnet-share">
+
+
+
+
+</div>
+  <div class="content">
+    <a href="/en/blog/202506-set-up-a-python-development-environment/" class="image" style="--bg-image: url('/blog/202506-set-up-a-python-development-environment/featured.jpg');">
+    <img src="/blog/202506-set-up-a-python-development-environment/featured.jpg" alt="">
+  </a> <p>This is my first time using Python in a work environment, so I&rsquo;m documenting the environment setup. Many of these packages are new to me, not having used them when I was self-learning a few years ago. I guess that reveals how long it&rsquo;s been since I touched Python!</p>
+<h1 id="mac-setup">Mac Setup</h1>
+<blockquote>
+<p>There are dependencies, so you must install them in order!</p></blockquote>
+<h2 id="homebrew"><a href="https://brew.sh/"
+   
+    target="_blank" rel="noreferrer noopener">Homebrew
+</a>
+</h2>
+<p>A package manager for Mac. I don&rsquo;t know what I&rsquo;d do without it on a Mac. And now it can be used on Linux too!</p>
+<p><strong>Installation:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/bin/bash -c <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><h2 id="oh-my-zsh"><a href="https://ohmyz.sh/"
+   
+    target="_blank" rel="noreferrer noopener">oh-my-zsh
+</a>
+</h2>
+<p>A better Terminal interface. I&rsquo;m used to the <code>philips</code> theme.</p>
+<p><strong>Installation:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sh -c <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><h2 id="pyenv"><a href="https://github.com/pyenv/pyenv"
+   
+    target="_blank" rel="noreferrer noopener">pyenv
+</a>
+</h2>
+<p>Python version control, similar to nvm and gvm.</p>
+<p><strong>Installation:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew install pyenv
+</span></span></code></pre></div><h2 id="python">python</h2>
+<p>Just&hellip; python. I still prefer installing it with brew.</p>
+<p><strong>Installation:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew install python
+</span></span></code></pre></div><p>If you don&rsquo;t do extra configuration, <code>python</code> and <code>pip</code> commands will become <code>python3</code> and <code>pip3</code>. I&rsquo;m used to it, so I don&rsquo;t want to configure it further. If I accidentally remove the python installed by brew, at least it guarantees other software won&rsquo;t have problems.</p>
+<p>Homebrew has a dedicated article explaining this: <a href="https://docs.brew.sh/Homebrew-and-Python"
+   
+    target="_blank" rel="noreferrer noopener">Homebrew and Python
+</a>
+</p>
+<h2 id="pipx"><a href="https://pipx.pypa.io/"
+   
+    target="_blank" rel="noreferrer noopener">pipx
+</a>
+</h2>
+<p>Think of it as Python&rsquo;s homebrew. It creates isolated environments when installing each package.</p>
+<p>Avoiding global Python tool installations and ensuring dependency isolation.<br>
+You can also use it directly without activating a virtual environment, and you don&rsquo;t need sudo permissions.</p>
+<p><strong>Installation and PATH configuration:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew install pipx
+</span></span><span style="display:flex;"><span>pipx ensurepath
+</span></span></code></pre></div><p><code>ensurepath</code> is used to ensure that the executable location of apps downloaded with <code>pipx</code> is added to the PATH environment variable.</p>
+<hr>
+<h1 id="python-development-packages">Python Development Packages</h1>
+<p>Packages that will be used for Python development. The prerequisite is to have <a href="https://pipx.pypa.io/stable/installation/"
+   
+    target="_blank" rel="noreferrer noopener">pipx
+</a>
+ installed.</p>
+<h2 id="black"><a href="https://black.readthedocs.io/en/stable/"
+   
+    target="_blank" rel="noreferrer noopener">Black
+</a>
+</h2>
+<p>A Coding Style checker that conforms to <a href="https://peps.python.org/pep-0008/"
+   
+    target="_blank" rel="noreferrer noopener">PEP 8
+</a>
+.</p>
+<p><strong>Installation:</strong></p>
+<pre tabindex="0"><code>pipx install black
+</code></pre><p><strong>Command Example:</strong></p>
+<pre tabindex="0"><code>black ./ --check --verbose -l 100
+</code></pre><h3 id="available-parameters">Available Parameters</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Parameter</th>
+          <th>Purpose</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>&ndash;check</td>
+          <td>Only check, do not modify</td>
+      </tr>
+      <tr>
+          <td>&ndash;verbose</td>
+          <td>Display detailed information</td>
+      </tr>
+      <tr>
+          <td>-l 100</td>
+          <td>Line length limit 100 characters</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="isort"><a href="https://pycqa.github.io/isort/"
+   
+    target="_blank" rel="noreferrer noopener">isort
+</a>
+</h2>
+<p>Sorts import order according to <a href="https://peps.python.org/pep-0008/"
+   
+    target="_blank" rel="noreferrer noopener">PEP 8
+</a>
+ style.</p>
+<p><strong>Installation:</strong></p>
+<pre tabindex="0"><code>pipx install isort
+</code></pre><p><strong>Command Example</strong>:</p>
+<pre tabindex="0"><code>isort ./ --profile black --filter-files
+</code></pre><h3 id="available-parameters-1">Available Parameters</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Parameter</th>
+          <th>Purpose</th>
+          <th>Reference</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>&ndash;profile black</td>
+          <td>Declares the use of black formatting settings<br>otherwise, it will conflict with black if executed simultaneously</td>
+          <td><a href="https://pycqa.github.io/isort/docs/configuration/profiles.html"
+   
+    target="_blank" rel="noreferrer noopener">Built-in Profile for isort
+</a>
+</td>
+      </tr>
+      <tr>
+          <td>&ndash;filter-files</td>
+          <td>Filters out omitted files</td>
+          <td><a href="https://pycqa.github.io/isort/docs/configuration/options.html"
+   
+    target="_blank" rel="noreferrer noopener">Filter Files
+</a>
+</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="poetry"><a href="https://python-poetry.org/"
+   
+    target="_blank" rel="noreferrer noopener">Poetry
+</a>
+</h2>
+<p>Manages project dependencies, similar to Laravel&rsquo;s composer or Node.js&rsquo;s npm.</p>
+<p><strong>Installation:</strong></p>
+<pre tabindex="0"><code>pipx install poetry
+</code></pre><p>Just like other frameworks with package managers, you need to run the package installation command every time you clone a new project. Otherwise, you&rsquo;ll encounter <code>could not resolve import</code> or <code>reportMissingImports</code> errors during execution or testing due to missing dependencies.</p>
+<p><strong>Installing packages in the project:</strong></p>
+<pre tabindex="0"><code>poetry install
+</code></pre><p>If you encounter the error message:</p>
+<blockquote>
+<p>Error: The current project could not be installed: No file/folder found for package my-project If you do not want to install the current project use &ndash;no-root. If you want to use Poetry only for dependency management but not for packaging, you can disable package mode by setting package-mode = false in your pyproject.toml file. If you did intend to install the current project, you may need to set <code>packages</code> in your pyproject.toml file.</p></blockquote>
+<p>Poetry cannot find the folder or file corresponding to <code>package my-project</code>. This means it doesn&rsquo;t know which directory or file is your actual Python package.</p>
+<p>When Poetry cannot find a Python package folder corresponding to <code>name = &quot;my-project&quot;</code>, Poetry assumes by default that you have a directory called <code>my_project</code> or a clearly specified path, hence the error about not finding the package.</p>
+<blockquote>
+<p>Poetry converts dashes <code>-</code> in directory names to underscores <code>_</code>. So, if your folder name is <code>my_project</code>, the <code>name</code> in <code>pyproject.toml</code> should have <code>-</code> replaced with <code>_</code>.</p></blockquote>
+<p>Therefore, if you intend to package your own project, you need a folder that corresponds to the project name.</p>
+<p>If you are not packaging, but just want to use Poetry for dependency management, you can use the additional parameter <code>--no-root</code> when executing to solve this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>poetry install --no-root
+</span></span></code></pre></div><h3 id="common-commands">Common Commands</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Command</th>
+          <th>Purpose</th>
+          <th>Option</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>poetry init</td>
+          <td>Initializes a Python project</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>poetry add</td>
+          <td>Installs a package</td>
+          <td><code>--dev</code> declares the package for development environment only</td>
+      </tr>
+      <tr>
+          <td>poetry remove</td>
+          <td>Removes a specified package</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>poetry show</td>
+          <td>Lists packages</td>
+          <td><code>--tree</code> lists all package dependencies</td>
+      </tr>
+      <tr>
+          <td>poetry update</td>
+          <td>Updates packages</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>poetry run</td>
+          <td>Executes a command or file in the virtual environment</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>poetry lock</td>
+          <td>Creates a package dependency lock file</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>poetry env activate</td>
+          <td>Activates the virtual environment</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>poetry env info</td>
+          <td>Lists virtual environment information</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>poetry env list</td>
+          <td>Lists virtual environments</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>poetry env remove</td>
+          <td>Removes a virtual environment</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>poetry env use</td>
+          <td>Switches virtual environment</td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h1 id="vs-code-settings">VS Code Settings</h1>
+<p>I&rsquo;ll just use the free VS Code for development!</p>
+<p>Although I&rsquo;ve heard <a href="https://www.jetbrains.com/pycharm/"
+   
+    target="_blank" rel="noreferrer noopener">PyCharm
+</a>
+ is very good, and the Community version is even free, I was tied to <a href="https://www.jetbrains.com/phpstorm/"
+   
+    target="_blank" rel="noreferrer noopener">PhpStorm
+</a>
+ for too many years. It became difficult to help colleagues who weren&rsquo;t using PhpStorm. So, since I started writing Golang, I&rsquo;ve been using VS Code as my development tool.</p>
+<h2 id="utility-tools">Utility Tools</h2>
+<p>If you&rsquo;re too lazy to install too many IDEs, or if you don&rsquo;t have enough computer permissions, you can install all your commonly used tools in VS Code.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Package</th>
+          <th>Purpose</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><a href="https://marketplace.visualstudio.com/items/?itemName=Oracle.mysql-shell-for-vs-code"
+   
+    target="_blank" rel="noreferrer noopener">MySQL Shell for VS Code
+</a>
+</td>
+          <td>Connect to MySQL</td>
+      </tr>
+      <tr>
+          <td><a href="https://marketplace.visualstudio.com/items/?itemName=ckolkman.vscode-postgres"
+   
+    target="_blank" rel="noreferrer noopener">PostgreSQL
+</a>
+</td>
+          <td>Connect to PostgreSQL, although no image looks a bit suspicious</td>
+      </tr>
+      <tr>
+          <td><a href="https://marketplace.visualstudio.com/items/?itemName=Redis.redis-for-vscode"
+   
+    target="_blank" rel="noreferrer noopener">Redis for VS Code
+</a>
+</td>
+          <td>Connect to Redis</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="development-tools">Development Tools</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Package</th>
+          <th>Purpose</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><a href="https://marketplace.visualstudio.com/items/?itemName=ms-vscode-remote.vscode-remote-extensionpack"
+   
+    target="_blank" rel="noreferrer noopener">Remote Development
+</a>
+</td>
+          <td>Connect to remote development machine</td>
+      </tr>
+      <tr>
+          <td><a href="https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance"
+   
+    target="_blank" rel="noreferrer noopener">pylance
+</a>
+</td>
+          <td>Syntax highlighting + autocompletion</td>
+      </tr>
+      <tr>
+          <td><a href="https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring"
+   
+    target="_blank" rel="noreferrer noopener">docstring
+</a>
+</td>
+          <td>Quickly generate function documentation</td>
+      </tr>
+      <tr>
+          <td><a href="https://marketplace.visualstudio.com/items/?itemName=mhutchie.git-graph"
+   
+    target="_blank" rel="noreferrer noopener">Git Graph
+</a>
+</td>
+          <td>Easily view Git Graph</td>
+      </tr>
+      <tr>
+          <td><a href="https://marketplace.visualstudio.com/items/?itemName=eamodio.gitlens"
+   
+    target="_blank" rel="noreferrer noopener">GitLens
+</a>
+</td>
+          <td>Git Blame神器 (Git Blame God-tier tool)</td>
+      </tr>
+  </tbody>
+</table>
+
+
+    
+    
+  </div>
+  <footer><div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/en/categories/python/">Python</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/en/tags/python/">Python</a></li>
+        
+      
+    </ul>
+  
+</div>
+</footer>
+</article>
+ 
+ 
+<div class="pagination">
+   
+  <a href="/en/blog/202503-typescript-generic/" class="button right"
+    ><span>TypeScript Generics</span></a
+  >
+  
+</div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>Recent Posts</h1>
+      </header>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202506-set-up-a-python-development-environment/" class="image" style="--bg-image: url('/blog/202506-set-up-a-python-development-environment/featured.jpg');">
+    <img src="/blog/202506-set-up-a-python-development-environment/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202506-set-up-a-python-development-environment/">Setting up Python Development Environment</a></h2>
+          <time class="published" datetime="2025-06-21 00:00:00 &#43;0000 UTC">June 21, 2025</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202503-typescript-generic/" class="image" style="--bg-image: url('/blog/202503-typescript-generic/featured.jpg');">
+    <img src="/blog/202503-typescript-generic/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202503-typescript-generic/">TypeScript Generics</a></h2>
+          <time class="published" datetime="2025-03-26 00:00:00 &#43;0000 UTC">March 26, 2025</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202503-typescript-class-and-interface/" class="image" style="--bg-image: url('/blog/202503-typescript-class-and-interface/featured.jpg');">
+    <img src="/blog/202503-typescript-class-and-interface/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202503-typescript-class-and-interface/">Class and Interface in TypeScript</a></h2>
+          <time class="published" datetime="2025-03-24 00:00:00 &#43;0000 UTC">March 24, 2025</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202503-typescript-basic-data-type/" class="image" style="--bg-image: url('/blog/202503-typescript-basic-data-type/featured.jpg');">
+    <img src="/blog/202503-typescript-basic-data-type/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202503-typescript-basic-data-type/">Basic Data Type in TypeScript</a></h2>
+          <time class="published" datetime="2025-03-20 00:00:00 &#43;0000 UTC">March 20, 2025</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202503-typescript-environment-setup/" class="image" style="--bg-image: url('/blog/202503-typescript-environment-setup/featured.jpg');">
+    <img src="/blog/202503-typescript-environment-setup/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202503-typescript-environment-setup/">TypeScript Environment Setup</a></h2>
+          <time class="published" datetime="2025-03-18 00:00:00 &#43;0000 UTC">March 18, 2025</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/en/blog/" class="button">See More</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="/en/categories">Categories</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/en/categories/aws/">aws<span class="count">25</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/devops/">devops<span class="count">24</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/golang/">golang<span class="count">12</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/laravel/">laravel<span class="count">6</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/typescript/">typescript<span class="count">4</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/python/">python<span class="count">3</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/web-hosting/">web hosting<span class="count">3</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/version-control/">version control<span class="count">2</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/website-operations/">website operations<span class="count">2</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/php/">php<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/serverless/">serverless<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/third-party-services/">third-party services<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/tools/">tools<span class="count">1</span></a>
+          </li>
+          
+        </ul>
+      </section>
+    
+  
+
+  
+  <section id="tags">
+    <header>
+      <h1><a href="/en/tags">Tags</a></h1>
+    </header>
+    <div class="li-x post-meta tags-md" style="margin-left: 0.5em;">
+      <ul>
+        
+        
+        <li>
+          <a href="/en/tags/aws/">aws (27)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/devops/">devops (26)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/docker/">docker (12)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/go/">go (11)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/golang/">golang (11)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/container-technology/">container technology (10)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/containerization/">containerization (10)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/cicd/">cicd (7)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/laravel/">laravel (7)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/docker-compose/">docker compose (6)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/gcp/">gcp (6)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/composer/">composer (5)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/php/">php (5)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/drone/">drone (4)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/jenkins/">jenkins (4)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/typescript/">typescript (4)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/cloudflare/">cloudflare (3)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/python/">python (3)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ssh/">ssh (3)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/web-hosting/">web hosting (3)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/chatbot/">chatbot (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/discord/">discord (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/dns/">dns (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/github/">github (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/google-domains/">google domains (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/nginx/">nginx (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/apache-bench/">apache bench (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/auto-scaling/">auto scaling (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/blockchain/">blockchain (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/cdn/">cdn (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ci/cd/">ci/cd (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/cloudflare-workers/">cloudflare workers (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/csv/">csv (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/domain/">domain (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/domain-name/">domain name (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/excel/">excel (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ffmpeg/">ffmpeg (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/firewall/">firewall (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/gas/">gas (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/gcr/">gcr (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/git/">git (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/github-page/">github page (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/golang-hugo/">golang, hugo (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/google-app-script/">google app script (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/google-container-registry/">google container registry (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/google-sheets/">google sheets (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/grumphp/">grumphp (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/laravel-excel/">laravel-excel (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/linux/">linux (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/load-balancing/">load balancing (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ngrok/">ngrok (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/personal-brand/">personal brand (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/php-fpm/">php-fpm (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/phpcbf/">phpcbf (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/phpcs/">phpcs (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/portainer/">portainer (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/postgresql/">postgresql (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/prerender/">prerender (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/proxy/">proxy (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/purchase-domain/">purchase domain (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/queue/">queue (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/redis/">redis (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/search-engine-optimization/">search engine optimization (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/seo/">seo (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/server/">server (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/serverless/">serverless (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/smart-contract/">smart contract (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/stress-testing/">stress testing (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/subdomain/">subdomain (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/version-control/">version control (1)</a>
+        </li>
+        
+      </ul>
+
+    </div>
+  </section>
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+    
+    <p class="copyright">
+        © 2025 Byte Ebi 🍤
+    </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>
+      hljs.configure({ ignoreUnescapedHTML: true }); 
+      hljs.highlightAll();
+    </script><script src="/js/bundle.min.04d0be7a7e5c603fcb60180437663d2cdaf0db120a187376a9da544938a75534.js" integrity="sha256-BNC&#43;en5cYD/LYBgEN2Y9LNrw2xIKGHN2qdpUSTinVTQ="></script>
+    <script src="/js/add-on.js"></script>
+
+
+    
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', "G-LTGVYYWC2J");
+        </script>
+    
+
+
+    </div>
+  </body>
+  
+</html>

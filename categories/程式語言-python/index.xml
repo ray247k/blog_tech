@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>程式語言-Python on Byte Ebi 🍤</title>
+    <link>http://localhost:1313/categories/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80-python/</link>
+    <description>Recent content in 程式語言-Python on Byte Ebi 🍤</description>
+    <generator>Hugo</generator>
+    <language>zh-TW</language>
+    <lastBuildDate>Sat, 21 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80-python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>設定 Python 開發環境</title>
+      <link>http://localhost:1313/blog/202506-set-up-a-python-development-environment/</link>
+      <pubDate>Sat, 21 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/202506-set-up-a-python-development-environment/</guid>
+      <description>&lt;p&gt;第一次在工作環境裡面用 Python 所以記錄一下環境設定，很多套件都是幾年前自學的時候沒用過的新東西&lt;br&gt;&#xA;不小心曝露多久沒碰過 Python 了吧&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

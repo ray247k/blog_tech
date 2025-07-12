@@ -6,8 +6,15 @@
     <description>Recent content in Categories on Byte Ebi 🍤</description>
     <generator>Hugo</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Wed, 26 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 21 Jun 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://tech.ray247k.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python</title>
+      <link>https://tech.ray247k.com/categories/python/</link>
+      <pubDate>Sat, 21 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/categories/python/</guid>
+      <description></description>
+    </item>
     <item>
       <title>TypeScript</title>
       <link>https://tech.ray247k.com/categories/typescript/</link>
@@ -83,13 +90,6 @@
       <link>https://tech.ray247k.com/categories/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%9C%8D%E5%8B%99/</link>
       <pubDate>Sun, 28 Nov 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/categories/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%9C%8D%E5%8B%99/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Python3</title>
-      <link>https://tech.ray247k.com/categories/python3/</link>
-      <pubDate>Thu, 28 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/categories/python3/</guid>
       <description></description>
     </item>
     <item>

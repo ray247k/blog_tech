@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on Byte Ebi 🍤</title>
+    <link>https://tech.ray247k.com/tags/python/</link>
+    <description>Recent content in Python on Byte Ebi 🍤</description>
+    <generator>Hugo</generator>
+    <language>zh-TW</language>
+    <lastBuildDate>Sat, 21 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tech.ray247k.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>設定 Python 開發環境</title>
+      <link>https://tech.ray247k.com/blog/202506-set-up-a-python-development-environment/</link>
+      <pubDate>Sat, 21 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/blog/202506-set-up-a-python-development-environment/</guid>
+      <description>&lt;p&gt;第一次在工作環境裡面用 Python 所以記錄一下環境設定，很多套件都是幾年前自學的時候沒用過的新東西&lt;br&gt;&#xA;不小心曝露多久沒碰過 Python 了吧&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[Discord 機器人] 02.擲骰機器人</title>
+      <link>https://tech.ray247k.com/blog/202110-make-discord-chatbot-02-roll-dice-bot/</link>
+      <pubDate>Thu, 28 Oct 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/blog/202110-make-discord-chatbot-02-roll-dice-bot/</guid>
+      <description>&lt;p&gt;不知道大家知不知道 TTRPG 呢？&lt;br&gt;&#xA;比較有名的大概就是龍與地下城(D&amp;amp;D)吧&lt;br&gt;&#xA;之前看 hololive EN 在玩，就萌生了「來寫個擲骰子 Bot 玩看看好了」的想法&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[Discord 機器人] 01.建立基本機器人</title>
+      <link>https://tech.ray247k.com/blog/202110-make-discord-chatbot-01-set-up/</link>
+      <pubDate>Wed, 20 Oct 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/blog/202110-make-discord-chatbot-01-set-up/</guid>
+      <description>&lt;p&gt;閒閒沒事，來寫點沒寫過的東西&lt;br&gt;&#xA;最近都在 Discord 活動，就決定寫 Discord ChatBot 啦&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[LeetCode] #404 Sum of Left Leaves (Easy)</title>
+      <link>https://tech.ray247k.com/blog/202110-leetcode-no404-sum-of-left-leaves/</link>
+      <pubDate>Wed, 13 Oct 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/blog/202110-leetcode-no404-sum-of-left-leaves/</guid>
+      <description>&lt;p&gt;用 Python 解 LeetCode 系列，&lt;code&gt;Sum of Left Leaves&lt;/code&gt;，屬於 Easy&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[LeetCode] #1013 Partition Array Into Three Parts With Equal Sum (Easy)</title>
+      <link>https://tech.ray247k.com/blog/202110-leetcode-no1013-partition-array-into-three-parts-with-equal-sum/</link>
+      <pubDate>Tue, 12 Oct 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/blog/202110-leetcode-no1013-partition-array-into-three-parts-with-equal-sum/</guid>
+      <description>&lt;p&gt;用 Python 解 LeetCode 系列，&lt;code&gt;Partition Array Into Three Parts With Equal Sum&lt;/code&gt;，屬於 Easy&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[LeetCode] #455 Assign Cookies (Easy)</title>
+      <link>https://tech.ray247k.com/blog/202110-leetcode-no455-assign-cookies/</link>
+      <pubDate>Tue, 05 Oct 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/blog/202110-leetcode-no455-assign-cookies/</guid>
+      <description>&lt;p&gt;用 Python 解 LeetCode 系列，&lt;code&gt;Assign Cookies&lt;/code&gt;，屬於 Easy&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[LeetCode] #150 Evaluate Reverse Polish Notation (Medium)</title>
+      <link>https://tech.ray247k.com/blog/202109-leetcode-no150-evaluate-reverse-polish-notation/</link>
+      <pubDate>Fri, 24 Sep 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/blog/202109-leetcode-no150-evaluate-reverse-polish-notation/</guid>
+      <description>&lt;p&gt;用 Python 解 LeetCode 系列，&lt;code&gt;Evaluate Reverse Polish Notation&lt;/code&gt;，屬於 Medium&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[LeetCode] #155 Min Stack (Easy)</title>
+      <link>https://tech.ray247k.com/blog/202109-leetcode-no155-min-stack/</link>
+      <pubDate>Wed, 15 Sep 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/blog/202109-leetcode-no155-min-stack/</guid>
+      <description>&lt;p&gt;用 Python 解 LeetCode 系列，&lt;code&gt;Min Stack&lt;/code&gt;，屬於 Easy&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[LeetCode] #66 Plus One (Easy)</title>
+      <link>https://tech.ray247k.com/blog/202109-leetcode-no66-plus-one/</link>
+      <pubDate>Thu, 09 Sep 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/blog/202109-leetcode-no66-plus-one/</guid>
+      <description>&lt;p&gt;用 Python 解 LeetCode 系列，&lt;code&gt;Plus One&lt;/code&gt;，屬於 Easy&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[LeetCode] #290 Word Pattern (Easy)</title>
+      <link>https://tech.ray247k.com/blog/202109-leetcode-no290-word-pattern/</link>
+      <pubDate>Sun, 05 Sep 2021 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/blog/202109-leetcode-no290-word-pattern/</guid>
+      <description>&lt;p&gt;用 Python 解 LeetCode 系列，&lt;code&gt;Word Pattern&lt;/code&gt;，屬於 Easy&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
