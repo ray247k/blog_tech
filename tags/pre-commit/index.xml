@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pre-Commit on Byte Ebi 🍤</title>
+    <link>https://tech.ray247k.com/tags/pre-commit/</link>
+    <description>Recent content in Pre-Commit on Byte Ebi 🍤</description>
+    <generator>Hugo</generator>
+    <language>zh-TW</language>
+    <lastBuildDate>Fri, 20 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tech.ray247k.com/tags/pre-commit/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Commit 前的最後防線：善用 Pre-commit 自動檢查程式碼</title>
+      <link>https://tech.ray247k.com/blog/202506-pre-commit-git-commit-gatekeeper/</link>
+      <pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/blog/202506-pre-commit-git-commit-gatekeeper/</guid>
+      <description>&lt;p&gt;透過 pre-commit 自動執行格式檢查與測試，減少低級錯誤。&lt;br&gt;&#xA;簡單安裝、快速設定，馬上提升程式碼品質。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

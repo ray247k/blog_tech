@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://tech.ray247k.com/en/blog/</loc>
-    <lastmod>2025-06-21T00:00:00+00:00</lastmod>
+    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-TW"
@@ -16,7 +16,7 @@
                 />
   </url><url>
     <loc>https://tech.ray247k.com/en/</loc>
-    <lastmod>2025-06-21T00:00:00+00:00</lastmod>
+    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-TW"
@@ -29,7 +29,7 @@
                 />
   </url><url>
     <loc>https://tech.ray247k.com/en/categories/</loc>
-    <lastmod>2025-06-21T00:00:00+00:00</lastmod>
+    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-TW"
@@ -41,8 +41,73 @@
                 href="https://tech.ray247k.com/en/categories/"
                 />
   </url><url>
+    <loc>https://tech.ray247k.com/en/categories/git/</loc>
+    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/categories/git/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/categories/git/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/tags/git/</loc>
+    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/git/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/git/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/tags/pre-commit/</loc>
+    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/pre-commit/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/pre-commit/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/tags/</loc>
+    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/blog/202506-pre-commit-git-commit-gatekeeper/</loc>
+    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202506-pre-commit-git-commit-gatekeeper/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202506-pre-commit-git-commit-gatekeeper/"
+                />
+  </url><url>
     <loc>https://tech.ray247k.com/en/categories/python/</loc>
-    <lastmod>2025-06-21T00:00:00+00:00</lastmod>
+    <lastmod>2025-06-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-TW"
@@ -55,7 +120,7 @@
                 />
   </url><url>
     <loc>https://tech.ray247k.com/en/tags/python/</loc>
-    <lastmod>2025-06-21T00:00:00+00:00</lastmod>
+    <lastmod>2025-06-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-TW"
@@ -67,30 +132,17 @@
                 href="https://tech.ray247k.com/en/tags/python/"
                 />
   </url><url>
-    <loc>https://tech.ray247k.com/en/blog/202506-set-up-a-python-development-environment/</loc>
-    <lastmod>2025-06-21T00:00:00+00:00</lastmod>
+    <loc>https://tech.ray247k.com/en/blog/202506-settin-up-a-python-development-environment/</loc>
+    <lastmod>2025-06-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-TW"
-                href="https://tech.ray247k.com/blog/202506-set-up-a-python-development-environment/"
+                href="https://tech.ray247k.com/blog/202506-settin-up-a-python-development-environment/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://tech.ray247k.com/en/blog/202506-set-up-a-python-development-environment/"
-                />
-  </url><url>
-    <loc>https://tech.ray247k.com/en/tags/</loc>
-    <lastmod>2025-06-21T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/tags/"
+                href="https://tech.ray247k.com/en/blog/202506-settin-up-a-python-development-environment/"
                 />
   </url><url>
     <loc>https://tech.ray247k.com/en/categories/typescript/</loc>
@@ -1464,19 +1516,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tech.ray247k.com/en/blog/202111-git-global-gitignore/"
-                />
-  </url><url>
-    <loc>https://tech.ray247k.com/en/tags/git/</loc>
-    <lastmod>2021-11-06T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/tags/git/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/tags/git/"
                 />
   </url><url>
     <loc>https://tech.ray247k.com/en/tags/version-control/</loc>

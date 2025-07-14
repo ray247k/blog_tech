@@ -1,0 +1,1290 @@
+<!doctype html>
+<html lang="zh-tw">
+  <head>
+  <meta charset="utf-8">
+<title>設定 Python 開發環境 - Byte Ebi 🍤</title>
+<meta name="description" content="記錄在 Mac 上設定 Python 開發環境的步驟和安裝的套件">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta property="og:site_name" content="Byte Ebi 🍤">
+<meta property="og:title" content="設定 Python 開發環境">
+<meta property="og:description" content="記錄在 Mac 上設定 Python 開發環境的步驟和安裝的套件">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://tech.ray247k.com/blog/202506-settin-up-a-python-development-environment/">
+  <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
+
+
+
+  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
+  
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=1" color="#ffffff">
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=1">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=1">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+<meta name="generator" content="Hugo 0.147.9"><meta property="og:site_name" content="Byte Ebi 🍤">
+  <meta property="og:title" content="設定 Python 開發環境">
+  <meta property="og:description" content="記錄在 Mac 上設定 Python 開發環境的步驟和安裝的套件">
+  <meta property="description" content="記錄在 Mac 上設定 Python 開發環境的步驟和安裝的套件">
+  <meta property="og:url" content="https://tech.ray247k.com/blog/202506-settin-up-a-python-development-environment/">
+  <meta property="og:type" content="article">
+  
+    <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
+  
+  
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/felipec.min.css">
+          <link rel="stylesheet" href="/css/bundle.min.ab6f0b6f1e10859cc4f1dd183c65d284967651f85c0f1a47375cc146742b7e3b.css" integrity="sha256-q28Lbx4QhZzE8d0YPGXShJZ2UfhcDxpHN1zBRnQrfjs="><link rel="stylesheet" href="/css/add-on.css">
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-LTGVYYWC2J');
+        }
+      </script>
+  <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "image": {
+        "@type": "ImageObject",
+        "image": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+        "height": 648,
+        "width": 1080
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com\/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Byte Ebi 🍤",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png"
+        }
+    },
+    "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+    "headline": "討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - Byte Ebi 🍤",
+    "name": "Byte Ebi 🍤",
+    "url": "https:\/\/tech.ray247k.com\/",
+    "description": "討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - aws,devops,git,golang,laravel,leetcode,node.js,php,python,serverless,typescript,實用工具,架站相關,版本控制,第三方服務,",
+    "keywords": [
+        "apache bench,auto scaling,aws,axios,blockchain,cdn,chatbot,cicd,cloudflare,cloudflare workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker compose,domain name,drone,element-ui,excel,express,ffmpeg,gas,gcp,gcr,getter,git,github,github page,go,golang,golang, hugo,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load balancing,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,phpcbf,phpcs,portainer,postgresql,pre-commit,prerender,proxy,python,queue,redis,restful,seo,server,serverless,smart contract,ssh,stress testing,subdomain,typescript,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
+    ]
+}
+</script>
+
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "legalName": "Byte Ebi 🍤",
+    "url": "https:\/\/tech.ray247k.com\/",
+    "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "",
+        "availableLanguage": [
+            "Mandarin",
+            "English"
+        ]
+    },
+    "sameAs": [
+        "https://ray247k.blogspot.com/"
+    ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "設定 Python 開發環境",
+    "description": "記錄在 Mac 上設定 Python 開發環境的步驟和安裝的套件",
+    "keywords": [
+        "Python" 
+    ],
+    "dateCreated": "2025-06-09T00:00:00.00Z",
+    "datePublished": "2025-06-09T00:00:00.00Z",
+    "dateModified": "2025-06-09T00:00:00.00Z",
+    "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "contentUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png"
+    },
+    "breadcrumb": {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\/",
+                    "name": "Byte Ebi 🍤",
+                    "url": "https:\/\/tech.ray247k.com\/"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\//blog",
+                    "name": "Blog",
+                    "url": "https:\/\/tech.ray247k.com\//blog"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\/blog\/202506-settin-up-a-python-development-environment\/",
+                    "name": "設定 Python 開發環境",
+                    "url": "https:\/\/tech.ray247k.com\/blog\/202506-settin-up-a-python-development-environment\/"
+                }
+            }
+        ],
+        "itemListOrder": "Ascending",
+        "numberOfItems": 3
+    }
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "articleSection": "blog",
+    "name": "設定 Python 開發環境",
+    "headline": "\u003cp\u003e第一次在工作環境裡面用 Python 所以記錄一下環境設定，很多套件都是幾年前自學的時候沒用過的新東西\u003cbr\u003e\n不小心曝露多久沒碰過 Python 了吧\u003c\/p\u003e",
+    "description": "記錄在 Mac 上設定 Python 開發環境的步驟和安裝的套件",
+    "inLanguage": "zh-TW",
+    "isFamilyFriendly": "true",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com\/blog\/202506-settin-up-a-python-development-environment\/"
+    },
+    "author" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "creator" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "accountablePerson" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "copyrightHolder" : "Byte Ebi 🍤",
+    "copyrightYear" : "2025",
+    "dateCreated": "2025-06-09T00:00:00.00Z",
+    "datePublished": "2025-06-09T00:00:00.00Z",
+    "dateModified": "2025-06-09T00:00:00.00Z",
+    "publisher":{
+        "@type":"Organization",
+        "name": "Byte Ebi 🍤",
+        "url": "https://tech.ray247k.com/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+            "width":"32",
+            "height":"32"
+        }
+    },
+    "image": "https://tech.ray247k.com/img/main/logo.png",
+    "url" : "https:\/\/tech.ray247k.com\/blog\/202506-settin-up-a-python-development-environment\/",
+    "wordCount" : "430",
+    "genre" : [ "Python" ],
+    "keywords" : [ "Python" ]
+}
+</script>
+
+
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/" class="nav">
+        
+          Blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/" class="nav link"><i class='fa fa-home'></i> home</a>
+        
+      
+        
+          
+          <a href="/about" class="nav link"><i class='far fa-id-card'></i> about</a>
+        
+      
+        
+          
+          <a href="/categories" class="nav link"><i class='fas fa-sitemap'></i> category</a>
+        
+      
+      
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    
+    <a href="#lang-menu" class="nav lang-toggle" lang="zh-tw">zh-tw</a>
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  <menu id="lang-menu" class="flyout-menu menu">
+  <a href="#" lang="zh-tw" class="nav link active">正體中文 (zh-tw)</a>
+  
+      <a href="https://tech.ray247k.com/en/blog/202506-settin-up-a-python-development-environment/" lang="en" class="nav link">English (en)</a>
+    
+  
+</menu>
+
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/"><img src="/img/main/logo.png" class="circle" width="100" alt="Byte Ebi&#39;s Logo" /></a>
+  <header>
+    <h1>Byte Ebi 🍤</h1>
+  </header>
+  <main>
+    <p>每天一小口，蝦米變鯨魚</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/ray247k" target="_blank" rel="noopener" title="GitHub"
+        class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//www.linkedin.com/in/j-ray-cheng" target="_blank" rel="noopener"
+        title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+<article class="post">
+  <header>
+  <div class="title">
+    
+      <h2><a href="/blog/202506-settin-up-a-python-development-environment/">設定 Python 開發環境</a></h2>
+    
+    
+      <p>記錄在 Mac 上設定 Python 開發環境的步驟和安裝的套件</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2025-06-09 00:00:00 &#43;0000 UTC">2025/06/09</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+  <div id="socnet-share">
+
+
+
+
+</div>
+  <div class="content">
+    <a href="/blog/202506-settin-up-a-python-development-environment/" class="image" style="--bg-image: url('/blog/202506-settin-up-a-python-development-environment/featured.jpg');">
+    <img src="/blog/202506-settin-up-a-python-development-environment/featured.jpg" alt="">
+  </a> <p>第一次在工作環境裡面用 Python 所以記錄一下環境設定，很多套件都是幾年前自學的時候沒用過的新東西<br>
+不小心曝露多久沒碰過 Python 了吧</p>
+<h1 id="mac-電腦設定">Mac 電腦設定</h1>
+<blockquote>
+<p>有相依關係，必須照順序安裝！</p></blockquote>
+<h2 id="homebrew"><a href="https://brew.sh/zh-tw/"
+   
+    target="_blank" rel="noreferrer noopener">Homebrew
+</a>
+</h2>
+<p>Mac 電腦上的套件管理，用 mac 不裝這個真的不知道怎麼辦<br>
+而且現在在 Linux 上也可以用了！</p>
+<p><strong>安裝：</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/bin/bash -c <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><h2 id="oh-my-zsh"><a href="https://ohmyz.sh/"
+   
+    target="_blank" rel="noreferrer noopener">oh-my-zsh
+</a>
+</h2>
+<p>比較好用的 Terminal 介面，theme 我是習慣用 <code>philips</code></p>
+<p><strong>安裝：</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sh -c <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><h2 id="pyenv"><a href="https://github.com/pyenv/pyenv"
+   
+    target="_blank" rel="noreferrer noopener">pyenv
+</a>
+</h2>
+<p>python 版本控制，類似 nvm 和 gvm 的東西</p>
+<p><strong>安裝：</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew install pyenv
+</span></span></code></pre></div><h2 id="python">python</h2>
+<p>就&hellip; python，我還是喜歡用 brew 安裝</p>
+<p><strong>安裝：</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew install python
+</span></span></code></pre></div><p>如果不做額外設定，<code>python</code> 和 <code>pip</code> 指令會變成 <code>python3</code> 和 <code>pip3</code><br>
+我是習慣了所以不想額外設定，萬一不小心移除了 brew 安裝的 python 至少保證其他軟體不會出問題</p>
+<p>Homwbrew 有特別一篇文章說明：<a href="https://docs.brew.sh/Homebrew-and-Python"
+   
+    target="_blank" rel="noreferrer noopener">Homebrew and Python
+</a>
+</p>
+<h2 id="pipx"><a href="https://pipx.pypa.io/"
+   
+    target="_blank" rel="noreferrer noopener">pipx
+</a>
+</h2>
+<p>可以想成 python 的 homebrew</p>
+<p>在安裝每個套件時建立分離的環境，避免將 Python 工具安裝到全域，確保依賴隔離<br>
+並且可以在不啟動虛擬環境的情況下直接使用，也不需要 sudo 權限</p>
+<p><strong>安裝並設定 PATH：</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew install pipx
+</span></span><span style="display:flex;"><span>pipx ensurepath
+</span></span></code></pre></div><p><code>ensurepath</code> 用來確保使用 <code>pipx</code> 下載的 app 其執行檔位置有被加入至 PATH 環境變數中</p>
+<hr>
+<h1 id="python-開發會用到的套件">Python 開發會用到的套件</h1>
+<p>在使用 python 開發時會用到的套件，先決條件是要安裝好 <a href="https://pipx.pypa.io/stable/installation/"
+   
+    target="_blank" rel="noreferrer noopener">pipx
+</a>
+</p>
+<h2 id="black"><a href="https://black.readthedocs.io/en/stable/"
+   
+    target="_blank" rel="noreferrer noopener">Black
+</a>
+</h2>
+<p>符合 <a href="https://peps.python.org/pep-0008/"
+   
+    target="_blank" rel="noreferrer noopener">PEP 8
+</a>
+ 的 Coding Style 檢查器</p>
+<p><strong>安裝：</strong></p>
+<pre tabindex="0"><code>pipx install black
+</code></pre><p><strong>指令範例：</strong></p>
+<pre tabindex="0"><code>black ./ --check --verbose -l 100
+</code></pre><h3 id="可用參數">可用參數</h3>
+<table>
+  <thead>
+      <tr>
+          <th>參數</th>
+          <th>用途</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>&ndash;check</td>
+          <td>只檢查不修改</td>
+      </tr>
+      <tr>
+          <td>&ndash;verbose</td>
+          <td>顯示詳細資訊</td>
+      </tr>
+      <tr>
+          <td>-l 100</td>
+          <td>每行長度限制 100 字元</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="isort"><a href="https://pycqa.github.io/isort/"
+   
+    target="_blank" rel="noreferrer noopener">isort
+</a>
+</h2>
+<p>符合 <a href="https://peps.python.org/pep-0008/"
+   
+    target="_blank" rel="noreferrer noopener">PEP 8
+</a>
+ 風格排序 import 順序</p>
+<p><strong>安裝：</strong></p>
+<pre tabindex="0"><code>pipx install isort
+</code></pre><p><strong>指令範例</strong>：</p>
+<pre tabindex="0"><code>isort ./ --profile black --filter-files
+</code></pre><h3 id="可用參數-1">可用參數</h3>
+<table>
+  <thead>
+      <tr>
+          <th>參數</th>
+          <th>用途</th>
+          <th>參考資料</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>&ndash;profile black</td>
+          <td>聲明使用 black 格式設定<br>否則和 black 同時的執行話會互相衝突</td>
+          <td><a href="https://pycqa.github.io/isort/docs/configuration/profiles.html"
+   
+    target="_blank" rel="noreferrer noopener">Built-in Profile for isort
+</a>
+</td>
+      </tr>
+      <tr>
+          <td>&ndash;filter-files</td>
+          <td>過濾掉省略的檔案</td>
+          <td><a href="https://pycqa.github.io/isort/docs/configuration/options.html"
+   
+    target="_blank" rel="noreferrer noopener">Filter Files
+</a>
+</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="poetry"><a href="https://python-poetry.org/"
+   
+    target="_blank" rel="noreferrer noopener">Poetry
+</a>
+</h2>
+<p>管理專案的依賴套件，可以理解成 Laravel 的 composer 或是 node.js 中的 npm</p>
+<p><strong>安裝：</strong></p>
+<pre tabindex="0"><code>pipx install poetry
+</code></pre><p>和有其他套件管理的框架一樣，每次新專案 clone 下來都要執行安裝套件的指令<br>
+否則執行或是測試的時候相依套件會出現 <code>無法解析匯入</code> 或是 <code>reportMissingImports</code> 錯誤</p>
+<p><strong>安裝專案中的套件：</strong></p>
+<pre tabindex="0"><code>poetry install
+</code></pre><p>如果出現錯誤訊息：</p>
+<blockquote>
+<p>Error: The current project could not be installed: No file/folder found for package my-project If you do not want to install the current project use &ndash;no-root. If you want to use Poetry only for dependency management but not for packaging, you can disable package mode by setting package-mode = false in your pyproject.toml file. If you did intend to install the current project, you may need to set <code>packages</code> in your pyproject.toml file.</p></blockquote>
+<p>Poetry 找不到對應於 package my-project 的資料夾或檔案<br>
+也就是說，它不知道哪個目錄或檔案是你的實際 Python 套件</p>
+<p>當 Poetry 找不到與 <code>name = &quot;my-project&quot;</code> 對應的 Python 套件資料夾時<br>
+Poetry 預設會假設你有一個目錄叫做 <code>my_project</code> 或明確指定的路徑<br>
+所以它報錯說找不到這個 package</p>
+<blockquote>
+<p>Poetry 會將目錄的 dash <code>-</code> 轉成 underscore <code>_</code><br>
+資料夾名為 <code>my_project</code>，即 <code>pyproject.toml</code> 中 name 把 <code>-</code> 換成 <code>_</code></p></blockquote>
+<p>所以如果是打算打包自己的專案，則需要有個資料夾與專案名稱對應</p>
+<p>如果不是要打包，只是想用 Poetry 管理依賴，則可以在執行時使用額外參數 <code>--no-root</code>來解決</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>poetry install --no-root
+</span></span></code></pre></div><h3 id="常用指令">常用指令</h3>
+<table>
+  <thead>
+      <tr>
+          <th>指令</th>
+          <th>用途</th>
+          <th>選項</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>poetry init</td>
+          <td>初始化 Python 專案</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>poetry add</td>
+          <td>安裝套件</td>
+          <td><code>--dev</code> 聲明套件只在開發環境使用</td>
+      </tr>
+      <tr>
+          <td>poetry remove</td>
+          <td>移除指定套件</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>poetry show</td>
+          <td>列出套件清單</td>
+          <td><code>--tree</code> 列出所有套件的依賴關係</td>
+      </tr>
+      <tr>
+          <td>poetry update</td>
+          <td>更新套件</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>poetry run</td>
+          <td>在虛擬環境中執行指令，或是檔案</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>poetry lock</td>
+          <td>建立套件的相依性鎖定檔案</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>poetry env activate</td>
+          <td>啟用虛擬環境</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>poetry env info</td>
+          <td>列出虛擬環境資訊</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>poetry env list</td>
+          <td>列出虛擬環境</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>poetry env remove</td>
+          <td>移除虛擬環境</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>poetry env use</td>
+          <td>切換虛擬環境</td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h1 id="vs-code-設定">VS Code 設定</h1>
+<p>就用免費的 VS Code 開發吧！</p>
+<p>雖然有聽說 <a href="https://www.jetbrains.com/pycharm/"
+   
+    target="_blank" rel="noreferrer noopener">PyCharm
+</a>
+ 很好用，而且 Community 版本還免費。不過之前被 <a href="https://www.jetbrains.com/phpstorm/"
+   
+    target="_blank" rel="noreferrer noopener">PhpStorm
+</a>
+ 綁定太多年，每次遇到同事不是用 PhpStorm 的時候就很難提供協助，所以從之前寫 Golang 的時候就開始使用 VS Code 作為開發工具了。</p>
+<h2 id="工具類">工具類</h2>
+<p>如果懶得裝太多 IDE，或是電腦權限不夠，可以把常用的工具全部裝在 Vscode 裡</p>
+<table>
+  <thead>
+      <tr>
+          <th>套件</th>
+          <th>用途</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><a href="https://marketplace.visualstudio.com/items/?itemName=Oracle.mysql-shell-for-vs-code"
+   
+    target="_blank" rel="noreferrer noopener">MySQL Shell for VS Code
+</a>
+</td>
+          <td>連線 MySQL</td>
+      </tr>
+      <tr>
+          <td><a href="https://marketplace.visualstudio.com/items/?itemName=ckolkman.vscode-postgres"
+   
+    target="_blank" rel="noreferrer noopener">PostgreSQL
+</a>
+</td>
+          <td>連線 PostgreSQL，雖然沒圖片看起來有點可疑</td>
+      </tr>
+      <tr>
+          <td><a href="https://marketplace.visualstudio.com/items/?itemName=Redis.redis-for-vscode"
+   
+    target="_blank" rel="noreferrer noopener">Redis for VS Code
+</a>
+</td>
+          <td>連線 Redis</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="開發類">開發類</h2>
+<table>
+  <thead>
+      <tr>
+          <th>套件</th>
+          <th>用途</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><a href="https://marketplace.visualstudio.com/items/?itemName=ms-vscode-remote.vscode-remote-extensionpack"
+   
+    target="_blank" rel="noreferrer noopener">Remote Development
+</a>
+</td>
+          <td>連遠端開發機</td>
+      </tr>
+      <tr>
+          <td><a href="https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance"
+   
+    target="_blank" rel="noreferrer noopener">pylance
+</a>
+</td>
+          <td>語法高亮＋自動完成</td>
+      </tr>
+      <tr>
+          <td><a href="https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring"
+   
+    target="_blank" rel="noreferrer noopener">docstring
+</a>
+</td>
+          <td>快速生成函式文件</td>
+      </tr>
+      <tr>
+          <td><a href="https://marketplace.visualstudio.com/items/?itemName=mhutchie.git-graph"
+   
+    target="_blank" rel="noreferrer noopener">Git Graph
+</a>
+</td>
+          <td>輕鬆查看 Git Graph</td>
+      </tr>
+      <tr>
+          <td><a href="https://marketplace.visualstudio.com/items/?itemName=eamodio.gitlens"
+   
+    target="_blank" rel="noreferrer noopener">GitLens
+</a>
+</td>
+          <td>Git Blame 神器</td>
+      </tr>
+  </tbody>
+</table>
+
+    
+    
+  </div>
+  <footer><div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/python/">Python</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/python/">Python</a></li>
+        
+      
+    </ul>
+  
+</div>
+</footer>
+</article>
+ 
+ 
+<div class="pagination">
+  
+  <a href="/blog/202506-pre-commit-git-commit-gatekeeper/" class="button left"
+    ><span>Commit 前的最後防線：善用 Pre-commit 自動檢查程式碼</span></a
+  >
+   
+  <a href="/blog/202503-typescript-generic/" class="button right"
+    ><span>TypeScript 泛型(Generic)</span></a
+  >
+  
+</div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>最新文章</h1>
+      </header>
+      
+      <article class="mini-post">
+          <a href="/blog/202506-pre-commit-git-commit-gatekeeper/" class="image" style="--bg-image: url('/blog/202506-pre-commit-git-commit-gatekeeper/featured.jpg');">
+    <img src="/blog/202506-pre-commit-git-commit-gatekeeper/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/blog/202506-pre-commit-git-commit-gatekeeper/">Commit 前的最後防線：善用 Pre-commit 自動檢查程式碼</a></h2>
+          <time class="published" datetime="2025-06-20 00:00:00 &#43;0000 UTC">2025/06/20</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202506-settin-up-a-python-development-environment/" class="image" style="--bg-image: url('/blog/202506-settin-up-a-python-development-environment/featured.jpg');">
+    <img src="/blog/202506-settin-up-a-python-development-environment/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/blog/202506-settin-up-a-python-development-environment/">設定 Python 開發環境</a></h2>
+          <time class="published" datetime="2025-06-09 00:00:00 &#43;0000 UTC">2025/06/09</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202503-typescript-generic/" class="image" style="--bg-image: url('/blog/202503-typescript-generic/featured.jpg');">
+    <img src="/blog/202503-typescript-generic/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/blog/202503-typescript-generic/">TypeScript 泛型(Generic)</a></h2>
+          <time class="published" datetime="2025-03-26 00:00:00 &#43;0000 UTC">2025/03/26</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202503-typescript-class-and-interface/" class="image" style="--bg-image: url('/blog/202503-typescript-class-and-interface/featured.jpg');">
+    <img src="/blog/202503-typescript-class-and-interface/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/blog/202503-typescript-class-and-interface/">TypeScript 的 Class 及 Interface</a></h2>
+          <time class="published" datetime="2025-03-24 00:00:00 &#43;0000 UTC">2025/03/24</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202503-typescript-basic-data-type/" class="image" style="--bg-image: url('/blog/202503-typescript-basic-data-type/featured.jpg');">
+    <img src="/blog/202503-typescript-basic-data-type/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/blog/202503-typescript-basic-data-type/">TypeScript 的基本資料型別</a></h2>
+          <time class="published" datetime="2025-03-20 00:00:00 &#43;0000 UTC">2025/03/20</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/blog/" class="button">查看更多</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="/categories">Category</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/categories/aws/">aws<span class="count">25</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/devops/">devops<span class="count">24</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/node.js/">node.js<span class="count">22</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/leetcode/">leetcode<span class="count">13</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/golang/">golang<span class="count">12</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/python/">python<span class="count">10</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/php/">php<span class="count">7</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/laravel/">laravel<span class="count">6</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/">架站相關<span class="count">6</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/typescript/">typescript<span class="count">4</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">版本控制<span class="count">2</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/git/">git<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/serverless/">serverless<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/%E5%AF%A6%E7%94%A8%E5%B7%A5%E5%85%B7/">實用工具<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%9C%8D%E5%8B%99/">第三方服務<span class="count">1</span></a>
+          </li>
+          
+        </ul>
+      </section>
+    
+  
+
+  
+  <section id="tags">
+    <header>
+      <h1><a href="/tags">Tag</a></h1>
+    </header>
+    <div class="li-x post-meta tags-md" style="margin-left: 0.5em;">
+      <ul>
+        
+        
+        <li>
+          <a href="/tags/aws/">aws (27)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/devops/">devops (27)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/node.js/">node.js (22)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/vue/">vue (15)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/leetcode/">leetcode (13)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/docker/">docker (12)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/go/">go (11)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/golang/">golang (11)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/php/">php (11)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/containerization/">containerization (10)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/python/">python (10)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%AE%B9%E5%99%A8%E6%8A%80%E8%A1%93/">容器技術 (10)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/express/">express (9)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cicd/">cicd (8)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/leetcode-easy/">leetcode-easy (8)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/gcp/">gcp (7)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/laravel/">laravel (7)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/docker-compose/">docker compose (6)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/vuex/">vuex (6)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/composer/">composer (5)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/element-ui/">element-ui (5)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/leetcode-medium/">leetcode-medium (5)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/drone/">drone (4)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/jenkins/">jenkins (4)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/ssh/">ssh (4)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/typescript/">typescript (4)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cloudflare/">cloudflare (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/mongodb/">mongodb (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/mutation/">mutation (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/restful/">restful (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/">架站相關 (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/chatbot/">chatbot (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/component/">component (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/discord/">discord (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/dns/">dns (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/getter/">getter (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/git/">git (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/github/">github (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/google-domains/">google domains (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/linux/">linux (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/nginx/">nginx (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/vue-router/">vue-router (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/vue-ui/">vue-ui (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/apache-bench/">apache bench (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/auto-scaling/">auto scaling (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/axios/">axios (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/blockchain/">blockchain (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cdn/">cdn (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cloudflare-workers/">cloudflare workers (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cors/">cors (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/csv/">csv (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/domain-name/">domain name (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/excel/">excel (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/ffmpeg/">ffmpeg (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/gas/">gas (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/gcr/">gcr (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/github-page/">github page (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/golang-hugo/">golang, hugo (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/google-app-script/">google app script (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/google-container-registry/">google container registry (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/google-sheets/">google sheets (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/grumphp/">grumphp (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/laravel-excel/">laravel-excel (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/load-balancing/">load balancing (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/ngrok/">ngrok (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/php-fpm/">php-fpm (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/phpcbf/">phpcbf (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/phpcs/">phpcs (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/portainer/">portainer (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/postgresql/">postgresql (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/pre-commit/">pre-commit (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/prerender/">prerender (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/proxy/">proxy (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/queue/">queue (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/redis/">redis (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/seo/">seo (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/server/">server (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/serverless/">serverless (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/smart-contract/">smart contract (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/stress-testing/">stress testing (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/subdomain/">subdomain (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E4%BC%BA%E6%9C%8D%E5%99%A8/">伺服器 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%80%8B%E4%BA%BA%E5%93%81%E7%89%8C/">個人品牌 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%9F%9F%E5%90%8D/">域名 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%A3%93%E5%8A%9B%E6%B8%AC%E8%A9%A6/">壓力測試 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%AD%90%E7%B6%B2%E5%9F%9F/">子網域 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E6%90%9C%E5%B0%8B%E5%BC%95%E6%93%8E%E6%9C%80%E4%BD%B3%E5%8C%96/">搜尋引擎最佳化 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">版本控制 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E8%B2%B7%E7%B6%B2%E5%9D%80/">買網址 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E9%98%B2%E7%81%AB%E7%89%86/">防火牆 (1)</a>
+        </li>
+        
+      </ul>
+
+    </div>
+  </section>
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+    
+    <p class="copyright">
+        © 2025 Byte Ebi 🍤
+    </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>
+      hljs.configure({ ignoreUnescapedHTML: true }); 
+      hljs.highlightAll();
+    </script><script src="/js/bundle.min.04d0be7a7e5c603fcb60180437663d2cdaf0db120a187376a9da544938a75534.js" integrity="sha256-BNC&#43;en5cYD/LYBgEN2Y9LNrw2xIKGHN2qdpUSTinVTQ="></script>
+    <script src="/js/add-on.js"></script>
+
+
+    
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', "G-LTGVYYWC2J");
+        </script>
+    
+
+
+    </div>
+  </body>
+  
+</html>

@@ -81,9 +81,9 @@
     "headline": "About web development, software engineering, frontend, backend, chatbot, server related topics. - Byte Ebi 🍤",
     "name": "Byte Ebi 🍤",
     "url": "https:\/\/tech.ray247k.com\/",
-    "description": "About web development, software engineering, frontend, backend, chatbot, server related topics. - aws,devops,golang,laravel,php,python,serverless,third-party services,tools,typescript,version control,web hosting,website operations,",
+    "description": "About web development, software engineering, frontend, backend, chatbot, server related topics. - aws,devops,git,golang,laravel,php,python,serverless,third-party services,tools,typescript,version control,web hosting,website operations,",
     "keywords": [
-        "apache bench,auto scaling,aws,blockchain,cdn,chatbot,ci\/cd,cicd,cloudflare,cloudflare workers,composer,container technology,containerization,csv,devops,discord,dns,docker,docker compose,domain,domain name,drone,excel,ffmpeg,firewall,gas,gcp,gcr,git,github,github page,go,golang,golang, hugo,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,linux,load balancing,nginx,ngrok,personal brand,php,php-fpm,phpcbf,phpcs,portainer,postgresql,prerender,proxy,purchase domain,python,queue,redis,search engine optimization,seo,server,serverless,smart contract,ssh,stress testing,subdomain,typescript,version control,web hosting,"
+        "apache bench,auto scaling,aws,blockchain,cdn,chatbot,ci\/cd,cicd,cloudflare,cloudflare workers,composer,container technology,containerization,csv,devops,discord,dns,docker,docker compose,domain,domain name,drone,excel,ffmpeg,firewall,gas,gcp,gcr,git,github,github page,go,golang,golang, hugo,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,linux,load balancing,nginx,ngrok,personal brand,php,php-fpm,phpcbf,phpcs,portainer,postgresql,pre-commit,prerender,proxy,purchase domain,python,queue,redis,search engine optimization,seo,server,serverless,smart contract,ssh,stress testing,subdomain,typescript,version control,web hosting,"
     ]
 }
 </script>
@@ -204,6 +204,66 @@
       <main id="site-main">
         
   
+  
+    <article class="post">
+  <header>
+  <div class="title">
+    
+      <h2><a href="/en/blog/202106-drone-cicd-2-advanced-pipeline-configuration/">[CI/CD with Drone 101] 02 Setting Deployment Trigger Conditions (Pipeline)</a></h2>
+    
+    
+      <p>Setting up deployment trigger conditions (pipeline) through Drone for automated deployment.</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2021-06-12 00:00:00 &#43;0000 UTC">June 12, 2021</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+  <div class="content">
+    
+    
+    <p>Utilizing <a href="https://www.drone.io/"
+   
+    target="_blank" rel="noreferrer noopener">Drone
+</a>
+ to establish a custom automated deployment service.<br>
+Drone is a CI/CD system tool developed in Golang.<br>
+In this article, we&rsquo;ll configure multiple trigger conditions to initiate different deployment steps under various circumstances.</p>
+
+  </div>
+  <footer>
+    <a href="/en/blog/202106-drone-cicd-2-advanced-pipeline-configuration/" class="button big">Read More</a>
+    <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/en/categories/devops/">DevOps</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/en/tags/devops/">DevOps</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/drone/">Drone</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/cicd/">CICD</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+  </footer>
+</article>
+
   
     <article class="post">
   <header>
@@ -577,62 +637,6 @@ This led me to consider self-hosting, partly as a platform to showcase my skills
 </article>
 
   
-    <article class="post">
-  <header>
-  <div class="title">
-    
-      <h2><a href="/en/blog/202104-use-ssh-key-login-remote-server/">Use ssh key login remote server</a></h2>
-    
-    
-      <p>Using SSH keys for logging into remote hosts instead of passwords</p>
-    
-  </div>
-  <div class="meta">
-    <time datetime="2021-04-25 00:00:00 &#43;0000 UTC">April 25, 2021</time>
-    <p>Ray</p>
-    
-  </div>
-</header>
-
-  <div class="content">
-    
-    
-    <p>Normally, logging into a server involves using a username and password,<br>
-but passwords can be compromised through interception or sharing.<br>
-The security level is not as robust as using SSH keys, which also eliminate the need for manual password entry each time.</p>
-
-  </div>
-  <footer>
-    <a href="/en/blog/202104-use-ssh-key-login-remote-server/" class="button big">Read More</a>
-    <div class="stats">
-  
-    <ul class="categories">
-      
-        
-          <li><a class="article-terms-link" href="/en/categories/devops/">DevOps</a></li>
-        
-      
-    </ul>
-  
-  
-    <ul class="tags">
-      
-        
-          <li><a class="article-terms-link" href="/en/tags/devops/">DevOps</a></li>
-        
-          <li><a class="article-terms-link" href="/en/tags/linux/">Linux</a></li>
-        
-          <li><a class="article-terms-link" href="/en/tags/ssh/">ssh</a></li>
-        
-      
-    </ul>
-  
-</div>
-
-  </footer>
-</article>
-
-  
   <div class="pagination">
     
       <a href="/en/blog/page/10/" class="button left"><span>Previous Page</span></a>
@@ -651,12 +655,22 @@ The security level is not as robust as using SSH keys, which also eliminate the 
       </header>
       
       <article class="mini-post">
-          <a href="/en/blog/202506-set-up-a-python-development-environment/" class="image" style="--bg-image: url('/blog/202506-set-up-a-python-development-environment/featured.jpg');">
-    <img src="/blog/202506-set-up-a-python-development-environment/featured.jpg" alt="">
+          <a href="/en/blog/202506-pre-commit-git-commit-gatekeeper/" class="image" style="--bg-image: url('/blog/202506-pre-commit-git-commit-gatekeeper/featured.jpg');">
+    <img src="/blog/202506-pre-commit-git-commit-gatekeeper/featured.jpg" alt="">
   </a>
         <header>
-          <h2><a href="/en/blog/202506-set-up-a-python-development-environment/">Setting up Python Development Environment</a></h2>
-          <time class="published" datetime="2025-06-21 00:00:00 &#43;0000 UTC">June 21, 2025</time>
+          <h2><a href="/en/blog/202506-pre-commit-git-commit-gatekeeper/">The Gatekeeper Before Your Git Commits: Pre-commit</a></h2>
+          <time class="published" datetime="2025-06-20 00:00:00 &#43;0000 UTC">June 20, 2025</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202506-settin-up-a-python-development-environment/" class="image" style="--bg-image: url('/blog/202506-settin-up-a-python-development-environment/featured.jpg');">
+    <img src="/blog/202506-settin-up-a-python-development-environment/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202506-settin-up-a-python-development-environment/">Setting up Python Development Environment</a></h2>
+          <time class="published" datetime="2025-06-09 00:00:00 &#43;0000 UTC">June 9, 2025</time>
         </header>
       </article>
       
@@ -687,16 +701,6 @@ The security level is not as robust as using SSH keys, which also eliminate the 
         <header>
           <h2><a href="/en/blog/202503-typescript-basic-data-type/">Basic Data Type in TypeScript</a></h2>
           <time class="published" datetime="2025-03-20 00:00:00 &#43;0000 UTC">March 20, 2025</time>
-        </header>
-      </article>
-      
-      <article class="mini-post">
-          <a href="/en/blog/202503-typescript-environment-setup/" class="image" style="--bg-image: url('/blog/202503-typescript-environment-setup/featured.jpg');">
-    <img src="/blog/202503-typescript-environment-setup/featured.jpg" alt="">
-  </a>
-        <header>
-          <h2><a href="/en/blog/202503-typescript-environment-setup/">TypeScript Environment Setup</a></h2>
-          <time class="published" datetime="2025-03-18 00:00:00 &#43;0000 UTC">March 18, 2025</time>
         </header>
       </article>
       
@@ -752,6 +756,10 @@ The security level is not as robust as using SSH keys, which also eliminate the 
           
           <li>
               <a href="/en/categories/website-operations/">website operations<span class="count">2</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/git/">git<span class="count">1</span></a>
           </li>
           
           <li>
@@ -877,6 +885,10 @@ The security level is not as robust as using SSH keys, which also eliminate the 
         </li>
         
         <li>
+          <a href="/en/tags/git/">git (2)</a>
+        </li>
+        
+        <li>
           <a href="/en/tags/github/">github (2)</a>
         </li>
         
@@ -945,10 +957,6 @@ The security level is not as robust as using SSH keys, which also eliminate the 
         </li>
         
         <li>
-          <a href="/en/tags/git/">git (1)</a>
-        </li>
-        
-        <li>
           <a href="/en/tags/github-page/">github page (1)</a>
         </li>
         
@@ -1010,6 +1018,10 @@ The security level is not as robust as using SSH keys, which also eliminate the 
         
         <li>
           <a href="/en/tags/postgresql/">postgresql (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/pre-commit/">pre-commit (1)</a>
         </li>
         
         <li>

@@ -6,12 +6,26 @@
     <description>Recent content in Tags on Byte Ebi 🍤</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 21 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 20 Jun 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://tech.ray247k.com/en/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git</title>
+      <link>https://tech.ray247k.com/en/tags/git/</link>
+      <pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/tags/git/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Pre-Commit</title>
+      <link>https://tech.ray247k.com/en/tags/pre-commit/</link>
+      <pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/tags/pre-commit/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Python</title>
       <link>https://tech.ray247k.com/en/tags/python/</link>
-      <pubDate>Sat, 21 Jun 2025 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 09 Jun 2025 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/en/tags/python/</guid>
       <description></description>
     </item>
@@ -293,13 +307,6 @@
       <link>https://tech.ray247k.com/en/tags/google-sheets/</link>
       <pubDate>Sun, 28 Nov 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/en/tags/google-sheets/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Git</title>
-      <link>https://tech.ray247k.com/en/tags/git/</link>
-      <pubDate>Sat, 06 Nov 2021 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/tags/git/</guid>
       <description></description>
     </item>
     <item>

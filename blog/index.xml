@@ -6,13 +6,20 @@
     <description>Recent content in Blog on Byte Ebi 🍤</description>
     <generator>Hugo</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Sat, 21 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 20 Jun 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://tech.ray247k.com/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Commit 前的最後防線：善用 Pre-commit 自動檢查程式碼</title>
+      <link>https://tech.ray247k.com/blog/202506-pre-commit-git-commit-gatekeeper/</link>
+      <pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/blog/202506-pre-commit-git-commit-gatekeeper/</guid>
+      <description>&lt;p&gt;透過 pre-commit 自動執行格式檢查與測試，減少低級錯誤。&lt;br&gt;&#xA;簡單安裝、快速設定，馬上提升程式碼品質。&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>設定 Python 開發環境</title>
-      <link>https://tech.ray247k.com/blog/202506-set-up-a-python-development-environment/</link>
-      <pubDate>Sat, 21 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202506-set-up-a-python-development-environment/</guid>
+      <link>https://tech.ray247k.com/blog/202506-settin-up-a-python-development-environment/</link>
+      <pubDate>Mon, 09 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/blog/202506-settin-up-a-python-development-environment/</guid>
       <description>&lt;p&gt;第一次在工作環境裡面用 Python 所以記錄一下環境設定，很多套件都是幾年前自學的時候沒用過的新東西&lt;br&gt;&#xA;不小心曝露多久沒碰過 Python 了吧&lt;/p&gt;</description>
     </item>
     <item>
