@@ -6,8 +6,15 @@
     <description>Recent content in Python on Byte Ebi 🍤</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 09 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 02 Jul 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://tech.ray247k.com/en/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Pytest 101] 01 Introduction to Pytest &amp; Mock</title>
+      <link>https://tech.ray247k.com/en/blog/202507-pytest-1-intro-to-pytest-and-mock/</link>
+      <pubDate>Wed, 02 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202507-pytest-1-intro-to-pytest-and-mock/</guid>
+      <description>&lt;p&gt;Writing unit tests is a well-known best practice in software development, but actually getting started often feels overwhelming.&lt;br&gt;&#xA;Where do you begin? What tools should you use? And how do you use them?&lt;br&gt;&#xA;For beginners, these first steps can easily become roadblocks.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Setting up Python Development Environment</title>
       <link>https://tech.ray247k.com/en/blog/202506-settin-up-a-python-development-environment/</link>

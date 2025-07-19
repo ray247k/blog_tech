@@ -1,0 +1,757 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+<title>Pytest - Byte Ebi 🍤</title>
+<meta name="description" content="About web development, software engineering, frontend, backend, chatbot, server related topics.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta property="og:site_name" content="Byte Ebi 🍤">
+<meta property="og:title" content="Pytest">
+<meta property="og:description" content="About web development, software engineering, frontend, backend, chatbot, server related topics.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://tech.ray247k.com/en/tags/pytest/">
+  <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
+
+
+
+  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
+  
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=1" color="#ffffff">
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=1">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=1">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+<meta name="generator" content="Hugo 0.148.1"><meta property="og:site_name" content="Byte Ebi 🍤">
+  <meta property="og:title" content="Pytest">
+  <meta property="og:description" content="About web development, software engineering, frontend, backend, chatbot, server related topics.">
+  <meta property="description" content="About web development, software engineering, frontend, backend, chatbot, server related topics.">
+  <meta property="og:url" content="https://tech.ray247k.com/en/tags/pytest/">
+  <meta property="og:type" content="article">
+  
+    <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
+  
+  
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/felipec.min.css">
+          <link rel="stylesheet" href="/css/bundle.min.ab6f0b6f1e10859cc4f1dd183c65d284967651f85c0f1a47375cc146742b7e3b.css" integrity="sha256-q28Lbx4QhZzE8d0YPGXShJZ2UfhcDxpHN1zBRnQrfjs="><link rel="stylesheet" href="/css/add-on.css">
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-LTGVYYWC2J');
+        }
+      </script>
+  <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "image": {
+        "@type": "ImageObject",
+        "image": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+        "height": 648,
+        "width": 1080
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com\/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Byte Ebi 🍤",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png"
+        }
+    },
+    "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+    "headline": "About web development, software engineering, frontend, backend, chatbot, server related topics. - Byte Ebi 🍤",
+    "name": "Byte Ebi 🍤",
+    "url": "https:\/\/tech.ray247k.com\/",
+    "description": "About web development, software engineering, frontend, backend, chatbot, server related topics. - aws,devops,git,golang,laravel,php,python,serverless,third-party services,tools,typescript,version control,web hosting,website operations,",
+    "keywords": [
+        "apache bench,auto scaling,aws,blockchain,cdn,chatbot,ci\/cd,cicd,cloudflare,cloudflare workers,composer,container technology,containerization,csv,devops,discord,dns,docker,docker compose,domain,domain name,drone,excel,ffmpeg,firewall,gas,gcp,gcr,git,github,github page,go,golang,golang, hugo,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,linux,load balancing,nginx,ngrok,personal brand,php,php-fpm,phpcbf,phpcs,portainer,postgresql,pre-commit,prerender,proxy,purchase domain,pytest,python,queue,redis,search engine optimization,seo,server,serverless,smart contract,ssh,stress testing,subdomain,tdd,typescript,unit test,version control,web hosting,"
+    ]
+}
+</script>
+
+
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/en/" class="nav">
+        
+          Tags
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/en/" class="nav link"><i class='fa fa-home'></i> home</a>
+        
+      
+        
+          
+          <a href="/en/about" class="nav link"><i class='far fa-id-card'></i> about</a>
+        
+      
+        
+          
+          <a href="/en/categories" class="nav link"><i class='fas fa-sitemap'></i> category</a>
+        
+      
+      
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    
+    <a href="#lang-menu" class="nav lang-toggle" lang="en">en</a>
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  <menu id="lang-menu" class="flyout-menu menu">
+  <a href="#" lang="en" class="nav link active">English (en)</a>
+  
+      <a href="https://tech.ray247k.com/tags/pytest/" lang="zh-tw" class="nav link">正體中文 (zh-tw)</a>
+    
+  
+</menu>
+
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/en/"><img src="/img/main/logo.png" class="circle" width="100" alt="Byte Ebi&#39;s Logo" /></a>
+  <header>
+    <h1>Byte Ebi 🍤</h1>
+  </header>
+  <main>
+    <p>A Bit everyday A Byte every week</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/ray247k" target="_blank" rel="noopener" title="GitHub"
+        class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//www.linkedin.com/in/j-ray-cheng" target="_blank" rel="noopener"
+        title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  
+  
+    <article class="post">
+  <header>
+  <div class="title">
+    
+      <h2><a href="/en/blog/202507-pytest-1-intro-to-pytest-and-mock/">[Pytest 101] 01 Introduction to Pytest &amp; Mock</a></h2>
+    
+    
+      <p>An introduction to Pytest and the core concepts of Mock</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2025-07-02 00:00:00 &#43;0000 UTC">July 2, 2025</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+  <div class="content">
+    <a href="/en/blog/202507-pytest-1-intro-to-pytest-and-mock/" class="image" style="--bg-image: url('/blog/202507-pytest-1-intro-to-pytest-and-mock/featured.jpg');">
+    <img src="/blog/202507-pytest-1-intro-to-pytest-and-mock/featured.jpg" alt="">
+  </a>
+    
+    <p>Writing unit tests is a well-known best practice in software development, but actually getting started often feels overwhelming.<br>
+Where do you begin? What tools should you use? And how do you use them?<br>
+For beginners, these first steps can easily become roadblocks.</p>
+
+  </div>
+  <footer>
+    <a href="/en/blog/202507-pytest-1-intro-to-pytest-and-mock/" class="button big">Read More</a>
+    <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/en/categories/python/">Python</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/en/tags/python/">Python</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/pytest/">Pytest</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/tdd/">TDD</a></li>
+        
+          <li><a class="article-terms-link" href="/en/tags/unit-test/">unit test</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+  </footer>
+</article>
+
+  
+  <div class="pagination">
+    
+    
+  </div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>Recent Posts</h1>
+      </header>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202507-pytest-1-intro-to-pytest-and-mock/" class="image" style="--bg-image: url('/blog/202507-pytest-1-intro-to-pytest-and-mock/featured.jpg');">
+    <img src="/blog/202507-pytest-1-intro-to-pytest-and-mock/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202507-pytest-1-intro-to-pytest-and-mock/">[Pytest 101] 01 Introduction to Pytest &amp; Mock</a></h2>
+          <time class="published" datetime="2025-07-02 00:00:00 &#43;0000 UTC">July 2, 2025</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202506-pre-commit-git-commit-gatekeeper/" class="image" style="--bg-image: url('/blog/202506-pre-commit-git-commit-gatekeeper/featured.jpg');">
+    <img src="/blog/202506-pre-commit-git-commit-gatekeeper/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202506-pre-commit-git-commit-gatekeeper/">The Gatekeeper Before Your Git Commits: Pre-commit</a></h2>
+          <time class="published" datetime="2025-06-20 00:00:00 &#43;0000 UTC">June 20, 2025</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202506-settin-up-a-python-development-environment/" class="image" style="--bg-image: url('/blog/202506-settin-up-a-python-development-environment/featured.jpg');">
+    <img src="/blog/202506-settin-up-a-python-development-environment/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202506-settin-up-a-python-development-environment/">Setting up Python Development Environment</a></h2>
+          <time class="published" datetime="2025-06-09 00:00:00 &#43;0000 UTC">June 9, 2025</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202503-typescript-generic/" class="image" style="--bg-image: url('/blog/202503-typescript-generic/featured.jpg');">
+    <img src="/blog/202503-typescript-generic/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202503-typescript-generic/">TypeScript Generics</a></h2>
+          <time class="published" datetime="2025-03-26 00:00:00 &#43;0000 UTC">March 26, 2025</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202503-typescript-class-and-interface/" class="image" style="--bg-image: url('/blog/202503-typescript-class-and-interface/featured.jpg');">
+    <img src="/blog/202503-typescript-class-and-interface/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202503-typescript-class-and-interface/">Class and Interface in TypeScript</a></h2>
+          <time class="published" datetime="2025-03-24 00:00:00 &#43;0000 UTC">March 24, 2025</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/en/blog/" class="button">See More</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="/en/categories">Categories</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/en/categories/aws/">aws<span class="count">25</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/devops/">devops<span class="count">24</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/golang/">golang<span class="count">12</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/laravel/">laravel<span class="count">6</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/python/">python<span class="count">4</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/typescript/">typescript<span class="count">4</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/web-hosting/">web hosting<span class="count">3</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/version-control/">version control<span class="count">2</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/website-operations/">website operations<span class="count">2</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/git/">git<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/php/">php<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/serverless/">serverless<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/third-party-services/">third-party services<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/tools/">tools<span class="count">1</span></a>
+          </li>
+          
+        </ul>
+      </section>
+    
+  
+
+  
+  <section id="tags">
+    <header>
+      <h1><a href="/en/tags">Tags</a></h1>
+    </header>
+    <div class="li-x post-meta tags-md" style="margin-left: 0.5em;">
+      <ul>
+        
+        
+        <li>
+          <a href="/en/tags/aws/">aws (27)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/devops/">devops (26)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/docker/">docker (12)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/go/">go (11)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/golang/">golang (11)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/container-technology/">container technology (10)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/containerization/">containerization (10)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/cicd/">cicd (7)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/laravel/">laravel (7)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/docker-compose/">docker compose (6)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/gcp/">gcp (6)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/composer/">composer (5)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/php/">php (5)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/drone/">drone (4)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/jenkins/">jenkins (4)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/python/">python (4)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/typescript/">typescript (4)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/cloudflare/">cloudflare (3)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ssh/">ssh (3)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/web-hosting/">web hosting (3)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/chatbot/">chatbot (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/discord/">discord (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/dns/">dns (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/git/">git (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/github/">github (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/google-domains/">google domains (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/nginx/">nginx (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/apache-bench/">apache bench (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/auto-scaling/">auto scaling (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/blockchain/">blockchain (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/cdn/">cdn (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ci/cd/">ci/cd (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/cloudflare-workers/">cloudflare workers (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/csv/">csv (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/domain/">domain (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/domain-name/">domain name (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/excel/">excel (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ffmpeg/">ffmpeg (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/firewall/">firewall (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/gas/">gas (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/gcr/">gcr (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/github-page/">github page (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/golang-hugo/">golang, hugo (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/google-app-script/">google app script (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/google-container-registry/">google container registry (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/google-sheets/">google sheets (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/grumphp/">grumphp (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/laravel-excel/">laravel-excel (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/linux/">linux (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/load-balancing/">load balancing (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ngrok/">ngrok (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/personal-brand/">personal brand (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/php-fpm/">php-fpm (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/phpcbf/">phpcbf (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/phpcs/">phpcs (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/portainer/">portainer (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/postgresql/">postgresql (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/pre-commit/">pre-commit (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/prerender/">prerender (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/proxy/">proxy (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/purchase-domain/">purchase domain (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/pytest/">pytest (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/queue/">queue (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/redis/">redis (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/search-engine-optimization/">search engine optimization (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/seo/">seo (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/server/">server (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/serverless/">serverless (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/smart-contract/">smart contract (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/stress-testing/">stress testing (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/subdomain/">subdomain (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/tdd/">tdd (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/unit-test/">unit test (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/version-control/">version control (1)</a>
+        </li>
+        
+      </ul>
+
+    </div>
+  </section>
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+    
+    <p class="copyright">
+        © 2025 Byte Ebi 🍤
+    </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>
+      hljs.configure({ ignoreUnescapedHTML: true }); 
+      hljs.highlightAll();
+    </script><script src="/js/bundle.min.04d0be7a7e5c603fcb60180437663d2cdaf0db120a187376a9da544938a75534.js" integrity="sha256-BNC&#43;en5cYD/LYBgEN2Y9LNrw2xIKGHN2qdpUSTinVTQ="></script>
+    <script src="/js/add-on.js"></script>
+
+
+    
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', "G-LTGVYYWC2J");
+        </script>
+    
+
+
+    </div>
+  </body>
+  
+</html>

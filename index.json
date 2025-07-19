@@ -1,4 +1,10 @@
 [{
+    "title": "[Pytest 101] 01 Pytest & Mock 基本介紹",
+    "date": "",
+    "description": "Pytest 基本介紹與 Mock 的核心概念",
+    "body": "寫程式要寫單元測試已經是大家耳熟能詳的工具了，但實際開工卻是層層阻礙。\n要怎麼開始？又要用到哪些工具？怎麼用？沒有經驗的人很容易迷失在這第一步。\n框架與套件 名稱 用途 安裝指令 pytest 測試框架 poetry add pytest --dev pytest-mock 用來 mock 物件抽換資料的 plugin poetry add pytest-mock --dev pytest-cov 用來生成覆蓋率報告的 plugin poetry add pytest-mock --dev Usage 在開始前先確定 poetry 環境有跑起來\npoetry install --no-root 可使用的標籤 標籤 用途 參考資料 -s 輸出 print 內容 How to capture stdout/stderr output --cov 計算測試涵蓋的資料夾 --cov-report 顯示覆蓋率的方式 Reporting - pytest-cov --log-cli-level=DEBUG 在執行時顯示詳細資訊 How to manage logging 執行指定測試檔案\npoetry run pytest -s --log-cli-level=DEBUG ${file} 執行指定資料夾下的測試\npoetry run pytest -s --log-cli-level=DEBUG ${folder} 執行指定測試方法\npoetry run pytest -s --log-cli-level=DEBUG ${file}::${test_name} 組合拳 在終端機顯示覆蓋率\npoetry run pytest --log-cli-level=DEBUG --cov=. --cov-report=term-missing ${folder} 執行測試檔案後輸出 html 覆蓋率報告\npoetry run pytest --cov-report=html:cov_html --cov=. ${folder} 開啟測試報告\nopen ./cov_html/index.html What is Mock Python 內建的 unittest.mock 模組，用於在測試中替換部分系統，並判定它們是如何被使用的。\nMagicMock 可以視為加強版的 mock！\n用來模擬任何 Python 物件，包括類別、函數、甚至是模組，並且不需要預先定義介面就可以進行抽換。\nPython 是一門動態類型語言。這意味著物件的類型是在執行時確定的，而不是在編譯時。\nMagicMock 的設計正是為了適應 Python 的這種動態性。\n在靜態類型語言中需要先定義一個介面 (interface) 或抽象類別 (abstract class)，然後才能建立一個 mock 物件來實現這個介面。但在 Python 中，由於 MagicMock 能夠動態地建立屬性和方法，因此不需要預先定義任何介面。\nMagicMock 不僅可以模擬簡單的資料，還可以模擬複雜的物件，例如資料庫連線、網路請求等等。\n可以根據你測試需求，靈活地配置 MagicMock 的行為。\n核心概念 動態屬性建立： 訪問不存在的屬性時，MagicMock 會自動創建一個新的 MagicMock 物件作為該屬性的值。 自動方法創建： 呼叫不存在的方法時，MagicMock 會自動創建一個新的 MagicMock 物件來代表這個方法。 可配置的返回值和副作用： 可通過 return_value 屬性或 side_effect 屬性來配置 MagicMock 物件的返回值和副作用。 記錄呼叫： MagicMock 會追蹤它被如何呼叫，包括呼叫的次數、使用的參數等等。 特殊的魔法方法處理： MagicMock 能夠自動處理 Python 的魔法方法（例如 str, len, getitem 等），為這些方法創建模擬，並且可以根據需要配置它們的行為。 ",
+    "ref": "/blog/202507-pytest-1-intro-to-pytest-and-mock/"
+  },{
     "title": "Commit 前的最後防線：善用 Pre-commit 自動檢查程式碼",
     "date": "",
     "description": "還在手動整理程式碼？試試 pre-commit，幫你在每次 commit 前自動把關！",

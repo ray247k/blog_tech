@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.147.9"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.148.1"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="Blog">
   <meta property="og:description" content="討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識">
   <meta property="description" content="討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識">
@@ -83,7 +83,7 @@
     "url": "https:\/\/tech.ray247k.com\/",
     "description": "討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - aws,devops,git,golang,laravel,leetcode,node.js,php,python,serverless,typescript,實用工具,架站相關,版本控制,第三方服務,",
     "keywords": [
-        "apache bench,auto scaling,aws,axios,blockchain,cdn,chatbot,cicd,cloudflare,cloudflare workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker compose,domain name,drone,element-ui,excel,express,ffmpeg,gas,gcp,gcr,getter,git,github,github page,go,golang,golang, hugo,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load balancing,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,phpcbf,phpcs,portainer,postgresql,pre-commit,prerender,proxy,python,queue,redis,restful,seo,server,serverless,smart contract,ssh,stress testing,subdomain,typescript,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
+        "apache bench,auto scaling,aws,axios,blockchain,cdn,chatbot,cicd,cloudflare,cloudflare workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker compose,domain name,drone,element-ui,excel,express,ffmpeg,gas,gcp,gcr,getter,git,github,github page,go,golang,golang, hugo,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load balancing,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,phpcbf,phpcs,portainer,postgresql,pre-commit,prerender,proxy,pytest,python,queue,redis,restful,seo,server,serverless,smart contract,ssh,stress testing,subdomain,tdd,typescript,unit test,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,單元測試,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
     ]
 }
 </script>
@@ -204,6 +204,69 @@
       <main id="site-main">
         
   
+  
+    <article class="post">
+  <header>
+  <div class="title">
+    
+      <h2><a href="/blog/202201-using-prerender-improve-spa-seo/">使用 Prerender 為 SPA 增進 SEO</a></h2>
+    
+    
+      <p>解決 CSR 網頁的 SEO 問題，示範自架與 SaaS 方案</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2022-01-31 00:00:00 &#43;0000 UTC">2022/01/31</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+  <div class="content">
+    <a href="/blog/202201-using-prerender-improve-spa-seo/" class="image" style="--bg-image: url('/blog/202201-using-prerender-improve-spa-seo/featured.jpeg');">
+    <img src="/blog/202201-using-prerender-improve-spa-seo/featured.jpeg" alt="">
+  </a>
+    
+    <p>Single Page Application(SPA) 網站使用 Client-Side Rendering (CSR) 來渲染畫面<br>
+一開始載入時伺服器只會回傳根元件，透過後續 API 互動取得資料填入<br>
+而網站排名的爬蟲，爬到就會是空空的。雖然 Google 聲稱他們的爬蟲會執行 JS，但是其他搜尋引擎不一定會執行<br>
+所以透過 Prerender 服務來做到預先渲染給網頁爬蟲，達成搜尋結果最佳化</p>
+
+  </div>
+  <footer>
+    <a href="/blog/202201-using-prerender-improve-spa-seo/" class="button big">閱讀全文</a>
+    <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/%e6%9e%b6%e7%ab%99%e7%9b%b8%e9%97%9c/">架站相關</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/seo/">SEO</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/prerender/">Prerender</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/%e6%90%9c%e5%b0%8b%e5%bc%95%e6%93%8e%e6%9c%80%e4%bd%b3%e5%8c%96/">搜尋引擎最佳化</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/cloudflare/">Cloudflare</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/cloudflare-workers/">Cloudflare Workers</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+  </footer>
+</article>
+
   
     <article class="post">
   <header>
@@ -556,65 +619,6 @@
 </article>
 
   
-    <article class="post">
-  <header>
-  <div class="title">
-    
-      <h2><a href="/blog/202112-a-tour-of-go-06-range-and-map/">[A Tour of Go 學習筆記] 06 Range、Map 和 function</a></h2>
-    
-    
-      <p>使用官方教學瞭解 Go Range、Map 和 function</p>
-    
-  </div>
-  <div class="meta">
-    <time datetime="2021-12-08 00:00:00 &#43;0000 UTC">2021/12/08</time>
-    <p>Ray</p>
-    
-  </div>
-</header>
-
-  <div class="content">
-    <a href="/blog/202112-a-tour-of-go-06-range-and-map/" class="image" style="--bg-image: url('/blog/202112-a-tour-of-go-06-range-and-map/feature.jpg');">
-    <img src="/blog/202112-a-tour-of-go-06-range-and-map/feature.jpg" alt="">
-  </a>
-    
-    <p>初入 Golang 的世界，首先我們使用官方教學：<a href="https://tour.golang.org/welcome/1"
-   
-    target="_blank" rel="noreferrer noopener">A Tour of Go
-</a>
- 來認識基本的 Golang 使用<br>
-這篇介紹 Range、Map 和 function</p>
-
-  </div>
-  <footer>
-    <a href="/blog/202112-a-tour-of-go-06-range-and-map/" class="button big">閱讀全文</a>
-    <div class="stats">
-  
-    <ul class="categories">
-      
-        
-          <li><a class="article-terms-link" href="/categories/golang/">Golang</a></li>
-        
-      
-    </ul>
-  
-  
-    <ul class="tags">
-      
-        
-          <li><a class="article-terms-link" href="/tags/golang/">Golang</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/go/">Go</a></li>
-        
-      
-    </ul>
-  
-</div>
-
-  </footer>
-</article>
-
-  
   <div class="pagination">
     
       <a href="/blog/page/7/" class="button left"><span>上一頁</span></a>
@@ -631,6 +635,16 @@
       <header>
         <h1>最新文章</h1>
       </header>
+      
+      <article class="mini-post">
+          <a href="/blog/202507-pytest-1-intro-to-pytest-and-mock/" class="image" style="--bg-image: url('/blog/202507-pytest-1-intro-to-pytest-and-mock/featured.jpg');">
+    <img src="/blog/202507-pytest-1-intro-to-pytest-and-mock/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/blog/202507-pytest-1-intro-to-pytest-and-mock/">[Pytest 101] 01 Pytest &amp; Mock 基本介紹</a></h2>
+          <time class="published" datetime="2025-07-02 00:00:00 &#43;0000 UTC">2025/07/02</time>
+        </header>
+      </article>
       
       <article class="mini-post">
           <a href="/blog/202506-pre-commit-git-commit-gatekeeper/" class="image" style="--bg-image: url('/blog/202506-pre-commit-git-commit-gatekeeper/featured.jpg');">
@@ -669,16 +683,6 @@
         <header>
           <h2><a href="/blog/202503-typescript-class-and-interface/">TypeScript 的 Class 及 Interface</a></h2>
           <time class="published" datetime="2025-03-24 00:00:00 &#43;0000 UTC">2025/03/24</time>
-        </header>
-      </article>
-      
-      <article class="mini-post">
-          <a href="/blog/202503-typescript-basic-data-type/" class="image" style="--bg-image: url('/blog/202503-typescript-basic-data-type/featured.jpg');">
-    <img src="/blog/202503-typescript-basic-data-type/featured.jpg" alt="">
-  </a>
-        <header>
-          <h2><a href="/blog/202503-typescript-basic-data-type/">TypeScript 的基本資料型別</a></h2>
-          <time class="published" datetime="2025-03-20 00:00:00 &#43;0000 UTC">2025/03/20</time>
         </header>
       </article>
       
@@ -721,7 +725,7 @@
           </li>
           
           <li>
-              <a href="/categories/python/">python<span class="count">10</span></a>
+              <a href="/categories/python/">python<span class="count">11</span></a>
           </li>
           
           <li>
@@ -811,11 +815,11 @@
         </li>
         
         <li>
-          <a href="/tags/containerization/">containerization (10)</a>
+          <a href="/tags/python/">python (11)</a>
         </li>
         
         <li>
-          <a href="/tags/python/">python (10)</a>
+          <a href="/tags/containerization/">containerization (10)</a>
         </li>
         
         <li>
@@ -1067,6 +1071,10 @@
         </li>
         
         <li>
+          <a href="/tags/pytest/">pytest (1)</a>
+        </li>
+        
+        <li>
           <a href="/tags/queue/">queue (1)</a>
         </li>
         
@@ -1099,11 +1107,23 @@
         </li>
         
         <li>
+          <a href="/tags/tdd/">tdd (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/unit-test/">unit test (1)</a>
+        </li>
+        
+        <li>
           <a href="/tags/%E4%BC%BA%E6%9C%8D%E5%99%A8/">伺服器 (1)</a>
         </li>
         
         <li>
           <a href="/tags/%E5%80%8B%E4%BA%BA%E5%93%81%E7%89%8C/">個人品牌 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%96%AE%E5%85%83%E6%B8%AC%E8%A9%A6/">單元測試 (1)</a>
         </li>
         
         <li>

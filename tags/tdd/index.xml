@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TDD on Byte Ebi 🍤</title>
+    <link>https://tech.ray247k.com/tags/tdd/</link>
+    <description>Recent content in TDD on Byte Ebi 🍤</description>
+    <generator>Hugo</generator>
+    <language>zh-TW</language>
+    <lastBuildDate>Wed, 02 Jul 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tech.ray247k.com/tags/tdd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Pytest 101] 01 Pytest &amp; Mock 基本介紹</title>
+      <link>https://tech.ray247k.com/blog/202507-pytest-1-intro-to-pytest-and-mock/</link>
+      <pubDate>Wed, 02 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/blog/202507-pytest-1-intro-to-pytest-and-mock/</guid>
+      <description>&lt;p&gt;寫程式要寫單元測試已經是大家耳熟能詳的工具了，但實際開工卻是層層阻礙。&lt;br&gt;&#xA;要怎麼開始？又要用到哪些工具？怎麼用？沒有經驗的人很容易迷失在這第一步。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
