@@ -6,8 +6,15 @@
     <description>Recent content in Python on Byte Ebi 🍤</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 02 Jul 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 11 Jul 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://tech.ray247k.com/en/categories/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Pytest 101] 02 Basic Usage of Mock</title>
+      <link>https://tech.ray247k.com/en/blog/202507-pytest-2-pytest-mock-basics/</link>
+      <pubDate>Fri, 11 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202507-pytest-2-pytest-mock-basics/</guid>
+      <description>&lt;p&gt;After covering the basic tools, this article demonstrates how to use mocks effectively in Pytest.&lt;br&gt;&#xA;Mocks allow us to replace the logic of real functions to simulate different scenarios and write more precise unit tests.&lt;br&gt;&#xA;We&amp;rsquo;ll walk through examples of mocking functions, simulating errors, and even handling external dependencies like Redis.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>[Pytest 101] 01 Introduction to Pytest &amp; Mock</title>
       <link>https://tech.ray247k.com/en/blog/202507-pytest-1-intro-to-pytest-and-mock/</link>
