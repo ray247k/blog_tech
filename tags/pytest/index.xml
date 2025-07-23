@@ -6,8 +6,15 @@
     <description>Recent content in Pytest on Byte Ebi 🍤</description>
     <generator>Hugo</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Fri, 11 Jul 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 23 Jul 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://tech.ray247k.com/tags/pytest/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Pytest 101] 03 Mock SQL Query</title>
+      <link>https://tech.ray247k.com/blog/202507-pytest-3-pytest-mock-sql-query/</link>
+      <pubDate>Wed, 23 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/blog/202507-pytest-3-pytest-mock-sql-query/</guid>
+      <description>&lt;p&gt;透過 Mock，我們不需要真的連線到資料庫來執行測試，就可以模擬資料庫操作的結果。&lt;br&gt;&#xA;而不需要準備一個測試用的資料庫，並在測試後清除資料庫。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>[Pytest 101] 02 Mock 的基本用法</title>
       <link>https://tech.ray247k.com/blog/202507-pytest-2-pytest-mock-basics/</link>
