@@ -210,7 +210,7 @@
     },
     "image": "https://tech.ray247k.com/img/main/logo.png",
     "url" : "https:\/\/tech.ray247k.com\/blog\/202506-settin-up-a-python-development-environment\/",
-    "wordCount" : "430",
+    "wordCount" : "473",
     "genre" : [ "Python" ],
     "keywords" : [ "Python" ]
 }
@@ -410,7 +410,27 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew install pipx
 </span></span><span style="display:flex;"><span>pipx ensurepath
 </span></span></code></pre></div><p><code>ensurepath</code> 用來確保使用 <code>pipx</code> 下載的 app 其執行檔位置有被加入至 PATH 環境變數中</p>
-<hr>
+<h2 id="direnv"><a href="https://direnv.net/"
+   
+    target="_blank" rel="noreferrer noopener">direnv
+</a>
+</h2>
+<p>自動載入資料夾內的 <code>.env</code> 檔案，我也不知道為什麼在 python 得自己裝</p>
+<p><strong>安裝：</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew install direnv
+</span></span></code></pre></div><p>安裝好後，根據使用的 shell 要加入不一樣的指令，常用的不外乎 BASH 和 zsh<br>
+其他 shell 可以參考 <a href="https://direnv.net/docs/hook.html"
+   
+    target="_blank" rel="noreferrer noopener">Setup
+</a>
+</p>
+<p>如果是 <code>BASH</code> 使用者，在 <code>~/.bashrc</code> 加入</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>eval <span style="color:#e6db74">&#34;$(direnv hook bash)&#34;</span>
+</span></span></code></pre></div><p>使用的是 <code>zsh</code> 的話，則是在 <code>~/.zshrc</code> 中加入</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>eval <span style="color:#e6db74">&#34;$(direnv hook zsh)&#34;</span>
+</span></span></code></pre></div><p>當第一次進入一個資料夾可能會需要根據提示視窗使用指令，才能自動載入 <code>.env</code> 檔案</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>direnv allow
+</span></span></code></pre></div><hr>
 <h1 id="python-開發會用到的套件">Python 開發會用到的套件</h1>
 <p>在使用 python 開發時會用到的套件，先決條件是要安裝好 <a href="https://pipx.pypa.io/stable/installation/"
    
@@ -744,6 +764,16 @@ Poetry 預設會假設你有一個目錄叫做 <code>my_project</code> 或明確
       </header>
       
       <article class="mini-post">
+          <a href="/blog/202507-pytest-4-pytest-mock-class/" class="image" style="--bg-image: url('/blog/202507-pytest-4-pytest-mock-class/featured.jpg');">
+    <img src="/blog/202507-pytest-4-pytest-mock-class/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/blog/202507-pytest-4-pytest-mock-class/">[Pytest 101] 04 Mock Class</a></h2>
+          <time class="published" datetime="2025-07-26 00:00:00 &#43;0000 UTC">2025/07/26</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
           <a href="/blog/202507-pytest-3-pytest-mock-sql-query/" class="image" style="--bg-image: url('/blog/202507-pytest-3-pytest-mock-sql-query/featured.jpg');">
     <img src="/blog/202507-pytest-3-pytest-mock-sql-query/featured.jpg" alt="">
   </a>
@@ -783,16 +813,6 @@ Poetry 預設會假設你有一個目錄叫做 <code>my_project</code> 或明確
         </header>
       </article>
       
-      <article class="mini-post">
-          <a href="/blog/202506-settin-up-a-python-development-environment/" class="image" style="--bg-image: url('/blog/202506-settin-up-a-python-development-environment/featured.jpg');">
-    <img src="/blog/202506-settin-up-a-python-development-environment/featured.jpg" alt="">
-  </a>
-        <header>
-          <h2><a href="/blog/202506-settin-up-a-python-development-environment/">設定 Python 開發環境</a></h2>
-          <time class="published" datetime="2025-06-09 00:00:00 &#43;0000 UTC">2025/06/09</time>
-        </header>
-      </article>
-      
       
         <footer>
           <a href="/blog/" class="button">查看更多</a>
@@ -824,11 +844,11 @@ Poetry 預設會假設你有一個目錄叫做 <code>my_project</code> 或明確
           </li>
           
           <li>
-              <a href="/categories/leetcode/">leetcode<span class="count">13</span></a>
+              <a href="/categories/python/">python<span class="count">14</span></a>
           </li>
           
           <li>
-              <a href="/categories/python/">python<span class="count">13</span></a>
+              <a href="/categories/leetcode/">leetcode<span class="count">13</span></a>
           </li>
           
           <li>
@@ -902,11 +922,11 @@ Poetry 預設會假設你有一個目錄叫做 <code>my_project</code> 或明確
         </li>
         
         <li>
-          <a href="/tags/leetcode/">leetcode (13)</a>
+          <a href="/tags/python/">python (14)</a>
         </li>
         
         <li>
-          <a href="/tags/python/">python (13)</a>
+          <a href="/tags/leetcode/">leetcode (13)</a>
         </li>
         
         <li>
@@ -982,11 +1002,27 @@ Poetry 預設會假設你有一個目錄叫做 <code>my_project</code> 或明確
         </li>
         
         <li>
+          <a href="/tags/pytest/">pytest (4)</a>
+        </li>
+        
+        <li>
           <a href="/tags/ssh/">ssh (4)</a>
         </li>
         
         <li>
+          <a href="/tags/tdd/">tdd (4)</a>
+        </li>
+        
+        <li>
           <a href="/tags/typescript/">typescript (4)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/unit-test/">unit test (4)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%96%AE%E5%85%83%E6%B8%AC%E8%A9%A6/">單元測試 (4)</a>
         </li>
         
         <li>
@@ -1002,23 +1038,7 @@ Poetry 預設會假設你有一個目錄叫做 <code>my_project</code> 或明確
         </li>
         
         <li>
-          <a href="/tags/pytest/">pytest (3)</a>
-        </li>
-        
-        <li>
           <a href="/tags/restful/">restful (3)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/tdd/">tdd (3)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/unit-test/">unit test (3)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/%E5%96%AE%E5%85%83%E6%B8%AC%E8%A9%A6/">單元測試 (3)</a>
         </li>
         
         <li>

@@ -2,21 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://tech.ray247k.com/blog/202507-pytest-3-pytest-mock-sql-query/</loc>
-    <lastmod>2025-07-23T00:00:00+00:00</lastmod>
+    <loc>https://tech.ray247k.com/blog/202507-pytest-4-pytest-mock-class/</loc>
+    <lastmod>2025-07-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://tech.ray247k.com/en/blog/202507-pytest-3-pytest-mock-sql-query/"
+                href="https://tech.ray247k.com/en/blog/202507-pytest-4-pytest-mock-class/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-TW"
-                href="https://tech.ray247k.com/blog/202507-pytest-3-pytest-mock-sql-query/"
+                href="https://tech.ray247k.com/blog/202507-pytest-4-pytest-mock-class/"
                 />
   </url><url>
     <loc>https://tech.ray247k.com/blog/</loc>
-    <lastmod>2025-07-23T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -29,7 +29,7 @@
                 />
   </url><url>
     <loc>https://tech.ray247k.com/</loc>
-    <lastmod>2025-07-23T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -42,7 +42,7 @@
                 />
   </url><url>
     <loc>https://tech.ray247k.com/categories/</loc>
-    <lastmod>2025-07-23T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -55,7 +55,7 @@
                 />
   </url><url>
     <loc>https://tech.ray247k.com/tags/pytest/</loc>
-    <lastmod>2025-07-23T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -68,7 +68,7 @@
                 />
   </url><url>
     <loc>https://tech.ray247k.com/categories/python/</loc>
-    <lastmod>2025-07-23T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -81,7 +81,7 @@
                 />
   </url><url>
     <loc>https://tech.ray247k.com/tags/python/</loc>
-    <lastmod>2025-07-23T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -94,7 +94,7 @@
                 />
   </url><url>
     <loc>https://tech.ray247k.com/tags/</loc>
-    <lastmod>2025-07-23T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -107,7 +107,7 @@
                 />
   </url><url>
     <loc>https://tech.ray247k.com/tags/tdd/</loc>
-    <lastmod>2025-07-23T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -120,7 +120,7 @@
                 />
   </url><url>
     <loc>https://tech.ray247k.com/tags/unit-test/</loc>
-    <lastmod>2025-07-23T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -133,7 +133,20 @@
                 />
   </url><url>
     <loc>https://tech.ray247k.com/tags/%E5%96%AE%E5%85%83%E6%B8%AC%E8%A9%A6/</loc>
+    <lastmod>2025-07-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tech.ray247k.com/blog/202507-pytest-3-pytest-mock-sql-query/</loc>
     <lastmod>2025-07-23T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202507-pytest-3-pytest-mock-sql-query/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202507-pytest-3-pytest-mock-sql-query/"
+                />
   </url><url>
     <loc>https://tech.ray247k.com/blog/202507-pytest-2-pytest-mock-basics/</loc>
     <lastmod>2025-07-11T00:00:00+00:00</lastmod>

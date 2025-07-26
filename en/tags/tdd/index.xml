@@ -6,8 +6,15 @@
     <description>Recent content in TDD on Byte Ebi 🍤</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 23 Jul 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 26 Jul 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://tech.ray247k.com/en/tags/tdd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Pytest 101] 04 Mock Class</title>
+      <link>https://tech.ray247k.com/en/blog/202507-pytest-4-pytest-mock-class/</link>
+      <pubDate>Sat, 26 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202507-pytest-4-pytest-mock-class/</guid>
+      <description>&lt;p&gt;Introducing the factory pattern in your code can significantly improve its structure—but it also makes unit testing a bit trickier.&lt;br&gt;&#xA;We’ll walk through two different mocking strategies, compare their pros and cons, and help you write more robust tests!&lt;/p&gt;</description>
+    </item>
     <item>
       <title>[Pytest 101] 03 Mock SQL Query</title>
       <link>https://tech.ray247k.com/en/blog/202507-pytest-3-pytest-mock-sql-query/</link>

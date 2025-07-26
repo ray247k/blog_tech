@@ -210,7 +210,7 @@
     },
     "image": "https://tech.ray247k.com/img/main/logo.png",
     "url" : "https:\/\/tech.ray247k.com\/en\/blog\/202506-settin-up-a-python-development-environment\/",
-    "wordCount" : "904",
+    "wordCount" : "1008",
     "genre" : [ "Python" ],
     "keywords" : [ "Python" ]
 }
@@ -407,7 +407,27 @@ You can also use it directly without activating a virtual environment, and you d
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew install pipx
 </span></span><span style="display:flex;"><span>pipx ensurepath
 </span></span></code></pre></div><p><code>ensurepath</code> is used to ensure that the executable location of apps downloaded with <code>pipx</code> is added to the PATH environment variable.</p>
-<hr>
+<h2 id="direnv"><a href="https://direnv.net/"
+   
+    target="_blank" rel="noreferrer noopener">direnv
+</a>
+</h2>
+<p>Automatically loads the <code>.env</code> file in a directory. Honestly, I don’t know why this isn’t built-in for Python.</p>
+<p><strong>Installation:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew install direnv
+</span></span></code></pre></div><p>After installation, you’ll need to add a specific command depending on the shell you&rsquo;re using—typically either BASH or Zsh.<br>
+For other shells, refer to the <a href="https://direnv.net/docs/hook.html"
+   
+    target="_blank" rel="noreferrer noopener">Setup
+</a>
+.</p>
+<p>If you’re using BASH, add the following to your <code>~/.bashrc</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>eval <span style="color:#e6db74">&#34;$(direnv hook bash)&#34;</span>
+</span></span></code></pre></div><p>If you’re using Zsh, add this to your <code>~/.zshrc</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>eval <span style="color:#e6db74">&#34;$(direnv hook zsh)&#34;</span>
+</span></span></code></pre></div><p>The first time you enter a directory with a <code>.env</code> file, you may need to run the following command (as prompted) to allow automatic loading:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>direnv allow
+</span></span></code></pre></div><hr>
 <h1 id="python-development-packages">Python Development Packages</h1>
 <p>Packages that will be used for Python development. The prerequisite is to have <a href="https://pipx.pypa.io/stable/installation/"
    
@@ -737,6 +757,16 @@ You can also use it directly without activating a virtual environment, and you d
       </header>
       
       <article class="mini-post">
+          <a href="/en/blog/202507-pytest-4-pytest-mock-class/" class="image" style="--bg-image: url('/blog/202507-pytest-4-pytest-mock-class/featured.jpg');">
+    <img src="/blog/202507-pytest-4-pytest-mock-class/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202507-pytest-4-pytest-mock-class/">[Pytest 101] 04 Mock Class</a></h2>
+          <time class="published" datetime="2025-07-26 00:00:00 &#43;0000 UTC">July 26, 2025</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
           <a href="/en/blog/202507-pytest-3-pytest-mock-sql-query/" class="image" style="--bg-image: url('/blog/202507-pytest-3-pytest-mock-sql-query/featured.jpg');">
     <img src="/blog/202507-pytest-3-pytest-mock-sql-query/featured.jpg" alt="">
   </a>
@@ -776,16 +806,6 @@ You can also use it directly without activating a virtual environment, and you d
         </header>
       </article>
       
-      <article class="mini-post">
-          <a href="/en/blog/202506-settin-up-a-python-development-environment/" class="image" style="--bg-image: url('/blog/202506-settin-up-a-python-development-environment/featured.jpg');">
-    <img src="/blog/202506-settin-up-a-python-development-environment/featured.jpg" alt="">
-  </a>
-        <header>
-          <h2><a href="/en/blog/202506-settin-up-a-python-development-environment/">Setting up Python Development Environment</a></h2>
-          <time class="published" datetime="2025-06-09 00:00:00 &#43;0000 UTC">June 9, 2025</time>
-        </header>
-      </article>
-      
       
         <footer>
           <a href="/en/blog/" class="button">See More</a>
@@ -817,11 +837,11 @@ You can also use it directly without activating a virtual environment, and you d
           </li>
           
           <li>
-              <a href="/en/categories/laravel/">laravel<span class="count">6</span></a>
+              <a href="/en/categories/python/">python<span class="count">7</span></a>
           </li>
           
           <li>
-              <a href="/en/categories/python/">python<span class="count">6</span></a>
+              <a href="/en/categories/laravel/">laravel<span class="count">6</span></a>
           </li>
           
           <li>
@@ -911,15 +931,15 @@ You can also use it directly without activating a virtual environment, and you d
         </li>
         
         <li>
+          <a href="/en/tags/python/">python (7)</a>
+        </li>
+        
+        <li>
           <a href="/en/tags/docker-compose/">docker compose (6)</a>
         </li>
         
         <li>
           <a href="/en/tags/gcp/">gcp (6)</a>
-        </li>
-        
-        <li>
-          <a href="/en/tags/python/">python (6)</a>
         </li>
         
         <li>
@@ -939,7 +959,19 @@ You can also use it directly without activating a virtual environment, and you d
         </li>
         
         <li>
+          <a href="/en/tags/pytest/">pytest (4)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/tdd/">tdd (4)</a>
+        </li>
+        
+        <li>
           <a href="/en/tags/typescript/">typescript (4)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/unit-test/">unit test (4)</a>
         </li>
         
         <li>
@@ -947,19 +979,7 @@ You can also use it directly without activating a virtual environment, and you d
         </li>
         
         <li>
-          <a href="/en/tags/pytest/">pytest (3)</a>
-        </li>
-        
-        <li>
           <a href="/en/tags/ssh/">ssh (3)</a>
-        </li>
-        
-        <li>
-          <a href="/en/tags/tdd/">tdd (3)</a>
-        </li>
-        
-        <li>
-          <a href="/en/tags/unit-test/">unit test (3)</a>
         </li>
         
         <li>
