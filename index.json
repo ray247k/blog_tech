@@ -1,4 +1,10 @@
 [{
+    "title": "使用 Pyenv 輕鬆管理多版本 Python",
+    "date": "",
+    "description": "切換 Python 版本，再也不手忙腳亂",
+    "body": "Pyenv 是一個用來控制 Python 版本的工具\n不論是在升級專案的 Python 版本，還是根據不同專案切換 Python 版本，Pyenv 都是一個很方便的工具。\n安裝方法 使用 Homebrew 安裝，參考官方說明：Installation 目前不支援 windows，但是有提出替代解決方案 pyenv-win brew install pyenv 檢查使否成功安裝：\npyenv versions 安裝完之後根據使用的 Shell 設定參數\nbash 使用者：\necho \u0026#39;export PYENV_ROOT=\u0026#34;$HOME/.pyenv\u0026#34;\u0026#39; \u0026gt;\u0026gt; ~/.bashrc echo \u0026#39;command -v pyenv \u0026gt;/dev/null || export PATH=\u0026#34;$PYENV_ROOT/bin:$PATH\u0026#34;\u0026#39; \u0026gt;\u0026gt; ~/.bashrc echo \u0026#39;eval \u0026#34;$(pyenv init -)\u0026#34;\u0026#39; \u0026gt;\u0026gt; ~/.bashrc zsh 使用者：\necho \u0026#39;export PYENV_ROOT=\u0026#34;$HOME/.pyenv\u0026#34;\u0026#39; \u0026gt;\u0026gt; ~/.zshrc echo \u0026#39;[[ -d $PYENV_ROOT/bin ]] \u0026amp;\u0026amp; export PATH=\u0026#34;$PYENV_ROOT/bin:$PATH\u0026#34;\u0026#39; \u0026gt;\u0026gt; ~/.zshrc echo \u0026#39;eval \u0026#34;$(pyenv init -)\u0026#34;\u0026#39; \u0026gt;\u0026gt; ~/.zshrc 如果上面忘記上面指令，可以透過 pyenv init 指令查看要做的事情，輸入後會顯示以下提示：\n# Load pyenv automatically by appending # the following to # ~/.zprofile (for login shells) # and ~/.zshrc (for interactive shells) : export PYENV_ROOT=\u0026#34;$HOME/.pyenv\u0026#34; [[ -d $PYENV_ROOT/bin ]] \u0026amp;\u0026amp; export PATH=\u0026#34;$PYENV_ROOT/bin:$PATH\u0026#34; eval \u0026#34;$(pyenv init -)\u0026#34; # Restart your shell for the changes to take effect. 可以手動加入指定檔案中，並且重新開啟終端機來讓變更生效。\n使用說明 安裝指定版本 查看可安裝的 python 版本：\npyenv install -l 安裝指定版本：\n以 python 3.13.5 為範例\npyenv install -v 3.13.5 查看已安裝版本：\npyenv versions 套用版本 如果同時設定多個版本的話，優先順序是：\nshell local global 在當前終端機使用指定版本：\npyenv shell 3.13.5 在當前資料夾使用指定版本：\npyenv local 3.13.5 全域使用指定版本：\npyenv global 3.13.5 檢查套用結果：\npython3 --version 恢復成系統預設 python 版本 pyenv global system 如果恢復系統預設不生效的話，可以先嘗試刪除檔案：/Users/{user_name}/.pyenv/version\n",
+    "ref": "/blog/202508-manage-python-versions-with-pyenv/"
+  },{
     "title": "[Pytest 101] 04 Mock Class",
     "date": "",
     "description": "介紹兩種在使用工廠模式時測試 class 建構的方式，並說明如何有效抽換依賴。",

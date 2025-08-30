@@ -6,8 +6,15 @@
     <description>Recent content in Python on Byte Ebi 🍤</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 26 Jul 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 30 Aug 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://tech.ray247k.com/en/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Manage Python Versions with Pyenv</title>
+      <link>https://tech.ray247k.com/en/blog/202508-manage-python-versions-with-pyenv/</link>
+      <pubDate>Sat, 30 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202508-manage-python-versions-with-pyenv/</guid>
+      <description>&lt;p&gt;Pyenv is a tool for managing different Python versions.&lt;br&gt;&#xA;Whether you’re upgrading a project to a newer Python release or switching between projects with different requirements, pyenv makes the process simple and hassle-free.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>[Pytest 101] 04 Mock Class</title>
       <link>https://tech.ray247k.com/en/blog/202507-pytest-4-pytest-mock-class/</link>

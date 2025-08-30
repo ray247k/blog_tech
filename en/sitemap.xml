@@ -2,6 +2,110 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://tech.ray247k.com/en/blog/</loc>
+    <lastmod>2025-08-30T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/</loc>
+    <lastmod>2025-08-30T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/categories/</loc>
+    <lastmod>2025-08-30T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/categories/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/blog/202508-manage-python-versions-with-pyenv/</loc>
+    <lastmod>2025-08-30T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202508-manage-python-versions-with-pyenv/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202508-manage-python-versions-with-pyenv/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/tags/pyenv/</loc>
+    <lastmod>2025-08-30T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/pyenv/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/pyenv/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/categories/python/</loc>
+    <lastmod>2025-08-30T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/categories/python/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/categories/python/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/tags/python/</loc>
+    <lastmod>2025-08-30T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/python/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/python/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/tags/</loc>
+    <lastmod>2025-08-30T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/"
+                />
+  </url><url>
     <loc>https://tech.ray247k.com/en/blog/202507-pytest-4-pytest-mock-class/</loc>
     <lastmod>2025-07-26T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -15,45 +119,6 @@
                 href="https://tech.ray247k.com/en/blog/202507-pytest-4-pytest-mock-class/"
                 />
   </url><url>
-    <loc>https://tech.ray247k.com/en/blog/</loc>
-    <lastmod>2025-07-26T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/blog/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/blog/"
-                />
-  </url><url>
-    <loc>https://tech.ray247k.com/en/</loc>
-    <lastmod>2025-07-26T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/"
-                />
-  </url><url>
-    <loc>https://tech.ray247k.com/en/categories/</loc>
-    <lastmod>2025-07-26T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/categories/"
-                />
-  </url><url>
     <loc>https://tech.ray247k.com/en/tags/pytest/</loc>
     <lastmod>2025-07-26T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -65,45 +130,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tech.ray247k.com/en/tags/pytest/"
-                />
-  </url><url>
-    <loc>https://tech.ray247k.com/en/categories/python/</loc>
-    <lastmod>2025-07-26T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/categories/python/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/categories/python/"
-                />
-  </url><url>
-    <loc>https://tech.ray247k.com/en/tags/python/</loc>
-    <lastmod>2025-07-26T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/tags/python/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/tags/python/"
-                />
-  </url><url>
-    <loc>https://tech.ray247k.com/en/tags/</loc>
-    <lastmod>2025-07-26T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/tags/"
                 />
   </url><url>
     <loc>https://tech.ray247k.com/en/tags/tdd/</loc>
