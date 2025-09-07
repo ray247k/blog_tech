@@ -2,8 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://tech.ray247k.com/en/categories/aws/</loc>
+    <lastmod>2025-09-07T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/categories/aws/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/categories/aws/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/tags/aws/</loc>
+    <lastmod>2025-09-07T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/aws/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/aws/"
+                />
+  </url><url>
     <loc>https://tech.ray247k.com/en/blog/</loc>
-    <lastmod>2025-08-30T00:00:00+00:00</lastmod>
+    <lastmod>2025-09-07T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-TW"
@@ -16,7 +42,7 @@
                 />
   </url><url>
     <loc>https://tech.ray247k.com/en/</loc>
-    <lastmod>2025-08-30T00:00:00+00:00</lastmod>
+    <lastmod>2025-09-07T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-TW"
@@ -29,7 +55,7 @@
                 />
   </url><url>
     <loc>https://tech.ray247k.com/en/categories/</loc>
-    <lastmod>2025-08-30T00:00:00+00:00</lastmod>
+    <lastmod>2025-09-07T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-TW"
@@ -39,6 +65,45 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tech.ray247k.com/en/categories/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/tags/rds/</loc>
+    <lastmod>2025-09-07T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/rds/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/rds/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/tags/</loc>
+    <lastmod>2025-09-07T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/blog/202509-amazon-rds-db-connection-limits/</loc>
+    <lastmod>2025-09-07T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202509-amazon-rds-db-connection-limits/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202509-amazon-rds-db-connection-limits/"
                 />
   </url><url>
     <loc>https://tech.ray247k.com/en/blog/202508-manage-python-versions-with-pyenv/</loc>
@@ -91,19 +156,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tech.ray247k.com/en/tags/python/"
-                />
-  </url><url>
-    <loc>https://tech.ray247k.com/en/tags/</loc>
-    <lastmod>2025-08-30T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/tags/"
                 />
   </url><url>
     <loc>https://tech.ray247k.com/en/blog/202507-pytest-4-pytest-mock-class/</loc>
@@ -432,32 +484,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tech.ray247k.com/en/blog/202402-aws-fundamental-architectures/"
-                />
-  </url><url>
-    <loc>https://tech.ray247k.com/en/categories/aws/</loc>
-    <lastmod>2024-02-18T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/categories/aws/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/categories/aws/"
-                />
-  </url><url>
-    <loc>https://tech.ray247k.com/en/tags/aws/</loc>
-    <lastmod>2024-02-18T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/tags/aws/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/tags/aws/"
                 />
   </url><url>
     <loc>https://tech.ray247k.com/en/blog/202402-aws-fundamental-hybrid-cloud/</loc>

@@ -1,4 +1,10 @@
 [{
+    "title": "掌握 Amazon RDS 的連線數限制",
+    "date": "",
+    "description": "計算 Amazon RDS 在不同實例型號下的最大連線數",
+    "body": "你是否曾經遇過資料庫連線數不足的情況？或是在規劃系統架構時，不確定該如何選擇合適的 RDS 實體？\n這篇文章將帶你了解 Amazon RDS 的連線數上限計算方式，並提供不同實例型號的比較，幫助你做出更精準的判斷。\n在新公司專案中發現 RDS 很不穩定，常常發生各種連線錯誤，追查發現裡面有多個資料庫並且和很多專案共用。\n一開始以為是因為 lambda 函式在執行時有太多的連線數，導致 RDS 沒有足夠的資源可用。\n於是就想計算一下 RDS 在不同實例型號下的最大連線數來驗證假設是否成立？並作為後續升級的參考依據。\n計算公式 連線數上限(max_connections) 的計算公式：RDS 資料庫連線數上限 max_connections = LEAST({DBInstanceClassMemory/9531392}, 5000) 假設 RDS 使用的是 db.t4g.medium 等級，的 PostgreSQL\n根據 Amazon RDS 執行個體類型 說明，記憶體是 4 GiB\n（1 GiB = 1,073,741,824 bytes，4GiB = 4,294,967,296 bytes）\n最大連線數：4294967296 / 9531392 = 450\n如果 RDS 實體裡面有多個資料庫，則需共用連線數\n其他等級的最大連線數 等級 max_connections vCPU 記憶體 (GiB) db.t4g.micro 112 2 1 db.t4g.small 225 2 2 db.t4g.medium 450 2 4 db.t4g.large 910 2 8 db.t4g.xlarge 1802 4 16 db.t4g.2xlarge 3604 8 32 後日談 在經過計算後和實際連線數對照後得知，連線數距離被用完還有很大的距離。\n同時間深入追查程式碼得知，其實是因為有一個服務有太多繁重的資料庫操作。\n其中包含在專案文件中完全沒有提到的 DB Trigger。\n下一步就是要去慢慢研究那個沒有人知道的服務到底在做什麼？\n視情況刪除該服務，並且對 RDS 進行調整，看是要升級 instance 還是拆成多個 instance？\n",
+    "ref": "/blog/202509-amazon-rds-db-connection-limits/"
+  },{
     "title": "使用 Pyenv 輕鬆管理多版本 Python",
     "date": "",
     "description": "切換 Python 版本，再也不手忙腳亂",

@@ -6,8 +6,15 @@
     <description>Recent content in Categories on Byte Ebi 🍤</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 30 Aug 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 07 Sep 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://tech.ray247k.com/en/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS</title>
+      <link>https://tech.ray247k.com/en/categories/aws/</link>
+      <pubDate>Sun, 07 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/categories/aws/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Python</title>
       <link>https://tech.ray247k.com/en/categories/python/</link>
@@ -41,13 +48,6 @@
       <link>https://tech.ray247k.com/en/categories/golang/</link>
       <pubDate>Mon, 06 May 2024 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/en/categories/golang/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>AWS</title>
-      <link>https://tech.ray247k.com/en/categories/aws/</link>
-      <pubDate>Sun, 18 Feb 2024 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/categories/aws/</guid>
       <description></description>
     </item>
     <item>

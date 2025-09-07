@@ -6,8 +6,15 @@
     <description>Recent content in AWS on Byte Ebi 🍤</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 18 Feb 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 07 Sep 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://tech.ray247k.com/en/tags/aws/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Understanding Amazon RDS Connection Limits</title>
+      <link>https://tech.ray247k.com/en/blog/202509-amazon-rds-db-connection-limits/</link>
+      <pubDate>Sun, 07 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/en/blog/202509-amazon-rds-db-connection-limits/</guid>
+      <description>&lt;p&gt;Have you ever run into database connection limits, or felt unsure about which RDS instance type to choose when planning your system architecture?&lt;br&gt;&#xA;This article walks you through how Amazon RDS calculates its maximum connections and provides a comparison across different instance types to help you make better decisions.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>[AWS Cloud Fundamental Notes] Overview of Common AWS Architectures</title>
       <link>https://tech.ray247k.com/en/blog/202402-aws-fundamental-architectures/</link>
