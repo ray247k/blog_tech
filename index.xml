@@ -6,8 +6,15 @@
     <description>Recent content on Byte Ebi 🍤</description>
     <generator>Hugo</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Sun, 07 Sep 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 24 Sep 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://tech.ray247k.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用 Airflow DAG 觸發其他 DAG</title>
+      <link>https://tech.ray247k.com/blog/202509-triggering-airflow-dag-from-another-dag/</link>
+      <pubDate>Wed, 24 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/blog/202509-triggering-airflow-dag-from-another-dag/</guid>
+      <description>&lt;p&gt;在 DAG 中呼叫其他 DAG 作為上下游處理關係，除了直接利用 REST API 外&lt;br&gt;&#xA;Airflow 也提供的內建的 Operator 可以使用&lt;/p&gt;</description>
+    </item>
     <item>
       <title>掌握 Amazon RDS 的連線數限制</title>
       <link>https://tech.ray247k.com/blog/202509-amazon-rds-db-connection-limits/</link>

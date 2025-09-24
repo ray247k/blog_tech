@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.148.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.150.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="[Express&#43;Vue 搭建電商網站] 22 使用 Docker 將專案容器化">
   <meta property="og:description" content="使用 Express &#43; Vue 搭建一個電商網站 - 使用 Docker 將專案容器化">
   <meta property="description" content="使用 Express &#43; Vue 搭建一個電商網站 - 使用 Docker 將專案容器化">
@@ -40,7 +40,7 @@
   
   
             <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/felipec.min.css">
-          <link rel="stylesheet" href="/css/bundle.min.ab6f0b6f1e10859cc4f1dd183c65d284967651f85c0f1a47375cc146742b7e3b.css" integrity="sha256-q28Lbx4QhZzE8d0YPGXShJZ2UfhcDxpHN1zBRnQrfjs="><link rel="stylesheet" href="/css/add-on.css">
+          <link rel="stylesheet" href="/css/bundle.min.436a2d15b55c358d8485d7ab5916320007762995e1d3e9a16fb219cd347ef839.css" integrity="sha256-Q2otFbVcNY2EhderWRYyAAd2KZXh0&#43;mhb7IZzTR&#43;&#43;Dk="><link rel="stylesheet" href="/css/add-on.css">
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
       <script>
         var doNotTrack = false;
@@ -83,7 +83,7 @@
     "url": "https:\/\/tech.ray247k.com\/",
     "description": "討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - aws,devops,git,golang,laravel,leetcode,node.js,php,python,serverless,typescript,實用工具,架站相關,版本控制,第三方服務,",
     "keywords": [
-        "apache bench,auto scaling,aws,axios,blockchain,cdn,chatbot,cicd,cloudflare,cloudflare workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker compose,domain name,drone,element-ui,excel,express,ffmpeg,gas,gcp,gcr,getter,git,github,github page,go,golang,golang, hugo,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load balancing,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,phpcbf,phpcs,portainer,postgresql,pre-commit,prerender,proxy,pyenv,pytest,python,queue,rds,redis,restful,seo,server,serverless,smart contract,ssh,stress testing,subdomain,tdd,typescript,unit test,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,單元測試,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
+        "airflow,apache bench,auto scaling,aws,axios,blockchain,cdn,chatbot,cicd,cloudflare,cloudflare workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker compose,domain name,drone,element-ui,excel,express,ffmpeg,gas,gcp,gcr,getter,git,github,github page,go,golang,golang, hugo,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load balancing,mongodb,mutation,nginx,ngrok,node.js,php,php-fpm,phpcbf,phpcs,portainer,postgresql,pre-commit,prerender,proxy,pyenv,pytest,python,queue,rds,redis,restful,seo,server,serverless,smart contract,ssh,stress testing,subdomain,tdd,typescript,unit test,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,單元測試,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
     ]
 }
 </script>
@@ -414,7 +414,7 @@
 </span></span></code></pre></div><p>這樣改了之後前端在對 API 發起請求時就是取決於當前頁面的網址，而不是固定的 <code>http://localhost:3000/api/v1</code></p>
 <p>接著就是要撰寫 Docker 相關設定<br>
 首先建立 <code>client/src/Dockerfile</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> nginx:1.13</span><span style="color:#960050;background-color:#1e0010">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> <span style="color:#e6db74">nginx:1.13</span><span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># 刪除預設的 Nginc 設定</span><span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> rm /etc/nginx/conf.d/default.conf<span style="color:#960050;background-color:#1e0010">
@@ -431,10 +431,10 @@
 <p>前端容器化之後，接著準備進行後端的容器化。首先把寫死的 MongoDB 連線字串透過環境變數注入，修改 <code>server/app.js</code> 連線資料庫的部分成</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span><span style="color:#a6e22e">mongoose</span>.<span style="color:#a6e22e">connect</span>(<span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">MONGO_URI</span> <span style="color:#f92672">||</span> <span style="color:#e6db74">`mongodb://localhost:27017/test`</span>);
 </span></span></code></pre></div><p>接著一樣新建 <code>server/Dockerfile</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> node:10</span><span style="color:#960050;background-color:#1e0010">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> <span style="color:#e6db74">node:10</span><span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># 指定工作目錄為 /usr/src/app，接下来的指令全部在這個路徑下操作</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">WORKDIR</span><span style="color:#e6db74"> /usr/src/app</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">WORKDIR</span> <span style="color:#e6db74">/usr/src/app</span><span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># 將 package.json 複製到根目錄</span><span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> package*.json ./<span style="color:#960050;background-color:#1e0010">
@@ -452,7 +452,7 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENV</span> PORT<span style="color:#f92672">=</span><span style="color:#ae81ff">3000</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># 曝露出 3000 port</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">EXPOSE</span><span style="color:#e6db74"> 3000</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">EXPOSE</span> <span style="color:#e6db74">3000</span><span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># 設定映像檔內執行的指令</span><span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">CMD</span> [<span style="color:#e6db74">&#34;npm&#34;</span>, <span style="color:#e6db74">&#34;start&#34;</span>]<span style="color:#960050;background-color:#1e0010">
@@ -610,6 +610,16 @@
       </header>
       
       <article class="mini-post">
+          <a href="/blog/202509-triggering-airflow-dag-from-another-dag/" class="image" style="--bg-image: url('/blog/202509-triggering-airflow-dag-from-another-dag/featured.jpg.jpg');">
+    <img src="/blog/202509-triggering-airflow-dag-from-another-dag/featured.jpg.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/blog/202509-triggering-airflow-dag-from-another-dag/">使用 Airflow DAG 觸發其他 DAG</a></h2>
+          <time class="published" datetime="2025-09-24 00:00:00 &#43;0000 UTC">2025/09/24</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
           <a href="/blog/202509-amazon-rds-db-connection-limits/" class="image" style="--bg-image: url('/blog/202509-amazon-rds-db-connection-limits/featured.jpg');">
     <img src="/blog/202509-amazon-rds-db-connection-limits/featured.jpg" alt="">
   </a>
@@ -649,16 +659,6 @@
         </header>
       </article>
       
-      <article class="mini-post">
-          <a href="/blog/202507-pytest-2-pytest-mock-basics/" class="image" style="--bg-image: url('/blog/202507-pytest-2-pytest-mock-basics/featured.jpg');">
-    <img src="/blog/202507-pytest-2-pytest-mock-basics/featured.jpg" alt="">
-  </a>
-        <header>
-          <h2><a href="/blog/202507-pytest-2-pytest-mock-basics/">[Pytest 101] 02 Mock 的基本用法</a></h2>
-          <time class="published" datetime="2025-07-11 00:00:00 &#43;0000 UTC">2025/07/11</time>
-        </header>
-      </article>
-      
       
         <footer>
           <a href="/blog/" class="button">查看更多</a>
@@ -690,7 +690,7 @@
           </li>
           
           <li>
-              <a href="/categories/python/">python<span class="count">15</span></a>
+              <a href="/categories/python/">python<span class="count">16</span></a>
           </li>
           
           <li>
@@ -940,6 +940,10 @@
         </li>
         
         <li>
+          <a href="/tags/airflow/">airflow (1)</a>
+        </li>
+        
+        <li>
           <a href="/tags/apache-bench/">apache bench (1)</a>
         </li>
         
@@ -1157,7 +1161,7 @@
     <script>
       hljs.configure({ ignoreUnescapedHTML: true }); 
       hljs.highlightAll();
-    </script><script src="/js/bundle.min.04d0be7a7e5c603fcb60180437663d2cdaf0db120a187376a9da544938a75534.js" integrity="sha256-BNC&#43;en5cYD/LYBgEN2Y9LNrw2xIKGHN2qdpUSTinVTQ="></script>
+    </script><script src="/js/bundle.min.55e0d28d7212af6fac04876ba58c818f8402e64bd18ec2d3225818204c866d0f.js" integrity="sha256-VeDSjXISr2&#43;sBIdrpYyBj4QC5kvRjsLTIlgYIEyGbQ8="></script>
     <script src="/js/add-on.js"></script>
 
 
