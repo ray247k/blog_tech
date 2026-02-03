@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.150.0"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.154.2"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="Setting up Laravel Development Environment with Docker">
   <meta property="og:description" content="Introduction to building a basic Laravel development environment using Docker">
   <meta property="description" content="Introduction to building a basic Laravel development environment using Docker">
@@ -40,11 +40,11 @@
   
   
             <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/felipec.min.css">
-          <link rel="stylesheet" href="/css/bundle.min.436a2d15b55c358d8485d7ab5916320007762995e1d3e9a16fb219cd347ef839.css" integrity="sha256-Q2otFbVcNY2EhderWRYyAAd2KZXh0&#43;mhb7IZzTR&#43;&#43;Dk="><link rel="stylesheet" href="/css/add-on.css">
+          <link rel="stylesheet" href="/css/bundle.min.ccd03ac07edc9876d74feb17a3b850cb8df2c519d3854020b6697286637e4cd4.css" integrity="sha256-zNA6wH7cmHbXT&#43;sXo7hQy43yxRnThUAgtmlyhmN&#43;TNQ="><link rel="stylesheet" href="/css/add-on.css">
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
       <script>
         var doNotTrack = false;
-        if ( false ) {
+        if ( true ) {
           var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
           var doNotTrack = (dnt == "1" || dnt == "yes");
         }
@@ -571,20 +571,20 @@ However, since PHP doesn&rsquo;t require pre-compilation, you can make changes d
 Unless there&rsquo;s a specific reason to run commands inside the container, it&rsquo;s not recommended to install Composer in the container.</p>
 <p>Create a <code>php</code> folder in the <code>docker_env</code> directory and add a file named <code>Dockerfile</code> with the following content:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span><span style="color:#75715e"># Dockerfile</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">FROM</span> <span style="color:#e6db74">php:7.4-fpm</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">WORKDIR</span> <span style="color:#e6db74">/var</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> apt-get update <span style="color:#f92672">&amp;&amp;</span> apt-get install -y libpq-dev libpng-dev libzip-dev zip<span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> docker-php-ext-install pgsql pdo_pgsql gd zip<span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#f92672">&amp;&amp;</span> docker-php-ext-enable opcache<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> <span style="color:#e6db74">php:7.4-fpm</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">WORKDIR</span> <span style="color:#e6db74">/var</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">RUN</span> apt-get update <span style="color:#f92672">&amp;&amp;</span> apt-get install -y libpq-dev libpng-dev libzip-dev zip<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">RUN</span> docker-php-ext-install pgsql pdo_pgsql gd zip<span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672">&amp;&amp;</span> docker-php-ext-enable opcache<span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># To use mysql, install pdo pdo_mysql instead of pgsql pdo_pgsql</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># To use mysql, install pdo pdo_mysql instead of pgsql pdo_pgsql</span><span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Install composer Latest</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># RUN php -r &#34;copy(&#39;https://getcomposer.org/installer&#39;, &#39;composer-setup.php&#39;);&#34; \</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># &amp;&amp; php -r &#34;if (hash_file(&#39;sha384&#39;, &#39;composer-setup.php&#39;) === &#39;756890a4488ce9024fc62c56153228907f1545c228516cbf63f885e036d37e9a59d27d63f46af1d4d07ee0f76181c7d3&#39;) { echo &#39;Installer verified&#39;; } else { echo &#39;Installer corrupt&#39;; unlink(&#39;composer-setup.php&#39;); } echo PHP_EOL;&#34; \</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># &amp;&amp; php composer-setup.php \</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># &amp;&amp; php -r &#34;unlink(&#39;composer-setup.php&#39;);&#34; \</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># &amp;&amp; mv composer.phar /usr/local/bin/composer</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># Install composer Latest</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># RUN php -r &#34;copy(&#39;https://getcomposer.org/installer&#39;, &#39;composer-setup.php&#39;);&#34; \</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># &amp;&amp; php -r &#34;if (hash_file(&#39;sha384&#39;, &#39;composer-setup.php&#39;) === &#39;756890a4488ce9024fc62c56153228907f1545c228516cbf63f885e036d37e9a59d27d63f46af1d4d07ee0f76181c7d3&#39;) { echo &#39;Installer verified&#39;; } else { echo &#39;Installer corrupt&#39;; unlink(&#39;composer-setup.php&#39;); } echo PHP_EOL;&#34; \</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># &amp;&amp; php composer-setup.php \</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># &amp;&amp; php -r &#34;unlink(&#39;composer-setup.php&#39;);&#34; \</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># &amp;&amp; mv composer.phar /usr/local/bin/composer</span><span style="color:#960050;background-color:#1e0010">
 </span></span></span></code></pre></div><h3 id="database">database</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>  <span style="color:#f92672">postgre</span>:
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">docker_env_postgre</span>
@@ -744,8 +744,18 @@ There are also many aspects not covered, such as Docker network segmentation and
       </header>
       
       <article class="mini-post">
-          <a href="/en/blog/202509-triggering-airflow-dag-from-another-dag/" class="image" style="--bg-image: url('/blog/202509-triggering-airflow-dag-from-another-dag/featured.jpg.jpg');">
-    <img src="/blog/202509-triggering-airflow-dag-from-another-dag/featured.jpg.jpg" alt="">
+          <a href="/en/blog/202602-airflow-dynamic-task-mapping/" class="image" style="--bg-image: url('/blog/202602-airflow-dynamic-task-mapping/featured.jpg');">
+    <img src="/blog/202602-airflow-dynamic-task-mapping/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202602-airflow-dynamic-task-mapping/">Unleashing Airflow Performance with Dynamic Task Mapping</a></h2>
+          <time class="published" datetime="2026-02-03 00:00:00 &#43;0000 UTC">February 3, 2026</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202509-triggering-airflow-dag-from-another-dag/" class="image" style="--bg-image: url('/blog/202509-triggering-airflow-dag-from-another-dag/featured.jpg');">
+    <img src="/blog/202509-triggering-airflow-dag-from-another-dag/featured.jpg" alt="">
   </a>
         <header>
           <h2><a href="/en/blog/202509-triggering-airflow-dag-from-another-dag/">Triggering Airflow DAG from Another</a></h2>
@@ -783,16 +793,6 @@ There are also many aspects not covered, such as Docker network segmentation and
         </header>
       </article>
       
-      <article class="mini-post">
-          <a href="/en/blog/202507-pytest-3-pytest-mock-sql-query/" class="image" style="--bg-image: url('/blog/202507-pytest-3-pytest-mock-sql-query/featured.jpg');">
-    <img src="/blog/202507-pytest-3-pytest-mock-sql-query/featured.jpg" alt="">
-  </a>
-        <header>
-          <h2><a href="/en/blog/202507-pytest-3-pytest-mock-sql-query/">[Pytest 101] 03 Mock SQL Query</a></h2>
-          <time class="published" datetime="2025-07-23 00:00:00 &#43;0000 UTC">July 23, 2025</time>
-        </header>
-      </article>
-      
       
         <footer>
           <a href="/en/blog/" class="button">See More</a>
@@ -824,7 +824,7 @@ There are also many aspects not covered, such as Docker network segmentation and
           </li>
           
           <li>
-              <a href="/en/categories/python/">python<span class="count">9</span></a>
+              <a href="/en/categories/python/">python<span class="count">10</span></a>
           </li>
           
           <li>
@@ -974,6 +974,10 @@ There are also many aspects not covered, such as Docker network segmentation and
         </li>
         
         <li>
+          <a href="/en/tags/airflow/">airflow (2)</a>
+        </li>
+        
+        <li>
           <a href="/en/tags/chatbot/">chatbot (2)</a>
         </li>
         
@@ -999,10 +1003,6 @@ There are also many aspects not covered, such as Docker network segmentation and
         
         <li>
           <a href="/en/tags/nginx/">nginx (2)</a>
-        </li>
-        
-        <li>
-          <a href="/en/tags/airflow/">airflow (1)</a>
         </li>
         
         <li>
@@ -1201,7 +1201,7 @@ There are also many aspects not covered, such as Docker network segmentation and
       <footer id="site-footer">
     
     <p class="copyright">
-        © 2025 Byte Ebi 🍤
+        © 2026 Byte Ebi 🍤
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
@@ -1211,7 +1211,7 @@ There are also many aspects not covered, such as Docker network segmentation and
     <script>
       hljs.configure({ ignoreUnescapedHTML: true }); 
       hljs.highlightAll();
-    </script><script src="/js/bundle.min.55e0d28d7212af6fac04876ba58c818f8402e64bd18ec2d3225818204c866d0f.js" integrity="sha256-VeDSjXISr2&#43;sBIdrpYyBj4QC5kvRjsLTIlgYIEyGbQ8="></script>
+    </script><script src="/js/bundle.min.a56655f3069386c7a1539049f4b6e4d773b948f9c00ee443e5187c783819f686.js" integrity="sha256-pWZV8waThsehU5BJ9Lbk13O5SPnADuRD5Rh8eDgZ9oY="></script>
     <script src="/js/add-on.js"></script>
 
 

@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.150.0"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.154.2"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="開發屬於自己的 Laravel 套件">
   <meta property="og:description" content="介紹如何在本機進行 Laravel 套件開發及撰寫測試，並在本機專案透過 composer 安裝自行開發的套件">
   <meta property="description" content="介紹如何在本機進行 Laravel 套件開發及撰寫測試，並在本機專案透過 composer 安裝自行開發的套件">
@@ -40,11 +40,11 @@
   
   
             <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/felipec.min.css">
-          <link rel="stylesheet" href="/css/bundle.min.436a2d15b55c358d8485d7ab5916320007762995e1d3e9a16fb219cd347ef839.css" integrity="sha256-Q2otFbVcNY2EhderWRYyAAd2KZXh0&#43;mhb7IZzTR&#43;&#43;Dk="><link rel="stylesheet" href="/css/add-on.css">
+          <link rel="stylesheet" href="/css/bundle.min.ccd03ac07edc9876d74feb17a3b850cb8df2c519d3854020b6697286637e4cd4.css" integrity="sha256-zNA6wH7cmHbXT&#43;sXo7hQy43yxRnThUAgtmlyhmN&#43;TNQ="><link rel="stylesheet" href="/css/add-on.css">
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
       <script>
         var doNotTrack = false;
-        if ( false ) {
+        if ( true ) {
           var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
           var doNotTrack = (dnt == "1" || dnt == "yes");
         }
@@ -391,7 +391,7 @@
 為了後續示範，我先建立一個簡單的 function</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># LaraPeko.php
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">namespace</span> <span style="color:#a6e22e">Ray247k\LaraPeko</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LaraPeko</span>
@@ -406,7 +406,7 @@
 透過 register 中的 singleton，會註冊一個叫做<code>LaraPeko</code>的類別，並回傳剛剛建立的 <code>LaraPeko</code> 物件</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># LaraPekoServiceProvider.php
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">namespace</span> <span style="color:#a6e22e">Ray247k\LaraPeko</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Illuminate\Support\ServiceProvider</span>;
@@ -419,7 +419,7 @@
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 註冊套件函式
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">register</span>()
+</span></span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">register</span>()
 </span></span><span style="display:flex;"><span>    {
 </span></span><span style="display:flex;"><span>        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">app</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">singleton</span>(<span style="color:#e6db74">&#39;LaraPeko&#39;</span>, <span style="color:#66d9ef">function</span> ($app) {
 </span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">LaraPeko</span>();
@@ -436,7 +436,7 @@
 使用剛剛上面 ServiceProvider 註冊的<code>LaraPeko</code>類別作為 Laravel 的 Facade 物件</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># LaraPekoFacade.php
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">namespace</span> <span style="color:#a6e22e">Ray247k\LaraPeko</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Illuminate\Support\Facades\Facade</span>;
@@ -453,14 +453,14 @@
 這時候可以在套件目錄下建立<code>config</code>資料夾，並且在裡面加入 config 設定檔 <code>lara_peko.php</code></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># lara_peko.php
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">return</span> [
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;best_girl&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;Yagoo&#39;</span>,
 </span></span><span style="display:flex;"><span>];
 </span></span></code></pre></div><p>建立好了之後，我們要編輯<code>LaraPekoServiceProvider.php</code>成底下內容</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># LaraPekoServiceProvider.php
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">namespace</span> <span style="color:#a6e22e">Ray247k\LaraPeko</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Illuminate\Support\ServiceProvider</span>;
@@ -476,7 +476,7 @@
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 註冊套件函式
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">register</span>()
+</span></span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">register</span>()
 </span></span><span style="display:flex;"><span>    {
 </span></span><span style="display:flex;"><span>        $configPath <span style="color:#f92672">=</span> <span style="color:#66d9ef">__DIR__</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/../config/lara_peko.php&#39;</span>;
 </span></span><span style="display:flex;"><span>        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">mergeConfigFrom</span>($configPath, <span style="color:#e6db74">&#39;lara_peko&#39;</span>);
@@ -504,7 +504,7 @@
 回到<code>LaraPeko.php</code>，新建個方法<code>getBestGirl</code>取得設定檔中的<code>best_girl</code>參數內容</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># LaraPeko.php
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">namespace</span> <span style="color:#a6e22e">Ray247k\LaraPeko</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LaraPeko</span>
@@ -665,7 +665,7 @@
 在檔案中載入 autoload 之後呼叫套件方法</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># test-autoload.php
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Ray247k\LaraPeko\LaraPeko</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">require_once</span> <span style="color:#e6db74">&#39;./vendor/autoload.php&#39;</span>;
@@ -707,11 +707,14 @@ Please use a different PHP interpreter.
 </a>
 </p>
 <blockquote>
-<p>PHPUnit refuses to be run with a PHP interpreter where the value of the PHP_VERSION constant contains an invalid value due to modification made by vendors that ship (binary) distributions of PHP.</p></blockquote>
+<p>PHPUnit refuses to be run with a PHP interpreter where the value of the PHP_VERSION constant contains an invalid value due to modification made by vendors that ship (binary) distributions of PHP.</p>
+</blockquote>
 <blockquote>
-<p>7.3.24-(to be removed in future macOS) is such an invalid value. The -(to be removed in future macOS) suffix was added by Apple, who is the vendor of the PHP interpreter binary you use.</p></blockquote>
+<p>7.3.24-(to be removed in future macOS) is such an invalid value. The -(to be removed in future macOS) suffix was added by Apple, who is the vendor of the PHP interpreter binary you use.</p>
+</blockquote>
 <blockquote>
-<p>TL;DR: Do not use the PHP interpreter that is shipped by Apple with macOS. Use Homebrew, or similar, instead.</p></blockquote>
+<p>TL;DR: Do not use the PHP interpreter that is shipped by Apple with macOS. Use Homebrew, or similar, instead.</p>
+</blockquote>
 <p>這時候有兩個解法，一個是用 <a href="https://brew.sh/index_zh-tw"
    
     target="_blank" rel="noreferrer noopener">Homebrew
@@ -835,8 +838,18 @@ Please use a different PHP interpreter.
       </header>
       
       <article class="mini-post">
-          <a href="/blog/202509-triggering-airflow-dag-from-another-dag/" class="image" style="--bg-image: url('/blog/202509-triggering-airflow-dag-from-another-dag/featured.jpg.jpg');">
-    <img src="/blog/202509-triggering-airflow-dag-from-another-dag/featured.jpg.jpg" alt="">
+          <a href="/blog/202602-airflow-dynamic-task-mapping/" class="image" style="--bg-image: url('/blog/202602-airflow-dynamic-task-mapping/featured.jpg');">
+    <img src="/blog/202602-airflow-dynamic-task-mapping/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/blog/202602-airflow-dynamic-task-mapping/">使用動態任務讓 Airflow 效能大解放</a></h2>
+          <time class="published" datetime="2026-02-03 00:00:00 &#43;0000 UTC">2026/02/03</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202509-triggering-airflow-dag-from-another-dag/" class="image" style="--bg-image: url('/blog/202509-triggering-airflow-dag-from-another-dag/featured.jpg');">
+    <img src="/blog/202509-triggering-airflow-dag-from-another-dag/featured.jpg" alt="">
   </a>
         <header>
           <h2><a href="/blog/202509-triggering-airflow-dag-from-another-dag/">使用 Airflow DAG 觸發其他 DAG</a></h2>
@@ -874,16 +887,6 @@ Please use a different PHP interpreter.
         </header>
       </article>
       
-      <article class="mini-post">
-          <a href="/blog/202507-pytest-3-pytest-mock-sql-query/" class="image" style="--bg-image: url('/blog/202507-pytest-3-pytest-mock-sql-query/featured.jpg');">
-    <img src="/blog/202507-pytest-3-pytest-mock-sql-query/featured.jpg" alt="">
-  </a>
-        <header>
-          <h2><a href="/blog/202507-pytest-3-pytest-mock-sql-query/">[Pytest 101] 03 Mock SQL Query</a></h2>
-          <time class="published" datetime="2025-07-23 00:00:00 &#43;0000 UTC">2025/07/23</time>
-        </header>
-      </article>
-      
       
         <footer>
           <a href="/blog/" class="button">查看更多</a>
@@ -915,7 +918,7 @@ Please use a different PHP interpreter.
           </li>
           
           <li>
-              <a href="/categories/python/">python<span class="count">16</span></a>
+              <a href="/categories/python/">python<span class="count">17</span></a>
           </li>
           
           <li>
@@ -1117,6 +1120,10 @@ Please use a different PHP interpreter.
         </li>
         
         <li>
+          <a href="/tags/airflow/">airflow (2)</a>
+        </li>
+        
+        <li>
           <a href="/tags/chatbot/">chatbot (2)</a>
         </li>
         
@@ -1162,10 +1169,6 @@ Please use a different PHP interpreter.
         
         <li>
           <a href="/tags/vue-ui/">vue-ui (2)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/airflow/">airflow (1)</a>
         </li>
         
         <li>
@@ -1376,7 +1379,7 @@ Please use a different PHP interpreter.
       <footer id="site-footer">
     
     <p class="copyright">
-        © 2025 Byte Ebi 🍤
+        © 2026 Byte Ebi 🍤
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
@@ -1386,7 +1389,7 @@ Please use a different PHP interpreter.
     <script>
       hljs.configure({ ignoreUnescapedHTML: true }); 
       hljs.highlightAll();
-    </script><script src="/js/bundle.min.55e0d28d7212af6fac04876ba58c818f8402e64bd18ec2d3225818204c866d0f.js" integrity="sha256-VeDSjXISr2&#43;sBIdrpYyBj4QC5kvRjsLTIlgYIEyGbQ8="></script>
+    </script><script src="/js/bundle.min.a56655f3069386c7a1539049f4b6e4d773b948f9c00ee443e5187c783819f686.js" integrity="sha256-pWZV8waThsehU5BJ9Lbk13O5SPnADuRD5Rh8eDgZ9oY="></script>
     <script src="/js/add-on.js"></script>
 
 

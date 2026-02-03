@@ -6,8 +6,15 @@
     <description>Recent content in Airflow on Byte Ebi 🍤</description>
     <generator>Hugo</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Wed, 24 Sep 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 03 Feb 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://tech.ray247k.com/tags/airflow/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用動態任務讓 Airflow 效能大解放</title>
+      <link>https://tech.ray247k.com/blog/202602-airflow-dynamic-task-mapping/</link>
+      <pubDate>Tue, 03 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/blog/202602-airflow-dynamic-task-mapping/</guid>
+      <description>&lt;p&gt;當任務之間有相依，但是彼此又是獨立事件時到底應該如何優雅的處裡呢？&lt;br&gt;&#xA;使用迴圈？還是多一個 DAG？抑或是有其他更好的方案？&lt;/p&gt;</description>
+    </item>
     <item>
       <title>使用 Airflow DAG 觸發其他 DAG</title>
       <link>https://tech.ray247k.com/blog/202509-triggering-airflow-dag-from-another-dag/</link>

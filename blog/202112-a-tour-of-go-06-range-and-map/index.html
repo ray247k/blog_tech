@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.150.0"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.154.2"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="[A Tour of Go 學習筆記] 06 Range、Map 和 function">
   <meta property="og:description" content="使用官方教學瞭解 Go Range、Map 和 function">
   <meta property="description" content="使用官方教學瞭解 Go Range、Map 和 function">
@@ -40,11 +40,11 @@
   
   
             <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/felipec.min.css">
-          <link rel="stylesheet" href="/css/bundle.min.436a2d15b55c358d8485d7ab5916320007762995e1d3e9a16fb219cd347ef839.css" integrity="sha256-Q2otFbVcNY2EhderWRYyAAd2KZXh0&#43;mhb7IZzTR&#43;&#43;Dk="><link rel="stylesheet" href="/css/add-on.css">
+          <link rel="stylesheet" href="/css/bundle.min.ccd03ac07edc9876d74feb17a3b850cb8df2c519d3854020b6697286637e4cd4.css" integrity="sha256-zNA6wH7cmHbXT&#43;sXo7hQy43yxRnThUAgtmlyhmN&#43;TNQ="><link rel="stylesheet" href="/css/add-on.css">
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
       <script>
         var doNotTrack = false;
-        if ( false ) {
+        if ( true ) {
           var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
           var doNotTrack = (dnt == "1" || dnt == "yes");
         }
@@ -642,8 +642,18 @@ func main() {
       </header>
       
       <article class="mini-post">
-          <a href="/blog/202509-triggering-airflow-dag-from-another-dag/" class="image" style="--bg-image: url('/blog/202509-triggering-airflow-dag-from-another-dag/featured.jpg.jpg');">
-    <img src="/blog/202509-triggering-airflow-dag-from-another-dag/featured.jpg.jpg" alt="">
+          <a href="/blog/202602-airflow-dynamic-task-mapping/" class="image" style="--bg-image: url('/blog/202602-airflow-dynamic-task-mapping/featured.jpg');">
+    <img src="/blog/202602-airflow-dynamic-task-mapping/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/blog/202602-airflow-dynamic-task-mapping/">使用動態任務讓 Airflow 效能大解放</a></h2>
+          <time class="published" datetime="2026-02-03 00:00:00 &#43;0000 UTC">2026/02/03</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202509-triggering-airflow-dag-from-another-dag/" class="image" style="--bg-image: url('/blog/202509-triggering-airflow-dag-from-another-dag/featured.jpg');">
+    <img src="/blog/202509-triggering-airflow-dag-from-another-dag/featured.jpg" alt="">
   </a>
         <header>
           <h2><a href="/blog/202509-triggering-airflow-dag-from-another-dag/">使用 Airflow DAG 觸發其他 DAG</a></h2>
@@ -681,16 +691,6 @@ func main() {
         </header>
       </article>
       
-      <article class="mini-post">
-          <a href="/blog/202507-pytest-3-pytest-mock-sql-query/" class="image" style="--bg-image: url('/blog/202507-pytest-3-pytest-mock-sql-query/featured.jpg');">
-    <img src="/blog/202507-pytest-3-pytest-mock-sql-query/featured.jpg" alt="">
-  </a>
-        <header>
-          <h2><a href="/blog/202507-pytest-3-pytest-mock-sql-query/">[Pytest 101] 03 Mock SQL Query</a></h2>
-          <time class="published" datetime="2025-07-23 00:00:00 &#43;0000 UTC">2025/07/23</time>
-        </header>
-      </article>
-      
       
         <footer>
           <a href="/blog/" class="button">查看更多</a>
@@ -722,7 +722,7 @@ func main() {
           </li>
           
           <li>
-              <a href="/categories/python/">python<span class="count">16</span></a>
+              <a href="/categories/python/">python<span class="count">17</span></a>
           </li>
           
           <li>
@@ -924,6 +924,10 @@ func main() {
         </li>
         
         <li>
+          <a href="/tags/airflow/">airflow (2)</a>
+        </li>
+        
+        <li>
           <a href="/tags/chatbot/">chatbot (2)</a>
         </li>
         
@@ -969,10 +973,6 @@ func main() {
         
         <li>
           <a href="/tags/vue-ui/">vue-ui (2)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/airflow/">airflow (1)</a>
         </li>
         
         <li>
@@ -1183,7 +1183,7 @@ func main() {
       <footer id="site-footer">
     
     <p class="copyright">
-        © 2025 Byte Ebi 🍤
+        © 2026 Byte Ebi 🍤
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
@@ -1193,7 +1193,7 @@ func main() {
     <script>
       hljs.configure({ ignoreUnescapedHTML: true }); 
       hljs.highlightAll();
-    </script><script src="/js/bundle.min.55e0d28d7212af6fac04876ba58c818f8402e64bd18ec2d3225818204c866d0f.js" integrity="sha256-VeDSjXISr2&#43;sBIdrpYyBj4QC5kvRjsLTIlgYIEyGbQ8="></script>
+    </script><script src="/js/bundle.min.a56655f3069386c7a1539049f4b6e4d773b948f9c00ee443e5187c783819f686.js" integrity="sha256-pWZV8waThsehU5BJ9Lbk13O5SPnADuRD5Rh8eDgZ9oY="></script>
     <script src="/js/add-on.js"></script>
 
 

@@ -6,12 +6,12 @@
     <description>Recent content in Tags on Byte Ebi 🍤</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 24 Sep 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 03 Feb 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://tech.ray247k.com/en/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Airflow</title>
       <link>https://tech.ray247k.com/en/tags/airflow/</link>
-      <pubDate>Wed, 24 Sep 2025 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 03 Feb 2026 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/en/tags/airflow/</guid>
       <description></description>
     </item>
@@ -401,7 +401,7 @@
       <description></description>
     </item>
     <item>
-      <title>Docker Compose</title>
+      <title>Docker-Compose</title>
       <link>https://tech.ray247k.com/en/tags/docker-compose/</link>
       <pubDate>Sat, 24 Jul 2021 00:00:00 +0000</pubDate>
       <guid>https://tech.ray247k.com/en/tags/docker-compose/</guid>

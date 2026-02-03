@@ -1,0 +1,1137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+<title>Unleashing Airflow Performance with Dynamic Task Mapping - Byte Ebi 🍤</title>
+<meta name="description" content="Unlocking parallel execution in Airflow with Dynamic Task Mapping">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta property="og:site_name" content="Byte Ebi 🍤">
+<meta property="og:title" content="Unleashing Airflow Performance with Dynamic Task Mapping">
+<meta property="og:description" content="Unlocking parallel execution in Airflow with Dynamic Task Mapping">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://tech.ray247k.com/en/blog/202602-airflow-dynamic-task-mapping/">
+  <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
+
+
+
+  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
+  
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=1" color="#ffffff">
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=1">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=1">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+<meta name="generator" content="Hugo 0.154.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+  <meta property="og:title" content="Unleashing Airflow Performance with Dynamic Task Mapping">
+  <meta property="og:description" content="Unlocking parallel execution in Airflow with Dynamic Task Mapping">
+  <meta property="description" content="Unlocking parallel execution in Airflow with Dynamic Task Mapping">
+  <meta property="og:url" content="https://tech.ray247k.com/en/blog/202602-airflow-dynamic-task-mapping/">
+  <meta property="og:type" content="article">
+  
+    <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
+  
+  
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/felipec.min.css">
+          <link rel="stylesheet" href="/css/bundle.min.ccd03ac07edc9876d74feb17a3b850cb8df2c519d3854020b6697286637e4cd4.css" integrity="sha256-zNA6wH7cmHbXT&#43;sXo7hQy43yxRnThUAgtmlyhmN&#43;TNQ="><link rel="stylesheet" href="/css/add-on.css">
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-LTGVYYWC2J');
+        }
+      </script>
+  <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "image": {
+        "@type": "ImageObject",
+        "image": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+        "height": 648,
+        "width": 1080
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com\/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Byte Ebi 🍤",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png"
+        }
+    },
+    "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+    "headline": "About web development, software engineering, frontend, backend, chatbot, server related topics. - Byte Ebi 🍤",
+    "name": "Byte Ebi 🍤",
+    "url": "https:\/\/tech.ray247k.com\/",
+    "description": "About web development, software engineering, frontend, backend, chatbot, server related topics. - aws,devops,git,golang,laravel,php,python,serverless,third-party services,tools,typescript,version control,web hosting,website operations,",
+    "keywords": [
+        "airflow,apache bench,auto scaling,aws,blockchain,cdn,chatbot,ci\/cd,cicd,cloudflare,cloudflare workers,composer,container technology,containerization,csv,devops,discord,dns,docker,docker compose,domain,domain name,drone,excel,ffmpeg,firewall,gas,gcp,gcr,git,github,github page,go,golang,golang, hugo,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,linux,load balancing,nginx,ngrok,personal brand,php,php-fpm,phpcbf,phpcs,portainer,postgresql,pre-commit,prerender,proxy,purchase domain,pyenv,pytest,python,queue,rds,redis,search engine optimization,seo,server,serverless,smart contract,ssh,stress testing,subdomain,tdd,typescript,unit test,version control,web hosting,"
+    ]
+}
+</script>
+
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "legalName": "Byte Ebi 🍤",
+    "url": "https:\/\/tech.ray247k.com\/",
+    "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "",
+        "availableLanguage": [
+            "Mandarin",
+            "English"
+        ]
+    },
+    "sameAs": [
+        "https://ray247k.blogspot.com/"
+    ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Unleashing Airflow Performance with Dynamic Task Mapping",
+    "description": "Unlocking parallel execution in Airflow with Dynamic Task Mapping",
+    "keywords": [
+        "Airflow" 
+    ],
+    "dateCreated": "2026-02-03T00:00:00.00Z",
+    "datePublished": "2026-02-03T00:00:00.00Z",
+    "dateModified": "2026-02-03T00:00:00.00Z",
+    "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "contentUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png"
+    },
+    "breadcrumb": {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\/",
+                    "name": "Byte Ebi 🍤",
+                    "url": "https:\/\/tech.ray247k.com\/"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\//blog",
+                    "name": "Blog",
+                    "url": "https:\/\/tech.ray247k.com\//blog"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\/en\/blog\/202602-airflow-dynamic-task-mapping\/",
+                    "name": "Unleashing Airflow Performance with Dynamic Task Mapping",
+                    "url": "https:\/\/tech.ray247k.com\/en\/blog\/202602-airflow-dynamic-task-mapping\/"
+                }
+            }
+        ],
+        "itemListOrder": "Ascending",
+        "numberOfItems": 3
+    }
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "articleSection": "blog",
+    "name": "Unleashing Airflow Performance with Dynamic Task Mapping",
+    "headline": "\u003cp\u003eWhen tasks depend on each other yet remain independent events, what is the most elegant way to handle them?\u003cbr\u003e\nShould we use a loop? Add another DAG? Or is there a better solution?\u003c\/p\u003e",
+    "description": "Unlocking parallel execution in Airflow with Dynamic Task Mapping",
+    "inLanguage": "en",
+    "isFamilyFriendly": "true",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com\/en\/blog\/202602-airflow-dynamic-task-mapping\/"
+    },
+    "author" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "creator" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "accountablePerson" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "copyrightHolder" : "Byte Ebi 🍤",
+    "copyrightYear" : "2026",
+    "dateCreated": "2026-02-03T00:00:00.00Z",
+    "datePublished": "2026-02-03T00:00:00.00Z",
+    "dateModified": "2026-02-03T00:00:00.00Z",
+    "publisher":{
+        "@type":"Organization",
+        "name": "Byte Ebi 🍤",
+        "url": "https://tech.ray247k.com/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+            "width":"32",
+            "height":"32"
+        }
+    },
+    "image": "https://tech.ray247k.com/img/main/logo.png",
+    "url" : "https:\/\/tech.ray247k.com\/en\/blog\/202602-airflow-dynamic-task-mapping\/",
+    "wordCount" : "1060",
+    "genre" : [ "Airflow" ],
+    "keywords" : [ "Airflow" ]
+}
+</script>
+
+
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/en/" class="nav">
+        
+          Blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/en/" class="nav link"><i class='fa fa-home'></i> home</a>
+        
+      
+        
+          
+          <a href="/en/about" class="nav link"><i class='far fa-id-card'></i> about</a>
+        
+      
+        
+          
+          <a href="/en/categories" class="nav link"><i class='fas fa-sitemap'></i> category</a>
+        
+      
+      
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    
+    <a href="#lang-menu" class="nav lang-toggle" lang="en">en</a>
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  <menu id="lang-menu" class="flyout-menu menu">
+  <a href="#" lang="en" class="nav link active">English (en)</a>
+  
+      <a href="https://tech.ray247k.com/blog/202602-airflow-dynamic-task-mapping/" lang="zh-tw" class="nav link">正體中文 (zh-tw)</a>
+    
+  
+</menu>
+
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/en/"><img src="/img/main/logo.png" class="circle" width="100" alt="Byte Ebi&#39;s Logo" /></a>
+  <header>
+    <h1>Byte Ebi 🍤</h1>
+  </header>
+  <main>
+    <p>A Bit everyday A Byte every week</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/ray247k" target="_blank" rel="noopener" title="GitHub"
+        class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//www.linkedin.com/in/j-ray-cheng" target="_blank" rel="noopener"
+        title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+<article class="post">
+  <header>
+  <div class="title">
+    
+      <h2><a href="/en/blog/202602-airflow-dynamic-task-mapping/">Unleashing Airflow Performance with Dynamic Task Mapping</a></h2>
+    
+    
+      <p>Unlocking parallel execution in Airflow with Dynamic Task Mapping</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2026-02-03 00:00:00 &#43;0000 UTC">February 3, 2026</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+  <div id="socnet-share">
+
+
+
+
+</div>
+  <div class="content">
+    <a href="/en/blog/202602-airflow-dynamic-task-mapping/" class="image" style="--bg-image: url('/blog/202602-airflow-dynamic-task-mapping/featured.jpg');">
+    <img src="/blog/202602-airflow-dynamic-task-mapping/featured.jpg" alt="">
+  </a> <p>When tasks depend on each other yet remain independent events, what is the most elegant way to handle them?<br>
+Should we use a loop? Add another DAG? Or is there a better solution?</p>
+<h1 id="background">Background</h1>
+<p>When working with Airflow, it is common to encounter scenarios where a single task needs to process repetitive work.<br>
+A typical example is generating shipping orders for each item in a customer order and sending them to a warehouse system.</p>
+<p>The most intuitive approach is to use a loop.<br>
+However, this tightly couples all subtasks into a single unit.<br>
+If any one of them fails, manual intervention is required, because re-running the entire task may cause already-sent shipping orders to be sent again.</p>
+<p>Another approach is to leverage Airflow’s RESTful API and split the workflow into multiple DAGs:</p>
+<ol>
+<li>Receive the order in a <code>DAG main</code>, perform preprocessing, and trigger a <code>DAG sub</code> for each item</li>
+<li>Each <code>DAG sub</code> is responsible for sending a shipping order for a single item</li>
+</ol>
+<p>Due to its characteristics, this design is referred to as the Processor-Sender pattern.<br>
+Conceptually, the workflow looks like this:</p>
+<p><img src="/blog/202602-airflow-dynamic-task-mapping/main-sub.jpg" alt="main-sub.jpg"></p>
+<p>This approach solves the retry issue introduced by loops by making each shipping action atomic.<br>
+It satisfies the need for separated execution, provides observability for each subtask, and allows individual retries when failures occur.</p>
+<p>This pattern worked well at first—until the number of DAGs started growing uncontrollably.<br>
+In addition, inspecting the execution results of a <code>DAG main</code> required manually searching through the records of multiple <code>DAG sub</code> runs.</p>
+<p>In the shipping example above, once all item-level shipping tasks are completed, another DAG must periodically check the execution status of all related <code>DAG sub</code> runs under the same <code>DAG main</code>.<br>
+Only after all <code>DAG sub</code> runs are completed can the workflow proceed to the next step.</p>
+<p>At this point, I came across a feature mentioned in the official documentation:<br>
+Dynamic Task Mapping — Airflow Documentation<br>
+<a href="https://airflow.apache.org/docs/apache-airflow/2.10.5/authoring-and-scheduling/dynamic-task-mapping.html"
+   
+    target="_blank" rel="noreferrer noopener">https://airflow.apache.org/docs/apache-airflow/2.10.5/authoring-and-scheduling/dynamic-task-mapping.html
+</a>
+</p>
+<p>(The following examples are based on Airflow 2.10.5, which is the version used at my company. This feature is also available in Airflow 3.)</p>
+<p>By expanding a dataset using <strong>expand</strong>, Dynamic Task Mapping allows identical tasks to be executed in parallel within the same DAG.<br>
+Because everything stays within a single DAG, downstream tasks can naturally follow once all mapped tasks are completed.</p>
+<p>The expected workflow looks like this:</p>
+<p><img src="/blog/202602-airflow-dynamic-task-mapping/dynamic_task_mapping.jpg" alt="Dynamic Task Mapping"></p>
+<h1 id="poc-proof-of-concept">PoC (Proof of Concept)</h1>
+<p>Before starting the PoC, the goal was clearly defined:</p>
+<blockquote>
+<p>Validate whether Dynamic Task Mapping can replace the Processor-Sender pattern, reducing the number of DAGs and improving maintainability.</p>
+</blockquote>
+<p>The requirements were analyzed as follows:</p>
+<ol>
+<li>Observability: individual item execution results must be visible in the UI</li>
+<li>Atomicity: tasks must be independently retryable to avoid tight coupling</li>
+<li>Performance: multiple tasks should run in parallel with configurable concurrency</li>
+</ol>
+<p>Below is a simple PoC implementation using Dynamic Task Mapping.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> datetime <span style="color:#f92672">import</span> datetime, timedelta
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> random
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> time
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> airflow <span style="color:#f92672">import</span> DAG
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> airflow.decorators <span style="color:#f92672">import</span> task
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> airflow.exceptions <span style="color:#f92672">import</span> AirflowException
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> airflow.models.xcom_arg <span style="color:#f92672">import</span> XComArg
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>default_args <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;owner&#34;</span>: <span style="color:#e6db74">&#34;airflow&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;retry_delay&#34;</span>: timedelta(minutes<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>),
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> DAG(
+</span></span><span style="display:flex;"><span>    dag_id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dynamic_task_mapping_poc&#34;</span>,
+</span></span><span style="display:flex;"><span>    start_date<span style="color:#f92672">=</span>datetime(<span style="color:#ae81ff">2025</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">13</span>),
+</span></span><span style="display:flex;"><span>    schedule<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>,
+</span></span><span style="display:flex;"><span>    catchup<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>,
+</span></span><span style="display:flex;"><span>    default_args<span style="color:#f92672">=</span>default_args,
+</span></span><span style="display:flex;"><span>    tags<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;poc&#34;</span>],
+</span></span><span style="display:flex;"><span>    max_active_runs<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>    max_active_tasks<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>,
+</span></span><span style="display:flex;"><span>) <span style="color:#66d9ef">as</span> dag:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@task</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fetch_items</span>():
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        Simulate data preparation in the DAG
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> [
+</span></span><span style="display:flex;"><span>            {<span style="color:#e6db74">&#34;item_id&#34;</span>: <span style="color:#e6db74">&#34;A&#34;</span>},
+</span></span><span style="display:flex;"><span>            {<span style="color:#e6db74">&#34;item_id&#34;</span>: <span style="color:#e6db74">&#34;B&#34;</span>},
+</span></span><span style="display:flex;"><span>            {<span style="color:#e6db74">&#34;item_id&#34;</span>: <span style="color:#e6db74">&#34;C&#34;</span>},
+</span></span><span style="display:flex;"><span>            {<span style="color:#e6db74">&#34;item_id&#34;</span>: <span style="color:#e6db74">&#34;D&#34;</span>},
+</span></span><span style="display:flex;"><span>            {<span style="color:#e6db74">&#34;item_id&#34;</span>: <span style="color:#e6db74">&#34;E&#34;</span>},
+</span></span><span style="display:flex;"><span>            {<span style="color:#e6db74">&#34;item_id&#34;</span>: <span style="color:#e6db74">&#34;F&#34;</span>},
+</span></span><span style="display:flex;"><span>            {<span style="color:#e6db74">&#34;item_id&#34;</span>: <span style="color:#e6db74">&#34;G&#34;</span>},
+</span></span><span style="display:flex;"><span>            {<span style="color:#e6db74">&#34;item_id&#34;</span>: <span style="color:#e6db74">&#34;H&#34;</span>},
+</span></span><span style="display:flex;"><span>            {<span style="color:#e6db74">&#34;item_id&#34;</span>: <span style="color:#e6db74">&#34;I&#34;</span>},
+</span></span><span style="display:flex;"><span>            {<span style="color:#e6db74">&#34;item_id&#34;</span>: <span style="color:#e6db74">&#34;J&#34;</span>},
+</span></span><span style="display:flex;"><span>            {<span style="color:#e6db74">&#34;item_id&#34;</span>: <span style="color:#e6db74">&#34;K&#34;</span>},
+</span></span><span style="display:flex;"><span>            {<span style="color:#e6db74">&#34;item_id&#34;</span>: <span style="color:#e6db74">&#34;L&#34;</span>},
+</span></span><span style="display:flex;"><span>        ]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@task</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">process_single_item</span>(item: dict) <span style="color:#f92672">-&gt;</span> str:
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        Each item runs as an independent task instance
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>        item_id <span style="color:#f92672">=</span> item[<span style="color:#e6db74">&#34;item_id&#34;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 20% chance of failure to verify manual retry behavior</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> random<span style="color:#f92672">.</span>random() <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0.2</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">raise</span> AirflowException(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Random failure for item </span><span style="color:#e6db74">{</span>item_id<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        time<span style="color:#f92672">.</span>sleep(random<span style="color:#f92672">.</span>randint(<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">10</span>))
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Successfully processed item </span><span style="color:#e6db74">{</span>item_id<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;done_</span><span style="color:#e6db74">{</span>item_id<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@task</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">summarize</span>(results: XComArg):
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        Collect results from all processed items
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;Finished items:&#34;</span>, results)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> results
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    raw_items <span style="color:#f92672">=</span> fetch_items()
+</span></span><span style="display:flex;"><span>    processed <span style="color:#f92672">=</span> process_single_item<span style="color:#f92672">.</span>expand(item<span style="color:#f92672">=</span>raw_items)
+</span></span><span style="display:flex;"><span>    summarize(processed)
+</span></span></code></pre></div><h2 id="1-triggering-the-dag">1. Triggering the DAG</h2>
+<p>Initially, SQLite was used as the metadata database for convenience.
+According to the Sequential Executor documentation, when using SQLite, <code>AIRFLOW__CORE__EXECUTOR</code> must be set to <code>SequentialExecutor</code>, which can only execute one task at a time.</p>
+<p>Even so, the second task already displays a tab called &ldquo;Mapped Tasks.&rdquo;
+Clicking it reveals that the input list has been expanded into independent task instances.</p>
+<p><img src="/blog/202602-airflow-dynamic-task-mapping/single_run.png" alt="single run"></p>
+<h2 id="2-verifying-parallel-execution">2. Verifying Parallel Execution</h2>
+<p>To enable parallel execution, Airflow and PostgreSQL were launched using containers.</p>
+<p>The verification focused on:</p>
+<ol>
+<li>The parallel execution capability of Dynamic Task Mapping</li>
+<li>Enforcing concurrency limits via the DAG&rsquo;s <code>max_active_tasks</code> parameter</li>
+</ol>
+<p>The following <code>docker-compose.yaml</code> file was used for validation.
+Since this was a local PoC, credentials were left in plain text.</p>
+<pre tabindex="0"><code>version: &#34;3.9&#34;
+
+services:
+  postgres:
+    image: postgres:13
+    container_name: airflow-postgres
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: [&#34;CMD-SHELL&#34;, &#34;pg_isready -U airflow&#34;]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  airflow:
+    image: apache/airflow:2.10.5-python3.11
+    container_name: airflow
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres:5432/airflow
+      AIRFLOW__CORE__PARALLELISM: 32
+      AIRFLOW__CORE__MAX_ACTIVE_TASKS_PER_DAG: 16
+      AIRFLOW__CORE__LOAD_EXAMPLES: &#34;false&#34;
+      AIRFLOW__WEBSERVER__EXPOSE_CONFIG: &#34;true&#34;
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./logs:/opt/airflow/logs
+    ports:
+      - &#34;8080:8080&#34;
+    command: &gt;
+      bash -c &#34;
+      airflow db migrate &amp;&amp;
+      airflow users create \\
+        --username admin \\
+        --password admin \\
+        --firstname admin \\
+        --lastname admin \\
+        --role Admin \\
+        --email admin@example.com &amp;&amp;
+      airflow scheduler &amp; airflow webserver
+      &#34;
+volumes:
+  postgres_data:
+</code></pre><h4 id="verification-steps">Verification Steps</h4>
+<ol>
+<li>Start containers: docker compose up</li>
+<li>Verify Airflow configuration:</li>
+<li>Enter the container: docker exec -it airflow bash</li>
+<li>Run: airflow config get-value core executor</li>
+<li>Ensure the result is LocalExecutor</li>
+</ol>
+<h4 id="results">Results</h4>
+<p>With <code>max_active_tasks=3</code>, exactly three tasks were running concurrently.</p>
+<p><img src="/blog/202602-airflow-dynamic-task-mapping/running01.png" alt="running01"></p>
+<p><img src="/blog/202602-airflow-dynamic-task-mapping/running02.png" alt="running02"></p>
+<h2 id="3-retry-mechanism">3. Retry Mechanism</h2>
+<p>Based on the PoC code, each DAG run has a 20% chance of task failure.
+When a mapped task fails, the downstream task <code>summarize</code> is blocked with the state <code>upstream_failed</code>.</p>
+<p><img src="/blog/202602-airflow-dynamic-task-mapping/retry_map.png" alt="retry_map"></p>
+<p>After clicking the failed task (Map Index: 10) and triggering a retry, the task transitions to <del><code>success</code></del>.</p>
+<p><img src="/blog/202602-airflow-dynamic-task-mapping/retry_index.png" alt="retry_index"></p>
+<p><img src="/blog/202602-airflow-dynamic-task-mapping/retry_ok.png" alt="retry_ok"></p>
+<p>Once all failed tasks are cleared, the downstream task <code>summarize</code> is automatically executed without manual intervention.</p>
+<p><img src="/blog/202602-airflow-dynamic-task-mapping/a_done.png" alt="a_done"></p>
+<h1 id="comparison">Comparison</h1>
+<table>
+  <thead>
+      <tr>
+          <th></th>
+          <th>Processor-Sender</th>
+          <th>Dynamic Task Mapping</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Parallelism</td>
+          <td>Supported</td>
+          <td>Supported (except with SQLite)</td>
+      </tr>
+      <tr>
+          <td>Retry</td>
+          <td>Manual clear or external trigger</td>
+          <td>Manual clear supported</td>
+      </tr>
+      <tr>
+          <td>Downstream</td>
+          <td>Non-blocking unless <code>wait_for_completion=true</code></td>
+          <td>Blocked on any upstream failure</td>
+      </tr>
+      <tr>
+          <td>Use cases</td>
+          <td>Manual parameterized execution</td>
+          <td>Data-driven parallel execution</td>
+      </tr>
+  </tbody>
+</table>
+<h1 id="conclusion">Conclusion</h1>
+<p>If subtasks are lightweight, indivisible, and should be retried as a whole, a simple for-loop is sufficient.</p>
+<p>When subtasks require manual parameter input or conditional execution, the two-DAG Processor-Sender pattern is more appropriate.</p>
+<p>Dynamic Task Mapping is best suited when:</p>
+<ul>
+<li>Subtasks under a main task have no dependencies on each other</li>
+<li>Each task can independently retry, succeed or fail, and maintain its own logs</li>
+</ul>
+<p>This approach enables manual retries on failed subtasks while keeping them decoupled from one another.</p>
+
+    
+    
+  </div>
+  <footer><div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/en/categories/python/">Python</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/en/tags/airflow/">Airflow</a></li>
+        
+      
+    </ul>
+  
+</div>
+</footer>
+</article>
+ 
+ 
+<div class="pagination">
+   
+  <a href="/en/blog/202509-triggering-airflow-dag-from-another-dag/" class="button right"
+    ><span>Triggering Airflow DAG from Another</span></a
+  >
+  
+</div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>Recent Posts</h1>
+      </header>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202602-airflow-dynamic-task-mapping/" class="image" style="--bg-image: url('/blog/202602-airflow-dynamic-task-mapping/featured.jpg');">
+    <img src="/blog/202602-airflow-dynamic-task-mapping/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202602-airflow-dynamic-task-mapping/">Unleashing Airflow Performance with Dynamic Task Mapping</a></h2>
+          <time class="published" datetime="2026-02-03 00:00:00 &#43;0000 UTC">February 3, 2026</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202509-triggering-airflow-dag-from-another-dag/" class="image" style="--bg-image: url('/blog/202509-triggering-airflow-dag-from-another-dag/featured.jpg');">
+    <img src="/blog/202509-triggering-airflow-dag-from-another-dag/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202509-triggering-airflow-dag-from-another-dag/">Triggering Airflow DAG from Another</a></h2>
+          <time class="published" datetime="2025-09-24 00:00:00 &#43;0000 UTC">September 24, 2025</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202509-amazon-rds-db-connection-limits/" class="image" style="--bg-image: url('/blog/202509-amazon-rds-db-connection-limits/featured.jpg');">
+    <img src="/blog/202509-amazon-rds-db-connection-limits/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202509-amazon-rds-db-connection-limits/">Understanding Amazon RDS Connection Limits</a></h2>
+          <time class="published" datetime="2025-09-07 00:00:00 &#43;0000 UTC">September 7, 2025</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202508-manage-python-versions-with-pyenv/" class="image" style="--bg-image: url('/blog/202508-manage-python-versions-with-pyenv/featured.jpg');">
+    <img src="/blog/202508-manage-python-versions-with-pyenv/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202508-manage-python-versions-with-pyenv/">Manage Python Versions with Pyenv</a></h2>
+          <time class="published" datetime="2025-08-30 00:00:00 &#43;0000 UTC">August 30, 2025</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202507-pytest-4-pytest-mock-class/" class="image" style="--bg-image: url('/blog/202507-pytest-4-pytest-mock-class/featured.jpg');">
+    <img src="/blog/202507-pytest-4-pytest-mock-class/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202507-pytest-4-pytest-mock-class/">[Pytest 101] 04 Mock Class</a></h2>
+          <time class="published" datetime="2025-07-26 00:00:00 &#43;0000 UTC">July 26, 2025</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/en/blog/" class="button">See More</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="/en/categories">Categories</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/en/categories/aws/">aws<span class="count">26</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/devops/">devops<span class="count">24</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/golang/">golang<span class="count">12</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/python/">python<span class="count">10</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/laravel/">laravel<span class="count">6</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/typescript/">typescript<span class="count">4</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/web-hosting/">web hosting<span class="count">3</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/version-control/">version control<span class="count">2</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/website-operations/">website operations<span class="count">2</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/git/">git<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/php/">php<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/serverless/">serverless<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/third-party-services/">third-party services<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/tools/">tools<span class="count">1</span></a>
+          </li>
+          
+        </ul>
+      </section>
+    
+  
+
+  
+  <section id="tags">
+    <header>
+      <h1><a href="/en/tags">Tags</a></h1>
+    </header>
+    <div class="li-x post-meta tags-md" style="margin-left: 0.5em;">
+      <ul>
+        
+        
+        <li>
+          <a href="/en/tags/aws/">aws (28)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/devops/">devops (26)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/docker/">docker (12)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/go/">go (11)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/golang/">golang (11)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/container-technology/">container technology (10)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/containerization/">containerization (10)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/python/">python (8)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/cicd/">cicd (7)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/laravel/">laravel (7)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/docker-compose/">docker compose (6)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/gcp/">gcp (6)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/composer/">composer (5)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/php/">php (5)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/drone/">drone (4)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/jenkins/">jenkins (4)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/pytest/">pytest (4)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/tdd/">tdd (4)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/typescript/">typescript (4)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/unit-test/">unit test (4)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/cloudflare/">cloudflare (3)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ssh/">ssh (3)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/web-hosting/">web hosting (3)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/airflow/">airflow (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/chatbot/">chatbot (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/discord/">discord (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/dns/">dns (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/git/">git (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/github/">github (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/google-domains/">google domains (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/nginx/">nginx (2)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/apache-bench/">apache bench (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/auto-scaling/">auto scaling (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/blockchain/">blockchain (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/cdn/">cdn (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ci/cd/">ci/cd (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/cloudflare-workers/">cloudflare workers (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/csv/">csv (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/domain/">domain (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/domain-name/">domain name (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/excel/">excel (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ffmpeg/">ffmpeg (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/firewall/">firewall (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/gas/">gas (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/gcr/">gcr (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/github-page/">github page (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/golang-hugo/">golang, hugo (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/google-app-script/">google app script (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/google-container-registry/">google container registry (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/google-sheets/">google sheets (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/grumphp/">grumphp (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/laravel-excel/">laravel-excel (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/linux/">linux (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/load-balancing/">load balancing (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ngrok/">ngrok (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/personal-brand/">personal brand (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/php-fpm/">php-fpm (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/phpcbf/">phpcbf (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/phpcs/">phpcs (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/portainer/">portainer (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/postgresql/">postgresql (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/pre-commit/">pre-commit (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/prerender/">prerender (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/proxy/">proxy (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/purchase-domain/">purchase domain (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/pyenv/">pyenv (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/queue/">queue (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/rds/">rds (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/redis/">redis (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/search-engine-optimization/">search engine optimization (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/seo/">seo (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/server/">server (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/serverless/">serverless (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/smart-contract/">smart contract (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/stress-testing/">stress testing (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/subdomain/">subdomain (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/version-control/">version control (1)</a>
+        </li>
+        
+      </ul>
+
+    </div>
+  </section>
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+    
+    <p class="copyright">
+        © 2026 Byte Ebi 🍤
+    </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>
+      hljs.configure({ ignoreUnescapedHTML: true }); 
+      hljs.highlightAll();
+    </script><script src="/js/bundle.min.a56655f3069386c7a1539049f4b6e4d773b948f9c00ee443e5187c783819f686.js" integrity="sha256-pWZV8waThsehU5BJ9Lbk13O5SPnADuRD5Rh8eDgZ9oY="></script>
+    <script src="/js/add-on.js"></script>
+
+
+    
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', "G-LTGVYYWC2J");
+        </script>
+    
+
+
+    </div>
+  </body>
+  
+</html>

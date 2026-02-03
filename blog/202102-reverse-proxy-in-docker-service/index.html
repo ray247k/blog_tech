@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.150.0"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.154.2"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="反向代理 - 在 Docker 環境建置">
   <meta property="og:description" content="你可能知道反向代理，但你試過在 Docker 做嗎">
   <meta property="description" content="你可能知道反向代理，但你試過在 Docker 做嗎">
@@ -40,11 +40,11 @@
   
   
             <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/felipec.min.css">
-          <link rel="stylesheet" href="/css/bundle.min.436a2d15b55c358d8485d7ab5916320007762995e1d3e9a16fb219cd347ef839.css" integrity="sha256-Q2otFbVcNY2EhderWRYyAAd2KZXh0&#43;mhb7IZzTR&#43;&#43;Dk="><link rel="stylesheet" href="/css/add-on.css">
+          <link rel="stylesheet" href="/css/bundle.min.ccd03ac07edc9876d74feb17a3b850cb8df2c519d3854020b6697286637e4cd4.css" integrity="sha256-zNA6wH7cmHbXT&#43;sXo7hQy43yxRnThUAgtmlyhmN&#43;TNQ="><link rel="stylesheet" href="/css/add-on.css">
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
       <script>
         var doNotTrack = false;
-        if ( false ) {
+        if ( true ) {
           var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
           var doNotTrack = (dnt == "1" || dnt == "yes");
         }
@@ -377,34 +377,34 @@
 <h3 id="設定-nginx-config">設定 nginx config</h3>
 <h4 id="第一台主機的-nginx-設定">第一台主機的 nginx 設定</h4>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nginx" data-lang="nginx"><span style="display:flex;"><span><span style="color:#75715e"># 把所有前往 domain/new_path 的請求反向代理到另一台主機上
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">location</span> <span style="color:#e6db74">/new_path</span> {
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">location</span> <span style="color:#e6db74">/new_path</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 要代理到哪個網址
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">proxy_pass</span> <span style="color:#e6db74">http://laravel55.test.com</span>;
+</span></span></span><span style="display:flex;"><span>    <span style="color:#f92672">proxy_pass</span> <span style="color:#e6db74">http://laravel55.test.com</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 傳送使用者真實 IP 到目標主機
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Real-IP</span> $remote_addr;
+</span></span></span><span style="display:flex;"><span>    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Real-IP</span> $remote_addr;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 設定伺服器為代理前的伺服器，否則 HTTP_HOST 會變成 proxy 那台代理伺服器的位址
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">Host</span> $host;
+</span></span></span><span style="display:flex;"><span>    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">Host</span> $host;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 設定 cookie 轉發
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">Cookie</span> $http_cookie;
+</span></span></span><span style="display:flex;"><span>    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">Cookie</span> $http_cookie;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 用來確認最初的用戶端原始 ip 位置
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Forwarded-Host</span> $host;
+</span></span></span><span style="display:flex;"><span>    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Forwarded-Host</span> $host;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 記錄從使用者端出來經過的每個代理 X-Forwarded-For: &lt;client&gt;, &lt;proxy1&gt;, &lt;proxy2&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Forwarded-For</span> $proxy_add_x_forwarded_for;
+</span></span></span><span style="display:flex;"><span>    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Forwarded-For</span> $proxy_add_x_forwarded_for;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 識別網路連線協定
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Forwarded-Proto</span> $scheme;
+</span></span></span><span style="display:flex;"><span>    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Forwarded-Proto</span> $scheme;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 隱藏伺服器資訊
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">proxy_hide_header</span> <span style="color:#e6db74">Server</span>;
+</span></span></span><span style="display:flex;"><span>    <span style="color:#f92672">proxy_hide_header</span> <span style="color:#e6db74">Server</span>;
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">proxy_hide_header</span> <span style="color:#e6db74">X-Powered-By</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 因為自行加大 header 所以把空間也加大
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">proxy_headers_hash_bucket_size</span> <span style="color:#ae81ff">128</span>;
+</span></span></span><span style="display:flex;"><span>    <span style="color:#f92672">proxy_headers_hash_bucket_size</span> <span style="color:#ae81ff">128</span>;
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">proxy_headers_hash_max_size</span> <span style="color:#ae81ff">512</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h4 id="第二台主機的-nginx-設定">第二台主機的 nginx 設定</h4>
@@ -430,7 +430,7 @@
 </span></span><span style="display:flex;"><span>        <span style="color:#f92672">include</span> <span style="color:#e6db74">snippets/fastcgi-php.conf</span>;
 </span></span><span style="display:flex;"><span>        
 </span></span><span style="display:flex;"><span>        <span style="color:#75715e"># php-fpm 的位置
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#f92672">fastcgi_pass</span> 127.0.0.1:<span style="color:#ae81ff">9000</span>; 
+</span></span></span><span style="display:flex;"><span>        <span style="color:#f92672">fastcgi_pass</span> 127.0.0.1:<span style="color:#ae81ff">9000</span>; 
 </span></span><span style="display:flex;"><span>   }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h4 id="注意事項">注意事項</h4>
@@ -460,7 +460,8 @@
 <h3 id="1-手動建立-network">1. 手動建立 network</h3>
 <blockquote>
 <p>反向代理會根據載入的設定檔把請求導向到指定的容器名稱內<br>
-故代理的目標容器必須在同一網路內，才能直接使用容器名稱做代理目標</p></blockquote>
+故代理的目標容器必須在同一網路內，才能直接使用容器名稱做代理目標</p>
+</blockquote>
 <p>因為不想讓 network 前面帶上 prefix，還有避免依賴，所以手動建立 network</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker network create nginx-network
 </span></span></code></pre></div><p>這個情境屬於來自外部的 nginx-proxy，要多給一個<code>external network</code>
@@ -524,7 +525,8 @@
 <code>http://nginx_test_portainer:9000</code></p>
 <p>在容器中使用的模式是</p>
 <blockquote>
-<p>http://{container_name}:{port}</p></blockquote>
+<p>http://{container_name}:{port}</p>
+</blockquote>
 <p>可以看到「<strong>container_name</strong>」對應了<a href="#2-%e5%bb%ba%e7%ab%8b%e6%b8%ac%e8%a9%a6%e7%94%a8%e7%9a%84%e6%9c%8d%e5%8b%99"
    
    >上面建立測試服務
@@ -573,7 +575,8 @@
 正確設定的話，監聽 80 port 的 nginx 服務應該會把所有目標是 <code>test.example</code> 的請求<br>
 利用 proxy_pass 送到 portainer 容器的指定 port，所以畫面上會顯示 portainer 服務的畫面</p>
 <blockquote>
-<p>要在所有服務都啟動之後再啟動反向代理服務，否則會報錯指出被代理的容器目標不存在</p></blockquote>
+<p>要在所有服務都啟動之後再啟動反向代理服務，否則會報錯指出被代理的容器目標不存在</p>
+</blockquote>
 <h1 id="注意事項-1">注意事項</h1>
 <p>如果要把全部沒有匹配到的<code>server_name</code>請求統一處理<br>
 可以在指定的 nginx config 加上 <code>default_server</code> 定義</p>
@@ -586,10 +589,10 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">ssl_certificate_key</span> <span style="color:#e6db74">/ssl/ssl.key</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Virtual Host Domain
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">server_name</span> <span style="color:#e6db74">_</span>;
+</span></span></span><span style="display:flex;"><span>    <span style="color:#f92672">server_name</span> <span style="color:#e6db74">_</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e"># where code is
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">root</span> <span style="color:#e6db74">/var/project/dev/www/my_backend/public</span>;
+</span></span></span><span style="display:flex;"><span>    <span style="color:#f92672">root</span> <span style="color:#e6db74">/var/project/dev/www/my_backend/public</span>;
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">index</span> <span style="color:#e6db74">index.php</span> <span style="color:#e6db74">index.html</span> <span style="color:#e6db74">index.htm</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">access_log</span> <span style="color:#e6db74">/var/log/nginx/access.log</span>;
@@ -691,8 +694,18 @@
       </header>
       
       <article class="mini-post">
-          <a href="/blog/202509-triggering-airflow-dag-from-another-dag/" class="image" style="--bg-image: url('/blog/202509-triggering-airflow-dag-from-another-dag/featured.jpg.jpg');">
-    <img src="/blog/202509-triggering-airflow-dag-from-another-dag/featured.jpg.jpg" alt="">
+          <a href="/blog/202602-airflow-dynamic-task-mapping/" class="image" style="--bg-image: url('/blog/202602-airflow-dynamic-task-mapping/featured.jpg');">
+    <img src="/blog/202602-airflow-dynamic-task-mapping/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/blog/202602-airflow-dynamic-task-mapping/">使用動態任務讓 Airflow 效能大解放</a></h2>
+          <time class="published" datetime="2026-02-03 00:00:00 &#43;0000 UTC">2026/02/03</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202509-triggering-airflow-dag-from-another-dag/" class="image" style="--bg-image: url('/blog/202509-triggering-airflow-dag-from-another-dag/featured.jpg');">
+    <img src="/blog/202509-triggering-airflow-dag-from-another-dag/featured.jpg" alt="">
   </a>
         <header>
           <h2><a href="/blog/202509-triggering-airflow-dag-from-another-dag/">使用 Airflow DAG 觸發其他 DAG</a></h2>
@@ -730,16 +743,6 @@
         </header>
       </article>
       
-      <article class="mini-post">
-          <a href="/blog/202507-pytest-3-pytest-mock-sql-query/" class="image" style="--bg-image: url('/blog/202507-pytest-3-pytest-mock-sql-query/featured.jpg');">
-    <img src="/blog/202507-pytest-3-pytest-mock-sql-query/featured.jpg" alt="">
-  </a>
-        <header>
-          <h2><a href="/blog/202507-pytest-3-pytest-mock-sql-query/">[Pytest 101] 03 Mock SQL Query</a></h2>
-          <time class="published" datetime="2025-07-23 00:00:00 &#43;0000 UTC">2025/07/23</time>
-        </header>
-      </article>
-      
       
         <footer>
           <a href="/blog/" class="button">查看更多</a>
@@ -771,7 +774,7 @@
           </li>
           
           <li>
-              <a href="/categories/python/">python<span class="count">16</span></a>
+              <a href="/categories/python/">python<span class="count">17</span></a>
           </li>
           
           <li>
@@ -973,6 +976,10 @@
         </li>
         
         <li>
+          <a href="/tags/airflow/">airflow (2)</a>
+        </li>
+        
+        <li>
           <a href="/tags/chatbot/">chatbot (2)</a>
         </li>
         
@@ -1018,10 +1025,6 @@
         
         <li>
           <a href="/tags/vue-ui/">vue-ui (2)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/airflow/">airflow (1)</a>
         </li>
         
         <li>
@@ -1232,7 +1235,7 @@
       <footer id="site-footer">
     
     <p class="copyright">
-        © 2025 Byte Ebi 🍤
+        © 2026 Byte Ebi 🍤
     </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
@@ -1242,7 +1245,7 @@
     <script>
       hljs.configure({ ignoreUnescapedHTML: true }); 
       hljs.highlightAll();
-    </script><script src="/js/bundle.min.55e0d28d7212af6fac04876ba58c818f8402e64bd18ec2d3225818204c866d0f.js" integrity="sha256-VeDSjXISr2&#43;sBIdrpYyBj4QC5kvRjsLTIlgYIEyGbQ8="></script>
+    </script><script src="/js/bundle.min.a56655f3069386c7a1539049f4b6e4d773b948f9c00ee443e5187c783819f686.js" integrity="sha256-pWZV8waThsehU5BJ9Lbk13O5SPnADuRD5Rh8eDgZ9oY="></script>
     <script src="/js/add-on.js"></script>
 
 

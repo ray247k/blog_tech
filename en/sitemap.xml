@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://tech.ray247k.com/en/tags/airflow/</loc>
-    <lastmod>2025-09-24T00:00:00+00:00</lastmod>
+    <lastmod>2026-02-03T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-TW"
@@ -15,21 +15,8 @@
                 href="https://tech.ray247k.com/en/tags/airflow/"
                 />
   </url><url>
-    <loc>https://tech.ray247k.com/en/blog/</loc>
-    <lastmod>2025-09-24T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/blog/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/blog/"
-                />
-  </url><url>
     <loc>https://tech.ray247k.com/en/</loc>
-    <lastmod>2025-09-24T00:00:00+00:00</lastmod>
+    <lastmod>2026-02-03T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-TW"
@@ -42,7 +29,7 @@
                 />
   </url><url>
     <loc>https://tech.ray247k.com/en/categories/</loc>
-    <lastmod>2025-09-24T00:00:00+00:00</lastmod>
+    <lastmod>2026-02-03T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-TW"
@@ -55,7 +42,7 @@
                 />
   </url><url>
     <loc>https://tech.ray247k.com/en/categories/python/</loc>
-    <lastmod>2025-09-24T00:00:00+00:00</lastmod>
+    <lastmod>2026-02-03T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-TW"
@@ -68,7 +55,7 @@
                 />
   </url><url>
     <loc>https://tech.ray247k.com/en/tags/</loc>
-    <lastmod>2025-09-24T00:00:00+00:00</lastmod>
+    <lastmod>2026-02-03T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-TW"
@@ -78,6 +65,19 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tech.ray247k.com/en/tags/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/blog/202602-airflow-dynamic-task-mapping/</loc>
+    <lastmod>2026-02-03T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202602-airflow-dynamic-task-mapping/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202602-airflow-dynamic-task-mapping/"
                 />
   </url><url>
     <loc>https://tech.ray247k.com/en/blog/202509-triggering-airflow-dag-from-another-dag/</loc>
