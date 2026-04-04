@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AI on Byte Ebi 🍤</title>
+    <link>https://tech.ray247k.com/categories/ai/</link>
+    <description>Recent content in AI on Byte Ebi 🍤</description>
+    <generator>Hugo</generator>
+    <language>zh-TW</language>
+    <lastBuildDate>Sat, 04 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tech.ray247k.com/categories/ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>不花一毛錢，快速部屬個人 AI 助理 Openclaw</title>
+      <link>https://tech.ray247k.com/blog/202604-deploy-openclaw-ai-for-free/</link>
+      <pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/blog/202604-deploy-openclaw-ai-for-free/</guid>
+      <description>&lt;p&gt;沒有 GPU、也不想花錢租主機？&lt;br&gt;&#xA;這篇教你用 GitHub 免費資源，部屬小龍蝦(Openclaw)，快速開始養小龍蝦&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

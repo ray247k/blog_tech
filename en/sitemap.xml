@@ -2,6 +2,84 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://tech.ray247k.com/en/categories/ai/</loc>
+    <lastmod>2026-04-04T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/categories/ai/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/categories/ai/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/</loc>
+    <lastmod>2026-04-04T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/categories/</loc>
+    <lastmod>2026-04-04T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/categories/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/blog/202604-deploy-openclaw-ai-for-free/</loc>
+    <lastmod>2026-04-04T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202604-deploy-openclaw-ai-for-free/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202604-deploy-openclaw-ai-for-free/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/tags/openclaw/</loc>
+    <lastmod>2026-04-04T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/openclaw/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/openclaw/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/tags/</loc>
+    <lastmod>2026-04-04T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/"
+                />
+  </url><url>
     <loc>https://tech.ray247k.com/en/tags/airflow/</loc>
     <lastmod>2026-02-03T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -15,32 +93,6 @@
                 href="https://tech.ray247k.com/en/tags/airflow/"
                 />
   </url><url>
-    <loc>https://tech.ray247k.com/en/</loc>
-    <lastmod>2026-02-03T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/"
-                />
-  </url><url>
-    <loc>https://tech.ray247k.com/en/categories/</loc>
-    <lastmod>2026-02-03T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/categories/"
-                />
-  </url><url>
     <loc>https://tech.ray247k.com/en/categories/python/</loc>
     <lastmod>2026-02-03T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -52,19 +104,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tech.ray247k.com/en/categories/python/"
-                />
-  </url><url>
-    <loc>https://tech.ray247k.com/en/tags/</loc>
-    <lastmod>2026-02-03T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/tags/"
                 />
   </url><url>
     <loc>https://tech.ray247k.com/en/blog/202602-airflow-dynamic-task-mapping/</loc>

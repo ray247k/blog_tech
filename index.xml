@@ -6,8 +6,15 @@
     <description>Recent content on Byte Ebi 🍤</description>
     <generator>Hugo</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Tue, 03 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 04 Apr 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://tech.ray247k.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>不花一毛錢，快速部屬個人 AI 助理 Openclaw</title>
+      <link>https://tech.ray247k.com/blog/202604-deploy-openclaw-ai-for-free/</link>
+      <pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/blog/202604-deploy-openclaw-ai-for-free/</guid>
+      <description>&lt;p&gt;沒有 GPU、也不想花錢租主機？&lt;br&gt;&#xA;這篇教你用 GitHub 免費資源，部屬小龍蝦(Openclaw)，快速開始養小龍蝦&lt;/p&gt;</description>
+    </item>
     <item>
       <title>使用動態任務讓 Airflow 效能大解放</title>
       <link>https://tech.ray247k.com/blog/202602-airflow-dynamic-task-mapping/</link>

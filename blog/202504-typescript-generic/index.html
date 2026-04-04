@@ -1,0 +1,1105 @@
+<!doctype html>
+<html lang="zh-tw">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<title>不花一毛錢，就能快速開始養小龍蝦(Openclaw) - Byte Ebi 🍤</title>
+<meta name="description" content="用 GitHub Codespaces 部屬免費雲端 AI 助理">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta property="og:site_name" content="Byte Ebi 🍤">
+<meta property="og:title" content="不花一毛錢，就能快速開始養小龍蝦(Openclaw)">
+<meta property="og:description" content="用 GitHub Codespaces 部屬免費雲端 AI 助理">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://localhost:1313/blog/202504-typescript-generic/">
+  <meta property="og:image" content="http://localhost:1313/img/main/logo.png">
+
+
+
+  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
+  
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=1" color="#ffffff">
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=1">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=1">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+<meta name="generator" content="Hugo 0.154.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+  <meta property="og:title" content="不花一毛錢，就能快速開始養小龍蝦(Openclaw)">
+  <meta property="og:description" content="用 GitHub Codespaces 部屬免費雲端 AI 助理">
+  <meta property="description" content="用 GitHub Codespaces 部屬免費雲端 AI 助理">
+  <meta property="og:url" content="http://localhost:1313/blog/202504-typescript-generic/">
+  <meta property="og:type" content="article">
+  
+    <meta property="og:image" content="http://localhost:1313/img/main/logo.png">
+  
+  
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/felipec.min.css">
+          <link rel="stylesheet" href="/css/bundle.min.ccd03ac07edc9876d74feb17a3b850cb8df2c519d3854020b6697286637e4cd4.css" integrity="sha256-zNA6wH7cmHbXT&#43;sXo7hQy43yxRnThUAgtmlyhmN&#43;TNQ="><link rel="stylesheet" href="/css/add-on.css">
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-LTGVYYWC2J');
+        }
+      </script>
+  <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "image": {
+        "@type": "ImageObject",
+        "image": "http:\/\/localhost:1313\/img\/main\/logo.png",
+        "height": 648,
+        "width": 1080
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http:\/\/localhost:1313\/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Byte Ebi 🍤",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http:\/\/localhost:1313\/img\/main\/logo.png"
+        }
+    },
+    "thumbnailUrl": "http:\/\/localhost:1313\/img\/main\/logo.png",
+    "headline": "討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - Byte Ebi 🍤",
+    "name": "Byte Ebi 🍤",
+    "url": "http:\/\/localhost:1313\/",
+    "description": "討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - ai,aws,devops,git,golang,laravel,leetcode,node.js,php,python,serverless,typescript,實用工具,架站相關,版本控制,第三方服務,",
+    "keywords": [
+        "airflow,apache bench,auto scaling,aws,axios,blockchain,cdn,chatbot,cicd,cloudflare,cloudflare workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker compose,domain name,drone,element-ui,excel,express,ffmpeg,gas,gcp,gcr,getter,git,github,github page,go,golang,golang, hugo,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load balancing,mongodb,mutation,nginx,ngrok,node.js,openclaw,php,php-fpm,phpcbf,phpcs,portainer,postgresql,pre-commit,prerender,proxy,pyenv,pytest,python,queue,rds,redis,restful,seo,server,serverless,smart contract,ssh,stress testing,subdomain,tdd,typescript,unit test,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,單元測試,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
+    ]
+}
+</script>
+
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "legalName": "Byte Ebi 🍤",
+    "url": "http:\/\/localhost:1313\/",
+    "logo": "http:\/\/localhost:1313\/img\/main\/logo.png",
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "",
+        "availableLanguage": [
+            "Mandarin",
+            "English"
+        ]
+    },
+    "sameAs": [
+        "https://ray247k.blogspot.com/"
+    ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "不花一毛錢，就能快速開始養小龍蝦(Openclaw)",
+    "description": "用 GitHub Codespaces 部屬免費雲端 AI 助理",
+    "keywords": [
+        "Openclaw" 
+    ],
+    "dateCreated": "2025-04-04T00:00:00.00Z",
+    "datePublished": "2025-04-04T00:00:00.00Z",
+    "dateModified": "2025-04-04T00:00:00.00Z",
+    "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "contentUrl": "http:\/\/localhost:1313\/img\/main\/logo.png"
+    },
+    "breadcrumb": {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@id": "http:\/\/localhost:1313\/",
+                    "name": "Byte Ebi 🍤",
+                    "url": "http:\/\/localhost:1313\/"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@id": "http:\/\/localhost:1313\//blog",
+                    "name": "Blog",
+                    "url": "http:\/\/localhost:1313\//blog"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@id": "http:\/\/localhost:1313\/blog\/202504-typescript-generic\/",
+                    "name": "不花一毛錢，就能快速開始養小龍蝦(Openclaw)",
+                    "url": "http:\/\/localhost:1313\/blog\/202504-typescript-generic\/"
+                }
+            }
+        ],
+        "itemListOrder": "Ascending",
+        "numberOfItems": 3
+    }
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "articleSection": "blog",
+    "name": "不花一毛錢，就能快速開始養小龍蝦(Openclaw)",
+    "headline": "",
+    "description": "用 GitHub Codespaces 部屬免費雲端 AI 助理",
+    "inLanguage": "zh-TW",
+    "isFamilyFriendly": "true",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http:\/\/localhost:1313\/blog\/202504-typescript-generic\/"
+    },
+    "author" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "creator" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "accountablePerson" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "copyrightHolder" : "Byte Ebi 🍤",
+    "copyrightYear" : "2025",
+    "dateCreated": "2025-04-04T00:00:00.00Z",
+    "datePublished": "2025-04-04T00:00:00.00Z",
+    "dateModified": "2025-04-04T00:00:00.00Z",
+    "publisher":{
+        "@type":"Organization",
+        "name": "Byte Ebi 🍤",
+        "url": "http://localhost:1313/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http:\/\/localhost:1313\/img\/main\/logo.png",
+            "width":"32",
+            "height":"32"
+        }
+    },
+    "image": "http://localhost:1313/img/main/logo.png",
+    "url" : "http:\/\/localhost:1313\/blog\/202504-typescript-generic\/",
+    "wordCount" : "345",
+    "genre" : [ "Openclaw" ],
+    "keywords" : [ "Openclaw" ]
+}
+</script>
+
+
+</head>
+
+  <body>
+    
+
+  
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/" class="nav">
+        
+          Blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/" class="nav link"><i class='fa fa-home'></i> home</a>
+        
+      
+        
+          
+          <a href="/about" class="nav link"><i class='far fa-id-card'></i> about</a>
+        
+      
+        
+          
+          <a href="/categories" class="nav link"><i class='fas fa-sitemap'></i> category</a>
+        
+      
+      
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    
+    <a href="#lang-menu" class="nav lang-toggle" lang="zh-tw">zh-tw</a>
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  <menu id="lang-menu" class="flyout-menu menu">
+  <a href="#" lang="zh-tw" class="nav link active">正體中文 (zh-tw)</a>
+  
+    
+      
+    
+      
+        <a href="/en" lang="en" class="nav no-lang link">English (en)</a>
+      
+    
+  
+</menu>
+
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/"><img src="/img/main/logo.png" class="circle" width="100" alt="Byte Ebi&#39;s Logo" /></a>
+  <header>
+    <h1>Byte Ebi 🍤</h1>
+  </header>
+  <main>
+    <p>每天一小口，蝦米變鯨魚</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/ray247k" target="_blank" rel="noopener" title="GitHub"
+        class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//www.linkedin.com/in/j-ray-cheng" target="_blank" rel="noopener"
+        title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+<article class="post">
+  <header>
+  <div class="title">
+    
+      <h2><a href="/blog/202504-typescript-generic/">不花一毛錢，就能快速開始養小龍蝦(Openclaw)</a></h2>
+    
+    
+      <p>用 GitHub Codespaces 部屬免費雲端 AI 助理</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2025-04-04 00:00:00 &#43;0000 UTC">2025/04/04</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+  <div id="socnet-share">
+
+
+
+
+</div>
+  <div class="content">
+    <a href="/blog/202504-typescript-generic/" class="image" style="--bg-image: url('/blog/202504-typescript-generic/featured.jpg');">
+    <img src="/blog/202504-typescript-generic/featured.jpg" alt="">
+  </a> <p>沒有 GPU、也不想花錢租主機？<br>
+這篇教你用 GitHub 免費資源，部屬小龍蝦(Openclaw)，快速開始養小龍蝦</p>
+<h1 id="github-codespaces-介紹">GitHub Codespaces 介紹</h1>
+<p>GitHub Codespaces 是由 GitHub 開發的基於雲端的線上整合開發環境<br>
+允許使用者直接在瀏覽器中或透過 Visual Studio Code 桌面建立和管理開發環境<br>
+其實不是給你用來當 VPS 用的，但是他剛好就可以用</p>
+<p>可以在 <a href="https://docs.github.com/en/billing/concepts/product-billing/github-codespaces"
+   
+    target="_blank" rel="noreferrer noopener">計費方案
+</a>
+ 查看費用，個人使用基本款的話每個月有 120 小時的免費執行時間<br>
+以實驗和概念驗證用途來說算夠用了</p>
+<h1 id="github-設定">GitHub 設定</h1>
+<p>註冊 GitHub 並建立一個 repository 並且設為 Private，勾選自動產生 README 檔案<br>
+接著在左上角漢堡選單打開 Codespaces</p>
+<p>![[01_github_side_menu.jpg]]</p>
+<p>並且選擇剛剛建立的專案來建立新的 Codespace</p>
+<p>![[02_codespace_menu.jpg]]![[03_new_codespace.jpg]]</p>
+<p>如此就完成 Codespace 的設定了，可以打開該 Codespace 進行下一步</p>
+<h1 id="安裝-gemini-cli">安裝 Gemini Cli</h1>
+<p>接著就是在 Codespace 裡面安裝之後要使用的模型<br>
+這邊先安裝 gemini-cli，後續就可以使用 Google 提供的各種模型</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm install -g @google/gemini-cli
+</span></span></code></pre></div><p>※ GitHub Codespaces 已經裝好 npm 了，所以不需要手動安裝</p>
+<h1 id="安裝-openclaw">安裝 Openclaw</h1>
+<p>非常簡單的一行指令</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -fsSL https://openclaw.ai/install.sh | bash
+</span></span></code></pre></div><p>下載好應該就看到這個畫面
+![[04_openclaw_install.jpg]]</p>
+<p>如果沒看到開始畫面可以在終端機輸入指令</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>openclaw onboard
+</span></span></code></pre></div><p>接著就是各種交互與設定，可能會因為版本有所差異<br>
+大致上應該是一樣的，這邊直接貼簡化後的選項</p>
+<pre tabindex="0"><code>◇  I understand this is personal-by-default and shared/multi-user use requires lock-down. Continue?
+│  ● Yes
+│
+◇  Onboarding mode
+│  ● Manual
+│
+◇  What do you want to set up?
+│  ● Local gateway (this machine)
+│
+◇  Workspace directory
+│  ● /home/codespace/.openclaw/workspace
+│
+◆  Model/auth provider
+│  ● Google (Gemini API key + OAuth)
+│
+◇  Google auth method
+│  ● Google Gemini CLI OAuth
+│
+◇  Continue with Google Gemini CLI OAuth?
+│  ● Yes
+</code></pre><p>到這邊會需要授權 Google Gemini</p>
+<ol>
+<li>終端機上會出現一段網址， CTRL+滑鼠點按開新視窗或是複製到瀏覽器開啟</li>
+<li>登入 Google 帳號</li>
+<li>點擊授權後會出現錯誤畫面，這時候<strong>千萬不要關掉！</strong>
+把網址列的網址 (<code>http://localhost...</code>) 完整複製下來</li>
+<li>回到 Codespace 的終端機畫面，貼上後按 ENTER 確定</li>
+<li>授權完畢</li>
+<li>接下來是選擇模型，跟我一樣免費仔的話就是 flash 模型就夠用了</li>
+</ol>
+<pre tabindex="0"><code>◇  Default model
+│  ● google-gemini-cli/gemini-3-flash-preview
+│
+◇  Gateway port
+│  ● 18789
+│
+◇  Gateway bind
+│  ● LAN (0.0.0.0)
+│
+◇  Gateway auth
+│  ● Token
+│
+◇  Tailscale exposure
+│  ● Off
+│
+◇  How do you want to provide the gateway token?
+│  ● Generate/store plaintext token
+│
+◇  Gateway token (blank to generate)
+│  (留空或是選一個自己喜歡的 token 都可以)
+│
+◇  Configure chat channels now?
+│  ● No
+│
+◇  Configure skills now? (recommended)
+│  ● No
+│
+◇  Enable hooks?
+│  ● Skip for now
+│
+◇  Install Gateway service (recommended)
+│  ● Yes
+│
+◇  Gateway service runtime
+│  ● Node (recommended)
+│
+◆  Enable bash shell completion for openclaw?
+│  ● Yes
+</code></pre><p>設定完成後會出現一串總結，這樣就完成設定了</p>
+<p>如果中間有設定錯誤的，可以使用指令重新設定</p>
+<pre tabindex="0"><code>openclaw configure
+</code></pre><h1 id="使用網頁進行對談">使用網頁進行對談</h1>
+<p>設定完了，接著就是使用網頁版進行使用<br>
+首先必須先在終端機執行指令啟用 <strong>gateway</strong></p>
+<pre tabindex="0"><code>openclaw gateway
+</code></pre><p>若是加上 <code>–verbose</code> 參數，就可以看到更完整的紀錄來確認執行是否有問題</p>
+<p>當指令執行後會看到通訊埠被開啟的提示</p>
+<p>![[05_gateway.png]]</p>
+<p>切換到連接埠介面再點擊地球標示，就會在瀏覽器開啟分頁</p>
+<p>![[06_openclaw_panel.jpg]]</p>
+<p>這邊的<strong>網關令牌</strong>就是前面設定的 <strong>Gateway token</strong>，啟動 Gateway 時也會顯示在終端機<br>
+輸入後會看到錯誤提示 <strong>pairing required</strong>
+此時切回 Codespace 終端機，並執行指定</p>
+<pre tabindex="0"><code>openclaw devices list
+</code></pre><p>此時會看到終端機中出現一個 Pending Request，我們需要手動進行批准連線</p>
+<p>使用指令</p>
+<pre tabindex="0"><code>openclaw devices approve {Request ID}
+</code></pre><p>接著回到網頁版，再次輸入網關令牌以及密碼 (預設為空) 就大功告成<br>
+你也成為一個小龍蝦飼主了！</p>
+<p>![[07_openclaw_chat.jpg]]</p>
+
+    
+    
+  </div>
+  <footer><div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/ai/">AI</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/openclaw/">Openclaw</a></li>
+        
+      
+    </ul>
+  
+</div>
+</footer>
+</article>
+ 
+ 
+<div class="pagination">
+  
+  <a href="/blog/202506-settin-up-a-python-development-environment/" class="button left"
+    ><span>設定 Python 開發環境</span></a
+  >
+   
+  <a href="/blog/202503-typescript-generic/" class="button right"
+    ><span>TypeScript 泛型(Generic)</span></a
+  >
+  
+</div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>最新文章</h1>
+      </header>
+      
+      <article class="mini-post">
+          <a href="/blog/202602-airflow-dynamic-task-mapping/" class="image" style="--bg-image: url('/blog/202602-airflow-dynamic-task-mapping/featured.jpg');">
+    <img src="/blog/202602-airflow-dynamic-task-mapping/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/blog/202602-airflow-dynamic-task-mapping/">使用動態任務讓 Airflow 效能大解放</a></h2>
+          <time class="published" datetime="2026-02-03 00:00:00 &#43;0000 UTC">2026/02/03</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202509-triggering-airflow-dag-from-another-dag/" class="image" style="--bg-image: url('/blog/202509-triggering-airflow-dag-from-another-dag/featured.jpg');">
+    <img src="/blog/202509-triggering-airflow-dag-from-another-dag/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/blog/202509-triggering-airflow-dag-from-another-dag/">使用 Airflow DAG 觸發其他 DAG</a></h2>
+          <time class="published" datetime="2025-09-24 00:00:00 &#43;0000 UTC">2025/09/24</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202509-amazon-rds-db-connection-limits/" class="image" style="--bg-image: url('/blog/202509-amazon-rds-db-connection-limits/featured.jpg');">
+    <img src="/blog/202509-amazon-rds-db-connection-limits/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/blog/202509-amazon-rds-db-connection-limits/">掌握 Amazon RDS 的連線數限制</a></h2>
+          <time class="published" datetime="2025-09-07 00:00:00 &#43;0000 UTC">2025/09/07</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202508-manage-python-versions-with-pyenv/" class="image" style="--bg-image: url('/blog/202508-manage-python-versions-with-pyenv/featured.jpg');">
+    <img src="/blog/202508-manage-python-versions-with-pyenv/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/blog/202508-manage-python-versions-with-pyenv/">使用 Pyenv 輕鬆管理多版本 Python</a></h2>
+          <time class="published" datetime="2025-08-30 00:00:00 &#43;0000 UTC">2025/08/30</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202507-pytest-4-pytest-mock-class/" class="image" style="--bg-image: url('/blog/202507-pytest-4-pytest-mock-class/featured.jpg');">
+    <img src="/blog/202507-pytest-4-pytest-mock-class/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/blog/202507-pytest-4-pytest-mock-class/">[Pytest 101] 04 Mock Class</a></h2>
+          <time class="published" datetime="2025-07-26 00:00:00 &#43;0000 UTC">2025/07/26</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/blog/" class="button">查看更多</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="/categories">Category</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/categories/aws/">aws<span class="count">26</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/devops/">devops<span class="count">24</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/node.js/">node.js<span class="count">22</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/python/">python<span class="count">17</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/leetcode/">leetcode<span class="count">13</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/golang/">golang<span class="count">12</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/php/">php<span class="count">7</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/laravel/">laravel<span class="count">6</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/">架站相關<span class="count">6</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/typescript/">typescript<span class="count">4</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">版本控制<span class="count">2</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/ai/">ai<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/git/">git<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/serverless/">serverless<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/%E5%AF%A6%E7%94%A8%E5%B7%A5%E5%85%B7/">實用工具<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%9C%8D%E5%8B%99/">第三方服務<span class="count">1</span></a>
+          </li>
+          
+        </ul>
+      </section>
+    
+  
+
+  
+  <section id="tags">
+    <header>
+      <h1><a href="/tags">Tag</a></h1>
+    </header>
+    <div class="li-x post-meta tags-md" style="margin-left: 0.5em;">
+      <ul>
+        
+        
+        <li>
+          <a href="/tags/aws/">aws (28)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/devops/">devops (27)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/node.js/">node.js (22)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/python/">python (15)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/vue/">vue (15)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/leetcode/">leetcode (13)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/docker/">docker (12)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/go/">go (11)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/golang/">golang (11)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/php/">php (11)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/containerization/">containerization (10)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%AE%B9%E5%99%A8%E6%8A%80%E8%A1%93/">容器技術 (10)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/express/">express (9)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cicd/">cicd (8)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/leetcode-easy/">leetcode-easy (8)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/gcp/">gcp (7)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/laravel/">laravel (7)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/docker-compose/">docker compose (6)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/vuex/">vuex (6)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/composer/">composer (5)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/element-ui/">element-ui (5)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/leetcode-medium/">leetcode-medium (5)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/drone/">drone (4)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/jenkins/">jenkins (4)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/pytest/">pytest (4)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/ssh/">ssh (4)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/tdd/">tdd (4)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/typescript/">typescript (4)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/unit-test/">unit test (4)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%96%AE%E5%85%83%E6%B8%AC%E8%A9%A6/">單元測試 (4)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cloudflare/">cloudflare (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/mongodb/">mongodb (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/mutation/">mutation (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/restful/">restful (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/">架站相關 (3)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/airflow/">airflow (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/chatbot/">chatbot (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/component/">component (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/discord/">discord (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/dns/">dns (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/getter/">getter (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/git/">git (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/github/">github (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/google-domains/">google domains (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/linux/">linux (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/nginx/">nginx (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/vue-router/">vue-router (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/vue-ui/">vue-ui (2)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/apache-bench/">apache bench (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/auto-scaling/">auto scaling (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/axios/">axios (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/blockchain/">blockchain (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cdn/">cdn (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cloudflare-workers/">cloudflare workers (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/cors/">cors (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/csv/">csv (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/domain-name/">domain name (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/excel/">excel (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/ffmpeg/">ffmpeg (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/gas/">gas (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/gcr/">gcr (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/github-page/">github page (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/golang-hugo/">golang, hugo (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/google-app-script/">google app script (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/google-container-registry/">google container registry (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/google-sheets/">google sheets (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/grumphp/">grumphp (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/laravel-excel/">laravel-excel (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/load-balancing/">load balancing (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/ngrok/">ngrok (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/openclaw/">openclaw (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/php-fpm/">php-fpm (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/phpcbf/">phpcbf (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/phpcs/">phpcs (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/portainer/">portainer (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/postgresql/">postgresql (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/pre-commit/">pre-commit (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/prerender/">prerender (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/proxy/">proxy (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/pyenv/">pyenv (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/queue/">queue (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/rds/">rds (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/redis/">redis (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/seo/">seo (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/server/">server (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/serverless/">serverless (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/smart-contract/">smart contract (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/stress-testing/">stress testing (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/subdomain/">subdomain (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E4%BC%BA%E6%9C%8D%E5%99%A8/">伺服器 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%80%8B%E4%BA%BA%E5%93%81%E7%89%8C/">個人品牌 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%9F%9F%E5%90%8D/">域名 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%A3%93%E5%8A%9B%E6%B8%AC%E8%A9%A6/">壓力測試 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%AD%90%E7%B6%B2%E5%9F%9F/">子網域 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E6%90%9C%E5%B0%8B%E5%BC%95%E6%93%8E%E6%9C%80%E4%BD%B3%E5%8C%96/">搜尋引擎最佳化 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">版本控制 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E8%B2%B7%E7%B6%B2%E5%9D%80/">買網址 (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E9%98%B2%E7%81%AB%E7%89%86/">防火牆 (1)</a>
+        </li>
+        
+      </ul>
+
+    </div>
+  </section>
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+    
+    <p class="copyright">
+        © 2026 Byte Ebi 🍤
+    </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>
+      hljs.configure({ ignoreUnescapedHTML: true }); 
+      hljs.highlightAll();
+    </script><script src="/js/bundle.min.e71492e77102eb501887eeccdcf53f5f904c06270e643da46792b905d51cc1b8.js" integrity="sha256-5xSS53EC61AYh&#43;7M3PU/X5BMBicOZD2kZ5K5BdUcwbg="></script>
+    <script src="/js/add-on.js"></script>
+
+
+    </div>
+  </body>
+  
+</html>

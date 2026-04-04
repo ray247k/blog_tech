@@ -6,8 +6,15 @@
     <description>Recent content in Categories on Byte Ebi 🍤</description>
     <generator>Hugo</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Tue, 03 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 04 Apr 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://tech.ray247k.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI</title>
+      <link>https://tech.ray247k.com/categories/ai/</link>
+      <pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://tech.ray247k.com/categories/ai/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Python</title>
       <link>https://tech.ray247k.com/categories/python/</link>
