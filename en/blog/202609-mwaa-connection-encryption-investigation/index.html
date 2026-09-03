@@ -355,7 +355,9 @@
 
 </div>
   <div class="content">
-     <p>The Airflow docs actually state that setting the encryption key to an empty string makes Connections fall back to plaintext.<br>
+    <a href="/en/blog/202609-mwaa-connection-encryption-investigation/" class="image" style="--bg-image: url('/blog/202609-mwaa-connection-encryption-investigation/featured.jpg');">
+    <img src="/blog/202609-mwaa-connection-encryption-investigation/featured.jpg" alt="">
+  </a> <p>The Airflow docs actually state that setting the encryption key to an empty string makes Connections fall back to plaintext.<br>
 But does the same thing hold true on AWS-managed MWAA?<br>
 This post traces that question from Airflow&rsquo;s native Fernet mechanism all the way to MWAA&rsquo;s reserved environment variables.</p>
 <h1 id="why-i-started-digging">Why I Started Digging</h1>
@@ -520,7 +522,9 @@ This is native Airflow behavior, not a misconfiguration.</p>
       </header>
       
       <article class="mini-post">
-          
+          <a href="/en/blog/202609-mwaa-connection-encryption-investigation/" class="image" style="--bg-image: url('/blog/202609-mwaa-connection-encryption-investigation/featured.jpg');">
+    <img src="/blog/202609-mwaa-connection-encryption-investigation/featured.jpg" alt="">
+  </a>
         <header>
           <h2><a href="/en/blog/202609-mwaa-connection-encryption-investigation/">Investigating Connection Encryption on Amazon MWAA</a></h2>
           <time class="published" datetime="2026-09-03 00:00:00 &#43;0000 UTC">September 3, 2026</time>
