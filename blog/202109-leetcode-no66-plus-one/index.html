@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.154.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.165.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="[LeetCode] #66 Plus One (Easy)">
   <meta property="og:description" content="LeetCode 第 66 題 Plus One，難度 Easy">
   <meta property="description" content="LeetCode 第 66 題 Plus One，難度 Easy">
@@ -40,7 +40,7 @@
   
   
             <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/felipec.min.css">
-          <link rel="stylesheet" href="/css/bundle.min.ccd03ac07edc9876d74feb17a3b850cb8df2c519d3854020b6697286637e4cd4.css" integrity="sha256-zNA6wH7cmHbXT&#43;sXo7hQy43yxRnThUAgtmlyhmN&#43;TNQ="><link rel="stylesheet" href="/css/add-on.css">
+          <link rel="stylesheet" href="/css/bundle.min.80aa639b4bec28a35fd95ccaf6d979df779f2693654656a4860eab54153fc258.css" integrity="sha256-gKpjm0vsKKNf2VzK9tl533efJpNlRlakhg6rVBU/wlg="><link rel="stylesheet" href="/css/add-on.css">
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
       <script>
         var doNotTrack = false;
@@ -83,7 +83,7 @@
     "url": "https:\/\/tech.ray247k.com\/",
     "description": "討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - ai,aws,devops,git,golang,laravel,leetcode,node.js,php,python,serverless,typescript,實用工具,架站相關,版本控制,第三方服務,",
     "keywords": [
-        "airflow,apache bench,auto scaling,aws,axios,blockchain,cdn,chatbot,cicd,cloudflare,cloudflare workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker compose,domain name,drone,element-ui,excel,express,ffmpeg,gas,gcp,gcr,getter,git,github,github page,go,golang,golang, hugo,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load balancing,mongodb,mutation,nginx,ngrok,node.js,openclaw,php,php-fpm,phpcbf,phpcs,portainer,postgresql,pre-commit,prerender,proxy,pyenv,pytest,python,queue,rds,redis,restful,seo,server,serverless,smart contract,ssh,stress testing,subdomain,tdd,typescript,unit test,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,單元測試,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
+        "airflow,apache bench,auto scaling,aws,axios,blockchain,cdn,chatbot,cicd,cloudflare,cloudflare workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker compose,domain name,drone,element-ui,excel,express,ffmpeg,gas,gcp,gcr,getter,git,github,github page,go,golang,golang, hugo,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load balancing,mongodb,mutation,mwaa,nginx,ngrok,node.js,openclaw,php,php-fpm,phpcbf,phpcs,portainer,postgresql,pre-commit,prerender,proxy,pyenv,pytest,python,queue,rds,redis,restful,seo,server,serverless,smart contract,ssh,stress testing,subdomain,tdd,typescript,unit test,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,單元測試,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
     ]
 }
 </script>
@@ -367,25 +367,25 @@ digit of the integer. The digits are ordered from most significant to least sign
 The large integer does not contain any leading <code>0</code>&rsquo;s.</p>
 <p>Increment the large integer by one and return <em>the resulting array of digits</em>.</p>
 <p>Example 1:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Input: digits = [1,2,3]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Input: digits = [1,2,3]
 </span></span><span style="display:flex;"><span>Output: [1,2,4]
 </span></span><span style="display:flex;"><span>Explanation: The array represents the integer 123.
 </span></span><span style="display:flex;"><span>Incrementing by one gives 123 + 1 = 124.
 </span></span><span style="display:flex;"><span>Thus, the result should be [1,2,4].
 </span></span></code></pre></div><p>Example 2:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Input: digits = [4,3,2,1]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Input: digits = [4,3,2,1]
 </span></span><span style="display:flex;"><span>Output: [4,3,2,2]
 </span></span><span style="display:flex;"><span>Explanation: The array represents the integer 4321.
 </span></span><span style="display:flex;"><span>Incrementing by one gives 4321 + 1 = 4322.
 </span></span><span style="display:flex;"><span>Thus, the result should be [4,3,2,2].
 </span></span></code></pre></div><p>Example 3:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Input: digits = [0]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Input: digits = [0]
 </span></span><span style="display:flex;"><span>Output: [1]
 </span></span><span style="display:flex;"><span>Explanation: The array represents the integer 0.
 </span></span><span style="display:flex;"><span>Incrementing by one gives 0 + 1 = 1.
 </span></span><span style="display:flex;"><span>Thus, the result should be [1].
 </span></span></code></pre></div><p>Example 4:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Input: digits = [9]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Input: digits = [9]
 </span></span><span style="display:flex;"><span>Output: [1,0]
 </span></span><span style="display:flex;"><span>Explanation: The array represents the integer 9.
 </span></span><span style="display:flex;"><span>Incrementing by one gives 9 + 1 = 10.
@@ -403,7 +403,7 @@ The large integer does not contain any leading <code>0</code>&rsquo;s.</p>
 <li>字串轉換成數字，然後 +1</li>
 <li>每個位元拆開做成新的 list 後回傳</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span>:
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">plusOne</span>(self, digits: List[int]) <span style="color:#f92672">-&gt;</span> List[int]:
 </span></span><span style="display:flex;"><span>        number_string <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
 </span></span><span style="display:flex;"><span>        number_new <span style="color:#f92672">=</span> []
@@ -477,6 +477,14 @@ The large integer does not contain any leading <code>0</code>&rsquo;s.</p>
       </header>
       
       <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202609-mwaa-connection-encryption-investigation/">MWAA Connections 加密機制調查</a></h2>
+          <time class="published" datetime="2026-09-03 00:00:00 &#43;0000 UTC">2026/09/03</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
           <a href="/blog/202604-deploy-openclaw-ai-for-free/" class="image" style="--bg-image: url('/blog/202604-deploy-openclaw-ai-for-free/featured.jpg');">
     <img src="/blog/202604-deploy-openclaw-ai-for-free/featured.jpg" alt="">
   </a>
@@ -516,16 +524,6 @@ The large integer does not contain any leading <code>0</code>&rsquo;s.</p>
         </header>
       </article>
       
-      <article class="mini-post">
-          <a href="/blog/202508-manage-python-versions-with-pyenv/" class="image" style="--bg-image: url('/blog/202508-manage-python-versions-with-pyenv/featured.jpg');">
-    <img src="/blog/202508-manage-python-versions-with-pyenv/featured.jpg" alt="">
-  </a>
-        <header>
-          <h2><a href="/blog/202508-manage-python-versions-with-pyenv/">使用 Pyenv 輕鬆管理多版本 Python</a></h2>
-          <time class="published" datetime="2025-08-30 00:00:00 &#43;0000 UTC">2025/08/30</time>
-        </header>
-      </article>
-      
       
         <footer>
           <a href="/blog/" class="button">查看更多</a>
@@ -545,7 +543,7 @@ The large integer does not contain any leading <code>0</code>&rsquo;s.</p>
           
           
           <li>
-              <a href="/categories/aws/">aws<span class="count">26</span></a>
+              <a href="/categories/aws/">aws<span class="count">27</span></a>
           </li>
           
           <li>
@@ -743,6 +741,10 @@ The large integer does not contain any leading <code>0</code>&rsquo;s.</p>
         </li>
         
         <li>
+          <a href="/tags/airflow/">airflow (3)</a>
+        </li>
+        
+        <li>
           <a href="/tags/cloudflare/">cloudflare (3)</a>
         </li>
         
@@ -760,10 +762,6 @@ The large integer does not contain any leading <code>0</code>&rsquo;s.</p>
         
         <li>
           <a href="/tags/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/">架站相關 (3)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/airflow/">airflow (2)</a>
         </li>
         
         <li>
@@ -896,6 +894,10 @@ The large integer does not contain any leading <code>0</code>&rsquo;s.</p>
         
         <li>
           <a href="/tags/load-balancing/">load balancing (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/mwaa/">mwaa (1)</a>
         </li>
         
         <li>
@@ -1036,7 +1038,7 @@ The large integer does not contain any leading <code>0</code>&rsquo;s.</p>
     <script>
       hljs.configure({ ignoreUnescapedHTML: true }); 
       hljs.highlightAll();
-    </script><script src="/js/bundle.min.a56655f3069386c7a1539049f4b6e4d773b948f9c00ee443e5187c783819f686.js" integrity="sha256-pWZV8waThsehU5BJ9Lbk13O5SPnADuRD5Rh8eDgZ9oY="></script>
+    </script><script src="/js/bundle.min.d21befc899e4b6158eba05da3928321e52d15d067cb323bbf20e1b37a4ee0e3d.js" integrity="sha256-0hvvyJnkthWOugXaOSgyHlLRXQZ8syO78g4bN6TuDj0="></script>
     <script src="/js/add-on.js"></script>
 
 

@@ -1,40 +1,45 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>TypeScript on Byte Ebi 🍤</title>
-    <link>https://tech.ray247k.com/categories/typescript/</link>
-    <description>Recent content in TypeScript on Byte Ebi 🍤</description>
-    <generator>Hugo</generator>
-    <language>zh-TW</language>
-    <lastBuildDate>Wed, 26 Mar 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://tech.ray247k.com/categories/typescript/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>TypeScript 泛型(Generic)</title>
-      <link>https://tech.ray247k.com/blog/202503-typescript-generic/</link>
-      <pubDate>Wed, 26 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202503-typescript-generic/</guid>
-      <description>&lt;p&gt;介紹 TypeScript 的泛型，說明如何透過定義靈活的函式、介面與類別來提高程式的可重用性&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>TypeScript 的 Class 及 Interface</title>
-      <link>https://tech.ray247k.com/blog/202503-typescript-class-and-interface/</link>
-      <pubDate>Mon, 24 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202503-typescript-class-and-interface/</guid>
-      <description>&lt;p&gt;介紹 TypeScript 的 Class 和 Interface 基本概念&lt;br&gt;&#xA;包含 Class 的實踐與介面繼承的範例&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>TypeScript 的基本資料型別</title>
-      <link>https://tech.ray247k.com/blog/202503-typescript-basic-data-type/</link>
-      <pubDate>Thu, 20 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202503-typescript-basic-data-type/</guid>
-      <description>&lt;p&gt;介紹 TypeScript 的基本型別與語法範例&lt;br&gt;&#xA;包含基本函式語法、箭頭函式、匿名函式及函式多載的範例&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>TypeScript 環境建置</title>
-      <link>https://tech.ray247k.com/blog/202503-typescript-environment-setup/</link>
-      <pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202503-typescript-environment-setup/</guid>
-      <description>&lt;p&gt;建立 TypeScript 的開發環境&lt;br&gt;&#xA;使用 NVM 安裝 Node.js 及 npm，安裝&lt;code&gt;typescript&lt;/code&gt;、&lt;code&gt;nodemon&lt;/code&gt;和&lt;code&gt;ts-node&lt;/code&gt;等開發工具&lt;/p&gt;</description>
-    </item>
-  </channel>
+	<channel>
+		<title>TypeScript on Byte Ebi 🍤</title>
+		<link>https://tech.ray247k.com/categories/typescript/</link>
+		<description>Recent content in TypeScript on Byte Ebi 🍤</description>
+		<generator>Hugo</generator>
+		<language>zh-TW</language>
+		
+		
+		
+		
+			<lastBuildDate>Wed, 26 Mar 2025 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://tech.ray247k.com/categories/typescript/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>TypeScript 泛型(Generic)</title>
+				<link>https://tech.ray247k.com/blog/202503-typescript-generic/</link>
+				<pubDate>Wed, 26 Mar 2025 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202503-typescript-generic/</guid>
+				<description>&lt;p&gt;介紹 TypeScript 的泛型，說明如何透過定義靈活的函式、介面與類別來提高程式的可重用性&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>TypeScript 的 Class 及 Interface</title>
+				<link>https://tech.ray247k.com/blog/202503-typescript-class-and-interface/</link>
+				<pubDate>Mon, 24 Mar 2025 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202503-typescript-class-and-interface/</guid>
+				<description>&lt;p&gt;介紹 TypeScript 的 Class 和 Interface 基本概念&lt;br&gt;&#xA;包含 Class 的實踐與介面繼承的範例&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>TypeScript 的基本資料型別</title>
+				<link>https://tech.ray247k.com/blog/202503-typescript-basic-data-type/</link>
+				<pubDate>Thu, 20 Mar 2025 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202503-typescript-basic-data-type/</guid>
+				<description>&lt;p&gt;介紹 TypeScript 的基本型別與語法範例&lt;br&gt;&#xA;包含基本函式語法、箭頭函式、匿名函式及函式多載的範例&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>TypeScript 環境建置</title>
+				<link>https://tech.ray247k.com/blog/202503-typescript-environment-setup/</link>
+				<pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202503-typescript-environment-setup/</guid>
+				<description>&lt;p&gt;建立 TypeScript 的開發環境&lt;br&gt;&#xA;使用 NVM 安裝 Node.js 及 npm，安裝&lt;code&gt;typescript&lt;/code&gt;、&lt;code&gt;nodemon&lt;/code&gt;和&lt;code&gt;ts-node&lt;/code&gt;等開發工具&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

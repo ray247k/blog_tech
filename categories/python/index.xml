@@ -1,131 +1,136 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Python on Byte Ebi 🍤</title>
-    <link>https://tech.ray247k.com/categories/python/</link>
-    <description>Recent content in Python on Byte Ebi 🍤</description>
-    <generator>Hugo</generator>
-    <language>zh-TW</language>
-    <lastBuildDate>Tue, 03 Feb 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://tech.ray247k.com/categories/python/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>使用動態任務讓 Airflow 效能大解放</title>
-      <link>https://tech.ray247k.com/blog/202602-airflow-dynamic-task-mapping/</link>
-      <pubDate>Tue, 03 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202602-airflow-dynamic-task-mapping/</guid>
-      <description>&lt;p&gt;當任務之間有相依，但是彼此又是獨立事件時到底應該如何優雅的處裡呢？&lt;br&gt;&#xA;使用迴圈？還是多一個 DAG？抑或是有其他更好的方案？&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>使用 Airflow DAG 觸發其他 DAG</title>
-      <link>https://tech.ray247k.com/blog/202509-triggering-airflow-dag-from-another-dag/</link>
-      <pubDate>Wed, 24 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202509-triggering-airflow-dag-from-another-dag/</guid>
-      <description>&lt;p&gt;在 DAG 中呼叫其他 DAG 作為上下游處理關係，除了直接利用 REST API 外&lt;br&gt;&#xA;Airflow 也提供的內建的 Operator 可以使用&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>使用 Pyenv 輕鬆管理多版本 Python</title>
-      <link>https://tech.ray247k.com/blog/202508-manage-python-versions-with-pyenv/</link>
-      <pubDate>Sat, 30 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202508-manage-python-versions-with-pyenv/</guid>
-      <description>&lt;p&gt;Pyenv 是一個用來控制 Python 版本的工具&lt;br&gt;&#xA;不論是在升級專案的 Python 版本，還是根據不同專案切換 Python 版本，Pyenv 都是一個很方便的工具。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[Pytest 101] 04 Mock Class</title>
-      <link>https://tech.ray247k.com/blog/202507-pytest-4-pytest-mock-class/</link>
-      <pubDate>Sat, 26 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202507-pytest-4-pytest-mock-class/</guid>
-      <description>&lt;p&gt;在開發中導入工廠模式雖然能讓架構更清晰，但也讓單元測試變得複雜。&lt;br&gt;&#xA;一次搞懂兩種不同 mock 策略的優劣與實作方式，幫助你寫出更穩健的測試程式！&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[Pytest 101] 03 Mock SQL Query</title>
-      <link>https://tech.ray247k.com/blog/202507-pytest-3-pytest-mock-sql-query/</link>
-      <pubDate>Wed, 23 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202507-pytest-3-pytest-mock-sql-query/</guid>
-      <description>&lt;p&gt;透過 Mock，我們不需要真的連線到資料庫來執行測試，就可以模擬資料庫操作的結果。&lt;br&gt;&#xA;而不需要準備一個測試用的資料庫，並在測試後清除資料庫。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[Pytest 101] 02 Mock 的基本用法</title>
-      <link>https://tech.ray247k.com/blog/202507-pytest-2-pytest-mock-basics/</link>
-      <pubDate>Fri, 11 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202507-pytest-2-pytest-mock-basics/</guid>
-      <description>&lt;p&gt;介紹完基本的工具後，這篇文章要實際操作 Pytest 中 Mock 的使用方式。&lt;br&gt;&#xA;Mock 可以讓我們替換原本的函式邏輯，模擬不同情境，寫出更精準的單元測試。&lt;br&gt;&#xA;本文將以實例說明如何抽換函式、模擬錯誤發生，甚至處理像是 Redis 這樣的外部資源。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[Pytest 101] 01 Pytest &amp; Mock 基本介紹</title>
-      <link>https://tech.ray247k.com/blog/202507-pytest-1-intro-to-pytest-and-mock/</link>
-      <pubDate>Wed, 02 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202507-pytest-1-intro-to-pytest-and-mock/</guid>
-      <description>&lt;p&gt;寫程式要寫單元測試已經是大家耳熟能詳的工具了，但實際開工卻是層層阻礙。&lt;br&gt;&#xA;要怎麼開始？又要用到哪些工具？怎麼用？沒有經驗的人很容易迷失在這第一步。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>設定 Python 開發環境</title>
-      <link>https://tech.ray247k.com/blog/202506-settin-up-a-python-development-environment/</link>
-      <pubDate>Mon, 09 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202506-settin-up-a-python-development-environment/</guid>
-      <description>&lt;p&gt;第一次在工作環境裡面用 Python 所以記錄一下環境設定，很多套件都是幾年前自學的時候沒用過的新東西&lt;br&gt;&#xA;不小心曝露多久沒碰過 Python 了吧&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[Discord 機器人] 02.擲骰機器人</title>
-      <link>https://tech.ray247k.com/blog/202110-make-discord-chatbot-02-roll-dice-bot/</link>
-      <pubDate>Thu, 28 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202110-make-discord-chatbot-02-roll-dice-bot/</guid>
-      <description>&lt;p&gt;不知道大家知不知道 TTRPG 呢？&lt;br&gt;&#xA;比較有名的大概就是龍與地下城(D&amp;amp;D)吧&lt;br&gt;&#xA;之前看 hololive EN 在玩，就萌生了「來寫個擲骰子 Bot 玩看看好了」的想法&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[Discord 機器人] 01.建立基本機器人</title>
-      <link>https://tech.ray247k.com/blog/202110-make-discord-chatbot-01-set-up/</link>
-      <pubDate>Wed, 20 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202110-make-discord-chatbot-01-set-up/</guid>
-      <description>&lt;p&gt;閒閒沒事，來寫點沒寫過的東西&lt;br&gt;&#xA;最近都在 Discord 活動，就決定寫 Discord ChatBot 啦&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[LeetCode] #404 Sum of Left Leaves (Easy)</title>
-      <link>https://tech.ray247k.com/blog/202110-leetcode-no404-sum-of-left-leaves/</link>
-      <pubDate>Wed, 13 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202110-leetcode-no404-sum-of-left-leaves/</guid>
-      <description>&lt;p&gt;用 Python 解 LeetCode 系列，&lt;code&gt;Sum of Left Leaves&lt;/code&gt;，屬於 Easy&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[LeetCode] #1013 Partition Array Into Three Parts With Equal Sum (Easy)</title>
-      <link>https://tech.ray247k.com/blog/202110-leetcode-no1013-partition-array-into-three-parts-with-equal-sum/</link>
-      <pubDate>Tue, 12 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202110-leetcode-no1013-partition-array-into-three-parts-with-equal-sum/</guid>
-      <description>&lt;p&gt;用 Python 解 LeetCode 系列，&lt;code&gt;Partition Array Into Three Parts With Equal Sum&lt;/code&gt;，屬於 Easy&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[LeetCode] #455 Assign Cookies (Easy)</title>
-      <link>https://tech.ray247k.com/blog/202110-leetcode-no455-assign-cookies/</link>
-      <pubDate>Tue, 05 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202110-leetcode-no455-assign-cookies/</guid>
-      <description>&lt;p&gt;用 Python 解 LeetCode 系列，&lt;code&gt;Assign Cookies&lt;/code&gt;，屬於 Easy&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[LeetCode] #150 Evaluate Reverse Polish Notation (Medium)</title>
-      <link>https://tech.ray247k.com/blog/202109-leetcode-no150-evaluate-reverse-polish-notation/</link>
-      <pubDate>Fri, 24 Sep 2021 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202109-leetcode-no150-evaluate-reverse-polish-notation/</guid>
-      <description>&lt;p&gt;用 Python 解 LeetCode 系列，&lt;code&gt;Evaluate Reverse Polish Notation&lt;/code&gt;，屬於 Medium&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[LeetCode] #155 Min Stack (Easy)</title>
-      <link>https://tech.ray247k.com/blog/202109-leetcode-no155-min-stack/</link>
-      <pubDate>Wed, 15 Sep 2021 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202109-leetcode-no155-min-stack/</guid>
-      <description>&lt;p&gt;用 Python 解 LeetCode 系列，&lt;code&gt;Min Stack&lt;/code&gt;，屬於 Easy&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[LeetCode] #66 Plus One (Easy)</title>
-      <link>https://tech.ray247k.com/blog/202109-leetcode-no66-plus-one/</link>
-      <pubDate>Thu, 09 Sep 2021 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202109-leetcode-no66-plus-one/</guid>
-      <description>&lt;p&gt;用 Python 解 LeetCode 系列，&lt;code&gt;Plus One&lt;/code&gt;，屬於 Easy&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[LeetCode] #290 Word Pattern (Easy)</title>
-      <link>https://tech.ray247k.com/blog/202109-leetcode-no290-word-pattern/</link>
-      <pubDate>Sun, 05 Sep 2021 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202109-leetcode-no290-word-pattern/</guid>
-      <description>&lt;p&gt;用 Python 解 LeetCode 系列，&lt;code&gt;Word Pattern&lt;/code&gt;，屬於 Easy&lt;/p&gt;</description>
-    </item>
-  </channel>
+	<channel>
+		<title>Python on Byte Ebi 🍤</title>
+		<link>https://tech.ray247k.com/categories/python/</link>
+		<description>Recent content in Python on Byte Ebi 🍤</description>
+		<generator>Hugo</generator>
+		<language>zh-TW</language>
+		
+		
+		
+		
+			<lastBuildDate>Tue, 03 Feb 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://tech.ray247k.com/categories/python/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>使用動態任務讓 Airflow 效能大解放</title>
+				<link>https://tech.ray247k.com/blog/202602-airflow-dynamic-task-mapping/</link>
+				<pubDate>Tue, 03 Feb 2026 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202602-airflow-dynamic-task-mapping/</guid>
+				<description>&lt;p&gt;當任務之間有相依，但是彼此又是獨立事件時到底應該如何優雅的處裡呢？&lt;br&gt;&#xA;使用迴圈？還是多一個 DAG？抑或是有其他更好的方案？&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>使用 Airflow DAG 觸發其他 DAG</title>
+				<link>https://tech.ray247k.com/blog/202509-triggering-airflow-dag-from-another-dag/</link>
+				<pubDate>Wed, 24 Sep 2025 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202509-triggering-airflow-dag-from-another-dag/</guid>
+				<description>&lt;p&gt;在 DAG 中呼叫其他 DAG 作為上下游處理關係，除了直接利用 REST API 外&lt;br&gt;&#xA;Airflow 也提供的內建的 Operator 可以使用&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>使用 Pyenv 輕鬆管理多版本 Python</title>
+				<link>https://tech.ray247k.com/blog/202508-manage-python-versions-with-pyenv/</link>
+				<pubDate>Sat, 30 Aug 2025 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202508-manage-python-versions-with-pyenv/</guid>
+				<description>&lt;p&gt;Pyenv 是一個用來控制 Python 版本的工具&lt;br&gt;&#xA;不論是在升級專案的 Python 版本，還是根據不同專案切換 Python 版本，Pyenv 都是一個很方便的工具。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[Pytest 101] 04 Mock Class</title>
+				<link>https://tech.ray247k.com/blog/202507-pytest-4-pytest-mock-class/</link>
+				<pubDate>Sat, 26 Jul 2025 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202507-pytest-4-pytest-mock-class/</guid>
+				<description>&lt;p&gt;在開發中導入工廠模式雖然能讓架構更清晰，但也讓單元測試變得複雜。&lt;br&gt;&#xA;一次搞懂兩種不同 mock 策略的優劣與實作方式，幫助你寫出更穩健的測試程式！&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[Pytest 101] 03 Mock SQL Query</title>
+				<link>https://tech.ray247k.com/blog/202507-pytest-3-pytest-mock-sql-query/</link>
+				<pubDate>Wed, 23 Jul 2025 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202507-pytest-3-pytest-mock-sql-query/</guid>
+				<description>&lt;p&gt;透過 Mock，我們不需要真的連線到資料庫來執行測試，就可以模擬資料庫操作的結果。&lt;br&gt;&#xA;而不需要準備一個測試用的資料庫，並在測試後清除資料庫。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[Pytest 101] 02 Mock 的基本用法</title>
+				<link>https://tech.ray247k.com/blog/202507-pytest-2-pytest-mock-basics/</link>
+				<pubDate>Fri, 11 Jul 2025 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202507-pytest-2-pytest-mock-basics/</guid>
+				<description>&lt;p&gt;介紹完基本的工具後，這篇文章要實際操作 Pytest 中 Mock 的使用方式。&lt;br&gt;&#xA;Mock 可以讓我們替換原本的函式邏輯，模擬不同情境，寫出更精準的單元測試。&lt;br&gt;&#xA;本文將以實例說明如何抽換函式、模擬錯誤發生，甚至處理像是 Redis 這樣的外部資源。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[Pytest 101] 01 Pytest &amp; Mock 基本介紹</title>
+				<link>https://tech.ray247k.com/blog/202507-pytest-1-intro-to-pytest-and-mock/</link>
+				<pubDate>Wed, 02 Jul 2025 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202507-pytest-1-intro-to-pytest-and-mock/</guid>
+				<description>&lt;p&gt;寫程式要寫單元測試已經是大家耳熟能詳的工具了，但實際開工卻是層層阻礙。&lt;br&gt;&#xA;要怎麼開始？又要用到哪些工具？怎麼用？沒有經驗的人很容易迷失在這第一步。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>設定 Python 開發環境</title>
+				<link>https://tech.ray247k.com/blog/202506-settin-up-a-python-development-environment/</link>
+				<pubDate>Mon, 09 Jun 2025 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202506-settin-up-a-python-development-environment/</guid>
+				<description>&lt;p&gt;第一次在工作環境裡面用 Python 所以記錄一下環境設定，很多套件都是幾年前自學的時候沒用過的新東西&lt;br&gt;&#xA;不小心曝露多久沒碰過 Python 了吧&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[Discord 機器人] 02.擲骰機器人</title>
+				<link>https://tech.ray247k.com/blog/202110-make-discord-chatbot-02-roll-dice-bot/</link>
+				<pubDate>Thu, 28 Oct 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202110-make-discord-chatbot-02-roll-dice-bot/</guid>
+				<description>&lt;p&gt;不知道大家知不知道 TTRPG 呢？&lt;br&gt;&#xA;比較有名的大概就是龍與地下城(D&amp;amp;D)吧&lt;br&gt;&#xA;之前看 hololive EN 在玩，就萌生了「來寫個擲骰子 Bot 玩看看好了」的想法&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[Discord 機器人] 01.建立基本機器人</title>
+				<link>https://tech.ray247k.com/blog/202110-make-discord-chatbot-01-set-up/</link>
+				<pubDate>Wed, 20 Oct 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202110-make-discord-chatbot-01-set-up/</guid>
+				<description>&lt;p&gt;閒閒沒事，來寫點沒寫過的東西&lt;br&gt;&#xA;最近都在 Discord 活動，就決定寫 Discord ChatBot 啦&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[LeetCode] #404 Sum of Left Leaves (Easy)</title>
+				<link>https://tech.ray247k.com/blog/202110-leetcode-no404-sum-of-left-leaves/</link>
+				<pubDate>Wed, 13 Oct 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202110-leetcode-no404-sum-of-left-leaves/</guid>
+				<description>&lt;p&gt;用 Python 解 LeetCode 系列，&lt;code&gt;Sum of Left Leaves&lt;/code&gt;，屬於 Easy&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[LeetCode] #1013 Partition Array Into Three Parts With Equal Sum (Easy)</title>
+				<link>https://tech.ray247k.com/blog/202110-leetcode-no1013-partition-array-into-three-parts-with-equal-sum/</link>
+				<pubDate>Tue, 12 Oct 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202110-leetcode-no1013-partition-array-into-three-parts-with-equal-sum/</guid>
+				<description>&lt;p&gt;用 Python 解 LeetCode 系列，&lt;code&gt;Partition Array Into Three Parts With Equal Sum&lt;/code&gt;，屬於 Easy&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[LeetCode] #455 Assign Cookies (Easy)</title>
+				<link>https://tech.ray247k.com/blog/202110-leetcode-no455-assign-cookies/</link>
+				<pubDate>Tue, 05 Oct 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202110-leetcode-no455-assign-cookies/</guid>
+				<description>&lt;p&gt;用 Python 解 LeetCode 系列，&lt;code&gt;Assign Cookies&lt;/code&gt;，屬於 Easy&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[LeetCode] #150 Evaluate Reverse Polish Notation (Medium)</title>
+				<link>https://tech.ray247k.com/blog/202109-leetcode-no150-evaluate-reverse-polish-notation/</link>
+				<pubDate>Fri, 24 Sep 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202109-leetcode-no150-evaluate-reverse-polish-notation/</guid>
+				<description>&lt;p&gt;用 Python 解 LeetCode 系列，&lt;code&gt;Evaluate Reverse Polish Notation&lt;/code&gt;，屬於 Medium&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[LeetCode] #155 Min Stack (Easy)</title>
+				<link>https://tech.ray247k.com/blog/202109-leetcode-no155-min-stack/</link>
+				<pubDate>Wed, 15 Sep 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202109-leetcode-no155-min-stack/</guid>
+				<description>&lt;p&gt;用 Python 解 LeetCode 系列，&lt;code&gt;Min Stack&lt;/code&gt;，屬於 Easy&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[LeetCode] #66 Plus One (Easy)</title>
+				<link>https://tech.ray247k.com/blog/202109-leetcode-no66-plus-one/</link>
+				<pubDate>Thu, 09 Sep 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202109-leetcode-no66-plus-one/</guid>
+				<description>&lt;p&gt;用 Python 解 LeetCode 系列，&lt;code&gt;Plus One&lt;/code&gt;，屬於 Easy&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[LeetCode] #290 Word Pattern (Easy)</title>
+				<link>https://tech.ray247k.com/blog/202109-leetcode-no290-word-pattern/</link>
+				<pubDate>Sun, 05 Sep 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202109-leetcode-no290-word-pattern/</guid>
+				<description>&lt;p&gt;用 Python 解 LeetCode 系列，&lt;code&gt;Word Pattern&lt;/code&gt;，屬於 Easy&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

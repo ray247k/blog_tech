@@ -1,194 +1,206 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>AWS on Byte Ebi 🍤</title>
-    <link>https://tech.ray247k.com/categories/aws/</link>
-    <description>Recent content in AWS on Byte Ebi 🍤</description>
-    <generator>Hugo</generator>
-    <language>zh-TW</language>
-    <lastBuildDate>Sun, 07 Sep 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://tech.ray247k.com/categories/aws/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>掌握 Amazon RDS 的連線數限制</title>
-      <link>https://tech.ray247k.com/blog/202509-amazon-rds-db-connection-limits/</link>
-      <pubDate>Sun, 07 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202509-amazon-rds-db-connection-limits/</guid>
-      <description>&lt;p&gt;你是否曾經遇過資料庫連線數不足的情況？或是在規劃系統架構時，不確定該如何選擇合適的 RDS 實體？&lt;br&gt;&#xA;這篇文章將帶你了解 Amazon RDS 的連線數上限計算方式，並提供不同實例型號的比較，幫助你做出更精準的判斷。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[大話 AWS 雲端架構筆記] AWS 常見架構總覽</title>
-      <link>https://tech.ray247k.com/blog/202402-aws-fundamental-architectures/</link>
-      <pubDate>Sun, 18 Feb 2024 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202402-aws-fundamental-architectures/</guid>
-      <description>&lt;p&gt;簡介各種常見的應用架構元件和演進&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[大話 AWS 雲端架構筆記] 混合雲</title>
-      <link>https://tech.ray247k.com/blog/202402-aws-fundamental-hybrid-cloud/</link>
-      <pubDate>Tue, 13 Feb 2024 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202402-aws-fundamental-hybrid-cloud/</guid>
-      <description>&lt;p&gt;混合雲端是一種IT 基礎設施設計，它可將公司的內部IT 資源與第三方雲端供應商的基礎設施和服務整合在一起&lt;br&gt;&#xA;AWS 混合雲端服務可在您需要的任何地方提供一致的AWS 體驗– 從雲端、內部部署到邊緣&lt;br&gt;&#xA;藉助混合雲端，您可以儲存資料並跨多個環境執行應用程式&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[大話 AWS 雲端架構筆記] 資安架構總覽</title>
-      <link>https://tech.ray247k.com/blog/202401-aws-fundamental-cyber-security/</link>
-      <pubDate>Sat, 06 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202401-aws-fundamental-cyber-security/</guid>
-      <description>&lt;p&gt;雲服務中企業使用大量帳號，造成架構與安全的破碎化，增加管理難度&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[大話 AWS 雲端架構筆記] Lambda</title>
-      <link>https://tech.ray247k.com/blog/202312-aws-fundamental-lambda/</link>
-      <pubDate>Wed, 27 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202312-aws-fundamental-lambda/</guid>
-      <description>&lt;p&gt;把程式上傳到 Lambda 服務裡，有網路封包傳入請求存取時快速啟用&lt;br&gt;&#xA;達成用多少付多少的目的&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[大話 AWS 雲端架構筆記] API Gateway</title>
-      <link>https://tech.ray247k.com/blog/202312-aws-fundamental-api-gateway/</link>
-      <pubDate>Sun, 17 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202312-aws-fundamental-api-gateway/</guid>
-      <description>&lt;p&gt;作為應用程式的「前門」，以便從後端服務存取資料、商業邏輯或功能&lt;br&gt;&#xA;使用 API Gateway 時，您可以建立 RESTful API 和 WebSocket API，以啟用即時雙向通訊應用程式&lt;br&gt;&#xA;API Gateway 支援容器化、無伺服器工作負載和 Web 應用程式&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>AWS DynamoDB 時間點還原 point-in-time recovery (PITR)</title>
-      <link>https://tech.ray247k.com/blog/202311-aws-dynamodb-pitr/</link>
-      <pubDate>Fri, 03 Nov 2023 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202311-aws-dynamodb-pitr/</guid>
-      <description>&lt;p&gt;時間點還原 (PITR) 是一種強大的資料恢復功能，對於 AWS DynamoDB 和其他數據庫服務至關重要。&lt;br&gt;&#xA;透過 PITR，可以在意外數據丟失或損壞的情況下，將資料還原至先前的狀態，進而保護業務的持續運作。&lt;br&gt;&#xA;此外，PITR 可以定期備份資料並保留多個時間點的版本，這有助於追蹤和修復可能發生的錯誤。&lt;br&gt;&#xA;最重要的是，PITR 可以按照需求靈活的還原資料，而不會影響其他系統操作，從而提高了系統的可靠性和穩定性。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[大話 AWS 雲端架構筆記] Kinesis、EMR 與 Redshift</title>
-      <link>https://tech.ray247k.com/blog/202310-aws-fundamental-kinesis-emr-and-redshift/</link>
-      <pubDate>Fri, 27 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202310-aws-fundamental-kinesis-emr-and-redshift/</guid>
-      <description>&lt;p&gt;用於大數據架構&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[大話 AWS 雲端架構筆記] 成本控管</title>
-      <link>https://tech.ray247k.com/blog/202309-aws-fundamental-cost-control/</link>
-      <pubDate>Sun, 17 Sep 2023 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202309-aws-fundamental-cost-control/</guid>
-      <description>&lt;p&gt;使用 AWS 定價計算工具：&lt;a href=&#34;https://calculator.aws/#/&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;AWS Pricing Calculator&#xA;&lt;/a&gt;&#xA; 透過機房思維進行雲端架構成本預估&lt;br&gt;&#xA;&lt;a href=&#34;https://docs.aws.amazon.com/zh_tw/organizations/latest/userguide/orgs_introduction.html&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;AWS Organizations&#xA;&lt;/a&gt;&#xA;&#xA;將多個 AWS 帳戶合併成一個組織集中管理&lt;br&gt;&#xA;可以在組織中建立帳戶，並邀請現有的帳戶加入組織&lt;br&gt;&#xA;包含帳戶管理和合併帳單功能，並符合預算、安全及合規需求&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[大話 AWS 雲端架構筆記] SNS</title>
-      <link>https://tech.ray247k.com/blog/202308-aws-fundamental-sns/</link>
-      <pubDate>Sun, 13 Aug 2023 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202308-aws-fundamental-sns/</guid>
-      <description>&lt;p&gt;應用於寄送簡訊或 E-mail 以及推播通知：&lt;a href=&#34;https://docs.aws.amazon.com/zh_tw/sns/latest/dg/welcome.html&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Simple Notification Servic&#xA;&lt;/a&gt;&#xA;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[大話 AWS 雲端架構筆記] Cognito</title>
-      <link>https://tech.ray247k.com/blog/202307-aws-fundamental-cognito/</link>
-      <pubDate>Fri, 07 Jul 2023 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202307-aws-fundamental-cognito/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://aws.amazon.com/tw/cognito/&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Amazon Cognito&#xA;&lt;/a&gt;&#xA;：當流量進來時，必須先做身份確認，確認可以使用的 AWS 雲端資源&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[大話 AWS 雲端架構筆記] CloudFormation</title>
-      <link>https://tech.ray247k.com/blog/202306-aws-fundamental-cloudformation/</link>
-      <pubDate>Sun, 18 Jun 2023 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202306-aws-fundamental-cloudformation/</guid>
-      <description>&lt;p&gt;CloudFormation 是 AWS 原生的 Infrastructure as Code(IaC) 服務&lt;br&gt;&#xA;將基礎設施視為程式碼，可讓您對 AWS 和第三方資源進行建模、佈建和管理&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[大話 AWS 雲端架構筆記] ElastiCache</title>
-      <link>https://tech.ray247k.com/blog/202306-aws-fundamental-elasticache/</link>
-      <pubDate>Tue, 13 Jun 2023 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202306-aws-fundamental-elasticache/</guid>
-      <description>&lt;p&gt;雲端快取服務，底層有 &lt;a href=&#34;#Redis&#34;&#xA;   &#xA;   &gt;Redis&#xA;&lt;/a&gt;&#xA; 和 &lt;a href=&#34;#Memcached&#34;&#xA;   &#xA;   &gt;Memcached&#xA;&lt;/a&gt;&#xA; 兩種引擎&lt;br&gt;&#xA;可協助施作&lt;code&gt;分片(Shard)&lt;/code&gt;機制&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[大話 AWS 雲端架構筆記] DynamoDB</title>
-      <link>https://tech.ray247k.com/blog/202306-aws-fundamental-dynamodb/</link>
-      <pubDate>Fri, 02 Jun 2023 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202306-aws-fundamental-dynamodb/</guid>
-      <description>&lt;p&gt;分散式 NoSQL 資料庫服務&lt;br&gt;&#xA;資料存取必須透過 IAM 取得對應的 Role(EC2) 或是使用 Credential(開發者)&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[大話 AWS 雲端架構筆記] SQS</title>
-      <link>https://tech.ray247k.com/blog/202305-aws-fundamental-sqs/</link>
-      <pubDate>Tue, 30 May 2023 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202305-aws-fundamental-sqs/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://docs.aws.amazon.com/zh_tw/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Amazon Simple Queue Service&#xA;&lt;/a&gt;&#xA;&#xA;作為任務暫存器，不需要及時處理的任務可以丟進去存放&lt;br&gt;&#xA;等系統有多餘的資源時再進行處理，可以解耦應用程式&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[大話 AWS 雲端架構筆記] Auto Scaling</title>
-      <link>https://tech.ray247k.com/blog/202305-aws-fundamental-auto-scaling/</link>
-      <pubDate>Tue, 23 May 2023 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202305-aws-fundamental-auto-scaling/</guid>
-      <description>&lt;p&gt;監控應用程式並按照流量變化自動增減機器，盡可能以最低成本維持穩定、可預測的效能&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[大話 AWS 雲端架構筆記] Elastic Load Balancer</title>
-      <link>https://tech.ray247k.com/blog/202305-aws-fundamental-elastic-load-balancer/</link>
-      <pubDate>Thu, 11 May 2023 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202305-aws-fundamental-elastic-load-balancer/</guid>
-      <description>&lt;p&gt;透過 &lt;a href=&#34;https://aws.amazon.com/tw/elasticloadbalancing/&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Elastic Load Balancer&#xA;&lt;/a&gt;&#xA; 達到流量附載分流的效果&lt;br&gt;&#xA;ELB 會將傳入的應用程式流量分配在一個或多個可用區域 (AZ) 中的多個目標和虛擬設備上&lt;br&gt;&#xA;並產生 Access log 留存&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[大話 AWS 雲端架構筆記] CloudFront</title>
-      <link>https://tech.ray247k.com/blog/202305-aws-fundamental-cloudfront/</link>
-      <pubDate>Wed, 03 May 2023 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202305-aws-fundamental-cloudfront/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://aws.amazon.com/tw/cloudfront/&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Amazon CloudFront&#xA;&lt;/a&gt;&#xA; 是一項內容交付網路 (CDN) 服務&lt;br&gt;&#xA;可以解決 DDoS 與靜態資源重複存取問題&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[大話 AWS 雲端架構筆記] CloudWatch 與 CloudTrail</title>
-      <link>https://tech.ray247k.com/blog/202304-aws-fundamental-cloudwatch-and-cloudtrail/</link>
-      <pubDate>Tue, 25 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202304-aws-fundamental-cloudwatch-and-cloudtrail/</guid>
-      <description>&lt;p&gt;Amazon CloudWatch 監控您的 Amazon Web Services（AWS）資源和您實時運行AWS的應用程序&lt;br&gt;&#xA;AWS CloudTrail 是一種AWS 服務，可協助您實現AWS 帳戶的操作與風險稽核、治理和合規&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[大話 AWS 雲端架構筆記] Route 53</title>
-      <link>https://tech.ray247k.com/blog/202304-aws-fundamental-route53/</link>
-      <pubDate>Sat, 15 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202304-aws-fundamental-route53/</guid>
-      <description>&lt;p&gt;提供域名購買、域名解析轉發、系統健康檢查、流量轉送&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[大話 AWS 雲端架構筆記] RDS</title>
-      <link>https://tech.ray247k.com/blog/202304-aws-fundamental-rds/</link>
-      <pubDate>Wed, 05 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202304-aws-fundamental-rds/</guid>
-      <description>&lt;p&gt;只要按幾下即可在雲端設定、操作和擴展關聯式資料庫&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[大話 AWS 雲端架構筆記] S3</title>
-      <link>https://tech.ray247k.com/blog/202303-aws-fundamental-s3/</link>
-      <pubDate>Sat, 25 Mar 2023 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202303-aws-fundamental-s3/</guid>
-      <description>&lt;p&gt;可擴展性、資料可用性、安全性和效能的雲端物件儲存&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[大話 AWS 雲端架構筆記] EC2</title>
-      <link>https://tech.ray247k.com/blog/202303-aws-fundamental-ec2/</link>
-      <pubDate>Mon, 20 Mar 2023 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202303-aws-fundamental-ec2/</guid>
-      <description>&lt;p&gt;讓使用者可以租用雲端電腦運行所需應用的系統&lt;br&gt;&#xA;EC2藉由提供Web服務的方式讓使用者可以彈性地運行自己的Amazon機器映像檔，使用者將可以在這個虛擬機器上運行任何自己想要的軟體或應用程式&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[大話 AWS 雲端架構筆記] VPC</title>
-      <link>https://tech.ray247k.com/blog/202303-aws-fundamental-vpc/</link>
-      <pubDate>Fri, 10 Mar 2023 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202303-aws-fundamental-vpc/</guid>
-      <description>&lt;p&gt;Amazon Virtual Private Cloud (Amazon VPC) 可讓您完全控制虛擬聯網環境，包括資源置放、連線和安全&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[大話 AWS 雲端架構筆記] IAM</title>
-      <link>https://tech.ray247k.com/blog/202301-aws-fundamental-iam/</link>
-      <pubDate>Tue, 10 Jan 2023 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202301-aws-fundamental-iam/</guid>
-      <description>&lt;p&gt;因為 root 權限太大，必須切割成多個用戶和群組來設定權限&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[AWS 101] 什麼是 SNS 和 SQS</title>
-      <link>https://tech.ray247k.com/blog/202210-aws101-what-is-sns-and-sqs/</link>
-      <pubDate>Thu, 06 Oct 2022 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202210-aws101-what-is-sns-and-sqs/</guid>
-      <description>&lt;p&gt;Amazon Simple Queue Service (SQS) 和 Amazon Simple Notification Service (SNS) 看起來很像，實際上又不太一樣&lt;br&gt;&#xA;為了更好釐清兩者，就把兩個服務的筆記放在一起比較&lt;/p&gt;</description>
-    </item>
-  </channel>
+	<channel>
+		<title>AWS on Byte Ebi 🍤</title>
+		<link>https://tech.ray247k.com/categories/aws/</link>
+		<description>Recent content in AWS on Byte Ebi 🍤</description>
+		<generator>Hugo</generator>
+		<language>zh-TW</language>
+		
+		
+		
+		
+			<lastBuildDate>Thu, 03 Sep 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://tech.ray247k.com/categories/aws/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>MWAA Connections 加密機制調查</title>
+				<link>https://tech.ray247k.com/blog/202609-mwaa-connection-encryption-investigation/</link>
+				<pubDate>Thu, 03 Sep 2026 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202609-mwaa-connection-encryption-investigation/</guid>
+				<description>&lt;p&gt;Airflow 文件裡其實記載著，加密金鑰設成空字串就會讓 Connections 直接以明碼儲存&lt;br&gt;&#xA;但同樣的做法放到 AWS 代管的 MWAA 上，是否也一樣行得通？&lt;br&gt;&#xA;這篇文章記錄我從 Airflow 原生的 Fernet 機制查到 MWAA 保留變數，一路找出答案的過程&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>掌握 Amazon RDS 的連線數限制</title>
+				<link>https://tech.ray247k.com/blog/202509-amazon-rds-db-connection-limits/</link>
+				<pubDate>Sun, 07 Sep 2025 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202509-amazon-rds-db-connection-limits/</guid>
+				<description>&lt;p&gt;你是否曾經遇過資料庫連線數不足的情況？或是在規劃系統架構時，不確定該如何選擇合適的 RDS 實體？&lt;br&gt;&#xA;這篇文章將帶你了解 Amazon RDS 的連線數上限計算方式，並提供不同實例型號的比較，幫助你做出更精準的判斷。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[大話 AWS 雲端架構筆記] AWS 常見架構總覽</title>
+				<link>https://tech.ray247k.com/blog/202402-aws-fundamental-architectures/</link>
+				<pubDate>Sun, 18 Feb 2024 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202402-aws-fundamental-architectures/</guid>
+				<description>&lt;p&gt;簡介各種常見的應用架構元件和演進&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[大話 AWS 雲端架構筆記] 混合雲</title>
+				<link>https://tech.ray247k.com/blog/202402-aws-fundamental-hybrid-cloud/</link>
+				<pubDate>Tue, 13 Feb 2024 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202402-aws-fundamental-hybrid-cloud/</guid>
+				<description>&lt;p&gt;混合雲端是一種IT 基礎設施設計，它可將公司的內部IT 資源與第三方雲端供應商的基礎設施和服務整合在一起&lt;br&gt;&#xA;AWS 混合雲端服務可在您需要的任何地方提供一致的AWS 體驗– 從雲端、內部部署到邊緣&lt;br&gt;&#xA;藉助混合雲端，您可以儲存資料並跨多個環境執行應用程式&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[大話 AWS 雲端架構筆記] 資安架構總覽</title>
+				<link>https://tech.ray247k.com/blog/202401-aws-fundamental-cyber-security/</link>
+				<pubDate>Sat, 06 Jan 2024 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202401-aws-fundamental-cyber-security/</guid>
+				<description>&lt;p&gt;雲服務中企業使用大量帳號，造成架構與安全的破碎化，增加管理難度&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[大話 AWS 雲端架構筆記] Lambda</title>
+				<link>https://tech.ray247k.com/blog/202312-aws-fundamental-lambda/</link>
+				<pubDate>Wed, 27 Dec 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202312-aws-fundamental-lambda/</guid>
+				<description>&lt;p&gt;把程式上傳到 Lambda 服務裡，有網路封包傳入請求存取時快速啟用&lt;br&gt;&#xA;達成用多少付多少的目的&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[大話 AWS 雲端架構筆記] API Gateway</title>
+				<link>https://tech.ray247k.com/blog/202312-aws-fundamental-api-gateway/</link>
+				<pubDate>Sun, 17 Dec 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202312-aws-fundamental-api-gateway/</guid>
+				<description>&lt;p&gt;作為應用程式的「前門」，以便從後端服務存取資料、商業邏輯或功能&lt;br&gt;&#xA;使用 API Gateway 時，您可以建立 RESTful API 和 WebSocket API，以啟用即時雙向通訊應用程式&lt;br&gt;&#xA;API Gateway 支援容器化、無伺服器工作負載和 Web 應用程式&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>AWS DynamoDB 時間點還原 point-in-time recovery (PITR)</title>
+				<link>https://tech.ray247k.com/blog/202311-aws-dynamodb-pitr/</link>
+				<pubDate>Fri, 03 Nov 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202311-aws-dynamodb-pitr/</guid>
+				<description>&lt;p&gt;時間點還原 (PITR) 是一種強大的資料恢復功能，對於 AWS DynamoDB 和其他數據庫服務至關重要。&lt;br&gt;&#xA;透過 PITR，可以在意外數據丟失或損壞的情況下，將資料還原至先前的狀態，進而保護業務的持續運作。&lt;br&gt;&#xA;此外，PITR 可以定期備份資料並保留多個時間點的版本，這有助於追蹤和修復可能發生的錯誤。&lt;br&gt;&#xA;最重要的是，PITR 可以按照需求靈活的還原資料，而不會影響其他系統操作，從而提高了系統的可靠性和穩定性。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[大話 AWS 雲端架構筆記] Kinesis、EMR 與 Redshift</title>
+				<link>https://tech.ray247k.com/blog/202310-aws-fundamental-kinesis-emr-and-redshift/</link>
+				<pubDate>Fri, 27 Oct 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202310-aws-fundamental-kinesis-emr-and-redshift/</guid>
+				<description>&lt;p&gt;用於大數據架構&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[大話 AWS 雲端架構筆記] 成本控管</title>
+				<link>https://tech.ray247k.com/blog/202309-aws-fundamental-cost-control/</link>
+				<pubDate>Sun, 17 Sep 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202309-aws-fundamental-cost-control/</guid>
+				<description>&lt;p&gt;使用 AWS 定價計算工具：&lt;a href=&#34;https://calculator.aws/#/&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;AWS Pricing Calculator&#xD;&#xA;&lt;/a&gt;&#xD;&#xA; 透過機房思維進行雲端架構成本預估&lt;br&gt;&#xA;&lt;a href=&#34;https://docs.aws.amazon.com/zh_tw/organizations/latest/userguide/orgs_introduction.html&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;AWS Organizations&#xD;&#xA;&lt;/a&gt;&#xD;&#xA;&#xA;將多個 AWS 帳戶合併成一個組織集中管理&lt;br&gt;&#xA;可以在組織中建立帳戶，並邀請現有的帳戶加入組織&lt;br&gt;&#xA;包含帳戶管理和合併帳單功能，並符合預算、安全及合規需求&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[大話 AWS 雲端架構筆記] SNS</title>
+				<link>https://tech.ray247k.com/blog/202308-aws-fundamental-sns/</link>
+				<pubDate>Sun, 13 Aug 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202308-aws-fundamental-sns/</guid>
+				<description>&lt;p&gt;應用於寄送簡訊或 E-mail 以及推播通知：&lt;a href=&#34;https://docs.aws.amazon.com/zh_tw/sns/latest/dg/welcome.html&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Simple Notification Servic&#xD;&#xA;&lt;/a&gt;&#xD;&#xA;&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[大話 AWS 雲端架構筆記] Cognito</title>
+				<link>https://tech.ray247k.com/blog/202307-aws-fundamental-cognito/</link>
+				<pubDate>Fri, 07 Jul 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202307-aws-fundamental-cognito/</guid>
+				<description>&lt;p&gt;&lt;a href=&#34;https://aws.amazon.com/tw/cognito/&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Amazon Cognito&#xD;&#xA;&lt;/a&gt;&#xD;&#xA;：當流量進來時，必須先做身份確認，確認可以使用的 AWS 雲端資源&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[大話 AWS 雲端架構筆記] CloudFormation</title>
+				<link>https://tech.ray247k.com/blog/202306-aws-fundamental-cloudformation/</link>
+				<pubDate>Sun, 18 Jun 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202306-aws-fundamental-cloudformation/</guid>
+				<description>&lt;p&gt;CloudFormation 是 AWS 原生的 Infrastructure as Code(IaC) 服務&lt;br&gt;&#xA;將基礎設施視為程式碼，可讓您對 AWS 和第三方資源進行建模、佈建和管理&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[大話 AWS 雲端架構筆記] ElastiCache</title>
+				<link>https://tech.ray247k.com/blog/202306-aws-fundamental-elasticache/</link>
+				<pubDate>Tue, 13 Jun 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202306-aws-fundamental-elasticache/</guid>
+				<description>&lt;p&gt;雲端快取服務，底層有 &lt;a href=&#34;#Redis&#34;&#xD;&#xA;   &#xD;&#xA;   &gt;Redis&#xD;&#xA;&lt;/a&gt;&#xD;&#xA; 和 &lt;a href=&#34;#Memcached&#34;&#xD;&#xA;   &#xD;&#xA;   &gt;Memcached&#xD;&#xA;&lt;/a&gt;&#xD;&#xA; 兩種引擎&lt;br&gt;&#xA;可協助施作&lt;code&gt;分片(Shard)&lt;/code&gt;機制&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[大話 AWS 雲端架構筆記] DynamoDB</title>
+				<link>https://tech.ray247k.com/blog/202306-aws-fundamental-dynamodb/</link>
+				<pubDate>Fri, 02 Jun 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202306-aws-fundamental-dynamodb/</guid>
+				<description>&lt;p&gt;分散式 NoSQL 資料庫服務&lt;br&gt;&#xA;資料存取必須透過 IAM 取得對應的 Role(EC2) 或是使用 Credential(開發者)&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[大話 AWS 雲端架構筆記] SQS</title>
+				<link>https://tech.ray247k.com/blog/202305-aws-fundamental-sqs/</link>
+				<pubDate>Tue, 30 May 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202305-aws-fundamental-sqs/</guid>
+				<description>&lt;p&gt;&lt;a href=&#34;https://docs.aws.amazon.com/zh_tw/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Amazon Simple Queue Service&#xD;&#xA;&lt;/a&gt;&#xD;&#xA;&#xA;作為任務暫存器，不需要及時處理的任務可以丟進去存放&lt;br&gt;&#xA;等系統有多餘的資源時再進行處理，可以解耦應用程式&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[大話 AWS 雲端架構筆記] Auto Scaling</title>
+				<link>https://tech.ray247k.com/blog/202305-aws-fundamental-auto-scaling/</link>
+				<pubDate>Tue, 23 May 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202305-aws-fundamental-auto-scaling/</guid>
+				<description>&lt;p&gt;監控應用程式並按照流量變化自動增減機器，盡可能以最低成本維持穩定、可預測的效能&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[大話 AWS 雲端架構筆記] Elastic Load Balancer</title>
+				<link>https://tech.ray247k.com/blog/202305-aws-fundamental-elastic-load-balancer/</link>
+				<pubDate>Thu, 11 May 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202305-aws-fundamental-elastic-load-balancer/</guid>
+				<description>&lt;p&gt;透過 &lt;a href=&#34;https://aws.amazon.com/tw/elasticloadbalancing/&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Elastic Load Balancer&#xD;&#xA;&lt;/a&gt;&#xD;&#xA; 達到流量附載分流的效果&lt;br&gt;&#xA;ELB 會將傳入的應用程式流量分配在一個或多個可用區域 (AZ) 中的多個目標和虛擬設備上&lt;br&gt;&#xA;並產生 Access log 留存&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[大話 AWS 雲端架構筆記] CloudFront</title>
+				<link>https://tech.ray247k.com/blog/202305-aws-fundamental-cloudfront/</link>
+				<pubDate>Wed, 03 May 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202305-aws-fundamental-cloudfront/</guid>
+				<description>&lt;p&gt;&lt;a href=&#34;https://aws.amazon.com/tw/cloudfront/&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Amazon CloudFront&#xD;&#xA;&lt;/a&gt;&#xD;&#xA; 是一項內容交付網路 (CDN) 服務&lt;br&gt;&#xA;可以解決 DDoS 與靜態資源重複存取問題&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[大話 AWS 雲端架構筆記] CloudWatch 與 CloudTrail</title>
+				<link>https://tech.ray247k.com/blog/202304-aws-fundamental-cloudwatch-and-cloudtrail/</link>
+				<pubDate>Tue, 25 Apr 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202304-aws-fundamental-cloudwatch-and-cloudtrail/</guid>
+				<description>&lt;p&gt;Amazon CloudWatch 監控您的 Amazon Web Services（AWS）資源和您實時運行AWS的應用程序&lt;br&gt;&#xA;AWS CloudTrail 是一種AWS 服務，可協助您實現AWS 帳戶的操作與風險稽核、治理和合規&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[大話 AWS 雲端架構筆記] Route 53</title>
+				<link>https://tech.ray247k.com/blog/202304-aws-fundamental-route53/</link>
+				<pubDate>Sat, 15 Apr 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202304-aws-fundamental-route53/</guid>
+				<description>&lt;p&gt;提供域名購買、域名解析轉發、系統健康檢查、流量轉送&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[大話 AWS 雲端架構筆記] RDS</title>
+				<link>https://tech.ray247k.com/blog/202304-aws-fundamental-rds/</link>
+				<pubDate>Wed, 05 Apr 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202304-aws-fundamental-rds/</guid>
+				<description>&lt;p&gt;只要按幾下即可在雲端設定、操作和擴展關聯式資料庫&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[大話 AWS 雲端架構筆記] S3</title>
+				<link>https://tech.ray247k.com/blog/202303-aws-fundamental-s3/</link>
+				<pubDate>Sat, 25 Mar 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202303-aws-fundamental-s3/</guid>
+				<description>&lt;p&gt;可擴展性、資料可用性、安全性和效能的雲端物件儲存&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[大話 AWS 雲端架構筆記] EC2</title>
+				<link>https://tech.ray247k.com/blog/202303-aws-fundamental-ec2/</link>
+				<pubDate>Mon, 20 Mar 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202303-aws-fundamental-ec2/</guid>
+				<description>&lt;p&gt;讓使用者可以租用雲端電腦運行所需應用的系統&lt;br&gt;&#xA;EC2藉由提供Web服務的方式讓使用者可以彈性地運行自己的Amazon機器映像檔，使用者將可以在這個虛擬機器上運行任何自己想要的軟體或應用程式&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[大話 AWS 雲端架構筆記] VPC</title>
+				<link>https://tech.ray247k.com/blog/202303-aws-fundamental-vpc/</link>
+				<pubDate>Fri, 10 Mar 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202303-aws-fundamental-vpc/</guid>
+				<description>&lt;p&gt;Amazon Virtual Private Cloud (Amazon VPC) 可讓您完全控制虛擬聯網環境，包括資源置放、連線和安全&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[大話 AWS 雲端架構筆記] IAM</title>
+				<link>https://tech.ray247k.com/blog/202301-aws-fundamental-iam/</link>
+				<pubDate>Tue, 10 Jan 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202301-aws-fundamental-iam/</guid>
+				<description>&lt;p&gt;因為 root 權限太大，必須切割成多個用戶和群組來設定權限&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[AWS 101] 什麼是 SNS 和 SQS</title>
+				<link>https://tech.ray247k.com/blog/202210-aws101-what-is-sns-and-sqs/</link>
+				<pubDate>Thu, 06 Oct 2022 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202210-aws101-what-is-sns-and-sqs/</guid>
+				<description>&lt;p&gt;Amazon Simple Queue Service (SQS) 和 Amazon Simple Notification Service (SNS) 看起來很像，實際上又不太一樣&lt;br&gt;&#xA;為了更好釐清兩者，就把兩個服務的筆記放在一起比較&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

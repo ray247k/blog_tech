@@ -1,40 +1,45 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>TDD on Byte Ebi 🍤</title>
-    <link>https://tech.ray247k.com/en/tags/tdd/</link>
-    <description>Recent content in TDD on Byte Ebi 🍤</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Sat, 26 Jul 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://tech.ray247k.com/en/tags/tdd/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>[Pytest 101] 04 Mock Class</title>
-      <link>https://tech.ray247k.com/en/blog/202507-pytest-4-pytest-mock-class/</link>
-      <pubDate>Sat, 26 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/blog/202507-pytest-4-pytest-mock-class/</guid>
-      <description>&lt;p&gt;Introducing the factory pattern in your code can significantly improve its structure—but it also makes unit testing a bit trickier.&lt;br&gt;&#xA;We’ll walk through two different mocking strategies, compare their pros and cons, and help you write more robust tests!&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[Pytest 101] 03 Mock SQL Query</title>
-      <link>https://tech.ray247k.com/en/blog/202507-pytest-3-pytest-mock-sql-query/</link>
-      <pubDate>Wed, 23 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/blog/202507-pytest-3-pytest-mock-sql-query/</guid>
-      <description>&lt;p&gt;With mock objects, we can simulate database operations without actually connecting to a real database.&lt;br&gt;&#xA;This means we don’t need to prepare a dedicated test database or worry about cleaning it up after tests.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[Pytest 101] 02 Basic Usage of Mock</title>
-      <link>https://tech.ray247k.com/en/blog/202507-pytest-2-pytest-mock-basics/</link>
-      <pubDate>Fri, 11 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/blog/202507-pytest-2-pytest-mock-basics/</guid>
-      <description>&lt;p&gt;After covering the basic tools, this article demonstrates how to use mocks effectively in Pytest.&lt;br&gt;&#xA;Mocks allow us to replace the logic of real functions to simulate different scenarios and write more precise unit tests.&lt;br&gt;&#xA;We&amp;rsquo;ll walk through examples of mocking functions, simulating errors, and even handling external dependencies like Redis.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[Pytest 101] 01 Introduction to Pytest &amp; Mock</title>
-      <link>https://tech.ray247k.com/en/blog/202507-pytest-1-intro-to-pytest-and-mock/</link>
-      <pubDate>Wed, 02 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/blog/202507-pytest-1-intro-to-pytest-and-mock/</guid>
-      <description>&lt;p&gt;Writing unit tests is a well-known best practice in software development, but actually getting started often feels overwhelming.&lt;br&gt;&#xA;Where do you begin? What tools should you use? And how do you use them?&lt;br&gt;&#xA;For beginners, these first steps can easily become roadblocks.&lt;/p&gt;</description>
-    </item>
-  </channel>
+	<channel>
+		<title>TDD on Byte Ebi 🍤</title>
+		<link>https://tech.ray247k.com/en/tags/tdd/</link>
+		<description>Recent content in TDD on Byte Ebi 🍤</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Sat, 26 Jul 2025 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://tech.ray247k.com/en/tags/tdd/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>[Pytest 101] 04 Mock Class</title>
+				<link>https://tech.ray247k.com/en/blog/202507-pytest-4-pytest-mock-class/</link>
+				<pubDate>Sat, 26 Jul 2025 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202507-pytest-4-pytest-mock-class/</guid>
+				<description>&lt;p&gt;Introducing the factory pattern in your code can significantly improve its structure—but it also makes unit testing a bit trickier.&lt;br&gt;&#xA;We’ll walk through two different mocking strategies, compare their pros and cons, and help you write more robust tests!&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[Pytest 101] 03 Mock SQL Query</title>
+				<link>https://tech.ray247k.com/en/blog/202507-pytest-3-pytest-mock-sql-query/</link>
+				<pubDate>Wed, 23 Jul 2025 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202507-pytest-3-pytest-mock-sql-query/</guid>
+				<description>&lt;p&gt;With mock objects, we can simulate database operations without actually connecting to a real database.&lt;br&gt;&#xA;This means we don’t need to prepare a dedicated test database or worry about cleaning it up after tests.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[Pytest 101] 02 Basic Usage of Mock</title>
+				<link>https://tech.ray247k.com/en/blog/202507-pytest-2-pytest-mock-basics/</link>
+				<pubDate>Fri, 11 Jul 2025 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202507-pytest-2-pytest-mock-basics/</guid>
+				<description>&lt;p&gt;After covering the basic tools, this article demonstrates how to use mocks effectively in Pytest.&lt;br&gt;&#xA;Mocks allow us to replace the logic of real functions to simulate different scenarios and write more precise unit tests.&lt;br&gt;&#xA;We&amp;rsquo;ll walk through examples of mocking functions, simulating errors, and even handling external dependencies like Redis.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[Pytest 101] 01 Introduction to Pytest &amp; Mock</title>
+				<link>https://tech.ray247k.com/en/blog/202507-pytest-1-intro-to-pytest-and-mock/</link>
+				<pubDate>Wed, 02 Jul 2025 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202507-pytest-1-intro-to-pytest-and-mock/</guid>
+				<description>&lt;p&gt;Writing unit tests is a well-known best practice in software development, but actually getting started often feels overwhelming.&lt;br&gt;&#xA;Where do you begin? What tools should you use? And how do you use them?&lt;br&gt;&#xA;For beginners, these first steps can easily become roadblocks.&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

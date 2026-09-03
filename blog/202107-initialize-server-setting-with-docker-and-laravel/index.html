@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.154.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.165.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="環境初始化主機設定(Docker &#43; Laravel)">
   <meta property="og:description" content="介紹如何在一台剛開的主機上設定基礎的 Docker 以及 Laravel 執行環境">
   <meta property="description" content="介紹如何在一台剛開的主機上設定基礎的 Docker 以及 Laravel 執行環境">
@@ -40,7 +40,7 @@
   
   
             <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/felipec.min.css">
-          <link rel="stylesheet" href="/css/bundle.min.ccd03ac07edc9876d74feb17a3b850cb8df2c519d3854020b6697286637e4cd4.css" integrity="sha256-zNA6wH7cmHbXT&#43;sXo7hQy43yxRnThUAgtmlyhmN&#43;TNQ="><link rel="stylesheet" href="/css/add-on.css">
+          <link rel="stylesheet" href="/css/bundle.min.80aa639b4bec28a35fd95ccaf6d979df779f2693654656a4860eab54153fc258.css" integrity="sha256-gKpjm0vsKKNf2VzK9tl533efJpNlRlakhg6rVBU/wlg="><link rel="stylesheet" href="/css/add-on.css">
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
       <script>
         var doNotTrack = false;
@@ -83,7 +83,7 @@
     "url": "https:\/\/tech.ray247k.com\/",
     "description": "討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - ai,aws,devops,git,golang,laravel,leetcode,node.js,php,python,serverless,typescript,實用工具,架站相關,版本控制,第三方服務,",
     "keywords": [
-        "airflow,apache bench,auto scaling,aws,axios,blockchain,cdn,chatbot,cicd,cloudflare,cloudflare workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker compose,domain name,drone,element-ui,excel,express,ffmpeg,gas,gcp,gcr,getter,git,github,github page,go,golang,golang, hugo,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load balancing,mongodb,mutation,nginx,ngrok,node.js,openclaw,php,php-fpm,phpcbf,phpcs,portainer,postgresql,pre-commit,prerender,proxy,pyenv,pytest,python,queue,rds,redis,restful,seo,server,serverless,smart contract,ssh,stress testing,subdomain,tdd,typescript,unit test,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,單元測試,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
+        "airflow,apache bench,auto scaling,aws,axios,blockchain,cdn,chatbot,cicd,cloudflare,cloudflare workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker compose,domain name,drone,element-ui,excel,express,ffmpeg,gas,gcp,gcr,getter,git,github,github page,go,golang,golang, hugo,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load balancing,mongodb,mutation,mwaa,nginx,ngrok,node.js,openclaw,php,php-fpm,phpcbf,phpcs,portainer,postgresql,pre-commit,prerender,proxy,pyenv,pytest,python,queue,rds,redis,restful,seo,server,serverless,smart contract,ssh,stress testing,subdomain,tdd,typescript,unit test,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,單元測試,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
     ]
 }
 </script>
@@ -365,12 +365,12 @@
 <p>要讓遠端主機可以對指定的 Repository 進行存取，需要加入 ssh key</p>
 <h2 id="正規方法">正規方法：</h2>
 <p>ssh 登入遠端主機之後，在遠端主機使用指令產生 ssh key</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh-keygen
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh-keygen
 </span></span></code></pre></div><p>然後把 public key 加到遠端版本庫</p>
 <h2 id="小朋友不要學的方法">小朋友不要學的方法：</h2>
 <p>也是可以把自己已經具有版本庫存取權限的 key pair 塞進遠端主機<br>
 如果 .ssh 資料夾不存在要自己加，權限 <code>700</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir .ssh
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir .ssh
 </span></span><span style="display:flex;"><span>chmod <span style="color:#ae81ff">700</span> .ssh
 </span></span><span style="display:flex;"><span>cd .ssh
 </span></span><span style="display:flex;"><span>vim id_rsa
@@ -379,22 +379,22 @@
 </span></span><span style="display:flex;"><span>chmod <span style="color:#ae81ff">644</span> id_rsa.pub
 </span></span></code></pre></div><h1 id="2-更新-linux-套件包">2. 更新 linux 套件包</h1>
 <p>因為等等要裝套件，先更新主機的套件包</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt update
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt update
 </span></span></code></pre></div><h1 id="3-安裝-docker">3. 安裝 docker</h1>
 <p>都說要建立 Docker 的環境，當然要安裝 Docker</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install docker.io
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install docker.io
 </span></span></code></pre></div><h1 id="4-安裝-docker-compose">4. 安裝 docker-compose</h1>
 <p>後面會使用 docker-compose 來組合多個 Docker container 啟動一個完整服務<br>
 因為之後的 Laravel 專案中會同時啟動 nginx, PHP, redis, mysql 等容器<br>
 透過 docker-compose 管理與操作會比較方便</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo curl -L <span style="color:#e6db74">&#34;https://github.com/docker/compose/releases/download/1.29.1/docker-compose-</span><span style="color:#66d9ef">$(</span>uname -s<span style="color:#66d9ef">)</span><span style="color:#e6db74">-</span><span style="color:#66d9ef">$(</span>uname -m<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> -o /usr/local/bin/docker-compose
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo curl -L <span style="color:#e6db74">&#34;https://github.com/docker/compose/releases/download/1.29.1/docker-compose-</span><span style="color:#66d9ef">$(</span>uname -s<span style="color:#66d9ef">)</span><span style="color:#e6db74">-</span><span style="color:#66d9ef">$(</span>uname -m<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> -o /usr/local/bin/docker-compose
 </span></span><span style="display:flex;"><span>sudo chmod +x /usr/local/bin/docker-compose
 </span></span></code></pre></div><h1 id="5-安裝-php-套件">5. 安裝 php 套件</h1>
 <p>因為 Laravel 專案不需要編譯，當我們修改容器外的檔案，會同步對掛載進容器的檔案做變更<br>
 所以不一定要連進容器裡執行指令，在本機的變更一樣會直接生效。當然不進行這一步也是可以的</p>
 <p>為了之後可以直接在主機上執行 <code>php artisan</code> 和 <code>phpunit</code>，還有安裝&amp;執行 <code>composer</code><br>
 PHP 版本根據你的需求安裝</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt install php7.4-cli php7.4-gd install php7.4-mbstring php7.4-curl php7.4-xml php7.4-zip
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt install php7.4-cli php7.4-gd install php7.4-mbstring php7.4-curl php7.4-xml php7.4-zip
 </span></span></code></pre></div><p>如果不確定自己想找的套件名稱叫什麼，可以在 <code>apt install php7.4</code> 之後按兩下 tab<br>
 這樣就會列出名稱為「php7.4」開頭的所有套件，如此就可以很方便的找到指定版本的套件！</p>
 <p>下圖用 <code>apt install docker</code> 按兩下 tab 顯示所有「docker」開頭的套件為例<br>
@@ -406,18 +406,18 @@ PHP 版本根據你的需求安裝</p>
 </a>
 </p>
 <p>範例：（正確指令以官方網站為主）</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>php -r <span style="color:#e6db74">&#34;copy(&#39;https://getcomposer.org/installer&#39;, &#39;composer-setup.php&#39;);&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>php -r <span style="color:#e6db74">&#34;copy(&#39;https://getcomposer.org/installer&#39;, &#39;composer-setup.php&#39;);&#34;</span>
 </span></span><span style="display:flex;"><span>php -r <span style="color:#e6db74">&#34;if (hash_file(&#39;sha384&#39;, &#39;composer-setup.php&#39;) === &#39;756890a4488ce9024fc62c56153228907f1545c228516cbf63f885e036d37e9a59d27d63f46af1d4d07ee0f76181c7d3&#39;) { echo &#39;Installer verified&#39;; } else { echo &#39;Installer corrupt&#39;; unlink(&#39;composer-setup.php&#39;); } echo PHP_EOL;&#34;</span>
 </span></span><span style="display:flex;"><span>php composer-setup.php
 </span></span><span style="display:flex;"><span>php -r <span style="color:#e6db74">&#34;unlink(&#39;composer-setup.php&#39;);&#34;</span>
 </span></span></code></pre></div><p>將 composer 移動到環境變數，讓全域都可以使用指令<br>
 建議要執行此步驟，否則就只能在你安裝的路徑（有 composer.phar 檔案）的地方執行指令</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo mv composer.phar /usr/local/bin/composer
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo mv composer.phar /usr/local/bin/composer
 </span></span></code></pre></div><p>若要查看全域可以執行的指令與對應目錄</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo $PATH
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo $PATH
 </span></span></code></pre></div><h1 id="7-設定-sh-檔案可執行">7. 設定 .sh 檔案可執行</h1>
 <p>如果專案中有 shell 需要執行，必須要修改檔案權限</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod <span style="color:#ae81ff">755</span> <span style="color:#f92672">{</span>target file path<span style="color:#f92672">}</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod <span style="color:#ae81ff">755</span> <span style="color:#f92672">{</span>target file path<span style="color:#f92672">}</span>
 </span></span></code></pre></div><hr>
 <p>如此就可以在主機中執行以下的指令</p>
 <ul>
@@ -487,6 +487,14 @@ PHP 版本根據你的需求安裝</p>
       </header>
       
       <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202609-mwaa-connection-encryption-investigation/">MWAA Connections 加密機制調查</a></h2>
+          <time class="published" datetime="2026-09-03 00:00:00 &#43;0000 UTC">2026/09/03</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
           <a href="/blog/202604-deploy-openclaw-ai-for-free/" class="image" style="--bg-image: url('/blog/202604-deploy-openclaw-ai-for-free/featured.jpg');">
     <img src="/blog/202604-deploy-openclaw-ai-for-free/featured.jpg" alt="">
   </a>
@@ -526,16 +534,6 @@ PHP 版本根據你的需求安裝</p>
         </header>
       </article>
       
-      <article class="mini-post">
-          <a href="/blog/202508-manage-python-versions-with-pyenv/" class="image" style="--bg-image: url('/blog/202508-manage-python-versions-with-pyenv/featured.jpg');">
-    <img src="/blog/202508-manage-python-versions-with-pyenv/featured.jpg" alt="">
-  </a>
-        <header>
-          <h2><a href="/blog/202508-manage-python-versions-with-pyenv/">使用 Pyenv 輕鬆管理多版本 Python</a></h2>
-          <time class="published" datetime="2025-08-30 00:00:00 &#43;0000 UTC">2025/08/30</time>
-        </header>
-      </article>
-      
       
         <footer>
           <a href="/blog/" class="button">查看更多</a>
@@ -555,7 +553,7 @@ PHP 版本根據你的需求安裝</p>
           
           
           <li>
-              <a href="/categories/aws/">aws<span class="count">26</span></a>
+              <a href="/categories/aws/">aws<span class="count">27</span></a>
           </li>
           
           <li>
@@ -753,6 +751,10 @@ PHP 版本根據你的需求安裝</p>
         </li>
         
         <li>
+          <a href="/tags/airflow/">airflow (3)</a>
+        </li>
+        
+        <li>
           <a href="/tags/cloudflare/">cloudflare (3)</a>
         </li>
         
@@ -770,10 +772,6 @@ PHP 版本根據你的需求安裝</p>
         
         <li>
           <a href="/tags/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/">架站相關 (3)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/airflow/">airflow (2)</a>
         </li>
         
         <li>
@@ -906,6 +904,10 @@ PHP 版本根據你的需求安裝</p>
         
         <li>
           <a href="/tags/load-balancing/">load balancing (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/mwaa/">mwaa (1)</a>
         </li>
         
         <li>
@@ -1046,7 +1048,7 @@ PHP 版本根據你的需求安裝</p>
     <script>
       hljs.configure({ ignoreUnescapedHTML: true }); 
       hljs.highlightAll();
-    </script><script src="/js/bundle.min.a56655f3069386c7a1539049f4b6e4d773b948f9c00ee443e5187c783819f686.js" integrity="sha256-pWZV8waThsehU5BJ9Lbk13O5SPnADuRD5Rh8eDgZ9oY="></script>
+    </script><script src="/js/bundle.min.d21befc899e4b6158eba05da3928321e52d15d067cb323bbf20e1b37a4ee0e3d.js" integrity="sha256-0hvvyJnkthWOugXaOSgyHlLRXQZ8syO78g4bN6TuDj0="></script>
     <script src="/js/add-on.js"></script>
 
 

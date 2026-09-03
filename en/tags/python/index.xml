@@ -1,68 +1,73 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Python on Byte Ebi 🍤</title>
-    <link>https://tech.ray247k.com/en/tags/python/</link>
-    <description>Recent content in Python on Byte Ebi 🍤</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Sat, 30 Aug 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://tech.ray247k.com/en/tags/python/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Manage Python Versions with Pyenv</title>
-      <link>https://tech.ray247k.com/en/blog/202508-manage-python-versions-with-pyenv/</link>
-      <pubDate>Sat, 30 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/blog/202508-manage-python-versions-with-pyenv/</guid>
-      <description>&lt;p&gt;Pyenv is a tool for managing different Python versions.&lt;br&gt;&#xA;Whether you’re upgrading a project to a newer Python release or switching between projects with different requirements, pyenv makes the process simple and hassle-free.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[Pytest 101] 04 Mock Class</title>
-      <link>https://tech.ray247k.com/en/blog/202507-pytest-4-pytest-mock-class/</link>
-      <pubDate>Sat, 26 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/blog/202507-pytest-4-pytest-mock-class/</guid>
-      <description>&lt;p&gt;Introducing the factory pattern in your code can significantly improve its structure—but it also makes unit testing a bit trickier.&lt;br&gt;&#xA;We’ll walk through two different mocking strategies, compare their pros and cons, and help you write more robust tests!&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[Pytest 101] 03 Mock SQL Query</title>
-      <link>https://tech.ray247k.com/en/blog/202507-pytest-3-pytest-mock-sql-query/</link>
-      <pubDate>Wed, 23 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/blog/202507-pytest-3-pytest-mock-sql-query/</guid>
-      <description>&lt;p&gt;With mock objects, we can simulate database operations without actually connecting to a real database.&lt;br&gt;&#xA;This means we don’t need to prepare a dedicated test database or worry about cleaning it up after tests.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[Pytest 101] 02 Basic Usage of Mock</title>
-      <link>https://tech.ray247k.com/en/blog/202507-pytest-2-pytest-mock-basics/</link>
-      <pubDate>Fri, 11 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/blog/202507-pytest-2-pytest-mock-basics/</guid>
-      <description>&lt;p&gt;After covering the basic tools, this article demonstrates how to use mocks effectively in Pytest.&lt;br&gt;&#xA;Mocks allow us to replace the logic of real functions to simulate different scenarios and write more precise unit tests.&lt;br&gt;&#xA;We&amp;rsquo;ll walk through examples of mocking functions, simulating errors, and even handling external dependencies like Redis.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[Pytest 101] 01 Introduction to Pytest &amp; Mock</title>
-      <link>https://tech.ray247k.com/en/blog/202507-pytest-1-intro-to-pytest-and-mock/</link>
-      <pubDate>Wed, 02 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/blog/202507-pytest-1-intro-to-pytest-and-mock/</guid>
-      <description>&lt;p&gt;Writing unit tests is a well-known best practice in software development, but actually getting started often feels overwhelming.&lt;br&gt;&#xA;Where do you begin? What tools should you use? And how do you use them?&lt;br&gt;&#xA;For beginners, these first steps can easily become roadblocks.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Setting up Python Development Environment</title>
-      <link>https://tech.ray247k.com/en/blog/202506-settin-up-a-python-development-environment/</link>
-      <pubDate>Mon, 09 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/blog/202506-settin-up-a-python-development-environment/</guid>
-      <description>&lt;p&gt;This is my first time using Python in a work environment, so I&amp;rsquo;m documenting the environment setup. Many of these packages are new to me, not having used them when I was self-learning a few years ago. I guess that reveals how long it&amp;rsquo;s been since I touched Python!&lt;/p&gt;&#xA;&lt;h1 id=&#34;mac-setup&#34;&gt;Mac Setup&lt;/h1&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;There are dependencies, so you must install them in order!&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;homebrew&#34;&gt;&lt;a href=&#34;https://brew.sh/&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Homebrew&#xA;&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;A package manager for Mac. I don&amp;rsquo;t know what I&amp;rsquo;d do without it on a Mac. And now it can be used on Linux too!&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[Discord Bot] 02. Dice Rolling Bot</title>
-      <link>https://tech.ray247k.com/en/blog/202110-make-discord-chatbot-02-roll-dice-bot/</link>
-      <pubDate>Thu, 28 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/blog/202110-make-discord-chatbot-02-roll-dice-bot/</guid>
-      <description>&lt;p&gt;Do you know about TTRPG? One of the most well-known is probably Dungeons &amp;amp; Dragons (D&amp;amp;D).&lt;br&gt;&#xA;After watching hololive EN play, I thought, &amp;ldquo;Let&amp;rsquo;s create a dice rolling bot and give it a try.&amp;rdquo;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[Discord Bot] 01. Creating a Basic Bot</title>
-      <link>https://tech.ray247k.com/en/blog/202110-make-discord-chatbot-01-set-up/</link>
-      <pubDate>Wed, 20 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/blog/202110-make-discord-chatbot-01-set-up/</guid>
-      <description>&lt;p&gt;Just for fun, let&amp;rsquo;s write something I haven&amp;rsquo;t written before.&lt;br&gt;&#xA;Lately, I&amp;rsquo;ve been active on Discord, so I&amp;rsquo;ve decided to create a Discord ChatBot.&lt;/p&gt;</description>
-    </item>
-  </channel>
+	<channel>
+		<title>Python on Byte Ebi 🍤</title>
+		<link>https://tech.ray247k.com/en/tags/python/</link>
+		<description>Recent content in Python on Byte Ebi 🍤</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Sat, 30 Aug 2025 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://tech.ray247k.com/en/tags/python/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Manage Python Versions with Pyenv</title>
+				<link>https://tech.ray247k.com/en/blog/202508-manage-python-versions-with-pyenv/</link>
+				<pubDate>Sat, 30 Aug 2025 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202508-manage-python-versions-with-pyenv/</guid>
+				<description>&lt;p&gt;Pyenv is a tool for managing different Python versions.&lt;br&gt;&#xA;Whether you’re upgrading a project to a newer Python release or switching between projects with different requirements, pyenv makes the process simple and hassle-free.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[Pytest 101] 04 Mock Class</title>
+				<link>https://tech.ray247k.com/en/blog/202507-pytest-4-pytest-mock-class/</link>
+				<pubDate>Sat, 26 Jul 2025 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202507-pytest-4-pytest-mock-class/</guid>
+				<description>&lt;p&gt;Introducing the factory pattern in your code can significantly improve its structure—but it also makes unit testing a bit trickier.&lt;br&gt;&#xA;We’ll walk through two different mocking strategies, compare their pros and cons, and help you write more robust tests!&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[Pytest 101] 03 Mock SQL Query</title>
+				<link>https://tech.ray247k.com/en/blog/202507-pytest-3-pytest-mock-sql-query/</link>
+				<pubDate>Wed, 23 Jul 2025 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202507-pytest-3-pytest-mock-sql-query/</guid>
+				<description>&lt;p&gt;With mock objects, we can simulate database operations without actually connecting to a real database.&lt;br&gt;&#xA;This means we don’t need to prepare a dedicated test database or worry about cleaning it up after tests.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[Pytest 101] 02 Basic Usage of Mock</title>
+				<link>https://tech.ray247k.com/en/blog/202507-pytest-2-pytest-mock-basics/</link>
+				<pubDate>Fri, 11 Jul 2025 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202507-pytest-2-pytest-mock-basics/</guid>
+				<description>&lt;p&gt;After covering the basic tools, this article demonstrates how to use mocks effectively in Pytest.&lt;br&gt;&#xA;Mocks allow us to replace the logic of real functions to simulate different scenarios and write more precise unit tests.&lt;br&gt;&#xA;We&amp;rsquo;ll walk through examples of mocking functions, simulating errors, and even handling external dependencies like Redis.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[Pytest 101] 01 Introduction to Pytest &amp; Mock</title>
+				<link>https://tech.ray247k.com/en/blog/202507-pytest-1-intro-to-pytest-and-mock/</link>
+				<pubDate>Wed, 02 Jul 2025 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202507-pytest-1-intro-to-pytest-and-mock/</guid>
+				<description>&lt;p&gt;Writing unit tests is a well-known best practice in software development, but actually getting started often feels overwhelming.&lt;br&gt;&#xA;Where do you begin? What tools should you use? And how do you use them?&lt;br&gt;&#xA;For beginners, these first steps can easily become roadblocks.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Setting up Python Development Environment</title>
+				<link>https://tech.ray247k.com/en/blog/202506-settin-up-a-python-development-environment/</link>
+				<pubDate>Mon, 09 Jun 2025 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202506-settin-up-a-python-development-environment/</guid>
+				<description>&lt;p&gt;This is my first time using Python in a work environment, so I&amp;rsquo;m documenting the environment setup. Many of these packages are new to me, not having used them when I was self-learning a few years ago. I guess that reveals how long it&amp;rsquo;s been since I touched Python!&lt;/p&gt;&#xA;&lt;h1 id=&#34;mac-setup&#34;&gt;Mac Setup&lt;/h1&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;There are dependencies, so you must install them in order!&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;homebrew&#34;&gt;&lt;a href=&#34;https://brew.sh/&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Homebrew&#xD;&#xA;&lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;A package manager for Mac. I don&amp;rsquo;t know what I&amp;rsquo;d do without it on a Mac. And now it can be used on Linux too!&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[Discord Bot] 02. Dice Rolling Bot</title>
+				<link>https://tech.ray247k.com/en/blog/202110-make-discord-chatbot-02-roll-dice-bot/</link>
+				<pubDate>Thu, 28 Oct 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202110-make-discord-chatbot-02-roll-dice-bot/</guid>
+				<description>&lt;p&gt;Do you know about TTRPG? One of the most well-known is probably Dungeons &amp;amp; Dragons (D&amp;amp;D).&lt;br&gt;&#xA;After watching hololive EN play, I thought, &amp;ldquo;Let&amp;rsquo;s create a dice rolling bot and give it a try.&amp;rdquo;&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[Discord Bot] 01. Creating a Basic Bot</title>
+				<link>https://tech.ray247k.com/en/blog/202110-make-discord-chatbot-01-set-up/</link>
+				<pubDate>Wed, 20 Oct 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202110-make-discord-chatbot-01-set-up/</guid>
+				<description>&lt;p&gt;Just for fun, let&amp;rsquo;s write something I haven&amp;rsquo;t written before.&lt;br&gt;&#xA;Lately, I&amp;rsquo;ve been active on Discord, so I&amp;rsquo;ve decided to create a Discord ChatBot.&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

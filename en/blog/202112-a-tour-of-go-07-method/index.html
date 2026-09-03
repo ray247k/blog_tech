@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.154.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.165.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="[A Tour of Go Study Notes] 07 method">
   <meta property="og:description" content="Understanding Go method using official tutorials">
   <meta property="description" content="Understanding Go method using official tutorials">
@@ -40,7 +40,7 @@
   
   
             <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/felipec.min.css">
-          <link rel="stylesheet" href="/css/bundle.min.ccd03ac07edc9876d74feb17a3b850cb8df2c519d3854020b6697286637e4cd4.css" integrity="sha256-zNA6wH7cmHbXT&#43;sXo7hQy43yxRnThUAgtmlyhmN&#43;TNQ="><link rel="stylesheet" href="/css/add-on.css">
+          <link rel="stylesheet" href="/css/bundle.min.80aa639b4bec28a35fd95ccaf6d979df779f2693654656a4860eab54153fc258.css" integrity="sha256-gKpjm0vsKKNf2VzK9tl533efJpNlRlakhg6rVBU/wlg="><link rel="stylesheet" href="/css/add-on.css">
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
       <script>
         var doNotTrack = false;
@@ -83,7 +83,7 @@
     "url": "https:\/\/tech.ray247k.com\/",
     "description": "About web development, software engineering, frontend, backend, chatbot, server related topics. - ai,aws,devops,git,golang,laravel,php,python,serverless,third-party services,tools,typescript,version control,web hosting,website operations,",
     "keywords": [
-        "airflow,apache bench,auto scaling,aws,blockchain,cdn,chatbot,ci\/cd,cicd,cloudflare,cloudflare workers,composer,container technology,containerization,csv,devops,discord,dns,docker,docker compose,domain,domain name,drone,excel,ffmpeg,firewall,gas,gcp,gcr,git,github,github page,go,golang,golang, hugo,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,linux,load balancing,nginx,ngrok,openclaw,personal brand,php,php-fpm,phpcbf,phpcs,portainer,postgresql,pre-commit,prerender,proxy,purchase domain,pyenv,pytest,python,queue,rds,redis,search engine optimization,seo,server,serverless,smart contract,ssh,stress testing,subdomain,tdd,typescript,unit test,version control,web hosting,"
+        "airflow,apache bench,auto scaling,aws,blockchain,cdn,chatbot,ci\/cd,cicd,cloudflare,cloudflare workers,composer,container technology,containerization,csv,devops,discord,dns,docker,docker compose,domain,domain name,drone,excel,ffmpeg,firewall,gas,gcp,gcr,git,github,github page,go,golang,golang, hugo,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,linux,load balancing,mwaa,nginx,ngrok,openclaw,personal brand,php,php-fpm,phpcbf,phpcs,portainer,postgresql,pre-commit,prerender,proxy,purchase domain,pyenv,pytest,python,queue,rds,redis,search engine optimization,seo,server,serverless,smart contract,ssh,stress testing,subdomain,tdd,typescript,unit test,version control,web hosting,"
     ]
 }
 </script>
@@ -172,7 +172,7 @@
     "@type": "BlogPosting",
     "articleSection": "blog",
     "name": "[A Tour of Go Study Notes] 07 method",
-    "headline": "\u003cp\u003eEntering the world of Golang, we first acquaint ourselves with basic Golang usage using the official tutorial: \u003ca href=\u0022https:\/\/tour.golang.org\/welcome\/1\u0022\n   \n    target=\u0022_blank\u0022 rel=\u0022noreferrer noopener\u0022\u003eA Tour of Go\n\u003c\/a\u003e\n.\u003cbr\u003e\nThis article introduces methods in Go.\u003c\/p\u003e",
+    "headline": "\u003cp\u003eEntering the world of Golang, we first acquaint ourselves with basic Golang usage using the official tutorial: \u003ca href=\u0022https:\/\/tour.golang.org\/welcome\/1\u0022\r\n   \r\n    target=\u0022_blank\u0022 rel=\u0022noreferrer noopener\u0022\u003eA Tour of Go\r\n\u003c\/a\u003e\r\n.\u003cbr\u003e\nThis article introduces methods in Go.\u003c\/p\u003e",
     "description": "Understanding Go method using official tutorials",
     "inLanguage": "en",
     "isFamilyFriendly": "true",
@@ -369,7 +369,7 @@ However, it can achieve similar functionality using <code>Type</code> in conjunc
 Methods are functions with a special receiver parameter.</p>
 <p>The receiver appears in its own parameter list between the <code>func</code> declaration and the method name.<br>
 In the example, the <code>Abs</code> function has a receiver of type <code>Vertex</code> named <code>v</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
 </span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;fmt&#34;</span>
@@ -397,7 +397,7 @@ In the example, the <code>Abs</code> function has a receiver of type <code>Verte
 <p>A method is just a function with a receiver.</p>
 </blockquote>
 <p>Below is a regular function with no significant change in functionality:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
 </span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;fmt&#34;</span>
@@ -423,7 +423,7 @@ In the example, the <code>Abs</code> function has a receiver of type <code>Verte
 </span></span></code></pre></div><p>Method declarations can also use non-struct types.</p>
 <p>Only types declared within the same package can be used as receivers.<br>
 Even built-in types like <code>int</code> are disallowed if declared in another package.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
 </span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;fmt&#34;</span>
@@ -451,7 +451,7 @@ Even built-in types like <code>int</code> are disallowed if declared in another 
 <p>You can also declare methods with pointer receivers.<br>
 Adding <code>*</code> before the type indicates a pointer receiver, where the receiver type of the method is a pointer.</p>
 <p>In the example, the function <code>Scale</code> has a receiver declared as <code>*Vertex</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
 </span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;fmt&#34;</span>
@@ -486,7 +486,7 @@ Because methods often modify the receiver, pointers are commonly used as receive
 <h1 id="pointers-and-functions">Pointers and Functions</h1>
 <p>Now, let&rsquo;s rewrite <code>Abs</code> and <code>Scale</code> methods as functions.</p>
 <p>Previously, <code>v.Scale(10)</code> could directly call a pointer receiver, but function parameters must use the <code>&amp;</code> symbol to declare a pointer.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
 </span></span><span style="display:flex;"><span>
@@ -519,22 +519,22 @@ Because methods often modify the receiver, pointers are commonly used as receive
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">&gt;&gt;&gt; {60 80} &amp;{96 72}
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span> 
 </span></span></code></pre></div><p>Comparing with the previous two examples, you&rsquo;ll notice that functions with parameters must receive a pointer, or else:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">v</span> <span style="color:#a6e22e">Vertex</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">v</span> <span style="color:#a6e22e">Vertex</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">ScaleFunc</span>(<span style="color:#a6e22e">v</span>, <span style="color:#ae81ff">5</span>)  <span style="color:#75715e">// Compile error!</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">ScaleFunc</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">v</span>, <span style="color:#ae81ff">5</span>) <span style="color:#75715e">// OK</span>
 </span></span></code></pre></div><p>But methods with a pointer receiver can be directly called with a value or pointer:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">v</span> <span style="color:#a6e22e">Vertex</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">v</span> <span style="color:#a6e22e">Vertex</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Scale</span>(<span style="color:#ae81ff">5</span>)  <span style="color:#75715e">// OK</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">p</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">v</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">Scale</span>(<span style="color:#ae81ff">10</span>) <span style="color:#75715e">// OK</span>
 </span></span></code></pre></div><p>For <code>v.Scale(5)</code>, even though <code>v</code> is a value rather than a pointer, a method with a pointer receiver can still be called.<br>
 Essentially, Go interprets <code>v.Scale(5)</code> as <code>(&amp;v).Scale(5)</code> for convenience.</p>
 <p>The same happens in reverse; if a function with parameters expects a value, and a pointer is passed:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">v</span> <span style="color:#a6e22e">Vertex</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">v</span> <span style="color:#a6e22e">Vertex</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">AbsFunc</span>(<span style="color:#a6e22e">v</span>))  <span style="color:#75715e">// OK</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">AbsFunc</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">v</span>)) <span style="color:#75715e">// Compile error!</span>
 </span></span></code></pre></div><p>But when used as a method, both values and pointers can be passed directly:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">v</span> <span style="color:#a6e22e">Vertex</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">v</span> <span style="color:#a6e22e">Vertex</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Abs</span>()) <span style="color:#75715e">// OK</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">p</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">v</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">Abs</span>()) <span style="color:#75715e">// OK</span>
@@ -547,7 +547,7 @@ Essentially, Go interprets <code>v.Scale(5)</code> as <code>(&amp;v).Scale(5)</c
 </ul>
 <p>In the example, <code>Scale</code> and <code>Abs</code> have receivers of type <code>*Vertex</code>.<br>
 Even though <code>Abs</code> doesn&rsquo;t need to modify the receiver, generally, all methods with a type should have either value or pointer receivers but not mix both.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
 </span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;fmt&#34;</span>
@@ -629,6 +629,14 @@ Even though <code>Abs</code> doesn&rsquo;t need to modify the receiver, generall
       </header>
       
       <article class="mini-post">
+          
+        <header>
+          <h2><a href="/en/blog/202609-mwaa-connection-encryption-investigation/">Investigating Connection Encryption on Amazon MWAA</a></h2>
+          <time class="published" datetime="2026-09-03 00:00:00 &#43;0000 UTC">September 3, 2026</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
           <a href="/en/blog/202604-deploy-openclaw-ai-for-free/" class="image" style="--bg-image: url('/blog/202604-deploy-openclaw-ai-for-free/featured.jpg');">
     <img src="/blog/202604-deploy-openclaw-ai-for-free/featured.jpg" alt="">
   </a>
@@ -668,16 +676,6 @@ Even though <code>Abs</code> doesn&rsquo;t need to modify the receiver, generall
         </header>
       </article>
       
-      <article class="mini-post">
-          <a href="/en/blog/202508-manage-python-versions-with-pyenv/" class="image" style="--bg-image: url('/blog/202508-manage-python-versions-with-pyenv/featured.jpg');">
-    <img src="/blog/202508-manage-python-versions-with-pyenv/featured.jpg" alt="">
-  </a>
-        <header>
-          <h2><a href="/en/blog/202508-manage-python-versions-with-pyenv/">Manage Python Versions with Pyenv</a></h2>
-          <time class="published" datetime="2025-08-30 00:00:00 &#43;0000 UTC">August 30, 2025</time>
-        </header>
-      </article>
-      
       
         <footer>
           <a href="/en/blog/" class="button">See More</a>
@@ -697,7 +695,7 @@ Even though <code>Abs</code> doesn&rsquo;t need to modify the receiver, generall
           
           
           <li>
-              <a href="/en/categories/aws/">aws<span class="count">26</span></a>
+              <a href="/en/categories/aws/">aws<span class="count">27</span></a>
           </li>
           
           <li>
@@ -851,6 +849,10 @@ Even though <code>Abs</code> doesn&rsquo;t need to modify the receiver, generall
         </li>
         
         <li>
+          <a href="/en/tags/airflow/">airflow (3)</a>
+        </li>
+        
+        <li>
           <a href="/en/tags/cloudflare/">cloudflare (3)</a>
         </li>
         
@@ -860,10 +862,6 @@ Even though <code>Abs</code> doesn&rsquo;t need to modify the receiver, generall
         
         <li>
           <a href="/en/tags/web-hosting/">web hosting (3)</a>
-        </li>
-        
-        <li>
-          <a href="/en/tags/airflow/">airflow (2)</a>
         </li>
         
         <li>
@@ -987,6 +985,10 @@ Even though <code>Abs</code> doesn&rsquo;t need to modify the receiver, generall
         </li>
         
         <li>
+          <a href="/en/tags/mwaa/">mwaa (1)</a>
+        </li>
+        
+        <li>
           <a href="/en/tags/ngrok/">ngrok (1)</a>
         </li>
         
@@ -1104,7 +1106,7 @@ Even though <code>Abs</code> doesn&rsquo;t need to modify the receiver, generall
     <script>
       hljs.configure({ ignoreUnescapedHTML: true }); 
       hljs.highlightAll();
-    </script><script src="/js/bundle.min.a56655f3069386c7a1539049f4b6e4d773b948f9c00ee443e5187c783819f686.js" integrity="sha256-pWZV8waThsehU5BJ9Lbk13O5SPnADuRD5Rh8eDgZ9oY="></script>
+    </script><script src="/js/bundle.min.d21befc899e4b6158eba05da3928321e52d15d067cb323bbf20e1b37a4ee0e3d.js" integrity="sha256-0hvvyJnkthWOugXaOSgyHlLRXQZ8syO78g4bN6TuDj0="></script>
     <script src="/js/add-on.js"></script>
 
 

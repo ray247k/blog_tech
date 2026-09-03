@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.154.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.165.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="使用 GrumPHP 做程式碼品質的守門員">
   <meta property="og:description" content="檢查你的程式有沒有怪味道，在你犯錯前就制止你。一生只督你一人">
   <meta property="description" content="檢查你的程式有沒有怪味道，在你犯錯前就制止你。一生只督你一人">
@@ -40,7 +40,7 @@
   
   
             <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/felipec.min.css">
-          <link rel="stylesheet" href="/css/bundle.min.ccd03ac07edc9876d74feb17a3b850cb8df2c519d3854020b6697286637e4cd4.css" integrity="sha256-zNA6wH7cmHbXT&#43;sXo7hQy43yxRnThUAgtmlyhmN&#43;TNQ="><link rel="stylesheet" href="/css/add-on.css">
+          <link rel="stylesheet" href="/css/bundle.min.80aa639b4bec28a35fd95ccaf6d979df779f2693654656a4860eab54153fc258.css" integrity="sha256-gKpjm0vsKKNf2VzK9tl533efJpNlRlakhg6rVBU/wlg="><link rel="stylesheet" href="/css/add-on.css">
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
       <script>
         var doNotTrack = false;
@@ -83,7 +83,7 @@
     "url": "https:\/\/tech.ray247k.com\/",
     "description": "討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - ai,aws,devops,git,golang,laravel,leetcode,node.js,php,python,serverless,typescript,實用工具,架站相關,版本控制,第三方服務,",
     "keywords": [
-        "airflow,apache bench,auto scaling,aws,axios,blockchain,cdn,chatbot,cicd,cloudflare,cloudflare workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker compose,domain name,drone,element-ui,excel,express,ffmpeg,gas,gcp,gcr,getter,git,github,github page,go,golang,golang, hugo,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load balancing,mongodb,mutation,nginx,ngrok,node.js,openclaw,php,php-fpm,phpcbf,phpcs,portainer,postgresql,pre-commit,prerender,proxy,pyenv,pytest,python,queue,rds,redis,restful,seo,server,serverless,smart contract,ssh,stress testing,subdomain,tdd,typescript,unit test,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,單元測試,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
+        "airflow,apache bench,auto scaling,aws,axios,blockchain,cdn,chatbot,cicd,cloudflare,cloudflare workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker compose,domain name,drone,element-ui,excel,express,ffmpeg,gas,gcp,gcr,getter,git,github,github page,go,golang,golang, hugo,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load balancing,mongodb,mutation,mwaa,nginx,ngrok,node.js,openclaw,php,php-fpm,phpcbf,phpcs,portainer,postgresql,pre-commit,prerender,proxy,pyenv,pytest,python,queue,rds,redis,restful,seo,server,serverless,smart contract,ssh,stress testing,subdomain,tdd,typescript,unit test,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,單元測試,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
     ]
 }
 </script>
@@ -380,9 +380,9 @@
 可以先隨便選一個，或是直接跳過<br>
 因為下一步要安裝的是<code>yamllint</code>，如果你在這邊選了 yamllint，下一步就沒事了</p>
 <p>可以在專案根目錄執行指令來測試是否可以執行檢查</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vendor/bin/grumphp run
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vendor/bin/grumphp run
 </span></span></code></pre></div><p>若是執行</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>composer install
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>composer install
 </span></span></code></pre></div><p>可以看到提示<code>GrumPHP is sniffing your commits!</code>代表 GrumPHP 已經在嗅探我們的 commit 了</p>
 <p><img src="/blog/202107-grumphp-a-php-code-quality-tool/grumphp-composer-install.png" alt="grumphp composer install"></p>
 <h1 id="加入檢查任務">加入檢查任務</h1>
@@ -394,7 +394,7 @@
 <li>Phpcs</li>
 </ul>
 <p>首先如果上一步沒建立<code>grumphp.yml</code>的話，在專案根目錄下建立檔案並建立內容</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">grumphp</span>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">grumphp</span>:
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">tasks</span>: {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    }
@@ -413,7 +413,7 @@
 </a>
  我們不需要額外配置<br>
 只需要在 tasks 列表中加入 yamllint 即可</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">grumphp</span>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">grumphp</span>:
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">tasks</span>: {
 </span></span><span style="display:flex;"><span>        <span style="color:#f92672">yamllint</span>: <span style="color:#66d9ef">null</span>,
 </span></span><span style="display:flex;"><span>    }
@@ -426,9 +426,9 @@
 <br>
 首先執行 composer 指令安裝依賴項目，因為這個檢查只有在測試環境需要被執行<br>
 所以只在測試環境<code>require-dev</code>中安裝</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>composer require --dev php-parallel-lint/php-parallel-lint
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>composer require --dev php-parallel-lint/php-parallel-lint
 </span></span></code></pre></div><p>接著加入<code>grumphp.yml</code>中的任務</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">grumphp</span>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">grumphp</span>:
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">tasks</span>: {
 </span></span><span style="display:flex;"><span>        <span style="color:#f92672">yamllint</span>: <span style="color:#66d9ef">null</span>,
 </span></span><span style="display:flex;"><span>        <span style="color:#f92672">phplint</span>: <span style="color:#ae81ff">~,</span>
@@ -442,7 +442,7 @@
     target="_blank" rel="noreferrer noopener">Phpunit
 </a>
 </p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>composer require --dev phpunit/phpunit
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>composer require --dev phpunit/phpunit
 </span></span></code></pre></div><p>而文件中有說明，你必須建立<code>phpunit.xml</code>作為任務的設定檔<br>
 底下範例指定了測試檔案的資料夾目錄</p>
 <ul>
@@ -452,7 +452,7 @@
 <p>如果缺少這個檔案，預設會是 null，執行下去會報錯<br>
 如果你的對應資料夾沒建立，在執行檢查的時候也會視為錯誤，記得要在專案中建立對應資料夾</p>
 <p><strong>phpunit.xml</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;phpunit</span> <span style="color:#a6e22e">xmlns:xsi=</span><span style="color:#e6db74">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
 </span></span><span style="display:flex;"><span>         <span style="color:#a6e22e">xsi:noNamespaceSchemaLocation=</span><span style="color:#e6db74">&#34;./vendor/phpunit/phpunit/phpunit.xsd&#34;</span>
 </span></span><span style="display:flex;"><span>         <span style="color:#a6e22e">bootstrap=</span><span style="color:#e6db74">&#34;vendor/autoload.php&#34;</span>
@@ -477,7 +477,7 @@
 執行指令<code>vendor/bin/grumphp run</code>可以看到通過的綠色的開心老頭</p>
 <p><img src="/blog/202107-grumphp-a-php-code-quality-tool/phpunit-pass.png" alt="phpunit pass"></p>
 <p>若我們修改測試方法，讓測試無法通過</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">testGetAhoy</span>()
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">testGetAhoy</span>()
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    $larapeko <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">LaraPeko</span>();
 </span></span><span style="display:flex;"><span>    $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">assertEquals</span>(<span style="color:#e6db74">&#39;ahoy&#39;</span>, <span style="color:#e6db74">&#39;DD&#39;</span>);
@@ -497,10 +497,10 @@
     target="_blank" rel="noreferrer noopener">Phpcs 任務文件
 </a>
 </p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>composer require --dev squizlabs/php_codesniffer
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>composer require --dev squizlabs/php_codesniffer
 </span></span></code></pre></div><p>接著一樣是需要建立配置文件<code>phpcs.xml</code>來設定我們需要檢查的規則，這邊以基本的 PSR-12 為例<br>
 可以看到我們設定了 PSR12 的檢查規則</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34;?&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34;?&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;ruleset</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;PSR12&#34;</span><span style="color:#f92672">&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;description&gt;</span>The PSR12 coding standard.<span style="color:#f92672">&lt;/description&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;rule</span> <span style="color:#a6e22e">ref=</span><span style="color:#e6db74">&#34;PSR12&#34;</span><span style="color:#f92672">/&gt;</span>
@@ -537,7 +537,7 @@
 <br>
 我們可以透過加入<code>scripts</code>區塊，讓指令在 composer 執行過程中被執行</p>
 <p>在專案的<code>composer.json</code>中加入指令，在初始時就就開始嗅探</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;scripts&#34;</span><span style="color:#f92672">:</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;scripts&#34;</span><span style="color:#f92672">:</span> {
 </span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;post-install-cmd&#34;</span><span style="color:#f92672">:</span> [
 </span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;@php ./vendor/bin/grumphp git:init&#34;</span>
 </span></span><span style="display:flex;"><span>        ]
@@ -596,6 +596,14 @@
       </header>
       
       <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202609-mwaa-connection-encryption-investigation/">MWAA Connections 加密機制調查</a></h2>
+          <time class="published" datetime="2026-09-03 00:00:00 &#43;0000 UTC">2026/09/03</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
           <a href="/blog/202604-deploy-openclaw-ai-for-free/" class="image" style="--bg-image: url('/blog/202604-deploy-openclaw-ai-for-free/featured.jpg');">
     <img src="/blog/202604-deploy-openclaw-ai-for-free/featured.jpg" alt="">
   </a>
@@ -635,16 +643,6 @@
         </header>
       </article>
       
-      <article class="mini-post">
-          <a href="/blog/202508-manage-python-versions-with-pyenv/" class="image" style="--bg-image: url('/blog/202508-manage-python-versions-with-pyenv/featured.jpg');">
-    <img src="/blog/202508-manage-python-versions-with-pyenv/featured.jpg" alt="">
-  </a>
-        <header>
-          <h2><a href="/blog/202508-manage-python-versions-with-pyenv/">使用 Pyenv 輕鬆管理多版本 Python</a></h2>
-          <time class="published" datetime="2025-08-30 00:00:00 &#43;0000 UTC">2025/08/30</time>
-        </header>
-      </article>
-      
       
         <footer>
           <a href="/blog/" class="button">查看更多</a>
@@ -664,7 +662,7 @@
           
           
           <li>
-              <a href="/categories/aws/">aws<span class="count">26</span></a>
+              <a href="/categories/aws/">aws<span class="count">27</span></a>
           </li>
           
           <li>
@@ -862,6 +860,10 @@
         </li>
         
         <li>
+          <a href="/tags/airflow/">airflow (3)</a>
+        </li>
+        
+        <li>
           <a href="/tags/cloudflare/">cloudflare (3)</a>
         </li>
         
@@ -879,10 +881,6 @@
         
         <li>
           <a href="/tags/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/">架站相關 (3)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/airflow/">airflow (2)</a>
         </li>
         
         <li>
@@ -1015,6 +1013,10 @@
         
         <li>
           <a href="/tags/load-balancing/">load balancing (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/mwaa/">mwaa (1)</a>
         </li>
         
         <li>
@@ -1155,7 +1157,7 @@
     <script>
       hljs.configure({ ignoreUnescapedHTML: true }); 
       hljs.highlightAll();
-    </script><script src="/js/bundle.min.a56655f3069386c7a1539049f4b6e4d773b948f9c00ee443e5187c783819f686.js" integrity="sha256-pWZV8waThsehU5BJ9Lbk13O5SPnADuRD5Rh8eDgZ9oY="></script>
+    </script><script src="/js/bundle.min.d21befc899e4b6158eba05da3928321e52d15d067cb323bbf20e1b37a4ee0e3d.js" integrity="sha256-0hvvyJnkthWOugXaOSgyHlLRXQZ8syO78g4bN6TuDj0="></script>
     <script src="/js/add-on.js"></script>
 
 

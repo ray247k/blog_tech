@@ -1,40 +1,45 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Unit Test on Byte Ebi 🍤</title>
-    <link>https://tech.ray247k.com/tags/unit-test/</link>
-    <description>Recent content in Unit Test on Byte Ebi 🍤</description>
-    <generator>Hugo</generator>
-    <language>zh-TW</language>
-    <lastBuildDate>Sat, 26 Jul 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://tech.ray247k.com/tags/unit-test/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>[Pytest 101] 04 Mock Class</title>
-      <link>https://tech.ray247k.com/blog/202507-pytest-4-pytest-mock-class/</link>
-      <pubDate>Sat, 26 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202507-pytest-4-pytest-mock-class/</guid>
-      <description>&lt;p&gt;在開發中導入工廠模式雖然能讓架構更清晰，但也讓單元測試變得複雜。&lt;br&gt;&#xA;一次搞懂兩種不同 mock 策略的優劣與實作方式，幫助你寫出更穩健的測試程式！&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[Pytest 101] 03 Mock SQL Query</title>
-      <link>https://tech.ray247k.com/blog/202507-pytest-3-pytest-mock-sql-query/</link>
-      <pubDate>Wed, 23 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202507-pytest-3-pytest-mock-sql-query/</guid>
-      <description>&lt;p&gt;透過 Mock，我們不需要真的連線到資料庫來執行測試，就可以模擬資料庫操作的結果。&lt;br&gt;&#xA;而不需要準備一個測試用的資料庫，並在測試後清除資料庫。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[Pytest 101] 02 Mock 的基本用法</title>
-      <link>https://tech.ray247k.com/blog/202507-pytest-2-pytest-mock-basics/</link>
-      <pubDate>Fri, 11 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202507-pytest-2-pytest-mock-basics/</guid>
-      <description>&lt;p&gt;介紹完基本的工具後，這篇文章要實際操作 Pytest 中 Mock 的使用方式。&lt;br&gt;&#xA;Mock 可以讓我們替換原本的函式邏輯，模擬不同情境，寫出更精準的單元測試。&lt;br&gt;&#xA;本文將以實例說明如何抽換函式、模擬錯誤發生，甚至處理像是 Redis 這樣的外部資源。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[Pytest 101] 01 Pytest &amp; Mock 基本介紹</title>
-      <link>https://tech.ray247k.com/blog/202507-pytest-1-intro-to-pytest-and-mock/</link>
-      <pubDate>Wed, 02 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202507-pytest-1-intro-to-pytest-and-mock/</guid>
-      <description>&lt;p&gt;寫程式要寫單元測試已經是大家耳熟能詳的工具了，但實際開工卻是層層阻礙。&lt;br&gt;&#xA;要怎麼開始？又要用到哪些工具？怎麼用？沒有經驗的人很容易迷失在這第一步。&lt;/p&gt;</description>
-    </item>
-  </channel>
+	<channel>
+		<title>Unit Test on Byte Ebi 🍤</title>
+		<link>https://tech.ray247k.com/tags/unit-test/</link>
+		<description>Recent content in Unit Test on Byte Ebi 🍤</description>
+		<generator>Hugo</generator>
+		<language>zh-TW</language>
+		
+		
+		
+		
+			<lastBuildDate>Sat, 26 Jul 2025 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://tech.ray247k.com/tags/unit-test/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>[Pytest 101] 04 Mock Class</title>
+				<link>https://tech.ray247k.com/blog/202507-pytest-4-pytest-mock-class/</link>
+				<pubDate>Sat, 26 Jul 2025 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202507-pytest-4-pytest-mock-class/</guid>
+				<description>&lt;p&gt;在開發中導入工廠模式雖然能讓架構更清晰，但也讓單元測試變得複雜。&lt;br&gt;&#xA;一次搞懂兩種不同 mock 策略的優劣與實作方式，幫助你寫出更穩健的測試程式！&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[Pytest 101] 03 Mock SQL Query</title>
+				<link>https://tech.ray247k.com/blog/202507-pytest-3-pytest-mock-sql-query/</link>
+				<pubDate>Wed, 23 Jul 2025 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202507-pytest-3-pytest-mock-sql-query/</guid>
+				<description>&lt;p&gt;透過 Mock，我們不需要真的連線到資料庫來執行測試，就可以模擬資料庫操作的結果。&lt;br&gt;&#xA;而不需要準備一個測試用的資料庫，並在測試後清除資料庫。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[Pytest 101] 02 Mock 的基本用法</title>
+				<link>https://tech.ray247k.com/blog/202507-pytest-2-pytest-mock-basics/</link>
+				<pubDate>Fri, 11 Jul 2025 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202507-pytest-2-pytest-mock-basics/</guid>
+				<description>&lt;p&gt;介紹完基本的工具後，這篇文章要實際操作 Pytest 中 Mock 的使用方式。&lt;br&gt;&#xA;Mock 可以讓我們替換原本的函式邏輯，模擬不同情境，寫出更精準的單元測試。&lt;br&gt;&#xA;本文將以實例說明如何抽換函式、模擬錯誤發生，甚至處理像是 Redis 這樣的外部資源。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[Pytest 101] 01 Pytest &amp; Mock 基本介紹</title>
+				<link>https://tech.ray247k.com/blog/202507-pytest-1-intro-to-pytest-and-mock/</link>
+				<pubDate>Wed, 02 Jul 2025 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202507-pytest-1-intro-to-pytest-and-mock/</guid>
+				<description>&lt;p&gt;寫程式要寫單元測試已經是大家耳熟能詳的工具了，但實際開工卻是層層阻礙。&lt;br&gt;&#xA;要怎麼開始？又要用到哪些工具？怎麼用？沒有經驗的人很容易迷失在這第一步。&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

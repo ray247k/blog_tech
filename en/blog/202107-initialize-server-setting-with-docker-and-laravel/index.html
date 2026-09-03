@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.154.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.165.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="Environment Initialization and Server Configuration (Docker &#43; Laravel)">
   <meta property="og:description" content="Setting up the basic Docker and Laravel execution environment on a new server">
   <meta property="description" content="Setting up the basic Docker and Laravel execution environment on a new server">
@@ -40,7 +40,7 @@
   
   
             <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/felipec.min.css">
-          <link rel="stylesheet" href="/css/bundle.min.ccd03ac07edc9876d74feb17a3b850cb8df2c519d3854020b6697286637e4cd4.css" integrity="sha256-zNA6wH7cmHbXT&#43;sXo7hQy43yxRnThUAgtmlyhmN&#43;TNQ="><link rel="stylesheet" href="/css/add-on.css">
+          <link rel="stylesheet" href="/css/bundle.min.80aa639b4bec28a35fd95ccaf6d979df779f2693654656a4860eab54153fc258.css" integrity="sha256-gKpjm0vsKKNf2VzK9tl533efJpNlRlakhg6rVBU/wlg="><link rel="stylesheet" href="/css/add-on.css">
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
       <script>
         var doNotTrack = false;
@@ -83,7 +83,7 @@
     "url": "https:\/\/tech.ray247k.com\/",
     "description": "About web development, software engineering, frontend, backend, chatbot, server related topics. - ai,aws,devops,git,golang,laravel,php,python,serverless,third-party services,tools,typescript,version control,web hosting,website operations,",
     "keywords": [
-        "airflow,apache bench,auto scaling,aws,blockchain,cdn,chatbot,ci\/cd,cicd,cloudflare,cloudflare workers,composer,container technology,containerization,csv,devops,discord,dns,docker,docker compose,domain,domain name,drone,excel,ffmpeg,firewall,gas,gcp,gcr,git,github,github page,go,golang,golang, hugo,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,linux,load balancing,nginx,ngrok,openclaw,personal brand,php,php-fpm,phpcbf,phpcs,portainer,postgresql,pre-commit,prerender,proxy,purchase domain,pyenv,pytest,python,queue,rds,redis,search engine optimization,seo,server,serverless,smart contract,ssh,stress testing,subdomain,tdd,typescript,unit test,version control,web hosting,"
+        "airflow,apache bench,auto scaling,aws,blockchain,cdn,chatbot,ci\/cd,cicd,cloudflare,cloudflare workers,composer,container technology,containerization,csv,devops,discord,dns,docker,docker compose,domain,domain name,drone,excel,ffmpeg,firewall,gas,gcp,gcr,git,github,github page,go,golang,golang, hugo,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,linux,load balancing,mwaa,nginx,ngrok,openclaw,personal brand,php,php-fpm,phpcbf,phpcs,portainer,postgresql,pre-commit,prerender,proxy,purchase domain,pyenv,pytest,python,queue,rds,redis,search engine optimization,seo,server,serverless,smart contract,ssh,stress testing,subdomain,tdd,typescript,unit test,version control,web hosting,"
     ]
 }
 </script>
@@ -365,12 +365,12 @@ It also lays the groundwork for the upcoming article on using Docker to build a 
 <p>To allow the remote server to access a specific repository, you need to add an SSH key.</p>
 <h2 id="standard-method">Standard Method:</h2>
 <p>After SSH logging into the remote server, generate an SSH key on the remote machine using the following command:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh-keygen
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh-keygen
 </span></span></code></pre></div><p>Then add the public key to the remote repository.</p>
 <h2 id="unrecommended-method">Unrecommended Method:</h2>
 <p>Alternatively, you can copy an existing key pair with repository access to the remote server.<br>
 If the .ssh folder doesn&rsquo;t exist, create it with permissions set to <code>700</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir .ssh
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir .ssh
 </span></span><span style="display:flex;"><span>chmod <span style="color:#ae81ff">700</span> .ssh
 </span></span><span style="display:flex;"><span>cd .ssh
 </span></span><span style="display:flex;"><span>vim id_rsa
@@ -379,20 +379,20 @@ If the .ssh folder doesn&rsquo;t exist, create it with permissions set to <code>
 </span></span><span style="display:flex;"><span>chmod <span style="color:#ae81ff">644</span> id_rsa.pub
 </span></span></code></pre></div><h1 id="2-update-linux-packages">2. Update Linux Packages</h1>
 <p>Since we&rsquo;ll be installing packages later, it&rsquo;s a good practice to update the server&rsquo;s package list.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt update
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt update
 </span></span></code></pre></div><h1 id="3-install-docker">3. Install Docker</h1>
 <p>Since we&rsquo;re creating a Docker environment, it&rsquo;s essential to install Docker.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install docker.io
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install docker.io
 </span></span></code></pre></div><h1 id="4-install-docker-compose">4. Install Docker-Compose</h1>
 <p>We&rsquo;ll use docker-compose to orchestrate multiple Docker containers and launch a complete service.<br>
 As we&rsquo;ll be starting various containers like nginx, PHP, redis, mysql for future Laravel projects, managing them with docker-compose will be more convenient.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo curl -L <span style="color:#e6db74">&#34;https://github.com/docker/compose/releases/download/1.29.1/docker-compose-</span><span style="color:#66d9ef">$(</span>uname -s<span style="color:#66d9ef">)</span><span style="color:#e6db74">-</span><span style="color:#66d9ef">$(</span>uname -m<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> -o /usr/local/bin/docker-compose
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo curl -L <span style="color:#e6db74">&#34;https://github.com/docker/compose/releases/download/1.29.1/docker-compose-</span><span style="color:#66d9ef">$(</span>uname -s<span style="color:#66d9ef">)</span><span style="color:#e6db74">-</span><span style="color:#66d9ef">$(</span>uname -m<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> -o /usr/local/bin/docker-compose
 </span></span><span style="display:flex;"><span>sudo chmod +x /usr/local/bin/docker-compose
 </span></span></code></pre></div><h1 id="5-install-php-packages">5. Install PHP Packages</h1>
 <p>For Laravel projects, where we don&rsquo;t need compilation, changes made outside the container will reflect inside it.<br>
 Therefore, it&rsquo;s not always necessary to execute commands within the container.<br>
 To run <code>php artisan</code> and <code>phpunit</code> directly on the host and install/execute <code>composer</code>, install PHP based on your requirements.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt install php7.4-cli php7.4-gd install php7.4-mbstring php7.4-curl php7.4-xml php7.4-zip
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt install php7.4-cli php7.4-gd install php7.4-mbstring php7.4-curl php7.4-xml php7.4-zip
 </span></span></code></pre></div><p>If you&rsquo;re unsure about the package names, you can use tab completion after <code>apt install php7.4</code> to list all packages starting with &ldquo;php7.4,&rdquo; making it easy to find the desired version.</p>
 <h1 id="6-install-php-package-manager-composer">6. Install PHP Package Manager: Composer</h1>
 <p>Follow the official steps for installation: <a href="https://getcomposer.org/download"
@@ -401,19 +401,19 @@ To run <code>php artisan</code> and <code>phpunit</code> directly on the host an
 </a>
 </p>
 <p>Example (official website should be the primary reference for the correct commands):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>php -r <span style="color:#e6db74">&#34;copy(&#39;https://getcomposer.org/installer&#39;, &#39;composer-setup.php&#39;);&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>php -r <span style="color:#e6db74">&#34;copy(&#39;https://getcomposer.org/installer&#39;, &#39;composer-setup.php&#39;);&#34;</span>
 </span></span><span style="display:flex;"><span>php -r <span style="color:#e6db74">&#34;if (hash_file(&#39;sha384&#39;, &#39;composer-setup.php&#39;) === &#39;756890a4488ce9024fc62c56153228907f1545c228516cbf63f885e036d37e9a59d27d63f46af1d4d07ee0f76181c7d3&#39;) { echo &#39;Installer verified&#39;; } else { echo &#39;Installer corrupt&#39;; unlink(&#39;composer-setup.php&#39;); } echo PHP_EOL;&#34;</span>
 </span></span><span style="display:flex;"><span>php composer-setup.php
 </span></span><span style="display:flex;"><span>php -r <span style="color:#e6db74">&#34;unlink(&#39;composer-setup.php&#39;);&#34;</span>
 </span></span></code></pre></div><p>Move composer to the environment variable for global usage.<br>
 It&rsquo;s recommended to perform this step.<br>
 Otherwise, you can only execute commands within the installation path where composer.phar is located.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo mv composer.phar /usr/local/bin/composer
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo mv composer.phar /usr/local/bin/composer
 </span></span></code></pre></div><p>To view globally executable commands and their corresponding directories:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo $PATH
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo $PATH
 </span></span></code></pre></div><h1 id="7-set-sh-file-as-executable">7. Set .sh File as Executable</h1>
 <p>If there are shell scripts to be executed in the project, you must modify the file permissions.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod <span style="color:#ae81ff">755</span> <span style="color:#f92672">{</span>target file path<span style="color:#f92672">}</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod <span style="color:#ae81ff">755</span> <span style="color:#f92672">{</span>target file path<span style="color:#f92672">}</span>
 </span></span></code></pre></div><hr>
 <p>With these steps, you can now execute the following commands on the host machine:</p>
 <ul>
@@ -483,6 +483,14 @@ Otherwise, you can only execute commands within the installation path where comp
       </header>
       
       <article class="mini-post">
+          
+        <header>
+          <h2><a href="/en/blog/202609-mwaa-connection-encryption-investigation/">Investigating Connection Encryption on Amazon MWAA</a></h2>
+          <time class="published" datetime="2026-09-03 00:00:00 &#43;0000 UTC">September 3, 2026</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
           <a href="/en/blog/202604-deploy-openclaw-ai-for-free/" class="image" style="--bg-image: url('/blog/202604-deploy-openclaw-ai-for-free/featured.jpg');">
     <img src="/blog/202604-deploy-openclaw-ai-for-free/featured.jpg" alt="">
   </a>
@@ -522,16 +530,6 @@ Otherwise, you can only execute commands within the installation path where comp
         </header>
       </article>
       
-      <article class="mini-post">
-          <a href="/en/blog/202508-manage-python-versions-with-pyenv/" class="image" style="--bg-image: url('/blog/202508-manage-python-versions-with-pyenv/featured.jpg');">
-    <img src="/blog/202508-manage-python-versions-with-pyenv/featured.jpg" alt="">
-  </a>
-        <header>
-          <h2><a href="/en/blog/202508-manage-python-versions-with-pyenv/">Manage Python Versions with Pyenv</a></h2>
-          <time class="published" datetime="2025-08-30 00:00:00 &#43;0000 UTC">August 30, 2025</time>
-        </header>
-      </article>
-      
       
         <footer>
           <a href="/en/blog/" class="button">See More</a>
@@ -551,7 +549,7 @@ Otherwise, you can only execute commands within the installation path where comp
           
           
           <li>
-              <a href="/en/categories/aws/">aws<span class="count">26</span></a>
+              <a href="/en/categories/aws/">aws<span class="count">27</span></a>
           </li>
           
           <li>
@@ -705,6 +703,10 @@ Otherwise, you can only execute commands within the installation path where comp
         </li>
         
         <li>
+          <a href="/en/tags/airflow/">airflow (3)</a>
+        </li>
+        
+        <li>
           <a href="/en/tags/cloudflare/">cloudflare (3)</a>
         </li>
         
@@ -714,10 +716,6 @@ Otherwise, you can only execute commands within the installation path where comp
         
         <li>
           <a href="/en/tags/web-hosting/">web hosting (3)</a>
-        </li>
-        
-        <li>
-          <a href="/en/tags/airflow/">airflow (2)</a>
         </li>
         
         <li>
@@ -841,6 +839,10 @@ Otherwise, you can only execute commands within the installation path where comp
         </li>
         
         <li>
+          <a href="/en/tags/mwaa/">mwaa (1)</a>
+        </li>
+        
+        <li>
           <a href="/en/tags/ngrok/">ngrok (1)</a>
         </li>
         
@@ -958,7 +960,7 @@ Otherwise, you can only execute commands within the installation path where comp
     <script>
       hljs.configure({ ignoreUnescapedHTML: true }); 
       hljs.highlightAll();
-    </script><script src="/js/bundle.min.a56655f3069386c7a1539049f4b6e4d773b948f9c00ee443e5187c783819f686.js" integrity="sha256-pWZV8waThsehU5BJ9Lbk13O5SPnADuRD5Rh8eDgZ9oY="></script>
+    </script><script src="/js/bundle.min.d21befc899e4b6158eba05da3928321e52d15d067cb323bbf20e1b37a4ee0e3d.js" integrity="sha256-0hvvyJnkthWOugXaOSgyHlLRXQZ8syO78g4bN6TuDj0="></script>
     <script src="/js/add-on.js"></script>
 
 

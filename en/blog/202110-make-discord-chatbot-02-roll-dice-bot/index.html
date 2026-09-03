@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.154.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.165.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="[Discord Bot] 02. Dice Rolling Bot">
   <meta property="og:description" content="Create a Discord chat bot for rolling dice using Python">
   <meta property="description" content="Create a Discord chat bot for rolling dice using Python">
@@ -40,7 +40,7 @@
   
   
             <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/felipec.min.css">
-          <link rel="stylesheet" href="/css/bundle.min.ccd03ac07edc9876d74feb17a3b850cb8df2c519d3854020b6697286637e4cd4.css" integrity="sha256-zNA6wH7cmHbXT&#43;sXo7hQy43yxRnThUAgtmlyhmN&#43;TNQ="><link rel="stylesheet" href="/css/add-on.css">
+          <link rel="stylesheet" href="/css/bundle.min.80aa639b4bec28a35fd95ccaf6d979df779f2693654656a4860eab54153fc258.css" integrity="sha256-gKpjm0vsKKNf2VzK9tl533efJpNlRlakhg6rVBU/wlg="><link rel="stylesheet" href="/css/add-on.css">
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
       <script>
         var doNotTrack = false;
@@ -83,7 +83,7 @@
     "url": "https:\/\/tech.ray247k.com\/",
     "description": "About web development, software engineering, frontend, backend, chatbot, server related topics. - ai,aws,devops,git,golang,laravel,php,python,serverless,third-party services,tools,typescript,version control,web hosting,website operations,",
     "keywords": [
-        "airflow,apache bench,auto scaling,aws,blockchain,cdn,chatbot,ci\/cd,cicd,cloudflare,cloudflare workers,composer,container technology,containerization,csv,devops,discord,dns,docker,docker compose,domain,domain name,drone,excel,ffmpeg,firewall,gas,gcp,gcr,git,github,github page,go,golang,golang, hugo,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,linux,load balancing,nginx,ngrok,openclaw,personal brand,php,php-fpm,phpcbf,phpcs,portainer,postgresql,pre-commit,prerender,proxy,purchase domain,pyenv,pytest,python,queue,rds,redis,search engine optimization,seo,server,serverless,smart contract,ssh,stress testing,subdomain,tdd,typescript,unit test,version control,web hosting,"
+        "airflow,apache bench,auto scaling,aws,blockchain,cdn,chatbot,ci\/cd,cicd,cloudflare,cloudflare workers,composer,container technology,containerization,csv,devops,discord,dns,docker,docker compose,domain,domain name,drone,excel,ffmpeg,firewall,gas,gcp,gcr,git,github,github page,go,golang,golang, hugo,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,linux,load balancing,mwaa,nginx,ngrok,openclaw,personal brand,php,php-fpm,phpcbf,phpcs,portainer,postgresql,pre-commit,prerender,proxy,purchase domain,pyenv,pytest,python,queue,rds,redis,search engine optimization,seo,server,serverless,smart contract,ssh,stress testing,subdomain,tdd,typescript,unit test,version control,web hosting,"
     ]
 }
 </script>
@@ -369,7 +369,7 @@ After watching hololive EN play, I thought, &ldquo;Let&rsquo;s create a dice rol
 <pre tabindex="0"><code>!roll 5D10&gt;8
 </code></pre><p>This means: roll 5 ten-sided dice, and success is determined if the result is greater than or equal to 8.</p>
 <h1 id="code">Code</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Import the Discord.py library</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Import the Discord.py library</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> discord
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Import the random library</span>
@@ -458,18 +458,18 @@ After watching hololive EN play, I thought, &ldquo;Let&rsquo;s create a dice rol
 <p>Basic usage of <code>discord.py</code> has been covered before, so we won&rsquo;t repeat it here. We&rsquo;ll focus on explaining the logic.</p>
 <h2 id="input-message-detection">Input Message Detection</h2>
 <p>We use</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>message<span style="color:#f92672">.</span>content<span style="color:#f92672">.</span>startswith(<span style="color:#e6db74">&#39;!roll&#39;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>message<span style="color:#f92672">.</span>content<span style="color:#f92672">.</span>startswith(<span style="color:#e6db74">&#39;!roll&#39;</span>)
 </span></span></code></pre></div><p>to only respond to messages starting with &lsquo;!roll&rsquo;. To ensure case insensitivity and handle spaces, we use</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>message<span style="color:#f92672">.</span>content<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39; &#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>)<span style="color:#f92672">.</span>lower()
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>message<span style="color:#f92672">.</span>content<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39; &#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>)<span style="color:#f92672">.</span>lower()
 </span></span></code></pre></div><p>to remove spaces and convert the message to lowercase.</p>
 <p>Now, the program processes the message as if the user had input &lsquo;!roll5d10&rsquo;.</p>
 <h2 id="dice-quantity-calculation">Dice Quantity Calculation</h2>
 <p>The logic is similar to before. We extract the number of dice by splitting the content around &rsquo;d&rsquo; and taking the first value.</p>
 <p>We use</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>content<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;!roll&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>content<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;!roll&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>)
 </span></span></code></pre></div><p>to remove &lsquo;!roll&rsquo; as it&rsquo;s only a trigger for the bot and doesn&rsquo;t affect the dice rolling result.</p>
 <p>We use</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>content<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;d&#39;</span>)[<span style="color:#ae81ff">0</span>]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>content<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;d&#39;</span>)[<span style="color:#ae81ff">0</span>]
 </span></span></code></pre></div><p>to get the number of dice. We then try to convert it to an integer, catching a ValueError if it&rsquo;s not a valid number.</p>
 <h2 id="dice-type-determination">Dice Type Determination</h2>
 <p>Similar to quantity calculation, but this time we extract the logic between &rsquo;d&rsquo; and &lsquo;&gt;&rsquo; to determine the type of dice.<br>
@@ -479,7 +479,7 @@ Again, we try to convert it to an integer and catch a ValueError if needed.</p>
 We try to convert it to an integer, catching a ValueError if needed.</p>
 <h2 id="rolling-the-dice">Rolling the Dice</h2>
 <p>If there are no errors, we roll the dice using</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>results <span style="color:#f92672">=</span> [random<span style="color:#f92672">.</span>randint(<span style="color:#ae81ff">1</span>, dice_type) <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(dice_count)]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>results <span style="color:#f92672">=</span> [random<span style="color:#f92672">.</span>randint(<span style="color:#ae81ff">1</span>, dice_type) <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(dice_count)]
 </span></span></code></pre></div><p>We iterate through the results, formatting them for Discord output, and count successful rolls if a success condition is specified.</p>
 <p>Finally, we send the result and success count to Discord. If there are errors, we send the error message instead.</p>
 <h1 id="improvement-directions">Improvement Directions</h1>
@@ -544,6 +544,14 @@ Proper handling of such cases should be considered.</p>
       </header>
       
       <article class="mini-post">
+          
+        <header>
+          <h2><a href="/en/blog/202609-mwaa-connection-encryption-investigation/">Investigating Connection Encryption on Amazon MWAA</a></h2>
+          <time class="published" datetime="2026-09-03 00:00:00 &#43;0000 UTC">September 3, 2026</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
           <a href="/en/blog/202604-deploy-openclaw-ai-for-free/" class="image" style="--bg-image: url('/blog/202604-deploy-openclaw-ai-for-free/featured.jpg');">
     <img src="/blog/202604-deploy-openclaw-ai-for-free/featured.jpg" alt="">
   </a>
@@ -583,16 +591,6 @@ Proper handling of such cases should be considered.</p>
         </header>
       </article>
       
-      <article class="mini-post">
-          <a href="/en/blog/202508-manage-python-versions-with-pyenv/" class="image" style="--bg-image: url('/blog/202508-manage-python-versions-with-pyenv/featured.jpg');">
-    <img src="/blog/202508-manage-python-versions-with-pyenv/featured.jpg" alt="">
-  </a>
-        <header>
-          <h2><a href="/en/blog/202508-manage-python-versions-with-pyenv/">Manage Python Versions with Pyenv</a></h2>
-          <time class="published" datetime="2025-08-30 00:00:00 &#43;0000 UTC">August 30, 2025</time>
-        </header>
-      </article>
-      
       
         <footer>
           <a href="/en/blog/" class="button">See More</a>
@@ -612,7 +610,7 @@ Proper handling of such cases should be considered.</p>
           
           
           <li>
-              <a href="/en/categories/aws/">aws<span class="count">26</span></a>
+              <a href="/en/categories/aws/">aws<span class="count">27</span></a>
           </li>
           
           <li>
@@ -766,6 +764,10 @@ Proper handling of such cases should be considered.</p>
         </li>
         
         <li>
+          <a href="/en/tags/airflow/">airflow (3)</a>
+        </li>
+        
+        <li>
           <a href="/en/tags/cloudflare/">cloudflare (3)</a>
         </li>
         
@@ -775,10 +777,6 @@ Proper handling of such cases should be considered.</p>
         
         <li>
           <a href="/en/tags/web-hosting/">web hosting (3)</a>
-        </li>
-        
-        <li>
-          <a href="/en/tags/airflow/">airflow (2)</a>
         </li>
         
         <li>
@@ -902,6 +900,10 @@ Proper handling of such cases should be considered.</p>
         </li>
         
         <li>
+          <a href="/en/tags/mwaa/">mwaa (1)</a>
+        </li>
+        
+        <li>
           <a href="/en/tags/ngrok/">ngrok (1)</a>
         </li>
         
@@ -1019,7 +1021,7 @@ Proper handling of such cases should be considered.</p>
     <script>
       hljs.configure({ ignoreUnescapedHTML: true }); 
       hljs.highlightAll();
-    </script><script src="/js/bundle.min.a56655f3069386c7a1539049f4b6e4d773b948f9c00ee443e5187c783819f686.js" integrity="sha256-pWZV8waThsehU5BJ9Lbk13O5SPnADuRD5Rh8eDgZ9oY="></script>
+    </script><script src="/js/bundle.min.d21befc899e4b6158eba05da3928321e52d15d067cb323bbf20e1b37a4ee0e3d.js" integrity="sha256-0hvvyJnkthWOugXaOSgyHlLRXQZ8syO78g4bN6TuDj0="></script>
     <script src="/js/add-on.js"></script>
 
 

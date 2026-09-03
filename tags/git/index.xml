@@ -1,26 +1,31 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Git on Byte Ebi 🍤</title>
-    <link>https://tech.ray247k.com/tags/git/</link>
-    <description>Recent content in Git on Byte Ebi 🍤</description>
-    <generator>Hugo</generator>
-    <language>zh-TW</language>
-    <lastBuildDate>Fri, 20 Jun 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://tech.ray247k.com/tags/git/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Commit 前的最後防線：善用 Pre-commit 自動檢查程式碼</title>
-      <link>https://tech.ray247k.com/blog/202506-pre-commit-git-commit-gatekeeper/</link>
-      <pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202506-pre-commit-git-commit-gatekeeper/</guid>
-      <description>&lt;p&gt;透過 pre-commit 自動執行格式檢查與測試，減少低級錯誤。&lt;br&gt;&#xA;簡單安裝、快速設定，馬上提升程式碼品質。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[Git 教學] 設定本機全域 gitignore</title>
-      <link>https://tech.ray247k.com/blog/202111-git-global-gitignore/</link>
-      <pubDate>Sat, 06 Nov 2021 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202111-git-global-gitignore/</guid>
-      <description>&lt;p&gt;在開發專案時，你會不會把編輯器自動產生的設定檔加入 .gitignore 裡呢？&lt;br&gt;&#xA;為什麼要把你的個人的環境設定加到專案中呢？&lt;/p&gt;</description>
-    </item>
-  </channel>
+	<channel>
+		<title>Git on Byte Ebi 🍤</title>
+		<link>https://tech.ray247k.com/tags/git/</link>
+		<description>Recent content in Git on Byte Ebi 🍤</description>
+		<generator>Hugo</generator>
+		<language>zh-TW</language>
+		
+		
+		
+		
+			<lastBuildDate>Fri, 20 Jun 2025 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://tech.ray247k.com/tags/git/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Commit 前的最後防線：善用 Pre-commit 自動檢查程式碼</title>
+				<link>https://tech.ray247k.com/blog/202506-pre-commit-git-commit-gatekeeper/</link>
+				<pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202506-pre-commit-git-commit-gatekeeper/</guid>
+				<description>&lt;p&gt;透過 pre-commit 自動執行格式檢查與測試，減少低級錯誤。&lt;br&gt;&#xA;簡單安裝、快速設定，馬上提升程式碼品質。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[Git 教學] 設定本機全域 gitignore</title>
+				<link>https://tech.ray247k.com/blog/202111-git-global-gitignore/</link>
+				<pubDate>Sat, 06 Nov 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202111-git-global-gitignore/</guid>
+				<description>&lt;p&gt;在開發專案時，你會不會把編輯器自動產生的設定檔加入 .gitignore 裡呢？&lt;br&gt;&#xA;為什麼要把你的個人的環境設定加到專案中呢？&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

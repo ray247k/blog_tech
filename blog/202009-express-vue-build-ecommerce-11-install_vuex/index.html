@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.154.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.165.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="[Express&#43;Vue 搭建電商網站] 11 認識 vuex">
   <meta property="og:description" content="使用 Express &#43; Vue 搭建一個電商網站 - 認識 vuex">
   <meta property="description" content="使用 Express &#43; Vue 搭建一個電商網站 - 認識 vuex">
@@ -40,7 +40,7 @@
   
   
             <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/felipec.min.css">
-          <link rel="stylesheet" href="/css/bundle.min.ccd03ac07edc9876d74feb17a3b850cb8df2c519d3854020b6697286637e4cd4.css" integrity="sha256-zNA6wH7cmHbXT&#43;sXo7hQy43yxRnThUAgtmlyhmN&#43;TNQ="><link rel="stylesheet" href="/css/add-on.css">
+          <link rel="stylesheet" href="/css/bundle.min.80aa639b4bec28a35fd95ccaf6d979df779f2693654656a4860eab54153fc258.css" integrity="sha256-gKpjm0vsKKNf2VzK9tl533efJpNlRlakhg6rVBU/wlg="><link rel="stylesheet" href="/css/add-on.css">
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
       <script>
         var doNotTrack = false;
@@ -83,7 +83,7 @@
     "url": "https:\/\/tech.ray247k.com\/",
     "description": "討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - ai,aws,devops,git,golang,laravel,leetcode,node.js,php,python,serverless,typescript,實用工具,架站相關,版本控制,第三方服務,",
     "keywords": [
-        "airflow,apache bench,auto scaling,aws,axios,blockchain,cdn,chatbot,cicd,cloudflare,cloudflare workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker compose,domain name,drone,element-ui,excel,express,ffmpeg,gas,gcp,gcr,getter,git,github,github page,go,golang,golang, hugo,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load balancing,mongodb,mutation,nginx,ngrok,node.js,openclaw,php,php-fpm,phpcbf,phpcs,portainer,postgresql,pre-commit,prerender,proxy,pyenv,pytest,python,queue,rds,redis,restful,seo,server,serverless,smart contract,ssh,stress testing,subdomain,tdd,typescript,unit test,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,單元測試,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
+        "airflow,apache bench,auto scaling,aws,axios,blockchain,cdn,chatbot,cicd,cloudflare,cloudflare workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker compose,domain name,drone,element-ui,excel,express,ffmpeg,gas,gcp,gcr,getter,git,github,github page,go,golang,golang, hugo,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load balancing,mongodb,mutation,mwaa,nginx,ngrok,node.js,openclaw,php,php-fpm,phpcbf,phpcs,portainer,postgresql,pre-commit,prerender,proxy,pyenv,pytest,python,queue,rds,redis,restful,seo,server,serverless,smart contract,ssh,stress testing,subdomain,tdd,typescript,unit test,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,單元測試,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
     ]
 }
 </script>
@@ -172,7 +172,7 @@
     "@type": "BlogPosting",
     "articleSection": "blog",
     "name": "[Express\u002bVue 搭建電商網站] 11 認識 vuex",
-    "headline": "\u003cp\u003e\u003ca href=\u0022https:\/\/vuex.vuejs.org\/zh\/\u0022\n   \n    target=\u0022_blank\u0022 rel=\u0022noreferrer noopener\u0022\u003evuex\n\u003c\/a\u003e\n 來協助我們集中管理組件狀態，就不用到處維護狀態\u003cbr\u003e\n使得組件只需要專注於渲染頁面，而前端狀態都保留在 vuex 中建立的狀態庫中\u003cbr\u003e\n所謂狀態庫，其實也就是一個 Javascript 物件\u003c\/p\u003e",
+    "headline": "\u003cp\u003e\u003ca href=\u0022https:\/\/vuex.vuejs.org\/zh\/\u0022\r\n   \r\n    target=\u0022_blank\u0022 rel=\u0022noreferrer noopener\u0022\u003evuex\r\n\u003c\/a\u003e\r\n 來協助我們集中管理組件狀態，就不用到處維護狀態\u003cbr\u003e\n使得組件只需要專注於渲染頁面，而前端狀態都保留在 vuex 中建立的狀態庫中\u003cbr\u003e\n所謂狀態庫，其實也就是一個 Javascript 物件\u003c\/p\u003e",
     "description": "使用 Express \u002b Vue 搭建一個電商網站 - 認識 vuex",
     "inLanguage": "zh-TW",
     "isFamilyFriendly": "true",
@@ -369,11 +369,11 @@
 所謂狀態庫，其實也就是一個 Javascript 物件</p>
 <h1 id="安裝-vuex">安裝 vuex</h1>
 <p>可以使用指令</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm install vuex --save
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm install vuex --save
 </span></span></code></pre></div><p>或是依然使用 <code>vue ui</code> 來安裝<br>
 <img src="/blog/202009-express-vue-build-ecommerce-11-install_vuex/install-vuex.png" alt="install-vuex"></p>
 <p>如果是使用 <code>vue ui</code> 安裝，會發現專案下多了一個檔案：<code>/src/store/index.js</code>，先用以下內容取代原本的檔案</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Vue</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue&#39;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Vue</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue&#39;</span>;
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Vuex</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vuex&#39;</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">Vue</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">Vuex</span>);
@@ -409,7 +409,7 @@
 <h1 id="整合-vuex-和-vue">整合 Vuex 和 Vue</h1>
 <p>當我們建立了 <code>Vuex</code> 的 <code>store</code> 物件後就可以使用它了，打開 <code>src/main.js</code><br>
 在開頭導入之前建立的 <code>store</code>，並且將 <code>store</code> 添加到 Vue 初始化的參數列表裡</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Vue</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Vue</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue&#39;</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">App</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./App.vue&#39;</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">router</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./router&#39;</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">store</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./store&#39;</span>
@@ -428,7 +428,7 @@
 同時也避免了組件嵌套層級過多時，組件之間傳遞屬性的複雜性，便於大型程式與團隊合作</p>
 <h1 id="查看結果">查看結果</h1>
 <p>在整合好 Vuex 和 Vue 之後，馬上來看看 Vuex 帶來的變化。打開 <code>src/pages/admin/Products.vue</code> 修改成以下內容</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#f92672">template</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#f92672">template</span>&gt;
 </span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">div</span>&gt;
 </span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;title&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">h1</span>&gt;<span style="color:#a6e22e">This</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">Admin</span>&lt;/<span style="color:#f92672">h1</span>&gt;
@@ -515,6 +515,14 @@
       </header>
       
       <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202609-mwaa-connection-encryption-investigation/">MWAA Connections 加密機制調查</a></h2>
+          <time class="published" datetime="2026-09-03 00:00:00 &#43;0000 UTC">2026/09/03</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
           <a href="/blog/202604-deploy-openclaw-ai-for-free/" class="image" style="--bg-image: url('/blog/202604-deploy-openclaw-ai-for-free/featured.jpg');">
     <img src="/blog/202604-deploy-openclaw-ai-for-free/featured.jpg" alt="">
   </a>
@@ -554,16 +562,6 @@
         </header>
       </article>
       
-      <article class="mini-post">
-          <a href="/blog/202508-manage-python-versions-with-pyenv/" class="image" style="--bg-image: url('/blog/202508-manage-python-versions-with-pyenv/featured.jpg');">
-    <img src="/blog/202508-manage-python-versions-with-pyenv/featured.jpg" alt="">
-  </a>
-        <header>
-          <h2><a href="/blog/202508-manage-python-versions-with-pyenv/">使用 Pyenv 輕鬆管理多版本 Python</a></h2>
-          <time class="published" datetime="2025-08-30 00:00:00 &#43;0000 UTC">2025/08/30</time>
-        </header>
-      </article>
-      
       
         <footer>
           <a href="/blog/" class="button">查看更多</a>
@@ -583,7 +581,7 @@
           
           
           <li>
-              <a href="/categories/aws/">aws<span class="count">26</span></a>
+              <a href="/categories/aws/">aws<span class="count">27</span></a>
           </li>
           
           <li>
@@ -781,6 +779,10 @@
         </li>
         
         <li>
+          <a href="/tags/airflow/">airflow (3)</a>
+        </li>
+        
+        <li>
           <a href="/tags/cloudflare/">cloudflare (3)</a>
         </li>
         
@@ -798,10 +800,6 @@
         
         <li>
           <a href="/tags/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/">架站相關 (3)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/airflow/">airflow (2)</a>
         </li>
         
         <li>
@@ -934,6 +932,10 @@
         
         <li>
           <a href="/tags/load-balancing/">load balancing (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/mwaa/">mwaa (1)</a>
         </li>
         
         <li>
@@ -1074,7 +1076,7 @@
     <script>
       hljs.configure({ ignoreUnescapedHTML: true }); 
       hljs.highlightAll();
-    </script><script src="/js/bundle.min.a56655f3069386c7a1539049f4b6e4d773b948f9c00ee443e5187c783819f686.js" integrity="sha256-pWZV8waThsehU5BJ9Lbk13O5SPnADuRD5Rh8eDgZ9oY="></script>
+    </script><script src="/js/bundle.min.d21befc899e4b6158eba05da3928321e52d15d067cb323bbf20e1b37a4ee0e3d.js" integrity="sha256-0hvvyJnkthWOugXaOSgyHlLRXQZ8syO78g4bN6TuDj0="></script>
     <script src="/js/add-on.js"></script>
 
 

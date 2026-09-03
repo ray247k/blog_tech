@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>MWAA on Byte Ebi 🍤</title>
+		<link>https://tech.ray247k.com/en/tags/mwaa/</link>
+		<description>Recent content in MWAA on Byte Ebi 🍤</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Thu, 03 Sep 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://tech.ray247k.com/en/tags/mwaa/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Investigating Connection Encryption on Amazon MWAA</title>
+				<link>https://tech.ray247k.com/en/blog/202609-mwaa-connection-encryption-investigation/</link>
+				<pubDate>Thu, 03 Sep 2026 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202609-mwaa-connection-encryption-investigation/</guid>
+				<description>&lt;p&gt;The Airflow docs actually state that setting the encryption key to an empty string makes Connections fall back to plaintext.&lt;br&gt;&#xA;But does the same thing hold true on AWS-managed MWAA?&lt;br&gt;&#xA;This post traces that question from Airflow&amp;rsquo;s native Fernet mechanism all the way to MWAA&amp;rsquo;s reserved environment variables.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.154.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.165.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="[Express&#43;Vue 搭建電商網站] 22 使用 Docker 將專案容器化">
   <meta property="og:description" content="使用 Express &#43; Vue 搭建一個電商網站 - 使用 Docker 將專案容器化">
   <meta property="description" content="使用 Express &#43; Vue 搭建一個電商網站 - 使用 Docker 將專案容器化">
@@ -40,7 +40,7 @@
   
   
             <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/felipec.min.css">
-          <link rel="stylesheet" href="/css/bundle.min.ccd03ac07edc9876d74feb17a3b850cb8df2c519d3854020b6697286637e4cd4.css" integrity="sha256-zNA6wH7cmHbXT&#43;sXo7hQy43yxRnThUAgtmlyhmN&#43;TNQ="><link rel="stylesheet" href="/css/add-on.css">
+          <link rel="stylesheet" href="/css/bundle.min.80aa639b4bec28a35fd95ccaf6d979df779f2693654656a4860eab54153fc258.css" integrity="sha256-gKpjm0vsKKNf2VzK9tl533efJpNlRlakhg6rVBU/wlg="><link rel="stylesheet" href="/css/add-on.css">
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
       <script>
         var doNotTrack = false;
@@ -83,7 +83,7 @@
     "url": "https:\/\/tech.ray247k.com\/",
     "description": "討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - ai,aws,devops,git,golang,laravel,leetcode,node.js,php,python,serverless,typescript,實用工具,架站相關,版本控制,第三方服務,",
     "keywords": [
-        "airflow,apache bench,auto scaling,aws,axios,blockchain,cdn,chatbot,cicd,cloudflare,cloudflare workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker compose,domain name,drone,element-ui,excel,express,ffmpeg,gas,gcp,gcr,getter,git,github,github page,go,golang,golang, hugo,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load balancing,mongodb,mutation,nginx,ngrok,node.js,openclaw,php,php-fpm,phpcbf,phpcs,portainer,postgresql,pre-commit,prerender,proxy,pyenv,pytest,python,queue,rds,redis,restful,seo,server,serverless,smart contract,ssh,stress testing,subdomain,tdd,typescript,unit test,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,單元測試,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
+        "airflow,apache bench,auto scaling,aws,axios,blockchain,cdn,chatbot,cicd,cloudflare,cloudflare workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker compose,domain name,drone,element-ui,excel,express,ffmpeg,gas,gcp,gcr,getter,git,github,github page,go,golang,golang, hugo,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load balancing,mongodb,mutation,mwaa,nginx,ngrok,node.js,openclaw,php,php-fpm,phpcbf,phpcs,portainer,postgresql,pre-commit,prerender,proxy,pyenv,pytest,python,queue,rds,redis,restful,seo,server,serverless,smart contract,ssh,stress testing,subdomain,tdd,typescript,unit test,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,單元測試,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
     ]
 }
 </script>
@@ -172,7 +172,7 @@
     "@type": "BlogPosting",
     "articleSection": "blog",
     "name": "[Express\u002bVue 搭建電商網站] 22 使用 Docker 將專案容器化",
-    "headline": "\u003cp\u003e接著我們會把整個專案使用 \u003ca href=\u0022https:\/\/www.docker.com\/\u0022\n   \n    target=\u0022_blank\u0022 rel=\u0022noreferrer noopener\u0022\u003eDocker\n\u003c\/a\u003e\n 來將服務容器化，也會在 MongoDB 設定身份驗證機制\u003cbr\u003e\n如果對 Docker 不熟的話必須先去了解，才有辦法進行\u003cbr\u003e\n或是直接跳過這個章節 \u003cdel\u003e交給熱心的攤主處理\u003c\/del\u003e\u003c\/p\u003e",
+    "headline": "\u003cp\u003e接著我們會把整個專案使用 \u003ca href=\u0022https:\/\/www.docker.com\/\u0022\r\n   \r\n    target=\u0022_blank\u0022 rel=\u0022noreferrer noopener\u0022\u003eDocker\r\n\u003c\/a\u003e\r\n 來將服務容器化，也會在 MongoDB 設定身份驗證機制\u003cbr\u003e\n如果對 Docker 不熟的話必須先去了解，才有辦法進行\u003cbr\u003e\n或是直接跳過這個章節 \u003cdel\u003e交給熱心的攤主處理\u003c\/del\u003e\u003c\/p\u003e",
     "description": "使用 Express \u002b Vue 搭建一個電商網站 - 使用 Docker 將專案容器化",
     "inLanguage": "zh-TW",
     "isFamilyFriendly": "true",
@@ -386,9 +386,9 @@
 </ul>
 <h2 id="前端容器化">前端容器化</h2>
 <p>首先容器化的是先前用 Vue 寫的前端專案，將專案打包成靜態頁面</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm run build
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm run build
 </span></span></code></pre></div><p>接著增加 nginx 設定檔 <code>client/config/nginx.conf</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nginx" data-lang="nginx"><span style="display:flex;"><span><span style="color:#66d9ef">server</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-nginx" data-lang="nginx"><span style="display:flex;"><span><span style="color:#66d9ef">server</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">listen</span> <span style="color:#ae81ff">80</span>;
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">root</span> <span style="color:#e6db74">/www</span>;
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">index</span> <span style="color:#e6db74">index.html</span>;
@@ -411,11 +411,11 @@
 <li>請求目標 <code>/</code>，則直接回傳靜態頁面 <code>index.html</code></li>
 </ul>
 <p>然後要回頭稍微修改一下前端訪問後端的網址，打開 <code>client/src/store/actions.js</code> 修改 <code>API_BASE</code> 成</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">API_BASE</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;/api/v1&#39;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">API_BASE</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;/api/v1&#39;</span>;
 </span></span></code></pre></div><p>這樣改了之後前端在對 API 發起請求時就是取決於當前頁面的網址，而不是固定的 <code>http://localhost:3000/api/v1</code></p>
 <p>接著就是要撰寫 Docker 相關設定<br>
 首先建立 <code>client/src/Dockerfile</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> <span style="color:#e6db74">nginx:1.13</span><span style="color:#960050;background-color:#1e0010">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> <span style="color:#e6db74">nginx:1.13</span><span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"># 刪除預設的 Nginc 設定</span><span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">RUN</span> rm /etc/nginx/conf.d/default.conf<span style="color:#960050;background-color:#1e0010">
@@ -430,9 +430,9 @@
 </code></pre><p>代表不 mount 進 docker 的資料夾</p>
 <h2 id="後端容器化">後端容器化</h2>
 <p>前端容器化之後，接著準備進行後端的容器化。首先把寫死的 MongoDB 連線字串透過環境變數注入，修改 <code>server/app.js</code> 連線資料庫的部分成</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span><span style="color:#a6e22e">mongoose</span>.<span style="color:#a6e22e">connect</span>(<span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">MONGO_URI</span> <span style="color:#f92672">||</span> <span style="color:#e6db74">`mongodb://localhost:27017/test`</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span><span style="color:#a6e22e">mongoose</span>.<span style="color:#a6e22e">connect</span>(<span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">MONGO_URI</span> <span style="color:#f92672">||</span> <span style="color:#e6db74">`mongodb://localhost:27017/test`</span>);
 </span></span></code></pre></div><p>接著一樣新建 <code>server/Dockerfile</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> <span style="color:#e6db74">node:10</span><span style="color:#960050;background-color:#1e0010">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> <span style="color:#e6db74">node:10</span><span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"># 指定工作目錄為 /usr/src/app，接下来的指令全部在這個路徑下操作</span><span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">WORKDIR</span> <span style="color:#e6db74">/usr/src/app</span><span style="color:#960050;background-color:#1e0010">
@@ -467,7 +467,7 @@
 </a>
  可以讓我們很好的管理 docker 容器，只需要透過一個 YAML 檔就可以修改設定。</p>
 <p>在專案的根目錄下建立（跟 client 和 server 兩個資料夾同層）<code>docker-compose.yml</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;3&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;3&#39;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">services</span>: 
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">db</span>:
@@ -498,7 +498,7 @@
 若是使用 <code>build</code> 則會根據指定目錄下的 <code>Dockerfile</code> 來建立映像檔。</p>
 </blockquote>
 <p>接著就是測試的時間！打開 Docker 之後，在終端機輸入</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker-compose up --build
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker-compose up --build
 </span></span></code></pre></div><p>第一次執行會多花一些時間，因為先前提過的要從<a href="https://hub.docker.com/"
    
     target="_blank" rel="noreferrer noopener">Docker Hub
@@ -506,7 +506,7 @@
  上拉回指定的映像檔，如下圖<br>
 <img src="/blog/202012-express-vue-build-ecommerce-22-docker-containerized/docker-compose-up.png" alt="docker_container.md"></p>
 <p>可以藉由</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker ps
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker ps
 </span></span></code></pre></div><p>來觀察目前所有的容器狀態，看起來沒問題的話就可以開啟 <code>localhost:8080</code> 來看看專案是不是跟原本一樣</p>
 <h1 id="mongodb-身份驗證">MongoDB 身份驗證</h1>
 <p>在之前的設定中我們的 MongoDB 資料庫並沒定任何身份驗證<br>
@@ -514,7 +514,7 @@
 <p>接著我們要來搞定 MongoDB 的身份驗證，增加系統的安全性</p>
 <h2 id="修改-mongodb-連線設定">修改 MongoDB 連線設定</h2>
 <p>打開 <code>server/app.js</code>，修改連線資料庫的部分成以下</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span><span style="color:#a6e22e">ongoose</span>.<span style="color:#a6e22e">connect</span>(<span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">MONGO_URI</span> <span style="color:#f92672">||</span> <span style="color:#e6db74">`mongodb://localhost:27017/test`</span>, {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span><span style="color:#a6e22e">ongoose</span>.<span style="color:#a6e22e">connect</span>(<span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">MONGO_URI</span> <span style="color:#f92672">||</span> <span style="color:#e6db74">`mongodb://localhost:27017/test`</span>, {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">useNewUrlParser</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">useUnifiedTopology</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">user</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">MONGO_USER</span>,
@@ -529,7 +529,7 @@
 </ul>
 <h2 id="dockerfile-中注入環境變數">Dockerfile 中注入環境變數</h2>
 <p>在 <code>server/Dockerfile</code> 中加入下面的環境變數：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span><span style="color:#66d9ef">ENV</span> NODE_ENV<span style="color:#f92672">=</span>production
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span><span style="color:#66d9ef">ENV</span> NODE_ENV<span style="color:#f92672">=</span>production
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">ENV</span> MONGO_URI<span style="color:#f92672">=</span>mongodb://db:27017/admin<span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">ENV</span> MONGO_USER<span style="color:#f92672">=</span>mongoadmin
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">ENV</span> MONGO_PASSWORD<span style="color:#f92672">=</span>secret
@@ -539,7 +539,7 @@
 這是為了啟用驗證功能並且使用 <code>admin</code> 作為 Authentication Database 的使用者</p>
 <h2 id="設定-docker-compose-預設密碼">設定 Docker Compose 預設密碼</h2>
 <p>接著在 <code>docker-compose.yml</code> 裡面幫 <code>db</code> 服務加入預設密碼的環境變數</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>db:<span style="color:#960050;background-color:#1e0010">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>db:<span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span>  image: mongo<span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span>  restart: always<span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span>  environment:<span style="color:#960050;background-color:#1e0010">
@@ -547,11 +547,11 @@
 </span></span></span><span style="display:flex;"><span>    MONGO_INITDB_ROOT_PASSWORD: secret<span style="color:#960050;background-color:#1e0010">
 </span></span></span></code></pre></div><h2 id="測試">測試</h2>
 <p>首先使用</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker-compose down --volumes
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker-compose down --volumes
 </span></span></code></pre></div><p>不只關閉了原本運行中的 docker 容器，還透過 <code>--volumes</code> 把原本的建立 MongoDB 的容器徹底刪除<br>
 若不這麼做，之後重啟容器會跳過初始化使用者的過程，這樣我們的驗證資料庫就沒辦法被建立，而會載入之前的資料</p>
 <p>接著重新啟動容器</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker-compose up --build
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker-compose up --build
 </span></span></code></pre></div><p>應該會看到網頁一切正常，不過資料庫已經有了驗證，不是「裸奔」的狀態了</p>
 <hr>
 <p>專案範例程式碼 GitHub 網址：<a href="https://github.com/ray247k/mini-E-commerce"
@@ -612,6 +612,14 @@
       </header>
       
       <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202609-mwaa-connection-encryption-investigation/">MWAA Connections 加密機制調查</a></h2>
+          <time class="published" datetime="2026-09-03 00:00:00 &#43;0000 UTC">2026/09/03</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
           <a href="/blog/202604-deploy-openclaw-ai-for-free/" class="image" style="--bg-image: url('/blog/202604-deploy-openclaw-ai-for-free/featured.jpg');">
     <img src="/blog/202604-deploy-openclaw-ai-for-free/featured.jpg" alt="">
   </a>
@@ -651,16 +659,6 @@
         </header>
       </article>
       
-      <article class="mini-post">
-          <a href="/blog/202508-manage-python-versions-with-pyenv/" class="image" style="--bg-image: url('/blog/202508-manage-python-versions-with-pyenv/featured.jpg');">
-    <img src="/blog/202508-manage-python-versions-with-pyenv/featured.jpg" alt="">
-  </a>
-        <header>
-          <h2><a href="/blog/202508-manage-python-versions-with-pyenv/">使用 Pyenv 輕鬆管理多版本 Python</a></h2>
-          <time class="published" datetime="2025-08-30 00:00:00 &#43;0000 UTC">2025/08/30</time>
-        </header>
-      </article>
-      
       
         <footer>
           <a href="/blog/" class="button">查看更多</a>
@@ -680,7 +678,7 @@
           
           
           <li>
-              <a href="/categories/aws/">aws<span class="count">26</span></a>
+              <a href="/categories/aws/">aws<span class="count">27</span></a>
           </li>
           
           <li>
@@ -878,6 +876,10 @@
         </li>
         
         <li>
+          <a href="/tags/airflow/">airflow (3)</a>
+        </li>
+        
+        <li>
           <a href="/tags/cloudflare/">cloudflare (3)</a>
         </li>
         
@@ -895,10 +897,6 @@
         
         <li>
           <a href="/tags/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/">架站相關 (3)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/airflow/">airflow (2)</a>
         </li>
         
         <li>
@@ -1031,6 +1029,10 @@
         
         <li>
           <a href="/tags/load-balancing/">load balancing (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/mwaa/">mwaa (1)</a>
         </li>
         
         <li>
@@ -1171,7 +1173,7 @@
     <script>
       hljs.configure({ ignoreUnescapedHTML: true }); 
       hljs.highlightAll();
-    </script><script src="/js/bundle.min.a56655f3069386c7a1539049f4b6e4d773b948f9c00ee443e5187c783819f686.js" integrity="sha256-pWZV8waThsehU5BJ9Lbk13O5SPnADuRD5Rh8eDgZ9oY="></script>
+    </script><script src="/js/bundle.min.d21befc899e4b6158eba05da3928321e52d15d067cb323bbf20e1b37a4ee0e3d.js" integrity="sha256-0hvvyJnkthWOugXaOSgyHlLRXQZ8syO78g4bN6TuDj0="></script>
     <script src="/js/add-on.js"></script>
 
 

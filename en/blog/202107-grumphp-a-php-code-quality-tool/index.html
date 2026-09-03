@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.154.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.165.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="Guarding Code Quality with GrumPHP">
   <meta property="og:description" content="Check if your code smells before you make a mistake.">
   <meta property="description" content="Check if your code smells before you make a mistake.">
@@ -40,7 +40,7 @@
   
   
             <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/felipec.min.css">
-          <link rel="stylesheet" href="/css/bundle.min.ccd03ac07edc9876d74feb17a3b850cb8df2c519d3854020b6697286637e4cd4.css" integrity="sha256-zNA6wH7cmHbXT&#43;sXo7hQy43yxRnThUAgtmlyhmN&#43;TNQ="><link rel="stylesheet" href="/css/add-on.css">
+          <link rel="stylesheet" href="/css/bundle.min.80aa639b4bec28a35fd95ccaf6d979df779f2693654656a4860eab54153fc258.css" integrity="sha256-gKpjm0vsKKNf2VzK9tl533efJpNlRlakhg6rVBU/wlg="><link rel="stylesheet" href="/css/add-on.css">
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
       <script>
         var doNotTrack = false;
@@ -83,7 +83,7 @@
     "url": "https:\/\/tech.ray247k.com\/",
     "description": "About web development, software engineering, frontend, backend, chatbot, server related topics. - ai,aws,devops,git,golang,laravel,php,python,serverless,third-party services,tools,typescript,version control,web hosting,website operations,",
     "keywords": [
-        "airflow,apache bench,auto scaling,aws,blockchain,cdn,chatbot,ci\/cd,cicd,cloudflare,cloudflare workers,composer,container technology,containerization,csv,devops,discord,dns,docker,docker compose,domain,domain name,drone,excel,ffmpeg,firewall,gas,gcp,gcr,git,github,github page,go,golang,golang, hugo,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,linux,load balancing,nginx,ngrok,openclaw,personal brand,php,php-fpm,phpcbf,phpcs,portainer,postgresql,pre-commit,prerender,proxy,purchase domain,pyenv,pytest,python,queue,rds,redis,search engine optimization,seo,server,serverless,smart contract,ssh,stress testing,subdomain,tdd,typescript,unit test,version control,web hosting,"
+        "airflow,apache bench,auto scaling,aws,blockchain,cdn,chatbot,ci\/cd,cicd,cloudflare,cloudflare workers,composer,container technology,containerization,csv,devops,discord,dns,docker,docker compose,domain,domain name,drone,excel,ffmpeg,firewall,gas,gcp,gcr,git,github,github page,go,golang,golang, hugo,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,linux,load balancing,mwaa,nginx,ngrok,openclaw,personal brand,php,php-fpm,phpcbf,phpcs,portainer,postgresql,pre-commit,prerender,proxy,purchase domain,pyenv,pytest,python,queue,rds,redis,search engine optimization,seo,server,serverless,smart contract,ssh,stress testing,subdomain,tdd,typescript,unit test,version control,web hosting,"
     ]
 }
 </script>
@@ -376,14 +376,14 @@ Let&rsquo;s go through the installation process and add four commonly used tasks
 <p>Let&rsquo;s use the partially developed LaraPeko package as an example.<br>
 The term &ldquo;project&rdquo; mentioned here refers to this package.</p>
 <p>First, navigate to the project directory and execute:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>composer require --dev phpro/grumphp
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>composer require --dev phpro/grumphp
 </span></span></code></pre></div><p>An interactive prompt will appear, asking if you want to create the configuration file <code>grumphp.yml</code> with various options.<br>
 You can choose any option or skip this step. The next step involves installing <code>yamllint</code>.<br>
 If you chose yamllint in the previous step, you&rsquo;re good to go.</p>
 <p>You can test if the checks are working by running:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vendor/bin/grumphp run
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vendor/bin/grumphp run
 </span></span></code></pre></div><p>If you run:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>composer install
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>composer install
 </span></span></code></pre></div><p>and see the message &ldquo;GrumPHP is sniffing your commits!&rdquo; it means GrumPHP is now sniffing your commits.</p>
 <p><img src="/blog/202107-grumphp-a-php-code-quality-tool/grumphp-composer-install.png" alt="grumphp composer install"></p>
 <h1 id="adding-check-tasks">Adding Check Tasks</h1>
@@ -395,7 +395,7 @@ If you chose yamllint in the previous step, you&rsquo;re good to go.</p>
 <li>Phpcs</li>
 </ol>
 <p>If you didn&rsquo;t create <code>grumphp.yml</code> in the previous step, create the file in the project root directory with the following content:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">grumphp</span>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">grumphp</span>:
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">tasks</span>: {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    }
@@ -412,7 +412,7 @@ If you chose yamllint in the previous step, you&rsquo;re good to go.</p>
 </a>
 , no additional configuration is required.<br>
 Just add yamllint to the tasks list in <code>grumphp.yml</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">grumphp</span>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">grumphp</span>:
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">tasks</span>: {
 </span></span><span style="display:flex;"><span>        <span style="color:#f92672">yamllint</span>: <span style="color:#66d9ef">null</span>,
 </span></span><span style="display:flex;"><span>    }
@@ -424,9 +424,9 @@ Just add yamllint to the tasks list in <code>grumphp.yml</code>:</p>
 </a>
 .<br>
 Start by installing the required dependency only in the test environment:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>composer require --dev php-parallel-lint/php-parallel-lint
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>composer require --dev php-parallel-lint/php-parallel-lint
 </span></span></code></pre></div><p>Add the phplint task to <code>grumphp.yml</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">grumphp</span>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">grumphp</span>:
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">tasks</span>: {
 </span></span><span style="display:flex;"><span>        <span style="color:#f92672">yamllint</span>: <span style="color:#66d9ef">null</span>,
 </span></span><span style="display:flex;"><span>        <span style="color:#f92672">phplint</span>: <span style="color:#ae81ff">~,</span>
@@ -440,9 +440,9 @@ Start by installing the required dependency only in the test environment:</p>
 </a>
 .
 Install Phpunit in the test environment:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>composer require --dev phpunit/phpunit
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>composer require --dev phpunit/phpunit
 </span></span></code></pre></div><p>Create the <code>phpunit.xml</code> configuration file as required:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;phpunit</span> <span style="color:#a6e22e">xmlns:xsi=</span><span style="color:#e6db74">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
 </span></span><span style="display:flex;"><span>         <span style="color:#a6e22e">xsi:noNamespaceSchemaLocation=</span><span style="color:#e6db74">&#34;./vendor/phpunit/phpunit/phpunit.xsd&#34;</span>
 </span></span><span style="display:flex;"><span>         <span style="color:#a6e22e">bootstrap=</span><span style="color:#e6db74">&#34;vendor/autoload.php&#34;</span>
@@ -464,11 +464,11 @@ Install Phpunit in the test environment:</p>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/phpunit&gt;</span>
 </span></span></code></pre></div><p>Test if the tasks are executed by running the following command.<br>
 Since we configured Phpunit to look for tests in specific folders, ensure those folders exist in the project.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vendor/bin/grumphp run
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vendor/bin/grumphp run
 </span></span></code></pre></div><p>You should see a green happy face indicating that the tests passed.</p>
 <p><img src="/blog/202107-grumphp-a-php-code-quality-tool/phpunit-pass.png" alt="phpunit pass"></p>
 <p>If we modify a test method to make it fail:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">testGetAhoy</span>()
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">testGetAhoy</span>()
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    $larapeko <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">LaraPeko</span>();
 </span></span><span style="display:flex;"><span>    $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">assertEquals</span>(<span style="color:#e6db74">&#39;ahoy&#39;</span>, <span style="color:#e6db74">&#39;DD&#39;</span>);
@@ -487,9 +487,9 @@ Since we configured Phpunit to look for tests in specific folders, ensure those 
     target="_blank" rel="noreferrer noopener">Phpcs
 </a>
 .</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>composer require --dev squizlabs/php_codesniffer
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>composer require --dev squizlabs/php_codesniffer
 </span></span></code></pre></div><p>Create a <code>phpcs.xml</code> configuration file to set the rules you want to check. Here, we use the basic PSR-12 rules:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34;?&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34;?&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;ruleset</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;PSR12&#34;</span><span style="color:#f92672">&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;description&gt;</span>The PSR12 coding standard.<span style="color:#f92672">&lt;/description&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;rule</span> <span style="color:#a6e22e">ref=</span><span style="color:#e6db74">&#34;PSR12&#34;</span><span style="color:#f92672">/&gt;</span>
@@ -509,7 +509,7 @@ Since we configured Phpunit to look for tests in specific folders, ensure those 
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;exclude-pattern&gt;</span>tests<span style="color:#f92672">&lt;/exclude-pattern&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/ruleset&gt;</span>
 </span></span></code></pre></div><p>Now, run the check:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vendor/bin/grumphp run
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vendor/bin/grumphp run
 </span></span></code></pre></div><p>You should see that all configured tests have passed.</p>
 <p><img src="/blog/202107-grumphp-a-php-code-quality-tool/phpcs-pass.png" alt="phpcs pass"></p>
 <p>If there are issues violating PSR-12, you will see a frowning face and details about the problems.</p>
@@ -518,7 +518,7 @@ Since we configured Phpunit to look for tests in specific folders, ensure those 
 <p>All the tasks we did above were manual executions. It would be better if the code quality check happens automatically.<br>
 To achieve this, we can modify the <code>composer.json</code> file by adding scripts that run during the Composer process.</p>
 <p>Add the following script to the <code>composer.json</code> file to initialize GrumPHP during the post-installation command:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;scripts&#34;</span><span style="color:#f92672">:</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;scripts&#34;</span><span style="color:#f92672">:</span> {
 </span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;post-install-cmd&#34;</span><span style="color:#f92672">:</span> [
 </span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;@php ./vendor/bin/grumphp git:init&#34;</span>
 </span></span><span style="display:flex;"><span>        ]
@@ -577,6 +577,14 @@ To achieve this, we can modify the <code>composer.json</code> file by adding scr
       </header>
       
       <article class="mini-post">
+          
+        <header>
+          <h2><a href="/en/blog/202609-mwaa-connection-encryption-investigation/">Investigating Connection Encryption on Amazon MWAA</a></h2>
+          <time class="published" datetime="2026-09-03 00:00:00 &#43;0000 UTC">September 3, 2026</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
           <a href="/en/blog/202604-deploy-openclaw-ai-for-free/" class="image" style="--bg-image: url('/blog/202604-deploy-openclaw-ai-for-free/featured.jpg');">
     <img src="/blog/202604-deploy-openclaw-ai-for-free/featured.jpg" alt="">
   </a>
@@ -616,16 +624,6 @@ To achieve this, we can modify the <code>composer.json</code> file by adding scr
         </header>
       </article>
       
-      <article class="mini-post">
-          <a href="/en/blog/202508-manage-python-versions-with-pyenv/" class="image" style="--bg-image: url('/blog/202508-manage-python-versions-with-pyenv/featured.jpg');">
-    <img src="/blog/202508-manage-python-versions-with-pyenv/featured.jpg" alt="">
-  </a>
-        <header>
-          <h2><a href="/en/blog/202508-manage-python-versions-with-pyenv/">Manage Python Versions with Pyenv</a></h2>
-          <time class="published" datetime="2025-08-30 00:00:00 &#43;0000 UTC">August 30, 2025</time>
-        </header>
-      </article>
-      
       
         <footer>
           <a href="/en/blog/" class="button">See More</a>
@@ -645,7 +643,7 @@ To achieve this, we can modify the <code>composer.json</code> file by adding scr
           
           
           <li>
-              <a href="/en/categories/aws/">aws<span class="count">26</span></a>
+              <a href="/en/categories/aws/">aws<span class="count">27</span></a>
           </li>
           
           <li>
@@ -799,6 +797,10 @@ To achieve this, we can modify the <code>composer.json</code> file by adding scr
         </li>
         
         <li>
+          <a href="/en/tags/airflow/">airflow (3)</a>
+        </li>
+        
+        <li>
           <a href="/en/tags/cloudflare/">cloudflare (3)</a>
         </li>
         
@@ -808,10 +810,6 @@ To achieve this, we can modify the <code>composer.json</code> file by adding scr
         
         <li>
           <a href="/en/tags/web-hosting/">web hosting (3)</a>
-        </li>
-        
-        <li>
-          <a href="/en/tags/airflow/">airflow (2)</a>
         </li>
         
         <li>
@@ -935,6 +933,10 @@ To achieve this, we can modify the <code>composer.json</code> file by adding scr
         </li>
         
         <li>
+          <a href="/en/tags/mwaa/">mwaa (1)</a>
+        </li>
+        
+        <li>
           <a href="/en/tags/ngrok/">ngrok (1)</a>
         </li>
         
@@ -1052,7 +1054,7 @@ To achieve this, we can modify the <code>composer.json</code> file by adding scr
     <script>
       hljs.configure({ ignoreUnescapedHTML: true }); 
       hljs.highlightAll();
-    </script><script src="/js/bundle.min.a56655f3069386c7a1539049f4b6e4d773b948f9c00ee443e5187c783819f686.js" integrity="sha256-pWZV8waThsehU5BJ9Lbk13O5SPnADuRD5Rh8eDgZ9oY="></script>
+    </script><script src="/js/bundle.min.d21befc899e4b6158eba05da3928321e52d15d067cb323bbf20e1b37a4ee0e3d.js" integrity="sha256-0hvvyJnkthWOugXaOSgyHlLRXQZ8syO78g4bN6TuDj0="></script>
     <script src="/js/add-on.js"></script>
 
 

@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Pyenv on Byte Ebi 🍤</title>
-    <link>https://tech.ray247k.com/tags/pyenv/</link>
-    <description>Recent content in Pyenv on Byte Ebi 🍤</description>
-    <generator>Hugo</generator>
-    <language>zh-TW</language>
-    <lastBuildDate>Sat, 30 Aug 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://tech.ray247k.com/tags/pyenv/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>使用 Pyenv 輕鬆管理多版本 Python</title>
-      <link>https://tech.ray247k.com/blog/202508-manage-python-versions-with-pyenv/</link>
-      <pubDate>Sat, 30 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/blog/202508-manage-python-versions-with-pyenv/</guid>
-      <description>&lt;p&gt;Pyenv 是一個用來控制 Python 版本的工具&lt;br&gt;&#xA;不論是在升級專案的 Python 版本，還是根據不同專案切換 Python 版本，Pyenv 都是一個很方便的工具。&lt;/p&gt;</description>
-    </item>
-  </channel>
+	<channel>
+		<title>Pyenv on Byte Ebi 🍤</title>
+		<link>https://tech.ray247k.com/tags/pyenv/</link>
+		<description>Recent content in Pyenv on Byte Ebi 🍤</description>
+		<generator>Hugo</generator>
+		<language>zh-TW</language>
+		
+		
+		
+		
+			<lastBuildDate>Sat, 30 Aug 2025 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://tech.ray247k.com/tags/pyenv/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>使用 Pyenv 輕鬆管理多版本 Python</title>
+				<link>https://tech.ray247k.com/blog/202508-manage-python-versions-with-pyenv/</link>
+				<pubDate>Sat, 30 Aug 2025 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202508-manage-python-versions-with-pyenv/</guid>
+				<description>&lt;p&gt;Pyenv 是一個用來控制 Python 版本的工具&lt;br&gt;&#xA;不論是在升級專案的 Python 版本，還是根據不同專案切換 Python 版本，Pyenv 都是一個很方便的工具。&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

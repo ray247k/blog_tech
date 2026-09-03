@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.154.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.165.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="[Pytest 101] 03 Mock SQL Query">
   <meta property="og:description" content="將單元測試從資料庫連線中解放出來">
   <meta property="description" content="將單元測試從資料庫連線中解放出來">
@@ -40,7 +40,7 @@
   
   
             <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/felipec.min.css">
-          <link rel="stylesheet" href="/css/bundle.min.ccd03ac07edc9876d74feb17a3b850cb8df2c519d3854020b6697286637e4cd4.css" integrity="sha256-zNA6wH7cmHbXT&#43;sXo7hQy43yxRnThUAgtmlyhmN&#43;TNQ="><link rel="stylesheet" href="/css/add-on.css">
+          <link rel="stylesheet" href="/css/bundle.min.80aa639b4bec28a35fd95ccaf6d979df779f2693654656a4860eab54153fc258.css" integrity="sha256-gKpjm0vsKKNf2VzK9tl533efJpNlRlakhg6rVBU/wlg="><link rel="stylesheet" href="/css/add-on.css">
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
       <script>
         var doNotTrack = false;
@@ -83,7 +83,7 @@
     "url": "https:\/\/tech.ray247k.com\/",
     "description": "討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - ai,aws,devops,git,golang,laravel,leetcode,node.js,php,python,serverless,typescript,實用工具,架站相關,版本控制,第三方服務,",
     "keywords": [
-        "airflow,apache bench,auto scaling,aws,axios,blockchain,cdn,chatbot,cicd,cloudflare,cloudflare workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker compose,domain name,drone,element-ui,excel,express,ffmpeg,gas,gcp,gcr,getter,git,github,github page,go,golang,golang, hugo,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load balancing,mongodb,mutation,nginx,ngrok,node.js,openclaw,php,php-fpm,phpcbf,phpcs,portainer,postgresql,pre-commit,prerender,proxy,pyenv,pytest,python,queue,rds,redis,restful,seo,server,serverless,smart contract,ssh,stress testing,subdomain,tdd,typescript,unit test,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,單元測試,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
+        "airflow,apache bench,auto scaling,aws,axios,blockchain,cdn,chatbot,cicd,cloudflare,cloudflare workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker compose,domain name,drone,element-ui,excel,express,ffmpeg,gas,gcp,gcr,getter,git,github,github page,go,golang,golang, hugo,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load balancing,mongodb,mutation,mwaa,nginx,ngrok,node.js,openclaw,php,php-fpm,phpcbf,phpcs,portainer,postgresql,pre-commit,prerender,proxy,pyenv,pytest,python,queue,rds,redis,restful,seo,server,serverless,smart contract,ssh,stress testing,subdomain,tdd,typescript,unit test,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,單元測試,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
     ]
 }
 </script>
@@ -367,9 +367,9 @@
 </a>
  來定義 Mock 物件的規格，讓 mock 盡可能地按照規格模仿，試圖取得不在規格內的屬性或者方法，就拋出 <code>AttributeError</code>，如此一來可避免 mock 預設的特性造成的困擾，測試案例的 mock 就更加嚴謹。</p>
 <p>最上方不要忘記引入對應的類別！</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> model.user_table <span style="color:#f92672">import</span> User
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> model.user_table <span style="color:#f92672">import</span> User
 </span></span></code></pre></div><p>接著就可以使用 <code>spec</code> 指定 mock 出來的物件類別</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>mock_user <span style="color:#f92672">=</span> mocker<span style="color:#f92672">.</span>MagicMock(spec<span style="color:#f92672">=</span>User)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>mock_user <span style="color:#f92672">=</span> mocker<span style="color:#f92672">.</span>MagicMock(spec<span style="color:#f92672">=</span>User)
 </span></span></code></pre></div><h1 id="mock-鍊接呼叫"><a href="https://docs.python.org/zh-tw/3.13/library/unittest.mock-examples.html#mocking-chained-calls"
    
     target="_blank" rel="noreferrer noopener">Mock 鍊接呼叫
@@ -380,9 +380,9 @@
 <p>在被呼叫前取得其 <strong>return_value</strong>，一個新的 Mock 就會被建立。</p>
 </blockquote>
 <p>當有個查詢為</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>user <span style="color:#f92672">=</span> session<span style="color:#f92672">.</span>query(User)<span style="color:#f92672">.</span>filter(User<span style="color:#f92672">.</span>id <span style="color:#f92672">==</span> user_id)<span style="color:#f92672">.</span>first()
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>user <span style="color:#f92672">=</span> session<span style="color:#f92672">.</span>query(User)<span style="color:#f92672">.</span>filter(User<span style="color:#f92672">.</span>id <span style="color:#f92672">==</span> user_id)<span style="color:#f92672">.</span>first()
 </span></span></code></pre></div><p>這是逐個物件進行 Mock 的寫法：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># 模擬 User 物件</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># 模擬 User 物件</span>
 </span></span><span style="display:flex;"><span>mock_user <span style="color:#f92672">=</span> mocker<span style="color:#f92672">.</span>MagicMock(spec<span style="color:#f92672">=</span>User)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># 模擬 session</span>
@@ -409,7 +409,7 @@
 <li>mock_user：模擬一個 User 物件。</li>
 </ul>
 <p>在這個測試中不在乎資料庫查詢時各階段的錯誤，所以可以用鍊接呼叫直接將查詢簡化為</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>mock_user <span style="color:#f92672">=</span> mocker<span style="color:#f92672">.</span>MagicMock(spec<span style="color:#f92672">=</span>User)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>mock_user <span style="color:#f92672">=</span> mocker<span style="color:#f92672">.</span>MagicMock(spec<span style="color:#f92672">=</span>User)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>mock_session <span style="color:#f92672">=</span> mocker<span style="color:#f92672">.</span>MagicMock()
 </span></span><span style="display:flex;"><span>mock_session<span style="color:#f92672">.</span>query<span style="color:#f92672">.</span>return_value<span style="color:#f92672">.</span>filter<span style="color:#f92672">.</span>return_value<span style="color:#f92672">.</span>first<span style="color:#f92672">.</span>return_value <span style="color:#f92672">=</span> mock_user
@@ -420,13 +420,13 @@
 <blockquote>
 <p>抽換資料庫的查詢，藉由 mock 一個 user 讓函式回傳，避免資料庫連線意外對測試結果造成影響。</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># my_project/service/user_service.py</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># my_project/service/user_service.py</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_user_by_id</span>(session, user_id):
 </span></span><span style="display:flex;"><span>    user <span style="color:#f92672">=</span> session<span style="color:#f92672">.</span>query(User)<span style="color:#f92672">.</span>filter(User<span style="color:#f92672">.</span>id <span style="color:#f92672">==</span> user_id)<span style="color:#f92672">.</span>first()
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> user
 </span></span></code></pre></div><p>如果使用者存在，斷言判斷回傳的 user 物件要和我們 mock 的 user 物件相同。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># my_project/test/service/test_user_service.py</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># my_project/test/service/test_user_service.py</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> pytest
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> pytest_mock <span style="color:#f92672">import</span> MockFixture
@@ -450,7 +450,7 @@
 所以可以針對 <code>session.commit()</code> 有沒有被呼叫，甚至呼叫幾次來驗證對資料庫的操作<br>
 並且可以設定 <code>commit 的 return_value</code> 作為資料庫操作事件回傳判斷</p>
 <p>也可以針對 <code>session.add</code>、<code>session.delete</code> 更近一步驗證呼叫的方法是否正確，這邊用<code>delete</code> 做範例</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># my_project/service/user_service.py</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># my_project/service/user_service.py</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">delete_user</span>(session, user_id):
 </span></span><span style="display:flex;"><span>    user <span style="color:#f92672">=</span> session<span style="color:#f92672">.</span>query(User)<span style="color:#f92672">.</span>filter(User<span style="color:#f92672">.</span>id <span style="color:#f92672">==</span> user_id)<span style="color:#f92672">.</span>first()
@@ -462,7 +462,7 @@
 <li>called：該方法有被呼叫</li>
 <li>call_count：該方法被呼叫的次數，回傳一個 int</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># my_project/test/service/test_user_service.py</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># my_project/test/service/test_user_service.py</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> pytest
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> pytest_mock <span style="color:#f92672">import</span> MockFixture
@@ -491,7 +491,7 @@
 例如使用 SQLAlchemy 的 <code>one_or_none()</code> 時，如果有多筆資料會回傳 <code>MultipleResultsFound</code> 類型的錯誤。</p>
 <p>為了方便測試，以下範例不做額外處理，直接將查詢結果回傳。<br>
 當發生錯誤時便會回傳 <code>MultipleResultsFound</code> 類型的錯誤。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># my_project/service/user_service.py</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># my_project/service/user_service.py</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_user_by_id</span>(session, id) <span style="color:#f92672">-&gt;</span> User:
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> session<span style="color:#f92672">.</span>query(User)<span style="color:#f92672">.</span>filter(User<span style="color:#f92672">.</span>id <span style="color:#f92672">==</span> id)<span style="color:#f92672">.</span>one_or_none()
@@ -501,7 +501,7 @@
 <li>抽換待測函式中的 <code>one_or_none()</code> 查詢結果，回傳 <code>MultipleResultsFound</code> 類型錯誤。</li>
 <li>使用斷言判斷取得的資料類別符合預期。</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># my_project/test/service/test_user_service.py</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># my_project/test/service/test_user_service.py</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> pytest
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> pytest_mock <span style="color:#f92672">import</span> MockFixture
@@ -578,6 +578,14 @@
       </header>
       
       <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202609-mwaa-connection-encryption-investigation/">MWAA Connections 加密機制調查</a></h2>
+          <time class="published" datetime="2026-09-03 00:00:00 &#43;0000 UTC">2026/09/03</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
           <a href="/blog/202604-deploy-openclaw-ai-for-free/" class="image" style="--bg-image: url('/blog/202604-deploy-openclaw-ai-for-free/featured.jpg');">
     <img src="/blog/202604-deploy-openclaw-ai-for-free/featured.jpg" alt="">
   </a>
@@ -617,16 +625,6 @@
         </header>
       </article>
       
-      <article class="mini-post">
-          <a href="/blog/202508-manage-python-versions-with-pyenv/" class="image" style="--bg-image: url('/blog/202508-manage-python-versions-with-pyenv/featured.jpg');">
-    <img src="/blog/202508-manage-python-versions-with-pyenv/featured.jpg" alt="">
-  </a>
-        <header>
-          <h2><a href="/blog/202508-manage-python-versions-with-pyenv/">使用 Pyenv 輕鬆管理多版本 Python</a></h2>
-          <time class="published" datetime="2025-08-30 00:00:00 &#43;0000 UTC">2025/08/30</time>
-        </header>
-      </article>
-      
       
         <footer>
           <a href="/blog/" class="button">查看更多</a>
@@ -646,7 +644,7 @@
           
           
           <li>
-              <a href="/categories/aws/">aws<span class="count">26</span></a>
+              <a href="/categories/aws/">aws<span class="count">27</span></a>
           </li>
           
           <li>
@@ -844,6 +842,10 @@
         </li>
         
         <li>
+          <a href="/tags/airflow/">airflow (3)</a>
+        </li>
+        
+        <li>
           <a href="/tags/cloudflare/">cloudflare (3)</a>
         </li>
         
@@ -861,10 +863,6 @@
         
         <li>
           <a href="/tags/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/">架站相關 (3)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/airflow/">airflow (2)</a>
         </li>
         
         <li>
@@ -997,6 +995,10 @@
         
         <li>
           <a href="/tags/load-balancing/">load balancing (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/mwaa/">mwaa (1)</a>
         </li>
         
         <li>
@@ -1137,7 +1139,7 @@
     <script>
       hljs.configure({ ignoreUnescapedHTML: true }); 
       hljs.highlightAll();
-    </script><script src="/js/bundle.min.a56655f3069386c7a1539049f4b6e4d773b948f9c00ee443e5187c783819f686.js" integrity="sha256-pWZV8waThsehU5BJ9Lbk13O5SPnADuRD5Rh8eDgZ9oY="></script>
+    </script><script src="/js/bundle.min.d21befc899e4b6158eba05da3928321e52d15d067cb323bbf20e1b37a4ee0e3d.js" integrity="sha256-0hvvyJnkthWOugXaOSgyHlLRXQZ8syO78g4bN6TuDj0="></script>
     <script src="/js/add-on.js"></script>
 
 

@@ -1,194 +1,199 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>DevOps on Byte Ebi 🍤</title>
-    <link>https://tech.ray247k.com/en/tags/devops/</link>
-    <description>Recent content in DevOps on Byte Ebi 🍤</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Thu, 30 Jun 2022 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://tech.ray247k.com/en/tags/devops/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Create a Redis service on GCP</title>
-      <link>https://tech.ray247k.com/en/blog/202206-gcp-redis/</link>
-      <pubDate>Thu, 30 Jun 2022 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/blog/202206-gcp-redis/</guid>
-      <description>&lt;p&gt;GCP offers the Google Cloud MemoryStore service for creating Redis or Memcached caching machine services.&lt;br&gt;&#xA;The pricing is similar to that of setting up a database.&lt;br&gt;&#xA;I thought it would be as inexpensive as using virtual machines (VMs).&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Make your computer be temporarily accessible on the internet. - Ngrok</title>
-      <link>https://tech.ray247k.com/en/blog/202204-ngrok/</link>
-      <pubDate>Sat, 23 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/blog/202204-ngrok/</guid>
-      <description>&lt;p&gt;In development, it is often encountered that testing on the local machine requires a publicly accessible URL for services.&lt;br&gt;&#xA;Or webhooks to use as a callback. Moreover, these services often require HTTPS certification.&lt;br&gt;&#xA;Are there any other options besides setting up a cloud server for this purpose?&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Jenkins CI/CD 04 - Using SSH Commands to Operate another VM Instance in GCP</title>
-      <link>https://tech.ray247k.com/en/blog/202204-jenkins-cicd-4-ssh-remote-server/</link>
-      <pubDate>Wed, 13 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/blog/202204-jenkins-cicd-4-ssh-remote-server/</guid>
-      <description>&lt;p&gt;In a non-automated deployment scenario, manually connecting to the server host&amp;rsquo;s internals is required every time.&lt;br&gt;&#xA;Executing deployment commands or running deployment command executables not only involves inconvenience but also carries the risk of human error.&lt;br&gt;&#xA;With Jenkins&amp;rsquo; pipeline, we can replace manual execution, making deployments easier and more pleasant.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Jenkins CI/CD 03 - Building and Pushing Docker Images to GCR</title>
-      <link>https://tech.ray247k.com/en/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/</link>
-      <pubDate>Fri, 08 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/</guid>
-      <description>&lt;p&gt;Google Container Registry is a service provided by Google for storing, managing, and securing Docker container images.&lt;br&gt;&#xA;The objective at hand is to package a Docker image and push it to Google Cloud Platform (GCP) using the &amp;lsquo;gcloud&amp;rsquo; command for future deployment purposes.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Scalable Server 02 Load Balancing</title>
-      <link>https://tech.ray247k.com/en/blog/202204-gcp-load-balancing/</link>
-      <pubDate>Tue, 05 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/blog/202204-gcp-load-balancing/</guid>
-      <description>&lt;p&gt;In the previous post &lt;a href=&#34;https://tech.ray247k.com/en/blog/202203-gcp-auto-scaling/&#34;&#xA;   &#xA;   &gt;Scalable Server 01 Auto Scaling&#xA;&lt;/a&gt;&#xA;, it was mentioned that we need to configure a set of Load Balancers to distribute internet requests to different server hosts.&lt;br&gt;&#xA;This allows us to dynamically adjust the number of hosts based on traffic and maintain stable service operations.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Jenkins CI/CD 02 Basic Pipeline Setup and GitHub Integration</title>
-      <link>https://tech.ray247k.com/en/blog/202203-jenkins-cicd-2-basic-pipeline/</link>
-      <pubDate>Wed, 30 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/blog/202203-jenkins-cicd-2-basic-pipeline/</guid>
-      <description>&lt;p&gt;In &lt;a href=&#34;https://www.jenkins.io/&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Jenkins&#xA;&lt;/a&gt;&#xA;, the build process is known as a pipeline.&lt;br&gt;&#xA;It can also be triggered through webhooks, offering various triggering and execution methods.&lt;br&gt;&#xA;Below, we&amp;rsquo;ll demonstrate how to integrate GitHub webhooks and provide common trigger condition examples.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Scalable Server 01 Auto Scaling</title>
-      <link>https://tech.ray247k.com/en/blog/202203-gcp-auto-scaling/</link>
-      <pubDate>Sun, 27 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/blog/202203-gcp-auto-scaling/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Jenkins CI/CD 01 Installation</title>
-      <link>https://tech.ray247k.com/en/blog/202203-jenkins-cicd-1-installation/</link>
-      <pubDate>Wed, 16 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/blog/202203-jenkins-cicd-1-installation/</guid>
-      <description>&lt;p&gt;Create Your Own Automated Deployment Service with &lt;a href=&#34;https://www.jenkins.io/&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Jenkins&#xA;&lt;/a&gt;&#xA;&lt;br&gt;&#xA;Jenkins is a Java-based CI/CD system tool that we are exploring in this tutorial,&lt;br&gt;&#xA;following our previous introduction to &lt;a href=&#34;https://tech.ray247k.com/tags/drone/&#34;&#xA;   &#xA;   &gt;Drone&#xA;&lt;/a&gt;&#xA;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Successfully launched a VM on GCP on the first try</title>
-      <link>https://tech.ray247k.com/en/blog/202201-gcp-vm-basic/</link>
-      <pubDate>Sat, 15 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/blog/202201-gcp-vm-basic/</guid>
-      <description>&lt;p&gt;How to launch a VM virtual machine on Google Cloud Platform (GCP)?&lt;br&gt;&#xA;It may sound complex, but in practice, it&amp;rsquo;s quite straightforward.&lt;br&gt;&#xA;If you haven&amp;rsquo;t had any experience with setting up a host before, this time, we&amp;rsquo;ll document the steps for you.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Setting up Laravel Development Environment with Docker</title>
-      <link>https://tech.ray247k.com/en/blog/202107-laravel-environment-with-docker/</link>
-      <pubDate>Sat, 24 Jul 2021 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/blog/202107-laravel-environment-with-docker/</guid>
-      <description>&lt;p&gt;In the past, developing Laravel projects locally mostly involved installing the required services directly on the machine.&lt;br&gt;&#xA;Later, the recommended development environment by the official documentation, &lt;a href=&#34;https://github.com/laravel/homestead&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Homestead&#xA;&lt;/a&gt;&#xA;, became a popular choice.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Environment Initialization and Server Configuration (Docker &#43; Laravel)</title>
-      <link>https://tech.ray247k.com/en/blog/202107-initialize-server-setting-with-docker-and-laravel/</link>
-      <pubDate>Sat, 17 Jul 2021 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/blog/202107-initialize-server-setting-with-docker-and-laravel/</guid>
-      <description>&lt;p&gt;If you are setting up a new cloud server and want to create a Laravel development environment using Docker on it.&lt;br&gt;&#xA;And run Laravel&amp;rsquo;s common composer and artisan commands remotely, here&amp;rsquo;s a guide for you.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[CI/CD with Drone 101] 04 Introduction to Drone Runners</title>
-      <link>https://tech.ray247k.com/en/blog/202107-drone-cicd-4-advanced-runner/</link>
-      <pubDate>Fri, 09 Jul 2021 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/blog/202107-drone-cicd-4-advanced-runner/</guid>
-      <description>&lt;p&gt;In our previous post, &amp;ldquo;&lt;a href=&#34;https://tech.ray247k.com/en/blog/202106-drone-cicd-1-basic-usage/&#34;&#xA;   &#xA;   &gt;[CI/CD with Drone 101] 01 Basic Service Setup and GitHub Integration&#xA;&lt;/a&gt;&#xA;&amp;rdquo; there is an example &lt;code&gt;docker-compose.yml&lt;/code&gt; file that creates two Docker runners: &lt;code&gt;drone_runner_docker&lt;/code&gt; and &lt;code&gt;drone-runner-ssh&lt;/code&gt;.&lt;br&gt;&#xA;However, in &amp;ldquo;&lt;a href=&#34;https://tech.ray247k.com/en/blog/202106-drone-cicd-2-advanced-pipeline-configuration/&#34;&#xA;   &#xA;   &gt;[CI/CD with Drone 101] 02 Setting Deployment Trigger Conditions (Pipeline)&#xA;&lt;/a&gt;&#xA;&amp;rdquo; only the Docker runner is used.&lt;br&gt;&#xA;This post will introduce both runners, along with other runners mentioned on the official website.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[CI/CD with Drone 101] 03 Deployment Schedule Configuration and Permission Management</title>
-      <link>https://tech.ray247k.com/en/blog/202106-drone-cicd-3-advanced-cron-job/</link>
-      <pubDate>Mon, 14 Jun 2021 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/blog/202106-drone-cicd-3-advanced-cron-job/</guid>
-      <description>&lt;p&gt;Utilizing &lt;a href=&#34;https://www.drone.io/&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Drone&#xA;&lt;/a&gt;&#xA; to establish a custom automated deployment service.&lt;br&gt;&#xA;Drone is a CI/CD system tool developed in Golang.&lt;br&gt;&#xA;This tutorial focuses on configuring deployment schedules and managing permissions.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[CI/CD with Drone 101] 02 Setting Deployment Trigger Conditions (Pipeline)</title>
-      <link>https://tech.ray247k.com/en/blog/202106-drone-cicd-2-advanced-pipeline-configuration/</link>
-      <pubDate>Sat, 12 Jun 2021 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/blog/202106-drone-cicd-2-advanced-pipeline-configuration/</guid>
-      <description>&lt;p&gt;Utilizing &lt;a href=&#34;https://www.drone.io/&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Drone&#xA;&lt;/a&gt;&#xA; to establish a custom automated deployment service.&lt;br&gt;&#xA;Drone is a CI/CD system tool developed in Golang.&lt;br&gt;&#xA;In this article, we&amp;rsquo;ll configure multiple trigger conditions to initiate different deployment steps under various circumstances.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[CI/CD with Drone 101] 01 Basic Service Setup and GitHub Integration</title>
-      <link>https://tech.ray247k.com/en/blog/202106-drone-cicd-1-basic-usage/</link>
-      <pubDate>Tue, 08 Jun 2021 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/blog/202106-drone-cicd-1-basic-usage/</guid>
-      <description>&lt;p&gt;Utilizing &lt;a href=&#34;https://www.drone.io/&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Drone&#xA;&lt;/a&gt;&#xA; to establish your own automated deployment service.&lt;br&gt;&#xA;Drone is a CI/CD system tool developed in Golang.&lt;br&gt;&#xA;This article covers the configuration of basic services and integration with GitHub.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Common Docker Commands</title>
-      <link>https://tech.ray247k.com/en/blog/202106-docker-common-commands/</link>
-      <pubDate>Sun, 06 Jun 2021 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/blog/202106-docker-common-commands/</guid>
-      <description>&lt;p&gt;Some commonly used commands and related parameters on Docker and their usage.&lt;br&gt;&#xA;In actual use, there are definitely more commands than those listed here.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Server Stress Testing - Using Apache Bench</title>
-      <link>https://tech.ray247k.com/en/blog/202105-web-server-stress-testing/</link>
-      <pubDate>Sun, 23 May 2021 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/blog/202105-web-server-stress-testing/</guid>
-      <description>&lt;p&gt;Server stress testing is a must before going live, no exceptions!&lt;br&gt;&#xA;Just imagine you&amp;rsquo;ve been working overtime for months, the system goes online.&lt;br&gt;&#xA;And you&amp;rsquo;re celebrating with pizza and cocktail, only to find out suddenly the server crashes due to overwhelming traffic!&lt;br&gt;&#xA;That&amp;rsquo;s why conducting stress tests beforehand makes a good system!&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Use ssh key login remote server</title>
-      <link>https://tech.ray247k.com/en/blog/202104-use-ssh-key-login-remote-server/</link>
-      <pubDate>Sun, 25 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/blog/202104-use-ssh-key-login-remote-server/</guid>
-      <description>&lt;p&gt;Normally, logging into a server involves using a username and password,&lt;br&gt;&#xA;but passwords can be compromised through interception or sharing.&lt;br&gt;&#xA;The security level is not as robust as using SSH keys, which also eliminate the need for manual password entry each time.&lt;/p&gt;&#xA;&lt;h1 id=&#34;creating-ssh-keys-for-login&#34;&gt;Creating SSH Keys for Login&lt;/h1&gt;&#xA;&lt;h2 id=&#34;generating-ssh-keys-on-the-client-side-using-the-command&#34;&gt;Generating SSH keys on the client side using the command:&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ssh-keygen&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;&#xA;&lt;p&gt;Note: SSH keys should be in RSA format; if using OPENSSH, errors may persist.&lt;br&gt;&#xA;Reference: &lt;a href=&#34;https://ray247k.blogspot.com/2019/03/mac-majave-10141-ssh-keygen.html&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;mac majave 10.14.1 ssh-keygen Key Format Issue&#xA;&lt;/a&gt;&#xA;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Enable docker service in remote server</title>
-      <link>https://tech.ray247k.com/en/blog/202103-enable-docker-service-in-remote-server/</link>
-      <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/blog/202103-enable-docker-service-in-remote-server/</guid>
-      <description>&lt;p&gt;Step-by-step guide for enabling Docker and Docker-compose services on a new cloud host.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Setting up postgreSQL database with docker</title>
-      <link>https://tech.ray247k.com/en/blog/202103-setting-up-postgresql-database-with-docker/</link>
-      <pubDate>Wed, 03 Mar 2021 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/blog/202103-setting-up-postgresql-database-with-docker/</guid>
-      <description>&lt;p&gt;Setting up a PostgreSQL Database with Docker&lt;br&gt;&#xA;Including &lt;code&gt;Database Setup&lt;/code&gt;, &lt;code&gt;Data Persistence&lt;/code&gt;, &lt;code&gt;Using GUI to Operate the Database&lt;/code&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Reverse Proxy Setup in Docker Environment</title>
-      <link>https://tech.ray247k.com/en/blog/202102-reverse-proxy-in-docker-service/</link>
-      <pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/blog/202102-reverse-proxy-in-docker-service/</guid>
-      <description>&lt;p&gt;This article provides a basic explanation of reverse proxies and how to set them up in a Docker container environment.&lt;/p&gt;&#xA;&lt;h1 id=&#34;reverse-proxy-overview&#34;&gt;Reverse Proxy Overview&lt;/h1&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.jyt0532.com/2019/11/18/proxy-reverse-proxy/&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;System Design - Forward Proxy vs Reverse Proxy&#xA;&lt;/a&gt;&#xA;&lt;/p&gt;&#xA;&lt;h1 id=&#34;different-physical-hosts&#34;&gt;Different Physical Hosts&lt;/h1&gt;&#xA;&lt;h2 id=&#34;using-nginx-proxy-pass&#34;&gt;Using nginx proxy-pass&lt;/h2&gt;&#xA;&lt;h3 id=&#34;objective&#34;&gt;Objective&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Users visit a specified web page path &lt;code&gt;/new_path&lt;/code&gt; or the root &lt;code&gt;/&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;Configure the test machine&amp;rsquo;s nginx proxy_pass to redirect to another host&amp;rsquo;s project under the same path&lt;/li&gt;&#xA;&lt;li&gt;Ensure that the user&amp;rsquo;s IP address is not replaced by the proxy server&amp;rsquo;s IP&lt;/li&gt;&#xA;&lt;li&gt;Ensure that the project on the target server can read cookies&lt;/li&gt;&#xA;&lt;li&gt;Ensure that the payload of POST requests is forwarded&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;configure-nginx-config&#34;&gt;Configure nginx config&lt;/h3&gt;&#xA;&lt;h4 id=&#34;configuration-on-the-first-hosts-nginx&#34;&gt;Configuration on the First Host&amp;rsquo;s nginx&lt;/h4&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-nginx&#34; data-lang=&#34;nginx&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Forward all requests to domain/new_path to another host&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;location&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;/new_path&lt;/span&gt; {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# Proxy to the specified URL&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;proxy_pass&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;http://laravel55.test.com&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# Send the user&amp;#39;s real IP to the target host&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;proxy_set_header&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;X-Real-IP&lt;/span&gt; $remote_addr;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# Set the server as the original server before the proxy, otherwise HTTP_HOST will become the address of the proxy server&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;proxy_set_header&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;Host&lt;/span&gt; $host;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# Set cookie forwarding&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;proxy_set_header&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;Cookie&lt;/span&gt; $http_cookie;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# Identify the original client&amp;#39;s IP&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;proxy_set_header&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;X-Forwarded-Host&lt;/span&gt; $host;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# Record each proxy passed through by the client&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;proxy_set_header&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;X-Forwarded-For&lt;/span&gt; $proxy_add_x_forwarded_for;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# Identify the network connection protocol&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;proxy_set_header&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;X-Forwarded-Proto&lt;/span&gt; $scheme;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# Hide server information&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;proxy_hide_header&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;Server&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;proxy_hide_header&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;X-Powered-By&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# Increase space due to additional headers&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;proxy_headers_hash_bucket_size&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;128&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;proxy_headers_hash_max_size&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;512&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;configuration-on-the-second-hosts-nginx&#34;&gt;Configuration on the Second Host&amp;rsquo;s nginx&lt;/h4&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-nginx&#34; data-lang=&#34;nginx&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;server&lt;/span&gt; {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;listen&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;80&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;server_name&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;ray200&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;root&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;/home/toc/www/laravel55/public&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;access_log&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;/var/log/nginx/www/laravel55.access.log&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;error_log&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;/var/log/nginx/www/laravel55.error.log&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;index&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;index.php&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;location&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;/&lt;/span&gt; {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;try_files&lt;/span&gt; $uri $uri/ &lt;span style=&#34;color:#e6db74&#34;&gt;/index.php&lt;/span&gt;$is_args$args;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;location&lt;/span&gt; ~&lt;span style=&#34;color:#e6db74&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;\.(jpg|jpeg|gif|css|png|js|ico|html|svg|ttf|woff|woff2|eotD)&lt;/span&gt;$ {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;access_log&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;off&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;expires&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;max&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;location&lt;/span&gt; ~ &lt;span style=&#34;color:#e6db74&#34;&gt;\.php$&lt;/span&gt; {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;include&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;snippets/fastcgi-php.conf&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;fastcgi_pass&lt;/span&gt; 127.0.0.1:&lt;span style=&#34;color:#ae81ff&#34;&gt;9000&lt;/span&gt;; &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;note&#34;&gt;Note&lt;/h4&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;server_name&lt;/code&gt; must match the domain to which proxy_pass redirects.&lt;br&gt;&#xA;Otherwise, the request will go to the default server_name.&lt;/li&gt;&#xA;&lt;li&gt;Modify the method of determining the real IP address in the program to read &lt;code&gt;x-real-ip&lt;/code&gt; from the header.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;verify-cookie-reading&#34;&gt;Verify Cookie Reading&lt;/h3&gt;&#xA;&lt;p&gt;If the nginx configuration includes &lt;code&gt;proxy_set_header Cookie $http_cookie;&lt;/code&gt;, &lt;code&gt;dump($_COOKIE);&lt;/code&gt; will capture cookies,&#xA;but Laravel&amp;rsquo;s &lt;code&gt;request()-&amp;gt;cookie();&lt;/code&gt; won&amp;rsquo;t.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Laravel environment basic settings</title>
-      <link>https://tech.ray247k.com/en/blog/202102-laravel-environment-basic-settings/</link>
-      <pubDate>Thu, 25 Feb 2021 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/blog/202102-laravel-environment-basic-settings/</guid>
-      <description>&lt;p&gt;Configuration and package installation required for developing Laravel projects, applicable whether on remote hosts or local machines.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Portainer - A Visual Docker Management Tool</title>
-      <link>https://tech.ray247k.com/en/blog/202101-portainer-open-source-container-management-gui/</link>
-      <pubDate>Sat, 16 Jan 2021 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/blog/202101-portainer-open-source-container-management-gui/</guid>
-      <description>&lt;p&gt;Local development mostly involves command-line operations or using Docker&amp;rsquo;s GUI interface for service management.&lt;br&gt;&#xA;&lt;a href=&#34;https://github.com/portainer&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Portainer&#xA;&lt;/a&gt;&#xA; is an open-source UI tool that allows viewing Docker images and containers,&#xA;and executing actions such as start, stop, restart, and remove. It also enables viewing logs and errors for each container.&lt;br&gt;&#xA;Even individuals without Docker execution permissions can log in using credentials when deploying services on cloud-hosted servers,&#xA;utilizing the visual interface for various Docker service management tasks.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Docker Notes 3 - docker-compose</title>
-      <link>https://tech.ray247k.com/en/blog/202101-docker-note-3-introduce-docker-compose/</link>
-      <pubDate>Tue, 12 Jan 2021 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/blog/202101-docker-note-3-introduce-docker-compose/</guid>
-      <description>&lt;p&gt;When it comes to managing multiple Docker containers that are related to each other, using plain Docker commands requires remembering the relationships between containers.&lt;br&gt;&#xA;However, with docker-compose, managing multiple containers becomes straightforward through easy definition of multi-container services.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Docker Notes 2 - Basic Usage</title>
-      <link>https://tech.ray247k.com/en/blog/202101-docker-note-2-basic-usage/</link>
-      <pubDate>Sat, 09 Jan 2021 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/blog/202101-docker-note-2-basic-usage/</guid>
-      <description>&lt;p&gt;Containerization isolates different environments, allowing engineers to focus on development without spending excessive effort on environment setup.&lt;br&gt;&#xA;Docker is currently a mature and popular containerization technology.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Docker Notes 1 - Understanding Docker</title>
-      <link>https://tech.ray247k.com/en/blog/202101-docker-note-1-what-is-docker/</link>
-      <pubDate>Sat, 02 Jan 2021 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/blog/202101-docker-note-1-what-is-docker/</guid>
-      <description>&lt;p&gt;Containerization isolates different environments, allowing engineers to focus on development without spending excessive effort on environment setup.&lt;br&gt;&#xA;Docker is currently a mature and popular containerization technology.&lt;/p&gt;</description>
-    </item>
-  </channel>
+	<channel>
+		<title>DevOps on Byte Ebi 🍤</title>
+		<link>https://tech.ray247k.com/en/tags/devops/</link>
+		<description>Recent content in DevOps on Byte Ebi 🍤</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Thu, 30 Jun 2022 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://tech.ray247k.com/en/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Create a Redis service on GCP</title>
+				<link>https://tech.ray247k.com/en/blog/202206-gcp-redis/</link>
+				<pubDate>Thu, 30 Jun 2022 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202206-gcp-redis/</guid>
+				<description>&lt;p&gt;GCP offers the Google Cloud MemoryStore service for creating Redis or Memcached caching machine services.&lt;br&gt;&#xA;The pricing is similar to that of setting up a database.&lt;br&gt;&#xA;I thought it would be as inexpensive as using virtual machines (VMs).&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Make your computer be temporarily accessible on the internet. - Ngrok</title>
+				<link>https://tech.ray247k.com/en/blog/202204-ngrok/</link>
+				<pubDate>Sat, 23 Apr 2022 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202204-ngrok/</guid>
+				<description>&lt;p&gt;In development, it is often encountered that testing on the local machine requires a publicly accessible URL for services.&lt;br&gt;&#xA;Or webhooks to use as a callback. Moreover, these services often require HTTPS certification.&lt;br&gt;&#xA;Are there any other options besides setting up a cloud server for this purpose?&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Jenkins CI/CD 04 - Using SSH Commands to Operate another VM Instance in GCP</title>
+				<link>https://tech.ray247k.com/en/blog/202204-jenkins-cicd-4-ssh-remote-server/</link>
+				<pubDate>Wed, 13 Apr 2022 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202204-jenkins-cicd-4-ssh-remote-server/</guid>
+				<description>&lt;p&gt;In a non-automated deployment scenario, manually connecting to the server host&amp;rsquo;s internals is required every time.&lt;br&gt;&#xA;Executing deployment commands or running deployment command executables not only involves inconvenience but also carries the risk of human error.&lt;br&gt;&#xA;With Jenkins&amp;rsquo; pipeline, we can replace manual execution, making deployments easier and more pleasant.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Jenkins CI/CD 03 - Building and Pushing Docker Images to GCR</title>
+				<link>https://tech.ray247k.com/en/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/</link>
+				<pubDate>Fri, 08 Apr 2022 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/</guid>
+				<description>&lt;p&gt;Google Container Registry is a service provided by Google for storing, managing, and securing Docker container images.&lt;br&gt;&#xA;The objective at hand is to package a Docker image and push it to Google Cloud Platform (GCP) using the &amp;lsquo;gcloud&amp;rsquo; command for future deployment purposes.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Scalable Server 02 Load Balancing</title>
+				<link>https://tech.ray247k.com/en/blog/202204-gcp-load-balancing/</link>
+				<pubDate>Tue, 05 Apr 2022 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202204-gcp-load-balancing/</guid>
+				<description>&lt;p&gt;In the previous post &lt;a href=&#34;https://tech.ray247k.com/en/blog/202203-gcp-auto-scaling/&#34;&#xD;&#xA;   &#xD;&#xA;   &gt;Scalable Server 01 Auto Scaling&#xD;&#xA;&lt;/a&gt;&#xD;&#xA;, it was mentioned that we need to configure a set of Load Balancers to distribute internet requests to different server hosts.&lt;br&gt;&#xA;This allows us to dynamically adjust the number of hosts based on traffic and maintain stable service operations.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Jenkins CI/CD 02 Basic Pipeline Setup and GitHub Integration</title>
+				<link>https://tech.ray247k.com/en/blog/202203-jenkins-cicd-2-basic-pipeline/</link>
+				<pubDate>Wed, 30 Mar 2022 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202203-jenkins-cicd-2-basic-pipeline/</guid>
+				<description>&lt;p&gt;In &lt;a href=&#34;https://www.jenkins.io/&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Jenkins&#xD;&#xA;&lt;/a&gt;&#xD;&#xA;, the build process is known as a pipeline.&lt;br&gt;&#xA;It can also be triggered through webhooks, offering various triggering and execution methods.&lt;br&gt;&#xA;Below, we&amp;rsquo;ll demonstrate how to integrate GitHub webhooks and provide common trigger condition examples.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Scalable Server 01 Auto Scaling</title>
+				<link>https://tech.ray247k.com/en/blog/202203-gcp-auto-scaling/</link>
+				<pubDate>Sun, 27 Mar 2022 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202203-gcp-auto-scaling/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Jenkins CI/CD 01 Installation</title>
+				<link>https://tech.ray247k.com/en/blog/202203-jenkins-cicd-1-installation/</link>
+				<pubDate>Wed, 16 Mar 2022 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202203-jenkins-cicd-1-installation/</guid>
+				<description>&lt;p&gt;Create Your Own Automated Deployment Service with &lt;a href=&#34;https://www.jenkins.io/&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Jenkins&#xD;&#xA;&lt;/a&gt;&#xD;&#xA;&lt;br&gt;&#xA;Jenkins is a Java-based CI/CD system tool that we are exploring in this tutorial,&lt;br&gt;&#xA;following our previous introduction to &lt;a href=&#34;https://tech.ray247k.com/tags/drone/&#34;&#xD;&#xA;   &#xD;&#xA;   &gt;Drone&#xD;&#xA;&lt;/a&gt;&#xD;&#xA;&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Successfully launched a VM on GCP on the first try</title>
+				<link>https://tech.ray247k.com/en/blog/202201-gcp-vm-basic/</link>
+				<pubDate>Sat, 15 Jan 2022 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202201-gcp-vm-basic/</guid>
+				<description>&lt;p&gt;How to launch a VM virtual machine on Google Cloud Platform (GCP)?&lt;br&gt;&#xA;It may sound complex, but in practice, it&amp;rsquo;s quite straightforward.&lt;br&gt;&#xA;If you haven&amp;rsquo;t had any experience with setting up a host before, this time, we&amp;rsquo;ll document the steps for you.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Setting up Laravel Development Environment with Docker</title>
+				<link>https://tech.ray247k.com/en/blog/202107-laravel-environment-with-docker/</link>
+				<pubDate>Sat, 24 Jul 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202107-laravel-environment-with-docker/</guid>
+				<description>&lt;p&gt;In the past, developing Laravel projects locally mostly involved installing the required services directly on the machine.&lt;br&gt;&#xA;Later, the recommended development environment by the official documentation, &lt;a href=&#34;https://github.com/laravel/homestead&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Homestead&#xD;&#xA;&lt;/a&gt;&#xD;&#xA;, became a popular choice.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Environment Initialization and Server Configuration (Docker &#43; Laravel)</title>
+				<link>https://tech.ray247k.com/en/blog/202107-initialize-server-setting-with-docker-and-laravel/</link>
+				<pubDate>Sat, 17 Jul 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202107-initialize-server-setting-with-docker-and-laravel/</guid>
+				<description>&lt;p&gt;If you are setting up a new cloud server and want to create a Laravel development environment using Docker on it.&lt;br&gt;&#xA;And run Laravel&amp;rsquo;s common composer and artisan commands remotely, here&amp;rsquo;s a guide for you.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[CI/CD with Drone 101] 04 Introduction to Drone Runners</title>
+				<link>https://tech.ray247k.com/en/blog/202107-drone-cicd-4-advanced-runner/</link>
+				<pubDate>Fri, 09 Jul 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202107-drone-cicd-4-advanced-runner/</guid>
+				<description>&lt;p&gt;In our previous post, &amp;ldquo;&lt;a href=&#34;https://tech.ray247k.com/en/blog/202106-drone-cicd-1-basic-usage/&#34;&#xD;&#xA;   &#xD;&#xA;   &gt;[CI/CD with Drone 101] 01 Basic Service Setup and GitHub Integration&#xD;&#xA;&lt;/a&gt;&#xD;&#xA;&amp;rdquo; there is an example &lt;code&gt;docker-compose.yml&lt;/code&gt; file that creates two Docker runners: &lt;code&gt;drone_runner_docker&lt;/code&gt; and &lt;code&gt;drone-runner-ssh&lt;/code&gt;.&lt;br&gt;&#xA;However, in &amp;ldquo;&lt;a href=&#34;https://tech.ray247k.com/en/blog/202106-drone-cicd-2-advanced-pipeline-configuration/&#34;&#xD;&#xA;   &#xD;&#xA;   &gt;[CI/CD with Drone 101] 02 Setting Deployment Trigger Conditions (Pipeline)&#xD;&#xA;&lt;/a&gt;&#xD;&#xA;&amp;rdquo; only the Docker runner is used.&lt;br&gt;&#xA;This post will introduce both runners, along with other runners mentioned on the official website.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[CI/CD with Drone 101] 03 Deployment Schedule Configuration and Permission Management</title>
+				<link>https://tech.ray247k.com/en/blog/202106-drone-cicd-3-advanced-cron-job/</link>
+				<pubDate>Mon, 14 Jun 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202106-drone-cicd-3-advanced-cron-job/</guid>
+				<description>&lt;p&gt;Utilizing &lt;a href=&#34;https://www.drone.io/&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Drone&#xD;&#xA;&lt;/a&gt;&#xD;&#xA; to establish a custom automated deployment service.&lt;br&gt;&#xA;Drone is a CI/CD system tool developed in Golang.&lt;br&gt;&#xA;This tutorial focuses on configuring deployment schedules and managing permissions.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[CI/CD with Drone 101] 02 Setting Deployment Trigger Conditions (Pipeline)</title>
+				<link>https://tech.ray247k.com/en/blog/202106-drone-cicd-2-advanced-pipeline-configuration/</link>
+				<pubDate>Sat, 12 Jun 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202106-drone-cicd-2-advanced-pipeline-configuration/</guid>
+				<description>&lt;p&gt;Utilizing &lt;a href=&#34;https://www.drone.io/&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Drone&#xD;&#xA;&lt;/a&gt;&#xD;&#xA; to establish a custom automated deployment service.&lt;br&gt;&#xA;Drone is a CI/CD system tool developed in Golang.&lt;br&gt;&#xA;In this article, we&amp;rsquo;ll configure multiple trigger conditions to initiate different deployment steps under various circumstances.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[CI/CD with Drone 101] 01 Basic Service Setup and GitHub Integration</title>
+				<link>https://tech.ray247k.com/en/blog/202106-drone-cicd-1-basic-usage/</link>
+				<pubDate>Tue, 08 Jun 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202106-drone-cicd-1-basic-usage/</guid>
+				<description>&lt;p&gt;Utilizing &lt;a href=&#34;https://www.drone.io/&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Drone&#xD;&#xA;&lt;/a&gt;&#xD;&#xA; to establish your own automated deployment service.&lt;br&gt;&#xA;Drone is a CI/CD system tool developed in Golang.&lt;br&gt;&#xA;This article covers the configuration of basic services and integration with GitHub.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Common Docker Commands</title>
+				<link>https://tech.ray247k.com/en/blog/202106-docker-common-commands/</link>
+				<pubDate>Sun, 06 Jun 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202106-docker-common-commands/</guid>
+				<description>&lt;p&gt;Some commonly used commands and related parameters on Docker and their usage.&lt;br&gt;&#xA;In actual use, there are definitely more commands than those listed here.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Server Stress Testing - Using Apache Bench</title>
+				<link>https://tech.ray247k.com/en/blog/202105-web-server-stress-testing/</link>
+				<pubDate>Sun, 23 May 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202105-web-server-stress-testing/</guid>
+				<description>&lt;p&gt;Server stress testing is a must before going live, no exceptions!&lt;br&gt;&#xA;Just imagine you&amp;rsquo;ve been working overtime for months, the system goes online.&lt;br&gt;&#xA;And you&amp;rsquo;re celebrating with pizza and cocktail, only to find out suddenly the server crashes due to overwhelming traffic!&lt;br&gt;&#xA;That&amp;rsquo;s why conducting stress tests beforehand makes a good system!&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Use ssh key login remote server</title>
+				<link>https://tech.ray247k.com/en/blog/202104-use-ssh-key-login-remote-server/</link>
+				<pubDate>Sun, 25 Apr 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202104-use-ssh-key-login-remote-server/</guid>
+				<description>&lt;p&gt;Normally, logging into a server involves using a username and password,&lt;br&gt;&#xA;but passwords can be compromised through interception or sharing.&lt;br&gt;&#xA;The security level is not as robust as using SSH keys, which also eliminate the need for manual password entry each time.&lt;/p&gt;&#xA;&lt;h1 id=&#34;creating-ssh-keys-for-login&#34;&gt;Creating SSH Keys for Login&lt;/h1&gt;&#xA;&lt;h2 id=&#34;generating-ssh-keys-on-the-client-side-using-the-command&#34;&gt;Generating SSH keys on the client side using the command:&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ssh-keygen&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;&#xA;&lt;p&gt;Note: SSH keys should be in RSA format; if using OPENSSH, errors may persist.&lt;br&gt;&#xA;Reference: &lt;a href=&#34;https://ray247k.blogspot.com/2019/03/mac-majave-10141-ssh-keygen.html&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;mac majave 10.14.1 ssh-keygen Key Format Issue&#xD;&#xA;&lt;/a&gt;&#xD;&#xA;&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Enable docker service in remote server</title>
+				<link>https://tech.ray247k.com/en/blog/202103-enable-docker-service-in-remote-server/</link>
+				<pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202103-enable-docker-service-in-remote-server/</guid>
+				<description>&lt;p&gt;Step-by-step guide for enabling Docker and Docker-compose services on a new cloud host.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Setting up postgreSQL database with docker</title>
+				<link>https://tech.ray247k.com/en/blog/202103-setting-up-postgresql-database-with-docker/</link>
+				<pubDate>Wed, 03 Mar 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202103-setting-up-postgresql-database-with-docker/</guid>
+				<description>&lt;p&gt;Setting up a PostgreSQL Database with Docker&lt;br&gt;&#xA;Including &lt;code&gt;Database Setup&lt;/code&gt;, &lt;code&gt;Data Persistence&lt;/code&gt;, &lt;code&gt;Using GUI to Operate the Database&lt;/code&gt;&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Reverse Proxy Setup in Docker Environment</title>
+				<link>https://tech.ray247k.com/en/blog/202102-reverse-proxy-in-docker-service/</link>
+				<pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202102-reverse-proxy-in-docker-service/</guid>
+				<description>&lt;p&gt;This article provides a basic explanation of reverse proxies and how to set them up in a Docker container environment.&lt;/p&gt;&#xA;&lt;h1 id=&#34;reverse-proxy-overview&#34;&gt;Reverse Proxy Overview&lt;/h1&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.jyt0532.com/2019/11/18/proxy-reverse-proxy/&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;System Design - Forward Proxy vs Reverse Proxy&#xD;&#xA;&lt;/a&gt;&#xD;&#xA;&lt;/p&gt;&#xA;&lt;h1 id=&#34;different-physical-hosts&#34;&gt;Different Physical Hosts&lt;/h1&gt;&#xA;&lt;h2 id=&#34;using-nginx-proxy-pass&#34;&gt;Using nginx proxy-pass&lt;/h2&gt;&#xA;&lt;h3 id=&#34;objective&#34;&gt;Objective&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Users visit a specified web page path &lt;code&gt;/new_path&lt;/code&gt; or the root &lt;code&gt;/&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;Configure the test machine&amp;rsquo;s nginx proxy_pass to redirect to another host&amp;rsquo;s project under the same path&lt;/li&gt;&#xA;&lt;li&gt;Ensure that the user&amp;rsquo;s IP address is not replaced by the proxy server&amp;rsquo;s IP&lt;/li&gt;&#xA;&lt;li&gt;Ensure that the project on the target server can read cookies&lt;/li&gt;&#xA;&lt;li&gt;Ensure that the payload of POST requests is forwarded&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;configure-nginx-config&#34;&gt;Configure nginx config&lt;/h3&gt;&#xA;&lt;h4 id=&#34;configuration-on-the-first-hosts-nginx&#34;&gt;Configuration on the First Host&amp;rsquo;s nginx&lt;/h4&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-nginx&#34; data-lang=&#34;nginx&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Forward all requests to domain/new_path to another host&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;location&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;/new_path&lt;/span&gt; {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# Proxy to the specified URL&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;proxy_pass&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;http://laravel55.test.com&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# Send the user&amp;#39;s real IP to the target host&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;proxy_set_header&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;X-Real-IP&lt;/span&gt; $remote_addr;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# Set the server as the original server before the proxy, otherwise HTTP_HOST will become the address of the proxy server&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;proxy_set_header&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;Host&lt;/span&gt; $host;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# Set cookie forwarding&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;proxy_set_header&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;Cookie&lt;/span&gt; $http_cookie;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# Identify the original client&amp;#39;s IP&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;proxy_set_header&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;X-Forwarded-Host&lt;/span&gt; $host;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# Record each proxy passed through by the client&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;proxy_set_header&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;X-Forwarded-For&lt;/span&gt; $proxy_add_x_forwarded_for;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# Identify the network connection protocol&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;proxy_set_header&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;X-Forwarded-Proto&lt;/span&gt; $scheme;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# Hide server information&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;proxy_hide_header&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;Server&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;proxy_hide_header&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;X-Powered-By&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# Increase space due to additional headers&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;proxy_headers_hash_bucket_size&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;128&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;proxy_headers_hash_max_size&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;512&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;configuration-on-the-second-hosts-nginx&#34;&gt;Configuration on the Second Host&amp;rsquo;s nginx&lt;/h4&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-nginx&#34; data-lang=&#34;nginx&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;server&lt;/span&gt; {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;listen&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;80&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;server_name&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;ray200&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;root&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;/home/toc/www/laravel55/public&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;access_log&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;/var/log/nginx/www/laravel55.access.log&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;error_log&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;/var/log/nginx/www/laravel55.error.log&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;index&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;index.php&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;location&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;/&lt;/span&gt; {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;try_files&lt;/span&gt; $uri $uri/ &lt;span style=&#34;color:#e6db74&#34;&gt;/index.php&lt;/span&gt;$is_args$args;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;location&lt;/span&gt; ~&lt;span style=&#34;color:#e6db74&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;\.(jpg|jpeg|gif|css|png|js|ico|html|svg|ttf|woff|woff2|eotD)&lt;/span&gt;$ {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;access_log&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;off&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;expires&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;max&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;location&lt;/span&gt; ~ &lt;span style=&#34;color:#e6db74&#34;&gt;\.php$&lt;/span&gt; {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;include&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;snippets/fastcgi-php.conf&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;fastcgi_pass&lt;/span&gt; 127.0.0.1:&lt;span style=&#34;color:#ae81ff&#34;&gt;9000&lt;/span&gt;; &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;note&#34;&gt;Note&lt;/h4&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;server_name&lt;/code&gt; must match the domain to which proxy_pass redirects.&lt;br&gt;&#xA;Otherwise, the request will go to the default server_name.&lt;/li&gt;&#xA;&lt;li&gt;Modify the method of determining the real IP address in the program to read &lt;code&gt;x-real-ip&lt;/code&gt; from the header.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;verify-cookie-reading&#34;&gt;Verify Cookie Reading&lt;/h3&gt;&#xA;&lt;p&gt;If the nginx configuration includes &lt;code&gt;proxy_set_header Cookie $http_cookie;&lt;/code&gt;, &lt;code&gt;dump($_COOKIE);&lt;/code&gt; will capture cookies,&#xA;but Laravel&amp;rsquo;s &lt;code&gt;request()-&amp;gt;cookie();&lt;/code&gt; won&amp;rsquo;t.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Laravel environment basic settings</title>
+				<link>https://tech.ray247k.com/en/blog/202102-laravel-environment-basic-settings/</link>
+				<pubDate>Thu, 25 Feb 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202102-laravel-environment-basic-settings/</guid>
+				<description>&lt;p&gt;Configuration and package installation required for developing Laravel projects, applicable whether on remote hosts or local machines.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Portainer - A Visual Docker Management Tool</title>
+				<link>https://tech.ray247k.com/en/blog/202101-portainer-open-source-container-management-gui/</link>
+				<pubDate>Sat, 16 Jan 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202101-portainer-open-source-container-management-gui/</guid>
+				<description>&lt;p&gt;Local development mostly involves command-line operations or using Docker&amp;rsquo;s GUI interface for service management.&lt;br&gt;&#xA;&lt;a href=&#34;https://github.com/portainer&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Portainer&#xD;&#xA;&lt;/a&gt;&#xD;&#xA; is an open-source UI tool that allows viewing Docker images and containers,&#xA;and executing actions such as start, stop, restart, and remove. It also enables viewing logs and errors for each container.&lt;br&gt;&#xA;Even individuals without Docker execution permissions can log in using credentials when deploying services on cloud-hosted servers,&#xA;utilizing the visual interface for various Docker service management tasks.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Docker Notes 3 - docker-compose</title>
+				<link>https://tech.ray247k.com/en/blog/202101-docker-note-3-introduce-docker-compose/</link>
+				<pubDate>Tue, 12 Jan 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202101-docker-note-3-introduce-docker-compose/</guid>
+				<description>&lt;p&gt;When it comes to managing multiple Docker containers that are related to each other, using plain Docker commands requires remembering the relationships between containers.&lt;br&gt;&#xA;However, with docker-compose, managing multiple containers becomes straightforward through easy definition of multi-container services.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Docker Notes 2 - Basic Usage</title>
+				<link>https://tech.ray247k.com/en/blog/202101-docker-note-2-basic-usage/</link>
+				<pubDate>Sat, 09 Jan 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202101-docker-note-2-basic-usage/</guid>
+				<description>&lt;p&gt;Containerization isolates different environments, allowing engineers to focus on development without spending excessive effort on environment setup.&lt;br&gt;&#xA;Docker is currently a mature and popular containerization technology.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Docker Notes 1 - Understanding Docker</title>
+				<link>https://tech.ray247k.com/en/blog/202101-docker-note-1-what-is-docker/</link>
+				<pubDate>Sat, 02 Jan 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202101-docker-note-1-what-is-docker/</guid>
+				<description>&lt;p&gt;Containerization isolates different environments, allowing engineers to focus on development without spending excessive effort on environment setup.&lt;br&gt;&#xA;Docker is currently a mature and popular containerization technology.&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

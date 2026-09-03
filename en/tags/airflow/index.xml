@@ -1,26 +1,38 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Airflow on Byte Ebi 🍤</title>
-    <link>https://tech.ray247k.com/en/tags/airflow/</link>
-    <description>Recent content in Airflow on Byte Ebi 🍤</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Tue, 03 Feb 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://tech.ray247k.com/en/tags/airflow/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Unleashing Airflow Performance with Dynamic Task Mapping</title>
-      <link>https://tech.ray247k.com/en/blog/202602-airflow-dynamic-task-mapping/</link>
-      <pubDate>Tue, 03 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/blog/202602-airflow-dynamic-task-mapping/</guid>
-      <description>&lt;p&gt;When tasks depend on each other yet remain independent events, what is the most elegant way to handle them?&lt;br&gt;&#xA;Should we use a loop? Add another DAG? Or is there a better solution?&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Triggering Airflow DAG from Another</title>
-      <link>https://tech.ray247k.com/en/blog/202509-triggering-airflow-dag-from-another-dag/</link>
-      <pubDate>Wed, 24 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/blog/202509-triggering-airflow-dag-from-another-dag/</guid>
-      <description>&lt;p&gt;When building dependencies between DAGs, you don’t always have to rely on RESTful APIs.&lt;br&gt;&#xA;Airflow also provides a built-in Operator for this purpose.&lt;/p&gt;</description>
-    </item>
-  </channel>
+	<channel>
+		<title>Airflow on Byte Ebi 🍤</title>
+		<link>https://tech.ray247k.com/en/tags/airflow/</link>
+		<description>Recent content in Airflow on Byte Ebi 🍤</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Thu, 03 Sep 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://tech.ray247k.com/en/tags/airflow/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Investigating Connection Encryption on Amazon MWAA</title>
+				<link>https://tech.ray247k.com/en/blog/202609-mwaa-connection-encryption-investigation/</link>
+				<pubDate>Thu, 03 Sep 2026 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202609-mwaa-connection-encryption-investigation/</guid>
+				<description>&lt;p&gt;The Airflow docs actually state that setting the encryption key to an empty string makes Connections fall back to plaintext.&lt;br&gt;&#xA;But does the same thing hold true on AWS-managed MWAA?&lt;br&gt;&#xA;This post traces that question from Airflow&amp;rsquo;s native Fernet mechanism all the way to MWAA&amp;rsquo;s reserved environment variables.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Unleashing Airflow Performance with Dynamic Task Mapping</title>
+				<link>https://tech.ray247k.com/en/blog/202602-airflow-dynamic-task-mapping/</link>
+				<pubDate>Tue, 03 Feb 2026 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202602-airflow-dynamic-task-mapping/</guid>
+				<description>&lt;p&gt;When tasks depend on each other yet remain independent events, what is the most elegant way to handle them?&lt;br&gt;&#xA;Should we use a loop? Add another DAG? Or is there a better solution?&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Triggering Airflow DAG from Another</title>
+				<link>https://tech.ray247k.com/en/blog/202509-triggering-airflow-dag-from-another-dag/</link>
+				<pubDate>Wed, 24 Sep 2025 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202509-triggering-airflow-dag-from-another-dag/</guid>
+				<description>&lt;p&gt;When building dependencies between DAGs, you don’t always have to rely on RESTful APIs.&lt;br&gt;&#xA;Airflow also provides a built-in Operator for this purpose.&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

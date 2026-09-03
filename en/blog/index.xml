@@ -1,670 +1,689 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Blog on Byte Ebi 🍤</title>
-    <link>http://localhost:1313/en/blog/</link>
-    <description>Recent content in Blog on Byte Ebi 🍤</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Tue, 03 Feb 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/en/blog/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Unleashing Airflow Performance with Dynamic Task Mapping</title>
-      <link>http://localhost:1313/en/blog/202602-airflow-dynamic-task-mapping/</link>
-      <pubDate>Tue, 03 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202602-airflow-dynamic-task-mapping/</guid>
-      <description>&lt;p&gt;When tasks depend on each other yet remain independent events, what is the most elegant way to handle them?&lt;br&gt;&#xA;Should we use a loop? Add another DAG? Or is there a better solution?&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Triggering Airflow DAG from Another</title>
-      <link>http://localhost:1313/en/blog/202509-triggering-airflow-dag-from-another-dag/</link>
-      <pubDate>Wed, 24 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202509-triggering-airflow-dag-from-another-dag/</guid>
-      <description>&lt;p&gt;When building dependencies between DAGs, you don’t always have to rely on RESTful APIs.&lt;br&gt;&#xA;Airflow also provides a built-in Operator for this purpose.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Understanding Amazon RDS Connection Limits</title>
-      <link>http://localhost:1313/en/blog/202509-amazon-rds-db-connection-limits/</link>
-      <pubDate>Sun, 07 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202509-amazon-rds-db-connection-limits/</guid>
-      <description>&lt;p&gt;Have you ever run into database connection limits, or felt unsure about which RDS instance type to choose when planning your system architecture?&lt;br&gt;&#xA;This article walks you through how Amazon RDS calculates its maximum connections and provides a comparison across different instance types to help you make better decisions.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Manage Python Versions with Pyenv</title>
-      <link>http://localhost:1313/en/blog/202508-manage-python-versions-with-pyenv/</link>
-      <pubDate>Sat, 30 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202508-manage-python-versions-with-pyenv/</guid>
-      <description>&lt;p&gt;Pyenv is a tool for managing different Python versions.&lt;br&gt;&#xA;Whether you’re upgrading a project to a newer Python release or switching between projects with different requirements, pyenv makes the process simple and hassle-free.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[Pytest 101] 04 Mock Class</title>
-      <link>http://localhost:1313/en/blog/202507-pytest-4-pytest-mock-class/</link>
-      <pubDate>Sat, 26 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202507-pytest-4-pytest-mock-class/</guid>
-      <description>&lt;p&gt;Introducing the factory pattern in your code can significantly improve its structure—but it also makes unit testing a bit trickier.&lt;br&gt;&#xA;We’ll walk through two different mocking strategies, compare their pros and cons, and help you write more robust tests!&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[Pytest 101] 03 Mock SQL Query</title>
-      <link>http://localhost:1313/en/blog/202507-pytest-3-pytest-mock-sql-query/</link>
-      <pubDate>Wed, 23 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202507-pytest-3-pytest-mock-sql-query/</guid>
-      <description>&lt;p&gt;With mock objects, we can simulate database operations without actually connecting to a real database.&lt;br&gt;&#xA;This means we don’t need to prepare a dedicated test database or worry about cleaning it up after tests.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[Pytest 101] 02 Basic Usage of Mock</title>
-      <link>http://localhost:1313/en/blog/202507-pytest-2-pytest-mock-basics/</link>
-      <pubDate>Fri, 11 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202507-pytest-2-pytest-mock-basics/</guid>
-      <description>&lt;p&gt;After covering the basic tools, this article demonstrates how to use mocks effectively in Pytest.&lt;br&gt;&#xA;Mocks allow us to replace the logic of real functions to simulate different scenarios and write more precise unit tests.&lt;br&gt;&#xA;We&amp;rsquo;ll walk through examples of mocking functions, simulating errors, and even handling external dependencies like Redis.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[Pytest 101] 01 Introduction to Pytest &amp; Mock</title>
-      <link>http://localhost:1313/en/blog/202507-pytest-1-intro-to-pytest-and-mock/</link>
-      <pubDate>Wed, 02 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202507-pytest-1-intro-to-pytest-and-mock/</guid>
-      <description>&lt;p&gt;Writing unit tests is a well-known best practice in software development, but actually getting started often feels overwhelming.&lt;br&gt;&#xA;Where do you begin? What tools should you use? And how do you use them?&lt;br&gt;&#xA;For beginners, these first steps can easily become roadblocks.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>The Gatekeeper Before Your Git Commits: Pre-commit</title>
-      <link>http://localhost:1313/en/blog/202506-pre-commit-git-commit-gatekeeper/</link>
-      <pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202506-pre-commit-git-commit-gatekeeper/</guid>
-      <description>&lt;p&gt;Make your Git commits safer! No complex setup required. Just install and commit with confidence.&lt;br&gt;&#xA;Use pre-commit to automatically run format checks and tests before committing.&lt;br&gt;&#xA;Easy to install and configure. Instantly improve your code quality.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Setting up Python Development Environment</title>
-      <link>http://localhost:1313/en/blog/202506-settin-up-a-python-development-environment/</link>
-      <pubDate>Mon, 09 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202506-settin-up-a-python-development-environment/</guid>
-      <description>&lt;p&gt;This is my first time using Python in a work environment, so I&amp;rsquo;m documenting the environment setup. Many of these packages are new to me, not having used them when I was self-learning a few years ago. I guess that reveals how long it&amp;rsquo;s been since I touched Python!&lt;/p&gt;&#xA;&lt;h1 id=&#34;mac-setup&#34;&gt;Mac Setup&lt;/h1&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;There are dependencies, so you must install them in order!&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;homebrew&#34;&gt;&lt;a href=&#34;https://brew.sh/&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Homebrew&#xA;&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;A package manager for Mac. I don&amp;rsquo;t know what I&amp;rsquo;d do without it on a Mac. And now it can be used on Linux too!&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>TypeScript Generics</title>
-      <link>http://localhost:1313/en/blog/202503-typescript-generic/</link>
-      <pubDate>Wed, 26 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202503-typescript-generic/</guid>
-      <description>&lt;p&gt;Introduces TypeScript generics, demonstrating how to enhance code reusability by defining flexible methods, interfaces, and classes that adapt to different types.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Class and Interface in TypeScript</title>
-      <link>http://localhost:1313/en/blog/202503-typescript-class-and-interface/</link>
-      <pubDate>Mon, 24 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202503-typescript-class-and-interface/</guid>
-      <description>&lt;p&gt;Introduces the basic concepts of TypeScript Classes and Interfaces.&lt;br&gt;&#xA;It also covers class implementation and interface inheritance examples.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Basic Data Type in TypeScript</title>
-      <link>http://localhost:1313/en/blog/202503-typescript-basic-data-type/</link>
-      <pubDate>Thu, 20 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202503-typescript-basic-data-type/</guid>
-      <description>&lt;p&gt;Introduction to TypeScript&amp;rsquo;s basic types and syntax examples,&lt;br&gt;&#xA;including examples of basic function syntax, arrow functions, anonymous functions, and function overloading.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>TypeScript Environment Setup</title>
-      <link>http://localhost:1313/en/blog/202503-typescript-environment-setup/</link>
-      <pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202503-typescript-environment-setup/</guid>
-      <description>&lt;p&gt;Set up a TypeScript development environment&lt;br&gt;&#xA;Using NVM to install Node.js and npm, installing development tools.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Setting up multiple GitHub accounts on one computer</title>
-      <link>http://localhost:1313/en/blog/202409-multiple-github-accounts-with-ssh-keys/</link>
-      <pubDate>Thu, 19 Sep 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202409-multiple-github-accounts-with-ssh-keys/</guid>
-      <description>&lt;p&gt;Due to my remote work setup, I needed to configure a company GitHub account on my personal computer.&lt;br&gt;&#xA;However, GitHub doesn&amp;rsquo;t allow the same SSH key to be used across multiple accounts, which means I can&amp;rsquo;t assign my personal SSH key to the company&amp;rsquo;s GitHub account.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Building a Static Website with Hugo</title>
-      <link>http://localhost:1313/en/blog/202405-create-static-web-site-with-hugo/</link>
-      <pubDate>Mon, 06 May 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202405-create-static-web-site-with-hugo/</guid>
-      <description>&lt;p&gt;Building a blog and migrating it each time can be a super painful task, especially since every platform has different export formats!&#xA;Why not build one yourself? Write articles using markdown syntax and then generate a static website.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[AWS Cloud Fundamental Notes] Overview of Common AWS Architectures</title>
-      <link>http://localhost:1313/en/blog/202402-aws-fundamental-architectures/</link>
-      <pubDate>Sun, 18 Feb 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202402-aws-fundamental-architectures/</guid>
-      <description>&lt;p&gt;Introducing various common application architecture components and their evolution.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[AWS Cloud Fundamental Notes] Hybrid Cloud</title>
-      <link>http://localhost:1313/en/blog/202402-aws-fundamental-hybrid-cloud/</link>
-      <pubDate>Tue, 13 Feb 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202402-aws-fundamental-hybrid-cloud/</guid>
-      <description>&lt;p&gt;Hybrid cloud integrates a company&amp;rsquo;s internal IT resources with third-party cloud providers&amp;rsquo; infrastructure and services.&lt;br&gt;&#xA;AWS hybrid cloud services offer a consistent AWS experience from the cloud to on-premises to the edge, allowing you to store data and run applications across multiple environments.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[AWS Cloud Fundamental Notes] Cyber Security</title>
-      <link>http://localhost:1313/en/blog/202401-aws-fundamental-cyber-security/</link>
-      <pubDate>Sat, 06 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202401-aws-fundamental-cyber-security/</guid>
-      <description>&lt;p&gt;In cloud services, enterprises use a large number of accounts, which causes fragmentation in architecture and security,&#xA;increasing management difficulty.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[AWS Cloud Fundamental Notes] Lambda</title>
-      <link>http://localhost:1313/en/blog/202312-aws-fundamental-lambda/</link>
-      <pubDate>Wed, 27 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202312-aws-fundamental-lambda/</guid>
-      <description>&lt;p&gt;Uploading the program to the Lambda service enables quick activation when network packets are sent in for request access,&#xA;achieving a pay-as-you-go model.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[AWS Cloud Fundamental Notes] API Gateway</title>
-      <link>http://localhost:1313/en/blog/202312-aws-fundamental-api-gateway/</link>
-      <pubDate>Sun, 17 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202312-aws-fundamental-api-gateway/</guid>
-      <description>&lt;p&gt;As the &amp;ldquo;front door&amp;rdquo; for applications to access data, business logic, or functionality from backend services.&lt;br&gt;&#xA;When using API Gateway, you can create RESTful APIs and WebSocket APIs to enable real-time bidirectional communication applications.&lt;br&gt;&#xA;API Gateway supports containerized, serverless workloads, and web applications.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>AWS DynamoDB Point-in-Time Recovery (PITR): Simplifying Data Restoration</title>
-      <link>http://localhost:1313/en/blog/202311-aws-dynamodb-pitr/</link>
-      <pubDate>Fri, 03 Nov 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202311-aws-dynamodb-pitr/</guid>
-      <description>&lt;p&gt;Point-in-Time Recovery (PITR) is a crucial data recovery feature for AWS DynamoDB and other database services.&lt;br&gt;&#xA;It allows you to restore data to a previous state in case of accidental loss or corruption, ensuring business continuity.&lt;br&gt;&#xA;PITR also enables regular data backups and retention of multiple versions, aiding in error tracking and resolution.&lt;br&gt;&#xA;It&amp;rsquo;s flexibility in restoring data on demand without affecting other operations enhances system reliability and stability.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[AWS Cloud Fundamental Notes] Kinesis、EMR and Redshift</title>
-      <link>http://localhost:1313/en/blog/202310-aws-fundamental-kinesis-emr-and-redshift/</link>
-      <pubDate>Fri, 27 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202310-aws-fundamental-kinesis-emr-and-redshift/</guid>
-      <description>&lt;p&gt;Used for big data architecture&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[AWS Cloud Fundamental Notes] Cost Control</title>
-      <link>http://localhost:1313/en/blog/202309-aws-fundamental-cost-control/</link>
-      <pubDate>Sun, 17 Sep 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202309-aws-fundamental-cost-control/</guid>
-      <description>&lt;p&gt;Using the &lt;a href=&#34;https://calculator.aws/#/&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;AWS Pricing Calculator&#xA;&lt;/a&gt;&#xA;, you can estimate the cost of cloud architecture through a data center perspective.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://docs.aws.amazon.com/zh_tw/organizations/latest/userguide/orgs_introduction.html&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;AWS Organizations&#xA;&lt;/a&gt;&#xA; consolidates multiple AWS accounts into one organization for centralized management.&lt;br&gt;&#xA;You can create accounts within the organization and invite existing accounts to join.&lt;br&gt;&#xA;It includes account management and consolidated billing features, meeting budget, security, and compliance requirements.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[AWS Cloud Fundamental Notes] SNS</title>
-      <link>http://localhost:1313/en/blog/202308-aws-fundamental-sns/</link>
-      <pubDate>Sun, 13 Aug 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202308-aws-fundamental-sns/</guid>
-      <description>&lt;p&gt;Used for sending SMS or E-mail as well as push notifications: &lt;a href=&#34;https://docs.aws.amazon.com/zh_tw/sns/latest/dg/welcome.html&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Simple Notification Service&#xA;&lt;/a&gt;&#xA;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[AWS Cloud Fundamental Notes] Cognito</title>
-      <link>http://localhost:1313/en/blog/202307-aws-fundamental-cognito/</link>
-      <pubDate>Fri, 07 Jul 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202307-aws-fundamental-cognito/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://aws.amazon.com/tw/cognito/&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Amazon Cognito&#xA;&lt;/a&gt;&#xA;: When traffic comes in, identity verification must be done first to confirm access to AWS cloud resources.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Different between pointer and value for struct type in golang</title>
-      <link>http://localhost:1313/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/</link>
-      <pubDate>Sun, 25 Jun 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/</guid>
-      <description>&lt;p&gt;I always had a question &amp;ldquo;Should I use value for type in struct? Or using pointer?&amp;rdquo;&lt;br&gt;&#xA;After reading many different projects on the web, it seems that they all have different practices.&lt;br&gt;&#xA;Until I recently encountered a problem that gave me some ideas.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[AWS Cloud Fundamental Notes] CloudFormation</title>
-      <link>http://localhost:1313/en/blog/202306-aws-fundamental-cloudformation/</link>
-      <pubDate>Sun, 18 Jun 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202306-aws-fundamental-cloudformation/</guid>
-      <description>&lt;p&gt;CloudFormation is AWS&amp;rsquo;s native Infrastructure as Code (IaC) service, which treats infrastructure as code,&#xA;allowing you to model, provision, and manage AWS and third-party resources.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[AWS Cloud Fundamental Notes] ElastiCache</title>
-      <link>http://localhost:1313/en/blog/202306-aws-fundamental-elasticache/</link>
-      <pubDate>Tue, 13 Jun 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202306-aws-fundamental-elasticache/</guid>
-      <description>&lt;p&gt;Cloud caching service with two underlying engines: &lt;a href=&#34;#Redis&#34;&#xA;   &#xA;   &gt;Redis&#xA;&lt;/a&gt;&#xA; and &lt;a href=&#34;#Memcached&#34;&#xA;   &#xA;   &gt;Memcached&#xA;&lt;/a&gt;&#xA;.&lt;br&gt;&#xA;It can assist in implementing &lt;code&gt;Shard&lt;/code&gt;.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[AWS Cloud Fundamental Notes] DynamoDB</title>
-      <link>http://localhost:1313/en/blog/202306-aws-fundamental-dynamodb/</link>
-      <pubDate>Fri, 02 Jun 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202306-aws-fundamental-dynamodb/</guid>
-      <description>&lt;p&gt;Distributed NoSQL database service.&lt;br&gt;&#xA;Data access must be obtained through the corresponding Role (EC2) or using Credentials (developer) with IAM.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[AWS Cloud Fundamental Notes] SQS</title>
-      <link>http://localhost:1313/en/blog/202305-aws-fundamental-sqs/</link>
-      <pubDate>Tue, 30 May 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202305-aws-fundamental-sqs/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://docs.aws.amazon.com/sqs/latest/dev/sqs-dg.pdf&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Amazon Simple Queue Service&#xA;&lt;/a&gt;&#xA; (SQS) serves as a task buffer, allowing tasks that do not require immediate processing to be placed in the queue for storage.&lt;br&gt;&#xA;When the system has spare resources, it processes these tasks, which helps decouple applications.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[AWS Cloud Fundamental Notes] Auto Scaling</title>
-      <link>http://localhost:1313/en/blog/202305-aws-fundamental-auto-scaling/</link>
-      <pubDate>Tue, 23 May 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202305-aws-fundamental-auto-scaling/</guid>
-      <description>&lt;p&gt;Monitoring applications and automatically scaling machines based on traffic changes,&#xA;aiming to maintain stable and predictable performance at the lowest possible cost.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[AWS Cloud Fundamental Notes] Elastic Load Balancer</title>
-      <link>http://localhost:1313/en/blog/202305-aws-fundamental-elastic-load-balancer/</link>
-      <pubDate>Thu, 11 May 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202305-aws-fundamental-elastic-load-balancer/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://aws.amazon.com/elasticloadbalancing/&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Elastic Load Balancer&#xA;&lt;/a&gt;&#xA; (ELB) achieves traffic distribution and load balancing.&lt;br&gt;&#xA;ELB distributes incoming application traffic across multiple targets and virtual devices in one or more Availability Zones(AZ) and generates Access logs.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[AWS Cloud Fundamental Notes] CloudFront</title>
-      <link>http://localhost:1313/en/blog/202305-aws-fundamental-cloudfront/</link>
-      <pubDate>Wed, 03 May 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202305-aws-fundamental-cloudfront/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://aws.amazon.com/cloudfront/&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Amazon CloudFront&#xA;&lt;/a&gt;&#xA; is a content delivery network (CDN) service that addresses DDoS and repetitive access to static resources.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[AWS Cloud Fundamental Notes] CloudWatch and CloudTrail</title>
-      <link>http://localhost:1313/en/blog/202304-aws-fundamental-cloudwatch-and-cloudtrail/</link>
-      <pubDate>Tue, 25 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202304-aws-fundamental-cloudwatch-and-cloudtrail/</guid>
-      <description>&lt;p&gt;Amazon CloudWatch monitors your Amazon Web Services (AWS) resources and the applications you run on AWS in real-time.&lt;br&gt;&#xA;AWS CloudTrail is an AWS service that helps you enable governance, compliance, and operational and risk auditing of your AWS account.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[AWS Cloud Fundamental Notes] Route 53</title>
-      <link>http://localhost:1313/en/blog/202304-aws-fundamental-route53/</link>
-      <pubDate>Sat, 15 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202304-aws-fundamental-route53/</guid>
-      <description>&lt;p&gt;Provide domain name purchase, domain name resolution forwarding, system health checks, and traffic forwarding.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[AWS Cloud Fundamental Notes] RDS</title>
-      <link>http://localhost:1313/en/blog/202304-aws-fundamental-rds/</link>
-      <pubDate>Wed, 05 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202304-aws-fundamental-rds/</guid>
-      <description>&lt;p&gt;Setting up, operating, and scaling relational databases in the cloud is just a few clicks away.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[AWS Cloud Fundamental Notes] S3</title>
-      <link>http://localhost:1313/en/blog/202303-aws-fundamental-s3/</link>
-      <pubDate>Sat, 25 Mar 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202303-aws-fundamental-s3/</guid>
-      <description>&lt;p&gt;Scalable, available, secure, and efficient cloud object storage&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[AWS Cloud Fundamental Notes] EC2</title>
-      <link>http://localhost:1313/en/blog/202303-aws-fundamental-ec2/</link>
-      <pubDate>Mon, 20 Mar 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202303-aws-fundamental-ec2/</guid>
-      <description>&lt;p&gt;Allow users to rent cloud computers to run their applications.&lt;br&gt;&#xA;EC2 allows users to flexibly run their Amazon machine images (AMIs) by providing web services, enabling users to run any software or application they desire on these virtual machines.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[AWS Cloud Fundamental Notes] VPC</title>
-      <link>http://localhost:1313/en/blog/202303-aws-fundamental-vpc/</link>
-      <pubDate>Fri, 10 Mar 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202303-aws-fundamental-vpc/</guid>
-      <description>&lt;p&gt;Amazon Virtual Private Cloud (Amazon VPC) allows you to have full control over a virtual networking environment, including resource placement, connectivity, and security.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[AWS Cloud Fundamental Notes] IAM</title>
-      <link>http://localhost:1313/en/blog/202301-aws-fundamental-iam/</link>
-      <pubDate>Tue, 10 Jan 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202301-aws-fundamental-iam/</guid>
-      <description>&lt;p&gt;Due to the excessive power of root permissions, it is necessary to divide them into multiple users and groups to set permissions.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://aws.amazon.com/tw/iam/&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;AWS IAM&#xA;&lt;/a&gt;&#xA;&lt;br&gt;&#xA;&lt;a href=&#34;https://docs.aws.amazon.com/zh_tw/IAM/latest/UserGuide/introduction.html&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;What is IAM?&#xA;&lt;/a&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://i.imgur.com/OtEOMd4.png&#34; alt=&#34;IAM Architecture&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;operation-mechanism&#34;&gt;Operation Mechanism&lt;/h2&gt;&#xA;&lt;p&gt;The architecture of IAM is as follows:&lt;/p&gt;&#xA;&lt;pre class=&#34;mermaid&#34;&gt;graph LR;&#xA;&#xA;Policy1--&gt;Permission;&#xA;Policy2--&gt;Permission;&#xA;Policy3--&gt;Permission;&#xA;Permission--&gt;Role;&#xA;Permission--&gt;Group;&#xA;Group--&gt;User;&#xA;User--&gt;Password;&#xA;User--&gt;Credentail;&#xA;Role--&gt;id1[External Users];&#xA;Role--&gt;id2[AWS Internal Services];&#xA;&lt;/pre&gt;&#xA;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;policy&#34;&gt;Policy&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://docs.aws.amazon.com/zh_tw/AWSEC2/latest/UserGuide/iam-policy-structure.html&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Official Documentation&#xA;&lt;/a&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;When a policy is attached to a user or group, it allows or denies permission for the user to perform specific tasks on specific resources.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Using FFmpeg to convert media files</title>
-      <link>http://localhost:1313/en/blog/202301-ffmpeg-video-convert/</link>
-      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202301-ffmpeg-video-convert/</guid>
-      <description>&lt;p&gt;Sometimes, we can use certain methods to download the .M3U8 file and then merge it into a .ts file.&lt;br&gt;&#xA;However, computers usually cannot directly play this format.&lt;br&gt;&#xA;We can use FFmpeg to convert it into a common .mp4 file for easy playback.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[AWS 101] What are SNS and SQS</title>
-      <link>http://localhost:1313/en/blog/202210-aws101-what-is-sns-and-sqs/</link>
-      <pubDate>Thu, 06 Oct 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202210-aws101-what-is-sns-and-sqs/</guid>
-      <description>&lt;p&gt;Amazon Simple Queue Service (SQS) and Amazon Simple Notification Service (SNS) may look similar.&lt;br&gt;&#xA;But in reality, they are quite different.&lt;/p&gt;&#xA;&lt;p&gt;To better clarify the differences between the two, let&amp;rsquo;s compare the notes on both services side by side.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Serverless 101</title>
-      <link>http://localhost:1313/en/blog/202210-what-is-serverless/</link>
-      <pubDate>Tue, 04 Oct 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202210-what-is-serverless/</guid>
-      <description>&lt;p&gt;Since our company&amp;rsquo;s services are built on AWS and heavily rely on various serverless computing services,&lt;br&gt;&#xA;I had no prior experience in this area.&#xA;This series serves as a compilation of notes for me,&lt;br&gt;&#xA;and its content may be subject to constant revisions in the future.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Interacting with smart contracts using Golang</title>
-      <link>http://localhost:1313/en/blog/202207-go-ethereum-abigen/</link>
-      <pubDate>Sat, 09 Jul 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202207-go-ethereum-abigen/</guid>
-      <description>&lt;p&gt;Previously, I was calling Smart Contracts through PHP, which raised two issues.&lt;br&gt;&#xA;One was the slowness, and the other was the lack of maintenance of the package.&lt;br&gt;&#xA;Fortunately, Golang provides an official package that is both fast and solves these two problems.&lt;br&gt;&#xA;This article explains how to convert existing Smart Contract ABIs into a Go package for interacting with contracts.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Create a Redis service on GCP</title>
-      <link>http://localhost:1313/en/blog/202206-gcp-redis/</link>
-      <pubDate>Thu, 30 Jun 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202206-gcp-redis/</guid>
-      <description>&lt;p&gt;GCP offers the Google Cloud MemoryStore service for creating Redis or Memcached caching machine services.&lt;br&gt;&#xA;The pricing is similar to that of setting up a database.&lt;br&gt;&#xA;I thought it would be as inexpensive as using virtual machines (VMs).&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Make your computer be temporarily accessible on the internet. - Ngrok</title>
-      <link>http://localhost:1313/en/blog/202204-ngrok/</link>
-      <pubDate>Sat, 23 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202204-ngrok/</guid>
-      <description>&lt;p&gt;In development, it is often encountered that testing on the local machine requires a publicly accessible URL for services.&lt;br&gt;&#xA;Or webhooks to use as a callback. Moreover, these services often require HTTPS certification.&lt;br&gt;&#xA;Are there any other options besides setting up a cloud server for this purpose?&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Jenkins CI/CD 04 - Using SSH Commands to Operate another VM Instance in GCP</title>
-      <link>http://localhost:1313/en/blog/202204-jenkins-cicd-4-ssh-remote-server/</link>
-      <pubDate>Wed, 13 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202204-jenkins-cicd-4-ssh-remote-server/</guid>
-      <description>&lt;p&gt;In a non-automated deployment scenario, manually connecting to the server host&amp;rsquo;s internals is required every time.&lt;br&gt;&#xA;Executing deployment commands or running deployment command executables not only involves inconvenience but also carries the risk of human error.&lt;br&gt;&#xA;With Jenkins&amp;rsquo; pipeline, we can replace manual execution, making deployments easier and more pleasant.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Jenkins CI/CD 03 - Building and Pushing Docker Images to GCR</title>
-      <link>http://localhost:1313/en/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/</link>
-      <pubDate>Fri, 08 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/</guid>
-      <description>&lt;p&gt;Google Container Registry is a service provided by Google for storing, managing, and securing Docker container images.&lt;br&gt;&#xA;The objective at hand is to package a Docker image and push it to Google Cloud Platform (GCP) using the &amp;lsquo;gcloud&amp;rsquo; command for future deployment purposes.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Scalable Server 02 Load Balancing</title>
-      <link>http://localhost:1313/en/blog/202204-gcp-load-balancing/</link>
-      <pubDate>Tue, 05 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202204-gcp-load-balancing/</guid>
-      <description>&lt;p&gt;In the previous post &lt;a href=&#34;http://localhost:1313/en/blog/202203-gcp-auto-scaling/&#34;&#xA;   &#xA;   &gt;Scalable Server 01 Auto Scaling&#xA;&lt;/a&gt;&#xA;, it was mentioned that we need to configure a set of Load Balancers to distribute internet requests to different server hosts.&lt;br&gt;&#xA;This allows us to dynamically adjust the number of hosts based on traffic and maintain stable service operations.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Introducing Laravel Sail and Basic Operations</title>
-      <link>http://localhost:1313/en/blog/202204-laravel-sail/</link>
-      <pubDate>Sat, 02 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202204-laravel-sail/</guid>
-      <description>&lt;p&gt;In the context of Laravel development environment setup, both official and unofficial sources offer a plethora of approaches.&lt;br&gt;&#xA;This time, we will be introducing a package introduced after Laravel 8: &lt;a href=&#34;https://laravel.com/docs/9.x/sail&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Laravel Sail&#xA;&lt;/a&gt;&#xA;.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Jenkins CI/CD 02 Basic Pipeline Setup and GitHub Integration</title>
-      <link>http://localhost:1313/en/blog/202203-jenkins-cicd-2-basic-pipeline/</link>
-      <pubDate>Wed, 30 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202203-jenkins-cicd-2-basic-pipeline/</guid>
-      <description>&lt;p&gt;In &lt;a href=&#34;https://www.jenkins.io/&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Jenkins&#xA;&lt;/a&gt;&#xA;, the build process is known as a pipeline.&lt;br&gt;&#xA;It can also be triggered through webhooks, offering various triggering and execution methods.&lt;br&gt;&#xA;Below, we&amp;rsquo;ll demonstrate how to integrate GitHub webhooks and provide common trigger condition examples.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Scalable Server 01 Auto Scaling</title>
-      <link>http://localhost:1313/en/blog/202203-gcp-auto-scaling/</link>
-      <pubDate>Sun, 27 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202203-gcp-auto-scaling/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Jenkins CI/CD 01 Installation</title>
-      <link>http://localhost:1313/en/blog/202203-jenkins-cicd-1-installation/</link>
-      <pubDate>Wed, 16 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202203-jenkins-cicd-1-installation/</guid>
-      <description>&lt;p&gt;Create Your Own Automated Deployment Service with &lt;a href=&#34;https://www.jenkins.io/&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Jenkins&#xA;&lt;/a&gt;&#xA;&lt;br&gt;&#xA;Jenkins is a Java-based CI/CD system tool that we are exploring in this tutorial,&lt;br&gt;&#xA;following our previous introduction to &lt;a href=&#34;http://localhost:1313/tags/drone/&#34;&#xA;   &#xA;   &gt;Drone&#xA;&lt;/a&gt;&#xA;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Laravel Queue Usage</title>
-      <link>http://localhost:1313/en/blog/202203-laravel-queue/</link>
-      <pubDate>Sat, 05 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202203-laravel-queue/</guid>
-      <description>&lt;p&gt;The purpose of queues is to defer processing of a time-consuming task that doesn&amp;rsquo;t require immediate completion.&#xA;Like sending emails, users don&amp;rsquo;t need to wait for the email to be sent successfully before the next step.&lt;br&gt;&#xA;Allowing the application to respond more quickly to web requests and smooth user experience.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Enhancing SEO for SPA with Prerender</title>
-      <link>http://localhost:1313/en/blog/202201-using-prerender-improve-spa-seo/</link>
-      <pubDate>Mon, 31 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202201-using-prerender-improve-spa-seo/</guid>
-      <description>&lt;p&gt;A Single Page Application (SPA) website utilizes Client-Side Rendering (CSR) to render its content.&lt;br&gt;&#xA;Upon initial loading, the server only returns the root component, and subsequent data is fetched through API interactions.&lt;br&gt;&#xA;However, for web crawlers responsible for ranking websites, the content obtained during crawling may appear empty.&lt;br&gt;&#xA;While Google claims that their crawler executes JavaScript, other search engines may not necessarily do so.&lt;br&gt;&#xA;To address this issue, a Prerender service is employed to achieve pre-rendering for web crawlers, optimizing search results.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Using PHP CodeSniffer to Check Coding Style</title>
-      <link>http://localhost:1313/en/blog/202201-phpcs/</link>
-      <pubDate>Thu, 20 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202201-phpcs/</guid>
-      <description>&lt;p&gt;Checking code conformity with standards using phpcs (PHP Code Sniffer)&lt;br&gt;&#xA;Automatically correcting non-conforming code using phpcbf (PHP Code Beautifier and Fixer)&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Successfully launched a VM on GCP on the first try</title>
-      <link>http://localhost:1313/en/blog/202201-gcp-vm-basic/</link>
-      <pubDate>Sat, 15 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202201-gcp-vm-basic/</guid>
-      <description>&lt;p&gt;How to launch a VM virtual machine on Google Cloud Platform (GCP)?&lt;br&gt;&#xA;It may sound complex, but in practice, it&amp;rsquo;s quite straightforward.&lt;br&gt;&#xA;If you haven&amp;rsquo;t had any experience with setting up a host before, this time, we&amp;rsquo;ll document the steps for you.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[A Tour of Go Study Notes] 09 concurrency</title>
-      <link>http://localhost:1313/en/blog/202112-a-tour-of-go-09-concurrency/</link>
-      <pubDate>Sat, 25 Dec 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202112-a-tour-of-go-09-concurrency/</guid>
-      <description>&lt;p&gt;Entering the world of Golang, we first explore basic Golang usage using the official tutorial: &lt;a href=&#34;https://tour.golang.org/welcome/1&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;A Tour of Go&#xA;&lt;/a&gt;&#xA;.&lt;br&gt;&#xA;This section introduces the powerful concurrency feature of Go.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[A Tour of Go Study Notes] 08 interface and error</title>
-      <link>http://localhost:1313/en/blog/202112-a-tour-of-go-08-interface-and-error/</link>
-      <pubDate>Sat, 18 Dec 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202112-a-tour-of-go-08-interface-and-error/</guid>
-      <description>&lt;p&gt;Entering the world of Golang, we first explore the basics of Golang using the official tutorial: &lt;a href=&#34;https://tour.golang.org/welcome/1&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;A Tour of Go&#xA;&lt;/a&gt;&#xA;.&lt;br&gt;&#xA;This piece introduces interfaces and errors.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[A Tour of Go Study Notes] 07 method</title>
-      <link>http://localhost:1313/en/blog/202112-a-tour-of-go-07-method/</link>
-      <pubDate>Thu, 16 Dec 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202112-a-tour-of-go-07-method/</guid>
-      <description>&lt;p&gt;Entering the world of Golang, we first acquaint ourselves with basic Golang usage using the official tutorial: &lt;a href=&#34;https://tour.golang.org/welcome/1&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;A Tour of Go&#xA;&lt;/a&gt;&#xA;.&lt;br&gt;&#xA;This article introduces methods in Go.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Importing Excel or CSV Files into Laravel</title>
-      <link>http://localhost:1313/en/blog/202112-laravel-excel-import/</link>
-      <pubDate>Sat, 11 Dec 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202112-laravel-excel-import/</guid>
-      <description>&lt;p&gt;When the backend interface isn&amp;rsquo;t fully developed or when users have extensive data that they prefer not to input manually, opting for a bulk import via a form becomes essential.&lt;br&gt;&#xA;This is where the Laravel-excel package comes into play.&#xA;Additionally, it&amp;rsquo;s worth discussing the challenges encountered when importing a large volume of data at once.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[A Tour of Go Study Notes] 06 Range, Map, and Function</title>
-      <link>http://localhost:1313/en/blog/202112-a-tour-of-go-06-range-and-map/</link>
-      <pubDate>Wed, 08 Dec 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202112-a-tour-of-go-06-range-and-map/</guid>
-      <description>&lt;p&gt;Entering the world of Golang, we first acquaint ourselves with basic Golang usage using the official tutorial: &lt;a href=&#34;https://tour.golang.org/welcome/1&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;A Tour of Go&#xA;&lt;/a&gt;&#xA;.&lt;br&gt;&#xA;This article introduces Range, Map, and Function.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Operating Google Forms with GAS (Google App Script)</title>
-      <link>http://localhost:1313/en/blog/202111-operate-google-sheet-via-google-app-script/</link>
-      <pubDate>Sun, 28 Nov 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202111-operate-google-sheet-via-google-app-script/</guid>
-      <description>&lt;p&gt;When the back office isn&amp;rsquo;t fully established but the frontend is already live, there&amp;rsquo;s a desire to enable non-programmers to autonomously adjust the website&amp;rsquo;s content.&lt;br&gt;&#xA;Alternatively, in cases where temporary content needs to be recorded without creating a dedicated database table, we often resort to managing this data through Google Forms.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[A Tour of Go Study Notes] 05 Arrays and Slices</title>
-      <link>http://localhost:1313/en/blog/202111-a-tour-of-go-05-array-and-slice/</link>
-      <pubDate>Tue, 23 Nov 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202111-a-tour-of-go-05-array-and-slice/</guid>
-      <description>&lt;p&gt;Let&amp;rsquo;s use the official tutorial, &lt;a href=&#34;https://tour.golang.org/welcome/1&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;A Tour of Go&#xA;&lt;/a&gt;&#xA;, to get familiar with basic Golang usage.&lt;br&gt;&#xA;This piece introduces the concepts of arrays and slices.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[A Tour of Go Study Notes] 04 Pointers and Structs</title>
-      <link>http://localhost:1313/en/blog/202111-a-tour-of-go-04-pointer-and-struct/</link>
-      <pubDate>Wed, 17 Nov 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202111-a-tour-of-go-04-pointer-and-struct/</guid>
-      <description>&lt;p&gt;Entering the world of Golang, we first explore the basic usage of Golang using the official tutorial: &lt;a href=&#34;https://tour.golang.org/welcome/1&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;A Tour of Go&#xA;&lt;/a&gt;&#xA;.&lt;br&gt;&#xA;This article introduces the usage of pointers and structs.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[A Tour of Go Study Notes] 03 Flow Control</title>
-      <link>http://localhost:1313/en/blog/202111-a-tour-of-go-03-flow-control-statements/</link>
-      <pubDate>Sun, 14 Nov 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202111-a-tour-of-go-03-flow-control-statements/</guid>
-      <description>&lt;p&gt;Entering the world of Golang, we first use the official tutorial: &lt;a href=&#34;https://tour.golang.org/welcome/1&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;A Tour of Go&#xA;&lt;/a&gt;&#xA; to learn the basics of using Golang.&lt;br&gt;&#xA;This article is a note on flow control, explaining some concepts like if, else, for, switch, and defer.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[A Tour of Go Study Notes] 02 Variables and Types</title>
-      <link>http://localhost:1313/en/blog/202111-a-tour-of-go-02-variables-and-types/</link>
-      <pubDate>Fri, 12 Nov 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202111-a-tour-of-go-02-variables-and-types/</guid>
-      <description>&lt;p&gt;Entering the world of Golang, we first use the official tutorial: &lt;a href=&#34;https://tour.golang.org/welcome/1&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;A Tour of Go&#xA;&lt;/a&gt;&#xA; to learn the basics of using Golang.&lt;br&gt;&#xA;This article is a note on variables and types.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[A Tour of Go Study Notes] 01 Packages and Functions</title>
-      <link>http://localhost:1313/en/blog/202111-a-tour-of-go-01-packages-and-functions/</link>
-      <pubDate>Wed, 10 Nov 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202111-a-tour-of-go-01-packages-and-functions/</guid>
-      <description>&lt;p&gt;Entering the world of Golang for beginners, we start with the basics of Golang using the official tutorial: &lt;a href=&#34;https://tour.golang.org/welcome/1&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;A Tour of Go&#xA;&lt;/a&gt;&#xA;.&lt;br&gt;&#xA;This piece covers the fundamental aspects of basic packages and functions in Golang.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[Git Tutorial] Configuring Global gitignore Locally</title>
-      <link>http://localhost:1313/en/blog/202111-git-global-gitignore/</link>
-      <pubDate>Sat, 06 Nov 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202111-git-global-gitignore/</guid>
-      <description>&lt;p&gt;Do you include automatically generated editor configuration files in your .gitignore while developing a project?&lt;br&gt;&#xA;Why add your personal environment settings to the project?&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[Discord Bot] 02. Dice Rolling Bot</title>
-      <link>http://localhost:1313/en/blog/202110-make-discord-chatbot-02-roll-dice-bot/</link>
-      <pubDate>Thu, 28 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202110-make-discord-chatbot-02-roll-dice-bot/</guid>
-      <description>&lt;p&gt;Do you know about TTRPG? One of the most well-known is probably Dungeons &amp;amp; Dragons (D&amp;amp;D).&lt;br&gt;&#xA;After watching hololive EN play, I thought, &amp;ldquo;Let&amp;rsquo;s create a dice rolling bot and give it a try.&amp;rdquo;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[Discord Bot] 01. Creating a Basic Bot</title>
-      <link>http://localhost:1313/en/blog/202110-make-discord-chatbot-01-set-up/</link>
-      <pubDate>Wed, 20 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202110-make-discord-chatbot-01-set-up/</guid>
-      <description>&lt;p&gt;Just for fun, let&amp;rsquo;s write something I haven&amp;rsquo;t written before.&lt;br&gt;&#xA;Lately, I&amp;rsquo;ve been active on Discord, so I&amp;rsquo;ve decided to create a Discord ChatBot.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Guarding Code Quality with GrumPHP</title>
-      <link>http://localhost:1313/en/blog/202107-grumphp-a-php-code-quality-tool/</link>
-      <pubDate>Sat, 31 Jul 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202107-grumphp-a-php-code-quality-tool/</guid>
-      <description>&lt;p&gt;In a collaborative development environment, Code Review is a crucial process.&lt;br&gt;&#xA;If someone writes code that violates rules or fails tests, it can lead to project errors.&lt;br&gt;&#xA;Manual syntax checks or running tests manually are time-consuming and not fashionable.&lt;br&gt;&#xA;These tasks should be automated, and that&amp;rsquo;s where &lt;code&gt;GrumPHP&lt;/code&gt; comes in.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Develop Your Own Laravel Package</title>
-      <link>http://localhost:1313/en/blog/202107-laravel-package-development/</link>
-      <pubDate>Sun, 25 Jul 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202107-laravel-package-development/</guid>
-      <description>&lt;p&gt;The Laravel ecosystem offers numerous convenient packages for various purposes.&lt;br&gt;&#xA;However, what if you can&amp;rsquo;t find a suitable package or need to create a company-specific one?&lt;br&gt;&#xA;This article demonstrates how to develop a package locally and install it in a Laravel project using composer, ensuring smooth development and testing.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Setting up Laravel Development Environment with Docker</title>
-      <link>http://localhost:1313/en/blog/202107-laravel-environment-with-docker/</link>
-      <pubDate>Sat, 24 Jul 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202107-laravel-environment-with-docker/</guid>
-      <description>&lt;p&gt;In the past, developing Laravel projects locally mostly involved installing the required services directly on the machine.&lt;br&gt;&#xA;Later, the recommended development environment by the official documentation, &lt;a href=&#34;https://github.com/laravel/homestead&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Homestead&#xA;&lt;/a&gt;&#xA;, became a popular choice.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Environment Initialization and Server Configuration (Docker &#43; Laravel)</title>
-      <link>http://localhost:1313/en/blog/202107-initialize-server-setting-with-docker-and-laravel/</link>
-      <pubDate>Sat, 17 Jul 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202107-initialize-server-setting-with-docker-and-laravel/</guid>
-      <description>&lt;p&gt;If you are setting up a new cloud server and want to create a Laravel development environment using Docker on it.&lt;br&gt;&#xA;And run Laravel&amp;rsquo;s common composer and artisan commands remotely, here&amp;rsquo;s a guide for you.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[CI/CD with Drone 101] 04 Introduction to Drone Runners</title>
-      <link>http://localhost:1313/en/blog/202107-drone-cicd-4-advanced-runner/</link>
-      <pubDate>Fri, 09 Jul 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202107-drone-cicd-4-advanced-runner/</guid>
-      <description>&lt;p&gt;In our previous post, &amp;ldquo;&lt;a href=&#34;http://localhost:1313/en/blog/202106-drone-cicd-1-basic-usage/&#34;&#xA;   &#xA;   &gt;[CI/CD with Drone 101] 01 Basic Service Setup and GitHub Integration&#xA;&lt;/a&gt;&#xA;&amp;rdquo; there is an example &lt;code&gt;docker-compose.yml&lt;/code&gt; file that creates two Docker runners: &lt;code&gt;drone_runner_docker&lt;/code&gt; and &lt;code&gt;drone-runner-ssh&lt;/code&gt;.&lt;br&gt;&#xA;However, in &amp;ldquo;&lt;a href=&#34;http://localhost:1313/en/blog/202106-drone-cicd-2-advanced-pipeline-configuration/&#34;&#xA;   &#xA;   &gt;[CI/CD with Drone 101] 02 Setting Deployment Trigger Conditions (Pipeline)&#xA;&lt;/a&gt;&#xA;&amp;rdquo; only the Docker runner is used.&lt;br&gt;&#xA;This post will introduce both runners, along with other runners mentioned on the official website.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[CI/CD with Drone 101] 03 Deployment Schedule Configuration and Permission Management</title>
-      <link>http://localhost:1313/en/blog/202106-drone-cicd-3-advanced-cron-job/</link>
-      <pubDate>Mon, 14 Jun 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202106-drone-cicd-3-advanced-cron-job/</guid>
-      <description>&lt;p&gt;Utilizing &lt;a href=&#34;https://www.drone.io/&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Drone&#xA;&lt;/a&gt;&#xA; to establish a custom automated deployment service.&lt;br&gt;&#xA;Drone is a CI/CD system tool developed in Golang.&lt;br&gt;&#xA;This tutorial focuses on configuring deployment schedules and managing permissions.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[CI/CD with Drone 101] 02 Setting Deployment Trigger Conditions (Pipeline)</title>
-      <link>http://localhost:1313/en/blog/202106-drone-cicd-2-advanced-pipeline-configuration/</link>
-      <pubDate>Sat, 12 Jun 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202106-drone-cicd-2-advanced-pipeline-configuration/</guid>
-      <description>&lt;p&gt;Utilizing &lt;a href=&#34;https://www.drone.io/&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Drone&#xA;&lt;/a&gt;&#xA; to establish a custom automated deployment service.&lt;br&gt;&#xA;Drone is a CI/CD system tool developed in Golang.&lt;br&gt;&#xA;In this article, we&amp;rsquo;ll configure multiple trigger conditions to initiate different deployment steps under various circumstances.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[CI/CD with Drone 101] 01 Basic Service Setup and GitHub Integration</title>
-      <link>http://localhost:1313/en/blog/202106-drone-cicd-1-basic-usage/</link>
-      <pubDate>Tue, 08 Jun 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202106-drone-cicd-1-basic-usage/</guid>
-      <description>&lt;p&gt;Utilizing &lt;a href=&#34;https://www.drone.io/&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Drone&#xA;&lt;/a&gt;&#xA; to establish your own automated deployment service.&lt;br&gt;&#xA;Drone is a CI/CD system tool developed in Golang.&lt;br&gt;&#xA;This article covers the configuration of basic services and integration with GitHub.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Common Docker Commands</title>
-      <link>http://localhost:1313/en/blog/202106-docker-common-commands/</link>
-      <pubDate>Sun, 06 Jun 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202106-docker-common-commands/</guid>
-      <description>&lt;p&gt;Some commonly used commands and related parameters on Docker and their usage.&lt;br&gt;&#xA;In actual use, there are definitely more commands than those listed here.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Server Stress Testing - Using Apache Bench</title>
-      <link>http://localhost:1313/en/blog/202105-web-server-stress-testing/</link>
-      <pubDate>Sun, 23 May 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202105-web-server-stress-testing/</guid>
-      <description>&lt;p&gt;Server stress testing is a must before going live, no exceptions!&lt;br&gt;&#xA;Just imagine you&amp;rsquo;ve been working overtime for months, the system goes online.&lt;br&gt;&#xA;And you&amp;rsquo;re celebrating with pizza and cocktail, only to find out suddenly the server crashes due to overwhelming traffic!&lt;br&gt;&#xA;That&amp;rsquo;s why conducting stress tests beforehand makes a good system!&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Setting Up Subdomain with Cloudflare and Customizing GitHub Page URL</title>
-      <link>http://localhost:1313/en/blog/202105-set-custom-domain-for-github-page/</link>
-      <pubDate>Tue, 18 May 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202105-set-custom-domain-for-github-page/</guid>
-      <description>&lt;p&gt;Previously, I purchased my own domain.Now, I want to use Cloudflare DNS service to set up a subdomain.&lt;br&gt;&#xA;And assign it to a specified GitHub Page project as a customized URL.&lt;br&gt;&#xA;Once you master this skill, with just one main domain, you can generate different subdomain URLs as needed.&lt;br&gt;&#xA;All major DNS service providers offer this feature, and this article uses Cloudflare as an example.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Setting Up Cloudflare Free CDN and Enabling DNS Hosting</title>
-      <link>http://localhost:1313/en/blog/202105-cloudflare-dns-add-domain/</link>
-      <pubDate>Sun, 16 May 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202105-cloudflare-dns-add-domain/</guid>
-      <description>&lt;p&gt;Google Domains service already provides Domain Name System (DNS) services, allowing you to manage your domain, including adding subdomains.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>How to Purchase Your Own Domain from Google Domains</title>
-      <link>http://localhost:1313/en/blog/202105-how-to-buy-a-domain-from-google/</link>
-      <pubDate>Sat, 15 May 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202105-how-to-buy-a-domain-from-google/</guid>
-      <description>&lt;p&gt;Previously, I&amp;rsquo;ve been using free blogging platforms like Blogger.&lt;br&gt;&#xA;However, with the rise of personal branding awareness in recent years and feeling limited by the features of the original blog,&lt;br&gt;&#xA;not to mention the inconvenience of moving, and the inability to customize SEO and embed tracking codes,&lt;br&gt;&#xA;I felt the need to take matters into my own hands.&lt;br&gt;&#xA;Having worked in the media industry, I realized that if you want something done right, you have to do it yourself.&lt;br&gt;&#xA;I initially moved from Blogger to Medium, then back to Blogger, finding the transition quite cumbersome.&lt;br&gt;&#xA;Furthermore, the formatting of code content often gets distorted, and I wanted to record everything using Markdown syntax.&lt;br&gt;&#xA;This led me to consider self-hosting, partly as a platform to showcase my skills.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Use ssh key login remote server</title>
-      <link>http://localhost:1313/en/blog/202104-use-ssh-key-login-remote-server/</link>
-      <pubDate>Sun, 25 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202104-use-ssh-key-login-remote-server/</guid>
-      <description>&lt;p&gt;Normally, logging into a server involves using a username and password,&lt;br&gt;&#xA;but passwords can be compromised through interception or sharing.&lt;br&gt;&#xA;The security level is not as robust as using SSH keys, which also eliminate the need for manual password entry each time.&lt;/p&gt;&#xA;&lt;h1 id=&#34;creating-ssh-keys-for-login&#34;&gt;Creating SSH Keys for Login&lt;/h1&gt;&#xA;&lt;h2 id=&#34;generating-ssh-keys-on-the-client-side-using-the-command&#34;&gt;Generating SSH keys on the client side using the command:&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ssh-keygen&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;&#xA;&lt;p&gt;Note: SSH keys should be in RSA format; if using OPENSSH, errors may persist.&lt;br&gt;&#xA;Reference: &lt;a href=&#34;https://ray247k.blogspot.com/2019/03/mac-majave-10141-ssh-keygen.html&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;mac majave 10.14.1 ssh-keygen Key Format Issue&#xA;&lt;/a&gt;&#xA;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Enable docker service in remote server</title>
-      <link>http://localhost:1313/en/blog/202103-enable-docker-service-in-remote-server/</link>
-      <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202103-enable-docker-service-in-remote-server/</guid>
-      <description>&lt;p&gt;Step-by-step guide for enabling Docker and Docker-compose services on a new cloud host.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Setting up postgreSQL database with docker</title>
-      <link>http://localhost:1313/en/blog/202103-setting-up-postgresql-database-with-docker/</link>
-      <pubDate>Wed, 03 Mar 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202103-setting-up-postgresql-database-with-docker/</guid>
-      <description>&lt;p&gt;Setting up a PostgreSQL Database with Docker&lt;br&gt;&#xA;Including &lt;code&gt;Database Setup&lt;/code&gt;, &lt;code&gt;Data Persistence&lt;/code&gt;, &lt;code&gt;Using GUI to Operate the Database&lt;/code&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Reverse Proxy Setup in Docker Environment</title>
-      <link>http://localhost:1313/en/blog/202102-reverse-proxy-in-docker-service/</link>
-      <pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202102-reverse-proxy-in-docker-service/</guid>
-      <description>&lt;p&gt;This article provides a basic explanation of reverse proxies and how to set them up in a Docker container environment.&lt;/p&gt;&#xA;&lt;h1 id=&#34;reverse-proxy-overview&#34;&gt;Reverse Proxy Overview&lt;/h1&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.jyt0532.com/2019/11/18/proxy-reverse-proxy/&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;System Design - Forward Proxy vs Reverse Proxy&#xA;&lt;/a&gt;&#xA;&lt;/p&gt;&#xA;&lt;h1 id=&#34;different-physical-hosts&#34;&gt;Different Physical Hosts&lt;/h1&gt;&#xA;&lt;h2 id=&#34;using-nginx-proxy-pass&#34;&gt;Using nginx proxy-pass&lt;/h2&gt;&#xA;&lt;h3 id=&#34;objective&#34;&gt;Objective&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Users visit a specified web page path &lt;code&gt;/new_path&lt;/code&gt; or the root &lt;code&gt;/&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;Configure the test machine&amp;rsquo;s nginx proxy_pass to redirect to another host&amp;rsquo;s project under the same path&lt;/li&gt;&#xA;&lt;li&gt;Ensure that the user&amp;rsquo;s IP address is not replaced by the proxy server&amp;rsquo;s IP&lt;/li&gt;&#xA;&lt;li&gt;Ensure that the project on the target server can read cookies&lt;/li&gt;&#xA;&lt;li&gt;Ensure that the payload of POST requests is forwarded&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;configure-nginx-config&#34;&gt;Configure nginx config&lt;/h3&gt;&#xA;&lt;h4 id=&#34;configuration-on-the-first-hosts-nginx&#34;&gt;Configuration on the First Host&amp;rsquo;s nginx&lt;/h4&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-nginx&#34; data-lang=&#34;nginx&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Forward all requests to domain/new_path to another host&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;location&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;/new_path&lt;/span&gt; {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# Proxy to the specified URL&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;proxy_pass&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;http://laravel55.test.com&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# Send the user&amp;#39;s real IP to the target host&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;proxy_set_header&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;X-Real-IP&lt;/span&gt; $remote_addr;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# Set the server as the original server before the proxy, otherwise HTTP_HOST will become the address of the proxy server&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;proxy_set_header&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;Host&lt;/span&gt; $host;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# Set cookie forwarding&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;proxy_set_header&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;Cookie&lt;/span&gt; $http_cookie;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# Identify the original client&amp;#39;s IP&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;proxy_set_header&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;X-Forwarded-Host&lt;/span&gt; $host;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# Record each proxy passed through by the client&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;proxy_set_header&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;X-Forwarded-For&lt;/span&gt; $proxy_add_x_forwarded_for;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# Identify the network connection protocol&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;proxy_set_header&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;X-Forwarded-Proto&lt;/span&gt; $scheme;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# Hide server information&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;proxy_hide_header&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;Server&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;proxy_hide_header&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;X-Powered-By&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# Increase space due to additional headers&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;proxy_headers_hash_bucket_size&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;128&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;proxy_headers_hash_max_size&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;512&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;configuration-on-the-second-hosts-nginx&#34;&gt;Configuration on the Second Host&amp;rsquo;s nginx&lt;/h4&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-nginx&#34; data-lang=&#34;nginx&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;server&lt;/span&gt; {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;listen&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;80&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;server_name&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;ray200&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;root&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;/home/toc/www/laravel55/public&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;access_log&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;/var/log/nginx/www/laravel55.access.log&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;error_log&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;/var/log/nginx/www/laravel55.error.log&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;index&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;index.php&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;location&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;/&lt;/span&gt; {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;try_files&lt;/span&gt; $uri $uri/ &lt;span style=&#34;color:#e6db74&#34;&gt;/index.php&lt;/span&gt;$is_args$args;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;location&lt;/span&gt; ~&lt;span style=&#34;color:#e6db74&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;\.(jpg|jpeg|gif|css|png|js|ico|html|svg|ttf|woff|woff2|eotD)&lt;/span&gt;$ {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;access_log&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;off&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;expires&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;max&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;location&lt;/span&gt; ~ &lt;span style=&#34;color:#e6db74&#34;&gt;\.php$&lt;/span&gt; {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;include&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;snippets/fastcgi-php.conf&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;fastcgi_pass&lt;/span&gt; 127.0.0.1:&lt;span style=&#34;color:#ae81ff&#34;&gt;9000&lt;/span&gt;; &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;note&#34;&gt;Note&lt;/h4&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;server_name&lt;/code&gt; must match the domain to which proxy_pass redirects.&lt;br&gt;&#xA;Otherwise, the request will go to the default server_name.&lt;/li&gt;&#xA;&lt;li&gt;Modify the method of determining the real IP address in the program to read &lt;code&gt;x-real-ip&lt;/code&gt; from the header.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;verify-cookie-reading&#34;&gt;Verify Cookie Reading&lt;/h3&gt;&#xA;&lt;p&gt;If the nginx configuration includes &lt;code&gt;proxy_set_header Cookie $http_cookie;&lt;/code&gt;, &lt;code&gt;dump($_COOKIE);&lt;/code&gt; will capture cookies,&#xA;but Laravel&amp;rsquo;s &lt;code&gt;request()-&amp;gt;cookie();&lt;/code&gt; won&amp;rsquo;t.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Laravel environment basic settings</title>
-      <link>http://localhost:1313/en/blog/202102-laravel-environment-basic-settings/</link>
-      <pubDate>Thu, 25 Feb 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202102-laravel-environment-basic-settings/</guid>
-      <description>&lt;p&gt;Configuration and package installation required for developing Laravel projects, applicable whether on remote hosts or local machines.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Portainer - A Visual Docker Management Tool</title>
-      <link>http://localhost:1313/en/blog/202101-portainer-open-source-container-management-gui/</link>
-      <pubDate>Sat, 16 Jan 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202101-portainer-open-source-container-management-gui/</guid>
-      <description>&lt;p&gt;Local development mostly involves command-line operations or using Docker&amp;rsquo;s GUI interface for service management.&lt;br&gt;&#xA;&lt;a href=&#34;https://github.com/portainer&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Portainer&#xA;&lt;/a&gt;&#xA; is an open-source UI tool that allows viewing Docker images and containers,&#xA;and executing actions such as start, stop, restart, and remove. It also enables viewing logs and errors for each container.&lt;br&gt;&#xA;Even individuals without Docker execution permissions can log in using credentials when deploying services on cloud-hosted servers,&#xA;utilizing the visual interface for various Docker service management tasks.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Docker Notes 3 - docker-compose</title>
-      <link>http://localhost:1313/en/blog/202101-docker-note-3-introduce-docker-compose/</link>
-      <pubDate>Tue, 12 Jan 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202101-docker-note-3-introduce-docker-compose/</guid>
-      <description>&lt;p&gt;When it comes to managing multiple Docker containers that are related to each other, using plain Docker commands requires remembering the relationships between containers.&lt;br&gt;&#xA;However, with docker-compose, managing multiple containers becomes straightforward through easy definition of multi-container services.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Docker Notes 2 - Basic Usage</title>
-      <link>http://localhost:1313/en/blog/202101-docker-note-2-basic-usage/</link>
-      <pubDate>Sat, 09 Jan 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202101-docker-note-2-basic-usage/</guid>
-      <description>&lt;p&gt;Containerization isolates different environments, allowing engineers to focus on development without spending excessive effort on environment setup.&lt;br&gt;&#xA;Docker is currently a mature and popular containerization technology.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Docker Notes 1 - Understanding Docker</title>
-      <link>http://localhost:1313/en/blog/202101-docker-note-1-what-is-docker/</link>
-      <pubDate>Sat, 02 Jan 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/blog/202101-docker-note-1-what-is-docker/</guid>
-      <description>&lt;p&gt;Containerization isolates different environments, allowing engineers to focus on development without spending excessive effort on environment setup.&lt;br&gt;&#xA;Docker is currently a mature and popular containerization technology.&lt;/p&gt;</description>
-    </item>
-  </channel>
+	<channel>
+		<title>Blog on Byte Ebi 🍤</title>
+		<link>https://tech.ray247k.com/en/blog/</link>
+		<description>Recent content in Blog on Byte Ebi 🍤</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Thu, 03 Sep 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://tech.ray247k.com/en/blog/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Investigating Connection Encryption on Amazon MWAA</title>
+				<link>https://tech.ray247k.com/en/blog/202609-mwaa-connection-encryption-investigation/</link>
+				<pubDate>Thu, 03 Sep 2026 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202609-mwaa-connection-encryption-investigation/</guid>
+				<description>&lt;p&gt;The Airflow docs actually state that setting the encryption key to an empty string makes Connections fall back to plaintext.&lt;br&gt;&#xA;But does the same thing hold true on AWS-managed MWAA?&lt;br&gt;&#xA;This post traces that question from Airflow&amp;rsquo;s native Fernet mechanism all the way to MWAA&amp;rsquo;s reserved environment variables.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Deploy Your Own Openclaw AI Assistant for Free</title>
+				<link>https://tech.ray247k.com/en/blog/202604-deploy-openclaw-ai-for-free/</link>
+				<pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202604-deploy-openclaw-ai-for-free/</guid>
+				<description>&lt;p&gt;No GPU? Don&amp;rsquo;t feel like paying for a server?&lt;br&gt;&#xA;This guide shows you how to deploy Openclaw on GitHub Codespaces using free resources, so you can start running your own AI assistant in minutes.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Unleashing Airflow Performance with Dynamic Task Mapping</title>
+				<link>https://tech.ray247k.com/en/blog/202602-airflow-dynamic-task-mapping/</link>
+				<pubDate>Tue, 03 Feb 2026 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202602-airflow-dynamic-task-mapping/</guid>
+				<description>&lt;p&gt;When tasks depend on each other yet remain independent events, what is the most elegant way to handle them?&lt;br&gt;&#xA;Should we use a loop? Add another DAG? Or is there a better solution?&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Triggering Airflow DAG from Another</title>
+				<link>https://tech.ray247k.com/en/blog/202509-triggering-airflow-dag-from-another-dag/</link>
+				<pubDate>Wed, 24 Sep 2025 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202509-triggering-airflow-dag-from-another-dag/</guid>
+				<description>&lt;p&gt;When building dependencies between DAGs, you don’t always have to rely on RESTful APIs.&lt;br&gt;&#xA;Airflow also provides a built-in Operator for this purpose.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Understanding Amazon RDS Connection Limits</title>
+				<link>https://tech.ray247k.com/en/blog/202509-amazon-rds-db-connection-limits/</link>
+				<pubDate>Sun, 07 Sep 2025 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202509-amazon-rds-db-connection-limits/</guid>
+				<description>&lt;p&gt;Have you ever run into database connection limits, or felt unsure about which RDS instance type to choose when planning your system architecture?&lt;br&gt;&#xA;This article walks you through how Amazon RDS calculates its maximum connections and provides a comparison across different instance types to help you make better decisions.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Manage Python Versions with Pyenv</title>
+				<link>https://tech.ray247k.com/en/blog/202508-manage-python-versions-with-pyenv/</link>
+				<pubDate>Sat, 30 Aug 2025 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202508-manage-python-versions-with-pyenv/</guid>
+				<description>&lt;p&gt;Pyenv is a tool for managing different Python versions.&lt;br&gt;&#xA;Whether you’re upgrading a project to a newer Python release or switching between projects with different requirements, pyenv makes the process simple and hassle-free.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[Pytest 101] 04 Mock Class</title>
+				<link>https://tech.ray247k.com/en/blog/202507-pytest-4-pytest-mock-class/</link>
+				<pubDate>Sat, 26 Jul 2025 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202507-pytest-4-pytest-mock-class/</guid>
+				<description>&lt;p&gt;Introducing the factory pattern in your code can significantly improve its structure—but it also makes unit testing a bit trickier.&lt;br&gt;&#xA;We’ll walk through two different mocking strategies, compare their pros and cons, and help you write more robust tests!&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[Pytest 101] 03 Mock SQL Query</title>
+				<link>https://tech.ray247k.com/en/blog/202507-pytest-3-pytest-mock-sql-query/</link>
+				<pubDate>Wed, 23 Jul 2025 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202507-pytest-3-pytest-mock-sql-query/</guid>
+				<description>&lt;p&gt;With mock objects, we can simulate database operations without actually connecting to a real database.&lt;br&gt;&#xA;This means we don’t need to prepare a dedicated test database or worry about cleaning it up after tests.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[Pytest 101] 02 Basic Usage of Mock</title>
+				<link>https://tech.ray247k.com/en/blog/202507-pytest-2-pytest-mock-basics/</link>
+				<pubDate>Fri, 11 Jul 2025 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202507-pytest-2-pytest-mock-basics/</guid>
+				<description>&lt;p&gt;After covering the basic tools, this article demonstrates how to use mocks effectively in Pytest.&lt;br&gt;&#xA;Mocks allow us to replace the logic of real functions to simulate different scenarios and write more precise unit tests.&lt;br&gt;&#xA;We&amp;rsquo;ll walk through examples of mocking functions, simulating errors, and even handling external dependencies like Redis.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[Pytest 101] 01 Introduction to Pytest &amp; Mock</title>
+				<link>https://tech.ray247k.com/en/blog/202507-pytest-1-intro-to-pytest-and-mock/</link>
+				<pubDate>Wed, 02 Jul 2025 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202507-pytest-1-intro-to-pytest-and-mock/</guid>
+				<description>&lt;p&gt;Writing unit tests is a well-known best practice in software development, but actually getting started often feels overwhelming.&lt;br&gt;&#xA;Where do you begin? What tools should you use? And how do you use them?&lt;br&gt;&#xA;For beginners, these first steps can easily become roadblocks.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>The Gatekeeper Before Your Git Commits: Pre-commit</title>
+				<link>https://tech.ray247k.com/en/blog/202506-pre-commit-git-commit-gatekeeper/</link>
+				<pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202506-pre-commit-git-commit-gatekeeper/</guid>
+				<description>&lt;p&gt;Make your Git commits safer! No complex setup required. Just install and commit with confidence.&lt;br&gt;&#xA;Use pre-commit to automatically run format checks and tests before committing.&lt;br&gt;&#xA;Easy to install and configure. Instantly improve your code quality.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Setting up Python Development Environment</title>
+				<link>https://tech.ray247k.com/en/blog/202506-settin-up-a-python-development-environment/</link>
+				<pubDate>Mon, 09 Jun 2025 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202506-settin-up-a-python-development-environment/</guid>
+				<description>&lt;p&gt;This is my first time using Python in a work environment, so I&amp;rsquo;m documenting the environment setup. Many of these packages are new to me, not having used them when I was self-learning a few years ago. I guess that reveals how long it&amp;rsquo;s been since I touched Python!&lt;/p&gt;&#xA;&lt;h1 id=&#34;mac-setup&#34;&gt;Mac Setup&lt;/h1&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;There are dependencies, so you must install them in order!&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;homebrew&#34;&gt;&lt;a href=&#34;https://brew.sh/&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Homebrew&#xD;&#xA;&lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;A package manager for Mac. I don&amp;rsquo;t know what I&amp;rsquo;d do without it on a Mac. And now it can be used on Linux too!&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>TypeScript Generics</title>
+				<link>https://tech.ray247k.com/en/blog/202503-typescript-generic/</link>
+				<pubDate>Wed, 26 Mar 2025 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202503-typescript-generic/</guid>
+				<description>&lt;p&gt;Introduces TypeScript generics, demonstrating how to enhance code reusability by defining flexible methods, interfaces, and classes that adapt to different types.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Class and Interface in TypeScript</title>
+				<link>https://tech.ray247k.com/en/blog/202503-typescript-class-and-interface/</link>
+				<pubDate>Mon, 24 Mar 2025 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202503-typescript-class-and-interface/</guid>
+				<description>&lt;p&gt;Introduces the basic concepts of TypeScript Classes and Interfaces.&lt;br&gt;&#xA;It also covers class implementation and interface inheritance examples.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Basic Data Type in TypeScript</title>
+				<link>https://tech.ray247k.com/en/blog/202503-typescript-basic-data-type/</link>
+				<pubDate>Thu, 20 Mar 2025 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202503-typescript-basic-data-type/</guid>
+				<description>&lt;p&gt;Introduction to TypeScript&amp;rsquo;s basic types and syntax examples,&lt;br&gt;&#xA;including examples of basic function syntax, arrow functions, anonymous functions, and function overloading.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>TypeScript Environment Setup</title>
+				<link>https://tech.ray247k.com/en/blog/202503-typescript-environment-setup/</link>
+				<pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202503-typescript-environment-setup/</guid>
+				<description>&lt;p&gt;Set up a TypeScript development environment&lt;br&gt;&#xA;Using NVM to install Node.js and npm, installing development tools.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Setting up multiple GitHub accounts on one computer</title>
+				<link>https://tech.ray247k.com/en/blog/202409-multiple-github-accounts-with-ssh-keys/</link>
+				<pubDate>Thu, 19 Sep 2024 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202409-multiple-github-accounts-with-ssh-keys/</guid>
+				<description>&lt;p&gt;Due to my remote work setup, I needed to configure a company GitHub account on my personal computer.&lt;br&gt;&#xA;However, GitHub doesn&amp;rsquo;t allow the same SSH key to be used across multiple accounts, which means I can&amp;rsquo;t assign my personal SSH key to the company&amp;rsquo;s GitHub account.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Building a Static Website with Hugo</title>
+				<link>https://tech.ray247k.com/en/blog/202405-create-static-web-site-with-hugo/</link>
+				<pubDate>Mon, 06 May 2024 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202405-create-static-web-site-with-hugo/</guid>
+				<description>&lt;p&gt;Building a blog and migrating it each time can be a super painful task, especially since every platform has different export formats!&#xA;Why not build one yourself? Write articles using markdown syntax and then generate a static website.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[AWS Cloud Fundamental Notes] Overview of Common AWS Architectures</title>
+				<link>https://tech.ray247k.com/en/blog/202402-aws-fundamental-architectures/</link>
+				<pubDate>Sun, 18 Feb 2024 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202402-aws-fundamental-architectures/</guid>
+				<description>&lt;p&gt;Introducing various common application architecture components and their evolution.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[AWS Cloud Fundamental Notes] Hybrid Cloud</title>
+				<link>https://tech.ray247k.com/en/blog/202402-aws-fundamental-hybrid-cloud/</link>
+				<pubDate>Tue, 13 Feb 2024 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202402-aws-fundamental-hybrid-cloud/</guid>
+				<description>&lt;p&gt;Hybrid cloud integrates a company&amp;rsquo;s internal IT resources with third-party cloud providers&amp;rsquo; infrastructure and services.&lt;br&gt;&#xA;AWS hybrid cloud services offer a consistent AWS experience from the cloud to on-premises to the edge, allowing you to store data and run applications across multiple environments.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[AWS Cloud Fundamental Notes] Cyber Security</title>
+				<link>https://tech.ray247k.com/en/blog/202401-aws-fundamental-cyber-security/</link>
+				<pubDate>Sat, 06 Jan 2024 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202401-aws-fundamental-cyber-security/</guid>
+				<description>&lt;p&gt;In cloud services, enterprises use a large number of accounts, which causes fragmentation in architecture and security,&#xA;increasing management difficulty.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[AWS Cloud Fundamental Notes] Lambda</title>
+				<link>https://tech.ray247k.com/en/blog/202312-aws-fundamental-lambda/</link>
+				<pubDate>Wed, 27 Dec 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202312-aws-fundamental-lambda/</guid>
+				<description>&lt;p&gt;Uploading the program to the Lambda service enables quick activation when network packets are sent in for request access,&#xA;achieving a pay-as-you-go model.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[AWS Cloud Fundamental Notes] API Gateway</title>
+				<link>https://tech.ray247k.com/en/blog/202312-aws-fundamental-api-gateway/</link>
+				<pubDate>Sun, 17 Dec 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202312-aws-fundamental-api-gateway/</guid>
+				<description>&lt;p&gt;As the &amp;ldquo;front door&amp;rdquo; for applications to access data, business logic, or functionality from backend services.&lt;br&gt;&#xA;When using API Gateway, you can create RESTful APIs and WebSocket APIs to enable real-time bidirectional communication applications.&lt;br&gt;&#xA;API Gateway supports containerized, serverless workloads, and web applications.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>AWS DynamoDB Point-in-Time Recovery (PITR): Simplifying Data Restoration</title>
+				<link>https://tech.ray247k.com/en/blog/202311-aws-dynamodb-pitr/</link>
+				<pubDate>Fri, 03 Nov 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202311-aws-dynamodb-pitr/</guid>
+				<description>&lt;p&gt;Point-in-Time Recovery (PITR) is a crucial data recovery feature for AWS DynamoDB and other database services.&lt;br&gt;&#xA;It allows you to restore data to a previous state in case of accidental loss or corruption, ensuring business continuity.&lt;br&gt;&#xA;PITR also enables regular data backups and retention of multiple versions, aiding in error tracking and resolution.&lt;br&gt;&#xA;It&amp;rsquo;s flexibility in restoring data on demand without affecting other operations enhances system reliability and stability.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[AWS Cloud Fundamental Notes] Kinesis、EMR and Redshift</title>
+				<link>https://tech.ray247k.com/en/blog/202310-aws-fundamental-kinesis-emr-and-redshift/</link>
+				<pubDate>Fri, 27 Oct 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202310-aws-fundamental-kinesis-emr-and-redshift/</guid>
+				<description>&lt;p&gt;Used for big data architecture&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[AWS Cloud Fundamental Notes] Cost Control</title>
+				<link>https://tech.ray247k.com/en/blog/202309-aws-fundamental-cost-control/</link>
+				<pubDate>Sun, 17 Sep 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202309-aws-fundamental-cost-control/</guid>
+				<description>&lt;p&gt;Using the &lt;a href=&#34;https://calculator.aws/#/&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;AWS Pricing Calculator&#xD;&#xA;&lt;/a&gt;&#xD;&#xA;, you can estimate the cost of cloud architecture through a data center perspective.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://docs.aws.amazon.com/zh_tw/organizations/latest/userguide/orgs_introduction.html&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;AWS Organizations&#xD;&#xA;&lt;/a&gt;&#xD;&#xA; consolidates multiple AWS accounts into one organization for centralized management.&lt;br&gt;&#xA;You can create accounts within the organization and invite existing accounts to join.&lt;br&gt;&#xA;It includes account management and consolidated billing features, meeting budget, security, and compliance requirements.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[AWS Cloud Fundamental Notes] SNS</title>
+				<link>https://tech.ray247k.com/en/blog/202308-aws-fundamental-sns/</link>
+				<pubDate>Sun, 13 Aug 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202308-aws-fundamental-sns/</guid>
+				<description>&lt;p&gt;Used for sending SMS or E-mail as well as push notifications: &lt;a href=&#34;https://docs.aws.amazon.com/zh_tw/sns/latest/dg/welcome.html&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Simple Notification Service&#xD;&#xA;&lt;/a&gt;&#xD;&#xA;&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[AWS Cloud Fundamental Notes] Cognito</title>
+				<link>https://tech.ray247k.com/en/blog/202307-aws-fundamental-cognito/</link>
+				<pubDate>Fri, 07 Jul 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202307-aws-fundamental-cognito/</guid>
+				<description>&lt;p&gt;&lt;a href=&#34;https://aws.amazon.com/tw/cognito/&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Amazon Cognito&#xD;&#xA;&lt;/a&gt;&#xD;&#xA;: When traffic comes in, identity verification must be done first to confirm access to AWS cloud resources.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Different between pointer and value for struct type in golang</title>
+				<link>https://tech.ray247k.com/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/</link>
+				<pubDate>Sun, 25 Jun 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/</guid>
+				<description>&lt;p&gt;I always had a question &amp;ldquo;Should I use value for type in struct? Or using pointer?&amp;rdquo;&lt;br&gt;&#xA;After reading many different projects on the web, it seems that they all have different practices.&lt;br&gt;&#xA;Until I recently encountered a problem that gave me some ideas.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[AWS Cloud Fundamental Notes] CloudFormation</title>
+				<link>https://tech.ray247k.com/en/blog/202306-aws-fundamental-cloudformation/</link>
+				<pubDate>Sun, 18 Jun 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202306-aws-fundamental-cloudformation/</guid>
+				<description>&lt;p&gt;CloudFormation is AWS&amp;rsquo;s native Infrastructure as Code (IaC) service, which treats infrastructure as code,&#xA;allowing you to model, provision, and manage AWS and third-party resources.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[AWS Cloud Fundamental Notes] ElastiCache</title>
+				<link>https://tech.ray247k.com/en/blog/202306-aws-fundamental-elasticache/</link>
+				<pubDate>Tue, 13 Jun 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202306-aws-fundamental-elasticache/</guid>
+				<description>&lt;p&gt;Cloud caching service with two underlying engines: &lt;a href=&#34;#Redis&#34;&#xD;&#xA;   &#xD;&#xA;   &gt;Redis&#xD;&#xA;&lt;/a&gt;&#xD;&#xA; and &lt;a href=&#34;#Memcached&#34;&#xD;&#xA;   &#xD;&#xA;   &gt;Memcached&#xD;&#xA;&lt;/a&gt;&#xD;&#xA;.&lt;br&gt;&#xA;It can assist in implementing &lt;code&gt;Shard&lt;/code&gt;.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[AWS Cloud Fundamental Notes] DynamoDB</title>
+				<link>https://tech.ray247k.com/en/blog/202306-aws-fundamental-dynamodb/</link>
+				<pubDate>Fri, 02 Jun 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202306-aws-fundamental-dynamodb/</guid>
+				<description>&lt;p&gt;Distributed NoSQL database service.&lt;br&gt;&#xA;Data access must be obtained through the corresponding Role (EC2) or using Credentials (developer) with IAM.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[AWS Cloud Fundamental Notes] SQS</title>
+				<link>https://tech.ray247k.com/en/blog/202305-aws-fundamental-sqs/</link>
+				<pubDate>Tue, 30 May 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202305-aws-fundamental-sqs/</guid>
+				<description>&lt;p&gt;&lt;a href=&#34;https://docs.aws.amazon.com/sqs/latest/dev/sqs-dg.pdf&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Amazon Simple Queue Service&#xD;&#xA;&lt;/a&gt;&#xD;&#xA; (SQS) serves as a task buffer, allowing tasks that do not require immediate processing to be placed in the queue for storage.&lt;br&gt;&#xA;When the system has spare resources, it processes these tasks, which helps decouple applications.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[AWS Cloud Fundamental Notes] Auto Scaling</title>
+				<link>https://tech.ray247k.com/en/blog/202305-aws-fundamental-auto-scaling/</link>
+				<pubDate>Tue, 23 May 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202305-aws-fundamental-auto-scaling/</guid>
+				<description>&lt;p&gt;Monitoring applications and automatically scaling machines based on traffic changes,&#xA;aiming to maintain stable and predictable performance at the lowest possible cost.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[AWS Cloud Fundamental Notes] Elastic Load Balancer</title>
+				<link>https://tech.ray247k.com/en/blog/202305-aws-fundamental-elastic-load-balancer/</link>
+				<pubDate>Thu, 11 May 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202305-aws-fundamental-elastic-load-balancer/</guid>
+				<description>&lt;p&gt;&lt;a href=&#34;https://aws.amazon.com/elasticloadbalancing/&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Elastic Load Balancer&#xD;&#xA;&lt;/a&gt;&#xD;&#xA; (ELB) achieves traffic distribution and load balancing.&lt;br&gt;&#xA;ELB distributes incoming application traffic across multiple targets and virtual devices in one or more Availability Zones(AZ) and generates Access logs.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[AWS Cloud Fundamental Notes] CloudFront</title>
+				<link>https://tech.ray247k.com/en/blog/202305-aws-fundamental-cloudfront/</link>
+				<pubDate>Wed, 03 May 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202305-aws-fundamental-cloudfront/</guid>
+				<description>&lt;p&gt;&lt;a href=&#34;https://aws.amazon.com/cloudfront/&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Amazon CloudFront&#xD;&#xA;&lt;/a&gt;&#xD;&#xA; is a content delivery network (CDN) service that addresses DDoS and repetitive access to static resources.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[AWS Cloud Fundamental Notes] CloudWatch and CloudTrail</title>
+				<link>https://tech.ray247k.com/en/blog/202304-aws-fundamental-cloudwatch-and-cloudtrail/</link>
+				<pubDate>Tue, 25 Apr 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202304-aws-fundamental-cloudwatch-and-cloudtrail/</guid>
+				<description>&lt;p&gt;Amazon CloudWatch monitors your Amazon Web Services (AWS) resources and the applications you run on AWS in real-time.&lt;br&gt;&#xA;AWS CloudTrail is an AWS service that helps you enable governance, compliance, and operational and risk auditing of your AWS account.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[AWS Cloud Fundamental Notes] Route 53</title>
+				<link>https://tech.ray247k.com/en/blog/202304-aws-fundamental-route53/</link>
+				<pubDate>Sat, 15 Apr 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202304-aws-fundamental-route53/</guid>
+				<description>&lt;p&gt;Provide domain name purchase, domain name resolution forwarding, system health checks, and traffic forwarding.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[AWS Cloud Fundamental Notes] RDS</title>
+				<link>https://tech.ray247k.com/en/blog/202304-aws-fundamental-rds/</link>
+				<pubDate>Wed, 05 Apr 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202304-aws-fundamental-rds/</guid>
+				<description>&lt;p&gt;Setting up, operating, and scaling relational databases in the cloud is just a few clicks away.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[AWS Cloud Fundamental Notes] S3</title>
+				<link>https://tech.ray247k.com/en/blog/202303-aws-fundamental-s3/</link>
+				<pubDate>Sat, 25 Mar 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202303-aws-fundamental-s3/</guid>
+				<description>&lt;p&gt;Scalable, available, secure, and efficient cloud object storage&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[AWS Cloud Fundamental Notes] EC2</title>
+				<link>https://tech.ray247k.com/en/blog/202303-aws-fundamental-ec2/</link>
+				<pubDate>Mon, 20 Mar 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202303-aws-fundamental-ec2/</guid>
+				<description>&lt;p&gt;Allow users to rent cloud computers to run their applications.&lt;br&gt;&#xA;EC2 allows users to flexibly run their Amazon machine images (AMIs) by providing web services, enabling users to run any software or application they desire on these virtual machines.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[AWS Cloud Fundamental Notes] VPC</title>
+				<link>https://tech.ray247k.com/en/blog/202303-aws-fundamental-vpc/</link>
+				<pubDate>Fri, 10 Mar 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202303-aws-fundamental-vpc/</guid>
+				<description>&lt;p&gt;Amazon Virtual Private Cloud (Amazon VPC) allows you to have full control over a virtual networking environment, including resource placement, connectivity, and security.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[AWS Cloud Fundamental Notes] IAM</title>
+				<link>https://tech.ray247k.com/en/blog/202301-aws-fundamental-iam/</link>
+				<pubDate>Tue, 10 Jan 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202301-aws-fundamental-iam/</guid>
+				<description>&lt;p&gt;Due to the excessive power of root permissions, it is necessary to divide them into multiple users and groups to set permissions.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://aws.amazon.com/tw/iam/&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;AWS IAM&#xD;&#xA;&lt;/a&gt;&#xD;&#xA;&lt;br&gt;&#xA;&lt;a href=&#34;https://docs.aws.amazon.com/zh_tw/IAM/latest/UserGuide/introduction.html&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;What is IAM?&#xD;&#xA;&lt;/a&gt;&#xD;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://i.imgur.com/OtEOMd4.png&#34; alt=&#34;IAM Architecture&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;operation-mechanism&#34;&gt;Operation Mechanism&lt;/h2&gt;&#xA;&lt;p&gt;The architecture of IAM is as follows:&lt;/p&gt;&#xA;&lt;pre class=&#34;mermaid&#34;&gt;graph LR;&#xD;&#xA;&#xD;&#xA;Policy1--&gt;Permission;&#xD;&#xA;Policy2--&gt;Permission;&#xD;&#xA;Policy3--&gt;Permission;&#xD;&#xA;Permission--&gt;Role;&#xD;&#xA;Permission--&gt;Group;&#xD;&#xA;Group--&gt;User;&#xD;&#xA;User--&gt;Password;&#xD;&#xA;User--&gt;Credentail;&#xD;&#xA;Role--&gt;id1[External Users];&#xD;&#xA;Role--&gt;id2[AWS Internal Services];&#xD;&#xA;&lt;/pre&gt;&#xD;&#xA;&#xD;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;policy&#34;&gt;Policy&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://docs.aws.amazon.com/zh_tw/AWSEC2/latest/UserGuide/iam-policy-structure.html&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Official Documentation&#xD;&#xA;&lt;/a&gt;&#xD;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;When a policy is attached to a user or group, it allows or denies permission for the user to perform specific tasks on specific resources.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Using FFmpeg to convert media files</title>
+				<link>https://tech.ray247k.com/en/blog/202301-ffmpeg-video-convert/</link>
+				<pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202301-ffmpeg-video-convert/</guid>
+				<description>&lt;p&gt;Sometimes, we can use certain methods to download the .M3U8 file and then merge it into a .ts file.&lt;br&gt;&#xA;However, computers usually cannot directly play this format.&lt;br&gt;&#xA;We can use FFmpeg to convert it into a common .mp4 file for easy playback.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[AWS 101] What are SNS and SQS</title>
+				<link>https://tech.ray247k.com/en/blog/202210-aws101-what-is-sns-and-sqs/</link>
+				<pubDate>Thu, 06 Oct 2022 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202210-aws101-what-is-sns-and-sqs/</guid>
+				<description>&lt;p&gt;Amazon Simple Queue Service (SQS) and Amazon Simple Notification Service (SNS) may look similar.&lt;br&gt;&#xA;But in reality, they are quite different.&lt;/p&gt;&#xA;&lt;p&gt;To better clarify the differences between the two, let&amp;rsquo;s compare the notes on both services side by side.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Serverless 101</title>
+				<link>https://tech.ray247k.com/en/blog/202210-what-is-serverless/</link>
+				<pubDate>Tue, 04 Oct 2022 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202210-what-is-serverless/</guid>
+				<description>&lt;p&gt;Since our company&amp;rsquo;s services are built on AWS and heavily rely on various serverless computing services,&lt;br&gt;&#xA;I had no prior experience in this area.&#xA;This series serves as a compilation of notes for me,&lt;br&gt;&#xA;and its content may be subject to constant revisions in the future.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Interacting with smart contracts using Golang</title>
+				<link>https://tech.ray247k.com/en/blog/202207-go-ethereum-abigen/</link>
+				<pubDate>Sat, 09 Jul 2022 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202207-go-ethereum-abigen/</guid>
+				<description>&lt;p&gt;Previously, I was calling Smart Contracts through PHP, which raised two issues.&lt;br&gt;&#xA;One was the slowness, and the other was the lack of maintenance of the package.&lt;br&gt;&#xA;Fortunately, Golang provides an official package that is both fast and solves these two problems.&lt;br&gt;&#xA;This article explains how to convert existing Smart Contract ABIs into a Go package for interacting with contracts.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Create a Redis service on GCP</title>
+				<link>https://tech.ray247k.com/en/blog/202206-gcp-redis/</link>
+				<pubDate>Thu, 30 Jun 2022 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202206-gcp-redis/</guid>
+				<description>&lt;p&gt;GCP offers the Google Cloud MemoryStore service for creating Redis or Memcached caching machine services.&lt;br&gt;&#xA;The pricing is similar to that of setting up a database.&lt;br&gt;&#xA;I thought it would be as inexpensive as using virtual machines (VMs).&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Make your computer be temporarily accessible on the internet. - Ngrok</title>
+				<link>https://tech.ray247k.com/en/blog/202204-ngrok/</link>
+				<pubDate>Sat, 23 Apr 2022 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202204-ngrok/</guid>
+				<description>&lt;p&gt;In development, it is often encountered that testing on the local machine requires a publicly accessible URL for services.&lt;br&gt;&#xA;Or webhooks to use as a callback. Moreover, these services often require HTTPS certification.&lt;br&gt;&#xA;Are there any other options besides setting up a cloud server for this purpose?&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Jenkins CI/CD 04 - Using SSH Commands to Operate another VM Instance in GCP</title>
+				<link>https://tech.ray247k.com/en/blog/202204-jenkins-cicd-4-ssh-remote-server/</link>
+				<pubDate>Wed, 13 Apr 2022 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202204-jenkins-cicd-4-ssh-remote-server/</guid>
+				<description>&lt;p&gt;In a non-automated deployment scenario, manually connecting to the server host&amp;rsquo;s internals is required every time.&lt;br&gt;&#xA;Executing deployment commands or running deployment command executables not only involves inconvenience but also carries the risk of human error.&lt;br&gt;&#xA;With Jenkins&amp;rsquo; pipeline, we can replace manual execution, making deployments easier and more pleasant.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Jenkins CI/CD 03 - Building and Pushing Docker Images to GCR</title>
+				<link>https://tech.ray247k.com/en/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/</link>
+				<pubDate>Fri, 08 Apr 2022 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/</guid>
+				<description>&lt;p&gt;Google Container Registry is a service provided by Google for storing, managing, and securing Docker container images.&lt;br&gt;&#xA;The objective at hand is to package a Docker image and push it to Google Cloud Platform (GCP) using the &amp;lsquo;gcloud&amp;rsquo; command for future deployment purposes.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Scalable Server 02 Load Balancing</title>
+				<link>https://tech.ray247k.com/en/blog/202204-gcp-load-balancing/</link>
+				<pubDate>Tue, 05 Apr 2022 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202204-gcp-load-balancing/</guid>
+				<description>&lt;p&gt;In the previous post &lt;a href=&#34;https://tech.ray247k.com/en/blog/202203-gcp-auto-scaling/&#34;&#xD;&#xA;   &#xD;&#xA;   &gt;Scalable Server 01 Auto Scaling&#xD;&#xA;&lt;/a&gt;&#xD;&#xA;, it was mentioned that we need to configure a set of Load Balancers to distribute internet requests to different server hosts.&lt;br&gt;&#xA;This allows us to dynamically adjust the number of hosts based on traffic and maintain stable service operations.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Introducing Laravel Sail and Basic Operations</title>
+				<link>https://tech.ray247k.com/en/blog/202204-laravel-sail/</link>
+				<pubDate>Sat, 02 Apr 2022 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202204-laravel-sail/</guid>
+				<description>&lt;p&gt;In the context of Laravel development environment setup, both official and unofficial sources offer a plethora of approaches.&lt;br&gt;&#xA;This time, we will be introducing a package introduced after Laravel 8: &lt;a href=&#34;https://laravel.com/docs/9.x/sail&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Laravel Sail&#xD;&#xA;&lt;/a&gt;&#xD;&#xA;.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Jenkins CI/CD 02 Basic Pipeline Setup and GitHub Integration</title>
+				<link>https://tech.ray247k.com/en/blog/202203-jenkins-cicd-2-basic-pipeline/</link>
+				<pubDate>Wed, 30 Mar 2022 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202203-jenkins-cicd-2-basic-pipeline/</guid>
+				<description>&lt;p&gt;In &lt;a href=&#34;https://www.jenkins.io/&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Jenkins&#xD;&#xA;&lt;/a&gt;&#xD;&#xA;, the build process is known as a pipeline.&lt;br&gt;&#xA;It can also be triggered through webhooks, offering various triggering and execution methods.&lt;br&gt;&#xA;Below, we&amp;rsquo;ll demonstrate how to integrate GitHub webhooks and provide common trigger condition examples.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Scalable Server 01 Auto Scaling</title>
+				<link>https://tech.ray247k.com/en/blog/202203-gcp-auto-scaling/</link>
+				<pubDate>Sun, 27 Mar 2022 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202203-gcp-auto-scaling/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Jenkins CI/CD 01 Installation</title>
+				<link>https://tech.ray247k.com/en/blog/202203-jenkins-cicd-1-installation/</link>
+				<pubDate>Wed, 16 Mar 2022 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202203-jenkins-cicd-1-installation/</guid>
+				<description>&lt;p&gt;Create Your Own Automated Deployment Service with &lt;a href=&#34;https://www.jenkins.io/&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Jenkins&#xD;&#xA;&lt;/a&gt;&#xD;&#xA;&lt;br&gt;&#xA;Jenkins is a Java-based CI/CD system tool that we are exploring in this tutorial,&lt;br&gt;&#xA;following our previous introduction to &lt;a href=&#34;https://tech.ray247k.com/tags/drone/&#34;&#xD;&#xA;   &#xD;&#xA;   &gt;Drone&#xD;&#xA;&lt;/a&gt;&#xD;&#xA;&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Laravel Queue Usage</title>
+				<link>https://tech.ray247k.com/en/blog/202203-laravel-queue/</link>
+				<pubDate>Sat, 05 Mar 2022 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202203-laravel-queue/</guid>
+				<description>&lt;p&gt;The purpose of queues is to defer processing of a time-consuming task that doesn&amp;rsquo;t require immediate completion.&#xA;Like sending emails, users don&amp;rsquo;t need to wait for the email to be sent successfully before the next step.&lt;br&gt;&#xA;Allowing the application to respond more quickly to web requests and smooth user experience.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Enhancing SEO for SPA with Prerender</title>
+				<link>https://tech.ray247k.com/en/blog/202201-using-prerender-improve-spa-seo/</link>
+				<pubDate>Mon, 31 Jan 2022 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202201-using-prerender-improve-spa-seo/</guid>
+				<description>&lt;p&gt;A Single Page Application (SPA) website utilizes Client-Side Rendering (CSR) to render its content.&lt;br&gt;&#xA;Upon initial loading, the server only returns the root component, and subsequent data is fetched through API interactions.&lt;br&gt;&#xA;However, for web crawlers responsible for ranking websites, the content obtained during crawling may appear empty.&lt;br&gt;&#xA;While Google claims that their crawler executes JavaScript, other search engines may not necessarily do so.&lt;br&gt;&#xA;To address this issue, a Prerender service is employed to achieve pre-rendering for web crawlers, optimizing search results.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Using PHP CodeSniffer to Check Coding Style</title>
+				<link>https://tech.ray247k.com/en/blog/202201-phpcs/</link>
+				<pubDate>Thu, 20 Jan 2022 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202201-phpcs/</guid>
+				<description>&lt;p&gt;Checking code conformity with standards using phpcs (PHP Code Sniffer)&lt;br&gt;&#xA;Automatically correcting non-conforming code using phpcbf (PHP Code Beautifier and Fixer)&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Successfully launched a VM on GCP on the first try</title>
+				<link>https://tech.ray247k.com/en/blog/202201-gcp-vm-basic/</link>
+				<pubDate>Sat, 15 Jan 2022 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202201-gcp-vm-basic/</guid>
+				<description>&lt;p&gt;How to launch a VM virtual machine on Google Cloud Platform (GCP)?&lt;br&gt;&#xA;It may sound complex, but in practice, it&amp;rsquo;s quite straightforward.&lt;br&gt;&#xA;If you haven&amp;rsquo;t had any experience with setting up a host before, this time, we&amp;rsquo;ll document the steps for you.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[A Tour of Go Study Notes] 09 concurrency</title>
+				<link>https://tech.ray247k.com/en/blog/202112-a-tour-of-go-09-concurrency/</link>
+				<pubDate>Sat, 25 Dec 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202112-a-tour-of-go-09-concurrency/</guid>
+				<description>&lt;p&gt;Entering the world of Golang, we first explore basic Golang usage using the official tutorial: &lt;a href=&#34;https://tour.golang.org/welcome/1&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;A Tour of Go&#xD;&#xA;&lt;/a&gt;&#xD;&#xA;.&lt;br&gt;&#xA;This section introduces the powerful concurrency feature of Go.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[A Tour of Go Study Notes] 08 interface and error</title>
+				<link>https://tech.ray247k.com/en/blog/202112-a-tour-of-go-08-interface-and-error/</link>
+				<pubDate>Sat, 18 Dec 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202112-a-tour-of-go-08-interface-and-error/</guid>
+				<description>&lt;p&gt;Entering the world of Golang, we first explore the basics of Golang using the official tutorial: &lt;a href=&#34;https://tour.golang.org/welcome/1&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;A Tour of Go&#xD;&#xA;&lt;/a&gt;&#xD;&#xA;.&lt;br&gt;&#xA;This piece introduces interfaces and errors.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[A Tour of Go Study Notes] 07 method</title>
+				<link>https://tech.ray247k.com/en/blog/202112-a-tour-of-go-07-method/</link>
+				<pubDate>Thu, 16 Dec 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202112-a-tour-of-go-07-method/</guid>
+				<description>&lt;p&gt;Entering the world of Golang, we first acquaint ourselves with basic Golang usage using the official tutorial: &lt;a href=&#34;https://tour.golang.org/welcome/1&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;A Tour of Go&#xD;&#xA;&lt;/a&gt;&#xD;&#xA;.&lt;br&gt;&#xA;This article introduces methods in Go.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Importing Excel or CSV Files into Laravel</title>
+				<link>https://tech.ray247k.com/en/blog/202112-laravel-excel-import/</link>
+				<pubDate>Sat, 11 Dec 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202112-laravel-excel-import/</guid>
+				<description>&lt;p&gt;When the backend interface isn&amp;rsquo;t fully developed or when users have extensive data that they prefer not to input manually, opting for a bulk import via a form becomes essential.&lt;br&gt;&#xA;This is where the Laravel-excel package comes into play.&#xA;Additionally, it&amp;rsquo;s worth discussing the challenges encountered when importing a large volume of data at once.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[A Tour of Go Study Notes] 06 Range, Map, and Function</title>
+				<link>https://tech.ray247k.com/en/blog/202112-a-tour-of-go-06-range-and-map/</link>
+				<pubDate>Wed, 08 Dec 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202112-a-tour-of-go-06-range-and-map/</guid>
+				<description>&lt;p&gt;Entering the world of Golang, we first acquaint ourselves with basic Golang usage using the official tutorial: &lt;a href=&#34;https://tour.golang.org/welcome/1&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;A Tour of Go&#xD;&#xA;&lt;/a&gt;&#xD;&#xA;.&lt;br&gt;&#xA;This article introduces Range, Map, and Function.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Operating Google Forms with GAS (Google App Script)</title>
+				<link>https://tech.ray247k.com/en/blog/202111-operate-google-sheet-via-google-app-script/</link>
+				<pubDate>Sun, 28 Nov 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202111-operate-google-sheet-via-google-app-script/</guid>
+				<description>&lt;p&gt;When the back office isn&amp;rsquo;t fully established but the frontend is already live, there&amp;rsquo;s a desire to enable non-programmers to autonomously adjust the website&amp;rsquo;s content.&lt;br&gt;&#xA;Alternatively, in cases where temporary content needs to be recorded without creating a dedicated database table, we often resort to managing this data through Google Forms.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[A Tour of Go Study Notes] 05 Arrays and Slices</title>
+				<link>https://tech.ray247k.com/en/blog/202111-a-tour-of-go-05-array-and-slice/</link>
+				<pubDate>Tue, 23 Nov 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202111-a-tour-of-go-05-array-and-slice/</guid>
+				<description>&lt;p&gt;Let&amp;rsquo;s use the official tutorial, &lt;a href=&#34;https://tour.golang.org/welcome/1&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;A Tour of Go&#xD;&#xA;&lt;/a&gt;&#xD;&#xA;, to get familiar with basic Golang usage.&lt;br&gt;&#xA;This piece introduces the concepts of arrays and slices.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[A Tour of Go Study Notes] 04 Pointers and Structs</title>
+				<link>https://tech.ray247k.com/en/blog/202111-a-tour-of-go-04-pointer-and-struct/</link>
+				<pubDate>Wed, 17 Nov 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202111-a-tour-of-go-04-pointer-and-struct/</guid>
+				<description>&lt;p&gt;Entering the world of Golang, we first explore the basic usage of Golang using the official tutorial: &lt;a href=&#34;https://tour.golang.org/welcome/1&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;A Tour of Go&#xD;&#xA;&lt;/a&gt;&#xD;&#xA;.&lt;br&gt;&#xA;This article introduces the usage of pointers and structs.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[A Tour of Go Study Notes] 03 Flow Control</title>
+				<link>https://tech.ray247k.com/en/blog/202111-a-tour-of-go-03-flow-control-statements/</link>
+				<pubDate>Sun, 14 Nov 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202111-a-tour-of-go-03-flow-control-statements/</guid>
+				<description>&lt;p&gt;Entering the world of Golang, we first use the official tutorial: &lt;a href=&#34;https://tour.golang.org/welcome/1&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;A Tour of Go&#xD;&#xA;&lt;/a&gt;&#xD;&#xA; to learn the basics of using Golang.&lt;br&gt;&#xA;This article is a note on flow control, explaining some concepts like if, else, for, switch, and defer.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[A Tour of Go Study Notes] 02 Variables and Types</title>
+				<link>https://tech.ray247k.com/en/blog/202111-a-tour-of-go-02-variables-and-types/</link>
+				<pubDate>Fri, 12 Nov 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202111-a-tour-of-go-02-variables-and-types/</guid>
+				<description>&lt;p&gt;Entering the world of Golang, we first use the official tutorial: &lt;a href=&#34;https://tour.golang.org/welcome/1&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;A Tour of Go&#xD;&#xA;&lt;/a&gt;&#xD;&#xA; to learn the basics of using Golang.&lt;br&gt;&#xA;This article is a note on variables and types.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[A Tour of Go Study Notes] 01 Packages and Functions</title>
+				<link>https://tech.ray247k.com/en/blog/202111-a-tour-of-go-01-packages-and-functions/</link>
+				<pubDate>Wed, 10 Nov 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202111-a-tour-of-go-01-packages-and-functions/</guid>
+				<description>&lt;p&gt;Entering the world of Golang for beginners, we start with the basics of Golang using the official tutorial: &lt;a href=&#34;https://tour.golang.org/welcome/1&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;A Tour of Go&#xD;&#xA;&lt;/a&gt;&#xD;&#xA;.&lt;br&gt;&#xA;This piece covers the fundamental aspects of basic packages and functions in Golang.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[Git Tutorial] Configuring Global gitignore Locally</title>
+				<link>https://tech.ray247k.com/en/blog/202111-git-global-gitignore/</link>
+				<pubDate>Sat, 06 Nov 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202111-git-global-gitignore/</guid>
+				<description>&lt;p&gt;Do you include automatically generated editor configuration files in your .gitignore while developing a project?&lt;br&gt;&#xA;Why add your personal environment settings to the project?&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[Discord Bot] 02. Dice Rolling Bot</title>
+				<link>https://tech.ray247k.com/en/blog/202110-make-discord-chatbot-02-roll-dice-bot/</link>
+				<pubDate>Thu, 28 Oct 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202110-make-discord-chatbot-02-roll-dice-bot/</guid>
+				<description>&lt;p&gt;Do you know about TTRPG? One of the most well-known is probably Dungeons &amp;amp; Dragons (D&amp;amp;D).&lt;br&gt;&#xA;After watching hololive EN play, I thought, &amp;ldquo;Let&amp;rsquo;s create a dice rolling bot and give it a try.&amp;rdquo;&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[Discord Bot] 01. Creating a Basic Bot</title>
+				<link>https://tech.ray247k.com/en/blog/202110-make-discord-chatbot-01-set-up/</link>
+				<pubDate>Wed, 20 Oct 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202110-make-discord-chatbot-01-set-up/</guid>
+				<description>&lt;p&gt;Just for fun, let&amp;rsquo;s write something I haven&amp;rsquo;t written before.&lt;br&gt;&#xA;Lately, I&amp;rsquo;ve been active on Discord, so I&amp;rsquo;ve decided to create a Discord ChatBot.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Guarding Code Quality with GrumPHP</title>
+				<link>https://tech.ray247k.com/en/blog/202107-grumphp-a-php-code-quality-tool/</link>
+				<pubDate>Sat, 31 Jul 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202107-grumphp-a-php-code-quality-tool/</guid>
+				<description>&lt;p&gt;In a collaborative development environment, Code Review is a crucial process.&lt;br&gt;&#xA;If someone writes code that violates rules or fails tests, it can lead to project errors.&lt;br&gt;&#xA;Manual syntax checks or running tests manually are time-consuming and not fashionable.&lt;br&gt;&#xA;These tasks should be automated, and that&amp;rsquo;s where &lt;code&gt;GrumPHP&lt;/code&gt; comes in.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Develop Your Own Laravel Package</title>
+				<link>https://tech.ray247k.com/en/blog/202107-laravel-package-development/</link>
+				<pubDate>Sun, 25 Jul 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202107-laravel-package-development/</guid>
+				<description>&lt;p&gt;The Laravel ecosystem offers numerous convenient packages for various purposes.&lt;br&gt;&#xA;However, what if you can&amp;rsquo;t find a suitable package or need to create a company-specific one?&lt;br&gt;&#xA;This article demonstrates how to develop a package locally and install it in a Laravel project using composer, ensuring smooth development and testing.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Setting up Laravel Development Environment with Docker</title>
+				<link>https://tech.ray247k.com/en/blog/202107-laravel-environment-with-docker/</link>
+				<pubDate>Sat, 24 Jul 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202107-laravel-environment-with-docker/</guid>
+				<description>&lt;p&gt;In the past, developing Laravel projects locally mostly involved installing the required services directly on the machine.&lt;br&gt;&#xA;Later, the recommended development environment by the official documentation, &lt;a href=&#34;https://github.com/laravel/homestead&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Homestead&#xD;&#xA;&lt;/a&gt;&#xD;&#xA;, became a popular choice.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Environment Initialization and Server Configuration (Docker &#43; Laravel)</title>
+				<link>https://tech.ray247k.com/en/blog/202107-initialize-server-setting-with-docker-and-laravel/</link>
+				<pubDate>Sat, 17 Jul 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202107-initialize-server-setting-with-docker-and-laravel/</guid>
+				<description>&lt;p&gt;If you are setting up a new cloud server and want to create a Laravel development environment using Docker on it.&lt;br&gt;&#xA;And run Laravel&amp;rsquo;s common composer and artisan commands remotely, here&amp;rsquo;s a guide for you.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[CI/CD with Drone 101] 04 Introduction to Drone Runners</title>
+				<link>https://tech.ray247k.com/en/blog/202107-drone-cicd-4-advanced-runner/</link>
+				<pubDate>Fri, 09 Jul 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202107-drone-cicd-4-advanced-runner/</guid>
+				<description>&lt;p&gt;In our previous post, &amp;ldquo;&lt;a href=&#34;https://tech.ray247k.com/en/blog/202106-drone-cicd-1-basic-usage/&#34;&#xD;&#xA;   &#xD;&#xA;   &gt;[CI/CD with Drone 101] 01 Basic Service Setup and GitHub Integration&#xD;&#xA;&lt;/a&gt;&#xD;&#xA;&amp;rdquo; there is an example &lt;code&gt;docker-compose.yml&lt;/code&gt; file that creates two Docker runners: &lt;code&gt;drone_runner_docker&lt;/code&gt; and &lt;code&gt;drone-runner-ssh&lt;/code&gt;.&lt;br&gt;&#xA;However, in &amp;ldquo;&lt;a href=&#34;https://tech.ray247k.com/en/blog/202106-drone-cicd-2-advanced-pipeline-configuration/&#34;&#xD;&#xA;   &#xD;&#xA;   &gt;[CI/CD with Drone 101] 02 Setting Deployment Trigger Conditions (Pipeline)&#xD;&#xA;&lt;/a&gt;&#xD;&#xA;&amp;rdquo; only the Docker runner is used.&lt;br&gt;&#xA;This post will introduce both runners, along with other runners mentioned on the official website.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[CI/CD with Drone 101] 03 Deployment Schedule Configuration and Permission Management</title>
+				<link>https://tech.ray247k.com/en/blog/202106-drone-cicd-3-advanced-cron-job/</link>
+				<pubDate>Mon, 14 Jun 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202106-drone-cicd-3-advanced-cron-job/</guid>
+				<description>&lt;p&gt;Utilizing &lt;a href=&#34;https://www.drone.io/&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Drone&#xD;&#xA;&lt;/a&gt;&#xD;&#xA; to establish a custom automated deployment service.&lt;br&gt;&#xA;Drone is a CI/CD system tool developed in Golang.&lt;br&gt;&#xA;This tutorial focuses on configuring deployment schedules and managing permissions.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[CI/CD with Drone 101] 02 Setting Deployment Trigger Conditions (Pipeline)</title>
+				<link>https://tech.ray247k.com/en/blog/202106-drone-cicd-2-advanced-pipeline-configuration/</link>
+				<pubDate>Sat, 12 Jun 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202106-drone-cicd-2-advanced-pipeline-configuration/</guid>
+				<description>&lt;p&gt;Utilizing &lt;a href=&#34;https://www.drone.io/&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Drone&#xD;&#xA;&lt;/a&gt;&#xD;&#xA; to establish a custom automated deployment service.&lt;br&gt;&#xA;Drone is a CI/CD system tool developed in Golang.&lt;br&gt;&#xA;In this article, we&amp;rsquo;ll configure multiple trigger conditions to initiate different deployment steps under various circumstances.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[CI/CD with Drone 101] 01 Basic Service Setup and GitHub Integration</title>
+				<link>https://tech.ray247k.com/en/blog/202106-drone-cicd-1-basic-usage/</link>
+				<pubDate>Tue, 08 Jun 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202106-drone-cicd-1-basic-usage/</guid>
+				<description>&lt;p&gt;Utilizing &lt;a href=&#34;https://www.drone.io/&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Drone&#xD;&#xA;&lt;/a&gt;&#xD;&#xA; to establish your own automated deployment service.&lt;br&gt;&#xA;Drone is a CI/CD system tool developed in Golang.&lt;br&gt;&#xA;This article covers the configuration of basic services and integration with GitHub.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Common Docker Commands</title>
+				<link>https://tech.ray247k.com/en/blog/202106-docker-common-commands/</link>
+				<pubDate>Sun, 06 Jun 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202106-docker-common-commands/</guid>
+				<description>&lt;p&gt;Some commonly used commands and related parameters on Docker and their usage.&lt;br&gt;&#xA;In actual use, there are definitely more commands than those listed here.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Server Stress Testing - Using Apache Bench</title>
+				<link>https://tech.ray247k.com/en/blog/202105-web-server-stress-testing/</link>
+				<pubDate>Sun, 23 May 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202105-web-server-stress-testing/</guid>
+				<description>&lt;p&gt;Server stress testing is a must before going live, no exceptions!&lt;br&gt;&#xA;Just imagine you&amp;rsquo;ve been working overtime for months, the system goes online.&lt;br&gt;&#xA;And you&amp;rsquo;re celebrating with pizza and cocktail, only to find out suddenly the server crashes due to overwhelming traffic!&lt;br&gt;&#xA;That&amp;rsquo;s why conducting stress tests beforehand makes a good system!&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Setting Up Subdomain with Cloudflare and Customizing GitHub Page URL</title>
+				<link>https://tech.ray247k.com/en/blog/202105-set-custom-domain-for-github-page/</link>
+				<pubDate>Tue, 18 May 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202105-set-custom-domain-for-github-page/</guid>
+				<description>&lt;p&gt;Previously, I purchased my own domain.Now, I want to use Cloudflare DNS service to set up a subdomain.&lt;br&gt;&#xA;And assign it to a specified GitHub Page project as a customized URL.&lt;br&gt;&#xA;Once you master this skill, with just one main domain, you can generate different subdomain URLs as needed.&lt;br&gt;&#xA;All major DNS service providers offer this feature, and this article uses Cloudflare as an example.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Setting Up Cloudflare Free CDN and Enabling DNS Hosting</title>
+				<link>https://tech.ray247k.com/en/blog/202105-cloudflare-dns-add-domain/</link>
+				<pubDate>Sun, 16 May 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202105-cloudflare-dns-add-domain/</guid>
+				<description>&lt;p&gt;Google Domains service already provides Domain Name System (DNS) services, allowing you to manage your domain, including adding subdomains.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>How to Purchase Your Own Domain from Google Domains</title>
+				<link>https://tech.ray247k.com/en/blog/202105-how-to-buy-a-domain-from-google/</link>
+				<pubDate>Sat, 15 May 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202105-how-to-buy-a-domain-from-google/</guid>
+				<description>&lt;p&gt;Previously, I&amp;rsquo;ve been using free blogging platforms like Blogger.&lt;br&gt;&#xA;However, with the rise of personal branding awareness in recent years and feeling limited by the features of the original blog,&lt;br&gt;&#xA;not to mention the inconvenience of moving, and the inability to customize SEO and embed tracking codes,&lt;br&gt;&#xA;I felt the need to take matters into my own hands.&lt;br&gt;&#xA;Having worked in the media industry, I realized that if you want something done right, you have to do it yourself.&lt;br&gt;&#xA;I initially moved from Blogger to Medium, then back to Blogger, finding the transition quite cumbersome.&lt;br&gt;&#xA;Furthermore, the formatting of code content often gets distorted, and I wanted to record everything using Markdown syntax.&lt;br&gt;&#xA;This led me to consider self-hosting, partly as a platform to showcase my skills.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Use ssh key login remote server</title>
+				<link>https://tech.ray247k.com/en/blog/202104-use-ssh-key-login-remote-server/</link>
+				<pubDate>Sun, 25 Apr 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202104-use-ssh-key-login-remote-server/</guid>
+				<description>&lt;p&gt;Normally, logging into a server involves using a username and password,&lt;br&gt;&#xA;but passwords can be compromised through interception or sharing.&lt;br&gt;&#xA;The security level is not as robust as using SSH keys, which also eliminate the need for manual password entry each time.&lt;/p&gt;&#xA;&lt;h1 id=&#34;creating-ssh-keys-for-login&#34;&gt;Creating SSH Keys for Login&lt;/h1&gt;&#xA;&lt;h2 id=&#34;generating-ssh-keys-on-the-client-side-using-the-command&#34;&gt;Generating SSH keys on the client side using the command:&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ssh-keygen&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;&#xA;&lt;p&gt;Note: SSH keys should be in RSA format; if using OPENSSH, errors may persist.&lt;br&gt;&#xA;Reference: &lt;a href=&#34;https://ray247k.blogspot.com/2019/03/mac-majave-10141-ssh-keygen.html&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;mac majave 10.14.1 ssh-keygen Key Format Issue&#xD;&#xA;&lt;/a&gt;&#xD;&#xA;&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Enable docker service in remote server</title>
+				<link>https://tech.ray247k.com/en/blog/202103-enable-docker-service-in-remote-server/</link>
+				<pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202103-enable-docker-service-in-remote-server/</guid>
+				<description>&lt;p&gt;Step-by-step guide for enabling Docker and Docker-compose services on a new cloud host.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Setting up postgreSQL database with docker</title>
+				<link>https://tech.ray247k.com/en/blog/202103-setting-up-postgresql-database-with-docker/</link>
+				<pubDate>Wed, 03 Mar 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202103-setting-up-postgresql-database-with-docker/</guid>
+				<description>&lt;p&gt;Setting up a PostgreSQL Database with Docker&lt;br&gt;&#xA;Including &lt;code&gt;Database Setup&lt;/code&gt;, &lt;code&gt;Data Persistence&lt;/code&gt;, &lt;code&gt;Using GUI to Operate the Database&lt;/code&gt;&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Reverse Proxy Setup in Docker Environment</title>
+				<link>https://tech.ray247k.com/en/blog/202102-reverse-proxy-in-docker-service/</link>
+				<pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202102-reverse-proxy-in-docker-service/</guid>
+				<description>&lt;p&gt;This article provides a basic explanation of reverse proxies and how to set them up in a Docker container environment.&lt;/p&gt;&#xA;&lt;h1 id=&#34;reverse-proxy-overview&#34;&gt;Reverse Proxy Overview&lt;/h1&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.jyt0532.com/2019/11/18/proxy-reverse-proxy/&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;System Design - Forward Proxy vs Reverse Proxy&#xD;&#xA;&lt;/a&gt;&#xD;&#xA;&lt;/p&gt;&#xA;&lt;h1 id=&#34;different-physical-hosts&#34;&gt;Different Physical Hosts&lt;/h1&gt;&#xA;&lt;h2 id=&#34;using-nginx-proxy-pass&#34;&gt;Using nginx proxy-pass&lt;/h2&gt;&#xA;&lt;h3 id=&#34;objective&#34;&gt;Objective&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Users visit a specified web page path &lt;code&gt;/new_path&lt;/code&gt; or the root &lt;code&gt;/&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;Configure the test machine&amp;rsquo;s nginx proxy_pass to redirect to another host&amp;rsquo;s project under the same path&lt;/li&gt;&#xA;&lt;li&gt;Ensure that the user&amp;rsquo;s IP address is not replaced by the proxy server&amp;rsquo;s IP&lt;/li&gt;&#xA;&lt;li&gt;Ensure that the project on the target server can read cookies&lt;/li&gt;&#xA;&lt;li&gt;Ensure that the payload of POST requests is forwarded&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;configure-nginx-config&#34;&gt;Configure nginx config&lt;/h3&gt;&#xA;&lt;h4 id=&#34;configuration-on-the-first-hosts-nginx&#34;&gt;Configuration on the First Host&amp;rsquo;s nginx&lt;/h4&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-nginx&#34; data-lang=&#34;nginx&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Forward all requests to domain/new_path to another host&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;location&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;/new_path&lt;/span&gt; {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# Proxy to the specified URL&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;proxy_pass&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;http://laravel55.test.com&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# Send the user&amp;#39;s real IP to the target host&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;proxy_set_header&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;X-Real-IP&lt;/span&gt; $remote_addr;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# Set the server as the original server before the proxy, otherwise HTTP_HOST will become the address of the proxy server&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;proxy_set_header&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;Host&lt;/span&gt; $host;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# Set cookie forwarding&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;proxy_set_header&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;Cookie&lt;/span&gt; $http_cookie;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# Identify the original client&amp;#39;s IP&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;proxy_set_header&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;X-Forwarded-Host&lt;/span&gt; $host;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# Record each proxy passed through by the client&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;proxy_set_header&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;X-Forwarded-For&lt;/span&gt; $proxy_add_x_forwarded_for;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# Identify the network connection protocol&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;proxy_set_header&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;X-Forwarded-Proto&lt;/span&gt; $scheme;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# Hide server information&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;proxy_hide_header&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;Server&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;proxy_hide_header&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;X-Powered-By&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# Increase space due to additional headers&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;proxy_headers_hash_bucket_size&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;128&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;proxy_headers_hash_max_size&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;512&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;configuration-on-the-second-hosts-nginx&#34;&gt;Configuration on the Second Host&amp;rsquo;s nginx&lt;/h4&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-nginx&#34; data-lang=&#34;nginx&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;server&lt;/span&gt; {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;listen&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;80&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;server_name&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;ray200&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;root&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;/home/toc/www/laravel55/public&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;access_log&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;/var/log/nginx/www/laravel55.access.log&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;error_log&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;/var/log/nginx/www/laravel55.error.log&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;index&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;index.php&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;location&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;/&lt;/span&gt; {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;try_files&lt;/span&gt; $uri $uri/ &lt;span style=&#34;color:#e6db74&#34;&gt;/index.php&lt;/span&gt;$is_args$args;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;location&lt;/span&gt; ~&lt;span style=&#34;color:#e6db74&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;\.(jpg|jpeg|gif|css|png|js|ico|html|svg|ttf|woff|woff2|eotD)&lt;/span&gt;$ {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;access_log&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;off&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;expires&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;max&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;location&lt;/span&gt; ~ &lt;span style=&#34;color:#e6db74&#34;&gt;\.php$&lt;/span&gt; {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;include&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;snippets/fastcgi-php.conf&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;fastcgi_pass&lt;/span&gt; 127.0.0.1:&lt;span style=&#34;color:#ae81ff&#34;&gt;9000&lt;/span&gt;; &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;note&#34;&gt;Note&lt;/h4&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;server_name&lt;/code&gt; must match the domain to which proxy_pass redirects.&lt;br&gt;&#xA;Otherwise, the request will go to the default server_name.&lt;/li&gt;&#xA;&lt;li&gt;Modify the method of determining the real IP address in the program to read &lt;code&gt;x-real-ip&lt;/code&gt; from the header.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;verify-cookie-reading&#34;&gt;Verify Cookie Reading&lt;/h3&gt;&#xA;&lt;p&gt;If the nginx configuration includes &lt;code&gt;proxy_set_header Cookie $http_cookie;&lt;/code&gt;, &lt;code&gt;dump($_COOKIE);&lt;/code&gt; will capture cookies,&#xA;but Laravel&amp;rsquo;s &lt;code&gt;request()-&amp;gt;cookie();&lt;/code&gt; won&amp;rsquo;t.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Laravel environment basic settings</title>
+				<link>https://tech.ray247k.com/en/blog/202102-laravel-environment-basic-settings/</link>
+				<pubDate>Thu, 25 Feb 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202102-laravel-environment-basic-settings/</guid>
+				<description>&lt;p&gt;Configuration and package installation required for developing Laravel projects, applicable whether on remote hosts or local machines.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Portainer - A Visual Docker Management Tool</title>
+				<link>https://tech.ray247k.com/en/blog/202101-portainer-open-source-container-management-gui/</link>
+				<pubDate>Sat, 16 Jan 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202101-portainer-open-source-container-management-gui/</guid>
+				<description>&lt;p&gt;Local development mostly involves command-line operations or using Docker&amp;rsquo;s GUI interface for service management.&lt;br&gt;&#xA;&lt;a href=&#34;https://github.com/portainer&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Portainer&#xD;&#xA;&lt;/a&gt;&#xD;&#xA; is an open-source UI tool that allows viewing Docker images and containers,&#xA;and executing actions such as start, stop, restart, and remove. It also enables viewing logs and errors for each container.&lt;br&gt;&#xA;Even individuals without Docker execution permissions can log in using credentials when deploying services on cloud-hosted servers,&#xA;utilizing the visual interface for various Docker service management tasks.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Docker Notes 3 - docker-compose</title>
+				<link>https://tech.ray247k.com/en/blog/202101-docker-note-3-introduce-docker-compose/</link>
+				<pubDate>Tue, 12 Jan 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202101-docker-note-3-introduce-docker-compose/</guid>
+				<description>&lt;p&gt;When it comes to managing multiple Docker containers that are related to each other, using plain Docker commands requires remembering the relationships between containers.&lt;br&gt;&#xA;However, with docker-compose, managing multiple containers becomes straightforward through easy definition of multi-container services.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Docker Notes 2 - Basic Usage</title>
+				<link>https://tech.ray247k.com/en/blog/202101-docker-note-2-basic-usage/</link>
+				<pubDate>Sat, 09 Jan 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202101-docker-note-2-basic-usage/</guid>
+				<description>&lt;p&gt;Containerization isolates different environments, allowing engineers to focus on development without spending excessive effort on environment setup.&lt;br&gt;&#xA;Docker is currently a mature and popular containerization technology.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Docker Notes 1 - Understanding Docker</title>
+				<link>https://tech.ray247k.com/en/blog/202101-docker-note-1-what-is-docker/</link>
+				<pubDate>Sat, 02 Jan 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202101-docker-note-1-what-is-docker/</guid>
+				<description>&lt;p&gt;Containerization isolates different environments, allowing engineers to focus on development without spending excessive effort on environment setup.&lt;br&gt;&#xA;Docker is currently a mature and popular containerization technology.&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

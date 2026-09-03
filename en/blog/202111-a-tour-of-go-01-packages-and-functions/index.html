@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.154.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.165.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="[A Tour of Go Study Notes] 01 Packages and Functions">
   <meta property="og:description" content="Explore the fundamentals of Go language&#39;s basic package structure and functions through the official tutorial.">
   <meta property="description" content="Explore the fundamentals of Go language&#39;s basic package structure and functions through the official tutorial.">
@@ -40,7 +40,7 @@
   
   
             <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/felipec.min.css">
-          <link rel="stylesheet" href="/css/bundle.min.ccd03ac07edc9876d74feb17a3b850cb8df2c519d3854020b6697286637e4cd4.css" integrity="sha256-zNA6wH7cmHbXT&#43;sXo7hQy43yxRnThUAgtmlyhmN&#43;TNQ="><link rel="stylesheet" href="/css/add-on.css">
+          <link rel="stylesheet" href="/css/bundle.min.80aa639b4bec28a35fd95ccaf6d979df779f2693654656a4860eab54153fc258.css" integrity="sha256-gKpjm0vsKKNf2VzK9tl533efJpNlRlakhg6rVBU/wlg="><link rel="stylesheet" href="/css/add-on.css">
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
       <script>
         var doNotTrack = false;
@@ -83,7 +83,7 @@
     "url": "https:\/\/tech.ray247k.com\/",
     "description": "About web development, software engineering, frontend, backend, chatbot, server related topics. - ai,aws,devops,git,golang,laravel,php,python,serverless,third-party services,tools,typescript,version control,web hosting,website operations,",
     "keywords": [
-        "airflow,apache bench,auto scaling,aws,blockchain,cdn,chatbot,ci\/cd,cicd,cloudflare,cloudflare workers,composer,container technology,containerization,csv,devops,discord,dns,docker,docker compose,domain,domain name,drone,excel,ffmpeg,firewall,gas,gcp,gcr,git,github,github page,go,golang,golang, hugo,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,linux,load balancing,nginx,ngrok,openclaw,personal brand,php,php-fpm,phpcbf,phpcs,portainer,postgresql,pre-commit,prerender,proxy,purchase domain,pyenv,pytest,python,queue,rds,redis,search engine optimization,seo,server,serverless,smart contract,ssh,stress testing,subdomain,tdd,typescript,unit test,version control,web hosting,"
+        "airflow,apache bench,auto scaling,aws,blockchain,cdn,chatbot,ci\/cd,cicd,cloudflare,cloudflare workers,composer,container technology,containerization,csv,devops,discord,dns,docker,docker compose,domain,domain name,drone,excel,ffmpeg,firewall,gas,gcp,gcr,git,github,github page,go,golang,golang, hugo,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,linux,load balancing,mwaa,nginx,ngrok,openclaw,personal brand,php,php-fpm,phpcbf,phpcs,portainer,postgresql,pre-commit,prerender,proxy,purchase domain,pyenv,pytest,python,queue,rds,redis,search engine optimization,seo,server,serverless,smart contract,ssh,stress testing,subdomain,tdd,typescript,unit test,version control,web hosting,"
     ]
 }
 </script>
@@ -172,7 +172,7 @@
     "@type": "BlogPosting",
     "articleSection": "blog",
     "name": "[A Tour of Go Study Notes] 01 Packages and Functions",
-    "headline": "\u003cp\u003eEntering the world of Golang for beginners, we start with the basics of Golang using the official tutorial: \u003ca href=\u0022https:\/\/tour.golang.org\/welcome\/1\u0022\n   \n    target=\u0022_blank\u0022 rel=\u0022noreferrer noopener\u0022\u003eA Tour of Go\n\u003c\/a\u003e\n.\u003cbr\u003e\nThis piece covers the fundamental aspects of basic packages and functions in Golang.\u003c\/p\u003e",
+    "headline": "\u003cp\u003eEntering the world of Golang for beginners, we start with the basics of Golang using the official tutorial: \u003ca href=\u0022https:\/\/tour.golang.org\/welcome\/1\u0022\r\n   \r\n    target=\u0022_blank\u0022 rel=\u0022noreferrer noopener\u0022\u003eA Tour of Go\r\n\u003c\/a\u003e\r\n.\u003cbr\u003e\nThis piece covers the fundamental aspects of basic packages and functions in Golang.\u003c\/p\u003e",
     "description": "Explore the fundamentals of Go language\u0027s basic package structure and functions through the official tutorial.",
     "inLanguage": "en",
     "isFamilyFriendly": "true",
@@ -365,7 +365,7 @@
 This piece covers the fundamental aspects of basic packages and functions in Golang.</p>
 <h1 id="hello-world">Hello World</h1>
 <p>The unavoidable <code>Hello World</code> starts off our journey.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
 </span></span><span style="display:flex;"><span>
@@ -379,7 +379,7 @@ The execution begins with the <code>main</code> package.</p>
 <p>In the example below, two packages, <code>fmt</code> and <code>math/rand</code>, are imported.<br>
 According to convention, the package name matches the last element of the import path.<br>
 For instance, methods in <code>math/rand</code> start with <code>package rand</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
 </span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;fmt&#34;</span>
@@ -391,7 +391,7 @@ For instance, methods in <code>math/rand</code> start with <code>package rand</c
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Apart from grouped imports within the <code>import</code> parentheses, another way to import is by writing multiple lines for imports.<br>
 However, grouped imports are considered better practice.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;math&#34;</span>
@@ -405,7 +405,7 @@ For example, <code>Pizza</code> is an exported name, just like <code>Pi</code> i
 However, <code>pizza</code> and <code>pi</code> are not exported names because they don&rsquo;t start with an uppercase letter.</p>
 <p>When using a package, you can only access the content of exported names.<br>
 Non-exported content cannot be accessed externally!</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
 </span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;fmt&#34;</span>
@@ -418,7 +418,7 @@ Non-exported content cannot be accessed externally!</p>
 </span></span></code></pre></div><h1 id="functions">Functions</h1>
 <p>Similar to other languages, a function can accept zero or more parameters.<br>
 The <code>add</code> function in the example takes two <code>int</code> parameters. Note that the type is defined after the parameter.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
 </span></span><span style="display:flex;"><span>
@@ -434,7 +434,7 @@ The <code>add</code> function in the example takes two <code>int</code> paramete
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">&gt;&gt;&gt; 55
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
 </span></span></code></pre></div><p>If consecutive parameters have the same type, you can omit the type declaration for preceding parameters and specify it only for the last one, changing <code>x int, y int</code> to <code>x, y int</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
 </span></span><span style="display:flex;"><span>
@@ -451,7 +451,7 @@ The <code>add</code> function in the example takes two <code>int</code> paramete
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
 </span></span></code></pre></div><h2 id="returning-multiple-values">Returning Multiple Values</h2>
 <p>A function can return any number of results.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
 </span></span><span style="display:flex;"><span>
@@ -472,7 +472,7 @@ Naming the return values at the top of the function treats them as variables wit
 <p>A <code>return</code> statement without any arguments returns the named return values directly, known as a &ldquo;naked&rdquo; return.<br>
 Named return values should have meaningful names and can be used as documentation.<br>
 Naked returns should be used in concise functions as using them in longer functions may impact readability.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
 </span></span><span style="display:flex;"><span>
@@ -540,6 +540,14 @@ Naked returns should be used in concise functions as using them in longer functi
       </header>
       
       <article class="mini-post">
+          
+        <header>
+          <h2><a href="/en/blog/202609-mwaa-connection-encryption-investigation/">Investigating Connection Encryption on Amazon MWAA</a></h2>
+          <time class="published" datetime="2026-09-03 00:00:00 &#43;0000 UTC">September 3, 2026</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
           <a href="/en/blog/202604-deploy-openclaw-ai-for-free/" class="image" style="--bg-image: url('/blog/202604-deploy-openclaw-ai-for-free/featured.jpg');">
     <img src="/blog/202604-deploy-openclaw-ai-for-free/featured.jpg" alt="">
   </a>
@@ -579,16 +587,6 @@ Naked returns should be used in concise functions as using them in longer functi
         </header>
       </article>
       
-      <article class="mini-post">
-          <a href="/en/blog/202508-manage-python-versions-with-pyenv/" class="image" style="--bg-image: url('/blog/202508-manage-python-versions-with-pyenv/featured.jpg');">
-    <img src="/blog/202508-manage-python-versions-with-pyenv/featured.jpg" alt="">
-  </a>
-        <header>
-          <h2><a href="/en/blog/202508-manage-python-versions-with-pyenv/">Manage Python Versions with Pyenv</a></h2>
-          <time class="published" datetime="2025-08-30 00:00:00 &#43;0000 UTC">August 30, 2025</time>
-        </header>
-      </article>
-      
       
         <footer>
           <a href="/en/blog/" class="button">See More</a>
@@ -608,7 +606,7 @@ Naked returns should be used in concise functions as using them in longer functi
           
           
           <li>
-              <a href="/en/categories/aws/">aws<span class="count">26</span></a>
+              <a href="/en/categories/aws/">aws<span class="count">27</span></a>
           </li>
           
           <li>
@@ -762,6 +760,10 @@ Naked returns should be used in concise functions as using them in longer functi
         </li>
         
         <li>
+          <a href="/en/tags/airflow/">airflow (3)</a>
+        </li>
+        
+        <li>
           <a href="/en/tags/cloudflare/">cloudflare (3)</a>
         </li>
         
@@ -771,10 +773,6 @@ Naked returns should be used in concise functions as using them in longer functi
         
         <li>
           <a href="/en/tags/web-hosting/">web hosting (3)</a>
-        </li>
-        
-        <li>
-          <a href="/en/tags/airflow/">airflow (2)</a>
         </li>
         
         <li>
@@ -898,6 +896,10 @@ Naked returns should be used in concise functions as using them in longer functi
         </li>
         
         <li>
+          <a href="/en/tags/mwaa/">mwaa (1)</a>
+        </li>
+        
+        <li>
           <a href="/en/tags/ngrok/">ngrok (1)</a>
         </li>
         
@@ -1015,7 +1017,7 @@ Naked returns should be used in concise functions as using them in longer functi
     <script>
       hljs.configure({ ignoreUnescapedHTML: true }); 
       hljs.highlightAll();
-    </script><script src="/js/bundle.min.a56655f3069386c7a1539049f4b6e4d773b948f9c00ee443e5187c783819f686.js" integrity="sha256-pWZV8waThsehU5BJ9Lbk13O5SPnADuRD5Rh8eDgZ9oY="></script>
+    </script><script src="/js/bundle.min.d21befc899e4b6158eba05da3928321e52d15d067cb323bbf20e1b37a4ee0e3d.js" integrity="sha256-0hvvyJnkthWOugXaOSgyHlLRXQZ8syO78g4bN6TuDj0="></script>
     <script src="/js/add-on.js"></script>
 
 

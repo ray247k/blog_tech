@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.154.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.165.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="Setting up Laravel Development Environment with Docker">
   <meta property="og:description" content="Introduction to building a basic Laravel development environment using Docker">
   <meta property="description" content="Introduction to building a basic Laravel development environment using Docker">
@@ -40,7 +40,7 @@
   
   
             <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/felipec.min.css">
-          <link rel="stylesheet" href="/css/bundle.min.ccd03ac07edc9876d74feb17a3b850cb8df2c519d3854020b6697286637e4cd4.css" integrity="sha256-zNA6wH7cmHbXT&#43;sXo7hQy43yxRnThUAgtmlyhmN&#43;TNQ="><link rel="stylesheet" href="/css/add-on.css">
+          <link rel="stylesheet" href="/css/bundle.min.80aa639b4bec28a35fd95ccaf6d979df779f2693654656a4860eab54153fc258.css" integrity="sha256-gKpjm0vsKKNf2VzK9tl533efJpNlRlakhg6rVBU/wlg="><link rel="stylesheet" href="/css/add-on.css">
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
       <script>
         var doNotTrack = false;
@@ -83,7 +83,7 @@
     "url": "https:\/\/tech.ray247k.com\/",
     "description": "About web development, software engineering, frontend, backend, chatbot, server related topics. - ai,aws,devops,git,golang,laravel,php,python,serverless,third-party services,tools,typescript,version control,web hosting,website operations,",
     "keywords": [
-        "airflow,apache bench,auto scaling,aws,blockchain,cdn,chatbot,ci\/cd,cicd,cloudflare,cloudflare workers,composer,container technology,containerization,csv,devops,discord,dns,docker,docker compose,domain,domain name,drone,excel,ffmpeg,firewall,gas,gcp,gcr,git,github,github page,go,golang,golang, hugo,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,linux,load balancing,nginx,ngrok,openclaw,personal brand,php,php-fpm,phpcbf,phpcs,portainer,postgresql,pre-commit,prerender,proxy,purchase domain,pyenv,pytest,python,queue,rds,redis,search engine optimization,seo,server,serverless,smart contract,ssh,stress testing,subdomain,tdd,typescript,unit test,version control,web hosting,"
+        "airflow,apache bench,auto scaling,aws,blockchain,cdn,chatbot,ci\/cd,cicd,cloudflare,cloudflare workers,composer,container technology,containerization,csv,devops,discord,dns,docker,docker compose,domain,domain name,drone,excel,ffmpeg,firewall,gas,gcp,gcr,git,github,github page,go,golang,golang, hugo,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,linux,load balancing,mwaa,nginx,ngrok,openclaw,personal brand,php,php-fpm,phpcbf,phpcs,portainer,postgresql,pre-commit,prerender,proxy,purchase domain,pyenv,pytest,python,queue,rds,redis,search engine optimization,seo,server,serverless,smart contract,ssh,stress testing,subdomain,tdd,typescript,unit test,version control,web hosting,"
     ]
 }
 </script>
@@ -172,7 +172,7 @@
     "@type": "BlogPosting",
     "articleSection": "blog",
     "name": "Setting up Laravel Development Environment with Docker",
-    "headline": "\u003cp\u003eIn the past, developing Laravel projects locally mostly involved installing the required services directly on the machine.\u003cbr\u003e\nLater, the recommended development environment by the official documentation, \u003ca href=\u0022https:\/\/github.com\/laravel\/homestead\u0022\n   \n    target=\u0022_blank\u0022 rel=\u0022noreferrer noopener\u0022\u003eHomestead\n\u003c\/a\u003e\n, became a popular choice.\u003c\/p\u003e",
+    "headline": "\u003cp\u003eIn the past, developing Laravel projects locally mostly involved installing the required services directly on the machine.\u003cbr\u003e\nLater, the recommended development environment by the official documentation, \u003ca href=\u0022https:\/\/github.com\/laravel\/homestead\u0022\r\n   \r\n    target=\u0022_blank\u0022 rel=\u0022noreferrer noopener\u0022\u003eHomestead\r\n\u003c\/a\u003e\r\n, became a popular choice.\u003c\/p\u003e",
     "description": "Introduction to building a basic Laravel development environment using Docker",
     "inLanguage": "en",
     "isFamilyFriendly": "true",
@@ -407,7 +407,7 @@ Choose one when starting!</p>
 <h2 id="1-docker-composeyml">1. docker-compose.yml</h2>
 <p>Start by creating a project folder, let&rsquo;s call it <code>docker_env</code> for clarity. Inside the <code>docker_env</code> folder, create a file named <code>docker-compose.yml</code> to serve as the configuration file for Docker-compose services.</p>
 <h2 id="complete-code">Complete Code</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># docker-compose.yml</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># docker-compose.yml</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;3&#39;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">networks</span>:
@@ -483,7 +483,7 @@ Choose one when starting!</p>
 If you simply copy and paste the above, the services are likely to fail.</p>
 <h3 id="nginx">nginx</h3>
 <p>Uses nginx as the web server for our application.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>  <span style="color:#f92672">nginx</span>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>  <span style="color:#f92672">nginx</span>:
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">docker_env_nginx</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">nginx:1.18</span> <span style="color:#75715e"># stable version</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">networks</span>:
@@ -550,7 +550,7 @@ The SSL certificate paths correspond to the mounted paths specified in the <code
 <p>The <code>fastcgi_pass</code> setting specifies the container_name and port of the container with PHP-FPM installed.<br>
 Note that the names and ports used are not fixed!</p>
 <h3 id="php">php</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>  <span style="color:#f92672">php</span>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>  <span style="color:#f92672">php</span>:
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">docker_env_php</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">build</span>: <span style="color:#ae81ff">./php/</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">expose</span>:
@@ -570,7 +570,7 @@ The example below demonstrates the setup for PostgreSQL.</p>
 However, since PHP doesn&rsquo;t require pre-compilation, you can make changes directly in the files mounted by the volumes, enabling internal program modifications without installing Composer inside the container.<br>
 Unless there&rsquo;s a specific reason to run commands inside the container, it&rsquo;s not recommended to install Composer in the container.</p>
 <p>Create a <code>php</code> folder in the <code>docker_env</code> directory and add a file named <code>Dockerfile</code> with the following content:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span><span style="color:#75715e"># Dockerfile</span><span style="color:#960050;background-color:#1e0010">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span><span style="color:#75715e"># Dockerfile</span><span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> <span style="color:#e6db74">php:7.4-fpm</span><span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">WORKDIR</span> <span style="color:#e6db74">/var</span><span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">RUN</span> apt-get update <span style="color:#f92672">&amp;&amp;</span> apt-get install -y libpq-dev libpng-dev libzip-dev zip<span style="color:#960050;background-color:#1e0010">
@@ -586,7 +586,7 @@ Unless there&rsquo;s a specific reason to run commands inside the container, it&
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"># &amp;&amp; php -r &#34;unlink(&#39;composer-setup.php&#39;);&#34; \</span><span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"># &amp;&amp; mv composer.phar /usr/local/bin/composer</span><span style="color:#960050;background-color:#1e0010">
 </span></span></span></code></pre></div><h3 id="database">database</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>  <span style="color:#f92672">postgre</span>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>  <span style="color:#f92672">postgre</span>:
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">docker_env_postgre</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
 </span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;5432:5432&#34;</span>
@@ -624,13 +624,13 @@ DB_NAME=my_database
 </code></pre><p>The keys on the left side can be called in the <code>docker-compose.yml</code> file using <code>${key}</code>, allowing retrieval of the values set on the left side.</p>
 <h2 id="starting-the-containers">Starting the Containers</h2>
 <p>After these steps, with Docker service running, navigate to the <code>docker_env</code> folder and run the command:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker-compose up -d
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker-compose up -d
 </span></span></code></pre></div><p>If everything is correct, the containers will start in the background.<br>
 This completes the goal of &ldquo;Setting up Laravel Environment with Docker!&rdquo;</p>
 <p>To check the container status, you can use the command:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker ps -a
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker ps -a
 </span></span></code></pre></div><p>If I were personally writing a new <code>docker-compose.yml</code> configuration, I would first use:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker-compose up
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker-compose up
 </span></span></code></pre></div><p>to display logs in real-time. This makes debugging much easier.<br>
 Common issues might include missing volume directories like nginx config, SSL, or the Laravel project.</p>
 <h2 id="laravel-env-configuration">Laravel .env Configuration</h2>
@@ -650,7 +650,7 @@ DB_PASSWORD=db_password
 Connecting Laravel to Docker Database - Done</p>
 <p>Now, we need to make sure that we can open the local Laravel project in the browser.<br>
 Open your terminal, whether it&rsquo;s bash or zsh:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo vim /etc/hosts 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo vim /etc/hosts 
 </span></span></code></pre></div><p>Add the following line in <code>/etc/hosts</code>:</p>
 <pre tabindex="0"><code>127.0.0.1       dev.project.com
 </code></pre><p>This line directs requests for <code>dev.project.com</code> to the localhost IP.<br>
@@ -665,13 +665,13 @@ When entering <code>dev.project.com</code> in the browser&rsquo;s address bar, t
 <p>With this setup, you should be able to access the Laravel project&rsquo;s interface.</p>
 <h2 id="running-laravel-commands">Running Laravel Commands</h2>
 <p>If you want to run Laravel commands related to the database, such as:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>php artisan migrate
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>php artisan migrate
 </span></span></code></pre></div><p>You first need to enter the PHP container:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker exec -ti docker_env_php bash
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker exec -ti docker_env_php bash
 </span></span></code></pre></div><p>Inside the container, navigate to the project directory and run the command.<br>
 If successful, you&rsquo;ll see the command executed correctly.<br>
 If you run the migrate command without entering the container, you&rsquo;ll encounter an error message like:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>SQLSTATE<span style="color:#f92672">[</span>08006<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>7<span style="color:#f92672">]</span> could not translate host name <span style="color:#e6db74">&#34;docker_env_postgre&#34;</span> to address: nodename nor servname provided, or not known
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>SQLSTATE<span style="color:#f92672">[</span>08006<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>7<span style="color:#f92672">]</span> could not translate host name <span style="color:#e6db74">&#34;docker_env_postgre&#34;</span> to address: nodename nor servname provided, or not known
 </span></span></code></pre></div><p>This is because the program doesn&rsquo;t recognize the host &ldquo;docker_env_postgre.&rdquo;<br>
 If we modify the .env file&rsquo;s DB_HOST to the real location using the <code>docker inspect</code> command, it would work, but this is not a sustainable solution.</p>
 <p>If you find it cumbersome to enter the container or want to run commands directly in the local project folder, what should you do? Modify the <code>etc/hosts</code> file again by adding:</p>
@@ -744,6 +744,14 @@ There are also many aspects not covered, such as Docker network segmentation and
       </header>
       
       <article class="mini-post">
+          
+        <header>
+          <h2><a href="/en/blog/202609-mwaa-connection-encryption-investigation/">Investigating Connection Encryption on Amazon MWAA</a></h2>
+          <time class="published" datetime="2026-09-03 00:00:00 &#43;0000 UTC">September 3, 2026</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
           <a href="/en/blog/202604-deploy-openclaw-ai-for-free/" class="image" style="--bg-image: url('/blog/202604-deploy-openclaw-ai-for-free/featured.jpg');">
     <img src="/blog/202604-deploy-openclaw-ai-for-free/featured.jpg" alt="">
   </a>
@@ -783,16 +791,6 @@ There are also many aspects not covered, such as Docker network segmentation and
         </header>
       </article>
       
-      <article class="mini-post">
-          <a href="/en/blog/202508-manage-python-versions-with-pyenv/" class="image" style="--bg-image: url('/blog/202508-manage-python-versions-with-pyenv/featured.jpg');">
-    <img src="/blog/202508-manage-python-versions-with-pyenv/featured.jpg" alt="">
-  </a>
-        <header>
-          <h2><a href="/en/blog/202508-manage-python-versions-with-pyenv/">Manage Python Versions with Pyenv</a></h2>
-          <time class="published" datetime="2025-08-30 00:00:00 &#43;0000 UTC">August 30, 2025</time>
-        </header>
-      </article>
-      
       
         <footer>
           <a href="/en/blog/" class="button">See More</a>
@@ -812,7 +810,7 @@ There are also many aspects not covered, such as Docker network segmentation and
           
           
           <li>
-              <a href="/en/categories/aws/">aws<span class="count">26</span></a>
+              <a href="/en/categories/aws/">aws<span class="count">27</span></a>
           </li>
           
           <li>
@@ -966,6 +964,10 @@ There are also many aspects not covered, such as Docker network segmentation and
         </li>
         
         <li>
+          <a href="/en/tags/airflow/">airflow (3)</a>
+        </li>
+        
+        <li>
           <a href="/en/tags/cloudflare/">cloudflare (3)</a>
         </li>
         
@@ -975,10 +977,6 @@ There are also many aspects not covered, such as Docker network segmentation and
         
         <li>
           <a href="/en/tags/web-hosting/">web hosting (3)</a>
-        </li>
-        
-        <li>
-          <a href="/en/tags/airflow/">airflow (2)</a>
         </li>
         
         <li>
@@ -1102,6 +1100,10 @@ There are also many aspects not covered, such as Docker network segmentation and
         </li>
         
         <li>
+          <a href="/en/tags/mwaa/">mwaa (1)</a>
+        </li>
+        
+        <li>
           <a href="/en/tags/ngrok/">ngrok (1)</a>
         </li>
         
@@ -1219,7 +1221,7 @@ There are also many aspects not covered, such as Docker network segmentation and
     <script>
       hljs.configure({ ignoreUnescapedHTML: true }); 
       hljs.highlightAll();
-    </script><script src="/js/bundle.min.a56655f3069386c7a1539049f4b6e4d773b948f9c00ee443e5187c783819f686.js" integrity="sha256-pWZV8waThsehU5BJ9Lbk13O5SPnADuRD5Rh8eDgZ9oY="></script>
+    </script><script src="/js/bundle.min.d21befc899e4b6158eba05da3928321e52d15d067cb323bbf20e1b37a4ee0e3d.js" integrity="sha256-0hvvyJnkthWOugXaOSgyHlLRXQZ8syO78g4bN6TuDj0="></script>
     <script src="/js/add-on.js"></script>
 
 

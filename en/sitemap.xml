@@ -2,21 +2,47 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://tech.ray247k.com/en/categories/ai/</loc>
-    <lastmod>2026-04-04T00:00:00+00:00</lastmod>
+    <loc>https://tech.ray247k.com/en/tags/airflow/</loc>
+    <lastmod>2026-09-03T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-TW"
-                href="https://tech.ray247k.com/categories/ai/"
+                href="https://tech.ray247k.com/tags/airflow/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://tech.ray247k.com/en/categories/ai/"
+                href="https://tech.ray247k.com/en/tags/airflow/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/categories/aws/</loc>
+    <lastmod>2026-09-03T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/categories/aws/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/categories/aws/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/blog/</loc>
+    <lastmod>2026-09-03T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/"
                 />
   </url><url>
     <loc>https://tech.ray247k.com/en/</loc>
-    <lastmod>2026-04-04T00:00:00+00:00</lastmod>
+    <lastmod>2026-09-03T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-TW"
@@ -29,7 +55,7 @@
                 />
   </url><url>
     <loc>https://tech.ray247k.com/en/categories/</loc>
-    <lastmod>2026-04-04T00:00:00+00:00</lastmod>
+    <lastmod>2026-09-03T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-TW"
@@ -39,6 +65,58 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tech.ray247k.com/en/categories/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/blog/202609-mwaa-connection-encryption-investigation/</loc>
+    <lastmod>2026-09-03T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202609-mwaa-connection-encryption-investigation/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202609-mwaa-connection-encryption-investigation/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/tags/mwaa/</loc>
+    <lastmod>2026-09-03T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/mwaa/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/mwaa/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/tags/</loc>
+    <lastmod>2026-09-03T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/categories/ai/</loc>
+    <lastmod>2026-04-04T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/categories/ai/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/categories/ai/"
                 />
   </url><url>
     <loc>https://tech.ray247k.com/en/blog/202604-deploy-openclaw-ai-for-free/</loc>
@@ -65,32 +143,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tech.ray247k.com/en/tags/openclaw/"
-                />
-  </url><url>
-    <loc>https://tech.ray247k.com/en/tags/</loc>
-    <lastmod>2026-04-04T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/tags/"
-                />
-  </url><url>
-    <loc>https://tech.ray247k.com/en/tags/airflow/</loc>
-    <lastmod>2026-02-03T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/tags/airflow/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/tags/airflow/"
                 />
   </url><url>
     <loc>https://tech.ray247k.com/en/categories/python/</loc>
@@ -130,19 +182,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tech.ray247k.com/en/blog/202509-triggering-airflow-dag-from-another-dag/"
-                />
-  </url><url>
-    <loc>https://tech.ray247k.com/en/categories/aws/</loc>
-    <lastmod>2025-09-07T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/categories/aws/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/categories/aws/"
                 />
   </url><url>
     <loc>https://tech.ray247k.com/en/tags/aws/</loc>

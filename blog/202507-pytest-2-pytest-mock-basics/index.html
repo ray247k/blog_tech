@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.154.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.165.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="[Pytest 101] 02 Mock 的基本用法">
   <meta property="og:description" content="在 Pytest 中如何使用 Mock 來模擬行為、拋出例外與測試副作用。">
   <meta property="description" content="在 Pytest 中如何使用 Mock 來模擬行為、拋出例外與測試副作用。">
@@ -40,7 +40,7 @@
   
   
             <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/felipec.min.css">
-          <link rel="stylesheet" href="/css/bundle.min.ccd03ac07edc9876d74feb17a3b850cb8df2c519d3854020b6697286637e4cd4.css" integrity="sha256-zNA6wH7cmHbXT&#43;sXo7hQy43yxRnThUAgtmlyhmN&#43;TNQ="><link rel="stylesheet" href="/css/add-on.css">
+          <link rel="stylesheet" href="/css/bundle.min.80aa639b4bec28a35fd95ccaf6d979df779f2693654656a4860eab54153fc258.css" integrity="sha256-gKpjm0vsKKNf2VzK9tl533efJpNlRlakhg6rVBU/wlg="><link rel="stylesheet" href="/css/add-on.css">
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
       <script>
         var doNotTrack = false;
@@ -83,7 +83,7 @@
     "url": "https:\/\/tech.ray247k.com\/",
     "description": "討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - ai,aws,devops,git,golang,laravel,leetcode,node.js,php,python,serverless,typescript,實用工具,架站相關,版本控制,第三方服務,",
     "keywords": [
-        "airflow,apache bench,auto scaling,aws,axios,blockchain,cdn,chatbot,cicd,cloudflare,cloudflare workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker compose,domain name,drone,element-ui,excel,express,ffmpeg,gas,gcp,gcr,getter,git,github,github page,go,golang,golang, hugo,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load balancing,mongodb,mutation,nginx,ngrok,node.js,openclaw,php,php-fpm,phpcbf,phpcs,portainer,postgresql,pre-commit,prerender,proxy,pyenv,pytest,python,queue,rds,redis,restful,seo,server,serverless,smart contract,ssh,stress testing,subdomain,tdd,typescript,unit test,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,單元測試,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
+        "airflow,apache bench,auto scaling,aws,axios,blockchain,cdn,chatbot,cicd,cloudflare,cloudflare workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker compose,domain name,drone,element-ui,excel,express,ffmpeg,gas,gcp,gcr,getter,git,github,github page,go,golang,golang, hugo,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load balancing,mongodb,mutation,mwaa,nginx,ngrok,node.js,openclaw,php,php-fpm,phpcbf,phpcs,portainer,postgresql,pre-commit,prerender,proxy,pyenv,pytest,python,queue,rds,redis,restful,seo,server,serverless,smart contract,ssh,stress testing,subdomain,tdd,typescript,unit test,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,單元測試,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
     ]
 }
 </script>
@@ -366,9 +366,9 @@ Mock 可以讓我們替換原本的函式邏輯，模擬不同情境，寫出更
 </a>
  來抽換自身或是其他模組的函數<br>
 以抽換來自 <code>service.my_service</code> 的 <code>do_something</code> 函式為例</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>mocker<span style="color:#f92672">.</span>patch(<span style="color:#e6db74">&#34;service.my_service.do_something&#34;</span>, return_value<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hello&#34;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>mocker<span style="color:#f92672">.</span>patch(<span style="color:#e6db74">&#34;service.my_service.do_something&#34;</span>, return_value<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hello&#34;</span>)
 </span></span></code></pre></div><h1 id="mock-function">Mock function</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># my_project/service/do_service.py</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># my_project/service/do_service.py</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">do_something</span>():
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
@@ -381,7 +381,7 @@ Mock 可以讓我們替換原本的函式邏輯，模擬不同情境，寫出更
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;success&#34;</span>
 </span></span></code></pre></div><p>抽換了 <code>something()</code> 這個函式，並且使用 <code>return_value</code> 定義其回傳值。<br>
 為了證明抽換的結果如預期，我們直接把值回傳，並且用 <code>assert</code> 斷言進行判斷。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># my_project/test/service/test_do_service.py</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># my_project/test/service/test_do_service.py</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> pytest
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> pytest_mock <span style="color:#f92672">import</span> MockFixture
@@ -399,11 +399,11 @@ Mock 可以讓我們替換原本的函式邏輯，模擬不同情境，寫出更
 <p>隨著專案複雜度增加，逐漸把共用函式統整成再一起是很常見的。</p>
 <p>假設今天 <code>something()</code> 是來自模組 <code>service/do_trick.py</code><br>
 在程式中會使用 <code>import</code> 引入來自 <code>do_trick.py</code> 的函式 <code>something()</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># my_project/service/do_trick.py</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># my_project/service/do_trick.py</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">something</span>():
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;success&#34;</span> 
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># my_project/service/do_service.py</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># my_project/service/do_service.py</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> service.do_trick <span style="color:#f92672">import</span> something
 </span></span><span style="display:flex;"><span>
@@ -415,7 +415,7 @@ Mock 可以讓我們替換原本的函式邏輯，模擬不同情境，寫出更
 而是當前的模組 <code>service.do_service.something</code></p>
 <p>如果 mock <code>package_name.function_name</code> 則測試時會使用未抽換的方法<br>
 而因為呼叫的 function 已經被引入到當前的模組內，屬於 mock 了個寂寞</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># my_project/test/service/test_do_service.py</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># my_project/test/service/test_do_service.py</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> pytest
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> pytest_mock <span style="color:#f92672">import</span> MockFixture
@@ -430,7 +430,7 @@ Mock 可以讓我們替換原本的函式邏輯，模擬不同情境，寫出更
 <h1 id="mock-try-except">Mock try-except</h1>
 <p>當有 try-except 時，也可以抽換方法來模擬某個地方出錯造成 <code>except</code> 後的行為。</p>
 <p>使用 <code>side_effect</code> 宣告 <code>something()</code> 在執行時拋出錯誤類別 <code>Exception</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_do_something_error</span>(mocker: MockFixture):
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_do_something_error</span>(mocker: MockFixture):
 </span></span><span style="display:flex;"><span>    error_message <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Exception error&#34;</span>
 </span></span><span style="display:flex;"><span>    mocker<span style="color:#f92672">.</span>patch(<span style="color:#e6db74">&#34;service.do_service.something&#34;</span>, side_effect<span style="color:#f92672">=</span><span style="color:#a6e22e">Exception</span>(error_message))
 </span></span><span style="display:flex;"><span>
@@ -444,14 +444,14 @@ Mock 可以讓我們替換原本的函式邏輯，模擬不同情境，寫出更
  可以帶入 function, iterable 以及常用到的 <code>exception class</code>。</p>
 <h1 id="mock-raise-exception">Mock raise Exception</h1>
 <p>有時候是程式執行沒有出錯，但是在特定條件時我們要主動拋出錯誤</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># my_project/service/do_service.py</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># my_project/service/do_service.py</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">do_something</span>(err):
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> err:
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">Exception</span>(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Something went wrong&#34;</span>)
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;success&#34;</span>
 </span></span></code></pre></div><p>這時候可以使用 <code>with pytest.raises()</code> 來聲明執行時會拋出的錯誤類型及訊息</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># my_project/test/service/test_do_service.py</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># my_project/test/service/test_do_service.py</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> pytest
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> pytest_mock <span style="color:#f92672">import</span> MockFixture
@@ -469,7 +469,7 @@ Mock 可以讓我們替換原本的函式邏輯，模擬不同情境，寫出更
 <blockquote>
 <p>因為 <code>redis.get</code> 會回傳 <code>bytes</code> 所以需要用到 <code>encode</code> 和 <code>decode</code>。</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_from_redis</span>(id:int):
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_from_redis</span>(id:int):
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e"># connect to redis</span>
 </span></span><span style="display:flex;"><span>    redis <span style="color:#f92672">=</span> Redis(host<span style="color:#f92672">=</span>os<span style="color:#f92672">.</span>environ[<span style="color:#e6db74">&#34;REDIS_HOST&#34;</span>])
 </span></span><span style="display:flex;"><span>    byte_data <span style="color:#f92672">=</span> redis<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;mykey.</span><span style="color:#e6db74">{}</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>format(id))
@@ -483,7 +483,7 @@ Mock 可以讓我們替換原本的函式邏輯，模擬不同情境，寫出更
 </span></span><span style="display:flex;"><span>    )
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> data
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_get_from_redis</span>(mocker: MockFixture):
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_get_from_redis</span>(mocker: MockFixture):
 </span></span><span style="display:flex;"><span>    test_data <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;test_data&#34;</span><span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#34;utf-8&#34;</span>)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    mock_redis <span style="color:#f92672">=</span> mocker<span style="color:#f92672">.</span>patch(<span style="color:#e6db74">&#34;service.do_service.Redis&#34;</span>)
@@ -551,6 +551,14 @@ Mock 可以讓我們替換原本的函式邏輯，模擬不同情境，寫出更
       </header>
       
       <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202609-mwaa-connection-encryption-investigation/">MWAA Connections 加密機制調查</a></h2>
+          <time class="published" datetime="2026-09-03 00:00:00 &#43;0000 UTC">2026/09/03</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
           <a href="/blog/202604-deploy-openclaw-ai-for-free/" class="image" style="--bg-image: url('/blog/202604-deploy-openclaw-ai-for-free/featured.jpg');">
     <img src="/blog/202604-deploy-openclaw-ai-for-free/featured.jpg" alt="">
   </a>
@@ -590,16 +598,6 @@ Mock 可以讓我們替換原本的函式邏輯，模擬不同情境，寫出更
         </header>
       </article>
       
-      <article class="mini-post">
-          <a href="/blog/202508-manage-python-versions-with-pyenv/" class="image" style="--bg-image: url('/blog/202508-manage-python-versions-with-pyenv/featured.jpg');">
-    <img src="/blog/202508-manage-python-versions-with-pyenv/featured.jpg" alt="">
-  </a>
-        <header>
-          <h2><a href="/blog/202508-manage-python-versions-with-pyenv/">使用 Pyenv 輕鬆管理多版本 Python</a></h2>
-          <time class="published" datetime="2025-08-30 00:00:00 &#43;0000 UTC">2025/08/30</time>
-        </header>
-      </article>
-      
       
         <footer>
           <a href="/blog/" class="button">查看更多</a>
@@ -619,7 +617,7 @@ Mock 可以讓我們替換原本的函式邏輯，模擬不同情境，寫出更
           
           
           <li>
-              <a href="/categories/aws/">aws<span class="count">26</span></a>
+              <a href="/categories/aws/">aws<span class="count">27</span></a>
           </li>
           
           <li>
@@ -817,6 +815,10 @@ Mock 可以讓我們替換原本的函式邏輯，模擬不同情境，寫出更
         </li>
         
         <li>
+          <a href="/tags/airflow/">airflow (3)</a>
+        </li>
+        
+        <li>
           <a href="/tags/cloudflare/">cloudflare (3)</a>
         </li>
         
@@ -834,10 +836,6 @@ Mock 可以讓我們替換原本的函式邏輯，模擬不同情境，寫出更
         
         <li>
           <a href="/tags/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/">架站相關 (3)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/airflow/">airflow (2)</a>
         </li>
         
         <li>
@@ -970,6 +968,10 @@ Mock 可以讓我們替換原本的函式邏輯，模擬不同情境，寫出更
         
         <li>
           <a href="/tags/load-balancing/">load balancing (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/mwaa/">mwaa (1)</a>
         </li>
         
         <li>
@@ -1110,7 +1112,7 @@ Mock 可以讓我們替換原本的函式邏輯，模擬不同情境，寫出更
     <script>
       hljs.configure({ ignoreUnescapedHTML: true }); 
       hljs.highlightAll();
-    </script><script src="/js/bundle.min.a56655f3069386c7a1539049f4b6e4d773b948f9c00ee443e5187c783819f686.js" integrity="sha256-pWZV8waThsehU5BJ9Lbk13O5SPnADuRD5Rh8eDgZ9oY="></script>
+    </script><script src="/js/bundle.min.d21befc899e4b6158eba05da3928321e52d15d067cb323bbf20e1b37a4ee0e3d.js" integrity="sha256-0hvvyJnkthWOugXaOSgyHlLRXQZ8syO78g4bN6TuDj0="></script>
     <script src="/js/add-on.js"></script>
 
 

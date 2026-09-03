@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Laravel-Excel on Byte Ebi 🍤</title>
-    <link>https://tech.ray247k.com/en/tags/laravel-excel/</link>
-    <description>Recent content in Laravel-Excel on Byte Ebi 🍤</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Sat, 11 Dec 2021 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://tech.ray247k.com/en/tags/laravel-excel/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Importing Excel or CSV Files into Laravel</title>
-      <link>https://tech.ray247k.com/en/blog/202112-laravel-excel-import/</link>
-      <pubDate>Sat, 11 Dec 2021 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/blog/202112-laravel-excel-import/</guid>
-      <description>&lt;p&gt;When the backend interface isn&amp;rsquo;t fully developed or when users have extensive data that they prefer not to input manually, opting for a bulk import via a form becomes essential.&lt;br&gt;&#xA;This is where the Laravel-excel package comes into play.&#xA;Additionally, it&amp;rsquo;s worth discussing the challenges encountered when importing a large volume of data at once.&lt;/p&gt;</description>
-    </item>
-  </channel>
+	<channel>
+		<title>Laravel-Excel on Byte Ebi 🍤</title>
+		<link>https://tech.ray247k.com/en/tags/laravel-excel/</link>
+		<description>Recent content in Laravel-Excel on Byte Ebi 🍤</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Sat, 11 Dec 2021 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://tech.ray247k.com/en/tags/laravel-excel/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Importing Excel or CSV Files into Laravel</title>
+				<link>https://tech.ray247k.com/en/blog/202112-laravel-excel-import/</link>
+				<pubDate>Sat, 11 Dec 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202112-laravel-excel-import/</guid>
+				<description>&lt;p&gt;When the backend interface isn&amp;rsquo;t fully developed or when users have extensive data that they prefer not to input manually, opting for a bulk import via a form becomes essential.&lt;br&gt;&#xA;This is where the Laravel-excel package comes into play.&#xA;Additionally, it&amp;rsquo;s worth discussing the challenges encountered when importing a large volume of data at once.&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

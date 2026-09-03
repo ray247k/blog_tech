@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.154.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.165.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="Interacting with smart contracts using Golang">
   <meta property="og:description" content="Generating a Go package with abigen tool to interact with smart contracts and perform contract operations">
   <meta property="description" content="Generating a Go package with abigen tool to interact with smart contracts and perform contract operations">
@@ -40,7 +40,7 @@
   
   
             <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/felipec.min.css">
-          <link rel="stylesheet" href="/css/bundle.min.ccd03ac07edc9876d74feb17a3b850cb8df2c519d3854020b6697286637e4cd4.css" integrity="sha256-zNA6wH7cmHbXT&#43;sXo7hQy43yxRnThUAgtmlyhmN&#43;TNQ="><link rel="stylesheet" href="/css/add-on.css">
+          <link rel="stylesheet" href="/css/bundle.min.80aa639b4bec28a35fd95ccaf6d979df779f2693654656a4860eab54153fc258.css" integrity="sha256-gKpjm0vsKKNf2VzK9tl533efJpNlRlakhg6rVBU/wlg="><link rel="stylesheet" href="/css/add-on.css">
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
       <script>
         var doNotTrack = false;
@@ -83,7 +83,7 @@
     "url": "https:\/\/tech.ray247k.com\/",
     "description": "About web development, software engineering, frontend, backend, chatbot, server related topics. - ai,aws,devops,git,golang,laravel,php,python,serverless,third-party services,tools,typescript,version control,web hosting,website operations,",
     "keywords": [
-        "airflow,apache bench,auto scaling,aws,blockchain,cdn,chatbot,ci\/cd,cicd,cloudflare,cloudflare workers,composer,container technology,containerization,csv,devops,discord,dns,docker,docker compose,domain,domain name,drone,excel,ffmpeg,firewall,gas,gcp,gcr,git,github,github page,go,golang,golang, hugo,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,linux,load balancing,nginx,ngrok,openclaw,personal brand,php,php-fpm,phpcbf,phpcs,portainer,postgresql,pre-commit,prerender,proxy,purchase domain,pyenv,pytest,python,queue,rds,redis,search engine optimization,seo,server,serverless,smart contract,ssh,stress testing,subdomain,tdd,typescript,unit test,version control,web hosting,"
+        "airflow,apache bench,auto scaling,aws,blockchain,cdn,chatbot,ci\/cd,cicd,cloudflare,cloudflare workers,composer,container technology,containerization,csv,devops,discord,dns,docker,docker compose,domain,domain name,drone,excel,ffmpeg,firewall,gas,gcp,gcr,git,github,github page,go,golang,golang, hugo,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,linux,load balancing,mwaa,nginx,ngrok,openclaw,personal brand,php,php-fpm,phpcbf,phpcs,portainer,postgresql,pre-commit,prerender,proxy,purchase domain,pyenv,pytest,python,queue,rds,redis,search engine optimization,seo,server,serverless,smart contract,ssh,stress testing,subdomain,tdd,typescript,unit test,version control,web hosting,"
     ]
 }
 </script>
@@ -367,7 +367,7 @@ This article explains how to convert existing Smart Contract ABIs into a Go pack
     target="_blank" rel="noreferrer noopener">Homebrew
 </a>
  beforehand.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew update
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew update
 </span></span><span style="display:flex;"><span>brew tap ethereum/ethereum
 </span></span><span style="display:flex;"><span>brew install ethereum
 </span></span><span style="display:flex;"><span>brew install solidity
@@ -380,7 +380,7 @@ Please install protoc</p>
 <h1 id="install-go-ethereum">Install go-ethereum</h1>
 <p>Next, you need to install the conversion tool we will be using.<br>
 The official package comes with the <code>abigen</code> command, which allows you to convert the ABI into a Go package.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/ethereum/go-ethereum.git
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/ethereum/go-ethereum.git
 </span></span><span style="display:flex;"><span>cd go-ethereum
 </span></span><span style="display:flex;"><span>make devtools
 </span></span></code></pre></div><h1 id="generate-go-library-file">Generate Go library file</h1>
@@ -388,37 +388,37 @@ The official package comes with the <code>abigen</code> command, which allows yo
 However, the topic of what a smart contract ABI is falls outside the scope of this article.<br>
 If you require a more in-depth explanation of smart contract operations in the future, it can be covered separately.</p>
 <p>Once you have obtained the <code>abi.json</code> file for the smart contract, you can proceed with the following command execution:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>abigen --abi<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;./erc721.abi.json&#34;</span> --type<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;erc721&#34;</span> --pkg<span style="color:#f92672">=</span>erc721 --out<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;erc721.go&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>abigen --abi<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;./erc721.abi.json&#34;</span> --type<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;erc721&#34;</span> --pkg<span style="color:#f92672">=</span>erc721 --out<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;erc721.go&#34;</span>
 </span></span></code></pre></div><table>
-  <thead>
-      <tr>
-          <th>flags</th>
-          <th>description</th>
-          <th>usage</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>&ndash;abi</td>
-          <td>file path for smart contract abi.json</td>
-          <td>./erc721.abi.json</td>
-      </tr>
-      <tr>
-          <td>&ndash;type</td>
-          <td>type name in struct</td>
-          <td>erc721</td>
-      </tr>
-      <tr>
-          <td>&ndash;pkg</td>
-          <td>go package name in output file</td>
-          <td>erc721</td>
-      </tr>
-      <tr>
-          <td>&ndash;out</td>
-          <td>output file name</td>
-          <td>erc721.go</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>flags</th>
+					<th>description</th>
+					<th>usage</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>&ndash;abi</td>
+					<td>file path for smart contract abi.json</td>
+					<td>./erc721.abi.json</td>
+			</tr>
+			<tr>
+					<td>&ndash;type</td>
+					<td>type name in struct</td>
+					<td>erc721</td>
+			</tr>
+			<tr>
+					<td>&ndash;pkg</td>
+					<td>go package name in output file</td>
+					<td>erc721</td>
+			</tr>
+			<tr>
+					<td>&ndash;out</td>
+					<td>output file name</td>
+					<td>erc721.go</td>
+			</tr>
+	</tbody>
 </table>
 <p>As a result, you will have a file named <code>erc721.go</code>, and upon opening it, you will find that the package name is <code>erc721</code>.<br>
 By comparing the functions inside the file, you will notice that they correspond to the functions in the abi.<br>
@@ -426,7 +426,7 @@ Now, you can interact with the contract by importing and referencing the <code>e
 <h1 id="using-the-package-in-golang">Using the package in Golang.</h1>
 <p>To interact with the generated <code>erc721</code> package in Go, you need to first import the package in your code.<br>
 Since blockchain operations are essential, you should also import <code>go-ethereum</code>. Here&rsquo;s an example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">import</span> (
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">import</span> (
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">erc721</span> <span style="color:#e6db74">&#34;project/package-erc721/path&#34;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;github.com/ethereum/go-ethereum/common&#34;</span>
@@ -436,7 +436,7 @@ Since blockchain operations are essential, you should also import <code>go-ether
 The following example demonstrates the interaction with the <code>TotalSupply</code> function in a smart contract.<br>
 Passing a smart contract&rsquo;s contract address string: <code>hexAddress</code>.<br>
 You can obtain the total supply issued by the contract, and this example focuses on an ERC721 NFT contract.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a6e22e">infuraUrl</span> <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#34;https://mainnet.infura.io/v3/38ad7d4b...97aa1d5c583&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a6e22e">infuraUrl</span> <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#34;https://mainnet.infura.io/v3/38ad7d4b...97aa1d5c583&#34;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">client</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">ethclient</span>.<span style="color:#a6e22e">Dial</span>(<span style="color:#a6e22e">infuraUrl</span>)
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
@@ -513,6 +513,14 @@ There are other applications to explore in the future as opportunities arise for
       </header>
       
       <article class="mini-post">
+          
+        <header>
+          <h2><a href="/en/blog/202609-mwaa-connection-encryption-investigation/">Investigating Connection Encryption on Amazon MWAA</a></h2>
+          <time class="published" datetime="2026-09-03 00:00:00 &#43;0000 UTC">September 3, 2026</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
           <a href="/en/blog/202604-deploy-openclaw-ai-for-free/" class="image" style="--bg-image: url('/blog/202604-deploy-openclaw-ai-for-free/featured.jpg');">
     <img src="/blog/202604-deploy-openclaw-ai-for-free/featured.jpg" alt="">
   </a>
@@ -552,16 +560,6 @@ There are other applications to explore in the future as opportunities arise for
         </header>
       </article>
       
-      <article class="mini-post">
-          <a href="/en/blog/202508-manage-python-versions-with-pyenv/" class="image" style="--bg-image: url('/blog/202508-manage-python-versions-with-pyenv/featured.jpg');">
-    <img src="/blog/202508-manage-python-versions-with-pyenv/featured.jpg" alt="">
-  </a>
-        <header>
-          <h2><a href="/en/blog/202508-manage-python-versions-with-pyenv/">Manage Python Versions with Pyenv</a></h2>
-          <time class="published" datetime="2025-08-30 00:00:00 &#43;0000 UTC">August 30, 2025</time>
-        </header>
-      </article>
-      
       
         <footer>
           <a href="/en/blog/" class="button">See More</a>
@@ -581,7 +579,7 @@ There are other applications to explore in the future as opportunities arise for
           
           
           <li>
-              <a href="/en/categories/aws/">aws<span class="count">26</span></a>
+              <a href="/en/categories/aws/">aws<span class="count">27</span></a>
           </li>
           
           <li>
@@ -735,6 +733,10 @@ There are other applications to explore in the future as opportunities arise for
         </li>
         
         <li>
+          <a href="/en/tags/airflow/">airflow (3)</a>
+        </li>
+        
+        <li>
           <a href="/en/tags/cloudflare/">cloudflare (3)</a>
         </li>
         
@@ -744,10 +746,6 @@ There are other applications to explore in the future as opportunities arise for
         
         <li>
           <a href="/en/tags/web-hosting/">web hosting (3)</a>
-        </li>
-        
-        <li>
-          <a href="/en/tags/airflow/">airflow (2)</a>
         </li>
         
         <li>
@@ -871,6 +869,10 @@ There are other applications to explore in the future as opportunities arise for
         </li>
         
         <li>
+          <a href="/en/tags/mwaa/">mwaa (1)</a>
+        </li>
+        
+        <li>
           <a href="/en/tags/ngrok/">ngrok (1)</a>
         </li>
         
@@ -988,7 +990,7 @@ There are other applications to explore in the future as opportunities arise for
     <script>
       hljs.configure({ ignoreUnescapedHTML: true }); 
       hljs.highlightAll();
-    </script><script src="/js/bundle.min.a56655f3069386c7a1539049f4b6e4d773b948f9c00ee443e5187c783819f686.js" integrity="sha256-pWZV8waThsehU5BJ9Lbk13O5SPnADuRD5Rh8eDgZ9oY="></script>
+    </script><script src="/js/bundle.min.d21befc899e4b6158eba05da3928321e52d15d067cb323bbf20e1b37a4ee0e3d.js" integrity="sha256-0hvvyJnkthWOugXaOSgyHlLRXQZ8syO78g4bN6TuDj0="></script>
     <script src="/js/add-on.js"></script>
 
 

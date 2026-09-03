@@ -29,7 +29,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.154.2"><meta property="og:site_name" content="Byte Ebi 🍤">
+<meta name="generator" content="Hugo 0.165.0"><meta property="og:site_name" content="Byte Ebi 🍤">
   <meta property="og:title" content="[Express&#43;Vue 搭建電商網站] 19 使用 Element UI 重構畫面">
   <meta property="og:description" content="使用 Express &#43; Vue 搭建一個電商網站 - 套用 Element UI 到頁面上">
   <meta property="description" content="使用 Express &#43; Vue 搭建一個電商網站 - 套用 Element UI 到頁面上">
@@ -40,7 +40,7 @@
   
   
             <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/felipec.min.css">
-          <link rel="stylesheet" href="/css/bundle.min.ccd03ac07edc9876d74feb17a3b850cb8df2c519d3854020b6697286637e4cd4.css" integrity="sha256-zNA6wH7cmHbXT&#43;sXo7hQy43yxRnThUAgtmlyhmN&#43;TNQ="><link rel="stylesheet" href="/css/add-on.css">
+          <link rel="stylesheet" href="/css/bundle.min.80aa639b4bec28a35fd95ccaf6d979df779f2693654656a4860eab54153fc258.css" integrity="sha256-gKpjm0vsKKNf2VzK9tl533efJpNlRlakhg6rVBU/wlg="><link rel="stylesheet" href="/css/add-on.css">
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
       <script>
         var doNotTrack = false;
@@ -83,7 +83,7 @@
     "url": "https:\/\/tech.ray247k.com\/",
     "description": "討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - ai,aws,devops,git,golang,laravel,leetcode,node.js,php,python,serverless,typescript,實用工具,架站相關,版本控制,第三方服務,",
     "keywords": [
-        "airflow,apache bench,auto scaling,aws,axios,blockchain,cdn,chatbot,cicd,cloudflare,cloudflare workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker compose,domain name,drone,element-ui,excel,express,ffmpeg,gas,gcp,gcr,getter,git,github,github page,go,golang,golang, hugo,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load balancing,mongodb,mutation,nginx,ngrok,node.js,openclaw,php,php-fpm,phpcbf,phpcs,portainer,postgresql,pre-commit,prerender,proxy,pyenv,pytest,python,queue,rds,redis,restful,seo,server,serverless,smart contract,ssh,stress testing,subdomain,tdd,typescript,unit test,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,單元測試,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
+        "airflow,apache bench,auto scaling,aws,axios,blockchain,cdn,chatbot,cicd,cloudflare,cloudflare workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker compose,domain name,drone,element-ui,excel,express,ffmpeg,gas,gcp,gcr,getter,git,github,github page,go,golang,golang, hugo,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load balancing,mongodb,mutation,mwaa,nginx,ngrok,node.js,openclaw,php,php-fpm,phpcbf,phpcs,portainer,postgresql,pre-commit,prerender,proxy,pyenv,pytest,python,queue,rds,redis,restful,seo,server,serverless,smart contract,ssh,stress testing,subdomain,tdd,typescript,unit test,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,單元測試,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
     ]
 }
 </script>
@@ -364,7 +364,7 @@
 後續的文章會把功能修復，莫急莫慌莫害怕</p>
 <h1 id="管理後台畫面重構">管理後台畫面重構</h1>
 <p>由於我們之前在 <code>App</code> 組件中已經有了共用的工具列，所以打開 <code>src/views/admin/Index.vue</code> 修改成</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#f92672">template</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#f92672">template</span>&gt;
 </span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">div</span>&gt;
 </span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;admin-new&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;
@@ -376,7 +376,7 @@
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">template</span>&gt;
 </span></span></code></pre></div><h2 id="後台商品列表頁面重構">後台商品列表頁面重構</h2>
 <p>接著打開後台的商品組件 <code>src/views/admin/Products.vue</code>，將 <code>&lt;template&gt;</code> 修改成</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#f92672">template</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#f92672">template</span>&gt;
 </span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;products&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">el-table</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;table&#34;</span>
@@ -411,7 +411,7 @@
 一個是將商品加入或移出購物車，一個是刪除或修改商品</p>
 <h2 id="後台編輯商品頁面重構">後台編輯商品頁面重構</h2>
 <p>打開 <code>ProductForm</code> 組件，在 <code>&lt;template&gt;</code> 內使用組件庫提供的 <code>el-form</code> 表單組件代替原本簡陋的 form 表單</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#f92672">template</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#f92672">template</span>&gt;
 </span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;productInfo&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">el-form</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form&#34;</span> <span style="color:#a6e22e">ref</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form&#34;</span> <span style="color:#f92672">:model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;model&#34;</span> <span style="color:#a6e22e">label</span><span style="color:#f92672">-width</span><span style="color:#960050;background-color:#1e0010">=&#34;</span><span style="color:#a6e22e">180px</span><span style="color:#960050;background-color:#1e0010">&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">el-form-item</span> <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Name&#34;</span>&gt;
@@ -452,7 +452,7 @@
 <br>
 結果送出之後還是沒反應，這很正常先繼續把畫面調好，等等我們會來修復它</p>
 <p>打開 <code>Edit</code> 組件，將原本在 computed 中的 <code>model</code> 屬性放到 <code>data</code> 屬性中，並移除原本在 computed 中的屬性</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#f92672">template</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#f92672">template</span>&gt;
 </span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">div</span>&gt;
 </span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;title&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">h1</span>&gt;<span style="color:#a6e22e">This</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">Admin</span><span style="color:#f92672">/</span><span style="color:#a6e22e">Edit</span>&lt;/<span style="color:#f92672">h1</span>&gt;
@@ -506,7 +506,7 @@
 </span></span><span style="display:flex;"><span>};
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
 </span></span></code></pre></div><p>接著，長得跟 <code>Edit</code> 組件很像的 <code>New</code> 組件也一起重構</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#f92672">template</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#f92672">template</span>&gt;
 </span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">product-form</span> <span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">save</span><span style="color:#f92672">-product</span><span style="color:#960050;background-color:#1e0010">=&#34;</span><span style="color:#a6e22e">addProduct</span><span style="color:#960050;background-color:#1e0010">&#34;</span> <span style="color:#f92672">:model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;model&#34;</span> <span style="color:#f92672">:manufacturers</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;manufacturers&#34;</span>&gt;&lt;/<span style="color:#f92672">product-form</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">template</span>&gt;
 </span></span><span style="display:flex;"><span>
@@ -542,7 +542,7 @@
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
 </span></span></code></pre></div><h2 id="後台編輯製造商頁面重構">後台編輯製造商頁面重構</h2>
 <p>和 <code>Products</code> 組件類似，開啟 <code>Manufacturers</code> 使用 <code>el-table</code> 替換掉原本的表單的 <code>&lt;template&gt;</code> 部分</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#f92672">template</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#f92672">template</span>&gt;
 </span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;manufacturers&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">el-table</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;table&#34;</span> <span style="color:#f92672">:data</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;manufacturers&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">el-table-column</span> <span style="color:#a6e22e">prop</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;製造商&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;180&#34;</span>&gt;&lt;/<span style="color:#f92672">el-table-column</span>&gt;
@@ -563,7 +563,7 @@
 </span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">div</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">template</span>&gt;
 </span></span></code></pre></div><p>接著重構 <code>NewManufacturers</code> 組件，一樣將 computed 的 <code>model</code> 換到 data 屬性中</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#f92672">template</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#f92672">template</span>&gt;
 </span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">manufacturer-form</span> <span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">save</span><span style="color:#f92672">-manufacturer</span><span style="color:#960050;background-color:#1e0010">=&#34;</span><span style="color:#a6e22e">addManufacturer</span><span style="color:#960050;background-color:#1e0010">&#34;</span> <span style="color:#f92672">:model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;model&#34;</span>&gt;&lt;/<span style="color:#f92672">manufacturer-form</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">template</span>&gt;
 </span></span><span style="display:flex;"><span>
@@ -589,7 +589,7 @@
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
 </span></span></code></pre></div><p>接著重構 <code>ManufacturerForm</code><br>
 程式結構和 <code>ProductForm</code> 組件很類似，將 <code>&lt;template&gt;</code> 區塊替換成組件庫樣式</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#f92672">template</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#f92672">template</span>&gt;
 </span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;manufacturerInfo&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">el-form</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form&#34;</span> <span style="color:#a6e22e">ref</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form&#34;</span> <span style="color:#f92672">:model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;model&#34;</span> <span style="color:#a6e22e">label</span><span style="color:#f92672">-width</span><span style="color:#960050;background-color:#1e0010">=&#34;</span><span style="color:#a6e22e">180px</span><span style="color:#960050;background-color:#1e0010">&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">el-form-item</span> <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Name&#34;</span>&gt;
@@ -605,7 +605,7 @@
 </span></span></code></pre></div><h1 id="重構前台購物車">重構前台購物車</h1>
 <p>最後！重構 <code>Cart</code> 組件，和 <code>ProductList</code> 類似，兩者都用了 <code>ProductItem</code> 組件<br>
 一樣那句話：將 <code>&lt;template&gt;</code> 區塊替換成組件庫樣式</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#f92672">template</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#f92672">template</span>&gt;
 </span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">div</span>&gt;
 </span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;title&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">h1</span>&gt;{{<span style="color:#a6e22e">msg</span>}}&lt;/<span style="color:#f92672">h1</span>&gt;
@@ -674,6 +674,14 @@
       </header>
       
       <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/202609-mwaa-connection-encryption-investigation/">MWAA Connections 加密機制調查</a></h2>
+          <time class="published" datetime="2026-09-03 00:00:00 &#43;0000 UTC">2026/09/03</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
           <a href="/blog/202604-deploy-openclaw-ai-for-free/" class="image" style="--bg-image: url('/blog/202604-deploy-openclaw-ai-for-free/featured.jpg');">
     <img src="/blog/202604-deploy-openclaw-ai-for-free/featured.jpg" alt="">
   </a>
@@ -713,16 +721,6 @@
         </header>
       </article>
       
-      <article class="mini-post">
-          <a href="/blog/202508-manage-python-versions-with-pyenv/" class="image" style="--bg-image: url('/blog/202508-manage-python-versions-with-pyenv/featured.jpg');">
-    <img src="/blog/202508-manage-python-versions-with-pyenv/featured.jpg" alt="">
-  </a>
-        <header>
-          <h2><a href="/blog/202508-manage-python-versions-with-pyenv/">使用 Pyenv 輕鬆管理多版本 Python</a></h2>
-          <time class="published" datetime="2025-08-30 00:00:00 &#43;0000 UTC">2025/08/30</time>
-        </header>
-      </article>
-      
       
         <footer>
           <a href="/blog/" class="button">查看更多</a>
@@ -742,7 +740,7 @@
           
           
           <li>
-              <a href="/categories/aws/">aws<span class="count">26</span></a>
+              <a href="/categories/aws/">aws<span class="count">27</span></a>
           </li>
           
           <li>
@@ -940,6 +938,10 @@
         </li>
         
         <li>
+          <a href="/tags/airflow/">airflow (3)</a>
+        </li>
+        
+        <li>
           <a href="/tags/cloudflare/">cloudflare (3)</a>
         </li>
         
@@ -957,10 +959,6 @@
         
         <li>
           <a href="/tags/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/">架站相關 (3)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/airflow/">airflow (2)</a>
         </li>
         
         <li>
@@ -1093,6 +1091,10 @@
         
         <li>
           <a href="/tags/load-balancing/">load balancing (1)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/mwaa/">mwaa (1)</a>
         </li>
         
         <li>
@@ -1233,7 +1235,7 @@
     <script>
       hljs.configure({ ignoreUnescapedHTML: true }); 
       hljs.highlightAll();
-    </script><script src="/js/bundle.min.a56655f3069386c7a1539049f4b6e4d773b948f9c00ee443e5187c783819f686.js" integrity="sha256-pWZV8waThsehU5BJ9Lbk13O5SPnADuRD5Rh8eDgZ9oY="></script>
+    </script><script src="/js/bundle.min.d21befc899e4b6158eba05da3928321e52d15d067cb323bbf20e1b37a4ee0e3d.js" integrity="sha256-0hvvyJnkthWOugXaOSgyHlLRXQZ8syO78g4bN6TuDj0="></script>
     <script src="/js/add-on.js"></script>
 
 

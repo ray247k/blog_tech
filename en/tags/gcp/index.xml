@@ -1,54 +1,59 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>GCP on Byte Ebi 🍤</title>
-    <link>https://tech.ray247k.com/en/tags/gcp/</link>
-    <description>Recent content in GCP on Byte Ebi 🍤</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Thu, 30 Jun 2022 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://tech.ray247k.com/en/tags/gcp/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Create a Redis service on GCP</title>
-      <link>https://tech.ray247k.com/en/blog/202206-gcp-redis/</link>
-      <pubDate>Thu, 30 Jun 2022 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/blog/202206-gcp-redis/</guid>
-      <description>&lt;p&gt;GCP offers the Google Cloud MemoryStore service for creating Redis or Memcached caching machine services.&lt;br&gt;&#xA;The pricing is similar to that of setting up a database.&lt;br&gt;&#xA;I thought it would be as inexpensive as using virtual machines (VMs).&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Jenkins CI/CD 04 - Using SSH Commands to Operate another VM Instance in GCP</title>
-      <link>https://tech.ray247k.com/en/blog/202204-jenkins-cicd-4-ssh-remote-server/</link>
-      <pubDate>Wed, 13 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/blog/202204-jenkins-cicd-4-ssh-remote-server/</guid>
-      <description>&lt;p&gt;In a non-automated deployment scenario, manually connecting to the server host&amp;rsquo;s internals is required every time.&lt;br&gt;&#xA;Executing deployment commands or running deployment command executables not only involves inconvenience but also carries the risk of human error.&lt;br&gt;&#xA;With Jenkins&amp;rsquo; pipeline, we can replace manual execution, making deployments easier and more pleasant.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Scalable Server 02 Load Balancing</title>
-      <link>https://tech.ray247k.com/en/blog/202204-gcp-load-balancing/</link>
-      <pubDate>Tue, 05 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/blog/202204-gcp-load-balancing/</guid>
-      <description>&lt;p&gt;In the previous post &lt;a href=&#34;https://tech.ray247k.com/en/blog/202203-gcp-auto-scaling/&#34;&#xA;   &#xA;   &gt;Scalable Server 01 Auto Scaling&#xA;&lt;/a&gt;&#xA;, it was mentioned that we need to configure a set of Load Balancers to distribute internet requests to different server hosts.&lt;br&gt;&#xA;This allows us to dynamically adjust the number of hosts based on traffic and maintain stable service operations.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Scalable Server 01 Auto Scaling</title>
-      <link>https://tech.ray247k.com/en/blog/202203-gcp-auto-scaling/</link>
-      <pubDate>Sun, 27 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/blog/202203-gcp-auto-scaling/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Successfully launched a VM on GCP on the first try</title>
-      <link>https://tech.ray247k.com/en/blog/202201-gcp-vm-basic/</link>
-      <pubDate>Sat, 15 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/blog/202201-gcp-vm-basic/</guid>
-      <description>&lt;p&gt;How to launch a VM virtual machine on Google Cloud Platform (GCP)?&lt;br&gt;&#xA;It may sound complex, but in practice, it&amp;rsquo;s quite straightforward.&lt;br&gt;&#xA;If you haven&amp;rsquo;t had any experience with setting up a host before, this time, we&amp;rsquo;ll document the steps for you.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Enable docker service in remote server</title>
-      <link>https://tech.ray247k.com/en/blog/202103-enable-docker-service-in-remote-server/</link>
-      <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/blog/202103-enable-docker-service-in-remote-server/</guid>
-      <description>&lt;p&gt;Step-by-step guide for enabling Docker and Docker-compose services on a new cloud host.&lt;/p&gt;</description>
-    </item>
-  </channel>
+	<channel>
+		<title>GCP on Byte Ebi 🍤</title>
+		<link>https://tech.ray247k.com/en/tags/gcp/</link>
+		<description>Recent content in GCP on Byte Ebi 🍤</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Thu, 30 Jun 2022 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://tech.ray247k.com/en/tags/gcp/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Create a Redis service on GCP</title>
+				<link>https://tech.ray247k.com/en/blog/202206-gcp-redis/</link>
+				<pubDate>Thu, 30 Jun 2022 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202206-gcp-redis/</guid>
+				<description>&lt;p&gt;GCP offers the Google Cloud MemoryStore service for creating Redis or Memcached caching machine services.&lt;br&gt;&#xA;The pricing is similar to that of setting up a database.&lt;br&gt;&#xA;I thought it would be as inexpensive as using virtual machines (VMs).&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Jenkins CI/CD 04 - Using SSH Commands to Operate another VM Instance in GCP</title>
+				<link>https://tech.ray247k.com/en/blog/202204-jenkins-cicd-4-ssh-remote-server/</link>
+				<pubDate>Wed, 13 Apr 2022 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202204-jenkins-cicd-4-ssh-remote-server/</guid>
+				<description>&lt;p&gt;In a non-automated deployment scenario, manually connecting to the server host&amp;rsquo;s internals is required every time.&lt;br&gt;&#xA;Executing deployment commands or running deployment command executables not only involves inconvenience but also carries the risk of human error.&lt;br&gt;&#xA;With Jenkins&amp;rsquo; pipeline, we can replace manual execution, making deployments easier and more pleasant.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Scalable Server 02 Load Balancing</title>
+				<link>https://tech.ray247k.com/en/blog/202204-gcp-load-balancing/</link>
+				<pubDate>Tue, 05 Apr 2022 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202204-gcp-load-balancing/</guid>
+				<description>&lt;p&gt;In the previous post &lt;a href=&#34;https://tech.ray247k.com/en/blog/202203-gcp-auto-scaling/&#34;&#xD;&#xA;   &#xD;&#xA;   &gt;Scalable Server 01 Auto Scaling&#xD;&#xA;&lt;/a&gt;&#xD;&#xA;, it was mentioned that we need to configure a set of Load Balancers to distribute internet requests to different server hosts.&lt;br&gt;&#xA;This allows us to dynamically adjust the number of hosts based on traffic and maintain stable service operations.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Scalable Server 01 Auto Scaling</title>
+				<link>https://tech.ray247k.com/en/blog/202203-gcp-auto-scaling/</link>
+				<pubDate>Sun, 27 Mar 2022 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202203-gcp-auto-scaling/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Successfully launched a VM on GCP on the first try</title>
+				<link>https://tech.ray247k.com/en/blog/202201-gcp-vm-basic/</link>
+				<pubDate>Sat, 15 Jan 2022 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202201-gcp-vm-basic/</guid>
+				<description>&lt;p&gt;How to launch a VM virtual machine on Google Cloud Platform (GCP)?&lt;br&gt;&#xA;It may sound complex, but in practice, it&amp;rsquo;s quite straightforward.&lt;br&gt;&#xA;If you haven&amp;rsquo;t had any experience with setting up a host before, this time, we&amp;rsquo;ll document the steps for you.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Enable docker service in remote server</title>
+				<link>https://tech.ray247k.com/en/blog/202103-enable-docker-service-in-remote-server/</link>
+				<pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202103-enable-docker-service-in-remote-server/</guid>
+				<description>&lt;p&gt;Step-by-step guide for enabling Docker and Docker-compose services on a new cloud host.&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

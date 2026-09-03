@@ -1,47 +1,52 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>PHP on Byte Ebi 🍤</title>
-    <link>https://tech.ray247k.com/en/tags/php/</link>
-    <description>Recent content in PHP on Byte Ebi 🍤</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Sat, 02 Apr 2022 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://tech.ray247k.com/en/tags/php/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Introducing Laravel Sail and Basic Operations</title>
-      <link>https://tech.ray247k.com/en/blog/202204-laravel-sail/</link>
-      <pubDate>Sat, 02 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/blog/202204-laravel-sail/</guid>
-      <description>&lt;p&gt;In the context of Laravel development environment setup, both official and unofficial sources offer a plethora of approaches.&lt;br&gt;&#xA;This time, we will be introducing a package introduced after Laravel 8: &lt;a href=&#34;https://laravel.com/docs/9.x/sail&#34;&#xA;   &#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Laravel Sail&#xA;&lt;/a&gt;&#xA;.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Laravel Queue Usage</title>
-      <link>https://tech.ray247k.com/en/blog/202203-laravel-queue/</link>
-      <pubDate>Sat, 05 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/blog/202203-laravel-queue/</guid>
-      <description>&lt;p&gt;The purpose of queues is to defer processing of a time-consuming task that doesn&amp;rsquo;t require immediate completion.&#xA;Like sending emails, users don&amp;rsquo;t need to wait for the email to be sent successfully before the next step.&lt;br&gt;&#xA;Allowing the application to respond more quickly to web requests and smooth user experience.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Using PHP CodeSniffer to Check Coding Style</title>
-      <link>https://tech.ray247k.com/en/blog/202201-phpcs/</link>
-      <pubDate>Thu, 20 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/blog/202201-phpcs/</guid>
-      <description>&lt;p&gt;Checking code conformity with standards using phpcs (PHP Code Sniffer)&lt;br&gt;&#xA;Automatically correcting non-conforming code using phpcbf (PHP Code Beautifier and Fixer)&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Server Stress Testing - Using Apache Bench</title>
-      <link>https://tech.ray247k.com/en/blog/202105-web-server-stress-testing/</link>
-      <pubDate>Sun, 23 May 2021 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/blog/202105-web-server-stress-testing/</guid>
-      <description>&lt;p&gt;Server stress testing is a must before going live, no exceptions!&lt;br&gt;&#xA;Just imagine you&amp;rsquo;ve been working overtime for months, the system goes online.&lt;br&gt;&#xA;And you&amp;rsquo;re celebrating with pizza and cocktail, only to find out suddenly the server crashes due to overwhelming traffic!&lt;br&gt;&#xA;That&amp;rsquo;s why conducting stress tests beforehand makes a good system!&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Laravel environment basic settings</title>
-      <link>https://tech.ray247k.com/en/blog/202102-laravel-environment-basic-settings/</link>
-      <pubDate>Thu, 25 Feb 2021 00:00:00 +0000</pubDate>
-      <guid>https://tech.ray247k.com/en/blog/202102-laravel-environment-basic-settings/</guid>
-      <description>&lt;p&gt;Configuration and package installation required for developing Laravel projects, applicable whether on remote hosts or local machines.&lt;/p&gt;</description>
-    </item>
-  </channel>
+	<channel>
+		<title>PHP on Byte Ebi 🍤</title>
+		<link>https://tech.ray247k.com/en/tags/php/</link>
+		<description>Recent content in PHP on Byte Ebi 🍤</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Sat, 02 Apr 2022 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://tech.ray247k.com/en/tags/php/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Introducing Laravel Sail and Basic Operations</title>
+				<link>https://tech.ray247k.com/en/blog/202204-laravel-sail/</link>
+				<pubDate>Sat, 02 Apr 2022 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202204-laravel-sail/</guid>
+				<description>&lt;p&gt;In the context of Laravel development environment setup, both official and unofficial sources offer a plethora of approaches.&lt;br&gt;&#xA;This time, we will be introducing a package introduced after Laravel 8: &lt;a href=&#34;https://laravel.com/docs/9.x/sail&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Laravel Sail&#xD;&#xA;&lt;/a&gt;&#xD;&#xA;.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Laravel Queue Usage</title>
+				<link>https://tech.ray247k.com/en/blog/202203-laravel-queue/</link>
+				<pubDate>Sat, 05 Mar 2022 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202203-laravel-queue/</guid>
+				<description>&lt;p&gt;The purpose of queues is to defer processing of a time-consuming task that doesn&amp;rsquo;t require immediate completion.&#xA;Like sending emails, users don&amp;rsquo;t need to wait for the email to be sent successfully before the next step.&lt;br&gt;&#xA;Allowing the application to respond more quickly to web requests and smooth user experience.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Using PHP CodeSniffer to Check Coding Style</title>
+				<link>https://tech.ray247k.com/en/blog/202201-phpcs/</link>
+				<pubDate>Thu, 20 Jan 2022 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202201-phpcs/</guid>
+				<description>&lt;p&gt;Checking code conformity with standards using phpcs (PHP Code Sniffer)&lt;br&gt;&#xA;Automatically correcting non-conforming code using phpcbf (PHP Code Beautifier and Fixer)&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Server Stress Testing - Using Apache Bench</title>
+				<link>https://tech.ray247k.com/en/blog/202105-web-server-stress-testing/</link>
+				<pubDate>Sun, 23 May 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202105-web-server-stress-testing/</guid>
+				<description>&lt;p&gt;Server stress testing is a must before going live, no exceptions!&lt;br&gt;&#xA;Just imagine you&amp;rsquo;ve been working overtime for months, the system goes online.&lt;br&gt;&#xA;And you&amp;rsquo;re celebrating with pizza and cocktail, only to find out suddenly the server crashes due to overwhelming traffic!&lt;br&gt;&#xA;That&amp;rsquo;s why conducting stress tests beforehand makes a good system!&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Laravel environment basic settings</title>
+				<link>https://tech.ray247k.com/en/blog/202102-laravel-environment-basic-settings/</link>
+				<pubDate>Thu, 25 Feb 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202102-laravel-environment-basic-settings/</guid>
+				<description>&lt;p&gt;Configuration and package installation required for developing Laravel projects, applicable whether on remote hosts or local machines.&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>
