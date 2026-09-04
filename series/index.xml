@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Series on Byte Ebi 🍤</title>
+		<link>https://tech.ray247k.com/series/</link>
+		<description>Recent content in Series on Byte Ebi 🍤</description>
+		<generator>Hugo</generator>
+		<language>zh-TW</language>
+		
+		
+		
+		
+			<lastBuildDate>Sun, 18 Feb 2024 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://tech.ray247k.com/series/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>大話 AWS 雲端架構筆記</title>
+				<link>https://tech.ray247k.com/series/%E5%A4%A7%E8%A9%B1-aws-%E9%9B%B2%E7%AB%AF%E6%9E%B6%E6%A7%8B%E7%AD%86%E8%A8%98/</link>
+				<pubDate>Sun, 18 Feb 2024 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/series/%E5%A4%A7%E8%A9%B1-aws-%E9%9B%B2%E7%AB%AF%E6%9E%B6%E6%A7%8B%E7%AD%86%E8%A8%98/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Jenkins CI/CD</title>
+				<link>https://tech.ray247k.com/series/jenkins-ci/cd/</link>
+				<pubDate>Wed, 13 Apr 2022 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/series/jenkins-ci/cd/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>伸縮自在的伺服器</title>
+				<link>https://tech.ray247k.com/series/%E4%BC%B8%E7%B8%AE%E8%87%AA%E5%9C%A8%E7%9A%84%E4%BC%BA%E6%9C%8D%E5%99%A8/</link>
+				<pubDate>Tue, 05 Apr 2022 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/series/%E4%BC%B8%E7%B8%AE%E8%87%AA%E5%9C%A8%E7%9A%84%E4%BC%BA%E6%9C%8D%E5%99%A8/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>A Tour of Go 學習筆記</title>
+				<link>https://tech.ray247k.com/series/a-tour-of-go-%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/</link>
+				<pubDate>Sat, 25 Dec 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/series/a-tour-of-go-%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>用 Drone 建立自動部署</title>
+				<link>https://tech.ray247k.com/series/%E7%94%A8-drone-%E5%BB%BA%E7%AB%8B%E8%87%AA%E5%8B%95%E9%83%A8%E7%BD%B2/</link>
+				<pubDate>Fri, 09 Jul 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/series/%E7%94%A8-drone-%E5%BB%BA%E7%AB%8B%E8%87%AA%E5%8B%95%E9%83%A8%E7%BD%B2/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Docker 筆記</title>
+				<link>https://tech.ray247k.com/series/docker-%E7%AD%86%E8%A8%98/</link>
+				<pubDate>Tue, 12 Jan 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/series/docker-%E7%AD%86%E8%A8%98/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Express&#43;Vue 搭建電商網站</title>
+				<link>https://tech.ray247k.com/series/express&#43;vue-%E6%90%AD%E5%BB%BA%E9%9B%BB%E5%95%86%E7%B6%B2%E7%AB%99/</link>
+				<pubDate>Thu, 03 Dec 2020 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/series/express&#43;vue-%E6%90%AD%E5%BB%BA%E9%9B%BB%E5%95%86%E7%B6%B2%E7%AB%99/</guid>
+				<description></description>
+			</item>
+	</channel>
+</rss>

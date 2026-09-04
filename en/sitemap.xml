@@ -564,17 +564,30 @@
                 href="https://tech.ray247k.com/en/categories/golang/"
                 />
   </url><url>
-    <loc>https://tech.ray247k.com/en/tags/golang-hugo/</loc>
+    <loc>https://tech.ray247k.com/en/tags/golang/</loc>
     <lastmod>2024-05-06T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-TW"
-                href="https://tech.ray247k.com/tags/golang-hugo/"
+                href="https://tech.ray247k.com/tags/golang/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://tech.ray247k.com/en/tags/golang-hugo/"
+                href="https://tech.ray247k.com/en/tags/golang/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/tags/hugo/</loc>
+    <lastmod>2024-05-06T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/hugo/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/hugo/"
                 />
   </url><url>
     <loc>https://tech.ray247k.com/en/blog/202402-aws-fundamental-architectures/</loc>
@@ -588,6 +601,22 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tech.ray247k.com/en/blog/202402-aws-fundamental-architectures/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/series/aws-cloud-fundamental-notes/</loc>
+    <lastmod>2024-02-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tech.ray247k.com/en/series/</loc>
+    <lastmod>2024-02-18T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/series/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/series/"
                 />
   </url><url>
     <loc>https://tech.ray247k.com/en/blog/202402-aws-fundamental-hybrid-cloud/</loc>
@@ -731,19 +760,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tech.ray247k.com/en/tags/go/"
-                />
-  </url><url>
-    <loc>https://tech.ray247k.com/en/tags/golang/</loc>
-    <lastmod>2023-06-25T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/tags/golang/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/tags/golang/"
                 />
   </url><url>
     <loc>https://tech.ray247k.com/en/blog/202306-aws-fundamental-cloudformation/</loc>
@@ -1168,6 +1184,19 @@
                 href="https://tech.ray247k.com/en/tags/jenkins/"
                 />
   </url><url>
+    <loc>https://tech.ray247k.com/en/series/jenkins-ci/cd/</loc>
+    <lastmod>2022-04-13T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/series/jenkins-ci/cd/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/series/jenkins-ci/cd/"
+                />
+  </url><url>
     <loc>https://tech.ray247k.com/en/blog/202204-jenkins-cicd-4-ssh-remote-server/</loc>
     <lastmod>2022-04-13T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -1245,6 +1274,9 @@
                 hreflang="en"
                 href="https://tech.ray247k.com/en/tags/load-balancing/"
                 />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/series/scalable-server/</loc>
+    <lastmod>2022-04-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/en/blog/202204-gcp-load-balancing/</loc>
     <lastmod>2022-04-05T00:00:00+00:00</lastmod>
@@ -1540,6 +1572,9 @@
                 hreflang="en"
                 href="https://tech.ray247k.com/en/blog/202112-a-tour-of-go-09-concurrency/"
                 />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/series/a-tour-of-go-study-notes/</loc>
+    <lastmod>2021-12-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/en/blog/202112-a-tour-of-go-08-interface-and-error/</loc>
     <lastmod>2021-12-18T00:00:00+00:00</lastmod>
@@ -1939,6 +1974,9 @@
                 hreflang="en"
                 href="https://tech.ray247k.com/en/blog/202107-drone-cicd-4-advanced-runner/"
                 />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/series/ci-cd-with-drone-101/</loc>
+    <lastmod>2021-07-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/en/tags/drone/</loc>
     <lastmod>2021-07-09T00:00:00+00:00</lastmod>
@@ -2344,6 +2382,9 @@
                 hreflang="en"
                 href="https://tech.ray247k.com/en/blog/202101-portainer-open-source-container-management-gui/"
                 />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/series/docker-notes/</loc>
+    <lastmod>2021-01-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/en/blog/202101-docker-note-3-introduce-docker-compose/</loc>
     <lastmod>2021-01-12T00:00:00+00:00</lastmod>

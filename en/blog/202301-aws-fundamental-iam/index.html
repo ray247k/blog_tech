@@ -83,7 +83,7 @@
     "url": "https:\/\/tech.ray247k.com\/",
     "description": "About web development, software engineering, frontend, backend, chatbot, server related topics. - ai,aws,devops,git,golang,laravel,php,python,serverless,third-party services,tools,typescript,version control,web hosting,website operations,",
     "keywords": [
-        "airflow,apache bench,auto scaling,aws,blockchain,cdn,chatbot,ci\/cd,cicd,cloudflare,cloudflare workers,composer,container technology,containerization,csv,devops,discord,dns,docker,docker compose,domain,domain name,drone,excel,ffmpeg,firewall,gas,gcp,gcr,git,github,github page,go,golang,golang, hugo,google app script,google container registry,google domains,google sheets,grumphp,jenkins,laravel,laravel-excel,linux,load balancing,mwaa,nginx,ngrok,openclaw,personal brand,php,php-fpm,phpcbf,phpcs,portainer,postgresql,pre-commit,prerender,proxy,purchase domain,pyenv,pytest,python,queue,rds,redis,search engine optimization,seo,server,serverless,smart contract,ssh,stress testing,subdomain,tdd,typescript,unit test,version control,web hosting,"
+        "airflow,apache bench,auto scaling,aws,blockchain,cdn,chatbot,ci\/cd,cicd,cloudflare,cloudflare workers,composer,container technology,containerization,csv,devops,discord,dns,docker,docker compose,domain,domain name,drone,excel,ffmpeg,firewall,gas,gcp,gcr,git,github,github page,go,golang,google app script,google container registry,google domains,google sheets,grumphp,hugo,jenkins,laravel,laravel-excel,linux,load balancing,mwaa,nginx,ngrok,openclaw,personal brand,php,php-fpm,phpcbf,phpcs,portainer,postgresql,pre-commit,prerender,proxy,purchase domain,pyenv,pytest,python,queue,rds,redis,search engine optimization,seo,server,serverless,smart contract,ssh,stress testing,subdomain,tdd,typescript,unit test,version control,web hosting,"
     ]
 }
 </script>
@@ -172,7 +172,7 @@
     "@type": "BlogPosting",
     "articleSection": "blog",
     "name": "[AWS Cloud Fundamental Notes] IAM",
-    "headline": "\u003cp\u003eDue to the excessive power of root permissions, it is necessary to divide them into multiple users and groups to set permissions.\u003c\/p\u003e\n\u003cp\u003e\u003ca href=\u0022https:\/\/aws.amazon.com\/tw\/iam\/\u0022\r\n   \r\n    target=\u0022_blank\u0022 rel=\u0022noreferrer noopener\u0022\u003eAWS IAM\r\n\u003c\/a\u003e\r\n\u003cbr\u003e\n\u003ca href=\u0022https:\/\/docs.aws.amazon.com\/zh_tw\/IAM\/latest\/UserGuide\/introduction.html\u0022\r\n   \r\n    target=\u0022_blank\u0022 rel=\u0022noreferrer noopener\u0022\u003eWhat is IAM?\r\n\u003c\/a\u003e\r\n\u003c\/p\u003e\n\u003cp\u003e\u003cimg src=\u0022https:\/\/i.imgur.com\/OtEOMd4.png\u0022 alt=\u0022IAM Architecture\u0022\u003e\u003c\/p\u003e\n\u003ch2 id=\u0022operation-mechanism\u0022\u003eOperation Mechanism\u003c\/h2\u003e\n\u003cp\u003eThe architecture of IAM is as follows:\u003c\/p\u003e\n\u003cpre class=\u0022mermaid\u0022\u003egraph LR;\r\n\r\nPolicy1--\u003ePermission;\r\nPolicy2--\u003ePermission;\r\nPolicy3--\u003ePermission;\r\nPermission--\u003eRole;\r\nPermission--\u003eGroup;\r\nGroup--\u003eUser;\r\nUser--\u003ePassword;\r\nUser--\u003eCredentail;\r\nRole--\u003eid1[External Users];\r\nRole--\u003eid2[AWS Internal Services];\r\n\u003c\/pre\u003e\r\n\r\n\u003chr\u003e\n\u003ch2 id=\u0022policy\u0022\u003ePolicy\u003c\/h2\u003e\n\u003cp\u003e\u003ca href=\u0022https:\/\/docs.aws.amazon.com\/zh_tw\/AWSEC2\/latest\/UserGuide\/iam-policy-structure.html\u0022\r\n   \r\n    target=\u0022_blank\u0022 rel=\u0022noreferrer noopener\u0022\u003eOfficial Documentation\r\n\u003c\/a\u003e\r\n\u003c\/p\u003e\n\u003cp\u003eWhen a policy is attached to a user or group, it allows or denies permission for the user to perform specific tasks on specific resources.\u003c\/p\u003e",
+    "headline": "\u003cp\u003eDue to the excessive power of root permissions, it is necessary to divide them into multiple users and groups to set permissions.\u003c\/p\u003e\n\u003cp\u003e\u003ca href=\u0022https:\/\/aws.amazon.com\/tw\/iam\/\u0022\r\n   \r\n    target=\u0022_blank\u0022 rel=\u0022noreferrer noopener\u0022\u003eAWS IAM\r\n\u003c\/a\u003e\r\n\u003cbr\u003e\n\u003ca href=\u0022https:\/\/docs.aws.amazon.com\/zh_tw\/IAM\/latest\/UserGuide\/introduction.html\u0022\r\n   \r\n    target=\u0022_blank\u0022 rel=\u0022noreferrer noopener\u0022\u003eWhat is IAM?\r\n\u003c\/a\u003e\r\n\u003c\/p\u003e\n\u003cp\u003e\u003cimg src=\u0022https:\/\/i.imgur.com\/OtEOMd4.png\u0022 alt=\u0022IAM Architecture\u0022\u003e\u003c\/p\u003e\n\u003ch2 id=\u0022operation-mechanism\u0022\u003eOperation Mechanism\u003c\/h2\u003e\n\u003cp\u003eThe architecture of IAM is as follows:\u003c\/p\u003e\n\u003cpre class=\u0022mermaid\u0022\u003egraph LR;\n\nPolicy1--\u003ePermission;\nPolicy2--\u003ePermission;\nPolicy3--\u003ePermission;\nPermission--\u003eRole;\nPermission--\u003eGroup;\nGroup--\u003eUser;\nUser--\u003ePassword;\nUser--\u003eCredentail;\nRole--\u003eid1[External Users];\nRole--\u003eid2[AWS Internal Services];\r\n\u003c\/pre\u003e\r\n\r\n\u003chr\u003e\n\u003ch2 id=\u0022policy\u0022\u003ePolicy\u003c\/h2\u003e\n\u003cp\u003e\u003ca href=\u0022https:\/\/docs.aws.amazon.com\/zh_tw\/AWSEC2\/latest\/UserGuide\/iam-policy-structure.html\u0022\r\n   \r\n    target=\u0022_blank\u0022 rel=\u0022noreferrer noopener\u0022\u003eOfficial Documentation\r\n\u003c\/a\u003e\r\n\u003c\/p\u003e\n\u003cp\u003eWhen a policy is attached to a user or group, it allows or denies permission for the user to perform specific tasks on specific resources.\u003c\/p\u003e",
     "description": "Introduction to IAM and its usage and operational mechanism",
     "inLanguage": "en",
     "isFamilyFriendly": "true",
@@ -246,6 +246,11 @@
         
           
           <a href="/en/categories" class="nav link"><i class='fas fa-sitemap'></i> category</a>
+        
+      
+        
+          
+          <a href="/en/series" class="nav link"><i class='fas fa-list-ol'></i> series</a>
         
       
       
@@ -348,6 +353,300 @@
   </div>
 </header>
 
+  
+    
+    
+    
+    
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      <details id="series-banner">
+        <summary>
+          <span><i class="fas fa-chevron-right series-chevron"></i> Series : AWS Cloud Fundamental Notes (Part 1 of 23)</span>
+          <a href="/en/series/aws-cloud-fundamental-notes/">View full series →</a>
+        </summary>
+        <ul class="posts">
+          
+          <li>
+            <article>
+              <header>
+                
+                <strong>[AWS Cloud Fundamental Notes] IAM</strong>
+                
+              </header>
+            </article>
+          </li>
+          
+          <li>
+            <article>
+              <header>
+                
+                <a href="/en/blog/202303-aws-fundamental-vpc/">[AWS Cloud Fundamental Notes] VPC</a>
+                
+              </header>
+            </article>
+          </li>
+          
+          <li>
+            <article>
+              <header>
+                
+                <a href="/en/blog/202303-aws-fundamental-ec2/">[AWS Cloud Fundamental Notes] EC2</a>
+                
+              </header>
+            </article>
+          </li>
+          
+          <li>
+            <article>
+              <header>
+                
+                <a href="/en/blog/202303-aws-fundamental-s3/">[AWS Cloud Fundamental Notes] S3</a>
+                
+              </header>
+            </article>
+          </li>
+          
+          <li>
+            <article>
+              <header>
+                
+                <a href="/en/blog/202304-aws-fundamental-rds/">[AWS Cloud Fundamental Notes] RDS</a>
+                
+              </header>
+            </article>
+          </li>
+          
+          <li>
+            <article>
+              <header>
+                
+                <a href="/en/blog/202304-aws-fundamental-route53/">[AWS Cloud Fundamental Notes] Route 53</a>
+                
+              </header>
+            </article>
+          </li>
+          
+          <li>
+            <article>
+              <header>
+                
+                <a href="/en/blog/202304-aws-fundamental-cloudwatch-and-cloudtrail/">[AWS Cloud Fundamental Notes] CloudWatch and CloudTrail</a>
+                
+              </header>
+            </article>
+          </li>
+          
+          <li>
+            <article>
+              <header>
+                
+                <a href="/en/blog/202305-aws-fundamental-cloudfront/">[AWS Cloud Fundamental Notes] CloudFront</a>
+                
+              </header>
+            </article>
+          </li>
+          
+          <li>
+            <article>
+              <header>
+                
+                <a href="/en/blog/202305-aws-fundamental-elastic-load-balancer/">[AWS Cloud Fundamental Notes] Elastic Load Balancer</a>
+                
+              </header>
+            </article>
+          </li>
+          
+          <li>
+            <article>
+              <header>
+                
+                <a href="/en/blog/202305-aws-fundamental-auto-scaling/">[AWS Cloud Fundamental Notes] Auto Scaling</a>
+                
+              </header>
+            </article>
+          </li>
+          
+          <li>
+            <article>
+              <header>
+                
+                <a href="/en/blog/202305-aws-fundamental-sqs/">[AWS Cloud Fundamental Notes] SQS</a>
+                
+              </header>
+            </article>
+          </li>
+          
+          <li>
+            <article>
+              <header>
+                
+                <a href="/en/blog/202306-aws-fundamental-dynamodb/">[AWS Cloud Fundamental Notes] DynamoDB</a>
+                
+              </header>
+            </article>
+          </li>
+          
+          <li>
+            <article>
+              <header>
+                
+                <a href="/en/blog/202306-aws-fundamental-elasticache/">[AWS Cloud Fundamental Notes] ElastiCache</a>
+                
+              </header>
+            </article>
+          </li>
+          
+          <li>
+            <article>
+              <header>
+                
+                <a href="/en/blog/202306-aws-fundamental-cloudformation/">[AWS Cloud Fundamental Notes] CloudFormation</a>
+                
+              </header>
+            </article>
+          </li>
+          
+          <li>
+            <article>
+              <header>
+                
+                <a href="/en/blog/202307-aws-fundamental-cognito/">[AWS Cloud Fundamental Notes] Cognito</a>
+                
+              </header>
+            </article>
+          </li>
+          
+          <li>
+            <article>
+              <header>
+                
+                <a href="/en/blog/202308-aws-fundamental-sns/">[AWS Cloud Fundamental Notes] SNS</a>
+                
+              </header>
+            </article>
+          </li>
+          
+          <li>
+            <article>
+              <header>
+                
+                <a href="/en/blog/202309-aws-fundamental-cost-control/">[AWS Cloud Fundamental Notes] Cost Control</a>
+                
+              </header>
+            </article>
+          </li>
+          
+          <li>
+            <article>
+              <header>
+                
+                <a href="/en/blog/202310-aws-fundamental-kinesis-emr-and-redshift/">[AWS Cloud Fundamental Notes] Kinesis、EMR and Redshift</a>
+                
+              </header>
+            </article>
+          </li>
+          
+          <li>
+            <article>
+              <header>
+                
+                <a href="/en/blog/202312-aws-fundamental-api-gateway/">[AWS Cloud Fundamental Notes] API Gateway</a>
+                
+              </header>
+            </article>
+          </li>
+          
+          <li>
+            <article>
+              <header>
+                
+                <a href="/en/blog/202312-aws-fundamental-lambda/">[AWS Cloud Fundamental Notes] Lambda</a>
+                
+              </header>
+            </article>
+          </li>
+          
+          <li>
+            <article>
+              <header>
+                
+                <a href="/en/blog/202401-aws-fundamental-cyber-security/">[AWS Cloud Fundamental Notes] Cyber Security</a>
+                
+              </header>
+            </article>
+          </li>
+          
+          <li>
+            <article>
+              <header>
+                
+                <a href="/en/blog/202402-aws-fundamental-hybrid-cloud/">[AWS Cloud Fundamental Notes] Hybrid Cloud</a>
+                
+              </header>
+            </article>
+          </li>
+          
+          <li>
+            <article>
+              <header>
+                
+                <a href="/en/blog/202402-aws-fundamental-architectures/">[AWS Cloud Fundamental Notes] Overview of Common AWS Architectures</a>
+                
+              </header>
+            </article>
+          </li>
+          
+        </ul>
+      </details>
+    
+  
   <div id="socnet-share">
 
 
@@ -723,11 +1022,11 @@ After applying a role with Admin permissions, they gain S3 Admin permissions</p>
         </li>
         
         <li>
-          <a href="/en/tags/go/">go (11)</a>
+          <a href="/en/tags/golang/">golang (12)</a>
         </li>
         
         <li>
-          <a href="/en/tags/golang/">golang (11)</a>
+          <a href="/en/tags/go/">go (11)</a>
         </li>
         
         <li>
@@ -895,10 +1194,6 @@ After applying a role with Admin permissions, they gain S3 Admin permissions</p>
         </li>
         
         <li>
-          <a href="/en/tags/golang-hugo/">golang, hugo (1)</a>
-        </li>
-        
-        <li>
           <a href="/en/tags/google-app-script/">google app script (1)</a>
         </li>
         
@@ -912,6 +1207,10 @@ After applying a role with Admin permissions, they gain S3 Admin permissions</p>
         
         <li>
           <a href="/en/tags/grumphp/">grumphp (1)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/hugo/">hugo (1)</a>
         </li>
         
         <li>

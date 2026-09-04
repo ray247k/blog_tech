@@ -86,3 +86,56 @@ h1, h2, h3, h4, h5, h6 {
 .content a:hover {
     color: #820614;
 }
+
+/*********************/
+/*   系列文章 頂部橫幅   */
+/*********************/
+#series-banner {
+    margin: 0 -1em 1em -1em;
+    background-color: #eafaf8;
+    border-left: 4px solid #2eb8ac;
+}
+
+#series-banner summary {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5em;
+    cursor: pointer;
+    padding: 0.6em 1em;
+    font-size: 0.9em;
+    list-style: none;
+}
+
+#series-banner summary::-webkit-details-marker {
+    display: none;
+}
+
+#series-banner i {
+    color: #2eb8ac;
+}
+
+#series-banner .series-chevron {
+    transition: transform 0.2s ease;
+}
+
+#series-banner[open] .series-chevron {
+    transform: rotate(90deg);
+}
+
+#series-banner summary a {
+    color: #2eb8ac;
+    font-weight: bold;
+    white-space: nowrap;
+    border-bottom: none;
+}
+
+#series-banner summary a:hover {
+    color: #820614;
+}
+
+#series-banner ul.posts {
+    margin: 0;
+    padding: 0 1em 0.8em 1em;
+}

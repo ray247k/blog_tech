@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Docker Notes on Byte Ebi 🍤</title>
+		<link>https://tech.ray247k.com/en/series/docker-notes/</link>
+		<description>Recent content in Docker Notes on Byte Ebi 🍤</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Tue, 12 Jan 2021 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://tech.ray247k.com/en/series/docker-notes/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Docker Notes 3 - docker-compose</title>
+				<link>https://tech.ray247k.com/en/blog/202101-docker-note-3-introduce-docker-compose/</link>
+				<pubDate>Tue, 12 Jan 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202101-docker-note-3-introduce-docker-compose/</guid>
+				<description>&lt;p&gt;When it comes to managing multiple Docker containers that are related to each other, using plain Docker commands requires remembering the relationships between containers.&lt;br&gt;&#xA;However, with docker-compose, managing multiple containers becomes straightforward through easy definition of multi-container services.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Docker Notes 2 - Basic Usage</title>
+				<link>https://tech.ray247k.com/en/blog/202101-docker-note-2-basic-usage/</link>
+				<pubDate>Sat, 09 Jan 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202101-docker-note-2-basic-usage/</guid>
+				<description>&lt;p&gt;Containerization isolates different environments, allowing engineers to focus on development without spending excessive effort on environment setup.&lt;br&gt;&#xA;Docker is currently a mature and popular containerization technology.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Docker Notes 1 - Understanding Docker</title>
+				<link>https://tech.ray247k.com/en/blog/202101-docker-note-1-what-is-docker/</link>
+				<pubDate>Sat, 02 Jan 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202101-docker-note-1-what-is-docker/</guid>
+				<description>&lt;p&gt;Containerization isolates different environments, allowing engineers to focus on development without spending excessive effort on environment setup.&lt;br&gt;&#xA;Docker is currently a mature and popular containerization technology.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

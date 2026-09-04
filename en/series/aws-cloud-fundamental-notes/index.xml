@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>AWS Cloud Fundamental Notes on Byte Ebi 🍤</title>
+		<link>https://tech.ray247k.com/en/series/aws-cloud-fundamental-notes/</link>
+		<description>Recent content in AWS Cloud Fundamental Notes on Byte Ebi 🍤</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Sun, 18 Feb 2024 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://tech.ray247k.com/en/series/aws-cloud-fundamental-notes/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>[AWS Cloud Fundamental Notes] Overview of Common AWS Architectures</title>
+				<link>https://tech.ray247k.com/en/blog/202402-aws-fundamental-architectures/</link>
+				<pubDate>Sun, 18 Feb 2024 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202402-aws-fundamental-architectures/</guid>
+				<description>&lt;p&gt;Introducing various common application architecture components and their evolution.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[AWS Cloud Fundamental Notes] Hybrid Cloud</title>
+				<link>https://tech.ray247k.com/en/blog/202402-aws-fundamental-hybrid-cloud/</link>
+				<pubDate>Tue, 13 Feb 2024 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202402-aws-fundamental-hybrid-cloud/</guid>
+				<description>&lt;p&gt;Hybrid cloud integrates a company&amp;rsquo;s internal IT resources with third-party cloud providers&amp;rsquo; infrastructure and services.&lt;br&gt;&#xA;AWS hybrid cloud services offer a consistent AWS experience from the cloud to on-premises to the edge, allowing you to store data and run applications across multiple environments.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[AWS Cloud Fundamental Notes] Cyber Security</title>
+				<link>https://tech.ray247k.com/en/blog/202401-aws-fundamental-cyber-security/</link>
+				<pubDate>Sat, 06 Jan 2024 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202401-aws-fundamental-cyber-security/</guid>
+				<description>&lt;p&gt;In cloud services, enterprises use a large number of accounts, which causes fragmentation in architecture and security,&#xA;increasing management difficulty.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[AWS Cloud Fundamental Notes] Lambda</title>
+				<link>https://tech.ray247k.com/en/blog/202312-aws-fundamental-lambda/</link>
+				<pubDate>Wed, 27 Dec 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202312-aws-fundamental-lambda/</guid>
+				<description>&lt;p&gt;Uploading the program to the Lambda service enables quick activation when network packets are sent in for request access,&#xA;achieving a pay-as-you-go model.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[AWS Cloud Fundamental Notes] API Gateway</title>
+				<link>https://tech.ray247k.com/en/blog/202312-aws-fundamental-api-gateway/</link>
+				<pubDate>Sun, 17 Dec 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202312-aws-fundamental-api-gateway/</guid>
+				<description>&lt;p&gt;As the &amp;ldquo;front door&amp;rdquo; for applications to access data, business logic, or functionality from backend services.&lt;br&gt;&#xA;When using API Gateway, you can create RESTful APIs and WebSocket APIs to enable real-time bidirectional communication applications.&lt;br&gt;&#xA;API Gateway supports containerized, serverless workloads, and web applications.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[AWS Cloud Fundamental Notes] Kinesis、EMR and Redshift</title>
+				<link>https://tech.ray247k.com/en/blog/202310-aws-fundamental-kinesis-emr-and-redshift/</link>
+				<pubDate>Fri, 27 Oct 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202310-aws-fundamental-kinesis-emr-and-redshift/</guid>
+				<description>&lt;p&gt;Used for big data architecture&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[AWS Cloud Fundamental Notes] Cost Control</title>
+				<link>https://tech.ray247k.com/en/blog/202309-aws-fundamental-cost-control/</link>
+				<pubDate>Sun, 17 Sep 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202309-aws-fundamental-cost-control/</guid>
+				<description>&lt;p&gt;Using the &lt;a href=&#34;https://calculator.aws/#/&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;AWS Pricing Calculator&#xD;&#xA;&lt;/a&gt;&#xD;&#xA;, you can estimate the cost of cloud architecture through a data center perspective.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://docs.aws.amazon.com/zh_tw/organizations/latest/userguide/orgs_introduction.html&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;AWS Organizations&#xD;&#xA;&lt;/a&gt;&#xD;&#xA; consolidates multiple AWS accounts into one organization for centralized management.&lt;br&gt;&#xA;You can create accounts within the organization and invite existing accounts to join.&lt;br&gt;&#xA;It includes account management and consolidated billing features, meeting budget, security, and compliance requirements.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[AWS Cloud Fundamental Notes] SNS</title>
+				<link>https://tech.ray247k.com/en/blog/202308-aws-fundamental-sns/</link>
+				<pubDate>Sun, 13 Aug 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202308-aws-fundamental-sns/</guid>
+				<description>&lt;p&gt;Used for sending SMS or E-mail as well as push notifications: &lt;a href=&#34;https://docs.aws.amazon.com/zh_tw/sns/latest/dg/welcome.html&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Simple Notification Service&#xD;&#xA;&lt;/a&gt;&#xD;&#xA;&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[AWS Cloud Fundamental Notes] Cognito</title>
+				<link>https://tech.ray247k.com/en/blog/202307-aws-fundamental-cognito/</link>
+				<pubDate>Fri, 07 Jul 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202307-aws-fundamental-cognito/</guid>
+				<description>&lt;p&gt;&lt;a href=&#34;https://aws.amazon.com/tw/cognito/&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Amazon Cognito&#xD;&#xA;&lt;/a&gt;&#xD;&#xA;: When traffic comes in, identity verification must be done first to confirm access to AWS cloud resources.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[AWS Cloud Fundamental Notes] CloudFormation</title>
+				<link>https://tech.ray247k.com/en/blog/202306-aws-fundamental-cloudformation/</link>
+				<pubDate>Sun, 18 Jun 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202306-aws-fundamental-cloudformation/</guid>
+				<description>&lt;p&gt;CloudFormation is AWS&amp;rsquo;s native Infrastructure as Code (IaC) service, which treats infrastructure as code,&#xA;allowing you to model, provision, and manage AWS and third-party resources.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[AWS Cloud Fundamental Notes] ElastiCache</title>
+				<link>https://tech.ray247k.com/en/blog/202306-aws-fundamental-elasticache/</link>
+				<pubDate>Tue, 13 Jun 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202306-aws-fundamental-elasticache/</guid>
+				<description>&lt;p&gt;Cloud caching service with two underlying engines: &lt;a href=&#34;#Redis&#34;&#xD;&#xA;   &#xD;&#xA;   &gt;Redis&#xD;&#xA;&lt;/a&gt;&#xD;&#xA; and &lt;a href=&#34;#Memcached&#34;&#xD;&#xA;   &#xD;&#xA;   &gt;Memcached&#xD;&#xA;&lt;/a&gt;&#xD;&#xA;.&lt;br&gt;&#xA;It can assist in implementing &lt;code&gt;Shard&lt;/code&gt;.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[AWS Cloud Fundamental Notes] DynamoDB</title>
+				<link>https://tech.ray247k.com/en/blog/202306-aws-fundamental-dynamodb/</link>
+				<pubDate>Fri, 02 Jun 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202306-aws-fundamental-dynamodb/</guid>
+				<description>&lt;p&gt;Distributed NoSQL database service.&lt;br&gt;&#xA;Data access must be obtained through the corresponding Role (EC2) or using Credentials (developer) with IAM.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[AWS Cloud Fundamental Notes] SQS</title>
+				<link>https://tech.ray247k.com/en/blog/202305-aws-fundamental-sqs/</link>
+				<pubDate>Tue, 30 May 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202305-aws-fundamental-sqs/</guid>
+				<description>&lt;p&gt;&lt;a href=&#34;https://docs.aws.amazon.com/sqs/latest/dev/sqs-dg.pdf&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Amazon Simple Queue Service&#xD;&#xA;&lt;/a&gt;&#xD;&#xA; (SQS) serves as a task buffer, allowing tasks that do not require immediate processing to be placed in the queue for storage.&lt;br&gt;&#xA;When the system has spare resources, it processes these tasks, which helps decouple applications.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[AWS Cloud Fundamental Notes] Auto Scaling</title>
+				<link>https://tech.ray247k.com/en/blog/202305-aws-fundamental-auto-scaling/</link>
+				<pubDate>Tue, 23 May 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202305-aws-fundamental-auto-scaling/</guid>
+				<description>&lt;p&gt;Monitoring applications and automatically scaling machines based on traffic changes,&#xA;aiming to maintain stable and predictable performance at the lowest possible cost.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[AWS Cloud Fundamental Notes] Elastic Load Balancer</title>
+				<link>https://tech.ray247k.com/en/blog/202305-aws-fundamental-elastic-load-balancer/</link>
+				<pubDate>Thu, 11 May 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202305-aws-fundamental-elastic-load-balancer/</guid>
+				<description>&lt;p&gt;&lt;a href=&#34;https://aws.amazon.com/elasticloadbalancing/&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Elastic Load Balancer&#xD;&#xA;&lt;/a&gt;&#xD;&#xA; (ELB) achieves traffic distribution and load balancing.&lt;br&gt;&#xA;ELB distributes incoming application traffic across multiple targets and virtual devices in one or more Availability Zones(AZ) and generates Access logs.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[AWS Cloud Fundamental Notes] CloudFront</title>
+				<link>https://tech.ray247k.com/en/blog/202305-aws-fundamental-cloudfront/</link>
+				<pubDate>Wed, 03 May 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202305-aws-fundamental-cloudfront/</guid>
+				<description>&lt;p&gt;&lt;a href=&#34;https://aws.amazon.com/cloudfront/&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Amazon CloudFront&#xD;&#xA;&lt;/a&gt;&#xD;&#xA; is a content delivery network (CDN) service that addresses DDoS and repetitive access to static resources.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[AWS Cloud Fundamental Notes] CloudWatch and CloudTrail</title>
+				<link>https://tech.ray247k.com/en/blog/202304-aws-fundamental-cloudwatch-and-cloudtrail/</link>
+				<pubDate>Tue, 25 Apr 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202304-aws-fundamental-cloudwatch-and-cloudtrail/</guid>
+				<description>&lt;p&gt;Amazon CloudWatch monitors your Amazon Web Services (AWS) resources and the applications you run on AWS in real-time.&lt;br&gt;&#xA;AWS CloudTrail is an AWS service that helps you enable governance, compliance, and operational and risk auditing of your AWS account.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[AWS Cloud Fundamental Notes] Route 53</title>
+				<link>https://tech.ray247k.com/en/blog/202304-aws-fundamental-route53/</link>
+				<pubDate>Sat, 15 Apr 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202304-aws-fundamental-route53/</guid>
+				<description>&lt;p&gt;Provide domain name purchase, domain name resolution forwarding, system health checks, and traffic forwarding.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[AWS Cloud Fundamental Notes] RDS</title>
+				<link>https://tech.ray247k.com/en/blog/202304-aws-fundamental-rds/</link>
+				<pubDate>Wed, 05 Apr 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202304-aws-fundamental-rds/</guid>
+				<description>&lt;p&gt;Setting up, operating, and scaling relational databases in the cloud is just a few clicks away.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[AWS Cloud Fundamental Notes] S3</title>
+				<link>https://tech.ray247k.com/en/blog/202303-aws-fundamental-s3/</link>
+				<pubDate>Sat, 25 Mar 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202303-aws-fundamental-s3/</guid>
+				<description>&lt;p&gt;Scalable, available, secure, and efficient cloud object storage&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[AWS Cloud Fundamental Notes] EC2</title>
+				<link>https://tech.ray247k.com/en/blog/202303-aws-fundamental-ec2/</link>
+				<pubDate>Mon, 20 Mar 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202303-aws-fundamental-ec2/</guid>
+				<description>&lt;p&gt;Allow users to rent cloud computers to run their applications.&lt;br&gt;&#xA;EC2 allows users to flexibly run their Amazon machine images (AMIs) by providing web services, enabling users to run any software or application they desire on these virtual machines.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[AWS Cloud Fundamental Notes] VPC</title>
+				<link>https://tech.ray247k.com/en/blog/202303-aws-fundamental-vpc/</link>
+				<pubDate>Fri, 10 Mar 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202303-aws-fundamental-vpc/</guid>
+				<description>&lt;p&gt;Amazon Virtual Private Cloud (Amazon VPC) allows you to have full control over a virtual networking environment, including resource placement, connectivity, and security.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[AWS Cloud Fundamental Notes] IAM</title>
+				<link>https://tech.ray247k.com/en/blog/202301-aws-fundamental-iam/</link>
+				<pubDate>Tue, 10 Jan 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202301-aws-fundamental-iam/</guid>
+				<description>&lt;p&gt;Due to the excessive power of root permissions, it is necessary to divide them into multiple users and groups to set permissions.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://aws.amazon.com/tw/iam/&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;AWS IAM&#xD;&#xA;&lt;/a&gt;&#xD;&#xA;&lt;br&gt;&#xA;&lt;a href=&#34;https://docs.aws.amazon.com/zh_tw/IAM/latest/UserGuide/introduction.html&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;What is IAM?&#xD;&#xA;&lt;/a&gt;&#xD;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://i.imgur.com/OtEOMd4.png&#34; alt=&#34;IAM Architecture&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;operation-mechanism&#34;&gt;Operation Mechanism&lt;/h2&gt;&#xA;&lt;p&gt;The architecture of IAM is as follows:&lt;/p&gt;&#xA;&lt;pre class=&#34;mermaid&#34;&gt;graph LR;&#xA;&#xA;Policy1--&gt;Permission;&#xA;Policy2--&gt;Permission;&#xA;Policy3--&gt;Permission;&#xA;Permission--&gt;Role;&#xA;Permission--&gt;Group;&#xA;Group--&gt;User;&#xA;User--&gt;Password;&#xA;User--&gt;Credentail;&#xA;Role--&gt;id1[External Users];&#xA;Role--&gt;id2[AWS Internal Services];&#xD;&#xA;&lt;/pre&gt;&#xD;&#xA;&#xD;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;policy&#34;&gt;Policy&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://docs.aws.amazon.com/zh_tw/AWSEC2/latest/UserGuide/iam-policy-structure.html&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Official Documentation&#xD;&#xA;&lt;/a&gt;&#xD;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;When a policy is attached to a user or group, it allows or denies permission for the user to perform specific tasks on specific resources.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>
