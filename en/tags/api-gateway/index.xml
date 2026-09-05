@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>API Gateway on Byte Ebi 🍤</title>
+		<link>https://tech.ray247k.com/en/tags/api-gateway/</link>
+		<description>Recent content in API Gateway on Byte Ebi 🍤</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Sun, 17 Dec 2023 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://tech.ray247k.com/en/tags/api-gateway/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>[AWS Cloud Fundamental Notes] API Gateway</title>
+				<link>https://tech.ray247k.com/en/blog/202312-aws-fundamental-api-gateway/</link>
+				<pubDate>Sun, 17 Dec 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202312-aws-fundamental-api-gateway/</guid>
+				<description>&lt;p&gt;As the &amp;ldquo;front door&amp;rdquo; for applications to access data, business logic, or functionality from backend services.&lt;br&gt;&#xA;When using API Gateway, you can create RESTful APIs and WebSocket APIs to enable real-time bidirectional communication applications.&lt;br&gt;&#xA;API Gateway supports containerized, serverless workloads, and web applications.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

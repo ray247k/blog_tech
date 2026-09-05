@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>SQS on Byte Ebi 🍤</title>
+		<link>https://tech.ray247k.com/tags/sqs/</link>
+		<description>Recent content in SQS on Byte Ebi 🍤</description>
+		<generator>Hugo</generator>
+		<language>zh-TW</language>
+		
+		
+		
+		
+			<lastBuildDate>Tue, 30 May 2023 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://tech.ray247k.com/tags/sqs/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>[大話 AWS 雲端架構筆記] SQS</title>
+				<link>https://tech.ray247k.com/blog/202305-aws-fundamental-sqs/</link>
+				<pubDate>Tue, 30 May 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202305-aws-fundamental-sqs/</guid>
+				<description>&lt;p&gt;&lt;a href=&#34;https://docs.aws.amazon.com/zh_tw/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Amazon Simple Queue Service&#xD;&#xA;&lt;/a&gt;&#xD;&#xA;&#xA;作為任務暫存器，不需要及時處理的任務可以丟進去存放&lt;br&gt;&#xA;等系統有多餘的資源時再進行處理，可以解耦應用程式&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[AWS 101] 什麼是 SNS 和 SQS</title>
+				<link>https://tech.ray247k.com/blog/202210-aws101-what-is-sns-and-sqs/</link>
+				<pubDate>Thu, 06 Oct 2022 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202210-aws101-what-is-sns-and-sqs/</guid>
+				<description>&lt;p&gt;Amazon Simple Queue Service (SQS) 和 Amazon Simple Notification Service (SNS) 看起來很像，實際上又不太一樣&lt;br&gt;&#xA;為了更好釐清兩者，就把兩個服務的筆記放在一起比較&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

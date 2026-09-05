@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>CloudWatch on Byte Ebi 🍤</title>
+		<link>https://tech.ray247k.com/tags/cloudwatch/</link>
+		<description>Recent content in CloudWatch on Byte Ebi 🍤</description>
+		<generator>Hugo</generator>
+		<language>zh-TW</language>
+		
+		
+		
+		
+			<lastBuildDate>Tue, 25 Apr 2023 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://tech.ray247k.com/tags/cloudwatch/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>[大話 AWS 雲端架構筆記] CloudWatch 與 CloudTrail</title>
+				<link>https://tech.ray247k.com/blog/202304-aws-fundamental-cloudwatch-and-cloudtrail/</link>
+				<pubDate>Tue, 25 Apr 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202304-aws-fundamental-cloudwatch-and-cloudtrail/</guid>
+				<description>&lt;p&gt;Amazon CloudWatch 監控您的 Amazon Web Services（AWS）資源和您實時運行AWS的應用程序&lt;br&gt;&#xA;AWS CloudTrail 是一種AWS 服務，可協助您實現AWS 帳戶的操作與風險稽核、治理和合規&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

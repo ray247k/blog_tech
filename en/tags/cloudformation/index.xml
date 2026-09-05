@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>CloudFormation on Byte Ebi 🍤</title>
+		<link>https://tech.ray247k.com/en/tags/cloudformation/</link>
+		<description>Recent content in CloudFormation on Byte Ebi 🍤</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Sun, 18 Jun 2023 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://tech.ray247k.com/en/tags/cloudformation/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>[AWS Cloud Fundamental Notes] CloudFormation</title>
+				<link>https://tech.ray247k.com/en/blog/202306-aws-fundamental-cloudformation/</link>
+				<pubDate>Sun, 18 Jun 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202306-aws-fundamental-cloudformation/</guid>
+				<description>&lt;p&gt;CloudFormation is AWS&amp;rsquo;s native Infrastructure as Code (IaC) service, which treats infrastructure as code,&#xA;allowing you to model, provision, and manage AWS and third-party resources.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

@@ -593,6 +593,19 @@
                 href="https://tech.ray247k.com/en/blog/202402-aws-fundamental-architectures/"
                 />
   </url><url>
+    <loc>https://tech.ray247k.com/tags/architecture/</loc>
+    <lastmod>2024-02-18T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/architecture/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/architecture/"
+                />
+  </url><url>
     <loc>https://tech.ray247k.com/series/</loc>
     <lastmod>2024-02-18T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -622,6 +635,19 @@
                 href="https://tech.ray247k.com/en/blog/202402-aws-fundamental-hybrid-cloud/"
                 />
   </url><url>
+    <loc>https://tech.ray247k.com/tags/hybrid-cloud/</loc>
+    <lastmod>2024-02-13T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/hybrid-cloud/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/hybrid-cloud/"
+                />
+  </url><url>
     <loc>https://tech.ray247k.com/blog/202401-aws-fundamental-cyber-security/</loc>
     <lastmod>2024-01-06T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -633,6 +659,19 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tech.ray247k.com/en/blog/202401-aws-fundamental-cyber-security/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/tags/security/</loc>
+    <lastmod>2024-01-06T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/security/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/security/"
                 />
   </url><url>
     <loc>https://tech.ray247k.com/blog/202312-aws-fundamental-lambda/</loc>
@@ -648,6 +687,19 @@
                 href="https://tech.ray247k.com/en/blog/202312-aws-fundamental-lambda/"
                 />
   </url><url>
+    <loc>https://tech.ray247k.com/tags/lambda/</loc>
+    <lastmod>2023-12-27T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/lambda/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/lambda/"
+                />
+  </url><url>
     <loc>https://tech.ray247k.com/blog/202312-aws-fundamental-api-gateway/</loc>
     <lastmod>2023-12-17T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -659,6 +711,19 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tech.ray247k.com/en/blog/202312-aws-fundamental-api-gateway/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/tags/api-gateway/</loc>
+    <lastmod>2023-12-17T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/api-gateway/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/api-gateway/"
                 />
   </url><url>
     <loc>https://tech.ray247k.com/blog/202311-aws-dynamodb-pitr/</loc>
@@ -674,6 +739,19 @@
                 href="https://tech.ray247k.com/en/blog/202311-aws-dynamodb-pitr/"
                 />
   </url><url>
+    <loc>https://tech.ray247k.com/tags/dynamodb/</loc>
+    <lastmod>2023-11-03T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/dynamodb/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/dynamodb/"
+                />
+  </url><url>
     <loc>https://tech.ray247k.com/blog/202310-aws-fundamental-kinesis-emr-and-redshift/</loc>
     <lastmod>2023-10-27T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -685,6 +763,45 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tech.ray247k.com/en/blog/202310-aws-fundamental-kinesis-emr-and-redshift/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/tags/emr/</loc>
+    <lastmod>2023-10-27T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/emr/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/emr/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/tags/kinesis/</loc>
+    <lastmod>2023-10-27T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/kinesis/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/kinesis/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/tags/redshift/</loc>
+    <lastmod>2023-10-27T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/redshift/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/redshift/"
                 />
   </url><url>
     <loc>https://tech.ray247k.com/blog/202309-aws-fundamental-cost-control/</loc>
@@ -700,6 +817,19 @@
                 href="https://tech.ray247k.com/en/blog/202309-aws-fundamental-cost-control/"
                 />
   </url><url>
+    <loc>https://tech.ray247k.com/tags/cost-control/</loc>
+    <lastmod>2023-09-17T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/cost-control/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/cost-control/"
+                />
+  </url><url>
     <loc>https://tech.ray247k.com/blog/202308-aws-fundamental-sns/</loc>
     <lastmod>2023-08-13T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -713,6 +843,19 @@
                 href="https://tech.ray247k.com/en/blog/202308-aws-fundamental-sns/"
                 />
   </url><url>
+    <loc>https://tech.ray247k.com/tags/sns/</loc>
+    <lastmod>2023-08-13T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/sns/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/sns/"
+                />
+  </url><url>
     <loc>https://tech.ray247k.com/blog/202307-aws-fundamental-cognito/</loc>
     <lastmod>2023-07-07T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -724,6 +867,19 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tech.ray247k.com/en/blog/202307-aws-fundamental-cognito/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/tags/cognito/</loc>
+    <lastmod>2023-07-07T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/cognito/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/cognito/"
                 />
   </url><url>
     <loc>https://tech.ray247k.com/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/</loc>
@@ -752,6 +908,19 @@
                 href="https://tech.ray247k.com/en/blog/202306-aws-fundamental-cloudformation/"
                 />
   </url><url>
+    <loc>https://tech.ray247k.com/tags/cloudformation/</loc>
+    <lastmod>2023-06-18T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/cloudformation/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/cloudformation/"
+                />
+  </url><url>
     <loc>https://tech.ray247k.com/blog/202306-aws-fundamental-elasticache/</loc>
     <lastmod>2023-06-13T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -763,6 +932,19 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tech.ray247k.com/en/blog/202306-aws-fundamental-elasticache/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/tags/elasticache/</loc>
+    <lastmod>2023-06-13T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/elasticache/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/elasticache/"
                 />
   </url><url>
     <loc>https://tech.ray247k.com/blog/202306-aws-fundamental-dynamodb/</loc>
@@ -791,6 +973,19 @@
                 href="https://tech.ray247k.com/en/blog/202305-aws-fundamental-sqs/"
                 />
   </url><url>
+    <loc>https://tech.ray247k.com/tags/sqs/</loc>
+    <lastmod>2023-05-30T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/sqs/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/sqs/"
+                />
+  </url><url>
     <loc>https://tech.ray247k.com/blog/202305-aws-fundamental-auto-scaling/</loc>
     <lastmod>2023-05-23T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -802,6 +997,19 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tech.ray247k.com/en/blog/202305-aws-fundamental-auto-scaling/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/tags/auto-scaling/</loc>
+    <lastmod>2023-05-23T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/auto-scaling/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/auto-scaling/"
                 />
   </url><url>
     <loc>https://tech.ray247k.com/blog/202305-aws-fundamental-elastic-load-balancer/</loc>
@@ -817,6 +1025,19 @@
                 href="https://tech.ray247k.com/en/blog/202305-aws-fundamental-elastic-load-balancer/"
                 />
   </url><url>
+    <loc>https://tech.ray247k.com/tags/load-balancing/</loc>
+    <lastmod>2023-05-11T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/load-balancing/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/load-balancing/"
+                />
+  </url><url>
     <loc>https://tech.ray247k.com/blog/202305-aws-fundamental-cloudfront/</loc>
     <lastmod>2023-05-03T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -828,6 +1049,19 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tech.ray247k.com/en/blog/202305-aws-fundamental-cloudfront/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/tags/cloudfront/</loc>
+    <lastmod>2023-05-03T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/cloudfront/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/cloudfront/"
                 />
   </url><url>
     <loc>https://tech.ray247k.com/blog/202304-aws-fundamental-cloudwatch-and-cloudtrail/</loc>
@@ -843,6 +1077,32 @@
                 href="https://tech.ray247k.com/en/blog/202304-aws-fundamental-cloudwatch-and-cloudtrail/"
                 />
   </url><url>
+    <loc>https://tech.ray247k.com/tags/cloudtrail/</loc>
+    <lastmod>2023-04-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/cloudtrail/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/cloudtrail/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/tags/cloudwatch/</loc>
+    <lastmod>2023-04-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/cloudwatch/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/cloudwatch/"
+                />
+  </url><url>
     <loc>https://tech.ray247k.com/blog/202304-aws-fundamental-route53/</loc>
     <lastmod>2023-04-15T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -854,6 +1114,19 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tech.ray247k.com/en/blog/202304-aws-fundamental-route53/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/tags/route-53/</loc>
+    <lastmod>2023-04-15T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/route-53/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/route-53/"
                 />
   </url><url>
     <loc>https://tech.ray247k.com/blog/202304-aws-fundamental-rds/</loc>
@@ -882,6 +1155,19 @@
                 href="https://tech.ray247k.com/en/blog/202303-aws-fundamental-s3/"
                 />
   </url><url>
+    <loc>https://tech.ray247k.com/tags/s3/</loc>
+    <lastmod>2023-03-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/s3/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/s3/"
+                />
+  </url><url>
     <loc>https://tech.ray247k.com/blog/202303-aws-fundamental-ec2/</loc>
     <lastmod>2023-03-20T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -893,6 +1179,19 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tech.ray247k.com/en/blog/202303-aws-fundamental-ec2/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/tags/ec2/</loc>
+    <lastmod>2023-03-20T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/ec2/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/ec2/"
                 />
   </url><url>
     <loc>https://tech.ray247k.com/blog/202303-aws-fundamental-vpc/</loc>
@@ -908,6 +1207,19 @@
                 href="https://tech.ray247k.com/en/blog/202303-aws-fundamental-vpc/"
                 />
   </url><url>
+    <loc>https://tech.ray247k.com/tags/vpc/</loc>
+    <lastmod>2023-03-10T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/vpc/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/vpc/"
+                />
+  </url><url>
     <loc>https://tech.ray247k.com/blog/202301-aws-fundamental-iam/</loc>
     <lastmod>2023-01-10T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -919,6 +1231,19 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tech.ray247k.com/en/blog/202301-aws-fundamental-iam/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/tags/iam/</loc>
+    <lastmod>2023-01-10T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/iam/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/iam/"
                 />
   </url><url>
     <loc>https://tech.ray247k.com/tags/ffmpeg/</loc>
@@ -1116,17 +1441,17 @@
                 href="https://tech.ray247k.com/en/blog/202204-ngrok/"
                 />
   </url><url>
-    <loc>https://tech.ray247k.com/tags/cicd/</loc>
+    <loc>https://tech.ray247k.com/tags/ci-cd/</loc>
     <lastmod>2022-04-13T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-TW"
-                href="https://tech.ray247k.com/tags/cicd/"
+                href="https://tech.ray247k.com/tags/ci-cd/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://tech.ray247k.com/en/tags/cicd/"
+                href="https://tech.ray247k.com/en/tags/ci-cd/"
                 />
   </url><url>
     <loc>https://tech.ray247k.com/tags/docker/</loc>
@@ -1194,19 +1519,6 @@
                 href="https://tech.ray247k.com/en/tags/gcr/"
                 />
   </url><url>
-    <loc>https://tech.ray247k.com/tags/google-container-registry/</loc>
-    <lastmod>2022-04-08T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/tags/google-container-registry/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/tags/google-container-registry/"
-                />
-  </url><url>
     <loc>https://tech.ray247k.com/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/</loc>
     <lastmod>2022-04-08T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -1218,19 +1530,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tech.ray247k.com/en/blog/202204-jenkins-cicd-3-push-docker-image-to-gcr/"
-                />
-  </url><url>
-    <loc>https://tech.ray247k.com/tags/load-balancing/</loc>
-    <lastmod>2022-04-05T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/tags/load-balancing/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/tags/load-balancing/"
                 />
   </url><url>
     <loc>https://tech.ray247k.com/series/%E4%BC%B8%E7%B8%AE%E8%87%AA%E5%9C%A8%E7%9A%84%E4%BC%BA%E6%9C%8D%E5%99%A8/</loc>
@@ -1312,19 +1611,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tech.ray247k.com/en/blog/202203-jenkins-cicd-2-basic-pipeline/"
-                />
-  </url><url>
-    <loc>https://tech.ray247k.com/tags/auto-scaling/</loc>
-    <lastmod>2022-03-27T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/tags/auto-scaling/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/tags/auto-scaling/"
                 />
   </url><url>
     <loc>https://tech.ray247k.com/blog/202203-gcp-auto-scaling/</loc>
@@ -1459,9 +1745,6 @@
                 hreflang="en"
                 href="https://tech.ray247k.com/en/blog/202201-using-prerender-improve-spa-seo/"
                 />
-  </url><url>
-    <loc>https://tech.ray247k.com/tags/%E6%90%9C%E5%B0%8B%E5%BC%95%E6%93%8E%E6%9C%80%E4%BD%B3%E5%8C%96/</loc>
-    <lastmod>2022-01-31T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/tags/phpcbf/</loc>
     <lastmod>2022-01-20T00:00:00+00:00</lastmod>
@@ -1636,19 +1919,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tech.ray247k.com/en/tags/gas/"
-                />
-  </url><url>
-    <loc>https://tech.ray247k.com/tags/google-app-script/</loc>
-    <lastmod>2021-11-28T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/tags/google-app-script/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/tags/google-app-script/"
                 />
   </url><url>
     <loc>https://tech.ray247k.com/tags/google-sheets/</loc>
@@ -2457,16 +2727,7 @@
     <loc>https://tech.ray247k.com/blog/202010-express-vue-build-ecommerce-17-use-const-instead-of-variable/</loc>
     <lastmod>2020-10-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://tech.ray247k.com/tags/mutation/</loc>
-    <lastmod>2020-10-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tech.ray247k.com/tags/vuex/</loc>
-    <lastmod>2020-10-24T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://tech.ray247k.com/blog/202010-express-vue-build-ecommerce-16-refactor-vue-store/</loc>
-    <lastmod>2020-10-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tech.ray247k.com/tags/getter/</loc>
     <lastmod>2020-10-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/blog/202010-express-vue-build-ecommerce-15-use-vuex-getters/</loc>
@@ -2475,13 +2736,7 @@
     <loc>https://tech.ray247k.com/blog/202010-express-vue-build-ecommerce-14-refactor-component/</loc>
     <lastmod>2020-10-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://tech.ray247k.com/tags/component/</loc>
-    <lastmod>2020-10-03T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://tech.ray247k.com/blog/202009-express-vue-build-ecommerce-13-how-to-use-axios/</loc>
-    <lastmod>2020-09-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tech.ray247k.com/tags/axios/</loc>
     <lastmod>2020-09-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/blog/202009-express-vue-build-ecommerce-12-vuex-mutation/</loc>
@@ -2517,9 +2772,6 @@
     <loc>https://tech.ray247k.com/blog/202007-express-vue-build-ecommerce-05-mongodb-connect-and-cors/</loc>
     <lastmod>2020-07-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://tech.ray247k.com/tags/cors/</loc>
-    <lastmod>2020-07-30T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://tech.ray247k.com/blog/202007-express-vue-build-ecommerce-04-hello-mongodb/</loc>
     <lastmod>2020-07-23T00:00:00+00:00</lastmod>
   </url><url>
@@ -2527,12 +2779,6 @@
     <lastmod>2020-07-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/blog/202007-express-vue-build-ecommerce-02-vue-router/</loc>
-    <lastmod>2020-07-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tech.ray247k.com/tags/vue-router/</loc>
-    <lastmod>2020-07-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tech.ray247k.com/tags/vue-ui/</loc>
     <lastmod>2020-07-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/blog/202006-express-vue-build-ecommerce-01-basic-settings/</loc>

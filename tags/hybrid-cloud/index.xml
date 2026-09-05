@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Hybrid Cloud on Byte Ebi 🍤</title>
+		<link>https://tech.ray247k.com/tags/hybrid-cloud/</link>
+		<description>Recent content in Hybrid Cloud on Byte Ebi 🍤</description>
+		<generator>Hugo</generator>
+		<language>zh-TW</language>
+		
+		
+		
+		
+			<lastBuildDate>Tue, 13 Feb 2024 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://tech.ray247k.com/tags/hybrid-cloud/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>[大話 AWS 雲端架構筆記] 混合雲</title>
+				<link>https://tech.ray247k.com/blog/202402-aws-fundamental-hybrid-cloud/</link>
+				<pubDate>Tue, 13 Feb 2024 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202402-aws-fundamental-hybrid-cloud/</guid>
+				<description>&lt;p&gt;混合雲端是一種IT 基礎設施設計，它可將公司的內部IT 資源與第三方雲端供應商的基礎設施和服務整合在一起&lt;br&gt;&#xA;AWS 混合雲端服務可在您需要的任何地方提供一致的AWS 體驗– 從雲端、內部部署到邊緣&lt;br&gt;&#xA;藉助混合雲端，您可以儲存資料並跨多個環境執行應用程式&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

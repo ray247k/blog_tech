@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>CloudFront on Byte Ebi 🍤</title>
+		<link>https://tech.ray247k.com/en/tags/cloudfront/</link>
+		<description>Recent content in CloudFront on Byte Ebi 🍤</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Wed, 03 May 2023 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://tech.ray247k.com/en/tags/cloudfront/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>[AWS Cloud Fundamental Notes] CloudFront</title>
+				<link>https://tech.ray247k.com/en/blog/202305-aws-fundamental-cloudfront/</link>
+				<pubDate>Wed, 03 May 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202305-aws-fundamental-cloudfront/</guid>
+				<description>&lt;p&gt;&lt;a href=&#34;https://aws.amazon.com/cloudfront/&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Amazon CloudFront&#xD;&#xA;&lt;/a&gt;&#xD;&#xA; is a content delivery network (CDN) service that addresses DDoS and repetitive access to static resources.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

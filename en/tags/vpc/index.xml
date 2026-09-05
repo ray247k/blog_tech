@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>VPC on Byte Ebi 🍤</title>
+		<link>https://tech.ray247k.com/en/tags/vpc/</link>
+		<description>Recent content in VPC on Byte Ebi 🍤</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Fri, 10 Mar 2023 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://tech.ray247k.com/en/tags/vpc/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>[AWS Cloud Fundamental Notes] VPC</title>
+				<link>https://tech.ray247k.com/en/blog/202303-aws-fundamental-vpc/</link>
+				<pubDate>Fri, 10 Mar 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202303-aws-fundamental-vpc/</guid>
+				<description>&lt;p&gt;Amazon Virtual Private Cloud (Amazon VPC) allows you to have full control over a virtual networking environment, including resource placement, connectivity, and security.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Hybrid Cloud on Byte Ebi 🍤</title>
+		<link>https://tech.ray247k.com/en/tags/hybrid-cloud/</link>
+		<description>Recent content in Hybrid Cloud on Byte Ebi 🍤</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Tue, 13 Feb 2024 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://tech.ray247k.com/en/tags/hybrid-cloud/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>[AWS Cloud Fundamental Notes] Hybrid Cloud</title>
+				<link>https://tech.ray247k.com/en/blog/202402-aws-fundamental-hybrid-cloud/</link>
+				<pubDate>Tue, 13 Feb 2024 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202402-aws-fundamental-hybrid-cloud/</guid>
+				<description>&lt;p&gt;Hybrid cloud integrates a company&amp;rsquo;s internal IT resources with third-party cloud providers&amp;rsquo; infrastructure and services.&lt;br&gt;&#xA;AWS hybrid cloud services offer a consistent AWS experience from the cloud to on-premises to the edge, allowing you to store data and run applications across multiple environments.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

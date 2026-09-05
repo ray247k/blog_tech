@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Security on Byte Ebi 🍤</title>
+		<link>https://tech.ray247k.com/en/tags/security/</link>
+		<description>Recent content in Security on Byte Ebi 🍤</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Sat, 06 Jan 2024 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://tech.ray247k.com/en/tags/security/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>[AWS Cloud Fundamental Notes] Cyber Security</title>
+				<link>https://tech.ray247k.com/en/blog/202401-aws-fundamental-cyber-security/</link>
+				<pubDate>Sat, 06 Jan 2024 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202401-aws-fundamental-cyber-security/</guid>
+				<description>&lt;p&gt;In cloud services, enterprises use a large number of accounts, which causes fragmentation in architecture and security,&#xA;increasing management difficulty.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

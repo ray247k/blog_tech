@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>CloudFormation on Byte Ebi 🍤</title>
+		<link>https://tech.ray247k.com/tags/cloudformation/</link>
+		<description>Recent content in CloudFormation on Byte Ebi 🍤</description>
+		<generator>Hugo</generator>
+		<language>zh-TW</language>
+		
+		
+		
+		
+			<lastBuildDate>Sun, 18 Jun 2023 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://tech.ray247k.com/tags/cloudformation/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>[大話 AWS 雲端架構筆記] CloudFormation</title>
+				<link>https://tech.ray247k.com/blog/202306-aws-fundamental-cloudformation/</link>
+				<pubDate>Sun, 18 Jun 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202306-aws-fundamental-cloudformation/</guid>
+				<description>&lt;p&gt;CloudFormation 是 AWS 原生的 Infrastructure as Code(IaC) 服務&lt;br&gt;&#xA;將基礎設施視為程式碼，可讓您對 AWS 和第三方資源進行建模、佈建和管理&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

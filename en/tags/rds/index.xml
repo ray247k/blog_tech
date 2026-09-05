@@ -20,5 +20,12 @@
 				<guid>https://tech.ray247k.com/en/blog/202509-amazon-rds-db-connection-limits/</guid>
 				<description>&lt;p&gt;Have you ever run into database connection limits, or felt unsure about which RDS instance type to choose when planning your system architecture?&lt;br&gt;&#xA;This article walks you through how Amazon RDS calculates its maximum connections and provides a comparison across different instance types to help you make better decisions.&lt;/p&gt;</description>
 			</item>
+			<item>
+				<title>[AWS Cloud Fundamental Notes] RDS</title>
+				<link>https://tech.ray247k.com/en/blog/202304-aws-fundamental-rds/</link>
+				<pubDate>Wed, 05 Apr 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202304-aws-fundamental-rds/</guid>
+				<description>&lt;p&gt;Setting up, operating, and scaling relational databases in the cloud is just a few clicks away.&lt;/p&gt;</description>
+			</item>
 	</channel>
 </rss>

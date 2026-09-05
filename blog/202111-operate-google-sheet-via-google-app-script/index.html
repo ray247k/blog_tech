@@ -2,15 +2,15 @@
 <html lang="zh-tw">
   <head>
   <meta charset="utf-8">
-<title>操作 Google 表單，透過 GAS(Google App Script) - Byte Ebi 🍤</title>
-<meta name="description" content="使用 GAS(Google App Script) 服務把 Google 表單當作簡易的資料庫使用">
+<title>操作 Google 表單，透過 GAS(Google Apps Script) - Byte Ebi 🍤</title>
+<meta name="description" content="使用 GAS(Google Apps Script) 服務把 Google 表單當作簡易的資料庫使用">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <meta name="twitter:card" content="summary_large_image">
 
 <meta property="og:site_name" content="Byte Ebi 🍤">
-<meta property="og:title" content="操作 Google 表單，透過 GAS(Google App Script)">
-<meta property="og:description" content="使用 GAS(Google App Script) 服務把 Google 表單當作簡易的資料庫使用">
+<meta property="og:title" content="操作 Google 表單，透過 GAS(Google Apps Script)">
+<meta property="og:description" content="使用 GAS(Google Apps Script) 服務把 Google 表單當作簡易的資料庫使用">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://tech.ray247k.com/blog/202111-operate-google-sheet-via-google-app-script/">
   <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
@@ -30,9 +30,9 @@
   <meta name="theme-color" content="#ffffff">
 
 <meta name="generator" content="Hugo 0.165.0"><meta property="og:site_name" content="Byte Ebi 🍤">
-  <meta property="og:title" content="操作 Google 表單，透過 GAS(Google App Script)">
-  <meta property="og:description" content="使用 GAS(Google App Script) 服務把 Google 表單當作簡易的資料庫使用">
-  <meta property="description" content="使用 GAS(Google App Script) 服務把 Google 表單當作簡易的資料庫使用">
+  <meta property="og:title" content="操作 Google 表單，透過 GAS(Google Apps Script)">
+  <meta property="og:description" content="使用 GAS(Google Apps Script) 服務把 Google 表單當作簡易的資料庫使用">
+  <meta property="description" content="使用 GAS(Google Apps Script) 服務把 Google 表單當作簡易的資料庫使用">
   <meta property="og:url" content="https://tech.ray247k.com/blog/202111-operate-google-sheet-via-google-app-script/">
   <meta property="og:type" content="article">
   
@@ -83,7 +83,7 @@
     "url": "https:\/\/tech.ray247k.com\/",
     "description": "討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - ai,aws,devops,golang,leetcode,node.js,php,python,typescript,維運與工具,",
     "keywords": [
-        "airflow,apache bench,auto scaling,aws,axios,blockchain,cdn,chatbot,cicd,cloudflare,cloudflare workers,component,composer,containerization,cors,csv,devops,discord,dns,docker,docker compose,domain name,drone,element-ui,excel,express,ffmpeg,gas,gcp,gcr,getter,git,github,github page,golang,google app script,google container registry,google domains,google sheets,grumphp,hugo,jenkins,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load balancing,mongodb,mutation,mwaa,nginx,ngrok,node.js,openclaw,php,php-fpm,phpcbf,phpcs,portainer,postgresql,pre-commit,prerender,proxy,pyenv,pytest,python,queue,rds,redis,restful,seo,server,serverless,smart contract,ssh,stress testing,subdomain,tdd,typescript,unit test,vue,vue-router,vue-ui,vuex,伺服器,個人品牌,單元測試,域名,壓力測試,子網域,容器技術,搜尋引擎最佳化,架站相關,版本控制,買網址,防火牆,"
+        "airflow,apache bench,api gateway,architecture,auto scaling,aws,blockchain,cdn,chatbot,ci-cd,cloudflare,cloudflare workers,cloudformation,cloudfront,cloudtrail,cloudwatch,cognito,composer,containerization,cost control,csv,devops,discord,dns,docker,docker compose,domain name,drone,dynamodb,ec2,elasticache,element-ui,emr,excel,express,ffmpeg,gas,gcp,gcr,git,github,github page,golang,google domains,google sheets,grumphp,hugo,hybrid cloud,iam,jenkins,kinesis,lambda,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load balancing,mongodb,mwaa,nginx,ngrok,node.js,openclaw,php,php-fpm,phpcbf,phpcs,portainer,postgresql,pre-commit,prerender,proxy,pyenv,pytest,python,queue,rds,redis,redshift,restful,route 53,s3,security,seo,server,serverless,smart contract,sns,sqs,ssh,stress testing,subdomain,tdd,typescript,unit test,vpc,vue,伺服器,個人品牌,單元測試,域名,壓力測試,子網域,容器技術,架站相關,版本控制,買網址,防火牆,"
     ]
 }
 </script>
@@ -116,10 +116,10 @@
 {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "操作 Google 表單，透過 GAS(Google App Script)",
-    "description": "使用 GAS(Google App Script) 服務把 Google 表單當作簡易的資料庫使用",
+    "name": "操作 Google 表單，透過 GAS(Google Apps Script)",
+    "description": "使用 GAS(Google Apps Script) 服務把 Google 表單當作簡易的資料庫使用",
     "keywords": [
-        "Google Sheets" , "Google App Script" , "GAS" 
+        "Google Sheets" , "GAS" 
     ],
     "dateCreated": "2021-11-28T00:00:00.00Z",
     "datePublished": "2021-11-28T00:00:00.00Z",
@@ -155,7 +155,7 @@
                 "position": 3,
                 "item": {
                     "@id": "https:\/\/tech.ray247k.com\/blog\/202111-operate-google-sheet-via-google-app-script\/",
-                    "name": "操作 Google 表單，透過 GAS(Google App Script)",
+                    "name": "操作 Google 表單，透過 GAS(Google Apps Script)",
                     "url": "https:\/\/tech.ray247k.com\/blog\/202111-operate-google-sheet-via-google-app-script\/"
                 }
             }
@@ -171,9 +171,9 @@
     "@context": "http://schema.org",
     "@type": "BlogPosting",
     "articleSection": "blog",
-    "name": "操作 Google 表單，透過 GAS(Google App Script)",
+    "name": "操作 Google 表單，透過 GAS(Google Apps Script)",
     "headline": "\u003cp\u003e在管理後台尚未建立完成而前台已經上線的時候，會希望可以讓非程式人員自行調整網頁上的文案\u003cbr\u003e\n又或是暫時性的紀錄內容不想因此開資料表，通常這時候我們會透過 Google 表單來管理資料\u003c\/p\u003e",
-    "description": "使用 GAS(Google App Script) 服務把 Google 表單當作簡易的資料庫使用",
+    "description": "使用 GAS(Google Apps Script) 服務把 Google 表單當作簡易的資料庫使用",
     "inLanguage": "zh-TW",
     "isFamilyFriendly": "true",
     "mainEntityOfPage": {
@@ -211,8 +211,8 @@
     "image": "https://tech.ray247k.com/img/main/logo.png",
     "url" : "https:\/\/tech.ray247k.com\/blog\/202111-operate-google-sheet-via-google-app-script\/",
     "wordCount" : "529",
-    "genre" : [ "Google Sheets" , "Google App Script" , "GAS" ],
-    "keywords" : [ "Google Sheets" , "Google App Script" , "GAS" ]
+    "genre" : [ "Google Sheets" , "GAS" ],
+    "keywords" : [ "Google Sheets" , "GAS" ]
 }
 </script>
 
@@ -340,10 +340,10 @@
   <header>
   <div class="title">
     
-      <h2><a href="/blog/202111-operate-google-sheet-via-google-app-script/">操作 Google 表單，透過 GAS(Google App Script)</a></h2>
+      <h2><a href="/blog/202111-operate-google-sheet-via-google-app-script/">操作 Google 表單，透過 GAS(Google Apps Script)</a></h2>
     
     
-      <p>使用 GAS(Google App Script) 服務把 Google 表單當作簡易的資料庫使用</p>
+      <p>使用 GAS(Google Apps Script) 服務把 Google 表單當作簡易的資料庫使用</p>
     
   </div>
   <div class="meta">
@@ -382,15 +382,15 @@ Google 表單本身限制蠻多的，如果你拿去當正式資料庫絕對會�
 <li>發佈內容會被 Google 快取：雖然說明寫有修改之後會更新，但是實際更新大概要等個三到五分鐘<br>
 如果你的內容是需要即時存取最新資料做判斷的話會發生問題</li>
 </ul>
-<p>至於第二種方式就是為了解決缺點的部分，為此我們要使用 Google 提供的 GAS(Google App Script) 服務</p>
+<p>至於第二種方式就是為了解決缺點的部分，為此我們要使用 Google 提供的 GAS(Google Apps Script) 服務</p>
 <h1 id="1-建立一個google-表單">1. 建立一個google 表單</h1>
 <p>既然都說要「操作 Google 表單」所以建立一個 Google 表單也是合情合理的吧<br>
 設為共用可查看就好</p>
 <p><img src="/blog/202111-operate-google-sheet-via-google-app-script/share-sheet.png" alt="share sheet"></p>
-<h1 id="2-建立新-google-app-script-專案">2. 建立新 Google App Script 專案</h1>
+<h1 id="2-建立新-google-apps-script-專案">2. 建立新 Google Apps Script 專案</h1>
 <p>可以在 <a href="https://script.google.com/home"
    
-    target="_blank" rel="noreferrer noopener">Google App Script 專案頁面
+    target="_blank" rel="noreferrer noopener">Google Apps Script 專案頁面
 </a>
  建立<br>
 或是用在 google sheet 裡面直接開啟擴充功能</p>
@@ -449,7 +449,7 @@ Google 表單本身限制蠻多的，如果你拿去當正式資料庫絕對會�
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>在寫好<code>doGet</code>之後我們來測試一下是否可以達成預期結果<br>
 在直接發佈之前可以利用內建的測試工具來測試</p>
-<p>在剛剛的 Google App Script 專案下新增一個檔案<code>debugGet.gs</code></p>
+<p>在剛剛的 Google Apps Script 專案下新增一個檔案<code>debugGet.gs</code></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">debug</span>() {
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">e</span> <span style="color:#f92672">=</span> {
 </span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">parameter</span><span style="color:#f92672">:</span>{
@@ -637,8 +637,6 @@ Google 表單本身限制蠻多的，如果你拿去當正式資料庫絕對會�
         
           <li><a class="article-terms-link" href="/tags/google-sheets/">Google Sheets</a></li>
         
-          <li><a class="article-terms-link" href="/tags/google-app-script/">Google App Script</a></li>
-        
           <li><a class="article-terms-link" href="/tags/gas/">GAS</a></li>
         
       
@@ -732,7 +730,7 @@ Google 表單本身限制蠻多的，如果你拿去當正式資料庫絕對會�
 
       <section id="categories">
         <header>
-          <h1><a href="/categories">Category</a></h1>
+          <h1><a href="/categories">文章分類</a></h1>
         </header>
         <ul>
           
@@ -840,7 +838,7 @@ Google 表單本身限制蠻多的，如果你拿去當正式資料庫絕對會�
         </li>
         
         <li>
-          <a href="/tags/cicd/">CICD (8)</a>
+          <a href="/tags/ci-cd/">CI-CD (8)</a>
         </li>
         
         <li>
@@ -855,337 +853,14 @@ Google 表單本身限制蠻多的，如果你拿去當正式資料庫絕對會�
           <a href="/tags/gcp/">GCP (7)</a>
         </li>
         
-        <li>
-          <a href="/tags/docker-compose/">Docker-Compose (6)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/vuex/">Vuex (6)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/composer/">Composer (5)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/element-ui/">Element-Ui (5)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/leetcode-medium/">LeetCode-Medium (5)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/drone/">Drone (4)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/jenkins/">Jenkins (4)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/pytest/">Pytest (4)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/ssh/">SSH (4)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/tdd/">TDD (4)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/typescript/">TypeScript (4)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/unit-test/">Unit Test (4)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/%E5%96%AE%E5%85%83%E6%B8%AC%E8%A9%A6/">單元測試 (4)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/airflow/">Airflow (3)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/cloudflare/">Cloudflare (3)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/mongodb/">MongoDB (3)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/mutation/">Mutation (3)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/restful/">RESTful (3)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/">架站相關 (3)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/chatbot/">ChatBot (2)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/component/">Component (2)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/discord/">Discord (2)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/dns/">DNS (2)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/getter/">Getter (2)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/git/">Git (2)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/github/">GitHub (2)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/google-domains/">Google Domains (2)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/linux/">Linux (2)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/nginx/">Nginx (2)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/vue-router/">Vue-Router (2)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/vue-ui/">Vue-Ui (2)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/apache-bench/">Apache Bench (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/auto-scaling/">Auto Scaling (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/axios/">Axios (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/blockchain/">Blockchain (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/cdn/">CDN (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/cloudflare-workers/">Cloudflare Workers (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/cors/">CORS (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/csv/">Csv (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/domain-name/">Domain Name (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/excel/">Excel (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/ffmpeg/">FFmpeg (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/gas/">GAS (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/gcr/">GCR (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/github-page/">GitHub Page (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/google-app-script/">Google App Script (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/google-container-registry/">Google Container Registry (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/google-sheets/">Google Sheets (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/grumphp/">GrumPHP (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/hugo/">Hugo (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/laravel-excel/">Laravel-Excel (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/load-balancing/">Load Balancing (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/mwaa/">MWAA (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/ngrok/">Ngrok (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/openclaw/">Openclaw (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/php-fpm/">PHP-FPM (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/phpcbf/">Phpcbf (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/phpcs/">Phpcs (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/portainer/">Portainer (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/postgresql/">PostgreSQL (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/pre-commit/">Pre-Commit (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/prerender/">Prerender (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/proxy/">Proxy (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/pyenv/">Pyenv (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/queue/">Queue (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/rds/">RDS (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/redis/">Redis (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/seo/">SEO (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/server/">Server (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/serverless/">Serverless (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/smart-contract/">Smart Contract (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/stress-testing/">Stress Testing (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/subdomain/">Subdomain (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/%E4%BC%BA%E6%9C%8D%E5%99%A8/">伺服器 (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/%E5%80%8B%E4%BA%BA%E5%93%81%E7%89%8C/">個人品牌 (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/%E5%9F%9F%E5%90%8D/">域名 (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/%E5%A3%93%E5%8A%9B%E6%B8%AC%E8%A9%A6/">壓力測試 (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/%E5%AD%90%E7%B6%B2%E5%9F%9F/">子網域 (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/%E6%90%9C%E5%B0%8B%E5%BC%95%E6%93%8E%E6%9C%80%E4%BD%B3%E5%8C%96/">搜尋引擎最佳化 (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">版本控制 (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/%E8%B2%B7%E7%B6%B2%E5%9D%80/">買網址 (1)</a>
-        </li>
-        
-        <li>
-          <a href="/tags/%E9%98%B2%E7%81%AB%E7%89%86/">防火牆 (1)</a>
-        </li>
-        
       </ul>
 
     </div>
+    
+      <footer>
+        <a href="/tags" class="button">查看更多</a>
+      </footer>
+    
   </section>
   
 

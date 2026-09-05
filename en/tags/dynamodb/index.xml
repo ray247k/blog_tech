@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>DynamoDB on Byte Ebi 🍤</title>
+		<link>https://tech.ray247k.com/en/tags/dynamodb/</link>
+		<description>Recent content in DynamoDB on Byte Ebi 🍤</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Fri, 03 Nov 2023 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://tech.ray247k.com/en/tags/dynamodb/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>AWS DynamoDB Point-in-Time Recovery (PITR): Simplifying Data Restoration</title>
+				<link>https://tech.ray247k.com/en/blog/202311-aws-dynamodb-pitr/</link>
+				<pubDate>Fri, 03 Nov 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202311-aws-dynamodb-pitr/</guid>
+				<description>&lt;p&gt;Point-in-Time Recovery (PITR) is a crucial data recovery feature for AWS DynamoDB and other database services.&lt;br&gt;&#xA;It allows you to restore data to a previous state in case of accidental loss or corruption, ensuring business continuity.&lt;br&gt;&#xA;PITR also enables regular data backups and retention of multiple versions, aiding in error tracking and resolution.&lt;br&gt;&#xA;It&amp;rsquo;s flexibility in restoring data on demand without affecting other operations enhances system reliability and stability.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[AWS Cloud Fundamental Notes] DynamoDB</title>
+				<link>https://tech.ray247k.com/en/blog/202306-aws-fundamental-dynamodb/</link>
+				<pubDate>Fri, 02 Jun 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202306-aws-fundamental-dynamodb/</guid>
+				<description>&lt;p&gt;Distributed NoSQL database service.&lt;br&gt;&#xA;Data access must be obtained through the corresponding Role (EC2) or using Credentials (developer) with IAM.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

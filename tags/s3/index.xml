@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>S3 on Byte Ebi 🍤</title>
+		<link>https://tech.ray247k.com/tags/s3/</link>
+		<description>Recent content in S3 on Byte Ebi 🍤</description>
+		<generator>Hugo</generator>
+		<language>zh-TW</language>
+		
+		
+		
+		
+			<lastBuildDate>Sat, 25 Mar 2023 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://tech.ray247k.com/tags/s3/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>[大話 AWS 雲端架構筆記] S3</title>
+				<link>https://tech.ray247k.com/blog/202303-aws-fundamental-s3/</link>
+				<pubDate>Sat, 25 Mar 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202303-aws-fundamental-s3/</guid>
+				<description>&lt;p&gt;可擴展性、資料可用性、安全性和效能的雲端物件儲存&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

@@ -476,7 +476,7 @@
 				<description>&lt;p&gt;初入 Golang 的世界，首先我們使用官方教學：&lt;a href=&#34;https://tour.golang.org/welcome/1&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;A Tour of Go&#xD;&#xA;&lt;/a&gt;&#xD;&#xA; 來認識基本的 Golang 使用&lt;br&gt;&#xA;這篇介紹 Range、Map 和 function&lt;/p&gt;</description>
 			</item>
 			<item>
-				<title>操作 Google 表單，透過 GAS(Google App Script)</title>
+				<title>操作 Google 表單，透過 GAS(Google Apps Script)</title>
 				<link>https://tech.ray247k.com/blog/202111-operate-google-sheet-via-google-app-script/</link>
 				<pubDate>Sun, 28 Nov 2021 00:00:00 +0000</pubDate>
 				<guid>https://tech.ray247k.com/blog/202111-operate-google-sheet-via-google-app-script/</guid>

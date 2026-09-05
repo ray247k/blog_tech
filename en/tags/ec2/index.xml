@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>EC2 on Byte Ebi 🍤</title>
+		<link>https://tech.ray247k.com/en/tags/ec2/</link>
+		<description>Recent content in EC2 on Byte Ebi 🍤</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 20 Mar 2023 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://tech.ray247k.com/en/tags/ec2/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>[AWS Cloud Fundamental Notes] EC2</title>
+				<link>https://tech.ray247k.com/en/blog/202303-aws-fundamental-ec2/</link>
+				<pubDate>Mon, 20 Mar 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202303-aws-fundamental-ec2/</guid>
+				<description>&lt;p&gt;Allow users to rent cloud computers to run their applications.&lt;br&gt;&#xA;EC2 allows users to flexibly run their Amazon machine images (AMIs) by providing web services, enabling users to run any software or application they desire on these virtual machines.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

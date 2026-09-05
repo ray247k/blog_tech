@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>EC2 on Byte Ebi 🍤</title>
+		<link>https://tech.ray247k.com/tags/ec2/</link>
+		<description>Recent content in EC2 on Byte Ebi 🍤</description>
+		<generator>Hugo</generator>
+		<language>zh-TW</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 20 Mar 2023 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://tech.ray247k.com/tags/ec2/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>[大話 AWS 雲端架構筆記] EC2</title>
+				<link>https://tech.ray247k.com/blog/202303-aws-fundamental-ec2/</link>
+				<pubDate>Mon, 20 Mar 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202303-aws-fundamental-ec2/</guid>
+				<description>&lt;p&gt;讓使用者可以租用雲端電腦運行所需應用的系統&lt;br&gt;&#xA;EC2藉由提供Web服務的方式讓使用者可以彈性地運行自己的Amazon機器映像檔，使用者將可以在這個虛擬機器上運行任何自己想要的軟體或應用程式&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

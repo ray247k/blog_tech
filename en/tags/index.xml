@@ -133,6 +133,181 @@
 				<description></description>
 			</item>
 			<item>
+				<title>Architecture</title>
+				<link>https://tech.ray247k.com/en/tags/architecture/</link>
+				<pubDate>Sun, 18 Feb 2024 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/tags/architecture/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Hybrid Cloud</title>
+				<link>https://tech.ray247k.com/en/tags/hybrid-cloud/</link>
+				<pubDate>Tue, 13 Feb 2024 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/tags/hybrid-cloud/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Security</title>
+				<link>https://tech.ray247k.com/en/tags/security/</link>
+				<pubDate>Sat, 06 Jan 2024 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/tags/security/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Lambda</title>
+				<link>https://tech.ray247k.com/en/tags/lambda/</link>
+				<pubDate>Wed, 27 Dec 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/tags/lambda/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>API Gateway</title>
+				<link>https://tech.ray247k.com/en/tags/api-gateway/</link>
+				<pubDate>Sun, 17 Dec 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/tags/api-gateway/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>DynamoDB</title>
+				<link>https://tech.ray247k.com/en/tags/dynamodb/</link>
+				<pubDate>Fri, 03 Nov 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/tags/dynamodb/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>EMR</title>
+				<link>https://tech.ray247k.com/en/tags/emr/</link>
+				<pubDate>Fri, 27 Oct 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/tags/emr/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Kinesis</title>
+				<link>https://tech.ray247k.com/en/tags/kinesis/</link>
+				<pubDate>Fri, 27 Oct 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/tags/kinesis/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Redshift</title>
+				<link>https://tech.ray247k.com/en/tags/redshift/</link>
+				<pubDate>Fri, 27 Oct 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/tags/redshift/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Cost Control</title>
+				<link>https://tech.ray247k.com/en/tags/cost-control/</link>
+				<pubDate>Sun, 17 Sep 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/tags/cost-control/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>SNS</title>
+				<link>https://tech.ray247k.com/en/tags/sns/</link>
+				<pubDate>Sun, 13 Aug 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/tags/sns/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Cognito</title>
+				<link>https://tech.ray247k.com/en/tags/cognito/</link>
+				<pubDate>Fri, 07 Jul 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/tags/cognito/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>CloudFormation</title>
+				<link>https://tech.ray247k.com/en/tags/cloudformation/</link>
+				<pubDate>Sun, 18 Jun 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/tags/cloudformation/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>ElastiCache</title>
+				<link>https://tech.ray247k.com/en/tags/elasticache/</link>
+				<pubDate>Tue, 13 Jun 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/tags/elasticache/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>SQS</title>
+				<link>https://tech.ray247k.com/en/tags/sqs/</link>
+				<pubDate>Tue, 30 May 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/tags/sqs/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Auto Scaling</title>
+				<link>https://tech.ray247k.com/en/tags/auto-scaling/</link>
+				<pubDate>Tue, 23 May 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/tags/auto-scaling/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Load Balancing</title>
+				<link>https://tech.ray247k.com/en/tags/load-balancing/</link>
+				<pubDate>Thu, 11 May 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/tags/load-balancing/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>CloudFront</title>
+				<link>https://tech.ray247k.com/en/tags/cloudfront/</link>
+				<pubDate>Wed, 03 May 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/tags/cloudfront/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>CloudTrail</title>
+				<link>https://tech.ray247k.com/en/tags/cloudtrail/</link>
+				<pubDate>Tue, 25 Apr 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/tags/cloudtrail/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>CloudWatch</title>
+				<link>https://tech.ray247k.com/en/tags/cloudwatch/</link>
+				<pubDate>Tue, 25 Apr 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/tags/cloudwatch/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Route 53</title>
+				<link>https://tech.ray247k.com/en/tags/route-53/</link>
+				<pubDate>Sat, 15 Apr 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/tags/route-53/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>S3</title>
+				<link>https://tech.ray247k.com/en/tags/s3/</link>
+				<pubDate>Sat, 25 Mar 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/tags/s3/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>EC2</title>
+				<link>https://tech.ray247k.com/en/tags/ec2/</link>
+				<pubDate>Mon, 20 Mar 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/tags/ec2/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>VPC</title>
+				<link>https://tech.ray247k.com/en/tags/vpc/</link>
+				<pubDate>Fri, 10 Mar 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/tags/vpc/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>IAM</title>
+				<link>https://tech.ray247k.com/en/tags/iam/</link>
+				<pubDate>Tue, 10 Jan 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/tags/iam/</guid>
+				<description></description>
+			</item>
+			<item>
 				<title>FFmpeg</title>
 				<link>https://tech.ray247k.com/en/tags/ffmpeg/</link>
 				<pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
@@ -189,10 +364,10 @@
 				<description></description>
 			</item>
 			<item>
-				<title>CI/CD</title>
-				<link>https://tech.ray247k.com/en/tags/ci/cd/</link>
+				<title>CI-CD</title>
+				<link>https://tech.ray247k.com/en/tags/ci-cd/</link>
 				<pubDate>Wed, 13 Apr 2022 00:00:00 +0000</pubDate>
-				<guid>https://tech.ray247k.com/en/tags/ci/cd/</guid>
+				<guid>https://tech.ray247k.com/en/tags/ci-cd/</guid>
 				<description></description>
 			</item>
 			<item>
@@ -210,31 +385,10 @@
 				<description></description>
 			</item>
 			<item>
-				<title>CICD</title>
-				<link>https://tech.ray247k.com/en/tags/cicd/</link>
-				<pubDate>Fri, 08 Apr 2022 00:00:00 +0000</pubDate>
-				<guid>https://tech.ray247k.com/en/tags/cicd/</guid>
-				<description></description>
-			</item>
-			<item>
 				<title>GCR</title>
 				<link>https://tech.ray247k.com/en/tags/gcr/</link>
 				<pubDate>Fri, 08 Apr 2022 00:00:00 +0000</pubDate>
 				<guid>https://tech.ray247k.com/en/tags/gcr/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Google Container Registry</title>
-				<link>https://tech.ray247k.com/en/tags/google-container-registry/</link>
-				<pubDate>Fri, 08 Apr 2022 00:00:00 +0000</pubDate>
-				<guid>https://tech.ray247k.com/en/tags/google-container-registry/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Load Balancing</title>
-				<link>https://tech.ray247k.com/en/tags/load-balancing/</link>
-				<pubDate>Tue, 05 Apr 2022 00:00:00 +0000</pubDate>
-				<guid>https://tech.ray247k.com/en/tags/load-balancing/</guid>
 				<description></description>
 			</item>
 			<item>
@@ -249,13 +403,6 @@
 				<link>https://tech.ray247k.com/en/tags/php/</link>
 				<pubDate>Sat, 02 Apr 2022 00:00:00 +0000</pubDate>
 				<guid>https://tech.ray247k.com/en/tags/php/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Auto Scaling</title>
-				<link>https://tech.ray247k.com/en/tags/auto-scaling/</link>
-				<pubDate>Sun, 27 Mar 2022 00:00:00 +0000</pubDate>
-				<guid>https://tech.ray247k.com/en/tags/auto-scaling/</guid>
 				<description></description>
 			</item>
 			<item>
@@ -284,13 +431,6 @@
 				<link>https://tech.ray247k.com/en/tags/prerender/</link>
 				<pubDate>Mon, 31 Jan 2022 00:00:00 +0000</pubDate>
 				<guid>https://tech.ray247k.com/en/tags/prerender/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Search Engine Optimization</title>
-				<link>https://tech.ray247k.com/en/tags/search-engine-optimization/</link>
-				<pubDate>Mon, 31 Jan 2022 00:00:00 +0000</pubDate>
-				<guid>https://tech.ray247k.com/en/tags/search-engine-optimization/</guid>
 				<description></description>
 			</item>
 			<item>
@@ -350,13 +490,6 @@
 				<description></description>
 			</item>
 			<item>
-				<title>Google App Script</title>
-				<link>https://tech.ray247k.com/en/tags/google-app-script/</link>
-				<pubDate>Sun, 28 Nov 2021 00:00:00 +0000</pubDate>
-				<guid>https://tech.ray247k.com/en/tags/google-app-script/</guid>
-				<description></description>
-			</item>
-			<item>
 				<title>Google Sheets</title>
 				<link>https://tech.ray247k.com/en/tags/google-sheets/</link>
 				<pubDate>Sun, 28 Nov 2021 00:00:00 +0000</pubDate>
@@ -413,7 +546,7 @@
 				<description></description>
 			</item>
 			<item>
-				<title>Docker-Compose</title>
+				<title>Docker Compose</title>
 				<link>https://tech.ray247k.com/en/tags/docker-compose/</link>
 				<pubDate>Sat, 24 Jul 2021 00:00:00 +0000</pubDate>
 				<guid>https://tech.ray247k.com/en/tags/docker-compose/</guid>

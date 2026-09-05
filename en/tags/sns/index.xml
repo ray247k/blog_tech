@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>SNS on Byte Ebi 🍤</title>
+		<link>https://tech.ray247k.com/en/tags/sns/</link>
+		<description>Recent content in SNS on Byte Ebi 🍤</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Sun, 13 Aug 2023 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://tech.ray247k.com/en/tags/sns/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>[AWS Cloud Fundamental Notes] SNS</title>
+				<link>https://tech.ray247k.com/en/blog/202308-aws-fundamental-sns/</link>
+				<pubDate>Sun, 13 Aug 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202308-aws-fundamental-sns/</guid>
+				<description>&lt;p&gt;Used for sending SMS or E-mail as well as push notifications: &lt;a href=&#34;https://docs.aws.amazon.com/zh_tw/sns/latest/dg/welcome.html&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Simple Notification Service&#xD;&#xA;&lt;/a&gt;&#xD;&#xA;&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[AWS 101] What are SNS and SQS</title>
+				<link>https://tech.ray247k.com/en/blog/202210-aws101-what-is-sns-and-sqs/</link>
+				<pubDate>Thu, 06 Oct 2022 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202210-aws101-what-is-sns-and-sqs/</guid>
+				<description>&lt;p&gt;Amazon Simple Queue Service (SQS) and Amazon Simple Notification Service (SNS) may look similar.&lt;br&gt;&#xA;But in reality, they are quite different.&lt;/p&gt;&#xA;&lt;p&gt;To better clarify the differences between the two, let&amp;rsquo;s compare the notes on both services side by side.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

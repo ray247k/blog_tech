@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="zh-tw">
+  <head>
+  <meta charset="utf-8">
+<title>SQS - Byte Ebi 🍤</title>
+<meta name="description" content="討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta property="og:site_name" content="Byte Ebi 🍤">
+<meta property="og:title" content="SQS">
+<meta property="og:description" content="討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://tech.ray247k.com/tags/sqs/">
+  <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
+
+
+
+  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
+  
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=1" color="#ffffff">
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=1">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=1">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+<meta name="generator" content="Hugo 0.165.0"><meta property="og:site_name" content="Byte Ebi 🍤">
+  <meta property="og:title" content="SQS">
+  <meta property="og:description" content="討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識">
+  <meta property="description" content="討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識">
+  <meta property="og:url" content="https://tech.ray247k.com/tags/sqs/">
+  <meta property="og:type" content="article">
+  
+    <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
+  
+  
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/felipec.min.css">
+          <link rel="stylesheet" href="/css/bundle.min.7bc2060a63595a20fd994db40a9ab8e5d39b1f2f841f74cd71bfee0f56e06776.css" integrity="sha256-e8IGCmNZWiD9mU20Cpq45dObHy&#43;EH3TNcb/uD1bgZ3Y="><link rel="stylesheet" href="/css/add-on.css">
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-LTGVYYWC2J');
+        }
+      </script>
+  <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "image": {
+        "@type": "ImageObject",
+        "image": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+        "height": 648,
+        "width": 1080
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com\/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Byte Ebi 🍤",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png"
+        }
+    },
+    "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+    "headline": "討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - Byte Ebi 🍤",
+    "name": "Byte Ebi 🍤",
+    "url": "https:\/\/tech.ray247k.com\/",
+    "description": "討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - ai,aws,devops,golang,leetcode,node.js,php,python,typescript,維運與工具,",
+    "keywords": [
+        "airflow,apache bench,api gateway,architecture,auto scaling,aws,blockchain,cdn,chatbot,ci-cd,cloudflare,cloudflare workers,cloudformation,cloudfront,cloudtrail,cloudwatch,cognito,composer,containerization,cost control,csv,devops,discord,dns,docker,docker compose,domain name,drone,dynamodb,ec2,elasticache,element-ui,emr,excel,express,ffmpeg,gas,gcp,gcr,git,github,github page,golang,google domains,google sheets,grumphp,hugo,hybrid cloud,iam,jenkins,kinesis,lambda,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load balancing,mongodb,mwaa,nginx,ngrok,node.js,openclaw,php,php-fpm,phpcbf,phpcs,portainer,postgresql,pre-commit,prerender,proxy,pyenv,pytest,python,queue,rds,redis,redshift,restful,route 53,s3,security,seo,server,serverless,smart contract,sns,sqs,ssh,stress testing,subdomain,tdd,typescript,unit test,vpc,vue,伺服器,個人品牌,單元測試,域名,壓力測試,子網域,容器技術,架站相關,版本控制,買網址,防火牆,"
+    ]
+}
+</script>
+
+
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/" class="nav">
+        
+          Tag
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/" class="nav link"><i class='fa fa-home'></i> home</a>
+        
+      
+        
+          
+          <a href="/about" class="nav link"><i class='far fa-id-card'></i> about</a>
+        
+      
+        
+          
+          <a href="/categories" class="nav link"><i class='fas fa-sitemap'></i> category</a>
+        
+      
+        
+          
+          <a href="/series" class="nav link"><i class='fas fa-list-ol'></i> series</a>
+        
+      
+      
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    
+    <a href="#lang-menu" class="nav lang-toggle" lang="zh-tw">zh-tw</a>
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  <menu id="lang-menu" class="flyout-menu menu">
+  <a href="#" lang="zh-tw" class="nav link active">正體中文 (zh-tw)</a>
+  
+      <a href="https://tech.ray247k.com/en/tags/sqs/" lang="en" class="nav link">English (en)</a>
+    
+  
+</menu>
+
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/"><img src="/img/main/logo.png" class="circle" width="100" alt="Byte Ebi&#39;s Logo" /></a>
+  <header>
+    <h1>Byte Ebi 🍤</h1>
+  </header>
+  <main>
+    <p>每天一小口，蝦米變鯨魚</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/ray247k" target="_blank" rel="noopener" title="GitHub"
+        class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//www.linkedin.com/in/j-ray-cheng" target="_blank" rel="noopener"
+        title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  
+  
+    <article class="post">
+  <header>
+  <div class="title">
+    
+      <h2><a href="/blog/202305-aws-fundamental-sqs/">[大話 AWS 雲端架構筆記] SQS</a></h2>
+    
+    
+      <p>簡介 SQS 和使用方法和運作機制</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2023-05-30 00:00:00 &#43;0000 UTC">2023/05/30</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+  <div class="content">
+    <a href="/blog/202305-aws-fundamental-sqs/" class="image" style="--bg-image: url('/blog/202305-aws-fundamental-sqs/featured.png');">
+    <img src="/blog/202305-aws-fundamental-sqs/featured.png" alt="">
+  </a>
+    
+    <p><a href="https://docs.aws.amazon.com/zh_tw/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html"
+   
+    target="_blank" rel="noreferrer noopener">Amazon Simple Queue Service
+</a>
+
+作為任務暫存器，不需要及時處理的任務可以丟進去存放<br>
+等系統有多餘的資源時再進行處理，可以解耦應用程式</p>
+
+  </div>
+  <footer>
+    <a href="/blog/202305-aws-fundamental-sqs/" class="button big">閱讀全文</a>
+    <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/aws/">AWS</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/aws/">AWS</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/sqs/">SQS</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+  </footer>
+</article>
+
+  
+    <article class="post">
+  <header>
+  <div class="title">
+    
+      <h2><a href="/blog/202210-aws101-what-is-sns-and-sqs/">[AWS 101] 什麼是 SNS 和 SQS</a></h2>
+    
+    
+      <p>簡單筆記一下 AWS SNS 和 SQS 服務在幹嘛，還有使用情境</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2022-10-06 00:00:00 &#43;0000 UTC">2022/10/06</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+  <div class="content">
+    <a href="/blog/202210-aws101-what-is-sns-and-sqs/" class="image" style="--bg-image: url('/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg');">
+    <img src="/blog/202210-aws101-what-is-sns-and-sqs/featured.jpg" alt="">
+  </a>
+    
+    <p>Amazon Simple Queue Service (SQS) 和 Amazon Simple Notification Service (SNS) 看起來很像，實際上又不太一樣<br>
+為了更好釐清兩者，就把兩個服務的筆記放在一起比較</p>
+
+  </div>
+  <footer>
+    <a href="/blog/202210-aws101-what-is-sns-and-sqs/" class="button big">閱讀全文</a>
+    <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/aws/">AWS</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/aws/">AWS</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/sns/">SNS</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/sqs/">SQS</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+  </footer>
+</article>
+
+  
+  <div class="pagination">
+    
+    
+  </div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>最新文章</h1>
+      </header>
+      
+      <article class="mini-post">
+          <a href="/blog/202609-mwaa-connection-encryption-investigation/" class="image" style="--bg-image: url('/blog/202609-mwaa-connection-encryption-investigation/featured.jpg');">
+    <img src="/blog/202609-mwaa-connection-encryption-investigation/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/blog/202609-mwaa-connection-encryption-investigation/">MWAA Connections 加密機制調查</a></h2>
+          <time class="published" datetime="2026-09-03 00:00:00 &#43;0000 UTC">2026/09/03</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202604-deploy-openclaw-ai-for-free/" class="image" style="--bg-image: url('/blog/202604-deploy-openclaw-ai-for-free/featured.jpg');">
+    <img src="/blog/202604-deploy-openclaw-ai-for-free/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/blog/202604-deploy-openclaw-ai-for-free/">不花一毛錢，快速部屬個人 AI 助理 Openclaw</a></h2>
+          <time class="published" datetime="2026-04-04 00:00:00 &#43;0000 UTC">2026/04/04</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202602-airflow-dynamic-task-mapping/" class="image" style="--bg-image: url('/blog/202602-airflow-dynamic-task-mapping/featured.jpg');">
+    <img src="/blog/202602-airflow-dynamic-task-mapping/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/blog/202602-airflow-dynamic-task-mapping/">使用動態任務讓 Airflow 效能大解放</a></h2>
+          <time class="published" datetime="2026-02-03 00:00:00 &#43;0000 UTC">2026/02/03</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202509-triggering-airflow-dag-from-another-dag/" class="image" style="--bg-image: url('/blog/202509-triggering-airflow-dag-from-another-dag/featured.jpg');">
+    <img src="/blog/202509-triggering-airflow-dag-from-another-dag/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/blog/202509-triggering-airflow-dag-from-another-dag/">使用 Airflow DAG 觸發其他 DAG</a></h2>
+          <time class="published" datetime="2025-09-24 00:00:00 &#43;0000 UTC">2025/09/24</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202509-amazon-rds-db-connection-limits/" class="image" style="--bg-image: url('/blog/202509-amazon-rds-db-connection-limits/featured.jpg');">
+    <img src="/blog/202509-amazon-rds-db-connection-limits/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/blog/202509-amazon-rds-db-connection-limits/">掌握 Amazon RDS 的連線數限制</a></h2>
+          <time class="published" datetime="2025-09-07 00:00:00 &#43;0000 UTC">2025/09/07</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/blog/" class="button">查看更多</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="/categories">文章分類</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/categories/aws/">AWS<span class="count">27</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/devops/">DevOps<span class="count">24</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/node.js/">Node.js<span class="count">22</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/leetcode/">LeetCode<span class="count">13</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/golang/">Golang<span class="count">12</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/%E7%B6%AD%E9%81%8B%E8%88%87%E5%B7%A5%E5%85%B7/">維運與工具<span class="count">12</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/python/">Python<span class="count">10</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/php/">PHP<span class="count">7</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/typescript/">TypeScript<span class="count">4</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/ai/">AI<span class="count">1</span></a>
+          </li>
+          
+        </ul>
+      </section>
+    
+  
+
+  
+  <section id="tags">
+    <header>
+      <h1><a href="/tags">Tag</a></h1>
+    </header>
+    <div class="li-x post-meta tags-md" style="margin-left: 0.5em;">
+      <ul>
+        
+        
+        <li>
+          <a href="/tags/aws/">AWS (28)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/devops/">DevOps (27)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/node.js/">Node.js (22)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/python/">Python (15)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/vue/">Vue (15)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/leetcode/">LeetCode (13)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/docker/">Docker (12)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/golang/">Golang (12)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/php/">PHP (11)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/containerization/">Containerization (10)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%AE%B9%E5%99%A8%E6%8A%80%E8%A1%93/">容器技術 (10)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/express/">Express (9)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/ci-cd/">CI-CD (8)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/laravel/">Laravel (8)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/leetcode-easy/">LeetCode-Easy (8)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/gcp/">GCP (7)</a>
+        </li>
+        
+      </ul>
+
+    </div>
+    
+      <footer>
+        <a href="/tags" class="button">查看更多</a>
+      </footer>
+    
+  </section>
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+    
+    <p class="copyright">
+        © 2026 Byte Ebi 🍤
+    </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>
+      hljs.configure({ ignoreUnescapedHTML: true }); 
+      hljs.highlightAll();
+    </script><script src="/js/bundle.min.d21befc899e4b6158eba05da3928321e52d15d067cb323bbf20e1b37a4ee0e3d.js" integrity="sha256-0hvvyJnkthWOugXaOSgyHlLRXQZ8syO78g4bN6TuDj0="></script>
+    <script src="/js/add-on.js"></script>
+
+
+    
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', "G-LTGVYYWC2J");
+        </script>
+    
+
+
+    </div>
+  </body>
+  
+</html>

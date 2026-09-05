@@ -469,7 +469,7 @@
 				<description>&lt;p&gt;Entering the world of Golang, we first acquaint ourselves with basic Golang usage using the official tutorial: &lt;a href=&#34;https://tour.golang.org/welcome/1&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;A Tour of Go&#xD;&#xA;&lt;/a&gt;&#xD;&#xA;.&lt;br&gt;&#xA;This article introduces Range, Map, and Function.&lt;/p&gt;</description>
 			</item>
 			<item>
-				<title>Operating Google Forms with GAS (Google App Script)</title>
+				<title>Operating Google Forms with GAS (Google Apps Script)</title>
 				<link>https://tech.ray247k.com/en/blog/202111-operate-google-sheet-via-google-app-script/</link>
 				<pubDate>Sun, 28 Nov 2021 00:00:00 +0000</pubDate>
 				<guid>https://tech.ray247k.com/en/blog/202111-operate-google-sheet-via-google-app-script/</guid>

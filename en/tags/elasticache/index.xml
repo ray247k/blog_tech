@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>ElastiCache on Byte Ebi 🍤</title>
+		<link>https://tech.ray247k.com/en/tags/elasticache/</link>
+		<description>Recent content in ElastiCache on Byte Ebi 🍤</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Tue, 13 Jun 2023 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://tech.ray247k.com/en/tags/elasticache/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>[AWS Cloud Fundamental Notes] ElastiCache</title>
+				<link>https://tech.ray247k.com/en/blog/202306-aws-fundamental-elasticache/</link>
+				<pubDate>Tue, 13 Jun 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202306-aws-fundamental-elasticache/</guid>
+				<description>&lt;p&gt;Cloud caching service with two underlying engines: &lt;a href=&#34;#Redis&#34;&#xD;&#xA;   &#xD;&#xA;   &gt;Redis&#xD;&#xA;&lt;/a&gt;&#xD;&#xA; and &lt;a href=&#34;#Memcached&#34;&#xD;&#xA;   &#xD;&#xA;   &gt;Memcached&#xD;&#xA;&lt;/a&gt;&#xD;&#xA;.&lt;br&gt;&#xA;It can assist in implementing &lt;code&gt;Shard&lt;/code&gt;.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

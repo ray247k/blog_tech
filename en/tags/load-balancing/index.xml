@@ -10,9 +10,16 @@
 		
 		
 		
-			<lastBuildDate>Tue, 05 Apr 2022 00:00:00 +0000</lastBuildDate>
+			<lastBuildDate>Thu, 11 May 2023 00:00:00 +0000</lastBuildDate>
 		
 			<atom:link href="https://tech.ray247k.com/en/tags/load-balancing/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>[AWS Cloud Fundamental Notes] Elastic Load Balancer</title>
+				<link>https://tech.ray247k.com/en/blog/202305-aws-fundamental-elastic-load-balancer/</link>
+				<pubDate>Thu, 11 May 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202305-aws-fundamental-elastic-load-balancer/</guid>
+				<description>&lt;p&gt;&lt;a href=&#34;https://aws.amazon.com/elasticloadbalancing/&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Elastic Load Balancer&#xD;&#xA;&lt;/a&gt;&#xD;&#xA; (ELB) achieves traffic distribution and load balancing.&lt;br&gt;&#xA;ELB distributes incoming application traffic across multiple targets and virtual devices in one or more Availability Zones(AZ) and generates Access logs.&lt;/p&gt;</description>
+			</item>
 			<item>
 				<title>Scalable Server 02 Load Balancing</title>
 				<link>https://tech.ray247k.com/en/blog/202204-gcp-load-balancing/</link>

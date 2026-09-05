@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>S3 on Byte Ebi 🍤</title>
+		<link>https://tech.ray247k.com/en/tags/s3/</link>
+		<description>Recent content in S3 on Byte Ebi 🍤</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Sat, 25 Mar 2023 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://tech.ray247k.com/en/tags/s3/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>[AWS Cloud Fundamental Notes] S3</title>
+				<link>https://tech.ray247k.com/en/blog/202303-aws-fundamental-s3/</link>
+				<pubDate>Sat, 25 Mar 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202303-aws-fundamental-s3/</guid>
+				<description>&lt;p&gt;Scalable, available, secure, and efficient cloud object storage&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

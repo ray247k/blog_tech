@@ -10,9 +10,16 @@
 		
 		
 		
-			<lastBuildDate>Sun, 27 Mar 2022 00:00:00 +0000</lastBuildDate>
+			<lastBuildDate>Tue, 23 May 2023 00:00:00 +0000</lastBuildDate>
 		
 			<atom:link href="https://tech.ray247k.com/tags/auto-scaling/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>[大話 AWS 雲端架構筆記] Auto Scaling</title>
+				<link>https://tech.ray247k.com/blog/202305-aws-fundamental-auto-scaling/</link>
+				<pubDate>Tue, 23 May 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202305-aws-fundamental-auto-scaling/</guid>
+				<description>&lt;p&gt;監控應用程式並按照流量變化自動增減機器，盡可能以最低成本維持穩定、可預測的效能&lt;/p&gt;</description>
+			</item>
 			<item>
 				<title>伸縮自在的伺服器 01 自動配置 Auto Scaling</title>
 				<link>https://tech.ray247k.com/blog/202203-gcp-auto-scaling/</link>

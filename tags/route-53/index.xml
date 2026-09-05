@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Route 53 on Byte Ebi 🍤</title>
+		<link>https://tech.ray247k.com/tags/route-53/</link>
+		<description>Recent content in Route 53 on Byte Ebi 🍤</description>
+		<generator>Hugo</generator>
+		<language>zh-TW</language>
+		
+		
+		
+		
+			<lastBuildDate>Sat, 15 Apr 2023 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://tech.ray247k.com/tags/route-53/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>[大話 AWS 雲端架構筆記] Route 53</title>
+				<link>https://tech.ray247k.com/blog/202304-aws-fundamental-route53/</link>
+				<pubDate>Sat, 15 Apr 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202304-aws-fundamental-route53/</guid>
+				<description>&lt;p&gt;提供域名購買、域名解析轉發、系統健康檢查、流量轉送&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

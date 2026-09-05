@@ -56,7 +56,7 @@
 				<description>&lt;p&gt;How to launch a VM virtual machine on Google Cloud Platform (GCP)?&lt;br&gt;&#xA;It may sound complex, but in practice, it&amp;rsquo;s quite straightforward.&lt;br&gt;&#xA;If you haven&amp;rsquo;t had any experience with setting up a host before, this time, we&amp;rsquo;ll document the steps for you.&lt;/p&gt;</description>
 			</item>
 			<item>
-				<title>Operating Google Forms with GAS (Google App Script)</title>
+				<title>Operating Google Forms with GAS (Google Apps Script)</title>
 				<link>https://tech.ray247k.com/en/blog/202111-operate-google-sheet-via-google-app-script/</link>
 				<pubDate>Sun, 28 Nov 2021 00:00:00 +0000</pubDate>
 				<guid>https://tech.ray247k.com/en/blog/202111-operate-google-sheet-via-google-app-script/</guid>

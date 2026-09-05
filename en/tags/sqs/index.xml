@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>SQS on Byte Ebi 🍤</title>
+		<link>https://tech.ray247k.com/en/tags/sqs/</link>
+		<description>Recent content in SQS on Byte Ebi 🍤</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Tue, 30 May 2023 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://tech.ray247k.com/en/tags/sqs/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>[AWS Cloud Fundamental Notes] SQS</title>
+				<link>https://tech.ray247k.com/en/blog/202305-aws-fundamental-sqs/</link>
+				<pubDate>Tue, 30 May 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202305-aws-fundamental-sqs/</guid>
+				<description>&lt;p&gt;&lt;a href=&#34;https://docs.aws.amazon.com/sqs/latest/dev/sqs-dg.pdf&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Amazon Simple Queue Service&#xD;&#xA;&lt;/a&gt;&#xD;&#xA; (SQS) serves as a task buffer, allowing tasks that do not require immediate processing to be placed in the queue for storage.&lt;br&gt;&#xA;When the system has spare resources, it processes these tasks, which helps decouple applications.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[AWS 101] What are SNS and SQS</title>
+				<link>https://tech.ray247k.com/en/blog/202210-aws101-what-is-sns-and-sqs/</link>
+				<pubDate>Thu, 06 Oct 2022 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202210-aws101-what-is-sns-and-sqs/</guid>
+				<description>&lt;p&gt;Amazon Simple Queue Service (SQS) and Amazon Simple Notification Service (SNS) may look similar.&lt;br&gt;&#xA;But in reality, they are quite different.&lt;/p&gt;&#xA;&lt;p&gt;To better clarify the differences between the two, let&amp;rsquo;s compare the notes on both services side by side.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

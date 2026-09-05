@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>CloudTrail on Byte Ebi 🍤</title>
+		<link>https://tech.ray247k.com/en/tags/cloudtrail/</link>
+		<description>Recent content in CloudTrail on Byte Ebi 🍤</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Tue, 25 Apr 2023 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://tech.ray247k.com/en/tags/cloudtrail/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>[AWS Cloud Fundamental Notes] CloudWatch and CloudTrail</title>
+				<link>https://tech.ray247k.com/en/blog/202304-aws-fundamental-cloudwatch-and-cloudtrail/</link>
+				<pubDate>Tue, 25 Apr 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202304-aws-fundamental-cloudwatch-and-cloudtrail/</guid>
+				<description>&lt;p&gt;Amazon CloudWatch monitors your Amazon Web Services (AWS) resources and the applications you run on AWS in real-time.&lt;br&gt;&#xA;AWS CloudTrail is an AWS service that helps you enable governance, compliance, and operational and risk auditing of your AWS account.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

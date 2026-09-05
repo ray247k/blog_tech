@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Cost Control on Byte Ebi 🍤</title>
+		<link>https://tech.ray247k.com/en/tags/cost-control/</link>
+		<description>Recent content in Cost Control on Byte Ebi 🍤</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Sun, 17 Sep 2023 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://tech.ray247k.com/en/tags/cost-control/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>[AWS Cloud Fundamental Notes] Cost Control</title>
+				<link>https://tech.ray247k.com/en/blog/202309-aws-fundamental-cost-control/</link>
+				<pubDate>Sun, 17 Sep 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202309-aws-fundamental-cost-control/</guid>
+				<description>&lt;p&gt;Using the &lt;a href=&#34;https://calculator.aws/#/&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;AWS Pricing Calculator&#xD;&#xA;&lt;/a&gt;&#xD;&#xA;, you can estimate the cost of cloud architecture through a data center perspective.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://docs.aws.amazon.com/zh_tw/organizations/latest/userguide/orgs_introduction.html&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;AWS Organizations&#xD;&#xA;&lt;/a&gt;&#xD;&#xA; consolidates multiple AWS accounts into one organization for centralized management.&lt;br&gt;&#xA;You can create accounts within the organization and invite existing accounts to join.&lt;br&gt;&#xA;It includes account management and consolidated billing features, meeting budget, security, and compliance requirements.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

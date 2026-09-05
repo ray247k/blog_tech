@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>API Gateway on Byte Ebi 🍤</title>
+		<link>https://tech.ray247k.com/tags/api-gateway/</link>
+		<description>Recent content in API Gateway on Byte Ebi 🍤</description>
+		<generator>Hugo</generator>
+		<language>zh-TW</language>
+		
+		
+		
+		
+			<lastBuildDate>Sun, 17 Dec 2023 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://tech.ray247k.com/tags/api-gateway/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>[大話 AWS 雲端架構筆記] API Gateway</title>
+				<link>https://tech.ray247k.com/blog/202312-aws-fundamental-api-gateway/</link>
+				<pubDate>Sun, 17 Dec 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202312-aws-fundamental-api-gateway/</guid>
+				<description>&lt;p&gt;作為應用程式的「前門」，以便從後端服務存取資料、商業邏輯或功能&lt;br&gt;&#xA;使用 API Gateway 時，您可以建立 RESTful API 和 WebSocket API，以啟用即時雙向通訊應用程式&lt;br&gt;&#xA;API Gateway 支援容器化、無伺服器工作負載和 Web 應用程式&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Architecture on Byte Ebi 🍤</title>
+		<link>https://tech.ray247k.com/tags/architecture/</link>
+		<description>Recent content in Architecture on Byte Ebi 🍤</description>
+		<generator>Hugo</generator>
+		<language>zh-TW</language>
+		
+		
+		
+		
+			<lastBuildDate>Sun, 18 Feb 2024 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://tech.ray247k.com/tags/architecture/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>[大話 AWS 雲端架構筆記] AWS 常見架構總覽</title>
+				<link>https://tech.ray247k.com/blog/202402-aws-fundamental-architectures/</link>
+				<pubDate>Sun, 18 Feb 2024 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202402-aws-fundamental-architectures/</guid>
+				<description>&lt;p&gt;簡介各種常見的應用架構元件和演進&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>
