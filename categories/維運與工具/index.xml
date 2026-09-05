@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>維運與工具 on Byte Ebi 🍤</title>
+		<link>https://tech.ray247k.com/categories/%E7%B6%AD%E9%81%8B%E8%88%87%E5%B7%A5%E5%85%B7/</link>
+		<description>Recent content in 維運與工具 on Byte Ebi 🍤</description>
+		<generator>Hugo</generator>
+		<language>zh-TW</language>
+		
+		
+		
+		
+			<lastBuildDate>Fri, 20 Jun 2025 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://tech.ray247k.com/categories/%E7%B6%AD%E9%81%8B%E8%88%87%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Commit 前的最後防線：善用 Pre-commit 自動檢查程式碼</title>
+				<link>https://tech.ray247k.com/blog/202506-pre-commit-git-commit-gatekeeper/</link>
+				<pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202506-pre-commit-git-commit-gatekeeper/</guid>
+				<description>&lt;p&gt;透過 pre-commit 自動執行格式檢查與測試，減少低級錯誤。&lt;br&gt;&#xA;簡單安裝、快速設定，馬上提升程式碼品質。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>在同一台電腦設定多組 GitHub 帳號</title>
+				<link>https://tech.ray247k.com/blog/202409-multiple-github-accounts-with-ssh-keys/</link>
+				<pubDate>Thu, 19 Sep 2024 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202409-multiple-github-accounts-with-ssh-keys/</guid>
+				<description>&lt;p&gt;因為遠端工作的關係，我要在自己的電腦上設定公司的 GitHub 帳號&lt;br&gt;&#xA;然而 GitHub 是不會讓你把同一組 SSH Key 設定給不同的帳號的&lt;br&gt;&#xA;所以無法把私人帳號的 SSH Key 設定到公司提供的 GitHub 帳號上&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>透過 FFmpeg 轉換影片格式</title>
+				<link>https://tech.ray247k.com/blog/202301-ffmpeg-video-convert/</link>
+				<pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202301-ffmpeg-video-convert/</guid>
+				<description>&lt;p&gt;有時候會透過某些方法把 .M3U8 檔下載回來後會整合成一隻 .ts 為副檔名的檔案&lt;br&gt;&#xA;而電腦通常不能直接播放這種格式，我們可以透過 FFmpeg 轉成常見的 .mp4 檔案便於播放&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Serverless 簡介</title>
+				<link>https://tech.ray247k.com/blog/202210-what-is-serverless/</link>
+				<pubDate>Tue, 04 Oct 2022 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202210-what-is-serverless/</guid>
+				<description>&lt;p&gt;因為公司的服務都是基於 AWS，且大量使用各種無伺服器運算服務&lt;br&gt;&#xA;以前完全沒摸過這部分，這系列算筆記整理，內容未來可能會隨時修正&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>使用 ssh 從本機連線到 GCP VM</title>
+				<link>https://tech.ray247k.com/blog/202202-connect-to-gcp-vm-using-ssh/</link>
+				<pubDate>Sat, 26 Feb 2022 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202202-connect-to-gcp-vm-using-ssh/</guid>
+				<description>&lt;p&gt;原先在 GCP 開啟 VM 後每當管理主機時都要先開啟 GCP 控制台頁面，找到指定主機&lt;br&gt;&#xA;按下畫面上的 SSH 連線按鈕，接著開啟 GCP 的終端機畫面&lt;br&gt;&#xA;開啟的步驟實在繁瑣，而且那個終端機也沒有自己本機的用的習慣&lt;br&gt;&#xA;這篇文章說明如何透過本機終端機 ssh 連線到 GCP 主機內&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>使用 Prerender 為 SPA 增進 SEO</title>
+				<link>https://tech.ray247k.com/blog/202201-using-prerender-improve-spa-seo/</link>
+				<pubDate>Mon, 31 Jan 2022 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202201-using-prerender-improve-spa-seo/</guid>
+				<description>&lt;p&gt;Single Page Application(SPA) 網站使用 Client-Side Rendering (CSR) 來渲染畫面&lt;br&gt;&#xA;一開始載入時伺服器只會回傳根元件，透過後續 API 互動取得資料填入&lt;br&gt;&#xA;而網站排名的爬蟲，爬到就會是空空的。雖然 Google 聲稱他們的爬蟲會執行 JS，但是其他搜尋引擎不一定會執行&lt;br&gt;&#xA;所以透過 Prerender 服務來做到預先渲染給網頁爬蟲，達成搜尋結果最佳化&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>第一次在 GCP 開 VM 就成功</title>
+				<link>https://tech.ray247k.com/blog/202201-gcp-vm-basic/</link>
+				<pubDate>Sat, 15 Jan 2022 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202201-gcp-vm-basic/</guid>
+				<description>&lt;p&gt;如何在 Google Cloud Platform (GCP) 上開啟一個 VM 虛擬主機呢？&lt;br&gt;&#xA;聽起來很複雜，實際做起來十分簡單&lt;br&gt;&#xA;過去沒有開主機的經驗，這次就把步驟給記錄下來&lt;br&gt;&#xA;&lt;del&gt;我不想花錢自己開，以前公司也沒開權限給我過&lt;/del&gt;&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>操作 Google 表單，透過 GAS(Google App Script)</title>
+				<link>https://tech.ray247k.com/blog/202111-operate-google-sheet-via-google-app-script/</link>
+				<pubDate>Sun, 28 Nov 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202111-operate-google-sheet-via-google-app-script/</guid>
+				<description>&lt;p&gt;在管理後台尚未建立完成而前台已經上線的時候，會希望可以讓非程式人員自行調整網頁上的文案&lt;br&gt;&#xA;又或是暫時性的紀錄內容不想因此開資料表，通常這時候我們會透過 Google 表單來管理資料&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>[Git 教學] 設定本機全域 gitignore</title>
+				<link>https://tech.ray247k.com/blog/202111-git-global-gitignore/</link>
+				<pubDate>Sat, 06 Nov 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202111-git-global-gitignore/</guid>
+				<description>&lt;p&gt;在開發專案時，你會不會把編輯器自動產生的設定檔加入 .gitignore 裡呢？&lt;br&gt;&#xA;為什麼要把你的個人的環境設定加到專案中呢？&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>透過 Cloudflare 設定子網域，並客製 GitHub Page 網址</title>
+				<link>https://tech.ray247k.com/blog/202105-set-custom-domain-for-github-page/</link>
+				<pubDate>Tue, 18 May 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202105-set-custom-domain-for-github-page/</guid>
+				<description>&lt;p&gt;之前已經買好了自己的網址，接著要利用 Cloudflare DNS 服務建立子網域&lt;br&gt;&#xA;並且設定給指定的 GitHub Page 專案作為客製網址&lt;br&gt;&#xA;學會這項技能之後，只要有一組主要網址，就可以根據需求產生不同的子網域網址&lt;br&gt;&#xA;各家 DNS 服務提供商都有這個功能，本篇以 Cloudflare 為例&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>設定 Cloudflare 免費 CDN，並啟用 DNS 代管</title>
+				<link>https://tech.ray247k.com/blog/202105-cloudflare-dns-add-domain/</link>
+				<pubDate>Sun, 16 May 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202105-cloudflare-dns-add-domain/</guid>
+				<description>&lt;p&gt;Google Domains 服務原本就有網域名稱伺服器(Domain Name System, DNS)服務&lt;br&gt;&#xA;透過 DNS 可以管理你的域名，加子網域什麼的&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>如何從 Google Domains 購買屬於自己的網址</title>
+				<link>https://tech.ray247k.com/blog/202105-how-to-buy-a-domain-from-google/</link>
+				<pubDate>Sat, 15 May 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202105-how-to-buy-a-domain-from-google/</guid>
+				<description>&lt;p&gt;以前都一直是使用免費的部落(blogger)，隨著近幾年個人品牌意識崛起，以及覺得原本部落格不敷使用&lt;br&gt;&#xA;且搬家非常不方便，還有不能自訂 SEO 和埋設追蹤碼。在媒體業做過就會想自己動手處理這些&lt;br&gt;&#xA;當初一度從 blogger 搬到 medium，又搬回 blogger轉移十分麻煩&lt;br&gt;&#xA;而且還有程式碼內容格式會跑掉，以及想都用 markdown 語法紀錄等等原因&lt;br&gt;&#xA;興起了自架的想法，一方面也是想要作為展現自己的能力的平台&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

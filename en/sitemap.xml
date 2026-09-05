@@ -353,19 +353,6 @@
                 href="https://tech.ray247k.com/en/blog/202507-pytest-1-intro-to-pytest-and-mock/"
                 />
   </url><url>
-    <loc>https://tech.ray247k.com/en/categories/git/</loc>
-    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/categories/git/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/categories/git/"
-                />
-  </url><url>
     <loc>https://tech.ray247k.com/en/tags/git/</loc>
     <lastmod>2025-06-20T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -378,6 +365,9 @@
                 hreflang="en"
                 href="https://tech.ray247k.com/en/tags/git/"
                 />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/categories/ops--tools/</loc>
+    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/en/tags/pre-commit/</loc>
     <lastmod>2025-06-20T00:00:00+00:00</lastmod>
@@ -534,9 +524,6 @@
                 hreflang="en"
                 href="https://tech.ray247k.com/en/tags/ssh/"
                 />
-  </url><url>
-    <loc>https://tech.ray247k.com/en/categories/version-control/</loc>
-    <lastmod>2024-09-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/en/blog/202405-create-static-web-site-with-hugo/</loc>
     <lastmod>2024-05-06T00:00:00+00:00</lastmod>
@@ -749,19 +736,6 @@
                 href="https://tech.ray247k.com/en/blog/202306-different-between-pointer-and-value-for-struct-type-in-golang/"
                 />
   </url><url>
-    <loc>https://tech.ray247k.com/en/tags/go/</loc>
-    <lastmod>2023-06-25T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/tags/go/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/tags/go/"
-                />
-  </url><url>
     <loc>https://tech.ray247k.com/en/blog/202306-aws-fundamental-cloudformation/</loc>
     <lastmod>2023-06-18T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -957,9 +931,6 @@
                 href="https://tech.ray247k.com/en/tags/ffmpeg/"
                 />
   </url><url>
-    <loc>https://tech.ray247k.com/en/categories/tools/</loc>
-    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://tech.ray247k.com/en/blog/202301-ffmpeg-video-convert/</loc>
     <lastmod>2023-01-01T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -984,19 +955,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tech.ray247k.com/en/blog/202210-aws101-what-is-sns-and-sqs/"
-                />
-  </url><url>
-    <loc>https://tech.ray247k.com/en/categories/serverless/</loc>
-    <lastmod>2022-10-04T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/categories/serverless/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/categories/serverless/"
                 />
   </url><url>
     <loc>https://tech.ray247k.com/en/tags/serverless/</loc>
@@ -1184,17 +1142,17 @@
                 href="https://tech.ray247k.com/en/tags/jenkins/"
                 />
   </url><url>
-    <loc>https://tech.ray247k.com/en/series/jenkins-ci/cd/</loc>
+    <loc>https://tech.ray247k.com/en/series/jenkins-ci-cd/</loc>
     <lastmod>2022-04-13T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-TW"
-                href="https://tech.ray247k.com/series/jenkins-ci/cd/"
+                href="https://tech.ray247k.com/series/jenkins-ci-cd/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://tech.ray247k.com/en/series/jenkins-ci/cd/"
+                href="https://tech.ray247k.com/en/series/jenkins-ci-cd/"
                 />
   </url><url>
     <loc>https://tech.ray247k.com/en/blog/202204-jenkins-cicd-4-ssh-remote-server/</loc>
@@ -1304,19 +1262,6 @@
                 href="https://tech.ray247k.com/en/blog/202204-laravel-sail/"
                 />
   </url><url>
-    <loc>https://tech.ray247k.com/en/categories/laravel/</loc>
-    <lastmod>2022-04-02T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/categories/laravel/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/categories/laravel/"
-                />
-  </url><url>
     <loc>https://tech.ray247k.com/en/tags/laravel/</loc>
     <lastmod>2022-04-02T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -1328,6 +1273,19 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tech.ray247k.com/en/tags/laravel/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/categories/php/</loc>
+    <lastmod>2022-04-02T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/categories/php/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/categories/php/"
                 />
   </url><url>
     <loc>https://tech.ray247k.com/en/tags/php/</loc>
@@ -1487,22 +1445,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tech.ray247k.com/en/tags/seo/"
-                />
-  </url><url>
-    <loc>https://tech.ray247k.com/en/categories/website-operations/</loc>
-    <lastmod>2022-01-31T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tech.ray247k.com/en/categories/php/</loc>
-    <lastmod>2022-01-20T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/categories/php/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/categories/php/"
                 />
   </url><url>
     <loc>https://tech.ray247k.com/en/tags/phpcbf/</loc>
@@ -1718,9 +1660,6 @@
                 hreflang="en"
                 href="https://tech.ray247k.com/en/blog/202111-operate-google-sheet-via-google-app-script/"
                 />
-  </url><url>
-    <loc>https://tech.ray247k.com/en/categories/third-party-services/</loc>
-    <lastmod>2021-11-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/en/blog/202111-a-tour-of-go-05-array-and-slice/</loc>
     <lastmod>2021-11-23T00:00:00+00:00</lastmod>
@@ -2172,9 +2111,6 @@
                 hreflang="en"
                 href="https://tech.ray247k.com/en/tags/subdomain/"
                 />
-  </url><url>
-    <loc>https://tech.ray247k.com/en/categories/web-hosting/</loc>
-    <lastmod>2021-05-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tech.ray247k.com/en/tags/web-hosting/</loc>
     <lastmod>2021-05-18T00:00:00+00:00</lastmod>

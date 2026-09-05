@@ -35,10 +35,10 @@
 				<description></description>
 			</item>
 			<item>
-				<title>Git</title>
-				<link>https://tech.ray247k.com/en/categories/git/</link>
+				<title>Ops &amp; Tools</title>
+				<link>https://tech.ray247k.com/en/categories/ops--tools/</link>
 				<pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
-				<guid>https://tech.ray247k.com/en/categories/git/</guid>
+				<guid>https://tech.ray247k.com/en/categories/ops--tools/</guid>
 				<description></description>
 			</item>
 			<item>
@@ -49,31 +49,10 @@
 				<description></description>
 			</item>
 			<item>
-				<title>Version Control</title>
-				<link>https://tech.ray247k.com/en/categories/version-control/</link>
-				<pubDate>Thu, 19 Sep 2024 00:00:00 +0000</pubDate>
-				<guid>https://tech.ray247k.com/en/categories/version-control/</guid>
-				<description></description>
-			</item>
-			<item>
 				<title>Golang</title>
 				<link>https://tech.ray247k.com/en/categories/golang/</link>
 				<pubDate>Mon, 06 May 2024 00:00:00 +0000</pubDate>
 				<guid>https://tech.ray247k.com/en/categories/golang/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Tools</title>
-				<link>https://tech.ray247k.com/en/categories/tools/</link>
-				<pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
-				<guid>https://tech.ray247k.com/en/categories/tools/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Serverless</title>
-				<link>https://tech.ray247k.com/en/categories/serverless/</link>
-				<pubDate>Tue, 04 Oct 2022 00:00:00 +0000</pubDate>
-				<guid>https://tech.ray247k.com/en/categories/serverless/</guid>
 				<description></description>
 			</item>
 			<item>
@@ -84,38 +63,10 @@
 				<description></description>
 			</item>
 			<item>
-				<title>Laravel</title>
-				<link>https://tech.ray247k.com/en/categories/laravel/</link>
-				<pubDate>Sat, 02 Apr 2022 00:00:00 +0000</pubDate>
-				<guid>https://tech.ray247k.com/en/categories/laravel/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Website Operations</title>
-				<link>https://tech.ray247k.com/en/categories/website-operations/</link>
-				<pubDate>Mon, 31 Jan 2022 00:00:00 +0000</pubDate>
-				<guid>https://tech.ray247k.com/en/categories/website-operations/</guid>
-				<description></description>
-			</item>
-			<item>
 				<title>PHP</title>
 				<link>https://tech.ray247k.com/en/categories/php/</link>
-				<pubDate>Thu, 20 Jan 2022 00:00:00 +0000</pubDate>
+				<pubDate>Sat, 02 Apr 2022 00:00:00 +0000</pubDate>
 				<guid>https://tech.ray247k.com/en/categories/php/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Third-Party Services</title>
-				<link>https://tech.ray247k.com/en/categories/third-party-services/</link>
-				<pubDate>Sun, 28 Nov 2021 00:00:00 +0000</pubDate>
-				<guid>https://tech.ray247k.com/en/categories/third-party-services/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Web Hosting</title>
-				<link>https://tech.ray247k.com/en/categories/web-hosting/</link>
-				<pubDate>Tue, 18 May 2021 00:00:00 +0000</pubDate>
-				<guid>https://tech.ray247k.com/en/categories/web-hosting/</guid>
 				<description></description>
 			</item>
 	</channel>

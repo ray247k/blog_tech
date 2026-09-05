@@ -35,6 +35,13 @@
 				<description>&lt;p&gt;在後台介面尚未建置完成，或是使用者有大量資料不想逐筆新增&lt;br&gt;&#xA;而是要透過表單一次性匯入，這時候我們就會用到 Laravel-excel 這個套件&lt;br&gt;&#xA;同時也分享一次匯入大量資料的時候遇到的坑&lt;/p&gt;</description>
 			</item>
 			<item>
+				<title>使用 GrumPHP 做程式碼品質的守門員</title>
+				<link>https://tech.ray247k.com/blog/202107-grumphp-a-php-code-quality-tool/</link>
+				<pubDate>Sat, 31 Jul 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202107-grumphp-a-php-code-quality-tool/</guid>
+				<description>&lt;p&gt;多人一起開發的環境下，Code Review 是一件非常重要的事情&lt;br&gt;&#xA;因為如果有人寫出一些不符合規則的程式，或是無法通過測試的程式時會造成專案出錯&lt;br&gt;&#xA;而人工檢查語法或是手動執行測試耗時費力 no fashion，這種事情應該讓程式自動做&lt;br&gt;&#xA;於是 &lt;code&gt;GrumPHP&lt;/code&gt; 登場了&lt;/p&gt;</description>
+			</item>
+			<item>
 				<title>開發屬於自己的 Laravel 套件</title>
 				<link>https://tech.ray247k.com/blog/202107-laravel-package-development/</link>
 				<pubDate>Sun, 25 Jul 2021 00:00:00 +0000</pubDate>

@@ -10,15 +10,57 @@
 		
 		
 		
-			<lastBuildDate>Thu, 20 Jan 2022 00:00:00 +0000</lastBuildDate>
+			<lastBuildDate>Sat, 02 Apr 2022 00:00:00 +0000</lastBuildDate>
 		
 			<atom:link href="https://tech.ray247k.com/en/categories/php/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Introducing Laravel Sail and Basic Operations</title>
+				<link>https://tech.ray247k.com/en/blog/202204-laravel-sail/</link>
+				<pubDate>Sat, 02 Apr 2022 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202204-laravel-sail/</guid>
+				<description>&lt;p&gt;In the context of Laravel development environment setup, both official and unofficial sources offer a plethora of approaches.&lt;br&gt;&#xA;This time, we will be introducing a package introduced after Laravel 8: &lt;a href=&#34;https://laravel.com/docs/9.x/sail&#34;&#xD;&#xA;   &#xD;&#xA;    target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Laravel Sail&#xD;&#xA;&lt;/a&gt;&#xD;&#xA;.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Laravel Queue Usage</title>
+				<link>https://tech.ray247k.com/en/blog/202203-laravel-queue/</link>
+				<pubDate>Sat, 05 Mar 2022 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202203-laravel-queue/</guid>
+				<description>&lt;p&gt;The purpose of queues is to defer processing of a time-consuming task that doesn&amp;rsquo;t require immediate completion.&#xA;Like sending emails, users don&amp;rsquo;t need to wait for the email to be sent successfully before the next step.&lt;br&gt;&#xA;Allowing the application to respond more quickly to web requests and smooth user experience.&lt;/p&gt;</description>
+			</item>
 			<item>
 				<title>Using PHP CodeSniffer to Check Coding Style</title>
 				<link>https://tech.ray247k.com/en/blog/202201-phpcs/</link>
 				<pubDate>Thu, 20 Jan 2022 00:00:00 +0000</pubDate>
 				<guid>https://tech.ray247k.com/en/blog/202201-phpcs/</guid>
 				<description>&lt;p&gt;Checking code conformity with standards using phpcs (PHP Code Sniffer)&lt;br&gt;&#xA;Automatically correcting non-conforming code using phpcbf (PHP Code Beautifier and Fixer)&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Importing Excel or CSV Files into Laravel</title>
+				<link>https://tech.ray247k.com/en/blog/202112-laravel-excel-import/</link>
+				<pubDate>Sat, 11 Dec 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202112-laravel-excel-import/</guid>
+				<description>&lt;p&gt;When the backend interface isn&amp;rsquo;t fully developed or when users have extensive data that they prefer not to input manually, opting for a bulk import via a form becomes essential.&lt;br&gt;&#xA;This is where the Laravel-excel package comes into play.&#xA;Additionally, it&amp;rsquo;s worth discussing the challenges encountered when importing a large volume of data at once.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Guarding Code Quality with GrumPHP</title>
+				<link>https://tech.ray247k.com/en/blog/202107-grumphp-a-php-code-quality-tool/</link>
+				<pubDate>Sat, 31 Jul 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202107-grumphp-a-php-code-quality-tool/</guid>
+				<description>&lt;p&gt;In a collaborative development environment, Code Review is a crucial process.&lt;br&gt;&#xA;If someone writes code that violates rules or fails tests, it can lead to project errors.&lt;br&gt;&#xA;Manual syntax checks or running tests manually are time-consuming and not fashionable.&lt;br&gt;&#xA;These tasks should be automated, and that&amp;rsquo;s where &lt;code&gt;GrumPHP&lt;/code&gt; comes in.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Develop Your Own Laravel Package</title>
+				<link>https://tech.ray247k.com/en/blog/202107-laravel-package-development/</link>
+				<pubDate>Sun, 25 Jul 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202107-laravel-package-development/</guid>
+				<description>&lt;p&gt;The Laravel ecosystem offers numerous convenient packages for various purposes.&lt;br&gt;&#xA;However, what if you can&amp;rsquo;t find a suitable package or need to create a company-specific one?&lt;br&gt;&#xA;This article demonstrates how to develop a package locally and install it in a Laravel project using composer, ensuring smooth development and testing.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Laravel environment basic settings</title>
+				<link>https://tech.ray247k.com/en/blog/202102-laravel-environment-basic-settings/</link>
+				<pubDate>Thu, 25 Feb 2021 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202102-laravel-environment-basic-settings/</guid>
+				<description>&lt;p&gt;Configuration and package installation required for developing Laravel projects, applicable whether on remote hosts or local machines.&lt;/p&gt;</description>
 			</item>
 	</channel>
 </rss>
