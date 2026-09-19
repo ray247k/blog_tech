@@ -10,9 +10,16 @@
 		
 		
 		
-			<lastBuildDate>Thu, 03 Sep 2026 00:00:00 +0000</lastBuildDate>
+			<lastBuildDate>Sat, 19 Sep 2026 00:00:00 +0000</lastBuildDate>
 		
 			<atom:link href="https://tech.ray247k.com/blog/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>依賴方向決定程式碼分層</title>
+				<link>https://tech.ray247k.com/blog/202609-dependency-direction-code-layering/</link>
+				<pubDate>Sat, 19 Sep 2026 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202609-dependency-direction-code-layering/</guid>
+				<description>&lt;p&gt;不要再靠命名或資料夾位置去猜了！&lt;br&gt;&#xA;以業務邏輯、支援邏輯、基礎設施三層依賴鏈為例，判斷是否為同層呼叫&lt;/p&gt;</description>
+			</item>
 			<item>
 				<title>MWAA Connections 加密機制調查</title>
 				<link>https://tech.ray247k.com/blog/202609-mwaa-connection-encryption-investigation/</link>

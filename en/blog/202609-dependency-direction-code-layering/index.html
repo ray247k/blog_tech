@@ -1,0 +1,864 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+<title>Dependency Direction Determines Code Layering - Byte Ebi 🍤</title>
+<meta name="description" content="Does living in the same folder mean two classes are in the same layer?">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta property="og:site_name" content="Byte Ebi 🍤">
+<meta property="og:title" content="Dependency Direction Determines Code Layering">
+<meta property="og:description" content="Does living in the same folder mean two classes are in the same layer?">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://tech.ray247k.com/en/blog/202609-dependency-direction-code-layering/">
+  <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
+
+
+
+  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
+  
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=1" color="#ffffff">
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=1">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=1">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+<meta name="generator" content="Hugo 0.165.0"><meta property="og:site_name" content="Byte Ebi 🍤">
+  <meta property="og:title" content="Dependency Direction Determines Code Layering">
+  <meta property="og:description" content="Does living in the same folder mean two classes are in the same layer?">
+  <meta property="description" content="Does living in the same folder mean two classes are in the same layer?">
+  <meta property="og:url" content="https://tech.ray247k.com/en/blog/202609-dependency-direction-code-layering/">
+  <meta property="og:type" content="article">
+  
+    <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
+  
+  
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/felipec.min.css">
+          <link rel="stylesheet" href="/css/bundle.min.7bc2060a63595a20fd994db40a9ab8e5d39b1f2f841f74cd71bfee0f56e06776.css" integrity="sha256-e8IGCmNZWiD9mU20Cpq45dObHy&#43;EH3TNcb/uD1bgZ3Y="><link rel="stylesheet" href="/css/add-on.css">
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-LTGVYYWC2J');
+        }
+      </script>
+  <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "image": {
+        "@type": "ImageObject",
+        "image": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+        "height": 648,
+        "width": 1080
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com\/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Byte Ebi 🍤",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png"
+        }
+    },
+    "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+    "headline": "About web development, software engineering, frontend, backend, chatbot, server related topics. - Byte Ebi 🍤",
+    "name": "Byte Ebi 🍤",
+    "url": "https:\/\/tech.ray247k.com\/",
+    "description": "About web development, software engineering, frontend, backend, chatbot, server related topics. - ai,aws,devops,golang,ops \u0026 tools,php,python,software architecture,typescript,",
+    "keywords": [
+        "airflow,apache bench,api gateway,auto scaling,aws,blockchain,cdn,chatbot,ci-cd,cloudflare,cloudflare workers,cloudformation,cloudfront,cloudtrail,cloudwatch,cognito,composer,containerization,cost control,csv,devops,discord,dns,docker,docker compose,domain,domain name,drone,dynamodb,ec2,elasticache,emr,excel,ffmpeg,firewall,gas,gcp,gcr,git,github,github page,golang,google domains,google sheets,grumphp,hugo,hybrid cloud,iam,jenkins,kinesis,lambda,laravel,laravel-excel,layering,linux,load balancing,mwaa,nginx,ngrok,openclaw,personal brand,php,php-fpm,phpcbf,phpcs,portainer,postgresql,pre-commit,prerender,proxy,purchase domain,pyenv,pytest,python,queue,rds,redis,redshift,route 53,s3,security,seo,server,serverless,smart contract,sns,sqs,ssh,stress testing,subdomain,tdd,typescript,unit test,version control,vpc,web hosting,"
+    ]
+}
+</script>
+
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "legalName": "Byte Ebi 🍤",
+    "url": "https:\/\/tech.ray247k.com\/",
+    "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "",
+        "availableLanguage": [
+            "Mandarin",
+            "English"
+        ]
+    },
+    "sameAs": [
+        "https://ray247k.blogspot.com/"
+    ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Dependency Direction Determines Code Layering",
+    "description": "Does living in the same folder mean two classes are in the same layer?",
+    "keywords": [
+        "Layering" 
+    ],
+    "dateCreated": "2026-09-19T00:00:00.00Z",
+    "datePublished": "2026-09-19T00:00:00.00Z",
+    "dateModified": "2026-09-19T00:00:00.00Z",
+    "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "contentUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png"
+    },
+    "breadcrumb": {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\/",
+                    "name": "Byte Ebi 🍤",
+                    "url": "https:\/\/tech.ray247k.com\/"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\//blog",
+                    "name": "Blog",
+                    "url": "https:\/\/tech.ray247k.com\//blog"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\/en\/blog\/202609-dependency-direction-code-layering\/",
+                    "name": "Dependency Direction Determines Code Layering",
+                    "url": "https:\/\/tech.ray247k.com\/en\/blog\/202609-dependency-direction-code-layering\/"
+                }
+            }
+        ],
+        "itemListOrder": "Ascending",
+        "numberOfItems": 3
+    }
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "articleSection": "blog",
+    "name": "Dependency Direction Determines Code Layering",
+    "headline": "\u003cp\u003eStop guessing from naming or folder location.\u003cbr\u003e\nTake a three-layer chain, business logic, support logic, infrastructure, as the example.\u003cbr\u003e\nThis post works out whether the calls are actually same-layer.\u003c\/p\u003e",
+    "description": "Does living in the same folder mean two classes are in the same layer?",
+    "inLanguage": "en",
+    "isFamilyFriendly": "true",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com\/en\/blog\/202609-dependency-direction-code-layering\/"
+    },
+    "author" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "creator" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "accountablePerson" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "copyrightHolder" : "Byte Ebi 🍤",
+    "copyrightYear" : "2026",
+    "dateCreated": "2026-09-19T00:00:00.00Z",
+    "datePublished": "2026-09-19T00:00:00.00Z",
+    "dateModified": "2026-09-19T00:00:00.00Z",
+    "publisher":{
+        "@type":"Organization",
+        "name": "Byte Ebi 🍤",
+        "url": "https://tech.ray247k.com/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+            "width":"32",
+            "height":"32"
+        }
+    },
+    "image": "https://tech.ray247k.com/img/main/logo.png",
+    "url" : "https:\/\/tech.ray247k.com\/en\/blog\/202609-dependency-direction-code-layering\/",
+    "wordCount" : "1200",
+    "genre" : [ "Layering" ],
+    "keywords" : [ "Layering" ]
+}
+</script>
+
+
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/en/" class="nav">
+        
+          Blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/en/" class="nav link"><i class='fa fa-home'></i> home</a>
+        
+      
+        
+          
+          <a href="/en/about" class="nav link"><i class='far fa-id-card'></i> about</a>
+        
+      
+        
+          
+          <a href="/en/categories" class="nav link"><i class='fas fa-sitemap'></i> category</a>
+        
+      
+        
+          
+          <a href="/en/series" class="nav link"><i class='fas fa-list-ol'></i> series</a>
+        
+      
+      
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    
+    <a href="#lang-menu" class="nav lang-toggle" lang="en">en</a>
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  <menu id="lang-menu" class="flyout-menu menu">
+  <a href="#" lang="en" class="nav link active">English (en)</a>
+  
+      <a href="https://tech.ray247k.com/blog/202609-dependency-direction-code-layering/" lang="zh-tw" class="nav link">正體中文 (zh-tw)</a>
+    
+  
+</menu>
+
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/en/"><img src="/img/main/logo.png" class="circle" width="100" alt="Byte Ebi&#39;s Logo" /></a>
+  <header>
+    <h1>Byte Ebi 🍤</h1>
+  </header>
+  <main>
+    <p>A Bit everyday A Byte every week</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/ray247k" target="_blank" rel="noopener" title="GitHub"
+        class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//www.linkedin.com/in/j-ray-cheng" target="_blank" rel="noopener"
+        title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+<article class="post">
+  <header>
+  <div class="title">
+    
+      <h2><a href="/en/blog/202609-dependency-direction-code-layering/">Dependency Direction Determines Code Layering</a></h2>
+    
+    
+      <p>Does living in the same folder mean two classes are in the same layer?</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2026-09-19 00:00:00 &#43;0000 UTC">September 19, 2026</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+  
+  <div id="socnet-share">
+
+
+
+
+</div>
+  <div class="content">
+    <a href="/en/blog/202609-dependency-direction-code-layering/" class="image" style="--bg-image: url('/blog/202609-dependency-direction-code-layering/featured.jpg');">
+    <img src="/blog/202609-dependency-direction-code-layering/featured.jpg" alt="">
+  </a> <p>Stop guessing from naming or folder location.<br>
+Take a three-layer chain, business logic, support logic, infrastructure, as the example.<br>
+This post works out whether the calls are actually same-layer.</p>
+<h1 id="background">Background</h1>
+<p>The external API this package integrates with requires a JWT token before every call.<br>
+To avoid re-exchanging the token on every call, the token gets cached in Redis.<br>
+The constructor of this integration package ended up passing three layers of dependencies down the chain.</p>
+<p>In <code>services/yoho/</code>, the <code>YohoRestClient</code> constructor takes a <code>YohoTokenProvider</code>.<br>
+The <code>YohoTokenProvider</code> constructor, in turn, takes a <code>RedisService</code>.</p>
+<p>All three classes live in the same folder, which set off alarm bells for me immediately:</p>
+<blockquote>
+<p>Does this count as same-layer classes calling each other? Could there be a circular dependency?</p>
+</blockquote>
+<p>But actually drawing the arrows out shows this isn&rsquo;t three parallel services. It&rsquo;s a one-way chain going downward:</p>
+<pre tabindex="0"><code>YohoRestClient           [Business Logic] Sends the request to the external system
+      │  depends on
+      ▼
+YohoTokenProvider        [Support Logic] Gets a valid OAuth token
+      │  depends on
+      ▼
+RedisService             [Infrastructure] Generic key-value cache
+</code></pre><p>Notice that &ldquo;<strong>the arrows only point downward, none of them point back</strong>.&rdquo;<br>
+This matters a lot: every test later in this post comes back to check against it.</p>
+<h1 id="folder-and-naming">Folder and Naming</h1>
+<p>In most projects, the folder name <code>services/</code> is just a loose classification label:</p>
+<blockquote>
+<p>This is where business logic lives, not the controller layer, and not a pure data model.</p>
+</blockquote>
+<p>It&rsquo;s not declaring that &ldquo;<strong>everything in this folder is horizontally equal and can&rsquo;t depend on each other</strong>.&rdquo;<br>
+Look closely at the existing naming, though, and it already draws a distinction, intentional or not:</p>
+<table>
+	<thead>
+			<tr>
+					<th>Class</th>
+					<th>Suffix</th>
+					<th>Actual Role</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>RedisService</code></td>
+					<td>Service</td>
+					<td>Wraps a generic piece of infrastructure (Redis), an external system</td>
+			</tr>
+			<tr>
+					<td><code>MonkeyEmailService</code></td>
+					<td>Service</td>
+					<td>Wraps a call to another external system (an email-sending API)</td>
+			</tr>
+			<tr>
+					<td><code>YohoTokenProvider</code></td>
+					<td>Provider</td>
+					<td>In the Yoho integration domain, plays the role of &ldquo;supplying a token&rdquo;</td>
+			</tr>
+			<tr>
+					<td><code>YohoRestClient</code></td>
+					<td>Client</td>
+					<td>In the Yoho integration domain, plays the role of &ldquo;sending requests&rdquo;</td>
+			</tr>
+	</tbody>
+</table>
+<p>What actually decides &ldquo;is there a layering problem&rdquo; is never the folder name or suffix. It&rsquo;s:</p>
+<ul>
+<li>Does the dependency direction have a cycle?</li>
+<li>Does the dependency target cross into an unrelated business domain?</li>
+</ul>
+<p>Neither has anything to do with what everyone else calls themselves.</p>
+<h1 id="six-tests-for-telling-layers-apart">Six Tests for Telling Layers Apart</h1>
+<p>Once you drop &ldquo;going by feel,&rdquo; these six questions can be applied to any pair of dependencies.</p>
+<h2 id="1-dependency-direction-test">1. Dependency Direction Test</h2>
+<ul>
+<li>Does A need to know B exists to get its own job done?</li>
+<li>Does B know A exists?</li>
+</ul>
+<p>Only a one-way relationship, &ldquo;<strong>A knows B, B has no idea A exists</strong>,&rdquo; counts as layering.<br>
+Same-layer or parallel relationships mean neither side knows about the other, or a higher-level role coordinates them.</p>
+<h2 id="2-one-sentence-responsibility-test">2. One-Sentence Responsibility Test</h2>
+<ul>
+<li>Can you describe what this component does in one sentence, without mentioning the other component at all?</li>
+</ul>
+<p>For example, <code>YohoRestClient</code> is &ldquo;send the request to Yoho,&rdquo; no need to mention Redis or JWT.<br>
+If both sides can be described independently, they&rsquo;re not same-layer, they&rsquo;re an upper/lower relationship.<br>
+If describing <strong>A</strong> forces you to drag in <strong>B</strong>&rsquo;s details, that&rsquo;s more like same-layer or overly tight coupling.</p>
+<h2 id="3-substitution-test">3. Substitution Test</h2>
+<ul>
+<li>If you swap <strong>B</strong> for a different implementation, does <strong>A</strong>&rsquo;s responsibility description change?</li>
+</ul>
+<p>Swap <code>RedisService</code> for a different cache implementation.<br>
+<code>YohoTokenProvider</code>&rsquo;s responsibility description doesn&rsquo;t change at all.<br>
+That means <strong>B</strong> is a supporting component underneath <strong>A</strong>, not a same-layer partner.</p>
+<h2 id="4-cross-domain-reuse-test">4. Cross-Domain Reuse Test</h2>
+<ul>
+<li>Does it make sense to hand this component to a completely unrelated business use case?</li>
+</ul>
+<p>Handing <code>RedisService</code> to an unrelated email module to cache templates makes total sense.<br>
+But handing <code>YohoTokenProvider</code> to that same module makes no sense at all.</p>
+<p>Whether something can be reused across domains is exactly the basis for judging how low-level it is:</p>
+<blockquote>
+<p>The more it can be reused by unrelated business logic, the lower-level and more generic it is.</p>
+</blockquote>
+<h2 id="5-change-ripple-test">5. Change Ripple Test</h2>
+<ul>
+<li>If <strong>B</strong>&rsquo;s implementation changes, does <strong>A</strong> have to change too?</li>
+</ul>
+<p>If Yoho swaps its JWT signing method, <code>YohoRestClient</code> doesn&rsquo;t need to change.<br>
+Only <code>YohoTokenProvider</code> needs to be updated.</p>
+<p>As long as the interface doesn&rsquo;t change, the lower layer can change without forcing the upper layer to move.<br>
+That&rsquo;s correct layering. If both sides keep changing together, the coupling is too tight.</p>
+<h2 id="6-constructor-parameter-bloat-test">6. Constructor Parameter Bloat Test</h2>
+<ul>
+<li>If you remove the layer in between, does the upper object&rsquo;s constructor get forced to take on a pile of parameters unrelated to its actual job?</li>
+</ul>
+<p>If you don&rsquo;t inject it and instead build the logic yourself, the constructor gets forced to accept a pile of unrelated parameters.</p>
+<h3 id="without-layering">Without Layering</h3>
+<p>Instead of injecting <code>YohoTokenProvider</code>, let <code>YohoRestClient</code> build the authentication logic itself:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">YohoRestClient</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">__init__</span>(
+</span></span><span style="display:flex;"><span>        self,
+</span></span><span style="display:flex;"><span>        base_url: str,
+</span></span><span style="display:flex;"><span>        client_id: str,
+</span></span><span style="display:flex;"><span>        redis_host: str,
+</span></span><span style="display:flex;"><span>        redis_port: int <span style="color:#f92672">=</span> <span style="color:#ae81ff">6379</span>,
+</span></span><span style="display:flex;"><span>    ) <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Build RedisService and YohoTokenProvider itself,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># and also has to remember when to refresh the token</span>
+</span></span></code></pre></div><h3 id="with-layering">With Layering</h3>
+<p>In <code>services/yoho/rest_client.py</code>, the <code>YohoRestClient</code> constructor takes a <code>YohoTokenProvider</code>.<br>
+The <code>YohoTokenProvider</code> constructor, in turn, takes a <code>RedisService</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">YohoRestClient</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">__init__</span>(
+</span></span><span style="display:flex;"><span>        self,
+</span></span><span style="display:flex;"><span>        base_url: str,
+</span></span><span style="display:flex;"><span>        token_provider: YohoTokenProvider,
+</span></span><span style="display:flex;"><span>    ) <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>base_url <span style="color:#f92672">=</span> base_url<span style="color:#f92672">.</span>rstrip(<span style="color:#e6db74">&#34;/&#34;</span>)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>token_provider <span style="color:#f92672">=</span> token_provider
+</span></span></code></pre></div><h3 id="factory-function">Factory Function</h3>
+<p>In the &ldquo;without layering&rdquo; version, three constructor parameters have nothing to do with &ldquo;sending the request.&rdquo;</p>
+<blockquote>
+<p>That means two different responsibilities have been forced into the same constructor.</p>
+</blockquote>
+<p>The &ldquo;with layering&rdquo; version stays clean.<br>
+That&rsquo;s thanks to a separate factory function, which manually news up each object and wires them together:</p>
+<p><strong><code>factories/yoho/rest_client_factory.py</code></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">build_yoho_rest_client</span>(
+</span></span><span style="display:flex;"><span>    env: str,
+</span></span><span style="display:flex;"><span>    client_id: str,
+</span></span><span style="display:flex;"><span>    base_url: str,
+</span></span><span style="display:flex;"><span>    redis_host: str,
+</span></span><span style="display:flex;"><span>    redis_port: int <span style="color:#f92672">=</span> <span style="color:#ae81ff">6379</span>,
+</span></span><span style="display:flex;"><span>) <span style="color:#f92672">-&gt;</span> YohoRestClient:
+</span></span><span style="display:flex;"><span>    redis_service <span style="color:#f92672">=</span> RedisService(redis_host, redis_port)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    token_provider <span style="color:#f92672">=</span> YohoTokenProvider(
+</span></span><span style="display:flex;"><span>        client_id<span style="color:#f92672">=</span>client_id,
+</span></span><span style="display:flex;"><span>        redis_service<span style="color:#f92672">=</span>redis_service,
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> YohoRestClient(base_url<span style="color:#f92672">=</span>base_url, token_provider<span style="color:#f92672">=</span>token_provider)
+</span></span></code></pre></div><p>The factory function knows the whole object graph, but each class only knows the layer right below it.</p>
+<p>For example, <code>YohoRestClient</code> only knows about <code>YohoTokenProvider</code>.<br>
+It has no idea <code>RedisService</code> even exists.</p>
+<p><strong>A Follow-up Thought</strong></p>
+<p>Looking at this factory function, a question might come up:</p>
+<ul>
+<li><strong>YohoTokenProvider</strong> receives a Redis object, but the factory function&rsquo;s <strong>redis_host</strong> parameter is a string. Isn&rsquo;t that inconsistent?</li>
+</ul>
+<p>It&rsquo;s not. The difference comes down to whether the thing has &ldquo;<strong>behavior</strong>&rdquo;.</p>
+<p>The <code>redis_host</code> parameter passed in is just a hostname string, it doesn&rsquo;t do anything on its own.<br>
+The factory sees it and just goes ahead and news up a <code>RedisService</code> with it. No need to pass it around as an object.</p>
+<p>But the <code>RedisService</code> object is different!<br>
+Every time <code>YohoTokenProvider.get_token()</code> gets called, it has to decide, right then and there:</p>
+<ul>
+<li>Did the cache hit?</li>
+<li>Does the token need to be refreshed?</li>
+</ul>
+<p>Only actually calling a method on this object can make that call. A string can&rsquo;t answer these questions.</p>
+<p>So the rule is simple:</p>
+<blockquote>
+<p>Pass data for pure configuration. Inject an object for anything that gets called and does work.</p>
+</blockquote>
+<h1 id="quick-reference">Quick Reference</h1>
+<p>Next time you see a pair of dependencies and can&rsquo;t tell whether they&rsquo;re same-layer, run through these:</p>
+<table>
+	<thead>
+			<tr>
+					<th>#</th>
+					<th>Test</th>
+					<th>Question</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>1</td>
+					<td>Dependency Direction</td>
+					<td>Is the arrow one-way, with no cycle?</td>
+			</tr>
+			<tr>
+					<td>2</td>
+					<td>One-Sentence Responsibility</td>
+					<td>Can you describe what it does without mentioning the other?</td>
+			</tr>
+			<tr>
+					<td>3</td>
+					<td>Substitution</td>
+					<td>Swap the lower implementation, does the upper description change?</td>
+			</tr>
+			<tr>
+					<td>4</td>
+					<td>Cross-Domain Reuse</td>
+					<td>Does it make sense handed to an unrelated business use case?</td>
+			</tr>
+			<tr>
+					<td>5</td>
+					<td>Change Ripple</td>
+					<td>Change the lower implementation, does the upper need to change?</td>
+			</tr>
+			<tr>
+					<td>6</td>
+					<td>Constructor Parameter Bloat</td>
+					<td>Remove this layer, does the upper constructor get stuffed with unrelated params?</td>
+			</tr>
+	</tbody>
+</table>
+
+    
+    
+  </div>
+  <footer><div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/en/categories/software-architecture/">Software Architecture</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/en/tags/layering/">Layering</a></li>
+        
+      
+    </ul>
+  
+</div>
+</footer>
+</article>
+ 
+ 
+<div class="pagination">
+   
+  <a href="/en/blog/202609-mwaa-connection-encryption-investigation/" class="button right"
+    ><span>Investigating Connection Encryption on Amazon MWAA</span></a
+  >
+  
+</div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>Recent Posts</h1>
+      </header>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202609-dependency-direction-code-layering/" class="image" style="--bg-image: url('/blog/202609-dependency-direction-code-layering/featured.jpg');">
+    <img src="/blog/202609-dependency-direction-code-layering/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202609-dependency-direction-code-layering/">Dependency Direction Determines Code Layering</a></h2>
+          <time class="published" datetime="2026-09-19 00:00:00 &#43;0000 UTC">September 19, 2026</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202609-mwaa-connection-encryption-investigation/" class="image" style="--bg-image: url('/blog/202609-mwaa-connection-encryption-investigation/featured.jpg');">
+    <img src="/blog/202609-mwaa-connection-encryption-investigation/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202609-mwaa-connection-encryption-investigation/">Investigating Connection Encryption on Amazon MWAA</a></h2>
+          <time class="published" datetime="2026-09-03 00:00:00 &#43;0000 UTC">September 3, 2026</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202604-deploy-openclaw-ai-for-free/" class="image" style="--bg-image: url('/blog/202604-deploy-openclaw-ai-for-free/featured.jpg');">
+    <img src="/blog/202604-deploy-openclaw-ai-for-free/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202604-deploy-openclaw-ai-for-free/">Deploy Your Own Openclaw AI Assistant for Free</a></h2>
+          <time class="published" datetime="2026-04-04 00:00:00 &#43;0000 UTC">April 4, 2026</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202602-airflow-dynamic-task-mapping/" class="image" style="--bg-image: url('/blog/202602-airflow-dynamic-task-mapping/featured.jpg');">
+    <img src="/blog/202602-airflow-dynamic-task-mapping/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202602-airflow-dynamic-task-mapping/">Unleashing Airflow Performance with Dynamic Task Mapping</a></h2>
+          <time class="published" datetime="2026-02-03 00:00:00 &#43;0000 UTC">February 3, 2026</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202509-triggering-airflow-dag-from-another-dag/" class="image" style="--bg-image: url('/blog/202509-triggering-airflow-dag-from-another-dag/featured.jpg');">
+    <img src="/blog/202509-triggering-airflow-dag-from-another-dag/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202509-triggering-airflow-dag-from-another-dag/">Triggering Airflow DAG from Another</a></h2>
+          <time class="published" datetime="2025-09-24 00:00:00 &#43;0000 UTC">September 24, 2025</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/en/blog/" class="button">See More</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="/en/categories">Categories</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/en/categories/aws/">AWS<span class="count">27</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/devops/">DevOps<span class="count">24</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/golang/">Golang<span class="count">12</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/ops-tools/">Ops &amp; Tools<span class="count">11</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/python/">Python<span class="count">10</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/php/">PHP<span class="count">7</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/typescript/">TypeScript<span class="count">4</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/ai/">AI<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/software-architecture/">Software Architecture<span class="count">1</span></a>
+          </li>
+          
+        </ul>
+      </section>
+    
+  
+
+  
+  <section id="tags">
+    <header>
+      <h1><a href="/en/tags">Tags</a></h1>
+    </header>
+    <div class="li-x post-meta tags-md" style="margin-left: 0.5em;">
+      <ul>
+        
+        
+        <li>
+          <a href="/en/tags/aws/">AWS (28)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/devops/">DevOps (26)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/docker/">Docker (12)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/golang/">Golang (12)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/containerization/">Containerization (10)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ci-cd/">CI-CD (8)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/laravel/">Laravel (8)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/python/">Python (8)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/docker-compose/">Docker Compose (6)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/gcp/">GCP (6)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/composer/">Composer (5)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/php/">PHP (5)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/drone/">Drone (4)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/jenkins/">Jenkins (4)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/pytest/">Pytest (4)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/tdd/">TDD (4)</a>
+        </li>
+        
+      </ul>
+
+    </div>
+    
+      <footer>
+        <a href="/en/tags" class="button">See More</a>
+      </footer>
+    
+  </section>
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+    
+    <p class="copyright">
+        © 2026 Byte Ebi 🍤
+    </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>
+      hljs.configure({ ignoreUnescapedHTML: true }); 
+      hljs.highlightAll();
+    </script><script src="/js/bundle.min.d21befc899e4b6158eba05da3928321e52d15d067cb323bbf20e1b37a4ee0e3d.js" integrity="sha256-0hvvyJnkthWOugXaOSgyHlLRXQZ8syO78g4bN6TuDj0="></script>
+    <script src="/js/add-on.js"></script>
+
+
+    
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', "G-LTGVYYWC2J");
+        </script>
+    
+
+
+    </div>
+  </body>
+  
+</html>

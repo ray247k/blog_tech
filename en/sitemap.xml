@@ -2,6 +2,77 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://tech.ray247k.com/en/blog/</loc>
+    <lastmod>2026-09-19T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/</loc>
+    <lastmod>2026-09-19T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/categories/</loc>
+    <lastmod>2026-09-19T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/categories/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/blog/202609-dependency-direction-code-layering/</loc>
+    <lastmod>2026-09-19T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/blog/202609-dependency-direction-code-layering/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/blog/202609-dependency-direction-code-layering/"
+                />
+  </url><url>
+    <loc>https://tech.ray247k.com/en/tags/layering/</loc>
+    <lastmod>2026-09-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tech.ray247k.com/en/categories/software-architecture/</loc>
+    <lastmod>2026-09-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tech.ray247k.com/en/tags/</loc>
+    <lastmod>2026-09-19T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://tech.ray247k.com/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tech.ray247k.com/en/tags/"
+                />
+  </url><url>
     <loc>https://tech.ray247k.com/en/tags/airflow/</loc>
     <lastmod>2026-09-03T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -28,45 +99,6 @@
                 href="https://tech.ray247k.com/en/categories/aws/"
                 />
   </url><url>
-    <loc>https://tech.ray247k.com/en/blog/</loc>
-    <lastmod>2026-09-03T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/blog/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/blog/"
-                />
-  </url><url>
-    <loc>https://tech.ray247k.com/en/</loc>
-    <lastmod>2026-09-03T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/"
-                />
-  </url><url>
-    <loc>https://tech.ray247k.com/en/categories/</loc>
-    <lastmod>2026-09-03T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/categories/"
-                />
-  </url><url>
     <loc>https://tech.ray247k.com/en/blog/202609-mwaa-connection-encryption-investigation/</loc>
     <lastmod>2026-09-03T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -91,19 +123,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tech.ray247k.com/en/tags/mwaa/"
-                />
-  </url><url>
-    <loc>https://tech.ray247k.com/en/tags/</loc>
-    <lastmod>2026-09-03T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/tags/"
                 />
   </url><url>
     <loc>https://tech.ray247k.com/en/categories/ai/</loc>
@@ -578,19 +597,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tech.ray247k.com/en/blog/202402-aws-fundamental-architectures/"
-                />
-  </url><url>
-    <loc>https://tech.ray247k.com/en/tags/architecture/</loc>
-    <lastmod>2024-02-18T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://tech.ray247k.com/tags/architecture/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tech.ray247k.com/en/tags/architecture/"
                 />
   </url><url>
     <loc>https://tech.ray247k.com/en/series/aws-cloud-fundamental-notes/</loc>

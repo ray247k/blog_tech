@@ -81,9 +81,9 @@
     "headline": "About web development, software engineering, frontend, backend, chatbot, server related topics. - Byte Ebi 🍤",
     "name": "Byte Ebi 🍤",
     "url": "https:\/\/tech.ray247k.com\/",
-    "description": "About web development, software engineering, frontend, backend, chatbot, server related topics. - ai,aws,devops,golang,ops \u0026 tools,php,python,typescript,",
+    "description": "About web development, software engineering, frontend, backend, chatbot, server related topics. - ai,aws,devops,golang,ops \u0026 tools,php,python,software architecture,typescript,",
     "keywords": [
-        "airflow,apache bench,api gateway,architecture,auto scaling,aws,blockchain,cdn,chatbot,ci-cd,cloudflare,cloudflare workers,cloudformation,cloudfront,cloudtrail,cloudwatch,cognito,composer,containerization,cost control,csv,devops,discord,dns,docker,docker compose,domain,domain name,drone,dynamodb,ec2,elasticache,emr,excel,ffmpeg,firewall,gas,gcp,gcr,git,github,github page,golang,google domains,google sheets,grumphp,hugo,hybrid cloud,iam,jenkins,kinesis,lambda,laravel,laravel-excel,linux,load balancing,mwaa,nginx,ngrok,openclaw,personal brand,php,php-fpm,phpcbf,phpcs,portainer,postgresql,pre-commit,prerender,proxy,purchase domain,pyenv,pytest,python,queue,rds,redis,redshift,route 53,s3,security,seo,server,serverless,smart contract,sns,sqs,ssh,stress testing,subdomain,tdd,typescript,unit test,version control,vpc,web hosting,"
+        "airflow,apache bench,api gateway,auto scaling,aws,blockchain,cdn,chatbot,ci-cd,cloudflare,cloudflare workers,cloudformation,cloudfront,cloudtrail,cloudwatch,cognito,composer,containerization,cost control,csv,devops,discord,dns,docker,docker compose,domain,domain name,drone,dynamodb,ec2,elasticache,emr,excel,ffmpeg,firewall,gas,gcp,gcr,git,github,github page,golang,google domains,google sheets,grumphp,hugo,hybrid cloud,iam,jenkins,kinesis,lambda,laravel,laravel-excel,layering,linux,load balancing,mwaa,nginx,ngrok,openclaw,personal brand,php,php-fpm,phpcbf,phpcs,portainer,postgresql,pre-commit,prerender,proxy,purchase domain,pyenv,pytest,python,queue,rds,redis,redshift,route 53,s3,security,seo,server,serverless,smart contract,sns,sqs,ssh,stress testing,subdomain,tdd,typescript,unit test,version control,vpc,web hosting,"
     ]
 }
 </script>
@@ -382,16 +382,16 @@ Therefore, including <code>idea</code> and <code>.DS_Store</code> in gitignore i
 <p>Actually, we can configure this locally in the git settings because your machine won&rsquo;t suddenly switch from Mac to Windows.<br>
 Excluding specific files or paths from version control in the local environment sounds much more reasonable.</p>
 <h1 id="operation-steps">Operation Steps</h1>
-<h2 id="1-create-a-global-gitignore-configuration-file">1 Create a Global gitignore Configuration File</h2>
+<h2 id="1-create-a-global-gitignore-configuration-file">1. Create a Global gitignore Configuration File</h2>
 <p>The filename can be anything; use the terminal to execute the command:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>touch .gitignore_global
-</span></span></code></pre></div><h2 id="2-add-files-to-be-ignored">2 Add Files to be Ignored</h2>
+</span></span></code></pre></div><h2 id="2-add-files-to-be-ignored">2. Add Files to be Ignored</h2>
 <p>Similar to <code>.gitignore</code>, you can manually open the file for editing or execute:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo /.idea &gt;&gt; .gitignore_global
-</span></span></code></pre></div><h2 id="3-add-the-configuration-file-to-gitconfig">3 Add the Configuration File to <code>.gitconfig</code></h2>
+</span></span></code></pre></div><h2 id="3-add-the-configuration-file-to-gitconfig">3. Add the Configuration File to <code>.gitconfig</code></h2>
 <p>You can manually edit or use the following command:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git config --global core.excludesfile ~/.gitignore_global
-</span></span></code></pre></div><h2 id="4-check-if-the-configuration-is-successful">4 Check if the Configuration is Successful</h2>
+</span></span></code></pre></div><h2 id="4-check-if-the-configuration-is-successful">4. Check if the Configuration is Successful</h2>
 <p>The simplest way is to open the project and delete the corresponding settings in <code>.gitignore</code>.<br>
 However, let&rsquo;s review what we&rsquo;ve just configured.<br>
 You can use commands to view or directly open the file.<br>
@@ -466,6 +466,16 @@ Reference: <a href="https://git-scm.com/docs/gitignore"
       </header>
       
       <article class="mini-post">
+          <a href="/en/blog/202609-dependency-direction-code-layering/" class="image" style="--bg-image: url('/blog/202609-dependency-direction-code-layering/featured.jpg');">
+    <img src="/blog/202609-dependency-direction-code-layering/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202609-dependency-direction-code-layering/">Dependency Direction Determines Code Layering</a></h2>
+          <time class="published" datetime="2026-09-19 00:00:00 &#43;0000 UTC">September 19, 2026</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
           <a href="/en/blog/202609-mwaa-connection-encryption-investigation/" class="image" style="--bg-image: url('/blog/202609-mwaa-connection-encryption-investigation/featured.jpg');">
     <img src="/blog/202609-mwaa-connection-encryption-investigation/featured.jpg" alt="">
   </a>
@@ -502,16 +512,6 @@ Reference: <a href="https://git-scm.com/docs/gitignore"
         <header>
           <h2><a href="/en/blog/202509-triggering-airflow-dag-from-another-dag/">Triggering Airflow DAG from Another</a></h2>
           <time class="published" datetime="2025-09-24 00:00:00 &#43;0000 UTC">September 24, 2025</time>
-        </header>
-      </article>
-      
-      <article class="mini-post">
-          <a href="/en/blog/202509-amazon-rds-db-connection-limits/" class="image" style="--bg-image: url('/blog/202509-amazon-rds-db-connection-limits/featured.jpg');">
-    <img src="/blog/202509-amazon-rds-db-connection-limits/featured.jpg" alt="">
-  </a>
-        <header>
-          <h2><a href="/en/blog/202509-amazon-rds-db-connection-limits/">Understanding Amazon RDS Connection Limits</a></h2>
-          <time class="published" datetime="2025-09-07 00:00:00 &#43;0000 UTC">September 7, 2025</time>
         </header>
       </article>
       
@@ -563,6 +563,10 @@ Reference: <a href="https://git-scm.com/docs/gitignore"
           
           <li>
               <a href="/en/categories/ai/">AI<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/software-architecture/">Software Architecture<span class="count">1</span></a>
           </li>
           
         </ul>

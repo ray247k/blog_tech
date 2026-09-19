@@ -1,0 +1,868 @@
+<!doctype html>
+<html lang="zh-tw">
+  <head>
+  <meta charset="utf-8">
+<title>依賴方向決定程式碼分層 - Byte Ebi 🍤</title>
+<meta name="description" content="放在同一個資料夾底下是不是就代表同一層？">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta property="og:site_name" content="Byte Ebi 🍤">
+<meta property="og:title" content="依賴方向決定程式碼分層">
+<meta property="og:description" content="放在同一個資料夾底下是不是就代表同一層？">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://tech.ray247k.com/blog/202609-dependency-direction-code-layering/">
+  <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
+
+
+
+  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
+  
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=1" color="#ffffff">
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=1">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=1">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+<meta name="generator" content="Hugo 0.165.0"><meta property="og:site_name" content="Byte Ebi 🍤">
+  <meta property="og:title" content="依賴方向決定程式碼分層">
+  <meta property="og:description" content="放在同一個資料夾底下是不是就代表同一層？">
+  <meta property="description" content="放在同一個資料夾底下是不是就代表同一層？">
+  <meta property="og:url" content="https://tech.ray247k.com/blog/202609-dependency-direction-code-layering/">
+  <meta property="og:type" content="article">
+  
+    <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
+  
+  
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/felipec.min.css">
+          <link rel="stylesheet" href="/css/bundle.min.7bc2060a63595a20fd994db40a9ab8e5d39b1f2f841f74cd71bfee0f56e06776.css" integrity="sha256-e8IGCmNZWiD9mU20Cpq45dObHy&#43;EH3TNcb/uD1bgZ3Y="><link rel="stylesheet" href="/css/add-on.css">
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-LTGVYYWC2J');
+        }
+      </script>
+  <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "image": {
+        "@type": "ImageObject",
+        "image": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+        "height": 648,
+        "width": 1080
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com\/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Byte Ebi 🍤",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png"
+        }
+    },
+    "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+    "headline": "討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - Byte Ebi 🍤",
+    "name": "Byte Ebi 🍤",
+    "url": "https:\/\/tech.ray247k.com\/",
+    "description": "討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - ai,aws,devops,golang,leetcode,node.js,php,python,typescript,維運與工具,軟體架構,",
+    "keywords": [
+        "airflow,apache bench,api gateway,auto scaling,aws,blockchain,cdn,chatbot,ci-cd,cloudflare,cloudflare workers,cloudformation,cloudfront,cloudtrail,cloudwatch,cognito,composer,cost control,csv,devops,discord,dns,docker,docker compose,domain name,drone,dynamodb,ec2,elasticache,element-ui,emr,excel,express,ffmpeg,gas,gcp,gcr,git,github,github page,golang,google domains,google sheets,grumphp,hugo,hybrid cloud,iam,jenkins,kinesis,lambda,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load balancing,mongodb,mwaa,nginx,ngrok,node.js,openclaw,php,php-fpm,phpcbf,phpcs,portainer,postgresql,pre-commit,prerender,proxy,pyenv,pytest,python,queue,rds,redis,redshift,restful,route 53,s3,security,seo,server,serverless,smart contract,sns,sqs,ssh,stress testing,subdomain,tdd,typescript,vpc,vue,伺服器,個人品牌,分層設計,單元測試,域名,壓力測試,子網域,容器技術,架站相關,版本控制,買網址,防火牆,"
+    ]
+}
+</script>
+
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "legalName": "Byte Ebi 🍤",
+    "url": "https:\/\/tech.ray247k.com\/",
+    "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "",
+        "availableLanguage": [
+            "Mandarin",
+            "English"
+        ]
+    },
+    "sameAs": [
+        "https://ray247k.blogspot.com/"
+    ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "依賴方向決定程式碼分層",
+    "description": "放在同一個資料夾底下是不是就代表同一層？",
+    "keywords": [
+        "分層設計" 
+    ],
+    "dateCreated": "2026-09-19T00:00:00.00Z",
+    "datePublished": "2026-09-19T00:00:00.00Z",
+    "dateModified": "2026-09-19T00:00:00.00Z",
+    "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "contentUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png"
+    },
+    "breadcrumb": {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\/",
+                    "name": "Byte Ebi 🍤",
+                    "url": "https:\/\/tech.ray247k.com\/"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\//blog",
+                    "name": "Blog",
+                    "url": "https:\/\/tech.ray247k.com\//blog"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\/blog\/202609-dependency-direction-code-layering\/",
+                    "name": "依賴方向決定程式碼分層",
+                    "url": "https:\/\/tech.ray247k.com\/blog\/202609-dependency-direction-code-layering\/"
+                }
+            }
+        ],
+        "itemListOrder": "Ascending",
+        "numberOfItems": 3
+    }
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "articleSection": "blog",
+    "name": "依賴方向決定程式碼分層",
+    "headline": "\u003cp\u003e不要再靠命名或資料夾位置去猜了！\u003cbr\u003e\n以業務邏輯、支援邏輯、基礎設施三層依賴鏈為例，判斷是否為同層呼叫\u003c\/p\u003e",
+    "description": "放在同一個資料夾底下是不是就代表同一層？",
+    "inLanguage": "zh-TW",
+    "isFamilyFriendly": "true",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com\/blog\/202609-dependency-direction-code-layering\/"
+    },
+    "author" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "creator" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "accountablePerson" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "copyrightHolder" : "Byte Ebi 🍤",
+    "copyrightYear" : "2026",
+    "dateCreated": "2026-09-19T00:00:00.00Z",
+    "datePublished": "2026-09-19T00:00:00.00Z",
+    "dateModified": "2026-09-19T00:00:00.00Z",
+    "publisher":{
+        "@type":"Organization",
+        "name": "Byte Ebi 🍤",
+        "url": "https://tech.ray247k.com/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+            "width":"32",
+            "height":"32"
+        }
+    },
+    "image": "https://tech.ray247k.com/img/main/logo.png",
+    "url" : "https:\/\/tech.ray247k.com\/blog\/202609-dependency-direction-code-layering\/",
+    "wordCount" : "319",
+    "genre" : [ "分層設計" ],
+    "keywords" : [ "分層設計" ]
+}
+</script>
+
+
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/" class="nav">
+        
+          Blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/" class="nav link"><i class='fa fa-home'></i> home</a>
+        
+      
+        
+          
+          <a href="/about" class="nav link"><i class='far fa-id-card'></i> about</a>
+        
+      
+        
+          
+          <a href="/categories" class="nav link"><i class='fas fa-sitemap'></i> category</a>
+        
+      
+        
+          
+          <a href="/series" class="nav link"><i class='fas fa-list-ol'></i> series</a>
+        
+      
+      
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    
+    <a href="#lang-menu" class="nav lang-toggle" lang="zh-tw">zh-tw</a>
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  <menu id="lang-menu" class="flyout-menu menu">
+  <a href="#" lang="zh-tw" class="nav link active">正體中文 (zh-tw)</a>
+  
+      <a href="https://tech.ray247k.com/en/blog/202609-dependency-direction-code-layering/" lang="en" class="nav link">English (en)</a>
+    
+  
+</menu>
+
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/"><img src="/img/main/logo.png" class="circle" width="100" alt="Byte Ebi&#39;s Logo" /></a>
+  <header>
+    <h1>Byte Ebi 🍤</h1>
+  </header>
+  <main>
+    <p>每天一小口，蝦米變鯨魚</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/ray247k" target="_blank" rel="noopener" title="GitHub"
+        class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//www.linkedin.com/in/j-ray-cheng" target="_blank" rel="noopener"
+        title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+<article class="post">
+  <header>
+  <div class="title">
+    
+      <h2><a href="/blog/202609-dependency-direction-code-layering/">依賴方向決定程式碼分層</a></h2>
+    
+    
+      <p>放在同一個資料夾底下是不是就代表同一層？</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2026-09-19 00:00:00 &#43;0000 UTC">2026/09/19</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+  
+  <div id="socnet-share">
+
+
+
+
+</div>
+  <div class="content">
+    <a href="/blog/202609-dependency-direction-code-layering/" class="image" style="--bg-image: url('/blog/202609-dependency-direction-code-layering/featured.jpg');">
+    <img src="/blog/202609-dependency-direction-code-layering/featured.jpg" alt="">
+  </a> <p>不要再靠命名或資料夾位置去猜了！<br>
+以業務邏輯、支援邏輯、基礎設施三層依賴鏈為例，判斷是否為同層呼叫</p>
+<h1 id="背景說明">背景說明</h1>
+<p>在實作一個對接外部系統 API 的串接套件時，要先換到 JWT token 才能呼叫<br>
+並且為了避免每次呼叫都重新換發，會將 token 存進 Redis 快取<br>
+這個串接套件的建構子，因此一路往下傳了三層依賴</p>
+<p>具體來說，在 <code>services/yoho/</code> 裡，<code>YohoRestClient</code> 建構子收了一個 <code>YohoTokenProvider</code><br>
+而 <code>YohoTokenProvider</code> 建構子又收了一個 <code>RedisService</code></p>
+<p>三個類別都住在同一層資料夾底下，這讓我瞬間警鈴大作：</p>
+<blockquote>
+<p>這算是同層互相呼叫嗎？會不會有循環相依的問題？</p>
+</blockquote>
+<p>然而把箭頭實際畫出來看，會發現這不是三個平行的 service，而是一條單向往下的鏈：</p>
+<pre tabindex="0"><code>YohoRestClient           [業務邏輯] 送出請求給外部系統
+      │  依賴
+      ▼
+YohoTokenProvider        [支援邏輯] 拿到有效的 OAuth token
+      │  依賴
+      ▼
+RedisService             [基礎設施] 通用的 key-value 快取
+</code></pre><p>可以發現「<strong>箭頭只往下指，沒有任何一個箭頭往回走</strong>」<br>
+這一點很重要，後面每一個判別測試都會回來對照</p>
+<h1 id="資料夾與命名">資料夾與命名</h1>
+<p>資料夾名稱 <code>services/</code> 在大多數專案裡只是一個寬鬆的分類標籤：</p>
+<blockquote>
+<p>這裡放業務邏輯，不是控制層（controller），也不是純資料模型（model）</p>
+</blockquote>
+<p>並不是在宣告「<strong>資料夾底下的東西都是水平對等、彼此不能依賴的同一層</strong>」<br>
+原有專案中的命名，其實已經有意無意做出區分：</p>
+<table>
+	<thead>
+			<tr>
+					<th>類別</th>
+					<th>後綴</th>
+					<th>實際角色</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>RedisService</code></td>
+					<td>Service</td>
+					<td>包住外部系統（Redis）的通用基礎設施</td>
+			</tr>
+			<tr>
+					<td><code>MonkeyEmailService</code></td>
+					<td>Service</td>
+					<td>包住另一個外部系統（郵件發送 API）的呼叫</td>
+			</tr>
+			<tr>
+					<td><code>YohoTokenProvider</code></td>
+					<td>Provider</td>
+					<td>在對接 Yoho 這個領域裡，扮演「供應 token」這個角色</td>
+			</tr>
+			<tr>
+					<td><code>YohoRestClient</code></td>
+					<td>Client</td>
+					<td>在對接 Yoho 這個領域裡，扮演「發送請求」這個角色</td>
+			</tr>
+	</tbody>
+</table>
+<p>決定「有沒有分層問題」的，從來不是資料夾名稱或字尾統不統一叫 service，而是：</p>
+<ul>
+<li>依賴方向有沒有循環？</li>
+<li>依賴的對象是不是跨到了不相干的業務領域？</li>
+</ul>
+<p>這兩件事跟「其他人怎麼稱呼自己」完全無關。</p>
+<h1 id="六個判別測試">六個判別測試</h1>
+<p>拿掉「憑感覺」之後，可以把這六個問題套用在任何一組依賴上</p>
+<h2 id="1-依賴方向測試">1. 依賴方向測試</h2>
+<ul>
+<li>A 需要知道 B 存在才能做完自己的事嗎？</li>
+<li>B 知道 A 存在嗎？</li>
+</ul>
+<p>只有單向「<strong>A 知道 B，B 完全不知道 A</strong>」才是分層<br>
+同層/平行關係通常是兩者互不知道對方，或由更上層的角色出面協調，而不是其中一個直接依賴另一個</p>
+<h2 id="2-一句話職責測試">2. 一句話職責測試</h2>
+<ul>
+<li>能不能用一句話講完這個元件在幹嘛，完全不必提到另一個元件？</li>
+</ul>
+<p>例如 <code>YohoRestClient</code> 是「把請求送到 Yoho」，不用提 Redis 或 JWT<br>
+兩邊都能各自講完，是上下關係不是同層關係</p>
+<p>如果講 A 時非得帶出 B 的細節，才比較像同層關係或耦合過緊</p>
+<h2 id="3-替換測試">3. 替換測試</h2>
+<ul>
+<li>如果將 B 的實作方式替換掉，A 的職責描述會變嗎？</li>
+</ul>
+<p>把 <code>RedisService</code> 換成別的快取實作，<code>YohoTokenProvider</code> 的職責描述完全不變<br>
+代表 B 是 A 底下的支撐元件，不是同層的夥伴</p>
+<h2 id="4-跨領域重用測試">4. 跨領域重用測試</h2>
+<ul>
+<li>這個元件拿給完全不相干的業務用，合理嗎？</li>
+</ul>
+<p>如果 <code>RedisService</code> 給另一個郵件發送模組拿去快取模板，完全合理<br>
+但把 <code>YohoTokenProvider</code> 給那個模組拿去用就說不通</p>
+<p>能不能被拿去跨領域重用，就是判斷層級高低的依據：</p>
+<blockquote>
+<p>越是能被不相干的業務重用，代表層級越低、越通用</p>
+</blockquote>
+<h2 id="5-異動漣漪測試">5. 異動漣漪測試</h2>
+<ul>
+<li>B 的實作改了，A 一定要跟著改嗎？</li>
+</ul>
+<p>當 Yoho 的 OAuth 規格換掉 JWT 簽章方式時可以不用動 <code>YohoRestClient</code><br>
+只有 <code>YohoTokenProvider</code> 要改</p>
+<p>只要對外的介面沒變，下層的修改就不該逼上層跟著動，這才是正確分層<br>
+兩邊常常要一起改，才是真正的同層關係或耦合過緊</p>
+<h2 id="6-建構參數膨脹測試">6. 建構參數膨脹測試</h2>
+<ul>
+<li>拿掉中間這一層，上層物件的建構子會被迫塞進一堆跟本職無關的參數嗎？</li>
+</ul>
+<p>如果不透過注入，而是自己組出相關邏輯，建構子會被迫接收一堆不相干的參數</p>
+<h3 id="沒有分層">沒有分層</h3>
+<p>不注入 <code>YohoTokenProvider</code> 而是讓 <code>YohoRestClient</code> 自己組出認證邏輯</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">YohoRestClient</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">__init__</span>(
+</span></span><span style="display:flex;"><span>        self,
+</span></span><span style="display:flex;"><span>        base_url: str,
+</span></span><span style="display:flex;"><span>        client_id: str,
+</span></span><span style="display:flex;"><span>        redis_host: str,
+</span></span><span style="display:flex;"><span>        redis_port: int <span style="color:#f92672">=</span> <span style="color:#ae81ff">6379</span>,
+</span></span><span style="display:flex;"><span>    ) <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 自己組 RedisService、YohoTokenProvider</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 並且要記得什麼時候該重新拿 token</span>
+</span></span></code></pre></div><h3 id="分層">分層</h3>
+<p>在 <code>services/yoho/rest_client.py</code> 裡，<code>YohoRestClient</code> 建構子收了一個 <code>YohoTokenProvider</code><br>
+而 <code>YohoTokenProvider</code> 建構子又收了一個 <code>RedisService</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">YohoRestClient</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">__init__</span>(
+</span></span><span style="display:flex;"><span>        self,
+</span></span><span style="display:flex;"><span>        base_url: str,
+</span></span><span style="display:flex;"><span>        token_provider: YohoTokenProvider,
+</span></span><span style="display:flex;"><span>    ) <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>base_url <span style="color:#f92672">=</span> base_url<span style="color:#f92672">.</span>rstrip(<span style="color:#e6db74">&#34;/&#34;</span>)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>token_provider <span style="color:#f92672">=</span> token_provider
+</span></span></code></pre></div><h3 id="工廠函式">工廠函式</h3>
+<p>「沒有分層」那個版本，建構子裡有三個參數跟「送出請求」這個職責完全無關</p>
+<blockquote>
+<p>代表這是兩個不同的職責被硬湊進同一個建構子裡</p>
+</blockquote>
+<p>「分層」這個版本能維持乾淨，靠的是寫一個獨立的工廠函式，手動 new 出每個物件並組合起來：</p>
+<p><strong><code>factories/yoho/rest_client_factory.py</code></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">build_yoho_rest_client</span>(
+</span></span><span style="display:flex;"><span>    env: str,
+</span></span><span style="display:flex;"><span>    client_id: str,
+</span></span><span style="display:flex;"><span>    base_url: str,
+</span></span><span style="display:flex;"><span>    redis_host: str,
+</span></span><span style="display:flex;"><span>    redis_port: int <span style="color:#f92672">=</span> <span style="color:#ae81ff">6379</span>,
+</span></span><span style="display:flex;"><span>) <span style="color:#f92672">-&gt;</span> YohoRestClient:
+</span></span><span style="display:flex;"><span>    redis_service <span style="color:#f92672">=</span> RedisService(redis_host, redis_port)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    token_provider <span style="color:#f92672">=</span> YohoTokenProvider(
+</span></span><span style="display:flex;"><span>        client_id<span style="color:#f92672">=</span>client_id,
+</span></span><span style="display:flex;"><span>        redis_service<span style="color:#f92672">=</span>redis_service,
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> YohoRestClient(base_url<span style="color:#f92672">=</span>base_url, token_provider<span style="color:#f92672">=</span>token_provider)
+</span></span></code></pre></div><p>工廠函式知道整張物件圖長什麼樣子，但每一個類別自己只認識下一層<br>
+例如：<code>YohoRestClient</code> 只認識 <code>YohoTokenProvider</code> 但完全不知道 <code>RedisService</code> 存在</p>
+<p><strong>延伸思考</strong></p>
+<p>看著這個工廠函式，可能會冒出一個疑問：</p>
+<ul>
+<li><strong>YohoTokenProvider</strong> 拿到的是 Redis 物件，但工廠函式接收的 <strong>redis_host</strong> 參數卻是字串，這樣算不算標準不一致？</li>
+</ul>
+<p>不算，差別在於這個東西有沒有「行為」</p>
+<p>傳入的 <code>redis_host</code> 參數只是一個網址字串，本身不會做任何事<br>
+工廠看到它，直接拿去 new 一個 <code>RedisService</code> 就好，不需要把它當物件傳來傳去</p>
+<p>但 <code>RedisService</code> 這個物件不一樣！<br>
+每次呼叫 <code>YohoTokenProvider.get_token()</code> 函式時，都要「當下」決定：</p>
+<ul>
+<li>快取命中了嗎？</li>
+<li>要不要重新換發 token？</li>
+</ul>
+<p>這些判斷只有真正呼叫這個物件的方法才做得到，字串沒辦法回答這些問題</p>
+<p>所以規則很簡單：</p>
+<blockquote>
+<p>純粹的設定值，傳資料就好；需要被呼叫、會做事的東西，才注入物件。</p>
+</blockquote>
+<h1 id="速查表">速查表</h1>
+<p>下次看到一組依賴，猶豫「這算不算同層」的時候，照著問一遍：</p>
+<table>
+	<thead>
+			<tr>
+					<th>#</th>
+					<th>測試</th>
+					<th>問題</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>1</td>
+					<td>依賴方向</td>
+					<td>箭頭是不是單向、沒有循環？</td>
+			</tr>
+			<tr>
+					<td>2</td>
+					<td>一句話職責</td>
+					<td>能不能不提到對方，講完自己在幹嘛？</td>
+			</tr>
+			<tr>
+					<td>3</td>
+					<td>替換測試</td>
+					<td>換掉下層實作，上層的職責描述會變嗎？</td>
+			</tr>
+			<tr>
+					<td>4</td>
+					<td>跨領域重用</td>
+					<td>丟給不相干的業務用，合理嗎？</td>
+			</tr>
+			<tr>
+					<td>5</td>
+					<td>異動漣漪</td>
+					<td>下層改實作，上層需要跟著改嗎？</td>
+			</tr>
+			<tr>
+					<td>6</td>
+					<td>建構參數膨脹</td>
+					<td>拿掉這層，上層建構子會被塞進不相干的參數嗎？</td>
+			</tr>
+	</tbody>
+</table>
+
+    
+    
+  </div>
+  <footer><div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/%e8%bb%9f%e9%ab%94%e6%9e%b6%e6%a7%8b/">軟體架構</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/%e5%88%86%e5%b1%a4%e8%a8%ad%e8%a8%88/">分層設計</a></li>
+        
+      
+    </ul>
+  
+</div>
+</footer>
+</article>
+ 
+ 
+<div class="pagination">
+   
+  <a href="/blog/202609-mwaa-connection-encryption-investigation/" class="button right"
+    ><span>MWAA Connections 加密機制調查</span></a
+  >
+  
+</div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>最新文章</h1>
+      </header>
+      
+      <article class="mini-post">
+          <a href="/blog/202609-dependency-direction-code-layering/" class="image" style="--bg-image: url('/blog/202609-dependency-direction-code-layering/featured.jpg');">
+    <img src="/blog/202609-dependency-direction-code-layering/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/blog/202609-dependency-direction-code-layering/">依賴方向決定程式碼分層</a></h2>
+          <time class="published" datetime="2026-09-19 00:00:00 &#43;0000 UTC">2026/09/19</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202609-mwaa-connection-encryption-investigation/" class="image" style="--bg-image: url('/blog/202609-mwaa-connection-encryption-investigation/featured.jpg');">
+    <img src="/blog/202609-mwaa-connection-encryption-investigation/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/blog/202609-mwaa-connection-encryption-investigation/">MWAA Connections 加密機制調查</a></h2>
+          <time class="published" datetime="2026-09-03 00:00:00 &#43;0000 UTC">2026/09/03</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202604-deploy-openclaw-ai-for-free/" class="image" style="--bg-image: url('/blog/202604-deploy-openclaw-ai-for-free/featured.jpg');">
+    <img src="/blog/202604-deploy-openclaw-ai-for-free/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/blog/202604-deploy-openclaw-ai-for-free/">不花一毛錢，快速部屬個人 AI 助理 Openclaw</a></h2>
+          <time class="published" datetime="2026-04-04 00:00:00 &#43;0000 UTC">2026/04/04</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202602-airflow-dynamic-task-mapping/" class="image" style="--bg-image: url('/blog/202602-airflow-dynamic-task-mapping/featured.jpg');">
+    <img src="/blog/202602-airflow-dynamic-task-mapping/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/blog/202602-airflow-dynamic-task-mapping/">使用動態任務讓 Airflow 效能大解放</a></h2>
+          <time class="published" datetime="2026-02-03 00:00:00 &#43;0000 UTC">2026/02/03</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202509-triggering-airflow-dag-from-another-dag/" class="image" style="--bg-image: url('/blog/202509-triggering-airflow-dag-from-another-dag/featured.jpg');">
+    <img src="/blog/202509-triggering-airflow-dag-from-another-dag/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/blog/202509-triggering-airflow-dag-from-another-dag/">使用 Airflow DAG 觸發其他 DAG</a></h2>
+          <time class="published" datetime="2025-09-24 00:00:00 &#43;0000 UTC">2025/09/24</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/blog/" class="button">查看更多</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="/categories">文章分類</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/categories/aws/">AWS<span class="count">27</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/devops/">DevOps<span class="count">24</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/node.js/">Node.js<span class="count">22</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/leetcode/">LeetCode<span class="count">13</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/golang/">Golang<span class="count">12</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/%E7%B6%AD%E9%81%8B%E8%88%87%E5%B7%A5%E5%85%B7/">維運與工具<span class="count">12</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/python/">Python<span class="count">10</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/php/">PHP<span class="count">7</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/typescript/">TypeScript<span class="count">4</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/ai/">AI<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/%E8%BB%9F%E9%AB%94%E6%9E%B6%E6%A7%8B/">軟體架構<span class="count">1</span></a>
+          </li>
+          
+        </ul>
+      </section>
+    
+  
+
+  
+  <section id="tags">
+    <header>
+      <h1><a href="/tags">Tag</a></h1>
+    </header>
+    <div class="li-x post-meta tags-md" style="margin-left: 0.5em;">
+      <ul>
+        
+        
+        <li>
+          <a href="/tags/aws/">AWS (28)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/devops/">DevOps (27)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/node.js/">Node.js (22)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/python/">Python (15)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/vue/">Vue (15)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/leetcode/">LeetCode (13)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/docker/">Docker (12)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/golang/">Golang (12)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/php/">PHP (11)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%AE%B9%E5%99%A8%E6%8A%80%E8%A1%93/">容器技術 (10)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/express/">Express (9)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/ci-cd/">CI-CD (8)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/laravel/">Laravel (8)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/leetcode-easy/">LeetCode-Easy (8)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/gcp/">GCP (7)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/docker-compose/">Docker Compose (6)</a>
+        </li>
+        
+      </ul>
+
+    </div>
+    
+      <footer>
+        <a href="/tags" class="button">查看更多</a>
+      </footer>
+    
+  </section>
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+    
+    <p class="copyright">
+        © 2026 Byte Ebi 🍤
+    </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>
+      hljs.configure({ ignoreUnescapedHTML: true }); 
+      hljs.highlightAll();
+    </script><script src="/js/bundle.min.d21befc899e4b6158eba05da3928321e52d15d067cb323bbf20e1b37a4ee0e3d.js" integrity="sha256-0hvvyJnkthWOugXaOSgyHlLRXQZ8syO78g4bN6TuDj0="></script>
+    <script src="/js/add-on.js"></script>
+
+
+    
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', "G-LTGVYYWC2J");
+        </script>
+    
+
+
+    </div>
+  </body>
+  
+</html>

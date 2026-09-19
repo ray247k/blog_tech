@@ -81,9 +81,9 @@
     "headline": "討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - Byte Ebi 🍤",
     "name": "Byte Ebi 🍤",
     "url": "https:\/\/tech.ray247k.com\/",
-    "description": "討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - ai,aws,devops,golang,leetcode,node.js,php,python,typescript,維運與工具,",
+    "description": "討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - ai,aws,devops,golang,leetcode,node.js,php,python,typescript,維運與工具,軟體架構,",
     "keywords": [
-        "airflow,apache bench,api gateway,architecture,auto scaling,aws,blockchain,cdn,chatbot,ci-cd,cloudflare,cloudflare workers,cloudformation,cloudfront,cloudtrail,cloudwatch,cognito,composer,cost control,csv,devops,discord,dns,docker,docker compose,domain name,drone,dynamodb,ec2,elasticache,element-ui,emr,excel,express,ffmpeg,gas,gcp,gcr,git,github,github page,golang,google domains,google sheets,grumphp,hugo,hybrid cloud,iam,jenkins,kinesis,lambda,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load balancing,mongodb,mwaa,nginx,ngrok,node.js,openclaw,php,php-fpm,phpcbf,phpcs,portainer,postgresql,pre-commit,prerender,proxy,pyenv,pytest,python,queue,rds,redis,redshift,restful,route 53,s3,security,seo,server,serverless,smart contract,sns,sqs,ssh,stress testing,subdomain,tdd,typescript,vpc,vue,伺服器,個人品牌,單元測試,域名,壓力測試,子網域,容器技術,架站相關,版本控制,買網址,防火牆,"
+        "airflow,apache bench,api gateway,auto scaling,aws,blockchain,cdn,chatbot,ci-cd,cloudflare,cloudflare workers,cloudformation,cloudfront,cloudtrail,cloudwatch,cognito,composer,cost control,csv,devops,discord,dns,docker,docker compose,domain name,drone,dynamodb,ec2,elasticache,element-ui,emr,excel,express,ffmpeg,gas,gcp,gcr,git,github,github page,golang,google domains,google sheets,grumphp,hugo,hybrid cloud,iam,jenkins,kinesis,lambda,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load balancing,mongodb,mwaa,nginx,ngrok,node.js,openclaw,php,php-fpm,phpcbf,phpcs,portainer,postgresql,pre-commit,prerender,proxy,pyenv,pytest,python,queue,rds,redis,redshift,restful,route 53,s3,security,seo,server,serverless,smart contract,sns,sqs,ssh,stress testing,subdomain,tdd,typescript,vpc,vue,伺服器,個人品牌,分層設計,單元測試,域名,壓力測試,子網域,容器技術,架站相關,版本控制,買網址,防火牆,"
     ]
 }
 </script>
@@ -209,6 +209,59 @@
       <main id="site-main">
         
   
+  
+    <article class="post">
+  <header>
+  <div class="title">
+    
+      <h2><a href="/blog/202609-dependency-direction-code-layering/">依賴方向決定程式碼分層</a></h2>
+    
+    
+      <p>放在同一個資料夾底下是不是就代表同一層？</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2026-09-19 00:00:00 &#43;0000 UTC">2026/09/19</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+  <div class="content">
+    <a href="/blog/202609-dependency-direction-code-layering/" class="image" style="--bg-image: url('/blog/202609-dependency-direction-code-layering/featured.jpg');">
+    <img src="/blog/202609-dependency-direction-code-layering/featured.jpg" alt="">
+  </a>
+    
+    <p>不要再靠命名或資料夾位置去猜了！<br>
+以業務邏輯、支援邏輯、基礎設施三層依賴鏈為例，判斷是否為同層呼叫</p>
+
+  </div>
+  <footer>
+    <a href="/blog/202609-dependency-direction-code-layering/" class="button big">閱讀全文</a>
+    <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/%e8%bb%9f%e9%ab%94%e6%9e%b6%e6%a7%8b/">軟體架構</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/%e5%88%86%e5%b1%a4%e8%a8%ad%e8%a8%88/">分層設計</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+  </footer>
+</article>
+
   
     <article class="post">
   <header>
@@ -535,65 +588,6 @@ Airflow 也提供的內建的 Operator 可以使用</p>
 </article>
 
   
-    <article class="post">
-  <header>
-  <div class="title">
-    
-      <h2><a href="/blog/202507-pytest-4-pytest-mock-class/">[Pytest 101] 04 Mock Class</a></h2>
-    
-    
-      <p>介紹兩種在使用工廠模式時測試 class 建構的方式，並說明如何有效抽換依賴。</p>
-    
-  </div>
-  <div class="meta">
-    <time datetime="2025-07-26 00:00:00 &#43;0000 UTC">2025/07/26</time>
-    <p>Ray</p>
-    
-  </div>
-</header>
-
-  <div class="content">
-    <a href="/blog/202507-pytest-4-pytest-mock-class/" class="image" style="--bg-image: url('/blog/202507-pytest-4-pytest-mock-class/featured.jpg');">
-    <img src="/blog/202507-pytest-4-pytest-mock-class/featured.jpg" alt="">
-  </a>
-    
-    <p>在開發中導入工廠模式雖然能讓架構更清晰，但也讓單元測試變得複雜。<br>
-一次搞懂兩種不同 mock 策略的優劣與實作方式，幫助你寫出更穩健的測試程式！</p>
-
-  </div>
-  <footer>
-    <a href="/blog/202507-pytest-4-pytest-mock-class/" class="button big">閱讀全文</a>
-    <div class="stats">
-  
-    <ul class="categories">
-      
-        
-          <li><a class="article-terms-link" href="/categories/python/">Python</a></li>
-        
-      
-    </ul>
-  
-  
-    <ul class="tags">
-      
-        
-          <li><a class="article-terms-link" href="/tags/python/">Python</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/pytest/">Pytest</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/tdd/">TDD</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/%e5%96%ae%e5%85%83%e6%b8%ac%e8%a9%a6/">單元測試</a></li>
-        
-      
-    </ul>
-  
-</div>
-
-  </footer>
-</article>
-
-  
   <div class="pagination">
     
     
@@ -608,6 +602,16 @@ Airflow 也提供的內建的 Operator 可以使用</p>
       <header>
         <h1>最新文章</h1>
       </header>
+      
+      <article class="mini-post">
+          <a href="/blog/202609-dependency-direction-code-layering/" class="image" style="--bg-image: url('/blog/202609-dependency-direction-code-layering/featured.jpg');">
+    <img src="/blog/202609-dependency-direction-code-layering/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/blog/202609-dependency-direction-code-layering/">依賴方向決定程式碼分層</a></h2>
+          <time class="published" datetime="2026-09-19 00:00:00 &#43;0000 UTC">2026/09/19</time>
+        </header>
+      </article>
       
       <article class="mini-post">
           <a href="/blog/202609-mwaa-connection-encryption-investigation/" class="image" style="--bg-image: url('/blog/202609-mwaa-connection-encryption-investigation/featured.jpg');">
@@ -646,16 +650,6 @@ Airflow 也提供的內建的 Operator 可以使用</p>
         <header>
           <h2><a href="/blog/202509-triggering-airflow-dag-from-another-dag/">使用 Airflow DAG 觸發其他 DAG</a></h2>
           <time class="published" datetime="2025-09-24 00:00:00 &#43;0000 UTC">2025/09/24</time>
-        </header>
-      </article>
-      
-      <article class="mini-post">
-          <a href="/blog/202509-amazon-rds-db-connection-limits/" class="image" style="--bg-image: url('/blog/202509-amazon-rds-db-connection-limits/featured.jpg');">
-    <img src="/blog/202509-amazon-rds-db-connection-limits/featured.jpg" alt="">
-  </a>
-        <header>
-          <h2><a href="/blog/202509-amazon-rds-db-connection-limits/">掌握 Amazon RDS 的連線數限制</a></h2>
-          <time class="published" datetime="2025-09-07 00:00:00 &#43;0000 UTC">2025/09/07</time>
         </header>
       </article>
       
@@ -715,6 +709,10 @@ Airflow 也提供的內建的 Operator 可以使用</p>
           
           <li>
               <a href="/categories/ai/">AI<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/%E8%BB%9F%E9%AB%94%E6%9E%B6%E6%A7%8B/">軟體架構<span class="count">1</span></a>
           </li>
           
         </ul>
