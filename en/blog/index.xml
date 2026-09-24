@@ -10,9 +10,16 @@
 		
 		
 		
-			<lastBuildDate>Sat, 19 Sep 2026 00:00:00 +0000</lastBuildDate>
+			<lastBuildDate>Thu, 24 Sep 2026 00:00:00 +0000</lastBuildDate>
 		
 			<atom:link href="https://tech.ray247k.com/en/blog/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Using S3KeySensor So Airflow Doesn&#39;t Wait a Lifetime for a File</title>
+				<link>https://tech.ray247k.com/en/blog/202609-airflow-s3-key-sensor/</link>
+				<pubDate>Thu, 24 Sep 2026 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202609-airflow-s3-key-sensor/</guid>
+				<description>&lt;p&gt;Waiting on an externally, asynchronously generated file before continuing is a common scenario in Airflow.&lt;br&gt;&#xA;But &amp;ldquo;I&amp;rsquo;ll wait as long as it takes&amp;rdquo; is a heavy promise to make on your infrastructure&amp;rsquo;s behalf.&lt;/p&gt;</description>
+			</item>
 			<item>
 				<title>Dependency Direction Determines Code Layering</title>
 				<link>https://tech.ray247k.com/en/blog/202609-dependency-direction-code-layering/</link>

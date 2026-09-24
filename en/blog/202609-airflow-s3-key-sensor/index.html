@@ -1,0 +1,869 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+<title>Using S3KeySensor So Airflow Doesn&#39;t Wait a Lifetime for a File - Byte Ebi 🍤</title>
+<meta name="description" content="As long as the file shows up, I&#39;ll do anything">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta property="og:site_name" content="Byte Ebi 🍤">
+<meta property="og:title" content="Using S3KeySensor So Airflow Doesn&#39;t Wait a Lifetime for a File">
+<meta property="og:description" content="As long as the file shows up, I&#39;ll do anything">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://tech.ray247k.com/en/blog/202609-airflow-s3-key-sensor/">
+  <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
+
+
+
+  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
+  
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=1" color="#ffffff">
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=1">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=1">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+<meta name="generator" content="Hugo 0.165.0"><meta property="og:site_name" content="Byte Ebi 🍤">
+  <meta property="og:title" content="Using S3KeySensor So Airflow Doesn&#39;t Wait a Lifetime for a File">
+  <meta property="og:description" content="As long as the file shows up, I&#39;ll do anything">
+  <meta property="description" content="As long as the file shows up, I&#39;ll do anything">
+  <meta property="og:url" content="https://tech.ray247k.com/en/blog/202609-airflow-s3-key-sensor/">
+  <meta property="og:type" content="article">
+  
+    <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
+  
+  
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/felipec.min.css">
+          <link rel="stylesheet" href="/css/bundle.min.7bc2060a63595a20fd994db40a9ab8e5d39b1f2f841f74cd71bfee0f56e06776.css" integrity="sha256-e8IGCmNZWiD9mU20Cpq45dObHy&#43;EH3TNcb/uD1bgZ3Y="><link rel="stylesheet" href="/css/add-on.css">
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-LTGVYYWC2J');
+        }
+      </script>
+  <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "image": {
+        "@type": "ImageObject",
+        "image": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+        "height": 648,
+        "width": 1080
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com\/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Byte Ebi 🍤",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png"
+        }
+    },
+    "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+    "headline": "About web development, software engineering, frontend, backend, chatbot, server related topics. - Byte Ebi 🍤",
+    "name": "Byte Ebi 🍤",
+    "url": "https:\/\/tech.ray247k.com\/",
+    "description": "About web development, software engineering, frontend, backend, chatbot, server related topics. - ai,aws,devops,golang,ops \u0026 tools,php,python,software architecture,typescript,",
+    "keywords": [
+        "airflow,apache bench,api gateway,auto scaling,aws,blockchain,cdn,chatbot,ci-cd,cloudflare,cloudflare workers,cloudformation,cloudfront,cloudtrail,cloudwatch,cognito,composer,containerization,cost control,csv,devops,discord,dns,docker,docker compose,domain,domain name,drone,dynamodb,ec2,elasticache,emr,excel,ffmpeg,firewall,gas,gcp,gcr,git,github,github page,golang,google domains,google sheets,grumphp,hugo,hybrid cloud,iam,jenkins,kinesis,lambda,laravel,laravel-excel,layering,linux,load balancing,mwaa,nginx,ngrok,openclaw,personal brand,php,php-fpm,phpcbf,phpcs,portainer,postgresql,pre-commit,prerender,proxy,purchase domain,pyenv,pytest,python,queue,rds,redis,redshift,route 53,s3,security,seo,server,serverless,smart contract,sns,sqs,ssh,stress testing,subdomain,tdd,typescript,unit test,version control,vpc,web hosting,"
+    ]
+}
+</script>
+
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "legalName": "Byte Ebi 🍤",
+    "url": "https:\/\/tech.ray247k.com\/",
+    "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "",
+        "availableLanguage": [
+            "Mandarin",
+            "English"
+        ]
+    },
+    "sameAs": [
+        "https://ray247k.blogspot.com/"
+    ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Using S3KeySensor So Airflow Doesn\u0027t Wait a Lifetime for a File",
+    "description": "As long as the file shows up, I\u0027ll do anything",
+    "keywords": [
+        "Airflow" 
+    ],
+    "dateCreated": "2026-09-24T00:00:00.00Z",
+    "datePublished": "2026-09-24T00:00:00.00Z",
+    "dateModified": "2026-09-24T00:00:00.00Z",
+    "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "contentUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png"
+    },
+    "breadcrumb": {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\/",
+                    "name": "Byte Ebi 🍤",
+                    "url": "https:\/\/tech.ray247k.com\/"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\//blog",
+                    "name": "Blog",
+                    "url": "https:\/\/tech.ray247k.com\//blog"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\/en\/blog\/202609-airflow-s3-key-sensor\/",
+                    "name": "Using S3KeySensor So Airflow Doesn\u0027t Wait a Lifetime for a File",
+                    "url": "https:\/\/tech.ray247k.com\/en\/blog\/202609-airflow-s3-key-sensor\/"
+                }
+            }
+        ],
+        "itemListOrder": "Ascending",
+        "numberOfItems": 3
+    }
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "articleSection": "blog",
+    "name": "Using S3KeySensor So Airflow Doesn\u0027t Wait a Lifetime for a File",
+    "headline": "\u003cp\u003eWaiting on an externally, asynchronously generated file before continuing is a common scenario in Airflow.\u003cbr\u003e\nBut \u0026ldquo;I\u0026rsquo;ll wait as long as it takes\u0026rdquo; is a heavy promise to make on your infrastructure\u0026rsquo;s behalf.\u003c\/p\u003e",
+    "description": "As long as the file shows up, I\u0027ll do anything",
+    "inLanguage": "en",
+    "isFamilyFriendly": "true",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com\/en\/blog\/202609-airflow-s3-key-sensor\/"
+    },
+    "author" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "creator" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "accountablePerson" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "copyrightHolder" : "Byte Ebi 🍤",
+    "copyrightYear" : "2026",
+    "dateCreated": "2026-09-24T00:00:00.00Z",
+    "datePublished": "2026-09-24T00:00:00.00Z",
+    "dateModified": "2026-09-24T00:00:00.00Z",
+    "publisher":{
+        "@type":"Organization",
+        "name": "Byte Ebi 🍤",
+        "url": "https://tech.ray247k.com/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+            "width":"32",
+            "height":"32"
+        }
+    },
+    "image": "https://tech.ray247k.com/img/main/logo.png",
+    "url" : "https:\/\/tech.ray247k.com\/en\/blog\/202609-airflow-s3-key-sensor\/",
+    "wordCount" : "1472",
+    "genre" : [ "Airflow" ],
+    "keywords" : [ "Airflow" ]
+}
+</script>
+
+
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/en/" class="nav">
+        
+          Blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/en/" class="nav link"><i class='fa fa-home'></i> home</a>
+        
+      
+        
+          
+          <a href="/en/about" class="nav link"><i class='far fa-id-card'></i> about</a>
+        
+      
+        
+          
+          <a href="/en/categories" class="nav link"><i class='fas fa-sitemap'></i> category</a>
+        
+      
+        
+          
+          <a href="/en/series" class="nav link"><i class='fas fa-list-ol'></i> series</a>
+        
+      
+      
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    
+    <a href="#lang-menu" class="nav lang-toggle" lang="en">en</a>
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  <menu id="lang-menu" class="flyout-menu menu">
+  <a href="#" lang="en" class="nav link active">English (en)</a>
+  
+      <a href="https://tech.ray247k.com/blog/202609-airflow-s3-key-sensor/" lang="zh-tw" class="nav link">正體中文 (zh-tw)</a>
+    
+  
+</menu>
+
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/en/"><img src="/img/main/logo.png" class="circle" width="100" alt="Byte Ebi&#39;s Logo" /></a>
+  <header>
+    <h1>Byte Ebi 🍤</h1>
+  </header>
+  <main>
+    <p>A Bit everyday A Byte every week</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/ray247k" target="_blank" rel="noopener" title="GitHub"
+        class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//www.linkedin.com/in/j-ray-cheng" target="_blank" rel="noopener"
+        title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+<article class="post">
+  <header>
+  <div class="title">
+    
+      <h2><a href="/en/blog/202609-airflow-s3-key-sensor/">Using S3KeySensor So Airflow Doesn&#39;t Wait a Lifetime for a File</a></h2>
+    
+    
+      <p>As long as the file shows up, I&#39;ll do anything</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2026-09-24 00:00:00 &#43;0000 UTC">September 24, 2026</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+  
+  <div id="socnet-share">
+
+
+
+
+</div>
+  <div class="content">
+    <a href="/en/blog/202609-airflow-s3-key-sensor/" class="image" style="--bg-image: url('/blog/202609-airflow-s3-key-sensor/featured.jpg');">
+    <img src="/blog/202609-airflow-s3-key-sensor/featured.jpg" alt="">
+  </a> <p>Waiting on an externally, asynchronously generated file before continuing is a common scenario in Airflow.<br>
+But &ldquo;I&rsquo;ll wait as long as it takes&rdquo; is a heavy promise to make on your infrastructure&rsquo;s behalf.</p>
+<h1 id="the-existing-problem">The Existing Problem</h1>
+<p>I&rsquo;m currently maintaining a system integration pipeline scheduled through Airflow.</p>
+<p>The main steps are:</p>
+<ol>
+<li>Receive parameters</li>
+<li>Call an external API to generate a file for exchange</li>
+<li>Once generation completes, continue with the downstream process</li>
+</ol>
+<p>The &ldquo;wait for the file to finish generating&rdquo; step has gone through two different approaches across projects.</p>
+<p><strong>Version 1</strong></p>
+<blockquote>
+<p>Call the external API directly and wait for it to respond only once the file is ready.</p>
+</blockquote>
+<p>Generating the file takes a while, and the connection often got cut by an API timeout, failing the whole task outright.<br>
+The fix at the time was simply extending the timeout: treating the symptom, not the cause.</p>
+<p><strong>Version 2</strong></p>
+<p>The external service was changed to write the file&rsquo;s generation-complete status into Redis as soon as it was ready.<br>
+The engineer at the time hand-rolled a sensor that waited for the Redis key to appear before moving on, sidestepping the timeout problem.</p>
+<p>It looked like the timeout issue was solved, but running it in production surfaced a few new problems:</p>
+<ul>
+<li>When the ECS instance hosting a worker sits idle, it gets reclaimed automatically, even while a task is still waiting on it.</li>
+<li>The Redis key can expire; if the check doesn&rsquo;t catch it in time, the status becomes unreadable, even though the file was actually generated successfully.</li>
+</ul>
+<p>Worse, these two problems can become entangled:</p>
+<blockquote>
+<p>Once the ECS instance is reclaimed, nobody&rsquo;s left to keep checking, and the key just quietly expires.</p>
+</blockquote>
+<p>That leaves the task in a Schrödinger&rsquo;s-cat state: a failure that isn&rsquo;t necessarily a real failure.</p>
+<p>The current workaround is to extend the <code>scale-in</code> <code>cooldown period</code> and bump up the default worker count.<br>
+Still treating the symptom, not the cause.</p>
+<h1 id="the-solution">The Solution</h1>
+<h3 id="s3keysensor--deferrable-to-the-rescue">S3KeySensor + deferrable to the Rescue!</h3>
+<p>Waiting on an externally, asynchronously generated file before continuing is actually a very common scenario in Airflow, and the built-in <a href="https://airflow.apache.org/docs/apache-airflow-providers-amazon/stable/_api/airflow/providers/amazon/aws/sensors/s3/index.html"
+   
+    target="_blank" rel="noreferrer noopener">S3KeySensor
+</a>
+ exists specifically to handle it.</p>
+<p>It can directly detect <strong>whether a given key exists on S3</strong>, using the S3 object itself as the thing being watched, so there&rsquo;s no Redis-key-expiration problem to worry about.</p>
+<p><code>S3KeySensor</code> is also a standard implementation maintained by an official Airflow provider. Airflow&rsquo;s own documentation confirms that with <code>deferrable=True</code>, it doesn&rsquo;t occupy a worker slot, so it&rsquo;s also immune to workers being interrupted when an ECS instance gets reclaimed.</p>
+<p>It supports three modes:</p>
+<ul>
+<li><code>mode=&quot;poke&quot;</code> (<strong>the default</strong>): the task occupies a worker slot until the condition is met.</li>
+<li><code>mode=&quot;reschedule&quot;</code>: each check reschedules a worker to run it, releasing the worker slot between checks.</li>
+<li><code>deferrable=True</code> (defaults to <code>False</code>): hands off &ldquo;waiting&rdquo; entirely to an independent <strong>triggerer</strong> process, without occupying a worker.</li>
+</ul>
+<p>These three take precedence over one another, which you can see in the source of <code>S3KeySensor.execute()</code>:</p>
+<p><a href="https://github.com/apache/airflow/blob/providers-amazon/9.36.0/providers/amazon/src/airflow/providers/amazon/aws/sensors/s3.py#L192"
+   
+    target="_blank" rel="noreferrer noopener">apache/airflow GitHub - providers/amazon/&hellip;/sensors/s3.py
+</a>
+</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">execute</span>(self, context: Context) <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> self<span style="color:#f92672">.</span>deferrable:
+</span></span><span style="display:flex;"><span>        super()<span style="color:#f92672">.</span>execute(context)   <span style="color:#75715e"># mode=&#34;poke&#34;/&#34;reschedule&#34; only takes effect here</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> self<span style="color:#f92672">.</span>poke(context<span style="color:#f92672">=</span>context):
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>_defer()          <span style="color:#75715e"># hand off to the triggerer in the background, no worker occupied</span>
+</span></span></code></pre></div><p>When <code>deferrable=True</code>, it only pokes once: if the condition isn&rsquo;t met, it&rsquo;s handed straight to the triggerer, and whatever <code>mode</code> is set to no longer has any effect.<br>
+And <code>mode</code> only matters when <code>deferrable=False</code>.</p>
+<p>Since this example uses <code>deferrable=True</code>, there&rsquo;s no need (and no reason) to set <code>mode</code> at all.</p>
+<p>Defaults for the other relevant parameters:</p>
+<ul>
+<li><code>poke_interval</code>: defaults to <strong>60 seconds</strong>, the interval between checks.</li>
+<li><code>timeout</code>: defaults to <strong>604800 seconds (7 days)</strong>, after which the task is marked as failed if the condition still isn&rsquo;t met.</li>
+</ul>
+<h1 id="proof-of-concept">Proof of Concept</h1>
+<p>I wrote a simple DAG to verify the whole mechanism:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> logging
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> datetime <span style="color:#f92672">import</span> UTC, datetime, timedelta
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> airflow.providers.amazon.aws.sensors.s3 <span style="color:#f92672">import</span> S3KeySensor
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> airflow.sdk <span style="color:#f92672">import</span> DAG, Param, Variable, get_current_context, task
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> airflow.sdk.definitions.param <span style="color:#f92672">import</span> ParamsDict
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> services.aws.s3_client <span style="color:#f92672">import</span> S3Client
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>logger <span style="color:#f92672">=</span> logging<span style="color:#f92672">.</span>getLogger(__name__)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>default_args <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;owner&#34;</span>: <span style="color:#e6db74">&#34;Developer&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;depends_on_past&#34;</span>: <span style="color:#66d9ef">False</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;start_date&#34;</span>: datetime(<span style="color:#ae81ff">2026</span>, <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">22</span>, tzinfo<span style="color:#f92672">=</span>UTC),
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;retry_delay&#34;</span>: timedelta(minutes<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>),
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> DAG(
+</span></span><span style="display:flex;"><span>    dag_id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;s3_key_sensor_test&#34;</span>,
+</span></span><span style="display:flex;"><span>    default_args<span style="color:#f92672">=</span>default_args,
+</span></span><span style="display:flex;"><span>    schedule<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>,
+</span></span><span style="display:flex;"><span>    catchup<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>,
+</span></span><span style="display:flex;"><span>    max_active_runs<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>    dag_display_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;S3KeySensor Proof of Concept&#34;</span>,
+</span></span><span style="display:flex;"><span>    tags<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;AWS&#34;</span>],
+</span></span><span style="display:flex;"><span>    doc_md<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        ## Testing how `S3KeySensor` works
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        1. `get_s3_path`: generates the S3 path to watch
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        2. `wait_for_key`: waits for the S3 object at the path from `get_s3_path` to appear before continuing
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        3. `fetch_value`: once detected, reads the content with the existing `S3Client` and returns its length (bytes)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        4. `print_value`: receives the return value from `fetch_value` and prints it
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    params<span style="color:#f92672">=</span>ParamsDict(
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;bucket_name&#34;</span>: Param(
+</span></span><span style="display:flex;"><span>                default<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>                type<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;string&#34;</span>,
+</span></span><span style="display:flex;"><span>                title<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;S3 Bucket&#34;</span>,
+</span></span><span style="display:flex;"><span>                description<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;S3 bucket name&#34;</span>,
+</span></span><span style="display:flex;"><span>            ),
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;bucket_key&#34;</span>: Param(
+</span></span><span style="display:flex;"><span>                default<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>                type<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;string&#34;</span>,
+</span></span><span style="display:flex;"><span>                title<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Bucket Key&#34;</span>,
+</span></span><span style="display:flex;"><span>                description<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;S3 object key&#34;</span>,
+</span></span><span style="display:flex;"><span>            ),
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    ),
+</span></span><span style="display:flex;"><span>) <span style="color:#66d9ef">as</span> dag:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@task</span>(task_id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;get_s3_path&#34;</span>, multiple_outputs<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_s3_path</span>() <span style="color:#f92672">-&gt;</span> dict[str, str]:
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;&#34;&#34;In production the path is computed by application logic; here it&#39;s taken directly from the params passed in when triggering the DAG, for testing convenience
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        multiple_outputs=True stores each dict key as its own XCom entry, so downstream tasks can use subscript syntax like s3_path[&#34;bucket_name&#34;] to read the value; otherwise it would come back as None
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        Returns:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            dict[str, str]: each key maps to its own XCom entry
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>        params <span style="color:#f92672">=</span> get_current_context()<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;params&#34;</span>, {})
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;bucket_name&#34;</span>: params[<span style="color:#e6db74">&#34;bucket_name&#34;</span>],
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;bucket_key&#34;</span>: params[<span style="color:#e6db74">&#34;bucket_key&#34;</span>],
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    s3_path <span style="color:#f92672">=</span> get_s3_path()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    wait_for_object <span style="color:#f92672">=</span> S3KeySensor(
+</span></span><span style="display:flex;"><span>        task_id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;wait_for_object&#34;</span>,
+</span></span><span style="display:flex;"><span>        bucket_name<span style="color:#f92672">=</span>s3_path[<span style="color:#e6db74">&#34;bucket_name&#34;</span>],  <span style="color:#75715e"># type: ignore[index]</span>
+</span></span><span style="display:flex;"><span>        bucket_key<span style="color:#f92672">=</span>s3_path[<span style="color:#e6db74">&#34;bucket_key&#34;</span>],  <span style="color:#75715e"># type: ignore[index]</span>
+</span></span><span style="display:flex;"><span>        deferrable<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>,  <span style="color:#75715e"># whether to hand off to the triggerer, without occupying a worker slot</span>
+</span></span><span style="display:flex;"><span>        poke_interval<span style="color:#f92672">=</span><span style="color:#ae81ff">30</span>,  <span style="color:#75715e"># seconds between checks, &gt;= 60 recommended in production</span>
+</span></span><span style="display:flex;"><span>        timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">3600</span>,  <span style="color:#75715e"># timeout in seconds</span>
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@task</span>(task_id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fetch_object&#34;</span>, retries<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fetch_object</span>(bucket_name: str, bucket_key: str) <span style="color:#f92672">-&gt;</span> int:
+</span></span><span style="display:flex;"><span>        content <span style="color:#f92672">=</span> S3Client(bucket_name<span style="color:#f92672">=</span>bucket_name)<span style="color:#f92672">.</span>get_object(bucket_key)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        logger<span style="color:#f92672">.</span>info(<span style="color:#e6db74">&#34;[S3KeySensor] Detected file at S3 </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">/</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span>, bucket_name, bucket_key)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> len(content)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@task</span>(task_id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;print_object_length&#34;</span>, retries<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">print_value</span>(content_length: int) <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;[S3KeySensor] Successfully retrieved </span><span style="color:#e6db74">{</span>content_length<span style="color:#e6db74">}</span><span style="color:#e6db74"> bytes&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    fetch_object_task <span style="color:#f92672">=</span> fetch_object(
+</span></span><span style="display:flex;"><span>        s3_path[<span style="color:#e6db74">&#34;bucket_name&#34;</span>],  <span style="color:#75715e"># type: ignore[index]</span>
+</span></span><span style="display:flex;"><span>        s3_path[<span style="color:#e6db74">&#34;bucket_key&#34;</span>],  <span style="color:#75715e"># type: ignore[index]</span>
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    wait_for_object<span style="color:#f92672">.</span>set_downstream(fetch_object_task)
+</span></span><span style="display:flex;"><span>    print_value(fetch_object_task)  <span style="color:#75715e"># type: ignore[arg-type]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+</span></span><span style="display:flex;"><span>    dag<span style="color:#f92672">.</span>cli()
+</span></span></code></pre></div><h2 id="1-get-the-s3-path">1. Get the S3 path</h2>
+<p>In production, the file&rsquo;s upload path is generated by application logic according to a set of rules.<br>
+For testing convenience, this is replaced with manually entering <code>bucket_name</code>/<code>bucket_key</code> when triggering the DAG.</p>
+<p><img src="/blog/202609-airflow-s3-key-sensor/01_get_path.png" alt="Getting the S3 path"></p>
+<p>You can see <code>bucket_name</code> and <code>bucket_key</code> recorded as separate entries on the XCom tab, while <code>return_value</code> is the dict packaged together and passed out as a whole.</p>
+<p>This is why <code>multiple_outputs=True</code> matters: it lets each key in the dict be stored as its own XCom entry, so downstream tasks can read values directly with subscript syntax like <code>s3_path[&quot;bucket_name&quot;]</code>.</p>
+<p>Without it, XCom would only store a single <code>return_value</code>, and <code>s3_path[&quot;bucket_name&quot;]</code> would actually come back as <code>None</code> instead of the expected string.</p>
+<h2 id="2-wait-for-the-s3-object-with-s3keysensor">2. Wait for the S3 object with S3KeySensor</h2>
+<p>The deferrable sensor waits for a file to actually show up at the path produced by <code>get_s3_path</code>.</p>
+<p><img src="/blog/202609-airflow-s3-key-sensor/02_deferred.png" alt="Deferred state"></p>
+<p>The audit log clearly shows the state transitions: <code>running</code> -&gt; <code>deferred</code> -&gt; <code>running</code> -&gt; <code>success</code>.</p>
+<p>The task switches into <code>deferred</code> almost immediately after starting, and spends roughly 7 minutes waiting, during which it occupies no worker at all.</p>
+<h2 id="3-read-the-file-content-once-detected">3. Read the file content once detected</h2>
+<p>A file is uploaded manually to simulate the external API generating it.</p>
+<p><img src="/blog/202609-airflow-s3-key-sensor/03_upload_s3.png" alt="Uploading a file to S3"></p>
+<p>Once <strong>S3KeySensor</strong> detects the file, it resumes from <code>deferred</code> and continues execution.</p>
+<p><img src="/blog/202609-airflow-s3-key-sensor/03_get_object.png" alt="Fetching the file content"></p>
+<p>The log matches the actual file&rsquo;s content length.</p>
+<p><img src="/blog/202609-airflow-s3-key-sensor/04_print_length.png" alt="Printing the content length"></p>
+<h1 id="caveats">Caveats</h1>
+<p>Using <code>deferrable</code> mode requires the <strong>triggerer</strong> component to be enabled in the environment; without it, the task gets stuck in <code>deferred</code> and is never woken up.</p>
+<p>This PoC doesn&rsquo;t set <code>aws_conn_id</code> explicitly; it simply relies on the default boto3 credential chain from the MWAA execution role.</p>
+<p>The &ldquo;task fails when its worker gets reclaimed&rdquo; problem isn&rsquo;t 100% eliminated; it&rsquo;s traded for a much lighter dependency.</p>
+<blockquote>
+<p>During the deferred phase of execution, since work has been offloaded to the triggerer, the task no longer occupies a worker slot, and you have more free workload capacity.</p>
+</blockquote>
+<p>The waiting logic now runs on an independent <strong>triggerer</strong> process, so it becomes dependent on that triggerer staying alive.<br>
+The good news is that the <code>deferred</code> state is persisted in the metadata DB, so even if the triggerer process restarts, the task isn&rsquo;t immediately marked as failed, which is what gives it high availability.</p>
+<blockquote>
+<p>Airflow automatically re-schedules triggers that were on that host to run elsewhere.</p>
+</blockquote>
+<p>Once the condition is met and the trigger fires, a worker still has to be handed back to actually finish executing the task:</p>
+<blockquote>
+<ul>
+<li>The trigger runs until it fires, at which point its source task is re-scheduled by the scheduler.</li>
+<li>The scheduler queues the task to resume on a worker node.</li>
+</ul>
+</blockquote>
+<p>In other words, using <code>deferrable</code> eliminates</p>
+<ul>
+<li>the risk of the worker process it depends on during the wait being reclaimed by ECS at any moment</li>
+</ul>
+<p>and trades it for the much lower-risk</p>
+<ul>
+<li>
+<p>dependency on the triggerer staying alive</p>
+<ul>
+<li>the deferred task&rsquo;s state lives in the metadata DB</li>
+<li>even if one triggerer dies, the scheduler automatically reassigns its triggers to another still-living triggerer</li>
+</ul>
+</li>
+<li>
+<p>need to be handed a worker again once execution resumes</p>
+<ul>
+<li>that worker is only occupied for the actual, short execution time</li>
+</ul>
+</li>
+</ul>
+<p>Reference: <a href="https://airflow.apache.org/docs/apache-airflow/stable/authoring-and-scheduling/deferring.html"
+   
+    target="_blank" rel="noreferrer noopener">Deferrable Operators &amp; Triggers - Apache Airflow official docs
+</a>
+</p>
+
+    
+    
+  </div>
+  <footer><div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/en/categories/python/">Python</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/en/tags/airflow/">Airflow</a></li>
+        
+      
+    </ul>
+  
+</div>
+</footer>
+</article>
+ 
+ 
+<div class="pagination">
+   
+  <a href="/en/blog/202609-dependency-direction-code-layering/" class="button right"
+    ><span>Dependency Direction Determines Code Layering</span></a
+  >
+  
+</div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>Recent Posts</h1>
+      </header>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202609-airflow-s3-key-sensor/" class="image" style="--bg-image: url('/blog/202609-airflow-s3-key-sensor/featured.jpg');">
+    <img src="/blog/202609-airflow-s3-key-sensor/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202609-airflow-s3-key-sensor/">Using S3KeySensor So Airflow Doesn&#39;t Wait a Lifetime for a File</a></h2>
+          <time class="published" datetime="2026-09-24 00:00:00 &#43;0000 UTC">September 24, 2026</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202609-dependency-direction-code-layering/" class="image" style="--bg-image: url('/blog/202609-dependency-direction-code-layering/featured.jpg');">
+    <img src="/blog/202609-dependency-direction-code-layering/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202609-dependency-direction-code-layering/">Dependency Direction Determines Code Layering</a></h2>
+          <time class="published" datetime="2026-09-19 00:00:00 &#43;0000 UTC">September 19, 2026</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202609-mwaa-connection-encryption-investigation/" class="image" style="--bg-image: url('/blog/202609-mwaa-connection-encryption-investigation/featured.jpg');">
+    <img src="/blog/202609-mwaa-connection-encryption-investigation/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202609-mwaa-connection-encryption-investigation/">Investigating Connection Encryption on Amazon MWAA</a></h2>
+          <time class="published" datetime="2026-09-03 00:00:00 &#43;0000 UTC">September 3, 2026</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202604-deploy-openclaw-ai-for-free/" class="image" style="--bg-image: url('/blog/202604-deploy-openclaw-ai-for-free/featured.jpg');">
+    <img src="/blog/202604-deploy-openclaw-ai-for-free/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202604-deploy-openclaw-ai-for-free/">Deploy Your Own Openclaw AI Assistant for Free</a></h2>
+          <time class="published" datetime="2026-04-04 00:00:00 &#43;0000 UTC">April 4, 2026</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202602-airflow-dynamic-task-mapping/" class="image" style="--bg-image: url('/blog/202602-airflow-dynamic-task-mapping/featured.jpg');">
+    <img src="/blog/202602-airflow-dynamic-task-mapping/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202602-airflow-dynamic-task-mapping/">Unleashing Airflow Performance with Dynamic Task Mapping</a></h2>
+          <time class="published" datetime="2026-02-03 00:00:00 &#43;0000 UTC">February 3, 2026</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/en/blog/" class="button">See More</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="/en/categories">Categories</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/en/categories/aws/">AWS<span class="count">27</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/devops/">DevOps<span class="count">24</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/golang/">Golang<span class="count">12</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/ops-tools/">Ops &amp; Tools<span class="count">11</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/python/">Python<span class="count">11</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/php/">PHP<span class="count">7</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/typescript/">TypeScript<span class="count">4</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/ai/">AI<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/software-architecture/">Software Architecture<span class="count">1</span></a>
+          </li>
+          
+        </ul>
+      </section>
+    
+  
+
+  
+  <section id="tags">
+    <header>
+      <h1><a href="/en/tags">Tags</a></h1>
+    </header>
+    <div class="li-x post-meta tags-md" style="margin-left: 0.5em;">
+      <ul>
+        
+        
+        <li>
+          <a href="/en/tags/aws/">AWS (28)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/devops/">DevOps (26)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/docker/">Docker (12)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/golang/">Golang (12)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/containerization/">Containerization (10)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ci-cd/">CI-CD (8)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/laravel/">Laravel (8)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/python/">Python (8)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/docker-compose/">Docker Compose (6)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/gcp/">GCP (6)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/composer/">Composer (5)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/php/">PHP (5)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/airflow/">Airflow (4)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/drone/">Drone (4)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/jenkins/">Jenkins (4)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/pytest/">Pytest (4)</a>
+        </li>
+        
+      </ul>
+
+    </div>
+    
+      <footer>
+        <a href="/en/tags" class="button">See More</a>
+      </footer>
+    
+  </section>
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+    
+    <p class="copyright">
+        © 2026 Byte Ebi 🍤
+    </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>
+      hljs.configure({ ignoreUnescapedHTML: true }); 
+      hljs.highlightAll();
+    </script><script src="/js/bundle.min.d21befc899e4b6158eba05da3928321e52d15d067cb323bbf20e1b37a4ee0e3d.js" integrity="sha256-0hvvyJnkthWOugXaOSgyHlLRXQZ8syO78g4bN6TuDj0="></script>
+    <script src="/js/add-on.js"></script>
+
+
+    
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', "G-LTGVYYWC2J");
+        </script>
+    
+
+
+    </div>
+  </body>
+  
+</html>

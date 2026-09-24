@@ -10,9 +10,16 @@
 		
 		
 		
-			<lastBuildDate>Tue, 03 Feb 2026 00:00:00 +0000</lastBuildDate>
+			<lastBuildDate>Thu, 24 Sep 2026 00:00:00 +0000</lastBuildDate>
 		
 			<atom:link href="https://tech.ray247k.com/categories/python/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>使用 S3KeySensor 讓 Airflow 不用等一輩子檔案</title>
+				<link>https://tech.ray247k.com/blog/202609-airflow-s3-key-sensor/</link>
+				<pubDate>Thu, 24 Sep 2026 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202609-airflow-s3-key-sensor/</guid>
+				<description>&lt;p&gt;Airflow 裡「等外部非同步產生的檔案才能繼續」是很常見的情境&lt;br&gt;&#xA;但「多久都願意等」，對負載來說是多麼沉重的一句話&lt;/p&gt;</description>
+			</item>
 			<item>
 				<title>使用動態任務讓 Airflow 效能大解放</title>
 				<link>https://tech.ray247k.com/blog/202602-airflow-dynamic-task-mapping/</link>

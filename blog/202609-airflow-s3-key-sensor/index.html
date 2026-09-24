@@ -1,0 +1,884 @@
+<!doctype html>
+<html lang="zh-tw">
+  <head>
+  <meta charset="utf-8">
+<title>使用 S3KeySensor 讓 Airflow 不用等一輩子檔案 - Byte Ebi 🍤</title>
+<meta name="description" content="只要能等到檔案生成，我什麼都願意做">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta property="og:site_name" content="Byte Ebi 🍤">
+<meta property="og:title" content="使用 S3KeySensor 讓 Airflow 不用等一輩子檔案">
+<meta property="og:description" content="只要能等到檔案生成，我什麼都願意做">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://tech.ray247k.com/blog/202609-airflow-s3-key-sensor/">
+  <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
+
+
+
+  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
+  
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=1" color="#ffffff">
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=1">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=1">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+<meta name="generator" content="Hugo 0.165.0"><meta property="og:site_name" content="Byte Ebi 🍤">
+  <meta property="og:title" content="使用 S3KeySensor 讓 Airflow 不用等一輩子檔案">
+  <meta property="og:description" content="只要能等到檔案生成，我什麼都願意做">
+  <meta property="description" content="只要能等到檔案生成，我什麼都願意做">
+  <meta property="og:url" content="https://tech.ray247k.com/blog/202609-airflow-s3-key-sensor/">
+  <meta property="og:type" content="article">
+  
+    <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
+  
+  
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/felipec.min.css">
+          <link rel="stylesheet" href="/css/bundle.min.7bc2060a63595a20fd994db40a9ab8e5d39b1f2f841f74cd71bfee0f56e06776.css" integrity="sha256-e8IGCmNZWiD9mU20Cpq45dObHy&#43;EH3TNcb/uD1bgZ3Y="><link rel="stylesheet" href="/css/add-on.css">
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-LTGVYYWC2J');
+        }
+      </script>
+  <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "image": {
+        "@type": "ImageObject",
+        "image": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+        "height": 648,
+        "width": 1080
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com\/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Byte Ebi 🍤",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png"
+        }
+    },
+    "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+    "headline": "討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - Byte Ebi 🍤",
+    "name": "Byte Ebi 🍤",
+    "url": "https:\/\/tech.ray247k.com\/",
+    "description": "討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - ai,aws,devops,golang,leetcode,node.js,php,python,typescript,維運與工具,軟體架構,",
+    "keywords": [
+        "airflow,apache bench,api gateway,auto scaling,aws,blockchain,cdn,chatbot,ci-cd,cloudflare,cloudflare workers,cloudformation,cloudfront,cloudtrail,cloudwatch,cognito,composer,cost control,csv,devops,discord,dns,docker,docker compose,domain name,drone,dynamodb,ec2,elasticache,element-ui,emr,excel,express,ffmpeg,gas,gcp,gcr,git,github,github page,golang,google domains,google sheets,grumphp,hugo,hybrid cloud,iam,jenkins,kinesis,lambda,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load balancing,mongodb,mwaa,nginx,ngrok,node.js,openclaw,php,php-fpm,phpcbf,phpcs,portainer,postgresql,pre-commit,prerender,proxy,pyenv,pytest,python,queue,rds,redis,redshift,restful,route 53,s3,security,seo,server,serverless,smart contract,sns,sqs,ssh,stress testing,subdomain,tdd,typescript,vpc,vue,伺服器,個人品牌,分層設計,單元測試,域名,壓力測試,子網域,容器技術,架站相關,版本控制,買網址,防火牆,"
+    ]
+}
+</script>
+
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "legalName": "Byte Ebi 🍤",
+    "url": "https:\/\/tech.ray247k.com\/",
+    "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "",
+        "availableLanguage": [
+            "Mandarin",
+            "English"
+        ]
+    },
+    "sameAs": [
+        "https://ray247k.blogspot.com/"
+    ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "使用 S3KeySensor 讓 Airflow 不用等一輩子檔案",
+    "description": "只要能等到檔案生成，我什麼都願意做",
+    "keywords": [
+        "Airflow" 
+    ],
+    "dateCreated": "2026-09-24T00:00:00.00Z",
+    "datePublished": "2026-09-24T00:00:00.00Z",
+    "dateModified": "2026-09-24T00:00:00.00Z",
+    "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "contentUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png"
+    },
+    "breadcrumb": {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\/",
+                    "name": "Byte Ebi 🍤",
+                    "url": "https:\/\/tech.ray247k.com\/"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\//blog",
+                    "name": "Blog",
+                    "url": "https:\/\/tech.ray247k.com\//blog"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\/blog\/202609-airflow-s3-key-sensor\/",
+                    "name": "使用 S3KeySensor 讓 Airflow 不用等一輩子檔案",
+                    "url": "https:\/\/tech.ray247k.com\/blog\/202609-airflow-s3-key-sensor\/"
+                }
+            }
+        ],
+        "itemListOrder": "Ascending",
+        "numberOfItems": 3
+    }
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "articleSection": "blog",
+    "name": "使用 S3KeySensor 讓 Airflow 不用等一輩子檔案",
+    "headline": "\u003cp\u003eAirflow 裡「等外部非同步產生的檔案才能繼續」是很常見的情境\u003cbr\u003e\n但「多久都願意等」，對負載來說是多麼沉重的一句話\u003c\/p\u003e",
+    "description": "只要能等到檔案生成，我什麼都願意做",
+    "inLanguage": "zh-TW",
+    "isFamilyFriendly": "true",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com\/blog\/202609-airflow-s3-key-sensor\/"
+    },
+    "author" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "creator" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "accountablePerson" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "copyrightHolder" : "Byte Ebi 🍤",
+    "copyrightYear" : "2026",
+    "dateCreated": "2026-09-24T00:00:00.00Z",
+    "datePublished": "2026-09-24T00:00:00.00Z",
+    "dateModified": "2026-09-24T00:00:00.00Z",
+    "publisher":{
+        "@type":"Organization",
+        "name": "Byte Ebi 🍤",
+        "url": "https://tech.ray247k.com/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+            "width":"32",
+            "height":"32"
+        }
+    },
+    "image": "https://tech.ray247k.com/img/main/logo.png",
+    "url" : "https:\/\/tech.ray247k.com\/blog\/202609-airflow-s3-key-sensor\/",
+    "wordCount" : "641",
+    "genre" : [ "Airflow" ],
+    "keywords" : [ "Airflow" ]
+}
+</script>
+
+
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/" class="nav">
+        
+          Blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/" class="nav link"><i class='fa fa-home'></i> home</a>
+        
+      
+        
+          
+          <a href="/about" class="nav link"><i class='far fa-id-card'></i> about</a>
+        
+      
+        
+          
+          <a href="/categories" class="nav link"><i class='fas fa-sitemap'></i> category</a>
+        
+      
+        
+          
+          <a href="/series" class="nav link"><i class='fas fa-list-ol'></i> series</a>
+        
+      
+      
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    
+    <a href="#lang-menu" class="nav lang-toggle" lang="zh-tw">zh-tw</a>
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  <menu id="lang-menu" class="flyout-menu menu">
+  <a href="#" lang="zh-tw" class="nav link active">正體中文 (zh-tw)</a>
+  
+      <a href="https://tech.ray247k.com/en/blog/202609-airflow-s3-key-sensor/" lang="en" class="nav link">English (en)</a>
+    
+  
+</menu>
+
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/"><img src="/img/main/logo.png" class="circle" width="100" alt="Byte Ebi&#39;s Logo" /></a>
+  <header>
+    <h1>Byte Ebi 🍤</h1>
+  </header>
+  <main>
+    <p>每天一小口，蝦米變鯨魚</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/ray247k" target="_blank" rel="noopener" title="GitHub"
+        class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//www.linkedin.com/in/j-ray-cheng" target="_blank" rel="noopener"
+        title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+<article class="post">
+  <header>
+  <div class="title">
+    
+      <h2><a href="/blog/202609-airflow-s3-key-sensor/">使用 S3KeySensor 讓 Airflow 不用等一輩子檔案</a></h2>
+    
+    
+      <p>只要能等到檔案生成，我什麼都願意做</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2026-09-24 00:00:00 &#43;0000 UTC">2026/09/24</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+  
+  <div id="socnet-share">
+
+
+
+
+</div>
+  <div class="content">
+    <a href="/blog/202609-airflow-s3-key-sensor/" class="image" style="--bg-image: url('/blog/202609-airflow-s3-key-sensor/featured.jpg');">
+    <img src="/blog/202609-airflow-s3-key-sensor/featured.jpg" alt="">
+  </a> <p>Airflow 裡「等外部非同步產生的檔案才能繼續」是很常見的情境<br>
+但「多久都願意等」，對負載來說是多麼沉重的一句話</p>
+<h1 id="既有問題">既有問題</h1>
+<p>目前經手一個系統整合流程，透過 Airflow 排程，主要步驟：</p>
+<ol>
+<li>接收參數</li>
+<li>呼叫外部 API，產生一份要交換的文件</li>
+<li>產生完成後，繼續往下進行後續流程</li>
+</ol>
+<p>其中「等檔案產生完成」這個環節，前後在不同專案裡用過兩種做法</p>
+<p><strong>第一版</strong></p>
+<blockquote>
+<p>直接呼叫外部 API 等對方把檔案產生完才回應</p>
+</blockquote>
+<p>檔案產生要花一段時間，常常等到 API timeout 就被切斷連線，整個 task 直接失敗<br>
+當時的解法是把 timeout 設定拉長，治標不治本</p>
+<p><strong>第二版</strong></p>
+<p>改成外部服務產生檔案的同時，把檔案生成完成的狀態寫進 Redis<br>
+當初的工程師手刻了一個 sensor 等 Redis key 出現才往下走，藉此繞過 timeout 問題</p>
+<p>看似解決了 timeout，但實際運行時踩了幾個坑：</p>
+<ul>
+<li>worker 所在的 ECS instance 使用率過低時會被自動回收，上面可能還有 task 在等待</li>
+<li>Redis key 會過期，沒有即時檢查到就會查不到狀態，即使檔案其實已經產生完成</li>
+</ul>
+<p>上面兩個問題還會量子糾纏，變成更麻煩的：</p>
+<blockquote>
+<p>ECS instance 被回收之後沒人繼續檢查，key 就這樣默默過期了</p>
+</blockquote>
+<p>直接變成薛丁格的狀態，就算失敗也不一定是真的失敗</p>
+<p>目前的應對方式是拉長 <code>scale-in</code> 的 <code>cooldown period</code> 並加大預設 worker 數量<br>
+一樣是治標不治本</p>
+<h1 id="解決方案">解決方案</h1>
+<h3 id="s3keysensor--deferrable-來拯救大家啦">S3KeySensor + deferrable 來拯救大家啦！</h3>
+<p>在 Airflow 裡「<strong>等外部非同步產生的檔案才能繼續</strong>」這種情境其實很常見<br>
+內建的 <a href="https://airflow.apache.org/docs/apache-airflow-providers-amazon/stable/_api/airflow/providers/amazon/aws/sensors/s3/index.html"
+   
+    target="_blank" rel="noreferrer noopener">S3KeySensor
+</a>
+ 就是設計來處理這件事的！</p>
+<p>可以直接偵測「<strong>S3 上某個 key 是否存在</strong>」<br>
+而且是用 S3 object 作為偵測目標，所以不會有 Redis key 過期的問題</p>
+<p>加上 <code>S3KeySensor</code> 是 Airflow 官方 provider 維護的標準實作<br>
+經過 Airflow 官方驗證使用 <code>deferrable=True</code> 時不會佔用 worker slot<br>
+也不會有 worker 因為 ECS instance 被回收而中斷的問題</p>
+<p>支援三種模式：</p>
+<ul>
+<li><code>mode=&quot;poke&quot;</code>（<strong>預設值</strong>）：task 會佔用 worker slot 直到條件成立為止</li>
+<li><code>mode=&quot;reschedule&quot;</code>：檢查時會重新排程一個 worker 執行，在檢查中間會釋放 worker slot</li>
+<li><code>deferrable=True</code>（預設是 <code>False</code>）：把「等待」交給獨立的 <strong>triggerer</strong> process 處理，不佔用 worker</li>
+</ul>
+<p>三者之間是有優先順序的，可以查看 <code>S3KeySensor.execute()</code> 的原始碼</p>
+<p><a href="https://github.com/apache/airflow/blob/providers-amazon/9.36.0/providers/amazon/src/airflow/providers/amazon/aws/sensors/s3.py#L192"
+   
+    target="_blank" rel="noreferrer noopener">apache/airflow GitHub - providers/amazon/&hellip;/sensors/s3.py
+</a>
+</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">execute</span>(self, context: Context) <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> self<span style="color:#f92672">.</span>deferrable:
+</span></span><span style="display:flex;"><span>        super()<span style="color:#f92672">.</span>execute(context)   <span style="color:#75715e"># mode=&#34;poke&#34;/&#34;reschedule&#34; 只在這裡起作用</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> self<span style="color:#f92672">.</span>poke(context<span style="color:#f92672">=</span>context):
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>_defer()          <span style="color:#75715e"># 交給 triggerer 背景等待，不佔用 worker</span>
+</span></span></code></pre></div><p>當 <code>deferrable=True</code> 時只會 poke 一次，沒滿足就直接丟給 triggerer，無論 <code>mode</code> 設什麼都不會生效<br>
+而 <code>mode</code> 只有在 <code>deferrable=False</code> 時才有意義</p>
+<p>本篇的範例選擇了 <code>deferrable=True</code> 就不需要、也不應該再另外設定 <code>mode</code></p>
+<p>其他相關參數的預設值：</p>
+<ul>
+<li><code>poke_interval</code>：預設 <strong>60 秒</strong>，每次檢查間隔</li>
+<li><code>timeout</code>：預設 <strong>604800 秒（7 天）</strong>，逾時仍等不到就判定失敗</li>
+</ul>
+<h1 id="概念驗證">概念驗證</h1>
+<p>寫了一個簡單的 DAG 驗證整個機制：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> logging
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> datetime <span style="color:#f92672">import</span> UTC, datetime, timedelta
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> airflow.providers.amazon.aws.sensors.s3 <span style="color:#f92672">import</span> S3KeySensor
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> airflow.sdk <span style="color:#f92672">import</span> DAG, Param, Variable, get_current_context, task
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> airflow.sdk.definitions.param <span style="color:#f92672">import</span> ParamsDict
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> services.aws.s3_client <span style="color:#f92672">import</span> S3Client
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>logger <span style="color:#f92672">=</span> logging<span style="color:#f92672">.</span>getLogger(__name__)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>default_args <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;owner&#34;</span>: <span style="color:#e6db74">&#34;Developer&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;depends_on_past&#34;</span>: <span style="color:#66d9ef">False</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;start_date&#34;</span>: datetime(<span style="color:#ae81ff">2026</span>, <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">22</span>, tzinfo<span style="color:#f92672">=</span>UTC),
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;retry_delay&#34;</span>: timedelta(minutes<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>),
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> DAG(
+</span></span><span style="display:flex;"><span>    dag_id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;s3_key_sensor_test&#34;</span>,
+</span></span><span style="display:flex;"><span>    default_args<span style="color:#f92672">=</span>default_args,
+</span></span><span style="display:flex;"><span>    schedule<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>,
+</span></span><span style="display:flex;"><span>    catchup<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>,
+</span></span><span style="display:flex;"><span>    max_active_runs<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>    dag_display_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;S3KeySensor 概念驗證&#34;</span>,
+</span></span><span style="display:flex;"><span>    tags<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;AWS&#34;</span>],
+</span></span><span style="display:flex;"><span>    doc_md<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        ## 測試 `S3KeySensor` 用法
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        1. `get_s3_path`：產生要監控的 S3 路徑
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        2. `wait_for_key`：等待 `get_s3_path` 產生的 S3 object 出現才會往下走
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        3. `fetch_value`：偵測到檔案後用既有的 `S3Client` 讀取內容，回傳長度 (bytes)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        4. `print_value`：接收 `fetch_value` 的回傳值並印出來
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    params<span style="color:#f92672">=</span>ParamsDict(
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;bucket_name&#34;</span>: Param(
+</span></span><span style="display:flex;"><span>                default<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>                type<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;string&#34;</span>,
+</span></span><span style="display:flex;"><span>                title<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;S3 Bucket&#34;</span>,
+</span></span><span style="display:flex;"><span>                description<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;S3 bucket name&#34;</span>,
+</span></span><span style="display:flex;"><span>            ),
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;bucket_key&#34;</span>: Param(
+</span></span><span style="display:flex;"><span>                default<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>                type<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;string&#34;</span>,
+</span></span><span style="display:flex;"><span>                title<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Bucket Key&#34;</span>,
+</span></span><span style="display:flex;"><span>                description<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;S3 object key&#34;</span>,
+</span></span><span style="display:flex;"><span>            ),
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    ),
+</span></span><span style="display:flex;"><span>) <span style="color:#66d9ef">as</span> dag:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@task</span>(task_id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;get_s3_path&#34;</span>, multiple_outputs<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_s3_path</span>() <span style="color:#f92672">-&gt;</span> dict[str, str]:
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;&#34;&#34;模擬正式流程中路徑是由程式邏輯算出來的，這裡先直接用 Trigger DAG 帶入的 params 代替
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        multiple_outputs=True 讓每個 dict key 分別存成獨立的 XCom 鍵值，下游才能用 s3_path[&#34;bucket_name&#34;] 這種下標語法取值，否則會拿到 None
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        Returns:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            dict[str, str]: 各自對應一個 XCom key
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>        params <span style="color:#f92672">=</span> get_current_context()<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;params&#34;</span>, {})
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;bucket_name&#34;</span>: params[<span style="color:#e6db74">&#34;bucket_name&#34;</span>],
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;bucket_key&#34;</span>: params[<span style="color:#e6db74">&#34;bucket_key&#34;</span>],
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    s3_path <span style="color:#f92672">=</span> get_s3_path()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    wait_for_object <span style="color:#f92672">=</span> S3KeySensor(
+</span></span><span style="display:flex;"><span>        task_id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;wait_for_object&#34;</span>,
+</span></span><span style="display:flex;"><span>        bucket_name<span style="color:#f92672">=</span>s3_path[<span style="color:#e6db74">&#34;bucket_name&#34;</span>],  <span style="color:#75715e"># type: ignore[index]</span>
+</span></span><span style="display:flex;"><span>        bucket_key<span style="color:#f92672">=</span>s3_path[<span style="color:#e6db74">&#34;bucket_key&#34;</span>],  <span style="color:#75715e"># type: ignore[index]</span>
+</span></span><span style="display:flex;"><span>        deferrable<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>,  <span style="color:#75715e"># 是否交給 triggerer 執行，不佔用 worker slot</span>
+</span></span><span style="display:flex;"><span>        poke_interval<span style="color:#f92672">=</span><span style="color:#ae81ff">30</span>,  <span style="color:#75715e"># 每次檢查間隔秒數，正式建議 &gt;= 60</span>
+</span></span><span style="display:flex;"><span>        timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">3600</span>,  <span style="color:#75715e"># 逾時秒數</span>
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@task</span>(task_id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fetch_object&#34;</span>, retries<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fetch_object</span>(bucket_name: str, bucket_key: str) <span style="color:#f92672">-&gt;</span> int:
+</span></span><span style="display:flex;"><span>        content <span style="color:#f92672">=</span> S3Client(bucket_name<span style="color:#f92672">=</span>bucket_name)<span style="color:#f92672">.</span>get_object(bucket_key)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        logger<span style="color:#f92672">.</span>info(<span style="color:#e6db74">&#34;[S3KeySensor] 在 S3 </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">/</span><span style="color:#e6db74">%s</span><span style="color:#e6db74"> 偵測到檔案&#34;</span>, bucket_name, bucket_key)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> len(content)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@task</span>(task_id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;print_object_length&#34;</span>, retries<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">print_value</span>(content_length: int) <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;[S3KeySensor] 成功取得 </span><span style="color:#e6db74">{</span>content_length<span style="color:#e6db74">}</span><span style="color:#e6db74"> bytes&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    fetch_object_task <span style="color:#f92672">=</span> fetch_object(
+</span></span><span style="display:flex;"><span>        s3_path[<span style="color:#e6db74">&#34;bucket_name&#34;</span>],  <span style="color:#75715e"># type: ignore[index]</span>
+</span></span><span style="display:flex;"><span>        s3_path[<span style="color:#e6db74">&#34;bucket_key&#34;</span>],  <span style="color:#75715e"># type: ignore[index]</span>
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    wait_for_object<span style="color:#f92672">.</span>set_downstream(fetch_object_task)
+</span></span><span style="display:flex;"><span>    print_value(fetch_object_task)  <span style="color:#75715e"># type: ignore[arg-type]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+</span></span><span style="display:flex;"><span>    dag<span style="color:#f92672">.</span>cli()
+</span></span></code></pre></div><h2 id="1-取得-s3-路徑">1. 取得 S3 路徑</h2>
+<p>正式流程中檔案上傳的路徑是由程式按照規則產生的<br>
+這邊為了方便測試，改成觸發時手動輸入 <code>bucket_name</code>/<code>bucket_key</code></p>
+<p><img src="/blog/202609-airflow-s3-key-sensor/01_get_path.png" alt="取得 S3 路徑"></p>
+<p>可以在 XCom 分頁看到 <code>bucket_name</code>、<code>bucket_key</code> 各自被記錄下來<br>
+而 <code>return_value</code> 則是包成 dict 一起傳出去</p>
+<p>這裡的關鍵是 <code>multiple_outputs=True</code><br>
+它讓 dict 裡的每個 key 各自存成獨立的 XCom，下游才能用 <code>s3_path[&quot;bucket_name&quot;]</code> 直接取值</p>
+<p>沒有設定的話 XCom 就只會存一份 <code>return_value</code><br>
+這時候 <code>s3_path[&quot;bucket_name&quot;]</code> 拿到的其實是 <code>None</code>，而不是預期中的字串</p>
+<h2 id="2-用-s3keysensor-等待-s3-object-出現">2. 用 S3KeySensor 等待 S3 object 出現</h2>
+<p>透過 deferrable sensor 等待 <code>get_s3_path</code> 傳來的路徑真的出現檔案</p>
+<p><img src="/blog/202609-airflow-s3-key-sensor/02_deferred.png" alt="deferred 狀態"></p>
+<p>從審計日誌可以清楚看到狀態變化：<code>running</code> -&gt; <code>deferred</code> -&gt; <code>running</code> -&gt; <code>success</code></p>
+<p>一開始 task 執行後馬上轉成 <code>deferred</code> 狀態
+中間等了將近 7 分鐘，這段期間完全不佔用 worker</p>
+<h2 id="3-偵測到檔案後讀取內容">3. 偵測到檔案後讀取內容</h2>
+<p>手動上傳檔案，模擬外部 API 生成檔案</p>
+<p><img src="/blog/202609-airflow-s3-key-sensor/03_upload_s3.png" alt="上傳檔案到 S3"></p>
+<p>當 <strong>S3KeySensor</strong> 偵測到檔案出現後就從 <code>deferred</code> 恢復並往下執行</p>
+<p><img src="/blog/202609-airflow-s3-key-sensor/03_get_object.png" alt="取得檔案內容"></p>
+<p>比對 log 和實際檔案內容長度一致</p>
+<p><img src="/blog/202609-airflow-s3-key-sensor/04_print_length.png" alt="印出檔案長度"></p>
+<h1 id="注意事項">注意事項</h1>
+<p>使用 <code>deferrable</code> 模式需要環境有啟用 <strong>triggerer</strong> 元件，沒開的話 task 會卡在 <code>deferred</code> 永遠不會被喚醒</p>
+<p>在 PoC 裡沒有另外設定 <code>aws_conn_id</code>，是直接吃 MWAA 執行角色的預設 boto3 憑證鏈</p>
+<p>「worker 被回收就失敗」的問題不是 100% 消除，而是換成一個更輕量的依賴</p>
+<blockquote>
+<p>During the deferred phase of execution, since work has been offloaded to the triggerer, the task no longer occupies a worker slot, and you have more free workload capacity.</p>
+</blockquote>
+<p>等待邏輯改成跑在獨立的 <strong>triggerer</strong> process 上，所以變成依賴 triggerer 要活著<br>
+好消息是 deferred 狀態有存進 metadata DB，即使 triggerer process 重啟也不會直接判失敗，藉此達成高可用的目標</p>
+<blockquote>
+<p>Airflow automatically re-schedules triggers that were on that host to run elsewhere.</p>
+</blockquote>
+<p>當條件成立、trigger 觸發之後，也還是要交回一個 worker 才能真正執行完 task：</p>
+<blockquote>
+<ul>
+<li>The trigger runs until it fires, at which point its source task is re-scheduled by the scheduler.</li>
+<li>The scheduler queues the task to resume on a worker node.</li>
+</ul>
+</blockquote>
+<p>所以說使用 <code>deferrable</code> 可以消除的是</p>
+<ul>
+<li>等待期間依賴的 worker process 隨時可能被 ECS 回收</li>
+</ul>
+<p>換成風險低很多的</p>
+<ul>
+<li>
+<p>依賴 triggerer 存活</p>
+<ul>
+<li>deferred 狀態的任務存在 metadata DB</li>
+<li>就算其中一個 triggerer 掛掉 scheduler 也會自動把 trigger 轉給其他還活著的 triggerer</li>
+</ul>
+</li>
+<li>
+<p>恢復執行時仍需要排到一個 worker</p>
+<ul>
+<li>只在任務真正執行的時間內佔用 worker slot</li>
+</ul>
+</li>
+</ul>
+<p>參考來源：<a href="https://airflow.apache.org/docs/apache-airflow/stable/authoring-and-scheduling/deferring.html"
+   
+    target="_blank" rel="noreferrer noopener">Deferrable Operators &amp; Triggers — Apache Airflow 官方文件
+</a>
+</p>
+
+    
+    
+  </div>
+  <footer><div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/python/">Python</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/airflow/">Airflow</a></li>
+        
+      
+    </ul>
+  
+</div>
+</footer>
+</article>
+ 
+ 
+<div class="pagination">
+   
+  <a href="/blog/202609-dependency-direction-code-layering/" class="button right"
+    ><span>依賴方向決定程式碼分層</span></a
+  >
+  
+</div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>最新文章</h1>
+      </header>
+      
+      <article class="mini-post">
+          <a href="/blog/202609-airflow-s3-key-sensor/" class="image" style="--bg-image: url('/blog/202609-airflow-s3-key-sensor/featured.jpg');">
+    <img src="/blog/202609-airflow-s3-key-sensor/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/blog/202609-airflow-s3-key-sensor/">使用 S3KeySensor 讓 Airflow 不用等一輩子檔案</a></h2>
+          <time class="published" datetime="2026-09-24 00:00:00 &#43;0000 UTC">2026/09/24</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202609-dependency-direction-code-layering/" class="image" style="--bg-image: url('/blog/202609-dependency-direction-code-layering/featured.jpg');">
+    <img src="/blog/202609-dependency-direction-code-layering/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/blog/202609-dependency-direction-code-layering/">依賴方向決定程式碼分層</a></h2>
+          <time class="published" datetime="2026-09-19 00:00:00 &#43;0000 UTC">2026/09/19</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202609-mwaa-connection-encryption-investigation/" class="image" style="--bg-image: url('/blog/202609-mwaa-connection-encryption-investigation/featured.jpg');">
+    <img src="/blog/202609-mwaa-connection-encryption-investigation/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/blog/202609-mwaa-connection-encryption-investigation/">MWAA Connections 加密機制調查</a></h2>
+          <time class="published" datetime="2026-09-03 00:00:00 &#43;0000 UTC">2026/09/03</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202604-deploy-openclaw-ai-for-free/" class="image" style="--bg-image: url('/blog/202604-deploy-openclaw-ai-for-free/featured.jpg');">
+    <img src="/blog/202604-deploy-openclaw-ai-for-free/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/blog/202604-deploy-openclaw-ai-for-free/">不花一毛錢，快速部屬個人 AI 助理 Openclaw</a></h2>
+          <time class="published" datetime="2026-04-04 00:00:00 &#43;0000 UTC">2026/04/04</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202602-airflow-dynamic-task-mapping/" class="image" style="--bg-image: url('/blog/202602-airflow-dynamic-task-mapping/featured.jpg');">
+    <img src="/blog/202602-airflow-dynamic-task-mapping/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/blog/202602-airflow-dynamic-task-mapping/">使用動態任務讓 Airflow 效能大解放</a></h2>
+          <time class="published" datetime="2026-02-03 00:00:00 &#43;0000 UTC">2026/02/03</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/blog/" class="button">查看更多</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="/categories">文章分類</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/categories/aws/">AWS<span class="count">27</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/devops/">DevOps<span class="count">24</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/node.js/">Node.js<span class="count">22</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/leetcode/">LeetCode<span class="count">13</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/golang/">Golang<span class="count">12</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/%E7%B6%AD%E9%81%8B%E8%88%87%E5%B7%A5%E5%85%B7/">維運與工具<span class="count">12</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/python/">Python<span class="count">11</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/php/">PHP<span class="count">7</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/typescript/">TypeScript<span class="count">4</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/ai/">AI<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/%E8%BB%9F%E9%AB%94%E6%9E%B6%E6%A7%8B/">軟體架構<span class="count">1</span></a>
+          </li>
+          
+        </ul>
+      </section>
+    
+  
+
+  
+  <section id="tags">
+    <header>
+      <h1><a href="/tags">Tag</a></h1>
+    </header>
+    <div class="li-x post-meta tags-md" style="margin-left: 0.5em;">
+      <ul>
+        
+        
+        <li>
+          <a href="/tags/aws/">AWS (28)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/devops/">DevOps (27)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/node.js/">Node.js (22)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/python/">Python (15)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/vue/">Vue (15)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/leetcode/">LeetCode (13)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/docker/">Docker (12)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/golang/">Golang (12)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/php/">PHP (11)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%AE%B9%E5%99%A8%E6%8A%80%E8%A1%93/">容器技術 (10)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/express/">Express (9)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/ci-cd/">CI-CD (8)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/laravel/">Laravel (8)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/leetcode-easy/">LeetCode-Easy (8)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/gcp/">GCP (7)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/docker-compose/">Docker Compose (6)</a>
+        </li>
+        
+      </ul>
+
+    </div>
+    
+      <footer>
+        <a href="/tags" class="button">查看更多</a>
+      </footer>
+    
+  </section>
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+    
+    <p class="copyright">
+        © 2026 Byte Ebi 🍤
+    </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>
+      hljs.configure({ ignoreUnescapedHTML: true }); 
+      hljs.highlightAll();
+    </script><script src="/js/bundle.min.d21befc899e4b6158eba05da3928321e52d15d067cb323bbf20e1b37a4ee0e3d.js" integrity="sha256-0hvvyJnkthWOugXaOSgyHlLRXQZ8syO78g4bN6TuDj0="></script>
+    <script src="/js/add-on.js"></script>
+
+
+    
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', "G-LTGVYYWC2J");
+        </script>
+    
+
+
+    </div>
+  </body>
+  
+</html>
