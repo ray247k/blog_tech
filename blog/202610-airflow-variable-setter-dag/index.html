@@ -1,0 +1,797 @@
+<!doctype html>
+<html lang="zh-tw">
+  <head>
+  <meta charset="utf-8">
+<title>用 DAG 開一個 Variable 櫃台 - Byte Ebi 🍤</title>
+<meta name="description" content="想改指定參數請洽櫃台，其餘變數恕不受理">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta property="og:site_name" content="Byte Ebi 🍤">
+<meta property="og:title" content="用 DAG 開一個 Variable 櫃台">
+<meta property="og:description" content="想改指定參數請洽櫃台，其餘變數恕不受理">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://tech.ray247k.com/blog/202610-airflow-variable-setter-dag/">
+  <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
+
+
+
+  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
+  
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=1" color="#ffffff">
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=1">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=1">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+<meta name="generator" content="Hugo 0.165.0"><meta property="og:site_name" content="Byte Ebi 🍤">
+  <meta property="og:title" content="用 DAG 開一個 Variable 櫃台">
+  <meta property="og:description" content="想改指定參數請洽櫃台，其餘變數恕不受理">
+  <meta property="description" content="想改指定參數請洽櫃台，其餘變數恕不受理">
+  <meta property="og:url" content="https://tech.ray247k.com/blog/202610-airflow-variable-setter-dag/">
+  <meta property="og:type" content="article">
+  
+    <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
+  
+  
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/felipec.min.css">
+          <link rel="stylesheet" href="/css/bundle.min.7bc2060a63595a20fd994db40a9ab8e5d39b1f2f841f74cd71bfee0f56e06776.css" integrity="sha256-e8IGCmNZWiD9mU20Cpq45dObHy&#43;EH3TNcb/uD1bgZ3Y="><link rel="stylesheet" href="/css/add-on.css">
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-LTGVYYWC2J');
+        }
+      </script>
+  <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "image": {
+        "@type": "ImageObject",
+        "image": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+        "height": 648,
+        "width": 1080
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com\/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Byte Ebi 🍤",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png"
+        }
+    },
+    "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+    "headline": "討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - Byte Ebi 🍤",
+    "name": "Byte Ebi 🍤",
+    "url": "https:\/\/tech.ray247k.com\/",
+    "description": "討論網頁開發、軟體工程、前端、後端、聊天機器人、伺服器等相關技術知識 - ai,aws,devops,golang,leetcode,node.js,php,python,typescript,維運與工具,軟體架構,",
+    "keywords": [
+        "airflow,apache bench,api gateway,auto scaling,aws,blockchain,cdn,chatbot,ci-cd,cloudflare,cloudflare workers,cloudformation,cloudfront,cloudtrail,cloudwatch,cognito,composer,cost control,csv,devops,discord,dns,docker,docker compose,domain name,drone,dynamodb,ec2,elasticache,element-ui,emr,excel,express,ffmpeg,gas,gcp,gcr,git,github,github page,golang,google domains,google sheets,grumphp,hugo,hybrid cloud,iam,jenkins,kinesis,lambda,laravel,laravel-excel,leetcode,leetcode-easy,leetcode-medium,linux,load balancing,mongodb,mwaa,nginx,ngrok,node.js,openclaw,php,php-fpm,phpcbf,phpcs,portainer,postgresql,pre-commit,prerender,proxy,pyenv,pytest,python,queue,rds,redis,redshift,restful,route 53,s3,security,seo,server,serverless,smart contract,sns,sqs,ssh,stress testing,subdomain,tdd,typescript,vpc,vue,伺服器,個人品牌,分層設計,單元測試,域名,壓力測試,子網域,容器技術,架站相關,版本控制,買網址,防火牆,"
+    ]
+}
+</script>
+
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "legalName": "Byte Ebi 🍤",
+    "url": "https:\/\/tech.ray247k.com\/",
+    "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "",
+        "availableLanguage": [
+            "Mandarin",
+            "English"
+        ]
+    },
+    "sameAs": [
+        "https://ray247k.blogspot.com/"
+    ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "用 DAG 開一個 Variable 櫃台",
+    "description": "想改指定參數請洽櫃台，其餘變數恕不受理",
+    "keywords": [
+        "Airflow" 
+    ],
+    "dateCreated": "2026-10-16T00:00:00.00Z",
+    "datePublished": "2026-10-16T00:00:00.00Z",
+    "dateModified": "2026-10-16T00:00:00.00Z",
+    "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "contentUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png"
+    },
+    "breadcrumb": {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\/",
+                    "name": "Byte Ebi 🍤",
+                    "url": "https:\/\/tech.ray247k.com\/"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\//blog",
+                    "name": "Blog",
+                    "url": "https:\/\/tech.ray247k.com\//blog"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\/blog\/202610-airflow-variable-setter-dag\/",
+                    "name": "用 DAG 開一個 Variable 櫃台",
+                    "url": "https:\/\/tech.ray247k.com\/blog\/202610-airflow-variable-setter-dag\/"
+                }
+            }
+        ],
+        "itemListOrder": "Ascending",
+        "numberOfItems": 3
+    }
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "articleSection": "blog",
+    "name": "用 DAG 開一個 Variable 櫃台",
+    "headline": "\u003cp\u003e需求單位想要隨時自己調整一個參數，不用每次都找工程師\u003cbr\u003e\n開資料庫 table 給他們改不好維護，存在 Airflow Variable 又沒辦法只開放一個\u003cbr\u003e\n不想開太大的權限，也不想隨時待命幫忙改值，怎麼辦？\u003c\/p\u003e",
+    "description": "想改指定參數請洽櫃台，其餘變數恕不受理",
+    "inLanguage": "zh-TW",
+    "isFamilyFriendly": "true",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com\/blog\/202610-airflow-variable-setter-dag\/"
+    },
+    "author" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "creator" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "accountablePerson" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "copyrightHolder" : "Byte Ebi 🍤",
+    "copyrightYear" : "2026",
+    "dateCreated": "2026-10-16T00:00:00.00Z",
+    "datePublished": "2026-10-16T00:00:00.00Z",
+    "dateModified": "2026-10-16T00:00:00.00Z",
+    "publisher":{
+        "@type":"Organization",
+        "name": "Byte Ebi 🍤",
+        "url": "https://tech.ray247k.com/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+            "width":"32",
+            "height":"32"
+        }
+    },
+    "image": "https://tech.ray247k.com/img/main/logo.png",
+    "url" : "https:\/\/tech.ray247k.com\/blog\/202610-airflow-variable-setter-dag\/",
+    "wordCount" : "345",
+    "genre" : [ "Airflow" ],
+    "keywords" : [ "Airflow" ]
+}
+</script>
+
+
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/" class="nav">
+        
+          Blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/" class="nav link"><i class='fa fa-home'></i> home</a>
+        
+      
+        
+          
+          <a href="/about" class="nav link"><i class='far fa-id-card'></i> about</a>
+        
+      
+        
+          
+          <a href="/categories" class="nav link"><i class='fas fa-sitemap'></i> category</a>
+        
+      
+        
+          
+          <a href="/series" class="nav link"><i class='fas fa-list-ol'></i> series</a>
+        
+      
+      
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    
+    <a href="#lang-menu" class="nav lang-toggle" lang="zh-tw">zh-tw</a>
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  <menu id="lang-menu" class="flyout-menu menu">
+  <a href="#" lang="zh-tw" class="nav link active">正體中文 (zh-tw)</a>
+  
+      <a href="https://tech.ray247k.com/en/blog/202610-airflow-variable-setter-dag/" lang="en" class="nav link">English (en)</a>
+    
+  
+</menu>
+
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/"><img src="/img/main/logo.png" class="circle" width="100" alt="Byte Ebi&#39;s Logo" /></a>
+  <header>
+    <h1>Byte Ebi 🍤</h1>
+  </header>
+  <main>
+    <p>每天一小口，蝦米變鯨魚</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/ray247k" target="_blank" rel="noopener" title="GitHub"
+        class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//www.linkedin.com/in/j-ray-cheng" target="_blank" rel="noopener"
+        title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+<article class="post">
+  <header>
+  <div class="title">
+    
+      <h2><a href="/blog/202610-airflow-variable-setter-dag/">用 DAG 開一個 Variable 櫃台</a></h2>
+    
+    
+      <p>想改指定參數請洽櫃台，其餘變數恕不受理</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2026-10-16 00:00:00 &#43;0000 UTC">2026/10/16</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+  
+  <div id="socnet-share">
+
+
+
+
+</div>
+  <div class="content">
+    <a href="/blog/202610-airflow-variable-setter-dag/" class="image" style="--bg-image: url('/blog/202610-airflow-variable-setter-dag/featured.jpg');">
+    <img src="/blog/202610-airflow-variable-setter-dag/featured.jpg" alt="">
+  </a> <p>需求單位想要隨時自己調整一個參數，不用每次都找工程師<br>
+開資料庫 table 給他們改不好維護，存在 Airflow Variable 又沒辦法只開放一個<br>
+不想開太大的權限，也不想隨時待命幫忙改值，怎麼辦？</p>
+<h1 id="既有問題">既有問題</h1>
+<p>有一支照排程持續執行的 DAG，裡面的判斷邏輯依賴一個由需求單位決定的參數<br>
+平常是固定值，但遇到特殊狀況就得臨時調整，而且要「<strong>改完，下一次執行就生效</strong>」</p>
+<h3 id="方案一手動帶參數觸發-dag">方案一：手動帶參數觸發 DAG</h3>
+<p>這支 DAG 一次 run 只處理 500 筆，總量可能有 6000 筆，要靠排程連續跑好幾輪才會處理完<br>
+參數必須在這幾輪排程裡都持續生效，靠每次手動帶參數觸發根本不實際</p>
+<p>那先把 DAG 暫停，改成手動觸發呢？</p>
+<p>DAG 暫停時手動觸發的 run 只會排進佇列，要等 DAG 重新開啟才會開始執行<br>
+而重新開啟的當下，只要已經錯過排程時間，scheduler 就會馬上補建排程 run</p>
+<ul>
+<li><code>catchup=False</code>：補建最近一個區間的 run</li>
+<li><code>catchup=True</code>：錯過的區間全部補跑</li>
+</ul>
+<p>不管哪一種，補建的都是排程 run，用的是<strong>預設參數</strong>，不是我們手動輸入的值</p>
+<blockquote>
+<p>手動 run 還沒跑，預設值的 run 已經先處理掉一批資料了</p>
+</blockquote>
+<p>結果就是部分資料用錯誤的參數處理，所以這個方案直接出局</p>
+<h3 id="方案二開一張-table-存這個參數">方案二：開一張 table 存這個參數</h3>
+<p>需求單位平常就習慣用 SQL 查詢、整理資料，所以他們的提案是開一張 table 專門存這個參數<br>
+要調整時自己下一句 <code>UPDATE</code> 就好，不用每次都找工程師改程式</p>
+<p>但為了<strong>一個值</strong>開一張表，然後權限、schema、資料庫維護全都要工程師扛<br>
+而且還有一連串問題要先回答：</p>
+<ul>
+<li>這張 table 是專門給這個參數用的嗎？那其他專案或需求也有參數要存，是不是每個都要再開一張？</li>
+<li>如果其他人也能存，很快就會變成什麼都往裡丟的雜物抽屜，沒人說得清楚哪筆是誰的、還有沒有在用</li>
+<li>直接 <code>UPDATE</code> 沒有任何驗證，值打錯了要等排程出錯才會發現</li>
+<li>誰在什麼時候改了什麼，沒有留下紀錄</li>
+</ul>
+<h3 id="方案三airflow-variable">方案三：Airflow Variable</h3>
+<p>Airflow 本來就有 Variable 可以存這種設定值，DAG 每次執行時讀取，改完下一次執行就生效<br>
+看起來是最適合的方案</p>
+<p>問題是 Airflow 的權限以「資源」為單位控管，<code>Variables</code> 的編輯權限一開就是<strong>全部</strong><br>
+其他流程用到的 API token、帳號密碼也都存在 Variable 裡</p>
+<blockquote>
+<p>只想讓需求單位改一個參數，結果連 token 跟密碼都一起交出去了</p>
+</blockquote>
+<p>基於<strong>最小權限原則(PoLP)</strong>，這個權限不能開給需求單位<br>
+但也不想每次需要調整時，都要有工程師隨時待命幫忙改</p>
+<h1 id="解決方案">解決方案</h1>
+<h3 id="用-dag-當-variable-的專屬窗口">用 DAG 當 Variable 的專屬窗口</h3>
+<p>既然 Variable 的權限切不細，那就把「能改哪個 key」寫死在 DAG 裡</p>
+<ul>
+<li>另外寫一支 DAG，寫死要更新的 Variable Key，需求單位只能透過 Trigger DAG 輸入新的值</li>
+<li>透過 <code>role</code> 設定這支 DAG 的權限，只讓需求單位看得到、觸發得了</li>
+<li>原本排程中的 DAG 完全不用動，照常讀取 Variable，下一次執行就會套用新值</li>
+<li>每次修改都是一次手動 DAG run，誰在什麼時候改成什麼值都會留下紀錄</li>
+</ul>
+<p>等於是把「改 Variable」包成一個只有一個欄位的櫃台<br>
+需求單位只能填值，不能選要改哪一個</p>
+<h1 id="概念驗證">概念驗證</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> __future__ <span style="color:#f92672">import</span> annotations
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> logging
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> datetime <span style="color:#f92672">import</span> datetime, timedelta
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> airflow.sdk <span style="color:#f92672">import</span> DAG, Param, Variable, task
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> airflow.sdk.definitions.param <span style="color:#f92672">import</span> ParamsDict
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> airflow.sdk.exceptions <span style="color:#f92672">import</span> AirflowException
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>logger <span style="color:#f92672">=</span> logging<span style="color:#f92672">.</span>getLogger(__name__)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>VARIABLE_KEY <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;my_variable&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>default_args <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;owner&#34;</span>: <span style="color:#e6db74">&#34;Developer&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;depends_on_past&#34;</span>: <span style="color:#66d9ef">False</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;start_date&#34;</span>: datetime(<span style="color:#ae81ff">2026</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">14</span>),
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;retry_delay&#34;</span>: timedelta(minutes<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>),
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> DAG(
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;variable_setter&#34;</span>,
+</span></span><span style="display:flex;"><span>    default_args<span style="color:#f92672">=</span>default_args,
+</span></span><span style="display:flex;"><span>    schedule<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>,
+</span></span><span style="display:flex;"><span>    dag_display_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Variable Setter&#34;</span>,
+</span></span><span style="display:flex;"><span>    max_active_runs<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>    catchup<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>,
+</span></span><span style="display:flex;"><span>    params<span style="color:#f92672">=</span>ParamsDict(
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;variable_value&#34;</span>: Param(
+</span></span><span style="display:flex;"><span>                type<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;string&#34;</span>,
+</span></span><span style="display:flex;"><span>                title<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Variable Value&#34;</span>,
+</span></span><span style="display:flex;"><span>                description<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;要設定的 Variable 值&#34;</span>,
+</span></span><span style="display:flex;"><span>            ),
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    ),
+</span></span><span style="display:flex;"><span>    doc_md<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        ### 指定 Variable 值
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        輸入 Variable 值，寫入指定 Variable Key。
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>) <span style="color:#66d9ef">as</span> dag:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@task</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">update_variable</span>(<span style="color:#f92672">**</span>kwargs):
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;&#34;&#34;取得傳入參數，驗證合法性後更新指定 Variable&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 取得傳入參數，並判斷合法性</span>
+</span></span><span style="display:flex;"><span>        variable_value <span style="color:#f92672">=</span> (kwargs[<span style="color:#e6db74">&#34;params&#34;</span>]<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;variable_value&#34;</span>) <span style="color:#f92672">or</span> <span style="color:#e6db74">&#34;&#34;</span>)<span style="color:#f92672">.</span>strip()
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> variable_value:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">raise</span> AirflowException(<span style="color:#e6db74">&#34;variable_value must not be empty&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 取得原本的值</span>
+</span></span><span style="display:flex;"><span>        old_value <span style="color:#f92672">=</span> Variable<span style="color:#f92672">.</span>get(VARIABLE_KEY, default<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 更新 Variable 的值</span>
+</span></span><span style="display:flex;"><span>        Variable<span style="color:#f92672">.</span>set(VARIABLE_KEY, variable_value, description<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;還可以寫註解&#34;</span>)
+</span></span><span style="display:flex;"><span>        logger<span style="color:#f92672">.</span>info(
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;Updated Variable </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">: </span><span style="color:#e6db74">%s</span><span style="color:#e6db74"> -&gt; </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span>,
+</span></span><span style="display:flex;"><span>            VARIABLE_KEY,
+</span></span><span style="display:flex;"><span>            old_value,
+</span></span><span style="display:flex;"><span>            variable_value,
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> variable_value
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 驗證參數之後更新 Variable</span>
+</span></span><span style="display:flex;"><span>    update_variable()
+</span></span></code></pre></div><p>幾個重點：</p>
+<ul>
+<li><code>params</code> 搭配 <code>Param</code> 定義輸入欄位，觸發 DAG 時會自動產生表單</li>
+<li>寫入前先 <code>strip()</code> 並檢查空值，避免一個不小心把參數清空</li>
+<li>寫入前先讀出舊值，log 記下 <code>舊值 -&gt; 新值</code>，日後追查比較方便</li>
+<li><code>max_active_runs=1</code> 避免兩個人同時觸發互相覆蓋</li>
+<li><code>Variable.set()</code> 可以順便帶 <code>description</code>，在 Variable 列表裡就看得到用途</li>
+</ul>
+<h2 id="1-初始狀態">1. 初始狀態</h2>
+<p>一開始 <code>my_variable</code> 還不存在</p>
+<p><img src="/blog/202610-airflow-variable-setter-dag/01_variable_not_exist.png" alt="Variable 值不存在"></p>
+<h2 id="2-觸發-dag-寫入值">2. 觸發 DAG 寫入值</h2>
+<p>觸發 DAG 並輸入 <code>init_var</code>，從 log 可以看到 <code>my_variable: None -&gt; init_var</code></p>
+<p><img src="/blog/202610-airflow-variable-setter-dag/02_init_run.png" alt="執行 DAG 設定值"></p>
+<p>回到 Variable 列表，值和描述都寫進去了</p>
+<p><img src="/blog/202610-airflow-variable-setter-dag/03_variable_set.png" alt="查看 Variable 值"></p>
+<h2 id="3-再次觸發更新值">3. 再次觸發更新值</h2>
+<p>這次輸入 <code>update_var</code>，log 記錄了 <code>init_var -&gt; update_var</code></p>
+<p><img src="/blog/202610-airflow-variable-setter-dag/04_update_run.png" alt="再次執行 DAG"></p>
+<p>查看實際的 Variable 值，可以看到已經更新了</p>
+<p><img src="/blog/202610-airflow-variable-setter-dag/05_variable_updated.png" alt="查看 Variable 值"></p>
+<h1 id="注意事項">注意事項</h1>
+<p>要記得設定 role 權限，只給這支 DAG 的讀取／觸發權限<br>
+不要給 <code>Variables</code> 的編輯權限，否則等於白做</p>
+<p>有固定格式的值一定要驗證<br>
+可以在 <code>Param</code> 加上 <code>pattern</code>，或在 task 裡檢查，避免輸入錯誤直接讓排程中的 DAG 出錯</p>
+<p>讀取 Variable 的那一端要在 task 裡呼叫 <code>Variable.get()</code>，不要寫在 DAG 檔案最外層<br>
+否則每次 DAG parse 都會去查 metadata DB</p>
+
+    
+    
+  </div>
+  <footer><div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/python/">Python</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/airflow/">Airflow</a></li>
+        
+      
+    </ul>
+  
+</div>
+</footer>
+</article>
+ 
+ 
+<div class="pagination">
+   
+  <a href="/blog/202609-airflow-s3-key-sensor/" class="button right"
+    ><span>使用 S3KeySensor 讓 Airflow 不用等一輩子檔案</span></a
+  >
+  
+</div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>最新文章</h1>
+      </header>
+      
+      <article class="mini-post">
+          <a href="/blog/202610-airflow-variable-setter-dag/" class="image" style="--bg-image: url('/blog/202610-airflow-variable-setter-dag/featured.jpg');">
+    <img src="/blog/202610-airflow-variable-setter-dag/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/blog/202610-airflow-variable-setter-dag/">用 DAG 開一個 Variable 櫃台</a></h2>
+          <time class="published" datetime="2026-10-16 00:00:00 &#43;0000 UTC">2026/10/16</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202609-airflow-s3-key-sensor/" class="image" style="--bg-image: url('/blog/202609-airflow-s3-key-sensor/featured.jpg');">
+    <img src="/blog/202609-airflow-s3-key-sensor/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/blog/202609-airflow-s3-key-sensor/">使用 S3KeySensor 讓 Airflow 不用等一輩子檔案</a></h2>
+          <time class="published" datetime="2026-09-24 00:00:00 &#43;0000 UTC">2026/09/24</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202609-dependency-direction-code-layering/" class="image" style="--bg-image: url('/blog/202609-dependency-direction-code-layering/featured.jpg');">
+    <img src="/blog/202609-dependency-direction-code-layering/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/blog/202609-dependency-direction-code-layering/">依賴方向決定程式碼分層</a></h2>
+          <time class="published" datetime="2026-09-19 00:00:00 &#43;0000 UTC">2026/09/19</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202609-mwaa-connection-encryption-investigation/" class="image" style="--bg-image: url('/blog/202609-mwaa-connection-encryption-investigation/featured.jpg');">
+    <img src="/blog/202609-mwaa-connection-encryption-investigation/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/blog/202609-mwaa-connection-encryption-investigation/">MWAA Connections 加密機制調查</a></h2>
+          <time class="published" datetime="2026-09-03 00:00:00 &#43;0000 UTC">2026/09/03</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/202604-deploy-openclaw-ai-for-free/" class="image" style="--bg-image: url('/blog/202604-deploy-openclaw-ai-for-free/featured.jpg');">
+    <img src="/blog/202604-deploy-openclaw-ai-for-free/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/blog/202604-deploy-openclaw-ai-for-free/">不花一毛錢，快速部屬個人 AI 助理 Openclaw</a></h2>
+          <time class="published" datetime="2026-04-04 00:00:00 &#43;0000 UTC">2026/04/04</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/blog/" class="button">查看更多</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="/categories">文章分類</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/categories/aws/">AWS<span class="count">27</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/devops/">DevOps<span class="count">24</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/node.js/">Node.js<span class="count">22</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/leetcode/">LeetCode<span class="count">13</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/golang/">Golang<span class="count">12</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/python/">Python<span class="count">12</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/%E7%B6%AD%E9%81%8B%E8%88%87%E5%B7%A5%E5%85%B7/">維運與工具<span class="count">12</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/php/">PHP<span class="count">7</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/typescript/">TypeScript<span class="count">4</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/ai/">AI<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/categories/%E8%BB%9F%E9%AB%94%E6%9E%B6%E6%A7%8B/">軟體架構<span class="count">1</span></a>
+          </li>
+          
+        </ul>
+      </section>
+    
+  
+
+  
+  <section id="tags">
+    <header>
+      <h1><a href="/tags">Tag</a></h1>
+    </header>
+    <div class="li-x post-meta tags-md" style="margin-left: 0.5em;">
+      <ul>
+        
+        
+        <li>
+          <a href="/tags/aws/">AWS (28)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/devops/">DevOps (27)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/node.js/">Node.js (22)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/python/">Python (15)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/vue/">Vue (15)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/leetcode/">LeetCode (13)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/docker/">Docker (12)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/golang/">Golang (12)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/php/">PHP (11)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/%E5%AE%B9%E5%99%A8%E6%8A%80%E8%A1%93/">容器技術 (10)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/express/">Express (9)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/ci-cd/">CI-CD (8)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/laravel/">Laravel (8)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/leetcode-easy/">LeetCode-Easy (8)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/gcp/">GCP (7)</a>
+        </li>
+        
+        <li>
+          <a href="/tags/docker-compose/">Docker Compose (6)</a>
+        </li>
+        
+      </ul>
+
+    </div>
+    
+      <footer>
+        <a href="/tags" class="button">查看更多</a>
+      </footer>
+    
+  </section>
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+    
+    <p class="copyright">
+        © 2026 Byte Ebi 🍤
+    </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>
+      hljs.configure({ ignoreUnescapedHTML: true }); 
+      hljs.highlightAll();
+    </script><script src="/js/bundle.min.d21befc899e4b6158eba05da3928321e52d15d067cb323bbf20e1b37a4ee0e3d.js" integrity="sha256-0hvvyJnkthWOugXaOSgyHlLRXQZ8syO78g4bN6TuDj0="></script>
+    <script src="/js/add-on.js"></script>
+
+
+    
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', "G-LTGVYYWC2J");
+        </script>
+    
+
+
+    </div>
+  </body>
+  
+</html>

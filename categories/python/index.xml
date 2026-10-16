@@ -10,9 +10,16 @@
 		
 		
 		
-			<lastBuildDate>Thu, 24 Sep 2026 00:00:00 +0000</lastBuildDate>
+			<lastBuildDate>Fri, 16 Oct 2026 00:00:00 +0000</lastBuildDate>
 		
 			<atom:link href="https://tech.ray247k.com/categories/python/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>用 DAG 開一個 Variable 櫃台</title>
+				<link>https://tech.ray247k.com/blog/202610-airflow-variable-setter-dag/</link>
+				<pubDate>Fri, 16 Oct 2026 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/blog/202610-airflow-variable-setter-dag/</guid>
+				<description>&lt;p&gt;需求單位想要隨時自己調整一個參數，不用每次都找工程師&lt;br&gt;&#xA;開資料庫 table 給他們改不好維護，存在 Airflow Variable 又沒辦法只開放一個&lt;br&gt;&#xA;不想開太大的權限，也不想隨時待命幫忙改值，怎麼辦？&lt;/p&gt;</description>
+			</item>
 			<item>
 				<title>使用 S3KeySensor 讓 Airflow 不用等一輩子檔案</title>
 				<link>https://tech.ray247k.com/blog/202609-airflow-s3-key-sensor/</link>

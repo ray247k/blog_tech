@@ -10,9 +10,16 @@
 		
 		
 		
-			<lastBuildDate>Thu, 24 Sep 2026 00:00:00 +0000</lastBuildDate>
+			<lastBuildDate>Fri, 16 Oct 2026 00:00:00 +0000</lastBuildDate>
 		
 			<atom:link href="https://tech.ray247k.com/en/tags/airflow/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>A DAG as a Variable Desk</title>
+				<link>https://tech.ray247k.com/en/blog/202610-airflow-variable-setter-dag/</link>
+				<pubDate>Fri, 16 Oct 2026 00:00:00 +0000</pubDate>
+				<guid>https://tech.ray247k.com/en/blog/202610-airflow-variable-setter-dag/</guid>
+				<description>&lt;p&gt;The requesting team wants to tweak a parameter whenever they need to, without going through an engineer every time.&lt;br&gt;&#xA;Giving them a database table to edit is a maintenance burden, and Airflow Variables can&amp;rsquo;t be opened up one at a time.&lt;br&gt;&#xA;I don&amp;rsquo;t want to grant overly broad permissions, and I don&amp;rsquo;t want to be on call to change a value either. So what now?&lt;/p&gt;</description>
+			</item>
 			<item>
 				<title>Using S3KeySensor So Airflow Doesn&#39;t Wait a Lifetime for a File</title>
 				<link>https://tech.ray247k.com/en/blog/202609-airflow-s3-key-sensor/</link>

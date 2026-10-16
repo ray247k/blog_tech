@@ -1,0 +1,790 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+<title>A DAG as a Variable Desk - Byte Ebi 🍤</title>
+<meta name="description" content="Designated parameter changes at the desk. All other variables, not our department.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta property="og:site_name" content="Byte Ebi 🍤">
+<meta property="og:title" content="A DAG as a Variable Desk">
+<meta property="og:description" content="Designated parameter changes at the desk. All other variables, not our department.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://tech.ray247k.com/en/blog/202610-airflow-variable-setter-dag/">
+  <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
+
+
+
+  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
+  
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=1" color="#ffffff">
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=1">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=1">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+<meta name="generator" content="Hugo 0.165.0"><meta property="og:site_name" content="Byte Ebi 🍤">
+  <meta property="og:title" content="A DAG as a Variable Desk">
+  <meta property="og:description" content="Designated parameter changes at the desk. All other variables, not our department.">
+  <meta property="description" content="Designated parameter changes at the desk. All other variables, not our department.">
+  <meta property="og:url" content="https://tech.ray247k.com/en/blog/202610-airflow-variable-setter-dag/">
+  <meta property="og:type" content="article">
+  
+    <meta property="og:image" content="https://tech.ray247k.com/img/main/logo.png">
+  
+  
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/felipec.min.css">
+          <link rel="stylesheet" href="/css/bundle.min.7bc2060a63595a20fd994db40a9ab8e5d39b1f2f841f74cd71bfee0f56e06776.css" integrity="sha256-e8IGCmNZWiD9mU20Cpq45dObHy&#43;EH3TNcb/uD1bgZ3Y="><link rel="stylesheet" href="/css/add-on.css">
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-LTGVYYWC2J');
+        }
+      </script>
+  <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "image": {
+        "@type": "ImageObject",
+        "image": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+        "height": 648,
+        "width": 1080
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com\/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Byte Ebi 🍤",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png"
+        }
+    },
+    "thumbnailUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+    "headline": "About web development, software engineering, frontend, backend, chatbot, server related topics. - Byte Ebi 🍤",
+    "name": "Byte Ebi 🍤",
+    "url": "https:\/\/tech.ray247k.com\/",
+    "description": "About web development, software engineering, frontend, backend, chatbot, server related topics. - ai,aws,devops,golang,ops \u0026 tools,php,python,software architecture,typescript,",
+    "keywords": [
+        "airflow,apache bench,api gateway,auto scaling,aws,blockchain,cdn,chatbot,ci-cd,cloudflare,cloudflare workers,cloudformation,cloudfront,cloudtrail,cloudwatch,cognito,composer,containerization,cost control,csv,devops,discord,dns,docker,docker compose,domain,domain name,drone,dynamodb,ec2,elasticache,emr,excel,ffmpeg,firewall,gas,gcp,gcr,git,github,github page,golang,google domains,google sheets,grumphp,hugo,hybrid cloud,iam,jenkins,kinesis,lambda,laravel,laravel-excel,layering,linux,load balancing,mwaa,nginx,ngrok,openclaw,personal brand,php,php-fpm,phpcbf,phpcs,portainer,postgresql,pre-commit,prerender,proxy,purchase domain,pyenv,pytest,python,queue,rds,redis,redshift,route 53,s3,security,seo,server,serverless,smart contract,sns,sqs,ssh,stress testing,subdomain,tdd,typescript,unit test,version control,vpc,web hosting,"
+    ]
+}
+</script>
+
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "legalName": "Byte Ebi 🍤",
+    "url": "https:\/\/tech.ray247k.com\/",
+    "logo": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "",
+        "availableLanguage": [
+            "Mandarin",
+            "English"
+        ]
+    },
+    "sameAs": [
+        "https://ray247k.blogspot.com/"
+    ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "A DAG as a Variable Desk",
+    "description": "Designated parameter changes at the desk. All other variables, not our department.",
+    "keywords": [
+        "Airflow" 
+    ],
+    "dateCreated": "2026-10-16T00:00:00.00Z",
+    "datePublished": "2026-10-16T00:00:00.00Z",
+    "dateModified": "2026-10-16T00:00:00.00Z",
+    "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "contentUrl": "https:\/\/tech.ray247k.com\/img\/main\/logo.png"
+    },
+    "breadcrumb": {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\/",
+                    "name": "Byte Ebi 🍤",
+                    "url": "https:\/\/tech.ray247k.com\/"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\//blog",
+                    "name": "Blog",
+                    "url": "https:\/\/tech.ray247k.com\//blog"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@id": "https:\/\/tech.ray247k.com\/en\/blog\/202610-airflow-variable-setter-dag\/",
+                    "name": "A DAG as a Variable Desk",
+                    "url": "https:\/\/tech.ray247k.com\/en\/blog\/202610-airflow-variable-setter-dag\/"
+                }
+            }
+        ],
+        "itemListOrder": "Ascending",
+        "numberOfItems": 3
+    }
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "articleSection": "blog",
+    "name": "A DAG as a Variable Desk",
+    "headline": "\u003cp\u003eThe requesting team wants to tweak a parameter whenever they need to, without going through an engineer every time.\u003cbr\u003e\nGiving them a database table to edit is a maintenance burden, and Airflow Variables can\u0026rsquo;t be opened up one at a time.\u003cbr\u003e\nI don\u0026rsquo;t want to grant overly broad permissions, and I don\u0026rsquo;t want to be on call to change a value either. So what now?\u003c\/p\u003e",
+    "description": "Designated parameter changes at the desk. All other variables, not our department.",
+    "inLanguage": "en",
+    "isFamilyFriendly": "true",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tech.ray247k.com\/en\/blog\/202610-airflow-variable-setter-dag\/"
+    },
+    "author" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "creator" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "accountablePerson" : {
+    "@type": "Person",
+    "name": "Ray"
+    },
+    "copyrightHolder" : "Byte Ebi 🍤",
+    "copyrightYear" : "2026",
+    "dateCreated": "2026-10-16T00:00:00.00Z",
+    "datePublished": "2026-10-16T00:00:00.00Z",
+    "dateModified": "2026-10-16T00:00:00.00Z",
+    "publisher":{
+        "@type":"Organization",
+        "name": "Byte Ebi 🍤",
+        "url": "https://tech.ray247k.com/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/tech.ray247k.com\/img\/main\/logo.png",
+            "width":"32",
+            "height":"32"
+        }
+    },
+    "image": "https://tech.ray247k.com/img/main/logo.png",
+    "url" : "https:\/\/tech.ray247k.com\/en\/blog\/202610-airflow-variable-setter-dag\/",
+    "wordCount" : "1122",
+    "genre" : [ "Airflow" ],
+    "keywords" : [ "Airflow" ]
+}
+</script>
+
+
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/en/" class="nav">
+        
+          Blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/en/" class="nav link"><i class='fa fa-home'></i> home</a>
+        
+      
+        
+          
+          <a href="/en/about" class="nav link"><i class='far fa-id-card'></i> about</a>
+        
+      
+        
+          
+          <a href="/en/categories" class="nav link"><i class='fas fa-sitemap'></i> category</a>
+        
+      
+        
+          
+          <a href="/en/series" class="nav link"><i class='fas fa-list-ol'></i> series</a>
+        
+      
+      
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    
+    <a href="#lang-menu" class="nav lang-toggle" lang="en">en</a>
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  <menu id="lang-menu" class="flyout-menu menu">
+  <a href="#" lang="en" class="nav link active">English (en)</a>
+  
+      <a href="https://tech.ray247k.com/blog/202610-airflow-variable-setter-dag/" lang="zh-tw" class="nav link">正體中文 (zh-tw)</a>
+    
+  
+</menu>
+
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/en/"><img src="/img/main/logo.png" class="circle" width="100" alt="Byte Ebi&#39;s Logo" /></a>
+  <header>
+    <h1>Byte Ebi 🍤</h1>
+  </header>
+  <main>
+    <p>A Bit everyday A Byte every week</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/ray247k" target="_blank" rel="noopener" title="GitHub"
+        class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//www.linkedin.com/in/j-ray-cheng" target="_blank" rel="noopener"
+        title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+<article class="post">
+  <header>
+  <div class="title">
+    
+      <h2><a href="/en/blog/202610-airflow-variable-setter-dag/">A DAG as a Variable Desk</a></h2>
+    
+    
+      <p>Designated parameter changes at the desk. All other variables, not our department.</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2026-10-16 00:00:00 &#43;0000 UTC">October 16, 2026</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+  
+  <div id="socnet-share">
+
+
+
+
+</div>
+  <div class="content">
+    <a href="/en/blog/202610-airflow-variable-setter-dag/" class="image" style="--bg-image: url('/blog/202610-airflow-variable-setter-dag/featured.jpg');">
+    <img src="/blog/202610-airflow-variable-setter-dag/featured.jpg" alt="">
+  </a> <p>The requesting team wants to tweak a parameter whenever they need to, without going through an engineer every time.<br>
+Giving them a database table to edit is a maintenance burden, and Airflow Variables can&rsquo;t be opened up one at a time.<br>
+I don&rsquo;t want to grant overly broad permissions, and I don&rsquo;t want to be on call to change a value either. So what now?</p>
+<h1 id="the-existing-problem">The Existing Problem</h1>
+<p>There&rsquo;s a DAG running on a schedule, and its decision logic depends on a parameter owned by the requesting team.<br>
+Most of the time the value stays the same, but in special cases it needs to change on short notice, and it has to &ldquo;<strong>take effect on the very next run</strong>&rdquo;.</p>
+<h3 id="option-1-trigger-the-dag-manually-with-parameters">Option 1: Trigger the DAG Manually with Parameters</h3>
+<p>This DAG only processes 500 records per run, and the total can reach 6000, so it takes several consecutive scheduled runs to get through everything.<br>
+The parameter has to stay in effect across all of those runs, so passing it in with a manual trigger every time just isn&rsquo;t practical.</p>
+<p>What about pausing the DAG and triggering it manually instead?</p>
+<p>A run triggered manually while the DAG is paused only gets queued; it won&rsquo;t start until the DAG is unpaused.<br>
+And the moment it&rsquo;s unpaused, if a scheduled time has already been missed, the scheduler immediately creates the missed scheduled run:</p>
+<ul>
+<li><code>catchup=False</code>: creates a run for the most recent interval</li>
+<li><code>catchup=True</code>: backfills every missed interval</li>
+</ul>
+<p>Either way, those are scheduled runs using the <strong>default parameters</strong>, not the value we entered manually.</p>
+<blockquote>
+<p>Before the manual run even starts, a run with the default value has already processed a batch of data.</p>
+</blockquote>
+<p>The result is some data getting processed with the wrong parameter, so this option is out.</p>
+<h3 id="option-2-create-a-table-to-store-the-parameter">Option 2: Create a Table to Store the Parameter</h3>
+<p>The requesting team is used to querying and wrangling data with SQL, so their proposal was a dedicated table just for this parameter.<br>
+Whenever it needs to change, they&rsquo;d run an <code>UPDATE</code> themselves, with no code change and no engineer involved.</p>
+<p>But that&rsquo;s a whole table for <strong>a single value</strong>, and the permissions, schema, and database maintenance all land on the engineers.<br>
+On top of that, there&rsquo;s a list of questions to answer first:</p>
+<ul>
+<li>Is this table dedicated to this one parameter? Then when other projects or requirements need to store parameters too, does each of them get its own table?</li>
+<li>If others can store things there too, it quickly turns into a junk drawer where nobody can tell whose row is whose or whether it&rsquo;s still in use.</li>
+<li>A raw <code>UPDATE</code> has no validation at all; a typo won&rsquo;t be noticed until the scheduled run fails.</li>
+<li>There&rsquo;s no record of who changed what, or when.</li>
+</ul>
+<h3 id="option-3-airflow-variable">Option 3: Airflow Variable</h3>
+<p>Airflow already has Variables for exactly this kind of setting.<br>
+The DAG reads it on each run, so a change takes effect on the next one.<br>
+This looks like the best fit.</p>
+<p>The problem is that Airflow controls permissions per <strong>resource</strong>, so granting edit access to <code>Variables</code> means <strong>all</strong> of them.<br>
+The API tokens and account passwords used by other pipelines live in Variables too.</p>
+<blockquote>
+<p>I only wanted them to change one parameter, and ended up handing over every token and password.</p>
+</blockquote>
+<p>Under the <strong>principle of least privilege(PoLP)</strong>, this permission can&rsquo;t go to the requesting team.<br>
+But I also don&rsquo;t want an engineer on standby every time a change is needed.</p>
+<h1 id="the-solution">The Solution</h1>
+<h3 id="a-dag-as-the-dedicated-window-for-a-variable">A DAG as the Dedicated Window for a Variable</h3>
+<p>Since Variable permissions can&rsquo;t be scoped any finer, hardcode &ldquo;which key can be changed&rdquo; into a DAG instead.</p>
+<ul>
+<li>Write a separate DAG that hardcodes the Variable key, so the requesting team can only enter a new value.</li>
+<li>Use <code>role</code> permissions so only the requesting team can see and trigger this DAG.</li>
+<li>The original scheduled DAG doesn&rsquo;t change at all; it keeps reading the Variable and picks up the new value on its next run.</li>
+<li>Every change is a manual DAG run, so who changed it to what, and when, is all on record.</li>
+</ul>
+<p>It essentially wraps <strong>&ldquo;editing a Variable&rdquo;</strong> into a service desk with a single input field.<br>
+The requesting team can fill in the value, but can&rsquo;t choose which variable to change.</p>
+<h1 id="proof-of-concept">Proof of Concept</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> __future__ <span style="color:#f92672">import</span> annotations
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> logging
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> datetime <span style="color:#f92672">import</span> datetime, timedelta
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> airflow.sdk <span style="color:#f92672">import</span> DAG, Param, Variable, task
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> airflow.sdk.definitions.param <span style="color:#f92672">import</span> ParamsDict
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> airflow.sdk.exceptions <span style="color:#f92672">import</span> AirflowException
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>logger <span style="color:#f92672">=</span> logging<span style="color:#f92672">.</span>getLogger(__name__)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>VARIABLE_KEY <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;my_variable&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>default_args <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;owner&#34;</span>: <span style="color:#e6db74">&#34;Developer&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;depends_on_past&#34;</span>: <span style="color:#66d9ef">False</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;start_date&#34;</span>: datetime(<span style="color:#ae81ff">2026</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">14</span>),
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;retry_delay&#34;</span>: timedelta(minutes<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>),
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> DAG(
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;variable_setter&#34;</span>,
+</span></span><span style="display:flex;"><span>    default_args<span style="color:#f92672">=</span>default_args,
+</span></span><span style="display:flex;"><span>    schedule<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>,
+</span></span><span style="display:flex;"><span>    dag_display_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Variable Setter&#34;</span>,
+</span></span><span style="display:flex;"><span>    max_active_runs<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>    catchup<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>,
+</span></span><span style="display:flex;"><span>    params<span style="color:#f92672">=</span>ParamsDict(
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;variable_value&#34;</span>: Param(
+</span></span><span style="display:flex;"><span>                type<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;string&#34;</span>,
+</span></span><span style="display:flex;"><span>                title<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Variable Value&#34;</span>,
+</span></span><span style="display:flex;"><span>                description<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;The Variable value to set&#34;</span>,
+</span></span><span style="display:flex;"><span>            ),
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    ),
+</span></span><span style="display:flex;"><span>    doc_md<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        ### Set Variable Value
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        Enter a Variable value to write to the designated Variable key.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>) <span style="color:#66d9ef">as</span> dag:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@task</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">update_variable</span>(<span style="color:#f92672">**</span>kwargs):
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;&#34;&#34;Read the input parameter, validate it, then update the designated Variable&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Read the input parameter and validate it</span>
+</span></span><span style="display:flex;"><span>        variable_value <span style="color:#f92672">=</span> (kwargs[<span style="color:#e6db74">&#34;params&#34;</span>]<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;variable_value&#34;</span>) <span style="color:#f92672">or</span> <span style="color:#e6db74">&#34;&#34;</span>)<span style="color:#f92672">.</span>strip()
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> variable_value:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">raise</span> AirflowException(<span style="color:#e6db74">&#34;variable_value must not be empty&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Get the current value</span>
+</span></span><span style="display:flex;"><span>        old_value <span style="color:#f92672">=</span> Variable<span style="color:#f92672">.</span>get(VARIABLE_KEY, default<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Update the Variable value</span>
+</span></span><span style="display:flex;"><span>        Variable<span style="color:#f92672">.</span>set(VARIABLE_KEY, variable_value, description<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;You can add a note too&#34;</span>)
+</span></span><span style="display:flex;"><span>        logger<span style="color:#f92672">.</span>info(
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;Updated Variable </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">: </span><span style="color:#e6db74">%s</span><span style="color:#e6db74"> -&gt; </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span>,
+</span></span><span style="display:flex;"><span>            VARIABLE_KEY,
+</span></span><span style="display:flex;"><span>            old_value,
+</span></span><span style="display:flex;"><span>            variable_value,
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> variable_value
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Validate the parameter, then update the Variable</span>
+</span></span><span style="display:flex;"><span>    update_variable()
+</span></span></code></pre></div><p>A few key points:</p>
+<ul>
+<li><code>params</code> with <code>Param</code> defines the input fields, and the trigger form is generated automatically.</li>
+<li>The value is <code>strip()</code>ped and checked for emptiness before writing, so the parameter doesn&rsquo;t get wiped by accident.</li>
+<li>The old value is read before writing, and the log records <code>old value -&gt; new value</code> for easier tracing.</li>
+<li><code>max_active_runs=1</code> prevents two people from triggering at the same time and overwriting each other.</li>
+<li><code>Variable.set()</code> can also take a <code>description</code>, so its purpose is visible right in the Variable list.</li>
+</ul>
+<h2 id="1-initial-state">1. Initial State</h2>
+<p>At first, <code>my_variable</code> doesn&rsquo;t exist yet.</p>
+<p><img src="/blog/202610-airflow-variable-setter-dag/01_variable_not_exist.png" alt="Variable does not exist"></p>
+<h2 id="2-trigger-the-dag-to-write-a-value">2. Trigger the DAG to Write a Value</h2>
+<p>Trigger the DAG with <code>init_var</code>, and the log shows <code>my_variable: None -&gt; init_var</code>.</p>
+<p><img src="/blog/202610-airflow-variable-setter-dag/02_init_run.png" alt="Running the DAG to set the value"></p>
+<p>Back in the Variable list, both the value and the description have been written.</p>
+<p><img src="/blog/202610-airflow-variable-setter-dag/03_variable_set.png" alt="Checking the Variable value"></p>
+<h2 id="3-trigger-again-to-update-the-value">3. Trigger Again to Update the Value</h2>
+<p>This time, enter <code>update_var</code>, and the log records <code>init_var -&gt; update_var</code>.</p>
+<p><img src="/blog/202610-airflow-variable-setter-dag/04_update_run.png" alt="Running the DAG again"></p>
+<p>Checking the actual Variable value confirms it has been updated.</p>
+<p><img src="/blog/202610-airflow-variable-setter-dag/05_variable_updated.png" alt="Checking the Variable value"></p>
+<h1 id="things-to-keep-in-mind">Things to Keep in Mind</h1>
+<p>Remember to set up role permissions: grant only read/trigger access to this DAG.<br>
+Don&rsquo;t grant edit access to <code>Variables</code>, or the whole thing is pointless.</p>
+<p>Values with a fixed format must be validated.<br>
+Add a <code>pattern</code> to the <code>Param</code>, or check it inside the task, so a bad input doesn&rsquo;t break the scheduled DAG.</p>
+<p>On the reading side, call <code>Variable.get()</code> inside a task, not at the top level of the DAG file.<br>
+Otherwise every DAG parse hits the metadata DB.</p>
+
+    
+    
+  </div>
+  <footer><div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/en/categories/python/">Python</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/en/tags/airflow/">Airflow</a></li>
+        
+      
+    </ul>
+  
+</div>
+</footer>
+</article>
+ 
+ 
+<div class="pagination">
+   
+  <a href="/en/blog/202609-airflow-s3-key-sensor/" class="button right"
+    ><span>Using S3KeySensor So Airflow Doesn&#39;t Wait a Lifetime for a File</span></a
+  >
+  
+</div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>Recent Posts</h1>
+      </header>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202610-airflow-variable-setter-dag/" class="image" style="--bg-image: url('/blog/202610-airflow-variable-setter-dag/featured.jpg');">
+    <img src="/blog/202610-airflow-variable-setter-dag/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202610-airflow-variable-setter-dag/">A DAG as a Variable Desk</a></h2>
+          <time class="published" datetime="2026-10-16 00:00:00 &#43;0000 UTC">October 16, 2026</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202609-airflow-s3-key-sensor/" class="image" style="--bg-image: url('/blog/202609-airflow-s3-key-sensor/featured.jpg');">
+    <img src="/blog/202609-airflow-s3-key-sensor/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202609-airflow-s3-key-sensor/">Using S3KeySensor So Airflow Doesn&#39;t Wait a Lifetime for a File</a></h2>
+          <time class="published" datetime="2026-09-24 00:00:00 &#43;0000 UTC">September 24, 2026</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202609-dependency-direction-code-layering/" class="image" style="--bg-image: url('/blog/202609-dependency-direction-code-layering/featured.jpg');">
+    <img src="/blog/202609-dependency-direction-code-layering/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202609-dependency-direction-code-layering/">Dependency Direction Determines Code Layering</a></h2>
+          <time class="published" datetime="2026-09-19 00:00:00 &#43;0000 UTC">September 19, 2026</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202609-mwaa-connection-encryption-investigation/" class="image" style="--bg-image: url('/blog/202609-mwaa-connection-encryption-investigation/featured.jpg');">
+    <img src="/blog/202609-mwaa-connection-encryption-investigation/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202609-mwaa-connection-encryption-investigation/">Investigating Connection Encryption on Amazon MWAA</a></h2>
+          <time class="published" datetime="2026-09-03 00:00:00 &#43;0000 UTC">September 3, 2026</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/en/blog/202604-deploy-openclaw-ai-for-free/" class="image" style="--bg-image: url('/blog/202604-deploy-openclaw-ai-for-free/featured.jpg');">
+    <img src="/blog/202604-deploy-openclaw-ai-for-free/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/en/blog/202604-deploy-openclaw-ai-for-free/">Deploy Your Own Openclaw AI Assistant for Free</a></h2>
+          <time class="published" datetime="2026-04-04 00:00:00 &#43;0000 UTC">April 4, 2026</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/en/blog/" class="button">See More</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="/en/categories">Categories</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/en/categories/aws/">AWS<span class="count">27</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/devops/">DevOps<span class="count">24</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/golang/">Golang<span class="count">12</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/python/">Python<span class="count">12</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/ops-tools/">Ops &amp; Tools<span class="count">11</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/php/">PHP<span class="count">7</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/typescript/">TypeScript<span class="count">4</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/ai/">AI<span class="count">1</span></a>
+          </li>
+          
+          <li>
+              <a href="/en/categories/software-architecture/">Software Architecture<span class="count">1</span></a>
+          </li>
+          
+        </ul>
+      </section>
+    
+  
+
+  
+  <section id="tags">
+    <header>
+      <h1><a href="/en/tags">Tags</a></h1>
+    </header>
+    <div class="li-x post-meta tags-md" style="margin-left: 0.5em;">
+      <ul>
+        
+        
+        <li>
+          <a href="/en/tags/aws/">AWS (28)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/devops/">DevOps (26)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/docker/">Docker (12)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/golang/">Golang (12)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/containerization/">Containerization (10)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/ci-cd/">CI-CD (8)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/laravel/">Laravel (8)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/python/">Python (8)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/docker-compose/">Docker Compose (6)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/gcp/">GCP (6)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/airflow/">Airflow (5)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/composer/">Composer (5)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/php/">PHP (5)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/drone/">Drone (4)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/jenkins/">Jenkins (4)</a>
+        </li>
+        
+        <li>
+          <a href="/en/tags/pytest/">Pytest (4)</a>
+        </li>
+        
+      </ul>
+
+    </div>
+    
+      <footer>
+        <a href="/en/tags" class="button">See More</a>
+      </footer>
+    
+  </section>
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+    
+    <p class="copyright">
+        © 2026 Byte Ebi 🍤
+    </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>
+      hljs.configure({ ignoreUnescapedHTML: true }); 
+      hljs.highlightAll();
+    </script><script src="/js/bundle.min.d21befc899e4b6158eba05da3928321e52d15d067cb323bbf20e1b37a4ee0e3d.js" integrity="sha256-0hvvyJnkthWOugXaOSgyHlLRXQZ8syO78g4bN6TuDj0="></script>
+    <script src="/js/add-on.js"></script>
+
+
+    
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGVYYWC2J"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', "G-LTGVYYWC2J");
+        </script>
+    
+
+
+    </div>
+  </body>
+  
+</html>

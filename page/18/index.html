@@ -214,6 +214,60 @@
   <header>
   <div class="title">
     
+      <h2><a href="/blog/202010-express-vue-build-ecommerce-16-refactor-vue-store/">[Express&#43;Vue 搭建電商網站] 16 抽離 Vuex store 中的邏輯</a></h2>
+    
+    
+      <p>使用 Express &#43; Vue 搭建一個電商網站 - 抽離 Vuex store 中的邏輯</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2020-10-16 00:00:00 &#43;0000 UTC">2020/10/16</time>
+    <p>Ray</p>
+    
+  </div>
+</header>
+
+  <div class="content">
+    
+    
+    <p>隨著我們的迷你電商網站越來越完整，在 Vuex store 中的程式也越來越龐大<br>
+不只有 getters、mutation 還有 actions<br>
+在章節中先試著將這些複雜的邏輯拆分成個別的檔案，抽出 Getters、Mutations 和 Actions 邏輯</p>
+
+  </div>
+  <footer>
+    <a href="/blog/202010-express-vue-build-ecommerce-16-refactor-vue-store/" class="button big">閱讀全文</a>
+    <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/node.js/">Node.js</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/vue/">vue</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/node.js/">Node.js</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+  </footer>
+</article>
+
+  
+    <article class="post">
+  <header>
+  <div class="title">
+    
       <h2><a href="/blog/202010-express-vue-build-ecommerce-15-use-vuex-getters/">[Express&#43;Vue 搭建電商網站] 15 使用 Vuex Getters 複用資料邏輯</a></h2>
     
     
@@ -535,60 +589,6 @@
 </article>
 
   
-    <article class="post">
-  <header>
-  <div class="title">
-    
-      <h2><a href="/blog/202008-express-vue-build-ecommerce-09-test-api/">[Express&#43;Vue 搭建電商網站] 09 API 測試</a></h2>
-    
-    
-      <p>使用 Express &#43; Vue 搭建一個電商網站 - API 測試</p>
-    
-  </div>
-  <div class="meta">
-    <time datetime="2020-08-28 00:00:00 &#43;0000 UTC">2020/08/28</time>
-    <p>Ray</p>
-    
-  </div>
-</header>
-
-  <div class="content">
-    
-    
-    <p>在上一篇中完成了第一個 API，這一篇要來測試 API 是不是正常工作</p>
-
-  </div>
-  <footer>
-    <a href="/blog/202008-express-vue-build-ecommerce-09-test-api/" class="button big">閱讀全文</a>
-    <div class="stats">
-  
-    <ul class="categories">
-      
-        
-          <li><a class="article-terms-link" href="/categories/node.js/">Node.js</a></li>
-        
-      
-    </ul>
-  
-  
-    <ul class="tags">
-      
-        
-          <li><a class="article-terms-link" href="/tags/express/">express</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/node.js/">Node.js</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/restful/">RESTful</a></li>
-        
-      
-    </ul>
-  
-</div>
-
-  </footer>
-</article>
-
-  
   <div class="pagination">
     
       <a href="/page/17/" class="button left"><span>上一頁</span></a>
@@ -605,6 +605,16 @@
       <header>
         <h1>最新文章</h1>
       </header>
+      
+      <article class="mini-post">
+          <a href="/blog/202610-airflow-variable-setter-dag/" class="image" style="--bg-image: url('/blog/202610-airflow-variable-setter-dag/featured.jpg');">
+    <img src="/blog/202610-airflow-variable-setter-dag/featured.jpg" alt="">
+  </a>
+        <header>
+          <h2><a href="/blog/202610-airflow-variable-setter-dag/">用 DAG 開一個 Variable 櫃台</a></h2>
+          <time class="published" datetime="2026-10-16 00:00:00 &#43;0000 UTC">2026/10/16</time>
+        </header>
+      </article>
       
       <article class="mini-post">
           <a href="/blog/202609-airflow-s3-key-sensor/" class="image" style="--bg-image: url('/blog/202609-airflow-s3-key-sensor/featured.jpg');">
@@ -643,16 +653,6 @@
         <header>
           <h2><a href="/blog/202604-deploy-openclaw-ai-for-free/">不花一毛錢，快速部屬個人 AI 助理 Openclaw</a></h2>
           <time class="published" datetime="2026-04-04 00:00:00 &#43;0000 UTC">2026/04/04</time>
-        </header>
-      </article>
-      
-      <article class="mini-post">
-          <a href="/blog/202602-airflow-dynamic-task-mapping/" class="image" style="--bg-image: url('/blog/202602-airflow-dynamic-task-mapping/featured.jpg');">
-    <img src="/blog/202602-airflow-dynamic-task-mapping/featured.jpg" alt="">
-  </a>
-        <header>
-          <h2><a href="/blog/202602-airflow-dynamic-task-mapping/">使用動態任務讓 Airflow 效能大解放</a></h2>
-          <time class="published" datetime="2026-02-03 00:00:00 &#43;0000 UTC">2026/02/03</time>
         </header>
       </article>
       
@@ -695,11 +695,11 @@
           </li>
           
           <li>
-              <a href="/categories/%E7%B6%AD%E9%81%8B%E8%88%87%E5%B7%A5%E5%85%B7/">維運與工具<span class="count">12</span></a>
+              <a href="/categories/python/">Python<span class="count">12</span></a>
           </li>
           
           <li>
-              <a href="/categories/python/">Python<span class="count">11</span></a>
+              <a href="/categories/%E7%B6%AD%E9%81%8B%E8%88%87%E5%B7%A5%E5%85%B7/">維運與工具<span class="count">12</span></a>
           </li>
           
           <li>
